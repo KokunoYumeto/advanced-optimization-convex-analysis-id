@@ -1,0 +1,815 @@
+{
+  "environment_count": 61,
+  "environment_counts": {
+    "aligned": 4,
+    "cases": 3,
+    "defn": 3,
+    "enumerate": 2,
+    "equation": 23,
+    "example": 2,
+    "figure": 1,
+    "gather": 2,
+    "lemma": 4,
+    "proof": 9,
+    "theorem": 8
+  },
+  "environment_topology_equal": true,
+  "failures": [],
+  "figures": [
+    "figures/gradient",
+    "figures/subgradient"
+  ],
+  "formula_delta_manifest_sha256": "c979be4ecb19687c87ef590feda4d5ba8f083a945a0e0cda98236d8d7581b681",
+  "formula_deltas": [
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0018"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 0,
+      "source_start": 1,
+      "target": [
+        "X",
+        "Y",
+        "X",
+        "V",
+        "W"
+      ],
+      "target_end": 5,
+      "target_start": 1
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0001"
+      ],
+      "operation": "delete",
+      "source": [
+        "A=Df(x)"
+      ],
+      "source_end": 14,
+      "source_start": 14,
+      "target": [],
+      "target_end": 18,
+      "target_start": 19
+    },
+    {
+      "dispositions": [
+        "editorial_punctuation_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "f(y)=f(x)+Df(x)(y-x)+o(\\|y-x\\|)"
+      ],
+      "source_end": 19,
+      "source_start": 19,
+      "target": [
+        "f(y)=f(x)+Df(x)(y-x)+o(\\|y-x\\|),"
+      ],
+      "target_end": 23,
+      "target_start": 23
+    },
+    {
+      "dispositions": [
+        "editorial_punctuation_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\min\\limits_x\\frac{1}{2}\\|Ax-b\\|^2_2+\\lambda\\|Kx\\|_1"
+      ],
+      "source_end": 21,
+      "source_start": 21,
+      "target": [
+        "\\min\\limits_x\\frac{1}{2}\\|Ax-b\\|^2_2+\\lambda\\|Kx\\|_1,"
+      ],
+      "target_end": 25,
+      "target_start": 25
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0002"
+      ],
+      "operation": "replace",
+      "source": [
+        "f:X\\rightarrowY"
+      ],
+      "source_end": 24,
+      "source_start": 24,
+      "target": [
+        "f:X\\rightarrow(-\\infty,\\infty]",
+        "x\\in\\dom(f)"
+      ],
+      "target_end": 29,
+      "target_start": 28
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0002"
+      ],
+      "operation": "replace",
+      "source": [
+        "x\\inX",
+        "f(x)+\\langleg,y-x\\rangle\\leqf(y),\\quad\\forally\\inY."
+      ],
+      "source_end": 28,
+      "source_start": 27,
+      "target": [
+        "x",
+        "f(x)+\\langleg,y-x\\rangle\\leqf(y),\\quad\\forally\\inX."
+      ],
+      "target_end": 33,
+      "target_start": 32
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0002"
+      ],
+      "operation": "delete",
+      "source": [
+        "x\\inX"
+      ],
+      "source_end": 30,
+      "source_start": 30,
+      "target": [],
+      "target_end": 34,
+      "target_start": 35
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0002"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(x)=\\{g\\inX^*\\;|\\;f(x)+\\langleg,y-x\\rangle\\leqf(y),\\quad\\forally\\inY\\}."
+      ],
+      "source_end": 32,
+      "source_start": 32,
+      "target": [
+        "x",
+        "\\partialf(x)=\\{g\\inX^*\\;|\\;f(x)+\\langleg,y-x\\rangle\\leqf(y),\\quad\\forally\\inX\\}.",
+        "x\\notin\\dom(f)",
+        "\\partialf(x)=\\emptyset"
+      ],
+      "target_end": 39,
+      "target_start": 36
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0014"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\|y\\|_*=\\sup_{\\|x\\|\\leq1}\\langlex,y\\rangle."
+      ],
+      "source_end": 38,
+      "source_start": 38,
+      "target": [
+        "\\|y\\|_*=\\sup_{\\|x\\|\\leq1}|\\langley,x\\rangle|."
+      ],
+      "target_end": 45,
+      "target_start": 45
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0003"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(0)=\\overline{B}_{||\\cdot\\|_\\infty,1}(0)=[-1,1]^n."
+      ],
+      "source_end": 41,
+      "source_start": 41,
+      "target": [
+        "\\partialf(0)=\\overline{B}_{\\|\\cdot\\|_\\infty,1}(0)=[-1,1]^n."
+      ],
+      "target_end": 48,
+      "target_start": 48
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "N_{\\overline{B}_{\\|\\cdot\\|,1}(0)}(x)=\\begin{cases}\\{y\\inX^\\ast|\\|y\\|_*\\leq\\inner{y}{x}\\}&\\text{#}\\norm{x}\\leq1,\\\\\\emptyset&\\text{#}\\norm{x}>1.\\end{cases}",
+        "f:V\\rightarrow\\R"
+      ],
+      "source_end": 49,
+      "source_start": 48,
+      "target": [
+        "N_{\\overline{B}_{\\|\\cdot\\|,1}(0)}(x)=\\begin{cases}\\{y\\inX^\\ast\\mid\\|y\\|_*\\leq\\inner{y}{x}\\}&\\text{#}\\norm{x}\\leq1,\\\\\\emptyset&\\text{#}\\norm{x}>1.\\end{cases}",
+        "f:X\\rightarrow\\R"
+      ],
+      "target_end": 56,
+      "target_start": 55
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0018"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 50,
+      "source_start": 51,
+      "target": [
+        "X"
+      ],
+      "target_end": 58,
+      "target_start": 58
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "f(x)+\\inner{\\nablaf(x)}{y-x}\\leqf(y),\\quady\\inV"
+      ],
+      "source_end": 55,
+      "source_start": 55,
+      "target": [
+        "f(x)+\\inner{\\nablaf(x)}{y-x}\\leqf(y),\\quady\\inX,"
+      ],
+      "target_end": 63,
+      "target_start": 63
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "h\\inV"
+      ],
+      "source_end": 58,
+      "source_start": 58,
+      "target": [
+        "h\\inX"
+      ],
+      "target_end": 66,
+      "target_start": 66
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0004"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 63,
+      "source_start": 64,
+      "target": [
+        "-h",
+        "\\inner{g}{h}=\\inner{\\nablaf(x)}{h}"
+      ],
+      "target_end": 73,
+      "target_start": 72
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0004"
+      ],
+      "operation": "delete",
+      "source": [
+        "\\inner{g}{h}=\\inner{\\nablaf(x)}{h}"
+      ],
+      "source_end": 65,
+      "source_start": 65,
+      "target": [],
+      "target_end": 74,
+      "target_start": 75
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0005"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 66,
+      "source_start": 67,
+      "target": [
+        "x"
+      ],
+      "target_end": 76,
+      "target_start": 76
+    },
+    {
+      "dispositions": [
+        "editorial_punctuation_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(x)=\\begin{cases}\\{\\frac{x}{\\|x\\|_2}\\}\\quad&x\\neq0\\\\\\overline{B}_{\\|\\cdot\\|_2,1}(0)\\quad&\\text{#}\\end{cases}"
+      ],
+      "source_end": 72,
+      "source_start": 72,
+      "target": [
+        "\\partialf(x)=\\begin{cases}\\{\\frac{x}{\\|x\\|_2}\\}\\quad&x\\neq0,\\\\\\overline{B}_{\\|\\cdot\\|_2,1}(0)\\quad&\\text{#}.\\end{cases}"
+      ],
+      "target_end": 82,
+      "target_start": 82
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0006"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(x)=\\begin{cases}\\{\\sign(x)\\}\\quad&x\\neq0\\\\[-1,1]\\quad&\\text{#}\\end{cases}",
+        "f:X\\rightarrowY"
+      ],
+      "source_end": 76,
+      "source_start": 75,
+      "target": [
+        "\\partialf(x)=\\begin{cases}\\{\\sign(x)\\}\\quad&x\\neq0,\\\\[-1,1]\\quad&\\text{#}.\\end{cases}",
+        "f:X\\rightarrow(-\\infty,\\infty]"
+      ],
+      "target_end": 86,
+      "target_start": 85
+    },
+    {
+      "dispositions": [
+        "proof_exposition_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "f(x+\\lambda(y-x))+\\langleg,x-(x+\\lambda(y-x))\\rangle\\leqf(x)\\\\f(x+\\lambda(y-x))+\\langleg,y-(x+\\lambda(y-x))\\rangle\\leqf(y)",
+        "f(x+\\lambda(y-x))+\\langleg,-\\lambda(y-x)\\rangle\\leqf(x)\\\\f(x+\\lambda(y-x))+\\langleg,(1-\\lambda)(y-x)\\rangle\\leqf(y)."
+      ],
+      "source_end": 82,
+      "source_start": 81,
+      "target": [
+        "f(x+\\lambda(y-x))+\\langleg,x-(x+\\lambda(y-x))\\rangle\\leqf(x),\\\\f(x+\\lambda(y-x))+\\langleg,y-(x+\\lambda(y-x))\\rangle\\leqf(y),",
+        "f(x+\\lambda(y-x))+\\langleg,-\\lambda(y-x)\\rangle\\leqf(x),\\\\f(x+\\lambda(y-x))+\\langleg,(1-\\lambda)(y-x)\\rangle\\leqf(y).",
+        "\\lambda",
+        "1-\\lambda"
+      ],
+      "target_end": 94,
+      "target_start": 91
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0008"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}f(x+\\lambda(y-x))\\leq(1-\\lambda)f(x)+\\lambdaf(y).\\end{aligned}"
+      ],
+      "source_end": 85,
+      "source_start": 85,
+      "target": [
+        "\\begin{aligned}f(x+\\lambda(y-x))\\leq(1-\\lambda)f(x)+\\lambdaf(y),\\end{aligned}",
+        "X"
+      ],
+      "target_end": 98,
+      "target_start": 97
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0017"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\epsilon"
+      ],
+      "source_end": 95,
+      "source_start": 95,
+      "target": [
+        "\\epsilon>0"
+      ],
+      "target_end": 108,
+      "target_start": 108
+    },
+    {
+      "dispositions": [
+        "editorial_punctuation_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "z=\\lambdax+(1-\\lambda)y+h=\\lambda(x+h)+(1-\\lambda)(y+h)"
+      ],
+      "source_end": 100,
+      "source_start": 100,
+      "target": [
+        "z=\\lambdax+(1-\\lambda)y+h=\\lambda(x+h)+(1-\\lambda)(y+h)."
+      ],
+      "target_end": 113,
+      "target_start": 113
+    },
+    {
+      "dispositions": [
+        "math_mode_typography_only"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 102,
+      "source_start": 103,
+      "target": [
+        "C"
+      ],
+      "target_end": 116,
+      "target_start": 116
+    },
+    {
+      "dispositions": [
+        "math_mode_typography_only"
+      ],
+      "operation": "delete",
+      "source": [
+        "C"
+      ],
+      "source_end": 104,
+      "source_start": 104,
+      "target": [],
+      "target_end": 117,
+      "target_start": 118
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0015"
+      ],
+      "operation": "replace",
+      "source": [
+        "C\\subset\\R^d"
+      ],
+      "source_end": 107,
+      "source_start": 107,
+      "target": [
+        "C\\subset\\R^d,\\d\\geq1"
+      ],
+      "target_end": 120,
+      "target_start": 120
+    },
+    {
+      "dispositions": [
+        "math_mode_typography_only"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 110,
+      "source_start": 111,
+      "target": [
+        "C",
+        "C"
+      ],
+      "target_end": 125,
+      "target_start": 124
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\tilde{C}=C-x_0"
+      ],
+      "source_end": 113,
+      "source_start": 113,
+      "target": [
+        "\\widetilde{C}=C-x_0"
+      ],
+      "target_end": 128,
+      "target_start": 128
+    },
+    {
+      "dispositions": [
+        "math_mode_typography_only"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 118,
+      "source_start": 119,
+      "target": [
+        "C"
+      ],
+      "target_end": 134,
+      "target_start": 134
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0007"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\frac{1}{2d}\\sum_{i=1}^dx_i\\inC^\\circ",
+        "\\frac{1}{2d}\\sum_{i=1}^dx_i=\\sum_{i=1}^d\\frac{1}{2d}x_i+\\frac{1}{2}0\\inC."
+      ],
+      "source_end": 122,
+      "source_start": 121,
+      "target": [
+        "x_\\star\\coloneqq\\frac{1}{2d}\\sum_{i=1}^dx_i\\inC^\\circ",
+        "x_\\star=\\frac{1}{2d}\\sum_{i=1}^dx_i=\\sum_{i=1}^d\\frac{1}{2d}x_i+\\frac{1}{2}0\\inC."
+      ],
+      "target_end": 138,
+      "target_start": 137
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0007"
+      ],
+      "operation": "replace",
+      "source": [
+        "x+h=\\sum_{i=1}^d\\big(\\frac{1}{2d}+\\lambda_i\\big)x_i=\\sum_{i=1}^d\\big(\\frac{1}{2d}+\\lambda_i\\big)x_i+\\bigg(1-\\sum_i\\big(\\frac{1}{2d}+\\lambda_i\\big)\\bigg)0\\inC."
+      ],
+      "source_end": 135,
+      "source_start": 135,
+      "target": [
+        "x_\\star+h=\\sum_{i=1}^d\\big(\\frac{1}{2d}+\\lambda_i\\big)x_i+\\bigg(1-\\sum_i\\big(\\frac{1}{2d}+\\lambda_i\\big)\\bigg)0\\inC."
+      ],
+      "target_end": 151,
+      "target_start": 151
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0007"
+      ],
+      "operation": "replace",
+      "source": [
+        "B_\\epsilon(0)\\subsetC"
+      ],
+      "source_end": 138,
+      "source_start": 138,
+      "target": [
+        "B_\\epsilon(x_\\star)\\subsetC"
+      ],
+      "target_end": 154,
+      "target_start": 154
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0015",
+        "O015-HAB-ADV-0008"
+      ],
+      "operation": "replace",
+      "source": [
+        "x_1,\\dots,x_{d-1}",
+        "C\\subset\\span\\{x_i\\;|i=1,\\dots,d-1\\}"
+      ],
+      "source_end": 142,
+      "source_start": 141,
+      "target": [
+        "x_1,\\dots,x_k",
+        "C",
+        "C\\subset\\span\\{x_i\\midi=1,\\dots,k\\}.",
+        "d",
+        "V"
+      ],
+      "target_end": 161,
+      "target_start": 157
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "x_0\\in\\partialC=\\overline{C}\\setminus(C^\\circ)"
+      ],
+      "source_end": 144,
+      "source_start": 144,
+      "target": [
+        "x_0\\in\\partialC=\\overline{C}\\setminusC^\\circ"
+      ],
+      "target_end": 163,
+      "target_start": 163
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0016"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 152,
+      "source_start": 153,
+      "target": [
+        "C\\subset\\overline{C^\\circ}",
+        "C"
+      ],
+      "target_end": 173,
+      "target_start": 172
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0016"
+      ],
+      "operation": "insert",
+      "source": [],
+      "source_end": 153,
+      "source_start": 154,
+      "target": [
+        "H"
+      ],
+      "target_end": 175,
+      "target_start": 175
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0016"
+      ],
+      "operation": "replace",
+      "source": [
+        "d-1",
+        "x_0"
+      ],
+      "source_end": 157,
+      "source_start": 156,
+      "target": [
+        "x_0\\in\\overlineC"
+      ],
+      "target_end": 178,
+      "target_start": 178
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0016"
+      ],
+      "operation": "replace",
+      "source": [
+        "H=\\{x\\;|\\;\\inner{x}{a}=b\\}."
+      ],
+      "source_end": 160,
+      "source_start": 160,
+      "target": [
+        "H=\\{x\\mid\\inner{a}{x}=b\\}."
+      ],
+      "target_end": 181,
+      "target_start": 181
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0008"
+      ],
+      "operation": "replace",
+      "source": [
+        "(g,-\\alpha)\\in(V\\times\\R)^*=V^*\\times\\R"
+      ],
+      "source_end": 169,
+      "source_start": 169,
+      "target": [
+        "(g,-\\alpha)\\in(X\\times\\R)^*=X^*\\times\\R"
+      ],
+      "target_end": 190,
+      "target_start": 190
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\inner{\\tilde{g}}{y}-t\\leq\\inner{\\tilde{g}}{x}-f(x),\\quad(y,t)\\in\\epi(f).",
+        "\\tilde{g}=g/\\alpha"
+      ],
+      "source_end": 186,
+      "source_start": 185,
+      "target": [
+        "\\inner{\\widetilde{g}}{y}-t\\leq\\inner{\\widetilde{g}}{x}-f(x),\\quad(y,t)\\in\\epi(f),",
+        "\\widetilde{g}=g/\\alpha"
+      ],
+      "target_end": 207,
+      "target_start": 206
+    },
+    {
+      "dispositions": [
+        "notation_normalization_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\tilde{g}\\in\\partialf(x)"
+      ],
+      "source_end": 188,
+      "source_start": 188,
+      "target": [
+        "\\widetilde{g}\\in\\partialf(x)"
+      ],
+      "target_end": 209,
+      "target_start": 209
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0010"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(x)+\\partialg(x)\\subset\\partial(f+g)."
+      ],
+      "source_end": 195,
+      "source_start": 195,
+      "target": [
+        "\\partialf(x)+\\partialg(x)\\subset\\partial(f+g)(x)."
+      ],
+      "target_end": 216,
+      "target_start": 216
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0010"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\partialf(x)+\\partialg(x)=\\partial(f+g)."
+      ],
+      "source_end": 197,
+      "source_start": 197,
+      "target": [
+        "\\partialf(x)+\\partialg(x)=\\partial(f+g)(x)."
+      ],
+      "target_end": 218,
+      "target_start": 218
+    },
+    {
+      "dispositions": [
+        "editorial_punctuation_only"
+      ],
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}f(x)+\\langlep_1,y-x\\rangle&\\leqf(y)\\\\g(x)+\\langlep_2,y-x\\rangle&\\leqg(y)\\end{aligned}",
+        "\\begin{aligned}f(x)+g(x)+\\langlep_1+p_2,y-x\\rangle\\leqf(y)+g(y)\\end{aligned}"
+      ],
+      "source_end": 201,
+      "source_start": 200,
+      "target": [
+        "\\begin{aligned}f(x)+\\langlep_1,y-x\\rangle&\\leqf(y),\\\\g(x)+\\langlep_2,y-x\\rangle&\\leqg(y).\\end{aligned}",
+        "\\begin{aligned}f(x)+g(x)+\\langlep_1+p_2,y-x\\rangle\\leqf(y)+g(y),\\end{aligned}"
+      ],
+      "target_end": 222,
+      "target_start": 221
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0011"
+      ],
+      "operation": "replace",
+      "source": [
+        "x_0\\in\\dom(h)^\\circ"
+      ],
+      "source_end": 209,
+      "source_start": 209,
+      "target": [
+        "x_0\\inV",
+        "Ax_0+b\\in\\dom(f)^\\circ"
+      ],
+      "target_end": 231,
+      "target_start": 230
+    },
+    {
+      "dispositions": [
+        "O015-HAB-ADV-0012"
+      ],
+      "operation": "replace",
+      "source": [
+        "x\\inV"
+      ],
+      "source_end": 215,
+      "source_start": 215,
+      "target": [
+        "x\\in\\dom(f)^\\circ"
+      ],
+      "target_end": 237,
+      "target_start": 237
+    }
+  ],
+  "formula_surface_count": {
+    "source": 230,
+    "target": 252
+  },
+  "labels": {
+    "source": [
+      "convexity:thm:nonempty_subgrad",
+      "subgradient:eq:supporting",
+      "subgrad:eq:nonempty_subdiff1",
+      "subgrad:eq:nonempty_subdiff2"
+    ],
+    "target": [
+      "d90-hab:ch:subgradien",
+      "convexity:thm:nonempty_subgrad",
+      "subgradient:eq:supporting",
+      "subgrad:eq:nonempty_subdiff1",
+      "subgrad:eq:nonempty_subdiff2"
+    ]
+  },
+  "result": "pass",
+  "schema": "o015-subgradient-structure-audit-v1",
+  "segments": [
+    "d90.hab.v1.ch03.seg0001",
+    "d90.hab.v1.ch03.seg0002",
+    "d90.hab.v1.ch03.seg0003",
+    "d90.hab.v1.ch03.seg0004",
+    "d90.hab.v1.ch03.seg0005",
+    "d90.hab.v1.ch03.seg0006",
+    "d90.hab.v1.ch03.seg0007",
+    "d90.hab.v1.ch03.seg0008",
+    "d90.hab.v1.ch03.seg0009",
+    "d90.hab.v1.ch03.seg0010",
+    "d90.hab.v1.ch03.seg0011"
+  ],
+  "source": {
+    "bytes": 16939,
+    "path": "authority/habring/source-v1/subgradient.tex",
+    "sha256": "c3b447ee9ea5d8dbf98333b927ad5b7408d1d66884c3b7d5590251dfc47c5405"
+  },
+  "target": {
+    "bytes": 19266,
+    "path": "source/id-ID/habring-03-subgradien-id.tex",
+    "sha256": "d04ff82898c157f56924c6c08fd204bcd97625f060847fd8a0b6f7a2b90b0a5c"
+  }
+}

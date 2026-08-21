@@ -1,0 +1,21 @@
+# Reproducible local build products and visual-QA scratch
+/build/
+/tmp/
+__pycache__/
+*.pyc
+
+# Frozen evidence not needed in the current public reader increment
+/authority/comparator/
+/authority/penn-state/
+
+# Redundant local download/extraction aliases; canonical Habring witnesses are
+# 2607.11664v1.{pdf,source.tar}, source-v1/, and the retained build evidence.
+/authority/habring/arxiv-2607.11664v1-abs.html
+/authority/habring/arxiv-2607.11664v1-experimental.html
+/authority/habring/arxiv-2607.11664v1-source.tar
+/authority/habring/arxiv-2607.11664v1-source/
+/authority/habring/arxiv-2607.11664v1.pdf
+/authority/habring/build-arxiv-2607.11664v1/
+
+# Accidental literal output directory from an early shell-variable expansion.
+/source/id-ID/$out/

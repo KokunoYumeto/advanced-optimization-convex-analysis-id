@@ -1,0 +1,165 @@
+{
+  "schema": "o015-source-authority-v1",
+  "lane": "O015",
+  "role": "D90 Advanced Optimization and Convex Analysis",
+  "frozen_on": "2026-08-21",
+  "authorities": [
+    {
+      "authority_id": "o015-penn-math555-v1.0-source",
+      "title": "Nonlinear Programming",
+      "creator": "Christopher Griffin",
+      "contributors": [
+        "Simon Miller",
+        "Douglas Mercer"
+      ],
+      "official_index": "https://sites.psu.edu/griffinch/lecture_notes/",
+      "official_pdf_url": "https://sites.psu.edu/griffinch/files/2023/06/Math555.pdf",
+      "official_source_url": "https://sites.psu.edu/griffinch/files/2023/06/Math555_SRC.zip",
+      "version_control": null,
+      "edition_note": "The editable archive is version 1.0. The public PDF is version 1.0.1 and differs in the title version plus the repaired closing delimiter in Equation (4.23); no exact editable v1.0.1 source was published.",
+      "artifacts": [
+        {
+          "path": "authority/penn-state/lecture_notes.html",
+          "bytes": 38149,
+          "sha256": "1de7334606881669437905fbf00b94db55f49bf173ade9a2d6451d85b708d5c4"
+        },
+        {
+          "path": "authority/penn-state/Math555.pdf",
+          "bytes": 4776722,
+          "pages": 187,
+          "edition": "1.0.1",
+          "sha256": "f7b99401af875333f3becb591eebf61fac81280768537c20b8a1264d578cb4ff"
+        },
+        {
+          "path": "authority/penn-state/Math555_SRC.zip",
+          "bytes": 23909024,
+          "entries": 524,
+          "sha256": "1958af9417aa7cd057f321c3c6f71a8c02349fb1d32da75f6bad05eb66286a0e"
+        },
+        {
+          "path": "authority/penn-state/Math555_SRC.entries.sha256.tsv",
+          "bytes": 54181,
+          "sha256": "e5c5f47ed7f5d21c7408c8f719fb5213eea3ff35abc9d918fe1f41956551907a"
+        }
+      ],
+      "license": {
+        "expression": "CC BY-NC-SA 3.0 US",
+        "translation_permitted": true,
+        "requirements": [
+          "attribution",
+          "identify changes",
+          "noncommercial use",
+          "ShareAlike",
+          "license link",
+          "no implied endorsement"
+        ],
+        "local_legalcode": "authority/penn-state/CC-BY-NC-SA-3.0-US-legalcode.html"
+      },
+      "build": {
+        "source_version": "1.0",
+        "command": "SOURCE_DATE_EPOCH=1469615970 FORCE_SOURCE_DATE=1 pdflatex -interaction=nonstopmode -halt-on-error -file-line-error Math555.tex (three passes, retaining bundled Math555.bbl)",
+        "result_pdf": "authority/penn-state/build/Math555.pdf",
+        "result_pages": 187,
+        "result_bytes": 5795749,
+        "result_sha256": "781bf236ac2511b9e05235277348a1af47a89973d7f297b69d587c2ce5d876e6",
+        "closure_caveat": "References.bib and mrabbrev.bib are absent; the bundled Math555.bbl is an essential opaque input. Proprietary Maple worksheets and unlicensed legacy code are not admitted as reusable code components."
+      },
+      "learning_surfaces": {
+        "chapters": 11,
+        "sections": 54,
+        "exercises": 84,
+        "explicit_hints": 17,
+        "answers": 0,
+        "solutions": 0,
+        "examples": 50,
+        "theorems": 73,
+        "proofs": 81
+      },
+      "admission": "smooth numerical optimization donor only",
+      "exclusions": [
+        "Chapter 9 LP/simplex/LP duality overlaps O018",
+        "Chapter 11 SQP/barrier/interior-point sections are empty headings",
+        "Maple worksheets and legacy code lack reusable component licensing and reproducible open dependencies"
+      ]
+    },
+    {
+      "authority_id": "o015-habring-arxiv-2607.11664v1",
+      "title": "Lecture Notes: Convex Optimization",
+      "creator": "Andreas Habring",
+      "official_record": "https://arxiv.org/abs/2607.11664v1",
+      "official_pdf_url": "https://arxiv.org/pdf/2607.11664v1",
+      "official_source_url": "https://arxiv.org/e-print/2607.11664v1",
+      "submitted_utc": "2026-07-13T15:08:35Z",
+      "cover_date": "2026-07-14",
+      "doi": "10.48550/arXiv.2607.11664",
+      "version_control": null,
+      "version_control_note": "No official notes repository exists; arXiv v1 is the immutable authority. Branch, commit, and tree identifiers are not applicable.",
+      "artifacts": [
+        {
+          "path": "authority/habring/2607.11664v1.pdf",
+          "bytes": 836977,
+          "pages": 84,
+          "sha256": "d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d"
+        },
+        {
+          "path": "authority/habring/2607.11664v1-source.tar",
+          "bytes": 230116,
+          "sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748"
+        },
+        {
+          "path": "authority/habring/2607.11664v1-api.xml",
+          "bytes": 1737,
+          "sha256": "c59dd51fda285214335e2ec00e53f967be44fddca2394ca690c00da70c9dd1d3"
+        },
+        {
+          "path": "authority/habring/CC-BY-4.0-legalcode.txt",
+          "bytes": 18657,
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        }
+      ],
+      "source_tree": {
+        "path": "authority/habring/source-v1",
+        "files": 22,
+        "bytes": 383054,
+        "manifest_sha256": "9c87aa3dda15b09f52d52d6035165b16800fec7a2952548f4fa036d24fbc51b8"
+      },
+      "license": {
+        "expression": "CC BY 4.0",
+        "recorded_by": "arXiv version record",
+        "translation_permitted": true,
+        "requirements": [
+          "attribution",
+          "license link",
+          "identify changes",
+          "no implied endorsement"
+        ]
+      },
+      "build": {
+        "declared_toolchain": "TeX Live 2025 / pdflatex",
+        "verified_toolchain": "MiKTeX 26.5 / pdfTeX 1.40.29 / Biber 2.21",
+        "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=<bounded-build-dir> Convopt_notes.tex",
+        "result_pdf": "authority/habring/build-arxiv-2607.11664v1/Convopt_notes.pdf",
+        "result_pages": 84,
+        "result_bytes": 987791,
+        "result_sha256": "e4146db1af496e54ad4c75a337f6779803252e3604214eec916d6d0c5e8e36ef",
+        "byte_reproducible": false,
+        "nonidentity_reasons": [
+          "source uses implicit current date",
+          "arXiv adds a margin stamp"
+        ]
+      },
+      "learning_surfaces": {
+        "chapters": 9,
+        "formal_exercises": 3,
+        "informal_exercise_proofs": 6,
+        "hints": 0,
+        "answers": 0,
+        "solutions": 0,
+        "code": 0,
+        "raster_figures": 7
+      },
+      "admission": "modern convex and nonsmooth module",
+      "component_caveat": "The CC BY record applies to the arXiv submission, but the custom class and raster figures have no separate embedded notices or generating-source provenance. The preface credits Thomas Pock's lecture slides and Christian Clason's template; this is retained in the component ledger."
+    }
+  ]
+}

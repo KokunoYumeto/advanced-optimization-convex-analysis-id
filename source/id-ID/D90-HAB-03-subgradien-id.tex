@@ -1,0 +1,54 @@
+\pdfoutput=1
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 3: Subgradien\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks — Unit 3: Subgradien — Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 3, ``Subgradients'', dari versi sumber yang ditentukan di atas. Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang bernorma dan ruang Hilbert, kekonveksan, epigraf, serta karakterisasi orde pertama fungsi konveks terdiferensialkan.
+
+Notasi, rumus, urutan teorema, bukti, contoh, dan dua gambar sumber dipertahankan. Beberapa kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka; ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini. Figur merupakan salinan persis aset sumber. Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca unit ini.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{2}
+\include{habring-03-subgradien-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber.
+
+\begin{enumerate}
+    \item Kalimat berlebih pada definisi gradien yang kembali menamai pemetaan turunan sebagai \(A\) dihapus; definisi turunan Fréchet sebelumnya tetap mempertahankan notasi tersebut.
+    \item Definisi subdiferensial diberi kodomain real diperluas, domain efektif, dan kuantifikasi pada ruang asal agar ketaksamaannya bertipe benar.
+    \item Bukti bahwa subdiferensial fungsi konveks terdiferensialkan adalah himpunan berunsur tunggal dilengkapi dengan menerapkan ketaksamaan pada arah negatif; kebalikannya dibatasi pada dimensi hingga dan fungsi yang hingga di sekitar titik tersebut.
+    \item Pernyataan keberadaan subgradien, hiperbidang pendukung, dan aturan hitung diberi ruang lingkup berdimensi hingga yang dipakai oleh buktinya.
+    \item Bukti lema interior kosong menangani himpunan kosong, memakai titik pusat bola yang benar, memilih himpunan bebas linear maksimal, dan mentranslasikan hiperbidang kembali.
+    \item Bukti hiperbidang pendukung memperluas ketaksamaan dari interior melalui ketertutupan dan kontinuitas, lalu memakai hiperbidang dari lema sebelumnya pada kasus interior kosong; urutan pasangan dual juga dibetulkan.
+    \item Norma dual ditulis dengan nilai mutlak dan urutan pasangan dual yang konsisten.
+    \item Aturan jumlah mengembalikan argumen evaluasi yang hilang; syarat aturan afin dinyatakan pada citra domain.
+    \item Rujukan silang ke bab prasyarat yang tidak dimuat diganti dengan nama konsep yang tepat, tanpa mengubah ketergantungan matematisnya.
+\end{enumerate}
+
+\chapter*{Atribusi dan lisensi}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+\end{document}

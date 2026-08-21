@@ -1,0 +1,264 @@
+\newabbreviation{ot}{OT}{optimal transport}
+
+
+\chapter{Excursion on Optimal Transport}
+While not fitting perfectly into this lecture, we finish with a an excursion into \gls{ot}, a subject with immense importance in modern mathematics and machine learning. We emphasize at this point that the exposition here will not be rigorous and in particular we will omit a lot of details regarding specific properties of the underlying spaces.
+
+\paragraph{Notation}
+In the following $X$, $Y$ will be measurable spaces\footnote{usually \emph{Polish} spaces, \ie, separable, complete, metric spaces}, $\Pc(X)$, $\Pc(Y)$ will be the space of all probability measures on $X$, respectively $Y$ and $\Mc(X)$, $\Mc(Y)$ the spaces of all finite measures.
+Recall that a (signed) measure $\mu$ on a set $X$ is a function $\mu:\Sigma\rightarrow \R$ where $\Sigma\subset 2^X$ is a subset\footnote{specifically, $\Sigma$ needs to be a $\sigma$-algebra, that is, a subset of $2^X$ with certain properties} of the power set of $X$ such that $\mu$ satisfies the following
+\begin{enumerate}
+    \item $\mu(\emptyset)=0$
+    \item For $(A_n)_{n\in \N}\subset\Sigma$ all disjoint it holds $\mu(\bigcup_n A_n) = \sum_n \mu(A_n)$.
+\end{enumerate}
+A probability measure is a measure with $\mu(A)\geq 0$ for any $A$ and $\mu(X)=1$.
+
+\section{Monge's and Kantorovich's optimal transport}
+
+\begin{figure}
+\begin{tikzpicture}[
+  >=Stealth,
+  font=\sffamily
+]
+
+% ----- shared baseline -----
+\def\y{0}
+\def\xmin{0}
+\def\xmax{16}
+\def\amean{3}
+\def\astd{1}
+\def\bmean{12}
+\def\bstd{1.4}
+
+% ----- density curves, both upright on the same baseline -----
+% alpha: Gaussian, mean \amean, std \astd
+\draw[domain=\xmin:\xmax, smooth, samples=150, variable=\x,
+      blue!60!black, thick, fill=blue!15]
+  plot ({\x}, {\y + 1.6*exp(-0.5*((\x-\amean)/\astd)^2)})
+  -- (\xmax,\y) -- (\xmin,\y) -- cycle;
+
+% beta: Gaussian, mean \bmean, std \bstd
+\draw[domain=\xmin:\xmax, smooth, samples=150, variable=\x,
+      red!60!black, thick, fill=red!15]
+  plot ({\x}, {\y + 1.6*exp(-0.5*((\x-\bmean)/\bstd)^2)})
+  -- (\xmax,\y) -- (\xmin,\y) -- cycle;
+
+% ----- shared baseline axis -----
+\draw[gray] (\xmin,\y) -- (\xmax,\y);
+
+% ----- distribution labels -----
+\node[blue!60!black] at (\amean, 2.1) {$\alpha$};
+\node[red!60!black]  at (\bmean, 2.1) {$\beta$};
+
+% ----- transport map: monotone, non-crossing arcs below the axis -----
+% sample points on alpha's support, mapped to beta's support via
+% the (monotone) optimal map T(x) = \bmean + (\bstd/\astd)*(x-\amean)
+\foreach \x/\opacity in {1/0.4, 2/0.6, 3/0.9, 4/0.6, 5/0.4} {
+  \pgfmathsetmacro{\Tx}{\bmean + (\bstd/\astd)*(\x-\amean)}
+  \draw[-{Stealth[length=2.2mm]}, line width=1pt,
+        violet!70!black, opacity=\opacity]
+    (\x,\y) to[out=-60, in=-120] (\Tx,\y);
+  \filldraw[blue!60!black] (\x,\y) circle (1.3pt);
+  \filldraw[red!60!black] (\Tx,\y) circle (1.3pt);
+}
+
+% ----- map label -----
+\node[violet!70!black, fill=white, fill opacity=0.85, text opacity=1,
+      inner sep=2pt] at (8, -3.7) {$T_{\#}\alpha=\beta$};
+\node[violet!70!black, font=\sffamily\small, fill=white, fill opacity=0.85,
+      text opacity=1, inner sep=2pt] at (8, -4.2) {(optimal transport map)};
+% ----- title -----
+% \node[font=\sffamily\bfseries] at (8, 3.2) {Optimal Transport from $\alpha$ to $\beta$};
+\end{tikzpicture}
+\caption{Illustration of~\gls{ot}. The map $T$ transports the \emph{pile} from $\alpha$ to $\beta$.}
+\label{ot:fig:ot}
+\end{figure}
+
+The typical motivation for \gls{ot} is the following. Imagine we want to carry a pile of sand from one spot to another. By conservation of mass we know that the two piles have the same total mass which we assume without loss of generality to be one. Thus, we may describe the initial pile by a probability distribution $\alpha\in\Pc(X)$ and the final pile by a probability distribution $\beta\in\Pc(Y)$. The question to be answered in \gls{ot} is:
+\begin{quote}
+    \centering
+    \emph{How can we transport the pile $\alpha$ to $\beta$ at minimal cost?}
+\end{quote}
+Careful readers might notice, that it is unclear what the \emph{costs} are. We assume we have a cost function $c$ such that $c(x,y)$ is the cost of transporting one unit of mass from $x\in X$ to $y\in Y$. Each possible transport from $\alpha$ to $\beta$ is modelled by a function $T$. The condition of transporting $x$ to $y$ can mathematically be formulated by requiring that for any set $A$, $\alpha(T^{-1}(A)) = \beta(A)$. We make the following appropriate definition.
+\begin{defn}[Push-forward]
+    Let $\alpha\in \Pc(X)$ and $T:X\rightarrow Y$. The push-forward measure $T_\sharp\alpha\in \Pc(Y)$ is defined via $T_\sharp \alpha(A) = \alpha(T^{-1}(A))$ for any measurable $A\subset Y$.
+\end{defn}
+
+We can no formally introduce the Monge~\gls{ot} problem:
+\begin{defn}[Monge \gls{ot}]
+    Let $X$ and $Y$ be measurable spaces and $\alpha\in \Pc(X)$ and $\beta\in \Pc(Y)$. The Monge \gls{ot} problem is 
+    \begin{equation}\label{ot:eq:monge}
+        \min_{T:X\rightarrow Y} \int c(x,T(x))\dd \alpha(x),\quad\text{s.t. }T_\sharp\alpha = \beta.
+    \end{equation}
+\end{defn}
+The Monge \gls{ot} problem admits a few downsides. For instance, one may quickly realize that the function $T$ can map each $x$ only to \emph{one} $y$ which means we cannot distribute mass located at a point $x$ to different points $y$. Therefore, whenever $\alpha$ admits non-zero mass at a specific point but $\beta$ is absolutely continuous with respect to the Lebesgue measure\footnote{that is, $\beta$ has no point masses} there is no admissible plan $T$. Moreover, depending on the choice of $c$, the problem is in general difficult to analyze as the unknown $T$ appears within the cost $c$. 
+
+A formulation of the problem that is more general and easier to analyze is Kantorovich's \gls{ot}. Instead of a map $T:X\rightarrow Y$, we model our transportation via a distribution as well. That is, a transport plan is a probability distribution $\gamma$ on $X\times Y$ which admits $\alpha$ and $\beta$ as its marginals, that is, $\gamma(A\times Y) = \alpha(A)$ and $\gamma(X\times B) = \beta(B)$ for all $A\subset X$, $B\subset Y$. Figuratively speaking, for any $A\subset X$, $B\subset Y$, $\gamma(A\times B)$ is the mass transported from $A$ to $B$. We denote the set of all such distributions with marginals $\alpha$, $\beta$ as $\Pi(\alpha,\beta)$ and refer to them as couplings. We can now define Kantorovich's \gls{ot} problem.
+\begin{defn}[Kantorovich's \gls{ot}]
+    Let $X$ and $Y$ be measurable spaces and $\alpha\in \Pc(X)$ and $\beta\in \Pc(Y)$. The Kantorovich \gls{ot} problem is 
+    \begin{equation}\label{ot:eq:K_ot}
+        \min_{\gamma\in\Pi(\alpha,\beta)} \int c(x,y)\dd\gamma(x,y).
+    \end{equation}
+\end{defn}
+Note that~\eqref{ot:eq:K_ot} is highly favorable over~\eqref{ot:eq:monge}. In particular, the objective is now linear.
+
+\begin{rem}
+    Note that we can formulate~\eqref{ot:eq:K_ot} very differently using random variables: Every coupling $\gamma$ can be~\emph{realized} as a random vector $(X,Y)\sim\gamma$ where $X\sim \alpha$ and $Y\sim \beta$. Then the cost satisfies
+    \begin{equation}
+        \int c(x,y)\dd \gamma(x,y) = \E[c(X,Y)].
+    \end{equation}
+\end{rem}
+
+We state the following result.
+\begin{theorem}[Existence of solutions]
+    Let $c:X\times Y\rightarrow \R\cup\{\infty\}$ be bounded from below and lower semi-continuous. Then there exists an optimal transport plan $\gamma$, that is, a solution to~\eqref{ot:eq:K_ot}.
+\end{theorem}
+\begin{proof}[Proof sketch]
+    For a detailed proof, see for instance~\cite[Theorem 4.1]{villani2009optimal}. Essentially, the proof boils down to the direct method: Assume $(\gamma_n)_n$ is a minimizing sequence. By extracting a subsequence we may assume $\lim_n \int c(x,y)\dd \gamma_n(x,y) = \inf_\gamma \int c(x,y)\dd \gamma(x,y)>-\infty$. We obtain boundedness of the sequence more or less for free, as the $\gamma_n$ are probability measures. More specifically, one can show that the set $\Pi(\alpha,\beta)$ is compact with respect to the weak topology. Therefore, by extracting another subsequence we obtain $\hat\gamma\in\Pi(\alpha,\beta)$ such that $\gamma_n\rightharpoonup \hat \gamma$. Since, moreover, $\gamma\mapsto \int c(x,y)\dd \gamma(x,y)$ is weakly lower semi-continuous, $\hat\gamma$ is a minimizer concluding the proof.
+\end{proof}
+
+An important special case of optimal transport surely has to be highlighted.
+
+\begin{defn}[Wasserstein distances]
+Let $X=Y$ and $c(x,y) = \|x-y\|^p$, $p\in[1,\infty)$. Then the expression
+\begin{equation}
+    W_p(\alpha,\beta) \coloneqq \bigg(\inf_{\gamma\in\Pi(\alpha,\beta)}\int c(x,y)\dd \gamma(x,y)\bigg)^{1/p}
+\end{equation}
+is referred to as the Wasserstein-$p$-distance.
+\end{defn}
+In particular, $W_p$ is a metric on the space of probability measures with finite $p$-th.
+
+\section{Kantorovich duality}
+From~\cref{chapter:duality} we are already familiar with the concept of duality. Duality plays a crucial role in~\gls{ot} and we obtain the following famous result.
+\begin{theorem}[Kantorovich duality]
+    Let $c:X\times Y\rightarrow \R\cup\{\infty\}$ be lower semi-continuous. We have the following duality
+    \begin{equation}
+        \begin{aligned}
+            \inf_{\gamma\in\Pi(\alpha,\beta)}\int c(x,y) \dd \gamma(x,y) 
+            = \sup_{\phi(x)+\psi(y)\leq c(x,y)}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y).
+        \end{aligned}
+    \end{equation}
+\end{theorem}
+\begin{proof}[Proof sketch]
+    We begin with the easy inequlity: Let $(\phi,\psi)$ be such that $\phi(x) + \psi(y)\leq c(x,y)$ and $\gamma\in\Pi(\alpha,\beta)$ arbitrary. We find
+    \begin{equation}
+        \begin{aligned}
+            \int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y)
+            =& \int \phi(x)\dd\gamma(x,y) + \int \psi(y)\dd \gamma(x,y)\\
+            =& \int \phi(x)+\psi(y)\dd\gamma(x,y)\\
+            \leq& \int c(x,y) \dd \gamma(x,y).
+        \end{aligned}
+    \end{equation}
+    Since $\gamma$ and $(\phi,\psi)$ were arbitrary we may take the infimum on the right and the supremum on the left to obtain
+    \begin{equation}
+        \begin{aligned}
+            \sup_{\phi(x)+\psi(y)\leq c(x,y)}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y)
+            \leq& \inf_{\gamma\in\Pi(\alpha,\beta)}\int c(x,y) \dd \gamma(x,y).
+        \end{aligned}
+    \end{equation}
+    The converse inequality turns out to be more intricate.
+    First we may rewrite~\eqref{ot:eq:K_ot} as 
+    \begin{equation}
+        \inf \int c(x,y)\dd \gamma + \delta_{\Pi(\alpha,\beta)}(\gamma)
+    \end{equation}
+    with $\delta_{\Pi(\alpha,\beta)}$ the indicator function as usual. Note that we can write
+    \begin{equation}\label{ot:eq:duality}
+        \begin{aligned}
+            \delta_{\Pi(\alpha,\beta)}(\gamma)
+            =& \sup_{\phi,\psi}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y) - \int \phi(x)+\psi(y)\dd \gamma(x,y)\\
+            % =& \sup_{\phi,\psi}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y) - \int \phi(x)+\psi(y)\dd \gamma(x,y)
+        \end{aligned}
+    \end{equation}
+    To see this, note that whenever $\gamma\in\Pi(\alpha,\beta)$, the right-hand side evaluates to zero for every $(\phi,\psi)$. On the other hand-side, when $\gamma\notin\Pi(\alpha,\beta)$ then without loss of generality $\gamma_x\neq \alpha$ where $\gamma_x$ denotes the $x$-marginal of $\gamma$. But by duality, this means that there exists $\phi$ such that
+    \begin{equation}
+        \int \phi \dd(\alpha - \gamma_x) \neq 0.
+    \end{equation}
+    Considering $t\phi$ with $t\rightarrow \pm \infty$ shows the result.
+
+    Therefore, assuming strong duality, that is, that we may exchange infimum and supremum, we obtain
+    \begin{equation}
+        \begin{aligned}
+            \inf_{\gamma\in\Pi(\alpha,\beta)}\int c(x,y) \dd \gamma(x,y)
+            =& \inf_{\gamma\in\Mc_+(X\times Y)}\sup_{\phi,\psi} \int c(x,y) \dd \gamma(x,y)\\
+            &+\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y) - \int \phi(x)+\psi(y)\dd \gamma(x,y)\\
+            =& \sup_{\phi,\psi}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y) \\
+            &+ \inf_{\gamma\in\Mc_+(\alpha,\beta)} \int c(x,y)- \phi(x)-\psi(y) \dd \gamma(x,y)\\
+            =& \sup_{\phi(x)+\psi(y)\leq c(x,y)}\int \phi(x)\dd\alpha(x) + \int \psi(y)\dd \beta(y)
+        \end{aligned}
+    \end{equation}
+    where in the last equality we again recognize the indicator function of the set $\{(\phi,\psi)\;|\; \phi(x) + \psi(y)\leq c(x,y)\}$ similarly as in~\eqref{ot:eq:duality}.
+\end{proof}
+
+\section{Discretizing optimal transport: The Sinkhorn-Knopp algorithm}
+To discretize~\eqref{ot:eq:K_ot} we model $\alpha$ and $\beta$ as discrete measures, that is,
+\begin{equation}
+    \alpha = \sum_{i=1}^n a_i \delta_{x_i}
+\end{equation}
+for some $a_i\in \Delta_n$ and $x_i\in X$ and similarly 
+\begin{equation}
+    \beta = \sum_{j=1}^m b_j \delta_{y_j}.
+\end{equation}
+Moreover, we define $C = [C_{i,j}]_{i,j} = [c(x_i,y_j)]_{i,j}$. A transport plan then is a matrix $P\in \R^{n\times m}$ such that 
+\begin{equation}
+    \begin{cases}
+        \sum_{j=1}^m P_{i,j} &= a_i\\
+        \sum_{i=1}^n P_{i,j} &= b_j\\
+        P_{i,j}&\geq 0.
+    \end{cases}
+\end{equation}
+The marginal constraints can be compactly written as $P\1=a$, $P^t\1 = b$. The discrete \gls{ot} problem then reads as
+\begin{equation}
+    \begin{aligned}
+        \min_{P\in \R^{n\times m}}\inner{C}{P} = \sum_{i,j}C_{i,j}P_{i,j}\\
+        \text{s.t. } P\1=a,\;P^t\1 = b\; P_{i,j}\geq 0.
+    \end{aligned}
+\end{equation}
+In practice, the problem is often regularized. That is, the non-negativity constraints implicitly handled by adding an entropic regularization
+\begin{equation}
+    E(P) \coloneq \sum_{i,j} P_{i,j}(\log(P_{i,j})-1),
+\end{equation}
+and considering the problem
+\begin{equation}\label{ot:eq:disc_entropic}
+    \begin{aligned}
+        \min_{P\in \R^{n\times m}}\inner{C}{P} + \epsilon E(P)
+        \quad \text{s.t. } P\1=a,\;P^t\1 = b.
+    \end{aligned}
+\end{equation}
+
+
+\begin{lemma}
+    The solution of the problem~\eqref{ot:eq:disc_entropic} is unique and admits the representation
+    \begin{equation}
+        P_{i,j} = u_i K_{i,j}v_j
+    \end{equation}
+    where $u_i,v_j>0$ and $K_{i,j}=\exp\left(-\frac{C_{i,j}}{\epsilon}\right)$.
+\end{lemma}
+\begin{proof}
+    Uniqueness is left as an exercise.
+    The Lagrangian for the problem reads as
+    \begin{equation}
+        L(P,\lambda,\mu)
+        = \inner{C}{P} + \epsilon E(P) + \inner{\lambda}{P\1-a} + \inner{\mu}{P^t\1-b}.
+    \end{equation}
+    The corresponding optimality conditions are
+    \begin{equation}
+        \begin{cases}
+            0 =& C_{i,j} + \epsilon\log(P_{i,j}) + \lambda_i + \mu_j\\
+            0 =& P\1-a\\
+            0 =& P^t\1-b.
+        \end{cases}
+    \end{equation}
+    The first condition implies 
+    \begin{equation}
+        P_{i,j} = \exp\left(-\frac{\mu_j}{\epsilon}\right)\exp\left(-\frac{C_{i,j}}{\epsilon}\right)\exp\left(-\frac{\lambda_i}{\epsilon}\right)
+    \end{equation}
+    concluding the proof.
+\end{proof}
+Since we additionally still have the constraints $P\1 = \diag(u) K \diag(v)\1 = \diag(u) K v = a$ and similarly $\diag(v)K^t u\1 = b$ this motivates the Sinkhorn-Knopp algorithm where we update for $k=1,2,\dots$
+\begin{equation}
+    \begin{cases}
+        u_{k+1} = a \oslash Kv_k\\
+        v_{k+1} = b\oslash K^t u_{k+1}
+    \end{cases}
+\end{equation}
+where $\oslash$ denotes element-wise division.

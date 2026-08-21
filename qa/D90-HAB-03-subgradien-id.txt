@@ -1,0 +1,525 @@
+                    OPTIMISASI KONVEKS
+                                 Unit 3: Subgradien
+                               Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 3, “Subgradients”, dari versi sumber yang diten-
+tukan di atas. Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang
+bernorma dan ruang Hilbert, kekonveksan, epigraf, serta karakterisasi orde pertama fungsi
+konveks terdiferensialkan.
+Notasi, rumus, urutan teorema, bukti, contoh, dan dua gambar sumber dipertahankan.
+Beberapa kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka;
+ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai
+sumber edisi ini. Figur merupakan salinan persis aset sumber. Tidak ada layanan daring
+atau perangkat lunak tertutup yang diperlukan untuk membaca unit ini.
+
+
+
+
+                                           i
+DAFTAR ISI
+
+
+
+
+3   subgradien   1
+
+
+
+
+                     ii
+3 SUBGRADIEN
+
+
+
+Ingat kembali definisi turunan (Fréchet).
+Sepanjang bab ini, 𝑋 dan 𝑌 menyatakan ruang bernorma real; apabila gradien digunakan,
+𝑋 merupakan ruang Hilbert. Setiap kali 𝑉 atau 𝑊 muncul, keduanya menyatakan ruang
+bernorma real berdimensi hingga. Pada pasangan dual, argumen pertama selalu fungsional
+dan argumen kedua selalu vektor.
+
+Definisi 3.1 (Turunan Fréchet). Misalkan 𝑓 : 𝑋 → 𝑌 . Fungsi 𝑓 dikatakan terdiferensialkan
+(dalam arti Fréchet) di 𝑥 ∈ 𝑋 apabila terdapat pemetaan linear kontinu 𝐴 : 𝑋 → 𝑌
+sedemikian sehingga
+
+                                 ∥𝑓 (𝑥 + ℎ) − 𝑓 (𝑥) − 𝐴ℎ∥
+(3.1)                       lim                           = 0.
+                           ∥ℎ∥→0            ∥ℎ∥
+
+Kita menuliskan 𝐴 = 𝐷 𝑓 (𝑥).
+
+Definisi 3.2 (Gradien). Misalkan 𝑓 : 𝑋 → ℝ terdiferensialkan dan 𝑋 merupakan ruang
+Hilbert. Gradien 𝑓 di titik 𝑥, yang dilambangkan dengan ∇𝑓 (𝑥), adalah unsur tunggal di 𝑋
+sedemikian sehingga
+
+(3.2)                          𝐷 𝑓 (𝑥)ℎ = ⟨∇𝑓 (𝑥), ℎ⟩ ,     ℎ ∈ 𝑋.
+
+Keberadaan dan ketunggalan gradien merupakan akibat langsung dari teorema repre-
+sentasi Riesz, sebab 𝐷 𝑓 (𝑥) ∈ 𝑋 ∗ apabila 𝑓 bernilai real. Perhatikan pula bahwa gradien
+bergantung pada hasil kali dalam yang dipilih.
+Walaupun definisi umum di atas mungkin tampak agak abstrak, gradien yang kita temui
+biasanya cukup sederhana. Secara khusus, apabila 𝑋 = ℝ𝑑 dilengkapi dengan hasil kali
+dalam Euklides baku, maka
+
+(3.3)                                 ∇𝑓 (𝑥) = 𝐷 𝑓 (𝑥)𝑇 ,
+
+yaitu, gradien hanyalah transpos dari turunannya.
+
+
+
+
+                                               1
+                                      3 subgradien
+
+
+Turunan dapat ditafsirkan sebagai hampiran linear terbaik terhadap fungsi di suatu titik,
+yakni
+
+(3.4)                  𝑓 (𝑦) = 𝑓 (𝑥) + 𝐷 𝑓 (𝑥)(𝑦 − 𝑥) + 𝑜 (∥𝑦 − 𝑥 ∥),
+
+dengan 𝑜 kecil menyatakan suatu suku yang meluruh lebih cepat daripada laju linear. Keba-
+nyakan metode optimisasi dapat ditafsirkan sebagai proses berulang untuk meminimumkan
+hampiran fungsi yang lebih mudah. Akan tetapi, banyak fungsi penting tidak memiliki
+gradien dalam pengertian di atas. Sebagai contoh, kita mungkin ingin menyelesaikan
+persoalan
+                                  1
+(3.5)                          min ∥𝐴𝑥 − 𝑏 ∥ 22 + 𝜆∥𝐾𝑥 ∥ 1,
+                                𝑥 2
+
+dengan 𝐴 dan 𝐾 linear. Persoalan komposit semacam ini sangat umum dalam pengolahan
+citra. Karena itu, kita dapat bertanya apakah terdapat gagasan hampiran linear yang lebih
+umum tetapi memiliki sifat serupa dengan gradien. Definisi berikut menjawab pertanyaan
+ini secara positif.
+
+Definisi 3.3 (Subdiferensial). Misalkan 𝑓 : 𝑋 → (−∞, ∞] dan 𝑥 ∈ dom(𝑓 ). Kita menyebut
+𝑔 ∈ 𝑋 ∗ sebagai subgradien 𝑓 di 𝑥 apabila
+
+(3.6)                     𝑓 (𝑥) + ⟨𝑔, 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦),   ∀𝑦 ∈ 𝑋 .
+
+Subdiferensial 𝜕𝑓 (𝑥) di 𝑥 adalah himpunan semua subgradien di 𝑥, yakni
+
+(3.7)           𝜕𝑓 (𝑥) = {𝑔 ∈ 𝑋 ∗ | 𝑓 (𝑥) + ⟨𝑔, 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦),    ∀𝑦 ∈ 𝑋 }.
+
+Untuk 𝑥 ∉ dom(𝑓 ), kita menetapkan 𝜕𝑓 (𝑥) = ∅.
+
+Jadi, subdiferensial dapat saja kosong; menurut konvensi di atas, subdiferensial kosong di
+setiap titik 𝑥 ∈ 𝑋 dengan 𝑓 (𝑥) = ∞.
+
+
+
+
+                                             2
+                                          3 subgradien
+
+
+  Contoh 3.4.
+        (i) Norma: Misalkan 𝑓 = ∥ · ∥. Maka
+
+                                           𝜕𝑓 (0) = 𝐵 ∥·∥ ∗,1 (0),
+
+           yaitu bola satuan untuk norma dual. Ingat bahwa norma dual ∥ · ∥ ∗ didefinisikan
+           oleh
+                                       ∥𝑦 ∥ ∗ = sup |⟨𝑦, 𝑥⟩|.
+                                                      ∥𝑥 ∥≤1
+
+           Sebagai contoh, apabila 𝑓 = ∥ · ∥ 1 pada ℝ𝑛 , maka
+
+                                     𝜕𝑓 (0) = 𝐵 ∥·∥ ∞,1 (0) = [−1, 1] 𝑛 .
+
+    (ii) Untuk suatu himpunan tak kosong 𝑆 ⊆ 𝑋 dan titik 𝑥 ∈ 𝑆, tinjau fungsi indikator
+         𝛿𝑆 . Subdiferensialnya adalah
+
+                         𝜕𝛿𝑆 (𝑥) = {𝑦 ∈ 𝑋 ∗ : ⟨𝑦, 𝑧 − 𝑥⟩ ≤ 0, ∀𝑧 ∈ 𝑆 } =: 𝑁𝑆 (𝑥),
+
+           yang disebut kerucut normal 𝑆 di 𝑥. Subdiferensial fungsi indikator dari bola
+           satuan adalah
+                                           (
+                                             {𝑦 ∈ 𝑋 ∗ | ∥𝑦 ∥ ∗ ≤ ⟨𝑦, 𝑥⟩} jika ∥𝑥 ∥ ≤ 1,
+                      𝑁𝐵 ∥ · ∥,1 (0) (𝑥) =
+                                             ∅                           jika ∥𝑥 ∥ > 1.
+
+
+Kita perlu memastikan bahwa subdiferensial benar-benar memperumum gradien biasa.
+
+Lema 3.5. Misalkan 𝑓 : 𝑋 → ℝ konveks dan terdiferensialkan di 𝑥 ∈ dom(𝑓 ) ◦ , dengan 𝑋
+ruang Hilbert. Maka 𝜕𝑓 (𝑥) = {∇𝑓 (𝑥)}.
+
+Bukti. Kita perlu menunjukkan (i) ∇𝑓 (𝑥) ∈ 𝜕𝑓 (𝑥) dan (ii) jika 𝑔 ∈ 𝜕𝑓 (𝑥), maka 𝑔 =
+∇𝑓 (𝑥). Bagian (i) langsung mengikuti karakterisasi orde pertama untuk fungsi konveks
+terdiferensialkan, yang memberikan
+(3.8)                       𝑓 (𝑥) + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦),         𝑦 ∈ 𝑋,
+sehingga ∇𝑓 (𝑥) ∈ 𝜕𝑓 (𝑥). Untuk (ii), menurut definisi subgradien, bagi setiap 𝑔 ∈ 𝜕𝑓 (𝑥),
+ℎ ∈ 𝑋 , dan 𝑡 > 0 yang cukup kecil sehingga 𝑥 + 𝑡ℎ ∈ dom(𝑓 ), berlaku
+                                     𝑓 (𝑥 + 𝑡ℎ) − 𝑓 (𝑥)
+(3.9)                              ⟨𝑔, ℎ⟩ ≤             .
+                                              𝑡
+Dengan mengambil limit 𝑡 → 0, diperoleh ⟨𝑔, ℎ⟩ ≤ ⟨∇𝑓 (𝑥), ℎ⟩. Menerapkan ketaksamaan
+yang sama pada −ℎ memberikan ketaksamaan sebaliknya. Karena itu ⟨𝑔, ℎ⟩ = ⟨∇𝑓 (𝑥), ℎ⟩
+untuk setiap ℎ, sehingga 𝑔 = ∇𝑓 (𝑥).                                               □
+
+
+                                                  3
+                                     3 subgradien
+
+
+
+
+Gambar 3.1: Kiri: gradien sebagai kemiringan garis singgung. Kanan: sebuah subgradien
+            sebagai kemiringan garis pendukung.
+
+
+Dalam dimensi hingga, kebalikannya juga berlaku bagi fungsi konveks yang hingga pada
+suatu lingkungan titik 𝑥: jika subdiferensial di 𝑥 hanya terdiri atas satu unsur, maka 𝑓
+terdiferensialkan di 𝑥 dan 𝜕𝑓 (𝑥) = {∇𝑓 (𝑥)}.
+Deskripsi gambar. Panel kiri memperlihatkan parabola halus dan satu garis singgung
+putus-putus pada titik yang ditandai. Panel kanan memperlihatkan grafik berbentuk V
+untuk norma satu dimensi dan tiga garis pendukung dengan kemiringan berbeda yang se-
+muanya melalui titik sudut yang ditandai. Label matematis pada kedua figur dipertahankan
+persis dari aset sumber.
+
+
+
+
+                                           4
+                                        3 subgradien
+
+
+  Contoh 3.6.
+     (i) Untuk 𝑓 (𝑥) = ∥𝑥 ∥ 2 , diperoleh
+                                            (
+                                                { ∥𝑥𝑥∥ 2 }      𝑥 ≠ 0,
+                                 𝜕𝑓 (𝑥) =
+                                                𝐵 ∥·∥ 2,1 (0)   selain itu.
+
+    (ii) Khususnya, untuk 𝑑 = 1 dan 𝑓 (𝑥) = |𝑥 |, diperoleh
+                                       (
+                                         {sign(𝑥)}       𝑥 ≠ 0,
+                             𝜕𝑓 (𝑥) =
+                                         [−1, 1]         selain itu.
+
+
+Lema 3.7. Jika domain 𝑓 : 𝑋 → (−∞, ∞] konveks dan subdiferensialnya tak kosong di setiap
+titik dalam domain, maka 𝑓 konveks.
+
+Bukti. Misalkan 𝑥, 𝑦 ∈ dom 𝑓 , 𝜆 ∈ (0, 1), dan 𝑔 ∈ 𝜕𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)). Menurut definisi
+subdiferensial,
+
+(3.10)               𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) + ⟨𝑔, 𝑥 − (𝑥 + 𝜆(𝑦 − 𝑥))⟩ ≤ 𝑓 (𝑥),
+(3.11)               𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) + ⟨𝑔, 𝑦 − (𝑥 + 𝜆(𝑦 − 𝑥))⟩ ≤ 𝑓 (𝑦),
+
+atau, setara dengan itu,
+
+(3.12)                     𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) + ⟨𝑔, −𝜆(𝑦 − 𝑥)⟩ ≤ 𝑓 (𝑥),
+(3.13)                  𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) + ⟨𝑔, (1 − 𝜆)(𝑦 − 𝑥)⟩ ≤ 𝑓 (𝑦).
+
+Dengan membagi ketaksamaan pertama oleh 𝜆, membagi yang kedua oleh 1 − 𝜆, lalu
+menjumlahkannya, diperoleh
+             1                     1                    1         1
+(3.14)         𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) +     𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) ≤ 𝑓 (𝑥) +     𝑓 (𝑦).
+             𝜆                    1−𝜆                   𝜆        1−𝜆
+Mengalikan dengan 𝜆(1 − 𝜆) menghasilkan
+
+(3.15)                     𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) ≤ (1 − 𝜆)𝑓 (𝑥) + 𝜆𝑓 (𝑦),
+
+sebagaimana yang diperlukan.                                                               □
+
+Seperti disebutkan di atas, subdiferensial dapat kosong. Namun, bagi fungsi konveks
+berdimensi hingga kita mempunyai jaminan berikut.
+Fungsi bernilai real diperluas disebut sejati (proper) apabila domain efektifnya tidak kosong
+dan fungsi itu tidak pernah bernilai minus tak hingga.
+
+
+
+                                                     5
+                                       3 subgradien
+
+
+Teorema 3.8. Misalkan 𝑋 ruang bernorma real berdimensi hingga dan 𝑓 : 𝑋 → ℝ sejati dan
+konveks. Maka 𝜕𝑓 (𝑥) ≠ ∅ untuk setiap 𝑥 ∈ dom(𝑓 ) ◦ .
+
+Sebelum membuktikan hasil ini, kita memerlukan beberapa persiapan.
+
+Lema 3.9. Interior suatu himpunan konveks adalah konveks.
+
+Bukti. Misalkan 𝐶 konveks. Jika 𝐶 ◦ = ∅, tidak ada yang perlu dibuktikan; jadi anggap
+𝐶 ◦ ≠ ∅. Ambil 𝑥, 𝑦 ∈ 𝐶 ◦ dan 𝜆 ∈ (0, 1). Kita perlu menunjukkan bahwa 𝑥 𝜆 := 𝜆𝑥 + (1−𝜆)𝑦 ∈
+𝐶 ◦ . Terdapat 𝜀 > 0 sedemikian sehingga 𝐵𝜀 (𝑥), 𝐵𝜀 (𝑦) ⊂ 𝐶 ◦ . Sekarang ambil 𝑧 ∈ 𝐵𝜀 (𝑥 𝜆 ).
+Dengan demikian, 𝑧 = 𝑥 𝜆 + ℎ untuk suatu ∥ℎ∥ < 𝜀. Kita dapat menuliskan
+
+(3.16)              𝑧 = 𝜆𝑥 + (1 − 𝜆)𝑦 + ℎ = 𝜆(𝑥 + ℎ) + (1 − 𝜆)(𝑦 + ℎ).
+
+Karena 𝑥 + ℎ ∈ 𝐵𝜀 (𝑥) ⊂ 𝐶 dan 𝑦 + ℎ ∈ 𝐵𝜀 (𝑦) ⊂ 𝐶, kekonveksan 𝐶 memberikan 𝑧 ∈ 𝐶. Jadi
+𝐵𝜀 (𝑥 𝜆 ) ⊂ 𝐶 dan 𝑥 𝜆 ∈ 𝐶 ◦ .                                                       □
+
+Lema 3.10. Jika 𝐶 ⊂ ℝ𝑑 , 𝑑 ≥ 1 konveks dan 𝐶 ◦ = ∅, maka terdapat hiperbidang 𝐻 sedemikian
+sehingga 𝐶 ⊂ 𝐻 .
+
+Bukti. Jika 𝐶 kosong, sembarang hiperbidang memenuhi kesimpulan. Selanjutnya anggap
+𝐶 tak kosong. Tanpa mengurangi keumuman, kita boleh menganggap 0 ∈ 𝐶. Jika tidak,
+pilih sembarang 𝑥 0 ∈ 𝐶 dan tinjau 𝐶e = 𝐶 −𝑥 0 ; pada akhir bukti, hiperbidang yang diperoleh
+ditranslasikan kembali.
+Kita akan menunjukkan bahwa 𝐶 merupakan himpunan bagian suatu subruang berdimensi
+paling besar 𝑑 − 1. Andaikan sebaliknya bahwa 𝐶 memuat 𝑑 unsur yang bebas linear, yaitu
+terdapat 𝑥 1, . . . , 𝑥𝑑 ∈ 𝐶 yang bebas linear. Karena 𝐶 konveks, selubung konveks
+                                                  𝑑              
+                                                     𝜆𝑖 𝑥𝑖 𝜆 ∈ Δ
+                                                  ∑︁            𝑑
+(3.17)                           conv((𝑥𝑖 )𝑖 ) =
+                                              𝑖=1
+
+juga merupakan himpunan bagian 𝐶. Kita mengklaim bahwa 𝑥★ := 2𝑑1 𝑑𝑖=1 𝑥𝑖 ∈ 𝐶 ◦ . Pertama,
+                                                                      P
+dari kekonveksan,
+                                         𝑑        𝑑
+                                      1 ∑︁       ∑︁   1     1
+                                𝑥★ =        𝑥𝑖 =        𝑥𝑖 + 0 ∈ 𝐶.
+                                     2𝑑 𝑖=1      𝑖=1 2𝑑     2
+Karena 𝑥𝑖 bebas linear, setiap ℎ ∈ ℝ𝑑 dapat ditulis sebagai ℎ = 𝑖 𝜆𝑖 𝑥𝑖 . Pemetaan 𝜆 ↦→ ℎ
+                                                                    P
+adalah pemetaan linear bijektif ℝ𝑑 → ℝ𝑑 . Oleh karena itu terdapat 𝜀 > 0 sedemikian
+sehingga ∥ℎ∥ < 𝜀 mengakibatkan |𝜆𝑖 | < 2𝑑1 untuk semua 𝑖. Khususnya, 2𝑑1 + 𝜆𝑖 ∈ [0, 1] dan
+P𝑑 1
+  𝑖=1 ( 2𝑑 + 𝜆𝑖 ) ∈ [0, 1]. Akibatnya, untuk setiap ∥ℎ∥ < 𝜀,
+
+                             𝑑                              
+                            ∑︁   1              ∑︁ 1      
+(3.18)             𝑥★ + ℎ =        + 𝜆𝑖 𝑥𝑖 + 1 −       + 𝜆𝑖 0 ∈ 𝐶.
+                            𝑖=1 2𝑑                𝑖 2𝑑
+
+
+                                             6
+                                        3 subgradien
+
+
+Jadi, apabila 𝐶 memuat 𝑑 unsur bebas linear, interiornya tidak mungkin kosong, sebab
+𝐵𝜀 (𝑥★) ⊂ 𝐶. Ini bertentangan dengan asumsi. Maka 𝐶 memuat paling banyak 𝑑 − 1 unsur
+bebas linear. Pilih himpunan bebas linear maksimal 𝑥 1, . . . , 𝑥𝑘 di dalam 𝐶; maksimalitas
+memberikan
+                               𝐶 ⊂ span{𝑥𝑖 | 𝑖 = 1, . . . , 𝑘 }.
+Dimensi subruang ini kurang dari 𝑑, sehingga subruang tersebut termuat dalam suatu hi-
+perbidang. Setelah translasi balik bila diperlukan, diperoleh hiperbidang afin yang memuat
+himpunan semula.                                                                        □
+
+Dengan kedua hasil sebelumnya, kita dapat membuktikan teorema hiperbidang pendu-
+kung.
+
+Teorema 3.11 (Teorema hiperbidang pendukung). Misalkan 𝑉 ruang bernorma real berdi-
+mensi hingga, 𝐶 ⊂ 𝑉 tak kosong dan konveks, serta 𝑥 0 ∈ 𝜕𝐶 = 𝐶 \𝐶 ◦1 . Maka terdapat 𝑎 ∈ 𝑉 ∗ ,
+𝑎 ≠ 0, sedemikian sehingga
+
+(3.19)                            ⟨𝑎, 𝑣⟩ ≤ ⟨𝑎, 𝑥 0 ⟩ ,   𝑣 ∈ 𝐶.
+
+Bukti. Hasil ini merupakan akibat teorema pemisahan Hahn–Banach. Kita membedakan
+dua kasus. Pertama, andaikan 𝐶 ◦ ≠ ∅. Himpunan 𝐶 ◦ terbuka, konveks, dan tak kosong.
+Teorema pemisahan Hahn–Banach dapat diterapkan pada 𝐶 ◦ dan {𝑥 0 }, sehingga ketaksa-
+maan pendukung berlaku pada interior. Karena 𝐶 ⊂ 𝐶 ◦ dan fungsional pemisah kontinu,
+ketaksamaan itu meluas ke seluruh 𝐶.
+Sebaliknya, jika 𝐶 ◦ kosong, lema sebelumnya memberikan hiperbidang afin 𝐻 yang memuat
+𝐶. Karena 𝐻 tertutup dan 𝑥 0 ∈ 𝐶, hiperbidang ini juga memuat titik batas tersebut. Ambil
+𝑎 ∈ 𝑉 ∗ yang tak nol dan 𝑏 ∈ ℝ sedemikian sehingga
+
+                                    𝐻 = {𝑥 | ⟨𝑎, 𝑥⟩ = 𝑏}.
+
+Fungsional 𝑎 ini memenuhi (3.19).                                                           □
+
+Sekarang kita dapat membuktikan keberadaan subgradien.
+
+Bukti teorema 3.8. Kita ingin menunjukkan bahwa terdapat 𝑔 ∈ 𝑋 ∗ sedemikian sehingga
+
+(3.20)                            𝑓 (𝑥) + ⟨𝑔, 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦)
+
+untuk semua 𝑦 ∈ 𝑋 . Ini setara dengan
+
+(3.21)                         ⟨𝑔, 𝑦⟩ − 𝑓 (𝑦) ≤ ⟨𝑔, 𝑥⟩ − 𝑓 (𝑥).
+
+ 1 yakni batas 𝐶
+
+
+
+
+                                                 7
+                                         3 subgradien
+
+
+Bentuk ini menyerupai struktur pemisahan Hahn–Banach. Agar dapat menggunakannya,
+kita beralih ke epigraf. Perhatikan bahwa (𝑥, 𝑓 (𝑥)) ∈ 𝜕 epi(𝑓 ). Selain itu, kekonveksan 𝑓
+mengakibatkan epi(𝑓 ) konveks. Dengan menerapkan teorema hiperbidang pendukung,
+diperoleh unsur tak nol (𝑔, −𝛼) ∈ (𝑋 × ℝ) ∗ = 𝑋 ∗ × ℝ sedemikian sehingga2
+
+(3.22)            ⟨(𝑔, −𝛼), (𝑦, 𝑡)⟩ ≤ ⟨(𝑔, −𝛼), (𝑥, 𝑓 (𝑥))⟩ ,   (𝑦, 𝑡) ∈ epi(𝑓 ).
+
+Ini setara dengan
+
+(3.23)                 ⟨𝑔, 𝑦⟩ − 𝛼𝑡 ≤ ⟨𝑔, 𝑥⟩ − 𝛼 𝑓 (𝑥),     (𝑦, 𝑡) ∈ epi(𝑓 ).
+
+Kita akan menunjukkan bahwa 𝛼 > 0. Andaikan 𝛼 < 0. Karena (𝑥, 𝑡) ∈ epi(𝑓 ) untuk
+setiap 𝑡 > 𝑓 (𝑥), kita dapat membiarkan 𝑡 → ∞ dan memperoleh kontradiksi. Berikutnya,
+andaikan 𝛼 = 0. Maka
+
+(3.24)                                    ⟨𝑔, 𝑦 − 𝑥⟩ ≤ 0
+
+bagi semua 𝑦 ∈ dom(𝑓 ). Karena 𝑥 ∈ dom(𝑓 ) ◦ , hal ini memaksa 𝑔 = 0. Padahal teore-
+ma pemisahan menghasilkan unsur pemisah yang tak nol; sekali lagi kita memperoleh
+kontradiksi. Jadi 𝛼 > 0, dan kita dapat membagi (3.22) dengan 𝛼 untuk memperoleh
+
+(3.25)                    𝑔, 𝑦⟩ − 𝑡 ≤ ⟨e
+                         ⟨e            𝑔, 𝑥⟩ − 𝑓 (𝑥),    (𝑦, 𝑡) ∈ epi(𝑓 ),
+
+dengan 𝑔e = 𝑔/𝛼. Memilih 𝑡 = 𝑓 (𝑦) memberikan 𝑔e ∈ 𝜕𝑓 (𝑥).                               □
+
+Seperti pada turunan biasa, kita dapat menurunkan beberapa aturan hitung untuk mempe-
+roleh subgradien dalam praktik.
+
+Teorema 3.12. Misalkan 𝑓 : 𝑉 → ℝ sejati dan konveks serta 𝛼 ≥ 0. Maka, untuk setiap
+𝑥 ∈ dom(𝑓 ),
+                               𝜕(𝛼 𝑓 )(𝑥) = 𝛼 𝜕𝑓 (𝑥).
+
+Bukti. Latihan.                                                                          □
+
+Teorema 3.13. Misalkan 𝑓 , 𝑔 : 𝑉 → ℝ sejati dan konveks. Untuk setiap 𝑥 ∈ dom(𝑓 ) ∩dom(𝑔),
+berlaku
+                                𝜕𝑓 (𝑥) + 𝜕𝑔(𝑥) ⊂ 𝜕(𝑓 + 𝑔)(𝑥).
+Selain itu, jika terdapat 𝑥 0 ∈ dom(𝑓 ) ◦ ∩ dom(𝑔), maka
+
+                                 𝜕𝑓 (𝑥) + 𝜕𝑔(𝑥) = 𝜕(𝑓 + 𝑔)(𝑥).
+
+
+ 2Tanda minus pada −𝛼 dipilih untuk memudahkan perhitungan.
+
+
+
+
+                                                 8
+                                            3 subgradien
+
+
+Bukti. Kita hanya membuktikan inklusi pertama. Bukti arah kedua sedikit lebih rumit dan
+menggunakan teorema pemisahan Hahn–Banach dengan cara yang serupa dengan bukti
+keberadaan subgradien.
+Ambil 𝑝 1 ∈ 𝜕𝑓 (𝑥) dan 𝑝 2 ∈ 𝜕𝑔(𝑥), yaitu
+
+                                     𝑓 (𝑥) + ⟨𝑝 1, 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦),
+(3.26)
+                                     𝑔(𝑥) + ⟨𝑝 2, 𝑦 − 𝑥⟩ ≤ 𝑔(𝑦).
+
+Menjumlahkan kedua ketaksamaan memberikan
+
+(3.27)                  𝑓 (𝑥) + 𝑔(𝑥) + ⟨𝑝 1 + 𝑝 2, 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦) + 𝑔(𝑦),
+
+sehingga 𝑝 1 + 𝑝 2 ∈ 𝜕(𝑓 + 𝑔)(𝑥).                                                     □
+
+Terakhir, kita mencatat beberapa aturan hitung subdiferensial tanpa bukti.
+
+Teorema 3.14. Misalkan 𝑓 : 𝑊 → ℝ sejati, konveks, dan semikontinu bawah, serta 𝐴 : 𝑉 → 𝑊
+transformasi linear. Definisikan ℎ(𝑥) = 𝑓 (𝐴𝑥 + 𝑏) untuk 𝑏 ∈ 𝑊 . Bagi setiap 𝑥 ∈ dom(ℎ)
+berlaku aturan lemah
+                                𝐴∗ (𝜕𝑓 (𝐴𝑥 + 𝑏)) ⊆ 𝜕ℎ(𝑥).
+Kesamaan berlaku apabila terdapat 𝑥 0 ∈ 𝑉 dengan 𝐴𝑥 0 + 𝑏 ∈ dom(𝑓 ) ◦ .
+
+Turunan komposisi fungsi-fungsi terdiferensialkan dihitung dengan aturan rantai. Jadi,
+turunan ℎ(𝑥) = 𝑔(𝑓 (𝑥)) adalah 𝐷ℎ(𝑥) = 𝐷𝑔(𝑓 (𝑥))𝐷 𝑓 (𝑥). Rumus ini dapat diperluas ke
+kalkulus subdiferensial.
+
+Teorema 3.15. Misalkan 𝑓 : 𝑉 → ℝ konveks, 𝑔 : ℝ → ℝ konveks dan tak menurun, serta
+ℎ = 𝑔 ◦ 𝑓 . Ambil 𝑥 ∈ dom(𝑓 ) ◦ dan andaikan 𝑔 terdiferensialkan di 𝑓 (𝑥). Maka
+
+                                      𝜕ℎ(𝑥) = 𝑔′ (𝑓 (𝑥))𝜕𝑓 (𝑥).
+
+Teorema 3.16. Misalkan 𝑓 : 𝑉 → (−∞, ∞] fungsi konveks sejati. Maka
+
+                                         𝑥 ∗ ∈ arg min 𝑓 (𝑥)
+                                                     𝑥 ∈𝑉
+
+jika dan hanya jika 0 ∈ 𝜕𝑓 (𝑥 ∗ ).
+
+Bukti. Pernyataan ini langsung mengikuti ketaksamaan subgradien
+
+                                     𝑓 (𝑥) ≥ 𝑓 (𝑥 ∗ ) + ⟨0, 𝑥 − 𝑥 ∗ ⟩
+
+bagi setiap 𝑥 ∈ dom 𝑓 .                                                               □
+
+
+
+                                                    9
+                                      3 subgradien
+
+
+Teorema 3.17. Misalkan 𝑓 : 𝑉 → (−∞, ∞] sejati dan konveks, serta 𝐶 ⊆ 𝑉 konveks dengan
+dom(𝑓 ) ◦ ∩ 𝐶 ◦ ≠ ∅. Titik 𝑥 ∗ ∈ 𝐶 merupakan solusi persoalan optimisasi berkendala jika dan
+hanya jika terdapat 𝑔 ∈ 𝜕𝑓 (𝑥 ∗ ) sedemikian sehingga
+
+                                      ⟨𝑔, 𝑥 − 𝑥 ∗ ⟩ ≥ 0
+
+bagi semua 𝑥 ∈ 𝐶.
+
+
+
+
+                                             10
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber.
+
+  (i) Kalimat berlebih pada definisi gradien yang kembali menamai pemetaan turunan
+      sebagai 𝐴 dihapus; definisi turunan Fréchet sebelumnya tetap mempertahankan
+      notasi tersebut.
+ (ii) Definisi subdiferensial diberi kodomain real diperluas, domain efektif, dan kuantifi-
+      kasi pada ruang asal agar ketaksamaannya bertipe benar.
+ (iii) Bukti bahwa subdiferensial fungsi konveks terdiferensialkan adalah himpunan ber-
+       unsur tunggal dilengkapi dengan menerapkan ketaksamaan pada arah negatif; ke-
+       balikannya dibatasi pada dimensi hingga dan fungsi yang hingga di sekitar titik
+       tersebut.
+ (iv) Pernyataan keberadaan subgradien, hiperbidang pendukung, dan aturan hitung
+      diberi ruang lingkup berdimensi hingga yang dipakai oleh buktinya.
+  (v) Bukti lema interior kosong menangani himpunan kosong, memakai titik pusat bola
+      yang benar, memilih himpunan bebas linear maksimal, dan mentranslasikan hiperbi-
+      dang kembali.
+ (vi) Bukti hiperbidang pendukung memperluas ketaksamaan dari interior melalui ke-
+      tertutupan dan kontinuitas, lalu memakai hiperbidang dari lema sebelumnya pada
+      kasus interior kosong; urutan pasangan dual juga dibetulkan.
+(vii) Norma dual ditulis dengan nilai mutlak dan urutan pasangan dual yang konsisten.
+(viii) Aturan jumlah mengembalikan argumen evaluasi yang hilang; syarat aturan afin
+       dinyatakan pada citra domain.
+ (ix) Rujukan silang ke bab prasyarat yang tidak dimuat diganti dengan nama konsep
+      yang tepat, tanpa mengubah ketergantungan matematisnya.
+
+
+
+
+                                           11
+ATRIBUSI DAN LISENSI
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Creative
+Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/
+by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+
+
+
+                                            12
+

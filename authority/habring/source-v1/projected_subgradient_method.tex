@@ -1,0 +1,292 @@
+\chapter{Projected subgradient descent}
+Recall that we are interested in solving the problem
+\begin{equation}
+    \min_{x\in C} f(x).
+\end{equation}
+where $f:C\rightarrow\R$ is convex.
+Recall also, that we may always write a constraint problem as above as an unconstraint one via\footnote{potentially extending $f$ arbitrarily outside of $\R^d$}
+\begin{equation}
+    \min_{x\in \R^d} f(x) + \delta_C(x).
+\end{equation}
+Let us recall the most basic numerical optimization method for such problems in the case $C=\R^d$: gradient (or \emph{steepest}) descent. We choose an initial value $x_0$ and then perform for $k=0,1,\dots$ the updates
+\begin{equation}
+    x_{k+1} = x_k-\tau_k \nabla f(x_k)
+\end{equation}
+where $\tau_k>0$ denotes the step size. As a first \emph{new} algorithm, we consider the subgradient version of steepest descent, for $k=0,1,\dots$
+\begin{equation}
+    \begin{cases}
+        g_k &\in \partial f(x_k)\\
+        x_{k+1} &= x_k-\tau_k g_k.
+    \end{cases}
+\end{equation}
+Whenever $C\neq\R^d$ we may quickly run into a problem: It might happen that $x_{k+1}\notin C$ in which case the method is not well defined as the subgradient of $\delta_C(x)$ is empty for $x\notin C$. Therefore, we somehow need to make sure, that each new iterate stays in $C$ for which we will use \emph{projections}.
+
+\begin{theorem}[Projection theorem]
+    Let $V$ be an inner product space and $C\subset V$ closed, convex, and non-empty. Then the following function is well-defined
+    \begin{equation}
+        \begin{aligned}
+            \proj_C:\R^d&\rightarrow C\\
+            x&\mapsto\arg\min_{y\in C}\|x-y\|.
+        \end{aligned}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    We need to show that the minimum is uniquely attained.
+    Let $(y_n)_n$ be a minimizing sequence, \ie,
+    \begin{equation}
+        \lim_n \|y_n-x\| = \inf_{y\in C}\|y-x\|.
+    \end{equation}
+    Then $(y_n)_n$ is of course bounded. Therefore, there exists a convergent subsequence $y_{n(k)}\rightarrow \hat y$. By closedness of $C$ it follows $\hat y \in C$. Moreover, by continuity of the norm we have
+    \begin{equation}
+        \|\hat y-x\| = \lim_n \|y_n-x\| = \inf_{y\in C}\|y-x\|.
+    \end{equation}
+    This yields existence of the minimizer. Regarding uniqueness, let us assume that $y_1\neq y_2$ were both minimizers. Then, using Young's inequality, we find 
+    \begin{equation}
+        \begin{aligned}
+            \| 1/2 (y_1+y_2) - x\|^2 
+            =& \frac{1}{4}\|y_1-x\|^2 + \frac{1}{4}\|y_2-x\|^2 + \frac{1}{2}\inner{y_1-x}{y_2-x}\\
+            \leq& \frac{1}{4}\|y_1-x\|^2 + \frac{1}{4}\|y_2-x\|^2 + \frac{1}{4}\|y_1-x\|^2 + \frac{1}{4}\|y_2-x\|^2\\
+            \leq& \frac{1}{2}\|y_1-x\|^2 + \frac{1}{2}\|y_2-x\|^2\\
+            =& \min_{y\in C}\|y-x\|^2.
+        \end{aligned}
+    \end{equation}
+    Note that the above inequality is strict, whenever $y_1-x$ and $y_2-x$ are not colinear and pointed in the same direction. 
+    The strict inequality would imply a contradiction to optimality of $y_1$ and $y_2$ as in this case $1/2(y_1+y_2)\in C$ would yield an even smaller value. So it follows that there exists $\lambda\geq 0$ such that
+    \[
+        y_2-x = \lambda (y_1-x)
+    \]
+    But since $\|y_1-x\|=\|y_2-x\|$ it follows that $\lambda=1$, \ie, $y_1=y_2$ concluding the proof.
+\end{proof}
+Equipped with the projection we have a remedy for the problem of \emph{escaping} $C$: the projected subgradient method, for $k=0,1,\dots$
+\begin{equation}\label{subgradient:eq:projectedSG}
+    \begin{cases}
+        g_k &\in \partial f(x_k)\\
+        x_{k+1} &= \proj_C( x_k-\tau_k g_k) .
+    \end{cases}
+\end{equation}
+In order to prove convergence of the method we require some auxiliary results.
+
+\begin{lemma}
+    Let $C$ be convex. Then it holds
+    \begin{equation}
+        \inner{x-\proj_C(x)}{y-\proj_C(x)}\leq 0,\quad y\in C.
+    \end{equation}
+    In particular, if $C$ is a subspace\footnote{this means $C$ fulfills the conditions of a vector space, \cf~\cref{preliminaries:defn:vectorspace}}, it follows
+    \begin{equation}
+        \inner{x-\proj_C(x)}{y}= 0,\quad y\in C.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    We have for any $y\in C$
+    \begin{equation}
+        \begin{aligned}
+            \|\proj_C(x)-x\|^2\leq& \|y-x\|^2\\
+            =& \|y - \proj_C(x) + \proj_C(x)-x\|^2\\
+            =& \|y-\proj_C(x)\|^2 + 2 \inner{y-\proj_C(x)}{\proj_C(x)-x} + \|\proj_C(x)-x\|^2.
+        \end{aligned}
+    \end{equation}
+    As a consequence we have
+    \begin{equation}
+        \begin{aligned}
+            0\leq \|y-\proj_C(x)\|^2 + 2 \inner{y-\proj_C(x)}{\proj_C(x)-x}
+        \end{aligned}
+    \end{equation}
+    Now let $z\in C$ arbitrary and plug in $y=\proj_C(x) + t(z-\proj_C(x))$ for $t\in (0,1)$ above. Then we find
+    \begin{equation}
+        \begin{aligned}
+            0\leq t^2 \|z-\proj_C(x)\|^2 + 2 t\inner{z-\proj_C(x)}{\proj_C(x)-x}.
+        \end{aligned}
+    \end{equation}
+    Dividing by $t>0$ we find
+    \begin{equation}
+        \begin{aligned}
+            0\leq t \|z-\proj_C(x)\|^2 + 2 \inner{z-\proj_C(x)}{\proj_C(x)-x}.
+        \end{aligned}
+    \end{equation}
+    Letting $t\rightarrow 0$ yields the desired result. The equality in the case of a subspace is left as an exercise.
+\end{proof}
+
+
+\begin{prop}
+    The projection onto a convex set is nonexpansive, \ie, Lipschitz continuous with Lipschitz constant one, that is
+    \begin{equation}
+        \|\proj_C(x_1)-\proj_C(x_2)\|\leq \|x_1-x_2\|.
+    \end{equation}
+\end{prop}
+\begin{proof}
+    Assume without loss of generality $\|\proj_C(x_2)-\proj_C(x_1)\|^2 \neq 0$ as otherwise there is nothing to prove. We find
+    \begin{equation}
+        \begin{aligned}
+            \|\proj_C(x_2)-\proj_C(x_1)\|^2 
+            =& \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1+x_1-\proj_C(x_1)}\\
+            =& \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1} \\
+            &+ \inner{\proj_C(x_2)-\proj_C(x_1)}{x_1-\proj_C(x_1)}\\
+            \leq& \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1}\\
+            =& \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_2+x_2-x_1}\\
+            \leq& \inner{\proj_C(x_1)-\proj_C(x_2)}{x_2-\proj_C(x_2)}\\
+            &+ \inner{\proj_C(x_2)-\proj_C(x_1)}{x_2-x_1}\\
+            \leq& \inner{\proj_C(x_2)-\proj_C(x_1)}{x_2-x_1}\\
+            \leq& \|\proj_C(x_2)-\proj_C(x_1)\|\|x_2-x_1\|
+        \end{aligned}
+    \end{equation}
+    Dividing by $\|\proj_C(x_2)-\proj_C(x_1)\|\neq 0$ yields the result.
+\end{proof}
+
+
+\begin{lemma}[Fundamental inequality of the projected subgradient method]\label{lemma:subgradient:fundamental}
+    Let $x_k$ denote the iterates of the projected subgradient method~\eqref{subgradient:eq:projectedSG} and $g_k\in\partial f(x_k)$. Then it holds true that 
+    \begin{equation}
+        \|x_{k+1}-x^*\|^2 
+            \leq \|x_k- x^*\|^2 - 2\tau_k (f(x_k)-f(x^*)) + \tau_k^2\|g_k\|^2
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    By definition of the subgradient we have $f(x_k)+ \inner{g_k}{x^*-x_k}\leq f(x^*)$. It follows
+    \begin{equation}\label{eq:subgradient:fundamental}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2 
+            =& \|\proj_C(x_k-\tau_kg_k) - \proj_C(x^*)\|^2\\
+            \leq& \|x_k-\tau_k g_k - x^*\|^2\\
+            \leq& \|x_k- x^*\|^2 - 2\tau_k \inner{g_k}{x_k-x^*} + \tau_k^2\|g_k\|^2\\
+            \leq& \|x_k- x^*\|^2 - 2\tau_k (f(x_k)-f(x^*)) + \tau_k^2\|g_k\|^2
+        \end{aligned}
+    \end{equation}
+\end{proof}
+A natural thing to do is now to use the previous result to deduce an optimal step size. More precisely, minimizing the right-hand side of~\eqref{eq:subgradient:fundamental} with respect to $\tau_k$ we find that the optimal step-size is
+\begin{equation}
+    \tau_k = \frac{f(x_k)-f(x^*)}{\|g_k\|^2}.
+\end{equation}
+whenever $g_k\neq 0$, and arbitrary (\eg, $\tau_k=1$) whenever $g_k=0$ as in the latter case the iteration stagnates anyway.
+This step size is referred to as Polyak's step size rule. We obtain the following result.
+
+\begin{theorem}
+    Assume that $f:C\rightarrow \R$ is Lipschitz continuous with Lipschitz constant $L$. With Polyak's step size rule 
+    \begin{equation}
+    \tau_k = \frac{f(x_k)-f(x^*)}{\|g_k\|^2}
+\end{equation}
+    the projected subgradient method~\eqref{subgradient:eq:projectedSG} satisfies
+    \begin{enumerate}
+        \item $\|x_{k+1}-x^*\|^2\leq \|x_{k}-x^*\|$ with strict inequality whenever $g_k\neq 0$,
+        \item $f(x_K)\rightarrow f(x^*)$ as $k\rightarrow\infty$, and
+        \item $f_{\mathrm{best}}^N-f(x^*)\leq \frac{L\|x_1-x^*\|}{\sqrt{N}}$ where $f_{\mathrm{best}}^N = \min_{k=1,\dots,N}f(x_k)$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Without loss of generality, we may assume $f(x^*)=0$. Otherwise simply consider $\tilde{f}(x) \coloneq f(x)-f(x^*)$. By~\cref{lemma:subgradient:fundamental} and the step size rule we obtain
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2 
+            \leq& \|x_{k} - x^*\|^2 - 2\tau_k f(x_k) +\tau_k^2\|g_k\|^2\\
+            =& \|x_{k} - x^*\|^2 - a_k\\
+        \end{aligned}
+    \end{equation}
+    where $a_k=\frac{f(x_k)^2}{\|g_k\|^2}$ if $g_k\neq 0$ and zero else.
+    By rearranging and summing over $k$ we find
+    \begin{equation}
+        \sum_{k=1}^{N-1} a_k \leq \|x_1-x^*\|^2 - \|x_N-x^*\|^2\leq \|x_1-x^*\|^2
+    \end{equation}
+    Lipschitz continuity of $f$ implies that $\|g_k\|\leq L$ (exercise!) so that we obtain
+    \begin{equation}
+        \sum_{k=1}^{N-1} f(x_k)^2\leq \sum_{k=1}^{N-1} L^2 a_k \leq L^2 \|x_1-x^*\|^2
+    \end{equation}
+    Since the above is true for any $N$ we may let $N\rightarrow \infty$. As a consequence we find $f(x_k)\rightarrow 0$. Moreover,
+    \begin{equation}
+        N (f_{\mathrm{best}}^N)^2\leq \sum_{k=1}^{N} f(x_k) \leq L^2\|x_1-x^*\|^2
+    \end{equation}
+    \ie, 
+    \begin{equation}
+        f_{\mathrm{best}}^N\leq \frac{L\|x_1-x^*\|}{\sqrt{N}}.
+    \end{equation}
+\end{proof}
+
+\begin{cor}
+    We require $N=\Oc(\frac{L^2\|x_1-x^*\|^2}{\epsilon^2})$ iterations in order to reach accuracy $f_{\mathrm{best}}^N - f(x^*)\leq \epsilon$.
+\end{cor}
+
+\begin{rem}
+    Recall that standard smooth gradient methods achieve complexity $\Oc(\frac{1}{\epsilon})$.
+\end{rem}
+
+While the convergent result using Polyak's step size rule is theoretically interesting and yields a best-case complexity result, in practice we will not be able to compute the step size as it requires knowledge of $f(x^*)$. In the following, we provide a more general convergence result.
+
+\begin{theorem}
+    Let $f$ be $L$-Lipschitz and assume the step sizes satsify
+    \[
+        \frac{\sum_{k=1}^n\tau_k}{\sum_{k=1}^n\tau_k^2}\rightarrow \infty
+    \]
+\end{theorem}
+as $n\rightarrow\infty$. Then it holds $f^n_{\mathrm{best}}\rightarrow f(x^*)$.
+\begin{proof}
+    We assume again for simplicity $f(x^*)=0$.
+    Using again $\|g_k\|\leq L$ and summing the fundamental inequality~\cref{lemma:subgradient:fundamental} over $k=1,\dots, N$ yields
+    \begin{equation}
+        2\sum_{k=1}^N\tau_k f(x_k) \leq \|x_1-x^*\|^2 + L^2 \sum_{k=1}^N \tau_k^2 
+    \end{equation}
+    Let us denote
+    \[
+        \sigma_n = \frac{\sum_{k=1}^n\tau_k}{\sum_{k=1}^n\tau_k^2}
+    \]
+    It follows
+    \begin{equation}
+        \sigma_n f^n_{\mathrm{best}} 
+        \leq \frac{\sum_{k=1}^n\tau_kf^n_{\mathrm{best}}}{\sum_{k=1}^n\tau_k^2}
+        \leq \frac{\sum_{k=1}^n\tau_kf(x_k)}{\sum_{k=1}^n\tau_k^2}
+        \leq \frac{\|x_1-x^*\|^2}{2\sum_{k=1}^n\tau_k^2} + L^2/2.
+    \end{equation}
+    Since the right-hand side is bounded as $n\rightarrow\infty$, $\sigma_n\rightarrow\infty$ implies $f^n_{\mathrm{best}}\rightarrow 0$.
+\end{proof}
+
+Variants of the convergence results can moreover be obtained if we assume, \eg, that $C$ is compact and we refer to~\cite{beck2017first} for details.
+
+The convergence can be improved and also \emph{transferred} to the iterates $(x_k)_k$ is we additionally assume that $f$ is strongly convex.
+
+
+\begin{theorem}
+    Assume that $f$ is $\mu$ strongly convex and $L$-Lipschitz over $C$\footnote{This implies that $C$ is bounded as every strongly convex function on an unbounded domain admits an unbeunded gradient!}. Then with the step size choice $\tau_k = \frac{2}{\mu k}$ the projected subgradient method~\eqref{subgradient:eq:projectedSG} satisfies
+    \begin{enumerate}
+        \item $f^n_{\mathrm{best}}-f(x^*)\leq \frac{L^2}{\mu (n-1)}$ and
+        \item $\|x_n-x^*\|\leq \frac{2L}{\mu \sqrt{n-1}}$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    As always, without loss of generality $f(x^*)=0$. Under strong convexity the fundamental inequality can in fact be improved to 
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2 
+            &\leq (1-\mu\tau_k)\|x_k- x^*\|^2 - 2\tau_k f(x_k) + \tau_k^2\|g_k\|^2\\
+            &\leq (1-\mu\tau_k)\|x_k- x^*\|^2 - 2\tau_k f(x_k) + \tau_k^2L^2
+        \end{aligned}
+    \end{equation}
+    Rearranging and dividing by $2\tau_k$ yields
+    \begin{equation}
+        \begin{aligned}
+            f(x_k)
+            \leq -\frac{\tau_k^{-1}}{2}\|x_{k+1}-x^*\|^2 + \frac{\tau_k^{-1}-\mu}{2}\|x_k- x^*\|^2  + \frac{\tau_k}{2}L^2.
+        \end{aligned}
+    \end{equation}
+    Inserting the step size choice $\tau_k = \frac{2}{\mu k}$ then yields
+    \begin{equation}
+        \begin{aligned}
+            f(x_k)
+            \leq -\frac{\mu k}{4} \|x_{k+1}-x^*\|^2 + \frac{\mu(k-2)}{4}\|x_k- x^*\|^2  + \frac{1}{\mu k}L^2.
+        \end{aligned}
+    \end{equation}
+    Multyplying by $k-1$ and summing over $k$ yields
+    \begin{equation}
+        \sum_{k=1}^{n} (k-1)f(x_k) \leq -\frac{\mu n(n-1)}{4} \|x_{n+1}-x^*\|^2 + \frac{1}{\mu}\sum_{k=1}^{n}\frac{k-1}{k}L^2.
+    \end{equation}
+    Using that $\sum_{k=1}^{n} (k-1) = n(n-1)/2$ and that $\sum_{k=1}^{n}\frac{k-1}{k}\leq n$ we obtain
+    \begin{equation}\label{subgradient:eq:strongly}
+        n(n-1)/2 f^n_{\mathrm{best}}\leq \sum_{k=1}^{n} (k-1)f(x_k) = -\frac{\mu n(n-1)}{4} \|x_{n+1}-x^*\|^2 + \frac{1}{\mu} n L^2.
+    \end{equation}
+    Thus
+    \begin{equation}
+        f^n_{\mathrm{best}} \leq \frac{"L^2}{\mu(n-1)}.
+    \end{equation}
+    On the other hand-side, rearranging \eqref{subgradient:eq:strongly} and using that $f^n_{\mathrm{best}}\geq 0$ yields
+    \begin{equation}
+        \frac{\mu n(n-1)}{4} \|x_{n+1}-x^*\|^2 \leq \frac{1}{\mu} n L^2,
+    \end{equation}
+    hence, $\|x_{n+1}-x^*\|^2\leq \frac{4L^2}{\mu^2 (n-1)}$.
+\end{proof}
+

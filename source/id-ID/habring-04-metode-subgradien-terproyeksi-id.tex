@@ -1,0 +1,355 @@
+\chapter{Penurunan subgradien terproyeksi}
+
+% segment-id: d90.hab.v1.ch04.seg0001
+Misalkan \(V\) ruang Hilbert real, \(C\subset V\) himpunan tak kosong, tertutup, dan konveks, serta \(f:V\rightarrow\R\) fungsi konveks. Kita tertarik menyelesaikan masalah
+\begin{equation}
+    \min_{x\in C} f(x).
+\end{equation}
+Kita mengasumsikan bahwa himpunan peminim tidak kosong dan menetapkan
+\(x^*\in\arg\min_{x\in C}f(x)\). Masalah berkendala di atas selalu dapat ditulis sebagai masalah tak berkendala melalui
+\begin{equation}
+    \min_{x\in V} f(x) + \delta_C(x),
+\end{equation}
+dengan \(\delta_C\) fungsi indikator himpunan \(C\).\footnote{Formulasi ini memakai \(f\) yang terdefinisi pada seluruh \(V\), termasuk di luar \(C\).}
+
+Ingat kembali metode optimisasi numerik paling dasar untuk masalah semacam ini ketika \(C=V\) dan \(f\) terdiferensialkan: penurunan gradien (atau penurunan \emph{tercuram}). Kita memilih nilai awal \(x_0\), lalu untuk \(k=0,1,\dots\) melakukan pembaruan
+\begin{equation}
+    x_{k+1} = x_k-\tau_k \nabla f(x_k),
+\end{equation}
+dengan \(\tau_k>0\) menyatakan ukuran langkah. Algoritma \emph{baru} pertama yang kita tinjau ialah versi subgradien dari penurunan tercuram: untuk \(k=0,1,\dots\),
+\begin{equation}
+    \begin{cases}
+        g_k &\in \partial f(x_k),\\
+        x_{k+1} &= x_k-\tau_k g_k.
+    \end{cases}
+\end{equation}
+Jika \(C\neq V\), masalah segera dapat muncul: mungkin saja \(x_{k+1}\notin C\). Dalam hal itu, iterasi yang memakai subdiferensial \(f+\delta_C\) tidak lagi terdefinisi karena \(\partial\delta_C(x)=\emptyset\) untuk \(x\notin C\). Karena itu, kita perlu memastikan setiap iterasi baru tetap berada di \(C\); untuk tujuan ini kita memakai \emph{proyeksi}.
+
+% segment-id: d90.hab.v1.ch04.seg0002
+\begin{theorem}[Teorema proyeksi]
+    Misalkan \(V\) ruang Hilbert real dan \(C\subset V\) tak kosong, tertutup, dan konveks. Fungsi berikut terdefinisi dengan baik:
+    \begin{equation}
+        \begin{aligned}
+            \proj_C:V&\rightarrow C,\\
+            x&\mapsto\arg\min_{y\in C}\|x-y\|.
+        \end{aligned}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    Kita perlu menunjukkan bahwa minimum tercapai secara tunggal. Tetapkan
+    \(d=\inf_{y\in C}\|y-x\|\), dan ambil barisan peminimum \((y_n)_n\subset C\), yaitu
+    \begin{equation}
+        \lim_n \|y_n-x\| = d.
+    \end{equation}
+    Karena \(C\) konveks, \((y_n+y_m)/2\in C\). Identitas jajaran genjang memberi
+    \[
+        \|y_n-y_m\|^2
+        =2\|y_n-x\|^2+2\|y_m-x\|^2
+        -4\left\|\frac{y_n+y_m}{2}-x\right\|^2
+        \leq 2\|y_n-x\|^2+2\|y_m-x\|^2-4d^2.
+    \]
+    Ruas kanan menuju nol ketika \(m,n\rightarrow\infty\), sehingga \((y_n)_n\) merupakan barisan Cauchy. Kelengkapan \(V\) menghasilkan \(y_n\rightarrow\widehat y\in V\), sedangkan ketertutupan \(C\) menghasilkan \(\widehat y\in C\). Dari kontinuitas norma diperoleh
+    \begin{equation}
+        \|\widehat y-x\| = \lim_n \|y_n-x\| = d,
+    \end{equation}
+    jadi peminim memang ada.
+
+    Untuk ketunggalan, andaikan \(y_1\neq y_2\) keduanya peminim. Identitas jajaran genjang memberikan
+    \begin{equation}
+        \begin{aligned}
+            \left\|\frac{y_1+y_2}{2}-x\right\|^2
+            &=\frac{1}{2}\|y_1-x\|^2+\frac{1}{2}\|y_2-x\|^2
+              -\frac{1}{4}\|y_1-y_2\|^2\\
+            &<d^2.
+        \end{aligned}
+    \end{equation}
+    Namun \((y_1+y_2)/2\in C\), yang bertentangan dengan definisi \(d\). Jadi peminimnya tunggal.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0003
+Dengan proyeksi, kita memperoleh cara mengatasi masalah \emph{keluar} dari \(C\): metode subgradien terproyeksi. Pilih \(x_0\in C\); kemudian, untuk \(k=0,1,\dots\) dan \(\tau_k\geq0\), tetapkan
+\begin{equation}\label{subgradient:eq:projectedSG}
+    \begin{cases}
+        g_k &\in \partial f(x_k),\\
+        x_{k+1} &= \proj_C( x_k-\tau_k g_k) .
+    \end{cases}
+\end{equation}
+Untuk membuktikan konvergensi metode ini, kita memerlukan beberapa hasil bantu.
+
+\begin{lemma}
+    Misalkan \(V\) ruang Hilbert real dan \(C\subset V\) tak kosong, tertutup, dan konveks. Maka
+    \begin{equation}
+        \inner{x-\proj_C(x)}{y-\proj_C(x)}\leq 0,\quad y\in C.
+    \end{equation}
+    Khususnya, jika \(C\) subruang,\footnote{Artinya, \(C\) memenuhi definisi ruang vektor.} maka
+    \begin{equation}
+        \inner{x-\proj_C(x)}{y}= 0,\quad y\in C.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Untuk setiap \(y\in C\), kita mempunyai
+    \begin{equation}
+        \begin{aligned}
+            \|\proj_C(x)-x\|^2
+            &\leq \|y-x\|^2\\
+            &= \|y - \proj_C(x) + \proj_C(x)-x\|^2\\
+            &= \|y-\proj_C(x)\|^2
+              + 2 \inner{y-\proj_C(x)}{\proj_C(x)-x}
+              + \|\proj_C(x)-x\|^2.
+        \end{aligned}
+    \end{equation}
+    Akibatnya,
+    \begin{equation}
+        \begin{aligned}
+            0\leq \|y-\proj_C(x)\|^2
+            + 2 \inner{y-\proj_C(x)}{\proj_C(x)-x}.
+        \end{aligned}
+    \end{equation}
+    Ambil sebarang \(z\in C\), lalu pada ketaksamaan di atas masukkan
+    \(y=\proj_C(x) + t(z-\proj_C(x))\) untuk \(t\in (0,1)\). Kita memperoleh
+    \begin{equation}
+        \begin{aligned}
+            0\leq t^2 \|z-\proj_C(x)\|^2
+            + 2 t\inner{z-\proj_C(x)}{\proj_C(x)-x}.
+        \end{aligned}
+    \end{equation}
+    Setelah dibagi dengan \(t>0\),
+    \begin{equation}
+        \begin{aligned}
+            0\leq t \|z-\proj_C(x)\|^2
+            + 2 \inner{z-\proj_C(x)}{\proj_C(x)-x}.
+        \end{aligned}
+    \end{equation}
+    Dengan mengambil limit \(t\rightarrow 0\), kita memperoleh hasil yang diinginkan. Kesamaan untuk kasus subruang ditinggalkan sebagai latihan.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0004
+\begin{prop}
+    Misalkan \(V\) ruang Hilbert real dan \(C\subset V\) tak kosong, tertutup, dan konveks. Proyeksi pada \(C\) bersifat tak ekspansif, yaitu kontinu Lipschitz dengan konstanta satu:
+    \begin{equation}
+        \|\proj_C(x_1)-\proj_C(x_2)\|\leq \|x_1-x_2\|.
+    \end{equation}
+\end{prop}
+\begin{proof}
+    Tanpa mengurangi keumuman, andaikan
+    \(\|\proj_C(x_2)-\proj_C(x_1)\|^2 \neq 0\), sebab jika tidak, tidak ada yang perlu dibuktikan. Kita memperoleh
+    \begin{equation}
+        \begin{aligned}
+            \|\proj_C(x_2)-\proj_C(x_1)\|^2
+            &= \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1+x_1-\proj_C(x_1)}\\
+            &= \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1}\\
+            &\quad+ \inner{\proj_C(x_2)-\proj_C(x_1)}{x_1-\proj_C(x_1)}\\
+            &\leq \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_1}\\
+            &= \inner{\proj_C(x_2)-\proj_C(x_1)}{\proj_C(x_2)-x_2+x_2-x_1}\\
+            &\leq \inner{\proj_C(x_1)-\proj_C(x_2)}{x_2-\proj_C(x_2)}\\
+            &\quad+ \inner{\proj_C(x_2)-\proj_C(x_1)}{x_2-x_1}\\
+            &\leq \inner{\proj_C(x_2)-\proj_C(x_1)}{x_2-x_1}\\
+            &\leq \|\proj_C(x_2)-\proj_C(x_1)\|\|x_2-x_1\|.
+        \end{aligned}
+    \end{equation}
+    Membagi dengan \(\|\proj_C(x_2)-\proj_C(x_1)\|\neq 0\) menghasilkan kesimpulan.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0005
+\begin{lemma}[Ketaksamaan fundamental metode subgradien terproyeksi]\label{lemma:subgradient:fundamental}
+    Misalkan \(x^*\in\arg\min_{x\in C}f(x)\), dan misalkan \(x_k\) adalah iterasi metode subgradien terproyeksi~\eqref{subgradient:eq:projectedSG}, dengan \(g_k\in\partial f(x_k)\) dan \(\tau_k\geq0\). Maka
+    \begin{equation}
+        \|x_{k+1}-x^*\|^2
+        \leq \|x_k- x^*\|^2 - 2\tau_k (f(x_k)-f(x^*)) + \tau_k^2\|g_k\|^2.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Dari definisi subgradien,
+    \(f(x_k)+ \inner{g_k}{x^*-x_k}\leq f(x^*)\). Karena \(x^*\in C\), kita mempunyai \(\proj_C(x^*)=x^*\). Ketakspansifan proyeksi lalu memberikan
+    \begin{equation}\label{eq:subgradient:fundamental}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2
+            &= \|\proj_C(x_k-\tau_kg_k) - \proj_C(x^*)\|^2\\
+            &\leq \|x_k-\tau_k g_k - x^*\|^2\\
+            &= \|x_k- x^*\|^2 - 2\tau_k \inner{g_k}{x_k-x^*} + \tau_k^2\|g_k\|^2\\
+            &\leq \|x_k- x^*\|^2 - 2\tau_k (f(x_k)-f(x^*)) + \tau_k^2\|g_k\|^2.
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0006
+Hal yang wajar dilakukan sekarang ialah memakai hasil sebelumnya untuk menentukan ukuran langkah optimal. Lebih tepatnya, dengan meminimumkan ruas kanan~\eqref{eq:subgradient:fundamental} terhadap \(\tau_k\), kita memperoleh
+\begin{equation}
+    \tau_k = \frac{f(x_k)-f(x^*)}{\|g_k\|^2}
+\end{equation}
+jika \(g_k\neq 0\), dan kita menetapkan \(\tau_k=0\) jika \(g_k=0\). Ukuran langkah ini disebut aturan ukuran langkah Polyak.
+
+Sebagai latihan, buktikan bahwa jika fungsi konveks \(f:V\rightarrow\R\) bersifat \(L\)-Lipschitz secara global pada \(V\), maka setiap \(g\in\partial f(x)\) memenuhi \(\|g\|\leq L\). Pada hasil-hasil berikut, kita memakai langsung batas pada subgradien yang dipilih, sehingga juga mencakup situasi berkendala yang tidak memenuhi asumsi Lipschitz global tersebut.
+
+\begin{theorem}
+    Andaikan subgradien yang dipilih pada iterasi memenuhi \(\|g_k\|\leq L\). Dengan aturan ukuran langkah Polyak
+    \begin{equation}
+        \tau_k = \frac{f(x_k)-f(x^*)}{\|g_k\|^2}\quad\text{jika }g_k\neq0,
+        \qquad \tau_k=0\quad\text{jika }g_k=0.
+    \end{equation}
+    metode subgradien terproyeksi~\eqref{subgradient:eq:projectedSG} memenuhi
+    \begin{enumerate}
+        \item \(\|x_{k+1}-x^*\|^2\leq \|x_k-x^*\|^2\), dengan ketaksamaan ketat jika \(f(x_k)>f(x^*)\);
+        \item \(f(x_k)\rightarrow f(x^*)\) ketika \(k\rightarrow\infty\); dan
+        \item \(f_{\mathrm{best}}^N-f(x^*)\leq \dfrac{L\|x_1-x^*\|}{\sqrt{N}}\), dengan \(f_{\mathrm{best}}^N = \min_{k=1,\dots,N}f(x_k)\).
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Tanpa mengurangi keumuman, kita boleh mengasumsikan \(f(x^*)=0\). Jika tidak, cukup tinjau \(\widetilde f(x)\coloneq f(x)-f(x^*)\). Dari~\cref{lemma:subgradient:fundamental} dan aturan ukuran langkah diperoleh
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2
+            &\leq \|x_k - x^*\|^2 - 2\tau_k f(x_k) +\tau_k^2\|g_k\|^2\\
+            &= \|x_k - x^*\|^2 - a_k,
+        \end{aligned}
+    \end{equation}
+    dengan \(a_k=f(x_k)^2/\|g_k\|^2\) jika \(g_k\neq0\), dan nol jika \(g_k=0\). Jika \(g_k=0\), kekonveksan memberi \(f(x_k)=f(x^*)\). Karena itu, pengurangan bersifat ketat tepat ketika celah nilai fungsi positif.
+
+    Dengan menata ulang dan menjumlahkan untuk \(k=1,\dots,N\), kita memperoleh
+    \begin{equation}
+        \sum_{k=1}^{N} a_k
+        \leq \|x_1-x^*\|^2 - \|x_{N+1}-x^*\|^2
+        \leq \|x_1-x^*\|^2.
+    \end{equation}
+    Karena \(\|g_k\|\leq L\),
+    \begin{equation}
+        \sum_{k=1}^{N} f(x_k)^2
+        \leq \sum_{k=1}^{N} L^2 a_k
+        \leq L^2 \|x_1-x^*\|^2.
+    \end{equation}
+    Batas ini berlaku untuk setiap \(N\), sehingga \(f(x_k)\rightarrow0\). Selain itu,
+    \begin{equation}
+        N (f_{\mathrm{best}}^N)^2
+        \leq \sum_{k=1}^{N} f(x_k)^2
+        \leq L^2\|x_1-x^*\|^2,
+    \end{equation}
+    yaitu
+    \begin{equation}
+        f_{\mathrm{best}}^N\leq \frac{L\|x_1-x^*\|}{\sqrt{N}}.
+    \end{equation}
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0007
+\begin{cor}
+    Untuk mencapai ketelitian \(f_{\mathrm{best}}^N - f(x^*)\leq \epsilon\), kita memerlukan
+    \[
+        N=\Oc\!\left(\frac{L^2\|x_1-x^*\|^2}{\epsilon^2}\right)
+    \]
+    iterasi.
+\end{cor}
+
+\begin{rem}
+    Ingat bahwa metode gradien mulus standar mencapai kompleksitas \(\Oc(1/\epsilon)\).
+\end{rem}
+
+Walaupun hasil konvergensi dengan aturan ukuran langkah Polyak menarik secara teoretis dan memberi batas kasus terburuk untuk iterasi terbaik, dalam praktiknya ukuran langkah tersebut tidak dapat dihitung tanpa mengetahui \(f(x^*)\). Berikut ini kita berikan hasil konvergensi yang lebih umum.
+
+\begin{theorem}
+    Andaikan subgradien yang dipilih memenuhi \(\|g_k\|\leq L\), dan ukuran langkah \(\tau_k>0\) memenuhi
+    \[
+        \frac{\sum_{k=1}^n\tau_k}{\sum_{k=1}^n\tau_k^2}\rightarrow \infty
+        \qquad\text{ketika }n\rightarrow\infty.
+    \]
+    Maka
+    \[
+        f^n_{\mathrm{best}}-f(x^*)
+        \leq
+        \frac{\|x_1-x^*\|^2+L^2\sum_{k=1}^n\tau_k^2}
+             {2\sum_{k=1}^n\tau_k}
+        \longrightarrow0.
+    \]
+\end{theorem}
+\begin{proof}
+    Sekali lagi, untuk menyederhanakan notasi, andaikan \(f(x^*)=0\). Dengan memakai \(\|g_k\|\leq L\) dan menjumlahkan ketaksamaan fundamental~\cref{lemma:subgradient:fundamental} untuk \(k=1,\dots,n\), kita memperoleh
+    \begin{equation}
+        2\sum_{k=1}^n\tau_k f(x_k)
+        \leq \|x_1-x^*\|^2 + L^2 \sum_{k=1}^n \tau_k^2.
+    \end{equation}
+    Tuliskan
+    \[
+        \sigma_n = \frac{\sum_{k=1}^n\tau_k}{\sum_{k=1}^n\tau_k^2}.
+    \]
+    Karena \(f^n_{\mathrm{best}}\leq f(x_k)\),
+    \begin{equation}
+        f^n_{\mathrm{best}}
+        \leq \frac{\sum_{k=1}^n\tau_kf(x_k)}{\sum_{k=1}^n\tau_k}
+        \leq \frac{\|x_1-x^*\|^2}{2\sum_{k=1}^n\tau_k}
+        +\frac{L^2}{2\sigma_n}.
+    \end{equation}
+    Hipotesis \(\sigma_n\rightarrow\infty\) juga memaksa \(\sum_{k=1}^n\tau_k\rightarrow\infty\); karena itu, kedua suku pada ruas kanan menuju nol.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch04.seg0008
+Varian hasil konvergensi juga dapat diperoleh, misalnya jika \(C\) kompak; lihat~\cite{beck2017first} untuk perinciannya.
+
+Konvergensi dapat dipercepat dan juga \emph{ditransfer} dari nilai fungsi ke iterasi \((x_k)_k\) jika kita menambahkan asumsi bahwa \(f\) konveks kuat.
+
+\begin{theorem}
+    Andaikan \(f\) konveks kuat dengan parameter \(\mu>0\) pada \(C\), dan subgradien yang dipilih memenuhi \(\|g_k\|\leq L\).\footnote{Batas ini dikenakan pada subgradien yang benar-benar dipilih oleh algoritma; batas tersebut tidak disimpulkan hanya dari sifat Lipschitz relatif pada \(C\).} Mulai dari \(x_1\in C\), gunakan ukuran langkah
+    \(\tau_k = \dfrac{2}{\mu k}\) untuk \(k\geq1\). Untuk \(n\geq2\), metode subgradien terproyeksi~\eqref{subgradient:eq:projectedSG} memenuhi
+    \begin{enumerate}
+        \item \(f^n_{\mathrm{best}}-f(x^*)\leq \dfrac{2L^2}{\mu (n-1)}\); dan
+        \item \(\|x_n-x^*\|\leq \dfrac{2L}{\mu \sqrt{n-1}}\).
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Seperti sebelumnya, tanpa mengurangi keumuman, tetapkan \(f(x^*)=0\). Kekonveksan kuat memperbaiki ketaksamaan fundamental menjadi
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2
+            &\leq (1-\mu\tau_k)\|x_k- x^*\|^2 - 2\tau_k f(x_k) + \tau_k^2\|g_k\|^2\\
+            &\leq (1-\mu\tau_k)\|x_k- x^*\|^2 - 2\tau_k f(x_k) + \tau_k^2L^2.
+        \end{aligned}
+    \end{equation}
+    Dengan menata ulang dan membagi dengan \(2\tau_k\), diperoleh
+    \begin{equation}
+        \begin{aligned}
+            f(x_k)
+            \leq -\frac{\tau_k^{-1}}{2}\|x_{k+1}-x^*\|^2
+            + \frac{\tau_k^{-1}-\mu}{2}\|x_k- x^*\|^2
+            + \frac{\tau_k}{2}L^2.
+        \end{aligned}
+    \end{equation}
+    Memasukkan \(\tau_k = 2/(\mu k)\) menghasilkan
+    \begin{equation}
+        \begin{aligned}
+            f(x_k)
+            \leq -\frac{\mu k}{4} \|x_{k+1}-x^*\|^2
+            + \frac{\mu(k-2)}{4}\|x_k- x^*\|^2
+            + \frac{1}{\mu k}L^2.
+        \end{aligned}
+    \end{equation}
+    Kalikan dengan \(k-1\), lalu jumlahkan terhadap \(k=1,\dots,n\). Suku jarak meneleskop, sehingga
+    \begin{equation}
+        \sum_{k=1}^{n} (k-1)f(x_k)
+        \leq -\frac{\mu n(n-1)}{4} \|x_{n+1}-x^*\|^2
+        + \frac{1}{\mu}\sum_{k=1}^{n}\frac{k-1}{k}L^2.
+    \end{equation}
+    Karena \(\sum_{k=1}^{n} (k-1)=n(n-1)/2\) dan
+    \(\sum_{k=1}^{n}(k-1)/k\leq n\), kita memperoleh
+    \begin{equation}\label{subgradient:eq:strongly}
+        \frac{n(n-1)}{2} f^n_{\mathrm{best}}
+        \leq \sum_{k=1}^{n} (k-1)f(x_k)
+        \leq -\frac{\mu n(n-1)}{4} \|x_{n+1}-x^*\|^2
+        + \frac{nL^2}{\mu}.
+    \end{equation}
+    Dengan membuang suku jarak yang tak positif, diperoleh
+    \begin{equation}
+        f^n_{\mathrm{best}} \leq \frac{2L^2}{\mu(n-1)}.
+    \end{equation}
+
+    Untuk batas iterasi, buang suku \(-2\tau_k f(x_k)\leq0\) dari ketaksamaan fundamental yang diperbaiki. Dengan \(d_k=\|x_k-x^*\|\),
+    \begin{equation}
+        d_{k+1}^2\leq\left(1-\frac{2}{k}\right)d_k^2
+        +\frac{4L^2}{\mu^2k^2}.
+    \end{equation}
+    Untuk \(k=1\), ketaksamaan ini memberi \(d_2^2\leq4L^2/\mu^2\). Jika
+    \(d_k^2\leq4L^2/[\mu^2(k-1)]\), substitusi pada relasi di atas memberikan
+    \[
+        d_{k+1}^2
+        \leq \frac{4L^2}{\mu^2}
+        \left(\frac{k-2}{k(k-1)}+\frac{1}{k^2}\right)
+        \leq \frac{4L^2}{\mu^2k}.
+    \]
+    Induksi membuktikan \(\|x_n-x^*\|\leq2L/[\mu\sqrt{n-1}]\) untuk setiap \(n\geq2\).
+\end{proof}

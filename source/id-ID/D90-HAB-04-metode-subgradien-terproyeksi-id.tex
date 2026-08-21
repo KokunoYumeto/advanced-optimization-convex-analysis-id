@@ -1,0 +1,57 @@
+\pdfoutput=1
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\addbibresource{../../authority/habring/source-v1/references.bib}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 4: Penurunan Subgradien Terproyeksi\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks — Unit 4: Penurunan Subgradien Terproyeksi — Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 4, ``Projected subgradient descent'', dari versi sumber yang ditentukan di atas. Unit ini melanjutkan Unit 3. Pembaca diharapkan telah mengenal fungsi konveks, subgradien dan subdiferensial, ruang Hilbert, norma, fungsi indikator, serta kondisi optimalitas Fermat.
+
+Notasi, urutan teorema, bukti, dua latihan informal, dan rujukan sumber dipertahankan. Sejumlah kekeliruan matematis dalam sumber diperbaiki secara terbuka; ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini. Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca unit ini.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{3}
+\include{habring-04-metode-subgradien-terproyeksi-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber.
+
+\begin{enumerate}
+    \item Masalah optimisasi diberi ruang ambien, domain fungsi, himpunan kendala, titik awal, dan peminim yang bertipe lengkap; fungsi indikator kini ditambahkan pada fungsi yang terdefinisi di seluruh ruang.
+    \item Teorema proyeksi dinyatakan pada ruang Hilbert real dan dibuktikan dengan identitas jajaran genjang, kelengkapan, serta ketertutupan; argumen sumber ``barisan terbatas mempunyai subbarisan konvergen'' tidak berlaku pada ruang hasil kali dalam umum.
+    \item Hipotesis himpunan tak kosong, tertutup, dan konveks serta ruang Hilbert diulang pada karakterisasi dan ketakspansifan proyeksi.
+    \item Semua hasil konvergensi memakai asumsi eksplisit bahwa subgradien yang dipilih dibatasi oleh \(L\), bukan implikasi keliru bahwa fungsi yang Lipschitz hanya pada himpunan kendala membatasi setiap subgradien relatif.
+    \item Ketaksamaan fundamental diberi \(x^*\in\arg\min_C f\) dan ukuran langkah tak negatif yang diperlukan oleh buktinya.
+    \item Teorema Polyak membandingkan norma kuadrat dengan norma kuadrat, memakai indeks yang konsisten, mensyaratkan celah objektif positif untuk penurunan ketat, dan mengembalikan kuadrat yang hilang pada bukti laju \(N^{-1/2}\).
+    \item Pernyataan teorema ukuran langkah umum disatukan kembali dengan limit dan kesimpulannya, serta batas iterasi terbaik ditulis secara eksplisit.
+    \item Hasil konveks kuat dimulai pada \(k=1\), mengganti kesamaan palsu dengan ketaksamaan, memperbaiki faktor laju nilai fungsi menjadi \(2\), dan membuktikan batas jarak iterasi dengan induksi. Tanda kutip liar pada rumus sumber juga dihapus.
+    \item Rujukan silang ke definisi ruang vektor yang tidak termuat diganti dengan nama konsep, sedangkan sitasi Beck dipertahankan dalam bibliografi unit.
+\end{enumerate}
+
+\printbibliography
+
+\chapter*{Atribusi dan lisensi}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+\end{document}

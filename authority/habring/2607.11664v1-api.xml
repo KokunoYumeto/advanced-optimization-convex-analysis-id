@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/RkRejxOnqmwiQTbqTzjKL04LvoQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=2607.11664&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-21T09:49:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2607.11664" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2607.11664v1</id>
+    <title>Lecture Notes: Convex Optimization</title>
+    <updated>2026-07-13T15:08:35Z</updated>
+    <link href="https://arxiv.org/abs/2607.11664v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.11664v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lecture notes for a course on convex optimization taught by Andreas Habring at Graz University of Technology in 2026. The notes cover mathematical preliminaries, fundamental results about existence and of solutions for minimization problems, projected subgradient descent, proximal-gradient methods, heavy ball gradient descent, Nesterov accelerated gradient descent and FISTA, primal-dual methods, and a short intro to optimal transport.</summary>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-13T15:08:35Z</published>
+    <arxiv:primary_category term="math.OC"/>
+    <author>
+      <name>Andreas Habring</name>
+    </author>
+  </entry>
+</feed>

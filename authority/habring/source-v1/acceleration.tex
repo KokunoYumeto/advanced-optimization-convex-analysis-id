@@ -1,0 +1,404 @@
+\chapter{Acceleration}
+
+By constructing a specifically difficult function to optimize, one can show that for any first order method which satisfies
+\begin{equation}
+    x_k\in x_0+\mathrm{span}\{\nabla f(x_0),\dots,\nabla f(x_{k-1})\}
+\end{equation}
+there exists $L$-smooth $f$ such that
+\begin{equation}
+    f(x_k)-\min f\geq\frac{3L\|x_0-x^*\|}{32(k+1)^2}.
+\end{equation}
+Note that up until now we have not reached convergence better than $\Oc(1/k)$. Closing the gap to $\Oc(1/k^2)$ is the goal of this section.
+
+\section{Polyak's heavy ball method}
+
+Note that we can interpret gradient descent for minimizing the (unconstrained) problem
+\begin{equation}
+    \min_x f(x)
+\end{equation}
+as a discretization of the \emph{gradient flow}
+\begin{equation}
+    \dot x  = -\nabla f(x).
+\end{equation}
+Interpreting the function $f$ as a potential, $\nabla f$ corresponds to the force enacted by this potential on a particle (with mass one). It is now natural to include friction into this model. The force caused by friction is typically modelled proportional to the velocity leading to
+\begin{equation}\label{acceleration:eq:friction_ode}
+    \ddot x = - \gamma \dot x -\nabla f(x).
+\end{equation}
+Let us discretize this ODE via $\dot x (t)\approx \frac{x(t)-x(t-h)}{h}$ and 
+\begin{equation}
+    \ddot x(t)
+    \approx \frac{\dot x(t+h)-\dot x(t)}{h}
+    \approx \frac{x(t+h)-2x(t)+x(t-h)}{h^2}.
+\end{equation}
+Denoting $x_{t-h}=x_{k-1}$, $x(t)=x_k$ and $x(t+h)=x_{k+1}$ we find via inserting into~\cref{acceleration:eq:friction_ode}
+\begin{equation}
+    x_{k+1} - 2x_k + x_{k-1} = -h\gamma (x_{k}-x_{k-1}) - h^2\nabla f(x_k)
+\end{equation}
+which yields after rearranging the update
+\begin{equation}
+    x_{k+1} = x_{k} + (1-\gamma h)(x_{k}-x_{k-1}) - h^2\nabla f(x_k).
+\end{equation}
+Relabelling the constants and allowing them also to be iteration depdendent we arrive at \emph{Polyak's heavy ball method}
+\begin{equation}
+    x_{k+1} = x_{k} + \beta_k(x_{k}-x_{k-1}) - \tau_k\nabla f(x_k).
+\end{equation}
+Note that even without this derivation using the ODE perspective, the update rule is rather intuitive: The update contains in addition to the descent direction for $f$ also an additional \emph{inertia} term, which adds a compontent in the same direction as the previous step.
+
+The convergence proof of the heavy ball method will rely on the following basic results from linear algebra which we include here for the sake of completeness.
+
+\begin{lemma}\label{acceleration:lemma:spectral_radius}
+    For any $A\in \R^{d\times d}$ we have $\lim_{n\rightarrow\infty}\|A^n\|^{1/n} = \rho(A)$ where 
+    \begin{equation}
+        \rho(A) = \max_{i}|\lambda_i(A)|
+    \end{equation}
+    with $\lambda_i(A)$ the eigenvalues of $A$.
+\end{lemma}
+\begin{proof}
+    First of all it is easy to see that $\liminf_{n\rightarrow\infty}\|A^n\|^{1/n} \geq \rho(A)$. Indeed, let $v$ be a normalized eigenvector for the largest (in absolute value) eigenvalue of $A$, then we have
+    \begin{equation}
+        \|A^n\|^{1/n} \geq \|A^n v\|^{1/n} = \rho(A)
+    \end{equation}
+    and thus also $\liminf_{n\rightarrow\infty}\|A^n\|^{1/n} \geq \rho(A)$.
+    The converse inequality is a little more subtle.
+    Recall from linar algebra that for every square matrix we can derive the Jordan normal form
+    \begin{equation}
+        A = B^{-1}D B
+    \end{equation}
+    with 
+    \begin{equation}
+        D = \begin{pmatrix}
+            \lambda_1& \rho_1 & \dots&\dots&\\
+            0 & \lambda_2& \rho_2&\dots&\\
+            &&\ddots&\ddots&\\
+            & &\dots & \lambda_{d-1}&\rho_{d-1}&\\
+            & & &\dots&\lambda_d\\
+        \end{pmatrix}
+    \end{equation}
+    with $\lambda_i$ the eigenvalues (with multiplicity) and $\rho_i\in \{0,1\}$ and which we write as $D=\Lambda + J$ where $\Lambda$ contains the diagonal entries and $J$ the off diagonals. Note that $J^k=0$ whenever $k$ is larger than the largest Jordan block. In particular, $J^k=0$ for $k\geq d-1$. Since $\Lambda$ and $J$ commute, we, thus, find
+    \begin{equation}
+        \begin{aligned}
+            \|D^n\| = 
+            \|\sum_{k=0}^{d-2}
+            \begin{pmatrix}
+                n\\
+                k
+            \end{pmatrix}\Lambda^{n-k}J^k\|
+            \leq \sum_{k=0}^{d-2}
+            \begin{pmatrix}
+                n\\
+                k
+            \end{pmatrix}\|\Lambda^{n-k}\|
+            \leq& \sum_{k=0}^{d-2} \frac{n^k}{k!}\|\Lambda^{n-k}\|\\
+            \leq& \sum_{k=0}^{d-2} \frac{n^k}{k!}\rho(A)^{n-k}\\
+            =& \rho(A)^{n}\sum_{k=0}^{d-2} \frac{n^k}{k!}\rho(A)^{-k}\\
+        \end{aligned}
+    \end{equation}
+    which implies
+    \begin{equation}
+        \begin{aligned}
+            \|D^n\|^{1/n}
+            \leq& \rho(A)\left(\sum_{k=0}^{d-2} \frac{n^k}{k!}\rho(A)^{-k}\right)^{1/n}
+            \leq& \rho(A)\left((d-1)n^{d-2}\max_{k=0,\dots, d-2}\rho(A)^{-k}\right)^{1/n}
+        \end{aligned}
+    \end{equation}
+    where we note that tha maximizing $k$ above is either $k=0$ or $k=d-2$ when $\rho(A)\leq 1$ or $\rho(A)>1$, respectively. Since $\lim_{n\rightarrow \infty} n^{1/n}=1$ it follows \begin{equation}
+        \begin{aligned}
+            \limsup_n\|D^n\|^{1/n}
+            \leq \rho(A).
+        \end{aligned}
+    \end{equation}
+    Lastly, we conclude
+    \begin{equation}
+        \limsup_n\|A^n\|^{1/n} 
+        = \limsup_n \|B^{-1}D^nB\|^{1/n}
+        \leq \limsup_n\|B^{-1}\|^{1/n}\|D^n\|^{1/n} \|B\|^{1/n}\leq \rho(A)
+    \end{equation}
+\end{proof}
+
+\begin{cor}\label{acceleration:cor:spectral_radius}
+    It holds that $\lim_k A^k=0$ if and only if $\rho(A)<1$. Moreover, in this case for every $\epsilon>0$ there exists $c(\epsilon)>0$ such that $\|A^k\|\leq c(\epsilon)(\rho(A)+\epsilon)^k$.
+\end{cor}
+\begin{proof}
+    The \enquote{if and only if}-part of the theorem follows from directly from~\cref{acceleration:lemma:spectral_radius}.
+    Moreover, by~\cref{acceleration:lemma:spectral_radius} we can choose $n$ sufficiently large such that $\|A^k\|^{1/k}\leq \rho(A) + \epsilon$ for $k\geq n$.
+    For such $k$ it follows
+    \begin{equation}
+        \|A^k\|\leq (\rho(A)+\epsilon)^k.
+    \end{equation}
+    Since there also exists some $c>0$ such that 
+    \begin{equation}
+        \|A^k\|\leq c(\rho(A)+\epsilon)^k.
+    \end{equation}
+    for $k\leq n$ the result follows.
+\end{proof}
+
+We can now prove convergence of the heavy ball method. The technique we use is quite standard: We analyse the eigenvalues of the linearization of the update rule.
+
+\begin{theorem}[Convergence of heavy ball]
+    Let 
+    \begin{equation}
+        0\leq \beta <1, \quad 0<\tau <2(1+\beta)/L,\quad \mu \Id\preceq \nabla^2 f(x^*)\preceq L\Id.
+    \end{equation}
+    There exists $\epsilon>0$ such that for $x_0,x_1\in B_\epsilon(x^*)$ it holds that $x_k\rightarrow x^*$. More specifically, 
+    \begin{equation}
+        \|x_k-x^*\|\leq c(\delta)(q+\delta)^k,\quad 0\leq q< 1, 0<\delta<1-q.
+    \end{equation}
+    Moreover, we can derive the optimal parameters (\ie, the minimal value of $q$) as
+    \begin{equation}
+        q = \frac{\sqrt{L}-\sqrt{\mu}}{\sqrt{L}+\sqrt{\mu}},
+        \quad \tau = \frac{4}{(\sqrt{L} + \sqrt{\mu})^2}
+        ,\quad \beta = \left(\frac{\sqrt{L}-\sqrt{\mu}}{\sqrt{L}+\sqrt{\mu}}\right)^2
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    Note that, as is, the scheme is, in fact, a recursion of depth two. We, thus, rewrite the update as
+    \begin{equation}
+        \begin{aligned}
+            \begin{bmatrix}
+                x_{k+1}\\
+                x_k
+            \end{bmatrix}
+            &= 
+            \begin{bmatrix}
+                x_{k} + \beta(x_{k}-x_{k-1}) - \tau\nabla f(x_k)\\
+                x_k
+            \end{bmatrix}\\
+            &=
+            \begin{pmatrix}
+                1+\beta - \tau \nabla f&-\beta\\
+                1&0
+            \end{pmatrix}
+            \begin{bmatrix}
+                x_k\\
+                x_{k-1}
+            \end{bmatrix}.
+        \end{aligned}
+    \end{equation}
+    Moreover, we can subtract the minimizer $x^*$, \ie, 
+    \begin{equation}
+        \begin{aligned}
+            \begin{bmatrix}
+                x_{k+1}-x^*\\
+                x_k-x^*
+            \end{bmatrix}
+            &=
+            \begin{pmatrix}
+                1+\beta - \tau \nabla f&-\beta\\
+                1&0
+            \end{pmatrix}
+            \begin{bmatrix}
+                x_k-x^*\\
+                x_{k-1}-x^*
+            \end{bmatrix}.
+        \end{aligned}
+    \end{equation}
+    Moreover, we can \emph{linearize} the update as follows: By the fundamental theorem of calculus we have
+    \begin{equation}
+        \begin{aligned}
+            \nabla f(x_k) - \nabla f(x^*) 
+            =& \int_0^1 \nabla^2 f(x^* + t(x_k-x^*))\dd t (x_k-x^*)\\
+            =& \nabla^2 f(x^*)(x_k-x^*) + \int_0^1 \nabla^2 f(x^* + t(x_k-x^*))-\nabla^2 f(x^*)\dd t (x_k-x^*).
+        \end{aligned}
+    \end{equation}
+    Thus, defining $z_k = \int_0^1 \nabla^2 f(x^* + t(x_k-x^*))-\nabla^2 f(x^*)\dd t (x_k-x^*)$ we have
+    \begin{equation}
+        \begin{aligned}
+            \begin{bmatrix}
+                x_{k+1}-x^*\\
+                x_k-x^*
+            \end{bmatrix}
+            &=
+            \underbrace{\begin{pmatrix}
+                1+\beta - \tau \nabla^2 f(x^*)&-\beta\\
+                1&0
+            \end{pmatrix}}_{\mathcal{H}}
+            \begin{bmatrix}
+                x_k-x^*\\
+                x_{k-1}-x^*
+            \end{bmatrix}
+            + \begin{bmatrix}
+                z_k\\
+                0
+            \end{bmatrix}
+        \end{aligned}
+    \end{equation}
+    In view of~\cref{acceleration:cor:spectral_radius}, we analyze the eigenvalues of $\mathcal{H}$. Let $(v,w)$ be an eigenvector of $\mathcal{H}$ with eigenvalue $\lambda$. We find
+    \begin{equation}
+        \begin{cases}
+            (1+\beta -\tau \nabla^2 f(x^*))v - \beta w &= \lambda v\\
+            v &= \lambda w.
+        \end{cases}
+    \end{equation}
+    Inserting the second into the first equation it follows
+    \begin{equation}
+        (1+\beta -\tau \nabla^2 f(x^*))v = \lambda v + \beta\lambda^{-1} v.
+    \end{equation}
+    This, in turn, implies that there exist an eigenvalue $\eta$ of $\nabla^2f(x^*)$ such that
+    \begin{equation}
+        1+\beta -\tau \eta = \lambda + \beta\lambda^{-1},
+    \end{equation}
+    respectively
+    \begin{equation}
+        \lambda^2 - \lambda(1+\beta -\tau \eta) = -\beta
+    \end{equation}
+    by completing the square we obtain
+    \begin{equation}\label{acceleration:eq:heavy_ball1}
+        \left(\lambda - \frac{1+\beta -\tau \eta}{2}\right)^2 = \left(\frac{1+\beta -\tau \eta}{2}\right)^2 - \beta.
+    \end{equation}
+    Our goal is to ensure $|\lambda|<1$. Note that~\eqref{acceleration:eq:heavy_ball1} shows that $\lambda$ is contained within a circle in the complex plane with center $c \coloneqq \frac{1+\beta -\tau \eta}{2}$ and radius $\sqrt{c^2 - \beta}$. It is easy to see that it suffices to estimate the values of $\lambda$ for maximal and minimal $c$.
+    A strict upper bound for $c$ is obtained by the estimate $\tau\eta>0$ yielding $c = (1+\beta)/2$ and 
+    \begin{equation}
+        \begin{aligned}
+            |\lambda|\leq c+c^2-\beta = \frac{3+\beta^2}{4}<1
+        \end{aligned}
+    \end{equation}
+    due to $0\leq \beta<1$.
+    Conversely, a strict lower bound for $c$ is obtained for $\tau = 2(1+\beta)/L$ and $\eta = L$ leading to $c = -(1+\beta)$ and a similar estimate as above. Thus, we find $\rho(\mathcal{H})<1$. Noting that $z_k = o(x_k-x^*)$ the result follows where we leave the remaining details as an exercise.
+\end{proof}
+
+% \todo{@Alex: Exercise: prove local convergence from the linearization with hints! Prove optimal parameters with hints.}
+
+\section{Nesterov acceleration}
+Polyak's method is in fact optimal in the sense that it achieves the best possible convergence rate. However, this is only true for strongly convex and twice continuously differentiable $f$. The next acceleration we consider achieves optimal convergence under significantly weaker conditions. We consider now again problems of the form 
+\begin{equation}
+    \min_x F(x)\coloneqq f(x) + g(x)
+\end{equation}
+where only $f$ is $L$-smooth. The update of the the \enquote{fast iterative shrinkage-thresholding algorithm} (FISTA, or fast proximal gradient method) reads as
+\begin{equation}
+    \begin{cases}
+        t_{k+1} = \frac{1+\sqrt{1+4t_k^2}}{2}\\
+        \beta_k = \frac{t_k-1}{t_{k+1}}\\
+        y_k = x_k + \beta_k(x_k-x_{k-1})\\
+        x_{k+1} = \prox_{\tau g}(y_k - \tau \nabla f(y_k)).
+    \end{cases}
+\end{equation}
+In the case $g\equiv 0$ the method closely resebles the heavy ball algorithm. However, the gradient is now evaluated after adding the inertia term. Moreover the convergence relies on a subtle adaptive choice of the inertia parameter.
+
+\begin{lemma}
+    Set $t_1 = 1$. It holds true that 
+    \begin{equation}
+        t_k \geq \frac{k+1}{2}
+    \end{equation}
+    for all $k$.
+\end{lemma}
+\begin{proof}
+    The proof follows by straightforward induction. The assertion holds true for $k=1$ and, using the induction hypothesis, we find
+    \begin{equation}
+        t_{k+1} = \frac{1+\sqrt{1+4t_k^2}}{2}\geq \frac{1+\sqrt{1+(k+1)^2}}{2}\geq \frac{1+(k+1)}{2}.
+    \end{equation}
+\end{proof}
+
+\begin{lemma}[Fundamental prox-grad inequality]
+    Denote 
+    \begin{equation}
+        P_\tau(x) = \prox_{\tau g}(x-\tau \nabla f(x)).
+    \end{equation}
+    For any $\tau\leq \frac{1}{L}$ it holds true that 
+    \begin{equation}
+        F(x) - F(P_\tau (y))\geq \frac{1}{2\tau}\|x-P_\tau (y)\|^2 - \frac{1}{2\tau}\|x-y\|^2 + \ell_f(x,y)
+    \end{equation}
+    where $\ell_f(x,y) = f(x) - f(y) - \langle x-y,\nabla f(y)\rangle$
+\end{lemma}
+\begin{proof}
+    First note that we can write
+    \begin{equation}
+        \begin{aligned}
+            P_\tau (y) 
+            =& \arg\min_z \frac{1}{2\tau}\|z-(y-\tau \nabla f(y))\|^2 + g(z)\\
+            =& \arg\min_z f(y) + \langle z-y,\nabla f(y)\rangle + \frac{1}{2\tau}\|z-y\|^2 + g(z).
+        \end{aligned}
+    \end{equation}
+    As a sidenote, this shows that the proximal-gradient method can be interpreted as a proximal method of $g$ plus a linear approximation of $f$. Let us denote 
+    \begin{equation}
+        \phi(z) = f(y) + \langle z-y,\nabla f(y)\rangle + \frac{1}{2\tau}\|z-y\|^2 + g(z).
+    \end{equation}
+    By convexity of and $g$, $\phi$ is $1/\tau$-strongly convex and we find
+    \begin{equation}
+        \phi(x) - \phi(P_\tau (y))\geq \frac{1}{2\tau}\|x-P_\tau (y)\|^2
+    \end{equation}
+    Moreover, by convexity and $L$-smoothness of $f$ and the fact that $\frac{1}{\tau}\geq L$
+    \begin{equation}
+        f(z) \leq f(y) + \langle z-y,\nabla f(y)\rangle + \frac{L}{2}\|y-z\| \leq f(y) + \langle z-y,\nabla f(y)\rangle + \frac{1}{2\tau}\|z-y\|^2
+    \end{equation}
+    and thus
+    \begin{equation}
+        \phi(x) - F(P_\tau (y))\geq \frac{1}{2\tau}\|x-P_\tau (y)\|^2
+    \end{equation}
+    Pugging in $\phi$ yields
+    \begin{equation}
+        f(y) + \langle x-y,\nabla f(y)\rangle + \frac{1}{2\tau}\|x-y\|^2 + g(x) - F(P_\tau (y))\geq \frac{1}{2\tau}\|x-P_\tau (y)\|^2
+    \end{equation}
+    concluding the proof.
+\end{proof}
+\begin{theorem}[Convergence of FISTA]
+    Let the iterates of FISTA be initialized as $x_0=x_1$ and $t_1=1$ and the step size $\tau\leq \frac{1}{L}$ with $L$ the Lipschitz constant of $\nabla f$. Then we obtain the convergence 
+    \begin{equation}
+        F(x_k) - F(x^*)\leq \frac{C}{k^2 \tau}
+    \end{equation}
+    with a constnat $C$ depending on the initialization.
+\end{theorem}
+\begin{proof}
+    Choosing $x = t_{k+1}^{-1}x^* + (1-t_{k+1}^{-1})x_k$ and $y=y_k$ in the fundamental prox-grad inequality and noting that by convexity of $f$ $\ell_f(x,y)\geq 0$, we obtain
+    \begin{equation}\label{eq:fista1}
+        \begin{aligned}
+            F(t_{k+1}^{-1}x^* + &(1-t_{k+1}^{-1})x_k) - F(x_{k+1})\\
+            \geq& \frac{1}{2\tau}\|t_{k+1}^{-1}x^* + (1-t_{k+1}^{-1})x_k-x_{k+1}\|^2 - \frac{1}{2\tau}\|t_{k+1}^{-1}x^* + (1-t_{k+1}^{-1})x_k-y_k\|^2\\
+            \geq& \frac{1}{2\tau t_{k+1}^2}\|x^* + (t_{k+1}-1)x_k-t_{k+1} x_{k+1}\|^2 - \frac{1}{2\tau t_{k+1}^2}\|x^* + (t_{k+1}-1)x_k-t_{k+1}y_k\|^2.
+        \end{aligned}
+    \end{equation}
+    Again, by convexity and the fact that by induction one easily verifies $t_k\geq 1$ for all $k$, it holds true that
+    \begin{equation}\label{eq:fista2}
+        \begin{aligned}
+            F(t_{k+1}^{-1}x^* + (1-t_{k+1}^{-1})x_k) - F(x_{k+1})
+            \leq& t_{k+1}^{-1} F(x^*) + (1-t_{k+1}^{-1}) F(x_k) - F(x_{k+1})\\
+            \leq& (1-t_{k+1}^{-1}) (F(x_k)-F(x^*)) - (F(x_{k+1})-F(x^*)).
+        \end{aligned}
+    \end{equation}
+    Since $y_k = x_k + \frac{t_k-1}{t_{k+1}}(x_k-x_{k-1})$ we have
+    \begin{equation}\label{eq:fista3}
+        \begin{aligned}
+            \|x^* + (t_{k+1}-1)x_k-t_{k+1}y_k\|^2
+            = \|x^* - t_k x_k + (t_k-1)x_{k-1}\|^2
+        \end{aligned}
+    \end{equation}
+    Combining~\eqref{eq:fista1}, \eqref{eq:fista2}, and \eqref{eq:fista3} yields
+    \begin{equation}
+        \begin{aligned}
+            t_{k+1}^2(1-t_{k+1}^{-1}) &(F(x_k)-F(x^*)) - t_{k+1}^2(F(x_{k+1})-F(x^*))\\
+            \geq& \frac{1}{2\tau}\|x^* - t_{k+1} x_{k+1}+ (t_{k+1}-1)x_k\|^2 - \frac{1}{2\tau}\|x^* - t_k x_k + (t_k-1)x_{k-1}\|^2.
+        \end{aligned}
+    \end{equation}
+    By the update rule of FISTA, it holds true that $t_{k+1}^2(1-t_{k+1}^{-1}) = t_{k}^2$ and we have
+    \begin{equation}
+        \begin{aligned}
+            t_{k}^2 &(F(x_k)-F(x^*)) - t_{k+1}^2(F(x_{k+1})-F(x^*))\\
+            \geq& \frac{1}{2\tau}\|x^* - t_{k+1} x_{k+1}+ (t_{k+1}-1)x_k\|^2 - \frac{1}{2\tau}\|x^* - t_k x_k + (t_k-1)x_{k-1}\|^2
+        \end{aligned}
+    \end{equation}
+    hence,
+    \begin{equation}
+        \begin{aligned}
+            t_{k}^2 &(F(x_k)-F(x^*)) + \frac{1}{2\tau}\|x^* - t_k x_k + (t_k-1)x_{k-1}\|^2\\
+            \geq& t_{k+1}^2(F(x_{k+1})-F(x^*)) + \frac{1}{2\tau}\|x^* - t_{k+1} x_{k+1}+ (t_{k+1}-1)x_k\|^2
+        \end{aligned}
+    \end{equation}
+    and by iterating over $k$ and noting that $x_0=x_1$
+    \begin{equation}
+        \begin{aligned}
+            t_{2}^2 &(F(x_2)-F(x^*)) + \frac{1}{2\tau}\|t_2 (x^* - x_2) + (t_2-1)(x_{1}-x^*)\|^2\\
+            \geq& t_{k}^2(F(x_{k})-F(x^*)) + \frac{1}{2\tau}\|x^* - t_{k} x_{k}+ (t_{k}-1)x_{k-1}\|^2
+        \end{aligned}
+    \end{equation}
+    Moreover, the fundamental prox-grad inequality with $x=x^*$ and $y=y_1=x_0=x_1$ yields
+    \begin{equation}
+        F(x^*) - F(x_2)\geq \frac{1}{2\tau}\|x^* - x_2\|^2 - \frac{1}{2\tau}\|x^* - x_1\|^2.
+    \end{equation}
+    Thus, we find
+    \begin{equation}
+        \begin{aligned}
+            F(x_{k})-F(x^*)
+            \leq t_k^{-2}\left(\frac{t_2^2}{2\tau}\|x^* - x_1\|^2 + \frac{1}{2\tau}\|t_2 (x^* - x_2) + (t_2-1)(x_{1}-x^*)\|^2\right)
+        \end{aligned}
+    \end{equation}
+    Since $t_k\geq \frac{k+1}{2}$ the result follows.
+\end{proof}

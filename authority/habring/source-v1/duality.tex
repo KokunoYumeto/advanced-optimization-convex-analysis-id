@@ -1,0 +1,597 @@
+\chapter{Duality}\label{chapter:duality}
+In this section $V$ will be a general vector space. We assume, however, that $V^{**} \cong V$. Note that this is trivially true for finite dimensional and for Hilbert spaces, where $V^*\cong V$.
+
+\section{Fenchel duality}
+
+\begin{defn}[Fenchel/convex conjugate]
+    Let $f:V\rightarrow [-\infty,\infty]$. We define the Fenchel or convex conjugate as
+    \begin{equation}
+        \begin{aligned}
+            f^*:V^*&\rightarrow[-\infty,\infty]\\
+            f^*(x^*) &= \sup_{x\in V} \inner{x^*}{x} - f(x).
+        \end{aligned}
+    \end{equation}
+\end{defn}
+
+\begin{example}
+    \begin{enumerate}
+        \item Indicator functions: Let $f=\delta_C$ with $C\subset V$ convex. Then $f^*(x^*) = \sup_{x\in C}\inner{x}{x^*}$ is the so-called support function.
+        \item Norms: Let $f = \|\emptyarg\|$ some norm. Then $f^* = \delta_{\overline{B}_{\|\emptyarg\|_*,1}(0)}$. That is, $f^*$ is the indicator function on the closed 1-ball with respect to the dual norm.
+        \item Conversely, the conjugate of $f = \delta_{\overline{B}_{\|\emptyarg\|_*,1}(0)}$ is $f^* = \|\emptyarg\|_*$.
+    \end{enumerate}
+\end{example}
+
+% \todo{Alex: Calculus as exercise}
+
+\begin{lemma}
+    Let $f$ be proper and convex, then $f^*$ is proper, convex, and lsc.
+\end{lemma}
+\begin{proof}
+    If $f$ is proper, there exists $x_0\in V$ such that $f(x_0)\in \R$ implying that for any $x^*$
+    \begin{equation}
+        f^*(x^*)\geq \inner{x^*}{x_0} - f(x_0)> -\infty.
+    \end{equation}
+    Since $f$ is proper and convex, there exists at least one $\hat x\in V$ such that $\partial f(\hat x) \neq \emptyset$ (\cf~\cite[Corollary 3.19]{beck2017first}). Let $g\in \partial f(\hat x)$. We have by definition of the subgradient
+    \begin{equation}
+        f(\hat x) + \inner{g}{x-\hat x}\leq f(x)
+    \end{equation}
+    and, thus,
+    \begin{equation}
+        \begin{aligned}
+            f^*(\hat x)
+            =& \sup_{x\in V}\inner{g}{x} - f(x)\\
+            \leq& \sup_{x\in V}f(x) - f(\hat x) + \inner{g}{\hat x} - f(x)\\
+            \leq& \sup_{x\in V}- f(\hat x) + \inner{g}{\hat x} <\infty.
+        \end{aligned}
+    \end{equation}
+    Convexity and lower semi-continuity follow directly by the fact that the convex conjugate is a pointwise supremum of linear, and thus convex and lsc, functions\footnote{We have only shown this property for convexity. For lsc it is left as an exercise.}. 
+\end{proof}
+
+\begin{lemma}[Fenchel inequality]
+    Let $f$ be proper. Then
+    \begin{equation}
+        f^*(x^*) + f(x)\geq \inner{x^*}{x}.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+We can \emph{iterate} the process of conjugation and consider the \emph{bijonjugate}. We will denote for simplicity $f^{**} \coloneq (f^*)^*$. Since we assume that $V^{**}=V$, the biconjugate is again defined on the original space $V$.
+
+\begin{lemma}
+    It holds true that $f^{**}(x)\leq f(x)$ for any $x\in V$.
+\end{lemma}
+\begin{proof}
+    Note first that for the conjugate we have for any $x$
+    \begin{equation}
+        f^*(x^*)\geq \inner{x^*}{x}-f(x).
+    \end{equation}
+    It follows
+    \begin{equation}
+        \begin{aligned}
+            f^{**}(x) 
+            =& \sup_{x^*\in V^*}\inner{x^*}{x} - f^*(x^*)\\
+            =& \sup_{x^*\in V^*}\inf_y \inner{x^*}{x-y} + f(y)\\
+            \leq& \sup_{x^*\in V^*} \inner{x^*}{x-x} + f(y)\\
+            =& f(x).
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+\begin{lemma}
+    Let $f$ be proper, convex, and lsc. Then $f^{**} = f$.
+\end{lemma}
+\begin{proof}
+    Since we always have $f^{**}\leq f$ it only remains to show that $f^{**}\geq f$. Assume to the contrary, there exists $x_0\in V$ such that
+    \begin{equation}
+        f^{**}(x_0) < f(x_0).
+    \end{equation}
+    This means that $(x_0, f^{**}(x_0))\not\in \epi(f)$. Since $\epi(f)$ is closed and convex by assumption, we may apply Hahn-Banach to find $(g,\alpha)\in V^*\times \R$ and $c_1,c_2\in \R$ such that
+    \begin{equation}
+        \inner{(g,\alpha)}{(x_0,f^{**}(x_0))}<c_1<c_2<\inner{(g,\alpha)}{(x,t)},\quad (x,t)\in \epi(f).
+    \end{equation}
+    Plugging in $x=x_0$ and $t$ large enough we find that $\alpha\geq 0$. 
+    Now assume $\alpha>0$. Then we may divide by $\alpha$ to obtain
+    \begin{equation}
+        \inner{\frac{g}{\alpha}}{x_0-x} + f^{**}(x_0)-f(x)\leq \frac{c_1-c_2}{\alpha}<0.
+    \end{equation}
+    The above is true for every $x\in \dom(f)$ and also trivially for every $x$ with $f(x)=\infty$. Taking the supremum over $x$ yields
+    \begin{equation}
+        \inner{\frac{g}{\alpha}}{x_0} + f^{**}(x_0)+f^*(-\frac{g}{\alpha})<0
+    \end{equation}
+    which contradicts Fenchel's inequality.
+    In the remaining case, that is, if $\alpha=0$ we have
+    \begin{equation}
+        \inner{g}{x_0-x} < c_1-c_2<0.
+    \end{equation}
+    Now take any $\hat y\in \dom(f^*)$. We obtain for $\hat g = g-\epsilon \hat y$
+    \begin{equation}
+        \begin{aligned}
+            \inner{\hat g}{x_0-x} + \epsilon(f^{**}(x_0)-f(x))
+            \leq& \inner{g}{x_0-x} + \epsilon( \inner{-\hat y}{x_0-x} + f^{**}(x_0)-f(x))\\
+            \leq& c_1-c_2 + \epsilon( \inner{\hat y}{-x_0} + f^{**}(x_0)+f^*(\hat y)).
+        \end{aligned}
+    \end{equation}
+    Note that $\hat y$ and $x_0$ are fixed and we may choose $\epsilon>0$ sufficiently small so that the right-hand side remains strictly negativ. Denote $c \coloneqq c_1-c_2 + \epsilon( \inner{-\hat y}{x_0} + f^{**}(x_0)+f^*(\hat y))<0$. Dividing by $\epsilon$ it follows
+    \begin{equation}
+        \begin{aligned}
+            \inner{\frac{\hat g}{\epsilon}}{x_0-x} + f^{**}(x_0)-f(x)\frac{c}{\epsilon}
+        \end{aligned}
+    \end{equation}
+    and once again taing the supremum over all $x$ yields 
+    \begin{equation}
+        \begin{aligned}
+            \inner{\frac{\hat g}{\epsilon}}{x_0} + f^{**}(x_0)+f^*(-\frac{\hat g}{\epsilon})\frac{c}{\epsilon}<0
+        \end{aligned}
+    \end{equation}
+    contradicting Fenchel's inequality. Thus, in any case the assumption $f^{**}(x_0)<f(x_0)$ leads to a contradiction, implying $f^{**}(x_0)\geq f(x_0)$ and concluding the proof.
+\end{proof}
+
+\begin{rem}
+    When $f$ is not convex and closed, $f^{**}$ is, in fact, a convex and closed relaxation of $f$, referred to as $\Gamma$-regularization. More precisely, denote
+    \begin{equation}
+        \Gamma(V)=\{\ell:V\rightarrow [-\infty,\infty]\;|\; \ell\text{ is proper, closed, and convex}\}
+    \end{equation}
+    then
+    \begin{equation}
+        f^{**}(x) = \sup_{\substack{\ell\in \Gamma(V),\\
+        \ell\leq f}}\ell (x).
+    \end{equation}
+\end{rem}
+
+The conjugate admits an intricate relation with the subgradient as the following lemma shows.
+\begin{lemma}\label{duality:lemma:subdiff_conjugate}
+    Let $f$ be proper, convex, and closed. Then the following statements are equivalent:
+    \begin{enumerate}
+        \item $f(x) + f^*(x^*) = \inner{x^*}{x}$.\label{duality:item1}
+        \item $x^*\in \partial f(x)$\label{duality:item2}
+        \item $x\in \partial f^*(x^*)$\label{duality:item3}
+    \end{enumerate}
+\end{lemma}
+\begin{proof}\
+    \begin{enumerate}
+        \item[\ref{duality:item1}$\rightarrow$\ref{duality:item2}:] \ref{duality:item1} implies that for any $z\in V$
+        \begin{equation}
+            \begin{aligned}
+                -f(x) + \inner{x^*}{x} = f^*(x^*) \geq \inner{x^*}{z} - f(z)
+            \end{aligned}
+        \end{equation}
+        which by definition implies $x^*\in \partial f(x)$.
+        \item[\ref{duality:item2}$\rightarrow$\ref{duality:item1}:]
+        Conversely, \ref{duality:item2} yields for any $z$
+        \begin{equation}
+            \begin{aligned}
+                -f(x) + \inner{x^*}{x} \geq \inner{x^*}{z} - f(z).
+            \end{aligned}
+        \end{equation}
+        By taking the supremum over $z$ we obtain $\inner{x^*}{x} \geq f(x) + f^*(x^*)$ which together with Fenchel's inequality shows the result.
+        \item[\ref{duality:item1}$\leftrightarrow$\ref{duality:item3}:]
+        Since $f$ is proper, convex, and closed, $\ref{duality:item1}$ is equivalent to
+        \begin{equation}
+            f^{**}(x) + f^*(x^*) = \inner{x^*}{x}.
+        \end{equation}
+        The proof follows then by repeating the arguments from above.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Moreau identity]\label{duality:thm:Moreau:id}
+    Let $V$ be an inner product space and $f:V\rightarrow [-\infty,\infty]$ proper, lsc, and convex. Then 
+    \begin{equation}
+        x = \prox_f(x) + \prox_{f^*}(x).
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    First of all, note that both proximal maps are well-defined and single-valued (why?). We denote $p = \prox_f(x)$ for simplicity. By the optimality conditions we have $x-p\in\partial f(p)$ and by~\cref{duality:lemma:subdiff_conjugate}, thus, $p = x - (x-p)\in \partial f^*(x-p)$. The latter implies $\prox_{f^*}(x) = x-p$ concluding the proof.
+\end{proof}
+
+\begin{theorem}[Fenchel-Rockafellar]\label{duality:eq:fenchel_duality}
+    Let $f:X\rightarrow [-\infty,\infty]$, $g:Y\rightarrow[-\infty,\infty]$ both proper, convex and, closed and $K:X\rightarrow Y$ a linear, bounded operator. Moreover, assume that there exists $x_0 \in \dom(f) \cap \dom(g\circ K)$ with $K x_0 \in \dom(g)^\circ$. Assume the (primal) problem 
+    \begin{equation}
+        \min_{x} f(x) + g(Kx).
+    \end{equation}
+    admits a solution $\hat x$. Then also the dual problem
+    \begin{equation}
+        \begin{aligned}
+            \max_{x^*} -f^*(-K^*x^*) - g^*(x^*).
+        \end{aligned}
+    \end{equation}
+    admits a solution $\hat x^*$ and we have strong duality, that is,
+    \begin{equation}
+        \begin{aligned}
+            \min_{x} f(x) + g(Kx)
+            = \max_{x^*} -f^*(-K^*x^*) - g^*(x^*).
+        \end{aligned}
+    \end{equation}
+    Moreover, the primal und dual solutions satisfy
+    \begin{equation}
+        \begin{cases}
+            -K^*\hat x^*&\in \partial f(\hat x),\\
+            \hat x^* &\in \partial g(K\hat x).
+        \end{cases}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    First of all one trivially finds
+    \begin{equation}\label{duality:eq:fenchel_rocka}
+        \begin{aligned}
+            \inf_{x} f(x) + g(Kx)
+            =& \inf_{x} f(x) + g^{**}(Kx)\\
+            =& \inf_{x}\sup_{x^*} f(x) + \inner{Kx}{x^*} - g^*(x^*)\\
+            \geq & \sup_{x^*} \inf_{x} f(x) + \inner{Kx}{x^*} - g^*(x^*)\\
+            = & \sup_{x^*} -\sup_{x} -f(x) + \inner{x}{-K^*x^*} - g^*(x^*)\\
+            = & \sup_{x^*} -f^*(-K^*x^*) - g^*(x^*).
+        \end{aligned}
+    \end{equation}
+    So it remains only to proof the converse inequality.
+    For the minimizer $\hat x$ it holds true that $0 \in \partial f(\hat x) + K^*\partial g(K\hat x)$. In other words, there exists $\hat x^*\in \partial g(K\hat x)$ such that $-K^*\hat x^*\in \partial f (\hat x)$. By~\cref{duality:lemma:subdiff_conjugate} this implies
+    \begin{equation}
+        \begin{aligned}
+            g(K\hat x) + g^*(\hat x^*) =& \inner{\hat x^*}{K\hat x},\\
+            f(\hat x) + f^*(-K^*\hat x^*) 
+            =& -\inner{K^*\hat x^*}{\hat x} = -\inner{\hat x^*}{K\hat x}.
+        \end{aligned}
+    \end{equation}
+    Therefore, 
+    \begin{equation}
+        \begin{aligned}
+            \inf_x f(x) + g(Kx) 
+            =& f(\hat x) + g(K\hat x) \\
+            =& \big(-f^*(-K^*\hat x^*) - \inner{\hat x^*}{K\hat x}\big) + \big(-g^*(\hat x^*) + \inner{\hat x^*}{K\hat x}\big)\\
+            =& -f^*(-K^*\hat x^*) -g^*(\hat x^*)\\
+            \leq& \sup_{x^*} -f^*(-K^*x^*) - g^*(x^*)
+        \end{aligned}
+    \end{equation}
+    which implies equality in~\eqref{duality:eq:fenchel_rocka} as well as that $\hat x^*$ is the solution of the dual problem.
+\end{proof}
+
+\section{Primal-dual optimization}
+
+\Cref{duality:eq:fenchel_duality} opens up the possibility for several methods to find solutions of problems of the form
+\begin{equation}\label{duality:qe:problem}
+    \min_x f(x) + g(Kx).
+\end{equation}
+Indeed, by strong duality we may tackle the primal, the dual, or the saddle point problem
+\begin{equation}\label{duality:qe:saddlepoint}
+    \min_x \max_y \Lc(x,y)\coloneqq f(x) -g^*(y) + \inner{Kx}{y}
+\end{equation}
+The main point of switching between primal/dual formulations is to \emph{transfer} the operator $K$. Indeed, if for instance $g$ is non-differentiable so that we would like to apply proximal steps to $g$, the operator $K$ in~\eqref{duality:qe:problem} will render $\prox_{g\circ K}$ inexplicit in general. Conversely, in the saddle-point formulation~\eqref{duality:qe:saddlepoint} the operator $K$ appears only in the scalar product. Note, moreover, that by~\cref{duality:thm:Moreau:id} the prox of a conjugate function is as easy or difficult to compute as the prox of the original function.
+
+We define the primal-dual gap as
+\begin{equation}
+    \Gc(x,y) = (f(x) + g(Kx)) - (-f^*(y) - g^*(-K^*y)).
+\end{equation}
+
+\begin{lemma}
+    We have $\Gc(x,y)\geq 0$ and $\Gc(\hat x,\hat y) = 0$ if and only if $\hat x$ solves the primal problem and $\hat y$ solves the dual problem. The gap admits the representation
+    \begin{equation}
+        \Gc(x,y) = \sup_{y'}\Lc(x,y') - \inf_{x'}\Lc(x',y).
+    \end{equation}
+    In particular, $(\hat x,\hat y)$ are optimal for the primal and dual problem, respectively, if and only if for any $x,y$
+    \begin{equation}
+        \Lc(\hat x,y)\leq \Lc(\hat x,\hat y)\leq \Lc(x,\hat y).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+Performing alternating optimization in~\eqref{duality:qe:saddlepoint} with proximal steps with respect to $f$ and $g$ and gradient steps with respect to the inner product we obtain the following update rule known as the Arrow-Hurwicz method
+\begin{equation}\label{duality:eq:AH}
+    \begin{cases}
+        x_{k+1} =& \prox_{\tau f}(x_k-\tau K^*y_k)\\
+        y_{k+1} =& \prox_{\sigma g^*}(y_k+\sigma Kx_{k+1}).
+    \end{cases}
+\end{equation}
+It turns out that in this form, the method admits worse properties. In order to derive a better update we rewrite the algorithm in a clever way. Using that $\prox_{\tau f}(x) = (\Id + \tau \partial f)^{-1}(x)$ one can easily verify that~\eqref{duality:eq:AH} amounts to
+\begin{equation}
+    \begin{cases}
+        x_{k+1} +\tau \partial f(x_{k+1}) =& x_k - \tau K^*y_k\\
+        y_{k+1} +\sigma \partial g^*(y_{k+1}) =& y_k + \sigma Kx_{k+1}.
+    \end{cases}
+\end{equation}
+Dividing by $\sigma$ and $\tau$ and using the notation $z = (x,y)$ we may rewrite this as
+\begin{equation}
+    \begin{bmatrix}
+        \frac{1}{\tau}\Id+ \partial f&0\\
+        -K&\frac{1}{\sigma}\Id + \partial g^*
+    \end{bmatrix}
+    z_{k+1} = 
+    \begin{bmatrix}
+        \frac{1}{\tau}\Id& - K^*\\
+        0& \frac{1}{\sigma}\Id
+    \end{bmatrix}
+    z_k
+\end{equation}
+Even without thinking about intricacies of a proof, one may expect that a more \emph{symmetrical} update could be preferred (in particular, due to favourable properties of symmetric matrices). Thus, we instead consider the following scheme which does not affect potential fixed points
+\begin{equation}
+    \begin{bmatrix}
+        \frac{1}{\tau}\Id+ \partial f&0\\
+        -2K&\frac{1}{\sigma}\Id + \partial g^*
+    \end{bmatrix}
+    z_{k+1} = 
+    \begin{bmatrix}
+        \frac{1}{\tau}\Id& -K^*\\
+        -K & \frac{1}{\sigma}\Id
+    \end{bmatrix}
+    z_k
+\end{equation}
+leading to a symmetric matrix on the right-hand side which is positive definite as long as $\sigma\tau \|K\|^2<1$.
+Going back to proximal operators this so-called primal-dual hybrid gradient method, often referred to as the Chambolle-Pock method due to~\cite{chambolle2011first} reads as
+\begin{equation}\label{duality:eq:pdhg}
+    \begin{cases}
+        x_{k+1} =& \prox_{\tau f}(x_k-\tau K^*y_k)\\
+        y_{k+1} =& \prox_{\sigma f}(y_k+\sigma K(2x_{k+1}-x_k)).
+    \end{cases}
+\end{equation}
+
+For the analysis we will rewrite the PDHG in an abstract way as
+\begin{equation}\label{duality:eq:pdhg2}
+    \begin{cases}
+        x^+ =& \arg\min_x \frac{1}{2\tau}|x-x^-|^2 + \inner{x}{K^*\bar y} + f(x)\\
+        y^+ =& \arg\min_x \frac{1}{2\sigma}|y-y^-|^2 - \inner{y}{K\bar x} + g^*(y)
+    \end{cases}
+\end{equation}
+where the plus superscript denotes the updated variables, the minus superscript the old iterates and the bar denotes the value of $x$ used for the $y$ update and the value of $y$ used in the $x$ update, respectively.
+
+\begin{lemma}
+    The update rule~\eqref{duality:eq:pdhg2} satisfies
+    \begin{equation}
+        \begin{aligned}
+            \Lc(x^+,y) - \Lc(x,y^+)\leq& \frac{1}{2\tau}|x-x^-|^2 + \frac{1}{2\sigma}|y-y^-|^2\\
+            &-\frac{1}{2\tau}|x-x^+|^2 - \frac{1}{2\sigma}|y-y^+|^2
+            -\frac{1}{2\tau}|x^+-x^-|^2 - \frac{1}{2\sigma}|y^+-y^-|^2\\
+            &+\inner{x^+-x}{K^*(y-\bar{y})}  - \inner{y^+-y}{K(x-\bar{x})}.
+        \end{aligned}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    By strong convexity the updates $x^+$ and $y^+$ satisfy
+    \begin{equation}
+        \begin{aligned}
+            \frac{1}{2\tau}|x^+-x^-|^2 + \inner{x^+}{K^*\bar y} + f(x^+) + \frac{1}{2\tau}|x-x^+|^2
+            \leq& \frac{1}{2\tau}|x-x^-|^2 + \inner{x}{K^*\bar y} + f(x)\\
+            \frac{1}{2\sigma}|y^+-y^-|^2 - \inner{y^+}{K\bar x} + g^*(y^+) + \frac{1}{2\tau}|y-y^+|^2
+            \leq& \frac{1}{2\sigma}|y-y^-|^2 - \inner{y}{K\bar x} + g^*(y).
+        \end{aligned}
+    \end{equation}
+    Summing the two inequalities and rearranging terms leads to the desired result.
+\end{proof}
+
+\begin{theorem}[Convergence of PDHG]
+    Consider the updates~\eqref{duality:eq:pdhg} and assume the step sizes satisfy $\tau\sigma\leq \|K\|^{-2}$. Define the ergodic means $X_K = \frac{1}{K}\sum_{k=0}^{K-1}x_k$ and $Y_K = \frac{1}{K}\sum_{k=0}^{K-1}y_k$. Then it holds true that 
+    \begin{equation}
+        \Lc(X_{K},y) - \Lc(x,Y_{K})\leq \frac{1}{K}\bigg[\frac{1}{2\tau}|x-x_0|^2 + \frac{1}{2\sigma}|y-y_0|^2 - \inner{y-y_0}{K(x-x_{0})}\bigg].
+    \end{equation}
+\end{theorem}
+\begin{rem}
+    Note that the step sizes do not depend on the functions $f$ and $g$ in any way but only on the operator $K$.
+
+\end{rem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \Lc(x_{k+1},y) - \Lc(x,y_{k+1})
+            \leq& \frac{1}{2\tau}|x-x_k|^2 + \frac{1}{2\sigma}|y-y_k|^2\\
+            &-\frac{1}{2\tau}|x-x_{k+1}|^2 - \frac{1}{2\sigma}|y-y_{k+1}|^2
+            -\frac{1}{2\tau}|x_{k+1}-x_k|^2 - \frac{1}{2\sigma}|y_{k+1}-y_k|^2\\
+            &+\inner{x_{k+1}-x}{K^*(y-y_k)}  - \inner{y_{k+1}-y}{K(x-x_{k+1})} + \inner{y_{k+1}-y}{K(x_{k+1}-x_k)}\\
+            \leq& \bigg[\frac{1}{2\tau}|x-x_k|^2 + \frac{1}{2\sigma}|y-y_k|^2 - \inner{y-y_k}{K(x-x_{k})}\bigg]\\
+            &-\bigg[\frac{1}{2\tau}|x-x_{k+1}|^2 + \frac{1}{2\sigma}|y-y_{k+1}|^2 - \inner{y-y_{k+1}}{K(x-x_{k+1})}\bigg]\\
+            &-\bigg[ \frac{1}{2\tau}|x_{k+1}-x_k|^2 + \frac{1}{2\sigma}|y_{k+1}-y_k|^2 - \inner{x_{k+1}-x_k}{K^*(y_{k+1}-y_{k})}\bigg].
+        \end{aligned}
+    \end{equation}
+    Note that all expressions within the parentheses are non-negative due to $\inner{Kx}{y}\leq \|Kx\|\|y\|\leq\|K\| (\frac{\delta}{2}\|x\|^2 + \frac{1}{2\delta}\|y\|^2)\leq \frac{1}{2\tau}\|x\|^2 + \frac{1}{2\sigma}\|y\|^2$
+    where the last inequality follows with the choice $\delta = \frac{1}{\tau\|K\|}$ using that $\|K\|^2\leq \frac{1}{\tau\sigma}$.
+    Summing over $k$ yields
+    \begin{equation}
+        \sum_{k=0}^{K-1} \Lc(x_{k},y) - \Lc(x,y_{k}) \leq \bigg[\frac{1}{2\tau}|x-x_0|^2 + \frac{1}{2\sigma}|y-y_0|^2 - \inner{y-y_0}{K(x-x_{0})}\bigg].
+    \end{equation}
+    Since $(x,y)\mapsto \Lc(x,y') - \Lc(x',y)$ is convex, we obtain
+    \begin{equation}
+        \Lc(X_{K},y) - \Lc(x,Y_{K})\leq \frac{1}{K}\sum_{k=0}^{K-1} \Lc(x_{k},y) - \Lc(x,y_{k}) \leq \frac{1}{K}\bigg[\frac{1}{2\tau}|x-x_0|^2 + \frac{1}{2\sigma}|y-y_0|^2 - \inner{y-y_0}{K(x-x_{0})}\bigg].
+    \end{equation}
+\end{proof}
+
+
+\section{Alternating direction method of multipliers (ADMM)}
+Consider the constrained optimization problem
+\begin{equation}\label{eq:admm1}
+    \min_{Ax + By = z} f(x) + g(y).
+\end{equation}
+We can reformulate this problem as an unconstrained saddle point problem of the \emph{augmented Lagrangian}, that is, for any $\gamma>0$ we consider
+\begin{equation}\label{eq:admm2}
+    \min_{x,y}\max_{\lambda} L_\gamma (x,y,\lambda) \coloneqq f(x) + g(y) + \inner{\lambda}{Ax + By - z} + \frac{\gamma}{2}\|Ax + By - z\|^2
+\end{equation}
+One can easily show the following:
+\begin{lemma}
+    The problems~\eqref{eq:admm1} and \eqref{eq:admm2} are equivalent.
+\end{lemma}
+\begin{proof}
+    Exercise!
+\end{proof}
+A straightforward way to solve the saddle-point problem is by performing in an alternating fashion an optimization with respect to $x$, and $y$, and then a gradient ascent step for $\lambda$.
+\begin{equation}\label{duality:eq:admm_algo}
+    \begin{cases}
+        x_{k+1} = \arg\min_{x} f(x) + \inner{\lambda_k}{Ax} + \frac{\gamma}{2}\|Ax + By_k - z\|^2\\
+        y_{k+1} = \arg\min_{x} g(y) + \inner{\lambda_k}{By} + \frac{\gamma}{2}\|Ax_{k+1} + By - z\|^2\\
+        \lambda_{k+1} = \lambda_k + \gamma (Ax_{k+1} + By_{k+1} - z).
+    \end{cases}
+\end{equation}
+Note that we used $\gamma$ as the step size for the gradient ascent. An intuitive motivation for this choice is the fact that by by definition of the update we have
+\begin{equation}\label{duality:eq:admm3}
+    \begin{aligned}
+        0 = \nabla g(y_{k+1}) + B^* \lambda_k + \gamma B^*(Ax_{k+1} + By_{k+1}-z).
+    \end{aligned}
+\end{equation}
+Multiplying the $\lambda$-update by $B^*$ and inserting~\eqref{duality:eq:admm3} we find
+\begin{equation}
+    B^*\lambda_{k+1} = -\nabla g(y_{k+1}).
+\end{equation}
+This, however, impliey that $\nabla_y L_0(x_{k+1}, y_{k+1},\lambda_{k+1})=0$. If we would perform the $x$ and $y$ optimization in~\eqref{duality:eq:admm_algo} jointly, we would obtain the same with respect to $x$ implying that every iterate of the dual variable $\lambda$ is a critical point.
+
+We can show the following very basic convergence result for ADMM.
+\begin{theorem}
+    Let $f,g:\R^d\rightarrow [-\infty,\infty]$ be proper, closed, and convex. Assume that there exists a saddle point of $L_0(x,y,\lambda)$. Then it holds true that 
+    \begin{equation}
+        f(x_k)+g(y_k) \rightarrow \min_{Ax + By = z} f(x) + g(y).
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    The proof uses an important technique, namely that of \emph{Lyapunv functionals}: We define a functional $V(y,\lambda)$ which is non-negative (lower-bounded) and decreasing along the iteration. Essentially, the Lyapunov functional serves as a substitute for the objective when proving a descent of the objective itself is not possible. In this specific case, we will use the Lyapunov functional 
+    \begin{equation}
+        V(y,\lambda) = \gamma \|B(y-y^*)\|^2 + \gamma^{-1} \|\lambda-\lambda^*\|^2
+    \end{equation}
+    where $(x^*,y^*,\lambda^*)$ is a saddle point for $L$. The descent of the Lyapunov functional will yield convergence using typical telescope sum arguments. Showing this descent, however, requires some technical estimates. For simplicity we denote the residuals as $r_k \coloneqq Ax_k + By_k- z$ and the objective value as $p_k \coloneqq f(x_k) + g(y_k)$ and similarly $r^*$ and $p^*$ for the saddle point. The proof is split into three steps.
+    \paragraph{Step 1} 
+    Since $(x^*,y^*,\lambda^*)$ is a saddle-point for $L_0$ it holds for any $k$, $L_0(x^*,y^*,\lambda^*)\leq L_0(x_{k+1},y_{k+1},\lambda^*)$. This is equivalent to
+    \begin{equation}\label{duality:eq:proof_admm1}
+        p^*-p_{k+1}\leq \inner{\lambda^*}{r_{k+1}}.
+    \end{equation}
+    \paragraph{Step 2}
+    On the other hand-side, we find by optimality of $x_{k+1}$, $y_{k+1}$ in~\eqref{duality:eq:admm_algo}
+    \begin{equation}\label{duality:eq:proof_admm2}
+        \begin{aligned}
+            0 &\in \partial f(x_{k+1}) + A^*\lambda_k + \gamma A^*(r_{k+1} + B(y_k-y_{k+1}))\\
+            0 &\in \partial g(y_{k+1}) + B^*\lambda_k + \gamma B^*r_{k+1}.
+        \end{aligned}
+    \end{equation}
+    Note, moreover, that the $\lambda$ update reads as $\lambda_{k+1} = \lambda_k + \gamma r_{k+1}$ so that
+    \begin{equation}
+        \begin{aligned}
+            A^* \lambda_{k+1} &= A^*\lambda_k + \gamma A^*r_{k+1}\\
+            B^* \lambda_{k+1} &= B^*\lambda_k + \gamma B^*r_{k+1}
+        \end{aligned}
+    \end{equation}
+    which, inserted into~\eqref{duality:eq:proof_admm2} yields
+    \begin{equation}
+        \begin{aligned}
+            0 &\in \partial f(x_{k+1}) + A^*(\lambda_{k+1} + \gamma B(y_k-y_{k+1}))\\
+            0 &\in \partial g(y_{k+1}) + B^*\lambda_{k+1}.
+        \end{aligned}
+    \end{equation}
+    This implies that $x_{k+1}$ minimizes
+    \begin{equation}
+        x\mapsto f(x) + \inner{A x}{\lambda_{k+1} + \gamma B(y_k-y_{k+1})}
+    \end{equation}
+    and $y_{k+1}$ minimizes
+    \begin{equation}
+        y\mapsto g(y) + \inner{By}{\lambda_{k+1}}.
+    \end{equation}
+    Consequently, we have by optimality
+    \begin{equation}
+        \begin{aligned}
+            f(x_{k+1}) + &\inner{A x_{k+1}}{\lambda_{k+1} + \gamma B(y_k-y_{k+1})} + g(y_{k+1}) + \inner{By_{k+1}}{\lambda_{k+1}}\\
+            &\leq
+            f(x^*) + \inner{Ax^*}{\lambda_{k+1} + \gamma B(y_k-y_{k+1})} + g(y^*) + \inner{By^*}{\lambda_{k+1}}
+        \end{aligned}
+    \end{equation}
+    Since the saddle point necessarily satisfies $Ax^* + By^* = z$ by also rearranging a little bit, this implies
+    \begin{equation}
+        \begin{aligned}
+            p_{k+1} - p^*
+            \leq \gamma \inner{A (x^*-x_{k+1})}{B(y_k-y_{k+1})} - \inner{r_{k+1}}{\lambda_{k+1}}
+        \end{aligned}
+    \end{equation}
+    Lastly, we may insert $A(x^* - x_{k+1}) = z - By^* - (r_{k+1} - z - By_{k+1}) = -r_{k+1} + By_{k+1}$ to obtain
+    \begin{equation}\label{duality:eq:proof_admm3}
+        \begin{aligned}
+            p_{k+1} - p^*
+            \leq -\gamma \inner{-r_{k+1} + B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} - \inner{r_{k+1}}{\lambda_{k+1}}.
+        \end{aligned}
+    \end{equation}
+    \paragraph{Step 3}
+    Summing~\eqref{duality:eq:proof_admm1} and~\eqref{duality:eq:proof_admm3} and multiplying by $2$ yields
+    \begin{equation}\label{duality:eq:proof_admm4}
+        -2\gamma \inner{r_{k+1}}{B(y_{k+1}-y_k)} + 2\gamma\inner{B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} + 2\inner{r_{k+1}}{\lambda_{k+1}-\lambda^*}\leq 0.
+    \end{equation}
+    We will manipulate this inequality. We can rewrite the third term using that $\lambda_{k+1} = \lambda_k + \gamma r_{k+1}$ leading to 
+    \begin{equation}
+        2\inner{r_{k+1}}{\lambda_{k+1}-\lambda^*}
+        = \gamma\|r_{k+1}\|^2 + \gamma\|r_{k+1}\|^2 + 2\inner{r_{k+1}}{\lambda_k -\lambda^*}.
+    \end{equation}
+    Substituting $r_{k+1} = (\lambda_{k+1}-\lambda_k)/\gamma$ in the last two terms yields
+    \begin{equation}
+        \gamma\|r_{k+1}\|^2 + \gamma^{-1}\|\lambda_{k+1}-\lambda_k\|^2 + 2\gamma^{-1}\inner{\lambda_{k+1}-\lambda_k}{\lambda_k -\lambda^*}.
+    \end{equation}
+    By replacing above $\lambda_{k+1}-\lambda_k = \lambda_{k+1}-\lambda^* + \lambda^* - \lambda_k$ this is equivalent to
+    \begin{equation}
+        \gamma\|r_{k+1}\|^2 + \gamma^{-1}\big(\|\lambda_{k+1}-\lambda^*\|^2 - \|\lambda_{k}-\lambda^*\|^2\big).
+    \end{equation}
+    Thus,~\eqref{duality:eq:proof_admm4} is equivalent to 
+    \begin{equation}\label{duality:eq:proof_admm5}
+        \begin{aligned}
+            0\geq&-2\gamma \inner{r_{k+1}}{B(y_{k+1}-y_k)} + 2\gamma\inner{B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} + \gamma\|r_{k+1}\|^2 \\
+            &+ \gamma^{-1}\big(\|\lambda_{k+1}-\lambda^*\|^2 - \|\lambda_{k}-\lambda^*\|^2\big).
+        \end{aligned}
+    \end{equation}
+    We will now reqrite the first three terms 
+    \begin{equation}\label{duality:eq:proof_admm6}
+        -2\gamma \inner{r_{k+1}}{B(y_{k+1}-y_k)} + 2\gamma\inner{B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} + \gamma\|r_{k+1}\|^2
+    \end{equation}
+    Noting that 
+    \begin{equation}
+        -2\inner{r_{k+1}}{B(y_{k+1}-y_k)} + \|r_{k+1}\|^2 
+        = \|r_{k+1} - B(y_{k+1}-y_k)\|^2 - \|B(y_{k+1}-y_k)\|^2
+    \end{equation}
+    we find that~\eqref{duality:eq:proof_admm5} is equivalent to 
+    \begin{equation}
+        \gamma \|r_{k+1} - B(y_{k+1}-y_k)\|^2 - \gamma\|B(y_{k+1}-y_k)\|^2 + 2\gamma\inner{B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)}
+    \end{equation}
+    which is equivalent to
+    \begin{equation}
+        \gamma \|r_{k+1} - B(y_{k+1}-y_k)\|^2 + \gamma\big( \|B(y_{k+1}-y^*)\|^2 - \|B(y_{k}-y^*)\|^2\big).
+    \end{equation}
+    In total,~\eqref{duality:eq:proof_admm5} then yields
+    \begin{equation}
+        0\geq \gamma \|r_{k+1} - B(y_{k+1}-y_k)\|^2 + \gamma\big( \|B(y_{k+1}-y^*)\|^2 - \|B(y_{k}-y^*)\|^2\big) + \gamma^{-1}\big(\|\lambda_{k+1}-\lambda^*\|^2 - \|\lambda_{k}-\lambda^*\|^2\big)
+    \end{equation}
+    Lastly, we note that
+    \begin{equation}
+        \|r_{k+1} - B(y_{k+1}-y_k)\|^2
+        =\|r_{k+1}\|^2 + \|B(y_{k+1}-y_k)\|^2 + 2\inner{r_{k+1}}{B(y_{k+1}-y_k)}
+    \end{equation}
+    We want to show that the term
+    \begin{equation}
+        \inner{r_{k+1}}{B(y_{k+1}-y_k)} = \inner{r_{k+1}}{B(y_{k+1}-y_k)}
+    \end{equation}
+    is non-negative. Recall that $y_k$ minimizes $g(y) + \inner{By}{\lambda_k}$. Thus, we have
+    \begin{equation}
+        \begin{aligned}
+            g(y_k) + \inner{By_k}{\lambda_k}
+            &\leq g(y_{k+1}) + \inner{By_{k+1}}{\lambda_k}\\
+            g(y_{k+1}) + \inner{By_{k+1}}{\lambda_{k+1}}
+            &\leq g(y_k) + \inner{By_k}{\lambda_{k+1}}
+        \end{aligned}
+    \end{equation}
+    and summing both inequalities yields
+    \begin{equation}
+        \begin{aligned}
+            \inner{B(y_{k+1}-y_k)}{\lambda_{k+1}-\lambda_k}
+            \leq 0 
+        \end{aligned}
+    \end{equation}
+    and inserting $\lambda_{k+1}-\lambda_k = \gamma r_{k+1}$ yields the desired sign. Thus, we have
+    \begin{equation}
+        V(y_{k+1},\lambda_{k+1}) + \|r_{k+1}\|^2 + \|B(y_{k+1}-y_k)\|^2 \leq V(y_{k},\lambda_{k}).
+    \end{equation}
+    Summing over $k$ yields
+    \begin{equation}
+        \sum_{k=0}^{K-1}\|r_{k+1}\|^2 + \|B(y_{k+1}-y_k)\|^2 \leq V(y_{0},\lambda_{0}).
+    \end{equation}
+    By the descent of the Lyapunov functional we immediately obtain that $\lambda_k$ and $By_k$ are bounded sequences.
+    Moreover, it follows
+    \begin{equation}\label{duality:eq:proof_admm6}
+        \begin{cases}
+            r_k&\rightarrow 0\\
+            B(y_{k+1}-y_k)&\rightarrow 0.
+        \end{cases}
+    \end{equation}
+    By~\eqref{duality:eq:proof_admm1} and~\eqref{duality:eq:proof_admm3} we have
+    \begin{equation}
+        \begin{aligned}
+            -\inner{\lambda^*}{r_{k+1}}\leq p_{k+1}-p^*\leq \inner{-r_{k+1} + B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} - \inner{r_{k+1}}{\lambda_{k+1}}.
+        \end{aligned}
+    \end{equation}
+    Then~\eqref{duality:eq:proof_admm6} and boundedness of $By_k$ imply that also $p_{k}\rightarrow p^*$.
+\end{proof}

@@ -1,0 +1,336 @@
+\chapter{Proximal Gradient Methods}
+
+We have seen in the proofs (and practical exercises) that the subgradient method does not provide ideal convergence. The convergence of function values is of order $\Oc(1/\sqrt{k})$ and we require diminishing step sizes for convergence. In this chapter, we will introduce an alternative to (explicit) subgradients for optimization.
+
+Consider the unconstrained problem
+\begin{equation}\label{proximal:eq:problem}
+    \min_x f(x)
+\end{equation}
+where $f$ is allowed to take on the value $+\infty$. Recall the subgradient method's update $x_{k+1} = x_k - \tau_k g_k$, $g_k\in\partial f(x_k)$, or, equivalently, $x_{k+1}\in x_k -\tau_k\partial f(x_k)$. In the following we instead propose
+\begin{equation}\label{proximal:eq:intro}
+    x_{k+1}\in x_k - \tau_k\partial f(x_{k+1}).
+\end{equation}
+At this point it is not clear that such a method is even well-defined. However, in case it is, we may expect on a high level that it is beneficial in terms of stability to \emph{look into the future} when choosing the update direction. This is also in line with the stability of implicit methods for discretizing differential equations (\cf~\emph{implicit Euler}).
+
+Taking a closer look at~\eqref{proximal:eq:intro} we find that it can be written as
+\begin{equation}
+    0 \in \partial \biggl(\frac{1}{2}\|\cdot - x_k\|^2 + \tau_k f\biggr)(x_{k+1})
+\end{equation}
+which amounts to the optimality condition of
+\begin{equation}
+    \min_x \frac{1}{2}\|x - x_k\|^2 + \tau_k f(x)
+\end{equation}
+and leads to the following
+\begin{defn}[Proximal operator]
+    We define the proximal operator/mapping of $f:\R^d\rightarrow (-\infty,\infty]$ as the map
+    \begin{equation}
+        \begin{aligned}
+            \prox_{f}:\R^d&\rightarrow 2^{\R^d}\\
+            x&\mapsto \arg\min_{y\in\R^d}\frac{1}{2}\|y - x\|^2 + f(y).
+        \end{aligned}
+    \end{equation}
+\end{defn}
+
+We will usually refer to $\prox_f$ as \enquote{the prox}. Note that the prox as a set-valued mapping is always well-defined. However, it will only be interesting when $\prox_f\neq\emptyset$. We can prove the following.
+
+\begin{lemma}
+    Let $f:\R^d\rightarrow (-\infty,\infty]$ be proper, convex, and lower semi-continuous, then the proximal mapping is single-valued and we have $y = \prox_f(x)$ iff $0\in (y-x) + \partial f(y)$.
+\end{lemma}
+\begin{rem}
+    Due to the characterization $0\in (y-x) + \partial f(y)$ we often write the prox as $\prox_f(x) = (\Id + \partial f)^{-1}(x)$.
+\end{rem}
+\begin{proof}
+    We assume for simplicity that $\dom(f)^\circ\neq \emptyset$ and refer to~\cite{beck2017first} for the general case. 
+    
+    Let $g\in \partial f(y_0)$ for some $y_0\in \dom(f)^\circ$. We have that 
+    \begin{equation}
+        f(y_0) + \inner{g}{y-y_0} + \frac{1}{2}\|x-y\|^2\leq f(y) + \frac{1}{2}\|x-y\|^2.
+    \end{equation}
+    Therefore, (why?) $y\mapsto f(y) + \frac{1}{2}\|x-y\|^2$ is coercive. Moreover, this map inherits lower semi-continuity and properness from $f$. By the direct method~\cref{preliminaries:thm:direct_method} there exists a solution to 
+    \begin{equation}\label{proximal:eq:prox_proof}
+        \min_{y\in\R^d}\frac{1}{2}\|y - x\|^2 + f(y).
+    \end{equation}
+    Uniqueness follows by the usual strategy, for if, $y_1,y_2$ where two distinct solutions, then by strict convexity of $y\mapsto \frac{1}{2}\|y - x\|^2$ and convexity of $f$ we would obtain for $\bar{y} = \frac{y_1+y_2}{2}$
+    \begin{equation}
+        \begin{aligned}
+            \frac{1}{2}\|\bar y - x\|^2 + f(\bar y)
+            <& \frac{1}{2}\bigg(\frac{1}{2}\| y_1 - x\|^2 + f(y_1) + \frac{1}{2}\|y_1 - x\|^2 + f(y_1)\bigg)\\
+            =&\arg\min_{y\in\R^d}\frac{1}{2}\|y - x\|^2 + f(y)
+        \end{aligned}
+    \end{equation}
+    which is a contradiction. The last assertion is simply the optimality condition of~\eqref{proximal:eq:prox_proof}.
+\end{proof}
+
+Equipped with well-definedness of the prox we can now define the proximal-gradient method. More specifically, we consider problems of the form 
+\begin{equation}\label{proximal:eq:composite}
+    \min_{x\in \R^d} F(x)\coloneqq f(x) + g(x)
+\end{equation}
+where $f$ is convex and $L$-smooth, that is, differentiable with $L$-Lipschitz continuous gradient and $g$ is proper, convex, and lower semi-continuous. Such problems arise frequently in practice and can be reduced to the originally considered problems by setting $f\equiv 0$. We define the proximal gradient method as for $k=0,1,\dots$
+\begin{equation}\label{proximal:eq:prox_grad}
+    \begin{aligned}
+        x_{k+1} = \prox_{\tau_k g}(x_k - \tau_k \nabla f(x_k)).
+    \end{aligned}
+\end{equation}
+That is, we perform gradient/explicit steps with respect to $f$ and proximal/implicit steps with respect to $g$.
+
+As a first simple result we show that the proximal-gradient method is reasonable in the sense that stationary points are indeed optimal. 
+\begin{lemma}
+    Assume $x\in\R^d$ is a stationary point of the proximal-gradient method, \ie, 
+    \begin{equation}
+        x = \prox_{\tau_k g}(x - \tau_k \nabla f(x)).
+    \end{equation}
+    Then $x$ solves~\eqref{proximal:eq:composite}.
+\end{lemma}
+\begin{proof}
+    Let $x$ be a stationary point as above. Inserting the optimlity conditions for the prox yields
+    \begin{equation}
+        x \in x - \tau_k \nabla f(x) - \tau_k \partial g(x).
+    \end{equation}
+    By the sum and the scaling rule for the subdifferential we have
+    \begin{equation}
+        0 \in \tau_k \partial (f + g)(x),
+    \end{equation}
+    \ie, $0 \in \partial (f+g)(x)$ which implies optimality of $x$.
+\end{proof}
+
+In addition to the prox we also define the Moreau envelope as the objective value realized by the prox.
+\begin{defn}[Moreau envelope]
+    Let $f:\R^d\rightarrow (-\infty,\infty]$. We define the Moreau envelope $M_f^\tau:\R^d\rightarrow [-\infty,\infty]$ as 
+    \begin{equation}
+        M_f^\tau(x) \coloneq \min_{y\in \R^d}\frac{1}{2\tau} \|x-y\|^2 + f(y).
+    \end{equation}
+\end{defn}
+
+\begin{lemma}
+    Let $f:\R^d\rightarrow (-\infty,\infty]$ be proper, convex, and lower semi-continuous. Then the Moreau envelope is always a real (\ie, finite) number and we have
+    \begin{equation}
+        M_f^\tau(x) = \frac{1}{2\tau} \|x-\prox_{\tau f}(x)\| + f(\prox_{\tau f}(x)).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+\begin{example}
+    We consider a few frequently occurring examples of proximal maps/Moreau envelopes:
+    \begin{enumerate}
+        \item Let $C\subset\R^d$ be closed and convex and consider the indicator function $\delta_C$. Then 
+        \begin{equation}
+            \prox_{\tau \delta_C}(x) = \proj_C(x),\quad M^{\tau}_{\delta_C}(x) = \frac{1}{2\tau}\mathrm{dist}(x,C)^2.
+        \end{equation}
+        \item In particular, if $C=\{x\in\R^d\,|\, \|x\|_\infty\leq 1\}$ then
+        \begin{equation}
+            (\prox_{\tau \delta_C}(x))_i = \frac{x_i}{\max\{1,|x_i|\}}
+        \end{equation}
+        \item Let $f(x) = \|x\|_1$ then the proximal map is the so-called \emph{soft-thresholding} operator
+        \begin{equation}
+            (\prox_{\tau f}(x))_i = 
+            \begin{cases}
+                x_i-\tau\quad &x_i>\tau\\
+                x_i+\tau\quad &x_t<-\tau\\
+                0\quad &x_i\in[-\tau,\tau]
+            \end{cases}
+        \end{equation}
+        For $d=1$, moreover, the Moreau envelope is exactly the Huber functional
+        \begin{equation}
+            M^\tau_{|\cdot|}(x) = 
+            \begin{cases}
+                \frac{|x|^2}{2\tau}\quad &|x|\leq \tau\\
+                |x|-\frac{\tau}{2} \quad &\text{else.}
+            \end{cases}
+        \end{equation}
+    \end{enumerate}
+\end{example}
+
+\begin{lemma}[Computation rules for the prox and the Moreau envelope]
+    The following rules apply
+    \begin{enumerate}
+        \item $f(x) = \sum_i f_i(x_i)$ with $x = (x_1,x_2,\dots,x_k)\R^d$, $x_i\in\R^{d_i}$, $\sum_i d_i = d$, then $\prox_{f}(x) = ((\prox_{f_i}(x_i))_i)$.
+        \item $f(x)=\alpha g(x) + b$ with $\alpha>0$, $b\in \R$, then $\prox_f = \prox_{\alpha g}$.
+        \item $f(x)=g(\alpha x+ b)$ with $\alpha\neq 0$, $b\in\R^d$, then $\prox_f(x) = \frac{1}{\alpha}(\prox_{\alpha^2 g}(\alpha x + b)-b)$
+        \item $f(x) = g(Qx)$ with $Q\in\R^{d\times d}$ orthonormal, then $\prox_f(x) = Q^T\prox_{g}(Qx)$
+        \item $f(x) = g(x) + \inner{a}{x} + b$ with $a\in\R^d$, $b\in R$, then $\prox_{f}(x) = \prox_g (x-a)$
+        \item $f(x) = g(x) + \frac{\gamma}{2}\|x-a\|^2$ with $a\in\R^d$, then $\prox_f(x) = \prox_{\tilde{\gamma}g}(\tilde{\gamma}x + \gamma\tilde{\gamma}a)$ with $\tilde{\gamma} = \frac{1}{1+\gamma}$.
+    \end{enumerate}
+\end{lemma}
+
+The Moreau envelope has a smoothing effect on the function $f$ as will be shown in the following result.
+\begin{lemma}
+    Let $f:\R^d\rightarrow (-\infty,\infty]$ be proper, convex, and lower semi-continuous. Then the Moreau envelope is convex and differentiable. Moreover, its gradient is $\nabla M^\tau_f$ is $\frac{1}{\tau}$-Lipschitz and can be expressed as
+    \begin{equation}
+        \nabla M^\tau_f(x) = \frac{1}{\tau} (x-\prox_{\tau f}(x)).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Convexity of the Moreau envelope follows as in~\cref{convexity:thm:minimum}. Regarding the gradient of the Moreau envelope, fix $\tau$ and denote for simplicity in the following $p(x) = \prox_{\tau f}(x)$. We have by definition of the prox
+    \begin{equation}
+        \begin{aligned}
+            M^\tau_f(x+h) = \frac{1}{2\tau}\|x+h-p(x+h)\|^2 + f(p(x+h))
+            \leq \frac{1}{2\tau}\|x+h-p(x)\|^2 + f(p(x))\\
+            M^\tau_f(x) = \frac{1}{2\tau}\|x-p(x)\|^2 + f(p(x)).
+        \end{aligned}
+    \end{equation}
+    Subtracting the two yields
+    \begin{equation}
+        \begin{aligned}
+            M^\tau_f(x+h) - M^\tau_f(x)
+            \leq& \frac{1}{2\tau}(\|x+h-p(x)\|^2 - \|x-p(x)\|^2)\\
+            =& \frac{1}{2\tau}(\|x+h\|^2 - \|x\|^2 -2\inner{h}{p(y)})\\
+            =& \inner{h}{\frac{1}{\tau}(x-p(x))} + \frac{1}{2\tau}\|h\|^2
+        \end{aligned}
+    \end{equation}
+    or, equivalently
+    \begin{equation}
+        \begin{aligned}
+            M^\tau_f(x+h) - M^\tau_f(x) - \inner{h}{\frac{1}{\tau}(x-p(x))}
+            \leq & \frac{1}{2\tau}\|h\|^2
+        \end{aligned}
+    \end{equation}
+    If we can bound
+    \begin{equation}\label{proximal:eq:moreau_diff}
+        \phi(h)\coloneqq M^\tau_f(x) - M^\tau_f(y) - \inner{x-y}{\frac{1}{\tau}(y-p(y))}
+    \end{equation}
+    similarly from below, we can conclude. Note that $\phi$ is convex and $\phi(0) = 0$, thus, $0 = \phi(0) = \phi(\frac{1}{2}h + \frac{1}{2}(-h))\leq \frac{1}{2}(\phi(h) + \phi(-h))$, \ie,
+    \begin{equation}
+        \phi(h)\geq -\phi(-h) \geq -\frac{1}{2\tau}\|h\|^2.
+    \end{equation}
+    In total we find
+    \begin{equation}
+        \begin{aligned}
+            \left|M^\tau_f(x+h) - M^\tau_f(x) - \inner{h}{\frac{1}{\tau}(x-p(x))}\right|
+            \leq & \frac{1}{2\tau}\|h\|^2
+        \end{aligned}
+    \end{equation}
+    implying $\nabla M^\tau_f(x) = \frac{1}{\tau}(x-p(x))$. To prove Lipschitz continuity of the gradient, we note that
+    \begin{equation}\label{proximal:eq:moreau_diff2}
+        \begin{aligned}
+            \|\nabla M^\tau_f(x) - \nabla M^\tau_f(y)\|^2
+            =& \inner{\nabla M^\tau_f(x) - \nabla M^\tau_f(y)}{\frac{1}{\tau}(x-p(x)) - \frac{1}{\tau}(y-p(y))}\\
+            =& \frac{1}{\tau}\inner{\nabla M^\tau_f(x) - \nabla M^\tau_f(y)}{x - y}
+            - \frac{1}{\tau} \inner{\nabla M^\tau_f(x) - \nabla M^\tau_f(y)}{p(x)-p(y)}.
+        \end{aligned}
+    \end{equation}
+    Note that $\nabla M^\tau_f(x) = \frac{1}{\tau}(x-p(x))\in \partial f(x)$ by the optimality conditions for the prox so that the second inner product in~\eqref{proximal:eq:moreau_diff2} is non-negative by monotonicity of the subgradient leading to 
+    \begin{equation}\label{proximal:eq:moreau_diff2}
+        \begin{aligned}
+            \|\nabla M^\tau_f(x) - \nabla M^\tau_f(y)\|^2
+            \leq & \frac{1}{\tau}\inner{\nabla M^\tau_f(x) - \nabla M^\tau_f(y)}{x - y}
+            \leq\frac{1}{\tau}\|\nabla M^\tau_f(x) - \nabla M^\tau_f(y)\|\|x-y\|
+        \end{aligned}
+    \end{equation}
+    concluding the proof.
+\end{proof}
+
+\begin{rem}
+    With the above representation of the gradient of the Moreau envelope we can rewrite the prox as 
+    \begin{equation}
+        \prox_{\tau f}(x) 
+        = x-\tau \bigg(\frac{1}{\tau}(x-\prox_{\tau f}(x))\bigg)
+        = x-\tau \nabla M^\tau_f(x).
+    \end{equation}
+    That is, a proximal step is equivalent to a gradient step on the Moreau envelope!
+\end{rem}
+
+\begin{example}
+    Projection, 1 norm, 2 norm
+\end{example}
+
+We will now proof convergence of the proximal gradient method. First we derive an essential lemma which states that for an $L$-smooth function we can bound the error between the function and its linear approximation by a square from above.
+
+\begin{lemma}\label{proximal_gradient:lemma:Lsmoothness}
+    Let $F:\R^d\rightarrow \R$ be continuously differentiable with $L$-Lipschitz gradient. Then it holds true that 
+    \begin{equation}
+        F(y)\leq F(x) + \inner{\nabla F(x)}{y-x} + \frac{L}{2}\|y-x\|^2.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    By the fundamental theorem of calculus and $L$-smoothness we have
+    \begin{equation}
+        \begin{aligned}
+            F(y)-F(x) 
+            =& \int_0^1 \frac{\dd}{\dd t}F(x+t(y-x))\dd t\\
+            =& \int_0^1\inner{\nabla F(x+t(y-x))}{y-x}\dd t\\
+            =& \int_0^1\inner{\nabla F(x+t(y-x)) - \nabla F(x)}{y-x}\dd t + \int_0^1\inner{\nabla F(x)}{y-x}\dd t\\
+            \leq & \int_0^1L t \|y-x\|^2\dd t + \inner{\nabla F(x)}{y-x}\\
+            = & \frac{L}{2} \|y-x\|^2 + \inner{\nabla F(x)}{y-x}
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+For the proof of convergence of the proximal-gradient method we introduce the following notation
+\begin{equation}
+    T_\tau(x) = \frac{1}{\tau}(x-\prox_{\tau g}(x-\tau \nabla f(x))).
+\end{equation}
+With this function we may write the update of the proximal-gradient method as 
+\begin{equation}
+    x_{k+1} = x_k - \tau_k T_{\tau_k}(x_k)
+\end{equation}
+
+\begin{theorem}
+    Let $f:\R^d\rightarrow\R$ be convex and $L$-smooth and $g:\R^d\rightarrow(-\infty,\infty]$ proper, closed, and convex. Moreover, assume $\tau_k\leq L^{-1}$ for all $k$. Then, with $x^*\in\arg\min_x F(x)$, the proximal gradient algorithm satisfies
+    \begin{equation}
+        F(x_{n})-F(x^*)\leq \frac{\|x_{0}-x^*\|^2}{2\tau_{\min} n}.
+    \end{equation}
+    Moreover, there exists $x^*\in\arg\min_x F(x)$ such that $x_k\rightarrow x^*$.
+\end{theorem}
+\begin{proof}
+    We first note that by definition of $T_\tau$ we have
+    \begin{equation}
+        T_{\tau_k}(x_k)-\nabla f(x_k)\in \partial g(x_k-\tau_k T_{\tau_k}(x_k)) = \partial g(x_{k+1}).
+    \end{equation}
+    Using this, the fact that $\nabla f(x)\in \partial f(x)$,~\cref{proximal_gradient:lemma:Lsmoothness}, and $\tau_k\leq L$, we find for any $z\in\R^d$
+    \begin{equation}
+        \begin{aligned}
+            F(x_{k+1})
+            \leq& f(x_k) -\tau_k\inner{\nabla f(x_k)}{T_{\tau_k}(x_k)} + \frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2\\
+            &+g(z) - \inner{T_{\tau_k}(x_k)-\nabla f(x_k)}{z - (x_k-\tau_k T_{\tau_k}(x_k))}\\
+            \leq& f(z) + g(z)\\
+            &- \inner{\nabla f(x_k)}{z-x_k}-\tau_k\inner{\nabla f(x_k)}{T_{\tau_k}(x_k)} + \frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2\\
+            &- \inner{T_{\tau_k}(x_k)-\nabla f(x_k)}{z - (x_k-\tau_k T_{\tau_k}(x_k))}\\
+            \leq& F(z) - \inner{T_{\tau_k}(x_k)}{z - x_k} -\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2.
+        \end{aligned}
+    \end{equation}
+    Inserting $z=x_k$ yields
+    \begin{equation}
+        F(x_{k+1})\leq F(x_k) - \frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2
+    \end{equation}
+    which implies that the proximal-gradient method is a descent method with strict decrease except for the case $T_{\tau_k}(x_k)=0$ which, however, implies that $x_k$ is optimal. On the other hand, inserting an optimal point $z=x^*$ and noting that $T_{\tau_k} = \tau_k^{-1}(x_k-x_{k+1})$, it follows
+    \begin{equation}
+        \begin{aligned}
+            0\leq F(x_{k+1})-F(x^*)
+            \leq& - \tau_k^{-1} \inner{x_k-x_{k+1}}{x^* - x_k} -\frac{\tau_k^{-1}}{2}\|x_k-x_{k+1}\|^2\\
+            \leq& -\frac{\tau_k^{-1}}{2} \left( \|x_k-x_{k+1}\|^2 - \inner{x_k-x_{k+1}}{x_k-x^*}\right)\\
+            \leq& -\frac{\tau_k^{-1}}{2} \left( \|x_{k+1} - x^*\|^2 - \|x_k-x^*\|^2\right)\\
+            \leq& \frac{\tau_k^{-1}}{2} \left( \|x_k-x^*\|^2 - \|x_{k+1} - x^*\|^2\right).
+        \end{aligned}
+    \end{equation}
+    In particular, note that $ \|x_k-x^*\|^2 - \|x_{k+1} - x^*\|^2\geq0$ and, thus, $(\|x_{k+1} - x^*\|^2)_k$ is decreasing as well.
+    As usual, summing over $k$ yields
+    \begin{equation}
+        \begin{aligned}
+            \sum_{k=1}^n F(x_{k})-F(x^*)
+            \leq& \sum_{k=1}^n\frac{\tau_k^{-1}}{2} \left( \|x_{k-1}-x^*\|^2 - \|x_{k} - x^*\|^2\right)\\
+            \leq& \frac{\tau_{\min}^{-1}}{2}\sum_{k=1}^n \left( \|x_{k-1}-x^*\|^2 - \|x_{k} - x^*\|^2\right)\\
+            =& \frac{\tau_{\min}^{-1}}{2} \left( \|x_{0}-x^*\|^2 - \|x_{n} - x^*\|^2\right)
+        \end{aligned}
+    \end{equation}
+    By the fact that $(F(x_{k})-F(x^*))_k$ is also decreasing we can deduce
+    \begin{equation}
+        n(F(x_{n})-F(x^*))\leq \sum_{k=1}^n F(x_{k})-F(x^*)
+        \leq \frac{\tau_{\min}^{-1}}{2} \|x_{0}-x^*\|^2
+    \end{equation}
+    and, thus, 
+    \begin{equation}
+        F(x_{n})-F(x^*)\leq \frac{\|x_{0}-x^*\|^2}{2\tau_{\min} n}.
+    \end{equation}
+    Lastly, we want to show convergence of the sequence $(x_k)_k$. Note that the above derivations have shown that $(\|x_k-x^*\|)_k$ is monotonically decreasing for every minimizer $x^*$ of $F$. In particular, $(x_k)_k$ is bounded, and thus, admits a convergent subsequence. 
+    Let $\hat x$ be an arbitrary accumulation point of $(x_k)_k$, that is $\hat x=\lim_k x_{n(k)}$ for some subsequence. Since $F(x_k)\rightarrow \min F$ we have by lower semi-continuity
+    \[
+        F(\hat x))\leq \liminf_k F(x_{n(k)}) = \lim F(x_k) = \min F,
+    \]
+    that is, $\hat x$ is a minimizer of $F$ and $(\|x_k-\hat{x}\|)_k$ is, therefore, decreasing. As a consequence there exists $c\in\R$ such that $\|x_k-\hat{x}\|\rightarrow c$. However, this implies
+    \begin{equation}
+        c = \lim_k \|x_k-\hat{x}\| = \lim_k \|x_{n(k)}-\hat{x}\| = 0
+    \end{equation}
+    meaning that already the original sequence converges to $\hat{x}$ concluding the proof.
+\end{proof}

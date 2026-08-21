@@ -1,0 +1,509 @@
+                    OPTIMISASI KONVEKS
+                  Unit 4: Penurunan Subgradien Terproyeksi
+                            Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 4, “Projected subgradient descent”, dari versi
+sumber yang ditentukan di atas. Unit ini melanjutkan Unit 3. Pembaca diharapkan telah
+mengenal fungsi konveks, subgradien dan subdiferensial, ruang Hilbert, norma, fungsi
+indikator, serta kondisi optimalitas Fermat.
+Notasi, urutan teorema, bukti, dua latihan informal, dan rujukan sumber dipertahankan.
+Sejumlah kekeliruan matematis dalam sumber diperbaiki secara terbuka; ringkasannya
+disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini.
+Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca
+unit ini.
+
+
+
+
+                                          i
+DAFTAR ISI
+
+
+
+
+4   penurunan subgradien terproyeksi   1
+
+
+
+
+                                           ii
+4 PENURUNAN SUBGRADIEN TERPROYEKSI
+
+
+
+Misalkan 𝑉 ruang Hilbert real, 𝐶 ⊂ 𝑉 himpunan tak kosong, tertutup, dan konveks, serta
+𝑓 : 𝑉 → ℝ fungsi konveks. Kita tertarik menyelesaikan masalah
+(4.1)                                            min 𝑓 (𝑥).
+                                                 𝑥 ∈𝐶
+
+Kita mengasumsikan bahwa himpunan peminim tidak kosong dan menetapkan 𝑥 ∗ ∈
+arg min𝑥 ∈𝐶 𝑓 (𝑥). Masalah berkendala di atas selalu dapat ditulis sebagai masalah tak ber-
+kendala melalui
+(4.2)                                     min 𝑓 (𝑥) + 𝛿𝐶 (𝑥),
+                                          𝑥 ∈𝑉
+
+dengan 𝛿𝐶 fungsi indikator himpunan 𝐶.1
+Ingat kembali metode optimisasi numerik paling dasar untuk masalah semacam ini ketika
+𝐶 = 𝑉 dan 𝑓 terdiferensialkan: penurunan gradien (atau penurunan tercuram). Kita memilih
+nilai awal 𝑥 0 , lalu untuk 𝑘 = 0, 1, . . . melakukan pembaruan
+(4.3)                                   𝑥𝑘+1 = 𝑥𝑘 − 𝜏𝑘 ∇𝑓 (𝑥𝑘 ),
+dengan 𝜏𝑘 > 0 menyatakan ukuran langkah. Algoritma baru pertama yang kita tinjau ialah
+versi subgradien dari penurunan tercuram: untuk 𝑘 = 0, 1, . . .,
+                                 (
+                                   𝑔𝑘   ∈ 𝜕𝑓 (𝑥𝑘 ),
+(4.4)
+                                   𝑥𝑘+1 = 𝑥𝑘 − 𝜏𝑘 𝑔𝑘 .
+
+Jika 𝐶 ≠ 𝑉 , masalah segera dapat muncul: mungkin saja 𝑥𝑘+1 ∉ 𝐶. Dalam hal itu, iterasi
+yang memakai subdiferensial 𝑓 + 𝛿𝐶 tidak lagi terdefinisi karena 𝜕𝛿𝐶 (𝑥) = ∅ untuk 𝑥 ∉ 𝐶.
+Karena itu, kita perlu memastikan setiap iterasi baru tetap berada di 𝐶; untuk tujuan ini
+kita memakai proyeksi.
+
+Teorema 4.1 (Teorema proyeksi). Misalkan 𝑉 ruang Hilbert real dan 𝐶 ⊂ 𝑉 tak kosong,
+tertutup, dan konveks. Fungsi berikut terdefinisi dengan baik:
+                                   proj𝐶 : 𝑉 → 𝐶,
+(4.5)                                      𝑥 ↦→ arg min ∥𝑥 − 𝑦 ∥.
+                                                            𝑦∈𝐶
+ 1 Formulasi ini memakai 𝑓 yang terdefinisi pada seluruh 𝑉 , termasuk di luar 𝐶.
+
+
+
+
+                                                        1
+                            4 penurunan subgradien terproyeksi
+
+
+Bukti. Kita perlu menunjukkan bahwa minimum tercapai secara tunggal. Tetapkan 𝑑 =
+inf 𝑦∈𝐶 ∥𝑦 − 𝑥 ∥, dan ambil barisan peminimum (𝑦𝑛 )𝑛 ⊂ 𝐶, yaitu
+
+(4.6)                                    lim ∥𝑦𝑛 − 𝑥 ∥ = 𝑑.
+                                          𝑛
+
+Karena 𝐶 konveks, (𝑦𝑛 + 𝑦𝑚 )/2 ∈ 𝐶. Identitas jajaran genjang memberi
+                                               𝑦𝑛 + 𝑦𝑚    2
+∥𝑦𝑛 − 𝑦𝑚 ∥ 2 = 2∥𝑦𝑛 −𝑥 ∥ 2 + 2∥𝑦𝑚 −𝑥 ∥ 2 − 4           − 𝑥 ≤ 2∥𝑦𝑛 −𝑥 ∥ 2 + 2∥𝑦𝑚 −𝑥 ∥ 2 − 4𝑑 2 .
+                                                  2
+Ruas kanan menuju nol ketika 𝑚, 𝑛 → ∞, sehingga (𝑦𝑛 )𝑛 merupakan barisan Cauchy.
+Kelengkapan 𝑉 menghasilkan 𝑦𝑛 → 𝑦b ∈ 𝑉 , sedangkan ketertutupan 𝐶 menghasilkan
+𝑦b ∈ 𝐶. Dari kontinuitas norma diperoleh
+
+(4.7)                               𝑦 − 𝑥 ∥ = lim ∥𝑦𝑛 − 𝑥 ∥ = 𝑑,
+                                   ∥b
+                                               𝑛
+
+jadi peminim memang ada.
+Untuk ketunggalan, andaikan 𝑦1 ≠ 𝑦2 keduanya peminim. Identitas jajaran genjang mem-
+berikan
+                   𝑦1 + 𝑦2    2  1            1             1
+                           − 𝑥 = ∥𝑦1 − 𝑥 ∥ 2 + ∥𝑦2 − 𝑥 ∥ 2 − ∥𝑦1 − 𝑦2 ∥ 2
+(4.8)                 2          2            2             4
+                                   2
+                                <𝑑 .
+
+Namun (𝑦1 +𝑦2 )/2 ∈ 𝐶, yang bertentangan dengan definisi 𝑑. Jadi peminimnya tunggal.         □
+
+Dengan proyeksi, kita memperoleh cara mengatasi masalah keluar dari 𝐶: metode subgra-
+dien terproyeksi. Pilih 𝑥 0 ∈ 𝐶; kemudian, untuk 𝑘 = 0, 1, . . . dan 𝜏𝑘 ≥ 0, tetapkan
+                                 (
+                                  𝑔𝑘    ∈ 𝜕𝑓 (𝑥𝑘 ),
+(4.9)
+                                  𝑥𝑘+1 = proj𝐶 (𝑥𝑘 − 𝜏𝑘 𝑔𝑘 ).
+
+Untuk membuktikan konvergensi metode ini, kita memerlukan beberapa hasil bantu.
+
+Lema 4.2. Misalkan 𝑉 ruang Hilbert real dan 𝐶 ⊂ 𝑉 tak kosong, tertutup, dan konveks. Maka
+
+(4.10)                     𝑥 − proj𝐶 (𝑥), 𝑦 − proj𝐶 (𝑥) ≤ 0,       𝑦 ∈ 𝐶.
+
+Khususnya, jika 𝐶 subruang,2 maka
+
+(4.11)                            𝑥 − proj𝐶 (𝑥), 𝑦 = 0,       𝑦 ∈ 𝐶.
+
+
+ 2Artinya, 𝐶 memenuhi definisi ruang vektor.
+
+
+
+
+                                                   2
+                             4 penurunan subgradien terproyeksi
+
+
+Bukti. Untuk setiap 𝑦 ∈ 𝐶, kita mempunyai
+(4.12)
+ ∥proj𝐶 (𝑥) − 𝑥 ∥ 2 ≤ ∥𝑦 − 𝑥 ∥ 2
+                     = ∥𝑦 − proj𝐶 (𝑥) + proj𝐶 (𝑥) − 𝑥 ∥ 2
+                     = ∥𝑦 − proj𝐶 (𝑥)∥ 2 + 2 𝑦 − proj𝐶 (𝑥), proj𝐶 (𝑥) − 𝑥 + ∥proj𝐶 (𝑥) − 𝑥 ∥ 2 .
+
+Akibatnya,
+
+(4.13)              0 ≤ ∥𝑦 − proj𝐶 (𝑥)∥ 2 + 2 𝑦 − proj𝐶 (𝑥), proj𝐶 (𝑥) − 𝑥 .
+
+Ambil sebarang 𝑧 ∈ 𝐶, lalu pada ketaksamaan di atas masukkan 𝑦 = proj𝐶 (𝑥) + 𝑡 (𝑧 −
+proj𝐶 (𝑥)) untuk 𝑡 ∈ (0, 1). Kita memperoleh
+
+(4.14)             0 ≤ 𝑡 2 ∥𝑧 − proj𝐶 (𝑥)∥ 2 + 2𝑡 𝑧 − proj𝐶 (𝑥), proj𝐶 (𝑥) − 𝑥 .
+
+Setelah dibagi dengan 𝑡 > 0,
+
+(4.15)              0 ≤ 𝑡 ∥𝑧 − proj𝐶 (𝑥)∥ 2 + 2 𝑧 − proj𝐶 (𝑥), proj𝐶 (𝑥) − 𝑥 .
+
+Dengan mengambil limit 𝑡 → 0, kita memperoleh hasil yang diinginkan. Kesamaan untuk
+kasus subruang ditinggalkan sebagai latihan.                                      □
+
+Proposisi 4.3. Misalkan 𝑉 ruang Hilbert real dan 𝐶 ⊂ 𝑉 tak kosong, tertutup, dan konveks.
+Proyeksi pada 𝐶 bersifat tak ekspansif, yaitu kontinu Lipschitz dengan konstanta satu:
+
+(4.16)                         ∥proj𝐶 (𝑥 1 ) − proj𝐶 (𝑥 2 )∥ ≤ ∥𝑥 1 − 𝑥 2 ∥.
+
+Bukti. Tanpa mengurangi keumuman, andaikan ∥proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 )∥ 2 ≠ 0, sebab jika
+tidak, tidak ada yang perlu dibuktikan. Kita memperoleh
+(4.17)
+    ∥proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 )∥ 2 = proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), proj𝐶 (𝑥 2 ) − 𝑥 1 + 𝑥 1 − proj𝐶 (𝑥 1 )
+                                  = proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), proj𝐶 (𝑥 2 ) − 𝑥 1
+                                    + proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), 𝑥 1 − proj𝐶 (𝑥 1 )
+                                  ≤ proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), proj𝐶 (𝑥 2 ) − 𝑥 1
+                                  = proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), proj𝐶 (𝑥 2 ) − 𝑥 2 + 𝑥 2 − 𝑥 1
+                                  ≤ proj𝐶 (𝑥 1 ) − proj𝐶 (𝑥 2 ), 𝑥 2 − proj𝐶 (𝑥 2 )
+                                    + proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), 𝑥 2 − 𝑥 1
+                                  ≤ proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 ), 𝑥 2 − 𝑥 1
+                                  ≤ ∥proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 )∥∥𝑥 2 − 𝑥 1 ∥.
+
+Membagi dengan ∥proj𝐶 (𝑥 2 ) − proj𝐶 (𝑥 1 )∥ ≠ 0 menghasilkan kesimpulan.                               □
+
+
+
+                                                     3
+                               4 penurunan subgradien terproyeksi
+
+
+Lema 4.4 (Ketaksamaan fundamental metode subgradien terproyeksi). Misalkan 𝑥 ∗ ∈
+arg min𝑥 ∈𝐶 𝑓 (𝑥), dan misalkan 𝑥𝑘 adalah iterasi metode subgradien terproyeksi (4.9), dengan
+𝑔𝑘 ∈ 𝜕𝑓 (𝑥𝑘 ) dan 𝜏𝑘 ≥ 0. Maka
+
+(4.18)             ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 ≤ ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 (𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )) + 𝜏𝑘2 ∥𝑔𝑘 ∥ 2 .
+
+Bukti. Dari definisi subgradien, 𝑓 (𝑥𝑘 ) + ⟨𝑔𝑘 , 𝑥 ∗ − 𝑥𝑘 ⟩ ≤ 𝑓 (𝑥 ∗ ). Karena 𝑥 ∗ ∈ 𝐶, kita mem-
+punyai proj𝐶 (𝑥 ∗ ) = 𝑥 ∗ . Ketakspansifan proyeksi lalu memberikan
+
+                   ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 = ∥proj𝐶 (𝑥𝑘 − 𝜏𝑘 𝑔𝑘 ) − proj𝐶 (𝑥 ∗ )∥ 2
+                                   ≤ ∥𝑥𝑘 − 𝜏𝑘 𝑔𝑘 − 𝑥 ∗ ∥ 2
+(4.19)
+                                   = ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 ⟨𝑔𝑘 , 𝑥𝑘 − 𝑥 ∗ ⟩ + 𝜏𝑘2 ∥𝑔𝑘 ∥ 2
+                                   ≤ ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 (𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )) + 𝜏𝑘2 ∥𝑔𝑘 ∥ 2 .
+                                                                                                □
+
+Hal yang wajar dilakukan sekarang ialah memakai hasil sebelumnya untuk menentuk-
+an ukuran langkah optimal. Lebih tepatnya, dengan meminimumkan ruas kanan (4.19)
+terhadap 𝜏𝑘 , kita memperoleh
+
+                                                      𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )
+(4.20)                                         𝜏𝑘 =
+                                                           ∥𝑔𝑘 ∥ 2
+
+jika 𝑔𝑘 ≠ 0, dan kita menetapkan 𝜏𝑘 = 0 jika 𝑔𝑘 = 0. Ukuran langkah ini disebut aturan
+ukuran langkah Polyak.
+Sebagai latihan, buktikan bahwa jika fungsi konveks 𝑓 : 𝑉 → ℝ bersifat 𝐿-Lipschitz secara
+global pada 𝑉 , maka setiap 𝑔 ∈ 𝜕𝑓 (𝑥) memenuhi ∥𝑔∥ ≤ 𝐿. Pada hasil-hasil berikut, kita
+memakai langsung batas pada subgradien yang dipilih, sehingga juga mencakup situasi
+berkendala yang tidak memenuhi asumsi Lipschitz global tersebut.
+
+Teorema 4.5. Andaikan subgradien yang dipilih pada iterasi memenuhi ∥𝑔𝑘 ∥ ≤ 𝐿. Dengan
+aturan ukuran langkah Polyak
+
+                          𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )
+(4.21)             𝜏𝑘 =                          jika 𝑔𝑘 ≠ 0,          𝜏𝑘 = 0   jika 𝑔𝑘 = 0.
+                               ∥𝑔𝑘 ∥ 2
+
+metode subgradien terproyeksi (4.9) memenuhi
+   (i) ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 ≤ ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 , dengan ketaksamaan ketat jika 𝑓 (𝑥𝑘 ) > 𝑓 (𝑥 ∗ );
+  (ii) 𝑓 (𝑥𝑘 ) → 𝑓 (𝑥 ∗ ) ketika 𝑘 → ∞; dan
+                                      ∗∥
+           𝑁 − 𝑓 (𝑥 ∗ ) ≤ 𝐿∥𝑥 1 − 𝑥
+                                                             𝑘=1,...,𝑁 𝑓 (𝑥𝑘 ).
+ (iii)                                                𝑁 = min
+                                           , dengan 𝑓best
+         𝑓best               √
+                                 𝑁
+
+
+
+                                                           4
+                            4 penurunan subgradien terproyeksi
+
+
+Bukti. Tanpa mengurangi keumuman, kita boleh mengasumsikan 𝑓 (𝑥 ∗ ) = 0. Jika tidak,
+cukup tinjau 𝑓e(𝑥) ≔ 𝑓 (𝑥) − 𝑓 (𝑥 ∗ ). Dari teorema 4.4 dan aturan ukuran langkah diperoleh
+
+                     ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 ≤ ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 𝑓 (𝑥𝑘 ) + 𝜏𝑘2 ∥𝑔𝑘 ∥ 2
+(4.22)
+                                       = ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 𝑎𝑘 ,
+
+dengan 𝑎𝑘 = 𝑓 (𝑥𝑘 ) 2 /∥𝑔𝑘 ∥ 2 jika 𝑔𝑘 ≠ 0, dan nol jika 𝑔𝑘 = 0. Jika 𝑔𝑘 = 0, kekonveksan
+memberi 𝑓 (𝑥𝑘 ) = 𝑓 (𝑥 ∗ ). Karena itu, pengurangan bersifat ketat tepat ketika celah nilai
+fungsi positif.
+Dengan menata ulang dan menjumlahkan untuk 𝑘 = 1, . . . , 𝑁 , kita memperoleh
+                      𝑁
+                     ∑︁
+(4.23)                     𝑎𝑘 ≤ ∥𝑥 1 − 𝑥 ∗ ∥ 2 − ∥𝑥 𝑁 +1 − 𝑥 ∗ ∥ 2 ≤ ∥𝑥 1 − 𝑥 ∗ ∥ 2 .
+                     𝑘=1
+
+Karena ∥𝑔𝑘 ∥ ≤ 𝐿,
+                              𝑁
+                             ∑︁                 𝑁
+                                               ∑︁
+(4.24)                                   2
+                                   𝑓 (𝑥𝑘 ) ≤         𝐿 2𝑎𝑘 ≤ 𝐿 2 ∥𝑥 1 − 𝑥 ∗ ∥ 2 .
+                             𝑘=1               𝑘=1
+
+Batas ini berlaku untuk setiap 𝑁 , sehingga 𝑓 (𝑥𝑘 ) → 0. Selain itu,
+                                              𝑁
+                                             ∑︁
+(4.25)                            𝑁 2
+                             𝑁 (𝑓best ) ≤          𝑓 (𝑥𝑘 ) 2 ≤ 𝐿 2 ∥𝑥 1 − 𝑥 ∗ ∥ 2,
+                                             𝑘=1
+
+yaitu
+
+                                           𝑁         𝐿∥𝑥 1 − 𝑥 ∗ ∥
+(4.26)                                   𝑓best ≤        √          .
+                                                           𝑁
+                                                                                         □
+
+                                          𝑁 − 𝑓 (𝑥 ∗ ) ≤ 𝜀, kita memerlukan
+Korolari 4.6. Untuk mencapai ketelitian 𝑓best
+
+                                          𝐿 ∥𝑥 1 − 𝑥 ∗ ∥ 2
+                                          2               
+                                 𝑁 =O
+                                                𝜀2
+iterasi.
+
+Catatan. Ingat bahwa metode gradien mulus standar mencapai kompleksitas O (1/𝜀).
+
+Walaupun hasil konvergensi dengan aturan ukuran langkah Polyak menarik secara teo-
+retis dan memberi batas kasus terburuk untuk iterasi terbaik, dalam praktiknya ukuran
+langkah tersebut tidak dapat dihitung tanpa mengetahui 𝑓 (𝑥 ∗ ). Berikut ini kita berikan
+hasil konvergensi yang lebih umum.
+
+
+                                                       5
+                              4 penurunan subgradien terproyeksi
+
+
+Teorema 4.7. Andaikan subgradien yang dipilih memenuhi ∥𝑔𝑘 ∥ ≤ 𝐿, dan ukuran langkah
+𝜏𝑘 > 0 memenuhi           P𝑛
+                               𝜏
+                            𝑘=1 𝑘
+                          P𝑛 2 → ∞           ketika 𝑛 → ∞.
+                               𝜏
+                            𝑘=1 𝑘
+Maka
+                                                  ∥𝑥 1 − 𝑥 ∗ ∥ 2 + 𝐿 2       𝜏2
+                                                                         P𝑛
+                           𝑛
+                          𝑓best − 𝑓 (𝑥 ∗ ) ≤                 P            𝑘=1 𝑘
+                                                                                    −→ 0.
+                                                           2 𝑛𝑘=1 𝜏𝑘
+
+Bukti. Sekali lagi, untuk menyederhanakan notasi, andaikan 𝑓 (𝑥 ∗ ) = 0. Dengan memakai
+∥𝑔𝑘 ∥ ≤ 𝐿 dan menjumlahkan ketaksamaan fundamental teorema 4.4 untuk 𝑘 = 1, . . . , 𝑛,
+kita memperoleh
+                                   𝑛
+                                  ∑︁                                           𝑛
+                                                                              ∑︁
+(4.27)                        2         𝜏𝑘 𝑓 (𝑥𝑘 ) ≤ ∥𝑥 1 − 𝑥 ∗ ∥ 2 + 𝐿 2        𝜏𝑘2 .
+                                  𝑘=1                                         𝑘=1
+
+Tuliskan                                                 P𝑛
+                                                            𝜏𝑘
+                                                  𝜎𝑛 = P𝑛𝑘=1 2 .
+                                                            𝜏
+                                                        𝑘=1 𝑘
+        𝑛 ≤ 𝑓 (𝑥 ),
+Karena 𝑓best    𝑘
+
+                                             𝜏 𝑓 (𝑥𝑘 ) ∥𝑥 1 − 𝑥 ∗ ∥ 2   𝐿2
+                                        P𝑛
+                             𝑛            𝑘=1 𝑘
+(4.28)                      𝑓best ≤        P𝑛         ≤ P𝑛            +     .
+                                                𝜏
+                                             𝑘=1 𝑘
+                                                        2 𝑘=1 𝜏𝑘        2𝜎𝑛
+
+Hipotesis 𝜎𝑛 → ∞ juga memaksa                    𝜏 → ∞; karena itu, kedua suku pada ruas kanan
+                                             P𝑛
+                                              𝑘=1 𝑘
+menuju nol.                                                                                             □
+
+Varian hasil konvergensi juga dapat diperoleh, misalnya jika 𝐶 kompak; lihat [Beck 2017]
+untuk perinciannya.
+Konvergensi dapat dipercepat dan juga ditransfer dari nilai fungsi ke iterasi (𝑥𝑘 )𝑘 jika kita
+menambahkan asumsi bahwa 𝑓 konveks kuat.
+
+Teorema 4.8. Andaikan 𝑓 konveks kuat dengan parameter 𝜇 > 0 pada 𝐶, dan subgradien
+                                                                                   2
+yang dipilih memenuhi ∥𝑔𝑘 ∥ ≤ 𝐿.3 Mulai dari 𝑥 1 ∈ 𝐶, gunakan ukuran langkah 𝜏𝑘 =
+                                                                                  𝜇𝑘
+untuk 𝑘 ≥ 1. Untuk 𝑛 ≥ 2, metode subgradien terproyeksi (4.9) memenuhi
+
+       𝑛 − 𝑓 (𝑥 ∗ ) ≤       2𝐿 2
+  (i) 𝑓best                        ; dan
+                         𝜇 (𝑛 − 1)
+                      2𝐿
+  (ii) ∥𝑥𝑛 − 𝑥 ∗ ∥ ≤ √    .
+                    𝜇 𝑛−1
+ 3 Batas ini dikenakan pada subgradien yang benar-benar dipilih oleh algoritma; batas tersebut tidak disim-
+
+   pulkan hanya dari sifat Lipschitz relatif pada 𝐶.
+
+
+
+                                                          6
+                             4 penurunan subgradien terproyeksi
+
+
+Bukti. Seperti sebelumnya, tanpa mengurangi keumuman, tetapkan 𝑓 (𝑥 ∗ ) = 0. Kekonveks-
+an kuat memperbaiki ketaksamaan fundamental menjadi
+
+                   ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 ≤ (1 − 𝜇𝜏𝑘 )∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 𝑓 (𝑥𝑘 ) + 𝜏𝑘2 ∥𝑔𝑘 ∥ 2
+(4.29)
+                                    ≤ (1 − 𝜇𝜏𝑘 )∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 𝑓 (𝑥𝑘 ) + 𝜏𝑘2𝐿 2 .
+
+Dengan menata ulang dan membagi dengan 2𝜏𝑘 , diperoleh
+
+                                  𝜏𝑘−1           ∗ 2
+                                                            𝜏𝑘−1 − 𝜇                     𝜏𝑘 2
+(4.30)              𝑓 (𝑥𝑘 ) ≤ −          ∥𝑥𝑘+1 − 𝑥 ∥ +                 ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 +      𝐿 .
+                                   2                           2                          2
+Memasukkan 𝜏𝑘 = 2/(𝜇𝑘) menghasilkan
+
+                                 𝜇𝑘                   𝜇 (𝑘 − 2)                 1
+(4.31)             𝑓 (𝑥𝑘 ) ≤ −      ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 +           ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 + 𝐿 2 .
+                                  4                       4                    𝜇𝑘
+
+Kalikan dengan 𝑘 −1, lalu jumlahkan terhadap 𝑘 = 1, . . . , 𝑛. Suku jarak meneleskop, sehingga
+                   𝑛                                                𝑛
+                  ∑︁                     𝜇𝑛(𝑛 − 1)          ∗ 2  1 ∑︁ 𝑘 −1 2
+(4.32)                (𝑘 − 1)𝑓 (𝑥𝑘 ) ≤ −           ∥𝑥𝑛+1 − 𝑥 ∥ +          𝐿 .
+                  𝑘=1                       4                    𝜇 𝑘=1 𝑘
+
+                (𝑘 − 1) = 𝑛(𝑛 − 1)/2 dan               (𝑘 − 1)/𝑘 ≤ 𝑛, kita memperoleh
+         P𝑛                                   P𝑛
+Karena    𝑘=1                                    𝑘=1
+
+              𝑛(𝑛 − 1) 𝑛       𝑛
+                              ∑︁                     𝜇𝑛(𝑛 − 1)                   𝑛𝐿 2
+(4.33)                𝑓best ≤     (𝑘 − 1)𝑓 (𝑥𝑘 ) ≤ −           ∥𝑥𝑛+1 − 𝑥 ∗ ∥ 2 +      .
+                 2            𝑘=1                       4                         𝜇
+
+Dengan membuang suku jarak yang tak positif, diperoleh
+
+                                               𝑛           2𝐿 2
+(4.34)                                        𝑓best ≤             .
+                                                        𝜇 (𝑛 − 1)
+
+Untuk batas iterasi, buang suku −2𝜏𝑘 𝑓 (𝑥𝑘 ) ≤ 0 dari ketaksamaan fundamental yang
+diperbaiki. Dengan 𝑑𝑘 = ∥𝑥𝑘 − 𝑥 ∗ ∥,
+
+                                           2 2 4𝐿 2
+                                            
+                                 2
+(4.35)                         𝑑𝑘+1 ≤ 1 −      𝑑 +     .
+                                           𝑘 𝑘 𝜇 2𝑘 2
+
+Untuk 𝑘 = 1, ketaksamaan ini memberi 𝑑 22 ≤ 4𝐿 2 /𝜇 2 . Jika 𝑑𝑘2 ≤ 4𝐿 2 /[𝜇 2 (𝑘 − 1)], substitusi
+pada relasi di atas memberikan
+
+                                 4𝐿 2 𝑘 − 2                  4𝐿 2
+                                                        
+                            2                        1
+                          𝑑𝑘+1 ≤ 2               + 2 ≤ 2 .
+                                  𝜇 𝑘 (𝑘 − 1) 𝑘              𝜇 𝑘
+                                        √
+Induksi membuktikan ∥𝑥𝑛 − 𝑥 ∗ ∥ ≤ 2𝐿/[𝜇 𝑛 − 1] untuk setiap 𝑛 ≥ 2.                              □
+
+
+
+
+                                                        7
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber.
+
+  (i) Masalah optimisasi diberi ruang ambien, domain fungsi, himpunan kendala, titik
+      awal, dan peminim yang bertipe lengkap; fungsi indikator kini ditambahkan pada
+      fungsi yang terdefinisi di seluruh ruang.
+ (ii) Teorema proyeksi dinyatakan pada ruang Hilbert real dan dibuktikan dengan iden-
+      titas jajaran genjang, kelengkapan, serta ketertutupan; argumen sumber “barisan
+      terbatas mempunyai subbarisan konvergen” tidak berlaku pada ruang hasil kali
+      dalam umum.
+ (iii) Hipotesis himpunan tak kosong, tertutup, dan konveks serta ruang Hilbert diulang
+       pada karakterisasi dan ketakspansifan proyeksi.
+ (iv) Semua hasil konvergensi memakai asumsi eksplisit bahwa subgradien yang dipilih
+      dibatasi oleh 𝐿, bukan implikasi keliru bahwa fungsi yang Lipschitz hanya pada
+      himpunan kendala membatasi setiap subgradien relatif.
+  (v) Ketaksamaan fundamental diberi 𝑥 ∗ ∈ arg min𝐶 𝑓 dan ukuran langkah tak negatif
+      yang diperlukan oleh buktinya.
+ (vi) Teorema Polyak membandingkan norma kuadrat dengan norma kuadrat, memakai
+      indeks yang konsisten, mensyaratkan celah objektif positif untuk penurunan ketat,
+      dan mengembalikan kuadrat yang hilang pada bukti laju 𝑁 −1/2 .
+(vii) Pernyataan teorema ukuran langkah umum disatukan kembali dengan limit dan
+      kesimpulannya, serta batas iterasi terbaik ditulis secara eksplisit.
+(viii) Hasil konveks kuat dimulai pada 𝑘 = 1, mengganti kesamaan palsu dengan ketaksa-
+       maan, memperbaiki faktor laju nilai fungsi menjadi 2, dan membuktikan batas jarak
+       iterasi dengan induksi. Tanda kutip liar pada rumus sumber juga dihapus.
+ (ix) Rujukan silang ke definisi ruang vektor yang tidak termuat diganti dengan nama
+      konsep, sedangkan sitasi Beck dipertahankan dalam bibliografi unit.
+
+
+
+
+                                           8
+BIBLIOGRAFI
+
+
+
+A. Beck (2017), First-order methods in optimization, SIAM.
+
+
+
+
+                                            9
+ATRIBUSI DAN LISENSI
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Creative
+Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/
+by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+
+
+
+                                            10
+

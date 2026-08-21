@@ -1,0 +1,47 @@
+\pdfoutput=1
+\documentclass[english]{shinybook}
+\input{macros}
+\addbibresource{references.bib}
+
+\title{Convex Optimization}
+\subtitle{lecture notes\\
+Graz University of Technology\\
+Institute of Visual Computing}
+\author{Andreas Habring}
+\publishers{\small\email{andreas.habring@tugraz.at}}
+\hypersetup{
+    pdftitle={Convex Optimization},
+    pdfauthor={Andreas Habring},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\include{preface}
+
+% \part{Preliminaries}
+
+\include{preliminaries}
+
+% \part{Convexity}
+\include{convexity}
+
+% \part{Subgradient methods}
+
+\include{subgradient}
+\include{projected_subgradient_method}
+\include{proximal_gradient}
+\include{acceleration}
+\include{duality}
+\include{stochastic}
+\include{optimal_transport}
+
+\backmatter
+\printbibliography
+
+\end{document}

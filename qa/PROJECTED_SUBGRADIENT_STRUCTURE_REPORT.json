@@ -1,0 +1,684 @@
+{
+  "citations": [
+    "beck2017first"
+  ],
+  "correction_ledger_ids": [
+    "O015-HAB-ADV-0019",
+    "O015-HAB-ADV-0020",
+    "O015-HAB-ADV-0021",
+    "O015-HAB-ADV-0022",
+    "O015-HAB-ADV-0023",
+    "O015-HAB-ADV-0024",
+    "O015-HAB-ADV-0025",
+    "O015-HAB-ADV-0026",
+    "O015-HAB-ADV-0027"
+  ],
+  "environment_count": 67,
+  "environment_counts": {
+    "aligned": 12,
+    "cases": 2,
+    "cor": 1,
+    "enumerate": 2,
+    "equation": 35,
+    "lemma": 2,
+    "proof": 7,
+    "prop": 1,
+    "rem": 1,
+    "theorem": 4
+  },
+  "environment_topology_equal": true,
+  "failures": [],
+  "figures": [],
+  "footnotes": 3,
+  "formula_delta_count": 40,
+  "formula_delta_manifest_sha256": "d0453330d42781afffe1e1b7ad3d5a663533509f43a754f9958785b9646171b4",
+  "formula_deltas": [
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 0,
+      "source_start": 1,
+      "target": [
+        "V",
+        "C\\subsetV",
+        "f:V\\rightarrow\\R"
+      ],
+      "target_end": 3,
+      "target_start": 1
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f:C\\rightarrow\\R"
+      ],
+      "source_end": 2,
+      "source_start": 2,
+      "target": [
+        "x^*\\in\\arg\\min_{x\\inC}f(x)",
+        "\\min_{x\\inV}f(x)+\\delta_C(x),",
+        "\\delta_C",
+        "C"
+      ],
+      "target_end": 8,
+      "target_start": 5
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\R^d",
+        "\\min_{x\\in\\R^d}f(x)+\\delta_C(x).",
+        "C=\\R^d"
+      ],
+      "source_end": 6,
+      "source_start": 4,
+      "target": [
+        "V",
+        "C",
+        "C=V",
+        "f"
+      ],
+      "target_end": 13,
+      "target_start": 10
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "x_{k+1}=x_k-\\tau_k\\nablaf(x_k)"
+      ],
+      "source_end": 9,
+      "source_start": 9,
+      "target": [
+        "x_{k+1}=x_k-\\tau_k\\nablaf(x_k),"
+      ],
+      "target_end": 16,
+      "target_start": 16
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{cases}g_k&\\in\\partialf(x_k)\\\\x_{k+1}&=x_k-\\tau_kg_k.\\end{cases}",
+        "C\\neq\\R^d"
+      ],
+      "source_end": 13,
+      "source_start": 12,
+      "target": [
+        "\\begin{cases}g_k&\\in\\partialf(x_k),\\\\x_{k+1}&=x_k-\\tau_kg_k.\\end{cases}",
+        "C\\neqV"
+      ],
+      "target_end": 20,
+      "target_start": 19
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\delta_C(x)"
+      ],
+      "source_end": 15,
+      "source_start": 15,
+      "target": [
+        "f+\\delta_C",
+        "\\partial\\delta_C(x)=\\emptyset"
+      ],
+      "target_end": 23,
+      "target_start": 22
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\proj_C:\\R^d&\\rightarrowC\\\\x&\\mapsto\\arg\\min_{y\\inC}\\|x-y\\|.\\end{aligned}"
+      ],
+      "source_end": 20,
+      "source_start": 20,
+      "target": [
+        "\\begin{aligned}\\proj_C:V&\\rightarrowC,\\\\x&\\mapsto\\arg\\min_{y\\inC}\\|x-y\\|.\\end{aligned}",
+        "d=\\inf_{y\\inC}\\|y-x\\|",
+        "(y_n)_n\\subsetC",
+        "\\lim_n\\|y_n-x\\|=d.",
+        "C",
+        "(y_n+y_m)/2\\inC",
+        "\\|y_n-y_m\\|^2=2\\|y_n-x\\|^2+2\\|y_m-x\\|^2-4\\left\\|\\frac{y_n+y_m}{2}-x\\right\\|^2\\leq2\\|y_n-x\\|^2+2\\|y_m-x\\|^2-4d^2.",
+        "m,n\\rightarrow\\infty"
+      ],
+      "target_end": 35,
+      "target_start": 28
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\lim_n\\|y_n-x\\|=\\inf_{y\\inC}\\|y-x\\|.",
+        "(y_n)_n",
+        "y_{n(k)}\\rightarrow\\haty"
+      ],
+      "source_end": 24,
+      "source_start": 22,
+      "target": [
+        "V",
+        "y_n\\rightarrow\\widehaty\\inV"
+      ],
+      "target_end": 38,
+      "target_start": 37
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\haty\\inC",
+        "\\|\\haty-x\\|=\\lim_n\\|y_n-x\\|=\\inf_{y\\inC}\\|y-x\\|."
+      ],
+      "source_end": 27,
+      "source_start": 26,
+      "target": [
+        "\\widehaty\\inC",
+        "\\|\\widehaty-x\\|=\\lim_n\\|y_n-x\\|=d,"
+      ],
+      "target_end": 41,
+      "target_start": 40
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\|1/2(y_1+y_2)-x\\|^2=&\\frac{1}{4}\\|y_1-x\\|^2+\\frac{1}{4}\\|y_2-x\\|^2+\\frac{1}{2}\\inner{y_1-x}{y_2-x}\\\\\\leq&\\frac{1}{4}\\|y_1-x\\|^2+\\frac{1}{4}\\|y_2-x\\|^2+\\frac{1}{4}\\|y_1-x\\|^2+\\frac{1}{4}\\|y_2-x\\|^2\\\\\\leq&\\frac{1}{2}\\|y_1-x\\|^2+\\frac{1}{2}\\|y_2-x\\|^2\\\\=&\\min_{y\\inC}\\|y-x\\|^2.\\end{aligned}",
+        "y_1-x",
+        "y_2-x",
+        "y_1",
+        "y_2",
+        "1/2(y_1+y_2)\\inC",
+        "\\lambda\\geq0",
+        "y_2-x=\\lambda(y_1-x)",
+        "\\|y_1-x\\|=\\|y_2-x\\|",
+        "\\lambda=1",
+        "y_1=y_2"
+      ],
+      "source_end": 39,
+      "source_start": 29,
+      "target": [
+        "\\begin{aligned}\\left\\|\\frac{y_1+y_2}{2}-x\\right\\|^2&=\\frac{1}{2}\\|y_1-x\\|^2+\\frac{1}{2}\\|y_2-x\\|^2-\\frac{1}{4}\\|y_1-y_2\\|^2\\\\&<d^2.\\end{aligned}",
+        "(y_1+y_2)/2\\inC",
+        "d"
+      ],
+      "target_end": 45,
+      "target_start": 43
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 40,
+      "source_start": 41,
+      "target": [
+        "x_0\\inC"
+      ],
+      "target_end": 47,
+      "target_start": 47
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{subgradient:eq:projectedSG}\\begin{cases}g_k&\\in\\partialf(x_k)\\\\x_{k+1}&=\\proj_C(x_k-\\tau_kg_k).\\end{cases}",
+        "C"
+      ],
+      "source_end": 43,
+      "source_start": 42,
+      "target": [
+        "\\tau_k\\geq0",
+        "\\label{subgradient:eq:projectedSG}\\begin{cases}g_k&\\in\\partialf(x_k),\\\\x_{k+1}&=\\proj_C(x_k-\\tau_kg_k).\\end{cases}",
+        "V",
+        "C\\subsetV"
+      ],
+      "target_end": 52,
+      "target_start": 49
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\|\\proj_C(x)-x\\|^2\\leq&\\|y-x\\|^2\\\\=&\\|y-\\proj_C(x)+\\proj_C(x)-x\\|^2\\\\=&\\|y-\\proj_C(x)\\|^2+2\\inner{y-\\proj_C(x)}{\\proj_C(x)-x}+\\|\\proj_C(x)-x\\|^2.\\end{aligned}",
+        "\\begin{aligned}0\\leq\\|y-\\proj_C(x)\\|^2+2\\inner{y-\\proj_C(x)}{\\proj_C(x)-x}\\end{aligned}"
+      ],
+      "source_end": 50,
+      "source_start": 49,
+      "target": [
+        "\\begin{aligned}\\|\\proj_C(x)-x\\|^2&\\leq\\|y-x\\|^2\\\\&=\\|y-\\proj_C(x)+\\proj_C(x)-x\\|^2\\\\&=\\|y-\\proj_C(x)\\|^2+2\\inner{y-\\proj_C(x)}{\\proj_C(x)-x}+\\|\\proj_C(x)-x\\|^2.\\end{aligned}",
+        "\\begin{aligned}0\\leq\\|y-\\proj_C(x)\\|^2+2\\inner{y-\\proj_C(x)}{\\proj_C(x)-x}.\\end{aligned}"
+      ],
+      "target_end": 59,
+      "target_start": 58
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 57,
+      "source_start": 58,
+      "target": [
+        "V",
+        "C\\subsetV",
+        "C"
+      ],
+      "target_end": 69,
+      "target_start": 67
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\|\\proj_C(x_2)-\\proj_C(x_1)\\|^2=&\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1+x_1-\\proj_C(x_1)}\\\\=&\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1}\\\\&+\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_1-\\proj_C(x_1)}\\\\\\leq&\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1}\\\\=&\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_2+x_2-x_1}\\\\\\leq&\\inner{\\proj_C(x_1)-\\proj_C(x_2)}{x_2-\\proj_C(x_2)}\\\\&+\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_2-x_1}\\\\\\leq&\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_2-x_1}\\\\\\leq&\\|\\proj_C(x_2)-\\proj_C(x_1)\\|\\|x_2-x_1\\|\\end{aligned}"
+      ],
+      "source_end": 60,
+      "source_start": 60,
+      "target": [
+        "\\begin{aligned}\\|\\proj_C(x_2)-\\proj_C(x_1)\\|^2&=\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1+x_1-\\proj_C(x_1)}\\\\&=\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1}\\\\&\\quad+\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_1-\\proj_C(x_1)}\\\\&\\leq\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_1}\\\\&=\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{\\proj_C(x_2)-x_2+x_2-x_1}\\\\&\\leq\\inner{\\proj_C(x_1)-\\proj_C(x_2)}{x_2-\\proj_C(x_2)}\\\\&\\quad+\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_2-x_1}\\\\&\\leq\\inner{\\proj_C(x_2)-\\proj_C(x_1)}{x_2-x_1}\\\\&\\leq\\|\\proj_C(x_2)-\\proj_C(x_1)\\|\\|x_2-x_1\\|.\\end{aligned}"
+      ],
+      "target_end": 72,
+      "target_start": 72
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 61,
+      "source_start": 62,
+      "target": [
+        "x^*\\in\\arg\\min_{x\\inC}f(x)"
+      ],
+      "target_end": 74,
+      "target_start": 74
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\|x_{k+1}-x^*\\|^2\\leq\\|x_k-x^*\\|^2-2\\tau_k(f(x_k)-f(x^*))+\\tau_k^2\\|g_k\\|^2"
+      ],
+      "source_end": 64,
+      "source_start": 64,
+      "target": [
+        "\\tau_k\\geq0",
+        "\\|x_{k+1}-x^*\\|^2\\leq\\|x_k-x^*\\|^2-2\\tau_k(f(x_k)-f(x^*))+\\tau_k^2\\|g_k\\|^2."
+      ],
+      "target_end": 78,
+      "target_start": 77
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{eq:subgradient:fundamental}\\begin{aligned}\\|x_{k+1}-x^*\\|^2=&\\|\\proj_C(x_k-\\tau_kg_k)-\\proj_C(x^*)\\|^2\\\\\\leq&\\|x_k-\\tau_kg_k-x^*\\|^2\\\\\\leq&\\|x_k-x^*\\|^2-2\\tau_k\\inner{g_k}{x_k-x^*}+\\tau_k^2\\|g_k\\|^2\\\\\\leq&\\|x_k-x^*\\|^2-2\\tau_k(f(x_k)-f(x^*))+\\tau_k^2\\|g_k\\|^2\\end{aligned}"
+      ],
+      "source_end": 66,
+      "source_start": 66,
+      "target": [
+        "x^*\\inC",
+        "\\proj_C(x^*)=x^*",
+        "\\label{eq:subgradient:fundamental}\\begin{aligned}\\|x_{k+1}-x^*\\|^2&=\\|\\proj_C(x_k-\\tau_kg_k)-\\proj_C(x^*)\\|^2\\\\&\\leq\\|x_k-\\tau_kg_k-x^*\\|^2\\\\&=\\|x_k-x^*\\|^2-2\\tau_k\\inner{g_k}{x_k-x^*}+\\tau_k^2\\|g_k\\|^2\\\\&\\leq\\|x_k-x^*\\|^2-2\\tau_k(f(x_k)-f(x^*))+\\tau_k^2\\|g_k\\|^2.\\end{aligned}"
+      ],
+      "target_end": 82,
+      "target_start": 80
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k=\\frac{f(x_k)-f(x^*)}{\\|g_k\\|^2}."
+      ],
+      "source_end": 68,
+      "source_start": 68,
+      "target": [
+        "\\tau_k=\\frac{f(x_k)-f(x^*)}{\\|g_k\\|^2}"
+      ],
+      "target_end": 84,
+      "target_start": 84
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k=1"
+      ],
+      "source_end": 70,
+      "source_start": 70,
+      "target": [
+        "\\tau_k=0"
+      ],
+      "target_end": 86,
+      "target_start": 86
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f:C\\rightarrow\\R"
+      ],
+      "source_end": 72,
+      "source_start": 72,
+      "target": [
+        "f:V\\rightarrow\\R"
+      ],
+      "target_end": 88,
+      "target_start": 88
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k=\\frac{f(x_k)-f(x^*)}{\\|g_k\\|^2}",
+        "\\|x_{k+1}-x^*\\|^2\\leq\\|x_{k}-x^*\\|",
+        "g_k\\neq0",
+        "f(x_K)\\rightarrowf(x^*)"
+      ],
+      "source_end": 77,
+      "source_start": 74,
+      "target": [
+        "V",
+        "g\\in\\partialf(x)",
+        "\\|g\\|\\leqL",
+        "\\|g_k\\|\\leqL",
+        "\\tau_k=\\frac{f(x_k)-f(x^*)}{\\|g_k\\|^2}\\quad\\text{#}g_k\\neq0,\\qquad\\tau_k=0\\quad\\text{#}g_k=0.",
+        "\\|x_{k+1}-x^*\\|^2\\leq\\|x_k-x^*\\|^2",
+        "f(x_k)>f(x^*)",
+        "f(x_k)\\rightarrowf(x^*)"
+      ],
+      "target_end": 97,
+      "target_start": 90
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f_{\\mathrm{best}}^N-f(x^*)\\leq\\frac{L\\|x_1-x^*\\|}{\\sqrt{N}}"
+      ],
+      "source_end": 79,
+      "source_start": 79,
+      "target": [
+        "f_{\\mathrm{best}}^N-f(x^*)\\leq\\dfrac{L\\|x_1-x^*\\|}{\\sqrt{N}}"
+      ],
+      "target_end": 99,
+      "target_start": 99
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tilde{f}(x)\\coloneqf(x)-f(x^*)",
+        "\\begin{aligned}\\|x_{k+1}-x^*\\|^2\\leq&\\|x_{k}-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2\\|g_k\\|^2\\\\=&\\|x_{k}-x^*\\|^2-a_k\\\\\\end{aligned}",
+        "a_k=\\frac{f(x_k)^2}{\\|g_k\\|^2}"
+      ],
+      "source_end": 84,
+      "source_start": 82,
+      "target": [
+        "\\widetildef(x)\\coloneqf(x)-f(x^*)",
+        "\\begin{aligned}\\|x_{k+1}-x^*\\|^2&\\leq\\|x_k-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2\\|g_k\\|^2\\\\&=\\|x_k-x^*\\|^2-a_k,\\end{aligned}",
+        "a_k=f(x_k)^2/\\|g_k\\|^2"
+      ],
+      "target_end": 104,
+      "target_start": 102
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "k",
+        "\\sum_{k=1}^{N-1}a_k\\leq\\|x_1-x^*\\|^2-\\|x_N-x^*\\|^2\\leq\\|x_1-x^*\\|^2",
+        "f"
+      ],
+      "source_end": 88,
+      "source_start": 86,
+      "target": [
+        "g_k=0",
+        "g_k=0",
+        "f(x_k)=f(x^*)",
+        "k=1,\\dots,N",
+        "\\sum_{k=1}^{N}a_k\\leq\\|x_1-x^*\\|^2-\\|x_{N+1}-x^*\\|^2\\leq\\|x_1-x^*\\|^2."
+      ],
+      "target_end": 110,
+      "target_start": 106
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\sum_{k=1}^{N-1}f(x_k)^2\\leq\\sum_{k=1}^{N-1}L^2a_k\\leqL^2\\|x_1-x^*\\|^2"
+      ],
+      "source_end": 90,
+      "source_start": 90,
+      "target": [
+        "\\sum_{k=1}^{N}f(x_k)^2\\leq\\sum_{k=1}^{N}L^2a_k\\leqL^2\\|x_1-x^*\\|^2."
+      ],
+      "target_end": 112,
+      "target_start": 112
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "N\\rightarrow\\infty"
+      ],
+      "source_end": 92,
+      "source_start": 92,
+      "target": [],
+      "target_end": 113,
+      "target_start": 114
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "N(f_{\\mathrm{best}}^N)^2\\leq\\sum_{k=1}^{N}f(x_k)\\leqL^2\\|x_1-x^*\\|^2"
+      ],
+      "source_end": 94,
+      "source_start": 94,
+      "target": [
+        "N(f_{\\mathrm{best}}^N)^2\\leq\\sum_{k=1}^{N}f(x_k)^2\\leqL^2\\|x_1-x^*\\|^2,"
+      ],
+      "target_end": 115,
+      "target_start": 115
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "N=\\Oc(\\frac{L^2\\|x_1-x^*\\|^2}{\\epsilon^2})"
+      ],
+      "source_end": 96,
+      "source_start": 96,
+      "target": [],
+      "target_end": 116,
+      "target_start": 117
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\Oc(\\frac{1}{\\epsilon})"
+      ],
+      "source_end": 98,
+      "source_start": 98,
+      "target": [
+        "N=\\Oc\\!\\left(\\frac{L^2\\|x_1-x^*\\|^2}{\\epsilon^2}\\right)",
+        "\\Oc(1/\\epsilon)"
+      ],
+      "target_end": 119,
+      "target_start": 118
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f",
+        "L",
+        "\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}\\rightarrow\\infty",
+        "n\\rightarrow\\infty",
+        "f^n_{\\mathrm{best}}\\rightarrowf(x^*)"
+      ],
+      "source_end": 104,
+      "source_start": 100,
+      "target": [
+        "\\|g_k\\|\\leqL",
+        "\\tau_k>0",
+        "\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}\\rightarrow\\infty\\qquad\\text{#}n\\rightarrow\\infty.",
+        "f^n_{\\mathrm{best}}-f(x^*)\\leq\\frac{\\|x_1-x^*\\|^2+L^2\\sum_{k=1}^n\\tau_k^2}{2\\sum_{k=1}^n\\tau_k}\\longrightarrow0."
+      ],
+      "target_end": 124,
+      "target_start": 121
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "k=1,\\dots,N",
+        "2\\sum_{k=1}^N\\tau_kf(x_k)\\leq\\|x_1-x^*\\|^2+L^2\\sum_{k=1}^N\\tau_k^2",
+        "\\sigma_n=\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}",
+        "\\sigma_nf^n_{\\mathrm{best}}\\leq\\frac{\\sum_{k=1}^n\\tau_kf^n_{\\mathrm{best}}}{\\sum_{k=1}^n\\tau_k^2}\\leq\\frac{\\sum_{k=1}^n\\tau_kf(x_k)}{\\sum_{k=1}^n\\tau_k^2}\\leq\\frac{\\|x_1-x^*\\|^2}{2\\sum_{k=1}^n\\tau_k^2}+L^2/2.",
+        "n\\rightarrow\\infty"
+      ],
+      "source_end": 111,
+      "source_start": 107,
+      "target": [
+        "k=1,\\dots,n",
+        "2\\sum_{k=1}^n\\tau_kf(x_k)\\leq\\|x_1-x^*\\|^2+L^2\\sum_{k=1}^n\\tau_k^2.",
+        "\\sigma_n=\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}.",
+        "f^n_{\\mathrm{best}}\\leqf(x_k)",
+        "f^n_{\\mathrm{best}}\\leq\\frac{\\sum_{k=1}^n\\tau_kf(x_k)}{\\sum_{k=1}^n\\tau_k}\\leq\\frac{\\|x_1-x^*\\|^2}{2\\sum_{k=1}^n\\tau_k}+\\frac{L^2}{2\\sigma_n}."
+      ],
+      "target_end": 131,
+      "target_start": 127
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f^n_{\\mathrm{best}}\\rightarrow0"
+      ],
+      "source_end": 113,
+      "source_start": 113,
+      "target": [
+        "\\sum_{k=1}^n\\tau_k\\rightarrow\\infty"
+      ],
+      "target_end": 133,
+      "target_start": 133
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\mu",
+        "L"
+      ],
+      "source_end": 119,
+      "source_start": 118,
+      "target": [
+        "\\mu>0"
+      ],
+      "target_end": 138,
+      "target_start": 138
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 120,
+      "source_start": 121,
+      "target": [
+        "\\|g_k\\|\\leqL"
+      ],
+      "target_end": 140,
+      "target_start": 140
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k=\\frac{2}{\\muk}",
+        "f^n_{\\mathrm{best}}-f(x^*)\\leq\\frac{L^2}{\\mu(n-1)}",
+        "\\|x_n-x^*\\|\\leq\\frac{2L}{\\mu\\sqrt{n-1}}"
+      ],
+      "source_end": 124,
+      "source_start": 122,
+      "target": [
+        "x_1\\inC",
+        "\\tau_k=\\dfrac{2}{\\muk}",
+        "k\\geq1",
+        "n\\geq2",
+        "f^n_{\\mathrm{best}}-f(x^*)\\leq\\dfrac{2L^2}{\\mu(n-1)}",
+        "\\|x_n-x^*\\|\\leq\\dfrac{2L}{\\mu\\sqrt{n-1}}"
+      ],
+      "target_end": 147,
+      "target_start": 142
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\|x_{k+1}-x^*\\|^2&\\leq(1-\\mu\\tau_k)\\|x_k-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2\\|g_k\\|^2\\\\&\\leq(1-\\mu\\tau_k)\\|x_k-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2L^2\\end{aligned}"
+      ],
+      "source_end": 126,
+      "source_start": 126,
+      "target": [
+        "\\begin{aligned}\\|x_{k+1}-x^*\\|^2&\\leq(1-\\mu\\tau_k)\\|x_k-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2\\|g_k\\|^2\\\\&\\leq(1-\\mu\\tau_k)\\|x_k-x^*\\|^2-2\\tau_kf(x_k)+\\tau_k^2L^2.\\end{aligned}"
+      ],
+      "target_end": 149,
+      "target_start": 149
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k=\\frac{2}{\\muk}"
+      ],
+      "source_end": 129,
+      "source_start": 129,
+      "target": [
+        "\\tau_k=2/(\\muk)"
+      ],
+      "target_end": 152,
+      "target_start": 152
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "k"
+      ],
+      "source_end": 132,
+      "source_start": 132,
+      "target": [
+        "k=1,\\dots,n"
+      ],
+      "target_end": 155,
+      "target_start": 155
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\sum_{k=1}^{n}\\frac{k-1}{k}\\leqn",
+        "\\label{subgradient:eq:strongly}n(n-1)/2f^n_{\\mathrm{best}}\\leq\\sum_{k=1}^{n}(k-1)f(x_k)=-\\frac{\\mun(n-1)}{4}\\|x_{n+1}-x^*\\|^2+\\frac{1}{\\mu}nL^2.",
+        "f^n_{\\mathrm{best}}\\leq\\frac{\"L^2}{\\mu(n-1)}.",
+        "f^n_{\\mathrm{best}}\\geq0",
+        "\\frac{\\mun(n-1)}{4}\\|x_{n+1}-x^*\\|^2\\leq\\frac{1}{\\mu}nL^2,",
+        "\\|x_{n+1}-x^*\\|^2\\leq\\frac{4L^2}{\\mu^2(n-1)}"
+      ],
+      "source_end": 140,
+      "source_start": 135,
+      "target": [
+        "\\sum_{k=1}^{n}(k-1)/k\\leqn",
+        "\\label{subgradient:eq:strongly}\\frac{n(n-1)}{2}f^n_{\\mathrm{best}}\\leq\\sum_{k=1}^{n}(k-1)f(x_k)\\leq-\\frac{\\mun(n-1)}{4}\\|x_{n+1}-x^*\\|^2+\\frac{nL^2}{\\mu}.",
+        "f^n_{\\mathrm{best}}\\leq\\frac{2L^2}{\\mu(n-1)}.",
+        "-2\\tau_kf(x_k)\\leq0",
+        "d_k=\\|x_k-x^*\\|",
+        "d_{k+1}^2\\leq\\left(1-\\frac{2}{k}\\right)d_k^2+\\frac{4L^2}{\\mu^2k^2}.",
+        "k=1",
+        "d_2^2\\leq4L^2/\\mu^2",
+        "d_k^2\\leq4L^2/[\\mu^2(k-1)]",
+        "d_{k+1}^2\\leq\\frac{4L^2}{\\mu^2}\\left(\\frac{k-2}{k(k-1)}+\\frac{1}{k^2}\\right)\\leq\\frac{4L^2}{\\mu^2k}.",
+        "\\|x_n-x^*\\|\\leq2L/[\\mu\\sqrt{n-1}]",
+        "n\\geq2"
+      ],
+      "target_end": 169,
+      "target_start": 158
+    }
+  ],
+  "formula_surface_count": {
+    "source": 140,
+    "target": 169
+  },
+  "informal_exercise_prompts": 2,
+  "labels": [
+    "subgradient:eq:projectedSG",
+    "lemma:subgradient:fundamental",
+    "eq:subgradient:fundamental",
+    "subgradient:eq:strongly"
+  ],
+  "result": "pass",
+  "schema": "o015-projected-subgradient-structure-audit-v1",
+  "segments": [
+    "d90.hab.v1.ch04.seg0001",
+    "d90.hab.v1.ch04.seg0002",
+    "d90.hab.v1.ch04.seg0003",
+    "d90.hab.v1.ch04.seg0004",
+    "d90.hab.v1.ch04.seg0005",
+    "d90.hab.v1.ch04.seg0006",
+    "d90.hab.v1.ch04.seg0007",
+    "d90.hab.v1.ch04.seg0008"
+  ],
+  "source": {
+    "bytes": 14391,
+    "path": "authority/habring/source-v1/projected_subgradient_method.tex",
+    "sha256": "44ac28a0f0b67fed4855f7ed91089fab52f77804115f2a06201bff98437bd8da"
+  },
+  "target": {
+    "bytes": 16612,
+    "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+    "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+  }
+}

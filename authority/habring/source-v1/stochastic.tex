@@ -1,0 +1,107 @@
+\chapter{Stochastic Gradient Descent}
+Assume we want to solve
+\begin{equation}
+    \min_x f(x),
+\end{equation}
+but we do have access only to random but unbiased estimates of $f$, respectively $\partial f$. That is, we assume we can evaluate $G(x,z)$ which satisfies
+\begin{equation}\label{stochastic:eq:gradient}
+    \E[G(x,Z)] \in \partial f(x)
+\end{equation}
+where $Z$ is some random variable.
+It turns out that many of the convergence proofs can be transferred to this stochastic setting with almost no extra effort. Before showing this, let us motivate this setting.
+
+In modern machine learning, most learning problems can be formulated as
+\begin{equation}
+    \min_x f(x)\coloneqq \sum_{i=1}^N f_i(x)
+\end{equation}
+very $N$ is usually the number of training samples. For instance, if we want to learn a parametrized map $f_\theta$ which should approximate some relation $x\mapsto y$ based on the training data $(x_i,y_i)_{i=1}^N$, the corresponding training problem could be
+\begin{equation}
+    \min_\theta \sum_{i=1}^N \|y_i-f_\theta(x_i)\|^2.
+\end{equation}
+Due to the encountered sizes of training data, it is often not possible to directly compute gradients of $f$ because of memory limitations.
+If $f_i$ are differentiable a possible remedy is the stochastic update
+\begin{equation}
+    \begin{cases}
+        \text{Choose $i\in\Ic$}\\
+        x_{k+1} = x_k - \tau \nabla f_i(x_k)
+    \end{cases}
+\end{equation}
+where $\Ic=\{1,\dots,N\}$.
+Defining $Z_k$ as a sequence of iid uniformly distributed random variables in $\Ic$ the above can be written as
+\begin{equation}
+    x_{k+1} = x_k - \tau G(x_k,Z_k)
+\end{equation}
+with $G(x,z) \coloneqq \nabla f_z(x)$. One can easily check that such $G$ satisfies~\eqref{stochastic:eq:gradient}.
+
+\begin{theorem}
+    Let $f$ be $L$-Lipschitz and assume the step sizes satisfy
+    \[
+        \frac{\sum_{k=1}^n\tau_k}{\sum_{k=1}^n\tau_k^2}\rightarrow \infty
+    \]
+    as $n\rightarrow\infty$. 
+    Moreover, assume the stochastic gradients are unbiased and of bounded variance, specifically, for all $x\in \R^d$ we have
+    \begin{equation}
+        \begin{cases}
+            \E[G(x,Z)] \in &\partial f(x)\\
+            \E[\|G(x,Z)\|^2] - \|\E[G(x,Z)]\|^2 &\leq \sigma^2<\infty
+        \end{cases}
+    \end{equation}
+Then it holds $\E[f^n_{\mathrm{best}}-f(x^*)]\rightarrow 0$.
+\end{theorem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2
+            &= \|\proj_C(x_{k}-\tau_k G(x_k,Z_k))-\proj_C(x^*)\|^2\\
+            &\leq \|x_{k}-\tau_k G(x_k,Z_k)-x^*\|^2\\
+            &= \|x_{k}-x^*\|^2 - 2\tau_k\inner{x_k-x^*}{G(x_k,Z_k)} + \tau_k^2\|G(x_k,Z_k)\|^2.
+        \end{aligned}
+    \end{equation}
+    Note that
+    \begin{equation}
+        \begin{aligned}
+            \E[\inner{x_k-x^*}{G(x_k,Z_k)}]
+            &= \E[\E[\inner{x_k-x^*}{G(x_k,Z_k)}|x_k]]\\
+            &= \E[\inner{x_k-x^*}{\E[G(x_k,Z_k)|x_k]}]\\
+            &\geq \E[f(x_k) - f(x^*)]\\
+            &= \E[f(x_k)] - f(x^*)
+        \end{aligned}
+    \end{equation}
+    as well as
+    \begin{equation}
+        \E[\|G(x_k,Z_k)\|^2] 
+        = \E[\|G(x_k,Z_k)\|^2] - \|E[G(x_k,Z_k)]\|^2 + \|E[G(x_k,Z_k)]\|^2
+        \leq \sigma^2 + L^2
+    \end{equation}
+    Thus, taking expectation leads to 
+    \begin{equation}
+        \begin{aligned}
+            \E[\|x_{k+1}-x^*\|^2]
+            \leq \E[\|x_{k}-x^*\|^2] - 2\tau_k (\E[f(x_k)] - f(x^*)) + \tau_k^2(\sigma^2 + L^2).
+        \end{aligned}
+    \end{equation}
+    The remaining proof is as in the deterministic case. Summing over $k$ leads to
+    \begin{equation}
+        \begin{aligned}
+            \sum_{k=0}^{K-1}\tau_k (\E[f(x_k)] - f(x^*))\leq \frac{1}{2}\E[\|x_{0}-x^*\|^2] + (\sigma^2 + L^2)\sum_{k=0}^{K-1}\tau_k^2
+        \end{aligned}
+    \end{equation}
+    Defining
+    \begin{equation}
+        \sigma_n = \frac{\sum_{k=0}^{K-1}\tau_k}{\sum_{k=0}^{K-1}\tau_k^2}
+    \end{equation}
+    we obtain
+    \begin{equation}
+        \begin{aligned}
+            \sigma_n \E[f^n_{\mathrm{best}}-f(x^*)]
+            =& \frac{\sum_{k=0}^{K-1}\tau_k\E[f^n_{\mathrm{best}}-f(x^*)]}{\sum_{k=0}^{K-1}\tau_k^2}\\
+            \leq& \frac{\sum_{k=0}^{K-1}\tau_k\E[f(x_k)-f(x^*)]}{\sum_{k=0}^{K-1}\tau_k^2}\\
+            \leq& \frac{\E[\|x_{0}-x^*\|^2]}{2\sum_{k=0}^{K-1}\tau_k^2} + \frac{(\sigma^2 + L^2)\sum_{k=0}^{K-1}\tau_k^2}{\sum_{k=0}^{K-1}\tau_k^2}\\
+        \end{aligned}
+    \end{equation}
+    and thus
+    \begin{equation}
+        \E[f^n_{\mathrm{best}}-f(x^*)] \leq \frac{\E[\|x_{0}-x^*\|^2]}{2\sum_{k=0}^{K-1}\tau_k} + \frac{(\sigma^2 + L^2)\sum_{k=0}^{K-1}\tau_k^2}{\sigma_n}
+    \end{equation}
+    which goes to zero as $n\rightarrow\infty$.
+\end{proof}

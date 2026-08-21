@@ -1,0 +1,140 @@
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{intersections,calc}
+\usetikzlibrary{arrows.meta, decorations.markings}
+\usepackage{glossaries-extra}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rb}{\overline{\mathbb{R}}}
+\newcommand{\bR}{\overline{\mathbb{R}}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\1}{\mathbb{1}}
+\newcommand{\linop}{\mathcal{L}}
+\newcommand{\Rnn}{\mathbb{R}^{n\times n}}
+\newcommand{\Cnn}{\mathbb{C}^{n\times n}}
+\newcommand{\E}{\mathbb{E}}
+\usepackage{pgffor}
+\foreach \x in {A,...,Z}{%
+    \expandafter\xdef\csname cal\x\endcsname{\noexpand\ensuremath{\noexpand\mathcal{\x}}}
+}
+
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\setto}{\rightrightarrows}
+\newcommand{\equivalent}{\Leftrightarrow}
+
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\supp}{\operatorname{\mathrm{supp}}}
+\renewcommand{\div}{\operatorname{\mathrm{div}}}
+\newcommand{\dom}{\operatorname{\mathrm{dom}}}
+\renewcommand{\ker}{\operatorname{\mathrm{ker}}}
+\newcommand{\conv}{\operatorname{\mathrm{conv}}}
+\newcommand{\rg}{\operatorname{\mathrm{rg}}}
+\newcommand{\graph}{\operatorname{\mathrm{graph}}}
+\newcommand{\tr}{\operatorname{\mathrm{tr}}}
+\newcommand{\epi}{\operatorname{\mathrm{epi}}}
+\renewcommand{\span}{\operatorname{\mathrm{span}}}
+\newcommand{\sign}{\operatorname{\mathrm{sign}}}
+\DeclareMathOperator{\Id}{\mathrm{Id}}
+\newcommand{\prox}{\mathrm{prox}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\spann}{\mathrm{span}}
+
+\newcommand{\Lloc}{L^1_{\mathrm{loc}}}
+\newcommand{\Cinf}{C^\infty_0}
+
+
+% amsthm definitions
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem*{rem}{Remark}
+
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{prop}{proposition}{Proposition}
+\crefname{defn}{Definition}{Definitions}
+\crefname{example}{Example}{Examples}
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{rem}{Remark}{Remarks}
+\crefname{exercise}{Exercise}{Exercises}
+
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\inner}[2]{\left\langle#1 , #2\right\rangle}
+\newcommand{\dual}[1]{\langle #1 \rangle}
+\newcommand{\setof}[2]{\left\{#1 \;\middle|\; #2\right\}}
+\newcommand{\wkto}{\rightharpoonup}
+
+\DeclareMathOperator{\Exp}{\mathbb{E}}
+\DeclareMathOperator{\Var}{\mathbb{V}}
+\DeclareMathOperator{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+
+\usepackage{enumerate}
+
+\newcommand{\weaki}{\protect{\u{\i}}} % trick biber...
+
+\AtBeginEnvironment{remark}{\small}
+
+\usepackage{mdframed}
+\mdfdefinestyle{examplebg}{
+    backgroundcolor=structure!7,%
+    hidealllines=true,%
+    splittopskip=\topskip,
+    frametitleaboveskip=0,
+    frametitlebelowskip=0,
+    innertopmargin=-.3em,%
+    innerbottommargin=.7em,%
+    innerleftmargin=.7em,%
+    innerrightmargin=.7em,%
+}
+\surroundwithmdframed[style=examplebg]{example}
+
+% hack mdframed to have footnotes outside
+\usepackage{tablefootnote}
+\makeatletter
+\AfterEndEnvironment{mdframed}{%
+ \tfn@tablefootnoteprintout%
+ \gdef\tfn@fnt{0}%
+}
+\makeatother
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\roman*)}
+\usepackage{scrhack}
+
+
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\cf}{\textit{cf.}}
+
+\newcommand{\emptyarg}{\,\cdot\,}
+
+\newcommand{\dd}{\mathrm{d}}
+
+
+\newcommand{\todo}[1]{{\color{red}Todo: #1}}
+
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Ic}{\mathcal{I}}
+\newcommand{\Pc}{\mathcal{P}}
+\newcommand{\Mc}{\mathcal{M}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\diag}{\mathrm{diag}}

@@ -1,0 +1,3 @@
+# Preserve authority and audit bytes exactly across platforms; recorded SHA-256
+# identities are over repository bytes, not line-ending-normalized variants.
+* -text
