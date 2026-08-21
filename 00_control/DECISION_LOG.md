@@ -51,3 +51,7 @@ Habring Chapter 4 is admitted at target SHA-256 `29fdc330007009bd765a17ca1dcd0cf
 ## D90-0013 — Edition completion is independent of curriculum admission
 
 The already-started bounded Indonesian edition will be completed whether or not the curriculum-selection root ultimately assigns this composite corpus to O015/D90. Completion, sunk effort, and publication status are not evidence for curricular selection; corpus fitness continues to rest only on authority, rights, coverage, source quality, buildability, self-study support, and non-overlap evidence.
+
+## D90-0014 — First public corpus checkpoint
+
+The single corpus repository is public at `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its initial content commit `bb2a7ab9d1a47beab97cd771eb63984bfe03f163` publishes only the two admitted Habring units, canonical Habring authority witnesses, QA/backend/control records, and per-component rights documentation. Local build caches, duplicate authority aliases, comparator evidence, and the not-yet-translated Penn closure are excluded. Public-byte readback passed. This checkpoint does not imply final corpus or curriculum-admission completion.

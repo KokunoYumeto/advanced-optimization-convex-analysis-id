@@ -43,6 +43,10 @@ Chapter 3 preserves all 61 source environments and eleven stable segments. Chapt
 
 The authority supplies sparse informal exercises and no systematic hints, answers, or solutions in the admitted units. Independent Indonesian language review has not yet been recorded. The full Habring module, Penn module, authored assessment layer, semantic HTML/EPUB reader, and final corpus publication remain incomplete.
 
+## Public corpus checkpoint
+
+The discoverable public corpus repository is `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its first `main` checkpoint contains the verified Chapter 3 and Chapter 4 Indonesian TeX/PDF readers, frozen Habring authority closure, QA, per-component rights controls, and the 238-record backend. Public-byte readback matched the local README, both PDFs, and backend exactly. Details are in `PUBLICATION_RECEIPTS.md`. No upstream contact has occurred.
+
 ## Exact continuation
 
 Continue with `authority/habring/source-v1/proximal_gradient.tex` (Chapter 5, proximal-gradient methods; 18,464 bytes; SHA-256 `59d5694742f0e2f9f46da0c1418b5fe0ff18521c49078ed29c843b6e8c701f6e`). Correct only independently determined source defects with ledger entries, preserve source topology and identifiers, and add open numerical checks for proximal mappings and forward–backward iteration. Translation remains the dominant activity. Completion of this edition remains independent of the curriculum root's later admission decision.
