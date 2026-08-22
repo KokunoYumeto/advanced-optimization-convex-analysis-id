@@ -1,0 +1,75 @@
+{
+  "schema": "o015-github-public-readback-v1",
+  "checked_at_utc": "2026-08-22T19:32:48.618Z",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "default_branch": "main",
+  "authentication": "none",
+  "content_commit": "6900a39ce579ba5ca464fecc00b4575139fbc3ea",
+  "content_tree": "8539cec4931da655e495a25eb3b05b25007208b5",
+  "api_commit_match": true,
+  "api_tree_match": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6781,
+      "sha256": "1667a898a66a911b15e6dc5ea5d99f262e3029046bf5d818f8ccafa321f4a507",
+      "remote_match": true
+    },
+    {
+      "path": "00_control/CURRENT_STATE.md",
+      "bytes": 8246,
+      "sha256": "b0bd035ab37c43d821cc0a98c2eafacc98e9330e537e9ae900d5e3aff11e0a94",
+      "remote_match": true
+    },
+    {
+      "path": "backend/records.jsonl",
+      "bytes": 942447,
+      "sha256": "e57a457d20edfcf772f38f7dd9dfdd3368530d785bbf5b71179b90784b8130f9",
+      "remote_match": true
+    },
+    {
+      "path": "backend/records.csv",
+      "bytes": 1129757,
+      "sha256": "e2ca8f3b58dc74e208a579ff1b55997d0e5e202f49c2b018edce6358b7492c2f",
+      "remote_match": true
+    },
+    {
+      "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+      "bytes": 21252,
+      "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd",
+      "remote_match": true
+    },
+    {
+      "path": "source/id-ID/penn-05-metode-newton-dan-koreksi-id.tex",
+      "bytes": 27317,
+      "sha256": "0f6afd7da2268661124f967f299ac9df89bb6a8f5683b3e4e8fea32718a8549a",
+      "remote_match": true
+    },
+    {
+      "path": "output/pdf/D90-HAB-03-09-modul-pendamping-id.pdf",
+      "bytes": 3090098,
+      "sha256": "6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87",
+      "remote_match": true
+    },
+    {
+      "path": "output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
+      "bytes": 2691780,
+      "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6",
+      "remote_match": true
+    },
+    {
+      "path": "release/zenodo/2026-08-22-10u/zenodo-public-readback.json",
+      "bytes": 4398,
+      "sha256": "6227d77e4d8de04d47f28b63ed71796fa90d4e210d8393d8f6cb950751e44d7c",
+      "remote_match": true
+    },
+    {
+      "path": "release/figshare/2026-08-22-reader/figshare-public-readback.json",
+      "bytes": 3988,
+      "sha256": "8c4a55aa504cd058be6b67cc8ae0d460ce6fd08c9532915aa3c74e468a4cd1ca",
+      "remote_match": true
+    }
+  ],
+  "all_files_match": true,
+  "result": "pass"
+}

@@ -119,3 +119,16 @@ The public ZIP reopened successfully with 152 unique entries; all 150 manifest-b
 The first/primary file is `D90-HAB-03-09-modul-pendamping-id.pdf`, 3,090,098 bytes, SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`. It is followed by the 29-entry resumable source ZIP, exact CC BY 4.0 legal code, release manifest, and checksums. Anonymous downloads matched every local byte count, MD5, and SHA-256. The public source ZIP reopened and all 28 manifest-bound entries matched. The PDF retained 103 pages, `/Lang id-ID`, eight outline destinations, no encryption, and the disclosed untagged limitation.
 
 The item contains no Penn or other mixed-license work byte, no TTP prose, and no false complete-course claim. It appears exactly once in the 24-item public project and exactly once in the 14-item Indonesian collection. Post-publication project usage was 207,268,626 bytes / 69 files, below the 20,000,000,000-byte cap; this task's five files total 3,271,149 bytes, below the 500,000,000-byte cap. Version history preserves immutable metadata-only version 1 and reader-first version 2. The sanitized receipt is `release/figshare/2026-08-22-reader/figshare-public-readback.json`: 3,988 bytes; SHA-256 `8c4a55aa504cd058be6b67cc8ae0d460ce6fd08c9532915aa3c74e468a4cd1ca`.
+
+## 2026-08-22 — Public GitHub ten-unit companion checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Visibility/default branch: public / `main`
+- Content commit: `6900a39ce579ba5ca464fecc00b4575139fbc3ea`
+- Content tree: `8539cec4931da655e495a25eb3b05b25007208b5`
+- Scope: admitted optional companion Habring Chapters 3--9 and Penn Chapters 3--5, the 103-page combined Habring reader, 1,283-record backend, exact QA/control records, and sanitized Zenodo/Figshare release evidence
+- Exclusions: unadmitted Penn Chapter 6 candidate, superseded drafts/worklogs, local build/temp/cache material, credential files, and upstream contact
+
+The credential-free GitHub commit API returned the exact content commit and tree. Anonymous immutable-commit downloads matched local byte counts and SHA-256 values for ten representative closure surfaces: `README.md`, `CURRENT_STATE.md`, both backend files, the terminal Habring and Penn source units, the combined Habring reader, the Penn Chapter 5 reader, and both Zenodo/Figshare public-readback receipts. The backend remained byte-identical after two final generation/validation cycles: JSONL `e57a457d20edfcf772f38f7dd9dfdd3368530d785bbf5b71179b90784b8130f9`; CSV `e2ca8f3b58dc74e208a579ff1b55997d0e5e202f49c2b018edce6358b7492c2f`.
+
+The sanitized machine receipt is `release/github/2026-08-22-10u/github-public-readback.json`. This remains an incomplete optional-companion checkpoint, not completion of the selected MIT/Royer D90 course. No upstream issue, comment, or other contact was made.
