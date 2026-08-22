@@ -55,3 +55,7 @@ The already-started bounded Indonesian edition will be completed whether or not 
 ## D90-0014 — First public corpus checkpoint
 
 The single corpus repository is public at `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its initial content commit `bb2a7ab9d1a47beab97cd771eb63984bfe03f163` publishes only the two admitted Habring units, canonical Habring authority witnesses, QA/backend/control records, and per-component rights documentation. Local build caches, duplicate authority aliases, comparator evidence, and the not-yet-translated Penn closure are excluded. Public-byte readback passed. This checkpoint does not imply final corpus or curriculum-admission completion.
+
+## D90-0015 — Chapter 5 admitted
+
+Habring Chapter 5 is admitted at target SHA-256 `1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691` and PDF SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`. Eleven substantive authority repairs are explicit as O015-HAB-ADV-0028 through O015-HAB-ADV-0038, including the prox-uniqueness proof, Moreau identity/proof, unfinished prox example, duplicate label, and convergence theorem. Exact topology/formula audit, deterministic rebuild, open numerical checks, all-page visual review, and independent final mathematical rereview pass with P1=0, P2=0, P3=0. The PDF remains untagged and language review remains unrecorded.

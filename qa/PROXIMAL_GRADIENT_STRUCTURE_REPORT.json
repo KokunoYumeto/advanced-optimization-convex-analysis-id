@@ -1,0 +1,747 @@
+{
+  "citations": {
+    "source": [
+      "beck2017first"
+    ],
+    "target": [
+      "beck2017first"
+    ]
+  },
+  "correction_ledger_ids": [
+    "O015-HAB-ADV-0028",
+    "O015-HAB-ADV-0029",
+    "O015-HAB-ADV-0030",
+    "O015-HAB-ADV-0031",
+    "O015-HAB-ADV-0032",
+    "O015-HAB-ADV-0033",
+    "O015-HAB-ADV-0034",
+    "O015-HAB-ADV-0035",
+    "O015-HAB-ADV-0036",
+    "O015-HAB-ADV-0037",
+    "O015-HAB-ADV-0038"
+  ],
+  "environment_count": 78,
+  "environment_counts": {
+    "aligned": 13,
+    "cases": 2,
+    "defn": 2,
+    "enumerate": 2,
+    "equation": 42,
+    "example": 2,
+    "lemma": 6,
+    "proof": 6,
+    "rem": 2,
+    "theorem": 1
+  },
+  "environment_topology_equal": true,
+  "failures": [],
+  "forbidden_surface_counts": {
+    "figures": {
+      "source": 0,
+      "target": 0
+    },
+    "footnotes": {
+      "source": 0,
+      "target": 0
+    },
+    "inputs": {
+      "source": 0,
+      "target": 0
+    }
+  },
+  "formula_delta_count": 38,
+  "formula_delta_manifest_sha256": "3b910b86e304b2ba472df7fbf642db5928824ee999b551cc60f287b2c5705a3c",
+  "formula_deltas": [
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{proximal:eq:problem}\\min_xf(x)",
+        "f",
+        "+\\infty"
+      ],
+      "source_end": 4,
+      "source_start": 2,
+      "target": [
+        "\\label{proximal:eq:problem}\\min_xf(x),",
+        "f:\\R^d\\rightarrow(-\\infty,\\infty]"
+      ],
+      "target_end": 3,
+      "target_start": 2
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 7,
+      "source_start": 8,
+      "target": [
+        "\\tau_k>0"
+      ],
+      "target_end": 7,
+      "target_start": 7
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "0\\in\\partial\\biggl(\\frac{1}{2}\\|\\cdot-x_k\\|^2+\\tau_kf\\biggr)(x_{k+1})",
+        "\\min_x\\frac{1}{2}\\|x-x_k\\|^2+\\tau_kf(x)"
+      ],
+      "source_end": 10,
+      "source_start": 9,
+      "target": [
+        "0\\in\\partial\\biggl(\\frac{1}{2}\\|\\cdot-x_k\\|^2+\\tau_kf\\biggr)(x_{k+1}),",
+        "\\min_x\\frac{1}{2}\\|x-x_k\\|^2+\\tau_kf(x)."
+      ],
+      "target_end": 10,
+      "target_start": 9
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}\\prox_{f}:\\R^d&\\rightarrow2^{\\R^d}\\\\x&\\mapsto\\arg\\min_{y\\in\\R^d}\\frac{1}{2}\\|y-x\\|^2+f(y).\\end{aligned}"
+      ],
+      "source_end": 12,
+      "source_start": 12,
+      "target": [
+        "\\begin{aligned}\\prox_f:\\R^d&\\rightarrow2^{\\R^d},\\\\x&\\mapsto\\arg\\min_{y\\in\\R^d}\\frac{1}{2}\\|y-x\\|^2+f(y).\\end{aligned}"
+      ],
+      "target_end": 12,
+      "target_start": 12
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_f\\neq\\emptyset"
+      ],
+      "source_end": 14,
+      "source_start": 14,
+      "target": [
+        "\\prox_f(x)\\neq\\emptyset"
+      ],
+      "target_end": 14,
+      "target_start": 14
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "y_1,y_2",
+        "y\\mapsto\\frac{1}{2}\\|y-x\\|^2"
+      ],
+      "source_end": 28,
+      "source_start": 27,
+      "target": [
+        "q_x(y)=\\frac{1}{2}\\|y-x\\|^2+f(y)",
+        "y_1\\neqy_2"
+      ],
+      "target_end": 28,
+      "target_start": 27
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\bar{y}=\\frac{y_1+y_2}{2}",
+        "\\begin{aligned}\\frac{1}{2}\\|\\bary-x\\|^2+f(\\bary)<&\\frac{1}{2}\\bigg(\\frac{1}{2}\\|y_1-x\\|^2+f(y_1)+\\frac{1}{2}\\|y_1-x\\|^2+f(y_1)\\bigg)\\\\=&\\arg\\min_{y\\in\\R^d}\\frac{1}{2}\\|y-x\\|^2+f(y)\\end{aligned}",
+        "\\label{proximal:eq:composite}\\min_{x\\in\\R^d}F(x)\\coloneqqf(x)+g(x)"
+      ],
+      "source_end": 32,
+      "source_start": 30,
+      "target": [
+        "\\bary=(y_1+y_2)/2",
+        "\\begin{aligned}q_x(\\bary)<&\\frac{1}{2}\\bigl(q_x(y_1)+q_x(y_2)\\bigr)\\\\=&\\min_{y\\in\\R^d}q_x(y),\\end{aligned}",
+        "\\label{proximal:eq:composite}\\min_{x\\in\\R^d}F(x)\\coloneqqf(x)+g(x),"
+      ],
+      "target_end": 32,
+      "target_start": 30
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{proximal:eq:prox_grad}\\begin{aligned}x_{k+1}=\\prox_{\\tau_kg}(x_k-\\tau_k\\nablaf(x_k)).\\end{aligned}"
+      ],
+      "source_end": 39,
+      "source_start": 39,
+      "target": [
+        "\\label{proximal:eq:prox_grad}\\begin{aligned}x_{k+1}=\\prox_{\\tau_kg}\\bigl(x_k-\\tau_k\\nablaf(x_k)\\bigr).\\end{aligned}"
+      ],
+      "target_end": 39,
+      "target_start": 39
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 41,
+      "source_start": 42,
+      "target": [
+        "\\tau>0"
+      ],
+      "target_end": 42,
+      "target_start": 42
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "x=\\prox_{\\tau_kg}(x-\\tau_k\\nablaf(x))."
+      ],
+      "source_end": 43,
+      "source_start": 43,
+      "target": [
+        "x=\\prox_{\\taug}\\bigl(x-\\tau\\nablaf(x)\\bigr)\\quad\\Longleftrightarrow\\quad0\\in\\partial(f+g)(x)."
+      ],
+      "target_end": 44,
+      "target_start": 44
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "x\\inx-\\tau_k\\nablaf(x)-\\tau_k\\partialg(x).",
+        "0\\in\\tau_k\\partial(f+g)(x),",
+        "0\\in\\partial(f+g)(x)"
+      ],
+      "source_end": 48,
+      "source_start": 46,
+      "target": [
+        "x=\\prox_{\\taug}\\bigl(x-\\tau\\nablaf(x)\\bigr)\\quad\\Longleftrightarrow\\quad0\\in\\tau\\nablaf(x)+\\tau\\partialg(x).",
+        "\\tau>0",
+        "0\\in\\tau\\bigl(\\nablaf(x)+\\partialg(x)\\bigr)\\quad\\Longleftrightarrow\\quad0\\in\\partial(f+g)(x).",
+        "F=f+g"
+      ],
+      "target_end": 50,
+      "target_start": 47
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 50,
+      "source_start": 51,
+      "target": [
+        "\\tau>0"
+      ],
+      "target_end": 53,
+      "target_start": 53
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "M_f^\\tau(x)\\coloneq\\min_{y\\in\\R^d}\\frac{1}{2\\tau}\\|x-y\\|^2+f(y)."
+      ],
+      "source_end": 52,
+      "source_start": 52,
+      "target": [
+        "M_f^\\tau(x)\\coloneqq\\inf_{y\\in\\R^d}\\frac{1}{2\\tau}\\|x-y\\|^2+f(y)."
+      ],
+      "target_end": 55,
+      "target_start": 55
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "M_f^\\tau(x)=\\frac{1}{2\\tau}\\|x-\\prox_{\\tauf}(x)\\|+f(\\prox_{\\tauf}(x))."
+      ],
+      "source_end": 54,
+      "source_start": 54,
+      "target": [
+        "\\tau>0",
+        "M_f^\\tau(x)=\\frac{1}{2\\tau}\\bigl\\|x-\\prox_{\\tauf}(x)\\bigr\\|^2+f\\bigl(\\prox_{\\tauf}(x)\\bigr).",
+        "\\tauf"
+      ],
+      "target_end": 59,
+      "target_start": 57
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_{\\tau\\delta_C}(x)=\\proj_C(x),\\quadM^{\\tau}_{\\delta_C}(x)=\\frac{1}{2\\tau}\\mathrm{dist}(x,C)^2.",
+        "C=\\{x\\in\\R^d\\,|\\,\\|x\\|_\\infty\\leq1\\}",
+        "(\\prox_{\\tau\\delta_C}(x))_i=\\frac{x_i}{\\max\\{1,|x_i|\\}}"
+      ],
+      "source_end": 59,
+      "source_start": 57,
+      "target": [
+        "\\prox_{\\tau\\delta_C}(x)=\\proj_C(x),\\qquadM_{\\delta_C}^{\\tau}(x)=\\frac{1}{2\\tau}\\operatorname{dist}(x,C)^2.",
+        "C=\\{x\\in\\R^d\\mid\\|x\\|_\\infty\\leq1\\}",
+        "\\bigl(\\prox_{\\tau\\delta_C}(x)\\bigr)_i=\\frac{x_i}{\\max\\{1,|x_i|\\}}."
+      ],
+      "target_end": 64,
+      "target_start": 62
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "(\\prox_{\\tauf}(x))_i=\\begin{cases}x_i-\\tau\\quad&x_i>\\tau\\\\x_i+\\tau\\quad&x_t<-\\tau\\\\0\\quad&x_i\\in[-\\tau,\\tau]\\end{cases}"
+      ],
+      "source_end": 61,
+      "source_start": 61,
+      "target": [
+        "\\bigl(\\prox_{\\tauf}(x)\\bigr)_i=\\begin{cases}x_i-\\tau&x_i>\\tau,\\\\x_i+\\tau&x_i<-\\tau,\\\\0&x_i\\in[-\\tau,\\tau].\\end{cases}"
+      ],
+      "target_end": 66,
+      "target_start": 66
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "M^\\tau_{|\\cdot|}(x)=\\begin{cases}\\frac{|x|^2}{2\\tau}\\quad&|x|\\leq\\tau\\\\|x|-\\frac{\\tau}{2}\\quad&\\text{#}\\end{cases}",
+        "f(x)=\\sum_if_i(x_i)",
+        "x=(x_1,x_2,\\dots,x_k)\\R^d"
+      ],
+      "source_end": 65,
+      "source_start": 63,
+      "target": [
+        "M_{|\\cdot|}^{\\tau}(x)=\\begin{cases}\\dfrac{|x|^2}{2\\tau}&|x|\\leq\\tau,\\\\|x|-\\dfrac{\\tau}{2}&|x|>\\tau.\\end{cases}",
+        "x=(x_1,\\dots,x_m)\\in\\R^{d_1}\\times\\cdots\\times\\R^{d_m}\\cong\\R^d"
+      ],
+      "target_end": 69,
+      "target_start": 68
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_{f}(x)=((\\prox_{f_i}(x_i))_i)"
+      ],
+      "source_end": 68,
+      "source_start": 68,
+      "target": [
+        "f(x)=\\sum_if_i(x_i)",
+        "\\prox_f(x)=\\bigl(\\prox_{f_i}(x_i)\\bigr)_i"
+      ],
+      "target_end": 73,
+      "target_start": 72
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_f(x)=\\frac{1}{\\alpha}(\\prox_{\\alpha^2g}(\\alphax+b)-b)"
+      ],
+      "source_end": 76,
+      "source_start": 76,
+      "target": [
+        "\\prox_f(x)=\\alpha^{-1}\\bigl(\\prox_{\\alpha^2g}(\\alphax+b)-b\\bigr)"
+      ],
+      "target_end": 81,
+      "target_start": 81
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_f(x)=Q^T\\prox_{g}(Qx)"
+      ],
+      "source_end": 79,
+      "source_start": 79,
+      "target": [
+        "\\prox_f(x)=Q^\\top\\prox_g(Qx)"
+      ],
+      "target_end": 84,
+      "target_start": 84
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "b\\inR",
+        "\\prox_{f}(x)=\\prox_g(x-a)"
+      ],
+      "source_end": 83,
+      "source_start": 82,
+      "target": [
+        "b\\in\\R",
+        "\\prox_f(x)=\\prox_g(x-a)"
+      ],
+      "target_end": 88,
+      "target_start": 87
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\prox_f(x)=\\prox_{\\tilde{\\gamma}g}(\\tilde{\\gamma}x+\\gamma\\tilde{\\gamma}a)",
+        "\\tilde{\\gamma}=\\frac{1}{1+\\gamma}"
+      ],
+      "source_end": 87,
+      "source_start": 86,
+      "target": [
+        "\\gamma\\geq0",
+        "\\prox_f(x)=\\prox_{\\widetilde\\gammag}(\\widetilde\\gammax+\\gamma\\widetilde\\gammaa)",
+        "\\widetilde\\gamma=(1+\\gamma)^{-1}"
+      ],
+      "target_end": 93,
+      "target_start": 91
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\nablaM^\\tau_f",
+        "\\frac{1}{\\tau}",
+        "\\nablaM^\\tau_f(x)=\\frac{1}{\\tau}(x-\\prox_{\\tauf}(x)).",
+        "\\tau"
+      ],
+      "source_end": 93,
+      "source_start": 90,
+      "target": [
+        "\\tau>0",
+        "1/\\tau",
+        "\\nablaM_f^\\tau(x)=\\frac{1}{\\tau}\\bigl(x-\\prox_{\\tauf}(x)\\bigr).",
+        "q(x,y)=\\frac{1}{2\\tau}\\|x-y\\|^2+f(y)",
+        "q",
+        "(x,y)",
+        "p_i=\\prox_{\\tauf}(x_i)",
+        "t\\in[0,1]",
+        "q",
+        "\\bigl(tx_1+(1-t)x_2,tp_1+(1-t)p_2\\bigr)",
+        "M_f^\\tau(tx_1+(1-t)x_2)\\leqtM_f^\\tau(x_1)+(1-t)M_f^\\tau(x_2)",
+        "f"
+      ],
+      "target_end": 107,
+      "target_start": 96
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}M^\\tau_f(x+h)=\\frac{1}{2\\tau}\\|x+h-p(x+h)\\|^2+f(p(x+h))\\leq\\frac{1}{2\\tau}\\|x+h-p(x)\\|^2+f(p(x))\\\\M^\\tau_f(x)=\\frac{1}{2\\tau}\\|x-p(x)\\|^2+f(p(x)).\\end{aligned}",
+        "\\begin{aligned}M^\\tau_f(x+h)-M^\\tau_f(x)\\leq&\\frac{1}{2\\tau}(\\|x+h-p(x)\\|^2-\\|x-p(x)\\|^2)\\\\=&\\frac{1}{2\\tau}(\\|x+h\\|^2-\\|x\\|^2-2\\inner{h}{p(y)})\\\\=&\\inner{h}{\\frac{1}{\\tau}(x-p(x))}+\\frac{1}{2\\tau}\\|h\\|^2\\end{aligned}",
+        "\\begin{aligned}M^\\tau_f(x+h)-M^\\tau_f(x)-\\inner{h}{\\frac{1}{\\tau}(x-p(x))}\\leq&\\frac{1}{2\\tau}\\|h\\|^2\\end{aligned}",
+        "\\label{proximal:eq:moreau_diff}\\phi(h)\\coloneqqM^\\tau_f(x)-M^\\tau_f(y)-\\inner{x-y}{\\frac{1}{\\tau}(y-p(y))}",
+        "\\phi",
+        "\\phi(0)=0",
+        "0=\\phi(0)=\\phi(\\frac{1}{2}h+\\frac{1}{2}(-h))\\leq\\frac{1}{2}(\\phi(h)+\\phi(-h))",
+        "\\phi(h)\\geq-\\phi(-h)\\geq-\\frac{1}{2\\tau}\\|h\\|^2.",
+        "\\begin{aligned}\\left|M^\\tau_f(x+h)-M^\\tau_f(x)-\\inner{h}{\\frac{1}{\\tau}(x-p(x))}\\right|\\leq&\\frac{1}{2\\tau}\\|h\\|^2\\end{aligned}",
+        "\\nablaM^\\tau_f(x)=\\frac{1}{\\tau}(x-p(x))",
+        "\\label{proximal:eq:moreau_diff2}\\begin{aligned}\\|\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)\\|^2=&\\inner{\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)}{\\frac{1}{\\tau}(x-p(x))-\\frac{1}{\\tau}(y-p(y))}\\\\=&\\frac{1}{\\tau}\\inner{\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)}{x-y}-\\frac{1}{\\tau}\\inner{\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)}{p(x)-p(y)}.\\end{aligned}",
+        "\\nablaM^\\tau_f(x)=\\frac{1}{\\tau}(x-p(x))\\in\\partialf(x)",
+        "\\label{proximal:eq:moreau_diff2}\\begin{aligned}\\|\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)\\|^2\\leq&\\frac{1}{\\tau}\\inner{\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)}{x-y}\\leq\\frac{1}{\\tau}\\|\\nablaM^\\tau_f(x)-\\nablaM^\\tau_f(y)\\|\\|x-y\\|\\end{aligned}",
+        "\\prox_{\\tauf}(x)=x-\\tau\\bigg(\\frac{1}{\\tau}(x-\\prox_{\\tauf}(x))\\bigg)=x-\\tau\\nablaM^\\tau_f(x)."
+      ],
+      "source_end": 108,
+      "source_start": 95,
+      "target": [
+        "\\begin{aligned}M_f^\\tau(x+h)=&\\frac{1}{2\\tau}\\|x+h-p(x+h)\\|^2+f(p(x+h))\\\\\\leq&\\frac{1}{2\\tau}\\|x+h-p(x)\\|^2+f(p(x)),\\\\M_f^\\tau(x)=&\\frac{1}{2\\tau}\\|x-p(x)\\|^2+f(p(x)).\\end{aligned}",
+        "\\begin{aligned}M_f^\\tau(x+h)-M_f^\\tau(x)\\leq&\\frac{1}{2\\tau}\\bigl(\\|x+h-p(x)\\|^2-\\|x-p(x)\\|^2\\bigr)\\\\=&\\inner{h}{\\frac{1}{\\tau}(x-p(x))}+\\frac{1}{2\\tau}\\|h\\|^2.\\end{aligned}",
+        "\\begin{aligned}M_f^\\tau(x+h)-M_f^\\tau(x)-\\inner{h}{\\frac{1}{\\tau}(x-p(x))}\\leq&\\frac{1}{2\\tau}\\|h\\|^2.\\end{aligned}",
+        "\\label{proximal:eq:moreau_diff}r_x(h)\\coloneqqM_f^\\tau(x+h)-M_f^\\tau(x)-\\inner{h}{\\frac{1}{\\tau}(x-p(x))}.",
+        "\\partialf",
+        "\\|p(x)-p(y)\\|\\leq\\|x-y\\|",
+        "p",
+        "M_f^\\tau(x)",
+        "p(x+h)",
+        "r_x(h)\\geq\\inner{h}{\\frac{1}{\\tau}\\bigl(p(x)-p(x+h)\\bigr)}+\\frac{1}{2\\tau}\\|h\\|^2\\geq-\\frac{1}{2\\tau}\\|h\\|^2.",
+        "\\begin{aligned}\\left|M_f^\\tau(x+h)-M_f^\\tau(x)-\\inner{h}{\\frac{1}{\\tau}(x-p(x))}\\right|\\leq&\\frac{1}{2\\tau}\\|h\\|^2.\\end{aligned}",
+        "\\nablaM_f^\\tau(x)=\\tau^{-1}(x-p(x))",
+        "\\label{proximal:eq:moreau_diff2}\\begin{aligned}\\|\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)\\|^2=&\\frac{1}{\\tau}\\inner{\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)}{(x-p(x))-(y-p(y))}\\\\=&\\frac{1}{\\tau}\\inner{\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)}{x-y}\\\\&-\\frac{1}{\\tau}\\inner{\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)}{p(x)-p(y)}.\\end{aligned}",
+        "\\nablaM_f^\\tau(x)=\\tau^{-1}(x-p(x))\\in\\partialf(p(x))",
+        "\\label{proximal:eq:moreau_diff2_bound}\\begin{aligned}\\|\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)\\|^2\\leq&\\frac{1}{\\tau}\\inner{\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)}{x-y}\\\\\\leq&\\frac{1}{\\tau}\\|\\nablaM_f^\\tau(x)-\\nablaM_f^\\tau(y)\\|\\,\\|x-y\\|.\\end{aligned}",
+        "1/\\tau",
+        "\\prox_{\\tauf}(x)=x-\\tau\\biggl(\\frac{1}{\\tau}\\bigl(x-\\prox_{\\tauf}(x)\\bigr)\\biggr)=x-\\tau\\nablaM_f^\\tau(x).",
+        "C",
+        "\\prox_{\\tau\\delta_C}(x)=\\proj_C(x)",
+        "f(x)=\\|x\\|_1",
+        "(\\prox_{\\tauf}(x))_i=\\operatorname{sign}(x_i)\\max\\{|x_i|-\\tau,0\\}",
+        "\\operatorname{sign}(0)=0",
+        "f(x)=\\|x\\|_2",
+        "\\prox_{\\tauf}(x)=(1-\\tau/\\|x\\|_2)_+x",
+        "x\\neq0",
+        "\\prox_{\\tauf}(0)=0"
+      ],
+      "target_end": 134,
+      "target_start": 109
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}F(y)-F(x)=&\\int_0^1\\frac{\\dd}{\\ddt}F(x+t(y-x))\\ddt\\\\=&\\int_0^1\\inner{\\nablaF(x+t(y-x))}{y-x}\\ddt\\\\=&\\int_0^1\\inner{\\nablaF(x+t(y-x))-\\nablaF(x)}{y-x}\\ddt+\\int_0^1\\inner{\\nablaF(x)}{y-x}\\ddt\\\\\\leq&\\int_0^1Lt\\|y-x\\|^2\\ddt+\\inner{\\nablaF(x)}{y-x}\\\\=&\\frac{L}{2}\\|y-x\\|^2+\\inner{\\nablaF(x)}{y-x}\\end{aligned}",
+        "T_\\tau(x)=\\frac{1}{\\tau}(x-\\prox_{\\taug}(x-\\tau\\nablaf(x))).",
+        "x_{k+1}=x_k-\\tau_kT_{\\tau_k}(x_k)"
+      ],
+      "source_end": 116,
+      "source_start": 114,
+      "target": [
+        "\\begin{aligned}F(y)-F(x)=&\\int_0^1\\frac{\\dd}{\\ddt}F(x+t(y-x))\\ddt\\\\=&\\int_0^1\\inner{\\nablaF(x+t(y-x))}{y-x}\\ddt\\\\=&\\int_0^1\\inner{\\nablaF(x+t(y-x))-\\nablaF(x)}{y-x}\\ddt+\\int_0^1\\inner{\\nablaF(x)}{y-x}\\ddt\\\\\\leq&\\int_0^1Lt\\|y-x\\|^2\\ddt+\\inner{\\nablaF(x)}{y-x}\\\\=&\\frac{L}{2}\\|y-x\\|^2+\\inner{\\nablaF(x)}{y-x}.\\end{aligned}",
+        "\\tau>0",
+        "T_\\tau(x)=\\frac{1}{\\tau}\\bigl(x-\\prox_{\\taug}(x-\\tau\\nablaf(x))\\bigr).",
+        "x_{k+1}=x_k-\\tau_kT_{\\tau_k}(x_k)."
+      ],
+      "target_end": 143,
+      "target_start": 140
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 118,
+      "source_start": 119,
+      "target": [
+        "L>0"
+      ],
+      "target_end": 146,
+      "target_start": 146
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau_k\\leqL^{-1}"
+      ],
+      "source_end": 120,
+      "source_start": 120,
+      "target": [
+        "\\arg\\min_xF(x)\\neq\\emptyset",
+        "\\tau_{\\min}>0",
+        "0<\\tau_{\\min}\\leq\\tau_k\\leqL^{-1}"
+      ],
+      "target_end": 150,
+      "target_start": 148
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "F(x_{n})-F(x^*)\\leq\\frac{\\|x_{0}-x^*\\|^2}{2\\tau_{\\min}n}.",
+        "x^*\\in\\arg\\min_xF(x)",
+        "x_k\\rightarrowx^*"
+      ],
+      "source_end": 125,
+      "source_start": 123,
+      "target": [
+        "F(x_n)-F(x^*)\\leq\\frac{\\|x_0-x^*\\|^2}{2\\tau_{\\min}n}\\qquad(n\\geq1).",
+        "x_k",
+        "\\hatx\\in\\arg\\min_xF(x)"
+      ],
+      "target_end": 155,
+      "target_start": 153
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "T_{\\tau_k}(x_k)-\\nablaf(x_k)\\in\\partialg(x_k-\\tau_kT_{\\tau_k}(x_k))=\\partialg(x_{k+1}).",
+        "\\nablaf(x)\\in\\partialf(x)",
+        "\\tau_k\\leqL"
+      ],
+      "source_end": 129,
+      "source_start": 127,
+      "target": [
+        "T_{\\tau_k}(x_k)-\\nablaf(x_k)\\in\\partialg\\bigl(x_k-\\tau_kT_{\\tau_k}(x_k)\\bigr)=\\partialg(x_{k+1}).",
+        "f",
+        "\\tau_k\\leqL^{-1}"
+      ],
+      "target_end": 159,
+      "target_start": 157
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}F(x_{k+1})\\leq&f(x_k)-\\tau_k\\inner{\\nablaf(x_k)}{T_{\\tau_k}(x_k)}+\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2\\\\&+g(z)-\\inner{T_{\\tau_k}(x_k)-\\nablaf(x_k)}{z-(x_k-\\tau_kT_{\\tau_k}(x_k))}\\\\\\leq&f(z)+g(z)\\\\&-\\inner{\\nablaf(x_k)}{z-x_k}-\\tau_k\\inner{\\nablaf(x_k)}{T_{\\tau_k}(x_k)}+\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2\\\\&-\\inner{T_{\\tau_k}(x_k)-\\nablaf(x_k)}{z-(x_k-\\tau_kT_{\\tau_k}(x_k))}\\\\\\leq&F(z)-\\inner{T_{\\tau_k}(x_k)}{z-x_k}-\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2.\\end{aligned}"
+      ],
+      "source_end": 131,
+      "source_start": 131,
+      "target": [
+        "\\begin{aligned}F(x_{k+1})\\leq&f(x_k)-\\tau_k\\inner{\\nablaf(x_k)}{T_{\\tau_k}(x_k)}+\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2\\\\&+g(z)-\\inner{T_{\\tau_k}(x_k)-\\nablaf(x_k)}{z-\\bigl(x_k-\\tau_kT_{\\tau_k}(x_k)\\bigr)}\\\\\\leq&f(z)+g(z)-\\inner{\\nablaf(x_k)}{z-x_k}-\\tau_k\\inner{\\nablaf(x_k)}{T_{\\tau_k}(x_k)}+\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2\\\\&-\\inner{T_{\\tau_k}(x_k)-\\nablaf(x_k)}{z-\\bigl(x_k-\\tau_kT_{\\tau_k}(x_k)\\bigr)}\\\\=&F(z)-\\inner{T_{\\tau_k}(x_k)}{z-x_k}-\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2.\\end{aligned}"
+      ],
+      "target_end": 161,
+      "target_start": 161
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "F(x_{k+1})\\leqF(x_k)-\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2"
+      ],
+      "source_end": 133,
+      "source_start": 133,
+      "target": [
+        "F(x_{k+1})\\leqF(x_k)-\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2."
+      ],
+      "target_end": 163,
+      "target_start": 163
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "T_{\\tau_k}=\\tau_k^{-1}(x_k-x_{k+1})",
+        "\\begin{aligned}0\\leqF(x_{k+1})-F(x^*)\\leq&-\\tau_k^{-1}\\inner{x_k-x_{k+1}}{x^*-x_k}-\\frac{\\tau_k^{-1}}{2}\\|x_k-x_{k+1}\\|^2\\\\\\leq&-\\frac{\\tau_k^{-1}}{2}\\left(\\|x_k-x_{k+1}\\|^2-\\inner{x_k-x_{k+1}}{x_k-x^*}\\right)\\\\\\leq&-\\frac{\\tau_k^{-1}}{2}\\left(\\|x_{k+1}-x^*\\|^2-\\|x_k-x^*\\|^2\\right)\\\\\\leq&\\frac{\\tau_k^{-1}}{2}\\left(\\|x_k-x^*\\|^2-\\|x_{k+1}-x^*\\|^2\\right).\\end{aligned}"
+      ],
+      "source_end": 138,
+      "source_start": 137,
+      "target": [
+        "T_{\\tau_k}(x_k)=\\tau_k^{-1}(x_k-x_{k+1})",
+        "\\begin{aligned}0\\leqF(x_{k+1})-F(x^*)\\leq&\\inner{T_{\\tau_k}(x_k)}{x_k-x^*}-\\frac{\\tau_k}{2}\\|T_{\\tau_k}(x_k)\\|^2\\\\=&\\frac{1}{2\\tau_k}\\left(2\\inner{x_k-x_{k+1}}{x_k-x^*}-\\|x_k-x_{k+1}\\|^2\\right)\\\\=&\\frac{1}{2\\tau_k}\\left(\\|x_k-x^*\\|^2-\\|x_{k+1}-x^*\\|^2\\right).\\end{aligned}"
+      ],
+      "target_end": 168,
+      "target_start": 167
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "(\\|x_{k+1}-x^*\\|^2)_k",
+        "k",
+        "\\begin{aligned}\\sum_{k=1}^nF(x_{k})-F(x^*)\\leq&\\sum_{k=1}^n\\frac{\\tau_k^{-1}}{2}\\left(\\|x_{k-1}-x^*\\|^2-\\|x_{k}-x^*\\|^2\\right)\\\\\\leq&\\frac{\\tau_{\\min}^{-1}}{2}\\sum_{k=1}^n\\left(\\|x_{k-1}-x^*\\|^2-\\|x_{k}-x^*\\|^2\\right)\\\\=&\\frac{\\tau_{\\min}^{-1}}{2}\\left(\\|x_{0}-x^*\\|^2-\\|x_{n}-x^*\\|^2\\right)\\end{aligned}",
+        "(F(x_{k})-F(x^*))_k",
+        "n(F(x_{n})-F(x^*))\\leq\\sum_{k=1}^nF(x_{k})-F(x^*)\\leq\\frac{\\tau_{\\min}^{-1}}{2}\\|x_{0}-x^*\\|^2",
+        "F(x_{n})-F(x^*)\\leq\\frac{\\|x_{0}-x^*\\|^2}{2\\tau_{\\min}n}."
+      ],
+      "source_end": 145,
+      "source_start": 140,
+      "target": [
+        "k=0,\\dots,n-1",
+        "\\begin{aligned}\\sum_{k=0}^{n-1}\\bigl(F(x_{k+1})-F(x^*)\\bigr)\\leq&\\sum_{k=0}^{n-1}\\frac{1}{2\\tau_k}\\left(\\|x_k-x^*\\|^2-\\|x_{k+1}-x^*\\|^2\\right)\\\\\\leq&\\frac{1}{2\\tau_{\\min}}\\sum_{k=0}^{n-1}\\left(\\|x_k-x^*\\|^2-\\|x_{k+1}-x^*\\|^2\\right)\\\\=&\\frac{1}{2\\tau_{\\min}}\\left(\\|x_0-x^*\\|^2-\\|x_n-x^*\\|^2\\right).\\end{aligned}",
+        "F(x_k)-F(x^*)",
+        "n\\bigl(F(x_n)-F(x^*)\\bigr)\\leq\\sum_{k=0}^{n-1}\\bigl(F(x_{k+1})-F(x^*)\\bigr)\\leq\\frac{\\|x_0-x^*\\|^2}{2\\tau_{\\min}}.",
+        "F(x_n)-F(x^*)\\leq\\frac{\\|x_0-x^*\\|^2}{2\\tau_{\\min}n}."
+      ],
+      "target_end": 174,
+      "target_start": 170
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "(\\|x_k-x^*\\|)_k"
+      ],
+      "source_end": 147,
+      "source_start": 147,
+      "target": [
+        "\\|x_k-x^*\\|"
+      ],
+      "target_end": 176,
+      "target_start": 176
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "F"
+      ],
+      "source_end": 149,
+      "source_start": 149,
+      "target": [],
+      "target_end": 177,
+      "target_start": 178
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 150,
+      "source_start": 151,
+      "target": [
+        "\\hatx=\\lim_jx_{n(j)}",
+        "F(x_k)\\rightarrow\\minF",
+        "F=f+g",
+        "F(\\hatx)\\leq\\liminf_jF(x_{n(j)})=\\lim_kF(x_k)=\\minF."
+      ],
+      "target_end": 182,
+      "target_start": 179
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "(x_k)_k",
+        "\\hatx=\\lim_kx_{n(k)}",
+        "F(x_k)\\rightarrow\\minF",
+        "F(\\hatx))\\leq\\liminf_kF(x_{n(k)})=\\limF(x_k)=\\minF,"
+      ],
+      "source_end": 155,
+      "source_start": 152,
+      "target": [
+        "\\|x_k-\\hatx\\|",
+        "c\\geq0",
+        "\\|x_k-\\hatx\\|\\rightarrowc",
+        "c=\\lim_k\\|x_k-\\hatx\\|=\\lim_j\\|x_{n(j)}-\\hatx\\|=0."
+      ],
+      "target_end": 187,
+      "target_start": 184
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "F",
+        "(\\|x_k-\\hat{x}\\|)_k",
+        "c\\in\\R",
+        "\\|x_k-\\hat{x}\\|\\rightarrowc",
+        "c=\\lim_k\\|x_k-\\hat{x}\\|=\\lim_k\\|x_{n(k)}-\\hat{x}\\|=0",
+        "\\hat{x}"
+      ],
+      "source_end": 162,
+      "source_start": 157,
+      "target": [],
+      "target_end": 188,
+      "target_start": 189
+    }
+  ],
+  "formula_surface_count": {
+    "source": 162,
+    "target": 188
+  },
+  "informal_prompt_count": {
+    "source": 3,
+    "target_dispositions": 3
+  },
+  "informal_prompt_dispositions": [
+    {
+      "disposition": "retained_as_informal_reasoning_prompt",
+      "source_occurrences": 1,
+      "source_surface": "Therefore, (why?)",
+      "target_occurrences": 1,
+      "target_surface": "Oleh karena itu (mengapa?)"
+    },
+    {
+      "disposition": "retained_and_scaffolded_as_self_study_exercise",
+      "source_occurrences": 1,
+      "source_surface": "Exercise.",
+      "target_occurrences": 1,
+      "target_surface": "Latihan. Terapkan lemma keberadaan dan keunikan proks pada \\(\\tau f\\), lalu substitusikan peminim unik tersebut ke dalam definisi infimum."
+    },
+    {
+      "disposition": "completed_placeholder_and_retained_verification_prompt",
+      "source_occurrences": 1,
+      "source_surface": "Projection, 1 norm, 2 norm",
+      "target_occurrences": 1,
+      "target_surface": "Verifikasikan ketiga rumus ini langsung dari kondisi optimalitas proks."
+    }
+  ],
+  "label_remaps": [
+    {
+      "reason": "unique remap of the source's second duplicate label",
+      "source": "proximal:eq:moreau_diff2",
+      "source_ordinal": 8,
+      "target": "proximal:eq:moreau_diff2_bound"
+    }
+  ],
+  "required_correction_surface_count": 16,
+  "result": "pass",
+  "schema": "o015-proximal-gradient-structure-audit-v1",
+  "segments": [
+    "d90.hab.v1.ch05.seg0001",
+    "d90.hab.v1.ch05.seg0002",
+    "d90.hab.v1.ch05.seg0003",
+    "d90.hab.v1.ch05.seg0004",
+    "d90.hab.v1.ch05.seg0005",
+    "d90.hab.v1.ch05.seg0006",
+    "d90.hab.v1.ch05.seg0007",
+    "d90.hab.v1.ch05.seg0008"
+  ],
+  "source": {
+    "bytes": 18464,
+    "path": "authority/habring/source-v1/proximal_gradient.tex",
+    "sha256": "59d5694742f0e2f9f46da0c1418b5fe0ff18521c49078ed29c843b6e8c701f6e"
+  },
+  "source_labels": [
+    "proximal:eq:problem",
+    "proximal:eq:intro",
+    "proximal:eq:prox_proof",
+    "proximal:eq:composite",
+    "proximal:eq:prox_grad",
+    "proximal:eq:moreau_diff",
+    "proximal:eq:moreau_diff2",
+    "proximal:eq:moreau_diff2",
+    "proximal_gradient:lemma:Lsmoothness"
+  ],
+  "target": {
+    "bytes": 20575,
+    "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+    "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+  },
+  "target_labels": [
+    "proximal:eq:problem",
+    "proximal:eq:intro",
+    "proximal:eq:prox_proof",
+    "proximal:eq:composite",
+    "proximal:eq:prox_grad",
+    "proximal:eq:moreau_diff",
+    "proximal:eq:moreau_diff2",
+    "proximal:eq:moreau_diff2_bound",
+    "proximal_gradient:lemma:Lsmoothness"
+  ],
+  "unnumbered_display_count": {
+    "source": 1,
+    "target": 1
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "checks": {
+    "l1_soft_thresholding": {
+      "independent_slsqp_cases": 18,
+      "independent_solver": "SLSQP epigraph variables (y,u), u>=+/-y",
+      "lambda": 0.7,
+      "mapping": "prox_{tau*lambda*||.||_1}, coordinatewise soft thresholding",
+      "max_kkt_residual": 2.7755575615628914e-16,
+      "max_slsqp_inf_error": 2.6671189212734703e-07,
+      "max_slsqp_objective_gap": 3.68594044175552e-14,
+      "result": "PASS",
+      "samples": 51,
+      "solver_iterations_total": 141,
+      "tau": 0.4,
+      "threshold": 0.27999999999999997
+    },
+    "l2_vector_shrinkage": {
+      "independent_solver": "scipy.optimize.minimize_scalar on the radial objective",
+      "lambda": 0.9,
+      "mapping": "prox_{tau*lambda*||.||_2}, vector shrinkage",
+      "max_kkt_residual": 5.182499086415284e-16,
+      "max_scalar_solver_objective_gap": 1.7128791842776938e-15,
+      "max_scalar_solver_radius_error": 4.672208342437756e-09,
+      "result": "PASS",
+      "samples": 52,
+      "tau": 0.35,
+      "threshold": 0.315,
+      "zero_input_returns_exact_zero": true
+    },
+    "moreau_envelope_gradient": {
+      "finite_difference_scheme": "centered coordinate differences",
+      "finite_difference_step": 2e-06,
+      "function": "lambda*||.||_1",
+      "gradient_formula": "(x-prox_{tau*f}(x))/tau",
+      "lambda": 0.8,
+      "max_finite_difference_inf_error": 4.670939190987156e-10,
+      "max_huber_gradient_formula_residual": 6.661338147750939e-16,
+      "result": "PASS",
+      "samples": 67,
+      "tau": 0.37
+    },
+    "projection_prox": {
+      "hi": [
+        0.5,
+        1.75,
+        0.8,
+        2.5
+      ],
+      "independent_slsqp_cases": 20,
+      "independent_solver": "scipy.optimize.minimize(method='SLSQP')",
+      "lo": [
+        -1.0,
+        -0.25,
+        -2.0,
+        0.0
+      ],
+      "mapping": "prox of the indicator of [lo,hi], implemented by coordinate clipping",
+      "max_feasibility_violation": 0.0,
+      "max_slsqp_inf_error": 2.220446049250313e-14,
+      "max_slsqp_objective_gap": 2.4158453015843406e-13,
+      "max_variational_inequality_residual": 0.0,
+      "result": "PASS",
+      "samples": 68,
+      "solver_iterations_total": 44,
+      "variational_test_points_per_sample": 12
+    },
+    "proximal_gradient": {
+      "L_exact_for_this_quadratic": 4.6167578080095515,
+      "descent_inequality": "F(x_{k+1}) <= F(x_k) - (tau/2)||T_tau(x_k)||^2",
+      "final_gradient_mapping_norm": 0.0,
+      "final_objective": 1.3541454073465926,
+      "final_objective_gap": -1.1102230246251565e-15,
+      "final_x": [
+        0.4776283600088755,
+        0.25758089240645543,
+        0.5816189374731193,
+        -0.0581659061284808
+      ],
+      "hessian_eigenvalues_from_numpy_eigvalsh": [
+        2.063831073815969,
+        3.1815730760113277,
+        3.8978380421631567,
+        4.6167578080095515
+      ],
+      "initial_distance_squared_to_reference": 13.444266471730664,
+      "initial_objective": 30.905800000000003,
+      "initial_x": [
+        2.2,
+        -1.7,
+        0.9,
+        2.5
+      ],
+      "iterations": 512,
+      "lambda": 0.18,
+      "matrix_A": [
+        [
+          1.2,
+          -0.4,
+          0.3,
+          0.0
+        ],
+        [
+          0.5,
+          1.1,
+          -0.2,
+          0.4
+        ],
+        [
+          -0.3,
+          0.2,
+          1.4,
+          -0.5
+        ],
+        [
+          0.7,
+          0.0,
+          0.6,
+          1.0
+        ],
+        [
+          0.0,
+          -0.8,
+          0.5,
+          1.3
+        ],
+        [
+          1.1,
+          0.3,
+          -0.7,
+          0.2
+        ],
+        [
+          -0.6,
+          0.9,
+          0.0,
+          0.8
+        ]
+      ],
+      "max_best_value_bound_signed_residual": -0.0638044019390675,
+      "max_best_value_bound_violation": 0.0,
+      "max_descent_signed_residual": 4.4431112403292665e-16,
+      "max_descent_violation": 4.4431112403292665e-16,
+      "max_last_value_bound_signed_residual": -0.06380440193906728,
+      "max_last_value_bound_violation": 0.0,
+      "max_monotonicity_signed_residual": 4.440892098500626e-16,
+      "max_monotonicity_violation": 4.440892098500626e-16,
+      "max_telescoping_signed_residual": -6.662119508176219e-16,
+      "max_telescoping_violation": 0.0,
+      "problem": "min_x 0.5*||A*x-b||_2^2 + lambda*||x||_1",
+      "reference_epigraph_objective_gap": 0.0,
+      "reference_gradient_mapping_norm": 9.789089220639961e-08,
+      "reference_objective": 1.3541454073465937,
+      "reference_solver": "scipy.optimize.minimize(method='SLSQP') epigraph variables (x,u)",
+      "reference_solver_iterations": 12,
+      "reference_solver_status": "Optimization terminated successfully",
+      "reference_x_star": [
+        0.47762834996112113,
+        0.2575809008034479,
+        0.581618948016462,
+        -0.05816592374701735
+      ],
+      "result": "PASS",
+      "step_condition": "tau <= 1/L",
+      "step_size_tau": 0.20577211097187242,
+      "tau_times_L": 0.95,
+      "telescoping_inequality": "F(x_{k+1})-F* <= (||x_k-x*||^2-||x_{k+1}-x*||^2)/(2*tau)",
+      "value_bound": "min_{1<=j<=n}(F(x_j)-F*) <= F(x_n)-F* <= ||x_0-x*||^2/(2*tau*n)",
+      "vector_b": [
+        1.0,
+        -0.4,
+        0.7,
+        1.3,
+        -0.8,
+        0.2,
+        0.5
+      ]
+    }
+  },
+  "reproducibility": {
+    "numpy_rng": "numpy.random.Generator(PCG64)",
+    "seed": 20260821
+  },
+  "result": "PASS",
+  "runtime": {
+    "numpy": "2.4.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9",
+    "scipy": "1.17.1"
+  },
+  "schema": "o015-proximal-gradient-solver-check-v1",
+  "tolerances": {
+    "algorithm_inequality": 3e-07,
+    "analytic": 5e-09,
+    "finite_difference": 2e-06,
+    "gradient_mapping": 3e-06,
+    "independent_solver": 3e-06
+  }
+}

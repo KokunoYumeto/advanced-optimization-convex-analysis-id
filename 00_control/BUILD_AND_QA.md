@@ -121,3 +121,70 @@ The final log contains only inherited/template/toolchain warnings: the locale fa
 ## Two-unit backend verification
 
 `python qa/validate_backend.py` passes with zero errors after deterministic generation/validation. The backend contains 238 records and 19 stable translation segments. After the final component-rights refresh, `backend/records.jsonl` is 161,956 bytes with SHA-256 `cfc027adbb6104adf9290222d5e37403eefcd6d3af9abe7acc765a52daabfca0`; its lossless `backend/records.csv` projection is 195,684 bytes with SHA-256 `9bc78b5f038bb784d92a04b1682781b3f00edcccd6008f0c0a789ca35ae36916`. Chapter 3 and Chapter 4 both record passed independent mathematical rereviews; independent Indonesian language review remains `not_recorded`, and PDF accessibility remains `pass_with_limitation` because the PDFs are untagged.
+
+---
+
+# Habring Chapter 5 build and QA record
+
+As of: 2026-08-22  
+Unit: Habring Chapter 5 — Proximal Gradient Methods / Metode Gradien Proksimal  
+Admission: PASS
+
+## Build inputs
+
+- Wrapper: `source/id-ID/D90-HAB-05-metode-gradien-proksimal-id.tex` — 4,817 bytes — SHA-256 `8c67641de7ebf2e06afefa2309c09823e78a4d3d5dbba89a28536392d82c359d`.
+- Translated chapter: `source/id-ID/habring-05-metode-gradien-proksimal-id.tex` — 20,575 bytes — SHA-256 `1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691`.
+- Authority chapter: `authority/habring/source-v1/proximal_gradient.tex` — 18,464 bytes — SHA-256 `59d5694742f0e2f9f46da0c1418b5fe0ff18521c49078ed29c843b6e8c701f6e`.
+- The wrapper uses the frozen authority bibliography `authority/habring/source-v1/references.bib` directly.
+
+The retained build used pdfTeX 1.40.29 / MiKTeX 26.5 with `latexmk` 4.88 and Biber, from `source/id-ID`, with `SOURCE_DATE_EPOCH=1786665600`, `TZ=UTC`, and output directed to `build/habring-unit-05-id`.
+
+## Final artifact
+
+- Build PDF: `build/habring-unit-05-id/D90-HAB-05-metode-gradien-proksimal-id.pdf`.
+- Publication copy: `output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf`.
+- Both: 473,685 bytes; 15 A4 pages; SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`.
+- Final log: 99,841 bytes; SHA-256 `462372113f47285d8a7940c1d31c779b673c8ae1da85401840310cab9acd8deb`.
+- Final text extraction: 33,973 bytes; SHA-256 `a2fdf8d859cd6767f951dfa4a17c8b89c470d98b13d24e01ce1783191e2313f8`.
+- A forced full rebuild reproduced the PDF byte-for-byte.
+
+## Structural and mathematical QA
+
+`python qa/audit_proximal_gradient_unit.py` passes:
+
+- authority and target hashes exact;
+- all 78 ordered environments preserved;
+- eight stable translation segments present and ordered;
+- nine label occurrences retained in source order, with the duplicated second authority label transparently remapped to `proximal:eq:moreau_diff2_bound`;
+- the Beck citation, all three informal learner prompts or their completed dispositions, the one unnumbered display, and the no-figure/no-footnote/no-input closure retained;
+- 162 authority and 188 target formula surfaces aligned into 38 explicit delta blocks;
+- every substantive delta is bound to O015-HAB-ADV-0028 through O015-HAB-ADV-0038;
+- formula-delta manifest SHA-256 `3b910b86e304b2ba472df7fbf642db5928824ee999b551cc60f287b2c5705a3c`.
+
+An independent rereview of the complete target and a final byte-delta rereview of target SHA-256 `1292f09d…` found P1=0, P2=0, P3=0. It confirmed the proximal existence/uniqueness and fixed-point arguments, Moreau definition and smoothing proof, completed projection/soft-threshold/Euclidean-shrinkage example, all six prox rules, the smooth descent lemma, and the corrected step conditions, polarization, indexing, rate, and full-sequence convergence theorem.
+
+## Computation QA
+
+`python qa/validate_proximal_gradient_unit.py` passes with Python 3.13.9, NumPy 2.4.4, and SciPy 1.17.1:
+
+- box projection agrees with independent SLSQP to `2.23e-14` in infinity norm;
+- coordinate soft threshold agrees with an SLSQP epigraph solve to `2.67e-7`, and Euclidean shrinkage agrees with an independent radial solve to `4.68e-9`;
+- the Moreau-envelope gradient formula agrees with centered finite differences to `4.68e-10`;
+- a quadratic-plus-`l1` forward–backward run uses the exact spectral constant `L=4.6167578080095515` and `tau L=0.95`; descent, telescoping, monotonicity, and corrected `O(1/n)` value bounds have no positive violation beyond floating-point noise;
+- the independently solved optimum has gradient-mapping norm `9.79e-8`.
+
+Result: `qa/PROXIMAL_GRADIENT_SOLVER_RESULTS.json` — 5,769 bytes — SHA-256 `de96482c608bbca67fc0a14eeb32a4e69890a97b8f6834a389ea198d2b440a54`.
+
+## Visual, text, and accessibility QA
+
+All 15 physical pages were rendered at 120 dpi and inspected in a contact sheet. The chapter opening, prox formulas/rules, Moreau proof, convergence theorem, two-page correction appendix, and attribution page were also inspected at full size. No clipping, overlap, blank page, broken glyph, or unreadable formula was found. The bounded English-residue scan found only the cited English source title and the explicitly identified source chapter title.
+
+The PDF is unencrypted, searchable, and declares `/Lang` as `id-ID`. It is not tagged; no semantic HTML/EPUB surface is claimed at this boundary. Independent Indonesian language review remains `not_recorded`.
+
+## Nonblocking toolchain warnings
+
+The final log contains only inherited/template/toolchain warnings: locale fallback, obsolete `xcolor` `hyperref` option, KOMA-Script with `tocloft`, and unavailable Indonesian localization for `biblatex`. It contains no overfull or underfull box, unresolved reference or citation, undefined control sequence, or LaTeX error.
+
+## Three-unit backend verification
+
+`python qa/extend_backend_ch05.py` followed by `python qa/validate_backend.py` passes with zero errors. The backend contains 337 records and 27 stable translation segments: Chapter 3 has 11, Chapter 4 has 8, and Chapter 5 has 8. The Chapter 5 extension adds 99 records across the unit, segments, concepts, terms, source learning surfaces, corrections, QA, artifacts, rights, and relations. Two generation/validation cycles were byte-identical, and a separate baseline reconstruction proved the 238 pre-Chapter-5 records semantically unchanged except for legitimate artifact byte/hash refreshes. Independent Indonesian language review remains `not_recorded`; PDF accessibility remains `pass_with_limitation` because the reader PDFs are untagged. Final JSONL/CSV hashes are refreshed after the current control records below and must be read from the validator output rather than this prose to avoid a self-referential artifact-hash loop.

@@ -222,6 +222,7 @@ segments = [record for record in records if record.get("entity_type") == "segmen
 expected_segment_counts = {
     "unit.habring.v1.ch03": 11,
     "unit.habring.v1.ch04": 8,
+    "unit.habring.v1.ch05": 8,
 }
 segments_by_unit: dict[str, list[dict[str, Any]]] = {}
 for segment in segments:
@@ -244,6 +245,124 @@ for unit_id, unit_segments in segments_by_unit.items():
             f"{unit_id}: segment order is not contiguous "
             f"1..{len(unit_segments)}: {segment_orders}"
         )
+
+# Each admitted unit has the same nine-event evidence topology.  Expected
+# results are data-driven because Chapter 3 predates the explicit untagged-PDF
+# limitation used by Chapters 4--5.
+admitted_unit_closure = {
+    "unit.habring.v1.ch03": {
+        "qa_prefix": "qa.o015.ch03",
+        "accessibility_result": "pass",
+        "correction_range": range(1, 19),
+    },
+    "unit.habring.v1.ch04": {
+        "qa_prefix": "qa.o015.ch04",
+        "accessibility_result": "pass_with_limitation",
+        "correction_range": range(19, 28),
+    },
+    "unit.habring.v1.ch05": {
+        "qa_prefix": "qa.o015.ch05",
+        "accessibility_result": "pass_with_limitation",
+        "correction_range": range(28, 39),
+    },
+}
+qa_suffixes = {
+    "accessibility",
+    "build",
+    "formula-delta",
+    "language",
+    "math-rereview",
+    "solver",
+    "source-freeze",
+    "structure",
+    "visual",
+}
+for unit_id, closure in admitted_unit_closure.items():
+    prefix = closure["qa_prefix"]
+    expected_qa_ids = {f"{prefix}.{suffix}" for suffix in qa_suffixes}
+    actual_qa_ids = {
+        record["id"]
+        for record in records
+        if record.get("entity_type") == "qa_event"
+        and record.get("unit_id") == unit_id
+    }
+    if actual_qa_ids != expected_qa_ids:
+        error(
+            f"{unit_id}: wrong QA event closure: "
+            f"expected {sorted(expected_qa_ids)}, found {sorted(actual_qa_ids)}"
+        )
+    language = ids.get(f"{prefix}.language", {})
+    if language.get("status") != "not_recorded" or language.get("result") != "not_recorded":
+        error(f"{unit_id}: language review must remain not_recorded")
+    accessibility = ids.get(f"{prefix}.accessibility", {})
+    if accessibility.get("result") != closure["accessibility_result"]:
+        error(
+            f"{unit_id}: wrong accessibility result: "
+            f"{accessibility.get('result')!r}"
+        )
+    math_review = ids.get(f"{prefix}.math-rereview", {})
+    if math_review.get("result") != "pass":
+        error(f"{unit_id}: independent mathematical rereview is not a pass")
+    if math_review.get("review_outcome") != {"p1": 0, "p2": 0, "p3": 0}:
+        error(f"{unit_id}: mathematical rereview does not prove P1=P2=P3=0")
+
+    expected_correction_ids = {
+        f"correction.o015-hab-adv-{number:04d}"
+        for number in closure["correction_range"]
+    }
+    actual_correction_ids = {
+        record["id"]
+        for record in records
+        if record.get("entity_type") == "correction"
+        and unit_id in record.get("affected_unit_ids", [])
+    }
+    if actual_correction_ids != expected_correction_ids:
+        error(
+            f"{unit_id}: wrong correction closure: "
+            f"expected {sorted(expected_correction_ids)}, "
+            f"found {sorted(actual_correction_ids)}"
+        )
+
+for segment in segments_by_unit.get("unit.habring.v1.ch05", []):
+    if segment.get("language_review_state") != "not_recorded":
+        error(f"{segment.get('id')}: language review must remain not_recorded")
+    if segment.get("mathematical_review_state") != (
+        "correction_audited_solver_checked_independent_rereview_passed"
+    ):
+        error(f"{segment.get('id')}: incomplete mathematical review state")
+
+required_ch05_ids = {
+    "artifact.habring.source-ch05",
+    "artifact.habring.target-ch05",
+    "artifact.habring.target-wrapper-ch05",
+    "artifact.habring.structure-report-ch05",
+    "artifact.habring.structure-audit-ch05",
+    "artifact.habring.solver-results-ch05",
+    "artifact.habring.solver-validator-ch05",
+    "artifact.habring.build-log-ch05",
+    "artifact.habring.target-pdf-ch05",
+    "artifact.habring.target-text-ch05",
+    "artifact.o015.backend-generator-ch05",
+    "rights.o015-habring-ch05-source",
+    "rights.o015-habring-id-ch05",
+    "rights.o015-proximal-gradient-solver-validation",
+    "surface.habring.v1.ch05.prompt01",
+    "surface.habring.v1.ch05.prompt02",
+    "surface.habring.v1.ch05.prompt03",
+    "surface.habring.v1.ch05.hint-inventory",
+    "surface.habring.v1.ch05.answer-inventory",
+    "surface.habring.v1.ch05.solution-inventory",
+}
+for required_id in sorted(required_ch05_ids):
+    if required_id not in ids:
+        error(f"Chapter 5 closure is missing {required_id}")
+
+ch05_pdf = ids.get("artifact.habring.target-pdf-ch05", {})
+if ch05_pdf.get("pages") != 15:
+    error("Chapter 5 PDF artifact does not record 15 pages")
+if ch05_pdf.get("accessibility") != "searchable id-ID PDF; untagged":
+    error("Chapter 5 PDF accessibility limitation is not explicit")
+
 translation_states = set(schema.get("translation_states", []))
 for segment in segments:
     if segment.get("translation_state") not in translation_states:

@@ -39,3 +39,6 @@ Every implemented substantive repair must receive a new event after `O015-HAB-AD
 
 Translate `seg0001` through `seg0008` contiguously in source order into `source/id-ID/habring-05-metode-gradien-proksimal-id.tex`. Preserve all 78 ordered environments, the unique source labels, the Beck citation, and learner prompts; replace the duplicate label with an explicitly mapped unique target label. Build a standalone id-ID wrapper, add open proximal/forward–backward numerical checks, expose all corrections in the reader and adverse ledger, and do not claim language review or tagged-PDF accessibility before they exist.
 
+## Admission result
+
+Completed on 2026-08-22. Final target SHA-256: `1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691`. Final 15-page PDF SHA-256: `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`. Structural/formula audit, open numerical validation, deterministic rebuild, all-page visual review, and independent mathematical rereview passed; P1=0, P2=0, P3=0. The exact continuation is Chapter 6, `authority/habring/source-v1/acceleration.tex`.

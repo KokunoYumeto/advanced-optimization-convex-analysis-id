@@ -1,0 +1,394 @@
+\chapter{Metode gradien proksimal}
+
+% segment-id: d90.hab.v1.ch05.seg0001
+Kita telah melihat dalam bukti (dan latihan praktis) bahwa metode subgradien tidak memberikan konvergensi yang ideal. Dalam kasus dasar atau terburuk, nilai fungsi berkonvergensi dengan orde \(\Oc(1/\sqrt{k})\), dan konvergensi memerlukan ukuran langkah yang mengecil. Dalam bab ini, kita akan memperkenalkan alternatif bagi subgradien (eksplisit) dalam optimisasi.
+
+Perhatikan masalah tak berkendala
+\begin{equation}\label{proximal:eq:problem}
+    \min_x f(x),
+\end{equation}
+dengan \(f:\R^d\rightarrow(-\infty,\infty]\) proper, semikontinu bawah, dan konveks. Ingat pembaruan metode subgradien \(x_{k+1}=x_k-\tau_k g_k\), \(g_k\in\partial f(x_k)\), atau, secara ekuivalen, \(x_{k+1}\in x_k-\tau_k\partial f(x_k)\). Untuk \(\tau_k>0\), kita usulkan pembaruan implisit
+\begin{equation}\label{proximal:eq:intro}
+    x_{k+1}\in x_k-\tau_k\partial f(x_{k+1}).
+\end{equation}
+Pada tahap ini belum jelas apakah metode tersebut terdefinisi dengan baik. Namun, jika memang terdefinisi, secara intuitif kestabilannya dapat membaik karena arah pembaruan dipilih dengan \emph{melihat ke masa depan}. Gagasan ini selaras dengan kestabilan metode implisit untuk mendiskretkan persamaan diferensial (\cf~\emph{Euler implisit}).
+
+Jika kita amati~\eqref{proximal:eq:intro} lebih dekat, aturan itu dapat ditulis sebagai
+\begin{equation}
+    0\in\partial\biggl(\frac{1}{2}\|\cdot-x_k\|^2+\tau_k f\biggr)(x_{k+1}),
+\end{equation}
+yang merupakan kondisi optimalitas untuk
+\begin{equation}
+    \min_x\frac{1}{2}\|x-x_k\|^2+\tau_k f(x).
+\end{equation}
+Hal ini membawa kita pada definisi berikut.
+\begin{defn}[Operator proksimal]
+    Operator atau pemetaan proksimal dari \(f:\R^d\rightarrow(-\infty,\infty]\) didefinisikan sebagai pemetaan
+    \begin{equation}
+        \begin{aligned}
+            \prox_f:\R^d&\rightarrow 2^{\R^d},\\
+            x&\mapsto\arg\min_{y\in\R^d}\frac{1}{2}\|y-x\|^2+f(y).
+        \end{aligned}
+    \end{equation}
+\end{defn}
+
+Kita biasanya menyebut \(\prox_f\) sebagai \enquote{proks}. Sebagai pemetaan bernilai himpunan, proks selalu dapat dituliskan; tetapi pemetaan itu baru berguna ketika \(\prox_f(x)\neq\emptyset\). Kita dapat membuktikan hasil berikut.
+
+% segment-id: d90.hab.v1.ch05.seg0002
+\begin{lemma}
+    Misalkan \(f:\R^d\rightarrow(-\infty,\infty]\) proper, konveks, dan semikontinu bawah. Pemetaan proksimal bernilai tunggal. Lebih lanjut, \(y=\prox_f(x)\) jika dan hanya jika \(0\in(y-x)+\partial f(y)\).
+\end{lemma}
+\begin{rem}
+    Berdasarkan karakterisasi \(0\in(y-x)+\partial f(y)\), kita sering menulis proks sebagai \(\prox_f(x)=(\Id+\partial f)^{-1}(x)\).
+\end{rem}
+\begin{proof}
+    Demi kesederhanaan, andaikan \(\dom(f)^\circ\neq\emptyset\); untuk kasus umum, lihat~\cite{beck2017first}.
+
+    Ambil \(g\in\partial f(y_0)\) untuk suatu \(y_0\in\dom(f)^\circ\). Kita mempunyai
+    \begin{equation}
+        f(y_0)+\inner{g}{y-y_0}+\frac{1}{2}\|x-y\|^2
+        \leq f(y)+\frac{1}{2}\|x-y\|^2.
+    \end{equation}
+    Oleh karena itu (mengapa?), pemetaan \(y\mapsto f(y)+\frac{1}{2}\|x-y\|^2\) bersifat koersif. Pemetaan ini juga mewarisi sifat semikontinu bawah dan proper dari \(f\). Dengan metode langsung untuk fungsi proper, semikontinu bawah, dan koersif di ruang berdimensi hingga, terdapat solusi bagi
+    \begin{equation}\label{proximal:eq:prox_proof}
+        \min_{y\in\R^d}\frac{1}{2}\|y-x\|^2+f(y).
+    \end{equation}
+    Untuk keunikan, definisikan \(q_x(y)=\frac{1}{2}\|y-x\|^2+f(y)\) dan andaikan \(y_1\neq y_2\) adalah dua peminim. Karena suku kuadrat konveks ketat dan \(f\) konveks, untuk \(\bar y=(y_1+y_2)/2\) berlaku
+    \begin{equation}
+        \begin{aligned}
+            q_x(\bar y)
+            <&\frac{1}{2}\bigl(q_x(y_1)+q_x(y_2)\bigr)\\
+            =&\min_{y\in\R^d}q_x(y),
+        \end{aligned}
+    \end{equation}
+    sebuah kontradiksi. Pernyataan terakhir merupakan kondisi optimalitas bagi~\eqref{proximal:eq:prox_proof}.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch05.seg0003
+Setelah mengetahui bahwa proks terdefinisi dengan baik, kita dapat mendefinisikan metode gradien proksimal. Secara khusus, perhatikan masalah
+\begin{equation}\label{proximal:eq:composite}
+    \min_{x\in\R^d}F(x)\coloneqq f(x)+g(x),
+\end{equation}
+dengan \(f\) konveks dan \(L\)-halus, yakni terdiferensialkan dengan gradien \(L\)-Lipschitz, sedangkan \(g\) proper, konveks, dan semikontinu bawah. Masalah semacam ini sering muncul dalam praktik dan mencakup masalah semula dengan mengambil \(f\equiv0\). Untuk \(k=0,1,\dots\), metode gradien proksimal didefinisikan oleh
+\begin{equation}\label{proximal:eq:prox_grad}
+    \begin{aligned}
+        x_{k+1}=\prox_{\tau_k g}\bigl(x_k-\tau_k\nabla f(x_k)\bigr).
+    \end{aligned}
+\end{equation}
+Jadi, kita melakukan langkah gradien atau eksplisit terhadap \(f\), lalu langkah proksimal atau implisit terhadap \(g\).
+
+Sebagai hasil sederhana pertama, kita menunjukkan bahwa titik tetap metode gradien proksimal tepat sama dengan titik optimal.
+\begin{lemma}
+    Untuk suatu \(\tau>0\) yang tetap dan \(x\in\R^d\), pernyataan berikut ekuivalen:
+    \begin{equation}
+        x=\prox_{\tau g}\bigl(x-\tau\nabla f(x)\bigr)
+        \quad\Longleftrightarrow\quad
+        0\in\partial(f+g)(x).
+    \end{equation}
+    Dengan demikian, \(x\) adalah titik tetap jika dan hanya jika \(x\) menyelesaikan~\eqref{proximal:eq:composite}.
+\end{lemma}
+\begin{proof}
+    Karakterisasi optimalitas proks memberikan ekuivalensi
+    \begin{equation}
+        x=\prox_{\tau g}\bigl(x-\tau\nabla f(x)\bigr)
+        \quad\Longleftrightarrow\quad
+        0\in\tau\nabla f(x)+\tau\partial g(x).
+    \end{equation}
+    Karena \(\tau>0\), serta menurut aturan jumlah dan aturan skala untuk subdiferensial,
+    \begin{equation}
+        0\in\tau\bigl(\nabla f(x)+\partial g(x)\bigr)
+        \quad\Longleftrightarrow\quad
+        0\in\partial(f+g)(x).
+    \end{equation}
+    Untuk fungsi konveks \(F=f+g\), kondisi terakhir ekuivalen dengan optimalitas \(x\).
+\end{proof}
+
+% segment-id: d90.hab.v1.ch05.seg0004
+Selain proks, kita mendefinisikan selubung Moreau sebagai nilai infimum dari objektif yang digunakan untuk proks.
+\begin{defn}[Selubung Moreau]
+    Misalkan \(f:\R^d\rightarrow(-\infty,\infty]\) dan \(\tau>0\). Selubung Moreau \(M_f^\tau:\R^d\rightarrow[-\infty,\infty]\) didefinisikan oleh
+    \begin{equation}
+        M_f^\tau(x)\coloneqq\inf_{y\in\R^d}\frac{1}{2\tau}\|x-y\|^2+f(y).
+    \end{equation}
+\end{defn}
+
+\begin{lemma}
+    Misalkan \(f:\R^d\rightarrow(-\infty,\infty]\) proper, konveks, dan semikontinu bawah, serta \(\tau>0\). Selubung Moreau selalu bernilai real (yakni berhingga), dan
+    \begin{equation}
+        M_f^\tau(x)
+        =\frac{1}{2\tau}\bigl\|x-\prox_{\tau f}(x)\bigr\|^2
+        +f\bigl(\prox_{\tau f}(x)\bigr).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Latihan. Terapkan lemma keberadaan dan keunikan proks pada \(\tau f\), lalu substitusikan peminim unik tersebut ke dalam definisi infimum.
+\end{proof}
+
+\begin{example}
+    Kita tinjau beberapa contoh pemetaan proksimal dan selubung Moreau yang sering muncul:
+    \begin{enumerate}
+        \item Misalkan \(C\subset\R^d\) tak kosong, tertutup, dan konveks, dan perhatikan fungsi indikator \(\delta_C\). Maka
+        \begin{equation}
+            \prox_{\tau\delta_C}(x)=\proj_C(x),
+            \qquad
+            M_{\delta_C}^{\tau}(x)=\frac{1}{2\tau}\operatorname{dist}(x,C)^2.
+        \end{equation}
+        \item Secara khusus, jika \(C=\{x\in\R^d\mid\|x\|_\infty\leq1\}\), maka
+        \begin{equation}
+            \bigl(\prox_{\tau\delta_C}(x)\bigr)_i
+            =\frac{x_i}{\max\{1,|x_i|\}}.
+        \end{equation}
+        \item Jika \(f(x)=\|x\|_1\), pemetaan proksimalnya adalah operator \emph{ambang lunak}
+        \begin{equation}
+            \bigl(\prox_{\tau f}(x)\bigr)_i=
+            \begin{cases}
+                x_i-\tau & x_i>\tau,\\
+                x_i+\tau & x_i<-\tau,\\
+                0 & x_i\in[-\tau,\tau].
+            \end{cases}
+        \end{equation}
+        Untuk \(d=1\), selubung Moreau-nya tepat merupakan fungsi Huber
+        \begin{equation}
+            M_{|\cdot|}^{\tau}(x)=
+            \begin{cases}
+                \dfrac{|x|^2}{2\tau} & |x|\leq\tau,\\
+                |x|-\dfrac{\tau}{2} & |x|>\tau.
+            \end{cases}
+        \end{equation}
+    \end{enumerate}
+\end{example}
+
+% segment-id: d90.hab.v1.ch05.seg0005
+\begin{lemma}[Aturan komputasi untuk proks]
+    Misalkan semua fungsi dasar yang muncul di bawah proper, semikontinu bawah, dan konveks pada domain berdimensi hingga yang dinyatakan. Aturan berikut berlaku:
+    \begin{enumerate}
+        \item Jika \(x=(x_1,\dots,x_m)\in\R^{d_1}\times\cdots\times\R^{d_m}\cong\R^d\), \(x_i\in\R^{d_i}\), \(\sum_i d_i=d\), dan \(f(x)=\sum_i f_i(x_i)\), maka \(\prox_f(x)=\bigl(\prox_{f_i}(x_i)\bigr)_i\).
+        \item Jika \(f(x)=\alpha g(x)+b\) dengan \(\alpha>0\) dan \(b\in\R\), maka \(\prox_f=\prox_{\alpha g}\).
+        \item Jika \(f(x)=g(\alpha x+b)\) dengan \(\alpha\neq0\) dan \(b\in\R^d\), maka \(\prox_f(x)=\alpha^{-1}\bigl(\prox_{\alpha^2g}(\alpha x+b)-b\bigr)\).
+        \item Jika \(f(x)=g(Qx)\) dengan \(Q\in\R^{d\times d}\) ortogonal, maka \(\prox_f(x)=Q^\top\prox_g(Qx)\).
+        \item Jika \(f(x)=g(x)+\inner{a}{x}+b\) dengan \(a\in\R^d\) dan \(b\in\R\), maka \(\prox_f(x)=\prox_g(x-a)\).
+        \item Jika \(f(x)=g(x)+\frac{\gamma}{2}\|x-a\|^2\) dengan \(a\in\R^d\) dan \(\gamma\geq0\), maka \(\prox_f(x)=\prox_{\widetilde\gamma g}(\widetilde\gamma x+\gamma\widetilde\gamma a)\), dengan \(\widetilde\gamma=(1+\gamma)^{-1}\).
+    \end{enumerate}
+\end{lemma}
+
+% segment-id: d90.hab.v1.ch05.seg0006
+Selubung Moreau memberikan efek penghalusan pada fungsi \(f\), sebagaimana ditunjukkan oleh hasil berikut.
+\begin{lemma}
+    Misalkan \(f:\R^d\rightarrow(-\infty,\infty]\) proper, konveks, dan semikontinu bawah, serta \(\tau>0\). Selubung Moreau bersifat konveks dan terdiferensialkan. Gradiennya \(1/\tau\)-Lipschitz dan dapat ditulis sebagai
+    \begin{equation}
+        \nabla M_f^\tau(x)=\frac{1}{\tau}\bigl(x-\prox_{\tau f}(x)\bigr).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Untuk \(q(x,y)=\frac{1}{2\tau}\|x-y\|^2+f(y)\), fungsi \(q\) konveks secara bersama pada \((x,y)\). Jika \(p_i=\prox_{\tau f}(x_i)\) dan \(t\in[0,1]\), evaluasi \(q\) di \(\bigl(tx_1+(1-t)x_2,tp_1+(1-t)p_2\bigr)\) menunjukkan bahwa \(M_f^\tau(tx_1+(1-t)x_2)\leq tM_f^\tau(x_1)+(1-t)M_f^\tau(x_2)\). Jadi, argumen ini tetap sah untuk fungsi \(f\) bernilai diperluas.
+
+    Tetapkan \(p(x)=\prox_{\tau f}(x)\). Dari definisi proks,
+    \begin{equation}
+        \begin{aligned}
+            M_f^\tau(x+h)
+            =&\frac{1}{2\tau}\|x+h-p(x+h)\|^2+f(p(x+h))\\
+            \leq&\frac{1}{2\tau}\|x+h-p(x)\|^2+f(p(x)),\\
+            M_f^\tau(x)
+            =&\frac{1}{2\tau}\|x-p(x)\|^2+f(p(x)).
+        \end{aligned}
+    \end{equation}
+    Dengan mengurangkan dua hubungan itu, kita memperoleh
+    \begin{equation}
+        \begin{aligned}
+            M_f^\tau(x+h)-M_f^\tau(x)
+            \leq&\frac{1}{2\tau}\bigl(\|x+h-p(x)\|^2-\|x-p(x)\|^2\bigr)\\
+            =&\inner{h}{\frac{1}{\tau}(x-p(x))}
+              +\frac{1}{2\tau}\|h\|^2.
+        \end{aligned}
+    \end{equation}
+    Secara ekuivalen,
+    \begin{equation}
+        \begin{aligned}
+            M_f^\tau(x+h)-M_f^\tau(x)
+            -\inner{h}{\frac{1}{\tau}(x-p(x))}
+            \leq&\frac{1}{2\tau}\|h\|^2.
+        \end{aligned}
+    \end{equation}
+    Definisikan residu keterdiferensialan
+    \begin{equation}\label{proximal:eq:moreau_diff}
+        r_x(h)\coloneqq
+        M_f^\tau(x+h)-M_f^\tau(x)
+        -\inner{h}{\frac{1}{\tau}(x-p(x))}.
+    \end{equation}
+    Kurangkan dua kondisi optimalitas proks, lalu gunakan monotonisitas \(\partial f\) dan ketaksamaan Cauchy--Schwarz. Hasilnya ialah \(\|p(x)-p(y)\|\leq\|x-y\|\), sehingga \(p\) tak ekspansif. Dengan mengevaluasi \(M_f^\tau(x)\) pada \(p(x+h)\), kita juga mendapatkan
+    \begin{equation}
+        r_x(h)
+        \geq\inner{h}{\frac{1}{\tau}\bigl(p(x)-p(x+h)\bigr)}
+             +\frac{1}{2\tau}\|h\|^2
+        \geq-\frac{1}{2\tau}\|h\|^2.
+    \end{equation}
+    Secara keseluruhan,
+    \begin{equation}
+        \begin{aligned}
+            \left|M_f^\tau(x+h)-M_f^\tau(x)
+            -\inner{h}{\frac{1}{\tau}(x-p(x))}\right|
+            \leq&\frac{1}{2\tau}\|h\|^2.
+        \end{aligned}
+    \end{equation}
+    Jadi, \(\nabla M_f^\tau(x)=\tau^{-1}(x-p(x))\). Untuk membuktikan kekontinuan Lipschitz gradien, perhatikan bahwa
+    \begin{equation}\label{proximal:eq:moreau_diff2}
+        \begin{aligned}
+            \|\nabla M_f^\tau(x)-\nabla M_f^\tau(y)\|^2
+            =&\frac{1}{\tau}
+              \inner{\nabla M_f^\tau(x)-\nabla M_f^\tau(y)}
+                    {(x-p(x))-(y-p(y))}\\
+            =&\frac{1}{\tau}
+              \inner{\nabla M_f^\tau(x)-\nabla M_f^\tau(y)}{x-y}\\
+             &-\frac{1}{\tau}
+              \inner{\nabla M_f^\tau(x)-\nabla M_f^\tau(y)}{p(x)-p(y)}.
+        \end{aligned}
+    \end{equation}
+    Kondisi optimalitas memberi
+    \(\nabla M_f^\tau(x)=\tau^{-1}(x-p(x))\in\partial f(p(x))\).
+    Karena itu, hasil kali dalam terakhir tidak negatif menurut monotonisitas subdiferensial, sehingga
+    \begin{equation}\label{proximal:eq:moreau_diff2_bound}
+        \begin{aligned}
+            \|\nabla M_f^\tau(x)-\nabla M_f^\tau(y)\|^2
+            \leq&\frac{1}{\tau}
+              \inner{\nabla M_f^\tau(x)-\nabla M_f^\tau(y)}{x-y}\\
+            \leq&\frac{1}{\tau}
+              \|\nabla M_f^\tau(x)-\nabla M_f^\tau(y)\|\,\|x-y\|.
+        \end{aligned}
+    \end{equation}
+    Setelah membagi dengan norma gradien yang berbeda dari nol (kasus nol langsung), diperoleh sifat \(1/\tau\)-Lipschitz.
+\end{proof}
+
+\begin{rem}
+    Dengan representasi gradien selubung Moreau di atas, proks dapat ditulis kembali sebagai
+    \begin{equation}
+        \prox_{\tau f}(x)
+        =x-\tau\biggl(\frac{1}{\tau}\bigl(x-\prox_{\tau f}(x)\bigr)\biggr)
+        =x-\tau\nabla M_f^\tau(x).
+    \end{equation}
+    Jadi, satu langkah proksimal ekuivalen dengan satu langkah gradien pada selubung Moreau.
+\end{rem}
+
+\begin{example}
+    Untuk fungsi indikator himpunan tak kosong, tertutup, dan konveks \(C\), rumusnya adalah \(\prox_{\tau\delta_C}(x)=\proj_C(x)\). Untuk \(f(x)=\|x\|_1\), setiap koordinat diberikan oleh ambang lunak \((\prox_{\tau f}(x))_i=\operatorname{sign}(x_i)\max\{|x_i|-\tau,0\}\), dengan \(\operatorname{sign}(0)=0\). Untuk \(f(x)=\|x\|_2\), penyusutan Euklides adalah \(\prox_{\tau f}(x)=(1-\tau/\|x\|_2)_+x\) jika \(x\neq0\), dan \(\prox_{\tau f}(0)=0\). Verifikasikan ketiga rumus ini langsung dari kondisi optimalitas proks.
+\end{example}
+
+% segment-id: d90.hab.v1.ch05.seg0007
+Sekarang kita akan membuktikan konvergensi metode gradien proksimal. Mula-mula kita turunkan lemma penting: untuk fungsi \(L\)-halus, galat antara fungsi dan hampiran linearnya dibatasi dari atas oleh suku kuadrat.
+
+\begin{lemma}\label{proximal_gradient:lemma:Lsmoothness}
+    Misalkan \(F:\R^d\rightarrow\R\) terdiferensialkan kontinu dan gradiennya \(L\)-Lipschitz. Maka
+    \begin{equation}
+        F(y)\leq F(x)+\inner{\nabla F(x)}{y-x}+\frac{L}{2}\|y-x\|^2.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Dari teorema dasar kalkulus dan sifat \(L\)-halus, kita mempunyai
+    \begin{equation}
+        \begin{aligned}
+            F(y)-F(x)
+            =&\int_0^1\frac{\dd}{\dd t}F(x+t(y-x))\dd t\\
+            =&\int_0^1\inner{\nabla F(x+t(y-x))}{y-x}\dd t\\
+            =&\int_0^1\inner{\nabla F(x+t(y-x))-\nabla F(x)}{y-x}\dd t
+              +\int_0^1\inner{\nabla F(x)}{y-x}\dd t\\
+            \leq&\int_0^1Lt\|y-x\|^2\dd t+\inner{\nabla F(x)}{y-x}\\
+            =&\frac{L}{2}\|y-x\|^2+\inner{\nabla F(x)}{y-x}.
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+Untuk bukti konvergensi metode gradien proksimal, bagi \(\tau>0\) kita perkenalkan notasi
+\begin{equation}
+    T_\tau(x)=\frac{1}{\tau}\bigl(x-\prox_{\tau g}(x-\tau\nabla f(x))\bigr).
+\end{equation}
+Dengan fungsi ini, pembaruan gradien proksimal dapat ditulis sebagai
+\begin{equation}
+    x_{k+1}=x_k-\tau_kT_{\tau_k}(x_k).
+\end{equation}
+
+% segment-id: d90.hab.v1.ch05.seg0008
+\begin{theorem}
+    Misalkan \(f:\R^d\rightarrow\R\) konveks dan \(L\)-halus dengan \(L>0\), serta \(g:\R^d\rightarrow(-\infty,\infty]\) proper, semikontinu bawah, dan konveks. Andaikan \(\arg\min_xF(x)\neq\emptyset\) dan terdapat \(\tau_{\min}>0\) sedemikian sehingga
+    \(0<\tau_{\min}\leq\tau_k\leq L^{-1}\) untuk semua \(k\). Untuk setiap \(x^*\in\arg\min_xF(x)\), algoritma gradien proksimal memenuhi
+    \begin{equation}
+        F(x_n)-F(x^*)\leq\frac{\|x_0-x^*\|^2}{2\tau_{\min}n}
+        \qquad(n\geq1).
+    \end{equation}
+    Selain itu, \(x_k\) berkonvergensi menuju suatu \(\hat x\in\arg\min_xF(x)\).
+\end{theorem}
+\begin{proof}
+    Dari definisi \(T_\tau\), kita mempunyai
+    \begin{equation}
+        T_{\tau_k}(x_k)-\nabla f(x_k)
+        \in\partial g\bigl(x_k-\tau_kT_{\tau_k}(x_k)\bigr)
+        =\partial g(x_{k+1}).
+    \end{equation}
+    Dengan memakai hubungan ini, kekonveksan \(f\), Lemma~\ref{proximal_gradient:lemma:Lsmoothness}, dan \(\tau_k\leq L^{-1}\), untuk setiap \(z\in\R^d\) diperoleh
+    \begin{equation}
+        \begin{aligned}
+            F(x_{k+1})
+            \leq& f(x_k)-\tau_k\inner{\nabla f(x_k)}{T_{\tau_k}(x_k)}
+              +\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2\\
+             &+g(z)-\inner{T_{\tau_k}(x_k)-\nabla f(x_k)}
+                               {z-\bigl(x_k-\tau_kT_{\tau_k}(x_k)\bigr)}\\
+            \leq& f(z)+g(z)-\inner{\nabla f(x_k)}{z-x_k}
+              -\tau_k\inner{\nabla f(x_k)}{T_{\tau_k}(x_k)}
+              +\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2\\
+             &-\inner{T_{\tau_k}(x_k)-\nabla f(x_k)}
+                               {z-\bigl(x_k-\tau_kT_{\tau_k}(x_k)\bigr)}\\
+            =&F(z)-\inner{T_{\tau_k}(x_k)}{z-x_k}
+              -\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2.
+        \end{aligned}
+    \end{equation}
+    Dengan mengambil \(z=x_k\), kita memperoleh
+    \begin{equation}
+        F(x_{k+1})\leq F(x_k)
+        -\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2.
+    \end{equation}
+    Jadi, nilai objektif tidak meningkat dan turun ketat kecuali jika \(T_{\tau_k}(x_k)=0\); menurut lemma titik tetap, kasus terakhir berarti \(x_k\) optimal. Di sisi lain, ambil \(z=x^*\) dan gunakan \(T_{\tau_k}(x_k)=\tau_k^{-1}(x_k-x_{k+1})\). Maka
+    \begin{equation}
+        \begin{aligned}
+            0\leq F(x_{k+1})-F(x^*)
+            \leq&\inner{T_{\tau_k}(x_k)}{x_k-x^*}
+                 -\frac{\tau_k}{2}\|T_{\tau_k}(x_k)\|^2\\
+            =&\frac{1}{2\tau_k}
+              \left(2\inner{x_k-x_{k+1}}{x_k-x^*}
+                    -\|x_k-x_{k+1}\|^2\right)\\
+            =&\frac{1}{2\tau_k}
+              \left(\|x_k-x^*\|^2-\|x_{k+1}-x^*\|^2\right).
+        \end{aligned}
+    \end{equation}
+    Khususnya, \(\|x_k-x^*\|^2-\|x_{k+1}-x^*\|^2\geq0\), sehingga jarak ke setiap peminim tidak meningkat. Dengan menjumlahkan untuk \(k=0,\dots,n-1\), kita memperoleh
+    \begin{equation}
+        \begin{aligned}
+            \sum_{k=0}^{n-1}\bigl(F(x_{k+1})-F(x^*)\bigr)
+            \leq&\sum_{k=0}^{n-1}\frac{1}{2\tau_k}
+              \left(\|x_k-x^*\|^2-\|x_{k+1}-x^*\|^2\right)\\
+            \leq&\frac{1}{2\tau_{\min}}\sum_{k=0}^{n-1}
+              \left(\|x_k-x^*\|^2-\|x_{k+1}-x^*\|^2\right)\\
+            =&\frac{1}{2\tau_{\min}}
+              \left(\|x_0-x^*\|^2-\|x_n-x^*\|^2\right).
+        \end{aligned}
+    \end{equation}
+    Karena \(F(x_k)-F(x^*)\) juga tidak meningkat,
+    \begin{equation}
+        n\bigl(F(x_n)-F(x^*)\bigr)
+        \leq\sum_{k=0}^{n-1}\bigl(F(x_{k+1})-F(x^*)\bigr)
+        \leq\frac{\|x_0-x^*\|^2}{2\tau_{\min}}.
+    \end{equation}
+    Jadi,
+    \begin{equation}
+        F(x_n)-F(x^*)\leq
+        \frac{\|x_0-x^*\|^2}{2\tau_{\min}n}.
+    \end{equation}
+    Terakhir, kita buktikan konvergensi \((x_k)_k\). Perhitungan di atas menunjukkan bahwa \(\|x_k-x^*\|\) tidak meningkat untuk setiap peminim \(x^*\). Dengan demikian, \((x_k)_k\) terbatas dan, di ruang berdimensi hingga, mempunyai subbarisan konvergen.
+    Misalkan \(\hat x=\lim_jx_{n(j)}\) adalah suatu titik akumulasi. Karena \(F(x_k)\rightarrow\min F\) dan \(F=f+g\) semikontinu bawah,
+    \[
+        F(\hat x)\leq\liminf_jF(x_{n(j)})=\lim_kF(x_k)=\min F.
+    \]
+    Jadi, \(\hat x\) adalah peminim dan \(\|x_k-\hat x\|\) tidak meningkat. Karena itu, terdapat \(c\geq0\) dengan \(\|x_k-\hat x\|\rightarrow c\). Namun,
+    \begin{equation}
+        c=\lim_k\|x_k-\hat x\|
+         =\lim_j\|x_{n(j)}-\hat x\|=0.
+    \end{equation}
+    Maka seluruh barisan berkonvergensi ke \(\hat x\), dan bukti selesai.
+\end{proof}

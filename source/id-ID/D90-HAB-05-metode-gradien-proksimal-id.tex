@@ -1,0 +1,59 @@
+\pdfoutput=1
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\addbibresource{../../authority/habring/source-v1/references.bib}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 5: Metode Gradien Proksimal\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks — Unit 5: Metode Gradien Proksimal — Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 5, \enquote{Proximal Gradient Methods}, dari versi sumber yang ditentukan di atas. Unit ini melanjutkan Unit 4. Pembaca diharapkan telah mengenal fungsi proper, semikontinu bawah, dan konveks; subgradien beserta aturan jumlah dan skalanya; kondisi optimalitas Fermat; proyeksi; serta fungsi dengan gradien Lipschitz.
+
+Notasi, urutan hasil, bukti, sitasi, dan semua ajakan belajar dalam sumber dipertahankan. Sejumlah kekeliruan matematis dalam sumber diperbaiki secara terbuka; ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini. Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca unit ini.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{4}
+\include{habring-05-metode-gradien-proksimal-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber.
+
+\begin{enumerate}
+    \item Laju subgradien pembuka dikualifikasi sebagai laju dasar atau kasus terburuk; fungsi dinyatakan proper, semikontinu bawah, dan konveks, serta ukuran langkah implisit disyaratkan positif sebelum inklusi diubah menjadi kondisi optimalitas.
+    \item Bukti keunikan proks kini memakai objektif skalar \(q_x\), dua peminim yang berbeda, dan ketaksamaan titik tengah yang benar; sumber mengulang \(y_1\) dan menyamakan nilai skalar dengan sebuah himpunan \(\arg\min\).
+    \item Karakterisasi titik tetap memakai satu \(\tau>0\) yang tetap dan membuktikan ekuivalensi dengan \(0\in\partial(f+g)(x)\); pernyataan sumber tidak benar jika ukuran langkah nol diizinkan.
+    \item Definisi selubung Moreau memakai \(\inf\) sebelum ketercapaian dibuktikan dan mensyaratkan \(\tau>0\). Kuadrat yang hilang pada jarak proks juga dipulihkan.
+    \item Contoh proyeksi mensyaratkan himpunan tak kosong, dan salah tik \(x_t\) pada ambang lunak diperbaiki menjadi \(x_i\).
+    \item Aturan komputasi proks diberi domain vektor dan skalar yang benar, asumsi yang menjamin proks bernilai tunggal, serta syarat \(\gamma\geq0\).
+    \item Bukti penghalusan Moreau kini memberi argumen kekonveksan yang sah untuk fungsi bernilai diperluas, memperbaiki ekspansi yang memakai \(p(y)\), mendefinisikan residu keterdiferensialan secara konsisten, dan menempatkan subgradien pada \(p(x)\).
+    \item Kemunculan label sumber yang kedua dan duplikat, \texttt{proximal:eq:moreau\_diff2}, dipetakan ke label unik \texttt{proximal:eq:moreau\_diff2\_bound}; kemunculan pertama dipertahankan.
+    \item Contoh sumber yang belum selesai, \enquote{Projection, 1 norm, 2 norm}, dilengkapi dengan rumus proyeksi, ambang lunak, dan penyusutan Euklides, termasuk konvensi pada nol.
+    \item Teorema konvergensi kini mensyaratkan \(L>0\), himpunan peminim tak kosong, dan \(0<\tau_{\min}\leq\tau_k\leq1/L\). Faktor dua pada identitas polarisasi, indeks penjumlahan, batas laju, dan bukti konvergensi ke suatu peminim diperbaiki.
+    \item Dua rujukan silang yang tidak termuat diganti dengan nama prasyarat yang tepat: metode langsung untuk keberadaan peminim dan argumen infimum parsial untuk kekonveksan. Sitasi Beck tetap memakai bibliografi sumber yang dibekukan.
+\end{enumerate}
+
+\printbibliography
+
+\chapter*{Atribusi dan lisensi}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+\end{document}

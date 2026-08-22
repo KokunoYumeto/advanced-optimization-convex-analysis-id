@@ -1,0 +1,580 @@
+                    OPTIMISASI KONVEKS
+                       Unit 5: Metode Gradien Proksimal
+                             Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 5, ?Proximal Gradient Methods?, dari versi sumber
+yang ditentukan di atas. Unit ini melanjutkan Unit 4. Pembaca diharapkan telah mengenal
+fungsi proper, semikontinu bawah, dan konveks; subgradien beserta aturan jumlah dan
+skalanya; kondisi optimalitas Fermat; proyeksi; serta fungsi dengan gradien Lipschitz.
+Notasi, urutan hasil, bukti, sitasi, dan semua ajakan belajar dalam sumber dipertahankan.
+Sejumlah kekeliruan matematis dalam sumber diperbaiki secara terbuka; ringkasannya
+disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini.
+Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca
+unit ini.
+
+
+
+
+                                            i
+DAFTAR ISI
+
+
+
+
+5   metode gradien proksimal   1
+
+
+
+
+                                   ii
+5 METODE GRADIEN PROKSIMAL
+
+
+
+Kita telah melihat dalam bukti (dan latihan praktis) bahwa metode subgradien tidak mem-
+berikan konvergensi yang√ ideal. Dalam kasus dasar atau terburuk, nilai fungsi berkonver-
+gensi dengan orde O (1/ 𝑘), dan konvergensi memerlukan ukuran langkah yang mengecil.
+Dalam bab ini, kita akan memperkenalkan alternatif bagi subgradien (eksplisit) dalam
+optimisasi.
+Perhatikan masalah tak berkendala
+(5.1)                                      min 𝑓 (𝑥),
+                                            𝑥
+
+dengan 𝑓 : ℝ𝑑 → (−∞, ∞] proper, semikontinu bawah, dan konveks. Ingat pembaruan
+metode subgradien 𝑥𝑘+1 = 𝑥𝑘 −𝜏𝑘 𝑔𝑘 ,𝑔𝑘 ∈ 𝜕𝑓 (𝑥𝑘 ), atau, secara ekuivalen,𝑥𝑘+1 ∈ 𝑥𝑘 −𝜏𝑘 𝜕𝑓 (𝑥𝑘 ).
+Untuk 𝜏𝑘 > 0, kita usulkan pembaruan implisit
+(5.2)                              𝑥𝑘+1 ∈ 𝑥𝑘 − 𝜏𝑘 𝜕𝑓 (𝑥𝑘+1 ).
+Pada tahap ini belum jelas apakah metode tersebut terdefinisi dengan baik. Namun, jika
+memang terdefinisi, secara intuitif kestabilannya dapat membaik karena arah pembaruan
+dipilih dengan melihat ke masa depan. Gagasan ini selaras dengan kestabilan metode
+implisit untuk mendiskretkan persamaan diferensial (bandingkan Euler implisit).
+Jika kita amati (5.2) lebih dekat, aturan itu dapat ditulis sebagai
+                                                       
+                                       1        2
+(5.3)                          0 ∈ 𝜕 ∥ · −𝑥𝑘 ∥ + 𝜏𝑘 𝑓 (𝑥𝑘+1 ),
+                                       2
+yang merupakan kondisi optimalitas untuk
+                                   1
+(5.4)                         min ∥𝑥 − 𝑥𝑘 ∥ 2 + 𝜏𝑘 𝑓 (𝑥).
+                               𝑥 2
+
+Hal ini membawa kita pada definisi berikut.
+
+Definisi 5.1 (Operator proksimal). Operator atau pemetaan proksimal dari 𝑓 : ℝ𝑑 →
+(−∞, ∞] didefinisikan sebagai pemetaan
+                                            𝑑
+                         prox 𝑓 : ℝ𝑑 → 2ℝ ,
+(5.5)                                            1
+                                   𝑥 ↦→ arg min ∥𝑦 − 𝑥 ∥ 2 + 𝑓 (𝑦).
+                                            𝑦∈ℝ 2
+                                               𝑑
+
+
+
+
+                                                1
+                               5 metode gradien proksimal
+
+
+Kita biasanya menyebut prox 𝑓 sebagai ?proks?. Sebagai pemetaan bernilai himpunan,
+proks selalu dapat dituliskan; tetapi pemetaan itu baru berguna ketika prox 𝑓 (𝑥) ≠ ∅. Kita
+dapat membuktikan hasil berikut.
+
+Lema 5.2. Misalkan 𝑓 : ℝ𝑑 → (−∞, ∞] proper, konveks, dan semikontinu bawah. Pemetaan
+proksimal bernilai tunggal. Lebih lanjut, 𝑦 = prox 𝑓 (𝑥) jika dan hanya jika 0 ∈ (𝑦−𝑥)+𝜕𝑓 (𝑦).
+
+Catatan. Berdasarkan karakterisasi 0 ∈ (𝑦 − 𝑥) + 𝜕𝑓 (𝑦), kita sering menulis proks sebagai
+prox 𝑓 (𝑥) = (Id +𝜕𝑓 ) −1 (𝑥).
+
+Bukti. Demi kesederhanaan, andaikan dom(𝑓 ) ◦ ≠ ∅; untuk kasus umum, lihat [Beck 2017].
+Ambil 𝑔 ∈ 𝜕𝑓 (𝑦0 ) untuk suatu 𝑦0 ∈ dom(𝑓 ) ◦ . Kita mempunyai
+                                          1                    1
+(5.6)             𝑓 (𝑦0 ) + ⟨𝑔, 𝑦 − 𝑦0 ⟩ + ∥𝑥 − 𝑦 ∥ 2 ≤ 𝑓 (𝑦) + ∥𝑥 − 𝑦 ∥ 2 .
+                                          2                    2
+Oleh karena itu (mengapa?), pemetaan 𝑦 ↦→ 𝑓 (𝑦) + 21 ∥𝑥 − 𝑦 ∥ 2 bersifat koersif. Pemetaan
+ini juga mewarisi sifat semikontinu bawah dan proper dari 𝑓 . Dengan metode langsung
+untuk fungsi proper, semikontinu bawah, dan koersif di ruang berdimensi hingga, terdapat
+solusi bagi
+                                       1
+(5.7)                             min ∥𝑦 − 𝑥 ∥ 2 + 𝑓 (𝑦).
+                                  𝑦∈ℝ 2
+                                     𝑑
+
+
+
+Untuk keunikan, definisikan 𝑞𝑥 (𝑦) = 21 ∥𝑦 − 𝑥 ∥ 2 + 𝑓 (𝑦) dan andaikan 𝑦1 ≠ 𝑦2 adalah dua
+peminim. Karena suku kuadrat konveks ketat dan 𝑓 konveks, untuk 𝑦¯ = (𝑦1 + 𝑦2 )/2 berlaku
+                                           1                     
+                                     ¯ <
+                                𝑞𝑥 ( 𝑦)      𝑞𝑥 (𝑦1 ) + 𝑞𝑥 (𝑦2 )
+(5.8)                                     2
+                                         = min 𝑞𝑥 (𝑦),
+                                           𝑦∈ℝ𝑑
+
+sebuah kontradiksi. Pernyataan terakhir merupakan kondisi optimalitas bagi (5.7).           □
+
+Setelah mengetahui bahwa proks terdefinisi dengan baik, kita dapat mendefinisikan metode
+gradien proksimal. Secara khusus, perhatikan masalah
+
+(5.9)                            min 𝐹 (𝑥) := 𝑓 (𝑥) + 𝑔(𝑥),
+                                 𝑥 ∈ℝ𝑑
+
+dengan 𝑓 konveks dan 𝐿-halus, yakni terdiferensialkan dengan gradien 𝐿-Lipschitz, se-
+dangkan 𝑔 proper, konveks, dan semikontinu bawah. Masalah semacam ini sering muncul
+dalam praktik dan mencakup masalah semula dengan mengambil 𝑓 ≡ 0. Untuk 𝑘 = 0, 1, . . .,
+metode gradien proksimal didefinisikan oleh
+                                                            
+(5.10)                      𝑥𝑘+1 = prox𝜏𝑘 𝑔 𝑥𝑘 − 𝜏𝑘 ∇𝑓 (𝑥𝑘 ) .
+
+
+                                                  2
+                             5 metode gradien proksimal
+
+
+Jadi, kita melakukan langkah gradien atau eksplisit terhadap 𝑓 , lalu langkah proksimal
+atau implisit terhadap 𝑔.
+Sebagai hasil sederhana pertama, kita menunjukkan bahwa titik tetap metode gradien
+proksimal tepat sama dengan titik optimal.
+
+Lema 5.3. Untuk suatu 𝜏 > 0 yang tetap dan 𝑥 ∈ ℝ𝑑 , pernyataan berikut ekuivalen:
+                                         
+(5.11)            𝑥 = prox𝜏𝑔 𝑥 − 𝜏∇𝑓 (𝑥)     ⇐⇒ 0 ∈ 𝜕(𝑓 + 𝑔)(𝑥).
+Dengan demikian, 𝑥 adalah titik tetap jika dan hanya jika 𝑥 menyelesaikan (5.9).
+
+Bukti. Karakterisasi optimalitas proks memberikan ekuivalensi
+                                       
+(5.12)          𝑥 = prox𝜏𝑔 𝑥 − 𝜏∇𝑓 (𝑥)    ⇐⇒ 0 ∈ 𝜏∇𝑓 (𝑥) + 𝜏 𝜕𝑔(𝑥).
+Karena 𝜏 > 0, serta menurut aturan jumlah dan aturan skala untuk subdiferensial,
+                                         
+(5.13)              0 ∈ 𝜏 ∇𝑓 (𝑥) + 𝜕𝑔(𝑥)   ⇐⇒ 0 ∈ 𝜕(𝑓 + 𝑔)(𝑥).
+Untuk fungsi konveks 𝐹 = 𝑓 + 𝑔, kondisi terakhir ekuivalen dengan optimalitas 𝑥.       □
+
+Selain proks, kita mendefinisikan selubung Moreau sebagai nilai infimum dari objektif
+yang digunakan untuk proks.
+
+Definisi 5.4 (Selubung Moreau). Misalkan 𝑓 : ℝ𝑑 → (−∞, ∞] dan 𝜏 > 0. Selubung Moreau
+𝑀 𝑓𝜏 : ℝ𝑑 → [−∞, ∞] didefinisikan oleh
+                                              1
+(5.14)                     𝑀 𝑓𝜏 (𝑥) := inf      ∥𝑥 − 𝑦 ∥ 2 + 𝑓 (𝑦).
+                                      𝑦∈ℝ𝑑   2𝜏
+
+Lema 5.5. Misalkan 𝑓 : ℝ𝑑 → (−∞, ∞] proper, konveks, dan semikontinu bawah, serta 𝜏 > 0.
+Selubung Moreau selalu bernilai real (yakni berhingga), dan
+                                 1                2               
+(5.15)               𝑀 𝑓𝜏 (𝑥) =    𝑥 − prox𝜏 𝑓 (𝑥) + 𝑓 prox𝜏 𝑓 (𝑥) .
+                                2𝜏
+
+Bukti. Latihan. Terapkan lemma keberadaan dan keunikan proks pada 𝜏 𝑓 , lalu substitusik-
+an peminim unik tersebut ke dalam definisi infimum.                                    □
+
+  Contoh 5.6. Kita tinjau beberapa contoh pemetaan proksimal dan selubung Moreau
+  yang sering muncul:
+     (i) Misalkan 𝐶 ⊂ ℝ𝑑 tak kosong, tertutup, dan konveks, dan perhatikan fungsi
+         indikator 𝛿𝐶 . Maka
+                                                                   1
+         (5.16)      prox𝜏𝛿𝐶 (𝑥) = proj𝐶 (𝑥),        𝑀𝛿𝜏𝐶 (𝑥) =      dist(𝑥, 𝐶) 2 .
+                                                                  2𝜏
+
+
+
+                                               3
+                                  5 metode gradien proksimal
+
+
+    (ii) Secara khusus, jika 𝐶 = {𝑥 ∈ ℝ𝑑 | ∥𝑥 ∥ ∞ ≤ 1}, maka
+                                                           𝑥𝑖
+         (5.17)                        prox𝜏𝛿𝐶 (𝑥) 𝑖 =                 .
+                                                         max{1, |𝑥𝑖 |}
+
+   (iii) Jika 𝑓 (𝑥) = ∥𝑥 ∥ 1 , pemetaan proksimalnya adalah operator ambang lunak
+                                                  𝑥 −𝜏       𝑥𝑖 > 𝜏,
+                                                  𝑖
+                                                 
+                                                 
+                                                
+         (5.18)                   prox𝜏 𝑓 (𝑥) 𝑖 = 𝑥𝑖 + 𝜏      𝑥𝑖 < −𝜏,
+                                                 
+                                                 0           𝑥𝑖 ∈ [−𝜏, 𝜏].
+                                                 
+                                                 
+         Untuk 𝑑 = 1, selubung Moreau-nya tepat merupakan fungsi Huber
+                                                 
+                                                  |𝑥 | 2
+                                                 
+                                                 
+                                                             |𝑥 | ≤ 𝜏,
+         (5.19)                         𝜏
+                                      𝑀 |·| (𝑥) = 2𝜏 𝜏
+                                                  |𝑥 | −     |𝑥 | > 𝜏 .
+                                                 
+                                                 
+                                                         2
+
+Lema 5.7 (Aturan komputasi untuk proks). Misalkan semua fungsi dasar yang muncul
+di bawah proper, semikontinu bawah, dan konveks pada domain berdimensi hingga yang
+dinyatakan. Aturan berikut berlaku:
+   (i) Jika 𝑥 = (𝑥 1, . . . , 𝑥𝑚 ) ∈ ℝ𝑑1 ×·· ·×ℝ𝑑𝑚  ℝ𝑑 , 𝑥𝑖 ∈ ℝ𝑑𝑖 , 𝑖 𝑑𝑖 = 𝑑, dan 𝑓 (𝑥) = 𝑖 𝑓𝑖 (𝑥𝑖 ),
+                                                                     P                     P
+       maka prox 𝑓 (𝑥) = prox 𝑓𝑖 (𝑥𝑖 ) 𝑖 .
+  (ii) Jika 𝑓 (𝑥) = 𝛼𝑔(𝑥) + 𝑏 dengan 𝛼 > 0 dan 𝑏 ∈ ℝ, maka prox 𝑓 = prox𝛼𝑔 .
+
+ (iii) Jika 𝑓 (𝑥) = 𝑔(𝛼𝑥 + 𝑏) dengan 𝛼 ≠ 0 dan 𝑏 ∈ ℝ𝑑 , maka prox 𝑓 (𝑥) = 𝛼 −1 prox𝛼 2𝑔 (𝛼𝑥 +
+              
+       𝑏) − 𝑏 .
+ (iv) Jika 𝑓 (𝑥) = 𝑔(𝑄𝑥) dengan 𝑄 ∈ ℝ𝑑×𝑑 ortogonal, maka prox 𝑓 (𝑥) = 𝑄 ⊤ prox𝑔 (𝑄𝑥).
+
+  (v) Jika 𝑓 (𝑥) = 𝑔(𝑥) + ⟨𝑎, 𝑥⟩ +𝑏 dengan 𝑎 ∈ ℝ𝑑 dan 𝑏 ∈ ℝ, maka prox 𝑓 (𝑥) = prox𝑔 (𝑥 −𝑎).
+
+ (vi) Jika 𝑓 (𝑥) = 𝑔(𝑥) + 2 ∥𝑥 −𝑎∥ 2 dengan 𝑎 ∈ ℝ𝑑 dan 𝛾 ≥ 0, maka prox 𝑓 (𝑥) = prox𝛾e𝑔 (e
+                            𝛾
+                                                                                         𝛾𝑥 +
+                                −1
+       𝛾 𝑎), dengan 𝛾e = (1 + 𝛾) .
+      𝛾e
+
+Selubung Moreau memberikan efek penghalusan pada fungsi 𝑓 , sebagaimana ditunjukkan
+oleh hasil berikut.
+
+Lema 5.8. Misalkan 𝑓 : ℝ𝑑 → (−∞, ∞] proper, konveks, dan semikontinu bawah, serta 𝜏 > 0.
+Selubung Moreau bersifat konveks dan terdiferensialkan. Gradiennya 1/𝜏-Lipschitz dan dapat
+ditulis sebagai
+                                                 1                
+(5.20)                            ∇𝑀 𝑓𝜏 (𝑥) =      𝑥 − prox𝜏 𝑓 (𝑥) .
+                                                 𝜏
+
+
+                                                    4
+                                  5 metode gradien proksimal
+
+
+Bukti. Untuk 𝑞(𝑥, 𝑦) = 2𝜏1 ∥𝑥 − 𝑦 ∥ 2 + 𝑓 (𝑦), fungsi 𝑞 konveks secara bersama           pada (𝑥, 𝑦).
+Jika 𝑝𝑖 = prox𝜏 𝑓 (𝑥𝑖 ) dan 𝑡 ∈ [0, 1], evaluasi 𝑞 di 𝑡𝑥 1 + (1−𝑡)𝑥 2, 𝑡𝑝 1 + (1−𝑡)𝑝 2 menunjukkan
+bahwa 𝑀 𝑓𝜏 (𝑡𝑥 1 + (1 − 𝑡)𝑥 2 ) ≤ 𝑡𝑀 𝑓𝜏 (𝑥 1 ) + (1 − 𝑡)𝑀 𝑓𝜏 (𝑥 2 ). Jadi, argumen ini tetap sah untuk
+fungsi 𝑓 bernilai diperluas.
+Tetapkan 𝑝 (𝑥) = prox𝜏 𝑓 (𝑥). Dari definisi proks,
+                                  1
+                      𝑀 𝑓𝜏 (𝑥 + ℎ) =∥𝑥 + ℎ − 𝑝 (𝑥 + ℎ)∥ 2 + 𝑓 (𝑝 (𝑥 + ℎ))
+                                 2𝜏
+                                  1
+(5.21)                         ≤ ∥𝑥 + ℎ − 𝑝 (𝑥)∥ 2 + 𝑓 (𝑝 (𝑥)),
+                                 2𝜏
+                                  1
+                      𝑀 𝑓𝜏 (𝑥) = ∥𝑥 − 𝑝 (𝑥)∥ 2 + 𝑓 (𝑝 (𝑥)).
+                                 2𝜏
+Dengan mengurangkan dua hubungan itu, kita memperoleh
+                                        1
+                                          ∥𝑥 + ℎ − 𝑝 (𝑥)∥ 2 − ∥𝑥 − 𝑝 (𝑥)∥ 2
+                                                                            
+             𝑀 𝑓𝜏 (𝑥 + ℎ) − 𝑀 𝑓𝜏 (𝑥) ≤
+                                       2𝜏
+(5.22)                                 
+                                           1
+                                                       
+                                                             1
+                                     = ℎ, (𝑥 − 𝑝 (𝑥)) + ∥ℎ∥ 2 .
+                                          𝜏                 2𝜏
+Secara ekuivalen,
+                                                               
+                                                    1              1
+(5.23)               𝑀 𝑓𝜏 (𝑥 + ℎ) − 𝑀 𝑓𝜏 (𝑥) −    ℎ, (𝑥 − 𝑝 (𝑥)) ≤ ∥ℎ∥ 2 .
+                                                    𝜏             2𝜏
+Definisikan residu keterdiferensialan
+                                                                            
+                                                                 1
+(5.24)                 𝑟 𝑥 (ℎ) := 𝑀 𝑓𝜏 (𝑥 + ℎ) − 𝑀 𝑓𝜏 (𝑥) −    ℎ, (𝑥 − 𝑝 (𝑥)) .
+                                                                 𝜏
+Kurangkan dua kondisi optimalitas proks, lalu gunakan monotonisitas 𝜕𝑓 dan ketaksamaan
+Cauchy–Schwarz. Hasilnya ialah ∥𝑝 (𝑥)−𝑝 (𝑦)∥ ≤ ∥𝑥 −𝑦 ∥, sehingga 𝑝 tak ekspansif. Dengan
+mengevaluasi 𝑀 𝑓𝜏 (𝑥) pada 𝑝 (𝑥 + ℎ), kita juga mendapatkan
+                                                  
+                              1                       1         1
+                 𝑟 𝑥 (ℎ) ≥ ℎ, 𝑝 (𝑥) − 𝑝 (𝑥 + ℎ) + ∥ℎ∥ 2 ≥ − ∥ℎ∥ 2 .
+                                                 
+(5.25)
+                              𝜏                      2𝜏        2𝜏
+Secara keseluruhan,
+                                                               
+                                                    1              1
+(5.26)               𝑀 𝑓𝜏 (𝑥 + ℎ) − 𝑀 𝑓𝜏 (𝑥) −    ℎ, (𝑥 − 𝑝 (𝑥)) ≤ ∥ℎ∥ 2 .
+                                                    𝜏             2𝜏
+Jadi, ∇𝑀 𝑓𝜏 (𝑥) = 𝜏 −1 (𝑥 − 𝑝 (𝑥)). Untuk membuktikan kekontinuan Lipschitz gradien, perha-
+tikan bahwa
+                                        1D                                                E
+             ∥∇𝑀 𝑓𝜏 (𝑥) − ∇𝑀 𝑓𝜏 (𝑦)∥ 2 = ∇𝑀 𝑓𝜏 (𝑥) − ∇𝑀 𝑓𝜏 (𝑦), (𝑥 − 𝑝 (𝑥)) − (𝑦 − 𝑝 (𝑦))
+                                        𝜏
+                                        1D                           E
+(5.27)                                        𝜏          𝜏
+                                       = ∇𝑀 𝑓 (𝑥) − ∇𝑀 𝑓 (𝑦), 𝑥 − 𝑦
+                                        𝜏
+                                          1D    𝜏           𝜏
+                                                                               E
+                                        −    ∇𝑀 𝑓 (𝑥) − ∇𝑀 𝑓 (𝑦), 𝑝 (𝑥) − 𝑝 (𝑦) .
+                                          𝜏
+
+
+                                                   5
+                               5 metode gradien proksimal
+
+
+Kondisi optimalitas memberi ∇𝑀 𝑓𝜏 (𝑥) = 𝜏 −1 (𝑥 − 𝑝 (𝑥)) ∈ 𝜕𝑓 (𝑝 (𝑥)). Karena itu, hasil kali
+dalam terakhir tidak negatif menurut monotonisitas subdiferensial, sehingga
+                                            1D                            E
+                 ∥∇𝑀 𝑓𝜏 (𝑥) − ∇𝑀 𝑓𝜏 (𝑦)∥ 2 ≤ ∇𝑀 𝑓𝜏 (𝑥) − ∇𝑀 𝑓𝜏 (𝑦), 𝑥 − 𝑦
+(5.28)                                      𝜏
+                                            1
+                                           ≤ ∥∇𝑀 𝑓𝜏 (𝑥) − ∇𝑀 𝑓𝜏 (𝑦)∥ ∥𝑥 − 𝑦 ∥.
+                                            𝜏
+Setelah membagi dengan norma gradien yang berbeda dari nol (kasus nol langsung),
+diperoleh sifat 1/𝜏-Lipschitz.                                                             □
+
+Catatan. Dengan representasi gradien selubung Moreau di atas, proks dapat ditulis kembali
+sebagai
+                                                        
+                                      1                
+(5.29)          prox𝜏 𝑓 (𝑥) = 𝑥 − 𝜏     𝑥 − prox𝜏 𝑓 (𝑥) = 𝑥 − 𝜏∇𝑀 𝑓𝜏 (𝑥).
+                                      𝜏
+Jadi, satu langkah proksimal ekuivalen dengan satu langkah gradien pada selubung Moreau.
+
+ Contoh 5.9. Untuk fungsi indikator himpunan tak kosong, tertutup, dan konveks 𝐶,
+ rumusnya adalah prox𝜏𝛿𝐶 (𝑥) = proj𝐶 (𝑥). Untuk 𝑓 (𝑥) = ∥𝑥 ∥ 1 , setiap koordinat diberikan
+ oleh ambang lunak (prox𝜏 𝑓 (𝑥))𝑖 = sign(𝑥𝑖 ) max{|𝑥𝑖 | − 𝜏, 0}, dengan sign(0) = 0. Untuk
+ 𝑓 (𝑥) = ∥𝑥 ∥ 2 , penyusutan Euklides adalah prox𝜏 𝑓 (𝑥) = (1 − 𝜏/∥𝑥 ∥ 2 )+𝑥 jika 𝑥 ≠ 0, dan
+ prox𝜏 𝑓 (0) = 0. Verifikasikan ketiga rumus ini langsung dari kondisi optimalitas proks.
+
+Sekarang kita akan membuktikan konvergensi metode gradien proksimal. Mula-mula kita
+turunkan lemma penting: untuk fungsi 𝐿-halus, galat antara fungsi dan hampiran linearnya
+dibatasi dari atas oleh suku kuadrat.
+
+Lema 5.10. Misalkan 𝐹 : ℝ𝑑 → ℝ terdiferensialkan kontinu dan gradiennya 𝐿-Lipschitz.
+Maka
+                                                      𝐿
+(5.30)               𝐹 (𝑦) ≤ 𝐹 (𝑥) + ⟨∇𝐹 (𝑥), 𝑦 − 𝑥⟩ + ∥𝑦 − 𝑥 ∥ 2 .
+                                                      2
+Bukti. Dari teorema dasar kalkulus dan sifat 𝐿-halus, kita mempunyai
+                       ∫ 1
+                            d
+       𝐹 (𝑦) − 𝐹 (𝑥) =        𝐹 (𝑥 + 𝑡 (𝑦 − 𝑥))d𝑡
+                        0 d𝑡
+                       ∫ 1
+                     =     ⟨∇𝐹 (𝑥 + 𝑡 (𝑦 − 𝑥)), 𝑦 − 𝑥⟩ d𝑡
+                        0
+                       ∫ 1                                           ∫ 1
+(5.31)               =     ⟨∇𝐹 (𝑥 + 𝑡 (𝑦 − 𝑥)) − ∇𝐹 (𝑥), 𝑦 − 𝑥⟩ d𝑡 +     ⟨∇𝐹 (𝑥), 𝑦 − 𝑥⟩ d𝑡
+                        0                                             0
+                       ∫ 1
+                     ≤     𝐿𝑡 ∥𝑦 − 𝑥 ∥ 2 d𝑡 + ⟨∇𝐹 (𝑥), 𝑦 − 𝑥⟩
+                        0
+                     𝐿
+                    = ∥𝑦 − 𝑥 ∥ 2 + ⟨∇𝐹 (𝑥), 𝑦 − 𝑥⟩ .
+                     2
+
+
+                                              6
+                                5 metode gradien proksimal
+
+
+                                                                                             □
+
+Untuk bukti konvergensi metode gradien proksimal, bagi 𝜏 > 0 kita perkenalkan notasi
+                                 1                        
+(5.32)                   𝑇𝜏 (𝑥) = 𝑥 − prox𝜏𝑔 (𝑥 − 𝜏∇𝑓 (𝑥)) .
+                                 𝜏
+Dengan fungsi ini, pembaruan gradien proksimal dapat ditulis sebagai
+(5.33)                               𝑥𝑘+1 = 𝑥𝑘 − 𝜏𝑘𝑇𝜏𝑘 (𝑥𝑘 ).
+
+Teorema 5.11. Misalkan 𝑓 : ℝ𝑑 → ℝ konveks dan 𝐿-halus dengan 𝐿 > 0, serta 𝑔 : ℝ𝑑 →
+(−∞, ∞] proper, semikontinu bawah, dan konveks. Andaikan arg min𝑥 𝐹 (𝑥) ≠ ∅ dan terdapat
+𝜏min > 0 sedemikian sehingga 0 < 𝜏min ≤ 𝜏𝑘 ≤ 𝐿 −1 untuk semua 𝑘. Untuk setiap 𝑥 ∗ ∈
+arg min𝑥 𝐹 (𝑥), algoritma gradien proksimal memenuhi
+                                          ∥𝑥 0 − 𝑥 ∗ ∥ 2
+(5.34)                    𝐹 (𝑥𝑛 ) − 𝐹 (𝑥 ∗ ) ≤             (𝑛 ≥ 1).
+                                             2𝜏min𝑛
+Selain itu, 𝑥𝑘 berkonvergensi menuju suatu 𝑥ˆ ∈ arg min𝑥 𝐹 (𝑥).
+
+Bukti. Dari definisi 𝑇𝜏 , kita mempunyai
+                                                              
+(5.35)              𝑇𝜏𝑘 (𝑥𝑘 ) − ∇𝑓 (𝑥𝑘 ) ∈ 𝜕𝑔 𝑥𝑘 − 𝜏𝑘𝑇𝜏𝑘 (𝑥𝑘 ) = 𝜕𝑔(𝑥𝑘+1 ).
+Dengan memakai hubungan ini, kekonveksan 𝑓 , Lemma 5.10, dan 𝜏𝑘 ≤ 𝐿 −1 , untuk setiap
+𝑧 ∈ ℝ𝑑 diperoleh
+                                                           𝜏𝑘
+          𝐹 (𝑥𝑘+1 ) ≤𝑓 (𝑥𝑘 ) − 𝜏𝑘 ∇𝑓 (𝑥𝑘 ),𝑇𝜏𝑘 (𝑥𝑘 ) + ∥𝑇𝜏𝑘 (𝑥𝑘 )∥ 2
+                                                            2                  
+                      + 𝑔(𝑧) − 𝑇𝜏𝑘 (𝑥𝑘 ) − ∇𝑓 (𝑥𝑘 ), 𝑧 − 𝑥𝑘 − 𝜏𝑘𝑇𝜏𝑘 (𝑥𝑘 )
+                                                                                      𝜏𝑘
+(5.36)              ≤𝑓 (𝑧) + 𝑔(𝑧) − ⟨∇𝑓 (𝑥𝑘 ), 𝑧 − 𝑥𝑘 ⟩ − 𝜏𝑘 ∇𝑓 (𝑥𝑘 ),𝑇𝜏𝑘 (𝑥𝑘 ) + ∥𝑇𝜏𝑘 (𝑥𝑘 )∥ 2
+                                                                                      2
+                      − 𝑇𝜏𝑘 (𝑥𝑘 ) − ∇𝑓 (𝑥𝑘 ), 𝑧 − 𝑥𝑘 − 𝜏𝑘𝑇𝜏𝑘 (𝑥𝑘 )
+                                                     𝜏𝑘
+                     =𝐹 (𝑧) − 𝑇𝜏𝑘 (𝑥𝑘 ), 𝑧 − 𝑥𝑘 − ∥𝑇𝜏𝑘 (𝑥𝑘 )∥ 2 .
+                                                      2
+Dengan mengambil 𝑧 = 𝑥𝑘 , kita memperoleh
+                                                         𝜏𝑘
+(5.37)                            𝐹 (𝑥𝑘+1 ) ≤ 𝐹 (𝑥𝑘 ) − ∥𝑇𝜏𝑘 (𝑥𝑘 )∥ 2 .
+                                                          2
+Jadi, nilai objektif tidak meningkat dan turun ketat kecuali jika 𝑇𝜏𝑘 (𝑥𝑘 ) = 0; menurut
+lemma titik tetap, kasus terakhir berarti 𝑥𝑘 optimal. Di sisi lain, ambil 𝑧 = 𝑥 ∗ dan gunakan
+𝑇𝜏𝑘 (𝑥𝑘 ) = 𝜏𝑘−1 (𝑥𝑘 − 𝑥𝑘+1 ). Maka
+                                                                  𝜏𝑘
+                0 ≤ 𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ ) ≤ 𝑇𝜏𝑘 (𝑥𝑘 ), 𝑥𝑘 − 𝑥 ∗ − ∥𝑇𝜏𝑘 (𝑥𝑘 )∥ 2
+                                                                   2
+                                            1
+                                                2 ⟨𝑥𝑘 − 𝑥𝑘+1, 𝑥𝑘 − 𝑥 ∗ ⟩ − ∥𝑥𝑘 − 𝑥𝑘+1 ∥ 2
+                                                                                          
+(5.38)                                   =
+                                           2𝜏𝑘
+                                            1
+                                                ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 .
+                                                                                
+                                         =
+                                           2𝜏𝑘
+
+
+                                                 7
+                                5 metode gradien proksimal
+
+
+Khususnya, ∥𝑥𝑘 −𝑥 ∗ ∥ 2 − ∥𝑥𝑘+1 −𝑥 ∗ ∥ 2 ≥ 0, sehingga jarak ke setiap peminim tidak meningkat.
+Dengan menjumlahkan untuk 𝑘 = 0, . . . , 𝑛 − 1, kita memperoleh
+               𝑛−1                        𝑛−1
+               ∑︁                       ∑︁    1
+                   𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ ) ≤         ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2
+                                                                                  
+               𝑘=0                        𝑘=0 2𝜏𝑘
+                                                 𝑛−1
+(5.39)                                       1   ∑︁
+                                                           ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2
+                                                                                             
+                                         ≤
+                                           2𝜏min 𝑘=0
+                                             1
+                                                  ∥𝑥 0 − 𝑥 ∗ ∥ 2 − ∥𝑥𝑛 − 𝑥 ∗ ∥ 2 .
+                                                                                
+                                         =
+                                           2𝜏min
+Karena 𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ ) juga tidak meningkat,
+                                        𝑛−1
+                                      ∑︁                        ∥𝑥 0 − 𝑥 ∗ ∥ 2
+(5.40)           𝑛 𝐹 (𝑥𝑛 ) − 𝐹 (𝑥 ∗ ) ≤     𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ ) ≤               .
+                                        𝑘=0                          2𝜏min
+
+Jadi,
+
+                                                          ∥𝑥 0 − 𝑥 ∗ ∥ 2
+(5.41)                           𝐹 (𝑥𝑛 ) − 𝐹 (𝑥 ∗ ) ≤                    .
+                                                            2𝜏min𝑛
+Terakhir, kita buktikan konvergensi (𝑥𝑘 )𝑘 . Perhitungan di atas menunjukkan bahwa ∥𝑥𝑘 −
+𝑥 ∗ ∥ tidak meningkat untuk setiap peminim 𝑥 ∗ . Dengan demikian, (𝑥𝑘 )𝑘 terbatas dan, di
+ruang berdimensi hingga, mempunyai subbarisan konvergen. Misalkan 𝑥ˆ = lim 𝑗 𝑥𝑛( 𝑗)
+adalah suatu titik akumulasi. Karena 𝐹 (𝑥𝑘 ) → min 𝐹 dan 𝐹 = 𝑓 + 𝑔 semikontinu bawah,
+
+                           ˆ ≤ lim inf 𝐹 (𝑥𝑛( 𝑗) ) = lim 𝐹 (𝑥𝑘 ) = min 𝐹 .
+                        𝐹 (𝑥)
+                                     𝑗                      𝑘
+
+Jadi, 𝑥ˆ adalah peminim dan ∥𝑥𝑘 − 𝑥ˆ ∥ tidak meningkat. Karena itu, terdapat 𝑐 ≥ 0 dengan
+∥𝑥𝑘 − 𝑥ˆ ∥ → 𝑐. Namun,
+
+(5.42)                     𝑐 = lim ∥𝑥𝑘 − 𝑥ˆ ∥ = lim ∥𝑥𝑛( 𝑗) − 𝑥ˆ ∥ = 0.
+                                 𝑘                    𝑗
+
+                                       ˆ dan bukti selesai.
+Maka seluruh barisan berkonvergensi ke 𝑥,                                                        □
+
+
+
+
+                                                  8
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber.
+
+  (i) Laju subgradien pembuka dikualifikasi sebagai laju dasar atau kasus terburuk; fungsi
+      dinyatakan proper, semikontinu bawah, dan konveks, serta ukuran langkah implisit
+      disyaratkan positif sebelum inklusi diubah menjadi kondisi optimalitas.
+ (ii) Bukti keunikan proks kini memakai objektif skalar 𝑞𝑥 , dua peminim yang berbeda,
+      dan ketaksamaan titik tengah yang benar; sumber mengulang 𝑦1 dan menyamakan
+      nilai skalar dengan sebuah himpunan arg min.
+ (iii) Karakterisasi titik tetap memakai satu 𝜏 > 0 yang tetap dan membuktikan ekuivalensi
+       dengan 0 ∈ 𝜕(𝑓 + 𝑔)(𝑥); pernyataan sumber tidak benar jika ukuran langkah nol
+       diizinkan.
+ (iv) Definisi selubung Moreau memakai inf sebelum ketercapaian dibuktikan dan men-
+      syaratkan 𝜏 > 0. Kuadrat yang hilang pada jarak proks juga dipulihkan.
+  (v) Contoh proyeksi mensyaratkan himpunan tak kosong, dan salah tik 𝑥𝑡 pada ambang
+      lunak diperbaiki menjadi 𝑥𝑖 .
+ (vi) Aturan komputasi proks diberi domain vektor dan skalar yang benar, asumsi yang
+      menjamin proks bernilai tunggal, serta syarat 𝛾 ≥ 0.
+(vii) Bukti penghalusan Moreau kini memberi argumen kekonveksan yang sah untuk
+      fungsi bernilai diperluas, memperbaiki ekspansi yang memakai 𝑝 (𝑦), mendefinisikan
+      residu keterdiferensialan secara konsisten, dan menempatkan subgradien pada 𝑝 (𝑥).
+(viii) Kemunculan label sumber yang kedua dan duplikat, proximal:eq:moreau_diff2,
+       dipetakan ke label unik proximal:eq:moreau_diff2_bound; kemunculan pertama
+       dipertahankan.
+ (ix) Contoh sumber yang belum selesai, ?Projection, 1 norm, 2 norm?, dilengkapi dengan
+      rumus proyeksi, ambang lunak, dan penyusutan Euklides, termasuk konvensi pada
+      nol.
+
+
+
+
+                                            9
+                           5 metode gradien proksimal
+
+
+(x) Teorema konvergensi kini mensyaratkan 𝐿 > 0, himpunan peminim tak kosong, dan
+    0 < 𝜏min ≤ 𝜏𝑘 ≤ 1/𝐿. Faktor dua pada identitas polarisasi, indeks penjumlahan, batas
+    laju, dan bukti konvergensi ke suatu peminim diperbaiki.
+(xi) Dua rujukan silang yang tidak termuat diganti dengan nama prasyarat yang tepat:
+     metode langsung untuk keberadaan peminim dan argumen infimum parsial untuk
+     kekonveksan. Sitasi Beck tetap memakai bibliografi sumber yang dibekukan.
+
+
+
+
+                                         10
+BIBLIOGRAFI
+
+
+
+A. Beck (2017), First-order methods in optimization, SIAM.
+
+
+
+
+                                            11
+ATRIBUSI DAN LISENSI
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Creative
+Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/
+by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+
+
+
+                                            12
+
