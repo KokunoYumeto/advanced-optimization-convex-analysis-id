@@ -1,0 +1,89 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\addbibresource{../../authority/habring/source-v1/references.bib}
+\microtypesetup{expansion=false}
+
+% Lokalisasi ini sengaja hanya berlaku pada unit mandiri Bab 7.
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 7: Dualitas\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks — Unit 7: Dualitas — Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 7, ``Duality'', dari Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1. Sumber berwenang untuk unit ini adalah berkas \texttt{duality.tex} edisi v1 dengan SHA-256 berikut:
+\begin{center}
+\small\texttt{0b112dee2582813cec5629c02df1dda32}\\[-0.2em]
+\texttt{9f690f944b60f4694b1c5762129bea9}
+\end{center}
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang bernorma dan ruang Hilbert, dual dan adjoin operator, semikontinuitas bawah, epigraf dan pemisahan Hahn--Banach, subgradien, operator proksimal, serta dasar analisis konvergensi. Seluruh definisi, contoh, lema, teorema, bukti, latihan, sitasi, dan catatan kaki dalam bab sumber dipertahankan dalam urutan sumber. Kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka dan diringkas pada akhir unit.
+
+Edisi ini berdiri sendiri untuk dibaca dan dibangun, tetapi tidak mengklaim menggantikan konteks lengkap catatan kuliah asal. Istilah teknis Indonesia dipakai secara konsisten; singkatan PDHG dan ADMM dipertahankan karena merupakan nama baku algoritme.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{6}
+\include{habring-07-dualitas-id}
+
+\backmatter
+\printbibliography[heading=bibintoc,title={Daftar pustaka}]
+
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-HAB-ADV-0050 sampai O015-HAB-ADV-0075 menyertai sumber edisi ini.
+
+\begin{enumerate}
+    \item Pada contoh konjugat, urutan pasangan dual dibetulkan menjadi $\inner{x^*}{x}$, dan konjugat indikator bola satuan dual diidentifikasi sebagai norma asal pada $V$ setelah identifikasi $V^{**}\cong V$.
+    \item Lema keproperan konjugat kini menyatakan hipotesis keberadaan sedikitnya satu subgradien yang dipakai buktinya; evaluasi yang salah tipe $f^*(\hat x)$ dibetulkan menjadi $f^*(g)$, dan fungsi dalam supremum disebut afin kontinu.
+    \item Bukti bikonjugat memakai $f(x)$ ketika memilih $y=x$ dan memulihkan dua tanda ketaksamaan yang hilang pada cabang $\alpha=0$.
+    \item Identitas Moreau dinyatakan di bawah konvensi ruang Hilbert bab ini agar pemetaan proksimal yang dipakai memang terdefinisi dan bernilai tunggal dalam lingkup bersama yang dinyatakan.
+    \item Rumus kesenjangan primal--dual diperbaiki agar konsisten tipe dan tanda dengan dual Fenchel: $f(x)+g(Kx)-[-f^*(-K^*y)-g^*(y)]$.
+    \item Pembaruan dual PDHG memakai $\prox_{\sigma g^*}$; submasalah abstraknya diminimumkan terhadap $y$; dan koefisien sisa kekonveksan kuat untuk $y$ memakai $1/(2\sigma)$.
+    \item Rerata ergodik PDHG dan langkah penjumlahannya memakai iterasi $1$ sampai $N$, sesuai ketaksamaan satu langkah untuk $x_{k+1}$ dan $y_{k+1}$.
+    \item Submasalah kedua ADMM diminimumkan terhadap $y$. Notasi gradien yang tidak berlaku bagi $g$ nonsmooth diganti dengan subdiferensial. Tripel ADMM aktual hanya dinyatakan stasioner terhadap $y$; stasioneritas primal penuh dibatasi pada skema hipotetis dengan minimisasi bersama.
+    \item Substitusi residu ADMM dibetulkan menjadi $Ax_{k+1}=r_{k+1}+z-By_{k+1}$ sebelum menurunkan $A(x^*-x_{k+1})$.
+    \item Dalam penurunan Lyapunov ADMM, tanda suku silang, tanda yang dibuktikan oleh optimalitas, faktor $\gamma$, dan indeks awal $k\geq1$ dibetulkan. Penjumlahan teleskopik dimulai dari iterasi pertama yang memenuhi kedua kondisi optimalitas $y$.
+    \item Batas atas terakhir untuk galat nilai objektif mengembalikan tanda minus dan faktor $\gamma$ yang sudah terdapat pada ketaksamaan berlabel sebelumnya.
+    \item Kemunculan kedua label \texttt{duality:eq:proof\_admm6} dipetakan secara transparan ke \texttt{duality:eq:proof\_admm7}; rujukan tunggalnya diperbarui bersama-sama.
+    \item Salah eja, frasa ganda, dan karakter kendali berlebih dalam prosa sumber dinormalkan dalam terjemahan tanpa mengubah matematika lain.
+    \item Lingkup bab dibuat koheren sebagai ruang Hilbert riil berdimensi hingga dengan dual kontinu dan identifikasi Riesz; $X$ dan $Y$ dinyatakan eksplisit. Kelas $\Gamma_0$ memakai konvensi fungsi proper, konveks, semikontinu bawah dengan nilai dalam $(-\infty,+\infty]$.
+    \item Karakterisasi regularisasi $\Gamma$ dibatasi pada keluarga minoran proper yang tidak kosong; jika keluarga itu kosong, supremumnya secara eksplisit adalah fungsi yang identik $-\infty$.
+    \item Dalam bukti Fenchel--Rockafellar, inklusi optimalitas kini dijustifikasi oleh kaidah Fermat serta aturan jumlah dan rantai di bawah syarat kualifikasi interior yang telah dinyatakan.
+    \item Maksimum titik demi titik yang ketercapaiannya tidak dijamin diganti dengan supremum, dan karakterisasi kesenjangan nol dinyatakan di bawah hipotesis dualitas kuat serta ketercapaian primal--dual.
+    \item Identitas Moreau berskala $\prox_{\sigma g^*}(y)=y-\sigma\prox_{g/\sigma}(y/\sigma)$ ditambahkan untuk menjelaskan langkah proksimal dual PDHG.
+    \item Teorema PDHG kini menyatakan fungsi dalam $\Gamma_0$, ruang dan operatornya, serta positifnya ukuran langkah; penghitung iterasi diganti dari $K$ menjadi $N$ agar tidak bertabrakan dengan operator $K$, dan kasus operator nol dinyatakan otomatis memenuhi syarat ukuran langkah.
+    \item Bagian ADMM kini memberi tipe $A,B:\R^d\to\R^m$ dan $z\in\R^m$, mengasumsikan $\gamma>0$ serta ketercapaian setiap submasalah eksak, dan menyatakan hanya konvergensi residu, perubahan citra blok, serta nilai objektif yang benar-benar dibuktikan.
+    \item Himpunan $C$ pada contoh fungsi indikator disyaratkan tak kosong agar $\delta_C$ proper dan fungsi pendukungnya tetap berada dalam kodomain nilai diperluas yang dinyatakan.
+    \item Tanda $\alpha\geq0$ dalam bukti Fenchel--Moreau kini diperoleh dari suatu $\bar x\in\dom(f)$ yang dijamin oleh keproperan, lalu dengan membiarkan tinggi epigraf menuju tak hingga; titik terpisah $x_0$ tidak lagi diasumsikan berada dalam domain efektif.
+    \item Bukti PDHG menangani operator nol secara terpisah, ketika suku campuran lenyap, dan hanya memakai $\delta=1/(\tau\|K\|)$ ketika $K\neq0$.
+    \item Lema satu langkah PDHG kini menyatakan sendiri hipotesis ruang Hilbert berdimensi hingga, fungsi dalam $\Gamma_0$, operator linear terbatas, dan ukuran langkah positif yang diperlukan karena lema itu mendahului teorema konvergensi.
+    \item Bikonjugasi dan ketaksamaan $f^{**}\leq f$ kini mensyaratkan $f$ serta $f^*$ proper. Dalam kasus keluarga minoran $\Gamma$ kosong, hanya supremum ruas kanan yang didefinisikan sebagai fungsi identik $-\infty$; di bawah konvensi masukan proper bab ini, fungsi tersebut tidak dinotasikan sebagai $f^{**}$.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+\end{document}

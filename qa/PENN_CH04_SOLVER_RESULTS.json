@@ -1,0 +1,207 @@
+{
+  "failures": [],
+  "gates": [
+    {
+      "detail": {
+        "actual": {
+          "bytes": 33313,
+          "lines": 613,
+          "path": "source/id-ID/penn-04-pencarian-garis-hampiran-dan-konvergensi-id.tex",
+          "sha256": "c5c0f09d38454177e61c2a97c9beef07771d5f4f715cc7a4a81a871ff54ced8f"
+        },
+        "expected": {
+          "bytes": 33313,
+          "lines": 613,
+          "sha256": "c5c0f09d38454177e61c2a97c9beef07771d5f4f715cc7a4a81a871ff54ced8f"
+        }
+      },
+      "gate": "pinned_target_identity",
+      "pass": true
+    },
+    {
+      "detail": {
+        "actual": {
+          "bytes": 10055,
+          "lines": 13,
+          "path": "qa/PENN_CH04_PROPOSED_LEDGER.jsonl",
+          "sha256": "fa9c5c0b097b7349a959ca6c1c9c797fc0ed2ea61e91148badec62bb239b7bbd"
+        },
+        "expected": {
+          "bytes": 10055,
+          "lines": 13,
+          "sha256": "fa9c5c0b097b7349a959ca6c1c9c797fc0ed2ea61e91148badec62bb239b7bbd"
+        }
+      },
+      "gate": "pinned_proposed_ledger_identity",
+      "pass": true
+    },
+    {
+      "detail": {
+        "event_ids": [
+          "O015-PENN-ADV-0025",
+          "O015-PENN-ADV-0026",
+          "O015-PENN-ADV-0027",
+          "O015-PENN-ADV-0028",
+          "O015-PENN-ADV-0029",
+          "O015-PENN-ADV-0030",
+          "O015-PENN-ADV-0031",
+          "O015-PENN-ADV-0032",
+          "O015-PENN-ADV-0033",
+          "O015-PENN-ADV-0034",
+          "O015-PENN-ADV-0035",
+          "O015-PENN-ADV-0036",
+          "O015-PENN-ADV-0037"
+        ],
+        "record_count": 13
+      },
+      "gate": "proposed_ledger_schema_event_range_and_sigma_repair",
+      "pass": true
+    },
+    {
+      "detail": {
+        "layout_and_exclusion": true,
+        "semantic_fragments": {
+          "capture_neighborhood": true,
+          "correct_example_matrix": true,
+          "shifted_chain_rule": true,
+          "uniform_B_bounds": true,
+          "uniform_newton_bound": true
+        }
+      },
+      "gate": "audited_semantic_fragments_layout_and_code_exclusion",
+      "pass": true
+    },
+    {
+      "detail": {
+        "armijo_margin": 0.6404227004257683,
+        "curvature_margin": 3.0356344428204345,
+        "phi_prime_step": -1.0169700676104894,
+        "phi_prime_zero": 4.03732875041989,
+        "shrink_count": 0,
+        "step": 1.0
+      },
+      "gate": "wolfe_ascent_signs",
+      "pass": true
+    },
+    {
+      "detail": {
+        "absolute_error": 8.337330825725076e-12,
+        "finite_difference": -1.016970067602152,
+        "shifted_gradient_dot_direction": -1.0169700676104894,
+        "step": 1.0
+      },
+      "gate": "shifted_line_restriction_chain_rule",
+      "pass": true
+    },
+    {
+      "detail": {
+        "last_even_or_odd_pair": [
+          1.0036279705600002,
+          -1.0021767823360004
+        ],
+        "maximum_closed_form_error": 4.440892098500626e-16
+      },
+      "gate": "failure_recurrence_indexing",
+      "pass": true
+    },
+    {
+      "detail": {
+        "minimum_ascent_bound_margin": 0.0019511418084693644,
+        "minimum_kantorovich_margin": 7.867572483610807e-06,
+        "witness_count": 40
+      },
+      "gate": "kantorovich_and_exact_ascent_bound",
+      "pass": true
+    },
+    {
+      "detail": {
+        "delta": 0.25,
+        "next_point_norm": 0.0,
+        "residual_factor": 0.0
+      },
+      "gate": "kantorovich_zero_residual_endpoint",
+      "pass": true
+    },
+    {
+      "detail": {
+        "Q": [
+          [
+            -4.0,
+            0.0
+          ],
+          [
+            0.0,
+            -20.0
+          ]
+        ],
+        "convergence_factor": 0.6666666666666666,
+        "spectral_condition_number": 5.0
+      },
+      "gate": "quadratic_example_scaling",
+      "pass": true
+    },
+    {
+      "detail": {
+        "M": 6.0,
+        "m": 0.75,
+        "minimum_directional_margin": 0.00028571387412732645,
+        "minimum_norm_bound_margin": 0.0016337575863577536,
+        "witness_count": 36
+      },
+      "gate": "uniform_spd_scaling_is_gradient_related",
+      "pass": true
+    },
+    {
+      "detail": {
+        "errors": [
+          0.8,
+          0.3506849315068493,
+          0.0630081854379469,
+          0.0004944005956326464,
+          2.4169442510747763e-10,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "selected_superlinear_ratios": [
+          0.007846609011134797,
+          4.88863539491088e-07,
+          0.0
+        ],
+        "unit_step_accepted": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "gate": "newton_direction_and_superlinear_witness",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "proposed_ledger": {
+      "bytes": 10055,
+      "lines": 13,
+      "path": "qa/PENN_CH04_PROPOSED_LEDGER.jsonl",
+      "sha256": "fa9c5c0b097b7349a959ca6c1c9c797fc0ed2ea61e91148badec62bb239b7bbd"
+    },
+    "target": {
+      "bytes": 33313,
+      "lines": 613,
+      "path": "source/id-ID/penn-04-pencarian-garis-hampiran-dan-konvergensi-id.tex",
+      "sha256": "c5c0f09d38454177e61c2a97c9beef07771d5f4f715cc7a4a81a871ff54ced8f"
+    }
+  },
+  "runtime": {
+    "numpy": "2.4.4",
+    "python": "stdlib"
+  },
+  "schema": "o015-penn-ch04-open-numerical-validation-v2-final",
+  "status": "PASS"
+}

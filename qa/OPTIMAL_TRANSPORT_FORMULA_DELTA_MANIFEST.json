@@ -1,0 +1,2508 @@
+{
+  "all_substantive_deltas_integrated_ledger_bound": true,
+  "all_substantive_deltas_proposed_ledger_bound": true,
+  "blocks": [
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0001",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 8,
+          "ordinal": 1,
+          "raw": "X"
+        },
+        {
+          "canonical": "Y",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 8,
+          "ordinal": 2,
+          "raw": "Y"
+        }
+      ],
+      "source_ordinal_end": 2,
+      "source_ordinal_start": 1,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "(X,\\Sigma_X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 10,
+          "ordinal": 1,
+          "raw": "(X,\\Sigma_X)"
+        },
+        {
+          "canonical": "(Y,\\Sigma_Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 10,
+          "ordinal": 2,
+          "raw": "(Y,\\Sigma_Y)"
+        },
+        {
+          "canonical": "\\sigma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 10,
+          "ordinal": 3,
+          "raw": "\\sigma"
+        }
+      ],
+      "target_ordinal_end": 3,
+      "target_ordinal_start": 1
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0002",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "delete",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 8,
+          "ordinal": 5,
+          "raw": "X"
+        },
+        {
+          "canonical": "Y",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 8,
+          "ordinal": 6,
+          "raw": "Y"
+        }
+      ],
+      "source_ordinal_end": 6,
+      "source_ordinal_start": 5,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [],
+      "target_ordinal_end": 5,
+      "target_ordinal_start": 6
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0003",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 8,
+      "source_ordinal_start": 9,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\Mc_+(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 10,
+          "ordinal": 8,
+          "raw": "\\Mc_+(X)"
+        },
+        {
+          "canonical": "\\Mc_+(Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 10,
+          "ordinal": 9,
+          "raw": "\\Mc_+(Y)"
+        }
+      ],
+      "target_ordinal_end": 9,
+      "target_ordinal_start": 8
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0004",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\mu:\\Sigma\\rightarrow\\R",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 11,
+          "raw": "\\mu:\\Sigma\\rightarrow \\R"
+        },
+        {
+          "canonical": "\\Sigma\\subset2^X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 12,
+          "raw": "\\Sigma\\subset 2^X"
+        },
+        {
+          "canonical": "\\Sigma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 13,
+          "raw": "\\Sigma"
+        }
+      ],
+      "source_ordinal_end": 13,
+      "source_ordinal_start": 11,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\mu:\\Sigma_X\\rightarrow\\R",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 11,
+          "ordinal": 12,
+          "raw": "\\mu:\\Sigma_X\\rightarrow\\R"
+        },
+        {
+          "canonical": "[0,\\infty)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 11,
+          "ordinal": 13,
+          "raw": "[0,\\infty)"
+        },
+        {
+          "canonical": "\\Sigma_X\\subseteq2^X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 11,
+          "ordinal": 14,
+          "raw": "\\Sigma_X\\subseteq2^X"
+        }
+      ],
+      "target_ordinal_end": 14,
+      "target_ordinal_start": 12
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0005",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "2^X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 15,
+          "raw": "2^X"
+        },
+        {
+          "canonical": "X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 16,
+          "raw": "X"
+        },
+        {
+          "canonical": "\\mu",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 9,
+          "ordinal": 17,
+          "raw": "\\mu"
+        }
+      ],
+      "source_ordinal_end": 17,
+      "source_ordinal_start": 15,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\Sigma_X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 11,
+          "ordinal": 16,
+          "raw": "\\Sigma_X"
+        }
+      ],
+      "target_ordinal_end": 16,
+      "target_ordinal_start": 16
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0006",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "(A_n)_{n\\in\\N}\\subset\\Sigma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 12,
+          "ordinal": 19,
+          "raw": "(A_n)_{n\\in \\N}\\subset\\Sigma"
+        }
+      ],
+      "source_ordinal_end": 19,
+      "source_ordinal_start": 19,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "(A_n)_{n\\in\\N}\\subset\\Sigma_X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 14,
+          "ordinal": 18,
+          "raw": "(A_n)_{n\\in\\N}\\subset\\Sigma_X"
+        }
+      ],
+      "target_ordinal_end": 18,
+      "target_ordinal_start": 18
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0007",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0085"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "delete",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\mu(A)\\geq0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 14,
+          "ordinal": 21,
+          "raw": "\\mu(A)\\geq 0"
+        },
+        {
+          "canonical": "A",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 14,
+          "ordinal": 22,
+          "raw": "A"
+        }
+      ],
+      "source_ordinal_end": 22,
+      "source_ordinal_start": 21,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [],
+      "target_ordinal_end": 19,
+      "target_ordinal_start": 20
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0008",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "c",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 82,
+          "ordinal": 36,
+          "raw": "c"
+        }
+      ],
+      "source_ordinal_end": 36,
+      "source_ordinal_start": 36,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "c:X\\timesY\\rightarrow(-\\infty,+\\infty]",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 91,
+          "ordinal": 33,
+          "raw": "c:X\\times Y\\rightarrow(-\\infty,+\\infty]"
+        }
+      ],
+      "target_ordinal_end": 33,
+      "target_ordinal_start": 33
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0009",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "T",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 82,
+          "ordinal": 42,
+          "raw": "T"
+        },
+        {
+          "canonical": "x",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 82,
+          "ordinal": 43,
+          "raw": "x"
+        },
+        {
+          "canonical": "y",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 82,
+          "ordinal": 44,
+          "raw": "y"
+        },
+        {
+          "canonical": "A",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 82,
+          "ordinal": 45,
+          "raw": "A"
+        }
+      ],
+      "source_ordinal_end": 45,
+      "source_ordinal_start": 42,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "T:X\\rightarrowY",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 91,
+          "ordinal": 39,
+          "raw": "T:X\\rightarrow Y"
+        }
+      ],
+      "target_ordinal_end": 39,
+      "target_ordinal_start": 39
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0010",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 46,
+      "source_ordinal_start": 47,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "A\\in\\Sigma_Y",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 91,
+          "ordinal": 41,
+          "raw": "A\\in\\Sigma_Y"
+        }
+      ],
+      "target_ordinal_end": 41,
+      "target_ordinal_start": 41
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0011",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "A\\subsetY",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 84,
+          "ordinal": 51,
+          "raw": "A\\subset Y"
+        }
+      ],
+      "source_ordinal_end": 51,
+      "source_ordinal_start": 51,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "A\\in\\Sigma_Y",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 93,
+          "ordinal": 46,
+          "raw": "A\\in\\Sigma_Y"
+        }
+      ],
+      "target_ordinal_end": 46,
+      "target_ordinal_start": 46
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0012",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\min_{T:X\\rightarrowY}\\intc(x,T(x))\\dd\\alpha(x),\\text{#}T_\\sharp\\alpha=\\beta",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 90,
+          "ordinal": 56,
+          "raw": "\\label{ot:eq:monge} \\min_{T:X\\rightarrow Y} \\int c(x,T(x))\\dd \\alpha(x),\\quad\\text{s.t. }T_\\sharp\\alpha = \\beta."
+        }
+      ],
+      "source_ordinal_end": 56,
+      "source_ordinal_start": 56,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "c",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 98,
+          "ordinal": 51,
+          "raw": "c"
+        },
+        {
+          "canonical": "\\inf_{\\substack{T:X\\rightarrowY\\\\mathrm{terukur}\\\\T_\\sharp\\alpha=\\beta}}\\intc(x,T(x))\\dd\\alpha(x),\\inf\\emptyset\\coloneq+\\infty",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 99,
+          "ordinal": 52,
+          "raw": "\\label{ot:eq:monge} \\inf_{\\substack{T:X\\rightarrow Y\\ \\mathrm{terukur}\\\\T_\\sharp\\alpha=\\beta}} \\int c(x,T(x))\\dd\\alpha(x), \\qquad \\inf\\emptyset\\coloneqq+\\infty."
+        },
+        {
+          "canonical": "x",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 105,
+          "ordinal": 53,
+          "raw": "x"
+        }
+      ],
+      "target_ordinal_end": 53,
+      "target_ordinal_start": 51
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0013",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "delete",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "x",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 94,
+          "ordinal": 58,
+          "raw": "x"
+        }
+      ],
+      "source_ordinal_end": 58,
+      "source_ordinal_start": 58,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [],
+      "target_ordinal_end": 54,
+      "target_ordinal_start": 55
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0014",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 62,
+      "source_ordinal_start": 63,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "Y\\subseteq\\R^q",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 105,
+          "ordinal": 59,
+          "raw": "Y\\subseteq\\R^q"
+        }
+      ],
+      "target_ordinal_end": 59,
+      "target_ordinal_start": 59
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0015",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "A\\subsetX",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 76,
+          "raw": "A\\subset X"
+        },
+        {
+          "canonical": "B\\subsetY",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 77,
+          "raw": "B\\subset Y"
+        },
+        {
+          "canonical": "A\\subsetX",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 78,
+          "raw": "A\\subset X"
+        },
+        {
+          "canonical": "B\\subsetY",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 79,
+          "raw": "B\\subset Y"
+        }
+      ],
+      "source_ordinal_end": 79,
+      "source_ordinal_start": 76,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "A\\in\\Sigma_X",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 107,
+          "ordinal": 73,
+          "raw": "A\\in\\Sigma_X"
+        },
+        {
+          "canonical": "B\\in\\Sigma_Y",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 107,
+          "ordinal": 74,
+          "raw": "B\\in\\Sigma_Y"
+        }
+      ],
+      "target_ordinal_end": 74,
+      "target_ordinal_start": 73
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0016",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\alpha",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 83,
+          "raw": "\\alpha"
+        },
+        {
+          "canonical": "\\beta",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 96,
+          "ordinal": 84,
+          "raw": "\\beta"
+        }
+      ],
+      "source_ordinal_end": 84,
+      "source_ordinal_start": 83,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\alpha,\\beta",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 107,
+          "ordinal": 78,
+          "raw": "\\alpha,\\beta"
+        }
+      ],
+      "target_ordinal_end": 78,
+      "target_ordinal_start": 78
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0017",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0084",
+        "O015-HAB-ADV-0086",
+        "O015-HAB-ADV-0087"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\min_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 99,
+          "ordinal": 90,
+          "raw": "\\label{ot:eq:K_ot} \\min_{\\gamma\\in\\Pi(\\alpha,\\beta)} \\int c(x,y)\\dd\\gamma(x,y)."
+        }
+      ],
+      "source_ordinal_end": 90,
+      "source_ordinal_start": 90,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "c",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 109,
+          "ordinal": 84,
+          "raw": "c"
+        },
+        {
+          "canonical": "\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 110,
+          "ordinal": 85,
+          "raw": "\\label{ot:eq:K_ot} \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)} \\int c(x,y)\\dd\\gamma(x,y)."
+        }
+      ],
+      "target_ordinal_end": 85,
+      "target_ordinal_start": 84
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0018",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0088",
+        "O015-HAB-ADV-0089"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "c:X\\timesY\\rightarrow\\R\\cup\\{\\infty\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 114,
+          "ordinal": 96,
+          "raw": "c:X\\times Y\\rightarrow \\R\\cup\\{\\infty\\}"
+        },
+        {
+          "canonical": "\\gamma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 114,
+          "ordinal": 97,
+          "raw": "\\gamma"
+        },
+        {
+          "canonical": "(\\gamma_n)_n",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 117,
+          "ordinal": 98,
+          "raw": "(\\gamma_n)_n"
+        },
+        {
+          "canonical": "\\lim_n\\intc(x,y)\\dd\\gamma_n(x,y)=\\inf_\\gamma\\intc(x,y)\\dd\\gamma(x,y)>-\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 117,
+          "ordinal": 99,
+          "raw": "\\lim_n \\int c(x,y)\\dd \\gamma_n(x,y) = \\inf_\\gamma \\int c(x,y)\\dd \\gamma(x,y)>-\\infty"
+        },
+        {
+          "canonical": "\\gamma_n",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 117,
+          "ordinal": 100,
+          "raw": "\\gamma_n"
+        }
+      ],
+      "source_ordinal_end": 100,
+      "source_ordinal_start": 96,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "X",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 91,
+          "raw": "X"
+        },
+        {
+          "canonical": "Y",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 92,
+          "raw": "Y"
+        },
+        {
+          "canonical": "\\sigma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 93,
+          "raw": "\\sigma"
+        },
+        {
+          "canonical": "\\alpha\\in\\Pc(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 94,
+          "raw": "\\alpha\\in\\Pc(X)"
+        },
+        {
+          "canonical": "\\beta\\in\\Pc(Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 95,
+          "raw": "\\beta\\in\\Pc(Y)"
+        },
+        {
+          "canonical": "c:X\\timesY\\rightarrow(-\\infty,+\\infty]",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 96,
+          "raw": "c:X\\times Y\\rightarrow(-\\infty,+\\infty]"
+        },
+        {
+          "canonical": "\\hat\\gamma\\in\\Pi(\\alpha,\\beta)",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 128,
+          "ordinal": 97,
+          "raw": "\\hat\\gamma\\in\\Pi(\\alpha,\\beta)"
+        },
+        {
+          "canonical": "(\\gamma_n)_n\\subset\\Pi(\\alpha,\\beta)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 131,
+          "ordinal": 98,
+          "raw": "(\\gamma_n)_n\\subset\\Pi(\\alpha,\\beta)"
+        },
+        {
+          "canonical": "\\alpha",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 131,
+          "ordinal": 99,
+          "raw": "\\alpha"
+        },
+        {
+          "canonical": "\\beta",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 131,
+          "ordinal": 100,
+          "raw": "\\beta"
+        }
+      ],
+      "target_ordinal_end": 100,
+      "target_ordinal_start": 91
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0019",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0088",
+        "O015-HAB-ADV-0089"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\hat\\gamma\\in\\Pi(\\alpha,\\beta)",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 117,
+          "ordinal": 102,
+          "raw": "\\hat\\gamma\\in\\Pi(\\alpha,\\beta)"
+        },
+        {
+          "canonical": "\\gamma_n\\rightharpoonup\\hat\\gamma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 117,
+          "ordinal": 103,
+          "raw": "\\gamma_n\\rightharpoonup \\hat \\gamma"
+        }
+      ],
+      "source_ordinal_end": 103,
+      "source_ordinal_start": 102,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\gamma_n\\rightharpoonup\\hat\\gamma\\in\\Pi(\\alpha,\\beta)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 131,
+          "ordinal": 102,
+          "raw": "\\gamma_n\\rightharpoonup\\hat\\gamma\\in\\Pi(\\alpha,\\beta)"
+        },
+        {
+          "canonical": "c",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 131,
+          "ordinal": 103,
+          "raw": "c"
+        }
+      ],
+      "target_ordinal_end": 103,
+      "target_ordinal_start": 102
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0020",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0088",
+        "O015-HAB-ADV-0089"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "X=Y",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 123,
+          "ordinal": 106,
+          "raw": "X=Y"
+        },
+        {
+          "canonical": "c(x,y)=\\|x-y\\|^p",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 123,
+          "ordinal": 107,
+          "raw": "c(x,y) = \\|x-y\\|^p"
+        }
+      ],
+      "source_ordinal_end": 107,
+      "source_ordinal_start": 106,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "(X,d)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 137,
+          "ordinal": 106,
+          "raw": "(X,d)"
+        }
+      ],
+      "target_ordinal_end": 106,
+      "target_ordinal_start": 106
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0021",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0088",
+        "O015-HAB-ADV-0089"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "W_p(\\alpha,\\beta)\\coloneq(\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y))^{1/p}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 124,
+          "ordinal": 109,
+          "raw": "W_p(\\alpha,\\beta) \\coloneqq \\bigg(\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\int c(x,y)\\dd \\gamma(x,y)\\bigg)^{1/p}"
+        }
+      ],
+      "source_ordinal_end": 109,
+      "source_ordinal_start": 109,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "x_0\\inX",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 137,
+          "ordinal": 108,
+          "raw": "x_0\\in X"
+        },
+        {
+          "canonical": "\\Pc_p(X)\\coloneq\\{\\mu\\in\\Pc(X):\\intd(x,x_0)^p\\dd\\mu(x)<\\infty\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 138,
+          "ordinal": 109,
+          "raw": "\\Pc_p(X)\\coloneqq\\{\\mu\\in\\Pc(X):\\int d(x,x_0)^p\\dd\\mu(x)<\\infty\\}"
+        },
+        {
+          "canonical": "x_0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 138,
+          "ordinal": 110,
+          "raw": "x_0"
+        },
+        {
+          "canonical": "\\alpha,\\beta\\in\\Pc_p(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 138,
+          "ordinal": 111,
+          "raw": "\\alpha,\\beta\\in\\Pc_p(X)"
+        },
+        {
+          "canonical": "c(x,y)=d(x,y)^p",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 138,
+          "ordinal": 112,
+          "raw": "c(x,y)=d(x,y)^p"
+        },
+        {
+          "canonical": "W_p(\\alpha,\\beta)\\coloneq(\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intd(x,y)^p\\dd\\gamma(x,y))^{1/p}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 139,
+          "ordinal": 113,
+          "raw": "W_p(\\alpha,\\beta)\\coloneqq \\bigg(\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)} \\int d(x,y)^p\\dd\\gamma(x,y)\\bigg)^{1/p}"
+        }
+      ],
+      "target_ordinal_end": 113,
+      "target_ordinal_start": 108
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0022",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0088",
+        "O015-HAB-ADV-0089",
+        "O015-HAB-ADV-0090",
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "c:X\\timesY\\rightarrow\\R\\cup\\{\\infty\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 134,
+          "ordinal": 113,
+          "raw": "c:X\\times Y\\rightarrow \\R\\cup\\{\\infty\\}"
+        },
+        {
+          "canonical": "\\begin{aligned}\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)=\\sup_{\\phi(x)+\\psi(y)\\leqc(x,y)}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 135,
+          "ordinal": 114,
+          "raw": "\\begin{aligned} \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\int c(x,y) \\dd \\gamma(x,y) = \\sup_{\\phi(x)+\\psi(y)\\leq c(x,y)}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y). \\end{aligned}"
+        },
+        {
+          "canonical": "(\\phi,\\psi)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 143,
+          "ordinal": 115,
+          "raw": "(\\phi,\\psi)"
+        }
+      ],
+      "source_ordinal_end": 115,
+      "source_ordinal_start": 113,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\Pc_p(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 146,
+          "ordinal": 117,
+          "raw": "\\Pc_p(X)"
+        },
+        {
+          "canonical": "X",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 118,
+          "raw": "X"
+        },
+        {
+          "canonical": "Y",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 119,
+          "raw": "Y"
+        },
+        {
+          "canonical": "\\sigma",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 120,
+          "raw": "\\sigma"
+        },
+        {
+          "canonical": "\\alpha\\in\\Pc(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 121,
+          "raw": "\\alpha\\in\\Pc(X)"
+        },
+        {
+          "canonical": "\\beta\\in\\Pc(Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 122,
+          "raw": "\\beta\\in\\Pc(Y)"
+        },
+        {
+          "canonical": "c:X\\timesY\\rightarrow[0,\\infty]",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 123,
+          "raw": "c:X\\times Y\\rightarrow[0,\\infty]"
+        },
+        {
+          "canonical": "C_b(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 124,
+          "raw": "C_b(X)"
+        },
+        {
+          "canonical": "C_b(Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 153,
+          "ordinal": 125,
+          "raw": "C_b(Y)"
+        },
+        {
+          "canonical": "\\begin{aligned}\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)=\\sup_{\\substack{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)\\\\\\phi(x)+\\psi(y)\\leqc(x,y)\\\\forall(x,y)}}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 154,
+          "ordinal": 126,
+          "raw": "\\begin{aligned} \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\int c(x,y)\\dd\\gamma(x,y) = \\sup_{\\substack{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)\\\\ \\phi(x)+\\psi(y)\\leq c(x,y)\\ \\forall(x,y)}} \\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y). \\end{aligned}"
+        },
+        {
+          "canonical": "(\\phi,\\psi)\\inC_b(X)\\timesC_b(Y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 167,
+          "ordinal": 127,
+          "raw": "(\\phi,\\psi)\\in C_b(X)\\times C_b(Y)"
+        }
+      ],
+      "target_ordinal_end": 127,
+      "target_ordinal_start": 117
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0023",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 116,
+      "source_ordinal_start": 117,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "(x,y)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 167,
+          "ordinal": 129,
+          "raw": "(x,y)"
+        }
+      ],
+      "target_ordinal_end": 129,
+      "target_ordinal_start": 129
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0024",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\begin{aligned}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)=&\\int\\phi(x)\\dd\\gamma(x,y)+\\int\\psi(y)\\dd\\gamma(x,y)\\\\=&\\int\\phi(x)+\\psi(y)\\dd\\gamma(x,y)\\\\\\leq&\\intc(x,y)\\dd\\gamma(x,y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 144,
+          "ordinal": 118,
+          "raw": "\\begin{aligned} \\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) =& \\int \\phi(x)\\dd\\gamma(x,y) + \\int \\psi(y)\\dd \\gamma(x,y)\\\\ =& \\int \\phi(x)+\\psi(y)\\dd\\gamma(x,y)\\\\ \\leq& \\int c(x,y) \\dd \\gamma(x,y). \\end{aligned}"
+        }
+      ],
+      "source_ordinal_end": 118,
+      "source_ordinal_start": 118,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\begin{aligned}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)&=\\int\\phi(x)\\dd\\gamma(x,y)+\\int\\psi(y)\\dd\\gamma(x,y)\\\\&=\\int(\\phi(x)+\\psi(y))\\dd\\gamma(x,y)\\\\&\\leq\\intc(x,y)\\dd\\gamma(x,y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 168,
+          "ordinal": 131,
+          "raw": "\\begin{aligned} \\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y) &= \\int\\phi(x)\\dd\\gamma(x,y)+\\int\\psi(y)\\dd\\gamma(x,y)\\\\ &= \\int\\big(\\phi(x)+\\psi(y)\\big)\\dd\\gamma(x,y)\\\\ &\\leq \\int c(x,y)\\dd\\gamma(x,y). \\end{aligned}"
+        }
+      ],
+      "target_ordinal_end": 131,
+      "target_ordinal_start": 131
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0025",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\begin{aligned}\\sup_{\\phi(x)+\\psi(y)\\leqc(x,y)}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\leq&\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 153,
+          "ordinal": 121,
+          "raw": "\\begin{aligned} \\sup_{\\phi(x)+\\psi(y)\\leq c(x,y)}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) \\leq& \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\int c(x,y) \\dd \\gamma(x,y). \\end{aligned}"
+        },
+        {
+          "canonical": "\\inf\\intc(x,y)\\dd\\gamma+\\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 161,
+          "ordinal": 122,
+          "raw": "\\inf \\int c(x,y)\\dd \\gamma + \\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)"
+        }
+      ],
+      "source_ordinal_end": 122,
+      "source_ordinal_start": 121,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\begin{aligned}\\sup_{\\substack{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)\\\\\\phi(x)+\\psi(y)\\leqc(x,y)\\\\forall(x,y)}}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\leq\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 177,
+          "ordinal": 134,
+          "raw": "\\begin{aligned} \\sup_{\\substack{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)\\\\ \\phi(x)+\\psi(y)\\leq c(x,y)\\ \\forall(x,y)}} \\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y) \\leq \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)} \\int c(x,y)\\dd\\gamma(x,y). \\end{aligned}"
+        },
+        {
+          "canonical": "\\inf_{\\gamma\\in\\Mc_+(X\\timesY)}\\{\\intc(x,y)\\dd\\gamma+\\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)\\}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 188,
+          "ordinal": 135,
+          "raw": "\\inf_{\\gamma\\in\\Mc_+(X\\times Y)} \\left\\{\\int c(x,y)\\dd\\gamma+\\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)\\right\\},"
+        }
+      ],
+      "target_ordinal_end": 135,
+      "target_ordinal_start": 134
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0026",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\begin{aligned}\\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)=&\\sup_{\\phi,\\psi}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)-\\int\\phi(x)+\\psi(y)\\dd\\gamma(x,y)\\\\\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 165,
+          "ordinal": 124,
+          "raw": "\\label{ot:eq:duality} \\begin{aligned} \\delta_{\\Pi(\\alpha,\\beta)}(\\gamma) =& \\sup_{\\phi,\\psi}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) - \\int \\phi(x)+\\psi(y)\\dd \\gamma(x,y)\\\\ % =& \\sup_{\\phi,\\psi}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) - \\int \\phi(x)+\\psi(y)\\dd \\gamma(x,y) \\end{aligned}"
+        }
+      ],
+      "source_ordinal_end": 124,
+      "source_ordinal_start": 124,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\gamma\\in\\Mc_+(X\\timesY)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 192,
+          "ordinal": 137,
+          "raw": "\\gamma\\in\\Mc_+(X\\times Y)"
+        },
+        {
+          "canonical": "\\begin{aligned}\\delta_{\\Pi(\\alpha,\\beta)}(\\gamma)&=\\sup_{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)}\\{\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\&-\\int(\\phi(x)+\\psi(y))\\dd\\gamma(x,y)\\}.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 193,
+          "ordinal": 138,
+          "raw": "\\label{ot:eq:duality} \\begin{aligned} \\delta_{\\Pi(\\alpha,\\beta)}(\\gamma) &= \\sup_{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)} \\bigg\\{\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\ &\\qquad-\\int\\big(\\phi(x)+\\psi(y)\\big)\\dd\\gamma(x,y)\\bigg\\}. \\end{aligned}"
+        }
+      ],
+      "target_ordinal_end": 138,
+      "target_ordinal_start": 137
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0027",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\gamma_x\\neq\\alpha",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 172,
+          "ordinal": 128,
+          "raw": "\\gamma_x\\neq \\alpha"
+        }
+      ],
+      "source_ordinal_end": 128,
+      "source_ordinal_start": 128,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\phi\\inC_b(X)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 201,
+          "ordinal": 142,
+          "raw": "\\phi\\in C_b(X)"
+        },
+        {
+          "canonical": "\\int\\phi\\dd(\\alpha-\\gamma_x)\\neq0",
+          "globally_novel": false,
+          "kind": "equation",
+          "line": 202,
+          "ordinal": 143,
+          "raw": "\\int\\phi\\dd(\\alpha-\\gamma_x)\\neq0,"
+        }
+      ],
+      "target_ordinal_end": 143,
+      "target_ordinal_start": 142
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0028",
+      "disposition": "sequence-only-no-corpus-wide-formula-change",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "delete",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\int\\phi\\dd(\\alpha-\\gamma_x)\\neq0",
+          "globally_novel": false,
+          "kind": "equation",
+          "line": 173,
+          "ordinal": 133,
+          "raw": "\\int \\phi \\dd(\\alpha - \\gamma_x) \\neq 0."
+        }
+      ],
+      "source_ordinal_end": 133,
+      "source_ordinal_start": 133,
+      "strict_ledger_bound": true,
+      "substantive": false,
+      "target": [],
+      "target_ordinal_end": 147,
+      "target_ordinal_start": 148
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0029",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0091"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "t\\rightarrow\\pm\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 176,
+          "ordinal": 135,
+          "raw": "t\\rightarrow \\pm \\infty"
+        },
+        {
+          "canonical": "\\begin{aligned}\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)=&\\inf_{\\gamma\\in\\Mc_+(X\\timesY)}\\sup_{\\phi,\\psi}\\intc(x,y)\\dd\\gamma(x,y)\\\\&+\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)-\\int\\phi(x)+\\psi(y)\\dd\\gamma(x,y)\\\\=&\\sup_{\\phi,\\psi}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\&+\\inf_{\\gamma\\in\\Mc_+(\\alpha,\\beta)}\\intc(x,y)-\\phi(x)-\\psi(y)\\dd\\gamma(x,y)\\\\=&\\sup_{\\phi(x)+\\psi(y)\\leqc(x,y)}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 179,
+          "ordinal": 136,
+          "raw": "\\begin{aligned} \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\int c(x,y) \\dd \\gamma(x,y) =& \\inf_{\\gamma\\in\\Mc_+(X\\times Y)}\\sup_{\\phi,\\psi} \\int c(x,y) \\dd \\gamma(x,y)\\\\ &+\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) - \\int \\phi(x)+\\psi(y)\\dd \\gamma(x,y)\\\\ =& \\sup_{\\phi,\\psi}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) \\\\ &+ \\inf_{\\gamma\\in\\Mc_+(\\alpha,\\beta)} \\int c(x,y)- \\phi(x)-\\psi(y) \\dd \\gamma(x,y)\\\\ =& \\sup_{\\phi(x)+\\psi(y)\\leq c(x,y)}\\int \\phi(x)\\dd\\alpha(x) + \\int \\psi(y)\\dd \\beta(y) \\end{aligned}"
+        },
+        {
+          "canonical": "\\{(\\phi,\\psi)|\\phi(x)+\\psi(y)\\leqc(x,y)\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 189,
+          "ordinal": 137,
+          "raw": "\\{(\\phi,\\psi)\\;|\\; \\phi(x) + \\psi(y)\\leq c(x,y)\\}"
+        }
+      ],
+      "source_ordinal_end": 137,
+      "source_ordinal_start": 135,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "t",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 205,
+          "ordinal": 149,
+          "raw": "t"
+        },
+        {
+          "canonical": "|t|\\rightarrow\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 205,
+          "ordinal": 150,
+          "raw": "|t|\\rightarrow\\infty"
+        },
+        {
+          "canonical": "+\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 205,
+          "ordinal": 151,
+          "raw": "+\\infty"
+        },
+        {
+          "canonical": "\\begin{aligned}\\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)}\\intc(x,y)\\dd\\gamma(x,y)&=\\inf_{\\gamma\\in\\Mc_+(X\\timesY)}\\sup_{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)}\\\\&\\{\\intc(x,y)\\dd\\gamma(x,y)\\\\&+\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\&-\\int(\\phi(x)+\\psi(y))\\dd\\gamma(x,y)\\}\\\\&=\\sup_{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)}\\{\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\&+\\inf_{\\gamma\\in\\Mc_+(X\\timesY)}\\int(c(x,y)-\\phi(x)-\\psi(y))\\dd\\gamma(x,y)\\}\\\\&=\\sup_{\\substack{\\phi\\inC_b(X),\\\\psi\\inC_b(Y)\\\\\\phi(x)+\\psi(y)\\leqc(x,y)\\\\forall(x,y)}}\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 208,
+          "ordinal": 152,
+          "raw": "\\begin{aligned} \\inf_{\\gamma\\in\\Pi(\\alpha,\\beta)} \\int c(x,y)\\dd\\gamma(x,y) &= \\inf_{\\gamma\\in\\Mc_+(X\\times Y)} \\sup_{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)} \\\\ &\\quad\\bigg\\{\\int c(x,y)\\dd\\gamma(x,y)\\\\ &\\quad+\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y) \\\\ &\\quad-\\int\\big(\\phi(x)+\\psi(y)\\big)\\dd\\gamma(x,y)\\bigg\\}\\\\ &= \\sup_{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)} \\bigg\\{\\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y)\\\\ &\\quad+\\inf_{\\gamma\\in\\Mc_+(X\\times Y)} \\int\\big(c(x,y)-\\phi(x)-\\psi(y)\\big)\\dd\\gamma(x,y)\\bigg\\}\\\\ &= \\sup_{\\substack{\\phi\\in C_b(X),\\ \\psi\\in C_b(Y)\\\\ \\phi(x)+\\psi(y)\\leq c(x,y)\\ \\forall(x,y)}} \\int\\phi(x)\\dd\\alpha(x)+\\int\\psi(y)\\dd\\beta(y). \\end{aligned}"
+        },
+        {
+          "canonical": "c-\\phi-\\psi\\geq0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 228,
+          "ordinal": 153,
+          "raw": "c-\\phi-\\psi\\geq0"
+        },
+        {
+          "canonical": "\\gamma=0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 228,
+          "ordinal": 154,
+          "raw": "\\gamma=0"
+        },
+        {
+          "canonical": "-\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 228,
+          "ordinal": 155,
+          "raw": "-\\infty"
+        }
+      ],
+      "target_ordinal_end": 155,
+      "target_ordinal_start": 149
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0030",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0092",
+        "O015-HAB-ADV-0093"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 139,
+      "source_ordinal_start": 140,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\Delta_n\\coloneq\\{r\\in\\R_+^n:\\1_n^\\topr=1\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 235,
+          "ordinal": 158,
+          "raw": "\\Delta_n\\coloneqq\\{r\\in\\R_+^n:\\1_n^\\top r=1\\}"
+        },
+        {
+          "canonical": "\\Delta_n^\\circ\\coloneq\\{r\\in\\R_{++}^n:\\1_n^\\topr=1\\}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 236,
+          "ordinal": 159,
+          "raw": "\\Delta_n^\\circ\\coloneqq\\{r\\in\\R_{++}^n:\\1_n^\\top r=1\\}"
+        },
+        {
+          "canonical": "a=(a_1,\\dots,a_n)\\in\\Delta_n",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 236,
+          "ordinal": 160,
+          "raw": "a=(a_1,\\dots,a_n)\\in\\Delta_n"
+        },
+        {
+          "canonical": "x_i\\inX",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 236,
+          "ordinal": 161,
+          "raw": "x_i\\in X"
+        }
+      ],
+      "target_ordinal_end": 161,
+      "target_ordinal_start": 158
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0031",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0092",
+        "O015-HAB-ADV-0093"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "a_i\\in\\Delta_n",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 197,
+          "ordinal": 141,
+          "raw": "a_i\\in \\Delta_n"
+        },
+        {
+          "canonical": "x_i\\inX",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 197,
+          "ordinal": 142,
+          "raw": "x_i\\in X"
+        }
+      ],
+      "source_ordinal_end": 142,
+      "source_ordinal_start": 141,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "b=(b_1,\\dots,b_m)\\in\\Delta_m",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 240,
+          "ordinal": 163,
+          "raw": "b=(b_1,\\dots,b_m)\\in\\Delta_m"
+        },
+        {
+          "canonical": "y_j\\inY",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 240,
+          "ordinal": 164,
+          "raw": "y_j\\in Y"
+        }
+      ],
+      "target_ordinal_end": 164,
+      "target_ordinal_start": 163
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0032",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0092",
+        "O015-HAB-ADV-0093"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\begin{cases}\\sum_{j=1}^mP_{i,j}&=a_i\\\\\\sum_{i=1}^nP_{i,j}&=b_j\\\\P_{i,j}&\\geq0.\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 202,
+          "ordinal": 146,
+          "raw": "\\begin{cases} \\sum_{j=1}^m P_{i,j} &= a_i\\\\ \\sum_{i=1}^n P_{i,j} &= b_j\\\\ P_{i,j}&\\geq 0. \\end{cases}"
+        },
+        {
+          "canonical": "P\\1=a",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 209,
+          "ordinal": 147,
+          "raw": "P\\1=a"
+        },
+        {
+          "canonical": "P^t\\1=b",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 209,
+          "ordinal": 148,
+          "raw": "P^t\\1 = b"
+        },
+        {
+          "canonical": "\\begin{aligned}\\min_{P\\in\\R^{n\\timesm}}\\inner{C}{P}=\\sum_{i,j}C_{i,j}P_{i,j}\\\\\\text{#}P\\1=a,P^t\\1=bP_{i,j}\\geq0.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 210,
+          "ordinal": 149,
+          "raw": "\\begin{aligned} \\min_{P\\in \\R^{n\\times m}}\\inner{C}{P} = \\sum_{i,j}C_{i,j}P_{i,j}\\\\ \\text{s.t. } P\\1=a,\\;P^t\\1 = b\\; P_{i,j}\\geq 0. \\end{aligned}"
+        }
+      ],
+      "source_ordinal_end": 149,
+      "source_ordinal_start": 146,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\begin{cases}\\sum_{j=1}^mP_{i,j}&=a_i,\\\\\\sum_{i=1}^nP_{i,j}&=b_j,\\\\P_{i,j}&\\geq0.\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 245,
+          "ordinal": 168,
+          "raw": "\\begin{cases} \\sum_{j=1}^mP_{i,j}&=a_i,\\\\ \\sum_{i=1}^nP_{i,j}&=b_j,\\\\ P_{i,j}&\\geq0. \\end{cases}"
+        },
+        {
+          "canonical": "P\\1_m=a",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 252,
+          "ordinal": 169,
+          "raw": "P\\1_m=a"
+        },
+        {
+          "canonical": "P^\\top\\1_n=b",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 252,
+          "ordinal": 170,
+          "raw": "P^\\top\\1_n=b"
+        },
+        {
+          "canonical": "\\begin{aligned}\\min_{P\\in\\R^{n\\timesm}}\\inner{C}{P}&=\\sum_{i,j}C_{i,j}P_{i,j}\\\\\\text{#}&P\\1_m=a,P^\\top\\1_n=b,P_{i,j}\\geq0.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 253,
+          "ordinal": 171,
+          "raw": "\\begin{aligned} \\min_{P\\in\\R^{n\\times m}}\\inner{C}{P} &=\\sum_{i,j}C_{i,j}P_{i,j}\\\\ \\text{dengan syarat }& P\\1_m=a,\\quad P^\\top\\1_n=b,\\quad P_{i,j}\\geq0. \\end{aligned}"
+        },
+        {
+          "canonical": "C\\in\\R^{n\\timesm}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 261,
+          "ordinal": 172,
+          "raw": "C\\in\\R^{n\\times m}"
+        },
+        {
+          "canonical": "P\\in\\R_+^{n\\timesm}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 261,
+          "ordinal": 173,
+          "raw": "P\\in\\R_+^{n\\times m}"
+        }
+      ],
+      "target_ordinal_end": 173,
+      "target_ordinal_start": 168
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0033",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0092",
+        "O015-HAB-ADV-0093",
+        "O015-HAB-ADV-0094"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "\\begin{aligned}\\min_{P\\in\\R^{n\\timesm}}\\inner{C}{P}+\\epsilonE(P)\\text{#}P\\1=a,P^t\\1=b.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 221,
+          "ordinal": 151,
+          "raw": "\\label{ot:eq:disc_entropic} \\begin{aligned} \\min_{P\\in \\R^{n\\times m}}\\inner{C}{P} + \\epsilon E(P) \\quad \\text{s.t. } P\\1=a,\\;P^t\\1 = b. \\end{aligned}"
+        }
+      ],
+      "source_ordinal_end": 151,
+      "source_ordinal_start": 151,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "0\\log0=0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 265,
+          "ordinal": 175,
+          "raw": "0\\log0=0"
+        },
+        {
+          "canonical": "E(P)=+\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 265,
+          "ordinal": 176,
+          "raw": "E(P)=+\\infty"
+        },
+        {
+          "canonical": "\\epsilon>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 265,
+          "ordinal": 177,
+          "raw": "\\epsilon>0"
+        },
+        {
+          "canonical": "\\begin{aligned}\\min_{P\\in\\R_+^{n\\timesm}}\\inner{C}{P}+\\epsilonE(P)\\text{#}P\\1_m=a,P^\\top\\1_n=b.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 266,
+          "ordinal": 178,
+          "raw": "\\label{ot:eq:disc_entropic} \\begin{aligned} \\min_{P\\in\\R_+^{n\\times m}}\\inner{C}{P}+\\epsilon E(P) \\quad\\text{dengan syarat }P\\1_m=a,\\quad P^\\top\\1_n=b. \\end{aligned}"
+        },
+        {
+          "canonical": "a\\in\\Delta_n^\\circ",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 277,
+          "ordinal": 179,
+          "raw": "a\\in\\Delta_n^\\circ"
+        },
+        {
+          "canonical": "b\\in\\Delta_m^\\circ",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 277,
+          "ordinal": 180,
+          "raw": "b\\in\\Delta_m^\\circ"
+        },
+        {
+          "canonical": "C\\in\\R^{n\\timesm}",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 277,
+          "ordinal": 181,
+          "raw": "C\\in\\R^{n\\times m}"
+        },
+        {
+          "canonical": "\\epsilon>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 277,
+          "ordinal": 182,
+          "raw": "\\epsilon>0"
+        }
+      ],
+      "target_ordinal_end": 182,
+      "target_ordinal_start": 175
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0034",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0094",
+        "O015-HAB-ADV-0095"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "proposed_ledger_bound": true,
+      "source": [
+        {
+          "canonical": "K_{i,j}=\\exp(-\\frac{C_{i,j}}{\\epsilon})",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 234,
+          "ordinal": 154,
+          "raw": "K_{i,j}=\\exp\\left(-\\frac{C_{i,j}}{\\epsilon}\\right)"
+        },
+        {
+          "canonical": "L(P,\\lambda,\\mu)=\\inner{C}{P}+\\epsilonE(P)+\\inner{\\lambda}{P\\1-a}+\\inner{\\mu}{P^t\\1-b}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 239,
+          "ordinal": 155,
+          "raw": "L(P,\\lambda,\\mu) = \\inner{C}{P} + \\epsilon E(P) + \\inner{\\lambda}{P\\1-a} + \\inner{\\mu}{P^t\\1-b}."
+        },
+        {
+          "canonical": "\\begin{cases}0=&C_{i,j}+\\epsilon\\log(P_{i,j})+\\lambda_i+\\mu_j\\\\0=&P\\1-a\\\\0=&P^t\\1-b.\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 244,
+          "ordinal": 156,
+          "raw": "\\begin{cases} 0 =& C_{i,j} + \\epsilon\\log(P_{i,j}) + \\lambda_i + \\mu_j\\\\ 0 =& P\\1-a\\\\ 0 =& P^t\\1-b. \\end{cases}"
+        },
+        {
+          "canonical": "P_{i,j}=\\exp(-\\frac{\\mu_j}{\\epsilon})\\exp(-\\frac{C_{i,j}}{\\epsilon})\\exp(-\\frac{\\lambda_i}{\\epsilon})",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 252,
+          "ordinal": 157,
+          "raw": "P_{i,j} = \\exp\\left(-\\frac{\\mu_j}{\\epsilon}\\right)\\exp\\left(-\\frac{C_{i,j}}{\\epsilon}\\right)\\exp\\left(-\\frac{\\lambda_i}{\\epsilon}\\right)"
+        },
+        {
+          "canonical": "P\\1=\\diag(u)K\\diag(v)\\1=\\diag(u)Kv=a",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 257,
+          "ordinal": 158,
+          "raw": "P\\1 = \\diag(u) K \\diag(v)\\1 = \\diag(u) K v = a"
+        },
+        {
+          "canonical": "\\diag(v)K^tu\\1=b",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 257,
+          "ordinal": 159,
+          "raw": "\\diag(v)K^t u\\1 = b"
+        },
+        {
+          "canonical": "k=1,2,\\dots",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 257,
+          "ordinal": 160,
+          "raw": "k=1,2,\\dots"
+        },
+        {
+          "canonical": "\\begin{cases}u_{k+1}=a\\oslashKv_k\\\\v_{k+1}=b\\oslashK^tu_{k+1}\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 258,
+          "ordinal": 161,
+          "raw": "\\begin{cases} u_{k+1} = a \\oslash Kv_k\\\\ v_{k+1} = b\\oslash K^t u_{k+1} \\end{cases}"
+        }
+      ],
+      "source_ordinal_end": 161,
+      "source_ordinal_start": 154,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "K_{i,j}=\\exp(-\\frac{C_{i,j}}{\\epsilon})>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 281,
+          "ordinal": 185,
+          "raw": "K_{i,j}=\\exp\\left(-\\frac{C_{i,j}}{\\epsilon}\\right)>0"
+        },
+        {
+          "canonical": "(u,v)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 281,
+          "ordinal": 186,
+          "raw": "(u,v)"
+        },
+        {
+          "canonical": "(u,v)\\mapsto(tu,t^{-1}v)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 281,
+          "ordinal": 187,
+          "raw": "(u,v)\\mapsto(tu,t^{-1}v)"
+        },
+        {
+          "canonical": "t>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 281,
+          "ordinal": 188,
+          "raw": "t>0"
+        },
+        {
+          "canonical": "Q=ab^\\top",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 285,
+          "ordinal": 189,
+          "raw": "Q=ab^\\top"
+        },
+        {
+          "canonical": "Q_{i,j}>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 285,
+          "ordinal": 190,
+          "raw": "Q_{i,j}>0"
+        },
+        {
+          "canonical": "h(t)=t(\\logt-1)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 287,
+          "ordinal": 191,
+          "raw": "h(t)=t(\\log t-1)"
+        },
+        {
+          "canonical": "h(0)=0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 287,
+          "ordinal": 192,
+          "raw": "h(0)=0"
+        },
+        {
+          "canonical": "[0,\\infty)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 288,
+          "ordinal": 193,
+          "raw": "[0,\\infty)"
+        },
+        {
+          "canonical": "P",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 291,
+          "ordinal": 194,
+          "raw": "P"
+        },
+        {
+          "canonical": "P_{i,j}=0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 292,
+          "ordinal": 195,
+          "raw": "P_{i,j}=0"
+        },
+        {
+          "canonical": "(i,j)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 292,
+          "ordinal": 196,
+          "raw": "(i,j)"
+        },
+        {
+          "canonical": "P_t=(1-t)P+tQ",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 293,
+          "ordinal": 197,
+          "raw": "P_t=(1-t)P+tQ"
+        },
+        {
+          "canonical": "t\\in(0,1)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 293,
+          "ordinal": 198,
+          "raw": "t\\in(0,1)"
+        },
+        {
+          "canonical": "\\frac{\\dd}{\\ddt}h(tQ_{i,j})=Q_{i,j}\\log(tQ_{i,j})\\rightarrow-\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 295,
+          "ordinal": 199,
+          "raw": "\\frac{\\dd}{\\dd t}h(tQ_{i,j})=Q_{i,j}\\log(tQ_{i,j}) \\rightarrow-\\infty"
+        },
+        {
+          "canonical": "t\\downarrow0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 296,
+          "ordinal": 200,
+          "raw": "t\\downarrow0"
+        },
+        {
+          "canonical": "t>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 298,
+          "ordinal": 201,
+          "raw": "t>0"
+        },
+        {
+          "canonical": "P_t",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 298,
+          "ordinal": 202,
+          "raw": "P_t"
+        },
+        {
+          "canonical": "P",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 299,
+          "ordinal": 203,
+          "raw": "P"
+        },
+        {
+          "canonical": "P_{i,j}>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 300,
+          "ordinal": 204,
+          "raw": "P_{i,j}>0"
+        },
+        {
+          "canonical": "i,j",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 300,
+          "ordinal": 205,
+          "raw": "i,j"
+        },
+        {
+          "canonical": "L(P,\\lambda,\\mu)=\\inner{C}{P}+\\epsilonE(P)+\\inner{\\lambda}{P\\1_m-a}+\\inner{\\mu}{P^\\top\\1_n-b}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 304,
+          "ordinal": 206,
+          "raw": "L(P,\\lambda,\\mu) =\\inner{C}{P}+\\epsilon E(P) +\\inner{\\lambda}{P\\1_m-a} +\\inner{\\mu}{P^\\top\\1_n-b}."
+        },
+        {
+          "canonical": "\\begin{cases}0&=C_{i,j}+\\epsilon\\log(P_{i,j})+\\lambda_i+\\mu_j,\\\\0&=P\\1_m-a,\\\\0&=P^\\top\\1_n-b.\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 311,
+          "ordinal": 207,
+          "raw": "\\begin{cases} 0&=C_{i,j}+\\epsilon\\log(P_{i,j})+\\lambda_i+\\mu_j,\\\\ 0&=P\\1_m-a,\\\\ 0&=P^\\top\\1_n-b. \\end{cases}"
+        },
+        {
+          "canonical": "P_{i,j}=\\exp(-\\frac{\\lambda_i}{\\epsilon})\\exp(-\\frac{C_{i,j}}{\\epsilon})\\exp(-\\frac{\\mu_j}{\\epsilon})",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 319,
+          "ordinal": 208,
+          "raw": "P_{i,j} =\\exp\\left(-\\frac{\\lambda_i}{\\epsilon}\\right) \\exp\\left(-\\frac{C_{i,j}}{\\epsilon}\\right) \\exp\\left(-\\frac{\\mu_j}{\\epsilon}\\right)."
+        },
+        {
+          "canonical": "u_i=\\exp(-\\lambda_i/\\epsilon)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 325,
+          "ordinal": 209,
+          "raw": "u_i=\\exp(-\\lambda_i/\\epsilon)"
+        },
+        {
+          "canonical": "v_j=\\exp(-\\mu_j/\\epsilon)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 326,
+          "ordinal": 210,
+          "raw": "v_j=\\exp(-\\mu_j/\\epsilon)"
+        },
+        {
+          "canonical": "(\\tildeu,\\tildev)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 327,
+          "ordinal": 211,
+          "raw": "(\\tilde u,\\tilde v)"
+        },
+        {
+          "canonical": "u_iK_{i,j}v_j=\\tildeu_iK_{i,j}\\tildev_j",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 328,
+          "ordinal": 212,
+          "raw": "u_iK_{i,j}v_j=\\tilde u_iK_{i,j}\\tilde v_j"
+        },
+        {
+          "canonical": "K_{i,j}>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 328,
+          "ordinal": 213,
+          "raw": "K_{i,j}>0"
+        },
+        {
+          "canonical": "\\tildeu_i/u_i=v_j/\\tildev_j",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 329,
+          "ordinal": 214,
+          "raw": "\\tilde u_i/u_i=v_j/\\tilde v_j"
+        },
+        {
+          "canonical": "i,j",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 329,
+          "ordinal": 215,
+          "raw": "i,j"
+        },
+        {
+          "canonical": "i",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 330,
+          "ordinal": 216,
+          "raw": "i"
+        },
+        {
+          "canonical": "j",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 330,
+          "ordinal": 217,
+          "raw": "j"
+        },
+        {
+          "canonical": "t>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 331,
+          "ordinal": 218,
+          "raw": "t>0"
+        },
+        {
+          "canonical": "(\\tildeu,\\tildev)=(tu,t^{-1}v)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 331,
+          "ordinal": 219,
+          "raw": "(\\tilde u,\\tilde v)=(tu,t^{-1}v)"
+        },
+        {
+          "canonical": "P\\1_m=\\diag(u)K\\diag(v)\\1_m=\\diag(u)Kv=a",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 337,
+          "ordinal": 220,
+          "raw": "P\\1_m=\\diag(u)K\\diag(v)\\1_m=\\diag(u)Kv=a"
+        },
+        {
+          "canonical": "P^\\top\\1_n=\\diag(v)K^\\topu=b",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 338,
+          "ordinal": 221,
+          "raw": "P^\\top\\1_n=\\diag(v)K^\\top u=b"
+        },
+        {
+          "canonical": "v_0\\in\\R_{++}^m",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 339,
+          "ordinal": 222,
+          "raw": "v_0\\in\\R_{++}^m"
+        },
+        {
+          "canonical": "v_0=\\1_m",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 339,
+          "ordinal": 223,
+          "raw": "v_0=\\1_m"
+        },
+        {
+          "canonical": "k=0,1,2,\\dots",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 340,
+          "ordinal": 224,
+          "raw": "k=0,1,2,\\dots"
+        },
+        {
+          "canonical": "\\begin{cases}u_{k+1}=a\\oslash(Kv_k),\\\\v_{k+1}=b\\oslash(K^\\topu_{k+1}),\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 341,
+          "ordinal": 225,
+          "raw": "\\begin{cases} u_{k+1}=a\\oslash(Kv_k),\\\\ v_{k+1}=b\\oslash(K^\\top u_{k+1}), \\end{cases}"
+        }
+      ],
+      "target_ordinal_end": 225,
+      "target_ordinal_start": 185
+    },
+    {
+      "block_id": "d90.hab.v1.ch09.formula-delta.0035",
+      "disposition": "correction-ledger-bound",
+      "integrated_ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0095"
+      ],
+      "missing_integrated_event_ids": [],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "proposed_ledger_bound": true,
+      "source": [],
+      "source_ordinal_end": 162,
+      "source_ordinal_start": 163,
+      "strict_ledger_bound": true,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "a",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 348,
+          "ordinal": 227,
+          "raw": "a"
+        },
+        {
+          "canonical": "b",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 348,
+          "ordinal": 228,
+          "raw": "b"
+        },
+        {
+          "canonical": "K",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 348,
+          "ordinal": 229,
+          "raw": "K"
+        },
+        {
+          "canonical": "\\diag(u_k)K\\diag(v_k)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 350,
+          "ordinal": 230,
+          "raw": "\\diag(u_k)K\\diag(v_k)"
+        },
+        {
+          "canonical": "k\\geq1",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 350,
+          "ordinal": 231,
+          "raw": "k\\geq1"
+        },
+        {
+          "canonical": "(u,v)\\mapsto(tu,t^{-1}v)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 352,
+          "ordinal": 232,
+          "raw": "(u,v)\\mapsto(tu,t^{-1}v)"
+        }
+      ],
+      "target_ordinal_end": 232,
+      "target_ordinal_start": 227
+    }
+  ],
+  "delta_block_count": 35,
+  "identity_policy": "authority_and_final_target_frozen_ledgers_derived_live",
+  "integration_incomplete_substantive_delta_block_ids": [],
+  "normalization": {
+    "equivalence": [
+      "coloneq and coloneqq"
+    ],
+    "linguistic_text": "contents of LaTeX text commands replaced by #",
+    "removed": [
+      "comments",
+      "labels",
+      "reference commands",
+      "display styles",
+      "delimiter sizing",
+      "spacing commands",
+      "terminal prose punctuation"
+    ],
+    "substantive_rule": "a non-equal sequence block is substantive iff it contains a canonical formula whose corpus-wide multiplicity differs"
+  },
+  "proposal_incomplete_substantive_delta_block_ids": [],
+  "required_ledger_event_ids": [
+    "O015-HAB-ADV-0084",
+    "O015-HAB-ADV-0085",
+    "O015-HAB-ADV-0086",
+    "O015-HAB-ADV-0087",
+    "O015-HAB-ADV-0088",
+    "O015-HAB-ADV-0089",
+    "O015-HAB-ADV-0090",
+    "O015-HAB-ADV-0091",
+    "O015-HAB-ADV-0092",
+    "O015-HAB-ADV-0093",
+    "O015-HAB-ADV-0094",
+    "O015-HAB-ADV-0095"
+  ],
+  "schema": "o015-optimal-transport-formula-delta-manifest-v1",
+  "source": {
+    "bytes": 15378,
+    "lines": 264,
+    "path": "authority/habring/source-v1/optimal_transport.tex",
+    "sha256": "719df724b368126cc7540dffd461dc33aba7d5b5b6060132181086dfa17649ba"
+  },
+  "source_formula_count": 162,
+  "substantive_delta_block_count": 34,
+  "substantive_delta_block_ids": [
+    "d90.hab.v1.ch09.formula-delta.0001",
+    "d90.hab.v1.ch09.formula-delta.0002",
+    "d90.hab.v1.ch09.formula-delta.0003",
+    "d90.hab.v1.ch09.formula-delta.0004",
+    "d90.hab.v1.ch09.formula-delta.0005",
+    "d90.hab.v1.ch09.formula-delta.0006",
+    "d90.hab.v1.ch09.formula-delta.0007",
+    "d90.hab.v1.ch09.formula-delta.0008",
+    "d90.hab.v1.ch09.formula-delta.0009",
+    "d90.hab.v1.ch09.formula-delta.0010",
+    "d90.hab.v1.ch09.formula-delta.0011",
+    "d90.hab.v1.ch09.formula-delta.0012",
+    "d90.hab.v1.ch09.formula-delta.0013",
+    "d90.hab.v1.ch09.formula-delta.0014",
+    "d90.hab.v1.ch09.formula-delta.0015",
+    "d90.hab.v1.ch09.formula-delta.0016",
+    "d90.hab.v1.ch09.formula-delta.0017",
+    "d90.hab.v1.ch09.formula-delta.0018",
+    "d90.hab.v1.ch09.formula-delta.0019",
+    "d90.hab.v1.ch09.formula-delta.0020",
+    "d90.hab.v1.ch09.formula-delta.0021",
+    "d90.hab.v1.ch09.formula-delta.0022",
+    "d90.hab.v1.ch09.formula-delta.0023",
+    "d90.hab.v1.ch09.formula-delta.0024",
+    "d90.hab.v1.ch09.formula-delta.0025",
+    "d90.hab.v1.ch09.formula-delta.0026",
+    "d90.hab.v1.ch09.formula-delta.0027",
+    "d90.hab.v1.ch09.formula-delta.0029",
+    "d90.hab.v1.ch09.formula-delta.0030",
+    "d90.hab.v1.ch09.formula-delta.0031",
+    "d90.hab.v1.ch09.formula-delta.0032",
+    "d90.hab.v1.ch09.formula-delta.0033",
+    "d90.hab.v1.ch09.formula-delta.0034",
+    "d90.hab.v1.ch09.formula-delta.0035"
+  ],
+  "target": {
+    "bytes": 21252,
+    "lines": 352,
+    "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+    "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+  },
+  "target_formula_count": 232,
+  "unbound_substantive_delta_block_ids": [],
+  "unused_required_ledger_event_ids": [],
+  "used_ledger_event_ids": [
+    "O015-HAB-ADV-0084",
+    "O015-HAB-ADV-0085",
+    "O015-HAB-ADV-0086",
+    "O015-HAB-ADV-0087",
+    "O015-HAB-ADV-0088",
+    "O015-HAB-ADV-0089",
+    "O015-HAB-ADV-0090",
+    "O015-HAB-ADV-0091",
+    "O015-HAB-ADV-0092",
+    "O015-HAB-ADV-0093",
+    "O015-HAB-ADV-0094",
+    "O015-HAB-ADV-0095"
+  ]
+}

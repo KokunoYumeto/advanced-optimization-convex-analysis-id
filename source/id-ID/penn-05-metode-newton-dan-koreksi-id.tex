@@ -1,0 +1,400 @@
+% P05-S001 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 1--38
+% segment-id: d90.penn.v1.ch05.seg0001
+% Terjemahan Indonesia independen; lihat qa/PENN_CH05_PROPOSED_LEDGER.jsonl
+% untuk perubahan matematis, teknis, dan hak-komponen yang ditentukan.
+% !TEX root = Math555-id.tex
+\chapter{Metode Newton dan Koreksinya}\label{ch:NewtonsMethod}
+
+\section{Metode Newton}
+\begin{remark} Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu. Dalam algoritma pendakian umum, langkah Newton untuk pemaksimuman diperoleh dengan memilih
+$\mathbf{B}_k=-\nabla^2f(\mathbf{x}_k)=-\mathbf{H}(\mathbf{x}_k)$,
+sehingga $\mathbf{p}_k=-\mathbf{H}(\mathbf{x}_k)^{-1}\nabla f(\mathbf{x}_k)$ ketika Hessian nonsingular. Jika $\delta_k=1$ pada setiap iterasi, algoritma tersebut disebut metode Newton \textit{murni}. Jika $\delta_k$ dipilih dengan pencarian garis, kita memperoleh metode Newton dengan panjang langkah variabel.
+\end{remark}
+
+\begin{remark} Algoritma umum Newton dengan panjang langkah variabel ditampilkan dalam Algoritma \ref{alg:NewtonsMethod}. Pseudokode ini ditulis secara independen untuk edisi ini dan tidak menyalin implementasi Maple sumber.
+\end{remark}
+
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{NewtonVariabel---bagian 1 dari 2}\\
+\textbf{Masukan:} $f$, titik awal $\mathbf{x}_0$, toleransi $\epsilon>0$, batas iterasi $N$, dan parameter pencarian garis.\\
+1. Tetapkan $k\leftarrow0$, $\mathbf{x}\leftarrow\mathbf{x}_0$, dan lintasan $P\leftarrow[\mathbf{x}]$.\\
+2. Hitung $\mathbf{g}\leftarrow\nabla f(\mathbf{x})$ dan $\mathbf{H}\leftarrow\nabla^2f(\mathbf{x})$.\\
+3. Jika $\lVert\mathbf{g}\rVert\leq\epsilon$, kembalikan $(\mathbf{x},P)$.
+}}
+\end{cgalgorithm}
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{NewtonVariabel---bagian 2 dari 2}\\
+4. Selama $k<N$, selesaikan $\mathbf{H}\mathbf{p}=-\mathbf{g}$; jika $\mathbf{H}$ singular atau $\mathbf{g}^T\mathbf{p}\leq0$, laporkan bahwa arah Newton gagal dan koreksi diperlukan.\\
+5. Pilih $\delta>0$ dengan pencarian garis yang mempunyai kontrak kegagalan eksplisit dan memenuhi kenaikan memadai.\\
+6. Tetapkan $\mathbf{x}\leftarrow\mathbf{x}+\delta\mathbf{p}$, tambahkan $\mathbf{x}$ ke $P$, naikkan $k$, lalu hitung ulang $\mathbf{g}$ dan $\mathbf{H}$.\\
+7. Jika $\lVert\mathbf{g}\rVert\leq\epsilon$, kembalikan $(\mathbf{x},P)$; jika batas $N$ tercapai, laporkan kegagalan.
+}}
+\caption{Metode Newton dengan panjang langkah variabel}
+\label{alg:NewtonsMethod}
+\end{cgalgorithm}
+
+\begin{example} Tinjau fungsi $F(x,y)=-2x^2-10y^4$. Fungsi ini konkaf, sebagaimana terlihat dari Hessian
+\begin{displaymath}
+\mathbf{H}(x,y)=\begin{bmatrix}-4&0\\0&-120y^2\end{bmatrix}.
+\end{displaymath}
+Matriks ini definit negatif jika $y\neq0$ dan semidefinit negatif jika $y=0$. Titik $x=y=0$ jelas merupakan pemaksimum global. Saksi eksekusi sumber, yang memulai metode Newton dari $x=15$, $y=5$ dengan toleransi implementasinya, mencatat konvergensi dalam 11 langkah; lintasannya ditunjukkan pada Gambar \ref{fig:NewtonsMethod}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{Figures/NewtonsMethod.pdf}
+\caption{Saksi sumber bagi metode Newton pada $F(x,y)=-2x^2-10y^4$: konvergensi dalam 11 langkah dengan sedikit gerak zig-zag di bawah toleransi implementasi sumber.}
+\label{fig:NewtonsMethod}
+\end{figure}
+\end{example}
+
+\begin{exercise} Implementasikan metode Newton dan ujilah pada variasi fungsi Rosenbrock berikut:
+\begin{equation}
+-(1-x)^2-100\left(y-x^2\right)^2.
+\end{equation}
+Laporkan kriteria penghentian dan kegagalan pencarian garis Anda.
+\end{exercise}
+
+% P05-S002 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 39--74
+% segment-id: d90.penn.v1.ch05.seg0002
+\section{Masalah Konvergensi dalam Metode Newton}
+\begin{example} Tinjau fungsi
+\begin{equation}
+F(x,y)=\left(x^2+3y^2\right){\rm e}^{1-x^2-y^2}.
+\end{equation}
+Grafiknya ditunjukkan pada Gambar \ref{fig:DoublePeak}. Fungsi ini mempunyai dua maksimum global, satu minimum lokal di antara keduanya, dan dua titik pelana di dekat puncak-puncaknya.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/DoublePeak.pdf}
+\caption{Fungsi berpuncak ganda dengan satu minimum lokal di antara puncaknya serta dua titik pelana.}
+\label{fig:DoublePeak}
+\end{figure}
+Jika metode Newton dijalankan dari $x=1$, $y=0.5$, Hessian pada titik awal adalah
+\begin{equation}
+\mathbf{H}(1,0.5)=
+\left[\begin{array}{cc}
+-1.947001958&-3.504603524\\ \noalign{\medskip}
+-3.504603524&-1.362901370
+\end{array}\right].
+\end{equation}
+Determinan matriks ini negatif, sehingga Hessian bersifat tak tentu; tanda elemen $(1,1)$ saja tidak cukup untuk menentukan sifat definitnya. Arah Newton yang benar untuk pemaksimuman ialah $\mathbf{p}_N=-\mathbf{H}^{-1}\nabla F$. Pada titik ini,
+$\mathbf{p}_N\approx(0.519685039,-0.622047244)^T$ dan
+$\nabla F(1,0.5)^T\mathbf{p}_N\approx-1.212660274<0$, sehingga ia bukan arah naik. Fungsi pencarian garis yang benar adalah
+\begin{displaymath}
+\phi(s)=F\!\left((1,0.5)^T+s\mathbf{p}_N\right),
+\qquad s\geq0.
+\end{displaymath}
+Karena $\phi'(0)<0$, arah ini melanggar prasyarat arah naik bagi pelacakan mundur Armijo; semua langkah yang cukup kecil juga menurunkan fungsi. Pelacakan mundur tidak boleh dipanggil dengan masukan ini. Implementasi defensif harus menolak arah tersebut sebelum pencarian garis; setiap perulangan penyusutan juga harus mempunyai batas dan melaporkan kegagalan jika tidak menemukan langkah yang dapat diterima, bukan berputar tanpa akhir atau mengembalikan $s=0$ sebagai langkah positif.
+\end{example}
+
+\begin{exercise} Implementasikan metode Newton murni dan ujilah pada contoh sebelumnya. Catat jenis titik stasioner yang dituju, jika ada, dan laporkan singularitas atau kegagalan konvergensi secara eksplisit.
+\end{exercise}
+
+\begin{remark} Kita sekarang ingin mengetahui kapan metode Newton konvergen dan seberapa cepat konvergensinya. Hasil di bawah melanjutkan pembahasan metode Newton satu dimensi pada Teorema \ref{thm:NMConvergeRate}.
+\end{remark}
+
+\begin{definition}[Norma Matriks] Untuk $\mathbf{M}\in\mathbb{R}^{n\times n}$, norma matriks terinduksi oleh norma Euclidean didefinisikan sebagai
+\begin{equation}
+\lVert\mathbf{M}\rVert=
+\max_{\lVert\mathbf{x}\rVert=1}\lVert\mathbf{M}\mathbf{x}\rVert.
+\end{equation}
+\end{definition}
+
+% P05-S003 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 75--148
+% segment-id: d90.penn.v1.ch05.seg0003
+\begin{theorem} Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu pada suatu lingkungan terbuka titik maksimum lokal $\mathbf{x}^*$, dan $\mathbf{H}(\mathbf{x}^*)$ nonsingular. Untuk $\delta>0$, tuliskan $S_\delta=\{\mathbf{x}:\lVert\mathbf{x}-\mathbf{x}^*\rVert\leq\delta\}$. Maka:
+\begin{enumerate*}
+\item Ada $\delta>0$ sedemikian sehingga, jika $\mathbf{x}_0\in S_\delta$, iterasi Newton murni
+\begin{equation}
+\mathbf{x}_{k+1}=\mathbf{x}_k-\mathbf{H}(\mathbf{x}_k)^{-1}\nabla f(\mathbf{x}_k)
+\end{equation}
+terdefinisi, tetap berada di $S_\delta$, dan konvergen ke $\mathbf{x}^*$. Iterasi itu mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga, atau galat nonnol $\lVert\mathbf{x}_k-\mathbf{x}^*\rVert$ berkonvergensi Q-superlinear.
+\item Jika, pada bola tersebut, terdapat $L,M>0$ sehingga untuk semua $\mathbf{x}_1,\mathbf{x}_2\in S_\delta$,
+\begin{equation}
+\lVert\mathbf{H}(\mathbf{x}_1)-\mathbf{H}(\mathbf{x}_2)\rVert
+\leq L\lVert\mathbf{x}_1-\mathbf{x}_2\rVert,
+\qquad
+\lVert\mathbf{H}(\mathbf{x}_1)^{-1}\rVert\leq M,
+\end{equation}
+maka, setelah $\delta$ dipilih cukup kecil sehingga $LM\delta/2<1$, setiap $\mathbf{x}_0\in S_\delta$ menghasilkan
+\begin{equation}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+\leq\frac{LM}{2}\lVert\mathbf{x}_k-\mathbf{x}^*\rVert^2,
+\qquad k=0,1,\dots.
+\end{equation}
+Jadi konvergensinya mempunyai taksiran Q-kuadratik; klaim orde eksak memerlukan informasi tambahan mengenai suku galat utama.
+\end{enumerate*}
+\end{theorem}
+\begin{proof} Pilih $\delta>0$ sehingga $S_\delta$ berada di dalam lingkungan keterdiferensialan dan $\mathbf{H}(\mathbf{x})$ nonsingular untuk setiap $\mathbf{x}\in S_\delta$. Karena invers Hessian kontinu pada bola kompak ini, ada $M>0$ sehingga
+\begin{displaymath}
+\lVert\mathbf{H}(\mathbf{x})^{-1}\rVert\leq M
+\qquad(\mathbf{x}\in S_\delta).
+\end{displaymath}
+Tuliskan $\mathbf{h}=\mathbf{x}_k-\mathbf{x}^*$. Berdasarkan Teorema Nilai Rata-rata untuk fungsi bernilai vektor pada Korolari \ref{cor:MVT-Vec}, dan karena $\nabla f(\mathbf{x}^*)=\mathbf{0}$,
+\begin{equation}
+\nabla f(\mathbf{x}^*+\mathbf{h})-\nabla f(\mathbf{x}^*)
+=\int_0^1\nabla^2f(\mathbf{x}^*+t\mathbf{h})\mathbf{h}\,dt
+\implies
+\nabla f(\mathbf{x}_k)=\int_0^1\mathbf{H}(\mathbf{x}^*+t\mathbf{h})\mathbf{h}\,dt.
+\label{eqn:NM_MV}
+\end{equation}
+Definisi iterasi memberikan
+\begin{equation}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+=\left\lVert\mathbf{x}_k-\mathbf{x}^*
+-\mathbf{H}(\mathbf{x}_k)^{-1}\nabla f(\mathbf{x}_k)\right\rVert.
+\end{equation}
+Dengan memfaktorkan invers Hessian secara eksak,
+\begin{equation}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+=\left\lVert\mathbf{H}(\mathbf{x}_k)^{-1}
+\left[\mathbf{H}(\mathbf{x}_k)(\mathbf{x}_k-\mathbf{x}^*)
+-\nabla f(\mathbf{x}_k)\right]\right\rVert.
+\end{equation}
+Dengan Persamaan \ref{eqn:NM_MV}, persamaan ini menjadi
+\begin{multline}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+=\left\lVert\mathbf{H}(\mathbf{x}_k)^{-1}
+\left[\mathbf{H}(\mathbf{x}_k)(\mathbf{x}_k-\mathbf{x}^*)
+-\int_0^1\mathbf{H}(\mathbf{x}^*+t\mathbf{h})\mathbf{h}\,dt\right]\right\rVert\\
+=\left\lVert\mathbf{H}(\mathbf{x}_k)^{-1}
+\left[\mathbf{H}(\mathbf{x}_k)-\int_0^1\mathbf{H}(\mathbf{x}^*+t\mathbf{h})\,dt\right]
+(\mathbf{x}_k-\mathbf{x}^*)\right\rVert.
+\end{multline}
+Karena $\mathbf{x}^*+t\mathbf{h}=t\mathbf{x}_k+(1-t)\mathbf{x}^*$,
+\begin{multline}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+=\left\lVert\mathbf{H}(\mathbf{x}_k)^{-1}
+\left[\mathbf{H}(\mathbf{x}_k)-
+\int_0^1\mathbf{H}(t\mathbf{x}_k+(1-t)\mathbf{x}^*)\,dt\right]
+(\mathbf{x}_k-\mathbf{x}^*)\right\rVert\\
+=\left\lVert\mathbf{H}(\mathbf{x}_k)^{-1}
+\left[\int_0^1\bigl(\mathbf{H}(\mathbf{x}_k)-
+\mathbf{H}(t\mathbf{x}_k+(1-t)\mathbf{x}^*)\bigr)\,dt\right]
+(\mathbf{x}_k-\mathbf{x}^*)\right\rVert.
+\end{multline}
+Submultiplikativitas norma terinduksi dan ketaksamaan integral memberi
+\begin{multline}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+\leq\lVert\mathbf{H}(\mathbf{x}_k)^{-1}\rVert
+\left\lVert\int_0^1\bigl(\mathbf{H}(\mathbf{x}_k)-
+\mathbf{H}(t\mathbf{x}_k+(1-t)\mathbf{x}^*)\bigr)\,dt\right\rVert
+\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\\
+\leq M\left(\int_0^1
+\lVert\mathbf{H}(\mathbf{x}_k)-
+\mathbf{H}(t\mathbf{x}_k+(1-t)\mathbf{x}^*)\rVert\,dt\right)
+\lVert\mathbf{x}_k-\mathbf{x}^*\rVert.
+\label{eqn:NM_FinalInequal}
+\end{multline}
+Pada langkah kedua kita juga menggunakan identitas
+\begin{displaymath}
+\int_0^1\mathbf{H}(\mathbf{x}_k)\,dt=\mathbf{H}(\mathbf{x}_k).
+\end{displaymath}
+Definisikan modulus kontinuitas lokal $\omega(r)$ sebagai supremum selisih Hessian pada pasangan titik di $S_\delta$ yang berjarak paling besar $r$. Kontinuitas seragam pada bola kompak memberi $\omega(r)\to0$ ketika $r\downarrow0$. Pilih $\delta$ lebih kecil jika perlu sehingga $q:=M\omega(\delta)<1$. Persamaan \ref{eqn:NM_FinalInequal} lalu memberi $\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert\leq q\lVert\mathbf{x}_k-\mathbf{x}^*\rVert$, yang membuktikan invariansi bola dan konvergensi. Jika suatu galat nol, iterasi telah mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga. Jika semua galat tetap nonnol, rasio galat dibatasi oleh $M\omega(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert)\to0$, sehingga konvergensinya Q-superlinear.
+
+Untuk pernyataan kedua, sifat Lipschitz Hessian mengubah Ketaksamaan \ref{eqn:NM_FinalInequal} menjadi
+\begin{multline}
+\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert
+\leq M\left(\int_0^1L
+\lVert\mathbf{x}_k-(t\mathbf{x}_k+(1-t)\mathbf{x}^*)\rVert\,dt\right)
+\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\\
+=M\left(\int_0^1L(1-t)\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\,dt\right)
+\lVert\mathbf{x}_k-\mathbf{x}^*\rVert
+=\frac{LM}{2}\lVert\mathbf{x}_k-\mathbf{x}^*\rVert^2.
+\end{multline}
+Ini menyelesaikan bukti.
+\end{proof}
+
+% P05-S004 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 149--178
+% segment-id: d90.penn.v1.ch05.seg0004
+\begin{remark}
+Tidak ada pernyataan bahwa metode Newton hanya tertarik ke maksimum lokal. Metode Newton mencari nol gradien dan karena itu dapat menuju titik stasioner jenis apa pun.
+\end{remark}
+
+\begin{remark} Hasil di atas menunjukkan bahwa metode Newton sangat efektif setelah iterat cukup dekat dengan solusi nonsingular. Bentuk murninya tidak mempunyai mekanisme global yang menjamin bahwa iterat akan memasuki lingkungan tersebut. Karena itu, berbagai koreksi atau strategi globalisasi diperlukan.
+\end{remark}
+
+\section{Koreksi Metode Newton}
+\begin{remark} Salah satu globalisasi sederhana adalah hibrida gradien--Newton: pada setiap iterasi, gunakan arah gradien jika Hessian belum definit negatif dan gunakan arah Newton jika Hessian definit negatif. Sumber mengaitkan gagasan ini secara tidak konsisten dengan Cauchy dan Gauss; edisi ini tidak menetapkan klaim sejarah tanpa bukti. Pemeriksaan Hessian harus diulang pada setiap iterasi, dan kedua arah tetap memerlukan pencarian garis dengan kontrak kegagalan.
+\end{remark}
+
+\begin{example} Tinjau kembali fungsi
+\begin{displaymath}
+F(x,y)=\left(x^2+3y^2\right){\rm e}^{1-x^2-y^2}.
+\end{displaymath}
+Alih-alih selalu memakai Newton dengan panjang langkah variabel, gunakan langkah gradien selama $\mathbf{H}(\mathbf{x})$ belum definit negatif, kemudian gunakan langkah Newton saat syarat tersebut terpenuhi. Modifikasi ini dapat dibuat dengan menambahkan uji Hessian sebelum pembentukan arah pada Algoritma \ref{alg:NewtonsMethod}. Dari $x_0=1$, $y_0=0.1$, jejak sumber melaporkan lima langkah menuju puncak global pada cabang $y>0$, yaitu $(x^*,y^*)=(0,1)$, sebagaimana pada Gambar \ref{fig:SimpleNewtonsMethod}. Titik $(1,1)$ yang tercetak dalam sumber bukan titik stasioner dan telah dikoreksi.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/GaussModifiedNewtonsMethod.pdf}
+\caption{Hibrida gradien--Newton: gunakan arah gradien ketika Hessian belum definit negatif dan arah Newton ketika Hessian definit negatif, dengan pencarian garis pada setiap langkah.}
+\label{fig:SimpleNewtonsMethod}
+\end{figure}
+\end{example}
+
+\begin{exercise} Implementasikan hibrida gradien--Newton di atas dan bandingkan laju konvergensinya pada variasi Rosenbrock dengan pendakian gradien murni dari $x_0=y_0=0$. Dengan mengasumsikan iterat tetap pada himpunan level kompak, pencarian garis memakai pelacakan mundur Armijo, dan matriks skala pada kedua cabang mempunyai batas spektral seragam, buktikan bahwa arah-arahnya berkaitan dengan gradien. Jika barisan iterat konvergen, simpulkan bahwa limitnya stasioner menggunakan Teorema \ref{thm:GenConverge}.
+\end{exercise}
+
+\begin{exercise} Andaikan hibrida gradien--Newton konvergen ke titik $\mathbf{x}^*$ dengan Hessian definit negatif dan menggunakan pelacakan mundur Armijo dengan $t_0=1$, $0<\sigma_1<1/2$. Buktikan bahwa algoritma mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga, atau akhirnya selalu memilih arah Newton dan berkonvergensi Q-superlinear menurut Teorema \ref{thm:Superlinear}.
+\end{exercise}
+
+% P05-S005 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 179--206
+% segment-id: d90.penn.v1.ch05.seg0005
+\begin{remark} Koreksi yang umum memakai \textit{dekomposisi Cholesky termodifikasi}. Masukkan $-\mathbf{H}(\mathbf{x})$ ke faktorisasi dan koreksi pivot yang terlalu kecil agar diperoleh matriks pengganti definit positif. Dengan demikian, penyelesaian terhadap matriks pengganti selalu memberi arah naik. Kita ingin mempertahankan struktur Hessian sejauh mungkin dan tidak mengubah matriks ketika semua pivot Cholesky alaminya aman. Pilih $0<\mu_1<\mu_2$. Pada setiap pivot Schur $d_i$, pertahankan $d_i$ jika $d_i\geq\mu_1$; jika tidak, ganti dengan $\mu_2$. Klaim kedekatan pengganti terhadap masukan bergantung pada ambang dan besarnya koreksi; definit positif saja tidak memberikan batas kedekatan. Algoritma \ref{alg:ModifiedCholesky} memberi pseudokode eksplisit yang ditulis secara independen untuk aturan ini.
+\end{remark}
+
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{CholeskyTermodifikasi}$(\mathbf{A},\mu_1,\mu_2)$\\
+\textbf{Masukan:} $\mathbf{A}=\mathbf{A}^T\in\mathbb{R}^{n\times n}$ dan $0<\mu_1<\mu_2$.\\
+1. Tetapkan $\mathbf{W}\leftarrow\mathbf{A}$ dan $\mathbf{L}\leftarrow\mathbf{0}$.\\
+2. Untuk $i=1,\dots,n$, ambil pivot Schur $d\leftarrow W_{ii}$; tetapkan $\widehat d\leftarrow d$ jika $d\geq\mu_1$, dan $\widehat d\leftarrow\mu_2$ jika tidak.\\
+3. Tetapkan $L_{ii}\leftarrow\sqrt{\widehat d}$ dan, untuk $j=i+1,\dots,n$, tetapkan $L_{ji}\leftarrow W_{ji}/L_{ii}$.\\
+4. Perbarui blok Schur tersisa secara simetris: $W_{jk}\leftarrow W_{jk}-L_{ji}L_{ki}$ untuk $j,k>i$.\\
+5. Kembalikan $\mathbf{L}$, $\mathbf{B}=\mathbf{L}\mathbf{L}^T$, dan daftar pivot yang dikoreksi. Matriks $\mathbf{B}$ definit positif karena diagonal $\mathbf{L}$ positif.
+}}
+\caption{Cholesky termodifikasi menghasilkan pengganti definit positif; kedekatannya terhadap matriks masukan bergantung pada koreksi pivot.}
+\label{alg:ModifiedCholesky}
+\end{cgalgorithm}
+
+\begin{remark} Misalkan $\mathbf{L}\in\mathbb{R}^{n\times n}$ dibentuk dari negatif Hessian fungsi skalar $f$ di $\mathbf{x}_k$, dan tetapkan $\mathbf{B}_k=\mathbf{L}\mathbf{L}^T$. Dengan notasi transparan,
+\begin{equation}
+-\mathbf{H}(\mathbf{x}_k)\sim\mathbf{B}_k=\mathbf{L}\mathbf{L}^T,
+\end{equation}
+dengan $\sim$ menyatakan bahwa $\mathbf{B}_k$ sama dengan $-\mathbf{H}(\mathbf{x}_k)$ jika tidak ada pivot yang dikoreksi, dan hanya merupakan pengganti definit positif jika koreksi terjadi. Arah dipilih sebagai
+\begin{equation}
+\left[\mathbf{L}\mathbf{L}^T\right]^{-1}\nabla f(\mathbf{x}_k)=\mathbf{p}.
+\end{equation}
+Ia dapat dihitung efisien tanpa membentuk invers: pertama selesaikan
+\begin{equation}
+\nabla f(\mathbf{x}_k)=\mathbf{L}\mathbf{z}
+\end{equation}
+dengan substitusi maju, lalu selesaikan
+\begin{equation}
+\mathbf{L}^T\mathbf{p}=\mathbf{z}
+\end{equation}
+dengan substitusi mundur. Matriks $\mathbf{L}$ segitiga bawah dan $\mathbf{L}^T$ segitiga atas.
+\end{remark}
+
+% P05-S006 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 207--277
+% segment-id: d90.penn.v1.ch05.seg0006
+\begin{example} Tinjau kembali fungsi
+\begin{displaymath}
+F(x,y)=\left(x^2+3y^2\right){\rm e}^{1-x^2-y^2}
+\end{displaymath}
+pada $x=1$, $y=1/2$. Dengan $\alpha={\rm e}^{-1/4}$, Hessian adalah
+\begin{displaymath}
+\mathbf{H}=\alpha\left[\begin{array}{cc}-5/2&-9/2\\ \noalign{\medskip}-9/2&-7/4\end{array}\right].
+\end{displaymath}
+Matriks $\mathbf{H}$ dan $\mathbf{A}=-\mathbf{H}$ sama-sama tak tentu. Terapkan Algoritma \ref{alg:ModifiedCholesky} pada $\mathbf{A}$ dengan $\mu_1=0.1$, $\mu_2=1$. Definisikan $r=\sqrt{5\alpha/2}$ dan $s=9\alpha/(2r)$. Pivot kedua tak terkoreksi bernilai negatif, sehingga diganti dengan $1$ dan diperoleh
+\begin{displaymath}
+\mathbf{L}=\left[\begin{array}{cc}r&0\\ \noalign{\medskip}s&1\end{array}\right].
+\end{displaymath}
+Gradien pada titik tersebut adalah
+\begin{displaymath}
+\nabla f\left(1,\tfrac12\right)=
+\alpha\left[\begin{array}{c}-3/2\\ \noalign{\medskip}5/4\end{array}\right].
+\end{displaymath}
+Persoalan segitiga pertama adalah
+\begin{equation}
+\left[\begin{array}{cc}r&0\\ \noalign{\medskip}s&1\end{array}\right]
+\begin{bmatrix}z_1\\z_2\end{bmatrix}
+=\alpha\left[\begin{array}{c}-3/2\\ \noalign{\medskip}5/4\end{array}\right].
+\end{equation}
+Dengan demikian,
+\begin{gather*}
+z_1=-\frac{3\alpha}{2r},\\
+z_2=\frac{5\alpha}{4}-s z_1=\frac{79\alpha}{20}.
+\end{gather*}
+Selanjutnya, selesaikan
+\begin{equation}
+\left[\begin{array}{cc}r&s\\ \noalign{\medskip}0&1\end{array}\right]
+\begin{bmatrix}p_1\\p_2\end{bmatrix}
+=\left[\begin{array}{c}-3\alpha/(2r)\\ \noalign{\medskip}79\alpha/20\end{array}\right].
+\end{equation}
+Hasilnya ialah
+\begin{gather*}
+p_2=\frac{79\alpha}{20},\\
+p_1=\frac{z_1-sp_2}{r}=-\frac35-\frac{711\alpha}{100}.
+\end{gather*}
+Karena itu,
+\begin{multline}
+\nabla f\left(1,\tfrac12\right)^T\mathbf{p}
+=\alpha\left[-\frac32\left(-\frac35-\frac{711\alpha}{100}\right)
++\frac54\left(\frac{79\alpha}{20}\right)\right]\\
+=\frac{9\alpha}{10}+\frac{6241\alpha^2}{400}
+\approx10.164315323>0.
+\end{multline}
+Jadi $\mathbf{p}$ merupakan arah naik. Perhitungan sumber memakai tanda Hessian yang berlawanan dengan uraian algoritmanya dan karena itu menghasilkan faktor serta angka yang berbeda; edisi ini memakai $-\mathbf{H}$ secara konsisten.
+\end{example}
+
+\begin{remark} Implementasi acuan independen bagi metode Newton terkoreksi ditampilkan pada Algoritma \ref{alg:CorrectedNewtonsMethod}. Pseudokode ini tidak menyalin dua listing Maple sumber.
+\end{remark}
+
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{NewtonTerkoreksi---bagian 1 dari 2}\\
+\textbf{Masukan:} $f$, $\mathbf{x}_0$, $\epsilon>0$, batas iterasi $N$, $0<\mu_1<\mu_2$, dan parameter Armijo.\\
+1. Tetapkan $k\leftarrow0$, $\mathbf{x}\leftarrow\mathbf{x}_0$, dan lintasan $P\leftarrow[\mathbf{x}]$.\\
+2. Hitung $\mathbf{g}\leftarrow\nabla f(\mathbf{x})$; jika $\lVert\mathbf{g}\rVert\leq\epsilon$, kembalikan $(\mathbf{x},P)$.\\
+3. Hitung $\mathbf{H}\leftarrow\nabla^2f(\mathbf{x})$ dan
+$(\mathbf{L},\mathbf{B},C)\leftarrow\textbf{CholeskyTermodifikasi}(-\mathbf{H},\mu_1,\mu_2)$, dengan $C$ daftar pivot yang dikoreksi.
+}}
+\end{cgalgorithm}
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{NewtonTerkoreksi---bagian 2 dari 2}\\
+4. Selesaikan $\mathbf{L}\mathbf{z}=\mathbf{g}$ dan $\mathbf{L}^T\mathbf{p}=\mathbf{z}$; periksa $\mathbf{g}^T\mathbf{p}>0$.\\
+5. Pilih $\delta>0$ dengan pelacakan mundur Armijo; jika batas penyusutan tercapai, laporkan kegagalan.\\
+6. Tetapkan $\mathbf{x}\leftarrow\mathbf{x}+\delta\mathbf{p}$, tambahkan ke $P$, naikkan $k$, lalu ulangi dari Langkah 2.\\
+7. Jika $k=N$ sebelum uji gradien terpenuhi, laporkan kegagalan batas iterasi.
+}}
+\caption{Metode Newton dengan panjang langkah variabel dan dekomposisi Cholesky termodifikasi}
+\label{alg:CorrectedNewtonsMethod}
+\end{cgalgorithm}
+
+% P05-S007 | sumber authority/penn-state/source/ClassNotes/Section5.tex baris 278--317
+% segment-id: d90.penn.v1.ch05.seg0007
+\begin{theorem} Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu, $0<\mu_1<\mu_2$, dan $\mathbf{B}_k=\mathbf{L}_k\mathbf{L}_k^T$ adalah matriks pengganti yang dipakai metode Newton terkoreksi. Andaikan terdapat $0<m\leq M<\infty$ sehingga $m\mathbf{I}\preceq\mathbf{B}_k\preceq M\mathbf{I}$ untuk semua $k$, langkah dipilih dengan pelacakan mundur Armijo berparameter tetap, dan barisan $\{\mathbf{x}_k\}$ konvergen ke $\mathbf{x}^*$. Maka $\nabla f(\mathbf{x}^*)=\mathbf{0}$.
+\end{theorem}
+\begin{proof} Secara konstruksi, $\mathbf{p}_k=\mathbf{B}_k^{-1}\nabla f(\mathbf{x}_k)$. Batas spektral memberi $\lVert\mathbf{p}_k\rVert\leq m^{-1}\lVert\nabla f(\mathbf{x}_k)\rVert$ dan $\nabla f(\mathbf{x}_k)^T\mathbf{p}_k\geq M^{-1}\lVert\nabla f(\mathbf{x}_k)\rVert^2$. Jadi arah-arah tersebut berkaitan dengan gradien. Teorema \ref{thm:GenConverge} kemudian menyatakan bahwa limit barisan adalah titik stasioner.
+\end{proof}
+
+\begin{theorem} Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu dan barisan metode Newton terkoreksi konvergen ke titik stasioner $\mathbf{x}^*$ dengan $\mathbf{H}(\mathbf{x}^*)$ definit negatif. Ada pilihan ambang tetap $0<\mu_1<\mu_2$ sedemikian sehingga, jika pencarian garis memakai aturan Armijo dengan $0<\sigma_1<1/2$ dan $t_0=1$, algoritma mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga, atau akhirnya tidak melakukan koreksi dan berkonvergensi Q-superlinear.
+\end{theorem}
+\begin{proof}
+Terapkan Cholesky biasa pada $-\mathbf{H}(\mathbf{x}^*)$, yang definit positif, dan pilih $\mu_1>0$ lebih kecil daripada pivot Schur terkecil faktorisasi tersebut. Kontinuitas Hessian dan kontinuitas setiap pivot Cholesky di sekitar matriks definit positif memberi lingkungan $S$ dari $\mathbf{x}^*$ tempat semua pivot $-\mathbf{H}(\mathbf{x})$ tetap lebih besar daripada $\mu_1$. Karena itu, Algoritma \ref{alg:ModifiedCholesky} tidak melakukan koreksi untuk $\mathbf{x}\in S$ dan arah yang dipakai sama dengan arah Newton murni. Jika iterasi mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga, alternatif pertama berlaku. Jika tidak, $\nabla f(\mathbf{x}_k)\neq\mathbf{0}$ untuk setiap $k$ dan kontinuitas invers Hessian memberi
+\begin{displaymath}
+\lim_{k\to\infty}
+\frac{\lVert\mathbf{p}_k+\mathbf{H}(\mathbf{x}^*)^{-1}\nabla f(\mathbf{x}_k)\rVert}
+{\lVert\nabla f(\mathbf{x}_k)\rVert}=0.
+\end{displaymath}
+Karena iterat akhirnya berada di $S$, semua hipotesis Teorema \ref{thm:Superlinear} berlaku dan
+\begin{displaymath}
+\lim_{k\to\infty}
+\frac{\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert}
+{\lVert\mathbf{x}_k-\mathbf{x}^*\rVert}=0.
+\end{displaymath}
+Ini menyelesaikan bukti.
+\end{proof}
+
+\begin{remark} Ambang juga dapat dibuat dinamis, misalnya $\mu_{1,k}=c\lVert\nabla f(\mathbf{x}_k)\rVert$ dengan konstanta tetap $c>0$, sementara $\mu_{2,k}$ tetap dipilih lebih besar dan positif. Karena $\mu_{1,k}\to0$ di dekat titik stasioner dengan Hessian definit negatif, koreksi akhirnya berhenti di bawah hipotesis yang sama.
+\end{remark}
+
+\begin{exercise} Buktikan bahwa metode Newton termodifikasi mencapai limitnya dalam sejumlah langkah hingga atau berkonvergensi Q-superlinear ketika $\mu_{1,k}=c\lVert\nabla f(\mathbf{x}_k)\rVert$, $c>0$, dengan mengasumsikan barisan konvergen ke titik dengan Hessian definit negatif, $\mu_{2,k}>\mu_{1,k}$, dan parameter Armijo seperti pada teorema sebelumnya.
+\end{exercise}
+
+\begin{remark} Tidak ada pilihan tunggal $\mu_1$ dan $\mu_2$ yang optimal bagi semua persoalan. Nilai $\mu_1$ yang kecil mempertahankan lebih banyak struktur Hessian, tetapi nilai koreksi $\mu_2$ yang terlalu kecil dapat membuat $\mathbf{L}\mathbf{L}^T$ hampir singular. Nilai $\mu_2$ yang terlalu besar dapat menghasilkan skala yang buruk dan memperlambat konvergensi. Pengguna harus menyesuaikan ambang dengan skala persoalan; \cite{Bert99} membahas pemilihan yang bergantung pada elemen diagonal terbesar Hessian terhitung.
+\end{remark}
+
+\begin{example} Kita ilustrasikan metode Newton termodifikasi pada fungsi
+\begin{displaymath}
+F(x,y)=\left(x^2+3y^2\right){\rm e}^{1-x^2-y^2}
+\end{displaymath}
+dari $x=1$, $y=1/2$, dengan $\mu_1=0.1$ dan $\mu_2=1$. Langkah-langkah sumber ditunjukkan pada Gambar \ref{fig:ModifiedNewton}; jejak tersebut mencapai suatu maksimum global dalam lima iterasi.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/ModifiedNewton.pdf}
+\caption{Metode Newton termodifikasi memakai pengganti Cholesky definit positif dan penyelesaian segitiga untuk memperoleh arah naik ketika Hessian belum definit negatif. Jejak ini memperlihatkan konvergensi terminal yang cepat; teorema sebelumnya menyatakan hipotesis untuk kesuperlinearannya.}
+\label{fig:ModifiedNewton}
+\end{figure}
+\end{example}

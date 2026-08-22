@@ -1,0 +1,53 @@
+{
+  "article_id": 33314733,
+  "checks": {
+    "cc0_metadata": true,
+    "collection_member": true,
+    "metadata_only": true,
+    "no_files": true,
+    "project_member": true,
+    "public": true,
+    "title": true,
+    "zenodo_concept_link": true,
+    "zenodo_record_link": true
+  },
+  "collection_doi": "10.6084/m9.figshare.c.8668413.v6",
+  "collection_id": 8668413,
+  "collection_version": 6,
+  "defined_type": "online resource",
+  "doi": "10.6084/m9.figshare.33314733.v1",
+  "files": [],
+  "is_metadata_record": true,
+  "license": {
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "value": 2
+  },
+  "metadata_reason": "The exact work release uses mixed per-component CC BY 4.0 and CC BY-NC-SA 3.0 United States rights. Figshare supports one scalar article license and does not offer the exact Penn license, so only a CC0 metadata/link record is published here; authoritative",
+  "project_id": 280296,
+  "public_url": "https://figshare.com/articles/online_resource/Optimisasi_Lanjut_dan_Analisis_Konveks_Edisi_Bahasa_Indonesia_Checkpoint_Sembilan_Unit_Belum_Lengkap_/33314733",
+  "related_materials": [
+    {
+      "id": 285575154,
+      "identifier": "10.5281/zenodo.22059742",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.5281/zenodo.22059742",
+      "relation": "IsMetadataFor",
+      "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Checkpoint Sembilan Unit (Belum Lengkap)"
+    },
+    {
+      "id": 285575157,
+      "identifier": "10.5281/zenodo.22059741",
+      "identifier_type": "DOI",
+      "is_linkout": false,
+      "link": "https://doi.org/10.5281/zenodo.22059741",
+      "relation": "IsMetadataFor",
+      "title": "Zenodo concept lineage for the Indonesian edition"
+    }
+  ],
+  "schema": "o015-figshare-metadata-readback-v1",
+  "status": "public",
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia: Checkpoint Sembilan Unit (Belum Lengkap)",
+  "version": 1
+}

@@ -1,0 +1,478 @@
+{
+  "correction_surface_audit": [
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0076",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "f(x)\\coloneqq \\frac{1}{N}\\sum_{i=1}^N f_i(x)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\min_\\theta \\frac{1}{N}\\sum_{i=1}^N \\|y_i-f_\\theta(x_i)\\|^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[G(x,Z)]=N^{-1}\\sum_{i=1}^N\\nabla f_i(x)=\\nabla f(x)",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0077",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "C\\subseteq\\R^d",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "f:\\R^d\\rightarrow\\R",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "x^*\\in\\arg\\min_{x\\in C}f(x)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "x_{k+1}=\\proj_C(x_k-\\tau_kG_k)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "\\tau_k>0",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\proj_C(x^*)=x^*",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0078",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\mathcal F_k=\\sigma(x_0,Z_0,\\dots,Z_{k-1})",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\bar g_k\\coloneqq\\E[G_k\\mid\\mathcal F_k]",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\bar g_k \\in \\partial f(x_k)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[\\|G_k-\\bar g_k\\|^2\\mid\\mathcal F_k]\\leq \\sigma^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[\\inner{x_k-x^*}{G_k}\\mid\\mathcal F_k]",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0079",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "f_{\\mathrm{best}}^K\\coloneqq\\min_{0\\leq k\\leq K-1}f(x_k)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 3,
+          "present": true,
+          "surface": "\\E[f_{\\mathrm{best}}^K-f(x^*)]",
+          "target_occurrences": 3
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "K\\rightarrow\\infty",
+          "target_occurrences": 2
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0080",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[\\|G_k\\|^2\\mid\\mathcal F_k]",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[\\|G_k-\\bar g_k\\|^2\\mid\\mathcal F_k]+\\|\\bar g_k\\|^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\sigma^2+L^2\\coloneqq M^2",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0081",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "+\\frac{M^2}{2}\\sum_{k=0}^{K-1}\\tau_k^2",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0082",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "S_K\\coloneqq\\sum_{k=0}^{K-1}\\tau_k",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Q_K\\coloneqq\\sum_{k=0}^{K-1}\\tau_k^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "\\frac{M^2Q_K}{2S_K}",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\frac{\\sum_{k=0}^{K-1}\\tau_k^2}{\\sum_{k=0}^{K-1}\\tau_k}\\longrightarrow0",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0083",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "dengan $N$ biasanya merupakan banyaknya sampel pelatihan",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\E[G(x,Z)] \\in \\partial f(x),",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Memang,",
+          "target_occurrences": 1
+        }
+      ]
+    }
+  ],
+  "environment_topology": {
+    "count": 24,
+    "counts_by_name": {
+      "aligned": 5,
+      "cases": 2,
+      "equation": 15,
+      "proof": 1,
+      "theorem": 1
+    },
+    "ordered_begin_environments": [
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "theorem",
+      "equation",
+      "cases",
+      "proof",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation"
+    ],
+    "ordered_begin_equal": true,
+    "ordered_end_environments": [
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "theorem",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "proof"
+    ],
+    "ordered_end_equal": true
+  },
+  "eqrefs": {
+    "source": [
+      "stochastic:eq:gradient"
+    ],
+    "target": [
+      "stochastic:eq:gradient"
+    ]
+  },
+  "failure_count": 0,
+  "failures": [],
+  "forbidden_canonical_formula_counts": {
+    "\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}\\rightarrow\\infty": 0,
+    "\\min_\\theta\\sum_{i=1}^N\\|y_i-f_\\theta(x_i)\\|^2": 0,
+    "\\min_xf(x)\\coloneq\\sum_{i=1}^Nf_i(x)": 0,
+    "\\sigma_n=\\frac{\\sum_{k=0}^{K-1}\\tau_k}{\\sum_{k=0}^{K-1}\\tau_k^2}": 0
+  },
+  "forbidden_prose_surface_counts": {
+    "Assume we want to solve": 0,
+    "It turns out that many": 0,
+    "The remaining proof": 0,
+    "Then it holds": 0,
+    "very $N$": 0,
+    "which goes to zero": 0
+  },
+  "formula_delta_manifest": {
+    "all_substantive_deltas_proposed_ledger_bound": true,
+    "bytes": 24702,
+    "delta_block_count": 7,
+    "incompletely_bound_substantive_delta_block_ids": [],
+    "path": "qa/STOCHASTIC_FORMULA_DELTA_MANIFEST.json",
+    "sha256": "2f9632d02071ded0c84d54ca17af019137cecfe18245d94a7e9243449c0e9fe9",
+    "source_formula_count": 38,
+    "substantive_delta_block_count": 7,
+    "target_formula_count": 61,
+    "unbound_substantive_delta_block_ids": [],
+    "unused_required_ledger_event_ids": [],
+    "used_ledger_event_ids": [
+      "O015-HAB-ADV-0076",
+      "O015-HAB-ADV-0077",
+      "O015-HAB-ADV-0078",
+      "O015-HAB-ADV-0079",
+      "O015-HAB-ADV-0080",
+      "O015-HAB-ADV-0081",
+      "O015-HAB-ADV-0082",
+      "O015-HAB-ADV-0083"
+    ]
+  },
+  "identities": {
+    "proposed_ledger": {
+      "bytes": 5188,
+      "lines": 8,
+      "path": "qa/CHAPTER08_PROPOSED_LEDGER.jsonl",
+      "sha256": "a815d0211da31b21a25a3f9fd8a2c1ec5fcc7da5e7a62c980f75df40ae65d45d"
+    },
+    "source": {
+      "bytes": 4665,
+      "lines": 107,
+      "path": "authority/habring/source-v1/stochastic.tex",
+      "sha256": "610d11b59d8dfabbbbe6fbc509a0f9ac1727540458c67f8cd3b7bab49566a07d"
+    },
+    "target": {
+      "bytes": 6378,
+      "lines": 133,
+      "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+      "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+    },
+    "wrapper": {
+      "bytes": 5129,
+      "lines": 69,
+      "path": "source/id-ID/D90-HAB-08-penurunan-gradien-stokastik-id.tex",
+      "sha256": "d00ea41830af388c227a1054025f049a9315da6f41675573965042d320eb7428"
+    }
+  },
+  "identity_policy": "authority_target_wrapper_and_proposed_ledger_frozen",
+  "independent_review": {
+    "disposition": "no undisclosed defect found",
+    "findings": [],
+    "scope": [
+      "all authority and target mathematical surfaces",
+      "probability conditioning and measurability",
+      "projected-SGD theorem hypotheses and proof",
+      "best-iterate convergence algebra and indices",
+      "all Indonesian reader prose",
+      "wrapper correction disclosure, attribution, and nonendorsement"
+    ],
+    "severity_counts": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0
+    }
+  },
+  "labels": {
+    "source": [
+      "stochastic:eq:gradient"
+    ],
+    "target": [
+      "stochastic:eq:gradient"
+    ]
+  },
+  "other_surface_topology": {
+    "citations": {
+      "source": 0,
+      "target": 0
+    },
+    "external_assets": {
+      "source": 0,
+      "target": 0
+    },
+    "figures": {
+      "source": 0,
+      "target": 0
+    },
+    "footnotes": {
+      "source": 0,
+      "target": 0
+    },
+    "items": {
+      "source": 0,
+      "target": 0
+    },
+    "sections": {
+      "source": 0,
+      "target": 0
+    },
+    "source_inputs": {
+      "source": 0,
+      "target": 0
+    }
+  },
+  "proposed_ledger": {
+    "bytes": 5188,
+    "exact_event_closure": true,
+    "ids_in_order": [
+      "O015-HAB-ADV-0076",
+      "O015-HAB-ADV-0077",
+      "O015-HAB-ADV-0078",
+      "O015-HAB-ADV-0079",
+      "O015-HAB-ADV-0080",
+      "O015-HAB-ADV-0081",
+      "O015-HAB-ADV-0082",
+      "O015-HAB-ADV-0083"
+    ],
+    "lines": 8,
+    "malformed_records": [],
+    "path": "qa/CHAPTER08_PROPOSED_LEDGER.jsonl",
+    "required_ids": [
+      "O015-HAB-ADV-0076",
+      "O015-HAB-ADV-0077",
+      "O015-HAB-ADV-0078",
+      "O015-HAB-ADV-0079",
+      "O015-HAB-ADV-0080",
+      "O015-HAB-ADV-0081",
+      "O015-HAB-ADV-0082",
+      "O015-HAB-ADV-0083"
+    ],
+    "sha256": "a815d0211da31b21a25a3f9fd8a2c1ec5fcc7da5e7a62c980f75df40ae65d45d"
+  },
+  "result": "pass",
+  "schema": "o015-stochastic-structure-audit-v1",
+  "source_marker_closure": {
+    "all_nonblank_source_lines_covered_exactly_once": true,
+    "multiply_covered_source_lines": [],
+    "uncovered_nonblank_source_lines": []
+  },
+  "source_markers": [
+    [
+      "001",
+      "1",
+      "34"
+    ],
+    [
+      "002",
+      "36",
+      "50"
+    ],
+    [
+      "003",
+      "51",
+      "107"
+    ]
+  ],
+  "stable_segment_ids": [
+    "d90.hab.v1.ch08.seg0001",
+    "d90.hab.v1.ch08.seg0002",
+    "d90.hab.v1.ch08.seg0003"
+  ],
+  "wrapper_gates": {
+    "authority_sha_present": true,
+    "chapter_counter_is_seven": true,
+    "correction_range_present": true,
+    "includes_target_once": true,
+    "license_present": true,
+    "nonendorsement_present": true
+  }
+}

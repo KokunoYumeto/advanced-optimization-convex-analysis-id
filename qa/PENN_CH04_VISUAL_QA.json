@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-08-22T16:31:17Z",
+  "pdf": {
+    "path": "output/pdf/D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf",
+    "bytes": 847350,
+    "sha256": "c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a",
+    "pages": 17,
+    "page_size": "A4"
+  },
+  "render": {
+    "renderer": "pdftoppm",
+    "dpi": 130,
+    "directory": "tmp/pdfs/penn-ch04-final-c0f283aa",
+    "contact_sheet": "tmp/pdfs/penn-ch04-final-c0f283aa/contact.png",
+    "contact_sheet_bytes": 3469036,
+    "contact_sheet_sha256": "29713fb1009ce51033f62a1ec332650710748b570e22e31054f2568ba4449c65"
+  },
+  "inspection": {
+    "all_page_contact_sheet": [1, 17],
+    "full_size_pages": [1, 5, 7, 10, 11, 12, 13, 14, 16, 17],
+    "checks": {
+      "blank_physical_pages": 0,
+      "clipped_content": 0,
+      "overlapping_content": 0,
+      "unreadable_glyphs": 0,
+      "broken_figures": 0,
+      "misbound_algorithm_captions": 0,
+      "forced_float_only_page": 0
+    },
+    "notes": [
+      "The initial source-faithful [p] placement stranded the split Algorithm 9 boxes on an otherwise mostly empty page.",
+      "Both placement specifiers were changed to [htbp] without changing environment, identifier, formula, or mathematical topology.",
+      "The final render places both boxes with their surrounding proof, remarks, example, and exercise; all five inherited figures are sharp and legible."
+    ]
+  },
+  "accessibility": {
+    "pdf_lang": "id-ID",
+    "searchable_nonempty_pages": 17,
+    "tagged_pdf": false,
+    "form": false,
+    "javascript": false,
+    "font_resources": 36,
+    "font_resources_with_tounicode": 26,
+    "font_resources_without_tounicode": 10,
+    "limitation": "The PDF is untagged, and ten inherited vector-figure font resources lack ToUnicode maps."
+  }
+}

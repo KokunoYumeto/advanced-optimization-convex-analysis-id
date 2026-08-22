@@ -1,0 +1,16 @@
+% Kutipan persis entri Bert99 dari Math555.bbl yang dibundel bersama sumber
+% Penn v1.0. Tidak ada basis data bibliografi upstream di dalam arsip sumber.
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref dipanggil oleh definisi amsart/book/proc untuk \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{Ber99}
+
+\bibitem[Ber99]{Bert99}
+D.~P. Bertsekas, \emph{{Nonlinear Programming}}, 2 ed., Athena Scientific,
+  1999.
+
+\end{thebibliography}

@@ -1,0 +1,861 @@
+{
+  "failures": [],
+  "formula_inventory": {
+    "source": [
+      {
+        "environment": "displaymath",
+        "index": 1,
+        "normalized_characters": 69,
+        "normalized_sha256": "bf0b0dac313ac899050f0c4d02b4e0729cd66907b419cc3623c3775c94b76dd4"
+      },
+      {
+        "environment": "equation",
+        "index": 2,
+        "normalized_characters": 32,
+        "normalized_sha256": "3176aa0a7cd4833f863131c075f99d3fe283e77c55ae045aae90446627fcec0f"
+      },
+      {
+        "environment": "equation",
+        "index": 3,
+        "normalized_characters": 72,
+        "normalized_sha256": "07fd0d39f04f6b057b44657b5c03f500c953b69c2e6e91c447ef997b629cf44b"
+      },
+      {
+        "environment": "equation",
+        "index": 4,
+        "normalized_characters": 142,
+        "normalized_sha256": "ba8a94d69b396c94f89762e94291a751fd506c944ce1f56213389dfeb1eafdca"
+      },
+      {
+        "environment": "displaymath",
+        "index": 5,
+        "normalized_characters": 54,
+        "normalized_sha256": "3493791745ddf609d32ce244918c7654de5bcec4961a2451192cb449000cdfc5"
+      },
+      {
+        "environment": "equation",
+        "index": 6,
+        "normalized_characters": 64,
+        "normalized_sha256": "cecdde023d94b3557212520276383fbd50fcd7d85e532a0b9403b66ba558d573"
+      },
+      {
+        "environment": "equation",
+        "index": 7,
+        "normalized_characters": 85,
+        "normalized_sha256": "64dc44311d64d7639240666f59b2d6057d030db62f40166366e493fcf2517453"
+      },
+      {
+        "environment": "equation",
+        "index": 8,
+        "normalized_characters": 182,
+        "normalized_sha256": "bafc27a1a79c1e7d2ddeb3cb9c3719483b51b26d586f10dbcdd6e9879ada32a8"
+      },
+      {
+        "environment": "equation",
+        "index": 9,
+        "normalized_characters": 117,
+        "normalized_sha256": "2b15bb8114ee1da306cc60524da784e74594066053c4ab30a956df51bd39eb71"
+      },
+      {
+        "environment": "displaymath",
+        "index": 10,
+        "normalized_characters": 97,
+        "normalized_sha256": "da2359cd80cafbb168f1606b41e086392b86461c4d29f4b54d8b8cb1ec47cfb9"
+      },
+      {
+        "environment": "equation",
+        "index": 11,
+        "normalized_characters": 228,
+        "normalized_sha256": "0217fd057d86ed3778c3db5e5aa2d0223ec062ac96e7baa39f1a8b76ed7d9080"
+      },
+      {
+        "environment": "equation",
+        "index": 12,
+        "normalized_characters": 211,
+        "normalized_sha256": "89c60a8bcc02b2d8095abf0c032f73a665475e1b69fc81c6c755dd44c5a63011"
+      },
+      {
+        "environment": "equation",
+        "index": 13,
+        "normalized_characters": 186,
+        "normalized_sha256": "8a8b7457feda1127df6d2dd6d723026388ce7d11f81893b1a71a536e94d7e4ab"
+      },
+      {
+        "environment": "multline",
+        "index": 14,
+        "normalized_characters": 440,
+        "normalized_sha256": "924ff753459c437062bafd0952cbe18717f0db2776854d08a4e7e06073c2f168"
+      },
+      {
+        "environment": "multline",
+        "index": 15,
+        "normalized_characters": 422,
+        "normalized_sha256": "248a01ba6113be64739f226480fc07a7c11b5baec95597a18ba9e927f5a8f7b3"
+      },
+      {
+        "environment": "multline",
+        "index": 16,
+        "normalized_characters": 632,
+        "normalized_sha256": "9242f407e2c226a6e396c31de30f33671bfdaccc1f0de8f94b1dd891cca3b925"
+      },
+      {
+        "environment": "displaymath",
+        "index": 17,
+        "normalized_characters": 63,
+        "normalized_sha256": "1b16fb7ac5c7e54bc3745958d1ff8dd5258b186054a70dad58feaec3ae3a225a"
+      },
+      {
+        "environment": "multline",
+        "index": 18,
+        "normalized_characters": 297,
+        "normalized_sha256": "ce6c08360c04c9e21316bc9a68b169d16a0d0da48bc20e887d0f525daf041ed2"
+      },
+      {
+        "environment": "displaymath",
+        "index": 19,
+        "normalized_characters": 72,
+        "normalized_sha256": "07fd0d39f04f6b057b44657b5c03f500c953b69c2e6e91c447ef997b629cf44b"
+      },
+      {
+        "environment": "equation",
+        "index": 20,
+        "normalized_characters": 53,
+        "normalized_sha256": "b6470d65f400b07b9142803cd3372364a0becc3ea8f82e620ae19073a2df40a7"
+      },
+      {
+        "environment": "equation",
+        "index": 21,
+        "normalized_characters": 75,
+        "normalized_sha256": "0669130eca608b5f79482fa44bdbd35a5193bffe59e1cf973c10da6266722f77"
+      },
+      {
+        "environment": "equation",
+        "index": 22,
+        "normalized_characters": 45,
+        "normalized_sha256": "b5c54ae143ea8e60f5b1dae50d29273044d50f083c08da88b2474b84480503b8"
+      },
+      {
+        "environment": "equation",
+        "index": 23,
+        "normalized_characters": 35,
+        "normalized_sha256": "d4bb4d5bda0ac9f4a8aec1483401ef28586dbeedb4f7990d548cc78abcaf6466"
+      },
+      {
+        "environment": "displaymath",
+        "index": 24,
+        "normalized_characters": 72,
+        "normalized_sha256": "07fd0d39f04f6b057b44657b5c03f500c953b69c2e6e91c447ef997b629cf44b"
+      },
+      {
+        "environment": "displaymath",
+        "index": 25,
+        "normalized_characters": 172,
+        "normalized_sha256": "8709617b6075e78441eb12508b03ea3ab5fd6a27004a8eac277c055d0ecb834f"
+      },
+      {
+        "environment": "displaymath",
+        "index": 26,
+        "normalized_characters": 108,
+        "normalized_sha256": "e13a3999fc81cfd47f7f0ade292c4e37f3745b0028b06c74b415ad11cda8b53b"
+      },
+      {
+        "environment": "displaymath",
+        "index": 27,
+        "normalized_characters": 148,
+        "normalized_sha256": "c9b12977f64c19560209f06d4e0b42f5e8f492943059ab9240d5ecef008ccb12"
+      },
+      {
+        "environment": "equation",
+        "index": 28,
+        "normalized_characters": 245,
+        "normalized_sha256": "a0e875515e47166a097a512058fc5a53343cf24ab4b4229f90bc39bbd829bb3c"
+      },
+      {
+        "environment": "gather*",
+        "index": 29,
+        "normalized_characters": 211,
+        "normalized_sha256": "2675df008324fe40c2ffcd681bba8f0cfa7ecd113ec04330c803a2759d25d1e3"
+      },
+      {
+        "environment": "equation",
+        "index": 30,
+        "normalized_characters": 302,
+        "normalized_sha256": "d8e24bf399a73e461f5b7457beb0174da2489c2cb2837d4339196efa97e226ec"
+      },
+      {
+        "environment": "gather*",
+        "index": 31,
+        "normalized_characters": 292,
+        "normalized_sha256": "5250397caef6f0b2f3b2697c3061de09617dc06fd756551815f7e260e7e32244"
+      },
+      {
+        "environment": "multline",
+        "index": 32,
+        "normalized_characters": 357,
+        "normalized_sha256": "639e0688aaf82230b5ade65a1f4086e9a64df0601f613ffd69dbd9667106c874"
+      },
+      {
+        "environment": "displaymath",
+        "index": 33,
+        "normalized_characters": 136,
+        "normalized_sha256": "7d200804c28852eb26aedddf6824cf1c8b7db55f8f7be5c68a19d755d7103b3f"
+      },
+      {
+        "environment": "displaymath",
+        "index": 34,
+        "normalized_characters": 109,
+        "normalized_sha256": "ec5bcdee227324a4f691bb7b55cc634afc358cdcf8ca386e13201320f99d6f7c"
+      },
+      {
+        "environment": "displaymath",
+        "index": 35,
+        "normalized_characters": 72,
+        "normalized_sha256": "07fd0d39f04f6b057b44657b5c03f500c953b69c2e6e91c447ef997b629cf44b"
+      }
+    ],
+    "target": [
+      {
+        "environment": "displaymath",
+        "index": 1,
+        "normalized_characters": 60,
+        "normalized_sha256": "3f78e62126c5a203ba3b604729dcbe05b889e4530ca6d7911320cee92316db0e"
+      },
+      {
+        "environment": "equation",
+        "index": 2,
+        "normalized_characters": 33,
+        "normalized_sha256": "89e40e5266cab8ac550f97af70dd560db7b1ac28b4ff64a4c306106f4d4b561e"
+      },
+      {
+        "environment": "equation",
+        "index": 3,
+        "normalized_characters": 48,
+        "normalized_sha256": "83b06454204d21ccb3b65cf7f6d59937df1435ad15937cd4fee3a3c6480c00e8"
+      },
+      {
+        "environment": "equation",
+        "index": 4,
+        "normalized_characters": 135,
+        "normalized_sha256": "e73dcae5334930fa7b4d5855bf62b329e4c31ddb3de77f567748dfcb3bd30b31"
+      },
+      {
+        "environment": "displaymath",
+        "index": 5,
+        "normalized_characters": 63,
+        "normalized_sha256": "38bd153ad94977c2db16e5a0b3ba3da8a50e2f81a24d7e7aacafbd4d8d4b36f6"
+      },
+      {
+        "environment": "equation",
+        "index": 6,
+        "normalized_characters": 88,
+        "normalized_sha256": "1e50f325a712cc8d3eb50df42853e796bdb9c08a059b8a25911825a754eec33d"
+      },
+      {
+        "environment": "equation",
+        "index": 7,
+        "normalized_characters": 81,
+        "normalized_sha256": "514459f723d9927ae53c333c0d995b6e8c79dd3be5137d9dce694b165be5805d"
+      },
+      {
+        "environment": "equation",
+        "index": 8,
+        "normalized_characters": 162,
+        "normalized_sha256": "9dae431c23e532577c28dec6af0276024018568468eab2b87f2b089a5ed1631e"
+      },
+      {
+        "environment": "equation",
+        "index": 9,
+        "normalized_characters": 118,
+        "normalized_sha256": "4745771b12d44033eba333db16b9ab6fc07638dbcbc6123b506f4b7c3c6774b9"
+      },
+      {
+        "environment": "displaymath",
+        "index": 10,
+        "normalized_characters": 77,
+        "normalized_sha256": "05bedcb8c31d9348e0150f4eece879d12622c58e95fe990f0e2ba5b4396a5df6"
+      },
+      {
+        "environment": "equation",
+        "index": 11,
+        "normalized_characters": 225,
+        "normalized_sha256": "b927e39fdd6b5a0fb6189581e3ab4315f6fc4432366c745521b899c8d1a33e09"
+      },
+      {
+        "environment": "equation",
+        "index": 12,
+        "normalized_characters": 145,
+        "normalized_sha256": "bebde47295fe9ff1038e85af1fb8b6835ec40e289fd42e1656abd3efcccb70a6"
+      },
+      {
+        "environment": "equation",
+        "index": 13,
+        "normalized_characters": 185,
+        "normalized_sha256": "0b376fa257a628ee6eb01d9336f67f681aeafcdf652985b389c927d4050207f4"
+      },
+      {
+        "environment": "multline",
+        "index": 14,
+        "normalized_characters": 392,
+        "normalized_sha256": "46c0acb38677eadc478c0b1a6bc1cbbb6a926f180a8b6b63ece9df9f10fb9456"
+      },
+      {
+        "environment": "multline",
+        "index": 15,
+        "normalized_characters": 410,
+        "normalized_sha256": "789a6ce64f9b72770decdfefdaf85cc551b16fa3b18e9e99e25b51e26f7d1c5b"
+      },
+      {
+        "environment": "multline",
+        "index": 16,
+        "normalized_characters": 425,
+        "normalized_sha256": "22ff327a94313ad84986e0befd265f2ae16a1d306454a21441a911bf3aee599b"
+      },
+      {
+        "environment": "displaymath",
+        "index": 17,
+        "normalized_characters": 62,
+        "normalized_sha256": "2ef0202ed6b8a582896a9e1ff9f96b85bf498473ca0af52975bc12e5e12214b4"
+      },
+      {
+        "environment": "multline",
+        "index": 18,
+        "normalized_characters": 336,
+        "normalized_sha256": "66f2d92b0776ba84d89d9b5005197e13ae1681c65dd8d61987e9f1547a0d239a"
+      },
+      {
+        "environment": "displaymath",
+        "index": 19,
+        "normalized_characters": 48,
+        "normalized_sha256": "83b06454204d21ccb3b65cf7f6d59937df1435ad15937cd4fee3a3c6480c00e8"
+      },
+      {
+        "environment": "equation",
+        "index": 20,
+        "normalized_characters": 65,
+        "normalized_sha256": "165e616f5116b394f8885f6f7a7252bd65683020cdedf1f6e8aa5bb008ce16d5"
+      },
+      {
+        "environment": "equation",
+        "index": 21,
+        "normalized_characters": 74,
+        "normalized_sha256": "c54e9352c16fd8d045dfb55d35188d1fd293c1c9cb49e363b2880901da138cb3"
+      },
+      {
+        "environment": "equation",
+        "index": 22,
+        "normalized_characters": 43,
+        "normalized_sha256": "861de31012ba8bf6061d93798fa1407a5ee05aea2dade8ae62e34b7f6c289300"
+      },
+      {
+        "environment": "equation",
+        "index": 23,
+        "normalized_characters": 33,
+        "normalized_sha256": "a2af8e9559e4ec1c41565b26d411624b261bb6de1094d44d16e2533d16091602"
+      },
+      {
+        "environment": "displaymath",
+        "index": 24,
+        "normalized_characters": 47,
+        "normalized_sha256": "aae822026ee2691630a37503d288fa21b60f752bd264117e861af7bb831b6b0d"
+      },
+      {
+        "environment": "displaymath",
+        "index": 25,
+        "normalized_characters": 98,
+        "normalized_sha256": "2df9e84035677367cc590b1228ba805462349d983c8bdf37a505098442e4b95b"
+      },
+      {
+        "environment": "displaymath",
+        "index": 26,
+        "normalized_characters": 80,
+        "normalized_sha256": "707e50257802134717552d85ece75db0fa5491788a377426f05e109d072e1fa4"
+      },
+      {
+        "environment": "displaymath",
+        "index": 27,
+        "normalized_characters": 108,
+        "normalized_sha256": "5d8ff2e03e6a8ebddd4800778df48586b03ff0f87e6eb4d6029b3c1d7fee4974"
+      },
+      {
+        "environment": "equation",
+        "index": 28,
+        "normalized_characters": 182,
+        "normalized_sha256": "8d23d33c20f2d27cc3a0a12c643aa7ea1e854d8ae9aa78438984f7244128fe42"
+      },
+      {
+        "environment": "gather*",
+        "index": 29,
+        "normalized_characters": 75,
+        "normalized_sha256": "e5cfe32ef22dd649ac816e791cc4575becee7347380ae28378e5d5b459305c52"
+      },
+      {
+        "environment": "equation",
+        "index": 30,
+        "normalized_characters": 193,
+        "normalized_sha256": "fe7f671db4069fcc77222d777e22345e6e879b944c07d7d9c58a855072ebdc01"
+      },
+      {
+        "environment": "gather*",
+        "index": 31,
+        "normalized_characters": 81,
+        "normalized_sha256": "3f1205670f1cba21092b0c9d500f899120808fed879949a1574d6da662691a5e"
+      },
+      {
+        "environment": "multline",
+        "index": 32,
+        "normalized_characters": 226,
+        "normalized_sha256": "daf539a1955d6709895ed1a39234a50d791039beffad4bdd39b7c7d405d8850d"
+      },
+      {
+        "environment": "displaymath",
+        "index": 33,
+        "normalized_characters": 141,
+        "normalized_sha256": "03441fc0d49ff48587078c8f15ab9719469f5f52173320ffe825b40ca4543fe8"
+      },
+      {
+        "environment": "displaymath",
+        "index": 34,
+        "normalized_characters": 109,
+        "normalized_sha256": "7c89b2be7aa564eb83ebbf0e7d230158e2405dcae147083628b74c3c9b61678a"
+      },
+      {
+        "environment": "displaymath",
+        "index": 35,
+        "normalized_characters": 47,
+        "normalized_sha256": "aae822026ee2691630a37503d288fa21b60f752bd264117e861af7bb831b6b0d"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "detail": {
+        "bytes": 22371,
+        "lines": 317,
+        "sha256": "15186b99be0913d83046e3e32eaf7a378d3a4fccd222219984b091ddf7f9a428"
+      },
+      "gate": "source_identity",
+      "pass": true
+    },
+    {
+      "detail": {
+        "errors": [],
+        "pass": true
+      },
+      "gate": "source_environment_balance",
+      "pass": true
+    },
+    {
+      "detail": {
+        "errors": [],
+        "pass": true
+      },
+      "gate": "target_environment_balance",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source_counts": {
+          "array": 8,
+          "bmatrix": 3,
+          "cgalgorithm": 5,
+          "definition": 1,
+          "displaymath": 12,
+          "enumerate*": 1,
+          "equation": 16,
+          "example": 5,
+          "exercise": 5,
+          "figure": 4,
+          "gather*": 2,
+          "multline": 5,
+          "proof": 3,
+          "remark": 11,
+          "theorem": 3
+        },
+        "source_total": 84,
+        "target_counts": {
+          "array": 8,
+          "bmatrix": 3,
+          "cgalgorithm": 5,
+          "definition": 1,
+          "displaymath": 12,
+          "enumerate*": 1,
+          "equation": 16,
+          "example": 5,
+          "exercise": 5,
+          "figure": 4,
+          "gather*": 2,
+          "multline": 5,
+          "proof": 3,
+          "remark": 11,
+          "theorem": 3
+        },
+        "target_total": 84
+      },
+      "gate": "ordered_environment_topology",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source": [
+          "ch:NewtonsMethod",
+          "alg:NewtonsMethod",
+          "fig:NewtonsMethod",
+          "fig:DoublePeak",
+          "eqn:NM_MV",
+          "eqn:NM_FinalInequal",
+          "fig:SimpleNewtonsMethod",
+          "alg:ModifiedCholesky",
+          "alg:CorrectedNewtonsMethod",
+          "fig:ModifiedNewton"
+        ],
+        "target": [
+          "ch:NewtonsMethod",
+          "alg:NewtonsMethod",
+          "fig:NewtonsMethod",
+          "fig:DoublePeak",
+          "eqn:NM_MV",
+          "eqn:NM_FinalInequal",
+          "fig:SimpleNewtonsMethod",
+          "alg:ModifiedCholesky",
+          "alg:CorrectedNewtonsMethod",
+          "fig:ModifiedNewton"
+        ]
+      },
+      "gate": "label_closure",
+      "pass": true
+    },
+    {
+      "detail": {
+        "added_targets": [],
+        "missing_source_targets": [],
+        "source_calls": 16,
+        "target_calls": 19
+      },
+      "gate": "reference_surface",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source": [
+          "Bert99"
+        ],
+        "target": [
+          "Bert99"
+        ]
+      },
+      "gate": "citation_sequence",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source": [
+          "Figures/NewtonsMethod.pdf",
+          "Figures/DoublePeak.pdf",
+          "Figures/GaussModifiedNewtonsMethod.pdf",
+          "Figures/ModifiedNewton.pdf"
+        ],
+        "target": [
+          "Figures/NewtonsMethod.pdf",
+          "Figures/DoublePeak.pdf",
+          "Figures/GaussModifiedNewtonsMethod.pdf",
+          "Figures/ModifiedNewton.pdf"
+        ]
+      },
+      "gate": "figure_call_sequence",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source": 5,
+        "target": 5
+      },
+      "gate": "exercise_count",
+      "pass": true
+    },
+    {
+      "detail": {
+        "covered_line_count": 317,
+        "parsed": [
+          [
+            "P05-S001",
+            "d90.penn.v1.ch05.seg0001",
+            1,
+            38
+          ],
+          [
+            "P05-S002",
+            "d90.penn.v1.ch05.seg0002",
+            39,
+            74
+          ],
+          [
+            "P05-S003",
+            "d90.penn.v1.ch05.seg0003",
+            75,
+            148
+          ],
+          [
+            "P05-S004",
+            "d90.penn.v1.ch05.seg0004",
+            149,
+            178
+          ],
+          [
+            "P05-S005",
+            "d90.penn.v1.ch05.seg0005",
+            179,
+            206
+          ],
+          [
+            "P05-S006",
+            "d90.penn.v1.ch05.seg0006",
+            207,
+            277
+          ],
+          [
+            "P05-S007",
+            "d90.penn.v1.ch05.seg0007",
+            278,
+            317
+          ]
+        ]
+      },
+      "gate": "segment_partition",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source_count": 35,
+        "target_count": 35,
+        "types": [
+          "displaymath",
+          "equation",
+          "equation",
+          "equation",
+          "displaymath",
+          "equation",
+          "equation",
+          "equation",
+          "equation",
+          "displaymath",
+          "equation",
+          "equation",
+          "equation",
+          "multline",
+          "multline",
+          "multline",
+          "displaymath",
+          "multline",
+          "displaymath",
+          "equation",
+          "equation",
+          "equation",
+          "equation",
+          "displaymath",
+          "displaymath",
+          "displaymath",
+          "displaymath",
+          "equation",
+          "gather*",
+          "equation",
+          "gather*",
+          "multline",
+          "displaymath",
+          "displaymath",
+          "displaymath"
+        ]
+      },
+      "gate": "formula_environment_sequence",
+      "pass": true
+    },
+    {
+      "detail": {
+        "correct_directional_product": true,
+        "correct_global_maximum": true,
+        "factorization_output_contract": true,
+        "local_finite_termination_alternative": true,
+        "local_invariance_modulus": true,
+        "matrix_norm_unit_sphere": true,
+        "named_surrogate": true,
+        "negative_hessian_pivots": true,
+        "newton_max_sign": true,
+        "pivot_square_root": true,
+        "scalar_line_function": true,
+        "superlinear_finite_termination_alternative": true,
+        "uniform_surrogate_bounds": true
+      },
+      "gate": "determined_repairs_present",
+      "pass": true
+    },
+    {
+      "detail": {
+        "ambiguous_open_pseudocode_claim": true,
+        "ambiguous_open_reference_claim": true,
+        "bad_endpoint": true,
+        "bad_matrix_norm": true,
+        "fixme": true,
+        "legacy_code_path": true,
+        "legacy_listing": true,
+        "missing_inverse_direction": true,
+        "tbd": true,
+        "todo": true
+      },
+      "gate": "residue_and_excluded_code",
+      "pass": true
+    },
+    {
+      "detail": {
+        "count": 12,
+        "ids": [
+          "O015-PENN-ADV-0038",
+          "O015-PENN-ADV-0039",
+          "O015-PENN-ADV-0040",
+          "O015-PENN-ADV-0041",
+          "O015-PENN-ADV-0042",
+          "O015-PENN-ADV-0043",
+          "O015-PENN-ADV-0044",
+          "O015-PENN-ADV-0045",
+          "O015-PENN-ADV-0046",
+          "O015-PENN-ADV-0047",
+          "O015-PENN-ADV-0048",
+          "O015-PENN-ADV-0049"
+        ]
+      },
+      "gate": "proposed_ledger",
+      "pass": true
+    },
+    {
+      "detail": [
+        {
+          "name": "NewtonsMethod.pdf",
+          "pass": true,
+          "source": {
+            "bytes": 123281,
+            "lines": 1137,
+            "sha256": "94c86e8eaf669f51dfe4d63f3b6799c84fb7b2d4fc781c304541aa40bc0442b6"
+          },
+          "target": {
+            "bytes": 123281,
+            "lines": 1137,
+            "sha256": "94c86e8eaf669f51dfe4d63f3b6799c84fb7b2d4fc781c304541aa40bc0442b6"
+          }
+        },
+        {
+          "name": "DoublePeak.pdf",
+          "pass": true,
+          "source": {
+            "bytes": 2138564,
+            "lines": 88409,
+            "sha256": "0091677ffedeaed91d4746edd03439ebb586a02900c86b9d7b9693205019e6fa"
+          },
+          "target": {
+            "bytes": 2138564,
+            "lines": 88409,
+            "sha256": "0091677ffedeaed91d4746edd03439ebb586a02900c86b9d7b9693205019e6fa"
+          }
+        },
+        {
+          "name": "GaussModifiedNewtonsMethod.pdf",
+          "pass": true,
+          "source": {
+            "bytes": 56347,
+            "lines": 534,
+            "sha256": "d59d49782969f5c55a49fde4ffc65e919019e5df06ebd70009457a1b508422c2"
+          },
+          "target": {
+            "bytes": 56347,
+            "lines": 534,
+            "sha256": "d59d49782969f5c55a49fde4ffc65e919019e5df06ebd70009457a1b508422c2"
+          }
+        },
+        {
+          "name": "ModifiedNewton.pdf",
+          "pass": true,
+          "source": {
+            "bytes": 56339,
+            "lines": 537,
+            "sha256": "7b5a76196e5b535447bc39162d1f11d63e65a021381108f06ac85ab7738bc28f"
+          },
+          "target": {
+            "bytes": 56339,
+            "lines": 537,
+            "sha256": "7b5a76196e5b535447bc39162d1f11d63e65a021381108f06ac85ab7738bc28f"
+          }
+        }
+      ],
+      "gate": "figure_asset_identity",
+      "pass": true
+    },
+    {
+      "detail": [
+        {
+          "bytes": 1668,
+          "lines": 45,
+          "name": "NewtonsMethodGeneral-1.mpl",
+          "pass": true,
+          "sha256": "918e74995875169a7cdc7557903cfdcf89b090ab4b555d6fe1ebff2096d6bd84"
+        },
+        {
+          "bytes": 568,
+          "lines": 21,
+          "name": "NewtonsMethodGeneral-2.mpl",
+          "pass": true,
+          "sha256": "8ad5ff5bf7ed6a2f2e35727ef6a93ae6a9a08473ad579d104ec25ae638c6ce83"
+        },
+        {
+          "bytes": 513,
+          "lines": 25,
+          "name": "ModifiedCholesky.mpl",
+          "pass": true,
+          "sha256": "a52e4706ceeb9b21a4e68f78bf7d48aa96d4e9b5d1fa4c499762d6509ddfad89"
+        },
+        {
+          "bytes": 1499,
+          "lines": 42,
+          "name": "ModifiedNewtonsMethod-1.mpl",
+          "pass": true,
+          "sha256": "8392a10e803d4b5219eacefe52f85621bdb6ee1ad2d65e78c474f3697da0a6d0"
+        },
+        {
+          "bytes": 929,
+          "lines": 31,
+          "name": "ModifiedNewtonsMethod-2.mpl",
+          "pass": true,
+          "sha256": "5b14d0dcb525888022339740fda447dd7e15f7cbe00cd4547663350eaf0c6cd4"
+        }
+      ],
+      "gate": "excluded_code_identity",
+      "pass": true
+    },
+    {
+      "detail": {
+        "source_close": 752,
+        "source_open": 752,
+        "target_close": 677,
+        "target_open": 677
+      },
+      "gate": "brace_balance",
+      "pass": true
+    }
+  ],
+  "proposed_ledger": {
+    "bytes": 10242,
+    "lines": 12,
+    "path": "qa/PENN_CH05_PROPOSED_LEDGER.jsonl",
+    "sha256": "823ba2913a44c88d39c062f9fab847720e5637fd9dca75e4532de806bcd02d67"
+  },
+  "schema": "o015-penn-ch05-structure-report-v1",
+  "source": {
+    "bytes": 22371,
+    "lines": 317,
+    "path": "authority/penn-state/source/ClassNotes/Section5.tex",
+    "sha256": "15186b99be0913d83046e3e32eaf7a378d3a4fccd222219984b091ddf7f9a428"
+  },
+  "status": "PASS",
+  "target": {
+    "bytes": 27317,
+    "lines": 400,
+    "path": "source/id-ID/penn-05-metode-newton-dan-koreksi-id.tex",
+    "sha256": "0f6afd7da2268661124f967f299ac9df89bb6a8f5683b3e4e8fea32718a8549a"
+  }
+}

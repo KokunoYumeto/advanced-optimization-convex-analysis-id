@@ -1,0 +1,37 @@
+{
+  "article_id": 33314733,
+  "collection_id": 8668413,
+  "complete_d90_course": false,
+  "license": "CC BY 4.0",
+  "payloads": [
+    {
+      "bytes": 3090098,
+      "filename": "D90-HAB-03-09-modul-pendamping-id.pdf",
+      "role": "primary reader",
+      "sha256": "6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87"
+    },
+    {
+      "bytes": 160908,
+      "filename": "D90-HAB-03-09-sumber-id.zip",
+      "role": "compact resumable source",
+      "sha256": "be06ba070d97506970378cea801c2525abc69bb305c3770b59186a6e212a645f"
+    },
+    {
+      "bytes": 18657,
+      "filename": "LICENSE_CC_BY_4.0.txt",
+      "role": "exact license",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    }
+  ],
+  "project_id": 280296,
+  "schema": "o015-figshare-reader-release-v1",
+  "source_bundle_entries": 29,
+  "status": "coherent partial companion module; Habring Chapters 3-9 complete",
+  "upload_order": [
+    "D90-HAB-03-09-modul-pendamping-id.pdf",
+    "D90-HAB-03-09-sumber-id.zip",
+    "LICENSE_CC_BY_4.0.txt",
+    "FIGSHARE_MANIFEST.json",
+    "SHA256SUMS"
+  ]
+}

@@ -1,51 +1,48 @@
 # O015 coverage and overlap boundary
 
-Date: 2026-08-21  
-Role: D90 — Advanced Optimization and Convex Analysis
+Date: 2026-08-22  
+Role: D90 — Advanced Optimization and Convex Analysis  
+Current architecture: MIT OCW 6.253 + Royer stochastic-gradient core; Penn/Habring preserved companion
 
-## Admitted composite
+## Selected D90 primary architecture
 
-No single candidate passed editable-source, derivative-rights, build-closure, modern-coverage, and solution-surface requirements. The admitted spine is therefore deliberately composite:
+The primary course spine is the complete MIT OpenCourseWare 6.253 *Convex Analysis and Optimization* teaching package under CC BY-NC-SA 4.0. It supplies convex geometry and functions, separation, conjugacy, convex/Fenchel/conic duality, optimality, subgradient calculus, conic and semidefinite programming, descent, cutting-plane, bundle, proximal, augmented-Lagrangian, interior-point, incremental/randomized, projection, and complexity material. The selected stochastic component is Clément Royer's complete 45-page *Optimization for Machine Learning -- Stochastic Gradient* notes plus both public notebook laboratories under CC BY-NC 4.0.
 
-- Penn State MATH 555 supplies mature smooth numerical optimization and constrained numerical methods. It is a static LaTeX archive under CC BY-NC-SA 3.0 US.
-- Andreas Habring's arXiv:2607.11664v1 supplies the modern convex/nonsmooth module under CC BY 4.0.
-- MIT OCW 6.253 may later supply a separately attributed CC BY-NC-SA 4.0 solved-assessment component. It is not the editable spine.
-- Any genuinely missing exercises, solutions, accessibility descriptions, or connective bridge prose must be independently authored and separately identified.
+Four independently authored bridge units close the documented gaps: nonlinear KKT/constraint qualifications/sensitivity; variational inequalities and monotone inclusions; stochastic approximation beyond basic SGD; and modern open-solver certificates, diagnostics, failure modes, and reproducibility. Four reproducible open-source laboratories, 36 new route-mastery problems with hints and complete solutions, published-solution repairs, and a cumulative capstone provide the required self-study closure. Component rights remain distinct.
+
+The exact controlling architecture and learner route are frozen in `O015_PRIMARY_ARCHITECTURE_PIVOT_20260822.md` and its verified upstream handoff. Bulk MIT translation is prohibited until one complete lecture block passes the fail-closed PDF-to-semantic-source pilot: complete page/segment mapping, formula/theorem/problem topology, stable IDs, deterministic HTML/PDF, accessibility, terminology, a second clean reconstruction, and independent redraw or omission of non-sublicensable Athena figure bytes.
+
+## Preserved Penn/Habring companion
+
+Habring Chapters 3--9 and Penn Chapters 3--5 form an admitted optional numerical/modern-algorithm companion. They retain every existing file, stable ID, correction event, attribution, component license, QA receipt, and public-history identity. They are not deleted, renumbered, silently merged into the selected primary spine, or counted in the selected D90 core-page total.
+
+The companion supplies subgradients, projected subgradient descent, proximal methods, acceleration, Fenchel duality/primal--dual methods/ADMM, stochastic gradient descent, optimal transport, smooth line search, convergence, Newton, globalization, and modified-Cholesky correction. Habring remains CC BY 4.0. Penn-derived text and figures remain CC BY-NC-SA 3.0 United States. Fourteen Penn Maple/legacy listing inputs encountered through Chapter 5 remain excluded because their reusable rights are unclear/external; reader roles are replaced by independently authored pseudocode registered separately inside the combined derivative.
+
+The completed Penn Chapter 6 candidate is preserved but unadmitted. No automatic Penn source-order expansion continues after the Chapter 5 preservation boundary. Further companion admission requires an explicit later decision and is not a prerequisite for D90.
 
 ## O018 exclusion boundary
 
-Open Optimization Book 1 already owns LP/IP modeling, simplex and tableau mechanics, LP duality and complementary slackness, sensitivity analysis, graph/network/discrete algorithms, operations-research case studies, and introductory Excel/Python solver workflows. The O015 reader cross-references that lane instead of retranslating it.
+O018 / D130 owns LP/MIP modelling, simplex and tableau mechanics, finite-dimensional LP duality and complementary slackness, LP sensitivity, network/discrete optimization, general operations-research workflows, and introductory solver tooling. D90 may use open solvers to study convex, nonsmooth, variational, and stochastic behavior but does not retranslate O018's course.
 
 Consequences:
 
-- Penn Chapter 9 is excluded from O015.
+- Penn Chapter 9 remains excluded.
 - Penn's general preliminaries are not repeated unless a narrow local prerequisite is indispensable.
-- Habring's Fenchel duality remains admitted because it is not the same surface as finite-dimensional LP duality.
-- MO-book application notebooks remain reference material, not a source whose printed Cambridge book rights are inferred from the repository license.
+- MIT conic/Fenchel duality, KKT-equivalent optimality, nonsmooth methods, and variational bridges remain in D90 because they are materially distinct from O018's LP/MIP curriculum.
+- General solver usage is not a second OR course; D90 laboratories are restricted to certificates, convex/nonsmooth/stochastic diagnostics, and reproducible failure analysis.
+- MO-book application notebooks remain reference material; no printed-book rights are inferred from a repository license.
 
-## Penn State admission boundary
+## Exact selected-source accounting
 
-Admit: line search, gradient methods, Newton and corrected Newton, conjugate directions/CG, DFP/BFGS, numerical differentiation, derivative-free methods, feasible directions/Frank--Wolfe, nonlinear KKT/Fritz John, active-set quadratic programming, and the written penalty-method material.
+- MIT external teaching package: 395 pages across 13 PDFs: 340 lecture-note pages, 16 homework-question pages, 33 homework-solution pages, and six midterm/solution pages.
+- Royer external component: 45 note pages plus two public notebook-source laboratories.
+- Selected D90 external source count: 440 pages.
+- Penn/Habring companion: preserved but contributes zero pages to the selected D90 core count.
 
-Do not claim:
+MIT has 27 numbered homework problems with paired solutions and four top-level midterm problems; one published solution contains a literal incomplete placeholder and must be repaired in a separately authored layer. Royer has three formal solved exercises. Every prompt, subpart, solution, omission, and new mastery item must receive stable problem/solution and source-page identities.
 
-- exact editable source for public version 1.0.1;
-- complete interior-point coverage—the SQP, barrier, interior-point simplex, and interior-point QP headings in Chapter 11 are empty;
-- an open, reproducible Maple/C++ computational closure;
-- hints/answers/solutions beyond the exact counts in `SOURCE_AUTHORITY.json`.
+## Nonclaims and stop rules
 
-## Habring admission boundary
+Do not claim editable mathematical TeX for MIT or Royer: both selected mathematical surfaces are currently PDF-derived, while the MIT repository is OCW/Hugo metadata rather than the mathematical source. Do not use lossy OCR, Athena figure bytes/layout, a blanket repository license, systematic solutions not actually present, complete human Indonesian review, tagged PDF, or completed semantic HTML/EPUB unless separately proved.
 
-Chapters 1 and the elementary part of Chapter 2 are prerequisite/overlap material. The first genuinely non-overlapping unit is Chapter 3, “Subgradients,” printed pages 30–37. It establishes the convex subdifferential, normal cones, calculus rules, the Fermat condition, and constrained optimality required by later projected/proximal methods. Chapter 4, “Projected subgradient descent,” is the next source-order cursor.
-
-Habring is not a complete mastery text by itself: it has only three formal exercises, no hints/answers/solutions, no code, untagged PDF output, raster-only figure assets, and author-declared nonfinal prose.
-
-## Bounded comparator stop
-
-Exactly three alternatives were assessed and the search stopped:
-
-1. Clason–Valkonen, arXiv:2001.00216v7 / SIAM MO38: strongest modern LaTeX benchmark (514 pages), but the arXiv record grants only nonexclusive distribution and the SIAM book is copyrighted; translation rights are absent and no exercise/solution system was found.
-2. MIT OCW 6.253: lawful CC BY-NC-SA 4.0 course with five solved homework sets and solved exams, but only PDF/HTML mathematical artifacts and an older classical emphasis.
-3. Durea–Strugariu (2014): substantial 73-page exercises-and-solutions chapter, but CC BY-NC-ND 3.0 expressly blocks translation and no editable source is public.
-
-No candidate met all three mandatory properties: editable closure, derivative permission, and meaningful solutions. The Penn + Habring composite remains the strongest lawful production choice.
+The earlier three-candidate comparator supported Penn/Habring as an editable production choice, but the later full-course curriculum decision superseded it for the primary spine because that composite lacks a complete solved KKT/variational/stochastic course arc. The bounded search is closed. Production now proceeds from the frozen MIT/Royer architecture and the semantic-source pilot, not from another inventory loop.

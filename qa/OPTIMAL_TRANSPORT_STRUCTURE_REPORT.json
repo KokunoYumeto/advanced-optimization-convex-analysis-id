@@ -1,0 +1,826 @@
+{
+  "citations": {
+    "intentional_added_target_citation": [
+      "villani2009optimal",
+      "Theorem 5.10"
+    ],
+    "source": [
+      [
+        "villani2009optimal",
+        "Theorem 4.1"
+      ]
+    ],
+    "target": [
+      [
+        "villani2009optimal",
+        "Theorem 4.1"
+      ],
+      [
+        "villani2009optimal",
+        "Theorem 5.10"
+      ]
+    ]
+  },
+  "content_failure_count": 0,
+  "content_failures": [],
+  "correction_surface_audit": [
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0084",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$(X,\\Sigma_X)$ dan $(Y,\\Sigma_Y)$ adalah ruang terukur",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$T:X\\rightarrow Y$ terukur",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "untuk setiap $A\\in\\Sigma_Y$",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "ruang hasil kali terukur $X\\times Y$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0085",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$\\Mc_+(X)$ dan $\\Mc_+(Y)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "ukuran bertanda $\\mu$ pada $X$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "ukuran tak negatif bernilai dalam $[0,\\infty)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "suatu aljabar-$\\sigma$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0086",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\inf_{\\substack{T:X\\rightarrow Y\\ \\mathrm{terukur}\\\\T_\\sharp\\alpha=\\beta}}",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\inf\\emptyset\\coloneqq+\\infty",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "fungsi biaya terukur yang terbatas dari bawah",
+          "target_occurrences": 2
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0087",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$Y\\subseteq\\R^q$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Hal ini khususnya menyiratkan bahwa $\\beta$ tidak mempunyai massa titik.",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0088",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "ruang Polish yang dilengkapi aljabar-$\\sigma$ Borelnya",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "keluarga kopling dengan kedua marginal tetap juga ketat",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "teorema Prokhorov",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Himpunan $\\Pi(\\alpha,\\beta)$ tertutup",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0089",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $(X,d)$ ruang metrik Polish",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$\\Pc_p(X)\\coloneqq\\{\\mu\\in\\Pc(X):\\int d(x,x_0)^p\\dd\\mu(x)<\\infty\\}$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "biaya $c(x,y)=d(x,y)^p$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "metrik pada ruang ukuran probabilitas bermomen ke-$p$ hingga",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0090",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$c:X\\times Y\\rightarrow[0,\\infty]$ semikontinu bawah",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$C_b(X)$ dan $C_b(Y)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "\\phi(x)+\\psi(y)\\leq c(x,y)\\ \\forall(x,y)",
+          "target_occurrences": 3
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0091",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Ukuran Borel hingga yang berbeda pada ruang Polish dapat dipisahkan",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 3,
+          "present": true,
+          "surface": "\\inf_{\\gamma\\in\\Mc_+(X\\times Y)}",
+          "target_occurrences": 3
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\cite[Theorem 5.10]{villani2009optimal}",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "skalakan massa Dirac pada titik pelanggaran",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0092",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$a=(a_1,\\dots,a_n)\\in\\Delta_n$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$b=(b_1,\\dots,b_m)\\in\\Delta_m$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$P\\1_m=a$ dan $P^\\top\\1_n=b$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "P\\1_m=a,\\quad P^\\top\\1_n=b,\\quad P_{i,j}\\geq0",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0093",
+      "surfaces": [
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "$C\\in\\R^{n\\times m}$",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$0\\log0=0$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$E(P)=+\\infty$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Untuk $\\epsilon>0$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\min_{P\\in\\R_+^{n\\times m}}",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0094",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$Q=ab^\\top$ layak",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "bersifat konveks ketat",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\frac{\\dd}{\\dd t}h(tQ_{i,j})=Q_{i,j}\\log(tQ_{i,j})",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$P_{i,j}>0$ untuk semua $i,j$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Vektor penskalaan $(u,v)$ unik hingga transformasi $(u,v)\\mapsto(tu,t^{-1}v)$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0095",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Pilih $v_0\\in\\R_{++}^m$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$k=0,1,2,\\dots$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "semua penyebut dan iterat tetap positif",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "konvergen ke rencana unik",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "ambiguitas perkalian $(u,v)\\mapsto(tu,t^{-1}v)$",
+          "target_occurrences": 1
+        }
+      ]
+    }
+  ],
+  "environment_topology": {
+    "count": 47,
+    "counts_by_name": {
+      "aligned": 7,
+      "cases": 3,
+      "defn": 4,
+      "enumerate": 1,
+      "equation": 22,
+      "figure": 1,
+      "lemma": 1,
+      "proof": 3,
+      "quote": 1,
+      "rem": 1,
+      "theorem": 2,
+      "tikzpicture": 1
+    },
+    "ordered_begin_environments": [
+      "enumerate",
+      "figure",
+      "tikzpicture",
+      "quote",
+      "defn",
+      "defn",
+      "equation",
+      "defn",
+      "equation",
+      "rem",
+      "equation",
+      "theorem",
+      "proof",
+      "defn",
+      "equation",
+      "theorem",
+      "equation",
+      "aligned",
+      "proof",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "lemma",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "equation",
+      "cases"
+    ],
+    "ordered_begin_equal": true,
+    "ordered_end_environments": [
+      "enumerate",
+      "tikzpicture",
+      "figure",
+      "quote",
+      "defn",
+      "equation",
+      "defn",
+      "equation",
+      "defn",
+      "equation",
+      "rem",
+      "theorem",
+      "proof",
+      "equation",
+      "defn",
+      "aligned",
+      "equation",
+      "theorem",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "lemma",
+      "equation",
+      "cases",
+      "equation",
+      "equation",
+      "proof",
+      "cases",
+      "equation"
+    ],
+    "ordered_end_equal": true
+  },
+  "failure_count": 0,
+  "failures": [],
+  "forbidden_target_surface_counts": {
+    "We can no formally introduce": 0,
+    "\\Mc_+(\\alpha,\\beta)": 0,
+    "\\diag(v)K^t u\\1": 0,
+    "\\min_{T:X\\rightarrow Y} \\int c(x,T(x))": 0,
+    "finite $p$-th.": 0,
+    "for some $a_i\\in \\Delta_n$": 0,
+    "where we update for $k=1,2,\\dots$": 0
+  },
+  "formula_delta_manifest": {
+    "all_substantive_deltas_integrated_ledger_bound": true,
+    "all_substantive_deltas_proposed_ledger_bound": true,
+    "bytes": 79141,
+    "delta_block_count": 35,
+    "integration_incomplete_substantive_delta_block_ids": [],
+    "path": "qa/OPTIMAL_TRANSPORT_FORMULA_DELTA_MANIFEST.json",
+    "proposal_incomplete_substantive_delta_block_ids": [],
+    "sha256": "796e13fbf1f221139f0233d30b2464dfb026027eb5b9ce44b66b58c2f2e169ef",
+    "source_formula_count": 162,
+    "substantive_delta_block_count": 34,
+    "target_formula_count": 232,
+    "unbound_substantive_delta_block_ids": []
+  },
+  "identity_policy": "authority_target_wrapper_and_proposed_ledger_frozen_integrated_ledger_derived_live",
+  "integrated_ledger": {
+    "bytes": 58370,
+    "duplicate_ids": [],
+    "exact_required_records_match_proposal": true,
+    "lines": 99,
+    "missing_required_ids": [],
+    "path": "00_control/ADVERSE_LEDGER.jsonl",
+    "record_count": 99,
+    "records_differing_from_proposal": [],
+    "sha256": "09a982c3e91f83655150f7ae29a6351cb071558ed14a36cbb3701d7f43e9d824",
+    "wrapper_bibliography_event_exact": true,
+    "wrapper_bibliography_event_id": "O015-HAB-ADV-0096",
+    "wrapper_bibliography_event_present": true
+  },
+  "item_topology": {
+    "source": [
+      "",
+      ""
+    ],
+    "target": [
+      "",
+      ""
+    ]
+  },
+  "labels": {
+    "source": [
+      "ot:fig:ot",
+      "ot:eq:monge",
+      "ot:eq:K_ot",
+      "ot:eq:duality",
+      "ot:eq:disc_entropic"
+    ],
+    "target": [
+      "ot:fig:ot",
+      "ot:eq:monge",
+      "ot:eq:K_ot",
+      "ot:eq:duality",
+      "ot:eq:disc_entropic"
+    ],
+    "target_unique": true
+  },
+  "local_bibliography": {
+    "bytes": 306,
+    "gates": {
+      "publisher_doi_present": true,
+      "single_expected_entry": true,
+      "sole_author_corrected": true,
+      "source_and_others_removed": true
+    },
+    "lines": 9,
+    "path": "source/id-ID/references-ot-id.bib",
+    "sha256": "93611c4b6a753478c51c601e59ef6cd3e290677e2e2d25b104d5d3b74df03126"
+  },
+  "mode": "strict",
+  "other_surface_topology": {
+    "abbreviations": {
+      "source": 1,
+      "target": 1
+    },
+    "external_assets": {
+      "source": 0,
+      "target": 0
+    },
+    "figure_environments": {
+      "source": 1,
+      "target": 1
+    },
+    "footnotes": {
+      "source": 3,
+      "target": 3
+    },
+    "glossary_surfaces": {
+      "source": 14,
+      "target": 14
+    },
+    "sections": {
+      "source": 3,
+      "target": 3
+    },
+    "source_inputs": {
+      "source": 0,
+      "target": 0
+    },
+    "tikz_environments": {
+      "source": 1,
+      "target": 1
+    }
+  },
+  "proposed_ledger": {
+    "bytes": 8840,
+    "duplicate_ids": [],
+    "extra_ids": [],
+    "ids_in_order": [
+      "O015-HAB-ADV-0084",
+      "O015-HAB-ADV-0085",
+      "O015-HAB-ADV-0086",
+      "O015-HAB-ADV-0087",
+      "O015-HAB-ADV-0088",
+      "O015-HAB-ADV-0089",
+      "O015-HAB-ADV-0090",
+      "O015-HAB-ADV-0091",
+      "O015-HAB-ADV-0092",
+      "O015-HAB-ADV-0093",
+      "O015-HAB-ADV-0094",
+      "O015-HAB-ADV-0095"
+    ],
+    "lines": 12,
+    "malformed_field_sets": [],
+    "missing_ids": [],
+    "path": "qa/CHAPTER09_PROPOSED_LEDGER.jsonl",
+    "required_ids": [
+      "O015-HAB-ADV-0084",
+      "O015-HAB-ADV-0085",
+      "O015-HAB-ADV-0086",
+      "O015-HAB-ADV-0087",
+      "O015-HAB-ADV-0088",
+      "O015-HAB-ADV-0089",
+      "O015-HAB-ADV-0090",
+      "O015-HAB-ADV-0091",
+      "O015-HAB-ADV-0092",
+      "O015-HAB-ADV-0093",
+      "O015-HAB-ADV-0094",
+      "O015-HAB-ADV-0095"
+    ],
+    "sha256": "643fde3fbe1409732ef2df8fdef52465e4df7a583fd9bbeb2137a6122f548add"
+  },
+  "references": {
+    "intentional_added_target_eqref": "ot:eq:disc_entropic",
+    "source": {
+      "Cref": [],
+      "cref": [
+        "chapter:duality"
+      ],
+      "eqref": [
+        "ot:eq:K_ot",
+        "ot:eq:monge",
+        "ot:eq:K_ot",
+        "ot:eq:K_ot",
+        "ot:eq:K_ot",
+        "ot:eq:duality",
+        "ot:eq:K_ot",
+        "ot:eq:disc_entropic"
+      ],
+      "ref": []
+    },
+    "target": {
+      "Cref": [],
+      "cref": [
+        "chapter:duality"
+      ],
+      "eqref": [
+        "ot:eq:K_ot",
+        "ot:eq:monge",
+        "ot:eq:K_ot",
+        "ot:eq:K_ot",
+        "ot:eq:K_ot",
+        "ot:eq:duality",
+        "ot:eq:K_ot",
+        "ot:eq:disc_entropic",
+        "ot:eq:disc_entropic"
+      ],
+      "ref": []
+    }
+  },
+  "result": "pass",
+  "schema": "o015-optimal-transport-structure-audit-v1",
+  "source": {
+    "bytes": 15378,
+    "lines": 264,
+    "path": "authority/habring/source-v1/optimal_transport.tex",
+    "sha256": "719df724b368126cc7540dffd461dc33aba7d5b5b6060132181086dfa17649ba"
+  },
+  "source_line_closure": {
+    "complete_nonblank_closure": true,
+    "covered_line_count": 259,
+    "multiply_covered_lines": [],
+    "out_of_bounds_lines": [],
+    "source_line_count": 264,
+    "uncovered_nonblank_lines": []
+  },
+  "source_markers": [
+    [
+      "001",
+      "1",
+      "15"
+    ],
+    [
+      "002",
+      "16",
+      "75"
+    ],
+    [
+      "003",
+      "77",
+      "110"
+    ],
+    [
+      "004",
+      "112",
+      "130"
+    ],
+    [
+      "005",
+      "131",
+      "141"
+    ],
+    [
+      "006",
+      "142",
+      "190"
+    ],
+    [
+      "007",
+      "192",
+      "226"
+    ],
+    [
+      "008",
+      "229",
+      "256"
+    ],
+    [
+      "009",
+      "257",
+      "264"
+    ]
+  ],
+  "stable_segment_ids": [
+    "d90.hab.v1.ch09.seg0001",
+    "d90.hab.v1.ch09.seg0002",
+    "d90.hab.v1.ch09.seg0003",
+    "d90.hab.v1.ch09.seg0004",
+    "d90.hab.v1.ch09.seg0005",
+    "d90.hab.v1.ch09.seg0006",
+    "d90.hab.v1.ch09.seg0007",
+    "d90.hab.v1.ch09.seg0008",
+    "d90.hab.v1.ch09.seg0009"
+  ],
+  "strict_only_failure_count": 0,
+  "strict_only_failures": [],
+  "strict_ready": true,
+  "target": {
+    "bytes": 21252,
+    "lines": 352,
+    "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+    "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+  },
+  "tikz_topology": {
+    "commands": {
+      "draw": {
+        "source": 4,
+        "target": 4
+      },
+      "filldraw": {
+        "source": 2,
+        "target": 2
+      },
+      "foreach": {
+        "source": 1,
+        "target": 1
+      },
+      "node": {
+        "source": 5,
+        "target": 5
+      },
+      "pgfmathsetmacro": {
+        "source": 1,
+        "target": 1
+      },
+      "plot": {
+        "source": 2,
+        "target": 2
+      }
+    },
+    "layout_only_resizebox": {
+      "source": 0,
+      "target": 1
+    }
+  },
+  "wrapper": {
+    "bytes": 6822,
+    "lines": 87,
+    "path": "source/id-ID/D90-HAB-09-transportasi-optimal-id.tex",
+    "sha256": "1e308a2bed0d1a6f5cdcff09cce932674cf32842a135bc88a5a34bc96c483ff6"
+  },
+  "wrapper_gates": {
+    "arxiv_authority_disclosed": true,
+    "authority_hash_disclosed": true,
+    "bibliography_correction_disclosed": true,
+    "bibliography_is_frozen_source": true,
+    "chapter_counter_is_eight": true,
+    "correction_range_disclosed": true,
+    "includes_target_once": true,
+    "language_metadata_present": true,
+    "license_present": true,
+    "nonendorsement_present": true,
+    "standalone_duality_anchor": true,
+    "thirteen_correction_items": true,
+    "title_preserved": true,
+    "ttp_absent": true
+  }
+}

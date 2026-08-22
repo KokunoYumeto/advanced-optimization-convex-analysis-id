@@ -1,0 +1,696 @@
+{
+  "all_substantive_deltas_proposed_ledger_bound": true,
+  "blocks": [
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0001",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "delete",
+      "source": [
+        {
+          "canonical": "\\partialf",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 6,
+          "ordinal": 3,
+          "raw": "\\partial f"
+        }
+      ],
+      "source_ordinal_end": 3,
+      "source_ordinal_start": 3,
+      "substantive": true,
+      "target": [],
+      "target_ordinal_end": 2,
+      "target_ordinal_start": 3
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0002",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0076",
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "source": [
+        {
+          "canonical": "\\min_xf(x)\\coloneq\\sum_{i=1}^Nf_i(x)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 14,
+          "ordinal": 7,
+          "raw": "\\min_x f(x)\\coloneqq \\sum_{i=1}^N f_i(x)"
+        }
+      ],
+      "source_ordinal_end": 7,
+      "source_ordinal_start": 7,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\min_xf(x)\\coloneq\\frac{1}{N}\\sum_{i=1}^Nf_i(x)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 16,
+          "ordinal": 6,
+          "raw": "\\min_x f(x)\\coloneqq \\frac{1}{N}\\sum_{i=1}^N f_i(x),"
+        }
+      ],
+      "target_ordinal_end": 6,
+      "target_ordinal_start": 6
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0003",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0076",
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "source": [
+        {
+          "canonical": "\\min_\\theta\\sum_{i=1}^N\\|y_i-f_\\theta(x_i)\\|^2",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 18,
+          "ordinal": 12,
+          "raw": "\\min_\\theta \\sum_{i=1}^N \\|y_i-f_\\theta(x_i)\\|^2."
+        }
+      ],
+      "source_ordinal_end": 12,
+      "source_ordinal_start": 12,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\min_\\theta\\frac{1}{N}\\sum_{i=1}^N\\|y_i-f_\\theta(x_i)\\|^2",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 20,
+          "ordinal": 11,
+          "raw": "\\min_\\theta \\frac{1}{N}\\sum_{i=1}^N \\|y_i-f_\\theta(x_i)\\|^2."
+        }
+      ],
+      "target_ordinal_end": 11,
+      "target_ordinal_start": 11
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0004",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0076",
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "source": [
+        {
+          "canonical": "Z_k",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 30,
+          "ordinal": 17,
+          "raw": "Z_k"
+        }
+      ],
+      "source_ordinal_end": 17,
+      "source_ordinal_start": 17,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "(Z_k)_k",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 32,
+          "ordinal": 16,
+          "raw": "(Z_k)_k"
+        }
+      ],
+      "target_ordinal_end": 16,
+      "target_ordinal_start": 16
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0005",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0076",
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "source": [],
+      "source_ordinal_end": 20,
+      "source_ordinal_start": 21,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\E[G(x,Z)]=N^{-1}\\sum_{i=1}^N\\nablaf_i(x)=\\nablaf(x)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 37,
+          "ordinal": 20,
+          "raw": "\\E[G(x,Z)]=N^{-1}\\sum_{i=1}^N\\nabla f_i(x)=\\nabla f(x)"
+        }
+      ],
+      "target_ordinal_end": 20,
+      "target_ordinal_start": 20
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0006",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0077",
+        "O015-HAB-ADV-0078",
+        "O015-HAB-ADV-0079",
+        "O015-HAB-ADV-0080",
+        "O015-HAB-ADV-0082"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "insert",
+      "source": [],
+      "source_ordinal_end": 21,
+      "source_ordinal_start": 22,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "C\\subseteq\\R^d",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 22,
+          "raw": "C\\subseteq\\R^d"
+        },
+        {
+          "canonical": "f:\\R^d\\rightarrow\\R",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 23,
+          "raw": "f:\\R^d\\rightarrow\\R"
+        },
+        {
+          "canonical": "L",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 24,
+          "raw": "L"
+        },
+        {
+          "canonical": "\\min_{x\\inC}f(x)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 25,
+          "raw": "\\min_{x\\in C}f(x)"
+        },
+        {
+          "canonical": "x^*\\in\\arg\\min_{x\\inC}f(x)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 26,
+          "raw": "x^*\\in\\arg\\min_{x\\in C}f(x)"
+        },
+        {
+          "canonical": "x_0\\inC",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 27,
+          "raw": "x_0\\in C"
+        },
+        {
+          "canonical": "k\\geq0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 28,
+          "raw": "k\\geq0"
+        },
+        {
+          "canonical": "G_k\\coloneqG(x_k,Z_k)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 43,
+          "ordinal": 29,
+          "raw": "G_k\\coloneqq G(x_k,Z_k)"
+        },
+        {
+          "canonical": "x_{k+1}=\\proj_C(x_k-\\tau_kG_k)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 44,
+          "ordinal": 30,
+          "raw": "x_{k+1}=\\proj_C(x_k-\\tau_kG_k)"
+        },
+        {
+          "canonical": "\\tau_k>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 44,
+          "ordinal": 31,
+          "raw": "\\tau_k>0"
+        },
+        {
+          "canonical": "\\mathcalF_k=\\sigma(x_0,Z_0,\\dots,Z_{k-1})",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 46,
+          "ordinal": 32,
+          "raw": "\\mathcal F_k=\\sigma(x_0,Z_0,\\dots,Z_{k-1})"
+        },
+        {
+          "canonical": "x_k",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 46,
+          "ordinal": 33,
+          "raw": "x_k"
+        },
+        {
+          "canonical": "\\mathcalF_k",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 46,
+          "ordinal": 34,
+          "raw": "\\mathcal F_k"
+        },
+        {
+          "canonical": "\\barg_k\\coloneq\\E[G_k\\mid\\mathcalF_k]",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 46,
+          "ordinal": 35,
+          "raw": "\\bar g_k\\coloneqq\\E[G_k\\mid\\mathcal F_k]"
+        },
+        {
+          "canonical": "k",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 46,
+          "ordinal": 36,
+          "raw": "k"
+        },
+        {
+          "canonical": "\\begin{cases}\\barg_k\\in\\partialf(x_k),\\\\\\E[\\|G_k-\\barg_k\\|^2\\mid\\mathcalF_k]\\leq\\sigma^2<\\infty.\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 47,
+          "ordinal": 37,
+          "raw": "\\begin{cases} \\bar g_k \\in \\partial f(x_k),\\\\ \\E[\\|G_k-\\bar g_k\\|^2\\mid\\mathcal F_k]\\leq \\sigma^2<\\infty. \\end{cases}"
+        },
+        {
+          "canonical": "\\sum_{k=0}^{K-1}\\tau_k\\longrightarrow\\infty,\\frac{\\sum_{k=0}^{K-1}\\tau_k^2}{\\sum_{k=0}^{K-1}\\tau_k}\\longrightarrow0\\text{#}K\\longrightarrow\\infty",
+          "globally_novel": true,
+          "kind": "bracket",
+          "line": 54,
+          "ordinal": 38,
+          "raw": "\\sum_{k=0}^{K-1}\\tau_k\\longrightarrow\\infty, \\qquad \\frac{\\sum_{k=0}^{K-1}\\tau_k^2}{\\sum_{k=0}^{K-1}\\tau_k}\\longrightarrow0 \\quad\\text{ketika }K\\longrightarrow\\infty."
+        },
+        {
+          "canonical": "K\\geq1",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 60,
+          "ordinal": 39,
+          "raw": "K\\geq1"
+        },
+        {
+          "canonical": "f_{\\mathrm{best}}^K\\coloneq\\min_{0\\leqk\\leqK-1}f(x_k)",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 61,
+          "ordinal": 40,
+          "raw": "f_{\\mathrm{best}}^K\\coloneqq\\min_{0\\leq k\\leq K-1}f(x_k)"
+        },
+        {
+          "canonical": "\\E[f_{\\mathrm{best}}^K-f(x^*)]\\rightarrow0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 62,
+          "ordinal": 41,
+          "raw": "\\E[f_{\\mathrm{best}}^K-f(x^*)]\\rightarrow0"
+        },
+        {
+          "canonical": "K\\rightarrow\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 62,
+          "ordinal": 42,
+          "raw": "K\\rightarrow\\infty"
+        },
+        {
+          "canonical": "x^*\\inC",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 68,
+          "ordinal": 43,
+          "raw": "x^*\\in C"
+        },
+        {
+          "canonical": "\\proj_C(x^*)=x^*",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 68,
+          "ordinal": 44,
+          "raw": "\\proj_C(x^*)=x^*"
+        },
+        {
+          "canonical": "\\begin{aligned}\\|x_{k+1}-x^*\\|^2&=\\|\\proj_C(x_{k}-\\tau_kG_k)-\\proj_C(x^*)\\|^2\\\\&\\leq\\|x_{k}-\\tau_kG_k-x^*\\|^2\\\\&=\\|x_{k}-x^*\\|^2-2\\tau_k\\inner{x_k-x^*}{G_k}+\\tau_k^2\\|G_k\\|^2.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 69,
+          "ordinal": 45,
+          "raw": "\\begin{aligned} \\|x_{k+1}-x^*\\|^2 &= \\|\\proj_C(x_{k}-\\tau_k G_k)-\\proj_C(x^*)\\|^2\\\\ &\\leq \\|x_{k}-\\tau_k G_k-x^*\\|^2\\\\ &= \\|x_{k}-x^*\\|^2 - 2\\tau_k\\inner{x_k-x^*}{G_k} + \\tau_k^2\\|G_k\\|^2. \\end{aligned}"
+        },
+        {
+          "canonical": "x_k",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 77,
+          "ordinal": 46,
+          "raw": "x_k"
+        },
+        {
+          "canonical": "\\begin{aligned}\\E[\\inner{x_k-x^*}{G_k}]&=\\E[\\E[\\inner{x_k-x^*}{G_k}\\mid\\mathcalF_k]]\\\\&=\\E[\\inner{x_k-x^*}{\\barg_k}]\\\\&\\geq\\E[f(x_k)-f(x^*)]\\\\&=\\E[f(x_k)]-f(x^*),\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 78,
+          "ordinal": 47,
+          "raw": "\\begin{aligned} \\E[\\inner{x_k-x^*}{G_k}] &= \\E\\!\\left[\\E[\\inner{x_k-x^*}{G_k}\\mid\\mathcal F_k]\\right]\\\\ &= \\E[\\inner{x_k-x^*}{\\bar g_k}]\\\\ &\\geq \\E[f(x_k)-f(x^*)]\\\\ &= \\E[f(x_k)]-f(x^*), \\end{aligned}"
+        }
+      ],
+      "target_ordinal_end": 47,
+      "target_ordinal_start": 22
+    },
+    {
+      "block_id": "d90.hab.v1.ch08.formula-delta.0007",
+      "ledger_bound": true,
+      "ledger_event_ids": [
+        "O015-HAB-ADV-0077",
+        "O015-HAB-ADV-0078",
+        "O015-HAB-ADV-0079",
+        "O015-HAB-ADV-0080",
+        "O015-HAB-ADV-0081",
+        "O015-HAB-ADV-0082",
+        "O015-HAB-ADV-0083"
+      ],
+      "missing_proposed_event_ids": [],
+      "operation": "replace",
+      "source": [
+        {
+          "canonical": "\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}\\rightarrow\\infty",
+          "globally_novel": true,
+          "kind": "bracket",
+          "line": 38,
+          "ordinal": 24,
+          "raw": "\\frac{\\sum_{k=1}^n\\tau_k}{\\sum_{k=1}^n\\tau_k^2}\\rightarrow \\infty"
+        },
+        {
+          "canonical": "n\\rightarrow\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 41,
+          "ordinal": 25,
+          "raw": "n\\rightarrow\\infty"
+        },
+        {
+          "canonical": "x\\in\\R^d",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 42,
+          "ordinal": 26,
+          "raw": "x\\in \\R^d"
+        },
+        {
+          "canonical": "\\begin{cases}\\E[G(x,Z)]\\in&\\partialf(x)\\\\\\E[\\|G(x,Z)\\|^2]-\\|\\E[G(x,Z)]\\|^2&\\leq\\sigma^2<\\infty\\end{cases}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 43,
+          "ordinal": 27,
+          "raw": "\\begin{cases} \\E[G(x,Z)] \\in &\\partial f(x)\\\\ \\E[\\|G(x,Z)\\|^2] - \\|\\E[G(x,Z)]\\|^2 &\\leq \\sigma^2<\\infty \\end{cases}"
+        },
+        {
+          "canonical": "\\E[f^n_{\\mathrm{best}}-f(x^*)]\\rightarrow0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 49,
+          "ordinal": 28,
+          "raw": "\\E[f^n_{\\mathrm{best}}-f(x^*)]\\rightarrow 0"
+        },
+        {
+          "canonical": "\\begin{aligned}\\|x_{k+1}-x^*\\|^2&=\\|\\proj_C(x_{k}-\\tau_kG(x_k,Z_k))-\\proj_C(x^*)\\|^2\\\\&\\leq\\|x_{k}-\\tau_kG(x_k,Z_k)-x^*\\|^2\\\\&=\\|x_{k}-x^*\\|^2-2\\tau_k\\inner{x_k-x^*}{G(x_k,Z_k)}+\\tau_k^2\\|G(x_k,Z_k)\\|^2.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 52,
+          "ordinal": 29,
+          "raw": "\\begin{aligned} \\|x_{k+1}-x^*\\|^2 &= \\|\\proj_C(x_{k}-\\tau_k G(x_k,Z_k))-\\proj_C(x^*)\\|^2\\\\ &\\leq \\|x_{k}-\\tau_k G(x_k,Z_k)-x^*\\|^2\\\\ &= \\|x_{k}-x^*\\|^2 - 2\\tau_k\\inner{x_k-x^*}{G(x_k,Z_k)} + \\tau_k^2\\|G(x_k,Z_k)\\|^2. \\end{aligned}"
+        },
+        {
+          "canonical": "\\begin{aligned}\\E[\\inner{x_k-x^*}{G(x_k,Z_k)}]&=\\E[\\E[\\inner{x_k-x^*}{G(x_k,Z_k)}|x_k]]\\\\&=\\E[\\inner{x_k-x^*}{\\E[G(x_k,Z_k)|x_k]}]\\\\&\\geq\\E[f(x_k)-f(x^*)]\\\\&=\\E[f(x_k)]-f(x^*)\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 61,
+          "ordinal": 30,
+          "raw": "\\begin{aligned} \\E[\\inner{x_k-x^*}{G(x_k,Z_k)}] &= \\E[\\E[\\inner{x_k-x^*}{G(x_k,Z_k)}|x_k]]\\\\ &= \\E[\\inner{x_k-x^*}{\\E[G(x_k,Z_k)|x_k]}]\\\\ &\\geq \\E[f(x_k) - f(x^*)]\\\\ &= \\E[f(x_k)] - f(x^*) \\end{aligned}"
+        },
+        {
+          "canonical": "\\E[\\|G(x_k,Z_k)\\|^2]=\\E[\\|G(x_k,Z_k)\\|^2]-\\|E[G(x_k,Z_k)]\\|^2+\\|E[G(x_k,Z_k)]\\|^2\\leq\\sigma^2+L^2",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 71,
+          "ordinal": 31,
+          "raw": "\\E[\\|G(x_k,Z_k)\\|^2] = \\E[\\|G(x_k,Z_k)\\|^2] - \\|E[G(x_k,Z_k)]\\|^2 + \\|E[G(x_k,Z_k)]\\|^2 \\leq \\sigma^2 + L^2"
+        },
+        {
+          "canonical": "\\begin{aligned}\\E[\\|x_{k+1}-x^*\\|^2]\\leq\\E[\\|x_{k}-x^*\\|^2]-2\\tau_k(\\E[f(x_k)]-f(x^*))+\\tau_k^2(\\sigma^2+L^2).\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 77,
+          "ordinal": 32,
+          "raw": "\\begin{aligned} \\E[\\|x_{k+1}-x^*\\|^2] \\leq \\E[\\|x_{k}-x^*\\|^2] - 2\\tau_k (\\E[f(x_k)] - f(x^*)) + \\tau_k^2(\\sigma^2 + L^2). \\end{aligned}"
+        },
+        {
+          "canonical": "k",
+          "globally_novel": false,
+          "kind": "inline",
+          "line": 83,
+          "ordinal": 33,
+          "raw": "k"
+        },
+        {
+          "canonical": "\\begin{aligned}\\sum_{k=0}^{K-1}\\tau_k(\\E[f(x_k)]-f(x^*))\\leq\\frac{1}{2}\\E[\\|x_{0}-x^*\\|^2]+(\\sigma^2+L^2)\\sum_{k=0}^{K-1}\\tau_k^2\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 84,
+          "ordinal": 34,
+          "raw": "\\begin{aligned} \\sum_{k=0}^{K-1}\\tau_k (\\E[f(x_k)] - f(x^*))\\leq \\frac{1}{2}\\E[\\|x_{0}-x^*\\|^2] + (\\sigma^2 + L^2)\\sum_{k=0}^{K-1}\\tau_k^2 \\end{aligned}"
+        },
+        {
+          "canonical": "\\sigma_n=\\frac{\\sum_{k=0}^{K-1}\\tau_k}{\\sum_{k=0}^{K-1}\\tau_k^2}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 90,
+          "ordinal": 35,
+          "raw": "\\sigma_n = \\frac{\\sum_{k=0}^{K-1}\\tau_k}{\\sum_{k=0}^{K-1}\\tau_k^2}"
+        },
+        {
+          "canonical": "\\begin{aligned}\\sigma_n\\E[f^n_{\\mathrm{best}}-f(x^*)]=&\\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f^n_{\\mathrm{best}}-f(x^*)]}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\\\leq&\\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f(x_k)-f(x^*)]}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\\\leq&\\frac{\\E[\\|x_{0}-x^*\\|^2]}{2\\sum_{k=0}^{K-1}\\tau_k^2}+\\frac{(\\sigma^2+L^2)\\sum_{k=0}^{K-1}\\tau_k^2}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 94,
+          "ordinal": 36,
+          "raw": "\\begin{aligned} \\sigma_n \\E[f^n_{\\mathrm{best}}-f(x^*)] =& \\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f^n_{\\mathrm{best}}-f(x^*)]}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\ \\leq& \\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f(x_k)-f(x^*)]}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\ \\leq& \\frac{\\E[\\|x_{0}-x^*\\|^2]}{2\\sum_{k=0}^{K-1}\\tau_k^2} + \\frac{(\\sigma^2 + L^2)\\sum_{k=0}^{K-1}\\tau_k^2}{\\sum_{k=0}^{K-1}\\tau_k^2}\\\\ \\end{aligned}"
+        },
+        {
+          "canonical": "\\E[f^n_{\\mathrm{best}}-f(x^*)]\\leq\\frac{\\E[\\|x_{0}-x^*\\|^2]}{2\\sum_{k=0}^{K-1}\\tau_k}+\\frac{(\\sigma^2+L^2)\\sum_{k=0}^{K-1}\\tau_k^2}{\\sigma_n}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 103,
+          "ordinal": 37,
+          "raw": "\\E[f^n_{\\mathrm{best}}-f(x^*)] \\leq \\frac{\\E[\\|x_{0}-x^*\\|^2]}{2\\sum_{k=0}^{K-1}\\tau_k} + \\frac{(\\sigma^2 + L^2)\\sum_{k=0}^{K-1}\\tau_k^2}{\\sigma_n}"
+        },
+        {
+          "canonical": "n\\rightarrow\\infty",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 106,
+          "ordinal": 38,
+          "raw": "n\\rightarrow\\infty"
+        }
+      ],
+      "source_ordinal_end": 38,
+      "source_ordinal_start": 24,
+      "substantive": true,
+      "target": [
+        {
+          "canonical": "\\R^d",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 87,
+          "ordinal": 50,
+          "raw": "\\R^d"
+        },
+        {
+          "canonical": "L",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 87,
+          "ordinal": 51,
+          "raw": "L"
+        },
+        {
+          "canonical": "\\E[\\|G_k\\|^2\\mid\\mathcalF_k]=\\E[\\|G_k-\\barg_k\\|^2\\mid\\mathcalF_k]+\\|\\barg_k\\|^2\\leq\\sigma^2+L^2\\coloneqM^2",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 88,
+          "ordinal": 52,
+          "raw": "\\E[\\|G_k\\|^2\\mid\\mathcal F_k] = \\E[\\|G_k-\\bar g_k\\|^2\\mid\\mathcal F_k]+\\|\\bar g_k\\|^2 \\leq \\sigma^2+L^2\\coloneqq M^2."
+        },
+        {
+          "canonical": "\\begin{aligned}\\E[\\|x_{k+1}-x^*\\|^2]\\leq\\E[\\|x_k-x^*\\|^2]-2\\tau_k(\\E[f(x_k)]-f(x^*))+\\tau_k^2M^2.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 94,
+          "ordinal": 53,
+          "raw": "\\begin{aligned} \\E[\\|x_{k+1}-x^*\\|^2] \\leq \\E[\\|x_k-x^*\\|^2] -2\\tau_k\\big(\\E[f(x_k)]-f(x^*)\\big) +\\tau_k^2M^2. \\end{aligned}"
+        },
+        {
+          "canonical": "k=0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 102,
+          "ordinal": 54,
+          "raw": "k=0"
+        },
+        {
+          "canonical": "K-1",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 102,
+          "ordinal": 55,
+          "raw": "K-1"
+        },
+        {
+          "canonical": "2",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 102,
+          "ordinal": 56,
+          "raw": "2"
+        },
+        {
+          "canonical": "\\begin{aligned}\\sum_{k=0}^{K-1}\\tau_k(\\E[f(x_k)]-f(x^*))\\leq\\frac{1}{2}\\|x_0-x^*\\|^2+\\frac{M^2}{2}\\sum_{k=0}^{K-1}\\tau_k^2.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 103,
+          "ordinal": 57,
+          "raw": "\\begin{aligned} \\sum_{k=0}^{K-1}\\tau_k\\big(\\E[f(x_k)]-f(x^*)\\big) \\leq \\frac{1}{2}\\|x_0-x^*\\|^2 +\\frac{M^2}{2}\\sum_{k=0}^{K-1}\\tau_k^2. \\end{aligned}"
+        },
+        {
+          "canonical": "S_K\\coloneq\\sum_{k=0}^{K-1}\\tau_k,Q_K\\coloneq\\sum_{k=0}^{K-1}\\tau_k^2",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 111,
+          "ordinal": 58,
+          "raw": "S_K\\coloneqq\\sum_{k=0}^{K-1}\\tau_k, \\qquad Q_K\\coloneqq\\sum_{k=0}^{K-1}\\tau_k^2."
+        },
+        {
+          "canonical": "\\tau_k>0",
+          "globally_novel": true,
+          "kind": "inline",
+          "line": 116,
+          "ordinal": 59,
+          "raw": "\\tau_k>0"
+        },
+        {
+          "canonical": "\\begin{aligned}\\E[f_{\\mathrm{best}}^K-f(x^*)]&\\leq\\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f(x_k)-f(x^*)]}{S_K}\\\\&\\leq\\frac{\\|x_0-x^*\\|^2}{2S_K}+\\frac{M^2Q_K}{2S_K}.\\end{aligned}",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 117,
+          "ordinal": 60,
+          "raw": "\\begin{aligned} \\E[f_{\\mathrm{best}}^K-f(x^*)] &\\leq \\frac{\\sum_{k=0}^{K-1}\\tau_k\\E[f(x_k)-f(x^*)]}{S_K}\\\\ &\\leq \\frac{\\|x_0-x^*\\|^2}{2S_K} +\\frac{M^2Q_K}{2S_K}. \\end{aligned}"
+        },
+        {
+          "canonical": "0\\leq\\E[f_{\\mathrm{best}}^K-f(x^*)]\\leq\\frac{\\|x_0-x^*\\|^2}{2S_K}+\\frac{M^2Q_K}{2S_K}\\longrightarrow0(K\\rightarrow\\infty)",
+          "globally_novel": true,
+          "kind": "equation",
+          "line": 126,
+          "ordinal": 61,
+          "raw": "0\\leq\\E[f_{\\mathrm{best}}^K-f(x^*)] \\leq\\frac{\\|x_0-x^*\\|^2}{2S_K} +\\frac{M^2Q_K}{2S_K} \\longrightarrow0 \\qquad(K\\rightarrow\\infty)."
+        }
+      ],
+      "target_ordinal_end": 61,
+      "target_ordinal_start": 50
+    }
+  ],
+  "delta_block_count": 7,
+  "identity_policy": "authority_target_and_proposed_ledger_frozen",
+  "incompletely_bound_substantive_delta_block_ids": [],
+  "normalization": {
+    "equivalence": [
+      "coloneq and coloneqq"
+    ],
+    "linguistic_text": "contents of LaTeX text commands replaced by #",
+    "removed": [
+      "comments",
+      "labels",
+      "reference commands",
+      "display styles",
+      "delimiter sizing",
+      "spacing commands",
+      "terminal prose punctuation"
+    ],
+    "substantive_rule": "a non-equal sequence block is substantive iff it contains a canonical formula whose corpus-wide multiplicity differs"
+  },
+  "required_ledger_event_ids": [
+    "O015-HAB-ADV-0076",
+    "O015-HAB-ADV-0077",
+    "O015-HAB-ADV-0078",
+    "O015-HAB-ADV-0079",
+    "O015-HAB-ADV-0080",
+    "O015-HAB-ADV-0081",
+    "O015-HAB-ADV-0082",
+    "O015-HAB-ADV-0083"
+  ],
+  "schema": "o015-stochastic-formula-delta-manifest-v1",
+  "source": {
+    "bytes": 4665,
+    "lines": 107,
+    "path": "authority/habring/source-v1/stochastic.tex",
+    "sha256": "610d11b59d8dfabbbbe6fbc509a0f9ac1727540458c67f8cd3b7bab49566a07d"
+  },
+  "source_formula_count": 38,
+  "substantive_delta_block_count": 7,
+  "substantive_delta_block_ids": [
+    "d90.hab.v1.ch08.formula-delta.0001",
+    "d90.hab.v1.ch08.formula-delta.0002",
+    "d90.hab.v1.ch08.formula-delta.0003",
+    "d90.hab.v1.ch08.formula-delta.0004",
+    "d90.hab.v1.ch08.formula-delta.0005",
+    "d90.hab.v1.ch08.formula-delta.0006",
+    "d90.hab.v1.ch08.formula-delta.0007"
+  ],
+  "target": {
+    "bytes": 6378,
+    "lines": 133,
+    "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+    "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+  },
+  "target_formula_count": 61,
+  "unbound_substantive_delta_block_ids": [],
+  "unused_required_ledger_event_ids": [],
+  "used_ledger_event_ids": [
+    "O015-HAB-ADV-0076",
+    "O015-HAB-ADV-0077",
+    "O015-HAB-ADV-0078",
+    "O015-HAB-ADV-0079",
+    "O015-HAB-ADV-0080",
+    "O015-HAB-ADV-0081",
+    "O015-HAB-ADV-0082",
+    "O015-HAB-ADV-0083"
+  ]
+}

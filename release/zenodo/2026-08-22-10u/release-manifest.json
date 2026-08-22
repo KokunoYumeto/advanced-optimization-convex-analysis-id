@@ -1,0 +1,97 @@
+{
+  "admitted_units": [
+    "Habring Chapter 3",
+    "Habring Chapter 4",
+    "Habring Chapter 5",
+    "Habring Chapter 6",
+    "Habring Chapter 7",
+    "Habring Chapter 8",
+    "Habring Chapter 9",
+    "Penn Chapter 3",
+    "Penn Chapter 4",
+    "Penn Chapter 5"
+  ],
+  "complete_corpus": false,
+  "publication_date": "2026-08-22",
+  "rights_notice": "Component-specific: Habring-derived material CC BY 4.0; Griffin/Penn-derived material CC BY-NC-SA 3.0 United States; see RIGHTS.md and 00_control/COMPONENT_RIGHTS.csv.",
+  "schema": "o015-zenodo-checkpoint-release-v1",
+  "source_bundle_entries": 152,
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "uploads": [
+    {
+      "bytes": 516084,
+      "filename": "D90-HAB-03-subgradien-id.pdf",
+      "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4"
+    },
+    {
+      "bytes": 370824,
+      "filename": "D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+      "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7"
+    },
+    {
+      "bytes": 473685,
+      "filename": "D90-HAB-05-metode-gradien-proksimal-id.pdf",
+      "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d"
+    },
+    {
+      "bytes": 392662,
+      "filename": "D90-HAB-06-akselerasi-id.pdf",
+      "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0"
+    },
+    {
+      "bytes": 445733,
+      "filename": "D90-HAB-07-dualitas-id.pdf",
+      "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e"
+    },
+    {
+      "bytes": 346785,
+      "filename": "D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+      "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a"
+    },
+    {
+      "bytes": 498244,
+      "filename": "D90-HAB-09-transportasi-optimal-id.pdf",
+      "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214"
+    },
+    {
+      "bytes": 515851,
+      "filename": "D90-PENN-03-pendakian-gradien-dan-pencarian-garis-id.pdf",
+      "sha256": "e1be82d06572c51b403608cd9595cc5adf2dc64cfa93f53001eba94e48f77e3e"
+    },
+    {
+      "bytes": 847350,
+      "filename": "D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf",
+      "sha256": "c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a"
+    },
+    {
+      "bytes": 2691780,
+      "filename": "D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
+      "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6"
+    },
+    {
+      "bytes": 2497901,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22_10U.zip",
+      "sha256": "0e2e5ac6452a50a5167e77da3ca5cc145406b61dfc11fe8d647a78052dab5274"
+    },
+    {
+      "bytes": 1884,
+      "filename": "README_RELEASE.md",
+      "sha256": "b5484c58e15e13f7b0d12d818537154581572c312e5d9e753c9e179d3914bedd"
+    },
+    {
+      "bytes": 6451,
+      "filename": "README.md",
+      "sha256": "8a83aaf6615c050ca0710f1cd7563f1d6d44b96f69255cfdb5d87bd9cf943556"
+    },
+    {
+      "bytes": 2688,
+      "filename": "RIGHTS.md",
+      "sha256": "22ca25d08904233a89e7cbc246ae0eff684ad6579e7749a192c86e050a8ef097"
+    }
+  ],
+  "version": "checkpoint-2026.08.22-10u",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": "10.5281/zenodo.22060447",
+  "zenodo_record_id": "22060447"
+}

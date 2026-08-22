@@ -1,40 +1,50 @@
 # O015 production cursor
 
 As of: 2026-08-22  
-State: Chapters 3–6 admitted after independent audits; Chapter 7 is the active cursor
+State: Penn/Habring companion admitted through Penn Chapter 5; Zenodo/Figshare preservation complete; GitHub synchronization active; selected primary cursor after synchronization is the MIT first-lecture semantic-source pilot
 
-## Completed production
+## Completed at this boundary
 
-- Authority frozen: Penn State MATH 555 official index, public v1.0.1 PDF, editable v1.0 source archive, legal code, entry manifest, and reproducible local build.
-- Authority frozen: Habring arXiv:2607.11664v1 PDF, source tar, metadata, CC BY 4.0 legal code, extracted closure, experimental HTML witness, and local build.
-- Bounded three-candidate comparison complete; no replacement admitted.
-- O018 overlap/exclusion map complete.
-- Habring Chapter 3 translated contiguously into id-ID with exact two-figure closure and an independent standalone master.
-- Open-solver validation passes for the absolute-value and composite $\ell^1$ examples.
-- Structural/formula audit and independent final mathematical rereview pass with P1=0, P2=0, P3=0.
-- All 15 reader pages have been visually inspected; the final PDF is deterministic across two consecutive builds.
-- A deterministic locale-neutral first-unit backend is implemented in JSONL with a lossless CSV projection and a bounded validator.
-- Habring Chapter 4 has been translated contiguously with eight stable segments, all 67 ordered environments and four authority labels preserved.
-- Nine substantive authority defects are transparently corrected and ledger-bound; structural/formula audit, open-solver validation, deterministic rebuild, all-page visual inspection, and independent mathematical rereview all pass.
-- Chapter 5 authority identity, closure, topology, dependencies, and correction plan are frozen in `CHAPTER05_SOURCE_AUDIT.md`; the complete translation preserves 78 ordered environments in eight stable segments and has passed structural/formula, computation, deterministic-build, visual, and independent mathematical gates.
-- The public corpus repository at `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id` has a verified four-unit `main` checkpoint through Chapter 6; exact commit/tree and byte-readback evidence are in `PUBLICATION_RECEIPTS.md`.
-- The four-unit backend now validates 449 records and 39 stable segments; Chapter 6's exact topology, twelve segments, dependencies, correction plan, and admission outcome are frozen in `CHAPTER06_SOURCE_AUDIT.md`.
-- Chapter 6 is translated contiguously with all 99 ordered environments, seven labels, eight internal reference calls, and twelve stable segments preserved. Eleven ledger-bound source repairs, structural/formula audit, numerical validation, deterministic build, all-page visual inspection, and independent final delta rereview pass with P1=0, P2=0, P3=0.
+- Habring Chapters 3--9 and Penn Chapters 3--5 are admitted as ten optional-companion reader units with exact sources, wrappers, PDFs, corrections, rights, and QA.
+- Penn Chapter 5 reaches `Section5.tex` EOF, preserves its full topology/exercise/reference/figure closure in seven stable segments, integrates events `O015-PENN-ADV-0038`--`0049`, and passes independent mathematical, computation, deterministic-build, visual, text, and bounded accessibility gates.
+- The companion backend passes repeated generation/validation cycles after the final architecture/rights refresh and contains 1,283 records / 84 segments. JSONL SHA-256: `e57a457d20edfcf772f38f7dd9dfdd3368530d785bbf5b71179b90784b8130f9`; CSV SHA-256: `e2ca8f3b58dc74e208a579ff1b55997d0e5e202f49c2b018edce6358b7492c2f`.
+- The previous public Zenodo version `10.5281/zenodo.22059742` preserves the first nine units through Penn Chapter 4 and passed anonymous exact-byte readback for all 15 files and all 132 manifest-bound ZIP payloads.
+- Zenodo version `10.5281/zenodo.22060447` now preserves all ten optional-companion units through Penn Chapter 5 and passed anonymous exact-byte readback for all 16 files and all 150 manifest-bound ZIP payloads.
+- Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
+- The controlling primary-architecture handoff was read completely and verified at 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`. MIT OCW 6.253 + Royer is now the selected D90 primary; Penn/Habring remains an optional companion.
+- The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 
-## Exact cursor
+## Active preservation cursor
 
-- Current completed source unit: `authority/habring/source-v1/acceleration.tex`
-- Current target unit: `source/id-ID/habring-06-akselerasi-id.tex`
-- Next source file: `authority/habring/source-v1/duality.tex`
-- Next unit title: Duality
-- Do not restart at preliminaries or convexity; those are admitted as prerequisites/overlap, not untranslated cursor gaps.
+- Destination: existing GitHub repository `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`, now reinstated.
+- Scope: the verified ten-unit companion, 1,283-record backend, 103-page combined Habring reader, Zenodo/Figshare release scripts and sanitized receipts, current architecture/rights/cursor controls, and no unadmitted candidate or temporary/build/cache material.
+- Method: inspect, stage, commit, and push only this task-local repository; no broad workspace Git scan. Verify immutable commit/tree and selected public raw-file hashes anonymously.
+- Receipt closure: append the content commit/tree/readback receipt, commit that receipt separately if needed, push, and verify it publicly before moving to MIT/Royer.
 
-## Next actions
+## Next primary production cursor
 
-1. Audit and translate Chapter 7 contiguously, preserving every definition, theorem, proof, reference, footnote, citation, and prompt; validate Fenchel identities, PDHG, and ADMM computations in the open stack.
-2. Continue through Habring Chapters 8–9 in source order, with independently authored assessments/solutions only where the source has a documented mastery gap.
-3. At the Habring module boundary, begin the non-overlapping Penn smooth numerical sequence at Chapter 3; do not admit Penn Chapter 9 or empty Chapter 11 headings.
-4. Build a semantic HTML/EPUB accessibility surface before any final corpus publication claim.
-5. Commit and push each coherent verified chunk to the single O015 corpus repository without waiting for repeated confirmation.
+After preservation closes, stop automatic Penn source-order expansion and freeze the selected authorities locally:
 
-Corpus-repository commits and pushes are authorized by the user-authored task. Upstream contact remains prohibited until the complete corpus is finished; then at most one concise high-confidence report may be submitted, signed `Codex — at the user’s direction`.
+- MIT OCW 6.253 official course, repository commit `58d7c86195f09dd8708b84dde28205d3199207dd` / tree `26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6`, 340-page notes SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`, complete 13-PDF/395-page teaching package, CC BY-NC-SA 4.0.
+- Royer official 45-page notes SHA-256 `3290c61e870ef807ae92c4ace309449ee46ab3aa544e033c100f4a005311dfd3`, two laboratory ZIPs SHA-256 `88e18ea096b87bd12d182072bfbf6fd12ac73d666e16911a3f015ee9a574d461` / `0a0a908157dcf07f0dd3874c118e416dad3033a5f04f9cb37ae248b2f8feb623`, CC BY-NC 4.0.
+
+The first translation/conversion target is one complete MIT lecture block, selected only after the official lecture-note page boundaries are frozen. Create exact page and segment IDs and independently reconstruct it twice. Admission requires:
+
+1. every source page/segment, theorem, formula, definition, example, prompt, and reference accounted for;
+2. exact source-page mapping and stable IDs;
+3. no Athena Scientific figure bytes or copied layout; independently redraw required mathematics with separate rights or omit it with an exact locator;
+4. deterministic semantic HTML and PDF builds;
+5. searchable text, `id-ID` language metadata, semantic headings/math/navigation/alt text, and explicit limitations;
+6. terminology and mathematical rereview with P1/P2/P3 closed;
+7. second clean reconstruction matching the admitted semantic record.
+
+A failed pilot reopens the conversion architecture. It does not authorize lossy OCR or bulk translation.
+
+## Stop rules
+
+- Do not admit Penn Chapter 6 or begin Penn Chapter 7 as automatic continuation.
+- Do not restart source selection or inventory alternatives.
+- Do not overlap O018.
+- GitHub access is restored and the Figshare transaction is closed. Perform the active narrow task-local commit/push to the existing repository and public immutable-commit readback; never run a broad workspace scan.
+- Do not contact upstream during production.
+- Do not publish a final-corpus claim until the full MIT/Royer route, bridges, labs, mastery/solution layer, accessible surfaces, backend, rights, and human-review status are complete.

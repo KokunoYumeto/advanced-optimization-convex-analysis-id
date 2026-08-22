@@ -1,0 +1,1312 @@
+{
+  "citations": {
+    "source": [
+      "beck2017first",
+      "chambolle2011first"
+    ],
+    "target": [
+      "beck2017first",
+      "chambolle2011first"
+    ]
+  },
+  "correction_surface_audit": [
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0050",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "f^*(x^*) = \\sup_{x\\in C}\\inner{x^*}{x}",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$f^* = \\|\\emptyarg\\|$ setelah identifikasi $V^{**}\\cong V$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0051",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "andaikan bahwa $\\partial f(\\hat x) \\neq \\emptyset$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "interior relatif domain efektif",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "f^*(g)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "fungsi-fungsi afin kontinu",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0052",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\inner{x^*}{x-x} + f(x)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "\\leq \\frac{c}{\\epsilon}<0",
+          "target_occurrences": 2
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0053",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $f\\in\\Gamma_0(V)$. Maka",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "kedua pemetaan proksimal terdefinisi dengan baik dan bernilai tunggal",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0054",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\Gc(x,y) = (f(x) + g(Kx)) - (-f^*(-K^*y) - g^*(y)).",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0055",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\prox_{\\sigma g^*}(y_k+\\sigma K(2x_{k+1}-x_k))",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "y^+ =& \\arg\\min_y",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "g^*(y^+) + \\frac{1}{2\\sigma}|y-y^+|^2",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0056",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "X_N = \\frac{1}{N}\\sum_{k=1}^{N}x_k",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Y_N = \\frac{1}{N}\\sum_{k=1}^{N}y_k",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\sum_{k=0}^{N-1} \\Lc(x_{k+1},y) - \\Lc(x,y_{k+1})",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0057",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "y_{k+1} = \\arg\\min_{y} g(y)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "0 \\in \\partial g(y_{k+1}) + B^* \\lambda_k",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "B^*\\lambda_{k+1} \\in -\\partial g(y_{k+1})",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "0\\in\\partial_y L_0(x_{k+1},y_{k+1},\\lambda_{k+1})",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0058",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "A(x^* - x_{k+1}) = z - By^* - (r_{k+1} + z - By_{k+1}) = -r_{k+1} + B(y_{k+1}-y^*)",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0059",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\|r_{k+1}\\|^2 + \\|B(y_{k+1}-y_k)\\|^2 - 2\\inner{r_{k+1}}{B(y_{k+1}-y_k)}",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\inner{r_{k+1}}{B(y_{k+1}-y_k)} \\leq 0",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "V(y_{k+1},\\lambda_{k+1}) + \\gamma\\|r_{k+1}\\|^2 + \\gamma\\|B(y_{k+1}-y_k)\\|^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\sum_{k=1}^{K-1}\\gamma\\big(\\|r_{k+1}\\|^2",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "V(y_{1},\\lambda_{1})",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0060",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "p_{k+1}-p^*\\leq -\\gamma\\inner{-r_{k+1} + B(y_{k+1}-y^*)}{B(y_{k+1}-y_k)} - \\inner{r_{k+1}}{\\lambda_{k+1}}",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0061",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\label{duality:eq:proof_admm7}",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\eqref{duality:eq:proof_admm7}",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0062",
+      "surfaces": [
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "bikonjugat",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 2,
+          "present": true,
+          "surface": "fungsional Lyapunov",
+          "target_occurrences": 4
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0063",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "semua ruang vektor dipahami sebagai ruang Hilbert riil berdimensi hingga",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Dual yang digunakan adalah dual kontinu",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "melalui representasi Riesz",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0064",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $f:V\\rightarrow(-\\infty,+\\infty]$ proper",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\Gamma_0(H)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "H\\rightarrow(-\\infty,+\\infty]",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0065",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "minoran konveks semikontinu bawah terbesar",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "selama keluarga minoran proper di bawah tidak kosong",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Jika $\\{\\ell\\in\\Gamma(V):\\ell\\leq f\\}\\neq\\emptyset$, maka",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "supremum pada ruas kanan dipahami sebagai fungsi yang identik $-\\infty$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Fungsi ini tidak termasuk dalam $\\Gamma(V)$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0066",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "syarat kualifikasi bagi aturan jumlah dan rantai subdiferensial",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "kaidah Fermat pada peminimum",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0067",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\min_x \\sup_y \\Lc(x,y)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\min_{x,y}\\sup_{\\lambda} L_\\gamma",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "hipotesis dualitas kuat dan ketercapaian primal--dual",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\sup_{y'}\\Lc(x,y') - \\inf_{x'}\\Lc(x',y)",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0068",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "\\prox_{\\sigma g^*}(y)=y-\\sigma\\prox_{g/\\sigma}(y/\\sigma)",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "untuk $\\sigma>0$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0069",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $X$ dan $Y$ ruang Hilbert riil berdimensi hingga",
+          "target_occurrences": 3
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$f\\in\\Gamma_0(X)$, $g\\in\\Gamma_0(Y)$",
+          "target_occurrences": 3
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$K:X\\rightarrow Y$ linear terbatas, serta $\\tau,\\sigma>0$",
+          "target_occurrences": 2
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$\\tau\\sigma\\leq \\|K\\|^{-2}$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "untuk $K=0$, syarat ini dipahami otomatis terpenuhi",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Untuk $N\\geq1$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0070",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$f,g\\in\\Gamma_0(\\R^d)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$A,B:\\R^d\\rightarrow\\R^m$ linear, dan $z\\in\\R^m$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Ambil $\\gamma>0$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "kedua submasalah minimisasi dalam algoritme ADMM di atas mencapai minimumnya",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "pilih sembarang peminimum tersebut",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Dengan $r_k\\coloneq Ax_k+By_k-z$, berlaku $r_k\\rightarrow0$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$B(y_{k+1}-y_k)\\rightarrow0$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "suatu titik pelana dari $L_0(x,y,\\lambda)$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0071",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "$C\\subset V$ tak kosong dan konveks",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0072",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Karena $f$ proper, pilih $\\bar x\\in\\dom(f)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "memasukkan $(\\bar x,t)\\in\\epi(f)$",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "membiarkan $t\\rightarrow\\infty$, diperoleh $\\alpha\\geq 0$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0073",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Jika $K=0$, suku campuran dalam setiap tanda kurung siku lenyap",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Jika $K\\neq0$, nonnegativitas mengikuti",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "pilihan $\\delta = \\frac{1}{\\tau\\|K\\|}$",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0074",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $X$ dan $Y$ ruang Hilbert riil berdimensi hingga, $f\\in\\Gamma_0(X)$, $g\\in\\Gamma_0(Y)$, $K:X\\rightarrow Y$ linear terbatas, serta $\\tau,\\sigma>0$. Aturan pembaruan",
+          "target_occurrences": 1
+        }
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0075",
+      "surfaces": [
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Untuk fungsi proper $f$ dengan $f^*$ proper",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Misalkan $f$ dan $f^*$ proper",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "Jika $\\{\\ell\\in\\Gamma(V):\\ell\\leq f\\}\\neq\\emptyset$, maka",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "supremum pada ruas kanan",
+          "target_occurrences": 1
+        },
+        {
+          "minimum_occurrences": 1,
+          "present": true,
+          "surface": "tidak dinotasikan sebagai $f^{**}$",
+          "target_occurrences": 1
+        }
+      ]
+    }
+  ],
+  "environment_topology": {
+    "count": 148,
+    "counts_by_name": {
+      "aligned": 27,
+      "bmatrix": 4,
+      "cases": 7,
+      "defn": 1,
+      "enumerate": 3,
+      "equation": 79,
+      "example": 1,
+      "lemma": 8,
+      "proof": 12,
+      "rem": 2,
+      "theorem": 4
+    },
+    "ordered_begin_environments": [
+      "defn",
+      "equation",
+      "aligned",
+      "example",
+      "enumerate",
+      "lemma",
+      "proof",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "lemma",
+      "equation",
+      "proof",
+      "lemma",
+      "proof",
+      "equation",
+      "equation",
+      "aligned",
+      "lemma",
+      "proof",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "rem",
+      "equation",
+      "equation",
+      "lemma",
+      "enumerate",
+      "proof",
+      "enumerate",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "theorem",
+      "equation",
+      "proof",
+      "theorem",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "cases",
+      "proof",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "lemma",
+      "equation",
+      "equation",
+      "proof",
+      "equation",
+      "cases",
+      "equation",
+      "cases",
+      "equation",
+      "bmatrix",
+      "bmatrix",
+      "equation",
+      "bmatrix",
+      "bmatrix",
+      "equation",
+      "cases",
+      "equation",
+      "cases",
+      "lemma",
+      "equation",
+      "aligned",
+      "proof",
+      "equation",
+      "aligned",
+      "theorem",
+      "equation",
+      "rem",
+      "proof",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "lemma",
+      "proof",
+      "equation",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "theorem",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "aligned"
+    ],
+    "ordered_begin_equal": true,
+    "ordered_end_environments": [
+      "aligned",
+      "equation",
+      "defn",
+      "enumerate",
+      "example",
+      "lemma",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "proof",
+      "equation",
+      "lemma",
+      "proof",
+      "lemma",
+      "equation",
+      "aligned",
+      "equation",
+      "proof",
+      "lemma",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "rem",
+      "enumerate",
+      "lemma",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "enumerate",
+      "proof",
+      "equation",
+      "theorem",
+      "proof",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "cases",
+      "equation",
+      "theorem",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "lemma",
+      "proof",
+      "cases",
+      "equation",
+      "cases",
+      "equation",
+      "bmatrix",
+      "bmatrix",
+      "equation",
+      "bmatrix",
+      "bmatrix",
+      "equation",
+      "cases",
+      "equation",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "lemma",
+      "aligned",
+      "equation",
+      "proof",
+      "equation",
+      "theorem",
+      "rem",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "proof",
+      "equation",
+      "equation",
+      "lemma",
+      "proof",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "theorem",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "equation",
+      "aligned",
+      "equation",
+      "aligned",
+      "equation",
+      "equation",
+      "equation",
+      "cases",
+      "equation",
+      "aligned",
+      "equation",
+      "proof"
+    ],
+    "ordered_end_equal": true
+  },
+  "failure_count": 0,
+  "failures": [],
+  "forbidden_target_surface_counts": {
+    "+ 2\\inner{r_{k+1}}{B(y_{k+1}-y_k)}": 0,
+    "Dengan memasukkan $x=x_0$ dan mengambil $t$ cukup besar": 0,
+    "Lyapunv": 0,
+    "\\inner{r_{k+1}}{B(y_{k+1}-y_k)} = \\inner{r_{k+1}}{B(y_{k+1}-y_k)}": 0,
+    "\\nabla g(y_{k+1})": 0,
+    "\\prox_{\\sigma f}(y_k+\\sigma K(2x_{k+1}-x_k))": 0,
+    "bijonjugate": 0,
+    "by by": 0,
+    "f,g:\\R^d\\rightarrow [-\\infty,\\infty]": 0,
+    "f:V\\rightarrow [-\\infty,\\infty]": 0,
+    "f:V\\rightarrow[-\\infty,\\infty]": 0,
+    "f^*(y) - g^*(-K^*y)": 0,
+    "impliey": 0,
+    "primal und dual": 0,
+    "reqrite": 0,
+    "strictly negativ": 0,
+    "taing": 0,
+    "to proof": 0,
+    "y^+ =& \\arg\\min_x": 0,
+    "y_{k+1} = \\arg\\min_{x} g(y)": 0
+  },
+  "formula_delta_manifest": {
+    "all_substantive_deltas_ledger_bound": true,
+    "bytes": 81046,
+    "delta_block_count": 49,
+    "incompletely_bound_substantive_delta_block_ids": [],
+    "path": "qa/DUALITY_FORMULA_DELTA_MANIFEST.json",
+    "sha256": "fe72e72d0223117a0b34727d235ced9b6bf2af17cf48154e6b670d2ce75d89fb",
+    "source_formula_count": 254,
+    "substantive_delta_block_count": 43,
+    "target_formula_count": 296,
+    "unbound_substantive_delta_block_ids": []
+  },
+  "identity_policy": "authority_and_final_target_frozen_ledgers_derived_live",
+  "integrated_ledger": {
+    "bytes": 43572,
+    "exact_required_records_match_proposal": true,
+    "missing_required_ids": [],
+    "path": "00_control/ADVERSE_LEDGER.jsonl",
+    "records_differing_from_proposal": [],
+    "sha256": "0673ba83dc3f481583a67b72f3c53b9ea7de4eefb01c94ef653696a7c79c0594"
+  },
+  "item_topology": {
+    "source": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "\\ref{duality:item1}$\\rightarrow$\\ref{duality:item2}:",
+      "\\ref{duality:item2}$\\rightarrow$\\ref{duality:item1}:",
+      "\\ref{duality:item1}$\\leftrightarrow$\\ref{duality:item3}:"
+    ],
+    "target": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "\\ref{duality:item1}$\\rightarrow$\\ref{duality:item2}:",
+      "\\ref{duality:item2}$\\rightarrow$\\ref{duality:item1}:",
+      "\\ref{duality:item1}$\\leftrightarrow$\\ref{duality:item3}:"
+    ]
+  },
+  "labels": {
+    "only_final_duplicate_remapped": true,
+    "source": [
+      "chapter:duality",
+      "duality:lemma:subdiff_conjugate",
+      "duality:item1",
+      "duality:item2",
+      "duality:item3",
+      "duality:thm:Moreau:id",
+      "duality:eq:fenchel_duality",
+      "duality:eq:fenchel_rocka",
+      "duality:qe:problem",
+      "duality:qe:saddlepoint",
+      "duality:eq:AH",
+      "duality:eq:pdhg",
+      "duality:eq:pdhg2",
+      "eq:admm1",
+      "eq:admm2",
+      "duality:eq:admm_algo",
+      "duality:eq:admm3",
+      "duality:eq:proof_admm1",
+      "duality:eq:proof_admm2",
+      "duality:eq:proof_admm3",
+      "duality:eq:proof_admm4",
+      "duality:eq:proof_admm5",
+      "duality:eq:proof_admm6",
+      "duality:eq:proof_admm6"
+    ],
+    "source_duplicate": "duality:eq:proof_admm6",
+    "target": [
+      "chapter:duality",
+      "duality:lemma:subdiff_conjugate",
+      "duality:item1",
+      "duality:item2",
+      "duality:item3",
+      "duality:thm:Moreau:id",
+      "duality:eq:fenchel_duality",
+      "duality:eq:fenchel_rocka",
+      "duality:qe:problem",
+      "duality:qe:saddlepoint",
+      "duality:eq:AH",
+      "duality:eq:pdhg",
+      "duality:eq:pdhg2",
+      "eq:admm1",
+      "eq:admm2",
+      "duality:eq:admm_algo",
+      "duality:eq:admm3",
+      "duality:eq:proof_admm1",
+      "duality:eq:proof_admm2",
+      "duality:eq:proof_admm3",
+      "duality:eq:proof_admm4",
+      "duality:eq:proof_admm5",
+      "duality:eq:proof_admm6",
+      "duality:eq:proof_admm7"
+    ],
+    "target_unique": true,
+    "target_unique_remap": "duality:eq:proof_admm7"
+  },
+  "other_surface_topology": {
+    "external_assets": {
+      "source": 0,
+      "target": 0
+    },
+    "figure_environments": {
+      "source": 0,
+      "target": 0
+    },
+    "footnotes": {
+      "source": 1,
+      "target": 1
+    },
+    "source_inputs": {
+      "source": 0,
+      "target": 0
+    }
+  },
+  "proposed_ledger": {
+    "bytes": 15830,
+    "extra_ids": [],
+    "missing_ids": [],
+    "path": "qa/CHAPTER07_PROPOSED_LEDGER.jsonl",
+    "required_ids": [
+      "O015-HAB-ADV-0050",
+      "O015-HAB-ADV-0051",
+      "O015-HAB-ADV-0052",
+      "O015-HAB-ADV-0053",
+      "O015-HAB-ADV-0054",
+      "O015-HAB-ADV-0055",
+      "O015-HAB-ADV-0056",
+      "O015-HAB-ADV-0057",
+      "O015-HAB-ADV-0058",
+      "O015-HAB-ADV-0059",
+      "O015-HAB-ADV-0060",
+      "O015-HAB-ADV-0061",
+      "O015-HAB-ADV-0062",
+      "O015-HAB-ADV-0063",
+      "O015-HAB-ADV-0064",
+      "O015-HAB-ADV-0065",
+      "O015-HAB-ADV-0066",
+      "O015-HAB-ADV-0067",
+      "O015-HAB-ADV-0068",
+      "O015-HAB-ADV-0069",
+      "O015-HAB-ADV-0070",
+      "O015-HAB-ADV-0071",
+      "O015-HAB-ADV-0072",
+      "O015-HAB-ADV-0073",
+      "O015-HAB-ADV-0074",
+      "O015-HAB-ADV-0075"
+    ],
+    "sha256": "57dbba9afdee2fc453dde9fbb97621c1a6897ff5377c1ec6a210827a8dce675d"
+  },
+  "references": {
+    "source": {
+      "Cref": [
+        "duality:eq:fenchel_duality"
+      ],
+      "cref": [
+        "duality:lemma:subdiff_conjugate",
+        "duality:lemma:subdiff_conjugate",
+        "duality:thm:Moreau:id"
+      ],
+      "eqref": [
+        "duality:eq:fenchel_rocka",
+        "duality:qe:problem",
+        "duality:qe:saddlepoint",
+        "duality:qe:saddlepoint",
+        "duality:eq:AH",
+        "duality:eq:pdhg2",
+        "duality:eq:pdhg",
+        "eq:admm1",
+        "eq:admm2",
+        "duality:eq:admm3",
+        "duality:eq:admm_algo",
+        "duality:eq:admm_algo",
+        "duality:eq:proof_admm2",
+        "duality:eq:proof_admm1",
+        "duality:eq:proof_admm3",
+        "duality:eq:proof_admm4",
+        "duality:eq:proof_admm5",
+        "duality:eq:proof_admm5",
+        "duality:eq:proof_admm1",
+        "duality:eq:proof_admm3",
+        "duality:eq:proof_admm6"
+      ],
+      "ref": [
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item3",
+        "duality:item1"
+      ]
+    },
+    "target": {
+      "Cref": [
+        "duality:eq:fenchel_duality"
+      ],
+      "cref": [
+        "duality:lemma:subdiff_conjugate",
+        "duality:lemma:subdiff_conjugate",
+        "duality:thm:Moreau:id"
+      ],
+      "eqref": [
+        "duality:eq:fenchel_rocka",
+        "duality:qe:problem",
+        "duality:qe:saddlepoint",
+        "duality:qe:saddlepoint",
+        "duality:eq:AH",
+        "duality:eq:pdhg2",
+        "duality:eq:pdhg",
+        "eq:admm1",
+        "eq:admm2",
+        "duality:eq:admm3",
+        "duality:eq:admm_algo",
+        "duality:eq:admm_algo",
+        "duality:eq:proof_admm2",
+        "duality:eq:proof_admm1",
+        "duality:eq:proof_admm3",
+        "duality:eq:proof_admm4",
+        "duality:eq:proof_admm5",
+        "duality:eq:proof_admm5",
+        "duality:eq:proof_admm1",
+        "duality:eq:proof_admm3",
+        "duality:eq:proof_admm7"
+      ],
+      "ref": [
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item2",
+        "duality:item1",
+        "duality:item3",
+        "duality:item1"
+      ]
+    }
+  },
+  "result": "pass",
+  "schema": "o015-duality-structure-audit-v1",
+  "source": {
+    "bytes": 30761,
+    "lines": 597,
+    "path": "authority/habring/source-v1/duality.tex",
+    "sha256": "0b112dee2582813cec5629c02df1dda329f690f944b60f4694b1c5762129bea9"
+  },
+  "source_markers": [
+    [
+      "001",
+      "1",
+      "24"
+    ],
+    [
+      "002",
+      "25",
+      "60"
+    ],
+    [
+      "003",
+      "61",
+      "141"
+    ],
+    [
+      "004",
+      "142",
+      "186"
+    ],
+    [
+      "005",
+      "187",
+      "247"
+    ],
+    [
+      "006",
+      "248",
+      "277"
+    ],
+    [
+      "007",
+      "278",
+      "335"
+    ],
+    [
+      "008",
+      "336",
+      "394"
+    ],
+    [
+      "009",
+      "395",
+      "432"
+    ],
+    [
+      "010",
+      "433",
+      "502"
+    ],
+    [
+      "011",
+      "503",
+      "597"
+    ]
+  ],
+  "stable_segment_ids": [
+    "d90.hab.v1.ch07.seg0001",
+    "d90.hab.v1.ch07.seg0002",
+    "d90.hab.v1.ch07.seg0003",
+    "d90.hab.v1.ch07.seg0004",
+    "d90.hab.v1.ch07.seg0005",
+    "d90.hab.v1.ch07.seg0006",
+    "d90.hab.v1.ch07.seg0007",
+    "d90.hab.v1.ch07.seg0008",
+    "d90.hab.v1.ch07.seg0009",
+    "d90.hab.v1.ch07.seg0010",
+    "d90.hab.v1.ch07.seg0011"
+  ],
+  "target": {
+    "bytes": 35428,
+    "expected_sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9",
+    "identity_policy": "final_target_frozen_after_independent_rereview",
+    "lines": 632,
+    "path": "source/id-ID/habring-07-dualitas-id.tex",
+    "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+  }
+}

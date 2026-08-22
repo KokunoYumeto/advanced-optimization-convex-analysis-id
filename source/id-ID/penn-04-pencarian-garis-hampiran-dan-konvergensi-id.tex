@@ -1,0 +1,613 @@
+% P04-S001 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 1--74
+% segment-id: d90.penn.v1.ch04.seg0001
+% Terjemahan Indonesia independen; lihat qa/PENN_CH04_PROPOSED_LEDGER.jsonl
+% untuk perubahan matematis, teknis, dan hak-komponen yang ditentukan.
+% !TEX root = Math555-id.tex
+\chapter{Pencarian Garis Hampiran dan Konvergensi Pendakian Gradien}
+\section{Pencarian Hampiran: Aturan Armijo dan Syarat Kelengkungan}
+\begin{remark} Kadang-kadang optimisasi fungsi $\phi(\delta_k)$ memerlukan biaya besar. Dalam keadaan ini, kita ingin menemukan $\delta_k$ yang cukup untuk menjamin konvergensi pendakian gradien atau algoritma terkait. Dengan demikian, pencarian garis dapat dihentikan sebelum persoalan satu dimensinya diselesaikan secara eksak, sehingga algoritma optimisasi keseluruhan menjadi lebih cepat. Syarat-syarat berikut, yang biasanya disebut \textit{syarat Wolfe}, dapat dipakai untuk menganalisis konvergensi pendakian gradien dan algoritma terkait.
+\end{remark}
+
+\begin{definition}[Aturan Armijo] Diberikan fungsi $f:\mathbb{R}^n \rightarrow \mathbb{R}$, arah naik $\mathbf{p}_k$, dan konstanta $\sigma_1 \in (0,1)$, aturan Armijo dipenuhi apabila
+\begin{equation}
+f(\mathbf{x}_k + \delta_k\mathbf{p}_k) - f(\mathbf{x}_k) \geq \sigma_1\delta_k\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\label{eqn:Armijo}
+\end{equation}
+\end{definition}
+
+\begin{remark} Ingat bahwa $\phi(\delta)=f(\mathbf{x}_k+\delta\mathbf{p}_k)$. Karena itu, Persamaan \ref{eqn:Armijo} menyatakan
+\begin{equation}
+\phi(\delta_k)-\phi(0)\geq \sigma_1\delta_k\nabla f(\mathbf{x}_k)^T\mathbf{p}_k
+=\sigma_1\delta_k\phi'(0),
+\end{equation}
+yang berarti bahwa nilai fungsi mengalami kenaikan yang memadai.
+\end{remark}
+
+\begin{definition}[Syarat Kelengkungan] Diberikan fungsi $f:\mathbb{R}^n \rightarrow \mathbb{R}$, arah naik $\mathbf{p}_k$, dan konstanta $\sigma_2\in(\sigma_1,1)$, syarat kelengkungan dipenuhi apabila
+\begin{equation}
+\sigma_2\nabla f(\mathbf{x}_k)^T\mathbf{p}_k
+\geq \nabla f(\mathbf{x}_k+\delta_k\mathbf{p}_k)^T\mathbf{p}_k.
+\end{equation}
+\end{definition}
+
+\begin{remark} Berdasarkan Proposisi \ref{prop:DirecDeriv} dan Teorema \ref{thm:DirDeriv}, aturan rantai memberikan
+\begin{displaymath}
+\phi'(\delta)=\nabla f(\mathbf{x}_k+\delta\mathbf{p}_k)^T\mathbf{p}_k.
+\end{displaymath}
+Jadi, syarat kelengkungan dapat ditulis sebagai
+\begin{equation}
+\sigma_2\phi'(0)\geq\phi'(\delta_k).
+\end{equation}
+Karena $\mathbf{p}_k$ merupakan arah naik, $\nabla f(\mathbf{x}_k)^T\mathbf{p}_k>0$ dan dengan demikian $\phi'(0)>0$. Syarat kelengkungan hanya menyatakan bahwa kemiringan fungsi satu variabel $\phi$ pada langkah terpilih $\delta_k$ tidak lagi sebesar kemiringannya di $0$.
+\end{remark}
+
+\begin{example}
+Tinjau fungsi
+\begin{displaymath}
+f(x,y)=\exp\left(-\frac{1}{10}\left(x^2+y^2\right)\right)\cos\left(x^2+y^2\right).
+\end{displaymath}
+Fungsi ini ditunjukkan pada Gambar \ref{fig:ThreeDCos}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/ThreeDCos.pdf}
+\caption{Fungsi $f(x,y)$ mempunyai maksimum di $x=y=0$, tempat nilainya sama dengan $1$.}
+\label{fig:ThreeDCos}
+\end{figure}
+Misalkan titik awalnya $x_0=y_0=1$. Dengan $\mathbf{x}_0=(x_0,y_0)^T$, fungsi sepanjang arah gradien adalah
+$\phi(t)=f\!\left(\mathbf{x}_0+t\nabla f(\mathbf{x}_0)\right)$.
+Grafik $\phi(t)$ ditunjukkan pada Gambar \ref{fig:Phi}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/WolfePhiOfT.pdf}
+\caption{Grafik $\phi(t)$ memperlihatkan bahwa nilai fungsi naik ketika kita mendekati maksimum global, lalu turun sesudahnya.}
+\label{fig:Phi}
+\end{figure}
+Aturan Armijo menyatakan
+\begin{equation}
+\phi(t)\geq\phi(0)+\sigma_1\phi'(0)t.
+\end{equation}
+Di sini $\sigma_1\in(0,1)$ merupakan konstanta pilihan, sedangkan $\phi'(0)$ dan $\phi(0)$ dihitung dari $\phi(t)$. Jadi, aturan ini menerima nilai $t$ yang membuat $\phi(t)$ terletak di atas garis $\phi(0)+\sigma_1\phi'(0)t$, sebagaimana pada Gambar \ref{fig:WolfeIllustration}. Syarat kelengkungan menyatakan
+\begin{equation}
+\sigma_2\phi'(0)\geq\phi'(t).
+\end{equation}
+Dengan demikian, syarat ini menerima nilai $t$ yang membuat $\phi'(t)$ tidak melebihi konstanta $\sigma_2\phi'(0)$, dengan $\sigma_1<\sigma_2<1$. Daerah tersebut juga ditunjukkan pada Gambar \ref{fig:WolfeIllustration}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/WolfeConditionsIllustrated.pdf}
+\caption{Syarat Wolfe diilustrasikan. Daerah yang diterima aturan Armijo beririsan dengan daerah yang diterima syarat kelengkungan, sehingga dalam contoh ini diperoleh langkah-langkah yang mengapit maksimum lokal terdekat bagi $\delta_k$. Di sini $\sigma_1=0.15$ dan $\sigma_2=0.5$.}
+\label{fig:WolfeIllustration}
+\end{figure}
+Ketika kedua syarat digabungkan, irisannya memberikan himpunan langkah yang memenuhi kenaikan memadai sekaligus pengurangan kemiringan.
+\end{example}
+
+% P04-S002 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 75--124
+% segment-id: d90.penn.v1.ch04.seg0002
+\begin{lemma} Misalkan $f$ terdiferensialkan secara kontinu pada suatu lingkungan sinar $\mathbf{x}_k+t\mathbf{p}_k$, $t\geq0$, dan terbatas di atas pada sinar tersebut. Jika $\mathbf{p}_k$ adalah arah naik di $\mathbf{x}_k$ dan $0<\sigma_1<\sigma_2<1$, maka terdapat suatu interval takkosong nilai $t>0$ yang memenuhi kedua syarat Wolfe.
+\label{lem:WolfeConditions}
+\end{lemma}
+\begin{proof}
+Definisikan $\phi(t)=f(\mathbf{x}_k+t\mathbf{p}_k)$. Karena $\mathbf{p}_k$ adalah arah naik,
+\begin{displaymath}
+\phi'(0)=\nabla f(\mathbf{x}_k)^T\mathbf{p}_k>0
+\end{displaymath}
+menurut Definisi \ref{def:AscentDir}. Karena $0<\sigma_1<1$, garis
+$l(t)=\phi(0)+\sigma_1\phi'(0)t$ tak terbatas di atas. Di dekat $0$, grafik $\phi$ terletak di atas $l$ karena garis singgungnya mempunyai kemiringan $\phi'(0)>\sigma_1\phi'(0)$. Sementara itu, $\phi$ terbatas di atas. Oleh kontinuitas, terdapat perpotongan positif; ambil $t'>0$ sebagai perpotongan positif pertama. Maka
+\begin{displaymath}
+\phi(t')=\phi(0)+\sigma_1\phi'(0)t'.
+\end{displaymath}
+Setiap $t\in(0,t')$ memenuhi aturan Armijo secara ketat.
+
+Teorema Nilai Rata-rata satu variabel (Lemma \ref{thm:MVT}) memberikan suatu $t''\in(0,t')$ sehingga
+\begin{displaymath}
+\phi(t')-\phi(0)=\phi'(t'')(t'-0).
+\end{displaymath}
+Dengan menggabungkan dua persamaan sebelumnya, diperoleh
+\begin{displaymath}
+\sigma_1\phi'(0)t'=\phi'(t'')t'.
+\end{displaymath}
+Karena $\sigma_2>\sigma_1$ dan $t'>0$,
+\begin{displaymath}
+\phi'(t'')t'=\sigma_1\phi'(0)t'<\sigma_2\phi'(0)t'.
+\end{displaymath}
+Jadi $\phi'(t'')<\sigma_2\phi'(0)$ dan $t''$ memenuhi syarat kelengkungan secara ketat. Kontinuitas $\phi'$ serta ketatnya kedua ketaksamaan menghasilkan suatu lingkungan takkosong di sekitar $t''$ yang memenuhi kedua syarat.
+\end{proof}
+
+\begin{remark} Syarat kelengkungan tidak diperlukan untuk memperoleh jaminan titik stasioner bagi pendakian gradien dengan pelacakan mundur. Pengamatan ini menghasilkan algoritma untuk memilih $\delta_k$ yang memenuhi aturan Armijo.
+\end{remark}
+
+\begin{remark} Lemma \ref{lem:WolfeConditions} menjamin adanya langkah yang memenuhi kedua syarat Wolfe di bawah hipotesisnya. Untuk aturan Armijo saja, Algoritma \ref{alg:BackTrace} memakai $\sigma_1\in(0,1)$, $\beta\in(0,1)$, dan langkah awal $t_0>0$. Algoritma menguji berturut-turut $t=\beta^j t_0$ sampai
+\begin{equation}
+\phi(t)\geq\phi(0)+\sigma_1t\phi'(0).
+\end{equation}
+Jika $\phi'(0)>0$, definisi turunan menyatakan bahwa ketaksamaan ini berlaku untuk semua $t>0$ yang cukup kecil; karena itu, perulangan berhingga. Langkah yang dikembalikan berbentuk $t=\beta^j t_0$ untuk suatu $j\geq0$.
+\end{remark}
+
+\begin{algorithm}
+\caption{Algoritma pelacakan mundur}
+\label{alg:BackTrace}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} $\phi$, $t_0>0$, $\beta\in(0,1)$, $\sigma_1\in(0,1)$, dan $\phi'(0)>0$.\\
+1. Tetapkan $t\leftarrow t_0$.\\
+2. Selama $\phi(t)<\phi(0)+\sigma_1t\phi'(0)$, tetapkan $t\leftarrow\beta t$.\\
+3. Kembalikan $t$.
+}}
+\end{algorithm}
+
+\begin{remark} Dalam praktik, $\sigma_1$ dipilih kecil, biasanya antara $10^{-5}$ dan $0.1$. Nilai $\beta$ umumnya berada antara $0.1$ dan $0.5$. Sering kali $t_0=1$, walaupun pilihan ini bergantung pada persoalan \cite{Bert99}.
+\end{remark}
+
+% P04-S003 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 125--206
+% segment-id: d90.penn.v1.ch04.seg0003
+\section{Konvergensi Algoritmik}\label{sec:Convergence}
+\begin{definition}[Berkaitan dengan Gradien]
+\label{def:GradientRelated}
+Misalkan $f:\mathbb{R}^n\to\mathbb{R}$ terdiferensialkan secara kontinu. Barisan arah naik $\{\mathbf{p}_k\}$ disebut \textit{berkaitan dengan gradien} apabila, untuk setiap himpunan indeks subsekuens $K=\{k_1,k_2,\dots\}$ yang membuat $\{\mathbf{x}_k\}_{k\in K}$ konvergen ke titik nonstasioner $f$, subsekuens $\{\mathbf{p}_k\}_{k\in K}$ terbatas dan memenuhi
+\begin{equation}
+\limsup_{k\to\infty,\ k\in K}\nabla f(\mathbf{x}_k)^T\mathbf{p}_k>0.
+\end{equation}
+\end{definition}
+
+\begin{theorem}
+\label{thm:GenConverge}
+Misalkan $\mathbf{x}_{k+1}=\mathbf{x}_k+\delta_k\mathbf{p}_k$, arah $\mathbf{p}_k$ berkaitan dengan gradien, dan setiap $\delta_k$ dipilih oleh Algoritma \ref{alg:BackTrace} dengan parameter tetap $t_0>0$, $\beta\in(0,1)$, dan $\sigma_1\in(0,1)$. Jika barisan $\{\mathbf{x}_k\}$ konvergen ke $\mathbf{x}^*$, maka $\nabla f(\mathbf{x}^*)=\mathbf{0}$. Oleh sebab itu, syarat penghentian
+\begin{equation}
+\lVert\nabla f(\mathbf{x}_k)\rVert<\epsilon
+\end{equation}
+dapat dipakai untuk suatu $\epsilon>0$ yang kecil.
+\end{theorem}
+\begin{proof}
+Andaikan, untuk memperoleh kontradiksi, bahwa $\mathbf{x}_k\to\mathbf{x}^+$ tetapi $\nabla f(\mathbf{x}^+)\neq\mathbf{0}$. Aturan Armijo membuat $\{f(\mathbf{x}_k)\}$ tidak menurun. Karena $f$ kontinu dan $\mathbf{x}_k\to\mathbf{x}^+$, barisan nilai fungsi konvergen ke $f(\mathbf{x}^+)$, sehingga
+\begin{equation}
+\lim_{k\to\infty}\bigl(f(\mathbf{x}_{k+1})-f(\mathbf{x}_k)\bigr)=0.
+\end{equation}
+Aturan Armijo juga memberikan
+\begin{equation}
+f(\mathbf{x}_{k+1})-f(\mathbf{x}_k)
+\geq\sigma_1\delta_k\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\end{equation}
+Karena semua faktor di ruas kanan taknegatif,
+\begin{equation}
+\lim_{k\to\infty}\delta_k\nabla f(\mathbf{x}_k)^T\mathbf{p}_k=0.
+\label{eqn:Lim1}
+\end{equation}
+Sifat berkaitan dengan gradien memungkinkan kita memilih suatu subsekuens indeks $K$ dan konstanta $\eta>0$ sehingga, setelah membuang sejumlah berhingga indeks,
+\begin{equation}
+\nabla f(\mathbf{x}_k)^T\mathbf{p}_k\geq\eta
+\qquad(k\in K).
+\end{equation}
+Maka Persamaan \ref{eqn:Lim1} memberi $\delta_k\to0$ sepanjang $K$. Karena $\delta_k$ adalah langkah kisi pertama yang diterima oleh pelacakan mundur, untuk semua $k\in K$ yang cukup besar langkah sebelumnya $\delta_k^+=\delta_k/\beta$ ditolak:
+\begin{equation}
+f(\mathbf{x}_k+\delta_k^+\mathbf{p}_k)-f(\mathbf{x}_k)
+<\sigma_1\delta_k^+\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\label{eqn:Lim2}
+\end{equation}
+Barisan $\{\mathbf{p}_k\}_{k\in K}$ terbatas. Ambil subsekuens lebih lanjut, tetap dilambangkan $K$, sehingga $\mathbf{p}_k\to\mathbf{p}^+$. Dari Persamaan \ref{eqn:Lim2},
+\begin{equation}
+\frac{f(\mathbf{x}_k+\delta_k^+\mathbf{p}_k)-f(\mathbf{x}_k)}{\delta_k^+}
+<\sigma_1\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\label{eqn:Lim3}
+\end{equation}
+Untuk setiap $k$, definisikan $\phi_k(t)=f(\mathbf{x}_k+t\mathbf{p}_k)$. Maka Persamaan \ref{eqn:Lim3} menjadi
+\begin{equation}
+\frac{\phi_k(\delta_k^+)-\phi_k(0)}{\delta_k^+}
+<\sigma_1\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\label{eqn:Lim4}
+\end{equation}
+Teorema Nilai Rata-rata memberi $\bar\delta_k\in(0,\delta_k^+)$ sehingga
+\begin{equation}
+\phi_k'(\bar\delta_k)
+<\sigma_1\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\label{eqn:Lim5}
+\end{equation}
+Dengan aturan rantai,
+\begin{equation}
+\nabla f(\mathbf{x}_k+\bar\delta_k\mathbf{p}_k)^T\mathbf{p}_k
+<\sigma_1\nabla f(\mathbf{x}_k)^T\mathbf{p}_k.
+\end{equation}
+Karena $\delta_k^+\to0$, $\mathbf{p}_k$ terbatas, dan $\nabla f$ kontinu, pengambilan limit sepanjang $K$ memberikan
+\begin{equation}
+\nabla f(\mathbf{x}^+)^T\mathbf{p}^+
+\leq\sigma_1\nabla f(\mathbf{x}^+)^T\mathbf{p}^+.
+\end{equation}
+Namun, pilihan $K$ dan kontinuitas memberi $\nabla f(\mathbf{x}^+)^T\mathbf{p}^+\geq\eta>0$. Ketaksamaan terakhir mustahil karena $\sigma_1<1$.
+\end{proof}
+
+\begin{corollary}
+\label{cor:MinArmijo}
+Andaikan suatu pemaksimum eksak berhingga $\delta_k$ bagi $\phi_k(t)=f(\mathbf{x}_k+t\mathbf{p}_k)$ pada $t\geq0$ ada pada setiap iterasi, arah $\mathbf{p}_k$ berkaitan dengan gradien, dan barisan iterat yang dihasilkan konvergen ke $\mathbf{x}^*$. Maka $\nabla f(\mathbf{x}^*)=\mathbf{0}$.
+\end{corollary}
+\begin{corollary}
+\label{cor:SymmetricPDConverge}
+Misalkan $\mathbf{p}_k=\mathbf{B}_k^{-1}\nabla f(\mathbf{x}_k)$ pada setiap iterasi Algoritma \ref{alg:ModifiedGradientAscent}, dan terdapat konstanta $0<m\leq M<\infty$ sehingga $m\mathbf{I}\preceq\mathbf{B}_k\preceq M\mathbf{I}$ untuk semua $k$. Jika langkah dipilih dengan pelacakan mundur seperti pada Teorema \ref{thm:GenConverge} dan barisan iterat konvergen, maka limitnya merupakan titik stasioner $f$.
+\end{corollary}
+
+\begin{exercise} Buktikan Korolari \ref{cor:MinArmijo} dengan memperhatikan bahwa, jika $\mathbf{x}_{k+1}$ dihasilkan dari $\mathbf{x}_k$ dengan memaksimumkan $\phi_k(\delta)$, maka
+\begin{equation}
+f(\mathbf{x}_{k+1})-f(\mathbf{x}_k)
+\geq f(\hat{\mathbf{x}}_{k+1})-f(\mathbf{x}_k)
+\geq\sigma_1\hat\delta_k\nabla f(\mathbf{x}_k)^T\mathbf{p}_k,
+\end{equation}
+dengan $\hat{\mathbf{x}}_{k+1}$ dan $\hat\delta_k$ dihasilkan oleh aturan Armijo dengan pelacakan mundur.
+\end{exercise}
+\begin{exercise} Buktikan Korolari \ref{cor:SymmetricPDConverge}. [Petunjuk: gunakan Lemma \ref{lem:AscentDirection}, serta batas spektral seragam untuk membuktikan bahwa arah-arahnya berkaitan dengan gradien.]
+\end{exercise}
+
+% P04-S004 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 207--243
+% segment-id: d90.penn.v1.ch04.seg0004
+\begin{example}[Kegagalan Konvergensi] Kita mengilustrasikan kasus sederhana ketika panjang langkah tidak dipilih melalui pemaksimuman atau aturan Armijo. Tinjau fungsi
+\begin{displaymath}
+f(x)=
+\begin{cases}
+-\frac{4}{5}\left(1-x\right)^2+2-2x & 1<x,\\
+-\frac{4}{5}\left(1+x\right)^2+2+2x & x<-1,\\
+-x^2+1 & \text{selainnya}.
+\end{cases}
+\end{displaymath}
+Mulailah dari $x_0=-2$ dan tetapkan panjang langkah konstan $\delta_k=1$. Pendakian gradien menghasilkan barisan $\{x_k\}$ yang ditunjukkan pada Gambar \ref{fig:GradDescentFailure}.
+\begin{figure}[htbp]
+\includegraphics[scale=0.35]{Figures/ConvergenceFailure.pdf}
+\caption{Kegagalan pendakian gradien untuk konvergen ke titik stasioner ketika panjang langkah tidak dipilih dengan aturan Armijo atau pemaksimuman.}
+\label{fig:GradDescentFailure}
+\end{figure}
+Pada setiap langkah,
+\begin{equation}
+x_{k+1}=x_k+\left.\frac{df}{dx}\right\rvert_{x=x_k}.
+\label{eqn:GradRecurse}
+\end{equation}
+Evaluasi Persamaan \ref{eqn:GradRecurse} memberikan, untuk $n=0,1,2,\dots$,
+\begin{equation}
+x_n=(-1)^n\left(\frac{3}{5}\right)^n x_0
++(-1)^{n+1}\left(1-\left(\frac{3}{5}\right)^n\right).
+\end{equation}
+Ketika $n\to\infty$, subsekuens genap menuju $-1$ dan subsekuens ganjil menuju $1$; jadi barisan tersebut tidak konvergen.
+\end{example}
+
+\begin{remark} Berikut ini kita nyatakan tanpa bukti teorema penangkapan, yang menguantifikasi salah satu alasan metode gradien cenderung menuju titik limit tunggal. Buktinya terdapat dalam \cite{Bert99}, hlm.~50--51.
+\end{remark}
+
+\begin{theorem}[Teorema Penangkapan] Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan secara kontinu dan $\{\mathbf{x}_k\}$ memenuhi $f(\mathbf{x}_{k+1})\geq f(\mathbf{x}_k)$ untuk semua $k$, dengan $\mathbf{x}_{k+1}=\mathbf{x}_k+\delta_k\mathbf{p}_k$. Andaikan metode tersebut konvergen dalam arti bahwa setiap titik limit dari setiap barisan yang dihasilkannya merupakan titik stasioner $f$. Andaikan pula terdapat skalar $s>0$ dan $c>0$ sehingga, untuk semua $k$,
+\begin{equation}
+\delta_k\leq s\qquad
+\lVert\mathbf{p}_k\rVert\leq c\lVert\nabla f(\mathbf{x}_k)\rVert.
+\end{equation}
+Misalkan $\mathbf{x}^*$ adalah maksimum lokal $f$ dan merupakan satu-satunya titik stasioner dalam suatu lingkungan terbuka yang memuat $\mathbf{x}^*$. Maka ada himpunan terbuka $S$ yang memuat $\mathbf{x}^*$ sedemikian sehingga, jika $\mathbf{x}_K\in S$ untuk suatu $K\geq0$, maka $\mathbf{x}_k\in S$ bagi semua $k\geq K$ dan $\{\mathbf{x}_k\}_{k\geq K}$ konvergen ke $\mathbf{x}^*$. Lebih lanjut, bagi setiap $\epsilon>0$, himpunan $S$ dapat dipilih sehingga $\lVert\mathbf{x}-\mathbf{x}^*\rVert<\epsilon$ bagi semua $\mathbf{x}\in S$. \hfill\qed
+\end{theorem}
+
+% P04-S005 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 244--331
+% segment-id: d90.penn.v1.ch04.seg0005
+\section{Laju Konvergensi Pendakian Gradien Murni}
+\begin{remark} Kita nyatakan ketaksamaan Kantorovich tanpa bukti. Sketsa buktinya terdapat pada halaman 76 dalam \cite{Bert99}. Variasi bukti Teorema \ref{thm:GradientAscentConverge} tersedia dalam \cite{Bert99} untuk \textit{penurunan gradien}.
+\end{remark}
+
+\begin{lemma}[Ketaksamaan Kantorovich]
+\label{lem:Kantorovich}
+Misalkan $\mathbf{Q}\in\mathbb{R}^{n\times n}$ simetris dan definit positif, dengan nilai eigen $0<\lambda_1\leq\lambda_2\leq\cdots\leq\lambda_n$. Untuk setiap $\mathbf{x}\in\mathbb{R}^{n\times1}$ dengan $\mathbf{x}\neq\mathbf{0}$,
+\begin{equation}
+\frac{(\mathbf{x}^T\mathbf{x})^2}
+{(\mathbf{x}^T\mathbf{Q}\mathbf{x})(\mathbf{x}^T\mathbf{Q}^{-1}\mathbf{x})}
+\geq\frac{4\lambda_1\lambda_n}{(\lambda_1+\lambda_n)^2}.
+\end{equation}
+\end{lemma}
+
+\begin{exercise} Buktikan bahwa Ketaksamaan Kantorovich juga berlaku untuk matriks definit negatif.
+\end{exercise}
+
+\begin{theorem}
+\label{thm:GradientAscentConverge}
+Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ adalah fungsi konkaf ketat
+\begin{equation}
+f(\mathbf{x})=\frac{1}{2}\mathbf{x}^T\mathbf{Q}\mathbf{x},
+\end{equation}
+dengan $\mathbf{Q}\in\mathbb{R}^{n\times n}$ simetris dan definit negatif. Misalkan $\{\mathbf{x}_k\}$ dihasilkan oleh pendakian gradien dengan pencarian garis eksak dan $\mathbf{x}^*=\mathbf{0}$ adalah pemaksimum global tunggal $f$. Jika nilai eigen $\mathbf{Q}$ adalah $0>\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_n$, maka
+\begin{equation}
+f(\mathbf{x}_{k+1})\geq
+\left(\frac{\lambda_n-\lambda_1}{\lambda_n+\lambda_1}\right)^2
+f(\mathbf{x}_k).
+\end{equation}
+\end{theorem}
+
+\begin{remark} Besaran
+\begin{displaymath}
+\rho=\left|\frac{\lambda_n-\lambda_1}{\lambda_n+\lambda_1}\right|
+=\frac{\kappa-1}{\kappa+1},
+\qquad
+\kappa=\frac{|\lambda_n|}{|\lambda_1|}\geq1,
+\end{displaymath}
+adalah faktor konvergensi terburuk per iterasi untuk galat dalam norma yang sesuai, sedangkan $\kappa$ adalah bilangan kondisi spektral. Nilai $\rho$ yang dekat dengan $1$---setara dengan $\kappa$ yang besar---menyebabkan konvergensi lambat (lihat Contoh \ref{ex:GradientAscent}).
+\end{remark}
+
+\begin{proof} Tuliskan $\mathbf{g}_k=\nabla f(\mathbf{x}_k)=\mathbf{Q}\mathbf{x}_k$. Jika $\mathbf{g}_k=\mathbf{0}$, maka $\mathbf{x}_k=\mathbf{x}^*$ dan $f(\mathbf{x}_{k+1})=f(\mathbf{x}_k)$, sehingga hasilnya langsung berlaku. Andaikan $\mathbf{g}_k\neq\mathbf{0}$ dan tinjau
+\begin{equation}
+\phi(\delta)=f(\mathbf{x}_k+\delta\mathbf{g}_k)
+=\frac{1}{2}(\mathbf{x}_k+\delta\mathbf{g}_k)^T
+\mathbf{Q}(\mathbf{x}_k+\delta\mathbf{g}_k).
+\end{equation}
+Ekspansi memberikan
+\begin{equation}
+\phi(\delta)=f(\mathbf{x}_k)
++\frac{1}{2}\delta\mathbf{x}_k^T\mathbf{Q}\mathbf{g}_k
++\frac{1}{2}\delta\mathbf{g}_k^T\mathbf{Q}\mathbf{x}_k
++\delta^2 f(\mathbf{g}_k).
+\end{equation}
+Karena $\mathbf{Q}=\mathbf{Q}^T$, $\mathbf{Q}\mathbf{x}_k=\mathbf{g}_k$, dan $\mathbf{x}_k^T\mathbf{Q}=\mathbf{g}_k^T$,
+\begin{equation}
+\phi(\delta)=f(\mathbf{x}_k)+\delta\mathbf{g}_k^T\mathbf{g}_k
++\delta^2f(\mathbf{g}_k).
+\end{equation}
+Dengan mendiferensialkan dan menetapkan $\phi'(\delta)=0$, diperoleh
+\begin{equation}
+\mathbf{g}_k^T\mathbf{g}_k+2\delta f(\mathbf{g}_k)=0
+\implies
+\delta=\frac{-\mathbf{g}_k^T\mathbf{g}_k}
+{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}.
+\end{equation}
+Nilai $\delta$ positif karena $\mathbf{Q}$ definit negatif. Substitusi ke $f(\mathbf{x}_{k+1})$ menghasilkan
+\begin{multline}
+f(\mathbf{x}_{k+1})=f(\mathbf{x}_k+\delta\mathbf{g}_k)
+=\frac{1}{2}(\mathbf{x}_k+\delta\mathbf{g}_k)^T\mathbf{Q}(\mathbf{x}_k+\delta\mathbf{g}_k)=\\
+f(\mathbf{x}_k)+\delta\mathbf{g}_k^T\mathbf{g}_k+\delta^2f(\mathbf{g}_k)=
+f(\mathbf{x}_k)+
+\left(\frac{-\mathbf{g}_k^T\mathbf{g}_k}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}\right)
+\mathbf{g}_k^T\mathbf{g}_k
++\left(\frac{-\mathbf{g}_k^T\mathbf{g}_k}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}\right)^2
+f(\mathbf{g}_k)=\\
+\frac{1}{2}\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k
+-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}
++\frac{1}{2}\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}
+=\frac{1}{2}\left(
+\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k
+-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}
+\right).
+\end{multline}
+Karena $\mathbf{Q}$ simetris,
+\begin{equation}
+\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k
+=\mathbf{x}_k^T\mathbf{Q}^T\mathbf{Q}^{-1}\mathbf{Q}\mathbf{x}_k
+=\mathbf{g}_k^T\mathbf{Q}^{-1}\mathbf{g}_k.
+\end{equation}
+Oleh karena itu,
+\begin{multline}
+f(\mathbf{x}_{k+1})=
+\frac{1}{2}\left(
+\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k
+-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}{\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k}
+\right)=\\
+\frac{1}{2}\left(
+1-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}
+{(\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k)
+(\mathbf{g}_k^T\mathbf{Q}^{-1}\mathbf{g}_k)}
+\right)\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k
+=\left(
+1-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}
+{(\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k)
+(\mathbf{g}_k^T\mathbf{Q}^{-1}\mathbf{g}_k)}
+\right)f(\mathbf{x}_k).
+\label{eqn:FinalEqnGradAscentConverge}
+\end{multline}
+Persamaan \ref{eqn:FinalEqnGradAscentConverge}, definit-negatifnya $\mathbf{Q}$, dan definit-positifnya $-\mathbf{Q}$ memberikan
+\begin{enumerate*}
+\item $f(\mathbf{x}_k),f(\mathbf{x}_{k+1})\leq0$;
+\item
+\begin{displaymath}
+\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}
+{(\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k)
+(\mathbf{g}_k^T\mathbf{Q}^{-1}\mathbf{g}_k)}>0;
+\end{displaymath}
+\item dan, berdasarkan Cauchy--Schwarz bagi $-\mathbf{Q}$,
+\begin{displaymath}
+0\leq
+1-\frac{(\mathbf{g}_k^T\mathbf{g}_k)^2}
+{(\mathbf{g}_k^T\mathbf{Q}\mathbf{g}_k)
+(\mathbf{g}_k^T\mathbf{Q}^{-1}\mathbf{g}_k)}<1.
+\end{displaymath}
+\end{enumerate*}
+Dengan menerapkan Lemma \ref{lem:Kantorovich} pada $-\mathbf{Q}$ dan memperhatikan bahwa $f(\mathbf{x}_k)\leq0$, diperoleh
+\begin{multline}
+f(\mathbf{x}_{k+1})\geq
+\left(1-\frac{4\lambda_1\lambda_n}{(\lambda_1+\lambda_n)^2}\right)f(\mathbf{x}_k)
+=\left(
+\frac{(\lambda_1+\lambda_n)^2-4\lambda_1\lambda_n}
+{(\lambda_1+\lambda_n)^2}
+\right)f(\mathbf{x}_k)=\\
+\left(
+\frac{\lambda_1^2-2\lambda_1\lambda_n+\lambda_n^2}
+{(\lambda_1+\lambda_n)^2}
+\right)f(\mathbf{x}_k)
+=\left(\frac{\lambda_1-\lambda_n}{\lambda_1+\lambda_n}\right)^2
+f(\mathbf{x}_k).
+\end{multline}
+Ini menyelesaikan bukti.
+\end{proof}
+
+% P04-S006 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 332--363
+% segment-id: d90.penn.v1.ch04.seg0006
+\begin{cgalgorithm}[htbp]
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{PendakianGradien---bagian 1 dari 2}\\
+\textbf{Masukan:} $F:\mathbb{R}^n\to\mathbb{R}$, $\mathbf{x}_0$, toleransi $\epsilon>0$, dan prosedur pencarian garis.\\
+1. Tetapkan $k\leftarrow0$, $\mathbf{x}\leftarrow\mathbf{x}_0$, dan lintasan $P\leftarrow[\mathbf{x}]$.\\
+2. Hitung $\mathbf{g}\leftarrow\nabla F(\mathbf{x})$.
+}}
+\end{cgalgorithm}
+\begin{cgalgorithm}[htbp]
+\caption{Implementasi acuan pendakian gradien}
+\label{alg:GradientAscent}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{PendakianGradien---bagian 2 dari 2}\\
+3. Selama $\lVert\mathbf{g}\rVert>\epsilon$, definisikan $\phi(t)=F(\mathbf{x}+t\mathbf{g})$.\\
+4. Pilih $t>0$ dengan prosedur pencarian garis yang memenuhi kontraknya.\\
+5. Tetapkan $\mathbf{x}\leftarrow\mathbf{x}+t\mathbf{g}$, tambahkan $\mathbf{x}$ ke $P$, naikkan $k$, dan hitung ulang $\mathbf{g}\leftarrow\nabla F(\mathbf{x})$.\\
+6. Kembalikan lintasan $P$ dan titik terakhir $\mathbf{x}$.
+}}
+\end{cgalgorithm}
+
+\begin{remark} Bukti sebelumnya sedikit lebih mudah dibaca untuk persoalan peminimuman karena nilai-nilainya positif dan kita tidak perlu melacak pembalikan tanda. Meskipun demikian, latihan tanda pada kasus pemaksimuman membantu pemahaman bukti.
+\end{remark}
+
+\begin{remark} Pseudokode pada Algoritma \ref{alg:GradientAscent} ditulis secara independen untuk edisi ini; ia tidak menyalin implementasi Maple sumber. Prosedur pencarian garis dapat menggabungkan pengurungan parabolik terlindungi (Algoritma \ref{alg:Bracket}), pencarian bagian emas (Algoritma \ref{alg:GoldenSearch}), dan pelacakan mundur (Algoritma \ref{alg:BackTrace}) untuk menemukan langkah awal yang menaikkan $\phi$. Setiap komponen tetap harus memenuhi hipotesis dan kontrak kegagalan algoritmanya sendiri.
+\end{remark}
+
+\begin{example}
+\label{ex:GradientAscent}
+Tinjau fungsi $F(x,y)=-2x^2-10y^2$. Jika pendakian gradien dimulai dari $x=15$, $y=5$ dengan $\epsilon=0.001$, lintasannya konvergen ke sekitar titik optimal $x^*=0$, $y^*=0$. Gerak zig-zag merupakan perilaku khas ketika magnitudo nilai eigen terbesar dan terkecil sangat berbeda (lihat Teorema \ref{thm:GradientAscentConverge}). Dalam representasi $F(\mathbf{x})=\tfrac12\mathbf{x}^T\mathbf{Q}\mathbf{x}$,
+\begin{displaymath}
+\mathbf{Q}=\begin{bmatrix}-4&0\\0&-20\end{bmatrix}.
+\end{displaymath}
+Jadi bilangan kondisi spektralnya $\kappa=20/4=5$, sedangkan faktor konvergensi gradien terburuknya $\rho=(5-1)/(5+1)=2/3$. Faktor $\rho$ yang cukup dekat dengan $1$ menjelaskan konvergensi yang relatif lambat dan gerak zig-zag.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/GradientAscentOut.pdf}
+\caption{Pendakian gradien pada $F(x,y)=-2x^2-10y^2$ dari $x=15$, $y=5$. Gerak zig-zag lazim terjadi ketika magnitudo $\lambda_n$ dan $\lambda_1$ sangat berbeda (lihat Teorema \ref{thm:GradientAscentConverge}).}
+\label{fig:GradientAscent}
+\end{figure}
+\end{example}
+
+\begin{exercise} Implementasikan Pendakian Gradien dengan pencarian garis tak-eksak. Dengan memakai $F(x,y)$ dari Contoh \ref{ex:GradientAscent}, buat gambar seperti Gambar \ref{fig:GradientAscent} untuk mengilustrasikan langkah-langkah algoritma Anda.
+\end{exercise}
+
+% P04-S007 | sumber authority/penn-state/source/ClassNotes/Section4.tex baris 364--469
+% segment-id: d90.penn.v1.ch04.seg0007
+\section{Laju Konvergensi Algoritma Pendakian Dasar}
+\begin{theorem}
+\label{thm:Superlinear}
+Misalkan $f:\mathbb{R}^n\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu dan $\{\mathbf{x}_k\}$ dihasilkan oleh Algoritma \ref{alg:ModifiedGradientAscent}, dengan $\mathbf{x}_{k+1}=\mathbf{x}_k+\delta_k\mathbf{p}_k$. Andaikan $\mathbf{x}_k\to\mathbf{x}^*$, $\nabla f(\mathbf{x}^*)=\mathbf{0}$, dan $\mathbf{H}(\mathbf{x}^*)=\nabla^2f(\mathbf{x}^*)$ definit negatif. Andaikan pula $\nabla f(\mathbf{x}_k)\neq\mathbf{0}$ untuk setiap $k$ dan
+\begin{equation}
+\lim_{k\to\infty}
+\frac{\lVert\mathbf{p}_k+\mathbf{H}^{-1}(\mathbf{x}^*)\nabla f(\mathbf{x}_k)\rVert}
+{\lVert\nabla f(\mathbf{x}_k)\rVert}=0.
+\label{eqn:Necessary}
+\end{equation}
+Jika $\delta_k$ dipilih dengan Algoritma \ref{alg:BackTrace}, $t_0=1$, dan $0<\sigma_1<\tfrac12$, maka
+\begin{equation}
+\lim_{k\to\infty}
+\frac{\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert}
+{\lVert\mathbf{x}_k-\mathbf{x}^*\rVert}=0.
+\label{eqn:Superlinear}
+\end{equation}
+Selain itu, terdapat bilangan bulat $\bar{k}\geq0$ sehingga $\delta_k=1$ untuk setiap $k\geq\bar{k}$; yakni, akhirnya pelacakan mundur menerima langkah satu tanpa menjalankan perulangannya.
+\end{theorem}
+
+\begin{remark} Teorema ini menyatakan bahwa, jika aturan pemilihan arah $\mathbf{p}_k$ mendekati langkah Newton saat $k$ membesar, algoritma berkonvergensi superlinear menurut Persamaan \ref{eqn:Superlinear}.
+\end{remark}
+
+\begin{remark} Ketika Hessian nonsingular, langkah Newton untuk pemaksimuman adalah
+
+$\mathbf{p}_k^{N}=-\mathbf{H}(\mathbf{x}_k)^{-1}\nabla f(\mathbf{x}_k)$.
+
+Persamaan \ref{eqn:Necessary} mengatakan bahwa arah yang dipilih mendekati langkah Newton ini secara relatif, dengan Hessian limit $\mathbf{H}(\mathbf{x}^*)$.
+\end{remark}
+
+\begin{proof} Berdasarkan Teorema Nilai Rata-rata Orde Kedua (Lemma \ref{thm:MVT2}), untuk setiap $k$ ada $t_k\in(0,1)$ sehingga
+\begin{equation}
+f(\mathbf{x}_k+\mathbf{p}_k)-f(\mathbf{x}_k)
+=\nabla f(\mathbf{x}_k)^T\mathbf{p}_k
++\frac12\mathbf{p}_k^T\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)\mathbf{p}_k.
+\end{equation}
+Jika untuk semua $k$ yang cukup besar berlaku
+\begin{equation}
+\nabla f(\mathbf{x}_k)^T\mathbf{p}_k
++\frac12\mathbf{p}_k^T\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)\mathbf{p}_k
+\geq\sigma_1\nabla f(\mathbf{x}_k)^T\mathbf{p}_k,
+\label{eqn:kbar1}
+\end{equation}
+maka langkah satu memenuhi aturan Armijo dan diterima tanpa penyusutan. Persamaan \ref{eqn:kbar1} ekuivalen dengan
+\begin{equation}
+(1-\sigma_1)\nabla f(\mathbf{x}_k)^T\mathbf{p}_k
++\frac12\mathbf{p}_k^T\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)\mathbf{p}_k
+\geq0.
+\label{eqn:kbar2}
+\end{equation}
+Definisikan
+\begin{gather*}
+\mathbf{q}_k=\frac{\nabla f(\mathbf{x}_k)}{\lVert\nabla f(\mathbf{x}_k)\rVert},\\
+\mathbf{r}_k=\frac{\mathbf{p}_k}{\lVert\nabla f(\mathbf{x}_k)\rVert}.
+\end{gather*}
+Setelah Persamaan \ref{eqn:kbar2} dibagi dengan $\lVert\nabla f(\mathbf{x}_k)\rVert^2$, ruas kirinya menjadi
+\begin{equation}
+E_k:=(1-\sigma_1)\mathbf{q}_k^T\mathbf{r}_k
++\frac12\mathbf{r}_k^T\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)\mathbf{r}_k.
+\label{eqn:kbar3}
+\end{equation}
+Dari Persamaan \ref{eqn:Necessary},
+\begin{equation}
+\lim_{k\to\infty}
+\lVert\mathbf{r}_k+\mathbf{H}^{-1}(\mathbf{x}^*)\mathbf{q}_k\rVert=0.
+\end{equation}
+Karena $\lVert\mathbf{q}_k\rVert=1$, barisan $\{\mathbf{r}_k\}$ terbatas. Selanjutnya, $\nabla f(\mathbf{x}_k)\to\mathbf{0}$ membuat $\mathbf{p}_k\to\mathbf{0}$, sehingga $\mathbf{x}_k+t_k\mathbf{p}_k\to\mathbf{x}^*$ dan Hessian pada titik tersebut menuju $\mathbf{H}(\mathbf{x}^*)$. Tuliskan $\mathbf{A}=\mathbf{H}^{-1}(\mathbf{x}^*)$ dan
+\begin{equation}
+\mathbf{r}_k=-\mathbf{A}\mathbf{q}_k+\mathbf{z}_k,
+\qquad \mathbf{z}_k\to\mathbf{0}.
+\end{equation}
+Substitusi ke Persamaan \ref{eqn:kbar3} memberi
+\begin{multline}
+E_k=(1-\sigma_1)\mathbf{q}_k^T(-\mathbf{A}\mathbf{q}_k+\mathbf{z}_k)+\\
+\frac12(-\mathbf{A}\mathbf{q}_k+\mathbf{z}_k)^T
+\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)
+(-\mathbf{A}\mathbf{q}_k+\mathbf{z}_k).
+\end{multline}
+Karena $\mathbf{q}_k$ dan $\mathbf{r}_k$ terbatas, semua suku yang mengandung $\mathbf{z}_k$ dapat dihimpun ke galat $e_k\to0$, sehingga
+\begin{equation}
+E_k=-(1-\sigma_1)\mathbf{q}_k^T\mathbf{A}\mathbf{q}_k
++\frac12(\mathbf{A}\mathbf{q}_k)^T
+\mathbf{H}(\mathbf{x}_k+t_k\mathbf{p}_k)
+(\mathbf{A}\mathbf{q}_k)+e_k.
+\end{equation}
+Konvergensi Hessian bersifat seragam pada vektor satuan $\mathbf{q}_k$, dan $\mathbf{A}\mathbf{H}(\mathbf{x}^*)\mathbf{A}=\mathbf{A}$. Maka
+\begin{equation}
+E_k=-\left(\frac12-\sigma_1\right)
+\mathbf{q}_k^T\mathbf{A}\mathbf{q}_k+o(1).
+\end{equation}
+Karena $\mathbf{A}$ definit negatif, ada $\mu>0$ sehingga $-\mathbf{q}^T\mathbf{A}\mathbf{q}\geq\mu$ untuk setiap $\lVert\mathbf{q}\rVert=1$. Oleh sebab itu,
+\begin{equation}
+E_k\geq\left(\frac12-\sigma_1\right)\mu+o(1)>0
+\quad\text{untuk semua $k$ yang cukup besar}.
+\label{eqn:FinalKbar}
+\end{equation}
+Persamaan \ref{eqn:FinalKbar} menunjukkan bahwa Persamaan \ref{eqn:kbar2}, dan karenanya Persamaan \ref{eqn:kbar1}, berlaku untuk $k$ cukup besar. Dengan demikian, terdapat $\bar{k}$ sehingga $\delta_k=1$ bagi semua $k\geq\bar{k}$.
+
+Persamaan \ref{eqn:Necessary} dapat ditulis sebagai
+\begin{equation}
+\mathbf{p}_k+\mathbf{H}^{-1}(\mathbf{x}^*)\nabla f(\mathbf{x}_k)
+=\lVert\nabla f(\mathbf{x}_k)\rVert\mathbf{y}_k,
+\qquad\mathbf{y}_k\to\mathbf{0}.
+\end{equation}
+Dengan menerapkan ekspansi Taylor pada fungsi bernilai vektor $\nabla f$ di $\mathbf{x}^*$,
+\begin{equation}
+\nabla f(\mathbf{x}_k)-\nabla f(\mathbf{x}^*)
+=\mathbf{H}(\mathbf{x}^*)(\mathbf{x}_k-\mathbf{x}^*)
++o\!\left(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\right).
+\end{equation}
+Karena $\nabla f(\mathbf{x}^*)=\mathbf{0}$,
+\begin{equation}
+\mathbf{H}^{-1}(\mathbf{x}^*)\nabla f(\mathbf{x}_k)
+=(\mathbf{x}_k-\mathbf{x}^*)
++o\!\left(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\right).
+\end{equation}
+Selain itu, $\lVert\nabla f(\mathbf{x}_k)\rVert=O(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert)$. Kedua hubungan ini memberi
+\begin{equation}
+\mathbf{p}_k+(\mathbf{x}_k-\mathbf{x}^*)
+=o\!\left(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\right).
+\label{eqn:LittleO1}
+\end{equation}
+Untuk $k\geq\bar{k}$,
+\begin{equation}
+\mathbf{x}_{k+1}=\mathbf{x}_k+\mathbf{p}_k.
+\end{equation}
+Dengan menggabungkannya dengan Persamaan \ref{eqn:LittleO1}, diperoleh
+\begin{equation}
+\mathbf{x}_{k+1}-\mathbf{x}^*
+=o\!\left(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert\right).
+\end{equation}
+Jadi,
+\begin{equation}
+\lim_{k\to\infty}
+\frac{\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert}
+{\lVert\mathbf{x}_k-\mathbf{x}^*\rVert}
+=\lim_{k\to\infty}
+\frac{o(\lVert\mathbf{x}_k-\mathbf{x}^*\rVert)}
+{\lVert\mathbf{x}_k-\mathbf{x}^*\rVert}=0.
+\end{equation}
+Ini menyelesaikan bukti.
+\end{proof}
+
+% Sumber menutup bab dengan komentar draf yang tidak mengandung materi pembaca.

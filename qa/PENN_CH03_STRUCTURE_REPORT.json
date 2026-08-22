@@ -1,0 +1,804 @@
+{
+  "admission_status": "PASS",
+  "audit_script": {
+    "bytes": 29555,
+    "path": "qa/audit_penn_ch03_unit.py",
+    "physical_lines": 757,
+    "sha256": "f17048adfb98de942c7c2d7a9884df53e785ddebd13eecf3845566bdf31d6323"
+  },
+  "checks": [
+    {
+      "check": "pinned_source_identity",
+      "evidence": {
+        "actual": {
+          "bytes": 41715,
+          "path": "authority/penn-state/source/ClassNotes/Section3.tex",
+          "physical_lines": 608,
+          "sha256": "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+        },
+        "expected": {
+          "bytes": 41715,
+          "lines": 608,
+          "sha256": "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "pinned_target_identity",
+      "evidence": {
+        "actual": {
+          "bytes": 44364,
+          "path": "source/id-ID/penn-03-pendakian-gradien-dan-pencarian-garis-id.tex",
+          "physical_lines": 646,
+          "sha256": "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+        },
+        "expected": {
+          "bytes": 44364,
+          "lines": 646,
+          "sha256": "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "pinned_ledger_identity",
+      "evidence": {
+        "actual": {
+          "bytes": 14813,
+          "path": "qa/PENN_CH03_PROPOSED_LEDGER.jsonl",
+          "physical_lines": 21,
+          "sha256": "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+        },
+        "expected": {
+          "bytes": 14813,
+          "lines": 21,
+          "sha256": "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ledger_schema_and_consecutive_unique_ids",
+      "evidence": [
+        "O015-PENN-ADV-0004",
+        "O015-PENN-ADV-0005",
+        "O015-PENN-ADV-0006",
+        "O015-PENN-ADV-0007",
+        "O015-PENN-ADV-0008",
+        "O015-PENN-ADV-0009",
+        "O015-PENN-ADV-0010",
+        "O015-PENN-ADV-0011",
+        "O015-PENN-ADV-0012",
+        "O015-PENN-ADV-0013",
+        "O015-PENN-ADV-0014",
+        "O015-PENN-ADV-0015",
+        "O015-PENN-ADV-0016",
+        "O015-PENN-ADV-0017",
+        "O015-PENN-ADV-0018",
+        "O015-PENN-ADV-0019",
+        "O015-PENN-ADV-0020",
+        "O015-PENN-ADV-0021",
+        "O015-PENN-ADV-0022",
+        "O015-PENN-ADV-0023",
+        "O015-PENN-ADV-0024"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "ledger_authority_binding",
+      "evidence": [
+        "o015-penn-math555-v1.0-source"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "balanced_live_source_environments",
+      "evidence": [],
+      "status": "PASS"
+    },
+    {
+      "check": "balanced_live_target_environments",
+      "evidence": [],
+      "status": "PASS"
+    },
+    {
+      "check": "exact_142_environment_topology",
+      "evidence": {
+        "counts": {
+          "algorithm": 5,
+          "aligned": 1,
+          "cases": 2,
+          "cgalgorithm": 1,
+          "corollary": 2,
+          "definition": 5,
+          "displaymath": 16,
+          "enumerate*": 1,
+          "equation": 33,
+          "example": 5,
+          "exercise": 12,
+          "figure": 4,
+          "gather": 2,
+          "gather*": 1,
+          "lemma": 3,
+          "minipage": 1,
+          "proof": 9,
+          "proposition": 3,
+          "remark": 29,
+          "theorem": 6,
+          "verbatim": 1
+        },
+        "source_total": 142,
+        "target_total": 142
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "disabled_comment_environment_exclusion",
+      "evidence": {
+        "live_begin_tokens": 142,
+        "raw_begin_tokens": 149
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_35_labels_once",
+      "evidence": {
+        "source": [
+          "def:AscentDir",
+          "alg:ModifiedGradientAscent",
+          "lem:AscentDirection",
+          "eqn:LineSearchProblem",
+          "prop:QuadFit",
+          "cor:QuadFitTurn",
+          "alg:Bracket",
+          "rem:SimpleBracketing",
+          "exer:BracketProof",
+          "alg:DichotomousSearch",
+          "fig:DichotomousSearch",
+          "thm:DichotomousSearchProof",
+          "thm:Convergence",
+          "fig:NonConcave",
+          "ex:DichotSearchExample",
+          "fig:GoldenRatioProof",
+          "alg:GoldenSearch",
+          "thm:GoldenSectionSearchProof",
+          "fig:SearchFailure",
+          "alg:Bisection",
+          "exer:BisectionConverge",
+          "alg:NewtonsMethod1",
+          "def:Contraction",
+          "eqn:ContractionRelation",
+          "eqn:Induction",
+          "lem:NMContractionDeriv",
+          "eqn:NMhDeriv",
+          "eqn:NMDerivBound",
+          "thm:NMPreReq",
+          "eqn:NMDefRho",
+          "cor:NMConverge",
+          "thm:NMConvergeRate",
+          "eqn:NMConvergeRate1",
+          "eqn:NMConvergeRate2",
+          "eqn:NMConvergeRate3"
+        ],
+        "target": [
+          "def:AscentDir",
+          "alg:ModifiedGradientAscent",
+          "lem:AscentDirection",
+          "eqn:LineSearchProblem",
+          "prop:QuadFit",
+          "cor:QuadFitTurn",
+          "alg:Bracket",
+          "rem:SimpleBracketing",
+          "exer:BracketProof",
+          "alg:DichotomousSearch",
+          "fig:DichotomousSearch",
+          "thm:DichotomousSearchProof",
+          "thm:Convergence",
+          "ex:DichotSearchExample",
+          "fig:NonConcave",
+          "fig:GoldenRatioProof",
+          "alg:GoldenSearch",
+          "thm:GoldenSectionSearchProof",
+          "fig:SearchFailure",
+          "alg:Bisection",
+          "exer:BisectionConverge",
+          "alg:NewtonsMethod1",
+          "def:Contraction",
+          "eqn:ContractionRelation",
+          "eqn:Induction",
+          "lem:NMContractionDeriv",
+          "thm:NMPreReq",
+          "eqn:NMhDeriv",
+          "eqn:NMDerivBound",
+          "eqn:NMDefRho",
+          "cor:NMConverge",
+          "thm:NMConvergeRate",
+          "eqn:NMConvergeRate1",
+          "eqn:NMConvergeRate2",
+          "eqn:NMConvergeRate3"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_37_unique_reference_targets",
+      "evidence": {
+        "source_occurrences": 56,
+        "source_unique": [
+          "alg:Bisection",
+          "alg:Bracket",
+          "alg:DichotomousSearch",
+          "alg:GoldenSearch",
+          "alg:ModifiedGradientAscent",
+          "alg:NewtonsMethod1",
+          "cor:InversePositiveDefinite",
+          "cor:NMConverge",
+          "cor:QuadFitTurn",
+          "def:Contraction",
+          "eqn:ContractionRelation",
+          "eqn:Induction",
+          "eqn:LineSearchProblem",
+          "eqn:NMConvergeRate1",
+          "eqn:NMConvergeRate2",
+          "eqn:NMConvergeRate3",
+          "eqn:NMDefRho",
+          "eqn:NMDerivBound",
+          "eqn:NMhDeriv",
+          "ex:DichotSearchExample",
+          "exer:BisectionConverge",
+          "exer:BracketProof",
+          "fig:DichotomousSearch",
+          "fig:GoldenRatioProof",
+          "fig:NonConcave",
+          "fig:QuarticFunction",
+          "fig:SearchFailure",
+          "lem:NMContractionDeriv",
+          "prop:QuadFit",
+          "rem:SimpleBracketing",
+          "sec:Convergence",
+          "thm:Convergence",
+          "thm:GoldenSectionSearchProof",
+          "thm:Gradient",
+          "thm:MVT",
+          "thm:NMPreReq",
+          "thm:Necessary"
+        ],
+        "target_occurrences": 52,
+        "target_unique": [
+          "alg:Bisection",
+          "alg:Bracket",
+          "alg:DichotomousSearch",
+          "alg:GoldenSearch",
+          "alg:ModifiedGradientAscent",
+          "alg:NewtonsMethod1",
+          "cor:InversePositiveDefinite",
+          "cor:NMConverge",
+          "cor:QuadFitTurn",
+          "def:Contraction",
+          "eqn:ContractionRelation",
+          "eqn:Induction",
+          "eqn:LineSearchProblem",
+          "eqn:NMConvergeRate1",
+          "eqn:NMConvergeRate2",
+          "eqn:NMConvergeRate3",
+          "eqn:NMDefRho",
+          "eqn:NMDerivBound",
+          "eqn:NMhDeriv",
+          "ex:DichotSearchExample",
+          "exer:BisectionConverge",
+          "exer:BracketProof",
+          "fig:DichotomousSearch",
+          "fig:GoldenRatioProof",
+          "fig:NonConcave",
+          "fig:QuarticFunction",
+          "fig:SearchFailure",
+          "lem:NMContractionDeriv",
+          "prop:QuadFit",
+          "rem:SimpleBracketing",
+          "sec:Convergence",
+          "thm:Convergence",
+          "thm:GoldenSectionSearchProof",
+          "thm:Gradient",
+          "thm:MVT",
+          "thm:NMPreReq",
+          "thm:Necessary"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_nine_entry_citation_sequence",
+      "evidence": {
+        "source": [
+          "PTVF07",
+          "PTVF07",
+          "PTVF07",
+          "BHS06",
+          "Bert99",
+          "PTVF07",
+          "Av03",
+          "BHS06",
+          "Munk00"
+        ],
+        "target": [
+          "PTVF07",
+          "PTVF07",
+          "PTVF07",
+          "BHS06",
+          "Bert99",
+          "PTVF07",
+          "Av03",
+          "BHS06",
+          "Munk00"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_four_figure_call_sequence",
+      "evidence": {
+        "source": [
+          "Figures/DichotomousSearch.pdf",
+          "Figures/NonConcave.pdf",
+          "Figures/GoldenRatioProof.pdf",
+          "Figures/GoldenSectionFail.pdf"
+        ],
+        "target": [
+          "Figures/DichotomousSearch.pdf",
+          "Figures/NonConcave.pdf",
+          "Figures/GoldenRatioProof.pdf",
+          "Figures/GoldenSectionFail.pdf"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_twelve_exercises",
+      "evidence": {
+        "source": 12,
+        "target": 12
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "eight_segment_exact_contiguous_source_closure",
+      "evidence": [
+        {
+          "name": "P03-S001",
+          "segment_id": "d90.penn.v1.ch03.seg0001",
+          "source_end": 47,
+          "source_start": 1,
+          "target_end": 51,
+          "target_marker_line": 1,
+          "target_start": 1
+        },
+        {
+          "name": "P03-S002",
+          "segment_id": "d90.penn.v1.ch03.seg0002",
+          "source_end": 80,
+          "source_start": 48,
+          "target_end": 86,
+          "target_marker_line": 52,
+          "target_start": 52
+        },
+        {
+          "name": "P03-S003",
+          "segment_id": "d90.penn.v1.ch03.seg0003",
+          "source_end": 160,
+          "source_start": 81,
+          "target_end": 185,
+          "target_marker_line": 87,
+          "target_start": 87
+        },
+        {
+          "name": "P03-S004",
+          "segment_id": "d90.penn.v1.ch03.seg0004",
+          "source_end": 224,
+          "source_start": 161,
+          "target_end": 255,
+          "target_marker_line": 186,
+          "target_start": 186
+        },
+        {
+          "name": "P03-S005",
+          "segment_id": "d90.penn.v1.ch03.seg0005",
+          "source_end": 312,
+          "source_start": 225,
+          "target_end": 350,
+          "target_marker_line": 256,
+          "target_start": 256
+        },
+        {
+          "name": "P03-S006",
+          "segment_id": "d90.penn.v1.ch03.seg0006",
+          "source_end": 404,
+          "source_start": 313,
+          "target_end": 425,
+          "target_marker_line": 351,
+          "target_start": 351
+        },
+        {
+          "name": "P03-S007",
+          "segment_id": "d90.penn.v1.ch03.seg0007",
+          "source_end": 452,
+          "source_start": 405,
+          "target_end": 482,
+          "target_marker_line": 426,
+          "target_start": 426
+        },
+        {
+          "name": "P03-S008",
+          "segment_id": "d90.penn.v1.ch03.seg0008",
+          "source_end": 608,
+          "source_start": 453,
+          "target_end": 646,
+          "target_marker_line": 483,
+          "target_start": 483
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "six_Maple_calls_and_five_output_calls_identified",
+      "evidence": {
+        "inputs": [
+          "Outputs/BracketExample1.tex",
+          "Outputs/BracketExample2.tex",
+          "Outputs/DichotomousOutput.tex",
+          "Outputs/GoldenSectionOutput.tex",
+          "Outputs/BisectionOutput.tex"
+        ],
+        "listings": [
+          "Code/QuadraticTurn.mpl",
+          "Code/ParabolicBracket.mpl",
+          "Code/DichotomousSearch.mpl",
+          "Code/GoldenSectionSearch.mpl",
+          "Code/BisectionSearch.mpl",
+          "Code/NewtonsMethod.mpl"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "target_has_no_legacy_listing_or_input_dependency",
+      "evidence": {
+        "target_inputs": [],
+        "target_listings": []
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "six_independent_pseudocode_replacement_surfaces",
+      "evidence": {
+        "fbox_surfaces": 6,
+        "independent_authorship_phrases": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact_legacy_dependency_witnesses",
+      "evidence": [
+        {
+          "bytes": 355,
+          "reference": "Code/QuadraticTurn.mpl",
+          "sha256": "6370cab7dcc4db79848e52959935df35184d38eaf6cd2c37616c17d67d317598",
+          "status": "PASS"
+        },
+        {
+          "bytes": 1716,
+          "reference": "Code/ParabolicBracket.mpl",
+          "sha256": "2eec4ee4856a8e8cf27c24a0a8d3eb6a6dd7f850486a38da84b73969f8e5006e",
+          "status": "PASS"
+        },
+        {
+          "bytes": 529,
+          "reference": "Code/DichotomousSearch.mpl",
+          "sha256": "0ffa9733a13c364465db5bde1d77a12995a04dabc41b640a0f11d850f866bc40",
+          "status": "PASS"
+        },
+        {
+          "bytes": 650,
+          "reference": "Code/GoldenSectionSearch.mpl",
+          "sha256": "a6c2685894a3acb3f37bc8a941f4524e40cba583ebe4df7e8f95f7c51953966a",
+          "status": "PASS"
+        },
+        {
+          "bytes": 538,
+          "reference": "Code/BisectionSearch.mpl",
+          "sha256": "0b3894b948fb15908c68925061111e0397a4e4e9fbc6af70bdb56aa1335f6997",
+          "status": "PASS"
+        },
+        {
+          "bytes": 406,
+          "reference": "Code/NewtonsMethod.mpl",
+          "sha256": "173078c027925a8153b7b3350971dc2765d6cd91e30f500442c6bf229ae648c3",
+          "status": "PASS"
+        },
+        {
+          "bytes": 424,
+          "reference": "Outputs/BracketExample1.tex",
+          "sha256": "1a521119df1ab71f58166033c7f7003a07a2f2e482a5bcc747774e05fac6414c",
+          "status": "PASS"
+        },
+        {
+          "bytes": 276,
+          "reference": "Outputs/BracketExample2.tex",
+          "sha256": "00364d7e6471f110e529dddb87dc2418a05a567079b7a336948bee3f8c766007",
+          "status": "PASS"
+        },
+        {
+          "bytes": 702,
+          "reference": "Outputs/DichotomousOutput.tex",
+          "sha256": "6f16487ec99050c506b32b379fc035106ef8d6743e34dea23ca5e2d03b36f172",
+          "status": "PASS"
+        },
+        {
+          "bytes": 850,
+          "reference": "Outputs/GoldenSectionOutput.tex",
+          "sha256": "290a80d59372078be61d60bb7b92edcb597b2d444503323f0d695b7003245089",
+          "status": "PASS"
+        },
+        {
+          "bytes": 309,
+          "reference": "Outputs/BisectionOutput.tex",
+          "sha256": "21e3bef1d4e4ff3b203b6456598f7dd13dc44b06a63c3fdfda8b143eab8229fb",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "exact_four_authority_figure_assets",
+      "evidence": [
+        {
+          "bytes": 101202,
+          "reference": "Figures/DichotomousSearch.pdf",
+          "sha256": "ccdc24742cbb4b908b740c34940cf84f314994e3bdb6b815edf902eb98be32e4",
+          "status": "PASS"
+        },
+        {
+          "bytes": 9733,
+          "reference": "Figures/NonConcave.pdf",
+          "sha256": "bc17c66377f01fc567639fd745f436d80ccedebc50824aba2b5d0ed470bc7c64",
+          "status": "PASS"
+        },
+        {
+          "bytes": 81307,
+          "reference": "Figures/GoldenRatioProof.pdf",
+          "sha256": "ad405a95c466ca65670c0be53cb54667846106ac03ffa9c86bf4248daf6cbb32",
+          "status": "PASS"
+        },
+        {
+          "bytes": 9913,
+          "reference": "Figures/GoldenSectionFail.pdf",
+          "sha256": "5abd708847cf98662f12645172e9b3390420d0263840ac3d7def776ffad07868",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "five_legacy_output_witnesses_integrated",
+      "evidence": [
+        "(2.864863884,\\,2.899652455,\\,2.904582162)",
+        "(6.194427192,\\,7.317871765,\\,7.565247585)",
+        "x^+\\approx9.001215067",
+        "x^+\\approx8.998228439",
+        "u=5.0009765625"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "no_verbatim_Maple_line_copy",
+      "evidence": [],
+      "status": "PASS"
+    },
+    {
+      "check": "every_formula_delta_has_known_ledger_binding",
+      "evidence": {
+        "canonical_equal_pairs": 230,
+        "delta_blocks": 89,
+        "source_math_records": 499,
+        "target_math_records": 570,
+        "unbound_delta_blocks": 0,
+        "unknown_ledger_bindings": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "independent_re_review_of_repaired_surfaces",
+      "evidence": {
+        "golden_failure": "weak-unimodal plateau and one-sided equality branch identified",
+        "ledger_0011": "zero-curvature overclaim removed",
+        "ledger_0024": "example characterization correction recorded",
+        "numeric_tuples": "moved into two displaymath surfaces",
+        "rate_theorem": "standard local C2 simple-root theorem with exact Taylor remainder"
+      },
+      "status": "PASS"
+    }
+  ],
+  "environment_sequence": [
+    "remark",
+    "definition",
+    "remark",
+    "cgalgorithm",
+    "minipage",
+    "enumerate*",
+    "remark",
+    "remark",
+    "displaymath",
+    "definition",
+    "definition",
+    "lemma",
+    "proof",
+    "displaymath",
+    "remark",
+    "remark",
+    "equation",
+    "equation",
+    "aligned",
+    "remark",
+    "remark",
+    "proposition",
+    "gather*",
+    "exercise",
+    "corollary",
+    "equation",
+    "remark",
+    "remark",
+    "algorithm",
+    "remark",
+    "proposition",
+    "proof",
+    "example",
+    "displaymath",
+    "remark",
+    "exercise",
+    "exercise",
+    "remark",
+    "algorithm",
+    "remark",
+    "figure",
+    "exercise",
+    "theorem",
+    "proof",
+    "theorem",
+    "displaymath",
+    "exercise",
+    "example",
+    "displaymath",
+    "cases",
+    "figure",
+    "remark",
+    "remark",
+    "proposition",
+    "proof",
+    "figure",
+    "displaymath",
+    "displaymath",
+    "displaymath",
+    "displaymath",
+    "displaymath",
+    "displaymath",
+    "displaymath",
+    "remark",
+    "algorithm",
+    "theorem",
+    "exercise",
+    "example",
+    "displaymath",
+    "cases",
+    "figure",
+    "remark",
+    "remark",
+    "remark",
+    "remark",
+    "remark",
+    "algorithm",
+    "theorem",
+    "proof",
+    "remark",
+    "exercise",
+    "equation",
+    "exercise",
+    "remark",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "exercise",
+    "example",
+    "remark",
+    "remark",
+    "equation",
+    "equation",
+    "algorithm",
+    "remark",
+    "example",
+    "displaymath",
+    "verbatim",
+    "exercise",
+    "exercise",
+    "displaymath",
+    "remark",
+    "definition",
+    "equation",
+    "remark",
+    "lemma",
+    "equation",
+    "proof",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "lemma",
+    "proof",
+    "equation",
+    "equation",
+    "theorem",
+    "equation",
+    "gather",
+    "equation",
+    "proof",
+    "gather",
+    "corollary",
+    "definition",
+    "equation",
+    "theorem",
+    "proof",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "displaymath",
+    "equation",
+    "exercise"
+  ],
+  "formula_manifest": {
+    "counts": {
+      "canonical_equal_pairs": 230,
+      "delta_blocks": 89,
+      "source_math_records": 499,
+      "target_math_records": 570,
+      "unbound_delta_blocks": 0,
+      "unknown_ledger_bindings": 0
+    },
+    "path": "qa/PENN_CH03_FORMULA_DELTA_MANIFEST.json",
+    "status": "PASS"
+  },
+  "identities": {
+    "ledger": {
+      "bytes": 14813,
+      "path": "qa/PENN_CH03_PROPOSED_LEDGER.jsonl",
+      "physical_lines": 21,
+      "sha256": "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+    },
+    "source": {
+      "bytes": 41715,
+      "path": "authority/penn-state/source/ClassNotes/Section3.tex",
+      "physical_lines": 608,
+      "sha256": "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+    },
+    "target": {
+      "bytes": 44364,
+      "path": "source/id-ID/penn-03-pendakian-gradien-dan-pencarian-garis-id.tex",
+      "physical_lines": 646,
+      "sha256": "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+    }
+  },
+  "manual_findings": [],
+  "overall_status": "PASS",
+  "reason": "All pinned structural, closure, delta-binding, and repaired-surface checks pass.",
+  "schema": "o015.penn.chapter03.structure-audit.v1",
+  "scope_note": "This audit proves exact physical-line partition, live TeX topology, identifier/reference/citation/figure/exercise surfaces, dependency identities, exclusion closure, output witnesses, and complete math-record delta accounting. It does not claim compilation or visual admission.",
+  "structural_failures": [],
+  "structural_status": "PASS"
+}

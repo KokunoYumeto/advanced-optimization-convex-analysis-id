@@ -1,0 +1,81 @@
+{
+  "schema": "o015-penn-unit-visual-qa-v1",
+  "unit_id": "d90.penn.v1.ch05",
+  "checked_on": "2026-08-22",
+  "authority": {
+    "path": "authority/penn-state/source/ClassNotes/Section5.tex",
+    "bytes": 22371,
+    "sha256": "15186b99be0913d83046e3e32eaf7a378d3a4fccd222219984b091ddf7f9a428"
+  },
+  "target": {
+    "path": "source/id-ID/penn-05-metode-newton-dan-koreksi-id.tex",
+    "bytes": 27317,
+    "sha256": "0f6afd7da2268661124f967f299ac9df89bb6a8f5683b3e4e8fea32718a8549a"
+  },
+  "wrapper": {
+    "path": "source/id-ID/D90-PENN-05-metode-newton-dan-koreksi-id.tex",
+    "bytes": 7230,
+    "sha256": "82450c4cdbe6de904c7cba1ee22922869f5d2e2caf19be69285092a5ea987e55"
+  },
+  "bibliography_input": {
+    "path": "source/id-ID/references-penn-ch05-id.bbl",
+    "bytes": 625,
+    "sha256": "037e62878f1a562314a33054da8f4df4e49c029bbad31c2ec75066cd3e1a99f3"
+  },
+  "pdf": {
+    "path": "output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
+    "bytes": 2691780,
+    "pages": 15,
+    "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6",
+    "canonical_and_repro_builds_byte_identical": true,
+    "page_size": "A4",
+    "pdf_version": "1.5",
+    "encrypted": false,
+    "language": "id-ID",
+    "searchable_pages": 15,
+    "outlines": 6,
+    "forms": false,
+    "javascript": false,
+    "tagged": false,
+    "font_resources": 137,
+    "font_resources_with_tounicode": 137,
+    "font_resources_without_tounicode": 0
+  },
+  "canonical_log": {
+    "path": "build/penn-unit-05-id/D90-PENN-05-metode-newton-dan-koreksi-id.log",
+    "bytes": 27062,
+    "lines": 700,
+    "sha256": "bb3e9416233d14400ced235b69eeb95f76e6347dfeabbfd2c06727b543aed8be",
+    "tex_errors": 0,
+    "undefined_references_or_citations": 0,
+    "overfull_boxes": 0,
+    "missing_glyphs": 0,
+    "rerun_requests": 0,
+    "accepted_underfull_caption_warning": 1
+  },
+  "render": {
+    "directory": "tmp/pdfs/penn-ch05-final-427db2c5",
+    "renderer": "pdftoppm 120 dpi PNG",
+    "rendered_pages": 15,
+    "contact_sheet": {
+      "path": "tmp/pdfs/penn-ch05-final-427db2c5/contact.png",
+      "bytes": 990958,
+      "sha256": "bc38b77f5e9aebe13a6218269a803eac69e01ff4203b247234b00cc01c91aafd"
+    }
+  },
+  "inspection": {
+    "all_page_contact_sheet_inspected": true,
+    "full_size_pages_inspected": [4, 5, 9, 10, 11, 12, 14],
+    "blank_or_nearly_blank_content_pages": 0,
+    "clipped_content": 0,
+    "collisions": 0,
+    "broken_figures": 0,
+    "unreadable_glyphs": 0,
+    "stranded_algorithm_only_pages": 0,
+    "result": "pass"
+  },
+  "limitations": [
+    "The PDF is not semantically tagged.",
+    "Independent human/native-speaker Indonesian language review is not recorded."
+  ]
+}

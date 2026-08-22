@@ -1,0 +1,25 @@
+% Kutipan persis dari Math555.bbl yang dibundel bersama sumber Penn v1.0.
+% Tidak ada basis data bibliografi upstream di dalam arsip sumber.
+\begin{thebibliography}{PTVF07}
+
+\bibitem[Avr03]{Av03}
+M.~Avriel, \emph{Nonlinear programming: Analysis and methods}, Dover Press,
+  2003.
+
+\bibitem[Ber99]{Bert99}
+D.~P. Bertsekas, \emph{{Nonlinear Programming}}, 2 ed., Athena Scientific,
+  1999.
+
+\bibitem[BSS06]{BHS06}
+M.~S. Bazaraa, H.~D. Sherali, and C.~M. Shetty, \emph{Nonlinear programming:
+  Theory and algorithms}, John Wiley and Sons, 2006.
+
+\bibitem[Mun00]{Munk00}
+J.~Munkres, \emph{Topology}, Prentice Hall, 2000.
+
+\bibitem[PTVF07]{PTVF07}
+W.~H. Press, S.~A. Teukolsky, W.~T. Vetterling, and B.~P. Flannery,
+  \emph{Numerical recipes 3rd edition: The art of scientific computing}, 3 ed.,
+  {Cambridge University Press}, 2007.
+
+\end{thebibliography}

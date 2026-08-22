@@ -1,0 +1,845 @@
+Pencarian Garis Hampiran dan
+Konvergensi Pendakian Gradien
+Bab 4 dari Nonlinear Programming
+
+Edisi Bahasa Indonesia
+Christopher Griffin
+dengan kontribusi Simon Miller dan Douglas Mercer
+
+Sumber TeX v1.0; saksi PDF publik v1.0.1
+
+Tentang unit ini
+Unit ini menerjemahkan secara utuh Bab 4 dari Christopher Griffin, Nonlinear Programming / Penn State MATH 555. Otoritas yang dapat disunting ialah distribusi TeX
+v1.0; PDF publik v1.0.1 dipakai hanya sebagai saksi koreksi upstream yang kemudian
+diterbitkan. Karya sumber dan karya turunannya berada di bawah Creative Commons
+Attribution–NonCommercial– ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+Bab 1–3 tidak diulang dalam pembaca mandiri ini. Sembilan rujukan prasyarat tetap
+memakai nomor sumber: Proposisi 1.20, Teorema 1.22, Teorema 2.2, Teorema 2.4, Definisi
+3.2, Lema 3.8, serta Algoritma 2, 3, dan 5. Seluruh struktur Bab 4, empat latihan, lima
+gambar, formula, label, rujukan silang, dan sitasi dipertahankan dalam urutan sumber.
+Tiga permukaan listing Maple yang tidak dapat dipakai sebagai penutupan komputasi
+terbuka diganti oleh pseudokode mandiri yang dinyatakan secara eksplisit.
+Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin, para kontributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau mendukung edisi
+ini.
+
+i
+
+Daftar Isi
+Tentang unit ini
+
+i
+
+Bab 4. Pencarian Garis Hampiran dan Konvergensi Pendakian Gradien
+1. Pencarian Hampiran: Aturan Armijo dan Syarat Kelengkungan
+2. Konvergensi Algoritmik
+3. Laju Konvergensi Pendakian Gradien Murni
+4. Laju Konvergensi Algoritma Pendakian Dasar
+
+1
+1
+4
+6
+9
+
+Daftar Pustaka
+
+12
+
+Catatan koreksi terhadap sumber
+
+13
+
+Atribusi, lisensi, dan nondukungan
+
+14
+
+ii
+
+BAB 4
+
+Pencarian Garis Hampiran dan Konvergensi Pendakian Gradien
+1. Pencarian Hampiran: Aturan Armijo dan Syarat Kelengkungan
+Catatan 4.1. Kadang-kadang optimisasi fungsi ϕ(δk ) memerlukan biaya besar.
+Dalam keadaan ini, kita ingin menemukan δk yang cukup untuk menjamin konvergensi
+pendakian gradien atau algoritma terkait. Dengan demikian, pencarian garis dapat
+dihentikan sebelum persoalan satu dimensinya diselesaikan secara eksak, sehingga algoritma optimisasi keseluruhan menjadi lebih cepat. Syarat-syarat berikut, yang biasanya
+disebut syarat Wolfe, dapat dipakai untuk menganalisis konvergensi pendakian gradien
+dan algoritma terkait.
+Definisi 4.2 (Aturan Armijo). Diberikan fungsi f : Rn → R, arah naik pk , dan
+konstanta σ1 ∈ (0, 1), aturan Armijo dipenuhi apabila
+(4.1)
+
+f (xk + δk pk ) − f (xk ) ≥ σ1 δk ∇f (xk )T pk .
+
+Catatan 4.3. Ingat bahwa ϕ(δ) = f (xk + δpk ). Karena itu, Persamaan 4.1 menyatakan
+(4.2)
+
+ϕ(δk ) − ϕ(0) ≥ σ1 δk ∇f (xk )T pk = σ1 δk ϕ′ (0),
+
+yang berarti bahwa nilai fungsi mengalami kenaikan yang memadai.
+Definisi 4.4 (Syarat Kelengkungan). Diberikan fungsi f : Rn → R, arah naik pk , dan
+konstanta σ2 ∈ (σ1 , 1), syarat kelengkungan dipenuhi apabila
+(4.3)
+
+σ2 ∇f (xk )T pk ≥ ∇f (xk + δk pk )T pk .
+
+Catatan 4.5. Berdasarkan Proposisi 1.20 dan Teorema 1.22, aturan rantai memberikan
+ϕ′ (δ) = ∇f (xk + δpk )T pk .
+Jadi, syarat kelengkungan dapat ditulis sebagai
+(4.4)
+
+σ2 ϕ′ (0) ≥ ϕ′ (δk ).
+
+Karena pk merupakan arah naik, ∇f (xk )T pk > 0 dan dengan demikian ϕ′ (0) > 0. Syarat
+kelengkungan hanya menyatakan bahwa kemiringan fungsi satu variabel ϕ pada langkah
+terpilih δk tidak lagi sebesar kemiringannya di 0.
+Contoh 4.6. Tinjau fungsi
+
+
+
+
+1
+2
+2
+f (x, y) = exp −
+x +y
+cos x2 + y 2 .
+10
+Fungsi ini ditunjukkan pada Gambar 4.1. Misalkan titik awalnya x0 = y0 = 1. Dengan
+x0 = (x0 , y0 )T , fungsi sepanjang arah gradien adalah ϕ(t) = f (x0 + t∇f (x0 )). Grafik ϕ(t)
+ditunjukkan pada Gambar 4.2. Aturan Armijo menyatakan
+(4.5)
+
+ϕ(t) ≥ ϕ(0) + σ1 ϕ′ (0)t.
+1
+
+2
+
+4. PENCARIAN GARIS HAMPIRAN DAN KONVERGENSI PENDAKIAN GRADIEN
+
+Gambar 4.1. Fungsi f (x, y) mempunyai maksimum di x = y = 0, tempat
+nilainya sama dengan 1.
+
+Gambar 4.2. Grafik ϕ(t) memperlihatkan bahwa nilai fungsi naik ketika kita
+mendekati maksimum global, lalu turun sesudahnya.
+
+Di sini σ1 ∈ (0, 1) merupakan konstanta pilihan, sedangkan ϕ′ (0) dan ϕ(0) dihitung dari
+ϕ(t). Jadi, aturan ini menerima nilai t yang membuat ϕ(t) terletak di atas garis ϕ(0) +
+σ1 ϕ′ (0)t, sebagaimana pada Gambar 4.3. Syarat kelengkungan menyatakan
+(4.6)
+
+σ2 ϕ′ (0) ≥ ϕ′ (t).
+
+Dengan demikian, syarat ini menerima nilai t yang membuat ϕ′ (t) tidak melebihi konstanta σ2 ϕ′ (0), dengan σ1 < σ2 < 1. Daerah tersebut juga ditunjukkan pada Gambar
+4.3. Ketika kedua syarat digabungkan, irisannya memberikan himpunan langkah yang
+memenuhi kenaikan memadai sekaligus pengurangan kemiringan.
+Lema 4.7. Misalkan f terdiferensialkan secara kontinu pada suatu lingkungan sinar
+xk + tpk , t ≥ 0, dan terbatas di atas pada sinar tersebut. Jika pk adalah arah naik di xk
+dan 0 < σ1 < σ2 < 1, maka terdapat suatu interval takkosong nilai t > 0 yang memenuhi
+kedua syarat Wolfe.
+Bukti. Definisikan ϕ(t) = f (xk + tpk ). Karena pk adalah arah naik,
+ϕ′ (0) = ∇f (xk )T pk > 0
+menurut Definisi 3.2. Karena 0 < σ1 < 1, garis l(t) = ϕ(0) + σ1 ϕ′ (0)t tak terbatas
+di atas. Di dekat 0, grafik ϕ terletak di atas l karena garis singgungnya mempunyai
+kemiringan ϕ′ (0) > σ1 ϕ′ (0). Sementara itu, ϕ terbatas di atas. Oleh kontinuitas, terdapat
+perpotongan positif; ambil t′ > 0 sebagai perpotongan positif pertama. Maka
+ϕ(t′ ) = ϕ(0) + σ1 ϕ′ (0)t′ .
+
+1. PENCARIAN HAMPIRAN: ATURAN ARMIJO DAN SYARAT KELENGKUNGAN
+
+0
+
+3
+
+(t)
+2
+
+0
+
+(0)
+
+(t)
+ARMIJO RULE
+
+CURVATURE CONDITION
+
+(0) +
+
+1
+
+0
+
+(0)t
+
+Gambar 4.3. Syarat Wolfe diilustrasikan. Daerah yang diterima aturan Armijo
+beririsan dengan daerah yang diterima syarat kelengkungan, sehingga dalam contoh ini diperoleh langkah-langkah yang mengapit maksimum lokal terdekat bagi
+δk . Di sini σ1 = 0.15 dan σ2 = 0.5.
+
+Setiap t ∈ (0, t′ ) memenuhi aturan Armijo secara ketat.
+Teorema Nilai Rata-rata satu variabel (Lemma 2.2) memberikan suatu t′′ ∈ (0, t′ )
+sehingga
+ϕ(t′ ) − ϕ(0) = ϕ′ (t′′ )(t′ − 0).
+Dengan menggabungkan dua persamaan sebelumnya, diperoleh
+σ1 ϕ′ (0)t′ = ϕ′ (t′′ )t′ .
+Karena σ2 > σ1 dan t′ > 0,
+ϕ′ (t′′ )t′ = σ1 ϕ′ (0)t′ < σ2 ϕ′ (0)t′ .
+Jadi ϕ′ (t′′ ) < σ2 ϕ′ (0) dan t′′ memenuhi syarat kelengkungan secara ketat. Kontinuitas ϕ′
+serta ketatnya kedua ketaksamaan menghasilkan suatu lingkungan takkosong di sekitar
+t′′ yang memenuhi kedua syarat.
+□
+Catatan 4.8. Syarat kelengkungan tidak diperlukan untuk memperoleh jaminan titik
+stasioner bagi pendakian gradien dengan pelacakan mundur. Pengamatan ini menghasilkan algoritma untuk memilih δk yang memenuhi aturan Armijo.
+Catatan 4.9. Lemma 4.7 menjamin adanya langkah yang memenuhi kedua syarat
+Wolfe di bawah hipotesisnya. Untuk aturan Armijo saja, Algoritma 8 memakai σ1 ∈ (0, 1),
+β ∈ (0, 1), dan langkah awal t0 > 0. Algoritma menguji berturut-turut t = β j t0 sampai
+(4.7)
+
+ϕ(t) ≥ ϕ(0) + σ1 tϕ′ (0).
+
+Jika ϕ′ (0) > 0, definisi turunan menyatakan bahwa ketaksamaan ini berlaku untuk semua
+t > 0 yang cukup kecil; karena itu, perulangan berhingga. Langkah yang dikembalikan
+berbentuk t = β j t0 untuk suatu j ≥ 0.
+Catatan 4.10. Dalam praktik, σ1 dipilih kecil, biasanya antara 10−5 dan 0.1. Nilai β
+umumnya berada antara 0.1 dan 0.5. Sering kali t0 = 1, walaupun pilihan ini bergantung
+pada persoalan [Ber99].
+
+4
+
+4. PENCARIAN GARIS HAMPIRAN DAN KONVERGENSI PENDAKIAN GRADIEN
+
+Masukan: ϕ, t0 > 0, β ∈ (0, 1), σ1 ∈ (0, 1), dan ϕ′ (0) > 0.
+1. Tetapkan t ← t0 .
+2. Selama ϕ(t) < ϕ(0) + σ1 tϕ′ (0), tetapkan t ← βt.
+3. Kembalikan t.
+Algoritma 8. Algoritma pelacakan mundur
+
+2. Konvergensi Algoritmik
+Definisi 4.11 (Berkaitan dengan Gradien). Misalkan f : Rn → R terdiferensialkan
+secara kontinu. Barisan arah naik {pk } disebut berkaitan dengan gradien apabila, untuk
+setiap himpunan indeks subsekuens K = {k1 , k2 , . . . } yang membuat {xk }k∈K konvergen
+ke titik nonstasioner f , subsekuens {pk }k∈K terbatas dan memenuhi
+(4.8)
+
+lim sup ∇f (xk )T pk > 0.
+k→∞, k∈K
+
+Teorema 4.12. Misalkan xk+1 = xk + δk pk , arah pk berkaitan dengan gradien, dan
+setiap δk dipilih oleh Algoritma 8 dengan parameter tetap t0 > 0, β ∈ (0, 1), dan σ1 ∈
+(0, 1). Jika barisan {xk } konvergen ke x∗ , maka ∇f (x∗ ) = 0. Oleh sebab itu, syarat
+penghentian
+(4.9)
+
+∥∇f (xk )∥ < ϵ
+
+dapat dipakai untuk suatu ϵ > 0 yang kecil.
+Bukti. Andaikan, untuk memperoleh kontradiksi, bahwa xk → x+ tetapi ∇f (x+ ) ̸=
+0. Aturan Armijo membuat {f (xk )} tidak menurun. Karena f kontinu dan xk → x+ ,
+barisan nilai fungsi konvergen ke f (x+ ), sehingga
+
+(4.10) lim f (xk+1 ) − f (xk ) = 0.
+k→∞
+
+Aturan Armijo juga memberikan
+(4.11)
+
+f (xk+1 ) − f (xk ) ≥ σ1 δk ∇f (xk )T pk .
+
+Karena semua faktor di ruas kanan taknegatif,
+(4.12)
+
+lim δk ∇f (xk )T pk = 0.
+
+k→∞
+
+Sifat berkaitan dengan gradien memungkinkan kita memilih suatu subsekuens indeks K
+dan konstanta η > 0 sehingga, setelah membuang sejumlah berhingga indeks,
+(4.13)
+
+∇f (xk )T pk ≥ η
+
+(k ∈ K).
+
+Maka Persamaan 4.12 memberi δk → 0 sepanjang K. Karena δk adalah langkah kisi
+pertama yang diterima oleh pelacakan mundur, untuk semua k ∈ K yang cukup besar
+langkah sebelumnya δk+ = δk /β ditolak:
+(4.14)
+
+f (xk + δk+ pk ) − f (xk ) < σ1 δk+ ∇f (xk )T pk .
+
+Barisan {pk }k∈K terbatas. Ambil subsekuens lebih lanjut, tetap dilambangkan K, sehingga pk → p+ . Dari Persamaan 4.14,
+(4.15)
+
+f (xk + δk+ pk ) − f (xk )
+< σ1 ∇f (xk )T pk .
++
+δk
+
+Untuk setiap k, definisikan ϕk (t) = f (xk + tpk ). Maka Persamaan 4.15 menjadi
+(4.16)
+
+ϕk (δk+ ) − ϕk (0)
+< σ1 ∇f (xk )T pk .
+δk+
+
+2. KONVERGENSI ALGORITMIK
+
+5
+
+Teorema Nilai Rata-rata memberi δ̄k ∈ (0, δk+ ) sehingga
+(4.17)
+
+ϕ′k (δ̄k ) < σ1 ∇f (xk )T pk .
+
+Dengan aturan rantai,
+(4.18)
+
+∇f (xk + δ̄k pk )T pk < σ1 ∇f (xk )T pk .
+
+Karena δk+ → 0, pk terbatas, dan ∇f kontinu, pengambilan limit sepanjang K memberikan
+(4.19)
+
+∇f (x+ )T p+ ≤ σ1 ∇f (x+ )T p+ .
+
+Namun, pilihan K dan kontinuitas memberi ∇f (x+ )T p+ ≥ η > 0. Ketaksamaan terakhir
+mustahil karena σ1 < 1.
+□
+Korolari 4.13. Andaikan suatu pemaksimum eksak berhingga δk bagi ϕk (t) = f (xk +
+tpk ) pada t ≥ 0 ada pada setiap iterasi, arah pk berkaitan dengan gradien, dan barisan
+iterat yang dihasilkan konvergen ke x∗ . Maka ∇f (x∗ ) = 0.
+Korolari 4.14. Misalkan pk = B−1
+k ∇f (xk ) pada setiap iterasi Algoritma 2, dan
+terdapat konstanta 0 < m ≤ M < ∞ sehingga mI ⪯ Bk ⪯ M I untuk semua k. Jika
+langkah dipilih dengan pelacakan mundur seperti pada Teorema 4.12 dan barisan iterat
+konvergen, maka limitnya merupakan titik stasioner f .
+Latihan 1. Buktikan Korolari 4.13 dengan memperhatikan bahwa, jika xk+1 dihasilkan dari xk dengan memaksimumkan ϕk (δ), maka
+(4.20)
+
+f (xk+1 ) − f (xk ) ≥ f (x̂k+1 ) − f (xk ) ≥ σ1 δ̂k ∇f (xk )T pk ,
+
+dengan x̂k+1 dan δ̂k dihasilkan oleh aturan Armijo dengan pelacakan mundur.
+Latihan 2. Buktikan Korolari 4.14. [Petunjuk: gunakan Lemma 3.8, serta batas
+spektral seragam untuk membuktikan bahwa arah-arahnya berkaitan dengan gradien.]
+Contoh 4.15 (Kegagalan Konvergensi). Kita mengilustrasikan kasus sederhana ketika
+panjang langkah tidak dipilih melalui pemaksimuman atau aturan Armijo. Tinjau fungsi
+
+2
+4
+
+− 5 (1 − x) + 2 − 2x 1 < x,
+f (x) = − 45 (1 + x)2 + 2 + 2x x < −1,
+
+−x2 + 1
+selainnya.
+Mulailah dari x0 = −2 dan tetapkan panjang langkah konstan δk = 1. Pendakian gradien
+menghasilkan barisan {xk } yang ditunjukkan pada Gambar 4.4. Pada setiap langkah,
+(4.21)
+
+xk+1 = xk +
+
+df
+.
+dx x=xk
+
+Evaluasi Persamaan 4.21 memberikan, untuk n = 0, 1, 2, . . . ,
+ n
+
+ n 
+3
+3
+n
+n+1
+(4.22) xn = (−1)
+x0 + (−1)
+1−
+.
+5
+5
+Ketika n → ∞, subsekuens genap menuju −1 dan subsekuens ganjil menuju 1; jadi barisan
+tersebut tidak konvergen.
+Catatan 4.16. Berikut ini kita nyatakan tanpa bukti teorema penangkapan, yang
+menguantifikasi salah satu alasan metode gradien cenderung menuju titik limit tunggal.
+Buktinya terdapat dalam [Ber99], hlm. 50–51.
+
+6
+
+4. PENCARIAN GARIS HAMPIRAN DAN KONVERGENSI PENDAKIAN GRADIEN
+
+Gambar 4.4. Kegagalan pendakian gradien untuk konvergen ke titik stasioner
+ketika panjang langkah tidak dipilih dengan aturan Armijo atau pemaksimuman.
+
+Teorema 4.17 (Teorema Penangkapan). Misalkan f : Rn → R terdiferensialkan
+secara kontinu dan {xk } memenuhi f (xk+1 ) ≥ f (xk ) untuk semua k, dengan xk+1 =
+xk + δk pk . Andaikan metode tersebut konvergen dalam arti bahwa setiap titik limit dari
+setiap barisan yang dihasilkannya merupakan titik stasioner f . Andaikan pula terdapat
+skalar s > 0 dan c > 0 sehingga, untuk semua k,
+(4.23)
+
+δk ≤ s
+
+∥pk ∥ ≤ c∥∇f (xk )∥.
+
+Misalkan x∗ adalah maksimum lokal f dan merupakan satu-satunya titik stasioner dalam
+suatu lingkungan terbuka yang memuat x∗ . Maka ada himpunan terbuka S yang memuat
+x∗ sedemikian sehingga, jika xK ∈ S untuk suatu K ≥ 0, maka xk ∈ S bagi semua k ≥ K
+dan {xk }k≥K konvergen ke x∗ . Lebih lanjut, bagi setiap ϵ > 0, himpunan S dapat dipilih
+sehingga ∥x − x∗ ∥ < ϵ bagi semua x ∈ S.
+□
+3. Laju Konvergensi Pendakian Gradien Murni
+Catatan 4.18. Kita nyatakan ketaksamaan Kantorovich tanpa bukti. Sketsa buktinya terdapat pada halaman 76 dalam [Ber99]. Variasi bukti Teorema 4.20 tersedia
+dalam [Ber99] untuk penurunan gradien.
+Lema 4.19 (Ketaksamaan Kantorovich). Misalkan Q ∈ Rn×n simetris dan definit
+positif, dengan nilai eigen 0 < λ1 ≤ λ2 ≤ · · · ≤ λn . Untuk setiap x ∈ Rn×1 dengan x ̸= 0,
+(4.24)
+
+(xT x)2
+4λ1 λn
+≥
+.
+T
+T
+−1
+(x Qx)(x Q x)
+(λ1 + λn )2
+
+Latihan 3. Buktikan bahwa Ketaksamaan Kantorovich juga berlaku untuk matriks
+definit negatif.
+Teorema 4.20. Misalkan f : Rn → R adalah fungsi konkaf ketat
+1
+f (x) = xT Qx,
+2
+dengan Q ∈ Rn×n simetris dan definit negatif. Misalkan {xk } dihasilkan oleh pendakian
+gradien dengan pencarian garis eksak dan x∗ = 0 adalah pemaksimum global tunggal f .
+
+(4.25)
+
+3. LAJU KONVERGENSI PENDAKIAN GRADIEN MURNI
+
+7
+
+Jika nilai eigen Q adalah 0 > λ1 ≥ λ2 ≥ · · · ≥ λn , maka
+
+2
+λn − λ1
+(4.26) f (xk+1 ) ≥
+f (xk ).
+λn + λ1
+Catatan 4.21. Besaran
+λn − λ 1
+κ−1
+,
+=
+ρ=
+λn + λ 1
+κ+1
+
+κ=
+
+|λn |
+≥ 1,
+|λ1 |
+
+adalah faktor konvergensi terburuk per iterasi untuk galat dalam norma yang sesuai,
+sedangkan κ adalah bilangan kondisi spektral. Nilai ρ yang dekat dengan 1—setara dengan
+κ yang besar—menyebabkan konvergensi lambat (lihat Contoh 4.24).
+Bukti. Tuliskan gk = ∇f (xk ) = Qxk . Jika gk = 0, maka xk = x∗ dan f (xk+1 ) =
+f (xk ), sehingga hasilnya langsung berlaku. Andaikan gk ̸= 0 dan tinjau
+1
+(4.27) ϕ(δ) = f (xk + δgk ) = (xk + δgk )T Q(xk + δgk ).
+2
+Ekspansi memberikan
+1
+1
+(4.28) ϕ(δ) = f (xk ) + δxTk Qgk + δgkT Qxk + δ 2 f (gk ).
+2
+2
+Karena Q = QT , Qxk = gk , dan xTk Q = gkT ,
+(4.29)
+
+ϕ(δ) = f (xk ) + δgkT gk + δ 2 f (gk ).
+
+Dengan mendiferensialkan dan menetapkan ϕ′ (δ) = 0, diperoleh
+(4.30)
+
+gkT gk + 2δf (gk ) = 0 =⇒ δ =
+
+−gkT gk
+.
+gkT Qgk
+
+Nilai δ positif karena Q definit negatif. Substitusi ke f (xk+1 ) menghasilkan
+(4.31)
+
+1
+f (xk+1 ) = f (xk + δgk ) = (xk + δgk )T Q(xk + δgk ) =
+2
+ T 
+ T 2
+−gk gk
+−gk gk
+T
+2
+T
+f (xk ) + δgk gk + δ f (gk ) = f (xk ) +
+gk gk +
+f (gk ) =
+T
+gk Qgk
+gkT Qgk
+
+
+1 T
+(gkT gk )2 1 (gkT gk )2
+1
+(gkT gk )2
+T
+x Qxk − T
++
+=
+xk Qxk − T
+.
+2 k
+2 gkT Qgk
+2
+gk Qgk
+gk Qgk
+
+Karena Q simetris,
+(4.32)
+
+xTk Qxk = xTk QT Q−1 Qxk = gkT Q−1 gk .
+
+Oleh karena itu,
+(4.33)
+
+
+
+1
+(gkT gk )2
+T
+f (xk+1 ) =
+xk Qxk − T
+=
+2
+gk Qgk
+
+
+
+
+(gkT gk )2
+1
+(gkT gk )2
+T
+1− T
+xk Qxk = 1 − T
+f (xk ).
+2
+(gk Qgk )(gkT Q−1 gk )
+(gk Qgk )(gkT Q−1 gk )
+
+Persamaan 4.33, definit-negatifnya Q, dan definit-positifnya −Q memberikan
+(1) f (xk ), f (xk+1 ) ≤ 0;
+(2)
+(gkT gk )2
+> 0;
+(gkT Qgk )(gkT Q−1 gk )
+
+8
+
+4. PENCARIAN GARIS HAMPIRAN DAN KONVERGENSI PENDAKIAN GRADIEN
+
+(3) dan, berdasarkan Cauchy–Schwarz bagi −Q,
+0≤1−
+
+(gkT gk )2
+< 1.
+(gkT Qgk )(gkT Q−1 gk )
+
+Dengan menerapkan Lemma 4.19 pada −Q dan memperhatikan bahwa f (xk ) ≤ 0, diperoleh
+
+
+
+
+4λ1 λn
+(λ1 + λn )2 − 4λ1 λn
+(4.34) f (xk+1 ) ≥ 1 −
+f (xk ) =
+f (xk ) =
+(λ1 + λn )2
+(λ1 + λn )2
+ 2
+2
+
+
+λ1 − 2λ1 λn + λ2n
+λ1 − λn
+f (xk ) =
+f (xk ).
+(λ1 + λn )2
+λ1 + λn
+Ini menyelesaikan bukti.
+□
+PendakianGradien—bagian 1 dari 2
+Masukan: F : Rn → R, x0 , toleransi ϵ > 0, dan prosedur pencarian garis.
+1. Tetapkan k ← 0, x ← x0 , dan lintasan P ← [x].
+2. Hitung g ← ∇F (x).
+
+PendakianGradien—bagian 2 dari 2
+3. Selama ∥g∥ > ϵ, definisikan ϕ(t) = F (x + tg).
+4. Pilih t > 0 dengan prosedur pencarian garis yang memenuhi kontraknya.
+5. Tetapkan x ← x + tg, tambahkan x ke P , naikkan k, dan hitung ulang g ← ∇F (x).
+6. Kembalikan lintasan P dan titik terakhir x.
+Algoritma 9. Implementasi acuan pendakian gradien
+
+Catatan 4.22. Bukti sebelumnya sedikit lebih mudah dibaca untuk persoalan peminimuman karena nilai-nilainya positif dan kita tidak perlu melacak pembalikan tanda.
+Meskipun demikian, latihan tanda pada kasus pemaksimuman membantu pemahaman
+bukti.
+Catatan 4.23. Pseudokode pada Algoritma 9 ditulis secara independen untuk edisi
+ini; ia tidak menyalin implementasi Maple sumber. Prosedur pencarian garis dapat menggabungkan pengurungan parabolik terlindungi (Algoritma 3), pencarian bagian emas (Algoritma 5), dan pelacakan mundur (Algoritma 8) untuk menemukan langkah awal yang
+menaikkan ϕ. Setiap komponen tetap harus memenuhi hipotesis dan kontrak kegagalan
+algoritmanya sendiri.
+Contoh 4.24. Tinjau fungsi F (x, y) = −2x2 − 10y 2 . Jika pendakian gradien dimulai
+dari x = 15, y = 5 dengan ϵ = 0.001, lintasannya konvergen ke sekitar titik optimal x∗ = 0,
+y ∗ = 0. Gerak zig-zag merupakan perilaku khas ketika magnitudo nilai eigen terbesar dan
+terkecil sangat berbeda (lihat Teorema 4.20). Dalam representasi F (x) = 21 xT Qx,
+
+
+−4 0
+Q=
+.
+0 −20
+Jadi bilangan kondisi spektralnya κ = 20/4 = 5, sedangkan faktor konvergensi gradien
+terburuknya ρ = (5 − 1)/(5 + 1) = 2/3. Faktor ρ yang cukup dekat dengan 1 menjelaskan
+konvergensi yang relatif lambat dan gerak zig-zag.
+Latihan 4. Implementasikan Pendakian Gradien dengan pencarian garis tak-eksak.
+Dengan memakai F (x, y) dari Contoh 4.24, buat gambar seperti Gambar 4.5 untuk
+mengilustrasikan langkah-langkah algoritma Anda.
+
+4. LAJU KONVERGENSI ALGORITMA PENDAKIAN DASAR
+
+9
+
+Gambar 4.5. Pendakian gradien pada F (x, y) = −2x2 −10y 2 dari x = 15, y = 5.
+Gerak zig-zag lazim terjadi ketika magnitudo λn dan λ1 sangat berbeda (lihat
+Teorema 4.20).
+
+4. Laju Konvergensi Algoritma Pendakian Dasar
+Teorema 4.25. Misalkan f : Rn → R terdiferensialkan dua kali secara kontinu dan
+{xk } dihasilkan oleh Algoritma 2, dengan xk+1 = xk +δk pk . Andaikan xk → x∗ , ∇f (x∗ ) =
+0, dan H(x∗ ) = ∇2 f (x∗ ) definit negatif. Andaikan pula ∇f (xk ) ̸= 0 untuk setiap k dan
+(4.35)
+
+∥pk + H−1 (x∗ )∇f (xk )∥
+= 0.
+k→∞
+∥∇f (xk )∥
+lim
+
+Jika δk dipilih dengan Algoritma 8, t0 = 1, dan 0 < σ1 < 12 , maka
+(4.36)
+
+∥xk+1 − x∗ ∥
+= 0.
+k→∞ ∥xk − x∗ ∥
+lim
+
+Selain itu, terdapat bilangan bulat k̄ ≥ 0 sehingga δk = 1 untuk setiap k ≥ k̄; yakni,
+akhirnya pelacakan mundur menerima langkah satu tanpa menjalankan perulangannya.
+Catatan 4.26. Teorema ini menyatakan bahwa, jika aturan pemilihan arah pk
+mendekati langkah Newton saat k membesar, algoritma berkonvergensi superlinear
+menurut Persamaan 4.36.
+Catatan 4.27. Ketika Hessian nonsingular, langkah Newton untuk pemaksimuman
+adalah
+−1
+pN
+k = −H(xk ) ∇f (xk ).
+Persamaan 4.35 mengatakan bahwa arah yang dipilih mendekati langkah Newton ini
+secara relatif, dengan Hessian limit H(x∗ ).
+Bukti. Berdasarkan Teorema Nilai Rata-rata Orde Kedua (Lemma 2.4), untuk setiap
+k ada tk ∈ (0, 1) sehingga
+1
+f (xk + pk ) − f (xk ) = ∇f (xk )T pk + pTk H(xk + tk pk )pk .
+2
+Jika untuk semua k yang cukup besar berlaku
+
+(4.37)
+
+(4.38)
+
+1
+∇f (xk )T pk + pTk H(xk + tk pk )pk ≥ σ1 ∇f (xk )T pk ,
+2
+
+10
+
+4. PENCARIAN GARIS HAMPIRAN DAN KONVERGENSI PENDAKIAN GRADIEN
+
+maka langkah satu memenuhi aturan Armijo dan diterima tanpa penyusutan. Persamaan
+4.38 ekuivalen dengan
+1
+(4.39) (1 − σ1 )∇f (xk )T pk + pTk H(xk + tk pk )pk ≥ 0.
+2
+Definisikan
+∇f (xk )
+qk =
+,
+∥∇f (xk )∥
+pk
+rk =
+.
+∥∇f (xk )∥
+Setelah Persamaan 4.39 dibagi dengan ∥∇f (xk )∥2 , ruas kirinya menjadi
+1
+(4.40) Ek := (1 − σ1 )qTk rk + rTk H(xk + tk pk )rk .
+2
+Dari Persamaan 4.35,
+(4.41)
+
+lim ∥rk + H−1 (x∗ )qk ∥ = 0.
+
+k→∞
+
+Karena ∥qk ∥ = 1, barisan {rk } terbatas. Selanjutnya, ∇f (xk ) → 0 membuat pk → 0,
+sehingga xk + tk pk → x∗ dan Hessian pada titik tersebut menuju H(x∗ ). Tuliskan A =
+H−1 (x∗ ) dan
+(4.42)
+
+rk = −Aqk + zk ,
+
+zk → 0.
+
+Substitusi ke Persamaan 4.40 memberi
+(4.43)
+
+Ek = (1 − σ1 )qTk (−Aqk + zk )+
+
+1
+(−Aqk + zk )T H(xk + tk pk )(−Aqk + zk ).
+2
+Karena qk dan rk terbatas, semua suku yang mengandung zk dapat dihimpun ke galat
+ek → 0, sehingga
+1
+(4.44) Ek = −(1 − σ1 )qTk Aqk + (Aqk )T H(xk + tk pk )(Aqk ) + ek .
+2
+Konvergensi Hessian bersifat seragam pada vektor satuan qk , dan AH(x∗ )A = A. Maka
+
+(4.45)
+
+Ek = −
+
+
+1
+− σ1 qTk Aqk + o(1).
+2
+
+Karena A definit negatif, ada µ > 0 sehingga −qT Aq ≥ µ untuk setiap ∥q∥ = 1. Oleh
+sebab itu,
+
+
+1
+− σ1 µ + o(1) > 0 untuk semua k yang cukup besar.
+(4.46) Ek ≥
+2
+Persamaan 4.46 menunjukkan bahwa Persamaan 4.39, dan karenanya Persamaan 4.38,
+berlaku untuk k cukup besar. Dengan demikian, terdapat k̄ sehingga δk = 1 bagi semua
+k ≥ k̄.
+Persamaan 4.35 dapat ditulis sebagai
+(4.47)
+
+pk + H−1 (x∗ )∇f (xk ) = ∥∇f (xk )∥yk ,
+
+yk → 0.
+
+Dengan menerapkan ekspansi Taylor pada fungsi bernilai vektor ∇f di x∗ ,
+(4.48)
+
+∇f (xk ) − ∇f (x∗ ) = H(x∗ )(xk − x∗ ) + o(∥xk − x∗ ∥) .
+
+Karena ∇f (x∗ ) = 0,
+(4.49)
+
+H−1 (x∗ )∇f (xk ) = (xk − x∗ ) + o(∥xk − x∗ ∥) .
+
+4. LAJU KONVERGENSI ALGORITMA PENDAKIAN DASAR
+
+11
+
+Selain itu, ∥∇f (xk )∥ = O(∥xk − x∗ ∥). Kedua hubungan ini memberi
+(4.50)
+
+pk + (xk − x∗ ) = o(∥xk − x∗ ∥) .
+
+Untuk k ≥ k̄,
+(4.51)
+
+xk+1 = xk + pk .
+
+Dengan menggabungkannya dengan Persamaan 4.50, diperoleh
+(4.52)
+
+xk+1 − x∗ = o(∥xk − x∗ ∥) .
+
+Jadi,
+∥xk+1 − x∗ ∥
+o(∥xk − x∗ ∥)
+=
+lim
+= 0.
+k→∞ ∥xk − x∗ ∥
+k→∞ ∥xk − x∗ ∥
+Ini menyelesaikan bukti.
+
+(4.53)
+
+lim
+
+□
+
+Daftar Pustaka
+[Ber99] D. P. Bertsekas, Nonlinear Programming, 2 ed., Athena Scientific, 1999.
+
+12
+
+Catatan koreksi terhadap sumber
+Rekaman terstruktur O015-PENN-ADV-0025 sampai O015-PENN-ADV-0037 menyertai edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia, bukan
+oleh penulis sumber.
+(1) Turunan pembatas garis pada syarat kelengkungan dievaluasi di xk + δpk , sesuai
+aturan rantai, dan tanda pertidaksamaan bentuk pemaksimuman dipertahankan.
+(2) Lintasan contoh dua dimensi ditulis sebagai lintasan vektor; daerah kelengkungan
+yang diterima dijelaskan sesuai pertidaksamaan yang ditampilkan.
+(3) Lema keberadaan Wolfe diberi kehalusan C 1 dan keterbatasan di atas pada sinar;
+terminasi Armijo dibuktikan langsung dari turunan positif di nol.
+(4) Listing Maple pelacakan mundur diganti pseudokode mandiri dengan domain
+masukan, perulangan penyusutan, penghentian, dan keluaran yang lengkap.
+(5) Teorema stasioner dibatasi pada pelacakan mundur berparameter tetap; bukti
+memakai langkah pendahulu yang ditolak, subsekuens arah, dan limit takketat
+yang benar.
+(6) Korolari pencarian eksak mensyaratkan pemaksimum garis berhingga dan konvergensi iterat; korolari penskalaan memakai batas spektral seragam, dan parameter
+Armijo yang tak terdefinisi dipulihkan menjadi σ1 .
+(7) Contoh kegagalan memakai langkah konstan, indeks bentuk tertutup yang konsisten, serta limit subsekuens genap dan ganjil yang eksplisit.
+(8) Delimiter norma yang hilang pada teorema penangkapan dipulihkan dari saksi
+PDF publik v1.0.1.
+(9) Faktor konvergensi ρ dipisahkan dari bilangan kondisi spektral κ; titik ujung nol,
+indeks nilai eigen, dan aljabar bukti diperbaiki.
+(10) Dua listing Maple pendakian gradien diganti pseudokode mandiri dua bagian
+dengan kontrak pencarian garis, penghentian, lintasan, dan keluaran.
+(11) Matriks kuadratik contoh diperbaiki menjadi diag(−4, −20); bilangan kondisi 5
+dibedakan dari faktor konvergensi 2/3.
+(12) Arah Newton ditulis lengkap; bukti langkah satu eventual mengendalikan suku
+sisa secara seragam di atas arah ternormalisasi yang berubah.
+(13) Enam label sumber dipindahkan sebelum isi bernomor yang bersarang agar tetap
+menunjuk lingkungan pemiliknya tanpa mengubah identifikator.
+
+13
+
+Atribusi, lisensi, dan nondukungan
+Karya sumber: Christopher Griffin, Nonlinear Programming, Penn State MATH 555,
+dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber v1.0 dan karya
+turunan ini tunduk pada CC BY-NC-SA 3.0 US. Edisi ini mengatribusikan sumber,
+menandai perubahan, bersifat nonkomersial, dan mempertahankan ShareAlike pada komponen Penn.
+Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak menyusun,
+memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama-nama tersebut semata-mata untuk atribusi karya sumber.
+
+14
+
+

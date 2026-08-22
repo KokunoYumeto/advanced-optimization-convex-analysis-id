@@ -1,0 +1,276 @@
+{
+  "caveat": "Numerical witnesses are not proofs of the general theorems.",
+  "chapter": "Habring Chapter 7 - Duality / Dualitas",
+  "checks": {
+    "admm": {
+      "A_diagonal": [
+        1.0,
+        -0.8,
+        1.4,
+        -1.1,
+        0.65,
+        1.25
+      ],
+      "B_diagonal": [
+        -1.2,
+        0.9,
+        0.75,
+        -1.35,
+        1.1,
+        -0.7
+      ],
+      "constraint_dimension": 6,
+      "final_dual_residual_l2": 3.597122599785508e-17,
+      "final_objective": 6.071068045523575,
+      "final_objective_absolute_error": 0.0,
+      "final_primal_residual_l2": 8.777083671441753e-17,
+      "first_dual_residual_l2": 3.6622305982543986,
+      "first_primal_residual_l2": 3.1168119111167063,
+      "gamma": 0.9,
+      "iterations": 300,
+      "last_20_max_objective_absolute_error": 0.0,
+      "max_inner_r_B_delta_y_from_k1": 1.0985504402784795e-31,
+      "max_lyapunov_descent_signed_residual_from_k1": 1.818399711794479e-31,
+      "max_lyapunov_descent_violation_from_k1": 1.818399711794479e-31,
+      "max_x_stationarity_l2_residual": 1.1081486299874245e-15,
+      "max_y_stationarity_l2_residual": 1.3877787807814457e-15,
+      "negative_controls": {
+        "arbitrary_y0_stationarity_l2_residual": 6.920701817932544,
+        "first_updated_y1_stationarity_l2_residual": 1.2851760658783268e-15,
+        "wrong_plus_z_primal_residual_at_solution": 3.9352030695160725
+      },
+      "optimal_objective": 6.071068045523575,
+      "problem": "min f(x)+g(y) subject to A*x+B*y=z, with diagonal separable quadratics",
+      "reference_kkt_l2_residual": 2.8031757299712627e-16,
+      "reference_objective_error_vs_kkt": 5.329070518200751e-15,
+      "reference_point_inf_error_vs_kkt": 4.8031439270346254e-08,
+      "reference_solver": "scipy.optimize.minimize(method='SLSQP') with LinearConstraint",
+      "reference_solver_iterations": 10,
+      "reference_solver_status": "Optimization terminated successfully",
+      "result": "PASS",
+      "x_dimension": 6,
+      "y_dimension": 6
+    },
+    "fenchel_conjugate_subdifferential": {
+      "conjugate": "f*(s)=||soft(s,lambda)||_2^2/(2*mu)",
+      "dimension": 6,
+      "equality_cases_max_absolute_gap": 8.881784197001252e-16,
+      "equivalence_cases": [
+        {
+          "case": "graph_with_zero_boundary",
+          "expected_subgradient_membership": true,
+          "fenchel_young_gap": 8.881784197001252e-16,
+          "s_in_partial_f_of_x": true,
+          "x_in_partial_f_star_of_s": true
+        },
+        {
+          "case": "zero_with_box_boundary",
+          "expected_subgradient_membership": true,
+          "fenchel_young_gap": 0.0,
+          "s_in_partial_f_of_x": true,
+          "x_in_partial_f_star_of_s": true
+        },
+        {
+          "case": "zero_outside_box",
+          "expected_subgradient_membership": false,
+          "fenchel_young_gap": 0.004923076923076932,
+          "s_in_partial_f_of_x": false,
+          "x_in_partial_f_star_of_s": false
+        },
+        {
+          "case": "nonzero_wrong_slope",
+          "expected_subgradient_membership": false,
+          "fenchel_young_gap": 0.04807692307692335,
+          "s_in_partial_f_of_x": false,
+          "x_in_partial_f_star_of_s": false
+        }
+      ],
+      "independent_solver": "scipy.optimize.minimize(method='SLSQP') on l1 epigraph",
+      "independent_solver_cases": 12,
+      "independent_solver_iterations_total": 36,
+      "lambda": 0.8,
+      "max_solver_conjugate_value_error": 1.2434497875801753e-14,
+      "max_solver_point_inf_error": 5.190292640122607e-15,
+      "maximum_random_fenchel_gap": 47.10788468286348,
+      "minimum_random_fenchel_gap": 3.1148450824064633,
+      "mu": 0.65,
+      "off_graph_cases_minimum_gap": 0.004923076923076932,
+      "problem": "f(x)=(mu/2)||x||_2^2+lambda||x||_1",
+      "random_fenchel_pairs": 96,
+      "result": "PASS"
+    },
+    "fenchel_rockafellar": {
+      "absolute_duality_gap": 1.6653345369377348e-16,
+      "alpha": 1.3,
+      "dual_dimension": 4,
+      "dual_solver": "independent scipy.optimize.minimize(method='trust-exact')",
+      "dual_solver_iterations": 2,
+      "dual_solver_status": "Optimization terminated successfully.",
+      "dual_stationarity_l2_residual": 2.7001571335240713e-16,
+      "dual_value": -0.08053230187932736,
+      "f_fenchel_equality_gap": -1.5265566588595902e-16,
+      "g_fenchel_equality_gap": -1.3877787807814457e-17,
+      "negative_controls": {
+        "swapped_fstar_argument_domain_rejected_by_dimensions": true,
+        "wrong_f_conjugate_sign_absolute_gap": 0.10746086870010141,
+        "wrong_g_conjugate_sign_absolute_gap": 0.7792621572993714
+      },
+      "operator_shape": [
+        4,
+        5
+      ],
+      "operator_spectral_norm": 1.1614947980840526,
+      "primal_dimension": 5,
+      "primal_solver": "scipy.optimize.minimize(method='trust-exact')",
+      "primal_solver_iterations": 3,
+      "primal_solver_status": "Optimization terminated successfully.",
+      "primal_stationarity_l2_residual": 1.377191275470677e-15,
+      "primal_value": -0.08053230187932753,
+      "problem": "min_x 0.5*x.T*Q*x+c.T*x + (alpha/2)||K*x-b||_2^2",
+      "q_condition_number": 9.938245340421823,
+      "result": "PASS",
+      "signed_primal_minus_dual_gap": -1.6653345369377348e-16,
+      "y_equals_alpha_Kx_minus_b_l2_residual": 4.014976168611859e-16
+    },
+    "live_target_correction_surfaces": {
+      "false_actual_admm_full_stationarity_overclaim_absent": true,
+      "required_surface_count": 30,
+      "required_surfaces_present": {
+        "abstract_y_minimization_variable": true,
+        "actual_admm_y_stationarity": true,
+        "admm_correct_xstar_substitution": true,
+        "admm_cross_term_nonpositive": true,
+        "admm_lyapunov_gamma_and_index": true,
+        "admm_norm_cross_term_minus": true,
+        "biconjugate_requires_proper_conjugate": true,
+        "empty_gamma_family_not_biconjugate": true,
+        "fundamental_y_metric_sigma": true,
+        "indicator_set_nonempty": true,
+        "no_actual_admm_x_stationarity_claim": true,
+        "pdhg_one_step_local_hypotheses": true,
+        "pdhg_y_uses_g_star": true,
+        "pdhg_zero_operator_branch": true,
+        "primal_dual_gap_signs": true,
+        "scaled_moreau_formula": true,
+        "separation_uses_domain_point": true,
+        "stable_segment_id_0001": true,
+        "stable_segment_id_0002": true,
+        "stable_segment_id_0003": true,
+        "stable_segment_id_0004": true,
+        "stable_segment_id_0005": true,
+        "stable_segment_id_0006": true,
+        "stable_segment_id_0007": true,
+        "stable_segment_id_0008": true,
+        "stable_segment_id_0009": true,
+        "stable_segment_id_0010": true,
+        "stable_segment_id_0011": true,
+        "updated_x_ergodic_index": true,
+        "updated_y_ergodic_index": true
+      },
+      "result": "PASS",
+      "target": "source/id-ID/habring-07-dualitas-id.tex"
+    },
+    "pdhg": {
+      "convergence": {
+        "final_iterate_distance_to_saddle": 7.200419022730857e-16,
+        "final_pointwise_saddle_gap": 1.1102230246251565e-16,
+        "final_updated_index_ergodic_gap": 0.00014767985075458956,
+        "initial_metric_energy": 13.866139490549081,
+        "iterations": 240,
+        "max_update_optimality_l2_residual": 7.514536976383426e-16,
+        "max_updated_index_ergodic_bound_signed_residual": -0.05762790135986658,
+        "max_updated_index_ergodic_bound_violation": 0.0,
+        "required_step_upper_bound": 1.0,
+        "sigma": 2.444444444444445,
+        "tau": 2.277777777777778,
+        "tau_sigma_operator_norm_squared": 0.7216
+      },
+      "dual_dimension": 4,
+      "fundamental_inequality": {
+        "cases": 72,
+        "max_signed_lhs_minus_rhs": -5.322884401779199,
+        "max_violation": 0.0,
+        "max_x_update_optimality_l2_residual": 8.260723321206717e-15,
+        "max_y_update_optimality_l2_residual": 1.9389211565826713e-15,
+        "sigma": 1.4,
+        "tau": 0.13
+      },
+      "negative_controls": {
+        "old_iterate_average_max_bound_violation": 17.033229030309705,
+        "old_iterate_average_worst_k": 1,
+        "prox_f_in_y_step_rejected_by_unequal_domains": true,
+        "wrong_y_coupling_sign_max_optimality_l2_residual": 14.3625788413024,
+        "wrong_y_metric_1_over_2tau_max_violation": 163.5829089039563
+      },
+      "operator_shape": [
+        4,
+        5
+      ],
+      "operator_spectral_norm": 0.35999999999999993,
+      "primal_dimension": 5,
+      "problem": "min_x max_y (mu_f/2)||x-a||^2-(mu_g_star/2)||y-d||^2+<Kx,y>",
+      "result": "PASS",
+      "saddle_stationarity_l2_residual": 3.260541871072589e-16
+    },
+    "scaled_moreau_decomposition": {
+      "dimension": 7,
+      "function": "f(x)=lambda||x||_1; f* is the indicator of the l_inf ball of radius lambda",
+      "gamma": 0.37,
+      "identity": "x=prox_{gamma*f}(x)+gamma*prox_{f*/gamma}(x/gamma)",
+      "independent_dual_solver": "L-BFGS-B box projection",
+      "independent_primal_solver": "SLSQP l1 epigraph",
+      "independent_solver_cases_each": 10,
+      "lambda": 0.85,
+      "max_decomposition_l2_residual": 8.881784197001252e-16,
+      "max_dual_prox_solver_inf_error": 1.354472090042691e-14,
+      "max_primal_prox_solver_inf_error": 7.938623847181248e-08,
+      "negative_controls": {
+        "minimum_required_detection": 0.0001,
+        "missing_outer_gamma_max_l2_residual": 1.4167998270750886,
+        "unscaled_dual_argument_max_l2_residual": 0.32377465691820295
+      },
+      "result": "PASS",
+      "samples_including_zero_and_exact_thresholds": 50,
+      "threshold_gamma_lambda": 0.3145
+    }
+  },
+  "inputs": {
+    "authority": {
+      "bytes": 30761,
+      "path": "authority/habring/source-v1/duality.tex",
+      "sha256": "0b112dee2582813cec5629c02df1dda329f690f944b60f4694b1c5762129bea9"
+    },
+    "live_target": {
+      "bytes": 35428,
+      "path": "source/id-ID/habring-07-dualitas-id.tex",
+      "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+    },
+    "validator": {
+      "bytes": 45213,
+      "path": "qa/validate_duality_unit.py",
+      "sha256": "127bed94abe4b506ebd999a46ea71b31457f2f4cc65c7fdd7cd4efcc60569c5b"
+    }
+  },
+  "reproducibility": {
+    "final_process_outputs_byte_identical": true,
+    "final_process_runs_compared": 2,
+    "json_serialization": "UTF-8, indent=2, sort_keys=True, trailing LF",
+    "rng": "numpy.random.Generator(PCG64)",
+    "seed": 20260822
+  },
+  "result": "PASS",
+  "runtime": {
+    "numpy": "2.4.4",
+    "python": "3.13.9",
+    "scipy": "1.17.1"
+  },
+  "schema": "o015-duality-solver-check-v1",
+  "scope": "bounded finite-dimensional numerical witnesses",
+  "tolerances": {
+    "algebra": 2e-11,
+    "convergence": 2e-08,
+    "independent_solver": 2e-07,
+    "inequality": 3e-10,
+    "negative_control_minimum_detection": 0.0001
+  }
+}

@@ -1,0 +1,549 @@
+                    OPTIMISASI KONVEKS
+                           Unit 9: Transportasi Optimal
+                             Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 9, "Excursion on Optimal Transport", dari Andre-
+as Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1. Sumber berwenang
+untuk unit ini adalah berkas optimal_transport.tex edisi v1 dengan SHA-256 berikut:
+
+                            719df724b368126cc7540dffd461dc33
+                            aba7d5b5b6060132181086dfa17649ba
+
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang terukur dan
+ukuran probabilitas, konvergensi lemah, ruang Polish dan keketatan, optimisasi konveks,
+dualitas, serta aljabar matriks. Seluruh definisi, gambar TikZ, teorema, sketsa bukti, lema,
+catatan, sitasi, catatan kaki, formula, rujukan silang, dan permukaan glosarium dalam bab
+sumber dipertahankan dalam urutan sumber. Kekeliruan yang dapat ditentukan secara
+matematis diperbaiki secara terbuka dan diringkas pada akhir unit.
+Uraian sumber menyebut dirinya sebagai selingan yang tidak sepenuhnya rigor. Edisi ini
+mempertahankan sifat pengantar tersebut, sambil menyatakan hipotesis minimum yang
+diperlukan agar klaim eksistensi, metrik Wasserstein, dualitas Kantorovich, serta faktori-
+sasi dan iterasi Sinkhorn mempunyai makna yang tepat.
+
+
+
+
+                                             i
+DAFTAR ISI
+
+
+
+
+9   selingan tentang transportasi optimal 1
+    9.1 Transportasi optimal Monge dan Kantorovich 1
+    9.2 Dualitas Kantorovich 4
+    9.3 Diskretisasi transportasi optimal: Algoritme Sinkhorn–Knopp   6
+
+daftar pustaka   9
+
+
+
+
+                                         ii
+9 SELINGAN TENTANG TRANSPORTASI OPTIMAL
+
+
+
+Meskipun tidak sepenuhnya menyatu dengan kuliah ini, kita menutupnya dengan suatu
+selingan mengenai transportasi optimal (OT), bidang yang sangat penting dalam mate-
+matika modern dan pembelajaran mesin. Perlu ditekankan sejak awal bahwa uraian ini
+hanya pengantar singkat; sejumlah rincian teori ukuran dan topologi yang mendasarinya
+akan dinyatakan seperlunya.
+
+
+Notasi Dalam bagian berikut, (𝑋, Σ𝑋 ) dan (𝑌, Σ𝑌 ) adalah ruang terukur1 . Tuliskan P (𝑋 )
+dan P (𝑌 ) untuk himpunan semua ukuran probabilitas, M (𝑋 ) dan M (𝑌 ) untuk ruang
+ukuran bertanda hingga, serta M+ (𝑋 ) dan M+ (𝑌 ) untuk kerucut ukuran tak negatif hing-
+ga. Ingat bahwa ukuran bertanda 𝜇 pada 𝑋 adalah fungsi 𝜇 : Σ𝑋 → ℝ, sedangkan ukuran
+tak negatif bernilai dalam [0, ∞), dengan Σ𝑋 ⊆ 2𝑋 suatu aljabar-𝜎 2 , dan memenuhi
+  (i) 𝜇 (∅) = 0;
+  (ii) untuk setiap barisan (𝐴𝑛 )𝑛∈ℕ ⊂ Σ𝑋 yang saling lepas, berlaku 𝜇 (          𝑛 𝐴𝑛 ) =     𝑛 𝜇 (𝐴𝑛 ).
+                                                                                S              P
+
+Ukuran probabilitas adalah ukuran tak negatif dengan 𝜇 (𝑋 ) = 1.
+
+
+9.1 transportasi optimal monge dan kantorovich
+
+Motivasi khas untuk OT adalah sebagai berikut. Bayangkan kita ingin memindahkan se-
+tumpuk pasir dari satu tempat ke tempat lain. Berdasarkan kekekalan massa, kedua tum-
+pukan mempunyai massa total yang sama; tanpa mengurangi keumuman, kita andaikan
+massanya satu. Karena itu, tumpukan awal dapat digambarkan oleh distribusi probabilitas
+𝛼 ∈ P (𝑋 ) dan tumpukan akhir oleh distribusi probabilitas 𝛽 ∈ P (𝑌 ). Pertanyaan yang
+hendak dijawab dalam OT adalah:
+      Bagaimana kita dapat mengangkut tumpukan 𝛼 ke 𝛽 dengan biaya minimum?
+
+
+ 1 Ketika topologi dibutuhkan, keduanya akan diasumsikan sebagai ruang Polish dengan aljabar-𝜎 Borel;
+
+   yaitu, ruang topologis separabel yang topologinya dibangkitkan oleh suatu metrik lengkap.
+ 2 Secara khusus, Σ memuat himpunan kosong serta tertutup terhadap komplemen dan gabungan terhi-
+                   𝑋
+   tung.
+
+
+
+                                                  1
+                         9 selingan tentang transportasi optimal
+
+
+                 𝛼                                                      𝛽
+
+
+
+
+                                                𝑇#𝛼 = 𝛽
+                                       (peta transportasi optimal)
+
+           Gambar 9.1: Ilustrasi OT. Peta 𝑇 mengangkut tumpukan dari 𝛼 ke 𝛽.
+
+Pembaca yang teliti mungkin menyadari bahwa biaya belum ditentukan. Andaikan terse-
+dia fungsi biaya terukur yang terbatas dari bawah, 𝑐 : 𝑋 × 𝑌 → (−∞, +∞], dengan 𝑐 (𝑥, 𝑦)
+menyatakan biaya untuk mengangkut satu satuan massa dari 𝑥 ∈ 𝑋 ke 𝑦 ∈ 𝑌 . Setiap
+transportasi deterministik dari 𝛼 ke 𝛽 dimodelkan oleh pemetaan terukur 𝑇 : 𝑋 → 𝑌 .
+Syarat pengangkutan dapat dirumuskan dengan meminta 𝛼 (𝑇 −1 (𝐴)) = 𝛽 (𝐴) untuk setiap
+𝐴 ∈ Σ𝑌 . Ini mengantar kita pada definisi berikut.
+
+Definisi 9.1 (Ukuran hasil dorong (push-forward)). Misalkan 𝛼 ∈ P (𝑋 ) dan 𝑇 : 𝑋 → 𝑌
+terukur. Ukuran hasil dorong 𝑇♯ 𝛼 ∈ P (𝑌 ) didefinisikan oleh 𝑇♯ 𝛼 (𝐴) = 𝛼 (𝑇 −1 (𝐴)) untuk
+setiap 𝐴 ∈ Σ𝑌 .
+
+Sekarang kita dapat memperkenalkan secara formal masalah Monge untuk OT:
+
+Definisi 9.2 (Monge OT). Misalkan 𝑋 dan 𝑌 ruang terukur, 𝛼 ∈ P (𝑋 ), 𝛽 ∈ P (𝑌 ), dan 𝑐
+fungsi biaya terukur yang terbatas dari bawah. Masalah Monge untuk OT adalah
+                               ∫
+(9.1)                   inf        𝑐 (𝑥,𝑇 (𝑥))d𝛼 (𝑥),  inf ∅ := +∞.
+                     𝑇 :𝑋 →𝑌 terukur
+                          𝑇♯ 𝛼=𝛽
+
+
+Masalah Monge untuk OT mempunyai beberapa kekurangan. Sebagai contoh, setiap 𝑥 ha-
+nya dapat dipetakan oleh 𝑇 ke satu titik 𝑦, sehingga massa pada satu titik 𝑥 tidak dapat
+dibagi ke beberapa titik 𝑦. Karena itu, apabila 𝛼 memberikan massa tak nol pada suatu titik,
+𝑌 ⊆ ℝ𝑞 , dan 𝛽 kontinu mutlak terhadap ukuran Lebesgue3 , tidak ada peta 𝑇 yang meme-
+nuhi syarat. Selain itu, bergantung pada pilihan 𝑐, masalah ini umumnya sulit dianalisis
+karena peubah tak diketahui 𝑇 muncul di dalam biaya 𝑐.
+ 3 Hal ini khususnya menyiratkan bahwa 𝛽 tidak mempunyai massa titik.
+
+
+
+
+                                                   2
+                       9 selingan tentang transportasi optimal
+
+
+Perumusan yang lebih umum dan lebih mudah dianalisis adalah OT Kantorovich. Alih-
+alih memakai peta 𝑇 : 𝑋 → 𝑌 , transportasi juga dimodelkan oleh suatu distribusi. Suatu
+rencana transportasi adalah distribusi probabilitas 𝛾 pada ruang hasil kali terukur 𝑋 × 𝑌
+yang mempunyai 𝛼 dan 𝛽 sebagai marginalnya: 𝛾 (𝐴 × 𝑌 ) = 𝛼 (𝐴) dan 𝛾 (𝑋 × 𝐵) = 𝛽 (𝐵)
+untuk semua 𝐴 ∈ Σ𝑋 dan 𝐵 ∈ Σ𝑌 . Secara intuitif,𝛾 (𝐴×𝐵) adalah massa yang diangkut dari
+𝐴 ke 𝐵. Himpunan semua distribusi dengan marginal 𝛼, 𝛽 dilambangkan dengan Π(𝛼, 𝛽)
+dan anggotanya disebut kopling (coupling). Sekarang kita dapat mendefinisikan masalah
+Kantorovich untuk OT.
+
+Definisi 9.3 (Kantorovich OT). Misalkan 𝑋 dan 𝑌 ruang terukur, 𝛼 ∈ P (𝑋 ), 𝛽 ∈ P (𝑌 ), dan
+𝑐 fungsi biaya terukur. Masalah Kantorovich untuk OT adalah
+                                      ∫
+(9.2)                            inf     𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦).
+                               𝛾 ∈Π(𝛼,𝛽)
+
+
+Perhatikan bahwa (9.2) jauh lebih menguntungkan daripada (9.1). Secara khusus, objektif-
+nya kini linear.
+
+Catatan. Kita juga dapat merumuskan (9.2) dengan peubah acak. Setiap kopling 𝛾 dapat
+direalisasikan sebagai vektor acak (𝑋, 𝑌 ) ∼ 𝛾 dengan 𝑋 ∼ 𝛼 dan 𝑌 ∼ 𝛽. Biayanya kemudi-
+an memenuhi
+                             ∫
+(9.3)                           𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦) = 𝔼[𝑐 (𝑋, 𝑌 )].
+
+
+Kita nyatakan hasil berikut.
+
+Teorema 9.4 (Eksistensi solusi). Misalkan 𝑋 dan 𝑌 ruang Polish yang dilengkapi aljabar-𝜎
+Borelnya, 𝛼 ∈ P (𝑋 ), dan 𝛽 ∈ P (𝑌 ). Jika 𝑐 : 𝑋 × 𝑌 → (−∞, +∞] terbatas dari bawah dan
+semikontinu bawah, maka terdapat rencana transportasi optimal 𝛾ˆ ∈ Π(𝛼, 𝛽), yaitu solusi
+untuk (9.2).
+
+Sketsa bukti. Untuk bukti terperinci, lihat misalnya [Villani 2009, Theorem 4.1]. Argumen-
+nya adalah metode langsung. Ambil barisan (𝛾𝑛 )𝑛 ⊂ Π(𝛼, 𝛽) yang nilai biayanya menuju
+infimum. Karena 𝛼 dan 𝛽 ketat pada ruang Polish, keluarga kopling dengan kedua mar-
+ginal tetap juga ketat. Himpunan Π(𝛼, 𝛽) tertutup terhadap konvergensi lemah; teorema
+Prokhorov karena itu menyatakan bahwa himpunan tersebut kompak secara lemah. Se-
+telah mengambil suatu subbarisan, diperoleh 𝛾𝑛 ∫⇀ 𝛾ˆ ∈ Π(𝛼, 𝛽). Karena 𝑐 semikontinu
+bawah dan terbatas dari bawah, pemetaan 𝛾 ↦→ 𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦) semikontinu bawah se-
+cara lemah. Maka 𝛾ˆ meminimumkan biaya dan bukti selesai.                               □
+
+Satu kasus khusus penting dari transportasi optimal perlu disoroti.
+
+
+
+                                            3
+                           9 selingan tentang transportasi optimal
+
+
+Definisi 9.5 (Jarak Wasserstein). Misalkan (𝑋, 𝑑) ruang ∫metrik Polish dan 𝑝 ∈ [1, ∞). Te-
+tapkan 𝑥 0 ∈ 𝑋 dan tuliskan P𝑝 (𝑋 ) := {𝜇 ∈ P (𝑋 ) : 𝑑 (𝑥, 𝑥 0 ) 𝑝 d𝜇 (𝑥) < ∞}; definisi
+ini tidak bergantung pada pilihan 𝑥 0 . Untuk 𝛼, 𝛽 ∈ P𝑝 (𝑋 ) dan biaya 𝑐 (𝑥, 𝑦) = 𝑑 (𝑥, 𝑦) 𝑝 ,
+besaran
+                                           ∫                      1/𝑝
+(9.4)                 𝑊𝑝 (𝛼, 𝛽) :=     inf             𝑝
+                                               𝑑 (𝑥, 𝑦) d𝛾 (𝑥, 𝑦)
+                                      𝛾 ∈Π(𝛼,𝛽)
+
+disebut jarak Wasserstein-𝑝.
+
+Secara khusus, 𝑊𝑝 adalah metrik pada ruang ukuran probabilitas bermomen ke-𝑝 hingga,
+yaitu P𝑝 (𝑋 ).
+
+
+9.2 dualitas kantorovich
+
+Dari Chapter 7 kita telah mengenal konsep dualitas. Dualitas memainkan peran penting
+dalam OT dan menghasilkan teorema terkenal berikut.
+
+Teorema 9.6 (Dualitas Kantorovich). Misalkan 𝑋 dan 𝑌 ruang Polish dengan aljabar-𝜎 Bo-
+relnya, 𝛼 ∈ P (𝑋 ), 𝛽 ∈ P (𝑌 ), dan 𝑐 : 𝑋 × 𝑌 → [0, ∞] semikontinu bawah. Tuliskan 𝐶𝑏 (𝑋 )
+dan 𝐶𝑏 (𝑌 ) untuk fungsi kontinu terbatas bernilai riil. Maka
+                ∫                                               ∫              ∫
+         inf      𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦) =            sup              𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦).
+(9.5) 𝛾 ∈Π(𝛼,𝛽)                          𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )
+                                     𝜑 (𝑥)+𝜓 (𝑦)≤𝑐 (𝑥,𝑦) ∀(𝑥,𝑦)
+
+
+Sketsa bukti. Kita mulai dengan ketaksamaan yang mudah. Ambil (𝜑,𝜓 ) ∈ 𝐶𝑏 (𝑋 ) ×𝐶𝑏 (𝑌 )
+sedemikian sehingga 𝜑 (𝑥) + 𝜓 (𝑦) ≤ 𝑐 (𝑥, 𝑦) untuk semua (𝑥, 𝑦), dan ambil sembarang
+𝛾 ∈ Π(𝛼, 𝛽). Maka
+          ∫                ∫               ∫                     ∫
+              𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦) =     𝜑 (𝑥)d𝛾 (𝑥, 𝑦) + 𝜓 (𝑦)d𝛾 (𝑥, 𝑦)
+                                           ∫
+                                                              
+(9.6)                                   =      𝜑 (𝑥) + 𝜓 (𝑦) d𝛾 (𝑥, 𝑦)
+                                           ∫
+                                        ≤     𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦).
+
+Karena 𝛾 dan (𝜑,𝜓 ) sembarang, kita dapat mengambil infimum di ruas kanan dan supre-
+mum di ruas kiri untuk memperoleh
+                               ∫              ∫                       ∫
+                sup              𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦) ≤ inf        𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦).
+(9.7)   𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )                              𝛾 ∈Π(𝛼,𝛽)
+      𝜑 (𝑥)+𝜓 (𝑦)≤𝑐 (𝑥,𝑦) ∀(𝑥,𝑦)
+
+
+
+
+                                                  4
+                        9 selingan tentang transportasi optimal
+
+
+Ketaksamaan sebaliknya lebih rumit. Pertama, kita dapat menulis ulang (9.2) sebagai
+                                 ∫                            
+(9.8)                      inf        𝑐 (𝑥, 𝑦)d𝛾 + 𝛿 Π(𝛼,𝛽) (𝛾) ,
+                          𝛾 ∈M+ (𝑋 ×𝑌 )
+
+dengan 𝛿 Π(𝛼,𝛽) fungsi indikator seperti biasa. Untuk 𝛾 ∈ M+ (𝑋 × 𝑌 ), berlaku
+                                                     ∫               ∫
+               𝛿 Π(𝛼,𝛽) (𝛾) =         sup               𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦)
+                              𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )
+(9.9)                                ∫                             
+                                                          
+                                  −         𝜑 (𝑥) + 𝜓 (𝑦) d𝛾 (𝑥, 𝑦) .
+
+Jika 𝛾 ∈ Π(𝛼, 𝛽), ekspresi di dalam supremum pada ruas kanan bernilai nol untuk setiap
+(𝜑,𝜓 ), sehingga supremumnya nol. Sebaliknya, jika 𝛾 ∉ Π(𝛼, 𝛽), sedikitnya satu marginal
+berbeda. Ukuran Borel hingga yang berbeda pada ruang Polish dapat dipisahkan oleh sua-
+tu fungsi kontinu terbatas; tanpa mengurangi keumuman, terdapat 𝜑 ∈ 𝐶𝑏 (𝑋 ) sedemikian
+sehingga
+                                   ∫
+(9.10)                                𝜑d(𝛼 − 𝛾𝑥 ) ≠ 0,
+
+dengan 𝛾𝑥 marginal-𝑥 dari 𝛾. Mengganti 𝜑 dengan 𝑡𝜑 dan memilih tanda 𝑡 ketika |𝑡 | → ∞
+menunjukkan bahwa supremumnya adalah +∞.
+Langkah taktrivial untuk ketaksamaan sebaliknya adalah pertukaran infimum dan sup-
+remum. Pertukaran itu tidak mengikuti perhitungan formal semata; di bawah hipotesis
+ruang Polish dan biaya semikontinu bawah tak negatif di atas, pertukaran tersebut dija-
+min oleh teorema dualitas Kantorovich standar, lihat [Villani 2009, Theorem 5.10]. Dengan
+justifikasi dualitas kuat ini, diperoleh
+               ∫
+          inf      𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦) =   inf       sup
+         𝛾 ∈Π(𝛼,𝛽)                      𝛾 ∈M+ (𝑋 ×𝑌 ) 𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )
+                                        ∫
+                                          𝑐 (𝑥, 𝑦)d𝛾 (𝑥, 𝑦)
+                                        ∫                  ∫
+                                      +    𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦)
+                                        ∫                            
+                                                           
+                                      −      𝜑 (𝑥) + 𝜓 (𝑦) d𝛾 (𝑥, 𝑦)
+(9.11)
+                                                      ∫                 ∫
+                                    =      sup              𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦)
+                                          𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )
+                                                              ∫                                  
+                                                                                        
+                                          +       inf              𝑐 (𝑥, 𝑦) − 𝜑 (𝑥) − 𝜓 (𝑦) d𝛾 (𝑥, 𝑦)
+                                              𝛾 ∈M+ (𝑋 ×𝑌 )
+                                                                       ∫                 ∫
+                                    =                 sup                  𝜑 (𝑥)d𝛼 (𝑥) + 𝜓 (𝑦)d𝛽 (𝑦).
+                                              𝜑 ∈𝐶𝑏 (𝑋 ), 𝜓 ∈𝐶𝑏 (𝑌 )
+                                          𝜑 (𝑥)+𝜓 (𝑦)≤𝑐 (𝑥,𝑦) ∀(𝑥,𝑦)
+
+
+
+
+                                                        5
+                          9 selingan tentang transportasi optimal
+
+
+Pada persamaan terakhir, infimum terhadap ukuran tak negatif bernilai nol jika 𝑐 −𝜑 −𝜓 ≥
+0 di setiap titik (ambil 𝛾 = 0), dan bernilai −∞ jika ketaksamaan itu gagal (skalakan massa
+Dirac pada titik pelanggaran). Ini sama dengan fungsi indikator kendala dual, sebagaimana
+pada (9.9).                                                                               □
+
+
+9.3 diskretisasi transportasi optimal: algoritme sinkhorn–knopp
+
+Untuk mendiskretisasi (9.2), kita modelkan 𝛼 dan 𝛽 sebagai ukuran diskret. Tuliskan Δ𝑛 :=
+{𝑟 ∈ ℝ𝑛+ : 𝟙𝑛⊤𝑟 = 1} dan Δ𝑛◦ := {𝑟 ∈ ℝ𝑛++ : 𝟙𝑛⊤𝑟 = 1}. Untuk suatu vektor 𝑎 = (𝑎 1, . . . , 𝑎𝑛 ) ∈
+Δ𝑛 dan titik 𝑥𝑖 ∈ 𝑋 , tetapkan
+                                                  𝑛
+                                                 ∑︁
+(9.12)                                    𝛼=           𝑎𝑖 𝛿 𝑥 𝑖 ,
+                                                 𝑖=1
+
+dan, serupa dengan itu, untuk 𝑏 = (𝑏 1, . . . , 𝑏𝑚 ) ∈ Δ𝑚 dan 𝑦 𝑗 ∈ 𝑌 , tetapkan
+                                                  𝑚
+                                                 ∑︁
+(9.13)                                    𝛽=           𝑏 𝑗 𝛿𝑦𝑗 .
+                                                 𝑗=1
+
+Selanjutnya, definisikan 𝐶 = [𝐶𝑖,𝑗 ] 𝑖,𝑗 = [𝑐 (𝑥𝑖 , 𝑦 𝑗 )] 𝑖,𝑗 . Rencana transportasi adalah matriks
+𝑃 ∈ ℝ𝑛×𝑚 sedemikian sehingga
+                                          P𝑚
+                                              𝑃           = 𝑎𝑖 ,
+                                         P 𝑗=1 𝑖,𝑗
+                                        
+                                        
+                                        
+(9.14)                                     𝑛 𝑃
+                                           𝑖=1 𝑖,𝑗         = 𝑏𝑗,
+                                        
+                                                           ≥ 0.
+                                        
+                                        𝑃𝑖,𝑗
+                                        
+Kendala marginal dapat ditulis ringkas sebagai 𝑃𝟙𝑚 = 𝑎 dan 𝑃 ⊤ 𝟙𝑛 = 𝑏. Masalah OT diskret
+kemudian berbentuk
+                                       ∑︁
+                        min   ⟨𝐶, 𝑃⟩ =      𝐶𝑖,𝑗 𝑃𝑖,𝑗
+                      𝑃 ∈ℝ𝑛×𝑚
+(9.15)                                  𝑖,𝑗
+                    dengan syarat 𝑃𝟙𝑚 = 𝑎, 𝑃 ⊤ 𝟙𝑛 = 𝑏, 𝑃𝑖,𝑗 ≥ 0.
+
+Dalam praktik, masalah ini sering diregularisasi. Untuk pembahasan regularisasi entropik
+berikut, andaikan 𝐶 ∈ ℝ𝑛×𝑚 , sehingga semua biaya diskret berhingga. Untuk 𝑃 ∈ ℝ𝑛×𝑚 + ,
+definisikan regularisasi entropik
+                                       ∑︁                    
+(9.16)                        𝐸 (𝑃) :=    𝑃𝑖,𝑗 log(𝑃𝑖,𝑗 ) − 1 ,
+                                           𝑖,𝑗
+
+dengan konvensi kontinu 0 log 0 = 0; di luar ortan tak negatif, tetapkan 𝐸 (𝑃) = +∞. Untuk
+𝜀 > 0, pertimbangkan masalah
+
+(9.17)           min ⟨𝐶, 𝑃⟩ + 𝜀𝐸 (𝑃)      dengan syarat 𝑃𝟙𝑚 = 𝑎,        𝑃 ⊤ 𝟙𝑛 = 𝑏.
+                𝑃 ∈ℝ𝑛×𝑚
+                    +
+
+
+
+
+                                                  6
+                        9 selingan tentang transportasi optimal
+
+
+Lema 9.7. Andaikan 𝑎 ∈ Δ𝑛◦ , 𝑏 ∈ Δ𝑚
+                                  ◦ , 𝐶 ∈ ℝ𝑛×𝑚 , dan 𝜀 > 0. Solusi masalah (9.17) unik dan
+
+mempunyai representasi
+
+(9.18)                                   𝑃𝑖,𝑗 = 𝑢𝑖 𝐾𝑖,𝑗 𝑣 𝑗 ,
+                                        
+                                    𝐶
+dengan 𝑢𝑖 , 𝑣 𝑗 > 0 dan 𝐾𝑖,𝑗 = exp − 𝜀𝑖,𝑗 > 0. Vektor penskalaan (𝑢, 𝑣) unik hingga transfor-
+masi (𝑢, 𝑣) ↦→ (𝑡𝑢, 𝑡 −1𝑣) untuk 𝑡 > 0.
+
+Bukti. Himpunan layak adalah politop transportasi tak kosong dan kompak: matriks 𝑄 =
+𝑎𝑏 ⊤ layak, bahkan 𝑄𝑖,𝑗 > 0. Karena fungsi objektif kontinu pada politop ini, suatu pemini-
+mum ada. Fungsi ℎ(𝑡) = 𝑡 (log 𝑡 − 1) dengan ℎ(0) = 0 bersifat konveks ketat pada [0, ∞);
+karena itu, jumlah entropik bersifat konveks ketat dan peminimumnya unik.
+Peminimum 𝑃 tidak dapat mempunyai entri nol. Memang, jika 𝑃𝑖,𝑗 = 0 untuk sedikitnya
+satu pasangan (𝑖, 𝑗), maka 𝑃𝑡 = (1 − 𝑡)𝑃 + 𝑡𝑄 tetap layak untuk 𝑡 ∈ (0, 1). Pada setiap entri
+nol, turunan searah satu sisi dari suku entropi memenuhi d𝑡d ℎ(𝑡𝑄𝑖,𝑗 ) = 𝑄𝑖,𝑗 log(𝑡𝑄𝑖,𝑗 ) →
+−∞ ketika 𝑡 ↓ 0, sedangkan kontribusi biaya linear dan turunan pada entri positif tetap
+hingga. Jadi, untuk 𝑡 > 0 yang cukup kecil, nilai objektif pada 𝑃𝑡 lebih kecil daripada pada
+𝑃, suatu kontradiksi. Dengan demikian, 𝑃𝑖,𝑗 > 0 untuk semua 𝑖, 𝑗, dan kondisi pengali
+Lagrange untuk kendala marginal afin dapat diterapkan.
+Lagrangian masalah ini adalah
+
+(9.19)          𝐿(𝑃, 𝜆, 𝜇) = ⟨𝐶, 𝑃⟩ + 𝜀𝐸 (𝑃) + ⟨𝜆, 𝑃𝟙𝑚 − 𝑎⟩ + 𝜇, 𝑃 ⊤ 𝟙𝑛 − 𝑏 .
+
+Kondisi optimalitasnya adalah
+                              
+                              
+                               0 = 𝐶𝑖,𝑗 + 𝜀 log(𝑃𝑖,𝑗 ) + 𝜆𝑖 + 𝜇 𝑗 ,
+                              
+                              
+(9.20)                          0 = 𝑃𝟙𝑚 − 𝑎,
+                              
+                               0 = 𝑃 ⊤ 𝟙𝑛 − 𝑏.
+                              
+                              
+Kondisi pertama menyiratkan
+                                                    
+                                       𝜆𝑖         𝐶𝑖,𝑗       𝜇 
+                                                                𝑗
+(9.21)                    𝑃𝑖,𝑗 = exp −      exp −        exp −    .
+                                       𝜀           𝜀           𝜀
+
+Dengan 𝑢𝑖 = exp(−𝜆𝑖 /𝜀) dan 𝑣 𝑗 = exp(−𝜇 𝑗 /𝜀), diperoleh representasi yang dinyatakan.
+                       ˜ 𝑣)
+Jika pasangan positif (𝑢, ˜ menghasilkan rencana yang sama, maka dari 𝑢𝑖 𝐾𝑖,𝑗 𝑣 𝑗 = 𝑢˜𝑖 𝐾𝑖,𝑗 𝑣˜ 𝑗
+dan 𝐾𝑖,𝑗 > 0 diperoleh 𝑢˜𝑖 /𝑢𝑖 = 𝑣 𝑗 /𝑣˜ 𝑗 untuk setiap 𝑖, 𝑗. Karena ruas kiri hanya bergantung
+pada 𝑖 dan ruas kanan hanya pada 𝑗, semua rasio itu sama dengan suatu 𝑡 > 0; jadi (𝑢,       ˜ =
+                                                                                          ˜ 𝑣)
+(𝑡𝑢, 𝑡 −1𝑣).                                                                                   □
+
+
+
+
+                                                7
+                      9 selingan tentang transportasi optimal
+
+
+Kendala yang masih harus dipenuhi adalah 𝑃𝟙𝑚 = diag(𝑢)𝐾diag(𝑣)𝟙𝑚 = diag(𝑢)𝐾𝑣 = 𝑎
+dan 𝑃 ⊤ 𝟙𝑛 = diag(𝑣)𝐾 ⊤𝑢 = 𝑏. Ini memotivasi algoritme Sinkhorn–Knopp. Pilih 𝑣 0 ∈ ℝ𝑚
+                                                                                    ++ ,
+misalnya 𝑣 0 = 𝟙𝑚 , lalu untuk 𝑘 = 0, 1, 2, . . . perbarui
+                                  (
+                                   𝑢𝑘+1 = 𝑎 ⊘ (𝐾𝑣𝑘 ),
+(9.22)
+                                   𝑣𝑘+1 = 𝑏 ⊘ (𝐾 ⊤𝑢𝑘+1 ),
+
+dengan ⊘ menyatakan pembagian komponen demi komponen. Berdasarkan positivitas
+𝑎, 𝑏, dan 𝐾, semua penyebut dan iterat tetap positif. Dengan hipotesis pada lema di atas,
+teorema Sinkhorn–Knopp menyatakan bahwa rencana diag(𝑢𝑘 )𝐾diag(𝑣𝑘 ), 𝑘 ≥ 1, konver-
+gen ke rencana unik pada masalah (9.17). Vektor penskalaannya sendiri tetap mempunyai
+ambiguitas perkalian (𝑢, 𝑣) ↦→ (𝑡𝑢, 𝑡 −1𝑣).
+
+
+
+
+                                           8
+DAFTAR PUSTAKA
+
+
+
+C. Villani (2009), Optimal Transport: Old and New, volume 338, Grundlehren der mathe-
+  matischen Wissenschaften, Springer Berlin, Heidelberg, doi: 10.1007/978-3-540-71050-9.
+
+
+
+
+                                           9
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-
+HAB-ADV-0084 sampai O015-HAB-ADV-0096 menyertai sumber edisi ini.
+
+  (i) Ruang terukur kini membawa aljabar-𝜎 bernama; setiap himpunan yang dipakai
+      pada marginal dan hasil dorong disyaratkan terukur, serta peta transportasi dan
+      fungsi biaya disyaratkan terukur.
+  (ii) Definisi ukuran membedakan ukuran bertanda hingga dari ukuran tak negatif dan
+       melengkapi sifat aljabar-𝜎 yang diperlukan untuk kebermaknaan aditivitas terhi-
+       tung.
+ (iii) Masalah Monge memakai infimum atas peta terukur yang layak, dengan konvensi
+       inf ∅ = +∞, karena keberadaan dan ketercapaian peta tidak dijamin.
+ (iv) Contoh ketidaklayakan Monge kini menyatakan 𝑌 ⊆ ℝ𝑞 sebelum menyebut ukuran
+      Lebesgue; catatan kaki menyatakan ketiadaan atom sebagai konsekuensi kontinui-
+      tas mutlak, bukan sebagai definisi yang ekuivalen.
+  (v) Teorema eksistensi kini mensyaratkan ruang Polish Borel. Sketsa bukti memakai
+      keketatan marginal, kekompakan lemah melalui Prokhorov, ketertutupan himpunan
+      kopling, dan semikontinuitas bawah biaya.
+ (vi) Jarak Wasserstein dibangun dari metrik 𝑑 pada ruang Polish dan dibatasi pada
+      P𝑝 (𝑋 ), ruang ukuran probabilitas dengan momen ke-𝑝 hingga.
+(vii) Teorema dualitas Kantorovich kini menyatakan ruang Polish Borel, biaya semikon-
+      tinu bawah tak negatif, serta kelas potensial 𝐶𝑏 (𝑋 ) × 𝐶𝑏 (𝑌 ) dan kendala titik demi
+      titik.
+(viii) Sketsa dualitas membenarkan pemisahan marginal dengan fungsi kontinu terbatas,
+       memperbaiki domain yang salah M+ (𝛼, 𝛽) menjadi M+ (𝑋 × 𝑌 ), dan mengidentifi-
+       kasi secara terbuka pertukaran infimum–supremum sebagai teorema dualitas kuat,
+       bukan akibat manipulasi formal.
+
+
+
+
+                                            10
+                           catatan koreksi terhadap sumber
+
+
+ (ix) Bobot diskret dinyatakan sebagai vektor 𝑎 ∈ Δ𝑛 dan 𝑏 ∈ Δ𝑚 ; vektor satuan pada ken-
+      dala marginal diberi dimensi yang benar, transpos dipakai konsisten, dan pemisah
+      kendala yang hilang dipulihkan.
+ (x) Entropi didefinisikan pada ortan tak negatif dengan 0 log 0 = 0 dan bernilai +∞ di
+     luarnya; 𝜀 > 0 serta keberhinggaan semua entri matriks biaya dinyatakan sebelum
+     masalah regularisasi.
+ (xi) Lema faktorisasi mensyaratkan marginal positif. Eksistensi dan keunikan dibuktik-
+      an dari kekompakan politop dan kekonveksan ketat; perturbasi menuju 𝑎𝑏 ⊤ mem-
+      buktikan positifnya setiap entri sebelum kondisi pengali Lagrange digunakan. Am-
+      biguitas penskalaan juga dinyatakan.
+(xii) Iterasi Sinkhorn diberi inisialisasi positif dan indeks yang lengkap. Positivitas pe-
+      nyebut serta konvergensi rencana penskalaan ke rencana entropik unik dinyatakan,
+      sambil mempertahankan ambiguitas perkalian pasangan penskalaan.
+(xiii) Entri daftar pustaka Villani memakai pengarang tunggal Cédric Villani sesuai me-
+       tadata penerbit; penanda “and others” yang keliru pada berkas sumber tidak lagi
+       menghasilkan nama tampilan “andothers”.
+
+
+
+
+                                            11
+ATRIBUSI, LISENSI, DAN NONDUKUNGAN
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Crea-
+tive Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/
+licenses/by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung
+terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+
+
+
+                                           12
+

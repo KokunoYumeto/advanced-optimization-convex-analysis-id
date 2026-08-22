@@ -1,0 +1,128 @@
+{
+  "article_id": 33314733,
+  "authors": [
+    {
+      "first_name": "Kokuno",
+      "full_name": "Kokuno Yumeto",
+      "id": 21544022,
+      "is_active": true,
+      "last_name": "Yumeto",
+      "orcid_id": "",
+      "url_name": "Kokuno_Yumeto"
+    }
+  ],
+  "checks": {
+    "all_public_bytes": true,
+    "caps": true,
+    "cc_by_4_0": true,
+    "collection_unique": true,
+    "metadata": true,
+    "no_penn_payload": true,
+    "no_ttp_prose": true,
+    "not_metadata_only": true,
+    "pdf_first": true,
+    "project_unique": true,
+    "public": true,
+    "source_zip": true
+  },
+  "collection_article_count": 14,
+  "collection_doi": "10.6084/m9.figshare.c.8668413.v30",
+  "collection_id": 8668413,
+  "collection_version": 30,
+  "doi": "10.6084/m9.figshare.33314733.v2",
+  "file_count": 5,
+  "files": [
+    {
+      "bytes": 3090098,
+      "filename": "D90-HAB-03-09-modul-pendamping-id.pdf",
+      "md5": "9b23674e5b308d3ac72bcf3b0a6287b1",
+      "public_byte_identity": "pass",
+      "sha256": "6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87"
+    },
+    {
+      "bytes": 160908,
+      "filename": "D90-HAB-03-09-sumber-id.zip",
+      "md5": "7bb43921cdc621054b508d8c96cb645e",
+      "public_byte_identity": "pass",
+      "sha256": "be06ba070d97506970378cea801c2525abc69bb305c3770b59186a6e212a645f"
+    },
+    {
+      "bytes": 18657,
+      "filename": "LICENSE_CC_BY_4.0.txt",
+      "md5": "2ab724713fdaf49e4523c4503bfd068d",
+      "public_byte_identity": "pass",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "bytes": 1111,
+      "filename": "FIGSHARE_MANIFEST.json",
+      "md5": "5eabc4a18b6fe0bde249fdfccf0f3100",
+      "public_byte_identity": "pass",
+      "sha256": "29c574ae755abc18a157ad48f4222b9fb6f75ca015c647d9f0ba9575264d260e"
+    },
+    {
+      "bytes": 375,
+      "filename": "SHA256SUMS",
+      "md5": "0a4eae3b79e47bf3cd4ba6076bd0c1c8",
+      "public_byte_identity": "pass",
+      "sha256": "b6f4a03048b057e45744d05e1a3dabc469240bdf977c4b1d99288f3c1780c885"
+    }
+  ],
+  "is_metadata_record": false,
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "value": 1
+  },
+  "primary_file": "D90-HAB-03-09-modul-pendamping-id.pdf",
+  "project_article_count": 24,
+  "project_bytes": 207268626,
+  "project_cap_bytes": 20000000000,
+  "project_file_count": 69,
+  "project_id": 280296,
+  "public_url": "https://figshare.com/articles/online_resource/Optimisasi_Lanjut_dan_Analisis_Konveks_Edisi_Bahasa_Indonesia_Checkpoint_Sembilan_Unit_Belum_Lengkap_/33314733",
+  "related_materials": [
+    {
+      "id": 285575523,
+      "identifier": "10.48550/arXiv.2607.11664",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.48550/arXiv.2607.11664",
+      "relation": "IsDerivedFrom",
+      "title": "Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1"
+    },
+    {
+      "id": 285575526,
+      "identifier": "10.5281/zenodo.22060447",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.5281/zenodo.22060447",
+      "relation": "IsSupplementedBy",
+      "title": "Checkpoint sepuluh unit Bahasa Indonesia dengan hak per komponen"
+    },
+    {
+      "id": 285575529,
+      "identifier": "10.5281/zenodo.22059741",
+      "identifier_type": "DOI",
+      "is_linkout": false,
+      "link": "https://doi.org/10.5281/zenodo.22059741",
+      "relation": "IsPartOf",
+      "title": "Garis keturunan Zenodo untuk edisi Bahasa Indonesia"
+    }
+  ],
+  "schema": "o015-figshare-reader-public-readback-v1",
+  "source_zip_verification": {
+    "entries": 29,
+    "integrity": "pass",
+    "manifest_entries_verified": 28
+  },
+  "status": "public",
+  "task_bytes": 3271149,
+  "task_cap_bytes": 500000000,
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Pendamping Habring Bab 3-9 (Bahasa Indonesia; Parsial)",
+  "version": 2,
+  "version_history": [
+    1,
+    2
+  ]
+}

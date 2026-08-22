@@ -1,0 +1,828 @@
+Pendakian Gradien dan Pencarian Garis
+          Bab 3 dari Nonlinear Programming
+
+               Edisi Bahasa Indonesia
+
+
+                   Christopher Griffin
+       dengan kontribusi Simon Miller dan Douglas Mercer
+
+
+
+
+           Sumber TeX v1.0; saksi PDF publik v1.0.1
+                                 Tentang unit ini
+
+     Unit ini menerjemahkan secara utuh Bab 3 dari Christopher Griffin, Nonlinear Pro-
+gramming / Penn State MATH 555. Otoritas yang dapat disunting ialah distribusi TeX
+v1.0; PDF publik v1.0.1 dipakai hanya sebagai saksi koreksi upstream yang kemudian
+diterbitkan. Karya sumber dan karya turunannya berada di bawah Creative Commons
+Attribution–NonCommercial– ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+     Bab 1–2 tidak diulang dalam pembaca mandiri ini. Empat rujukan prasyarat tetap
+memakai nomor sumber: Teorema 1.23 (arah gradien), Korolari 1.37 (invers matriks
+definit positif), Teorema 2.2 (nilai rata-rata), dan Teorema 2.12 (syarat perlu orde per-
+tama). Rujukan ke Gambar 2.3 pada Bab 2 dan Bagian 2 pada Bab 4 juga memperta-
+hankan nomor sumbernya. Seluruh struktur Bab 3, dua belas latihan, empat gambar,
+formula, label, rujukan silang, dan sitasi dipertahankan dalam urutan sumber. Enam per-
+mukaan Maple/keluaran program yang tidak dapat dipakai sebagai penutupan komputasi
+terbuka diganti oleh pseudokode mandiri atau saksi numerik yang dinyatakan secara ek-
+splisit.
+     Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin, para kon-
+tributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau mendukung edisi
+ini.
+
+
+
+
+                                            i
+                                     Daftar Isi
+
+Tentang unit ini                                                 i
+Bab 3. Pengantar Pendakian Gradien dan Metode Pencarian Garis    1
+  1. Algoritma Pendakian Gradien                                 1
+  2. Beberapa Hasil tentang Algoritma Pendakian Dasar            2
+  3. Pengurungan Maksimum                                        2
+  4. Pencarian Dikotomis                                         4
+  5. Pencarian Bagian Emas                                       6
+  6. Pencarian Biseksi                                           9
+  7. Metode Newton                                              10
+  8. Konvergensi Metode Newton                                  12
+Daftar Pustaka                                                  15
+Catatan koreksi terhadap sumber                                 16
+Atribusi, lisensi, dan nondukungan                              17
+
+
+
+
+                                         ii
+                                         BAB 3
+
+   Pengantar Pendakian Gradien dan Metode Pencarian Garis
+
+                         1. Algoritma Pendakian Gradien
+    Catatan 3.1. Dalam Teorema 1.23, kita membuktikan bahwa gradien menunjuk ke
+arah kenaikan tercepat suatu fungsi f : Rn → R. Jika kita ingin mengidentifikasi titik
+x∗ ∈ Rn yang merupakan maksimum lokal atau global bagi f , pendekatan yang wajar
+ialah bergerak sepanjang suatu arah p sehingga ∇f (x)T p > 0.
+   Definisi 3.2. Misalkan f : Rn → R terdiferensialkan secara kontinu dan p ∈ Rn . Jika
+∇f (x)T p > 0, maka p disebut arah naik di x.
+   Catatan 3.3. Namun, kita harus berhati-hati karena ∇f (x) hanya menyatakan arah
+kenaikan tercepat di x. Oleh sebab itu, kita mengambil langkah yang sesuai di sepa-
+njang p, mengevaluasi kembali gradien di iterat baru, lalu melanjutkan sampai syarat
+penghentian terpenuhi.
+
+
+ Algoritma Pendakian Dasar
+ Masukan: fungsi terdiferensialkan f : Rn → R yang akan dimaksimumkan, titik awal
+ x0 ∈ Rn , dan suatu uji penghentian
+ Inisialisasi: k = 0
+      (1) selama uji penghentian belum terpenuhi, lakukan
+      (2)        jika ∇f (xk ) = 0, hentikan dan kembalikan xk ;
+      (3)        pilih pk ∈ Rn dan δk > 0 sehingga ∇f (xk )T pk > 0 dan f (xk + δk pk ) >
+          f (xk );
+      (4)        xk+1 := xk + δk pk ;
+      (5)        k := k + 1.
+      (6) selesai
+ Keluaran: xk
+                        Algoritma 1. Algoritma Pendakian Dasar
+
+
+    Catatan 3.4. Algoritma 1 masih menyisakan beberapa pilihan yang harus ditentukan.
+Kita belum menjelaskan cara memilih pk dan δk , ataupun uji penghentiannya. Lebih
+penting lagi, kita ingin menemukan syarat yang menjamin bahwa iteratnya konvergen
+dan bahwa setiap titik limit memenuhi syarat perlu untuk maksimum lokal (lihat Teorema
+2.12). Terminasi dalam sejumlah langkah hingga dan konvergensi suatu barisan tak hingga
+adalah dua hal yang berbeda; keduanya memerlukan hipotesis tambahan.
+   Catatan 3.5. Untuk bagian selanjutnya dari catatan ini, kita akan menggunakan
+        pk = B−1
+              k ∇f (xk ),
+
+dengan Bk ∈ Rn×n simetris dan nonsingular. Agar pk pasti menjadi arah naik ketika
+gradien tidak nol, kita secara khusus akan mensyaratkan Bk definit positif; pilihan Newton
+memerlukan hipotesis lokal tersendiri.
+                                            1
+2          3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+    Definisi 3.6 (Pendakian Gradien). Jika Bk = In , maka Algoritma 1 disebut pendakian
+gradien.
+   Definisi 3.7 (Metode Newton). Jika Bk = −∇2 f (xk ) dan δk ∈ R+ , maka Algoritma 1
+menghasilkan langkah metode Newton untuk pemaksimuman. Metode ini akan dipelajari
+pada bab berikutnya; −∇2 f (xk ) definit positif hanya di wilayah tempat Hessian f definit
+negatif.
+
+             2. Beberapa Hasil tentang Algoritma Pendakian Dasar
+   Lema 3.8. Misalkan Bk definit positif dan ∇f (xk ) ̸= 0. Maka pk = B−1
+                                                                       k ∇f (xk )
+                                        T
+adalah arah naik di xk ; yakni, ∇f (xk ) pk > 0.
+    Bukti. Berdasarkan Korolari 1.37, B−1
+                                       k definit positif. Karena gradien tidak nol,
+
+         ∇f (xk )T pk = ∇f (xk )T B−1
+                                   k ∇f (xk ) > 0
+
+menurut definisi definit positif.                                                         □
+   Catatan 3.9. Karena Bk = In selalu definit positif dan nonsingular, pk = ∇f (xk )
+merupakan arah naik yang terdefinisi dengan benar setiap kali ∇f (xk ) ̸= 0. Jika gradi-
+ennya nol, xk adalah titik stasioner dan tidak ada arah naik ketat yang diberikan oleh
+gradien.
+   Catatan 3.10. Seperti telah dicatat, kita tidak boleh memilih δk secara sem-
+barang dalam Algoritma 1. Gradien hanya memberikan informasi lokal, sehingga
+pk = B−1
+      k ∇f (xk ) hanya dijamin sebagai arah naik di sekitar xk . Jika kita mendefinisikan
+
+
+
+(3.1)    ϕ(δk ) = f (xk + δk pk ),
+maka persoalan kita adalah menyelesaikan
+         max ϕ(δk )
+       
+(3.2)
+          s.t. δk ≥ 0.
+Ini adalah persoalan optimisasi satu variabel, yaitu δk . Dengan mengasumsikan solusi
+δk∗ ada dan menetapkan xk+1 := xk + δk∗ pk , kita pasti menaikkan—atau setidaknya tidak
+menurunkan—nilai f (xk+1 ) dibandingkan dengan f (xk ).
+    Catatan 3.11. Seperti akan kita lihat pada Bagian 2, sekadar menaikkan nilai f (xk )
+pada setiap iterasi k tidaklah cukup; kenaikannya harus memadai. Salah satu cara termu-
+dah, walaupun belum tentu paling efisien secara komputasi, ialah mencari solusi Persoalan
+3.2. Bagian-bagian berikut membahas beberapa metode untuk melakukannya.
+
+                               3. Pengurungan Maksimum
+    Catatan 3.12. Untuk seluruh bagian ini, misalkan ϕ(x) adalah fungsi satu variabel
+yang ingin kita maksimumkan. Salah satu kesulitan pada Persoalan 3.2 ialah bahwa
+setengah garis δk ≥ 0 tak terbatas, sehingga pencarian dapat berjalan sangat jauh. Kita
+memperkenalkan pencarian terbatas pada interval [a, c], dengan a < b < c dan ϕ(a) <
+ϕ(b) > ϕ(c). Tripel (a, b, c) seperti ini disebut pengurung.
+    Proposisi 3.13. Untuk meringkas notasi, tuliskan ϕ(x) = ϕx ∈ R. Jika a, b, c saling
+berbeda, koefisien kurva kuadratik rx2 + sx + t yang melalui (a, ϕa ), (b, ϕb ), dan (c, ϕc )
+                                 3. PENGURUNGAN MAKSIMUM                                         3
+
+diberikan oleh
+             −bϕa + bϕc − aϕc + ϕa c − ϕb c + ϕb a
+         r=−
+               b2 c − b2 a − bc2 + ba2 − a2 c + ac2
+              2
+            −a ϕc + a2 ϕb − ϕa b2 + ϕa c2 − c2 ϕb + ϕc b2
+         s=
+                    (−c + a) (ab − ac − b2 + cb)
+            −ϕb a2 c + a2 bϕc + ac2 ϕb − aϕc b2 − c2 bϕa + cϕa b2
+         t=                                                       .
+                       (−c + a) (ab − ac − b2 + cb)
+
+  Latihan 1. Buktikan Proposisi 3.13 dengan menyelesaikan sistem linear bagi r, s, t.
+Anda boleh memeriksa aljabarnya dengan sistem aljabar komputer terbuka.
+    Korolari 3.14. Jika r ̸= 0, titik stasioner kurva kuadratik rx2 + sx + t yang melalui
+(a, ϕa ), (b, ϕb ), dan (c, ϕc ) adalah
+              1 −a2 ϕc + a2 ϕb − ϕa b2 + ϕa c2 − c2 ϕb + ϕc b2
+(3.3)    u=                                                    .
+              2   −bϕa + bϕc − aϕc + ϕa c − ϕb c + ϕb a
+Titik ini adalah maksimum jika r < 0 dan minimum jika r > 0.
+    Catatan 3.15. Pseudokode berikut menghitung titik stasioner kuadratik yang melalui
+(a, ϕa ), (b, ϕb ), dan (c, ϕc ). Pseudokode ini ditulis secara independen untuk edisi ini dan
+tidak menyalin implementasi Maple sumber.
+ TitikBalikKuadratik(a, fa , b, fb , c, fc )
+ 1. Selesaikan sistem Vandermonde untuk (r, s, t) pada rx2 + sx + t.
+ 2. Jika sistem singular atau r = 0, kembalikan (NaN, salah).
+ 3. Tetapkan u = −s/(2r) dan kembalikan (u, r < 0).
+    Komponen kedua bernilai benar tepat ketika interpolan mempunyai maksimum yang
+terdefinisi. Nama fa , fb , fc pada pseudokode menyatakan ϕa , ϕb , ϕc .
+    Catatan 3.16. Dalam pencarian garis, biasanya a = 0 dan kita dapat memilih b =
+a + ε yang kecil. Masalah berikutnya ialah menemukan c. Algoritma pengurungan pada
+Algoritma 2 memperluas interval ke arah kenaikan, menggunakan interpolasi kuadratik
+jika usulannya aman dan kembali ke perluasan geometri jika tidak. Jaminan formal di
+bawah memerlukan keunimodalan serta penurunan pada ekor; kekonkavan lokal saja tidak
+cukup untuk menjamin terminasi global.
+
+
+Masukan: ϕ, a < b dengan ϕ(b) > ϕ(a), faktor τ > 1, batas iterasi N .
+1. Tetapkan c ← b + τ (b − a).
+2. Untuk j = 0, . . . , N − 1: jika ϕ(b) > ϕ(c), kembalikan pengurung ketat (a, b, c).
+3. Jika ϕ(b) = ϕ(c), tetapkan m ← (b + c)/2; jika ϕ(m) > ϕ(b), kembalikan pengurung ketat
+(b, m, c), dan jika tidak, laporkan bahwa hipotesis keunimodalan ketat gagal.
+4. Jika ϕ(b) < ϕ(c), hitung usulan maksimum parabolik u dari (a, ϕ(a)), (b, ϕ(b)), (c, ϕ(c)).
+5. Jika u terdefinisi dan c + τ (c − b) ≤ u ≤ c + τ 2 (c − b), tetapkan d ← u; selain itu tetapkan
+d ← c + τ (c − b). Dengan demikian d > c dan d − c ≥ τ (c − b).
+6. Tetapkan (a, b, c) ← (b, c, d) dan lanjutkan. Jika batas iterasi tercapai, laporkan kegagalan
+alih-alih mengklaim suatu pengurung.
+        Algoritma 2. Algoritma Pengurungan dengan Usulan Parabolik Terlindungi
+
+
+    Catatan 3.17. Pada Algoritma 2, τ dapat dipilih sebagai rasio emas dan nilai awal-
+nya c = b + τ (b − a). Nilai ini juga digunakan ketika interpolasi parabolik gagal atau
+tidak aman. Dalam implementasi numerik, penyebut pada Korolari 3.14 harus diuji
+4         3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+terhadap toleransi, bukan sekadar ditambahi konstanta tanpa skala (lihat [PTVF07],
+hlm. 491). Nilai ϕ(a), ϕ(b), dan ϕ(c) juga harus disimpan agar tidak dievaluasi berulang
+kali ([PTVF07], hlm. 491).
+   Proposisi 3.18. Misalkan ϕ : [0, ∞) → R kontinu dan unimodal ketat: ia naik ketat
+hingga suatu pemaksimum berhingga x∗ lalu turun ketat. Jika 0 ≤ a < b ≤ x∗ dan ϕ(b) >
+ϕ(a), maka versi tak berbatas-iterasi dari Algoritma 2 mengidentifikasi pengurung ketat
+yang memuat x∗ dalam sejumlah langkah hingga. Implementasi berbatas N mempunyai
+jaminan yang sama apabila N dipilih sekurang-kurangnya sebesar jumlah langkah tersebut.
+    Bukti. Selama pengurung belum ditemukan, setiap titik baru memenuhi d − c ≥
+τ (c − b) dengan τ > 1. Karena celah positif bertambah sekurang-kurangnya secara
+geometrik, titik kanan bertambah tanpa batas dan akhirnya melampaui x∗ . Selama
+b < c ≤ x∗ , keunimodalan ketat memberi ϕ(c) > ϕ(b), sehingga pencarian memang
+harus berlanjut. Setelah dua titik berurutan berada di kanan x∗ , penurunan ketat mem-
+beri ϕ(b) > ϕ(c), sedangkan invarian dari iterasi sebelumnya memberi ϕ(a) < ϕ(b); al-
+goritma lalu mengembalikan pengurung ketat. Jika pada langkah penyeberangan terjadi
+ϕ(b) = ϕ(c), keunimodalan ketat menempatkan x∗ di antara keduanya dan memberi
+ϕ((b + c)/2) > ϕ(b), sehingga cabang kesamaan juga mengembalikan pengurung ketat.
+Usulan parabolik yang diterima memenuhi batas kemajuan yang sama, jadi tidak men-
+gubah argumen terminasi.                                                            □
+    Contoh 3.19. Tinjau fungsi
+        ϕ(x) = −(x − 4)4 + 3(x − 4)3 + 6(x − 4)2 − 3(x − 4) + 100.
+Grafik fungsi ini ditunjukkan pada Gambar 2.3. Untuk titik awal a = 0 dan b = 0.25,
+saksi keluaran numerik sumber mencatat
+        (a, b, c) = (2.864863884, 2.899652455, 2.904582162).
+Untuk titik awal a = 4.3 dan b = 4.5, saksi tersebut mencatat
+        (a, b, c) = (6.194427192, 7.317871765, 7.565247585).
+Maksimum lokal sebenarnya terjadi pada x ∼ 2.900627632 dan x ∼ 7.131520555, sedan-
+gkan x ∼ 4.217851814 adalah minimum lokal. Kedua keluaran membentuk pengurung
+yang memuat maksimum lokal yang sesuai.
+  Catatan 3.20. Pencocokan parabolik sering terlalu rumit. Untuk fungsi yang uni-
+modal, kita cukup menetapkan c = b + α(b − a) dengan α > 1, lalu berturut-turut
+menetapkan a ← b dan b ← c sampai ketaksamaan pengurung terpenuhi.
+    Latihan 2. Tuliskan algoritma yang dibahas dalam Catatan 3.20. Buktikan bahwa
+jika ϕ kontinu dan unimodal ketat pada [0, ∞), mempunyai pemaksimum hingga x∗ , serta
+menurun ketat setelah x∗ , maka algoritma tersebut akhirnya mengurung x∗ apabila dim-
+ulai dengan a = 0, b = a + ε ≤ x∗ , dan ϕ(b) > ϕ(a).
+   Latihan 3. Bandingkan ukuran pengurung yang diperoleh dari Algoritma 2 dengan
+ukuran pengurung dari algoritma yang Anda tulis dalam Latihan 2. Apakah perbedaan-
+nya berarti?
+                              4. Pencarian Dikotomis
+     Catatan 3.21. Dengan mengasumsikan bahwa kita telah mempunyai pengurung bagi
+suatu maksimum lokal ϕ(x), tujuan berikutnya ialah menemukan nilai yang dekat dengan
+x∗ , yaitu titik tempat ϕ(x∗ ) mencapai maksimum tersebut. Pencarian dikotomis adalah
+metode yang populer, walaupun bukan yang paling efisien. Algoritma 3 memberikan
+pseudokode terbuka yang ditulis secara independen untuk edisi ini.
+                                 4. PENCARIAN DIKOTOMIS                                     5
+
+
+Masukan: ϕ, ujung a < b, toleransi posisi ε > 0.
+1. Tetapkan (ℓ, r) ← (a, b).
+2. Selama r − ℓ > 2ε, tetapkan u ← (ℓ + r)/2, x1 ← (ℓ + u)/2, dan x2 ← (u + r)/2.
+3. Jika ϕ(x1 ) > ϕ(x2 ), tetapkan r ← x2 ; jika ϕ(x1 ) < ϕ(x2 ), tetapkan ℓ ← x1 ; jika sama,
+tetapkan (ℓ, r) ← (x1 , x2 ).
+4. Kembalikan x+ ← (ℓ + r)/2 beserta interval akhir [ℓ, r].
+                            Algoritma 3. Pencarian Dikotomis
+
+    Catatan 3.22. Pencarian dikotomis dimulai dengan interval yang diketahui memuat
+maksimum. Interval ini diperkecil berulang kali sampai maksimum terlacak dalam interval
+yang cukup kecil. Dua titik uji dihitung di kiri dan kanan titik tengah, sebagaimana
+diilustrasikan pada Gambar 3.1. Perbandingan nilai ϕ menentukan bagian interval yang
+dapat dibuang. Jika nilainya sama, interval dapat dipersempit ke [x1 , x2 ]. Varian yang
+lebih lazim memakai x1 = u − δ dan x2 = u + δ untuk suatu δ > 0 yang kecil; pemilihan
+δ harus selaras dengan toleransi akhir.
+                                                                      (1)   (2)
+                                                                     x2 x2
+
+                                         (1)
+                                        x1      (2)
+                                               x1
+
+
+
+
+                                                                Third Bracket
+
+                                                      Second Bracket
+
+                                                First Bracket
+
+
+
+
+       Gambar 3.1. Pencarian dikotomis memperkecil secara iteratif pengurung yang
+       memuat maksimum ϕ dengan membandingkan dua titik uji di sekitar titik tengah.
+
+   Latihan 4. Untuk suatu δ kecil (misalnya 0.01), bandingkan secara empiris laju
+konvergensi Algoritma Pencarian Dikotomis pada Algoritma 3 dengan varian titik uji
+u ± δ.
+    Teorema 3.23. Misalkan ϕ konkaf ketat pada [a, b] dan mencapai maksimum tung-
+galnya di x∗ ∈ [a, b]. Maka Pencarian Dikotomis pada Algoritma 3 mempertahankan x∗
+di setiap intervalnya dan berhenti pada titik x+ dengan |x+ − x∗ | ≤ ε.
+    Bukti. Misalkan [ℓ, r] adalah interval sekarang dan ℓ < x1 < x2 < r. Untuk fungsi
+konkaf ketat, fungsi naik ketat di sebelah kiri pemaksimum dan turun ketat di sebelah
+kanannya. Karena itu, ϕ(x1 ) > ϕ(x2 ) menyiratkan x∗ < x2 , sedangkan ϕ(x1 ) < ϕ(x2 )
+menyiratkan x∗ > x1 . Jika kedua nilai sama, kekonkavan ketat menempatkan x∗ di
+antara x1 dan x2 . Dengan demikian, ketiga cabang pembaruan mempertahankan x∗ di
+interval baru. Induksi, dimulai dari x∗ ∈ [a, b], membuktikan invarian tersebut pada setiap
+iterasi. Panjang interval berkurang paling sedikit dengan faktor 3/4, sehingga akhirnya
+r − ℓ ≤ 2ε. Karena x∗ dan titik tengah x+ sama-sama berada dalam interval akhir,
+|x+ − x∗ | ≤ (r − ℓ)/2 ≤ ε.                                                               □
+6             3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+    Teorema 3.24. Misalkan ϕ konkaf pada [a, b] dan mencapai maksimum di interval
+awal tersebut. Jika setiap iterasi mempertahankan setidaknya satu pemaksimum dan men-
+galikan panjang interval ketidakpastian dengan faktor paling besar r ∈ (0, 1), maka panjang
+interval tidak melebihi ε setelah
+                                     
+                        log(ε/|b − a|)
+         n = max 0,
+                            log(r)
+iterasi.
+     Latihan 5. Buktikan Teorema 3.24. Ilustrasikan bukti Anda dengan mengimplemen-
+tasikan pencarian dikotomis dan memaksimumkan ϕ(x) = 10 − (x − 5)2 pada interval
+[0, 10].
+  Contoh 3.25. Asumsi kekonkavan pada [a, b] tidak diperlukan apabila struktur uni-
+modal yang lebih lemah tetap menjamin bahwa cabang yang dibuang tidak memuat pe-
+maksimum. Sebagai contoh, tinjau
+               
+               
+                2x + 1    x < 2,
+               
+               5          2 ≤ x ≤ 8,
+       ϕ(x) =
+               
+                x−3       8 < x ≤ 9,
+               
+                 −x + 15 x > 9.
+               
+
+Fungsi ini diilustrasikan pada Gambar 3.2. Jika Algoritma 3 dijalankan pada [0, 15],
+
+
+
+
+           Gambar 3.2. Fungsi tak konkaf yang mencapai maksimum pada interval [0, 15].
+
+algoritma tersebut konvergen ke interval sempit di sekitar x = 9, walaupun fungsi ini
+tidak konkaf. Saksi keluaran numerik sumber mencatat x+ ≈ 9.001215067.
+
+                                 5. Pencarian Bagian Emas
+    Catatan 3.26. Pada pencarian dikotomis, setiap iterasi memerlukan dua evaluasi
+baru terhadap ϕ. Jika evaluasi ϕ sangat mahal, algoritma yang menyusun interval
+sedemikian rupa sehingga hanya satu nilai baru perlu dihitung per iterasi dapat lebih
+efisien. Pencarian bagian emas melakukan tepat hal itu.
+    Catatan 3.27. Pada setiap iterasi pencarian bagian emas, terdapat empat titik x1 <
+x2 < x3 < x4 , dengan x1 dan x4 sebagai ujung kiri dan kanan interval sekarang. Jika
+ϕ(x2 ) > ϕ(x3 ), pada iterasi berikutnya x1 tetap menjadi ujung kiri, x3 menjadi ujung
+kanan, dan x2 mengambil peran x3 . Jika ϕ(x2 ) < ϕ(x3 ), x4 tetap menjadi ujung kanan,
+x2 menjadi ujung kiri, dan x3 mengambil peran x2 . Tujuannya ialah mempertahankan
+rasio panjang subinterval yang sama selama algoritma berjalan.
+                               5. PENCARIAN BAGIAN EMAS                                   7
+
+   Proposisi 3.28. Diberikan interval awal [x1 , x4 ] yang memuat maksimum fungsi uni-
+modal ϕ. Agar rasio panjang subinterval tetap sama setelah salah satu titik interior di-
+           √ pilih x2 = (1/τ )x1 + (1 − 1/τ )x4 dan x3 = (1 − 1/τ )x1 + (1/τ )x4 , dengan
+pakai kembali,
+τ = 21 (1 + 5) rasio emas.
+   Bukti. Tinjau Gambar 3.3. Pada interval awal, rasio x2 − x1 terhadap x4 − x2 adalah
+                                                  b
+
+
+
+
+                               x1        x2       x3     x4
+                                              c
+                                    a
+
+
+
+       Gambar 3.3. Ukuran relatif interval dan subinterval dalam pencarian bagian
+       emas.
+
+a/b. Pada iterasi berikutnya, salah satu titik interior akan dipakai kembali. Jika ϕ(x2 ) >
+ϕ(x3 ), x2 menjadi titik x3 yang baru sehingga kita memerlukan
+          a     c
+             = .
+          b     a
+Sebaliknya, jika ϕ(x2 ) < ϕ(x3 ), x3 menjadi titik x2 yang baru sehingga kita memerlukan
+          a       c
+             =        .
+          b     b−c
+Dari persamaan pertama, a2 /c = b. Substitusi ke persamaan kedua menghasilkan
+           a 2 a
+                 − − 1 = 0,
+            c       c
+sehingga
+          a          b
+             =τ = .
+          c          a
+Tanpa mengurangi keumuman, misalkan x1 = 0 dan x4 = 1. Untuk menghitung x2 ,
+             a      1             1
+                  =     =⇒ a =       .
+          1−a       τ           1+τ
+Untuk rasio emas, 1/(1 + τ ) = 1 − 1/τ , sehingga x2 = (1/τ )x1 + (1 − 1/τ )x4 . Untuk
+menghitung x3 , misalkan a + c = r. Maka
+          r − x2      1
+                   = .
+           1−r        τ
+Dengan mengganti x2 oleh 1/(1 + τ ), kita memperoleh
+                1 + 2τ
+          r=             .
+               (1 + τ )2
+Untuk rasio emas, pecahan terakhir menyederhana menjadi r = 1/τ . Jadi x3 = (1 −
+1/τ )x1 + (1/τ )x4 , dan bukti selesai.                                        □
+   Catatan 3.29. Algoritma 4 menyajikan pencarian bagian emas dalam pseudokode
+independen yang setara secara matematis. Struktur pemakaian ulang satu titik interior
+mengikuti metode pada [PTVF07], hlm. 495.
+
+    Teorema 3.30. Misalkan ϕ konkaf ketat dan mencapai maksimum tunggalnya pada
+interval awal [a, b] di x∗ . Maka pencarian bagian emas mempertahankan x∗ di dalam
+intervalnya dan konvergen ke titik x+ dengan |x+ − x∗ | ≤ ε ketika kriteria lebar pada
+Algoritma 4 digunakan.
+8         3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+
+Masukan: fungsi unimodal ϕ, interval [a, b], toleransi ε > 0.
+1. Tetapkan ρ ← 1/τ , x2 ← b − ρ(b − a), dan x3 ← a + ρ(b − a); hitung ϕ(x2 ), ϕ(x3 ).
+2. Selama b−a > 2ε: jika ϕ(x2 ) > ϕ(x3 ), tetapkan b ← x3 , x3 ← x2 , lalu hitung x2 ← b−ρ(b−a)
+dan ϕ(x2 ).
+3. Jika tidak, tetapkan a ← x2 , x2 ← x3 , lalu hitung x3 ← a + ρ(b − a) dan ϕ(x3 ).
+4. Kembalikan titik interior bernilai terbesar beserta interval akhir [a, b].
+                           Algoritma 4. Pencarian Bagian Emas
+
+    Latihan 6. Buktikan Teorema 3.30.
+    Contoh 3.31. Dalam Contoh 3.25, kita melihat fungsi tak konkaf yang tetap dapat
+ditangani pencarian dikotomis. Sekarang tinjau fungsi yang membuat pencarian bagian
+emas gagal menemukan maksimum global:
+               
+               
+                 10x         x < 21 ,
+               −10x + 10 x ≥ 1 dan x < 3 ,
+               
+        ϕ(x) = 5                   2           4
+                                   3
+                             x ≥      dan x < 9,
+               2                  4
+               
+                      23
+                  −x + 2      x ≥ 9.
+Fungsi ini ditunjukkan pada Gambar 3.4. Ia naik ketat hingga maksimum global di
+x = 1/2, turun hingga x = 3/4, konstan pada [3/4, 9], lalu turun lagi. Jadi fungsi ini
+unimodal dalam arti lemah, tetapi tidak unimodal ketat. Pada interval [0, 11], dua titik
+interior mula-mula dapat jatuh pada plateau yang sama. Cabang kesamaan Algoritma 4,
+yang berada di dalam cabang “jika tidak”, kemudian dapat membuang wilayah kiri yang
+memuat maksimum global. Contoh ini menegaskan perlunya hipotesis ketat atau kebi-
+jakan kesamaan yang mempertahankan kedua sisi yang masih mungkin memuat pemak-
+simum. Saksi keluaran numerik sumber mencatat x+ ≈ 8.998228439, yang mempunyai
+
+
+
+
+       Gambar 3.4. Fungsi unimodal lemah dengan plateau panjang; kebijakan ke-
+       samaan satu sisi dapat membuang maksimum global.
+
+nilai fungsi lebih rendah daripada maksimum global di x = 1/2.
+   Catatan 3.32. Terdapat metode pencarian garis bebas-turunan lainnya. Salah
+satu yang paling sederhana memakai interpolasi parabolik seperti pada Algoritma 2
+                                  6. PENCARIAN BISEKSI                                  9
+
+(lihat [BSS06] atau [Ber99]). Metode Brent menggabungkan interpolasi parabolik
+dengan metode bagian emas (lihat [PTVF07], Bab 10). Teknik-teknik ini terutama
+meningkatkan efisiensi tanpa mengubah gagasan dasar metode bebas-turunan pada
+bagian ini.
+
+                                6. Pencarian Biseksi
+   Catatan 3.33. Sekarang kita mengasumsikan bahwa turunan pertama, dan mungkin
+turunan kedua, dari ϕ(x) dapat dihitung. Informasi ini memungkinkan metode baru untuk
+mencari titik yang memaksimumkan fungsi tersebut.
+   Catatan 3.34. Sebelum melanjutkan, perlu ditekankan bahwa metode berbasis tu-
+runan sebaiknya memakai turunan fungsi yang sebenarnya, bukan hampiran yang tidak
+dikendalikan. Hampiran turunan memang sering diperlukan dalam optimisasi multidi-
+mensi, tetapi pencarian garis dapat peka terhadap turunan yang keliru. Karena itu,
+metode bebas-turunan kadang lebih aman walaupun mungkin kurang efisien.
+   Catatan 3.35. Pencarian biseksi mengasumsikan bahwa untuk fungsi satu variabel
+ϕ(x) tersedia interval [a, b] ⊂ R yang memuat suatu maksimum lokal, ϕ terdiferensialkan
+pada interval tertutup tersebut, dan ϕ′ (a) > 0 serta ϕ′ (b) < 0. Kekonkavan menjamin
+bahwa tanda turunan dapat dipakai untuk mempertahankan interval yang memuat pe-
+maksimum.
+     Catatan 3.36. Algoritma 5 memilih titik tengah u = (ℓ + r)/2. Jika ϕ′ (u) > 0,
+pemaksimum berada di sebelah kanan u dan interval diperbarui menjadi [u, r]. Jika
+ϕ′ (u) < 0, interval diperbarui menjadi [ℓ, u]. Turunan nol memberi titik stasioner secara
+eksak. Dalam aritmetika titik-mengambang, algoritma juga memakai toleransi turunan
+εg dan toleransi posisi εx ; hanya toleransi posisi yang sendiri memberi batas jarak tanpa
+asumsi kelengkungan tambahan.
+
+
+Masukan: ϕ′ , a < b dengan ϕ′ (a) > 0 > ϕ′ (b), εx > 0, εg ≥ 0, dan batas iterasi N .
+1. Tetapkan (ℓ, r) ← (a, b).
+2. Untuk j = 0, . . . , N − 1, tetapkan u ← (ℓ + r)/2 dan g ← ϕ′ (u).
+3. Jika g = 0, kembalikan u sebagai pemaksimum; jika r − ℓ ≤ 2εx , kembalikan u beserta
+interval [ℓ, r].
+4. Jika εg > 0 dan |g| ≤ εg , kembalikan u dengan penanda bahwa batas jarak memerlukan
+hipotesis kelengkungan.
+5. Jika g > 0, tetapkan ℓ ← u; jika g < 0, tetapkan r ← u.
+6. Jika batas iterasi tercapai, laporkan kegagalan alih-alih mengklaim konvergensi.
+                             Algoritma 5. Pencarian Biseksi
+
+
+    Teorema 3.37. Misalkan ϕ konkaf dan terdiferensialkan secara kontinu pada [a, b],
+dengan ϕ′ (a) > 0 > ϕ′ (b), dan misalkan M adalah himpunan pemaksimumnya. Algoritma
+5 mempertahankan M ∩ [ℓ, r] ̸= ∅ pada setiap iterasi. Jika algoritma berhenti karena
+r − ℓ ≤ 2εx , titik tengah yang dikembalikan memenuhi |u − x∗ | ≤ εx untuk suatu x∗ ∈ M .
+Jika, selain itu, ϕ adalah konkaf kuat dengan parameter m > 0 dan algoritma berhenti
+karena |ϕ′ (u)| ≤ εg , maka pemaksimum x∗ tunggal dan |u − x∗ | ≤ εg /m.
+   Bukti. Karena ϕ konkaf dan terdiferensialkan, ϕ′ tidak menaik. Tanda ujung men-
+jamin adanya pemaksimum di bagian dalam interval awal. Jika ϕ′ (u) > 0, tidak ada pe-
+maksimum di kiri u; jika ϕ′ (u) < 0, tidak ada pemaksimum di kanan u; dan jika ϕ′ (u) = 0,
+maka u sendiri merupakan pemaksimum. Dengan demikian, setiap cabang pembaruan
+10         3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+mempertahankan setidaknya satu pemaksimum. Panjang interval dibagi dua pada setiap
+pembaruan, sehingga penghentian berbasis lebar memberi |u − x∗ | ≤ (r − ℓ)/2 ≤ εx . Un-
+tuk kekonkavan kuat, ketaksamaan monotonisitas kuat bagi −ϕ′ memberi m|u − x∗ | ≤
+|ϕ′ (u) − ϕ′ (x∗ )| = |ϕ′ (u)|. Batas εg /m segera mengikuti.                        □
+    Catatan 3.38. Kekonkavan biasa dan kontinuitas ϕ′ cukup untuk invarian interval,
+tetapi tidak mengubah residu turunan kecil menjadi batas jarak seragam. Batas demikian
+memerlukan modulus kuantitatif, misalnya sifat bilipschitz bagi ϕ′ atau kekonkavan kuat.
+Latihan 8 memberikan bentuk batas yang eksplisit.
+    Latihan 7. Fungsi f : R → R disebut kontinu Lipschitz jika ada K > 0 sehingga
+untuk semua x1 , x2 ∈ R berlaku |f (x1 ) − f (x2 )| ≤ K|x1 − x2 |. Fungsi tersebut disebut
+bilipschitz jika ada K ≥ 1 sehingga
+          1
+(3.4)       |x1 − x2 | ≤ |f (x1 ) − f (x2 )| ≤ K|x1 − x2 |.
+          K
+Misalkan ϕ′ bilipschitz dan |ϕ′ (u)| < εg sementara ϕ′ (x∗ ) = 0. Temukan batas eksplisit
+bagi |u − x∗ |.
+     Latihan 8. Latihan ini memperkuat bukti konvergensi pencarian biseksi dengan
+asumsi kelengkungan kuantitatif.
+     Misalkan ϕ : R → R terdiferensialkan dua kali secara kontinu dan konkaf kuat pada
+[a, b]: ada m > 0 sehingga ϕ′′ (x) ≤ −m untuk setiap x ∈ [a, b]. Misalkan pemaksimum
+tunggalnya adalah x∗ ∈ (a, b), sehingga ϕ′ (x∗ ) = 0, dan |ϕ′ (u)| < εg . Gunakan Teorema
+Nilai Rata-rata untuk membuktikan |u − x∗ | < εg /m.
+     Catatan 3.39. Karena ϕ terdiferensialkan dua kali, ada t di antara u dan x∗ sehingga
+
+(3.5)    ϕ′ (u) − ϕ′ (x∗ ) = ϕ′′ (t)(u − x∗ ).
+Karena itu,
+(3.6)    |ϕ′ (u) − ϕ′ (x∗ )| = |ϕ′′ (t)| |u − x∗ |.
+Dari ϕ′′ (t) ≤ −m dan ϕ′ (x∗ ) = 0, diperoleh
+(3.7)    m|u − x∗ | ≤ |ϕ′′ (t)| |u − x∗ | = |ϕ′ (u)| < εg .
+Jadi,
+                    εg
+(3.8)    |u − x∗ | <   .
+                    m
+   Latihan 9. Ubah pencarian biseksi agar mendeteksi minimum. Uji algoritma Anda
+pada fungsi f (x) = (x − 5)2 .
+    Contoh 3.40. Jalankan implementasi terbuka Pencarian Biseksi pada ϕ(x) =
+10 − (x − 5)2 di interval [0, 9] dengan εg = 0.01. Jejak interval berakhir dengan
+[4.9921875, 5.009765625] dan mengembalikan u = 5.0009765625. Karena −ϕ′′ = 2, batas
+kekonkavan-kuat memberi |u − 5| ≤ 0.01/2 = 0.005, sebagaimana teramati.
+                                        7. Metode Newton
+   Catatan 3.41. Metode Newton adalah metode populer untuk mencari akar dan juga
+dapat diterapkan pada pemaksimuman atau peminimuman fungsi satu variabel apabila
+turunan keduanya dapat dihitung. Karena metode Newton untuk fungsi multidimensi
+dibahas pada bab berikutnya, di sini kita hanya menyajikan gagasan satu dimensinya.
+Secara teori metode Newton hanya memerlukan titik awal, bukan pengurung, walaupun
+pengurung berguna untuk memilih titik awal yang masuk akal.
+                                        7. METODE NEWTON                                      11
+
+   Catatan 3.42. Metode ini mengasumsikan bahwa hampiran Taylor kuadratik bagi ϕ
+cukup akurat di sekitar iterat sekarang xk :
+                                            1
+(3.9)    ϕ(x) ≈ ϕ(xk ) + ϕ′ (xk )(x − xk ) + ϕ′′ (xk )(x − xk )2 .
+                                            2
+Jika ϕ′′ (xk ) < 0, titik stasioner hampiran tersebut adalah maksimum, dan diferensiasi
+terhadap x memberi
+                    ϕ′ (xk ) − ϕ′′ (xk )xk        ϕ′ (xk )
+(3.10)   xk+1 = −                          = xk −           .
+                            ϕ′′ (xk )             ϕ′′ (xk )
+Iterasi dilanjutkan sampai suatu syarat penghentian terpenuhi. Algoritma 6 memberikan
+pseudokode terbuka yang ditulis secara independen untuk edisi ini.
+
+
+Masukan: ϕ′ , ϕ′′ , titik awal x0 , toleransi εg , εx > 0, dan batas iterasi N .
+1. Untuk k = 0, . . . , N − 1, hitung gk ← ϕ′ (xk ) dan Hk ← ϕ′′ (xk ).
+2. Jika |gk | ≤ εg , kembalikan xk beserta penanda maksimum Hk < 0.
+3. Jika Hk = 0, laporkan kegagalan karena langkah Newton tidak terdefinisi.
+4. Tetapkan sk ← −gk /Hk dan xk+1 ← xk + sk .
+5. Jika |sk | ≤ εx , hitung ulang turunan di xk+1 lalu kembalikan titik tersebut beserta penanda
+kelengkungannya.
+6. Jika batas iterasi tercapai, laporkan kegagalan; tanpa pelindung atau pencarian garis,
+konvergensi global tidak diklaim.
+                         Algoritma 6. Metode Newton Satu Dimensi
+
+
+    Catatan 3.43. Pemeriksaan akhir ϕ′′ (xk ) < 0 membedakan titik stasioner yang meru-
+pakan maksimum lokal dari minimum lokal dalam kasus tak degenerat. Pemeriksaan itu
+tidak dengan sendirinya menjamin bahwa iterasi akan konvergen dari titik awal sem-
+barang.
+    Contoh 3.44. Jalankan algoritma pengurungan pada
+         ϕ(x) = −(x − 4)4 + 3(x − 4)3 + 6(x − 4)2 − 3(x − 4) + 100
+dari 0 dan 0.25. Diperoleh pengurung (2.864863884, 2.899652455, 2.904582162). Jika
+metode Newton dimulai dari titik tengah 2.899652455, jejak terbukanya adalah
+x_0 = 2.899652455
+x_1 = 2.900626687
+x_2 = 2.900627632
+hasil = (2.900627632, maksimum)
+   Latihan 10. Temukan suatu syarat perlu sederhana agar metode Newton konvergen
+dalam satu iterasi.
+    Latihan 11. Implementasikan metode Newton dengan pelaporan kegagalan yang ek-
+splisit. Untuk
+         ϕ(x) = −(x − 4)4 + 3(x − 4)3 + 6(x − 4)2 − 3(x − 4) + 100,
+temukan satu titik awal yang membuat metode Newton konvergen ke maksimum dan satu
+titik awal yang membuatnya konvergen ke minimum.
+12           3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+                                 8. Konvergensi Metode Newton
+   Catatan 3.45. Sebagian besar pembahasan ini diadaptasi dari Bab 8.1 [Avr03]. Pem-
+bahasan yang sedikit lebih umum terdapat dalam [BSS06].
+   Definisi 3.46. Misalkan S = [a, b] ⊂ R. Suatu fungsi kontinu f : S → S disebut
+pemetaan kontraksi pada S apabila ada q ∈ (0, 1) sehingga
+(3.11)     |f (x1 ) − f (x2 )| ≤ q|x1 − x2 |
+untuk semua x1 , x2 ∈ S.
+   Catatan 3.47. Definisi 3.46 adalah bentuk khusus kontinuitas Lipschitz dengan kon-
+stanta Lipschitz yang lebih kecil daripada 1.
+    Lema 3.48. Misalkan f : S → S merupakan pemetaan kontraksi pada S = [a, b] ⊂ R.
+Definisikan x(k+1) = f (x(k) ) dan ambil x(0) ∈ S. Maka ada titik tetap tunggal x∗ yang
+dituju barisan {x(k) }, dan
+(3.12)     |x(k+1) − x∗ | ≤ q k+1 |x(0) − x∗ |      k = 0, 1, . . .
+    Bukti. Karena f kontinu dan memetakan interval tertutup ke dirinya sendiri, fungsi
+f (x) − x mempunyai nol di S; hal ini juga merupakan kasus satu dimensi dari teorema
+titik tetap (lihat [Mun00], hlm. 351–353). Namai titik tetap tersebut x∗ . Sifat kontraksi
+memberi
+(3.13)     |f (x(0) ) − x∗ | ≤ q|x(0) − x∗ |,
+sehingga
+(3.14)     |x(1) − x∗ | ≤ q|x(0) − x∗ |.
+Sekarang asumsikan secara induktif bahwa
+(3.15)     |x(k) − x∗ | ≤ q k |x(0) − x∗ | k = 0, 1, . . . , K.
+Dari Persamaan 3.15,
+(3.16)     |f (x(K) ) − x∗ | ≤ q|x(K) − x∗ | ≤ q K+1 |x(0) − x∗ |.
+Jadi,
+(3.17)     |x(K+1) − x∗ | ≤ q K+1 |x(0) − x∗ |.
+Persamaan 3.12 mengikuti dengan induksi, dan q < 1 menunjukkan bahwa x(k) → x∗ .
+Untuk keunikan, andaikan ada titik tetap lain x+ ̸= x∗ . Maka
+(3.18)     0 < |x∗ − x+ | = |f (x∗ ) − f (x+ )| ≤ q|x∗ − x+ |,
+yang mustahil untuk 0 < q < 1. Jadi x∗ tunggal.                                         □
+   Lema 3.49. Misalkan f terdiferensialkan secara kontinu pada S = [a, b] ⊂ R dan
+memetakan S ke dirinya sendiri. Jika |f ′ (x)| < 1 untuk setiap x ∈ S, maka f adalah
+pemetaan kontraksi.
+    Bukti. Untuk x1 , x2 ∈ S, Teorema Nilai Rata-rata (Teorema 2.2) memberi suatu ξ
+di antara keduanya sehingga
+(3.19)     f (x1 ) = f (x2 ) + f ′ (ξ)(x1 − x2 ).
+Karena itu,
+(3.20)     |f (x1 ) − f (x2 )| = |f ′ (ξ)| |x1 − x2 |.
+Kontinuitas f ′ dan kekompakan S menjamin bahwa q := maxx∈S |f ′ (x)| ada. Hipotesis
+titik demi titik memberi q < 1, sehingga ketaksamaan kontraksi mengikuti.         □
+                              8. KONVERGENSI METODE NEWTON                                 13
+
+   Teorema 3.50. Misalkan h dan γ terdiferensialkan secara kontinu pada S = [a, b] ⊂
+R. Andaikan
+(3.21)   h(a)h(b) < 0
+dan, untuk semua x ∈ S,
+(3.22)   γ(x) > 0,
+(3.23)   h′ (x) > 0
+(3.24)   0 ≤ 1 − (γ(x)h(x))′ ≤ q < 1.
+Definisikan
+(3.25)   x(k+1) = x(k) − γ(x(k) )h(x(k) )   k = 0, 1, . . . ,
+dengan x(0) ∈ S. Maka barisan {x(k) } konvergen ke solusi tunggal x∗ dari h(x∗ ) = 0 di S.
+    Bukti. Definisikan
+(3.26)   ρ(x) = x − γ(x)h(x)
+(3.27)   ρ′ (x) = 1 − (γ(x)h(x))′ .
+Dari Persamaan 3.26 dan Ketaksamaan 3.24, diperoleh 0 ≤ ρ′ (x) ≤ q < 1, sehingga ρ
+tidak menurun. Ketaksamaan 3.23 membuat h naik ketat; bersama h(a)h(b) < 0, hal ini
+memberi h(a) < 0 < h(b). Karena γ > 0, kita memperoleh ρ(a) > a dan ρ(b) < b. Maka,
+untuk setiap x ∈ [a, b], a < ρ(a) ≤ ρ(x) ≤ ρ(b) < b, sehingga ρ memetakan S ke dirinya
+sendiri. Lemma 3.49 menunjukkan bahwa ρ adalah kontraksi. Lemma kontraksi di atas
+kemudian menyatakan bahwa setiap iterasi konvergen ke titik tetap tunggal x∗ = ρ(x∗ ).
+Karena γ(x∗ ) > 0, identitas titik tetap ini setara dengan h(x∗ ) = 0.              □
+    Korolari 3.51. Misalkan ϕ : R → R adalah fungsi satu variabel yang akan dimak-
+simumkan dan terdiferensialkan tiga kali secara kontinu. Tetapkan h(x) = −ϕ′ (x) dan
+γ(x) = −1/ϕ′′ (x). Maka ρ(x) = x − γ(x)h(x) = x − ϕ′ (x)/ϕ′′ (x) adalah peta iterasi New-
+ton. Jika hipotesis Teorema 3.50 bagi h dan γ berlaku—khususnya ϕ′′ < 0 pada S—metode
+Newton konvergen ke titik stasioner tunggal ϕ′ (x∗ ) = 0 pada S = [a, b] ⊂ R.          □
+    Definisi 3.52 (Laju Konvergensi). Misalkan barisan {xk } ⊆ Rn konvergen ke x∗ ∈ Rn
+tanpa mencapai x∗ dalam sejumlah langkah hingga. Jika ada p ≥ 1 dan α ∈ (0, ∞)
+sehingga
+             ∥xk+1 − x∗ ∥
+(3.28) lim                = α,
+         k→∞ ∥xk − x∗ ∥p
+
+dengan tambahan α < 1 ketika p = 1, maka p disebut orde konvergensi barisan tersebut.
+Konvergensi berorde p = 1 disebut linear ; orde p > 1 disebut superlinear ; dan orde p = 2
+disebut kuadratik.
+    Teorema 3.53. Korolari 3.51 memberi satu syarat cukup global bagi konvergensi.
+Untuk hasil laju lokal, misalkan h terdiferensialkan dua kali secara kontinu pada suatu
+lingkungan titik x∗ , dengan h(x∗ ) = 0 dan h′ (x∗ ) ̸= 0. Andaikan iterasi Newton xk+1 =
+xk − h(xk )/h′ (xk ) terdefinisi, konvergen ke x∗ , dan tidak mencapai x∗ dalam sejumlah
+langkah hingga. Maka galatnya memenuhi taksiran Q-kuadratik untuk k yang cukup besar.
+Jika h′′ (x∗ ) ̸= 0, orde konvergensinya tepat 2 menurut definisi di atas; jika h′′ (x∗ ) = 0,
+rasio kuadratiknya menuju nol dan konvergensinya dapat berorde lebih tinggi.
+    Bukti. Tuliskan peta Newton sebagai
+                    h(x)
+(3.29) N (x) = x − ′ .
+                    h (x)
+14         3. PENGANTAR PENDAKIAN GRADIEN DAN METODE PENCARIAN GARIS
+
+Karena h(x∗ ) = 0 dan h′ (x∗ ) ̸= 0, titik akar itu adalah titik tetap:
+(3.30)   N (x∗ ) = x∗ .
+Kontinuitas memberi lingkungan tertutup I dari x∗ dan konstanta m, M > 0 sehingga
+(3.31)   |h′ (x)| ≥ m dan |h′′ (x)| ≤ M           (x ∈ I).
+                      ∗
+Konvergensi xk → x menjamin bahwa xk ∈ I untuk semua k yang cukup besar. Teorema
+Taylor pada ruas antara xk dan x∗ memberi suatu ξk di antara kedua titik itu sehingga
+                                                           1
+(3.32) 0 = h(x∗ ) = h(xk ) + h′ (xk )(x∗ − xk ) + h′′ (ξk )(x∗ − xk )2 .
+                                                           2
+Penyusunan ulang Persamaan 3.32 memberi
+         h(xk )               ∗       h′′ (ξk )
+(3.33)            =  (xk −  x   ) −             (xk − x∗ )2 .
+         h′ (xk )                    2h′ (xk )
+Dengan memakai definisi langkah Newton, diperoleh identitas galat
+                   ∗     h′′ (ξk )
+(3.34) xk+1 − x = ′                (xk − x∗ )2 .
+                         2h (xk )
+Persamaan 3.34 dan batas pada I menghasilkan, untuk k yang cukup besar,
+                          M
+(3.35) |xk+1 − x∗ | ≤          |xk − x∗ |2 .
+                          2m
+Dengan
+               M
+(3.36) β =         < ∞,
+               2m
+Ketaksamaan 3.35 membuktikan taksiran Q-kuadratik. Karena iterat tidak mencapai
+akar dalam sejumlah langkah hingga, Persamaan 3.34 juga memberi rasio eksak
+         |xk+1 − x∗ |      |h′′ (ξk )|
+(3.37)                  =              .
+          |xk − x∗ |2     2|h′ (xk )|
+Karena ξk terletak di antara xk dan x∗ , konvergensi iterat memberi
+         ξk −→ x∗ ,       h′ (xk ) −→ h′ (x∗ ),   h′′ (ξk ) −→ h′′ (x∗ ).
+Oleh karena itu,
+                 |xk+1 − x∗ |   |h′′ (x∗ )|
+(3.38) lim                    =             .
+           k→∞ |xk − x∗ |2      2|h′ (x∗ )|
+Jika h′′ (x∗ ) ̸= 0, limit tersebut positif dan berhingga, sehingga ordenya tepat 2. Jika
+h′′ (x∗ ) = 0, limitnya nol; taksiran Q-kuadratik tetap berlaku, tetapi orde eksak memer-
+lukan informasi reguleritas yang lebih tinggi.                                         □
+  Latihan 12. Gunakan implementasi terbuka metode Newton yang Anda tulis untuk
+menunjukkan secara empiris bahwa konvergensinya kuadratik.
+                                     Daftar Pustaka
+
+[Avr03]  M. Avriel, Nonlinear programming: Analysis and methods, Dover Press, 2003.
+[Ber99]  D. P. Bertsekas, Nonlinear Programming, 2 ed., Athena Scientific, 1999.
+[BSS06]  M. S. Bazaraa, H. D. Sherali, and C. M. Shetty, Nonlinear programming: Theory and algo-
+         rithms, John Wiley and Sons, 2006.
+[Mun00] J. Munkres, Topology, Prentice Hall, 2000.
+[PTVF07] W. H. Press, S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery, Numerical recipes 3rd
+         edition: The art of scientific computing, 3 ed., Cambridge University Press, 2007.
+
+
+
+
+                                               15
+                     Catatan koreksi terhadap sumber
+
+    Rekaman terstruktur O015-PENN-ADV-0004 sampai O015-PENN-ADV-0024 meny-
+ertai edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia, bukan
+oleh penulis sumber.
+     (1) Keadaan, indeks, penghentian, arah kenaikan, dan keluaran algoritma pendakian
+          dasar dibuat lengkap; ke-definit-positif-an yang diperlukan bagi arah naik diny-
+          atakan secara eksplisit.
+     (2) Notasi pencarian garis dan syarat ketercapaian diperjelas; simpul interpolasi
+          kuadratik, klasifikasi titik stasioner, dan domain pengurung diperbaiki.
+     (3) Listing Maple pengurungan diganti pseudokode mandiri dengan usulan parabolik
+          terlindungi, kemajuan keluar kuantitatif, kontrak kegagalan, dan teorema termi-
+          nasi berdasarkan keunimodalan ketat serta pemaksimum berhingga.
+     (4) Klasifikasi titik stasioner contoh kuartik diperbaiki: dua maksimum lokal berada
+          dekat 2.900627632 dan 7.131520555, sedangkan titik dekat 4.217851814 adalah
+          minimum lokal.
+     (5) Pencarian dikotomis dan bagian emas diberi pseudokode terbuka mandiri, invar-
+          ian interval, pemakaian ulang evaluasi, kriteria lebar, dan jaminan galat yang
+          konsisten.
+     (6) Batas iterasi kontraksi interval tidak lagi negatif apabila interval awal sudah
+          memenuhi toleransi; keluaran numerik warisan yang diperlukan dipertahankan
+          sebagai saksi nilai, bukan sebagai ketergantungan program.
+     (7) Biseksi memisahkan toleransi turunan dari toleransi posisi. Batas |u−x∗ | ≤ εg /m
+          hanya dinyatakan di bawah kekonkavan kuat berparameter m > 0.
+     (8) Ekspansi Taylor Newton dievaluasi di xk ; pseudokode mandiri menangani Hes-
+          sian nol, penghentian, klasifikasi kelengkungan, dan kegagalan tanpa mengklaim
+          konvergensi global.
+     (9) Bukti kontraksi memakai kekompakan untuk memperoleh konstanta seragam,
+          membuktikan peta mengirim interval ke dirinya sendiri, dan benar-benar menarik
+          kesimpulan titik tetap tunggal.
+    (10) Spesialisasi pemaksimuman memakai h = −ϕ′ dan γ = −1/ϕ′′ , sehingga hipotesis
+          tanda konsisten dan peta Newton tetap x − ϕ′ /ϕ′′ .
+    (11) Definisi orde konvergensi memakai p ≥ 1 dan α ∈ (0, ∞), dengan α < 1 untuk
+          orde linear. Bukti Newton membedakan taksiran Q-kuadratik dari orde tepat
+          dua.
+    (12) Empat label sumber dipindahkan sebelum permukaan bernomor yang bersarang
+          agar tetap menunjuk korolari, contoh, definisi, atau teorema yang dimaksud
+          tanpa mengganti identifikatornya.
+    (13) Contoh kegagalan bagian emas diklasifikasikan sebagai unimodal lemah tetapi
+          tidak ketat. Mekanisme kegagalannya adalah cabang kesamaan satu sisi ketika
+          kedua titik uji jatuh pada plateau yang sama, bukan ketiadaan keunimodalan
+          dalam arti lemah.
+
+
+
+                                           16
+                   Atribusi, lisensi, dan nondukungan
+
+   Karya sumber: Christopher Griffin, Nonlinear Programming, Penn State MATH 555,
+dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber v1.0 dan karya
+turunan ini tunduk pada CC BY-NC-SA 3.0 US. Edisi ini mengatribusikan sumber,
+menandai perubahan, bersifat nonkomersial, dan mempertahankan ShareAlike pada kom-
+ponen Penn.
+   Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak menyusun,
+memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama-nama terse-
+but semata-mata untuk atribusi karya sumber.
+
+
+
+
+                                        17
+

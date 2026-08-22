@@ -1,0 +1,541 @@
+Metode Newton dan Koreksinya
+      Bab 5 dari Nonlinear Programming
+
+           Edisi Bahasa Indonesia
+
+
+               Christopher Griffin
+   dengan kontribusi Simon Miller dan Douglas Mercer
+
+
+
+
+       Sumber TeX v1.0; saksi PDF publik v1.0.1
+                                Tentang unit ini
+
+     Unit ini menerjemahkan secara utuh Bab 5 dari Christopher Griffin, Nonlinear Pro-
+gramming / Penn State MATH 555. Otoritas yang dapat disunting ialah distribusi TeX
+v1.0; PDF publik v1.0.1 dipakai hanya sebagai saksi koreksi upstream yang kemudian
+diterbitkan. Karya sumber dan karya turunannya berada di bawah Creative Commons
+Attribution–NonCommercial– ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+     Bab 1–4 tidak diulang dalam pembaca mandiri ini. Empat rujukan prasyarat tetap
+memakai nomor sumber: Korolari 2.7, Teorema 3.53, Teorema 4.12, dan Teorema 4.25.
+Seluruh struktur Bab 5, lima latihan, empat gambar, formula, label, rujukan silang, dan
+sitasi dipertahankan dalam urutan sumber. Lima permukaan listing Maple yang tidak
+dapat dipakai sebagai penutupan komputasi terbuka diganti oleh pseudokode mandiri
+yang dinyatakan secara eksplisit.
+     Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin, para kon-
+tributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau mendukung edisi
+ini.
+
+
+
+
+                                           i
+                                     Daftar Isi
+
+Tentang unit ini                                   i
+Bab 5. Metode Newton dan Koreksinya               1
+  1. Metode Newton                                1
+  2. Masalah Konvergensi dalam Metode Newton      2
+  3. Koreksi Metode Newton                        5
+Daftar Pustaka                                    10
+Catatan koreksi terhadap sumber                   11
+Atribusi, lisensi, dan nondukungan                12
+
+
+
+
+                                         ii
+                                        BAB 5
+
+                      Metode Newton dan Koreksinya
+
+                                 1. Metode Newton
+    Catatan 5.1. Misalkan f : Rn → R terdiferensialkan dua kali secara kontinu. Dalam
+algoritma pendakian umum, langkah Newton untuk pemaksimuman diperoleh dengan
+memilih Bk = −∇2 f (xk ) = −H(xk ), sehingga pk = −H(xk )−1 ∇f (xk ) ketika Hessian
+nonsingular. Jika δk = 1 pada setiap iterasi, algoritma tersebut disebut metode Newton
+murni. Jika δk dipilih dengan pencarian garis, kita memperoleh metode Newton dengan
+panjang langkah variabel.
+   Catatan 5.2. Algoritma umum Newton dengan panjang langkah variabel ditampilkan
+dalam Algoritma 10. Pseudokode ini ditulis secara independen untuk edisi ini dan tidak
+menyalin implementasi Maple sumber.
+
+NewtonVariabel—bagian 1 dari 2
+Masukan: f , titik awal x0 , toleransi ϵ > 0, batas iterasi N , dan parameter pencarian
+garis.
+1. Tetapkan k ← 0, x ← x0 , dan lintasan P ← [x].
+2. Hitung g ← ∇f (x) dan H ← ∇2 f (x).
+3. Jika ∥g∥ ≤ ϵ, kembalikan (x, P ).
+
+
+NewtonVariabel—bagian 2 dari 2
+4. Selama k < N , selesaikan Hp = −g; jika H singular atau gT p ≤ 0, laporkan bahwa
+arah Newton gagal dan koreksi diperlukan.
+5. Pilih δ > 0 dengan pencarian garis yang mempunyai kontrak kegagalan eksplisit dan
+memenuhi kenaikan memadai.
+6. Tetapkan x ← x + δp, tambahkan x ke P , naikkan k, lalu hitung ulang g dan H.
+7. Jika ∥g∥ ≤ ϵ, kembalikan (x, P ); jika batas N tercapai, laporkan kegagalan.
+             Algoritma 10. Metode Newton dengan panjang langkah variabel
+
+    Contoh 5.3. Tinjau fungsi F (x, y) = −2x2 − 10y 4 . Fungsi ini konkaf, sebagaimana
+terlihat dari Hessian
+                               
+                      −4  0
+         H(x, y) =                .
+                      0 −120y 2
+Matriks ini definit negatif jika y ̸= 0 dan semidefinit negatif jika y = 0. Titik x = y =
+0 jelas merupakan pemaksimum global. Saksi eksekusi sumber, yang memulai metode
+Newton dari x = 15, y = 5 dengan toleransi implementasinya, mencatat konvergensi
+dalam 11 langkah; lintasannya ditunjukkan pada Gambar 5.1.
+    Latihan 1. Implementasikan metode Newton dan ujilah pada variasi fungsi Rosen-
+brock berikut:
+                              2
+(5.1)   −(1 − x)2 − 100 y − x2 .
+                                            1
+2                            5. METODE NEWTON DAN KOREKSINYA
+
+
+
+
+        Gambar 5.1. Saksi sumber bagi metode Newton pada F (x, y) = −2x2 − 10y 4 :
+        konvergensi dalam 11 langkah dengan sedikit gerak zig-zag di bawah toleransi
+        implementasi sumber.
+
+Laporkan kriteria penghentian dan kegagalan pencarian garis Anda.
+                 2. Masalah Konvergensi dalam Metode Newton
+    Contoh 5.4. Tinjau fungsi
+                                2  2
+       F (x, y) = x2 + 3y 2 e1−x −y .
+                           
+(5.2)
+Grafiknya ditunjukkan pada Gambar 5.2. Fungsi ini mempunyai dua maksimum global,
+satu minimum lokal di antara keduanya, dan dua titik pelana di dekat puncak-puncaknya.
+Jika metode Newton dijalankan dari x = 1, y = 0.5, Hessian pada titik awal adalah
+
+
+
+
+        Gambar 5.2. Fungsi berpuncak ganda dengan satu minimum lokal di antara
+        puncaknya serta dua titik pelana.
+
+                       "                               #
+                           −1.947001958 −3.504603524
+(5.3)    H(1, 0.5) =                                       .
+                           −3.504603524 −1.362901370
+Determinan matriks ini negatif, sehingga Hessian bersifat tak tentu; tanda elemen (1, 1)
+saja tidak cukup untuk menentukan sifat definitnya. Arah Newton yang benar untuk pe-
+maksimuman ialah pN = −H−1 ∇F . Pada titik ini, pN ≈ (0.519685039, −0.622047244)T
+                     2. MASALAH KONVERGENSI DALAM METODE NEWTON                          3
+
+dan ∇F (1, 0.5)T pN ≈ −1.212660274 < 0, sehingga ia bukan arah naik. Fungsi pencarian
+garis yang benar adalah
+         ϕ(s) = F (1, 0.5)T + spN ,
+                                 
+                                      s ≥ 0.
+Karena ϕ′ (0) < 0, arah ini melanggar prasyarat arah naik bagi pelacakan mundur Armijo;
+semua langkah yang cukup kecil juga menurunkan fungsi. Pelacakan mundur tidak
+boleh dipanggil dengan masukan ini. Implementasi defensif harus menolak arah terse-
+but sebelum pencarian garis; setiap perulangan penyusutan juga harus mempunyai batas
+dan melaporkan kegagalan jika tidak menemukan langkah yang dapat diterima, bukan
+berputar tanpa akhir atau mengembalikan s = 0 sebagai langkah positif.
+   Latihan 2. Implementasikan metode Newton murni dan ujilah pada contoh sebelum-
+nya. Catat jenis titik stasioner yang dituju, jika ada, dan laporkan singularitas atau
+kegagalan konvergensi secara eksplisit.
+   Catatan 5.5. Kita sekarang ingin mengetahui kapan metode Newton konvergen dan
+seberapa cepat konvergensinya. Hasil di bawah melanjutkan pembahasan metode Newton
+satu dimensi pada Teorema 3.53.
+   Definisi 5.6 (Norma Matriks). Untuk M ∈ Rn×n , norma matriks terinduksi oleh
+norma Euclidean didefinisikan sebagai
+(5.4)      ∥M∥ = max ∥Mx∥.
+                   ∥x∥=1
+
+    Teorema 5.7. Misalkan f : Rn → R terdiferensialkan dua kali secara kontinu pada
+suatu lingkungan terbuka titik maksimum lokal x∗ , dan H(x∗ ) nonsingular. Untuk δ > 0,
+tuliskan Sδ = {x : ∥x − x∗ ∥ ≤ δ}. Maka:
+      (1) Ada δ > 0 sedemikian sehingga, jika x0 ∈ Sδ , iterasi Newton murni
+(5.5)      xk+1 = xk − H(xk )−1 ∇f (xk )
+            terdefinisi, tetap berada di Sδ , dan konvergen ke x∗ . Iterasi itu mencapai x∗
+            dalam sejumlah langkah hingga, atau galat nonnol ∥xk − x∗ ∥ berkonvergensi Q-
+            superlinear.
+        (2) Jika, pada bola tersebut, terdapat L, M > 0 sehingga untuk semua x1 , x2 ∈ Sδ ,
+(5.6)      ∥H(x1 ) − H(x2 )∥ ≤ L∥x1 − x2 ∥,     ∥H(x1 )−1 ∥ ≤ M,
+           maka, setelah δ dipilih cukup kecil sehingga LM δ/2 < 1, setiap x0 ∈ Sδ meng-
+           hasilkan
+                          LM
+(5.7)      ∥xk+1 − x∗ ∥ ≤     ∥xk − x∗ ∥2 ,     k = 0, 1, . . . .
+                            2
+           Jadi konvergensinya mempunyai taksiran Q-kuadratik; klaim orde eksak memer-
+           lukan informasi tambahan mengenai suku galat utama.
+    Bukti. Pilih δ > 0 sehingga Sδ berada di dalam lingkungan keterdiferensialan dan
+H(x) nonsingular untuk setiap x ∈ Sδ . Karena invers Hessian kontinu pada bola kompak
+ini, ada M > 0 sehingga
+           ∥H(x)−1 ∥ ≤ M       (x ∈ Sδ ).
+Tuliskan h = xk − x∗ . Berdasarkan Teorema Nilai Rata-rata untuk fungsi bernilai vektor
+pada Korolari 2.7, dan karena ∇f (x∗ ) = 0,
+                               Z 1                                 Z 1
+            ∗              ∗              ∗
+(5.8) ∇f (x + h) − ∇f (x ) =         2
+                                   ∇ f (x + th)h dt =⇒ ∇f (xk ) =      H(x∗ + th)h dt.
+                                    0                                    0
+4                          5. METODE NEWTON DAN KOREKSINYA
+
+Definisi iterasi memberikan
+(5.9)    ∥xk+1 − x∗ ∥ = xk − x∗ − H(xk )−1 ∇f (xk ) .
+Dengan memfaktorkan invers Hessian secara eksak,
+(5.10)   ∥xk+1 − x∗ ∥ = H(xk )−1 [H(xk )(xk − x∗ ) − ∇f (xk )] .
+Dengan Persamaan 5.8, persamaan ini menjadi
+                                                   Z 1                
+                ∗           −1                 ∗             ∗
+(5.11) ∥xk+1 − x ∥ = H(xk )      H(xk )(xk − x ) −       H(x + th)h dt
+                                                      0
+                                                       Z 1              
+                                         −1
+                              = H(xk )        H(xk ) −         ∗
+                                                            H(x + th) dt (xk − x∗ ) .
+                                                          0
+         ∗                       ∗
+Karena x + th = txk + (1 − t)x ,
+                                          Z 1                      
+                ∗            −1
+(5.12) ∥xk+1 − x ∥ = H(xk )       H(xk ) −                     ∗
+                                               H(txk + (1 − t)x ) dt (xk − x∗ )
+                                            0
+                                   Z 1                                 
+                                −1                                 ∗
+                                         H(xk ) − H(txk + (1 − t)x ) dt (xk − x∗ ) .
+                                                                     
+                     = H(xk )
+                                       0
+
+Submultiplikativitas norma terinduksi dan ketaksamaan integral memberi
+                                   Z 1
+                  ∗           −1
+                                       H(xk ) − H(txk + (1 − t)x∗ ) dt ∥xk − x∗ ∥
+                                                                   
+(5.13) ∥xk+1 − x ∥ ≤ ∥H(xk ) ∥
+                                    0
+                                   Z 1                                 
+                              ≤M                                   ∗
+                                        ∥H(xk ) − H(txk + (1 − t)x )∥ dt ∥xk − x∗ ∥.
+                                        0
+
+Pada langkah kedua kita juga menggunakan identitas
+        Z 1
+            H(xk ) dt = H(xk ).
+          0
+
+Definisikan modulus kontinuitas lokal ω(r) sebagai supremum selisih Hessian pada pasan-
+gan titik di Sδ yang berjarak paling besar r. Kontinuitas seragam pada bola kompak
+memberi ω(r) → 0 ketika r ↓ 0. Pilih δ lebih kecil jika perlu sehingga q := M ω(δ) < 1.
+Persamaan 5.13 lalu memberi ∥xk+1 −x∗ ∥ ≤ q∥xk −x∗ ∥, yang membuktikan invariansi bola
+dan konvergensi. Jika suatu galat nol, iterasi telah mencapai x∗ dalam sejumlah langkah
+hingga. Jika semua galat tetap nonnol, rasio galat dibatasi oleh M ω(∥xk − x∗ ∥) → 0,
+sehingga konvergensinya Q-superlinear.
+    Untuk pernyataan kedua, sifat Lipschitz Hessian mengubah Ketaksamaan 5.13 men-
+jadi
+                          Z 1                              
+                  ∗
+(5.14) ∥xk+1 − x ∥ ≤ M                                 ∗
+                               L∥xk − (txk + (1 − t)x )∥ dt ∥xk − x∗ ∥
+                             0
+                             Z 1                       
+                                                                      LM
+                        =M                           ∗
+                                   L(1 − t)∥xk − x ∥ dt ∥xk − x∗ ∥ =       ∥xk − x∗ ∥2 .
+                                0                                       2
+Ini menyelesaikan bukti.                                                                □
+    Catatan 5.8. Tidak ada pernyataan bahwa metode Newton hanya tertarik ke mak-
+simum lokal. Metode Newton mencari nol gradien dan karena itu dapat menuju titik
+stasioner jenis apa pun.
+                             3. KOREKSI METODE NEWTON                                 5
+
+    Catatan 5.9. Hasil di atas menunjukkan bahwa metode Newton sangat efektif sete-
+lah iterat cukup dekat dengan solusi nonsingular. Bentuk murninya tidak mempun-
+yai mekanisme global yang menjamin bahwa iterat akan memasuki lingkungan tersebut.
+Karena itu, berbagai koreksi atau strategi globalisasi diperlukan.
+
+                            3. Koreksi Metode Newton
+    Catatan 5.10. Salah satu globalisasi sederhana adalah hibrida gradien–Newton: pada
+setiap iterasi, gunakan arah gradien jika Hessian belum definit negatif dan gunakan arah
+Newton jika Hessian definit negatif. Sumber mengaitkan gagasan ini secara tidak kon-
+sisten dengan Cauchy dan Gauss; edisi ini tidak menetapkan klaim sejarah tanpa bukti.
+Pemeriksaan Hessian harus diulang pada setiap iterasi, dan kedua arah tetap memerlukan
+pencarian garis dengan kontrak kegagalan.
+   Contoh 5.11. Tinjau kembali fungsi
+                               2  2
+      F (x, y) = x2 + 3y 2 e1−x −y .
+                          
+
+Alih-alih selalu memakai Newton dengan panjang langkah variabel, gunakan langkah gra-
+dien selama H(x) belum definit negatif, kemudian gunakan langkah Newton saat syarat
+tersebut terpenuhi. Modifikasi ini dapat dibuat dengan menambahkan uji Hessian sebelum
+pembentukan arah pada Algoritma 10. Dari x0 = 1, y0 = 0.1, jejak sumber melaporkan
+lima langkah menuju puncak global pada cabang y > 0, yaitu (x∗ , y ∗ ) = (0, 1), seba-
+gaimana pada Gambar 5.3. Titik (1, 1) yang tercetak dalam sumber bukan titik stasioner
+dan telah dikoreksi.
+
+
+
+
+      Gambar 5.3. Hibrida gradien–Newton: gunakan arah gradien ketika Hessian
+      belum definit negatif dan arah Newton ketika Hessian definit negatif, dengan
+      pencarian garis pada setiap langkah.
+
+
+   Latihan 3. Implementasikan hibrida gradien–Newton di atas dan bandingkan laju
+konvergensinya pada variasi Rosenbrock dengan pendakian gradien murni dari x0 = y0 =
+0. Dengan mengasumsikan iterat tetap pada himpunan level kompak, pencarian garis
+memakai pelacakan mundur Armijo, dan matriks skala pada kedua cabang mempunyai
+batas spektral seragam, buktikan bahwa arah-arahnya berkaitan dengan gradien. Jika
+barisan iterat konvergen, simpulkan bahwa limitnya stasioner menggunakan Teorema 4.12.
+6                          5. METODE NEWTON DAN KOREKSINYA
+
+    Latihan 4. Andaikan hibrida gradien–Newton konvergen ke titik x∗ dengan Hessian
+definit negatif dan menggunakan pelacakan mundur Armijo dengan t0 = 1, 0 < σ1 < 1/2.
+Buktikan bahwa algoritma mencapai x∗ dalam sejumlah langkah hingga, atau akhirnya
+selalu memilih arah Newton dan berkonvergensi Q-superlinear menurut Teorema 4.25.
+    Catatan 5.12. Koreksi yang umum memakai dekomposisi Cholesky termodifikasi. Ma-
+sukkan −H(x) ke faktorisasi dan koreksi pivot yang terlalu kecil agar diperoleh ma-
+triks pengganti definit positif. Dengan demikian, penyelesaian terhadap matriks peng-
+ganti selalu memberi arah naik. Kita ingin mempertahankan struktur Hessian sejauh
+mungkin dan tidak mengubah matriks ketika semua pivot Cholesky alaminya aman. Pilih
+0 < µ1 < µ2 . Pada setiap pivot Schur di , pertahankan di jika di ≥ µ1 ; jika tidak, ganti
+dengan µ2 . Klaim kedekatan pengganti terhadap masukan bergantung pada ambang dan
+besarnya koreksi; definit positif saja tidak memberikan batas kedekatan. Algoritma 11
+memberi pseudokode eksplisit yang ditulis secara independen untuk aturan ini.
+
+
+CholeskyTermodifikasi(A, µ1 , µ2 )
+Masukan: A = AT ∈ Rn×n dan 0 < µ1 < µ2 .
+1. Tetapkan W ← A dan L ← 0.
+2. Untuk i = 1, . . . , n, ambil pivot Schur d ← Wii ; tetapkan db ← d jika d ≥ µ1 , dan
+db ← µ2 jika tidak. p
+3. Tetapkan Lii ← db dan, untuk j = i + 1, . . . , n, tetapkan Lji ← Wji /Lii .
+4. Perbarui blok Schur tersisa secara simetris: Wjk ← Wjk − Lji Lki untuk j, k > i.
+5. Kembalikan L, B = LLT , dan daftar pivot yang dikoreksi. Matriks B definit positif
+karena diagonal L positif.
+         Algoritma 11. Cholesky termodifikasi menghasilkan pengganti definit positif;
+         kedekatannya terhadap matriks masukan bergantung pada koreksi pivot.
+
+
+     Catatan 5.13. Misalkan L ∈ Rn×n dibentuk dari negatif Hessian fungsi skalar f di
+xk , dan tetapkan Bk = LLT . Dengan notasi transparan,
+(5.15)    −H(xk ) ∼ Bk = LLT ,
+dengan ∼ menyatakan bahwa Bk sama dengan −H(xk ) jika tidak ada pivot yang dikoreksi,
+dan hanya merupakan pengganti definit positif jika koreksi terjadi. Arah dipilih sebagai
+        T −1
+(5.16)  LL     ∇f (xk ) = p.
+Ia dapat dihitung efisien tanpa membentuk invers: pertama selesaikan
+(5.17)    ∇f (xk ) = Lz
+dengan substitusi maju, lalu selesaikan
+(5.18)    LT p = z
+dengan substitusi mundur. Matriks L segitiga bawah dan LT segitiga atas.
+    Contoh 5.14. Tinjau kembali fungsi
+                                2   2
+       F (x, y) = x2 + 3y 2 e1−x −y
+                           
+
+pada x = 1, y = 1/2. Dengan α = e−1/4 , Hessian adalah
+               "             #
+                 −5/2 −9/2
+        H=α                    .
+                 −9/2 −7/4
+                             3. KOREKSI METODE NEWTON                              7
+
+Matriks H dan A = −H sama-sama      p tak tentu. Terapkan Algoritma 11 pada A dengan
+µ1 = 0.1, µ2 = 1. Definisikan r = 5α/2 dan s = 9α/(2r). Pivot kedua tak terkoreksi
+bernilai negatif, sehingga diganti dengan 1 dan diperoleh
+             "        #
+                 r 0
+         L=             .
+                 s 1
+Gradien pada titik tersebut adalah
+                       "       #
+                         −3/2
+        ∇f 1, 21 = α
+                
+                                 .
+                          5/4
+Persoalan segitiga pertama adalah
+        "       #       "       #
+           r 0     z1       −3/2
+(5.19)                 =α           .
+           s 1     z2        5/4
+Dengan demikian,
+                3α
+        z1 = − ,
+                 2r
+              5α          79α
+        z2 =      − sz1 =      .
+               4           20
+Selanjutnya, selesaikan
+        "        #  "              #
+           r s      p1      −3α/(2r)
+(5.20)                  =              .
+           0 1      p2        79α/20
+Hasilnya ialah
+              79α
+        p2 =       ,
+               20
+              z1 − sp2      3 711α
+        p1 =           =− −          .
+                  r         5    100
+Karena itu,
+                                                  
+                1 T
+                             3    3 711α      5 79α
+(5.21) ∇f 1, 2 p = α −           − −         +
+                              2    5   100     4 20
+                                                  9α 6241α2
+                                               =     +       ≈ 10.164315323 > 0.
+                                                  10    400
+Jadi p merupakan arah naik. Perhitungan sumber memakai tanda Hessian yang
+berlawanan dengan uraian algoritmanya dan karena itu menghasilkan faktor serta angka
+yang berbeda; edisi ini memakai −H secara konsisten.
+   Catatan 5.15. Implementasi acuan independen bagi metode Newton terkoreksi dita-
+mpilkan pada Algoritma 12. Pseudokode ini tidak menyalin dua listing Maple sumber.
+
+
+NewtonTerkoreksi—bagian 1 dari 2
+Masukan: f , x0 , ϵ > 0, batas iterasi N , 0 < µ1 < µ2 , dan parameter Armijo.
+1. Tetapkan k ← 0, x ← x0 , dan lintasan P ← [x].
+2. Hitung g ← ∇f (x); jika ∥g∥ ≤ ϵ, kembalikan (x, P ).
+3. Hitung H ← ∇2 f (x) dan (L, B, C) ← CholeskyTermodifikasi(−H, µ1 , µ2 ), dengan
+C daftar pivot yang dikoreksi.
+8                          5. METODE NEWTON DAN KOREKSINYA
+
+
+NewtonTerkoreksi—bagian 2 dari 2
+4. Selesaikan Lz = g dan LT p = z; periksa gT p > 0.
+5. Pilih δ > 0 dengan pelacakan mundur Armijo; jika batas penyusutan tercapai, la-
+porkan kegagalan.
+6. Tetapkan x ← x + δp, tambahkan ke P , naikkan k, lalu ulangi dari Langkah 2.
+7. Jika k = N sebelum uji gradien terpenuhi, laporkan kegagalan batas iterasi.
+         Algoritma 12. Metode Newton dengan panjang langkah variabel dan dekom-
+         posisi Cholesky termodifikasi
+
+    Teorema 5.16. Misalkan f : Rn → R terdiferensialkan dua kali secara kontinu, 0 <
+µ1 < µ2 , dan Bk = Lk LTk adalah matriks pengganti yang dipakai metode Newton terkoreksi.
+Andaikan terdapat 0 < m ≤ M < ∞ sehingga mI ⪯ Bk ⪯ M I untuk semua k, langkah
+dipilih dengan pelacakan mundur Armijo berparameter tetap, dan barisan {xk } konvergen
+ke x∗ . Maka ∇f (x∗ ) = 0.
+    Bukti. Secara konstruksi, pk = B−1k ∇f (xk ).  Batas spektral memberi ∥pk ∥ ≤
+    −1
+m ∥∇f (xk )∥ dan ∇f (xk )T pk ≥ M −1 ∥∇f (xk )∥2 . Jadi arah-arah tersebut berkaitan
+dengan gradien. Teorema 4.12 kemudian menyatakan bahwa limit barisan adalah titik
+stasioner.                                                                         □
+    Teorema 5.17. Misalkan f : Rn → R terdiferensialkan dua kali secara kontinu dan
+barisan metode Newton terkoreksi konvergen ke titik stasioner x∗ dengan H(x∗ ) definit
+negatif. Ada pilihan ambang tetap 0 < µ1 < µ2 sedemikian sehingga, jika pencarian garis
+memakai aturan Armijo dengan 0 < σ1 < 1/2 dan t0 = 1, algoritma mencapai x∗ dalam
+sejumlah langkah hingga, atau akhirnya tidak melakukan koreksi dan berkonvergensi Q-
+superlinear.
+    Bukti. Terapkan Cholesky biasa pada −H(x∗ ), yang definit positif, dan pilih µ1 > 0
+lebih kecil daripada pivot Schur terkecil faktorisasi tersebut. Kontinuitas Hessian dan
+kontinuitas setiap pivot Cholesky di sekitar matriks definit positif memberi lingkungan S
+dari x∗ tempat semua pivot −H(x) tetap lebih besar daripada µ1 . Karena itu, Algoritma
+11 tidak melakukan koreksi untuk x ∈ S dan arah yang dipakai sama dengan arah New-
+ton murni. Jika iterasi mencapai x∗ dalam sejumlah langkah hingga, alternatif pertama
+berlaku. Jika tidak, ∇f (xk ) ̸= 0 untuk setiap k dan kontinuitas invers Hessian memberi
+              ∥pk + H(x∗ )−1 ∇f (xk )∥
+           lim                         = 0.
+          k→∞       ∥∇f (xk )∥
+Karena iterat akhirnya berada di S, semua hipotesis Teorema 4.25 berlaku dan
+             ∥xk+1 − x∗ ∥
+           lim            = 0.
+          k→∞ ∥xk − x∗ ∥
+
+Ini menyelesaikan bukti.                                                                □
+    Catatan 5.18. Ambang juga dapat dibuat dinamis, misalnya µ1,k = c∥∇f (xk )∥ den-
+gan konstanta tetap c > 0, sementara µ2,k tetap dipilih lebih besar dan positif. Karena
+µ1,k → 0 di dekat titik stasioner dengan Hessian definit negatif, koreksi akhirnya berhenti
+di bawah hipotesis yang sama.
+    Latihan 5. Buktikan bahwa metode Newton termodifikasi mencapai limitnya dalam
+sejumlah langkah hingga atau berkonvergensi Q-superlinear ketika µ1,k = c∥∇f (xk )∥,
+c > 0, dengan mengasumsikan barisan konvergen ke titik dengan Hessian definit negatif,
+µ2,k > µ1,k , dan parameter Armijo seperti pada teorema sebelumnya.
+                              3. KOREKSI METODE NEWTON                                   9
+
+   Catatan 5.19. Tidak ada pilihan tunggal µ1 dan µ2 yang optimal bagi semua per-
+soalan. Nilai µ1 yang kecil mempertahankan lebih banyak struktur Hessian, tetapi nilai
+koreksi µ2 yang terlalu kecil dapat membuat LLT hampir singular. Nilai µ2 yang terlalu
+besar dapat menghasilkan skala yang buruk dan memperlambat konvergensi. Pengguna
+harus menyesuaikan ambang dengan skala persoalan; [Ber99] membahas pemilihan yang
+bergantung pada elemen diagonal terbesar Hessian terhitung.
+   Contoh 5.20. Kita ilustrasikan metode Newton termodifikasi pada fungsi
+                               2   2
+      F (x, y) = x2 + 3y 2 e1−x −y
+                          
+
+dari x = 1, y = 1/2, dengan µ1 = 0.1 dan µ2 = 1. Langkah-langkah sumber ditunjukkan
+pada Gambar 5.4; jejak tersebut mencapai suatu maksimum global dalam lima iterasi.
+
+
+
+
+      Gambar 5.4. Metode Newton termodifikasi memakai pengganti Cholesky
+      definit positif dan penyelesaian segitiga untuk memperoleh arah naik ketika Hes-
+      sian belum definit negatif. Jejak ini memperlihatkan konvergensi terminal yang
+      cepat; teorema sebelumnya menyatakan hipotesis untuk kesuperlinearannya.
+                                       Daftar Pustaka
+
+[Ber99] D. P. Bertsekas, Nonlinear Programming, 2 ed., Athena Scientific, 1999.
+
+
+
+
+                                                  10
+                     Catatan koreksi terhadap sumber
+
+    Rekaman terstruktur O015-PENN-ADV-0038 sampai O015-PENN-ADV-0049 meny-
+ertai edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia, bukan
+oleh penulis sumber.
+     (1) Konvensi tanda Newton untuk persoalan pemaksimuman dinyatakan secara ek-
+          splisit dan dipakai konsisten pada arah serta Hessian terkoreksi.
+     (2) Dua listing Maple metode Newton dengan panjang langkah variabel diganti oleh
+          pseudokode mandiri dengan kontrak masukan, pencarian garis, penghentian, dan
+          keluaran yang lengkap.
+     (3) Contoh Hessian tak tentu membedakan arah Newton dari arah naik dan
+          memeriksa fungsi garis skalar yang sebenarnya.
+     (4) Norma matriks pada analisis lokal dinyatakan sebagai norma terinduksi, sehingga
+          pertidaksamaan operator yang dipakai dalam bukti terikat sah.
+     (5) Teorema konvergensi lokal Newton memuat lingkungan invarian, kontinuitas in-
+         vers Hessian, dan argumen modulus kontinuitas yang lengkap.
+     (6) Hibrida gradien–Newton memakai titik ujung stasioner yang benar serta hipotesis
+          pencarian garis, kekompakan level, dan batas spektral yang cukup.
+     (7) Listing Maple Cholesky termodifikasi diganti pseudokode mandiri; aturan pivot
+          dan batas klaim kedekatan pengganti dijelaskan secara tepat.
+     (8) Notasi Hessian pengganti dan dua penyelesaian segitiga diselaraskan dengan fak-
+          torisasi matriks definit positif yang dipakai algoritma.
+     (9) Contoh numerik Cholesky termodifikasi memakai tanda matriks dan aritmetika
+          faktor yang konsisten serta dapat diperiksa secara eksak.
+    (10) Dua listing Maple Newton terkoreksi diganti oleh pseudokode mandiri dua bagian
+         yang menghubungkan faktorisasi, arah naik, dan pencarian garis.
+    (11) Teorema stasioner menyatakan batas spektral seragam, pelacakan mundur, dan
+          hipotesis konvergensi yang diperlukan oleh hasil rujukannya.
+    (12) Pemulihan eventual metode Newton murni menyatakan ambang pivot, lingkun-
+          gan tanpa koreksi, dan asumsi yang diperlukan untuk kesuperlinearan.
+
+
+
+
+                                           11
+                   Atribusi, lisensi, dan nondukungan
+
+   Karya sumber: Christopher Griffin, Nonlinear Programming, Penn State MATH 555,
+dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber v1.0 dan karya
+turunan ini tunduk pada CC BY-NC-SA 3.0 US. Edisi ini mengatribusikan sumber,
+menandai perubahan, bersifat nonkomersial, dan mempertahankan ShareAlike pada kom-
+ponen Penn.
+   Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak menyusun,
+memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama-nama terse-
+but semata-mata untuk atribusi karya sumber.
+
+
+
+
+                                        12
+

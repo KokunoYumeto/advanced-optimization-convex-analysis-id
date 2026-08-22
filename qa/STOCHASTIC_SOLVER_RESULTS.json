@@ -1,0 +1,868 @@
+{
+  "best_iterate_bound": {
+    "cases": [
+      {
+        "K": 1,
+        "Q_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "S_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "bound_margin": {
+          "decimal": 0.125,
+          "exact": "1/8"
+        },
+        "expected_best_gap": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "harmonic_1_over_k_plus_1",
+        "terminal_state_count": 1,
+        "theorem_bound": {
+          "decimal": 1.125,
+          "exact": "9/8"
+        },
+        "weighted_expected_gap": {
+          "decimal": 1.0,
+          "exact": "1"
+        }
+      },
+      {
+        "K": 2,
+        "Q_K": {
+          "decimal": 1.25,
+          "exact": "5/4"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.8333333333333334,
+          "exact": "5/6"
+        },
+        "S_K": {
+          "decimal": 1.5,
+          "exact": "3/2"
+        },
+        "bound_margin": {
+          "decimal": 0.3541666666666667,
+          "exact": "17/48"
+        },
+        "expected_best_gap": {
+          "decimal": 0.5,
+          "exact": "1/2"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "harmonic_1_over_k_plus_1",
+        "terminal_state_count": 2,
+        "theorem_bound": {
+          "decimal": 0.8541666666666666,
+          "exact": "41/48"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.8333333333333334,
+          "exact": "5/6"
+        }
+      },
+      {
+        "K": 4,
+        "Q_K": {
+          "decimal": 1.4236111111111112,
+          "exact": "205/144"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.6833333333333333,
+          "exact": "41/60"
+        },
+        "S_K": {
+          "decimal": 2.0833333333333335,
+          "exact": "25/12"
+        },
+        "bound_margin": {
+          "decimal": 0.5004166666666666,
+          "exact": "1201/2400"
+        },
+        "expected_best_gap": {
+          "decimal": 0.16666666666666666,
+          "exact": "1/6"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "harmonic_1_over_k_plus_1",
+        "terminal_state_count": 4,
+        "theorem_bound": {
+          "decimal": 0.6670833333333334,
+          "exact": "1601/2400"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.66,
+          "exact": "33/50"
+        }
+      },
+      {
+        "K": 8,
+        "Q_K": {
+          "decimal": 1.527422052154195,
+          "exact": "1077749/705600"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.5619949731973385,
+          "exact": "1077749/1917720"
+        },
+        "S_K": {
+          "decimal": 2.717857142857143,
+          "exact": "761/280"
+        },
+        "bound_margin": {
+          "decimal": 0.5051929993690424,
+          "exact": "31002199/61367040"
+        },
+        "expected_best_gap": {
+          "decimal": 0.03002232142857143,
+          "exact": "269/8960"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "harmonic_1_over_k_plus_1",
+        "terminal_state_count": 44,
+        "theorem_bound": {
+          "decimal": 0.5352153207976138,
+          "exact": "1642229/3068352"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.5333830668710761,
+          "exact": "233801/438336"
+        }
+      },
+      {
+        "K": 12,
+        "Q_K": {
+          "decimal": 1.5649766384209025,
+          "exact": "240505109/153679680"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.5043088596624943,
+          "exact": "18500393/36684648"
+        },
+        "S_K": {
+          "decimal": 3.103210678210678,
+          "exact": "86021/27720"
+        },
+        "bound_margin": {
+          "decimal": 0.4630836392599787,
+          "exact": "565362646811/1220865085440"
+        },
+        "expected_best_gap": {
+          "decimal": 0.013232844629329004,
+          "exact": "62603/4730880"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "harmonic_1_over_k_plus_1",
+        "terminal_state_count": 634,
+        "theorem_bound": {
+          "decimal": 0.4763164838893077,
+          "exact": "1817244265/3815203392"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.4756302788859939,
+          "exact": "251376797/528513024"
+        }
+      },
+      {
+        "K": 1,
+        "Q_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "S_K": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "bound_margin": {
+          "decimal": 0.125,
+          "exact": "1/8"
+        },
+        "expected_best_gap": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "shifted_harmonic_2_over_k_plus_2",
+        "terminal_state_count": 1,
+        "theorem_bound": {
+          "decimal": 1.125,
+          "exact": "9/8"
+        },
+        "weighted_expected_gap": {
+          "decimal": 1.0,
+          "exact": "1"
+        }
+      },
+      {
+        "K": 2,
+        "Q_K": {
+          "decimal": 1.4444444444444444,
+          "exact": "13/9"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.8666666666666667,
+          "exact": "13/15"
+        },
+        "S_K": {
+          "decimal": 1.6666666666666667,
+          "exact": "5/3"
+        },
+        "bound_margin": {
+          "decimal": 0.3416666666666667,
+          "exact": "41/120"
+        },
+        "expected_best_gap": {
+          "decimal": 0.5,
+          "exact": "1/2"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "shifted_harmonic_2_over_k_plus_2",
+        "terminal_state_count": 2,
+        "theorem_bound": {
+          "decimal": 0.8416666666666667,
+          "exact": "101/120"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.8,
+          "exact": "4/5"
+        }
+      },
+      {
+        "K": 4,
+        "Q_K": {
+          "decimal": 1.8544444444444443,
+          "exact": "1669/900"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.7225108225108225,
+          "exact": "1669/2310"
+        },
+        "S_K": {
+          "decimal": 2.566666666666667,
+          "exact": "77/30"
+        },
+        "bound_margin": {
+          "decimal": 0.4588744588744589,
+          "exact": "106/231"
+        },
+        "expected_best_gap": {
+          "decimal": 0.1875,
+          "exact": "3/16"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "shifted_harmonic_2_over_k_plus_2",
+        "terminal_state_count": 6,
+        "theorem_bound": {
+          "decimal": 0.6463744588744589,
+          "exact": "2389/3696"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.6298701298701299,
+          "exact": "97/154"
+        }
+      },
+      {
+        "K": 8,
+        "Q_K": {
+          "decimal": 2.1590709246661626,
+          "exact": "3427741/1587600"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.5902428650638675,
+          "exact": "3427741/5807340"
+        },
+        "S_K": {
+          "decimal": 3.657936507936508,
+          "exact": "4609/1260"
+        },
+        "bound_margin": {
+          "decimal": 0.45512584747276724,
+          "exact": "338313029/743339520"
+        },
+        "expected_best_gap": {
+          "decimal": 0.05046502976190476,
+          "exact": "2713/53760"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "shifted_harmonic_2_over_k_plus_2",
+        "terminal_state_count": 88,
+        "theorem_bound": {
+          "decimal": 0.505590877234672,
+          "exact": "4697821/9291744"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.5018577782599263,
+          "exact": "37009/73744"
+        }
+      },
+      {
+        "K": 12,
+        "Q_K": {
+          "decimal": 2.2835751927368646,
+          "exact": "14827177181/6492966480"
+        },
+        "Q_K_over_S_K": {
+          "decimal": 0.5237236447900333,
+          "exact": "14827177181/28311070788"
+        },
+        "S_K": {
+          "decimal": 4.36026751026751,
+          "exact": "785633/180180"
+        },
+        "bound_margin": {
+          "decimal": 0.4185768604751117,
+          "exact": "1083461405909/2588440757760"
+        },
+        "expected_best_gap": {
+          "decimal": 0.023422280844155843,
+          "exact": "4617/197120"
+        },
+        "passed": true,
+        "probability_mass": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "schedule": "shifted_harmonic_2_over_k_plus_2",
+        "terminal_state_count": 1212,
+        "theorem_bound": {
+          "decimal": 0.4419991413192676,
+          "exact": "100107751825/226488566304"
+        },
+        "weighted_expected_gap": {
+          "decimal": 0.4404760507245166,
+          "exact": "1063073345/2413464576"
+        }
+      }
+    ],
+    "model": "f(x)=abs(x), C=[-1,1], x0=1, epsilon=+-1/2 uniformly",
+    "passed": true
+  },
+  "conditional_oracle": {
+    "L_squared": {
+      "decimal": 1.0,
+      "exact": "1"
+    },
+    "M_squared": {
+      "decimal": 1.25,
+      "exact": "5/4"
+    },
+    "cases": [
+      {
+        "conditional_mean": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "conditional_second_moment": {
+          "decimal": 1.25,
+          "exact": "5/4"
+        },
+        "conditional_variance": {
+          "decimal": 0.25,
+          "exact": "1/4"
+        },
+        "mean_is_subgradient": true,
+        "oracle_outputs": [
+          {
+            "decimal": 0.5,
+            "exact": "1/2"
+          },
+          {
+            "decimal": 1.5,
+            "exact": "3/2"
+          }
+        ],
+        "passed": true,
+        "state": "positive_state",
+        "variance_plus_mean_squared": {
+          "decimal": 1.25,
+          "exact": "5/4"
+        },
+        "x": {
+          "decimal": 2.0,
+          "exact": "2"
+        }
+      },
+      {
+        "conditional_mean": {
+          "decimal": -1.0,
+          "exact": "-1"
+        },
+        "conditional_second_moment": {
+          "decimal": 1.25,
+          "exact": "5/4"
+        },
+        "conditional_variance": {
+          "decimal": 0.25,
+          "exact": "1/4"
+        },
+        "mean_is_subgradient": true,
+        "oracle_outputs": [
+          {
+            "decimal": -1.5,
+            "exact": "-3/2"
+          },
+          {
+            "decimal": -0.5,
+            "exact": "-1/2"
+          }
+        ],
+        "passed": true,
+        "state": "negative_state",
+        "variance_plus_mean_squared": {
+          "decimal": 1.25,
+          "exact": "5/4"
+        },
+        "x": {
+          "decimal": -3.0,
+          "exact": "-3"
+        }
+      },
+      {
+        "conditional_mean": {
+          "decimal": 0.0,
+          "exact": "0"
+        },
+        "conditional_second_moment": {
+          "decimal": 0.25,
+          "exact": "1/4"
+        },
+        "conditional_variance": {
+          "decimal": 0.25,
+          "exact": "1/4"
+        },
+        "mean_is_subgradient": true,
+        "oracle_outputs": [
+          {
+            "decimal": -0.5,
+            "exact": "-1/2"
+          },
+          {
+            "decimal": 0.5,
+            "exact": "1/2"
+          }
+        ],
+        "passed": true,
+        "state": "origin_state",
+        "variance_plus_mean_squared": {
+          "decimal": 0.25,
+          "exact": "1/4"
+        },
+        "x": {
+          "decimal": 0.0,
+          "exact": "0"
+        }
+      }
+    ],
+    "function": "f(x)=abs(x)",
+    "sigma_squared": {
+      "decimal": 0.25,
+      "exact": "1/4"
+    }
+  },
+  "deterministic": true,
+  "extra_Q_K_negative_control": {
+    "Q_K_asymptotic_exponent": "3/5",
+    "S_K_asymptotic_exponent": "4/5",
+    "correct_Q_K_over_S_K_exponent": "-1/5",
+    "erroneous_Q_K_squared_over_S_K_exponent": "2/5",
+    "numeric_witnesses": [
+      {
+        "K": 100,
+        "Q_K": 25.359280587297384,
+        "S_K": 49.2284626286644,
+        "correct_Q_K_over_S_K": 0.5151345224526951,
+        "erroneous_Q_K_squared_over_S_K": 13.063440895081339
+      },
+      {
+        "K": 1000,
+        "Q_K": 104.05630539353153,
+        "S_K": 313.3774731488994,
+        "correct_Q_K_over_S_K": 0.3320478155240272,
+        "erroneous_Q_K_squared_over_S_K": 34.55166889742319
+      },
+      {
+        "K": 10000,
+        "Q_K": 417.525500149491,
+        "S_K": 1980.4618140469695,
+        "correct_Q_K_over_S_K": 0.21082229265319669,
+        "erroneous_Q_K_squared_over_S_K": 88.0236831826883
+      },
+      {
+        "K": 100000,
+        "Q_K": 1665.536868879466,
+        "S_K": 12499.316079058435,
+        "correct_Q_K_over_S_K": 0.13325024012073225,
+        "erroneous_Q_K_squared_over_S_K": 221.93318770812138
+      }
+    ],
+    "passed": true,
+    "schedule": "tau_k=(k+1)^(-1/5)"
+  },
+  "finite_sum_unbiasedness": {
+    "N": 4,
+    "N_scaled_oracle_mean": {
+      "decimal": [
+        8.0,
+        4.0
+      ],
+      "exact": [
+        "8",
+        "4"
+      ]
+    },
+    "component_gradients": [
+      {
+        "decimal": [
+          1.0,
+          3.0
+        ],
+        "exact": [
+          "1",
+          "3"
+        ]
+      },
+      {
+        "decimal": [
+          -2.0,
+          5.0
+        ],
+        "exact": [
+          "-2",
+          "5"
+        ]
+      },
+      {
+        "decimal": [
+          7.0,
+          -1.0
+        ],
+        "exact": [
+          "7",
+          "-1"
+        ]
+      },
+      {
+        "decimal": [
+          2.0,
+          -3.0
+        ],
+        "exact": [
+          "2",
+          "-3"
+        ]
+      }
+    ],
+    "missing_factor_negative_control_detected": true,
+    "normalized_objective_gradient": {
+      "decimal": [
+        2.0,
+        1.0
+      ],
+      "exact": [
+        "2",
+        "1"
+      ]
+    },
+    "normalized_unbiasedness_passed": true,
+    "uniform_component_oracle_mean": {
+      "decimal": [
+        2.0,
+        1.0
+      ],
+      "exact": [
+        "2",
+        "1"
+      ]
+    },
+    "unnormalized_sum_gradient": {
+      "decimal": [
+        8.0,
+        4.0
+      ],
+      "exact": [
+        "8",
+        "4"
+      ]
+    }
+  },
+  "gates": [
+    {
+      "detail": "610d11b59d8dfabbbbe6fbc509a0f9ac1727540458c67f8cd3b7bab49566a07d",
+      "id": "surface.authority.sha256",
+      "passed": true
+    },
+    {
+      "detail": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344",
+      "id": "surface.target.sha256",
+      "passed": true
+    },
+    {
+      "detail": "required authority defect witness present",
+      "id": "surface.authority.unnormalized_finite_sum",
+      "passed": true
+    },
+    {
+      "detail": "required authority defect witness present",
+      "id": "surface.authority.unscaled_component_oracle",
+      "passed": true
+    },
+    {
+      "detail": "required authority defect witness present",
+      "id": "surface.authority.extra_Q_K_term",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.normalized_finite_sum",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.normalized_unbiased_identity",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.closed_convex_constraint",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.projected_iteration",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.filtration",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.conditional_mean",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.conditional_variance",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.best_iterate",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.S_K",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.Q_K",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correct_variance_term",
+      "passed": true
+    },
+    {
+      "detail": "count=3",
+      "id": "surface.target.segment_markers",
+      "passed": true
+    },
+    {
+      "detail": "authority's erroneous extra-Q_K term absent",
+      "id": "surface.target.excludes_extra_Q_K_algebra",
+      "passed": true
+    },
+    {
+      "detail": "mean=(Fraction(2, 1), Fraction(1, 1)), normalized gradient=(Fraction(2, 1), Fraction(1, 1))",
+      "id": "math.finite_sum.normalized_unbiasedness",
+      "passed": true
+    },
+    {
+      "detail": "naive mean=(Fraction(2, 1), Fraction(1, 1)), sum gradient=(Fraction(8, 1), Fraction(4, 1)), N=4",
+      "id": "negative_control.finite_sum.missing_factor_N",
+      "passed": true
+    },
+    {
+      "detail": "three filtration states enumerated exactly",
+      "id": "math.conditional_mean_variance_second_moment",
+      "passed": true
+    },
+    {
+      "detail": "projected E[D+]=401/800, rhs=421/400",
+      "id": "math.projection_and_one_step_recurrence",
+      "passed": true
+    },
+    {
+      "detail": "exact cases=10",
+      "id": "math.projected_stochastic_best_iterate_bound",
+      "passed": true
+    },
+    {
+      "detail": "correct exponent=-1/5; erroneous exponent=2/5",
+      "id": "negative_control.source_extra_Q_K_convergence",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "authority": {
+      "bytes": 4665,
+      "lines": 107,
+      "path": "authority/habring/source-v1/stochastic.tex",
+      "sha256": "610d11b59d8dfabbbbe6fbc509a0f9ac1727540458c67f8cd3b7bab49566a07d"
+    },
+    "target": {
+      "bytes": 6378,
+      "lines": 133,
+      "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+      "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+    }
+  },
+  "projection_one_step": {
+    "constraint": "[-1,1]",
+    "expected_projected_distance_squared": {
+      "decimal": 0.50125,
+      "exact": "401/800"
+    },
+    "expected_unprojected_distance_squared": {
+      "decimal": 1.0525,
+      "exact": "421/400"
+    },
+    "outcomes": [
+      {
+        "expanded_distance_squared": {
+          "decimal": 0.0025,
+          "exact": "1/400"
+        },
+        "oracle": {
+          "decimal": 0.5,
+          "exact": "1/2"
+        },
+        "passed": true,
+        "projected_distance_squared": {
+          "decimal": 0.0025,
+          "exact": "1/400"
+        },
+        "projected_iterate": {
+          "decimal": 0.05,
+          "exact": "1/20"
+        },
+        "unprojected_distance_squared": {
+          "decimal": 0.0025,
+          "exact": "1/400"
+        },
+        "unprojected_iterate": {
+          "decimal": 0.05,
+          "exact": "1/20"
+        }
+      },
+      {
+        "expanded_distance_squared": {
+          "decimal": 2.1025,
+          "exact": "841/400"
+        },
+        "oracle": {
+          "decimal": 1.5,
+          "exact": "3/2"
+        },
+        "passed": true,
+        "projected_distance_squared": {
+          "decimal": 1.0,
+          "exact": "1"
+        },
+        "projected_iterate": {
+          "decimal": -1.0,
+          "exact": "-1"
+        },
+        "unprojected_distance_squared": {
+          "decimal": 2.1025,
+          "exact": "841/400"
+        },
+        "unprojected_iterate": {
+          "decimal": -1.45,
+          "exact": "-29/20"
+        }
+      }
+    ],
+    "passed": true,
+    "recurrence_margin": {
+      "decimal": 0.55125,
+      "exact": "441/800"
+    },
+    "recurrence_rhs": {
+      "decimal": 1.0525,
+      "exact": "421/400"
+    },
+    "tau_k": {
+      "decimal": 1.5,
+      "exact": "3/2"
+    },
+    "x_k": {
+      "decimal": 0.8,
+      "exact": "4/5"
+    },
+    "x_star": {
+      "decimal": 0.0,
+      "exact": "0"
+    }
+  },
+  "schema": "d90.stochastic-validator.v1",
+  "status": "PASS",
+  "summary": {
+    "exact_best_iterate_case_count": 10,
+    "failed_gate_count": 0,
+    "gate_count": 24,
+    "passed_gate_count": 24
+  }
+}

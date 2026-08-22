@@ -1,0 +1,698 @@
+{
+  "deterministic": true,
+  "entropic_sinkhorn": {
+    "checks": {
+      "column_marginal_residual": true,
+      "converged": true,
+      "factorization": true,
+      "feasible_cycle": true,
+      "finite_cost": true,
+      "kkt_stationarity": true,
+      "positive_inputs": true,
+      "positive_kernel": true,
+      "positive_plan": true,
+      "positive_scalings": true,
+      "row_marginal_residual": true,
+      "scaling_ambiguity_same_plan": true,
+      "strict_convexity_midpoint": true,
+      "unique_minimizer_cycle_witness": true
+    },
+    "entropic_objective": -1.193365024208343,
+    "epsilon": 0.6,
+    "iterations": 27,
+    "kernel": [
+      [
+        0.7165313105737893,
+        0.11455884399268769,
+        0.030197383422318487,
+        0.3114032239145977
+      ],
+      [
+        0.15987974607969388,
+        0.846481724890614,
+        0.2635971381157267,
+        0.042143843509276406
+      ],
+      [
+        0.05881647164242988,
+        0.22313016014842982,
+        0.6065306597126334,
+        0.1353352832366127
+      ]
+    ],
+    "maximum_column_residual": 0.0,
+    "maximum_factorization_residual": 0.0,
+    "maximum_iterations": 5000,
+    "maximum_kkt_stationarity_residual": 0.0,
+    "maximum_row_residual": 3.608224830031759e-15,
+    "minimum_plan_entry": 0.005299916588628498,
+    "passed": true,
+    "plan": [
+      [
+        0.050935232001711406,
+        0.007898826147717183,
+        0.005299916588628498,
+        0.13586602526194655
+      ],
+      [
+        0.04228710595935963,
+        0.2171615421752439,
+        0.1721360409844421,
+        0.06841531088095099
+      ],
+      [
+        0.006777662038928973,
+        0.024939631677038943,
+        0.17256404242692933,
+        0.09571866385710244
+      ]
+    ],
+    "scaling_ambiguity_witness": {
+      "factor": 3.7,
+      "maximum_plan_residual": 0.0
+    },
+    "shape": [
+      3,
+      4
+    ],
+    "stopping_tolerance": 1e-14,
+    "strict_convexity_witness": {
+      "cycle_delta": 0.001974706536929296,
+      "maximum_cycle_column_sum": 0.0,
+      "maximum_cycle_row_sum": 0.0,
+      "midpoint_strict_convexity_gap": 0.00020571991428841585,
+      "minimum_local_entropy_hessian_diagonal": 2.7629201468638267,
+      "objective_at_plan": -1.193365024208343,
+      "objective_at_plan_minus_cycle": -1.1931720024018975,
+      "objective_at_plan_plus_cycle": -1.1931466061862115
+    },
+    "u": [
+      0.13772409170457284,
+      0.5124379852917345,
+      0.22325836626408832
+    ],
+    "v": [
+      0.5161467523686039,
+      0.5006382362084909,
+      1.2743531723722101,
+      3.167946575933454
+    ]
+  },
+  "environment": {
+    "linear_program_solver": "scipy.optimize.linprog(method='highs')",
+    "numpy": "2.4.4",
+    "python": "3.13.9",
+    "scipy": "1.17.1"
+  },
+  "gates": [
+    {
+      "detail": "719df724b368126cc7540dffd461dc33aba7d5b5b6060132181086dfa17649ba",
+      "id": "surface.authority.sha256",
+      "passed": true
+    },
+    {
+      "detail": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd",
+      "id": "surface.target.sha256",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.scalar_claimed_in_simplex",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.untyped_rectangular_marginals",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.missing_constraint_separator",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.wrong_measure_cone_argument",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.entropy_over_full_real_space",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.malformed_transposed_marginal",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.unparenthesized_sinkhorn_division",
+      "passed": true
+    },
+    {
+      "detail": "required frozen authority defect witness present",
+      "id": "surface.authority.defect.unfinished_wasserstein_sentence",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.measurable_monge_map",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.empty_monge_convention",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.polish_tightness",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.wasserstein_moment_space",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.wasserstein_metric_cost",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.bounded_continuous_dual_class",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.correct_measure_cone",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.vector_simplex_a",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.vector_simplex_b",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.typed_row_marginal",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.typed_column_marginal",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.finite_entropic_cost",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.nonnegative_entropy_domain",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.zero_log_zero_convention",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.extended_entropy_negative_domain",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.strict_convexity_argument",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.positive_plan_argument",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.positive_simplex_assumptions",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.scaling_ambiguity",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.correct_sinkhorn_transpose",
+      "passed": true
+    },
+    {
+      "detail": "required corrected target surface present",
+      "id": "surface.target.correction.positive_sinkhorn_initialization",
+      "passed": true
+    },
+    {
+      "detail": "count=9",
+      "id": "surface.target.segment_markers",
+      "passed": true
+    },
+    {
+      "detail": "authority's malformed measure-cone argument absent",
+      "id": "surface.target.excludes_wrong_measure_cone",
+      "passed": true
+    },
+    {
+      "detail": "authority's undefined full-real entropy domain absent",
+      "id": "surface.target.excludes_full_real_entropy_domain",
+      "passed": true
+    },
+    {
+      "detail": "shape=[3, 4]; objective=0.575; duality_gap=0.0",
+      "id": "math.rectangular_finite_ot_primal_dual",
+      "passed": true
+    },
+    {
+      "detail": "W2_squared=3.0; W2=1.7320508075688772",
+      "id": "math.wasserstein_two_special_case",
+      "passed": true
+    },
+    {
+      "detail": "iterations=27; row_residual=3.608224830031759e-15; column_residual=0.0",
+      "id": "math.entropic_sinkhorn_positive_plan",
+      "passed": true
+    },
+    {
+      "detail": "shape(a)=(3,); shape(a_i)=()",
+      "id": "negative_control.source_scalar_simplex_dimension",
+      "passed": true
+    },
+    {
+      "detail": "P is 3x4: row marginal needs 1_4 and column marginal needs 1_3",
+      "id": "negative_control.source_untyped_ones_rectangular",
+      "passed": true
+    },
+    {
+      "detail": "shape(K^T u)=(4,); shape((K^T u)^T 1_4)=(); shape(b)=(4,)",
+      "id": "negative_control.source_transpose_expression_dimension_collapse",
+      "passed": true
+    },
+    {
+      "detail": "naive formula is NaN at zero/negative entries; target extension is finite/+infinity",
+      "id": "negative_control.source_entropy_domain",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "authority": {
+      "bytes": 15378,
+      "lines": 264,
+      "path": "authority/habring/source-v1/optimal_transport.tex",
+      "sha256": "719df724b368126cc7540dffd461dc33aba7d5b5b6060132181086dfa17649ba"
+    },
+    "target": {
+      "bytes": 21252,
+      "lines": 352,
+      "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+      "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+    }
+  },
+  "negative_controls": {
+    "entropy_domain": {
+      "extended_negative_entropy": "Infinity",
+      "extended_zero_entropy": -1.6931471805599454,
+      "naive_negative_entropy": "NaN",
+      "naive_zero_entropy": "NaN",
+      "passed": true
+    },
+    "scalar_simplex_dimension": {
+      "passed": true,
+      "scalar_shape": [],
+      "vector_shape": [
+        3
+      ]
+    },
+    "transpose_expression_dimension_collapse": {
+      "correct_K_transpose_u_shape": [
+        4
+      ],
+      "malformed_postmultiplication_shape": [],
+      "passed": true,
+      "required_b_shape": [
+        4
+      ]
+    },
+    "untyped_ones_rectangular": {
+      "correct_column_ones_dimension": 3,
+      "correct_row_ones_dimension": 4,
+      "passed": true,
+      "plan_shape": [
+        3,
+        4
+      ],
+      "wrong_column_product_raised_value_error": true,
+      "wrong_row_product_raised_value_error": true
+    }
+  },
+  "rectangular_finite_ot": {
+    "a": [
+      0.2,
+      0.5,
+      0.3
+    ],
+    "b": [
+      0.1,
+      0.25,
+      0.35,
+      0.3
+    ],
+    "checks": {
+      "column_marginal_residual": true,
+      "complementarity": true,
+      "dual_feasibility": true,
+      "equality_residual": true,
+      "nonnegativity": true,
+      "row_marginal_residual": true,
+      "solver_success": true,
+      "strong_duality": true,
+      "total_mass_equality": true
+    },
+    "cost": [
+      [
+        0.2,
+        1.3,
+        2.1,
+        0.7
+      ],
+      [
+        1.1,
+        0.1,
+        0.8,
+        1.9
+      ],
+      [
+        1.7,
+        0.9,
+        0.3,
+        1.2
+      ]
+    ],
+    "dual_column_potentials": [
+      0.6000000000000001,
+      -0.4,
+      0.3,
+      1.2
+    ],
+    "dual_objective": 0.575,
+    "dual_row_potentials": [
+      -0.5,
+      0.5,
+      0.0
+    ],
+    "dual_slack_minimum": 0.0,
+    "duality_gap_absolute": 0.0,
+    "maximum_column_residual": 0.0,
+    "maximum_complementarity_residual": 0.0,
+    "maximum_equality_residual": 0.0,
+    "maximum_row_residual": 0.0,
+    "minimum_plan_entry": 0.0,
+    "passed": true,
+    "plan": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.2
+      ],
+      [
+        0.1,
+        0.25,
+        0.15000000000000002,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.19999999999999996,
+        0.09999999999999998
+      ]
+    ],
+    "primal_objective": 0.575,
+    "shape": [
+      3,
+      4
+    ]
+  },
+  "schema": "d90.optimal-transport-validator.v1",
+  "status": "PASS",
+  "summary": {
+    "failed_gate_count": 0,
+    "finite_ot_shape": [
+      3,
+      4
+    ],
+    "gate_count": 41,
+    "negative_control_count": 4,
+    "passed_gate_count": 41,
+    "sinkhorn_iterations": 27
+  },
+  "wasserstein_two_special_case": {
+    "W2": 1.7320508075688772,
+    "W2_squared": 3.0,
+    "alpha_points": [
+      0.0,
+      2.0
+    ],
+    "alpha_weights": [
+      0.5,
+      0.5
+    ],
+    "beta_points": [
+      1.0,
+      3.0
+    ],
+    "beta_weights": [
+      0.25,
+      0.75
+    ],
+    "checks": {
+      "finite_second_moments": true,
+      "forward_lp": true,
+      "identity": true,
+      "identity_lp": true,
+      "known_squared_value": true,
+      "known_value": true,
+      "reverse_lp": true,
+      "symmetry": true
+    },
+    "forward": {
+      "a": [
+        0.5,
+        0.5
+      ],
+      "b": [
+        0.25,
+        0.75
+      ],
+      "checks": {
+        "column_marginal_residual": true,
+        "complementarity": true,
+        "dual_feasibility": true,
+        "equality_residual": true,
+        "nonnegativity": true,
+        "row_marginal_residual": true,
+        "solver_success": true,
+        "strong_duality": true,
+        "total_mass_equality": true
+      },
+      "cost": [
+        [
+          1.0,
+          9.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "dual_column_potentials": [
+        -8.0,
+        0.0
+      ],
+      "dual_objective": 3.0,
+      "dual_row_potentials": [
+        9.0,
+        1.0
+      ],
+      "dual_slack_minimum": 0.0,
+      "duality_gap_absolute": 0.0,
+      "maximum_column_residual": 0.0,
+      "maximum_complementarity_residual": 0.0,
+      "maximum_equality_residual": 0.0,
+      "maximum_row_residual": 0.0,
+      "minimum_plan_entry": 0.0,
+      "passed": true,
+      "plan": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.0,
+          0.5
+        ]
+      ],
+      "primal_objective": 3.0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "identity": {
+      "a": [
+        0.5,
+        0.5
+      ],
+      "b": [
+        0.5,
+        0.5
+      ],
+      "checks": {
+        "column_marginal_residual": true,
+        "complementarity": true,
+        "dual_feasibility": true,
+        "equality_residual": true,
+        "nonnegativity": true,
+        "row_marginal_residual": true,
+        "solver_success": true,
+        "strong_duality": true,
+        "total_mass_equality": true
+      },
+      "cost": [
+        [
+          0.0,
+          4.0
+        ],
+        [
+          4.0,
+          0.0
+        ]
+      ],
+      "dual_column_potentials": [
+        -4.0,
+        0.0
+      ],
+      "dual_objective": 0.0,
+      "dual_row_potentials": [
+        4.0,
+        0.0
+      ],
+      "dual_slack_minimum": 0.0,
+      "duality_gap_absolute": 0.0,
+      "maximum_column_residual": 0.0,
+      "maximum_complementarity_residual": 0.0,
+      "maximum_equality_residual": 0.0,
+      "maximum_row_residual": 0.0,
+      "minimum_plan_entry": 0.0,
+      "passed": true,
+      "plan": [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ]
+      ],
+      "primal_objective": 0.0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "p": 2,
+    "passed": true,
+    "reverse": {
+      "a": [
+        0.25,
+        0.75
+      ],
+      "b": [
+        0.5,
+        0.5
+      ],
+      "checks": {
+        "column_marginal_residual": true,
+        "complementarity": true,
+        "dual_feasibility": true,
+        "equality_residual": true,
+        "nonnegativity": true,
+        "row_marginal_residual": true,
+        "solver_success": true,
+        "strong_duality": true,
+        "total_mass_equality": true
+      },
+      "cost": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          9.0,
+          1.0
+        ]
+      ],
+      "dual_column_potentials": [
+        8.0,
+        0.0
+      ],
+      "dual_objective": 3.0,
+      "dual_row_potentials": [
+        -7.0,
+        1.0
+      ],
+      "dual_slack_minimum": 0.0,
+      "duality_gap_absolute": 0.0,
+      "maximum_column_residual": 0.0,
+      "maximum_complementarity_residual": 0.0,
+      "maximum_equality_residual": 0.0,
+      "maximum_row_residual": 0.0,
+      "minimum_plan_entry": 0.0,
+      "passed": true,
+      "plan": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.25,
+          0.5
+        ]
+      ],
+      "primal_objective": 3.0,
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "squared_distance_cost": [
+      [
+        1.0,
+        9.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ]
+  }
+}

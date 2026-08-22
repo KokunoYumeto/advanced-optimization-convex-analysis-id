@@ -1,0 +1,69 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+% Lokalisasi ini sengaja hanya berlaku pada unit mandiri Bab 8.
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 8: Penurunan Gradien Stokastik\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks - Unit 8: Penurunan Gradien Stokastik - Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 8, "Stochastic Gradient Descent", dari Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1. Sumber berwenang untuk unit ini adalah berkas \texttt{stochastic.tex} edisi v1 dengan SHA-256 berikut:
+\begin{center}
+\small\texttt{610d11b59d8dfabbbbe6fbc509a0f9ac}\\[-0.2em]
+\texttt{1727540458c67f8cd3b7bab49566a07d}
+\end{center}
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal fungsi konveks Lipschitz, subgradien, proyeksi metrik pada himpunan konveks tertutup, ekspektasi bersyarat, filtrasi, dan bukti konvergensi metode subgradien terproyeksi. Seluruh motivasi, algoritme, teorema, bukti, dan formula dalam bab sumber dipertahankan dalam urutan sumber. Kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka dan diringkas pada akhir unit.
+
+Edisi ini berdiri sendiri untuk dibaca dan dibangun, tetapi tidak mengklaim menggantikan konteks lengkap catatan kuliah asal. Notasi iid dipertahankan sebagai singkatan baku untuk peubah acak yang saling bebas dan berdistribusi identik.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{7}
+\include{habring-08-penurunan-gradien-stokastik-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-HAB-ADV-0076 sampai O015-HAB-ADV-0083 menyertai sumber edisi ini.
+
+\begin{enumerate}
+    \item Objektif jumlah hingga dinormalisasi menjadi $N^{-1}\sum_i f_i$. Dengan demikian, pengambilan indeks seragam dan pilihan $G(x,z)=\nabla f_z(x)$ benar-benar memenuhi ketakbiasan yang dinyatakan; pembagian dengan $N$ tidak mengubah himpunan peminimum.
+    \item Teorema kini menyatakan fungsi konveks Lipschitz, himpunan kendala $C$ yang tak kosong, tertutup, dan konveks, keberadaan solusi $x^*\in C$, titik awal $x_0\in C$, ukuran langkah positif, serta iterasi SGD terproyeksi yang memang dipakai dalam bukti.
+    \item Ketakbiasan dan batas varians dirumuskan secara bersyarat terhadap filtrasi sebelum sampel ke-$k$. Hal ini menutup kesenjangan antara asumsi satu peubah acak tetap dan pembuktian pada iterasi adaptif.
+    \item Besaran $f_{\mathrm{best}}^K$ didefinisikan sebagai nilai terbaik di antara iterasi $0$ sampai $K-1$, dan seluruh penghitung pada pernyataan serta bukti dibuat konsisten dengan $K$.
+    \item Identitas momen kedua memakai gradien rata-rata bersyarat $\bar g_k$ dan menghasilkan batas $M^2=\sigma^2+L^2$ dari varians bersyarat serta sifat Lipschitz, bukan dengan mengurangkan norma ekspektasi tak bersyarat pada titik acak.
+    \item Setelah relasi satu langkah dibagi dua, faktor $1/2$ yang hilang pada suku $M^2\sum_k\tau_k^2$ dalam sumber dipulihkan.
+    \item Definisi dan manipulasi $\sigma_n$ yang tidak konsisten diganti dengan $S_K=\sum_k\tau_k$ dan $Q_K=\sum_k\tau_k^2$. Syarat konvergensi yang benar dinyatakan sebagai $S_K\to\infty$ dan $Q_K/S_K\to0$, lalu diterapkan langsung pada batas galat.
+    \item Salah ketik prosa, makro ekspektasi $E$ yang hilang garis miring, dan pemisah penjajaran yang salah tempat pada inklusi subgradien dinormalkan tanpa mengubah isi lain.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+\end{document}

@@ -1,0 +1,352 @@
+% H09-S001 | sumber authority/habring/source-v1/optimal_transport.tex baris 1--15
+% segment-id: d90.hab.v1.ch09.seg0001
+\newabbreviation{ot}{OT}{transportasi optimal}
+
+
+\chapter{Selingan tentang Transportasi Optimal}
+Meskipun tidak sepenuhnya menyatu dengan kuliah ini, kita menutupnya dengan suatu selingan mengenai \gls{ot}, bidang yang sangat penting dalam matematika modern dan pembelajaran mesin. Perlu ditekankan sejak awal bahwa uraian ini hanya pengantar singkat; sejumlah rincian teori ukuran dan topologi yang mendasarinya akan dinyatakan seperlunya.
+
+\paragraph{Notasi}
+Dalam bagian berikut, $(X,\Sigma_X)$ dan $(Y,\Sigma_Y)$ adalah ruang terukur\footnote{Ketika topologi dibutuhkan, keduanya akan diasumsikan sebagai ruang Polish dengan aljabar-$\sigma$ Borel; yaitu, ruang topologis separabel yang topologinya dibangkitkan oleh suatu metrik lengkap.}. Tuliskan $\Pc(X)$ dan $\Pc(Y)$ untuk himpunan semua ukuran probabilitas, $\Mc(X)$ dan $\Mc(Y)$ untuk ruang ukuran bertanda hingga, serta $\Mc_+(X)$ dan $\Mc_+(Y)$ untuk kerucut ukuran tak negatif hingga.
+Ingat bahwa ukuran bertanda $\mu$ pada $X$ adalah fungsi $\mu:\Sigma_X\rightarrow\R$, sedangkan ukuran tak negatif bernilai dalam $[0,\infty)$, dengan $\Sigma_X\subseteq2^X$ suatu aljabar-$\sigma$\footnote{Secara khusus, $\Sigma_X$ memuat himpunan kosong serta tertutup terhadap komplemen dan gabungan terhitung.}, dan memenuhi
+\begin{enumerate}
+    \item $\mu(\emptyset)=0$;
+    \item untuk setiap barisan $(A_n)_{n\in\N}\subset\Sigma_X$ yang saling lepas, berlaku $\mu(\bigcup_n A_n)=\sum_n\mu(A_n)$.
+\end{enumerate}
+Ukuran probabilitas adalah ukuran tak negatif dengan $\mu(X)=1$.
+
+% H09-S002 | sumber authority/habring/source-v1/optimal_transport.tex baris 16--75
+% segment-id: d90.hab.v1.ch09.seg0002
+\section{Transportasi optimal Monge dan Kantorovich}
+
+\begin{figure}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  >=Stealth,
+  font=\sffamily
+]
+
+% ----- garis dasar bersama -----
+\def\y{0}
+\def\xmin{0}
+\def\xmax{16}
+\def\amean{3}
+\def\astd{1}
+\def\bmean{12}
+\def\bstd{1.4}
+
+% ----- kurva kepadatan tegak pada garis dasar yang sama -----
+% alpha: Gaussian, rerata \amean, simpangan baku \astd
+\draw[domain=\xmin:\xmax, smooth, samples=150, variable=\x,
+      blue!60!black, thick, fill=blue!15]
+  plot ({\x}, {\y + 1.6*exp(-0.5*((\x-\amean)/\astd)^2)})
+  -- (\xmax,\y) -- (\xmin,\y) -- cycle;
+
+% beta: Gaussian, rerata \bmean, simpangan baku \bstd
+\draw[domain=\xmin:\xmax, smooth, samples=150, variable=\x,
+      red!60!black, thick, fill=red!15]
+  plot ({\x}, {\y + 1.6*exp(-0.5*((\x-\bmean)/\bstd)^2)})
+  -- (\xmax,\y) -- (\xmin,\y) -- cycle;
+
+% ----- sumbu garis dasar bersama -----
+\draw[gray] (\xmin,\y) -- (\xmax,\y);
+
+% ----- label distribusi -----
+\node[blue!60!black] at (\amean, 2.1) {$\alpha$};
+\node[red!60!black]  at (\bmean, 2.1) {$\beta$};
+
+% ----- peta transportasi: busur monoton tak berpotongan di bawah sumbu -----
+% titik sampel pada dukungan alpha dipetakan ke dukungan beta oleh
+% peta optimal monoton T(x)=\bmean+(\bstd/\astd)(x-\amean)
+\foreach \x/\opacity in {1/0.4, 2/0.6, 3/0.9, 4/0.6, 5/0.4} {
+  \pgfmathsetmacro{\Tx}{\bmean + (\bstd/\astd)*(\x-\amean)}
+  \draw[-{Stealth[length=2.2mm]}, line width=1pt,
+        violet!70!black, opacity=\opacity]
+    (\x,\y) to[out=-60, in=-120] (\Tx,\y);
+  \filldraw[blue!60!black] (\x,\y) circle (1.3pt);
+  \filldraw[red!60!black] (\Tx,\y) circle (1.3pt);
+}
+
+% ----- label peta -----
+\node[violet!70!black, fill=white, fill opacity=0.85, text opacity=1,
+      inner sep=2pt] at (8, -3.7) {$T_{\#}\alpha=\beta$};
+\node[violet!70!black, font=\sffamily\small, fill=white, fill opacity=0.85,
+      text opacity=1, inner sep=2pt] at (8, -4.2) {(peta transportasi optimal)};
+% ----- judul opsional -----
+% \node[font=\sffamily\bfseries] at (8, 3.2) {Transportasi Optimal dari $\alpha$ ke $\beta$};
+\end{tikzpicture}%
+}
+\caption{Ilustrasi~\gls{ot}. Peta $T$ mengangkut \emph{tumpukan} dari $\alpha$ ke $\beta$.}
+\label{ot:fig:ot}
+\end{figure}
+
+% H09-S003 | sumber authority/habring/source-v1/optimal_transport.tex baris 77--110
+% segment-id: d90.hab.v1.ch09.seg0003
+Motivasi khas untuk \gls{ot} adalah sebagai berikut. Bayangkan kita ingin memindahkan setumpuk pasir dari satu tempat ke tempat lain. Berdasarkan kekekalan massa, kedua tumpukan mempunyai massa total yang sama; tanpa mengurangi keumuman, kita andaikan massanya satu. Karena itu, tumpukan awal dapat digambarkan oleh distribusi probabilitas $\alpha\in\Pc(X)$ dan tumpukan akhir oleh distribusi probabilitas $\beta\in\Pc(Y)$. Pertanyaan yang hendak dijawab dalam \gls{ot} adalah:
+\begin{quote}
+    \centering
+    \emph{Bagaimana kita dapat mengangkut tumpukan $\alpha$ ke $\beta$ dengan biaya minimum?}
+\end{quote}
+Pembaca yang teliti mungkin menyadari bahwa \emph{biaya} belum ditentukan. Andaikan tersedia fungsi biaya terukur yang terbatas dari bawah, $c:X\times Y\rightarrow(-\infty,+\infty]$, dengan $c(x,y)$ menyatakan biaya untuk mengangkut satu satuan massa dari $x\in X$ ke $y\in Y$. Setiap transportasi deterministik dari $\alpha$ ke $\beta$ dimodelkan oleh pemetaan terukur $T:X\rightarrow Y$. Syarat pengangkutan dapat dirumuskan dengan meminta $\alpha(T^{-1}(A))=\beta(A)$ untuk setiap $A\in\Sigma_Y$. Ini mengantar kita pada definisi berikut.
+\begin{defn}[Ukuran hasil dorong (\emph{push-forward})]
+    Misalkan $\alpha\in\Pc(X)$ dan $T:X\rightarrow Y$ terukur. Ukuran hasil dorong $T_\sharp\alpha\in\Pc(Y)$ didefinisikan oleh $T_\sharp\alpha(A)=\alpha(T^{-1}(A))$ untuk setiap $A\in\Sigma_Y$.
+\end{defn}
+
+Sekarang kita dapat memperkenalkan secara formal masalah Monge untuk~\gls{ot}:
+\begin{defn}[Monge \gls{ot}]
+    Misalkan $X$ dan $Y$ ruang terukur, $\alpha\in\Pc(X)$, $\beta\in\Pc(Y)$, dan $c$ fungsi biaya terukur yang terbatas dari bawah. Masalah Monge untuk \gls{ot} adalah
+    \begin{equation}\label{ot:eq:monge}
+        \inf_{\substack{T:X\rightarrow Y\ \mathrm{terukur}\\T_\sharp\alpha=\beta}}
+        \int c(x,T(x))\dd\alpha(x),
+        \qquad \inf\emptyset\coloneqq+\infty.
+    \end{equation}
+\end{defn}
+Masalah Monge untuk \gls{ot} mempunyai beberapa kekurangan. Sebagai contoh, setiap $x$ hanya dapat dipetakan oleh $T$ ke \emph{satu} titik $y$, sehingga massa pada satu titik $x$ tidak dapat dibagi ke beberapa titik $y$. Karena itu, apabila $\alpha$ memberikan massa tak nol pada suatu titik, $Y\subseteq\R^q$, dan $\beta$ kontinu mutlak terhadap ukuran Lebesgue\footnote{Hal ini khususnya menyiratkan bahwa $\beta$ tidak mempunyai massa titik.}, tidak ada peta $T$ yang memenuhi syarat. Selain itu, bergantung pada pilihan $c$, masalah ini umumnya sulit dianalisis karena peubah tak diketahui $T$ muncul di dalam biaya $c$.
+
+Perumusan yang lebih umum dan lebih mudah dianalisis adalah \gls{ot} Kantorovich. Alih-alih memakai peta $T:X\rightarrow Y$, transportasi juga dimodelkan oleh suatu distribusi. Suatu rencana transportasi adalah distribusi probabilitas $\gamma$ pada ruang hasil kali terukur $X\times Y$ yang mempunyai $\alpha$ dan $\beta$ sebagai marginalnya: $\gamma(A\times Y)=\alpha(A)$ dan $\gamma(X\times B)=\beta(B)$ untuk semua $A\in\Sigma_X$ dan $B\in\Sigma_Y$. Secara intuitif, $\gamma(A\times B)$ adalah massa yang diangkut dari $A$ ke $B$. Himpunan semua distribusi dengan marginal $\alpha,\beta$ dilambangkan dengan $\Pi(\alpha,\beta)$ dan anggotanya disebut kopling (\emph{coupling}). Sekarang kita dapat mendefinisikan masalah Kantorovich untuk~\gls{ot}.
+\begin{defn}[Kantorovich \gls{ot}]
+    Misalkan $X$ dan $Y$ ruang terukur, $\alpha\in\Pc(X)$, $\beta\in\Pc(Y)$, dan $c$ fungsi biaya terukur. Masalah Kantorovich untuk \gls{ot} adalah
+    \begin{equation}\label{ot:eq:K_ot}
+        \inf_{\gamma\in\Pi(\alpha,\beta)}
+        \int c(x,y)\dd\gamma(x,y).
+    \end{equation}
+\end{defn}
+Perhatikan bahwa~\eqref{ot:eq:K_ot} jauh lebih menguntungkan daripada~\eqref{ot:eq:monge}. Secara khusus, objektifnya kini linear.
+
+\begin{rem}
+    Kita juga dapat merumuskan~\eqref{ot:eq:K_ot} dengan peubah acak. Setiap kopling $\gamma$ dapat \emph{direalisasikan} sebagai vektor acak $(X,Y)\sim\gamma$ dengan $X\sim\alpha$ dan $Y\sim\beta$. Biayanya kemudian memenuhi
+    \begin{equation}
+        \int c(x,y)\dd\gamma(x,y)=\E[c(X,Y)].
+    \end{equation}
+\end{rem}
+
+% H09-S004 | sumber authority/habring/source-v1/optimal_transport.tex baris 112--130
+% segment-id: d90.hab.v1.ch09.seg0004
+Kita nyatakan hasil berikut.
+\begin{theorem}[Eksistensi solusi]
+    Misalkan $X$ dan $Y$ ruang Polish yang dilengkapi aljabar-$\sigma$ Borelnya, $\alpha\in\Pc(X)$, dan $\beta\in\Pc(Y)$. Jika $c:X\times Y\rightarrow(-\infty,+\infty]$ terbatas dari bawah dan semikontinu bawah, maka terdapat rencana transportasi optimal $\hat\gamma\in\Pi(\alpha,\beta)$, yaitu solusi untuk~\eqref{ot:eq:K_ot}.
+\end{theorem}
+\begin{proof}[Sketsa bukti]
+    Untuk bukti terperinci, lihat misalnya~\cite[Theorem 4.1]{villani2009optimal}. Argumennya adalah metode langsung. Ambil barisan $(\gamma_n)_n\subset\Pi(\alpha,\beta)$ yang nilai biayanya menuju infimum. Karena $\alpha$ dan $\beta$ ketat pada ruang Polish, keluarga kopling dengan kedua marginal tetap juga ketat. Himpunan $\Pi(\alpha,\beta)$ tertutup terhadap konvergensi lemah; teorema Prokhorov karena itu menyatakan bahwa himpunan tersebut kompak secara lemah. Setelah mengambil suatu subbarisan, diperoleh $\gamma_n\rightharpoonup\hat\gamma\in\Pi(\alpha,\beta)$. Karena $c$ semikontinu bawah dan terbatas dari bawah, pemetaan $\gamma\mapsto\int c(x,y)\dd\gamma(x,y)$ semikontinu bawah secara lemah. Maka $\hat\gamma$ meminimumkan biaya dan bukti selesai.
+\end{proof}
+
+Satu kasus khusus penting dari transportasi optimal perlu disoroti.
+
+\begin{defn}[Jarak Wasserstein]
+Misalkan $(X,d)$ ruang metrik Polish dan $p\in[1,\infty)$. Tetapkan $x_0\in X$ dan tuliskan
+$\Pc_p(X)\coloneqq\{\mu\in\Pc(X):\int d(x,x_0)^p\dd\mu(x)<\infty\}$; definisi ini tidak bergantung pada pilihan $x_0$. Untuk $\alpha,\beta\in\Pc_p(X)$ dan biaya $c(x,y)=d(x,y)^p$, besaran
+\begin{equation}
+    W_p(\alpha,\beta)\coloneqq
+    \bigg(\inf_{\gamma\in\Pi(\alpha,\beta)}
+    \int d(x,y)^p\dd\gamma(x,y)\bigg)^{1/p}
+\end{equation}
+disebut jarak Wasserstein-$p$.
+\end{defn}
+Secara khusus, $W_p$ adalah metrik pada ruang ukuran probabilitas bermomen ke-$p$ hingga, yaitu $\Pc_p(X)$.
+
+% H09-S005 | sumber authority/habring/source-v1/optimal_transport.tex baris 131--141
+% segment-id: d90.hab.v1.ch09.seg0005
+\section{Dualitas Kantorovich}
+Dari~\cref{chapter:duality} kita telah mengenal konsep dualitas. Dualitas memainkan peran penting dalam~\gls{ot} dan menghasilkan teorema terkenal berikut.
+\begin{theorem}[Dualitas Kantorovich]
+    Misalkan $X$ dan $Y$ ruang Polish dengan aljabar-$\sigma$ Borelnya, $\alpha\in\Pc(X)$, $\beta\in\Pc(Y)$, dan $c:X\times Y\rightarrow[0,\infty]$ semikontinu bawah. Tuliskan $C_b(X)$ dan $C_b(Y)$ untuk fungsi kontinu terbatas bernilai riil. Maka
+    \begin{equation}
+        \begin{aligned}
+            \inf_{\gamma\in\Pi(\alpha,\beta)}\int c(x,y)\dd\gamma(x,y)
+            = \sup_{\substack{\phi\in C_b(X),\ \psi\in C_b(Y)\\
+            \phi(x)+\psi(y)\leq c(x,y)\ \forall(x,y)}}
+            \int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y).
+        \end{aligned}
+    \end{equation}
+\end{theorem}
+
+% H09-S006 | sumber authority/habring/source-v1/optimal_transport.tex baris 142--190
+% segment-id: d90.hab.v1.ch09.seg0006
+\begin{proof}[Sketsa bukti]
+    Kita mulai dengan ketaksamaan yang mudah. Ambil $(\phi,\psi)\in C_b(X)\times C_b(Y)$ sedemikian sehingga $\phi(x)+\psi(y)\leq c(x,y)$ untuk semua $(x,y)$, dan ambil sembarang $\gamma\in\Pi(\alpha,\beta)$. Maka
+    \begin{equation}
+        \begin{aligned}
+            \int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y)
+            &= \int\phi(x)\dd\gamma(x,y)+\int\psi(y)\dd\gamma(x,y)\\
+            &= \int\big(\phi(x)+\psi(y)\big)\dd\gamma(x,y)\\
+            &\leq \int c(x,y)\dd\gamma(x,y).
+        \end{aligned}
+    \end{equation}
+    Karena $\gamma$ dan $(\phi,\psi)$ sembarang, kita dapat mengambil infimum di ruas kanan dan supremum di ruas kiri untuk memperoleh
+    \begin{equation}
+        \begin{aligned}
+            \sup_{\substack{\phi\in C_b(X),\ \psi\in C_b(Y)\\
+            \phi(x)+\psi(y)\leq c(x,y)\ \forall(x,y)}}
+            \int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y)
+            \leq \inf_{\gamma\in\Pi(\alpha,\beta)}
+            \int c(x,y)\dd\gamma(x,y).
+        \end{aligned}
+    \end{equation}
+    Ketaksamaan sebaliknya lebih rumit.
+    Pertama, kita dapat menulis ulang~\eqref{ot:eq:K_ot} sebagai
+    \begin{equation}
+        \inf_{\gamma\in\Mc_+(X\times Y)}
+        \left\{\int c(x,y)\dd\gamma+\delta_{\Pi(\alpha,\beta)}(\gamma)\right\},
+    \end{equation}
+    dengan $\delta_{\Pi(\alpha,\beta)}$ fungsi indikator seperti biasa. Untuk $\gamma\in\Mc_+(X\times Y)$, berlaku
+    \begin{equation}\label{ot:eq:duality}
+        \begin{aligned}
+            \delta_{\Pi(\alpha,\beta)}(\gamma)
+            &= \sup_{\phi\in C_b(X),\ \psi\in C_b(Y)}
+            \bigg\{\int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y)\\
+            &\qquad-\int\big(\phi(x)+\psi(y)\big)\dd\gamma(x,y)\bigg\}.
+        \end{aligned}
+    \end{equation}
+    Jika $\gamma\in\Pi(\alpha,\beta)$, ekspresi di dalam supremum pada ruas kanan bernilai nol untuk setiap $(\phi,\psi)$, sehingga supremumnya nol. Sebaliknya, jika $\gamma\notin\Pi(\alpha,\beta)$, sedikitnya satu marginal berbeda. Ukuran Borel hingga yang berbeda pada ruang Polish dapat dipisahkan oleh suatu fungsi kontinu terbatas; tanpa mengurangi keumuman, terdapat $\phi\in C_b(X)$ sedemikian sehingga
+    \begin{equation}
+        \int\phi\dd(\alpha-\gamma_x)\neq0,
+    \end{equation}
+    dengan $\gamma_x$ marginal-$x$ dari $\gamma$. Mengganti $\phi$ dengan $t\phi$ dan memilih tanda $t$ ketika $|t|\rightarrow\infty$ menunjukkan bahwa supremumnya adalah $+\infty$.
+
+    Langkah taktrivial untuk ketaksamaan sebaliknya adalah pertukaran infimum dan supremum. Pertukaran itu tidak mengikuti perhitungan formal semata; di bawah hipotesis ruang Polish dan biaya semikontinu bawah tak negatif di atas, pertukaran tersebut dijamin oleh teorema dualitas Kantorovich standar, lihat~\cite[Theorem 5.10]{villani2009optimal}. Dengan justifikasi dualitas kuat ini, diperoleh
+    \begin{equation}
+        \begin{aligned}
+            \inf_{\gamma\in\Pi(\alpha,\beta)}
+            \int c(x,y)\dd\gamma(x,y)
+            &= \inf_{\gamma\in\Mc_+(X\times Y)}
+            \sup_{\phi\in C_b(X),\ \psi\in C_b(Y)}
+            \\
+            &\quad\bigg\{\int c(x,y)\dd\gamma(x,y)\\
+            &\quad+\int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y)
+            \\
+            &\quad-\int\big(\phi(x)+\psi(y)\big)\dd\gamma(x,y)\bigg\}\\
+            &= \sup_{\phi\in C_b(X),\ \psi\in C_b(Y)}
+            \bigg\{\int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y)\\
+            &\quad+\inf_{\gamma\in\Mc_+(X\times Y)}
+            \int\big(c(x,y)-\phi(x)-\psi(y)\big)\dd\gamma(x,y)\bigg\}\\
+            &= \sup_{\substack{\phi\in C_b(X),\ \psi\in C_b(Y)\\
+            \phi(x)+\psi(y)\leq c(x,y)\ \forall(x,y)}}
+            \int\phi(x)\dd\alpha(x)+\int\psi(y)\dd\beta(y).
+        \end{aligned}
+    \end{equation}
+    Pada persamaan terakhir, infimum terhadap ukuran tak negatif bernilai nol jika $c-\phi-\psi\geq0$ di setiap titik (ambil $\gamma=0$), dan bernilai $-\infty$ jika ketaksamaan itu gagal (skalakan massa Dirac pada titik pelanggaran). Ini sama dengan fungsi indikator kendala dual, sebagaimana pada~\eqref{ot:eq:duality}.
+\end{proof}
+
+% H09-S007 | sumber authority/habring/source-v1/optimal_transport.tex baris 192--226
+% segment-id: d90.hab.v1.ch09.seg0007
+\section{Diskretisasi transportasi optimal: Algoritme Sinkhorn--Knopp}
+Untuk mendiskretisasi~\eqref{ot:eq:K_ot}, kita modelkan $\alpha$ dan $\beta$ sebagai ukuran diskret. Tuliskan
+$\Delta_n\coloneqq\{r\in\R_+^n:\1_n^\top r=1\}$ dan
+$\Delta_n^\circ\coloneqq\{r\in\R_{++}^n:\1_n^\top r=1\}$. Untuk suatu vektor $a=(a_1,\dots,a_n)\in\Delta_n$ dan titik $x_i\in X$, tetapkan
+\begin{equation}
+    \alpha=\sum_{i=1}^n a_i\delta_{x_i},
+\end{equation}
+dan, serupa dengan itu, untuk $b=(b_1,\dots,b_m)\in\Delta_m$ dan $y_j\in Y$, tetapkan
+\begin{equation}
+    \beta=\sum_{j=1}^m b_j\delta_{y_j}.
+\end{equation}
+Selanjutnya, definisikan $C=[C_{i,j}]_{i,j}=[c(x_i,y_j)]_{i,j}$. Rencana transportasi adalah matriks $P\in\R^{n\times m}$ sedemikian sehingga
+\begin{equation}
+    \begin{cases}
+        \sum_{j=1}^mP_{i,j}&=a_i,\\
+        \sum_{i=1}^nP_{i,j}&=b_j,\\
+        P_{i,j}&\geq0.
+    \end{cases}
+\end{equation}
+Kendala marginal dapat ditulis ringkas sebagai $P\1_m=a$ dan $P^\top\1_n=b$. Masalah \gls{ot} diskret kemudian berbentuk
+\begin{equation}
+    \begin{aligned}
+        \min_{P\in\R^{n\times m}}\inner{C}{P}
+        &=\sum_{i,j}C_{i,j}P_{i,j}\\
+        \text{dengan syarat }&
+        P\1_m=a,\quad P^\top\1_n=b,\quad P_{i,j}\geq0.
+    \end{aligned}
+\end{equation}
+Dalam praktik, masalah ini sering diregularisasi. Untuk pembahasan regularisasi entropik berikut, andaikan $C\in\R^{n\times m}$, sehingga semua biaya diskret berhingga. Untuk $P\in\R_+^{n\times m}$, definisikan regularisasi entropik
+\begin{equation}
+    E(P)\coloneqq\sum_{i,j}P_{i,j}\big(\log(P_{i,j})-1\big),
+\end{equation}
+dengan konvensi kontinu $0\log0=0$; di luar ortan tak negatif, tetapkan $E(P)=+\infty$. Untuk $\epsilon>0$, pertimbangkan masalah
+\begin{equation}\label{ot:eq:disc_entropic}
+    \begin{aligned}
+        \min_{P\in\R_+^{n\times m}}\inner{C}{P}+\epsilon E(P)
+        \quad\text{dengan syarat }P\1_m=a,\quad P^\top\1_n=b.
+    \end{aligned}
+\end{equation}
+
+
+% H09-S008 | sumber authority/habring/source-v1/optimal_transport.tex baris 229--256
+% segment-id: d90.hab.v1.ch09.seg0008
+\begin{lemma}
+    Andaikan $a\in\Delta_n^\circ$, $b\in\Delta_m^\circ$, $C\in\R^{n\times m}$, dan $\epsilon>0$. Solusi masalah~\eqref{ot:eq:disc_entropic} unik dan mempunyai representasi
+    \begin{equation}
+        P_{i,j}=u_iK_{i,j}v_j,
+    \end{equation}
+    dengan $u_i,v_j>0$ dan $K_{i,j}=\exp\left(-\frac{C_{i,j}}{\epsilon}\right)>0$. Vektor penskalaan $(u,v)$ unik hingga transformasi $(u,v)\mapsto(tu,t^{-1}v)$ untuk $t>0$.
+\end{lemma}
+\begin{proof}
+    Himpunan layak adalah politop transportasi tak kosong dan kompak: matriks
+    $Q=ab^\top$ layak, bahkan $Q_{i,j}>0$. Karena fungsi objektif kontinu pada
+    politop ini, suatu peminimum ada. Fungsi
+    $h(t)=t(\log t-1)$ dengan $h(0)=0$ bersifat konveks ketat pada
+    $[0,\infty)$; karena itu, jumlah entropik bersifat konveks ketat dan
+    peminimumnya unik.
+
+    Peminimum $P$ tidak dapat mempunyai entri nol. Memang, jika
+    $P_{i,j}=0$ untuk sedikitnya satu pasangan $(i,j)$, maka
+    $P_t=(1-t)P+tQ$ tetap layak untuk $t\in(0,1)$. Pada setiap entri nol,
+    turunan searah satu sisi dari suku entropi memenuhi
+    $\frac{\dd}{\dd t}h(tQ_{i,j})=Q_{i,j}\log(tQ_{i,j})
+    \rightarrow-\infty$ ketika $t\downarrow0$,
+    sedangkan kontribusi biaya linear dan turunan pada entri positif tetap
+    hingga. Jadi, untuk $t>0$ yang cukup kecil, nilai objektif pada $P_t$
+    lebih kecil daripada pada $P$, suatu kontradiksi. Dengan demikian,
+    $P_{i,j}>0$ untuk semua $i,j$, dan kondisi pengali Lagrange untuk kendala
+    marginal afin dapat diterapkan.
+
+    Lagrangian masalah ini adalah
+    \begin{equation}
+        L(P,\lambda,\mu)
+        =\inner{C}{P}+\epsilon E(P)
+        +\inner{\lambda}{P\1_m-a}
+        +\inner{\mu}{P^\top\1_n-b}.
+    \end{equation}
+    Kondisi optimalitasnya adalah
+    \begin{equation}
+        \begin{cases}
+            0&=C_{i,j}+\epsilon\log(P_{i,j})+\lambda_i+\mu_j,\\
+            0&=P\1_m-a,\\
+            0&=P^\top\1_n-b.
+        \end{cases}
+    \end{equation}
+    Kondisi pertama menyiratkan
+    \begin{equation}
+        P_{i,j}
+        =\exp\left(-\frac{\lambda_i}{\epsilon}\right)
+        \exp\left(-\frac{C_{i,j}}{\epsilon}\right)
+        \exp\left(-\frac{\mu_j}{\epsilon}\right).
+    \end{equation}
+    Dengan $u_i=\exp(-\lambda_i/\epsilon)$ dan
+    $v_j=\exp(-\mu_j/\epsilon)$, diperoleh representasi yang dinyatakan.
+    Jika pasangan positif $(\tilde u,\tilde v)$ menghasilkan rencana yang sama,
+    maka dari $u_iK_{i,j}v_j=\tilde u_iK_{i,j}\tilde v_j$ dan $K_{i,j}>0$
+    diperoleh $\tilde u_i/u_i=v_j/\tilde v_j$ untuk setiap $i,j$. Karena ruas
+    kiri hanya bergantung pada $i$ dan ruas kanan hanya pada $j$, semua rasio
+    itu sama dengan suatu $t>0$; jadi $(\tilde u,\tilde v)=(tu,t^{-1}v)$.
+\end{proof}
+
+% H09-S009 | sumber authority/habring/source-v1/optimal_transport.tex baris 257--264
+% segment-id: d90.hab.v1.ch09.seg0009
+Kendala yang masih harus dipenuhi adalah
+$P\1_m=\diag(u)K\diag(v)\1_m=\diag(u)Kv=a$ dan
+$P^\top\1_n=\diag(v)K^\top u=b$. Ini memotivasi algoritme
+Sinkhorn--Knopp. Pilih $v_0\in\R_{++}^m$, misalnya $v_0=\1_m$, lalu untuk
+$k=0,1,2,\dots$ perbarui
+\begin{equation}
+    \begin{cases}
+        u_{k+1}=a\oslash(Kv_k),\\
+        v_{k+1}=b\oslash(K^\top u_{k+1}),
+    \end{cases}
+\end{equation}
+dengan $\oslash$ menyatakan pembagian komponen demi komponen. Berdasarkan
+positivitas $a$, $b$, dan $K$, semua penyebut dan iterat tetap positif.
+Dengan hipotesis pada lema di atas, teorema Sinkhorn--Knopp menyatakan bahwa rencana
+$\diag(u_k)K\diag(v_k)$, $k\geq1$, konvergen ke rencana unik pada
+masalah~\eqref{ot:eq:disc_entropic}. Vektor penskalaannya sendiri tetap
+mempunyai ambiguitas perkalian $(u,v)\mapsto(tu,t^{-1}v)$.

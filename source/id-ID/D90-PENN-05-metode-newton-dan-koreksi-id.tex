@@ -1,0 +1,175 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[a4paper,openany,leqno,fleqn,12pt]{amsbook}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[small,bf]{caption}
+\usepackage{calc}
+\usepackage{float}
+\usepackage{mdwlist}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[pdftitle={Metode Newton dan Koreksinya - Edisi Bahasa Indonesia},
+pdfauthor={Christopher Griffin},pdflang={id-ID},
+colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=red]{hyperref}
+\microtypesetup{expansion=false}
+\setlength{\emergencystretch}{2em}
+
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+
+\floatstyle{boxed}
+\newfloat{cgalgorithm}{thp}{lop}
+\floatname{cgalgorithm}{Algoritma}
+\newenvironment{algorithm}
+{\begin{cgalgorithm}[htbp]\small}
+{\normalsize\end{cgalgorithm}}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposisi}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Korolari}
+\newtheorem{claim}{Klaim}
+\makeatletter
+\@addtoreset{claim}{theorem}
+\@addtoreset{claim}{lemma}
+\@addtoreset{claim}{proposition}
+\@addtoreset{claim}{corollary}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definisi}
+\newtheorem{assumption}{Asumsi}
+\newtheorem{assumptionx}{Asumsi}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Catatan}
+\newtheorem{example}[theorem]{Contoh}
+\newtheorem{exercise}{Latihan}
+
+\renewcommand{\chaptername}{Bab}
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\bibname}{Daftar Pustaka}
+\renewcommand{\proofname}{Bukti}
+
+\title{Metode Newton dan Koreksinya\\
+       {\large Bab 5 dari \emph{Nonlinear Programming}\\Edisi Bahasa Indonesia}}
+\author{Christopher Griffin\\
+{\small dengan kontribusi Simon Miller dan Douglas Mercer}}
+\date{Sumber TeX v1.0; saksi PDF publik v1.0.1}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\LARGE\bfseries Metode Newton dan Koreksinya\par}
+\vspace{0.8em}
+{\large Bab 5 dari \emph{Nonlinear Programming}\par}
+\vspace{0.8em}
+{\Large Edisi Bahasa Indonesia\par}
+\vspace{3em}
+{\large Christopher Griffin\par}
+\vspace{0.75em}
+{\small dengan kontribusi Simon Miller dan Douglas Mercer\par}
+\vfill
+{\small Sumber TeX v1.0; saksi PDF publik v1.0.1\par}
+\end{titlepage}
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 5 dari Christopher Griffin,
+\emph{Nonlinear Programming} / Penn State MATH 555. Otoritas yang dapat
+disunting ialah distribusi TeX v1.0; PDF publik v1.0.1 dipakai hanya sebagai
+saksi koreksi upstream yang kemudian diterbitkan. Karya sumber dan karya
+turunannya berada di bawah Creative Commons Attribution--NonCommercial--
+ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+
+\hypertarget{penn-external-references}{}%
+Bab 1--4 tidak diulang dalam pembaca mandiri ini. Empat rujukan prasyarat tetap
+memakai nomor sumber: Korolari 2.7, Teorema 3.53, Teorema 4.12, dan Teorema
+4.25. Seluruh struktur Bab 5, lima latihan, empat gambar, formula, label,
+rujukan silang, dan sitasi dipertahankan dalam urutan sumber. Lima permukaan
+listing Maple yang tidak dapat dipakai sebagai penutupan komputasi terbuka
+diganti oleh pseudokode mandiri yang dinyatakan secara eksplisit.
+
+Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin,
+para kontributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau
+mendukung edisi ini.
+
+\tableofcontents
+
+% Empat label eksternal diikat ke nomor dan halaman resmi dari Math555.aux.
+% Tautannya kembali ke penjelasan nomor eksternal di halaman Tentang unit ini.
+\makeatletter
+\@namedef{r@cor:MVT-Vec}{{2.7}{14}{}{penn-external-references}{}}
+\@namedef{r@thm:NMConvergeRate}{{3.53}{39}{}{penn-external-references}{}}
+\@namedef{r@thm:GenConverge}{{4.12}{44}{}{penn-external-references}{}}
+\@namedef{r@thm:Superlinear}{{4.25}{49}{}{penn-external-references}{}}
+\makeatother
+
+\mainmatter
+\setcounter{chapter}{4}
+% Nomor global algoritma sumber sebelum Bab 5 adalah 9; caption berikutnya
+% dengan demikian tetap menjadi Algoritma 10, lalu Algoritma 11 dan 12.
+\setcounter{cgalgorithm}{9}
+\include{penn-05-metode-newton-dan-koreksi-id}
+
+\backmatter
+\input{references-penn-ch05-id.bbl}
+
+\chapter*{Catatan koreksi terhadap sumber}
+\markboth{Catatan koreksi terhadap sumber}{Catatan koreksi terhadap sumber}
+Rekaman terstruktur O015-PENN-ADV-0038 sampai O015-PENN-ADV-0049 menyertai
+edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia,
+bukan oleh penulis sumber.
+
+\begin{enumerate}
+  \item Konvensi tanda Newton untuk persoalan pemaksimuman dinyatakan secara
+  eksplisit dan dipakai konsisten pada arah serta Hessian terkoreksi.
+  \item Dua listing Maple metode Newton dengan panjang langkah variabel
+  diganti oleh pseudokode mandiri dengan kontrak masukan, pencarian garis,
+  penghentian, dan keluaran yang lengkap.
+  \item Contoh Hessian tak tentu membedakan arah Newton dari arah naik dan
+  memeriksa fungsi garis skalar yang sebenarnya.
+  \item Norma matriks pada analisis lokal dinyatakan sebagai norma terinduksi,
+  sehingga pertidaksamaan operator yang dipakai dalam bukti terikat sah.
+  \item Teorema konvergensi lokal Newton memuat lingkungan invarian,
+  kontinuitas invers Hessian, dan argumen modulus kontinuitas yang lengkap.
+  \item Hibrida gradien--Newton memakai titik ujung stasioner yang benar serta
+  hipotesis pencarian garis, kekompakan level, dan batas spektral yang cukup.
+  \item Listing Maple Cholesky termodifikasi diganti pseudokode mandiri; aturan
+  pivot dan batas klaim kedekatan pengganti dijelaskan secara tepat.
+  \item Notasi Hessian pengganti dan dua penyelesaian segitiga diselaraskan
+  dengan faktorisasi matriks definit positif yang dipakai algoritma.
+  \item Contoh numerik Cholesky termodifikasi memakai tanda matriks dan
+  aritmetika faktor yang konsisten serta dapat diperiksa secara eksak.
+  \item Dua listing Maple Newton terkoreksi diganti oleh pseudokode mandiri
+  dua bagian yang menghubungkan faktorisasi, arah naik, dan pencarian garis.
+  \item Teorema stasioner menyatakan batas spektral seragam, pelacakan mundur,
+  dan hipotesis konvergensi yang diperlukan oleh hasil rujukannya.
+  \item Pemulihan eventual metode Newton murni menyatakan ambang pivot,
+  lingkungan tanpa koreksi, dan asumsi yang diperlukan untuk kesuperlinearan.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Christopher Griffin, \emph{Nonlinear Programming}, Penn State
+MATH 555, dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber
+v1.0 dan karya turunan ini tunduk pada
+\href{https://creativecommons.org/licenses/by-nc-sa/3.0/us/}
+{CC BY-NC-SA 3.0 US}. Edisi ini mengatribusikan sumber, menandai perubahan,
+bersifat nonkomersial, dan mempertahankan ShareAlike pada komponen Penn.
+
+Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak
+menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan
+nama-nama tersebut semata-mata untuk atribusi karya sumber.
+
+\end{document}

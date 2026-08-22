@@ -1,0 +1,942 @@
+                    OPTIMISASI KONVEKS
+                                  Unit 7: Dualitas
+                               Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 7, “Duality”, dari Andreas Habring, Lecture Notes:
+Convex Optimization, arXiv:2607.11664v1. Sumber berwenang untuk unit ini adalah berkas
+duality.tex edisi v1 dengan SHA-256 berikut:
+
+                            0b112dee2582813cec5629c02df1dda32
+                             9f690f944b60f4694b1c5762129bea9
+
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang bernorma
+dan ruang Hilbert, dual dan adjoin operator, semikontinuitas bawah, epigraf dan pemisah-
+an Hahn–Banach, subgradien, operator proksimal, serta dasar analisis konvergensi. Selu-
+ruh definisi, contoh, lema, teorema, bukti, latihan, sitasi, dan catatan kaki dalam bab sumber
+dipertahankan dalam urutan sumber. Kekeliruan yang dapat ditentukan secara matematis
+diperbaiki secara terbuka dan diringkas pada akhir unit.
+Edisi ini berdiri sendiri untuk dibaca dan dibangun, tetapi tidak mengklaim menggantik-
+an konteks lengkap catatan kuliah asal. Istilah teknis Indonesia dipakai secara konsisten;
+singkatan PDHG dan ADMM dipertahankan karena merupakan nama baku algoritme.
+
+
+
+
+                                              i
+DAFTAR ISI
+
+
+
+
+7   dualitas 1
+    7.1 Dualitas Fenchel 1
+    7.2 Optimisasi primal–dual 6
+    7.3 Metode pengali arah bergantian (ADMM)   9
+
+daftar pustaka   14
+
+
+
+
+                                      ii
+7 DUALITAS
+
+
+
+Dalam bab ini, semua ruang vektor dipahami sebagai ruang Hilbert riil berdimensi hingga.
+Dual yang digunakan adalah dual kontinu; melalui representasi Riesz kita mengidentifika-
+si 𝑉 ∗  𝑉 dan, khususnya, 𝑉 ∗∗  𝑉 . Untuk setiap ruang demikian 𝐻 , tuliskan Γ0 (𝐻 ) bagi
+kelas fungsi 𝐻 → (−∞, +∞] yang proper, konveks, dan semikontinu bawah.
+
+
+7.1 dualitas fenchel
+
+Definisi 7.1 (Konjugat Fenchel/konveks). Misalkan 𝑓 : 𝑉 → (−∞, +∞] proper. Konjugat
+Fenchel, atau konjugat konveks, didefinisikan sebagai
+
+                                  𝑓 ∗ : 𝑉 ∗ → (−∞, +∞]
+(7.1)                             𝑓 ∗ (𝑥 ∗ ) = sup ⟨𝑥 ∗, 𝑥⟩ − 𝑓 (𝑥).
+                                              𝑥 ∈𝑉
+
+
+
+  Contoh 7.2.  (i) Fungsi indikator: Misalkan 𝑓 = 𝛿𝐶 dengan 𝐶 ⊂ 𝑉 tak kosong dan
+       konveks. Maka 𝑓 ∗ (𝑥 ∗ ) = sup𝑥 ∈𝐶 ⟨𝑥 ∗, 𝑥⟩ adalah apa yang disebut fungsi pendu-
+       kung.
+    (ii) Norma: Misalkan 𝑓 = ∥ · ∥ adalah suatu norma. Maka 𝑓 ∗ = 𝛿 𝐵 ∥ · ∥ ,1 (0) . Artinya,
+                                                                           ∗
+         𝑓 ∗ adalah fungsi indikator pada bola satuan tertutup terhadap norma dual.
+    (iii) Sebaliknya, konjugat dari 𝑓 = 𝛿 𝐵 ∥ · ∥ ,1 (0) adalah 𝑓 ∗ = ∥ · ∥ setelah identifikasi
+                                                 ∗
+          𝑉 ∗∗  𝑉 .
+
+Lema 7.3. Misalkan 𝑓 proper dan konveks, serta andaikan bahwa 𝜕𝑓 (𝑥)    ˆ ≠ ∅ untuk suatu
+𝑥ˆ ∈ 𝑉 . Dalam dimensi hingga, syarat tambahan ini otomatis dipenuhi pada suatu titik
+di interior relatif domain efektif; bandingkan [Beck 2017, Corollary 3.19]. Maka 𝑓 ∗ proper,
+konveks, dan semikontinu bawah (lsc).
+
+Bukti. Karena 𝑓 proper, terdapat 𝑥 0 ∈ 𝑉 sedemikian sehingga 𝑓 (𝑥 0 ) ∈ ℝ. Akibatnya,
+untuk setiap 𝑥 ∗ ,
+
+(7.2)                          𝑓 ∗ (𝑥 ∗ ) ≥ ⟨𝑥 ∗, 𝑥 0 ⟩ − 𝑓 (𝑥 0 ) > −∞.
+
+
+                                                     1
+                                               7 dualitas
+
+
+              ˆ Berdasarkan definisi subgradien, kita mempunyai
+Ambil 𝑔 ∈ 𝜕𝑓 (𝑥).
+
+(7.3)                                    ˆ + ⟨𝑔, 𝑥 − 𝑥⟩
+                                      𝑓 (𝑥)          ˆ ≤ 𝑓 (𝑥)
+
+dan, dengan demikian,
+
+                             𝑓 ∗ (𝑔) = sup ⟨𝑔, 𝑥⟩ − 𝑓 (𝑥)
+                                      𝑥 ∈𝑉
+
+(7.4)                                                ˆ + ⟨𝑔, 𝑥⟩
+                                    ≤ sup 𝑓 (𝑥) − 𝑓 (𝑥)      ˆ − 𝑓 (𝑥)
+                                      𝑥 ∈𝑉
+                                              ˆ + ⟨𝑔, 𝑥⟩
+                                    ≤ sup −𝑓 (𝑥)      ˆ < ∞.
+                                      𝑥 ∈𝑉
+
+Kekonveksan dan semikontinuitas bawah langsung mengikuti fakta bahwa konjugat kon-
+veks merupakan supremum titik demi titik dari fungsi-fungsi afin kontinu, yang karena
+itu konveks dan lsc1 .                                                              □
+
+Lema 7.4 (Ketaksamaan Fenchel). Misalkan 𝑓 proper. Maka
+
+(7.5)                                 𝑓 ∗ (𝑥 ∗ ) + 𝑓 (𝑥) ≥ ⟨𝑥 ∗, 𝑥⟩ .
+
+Bukti. Latihan.                                                                                        □
+
+Untuk fungsi proper 𝑓 dengan 𝑓 ∗ proper, proses pengambilan konjugat dapat kita iterasik-
+an untuk memperoleh bikonjugat. Kondisi ini dijamin oleh lema sebelumnya pada kasus
+konveks yang memenuhi hipotesisnya. Demi kesederhanaan, kita tulis 𝑓 ∗∗ ≔ (𝑓 ∗ ) ∗ . Kare-
+na diasumsikan 𝑉 ∗∗ = 𝑉 , bikonjugat kembali terdefinisi pada ruang asal 𝑉 .
+
+Lema 7.5. Misalkan 𝑓 dan 𝑓 ∗ proper. Untuk setiap 𝑥 ∈ 𝑉 berlaku 𝑓 ∗∗ (𝑥) ≤ 𝑓 (𝑥).
+
+Bukti. Pertama, perhatikan bahwa untuk setiap 𝑥, konjugat memenuhi
+
+(7.6)                                 𝑓 ∗ (𝑥 ∗ ) ≥ ⟨𝑥 ∗, 𝑥⟩ − 𝑓 (𝑥).
+
+Oleh karena itu,
+
+                               𝑓 ∗∗ (𝑥) = sup ⟨𝑥 ∗, 𝑥⟩ − 𝑓 ∗ (𝑥 ∗ )
+                                          𝑥 ∗ ∈𝑉 ∗
+                                       = sup inf ⟨𝑥 ∗, 𝑥 − 𝑦⟩ + 𝑓 (𝑦)
+(7.7)                                     𝑥 ∗ ∈𝑉 ∗ 𝑦
+                                       ≤ sup ⟨𝑥 ∗, 𝑥 − 𝑥⟩ + 𝑓 (𝑥)
+                                          𝑥 ∗ ∈𝑉 ∗
+                                       =𝑓 (𝑥).
+                                                                                                       □
+ 1 Di sini kekonveksan telah ditunjukkan secara langsung. Rincian untuk lsc ditinggalkan sebagai latihan.
+
+
+
+
+                                                       2
+                                                7 dualitas
+
+
+Lema 7.6. Misalkan 𝑓 proper, konveks, dan lsc. Maka 𝑓 ∗∗ = 𝑓 .
+
+Bukti. Karena selalu berlaku 𝑓 ∗∗ ≤ 𝑓 , tinggal ditunjukkan bahwa 𝑓 ∗∗ ≥ 𝑓 . Andaikan
+sebaliknya: terdapat 𝑥 0 ∈ 𝑉 sedemikian sehingga
+(7.8)                                        𝑓 ∗∗ (𝑥 0 ) < 𝑓 (𝑥 0 ).
+Ini berarti (𝑥 0, 𝑓 ∗∗ (𝑥 0 )) ∉ epi(𝑓 ). Karena epi(𝑓 ) tertutup dan konveks berdasarkan asumsi,
+teorema Hahn–Banach dapat diterapkan untuk mendapatkan (𝑔, 𝛼) ∈ 𝑉 ∗ ×ℝ dan 𝑐 1, 𝑐 2 ∈ ℝ
+sedemikian sehingga
+(7.9)         ⟨(𝑔, 𝛼), (𝑥 0, 𝑓 ∗∗ (𝑥 0 ))⟩ < 𝑐 1 < 𝑐 2 < ⟨(𝑔, 𝛼), (𝑥, 𝑡)⟩ ,   (𝑥, 𝑡) ∈ epi(𝑓 ).
+Karena 𝑓 proper, pilih 𝑥¯ ∈ dom(𝑓 ). Dengan memasukkan (𝑥,         ¯ 𝑡) ∈ epi(𝑓 ) dan membiarkan
+𝑡 → ∞, diperoleh 𝛼 ≥ 0. Sekarang andaikan 𝛼 > 0. Kita dapat membagi dengan 𝛼 dan
+memperoleh
+                        D𝑔           E                        𝑐1 − 𝑐2
+(7.10)                      , 𝑥 0 − 𝑥 + 𝑓 ∗∗ (𝑥 0 ) − 𝑓 (𝑥) ≤          < 0.
+                          𝛼                                      𝛼
+Ketaksamaan di atas berlaku untuk setiap 𝑥 ∈ dom(𝑓 ) dan juga secara otomatis untuk
+setiap 𝑥 dengan 𝑓 (𝑥) = ∞. Mengambil supremum terhadap 𝑥 menghasilkan
+                            D𝑔 E                           𝑔
+(7.11)                         , 𝑥 0 + 𝑓 ∗∗ (𝑥 0 ) + 𝑓 ∗ (− ) < 0,
+                             𝛼                             𝛼
+yang bertentangan dengan ketaksamaan Fenchel. Pada kasus yang tersisa, yaitu 𝛼 = 0,
+kita mempunyai
+(7.12)                                  ⟨𝑔, 𝑥 0 − 𝑥⟩ < 𝑐 1 − 𝑐 2 < 0.
+Ambil sembarang 𝑦ˆ ∈ dom(𝑓 ∗ ). Untuk 𝑔ˆ = 𝑔 − 𝜀 𝑦,
+                                                 ˆ kita memperoleh
+         ⟨𝑔,ˆ 𝑥 0 − 𝑥⟩ + 𝜀 (𝑓 ∗∗ (𝑥 0 ) − 𝑓 (𝑥)) ≤ ⟨𝑔, 𝑥 0 − 𝑥⟩ + 𝜀 (⟨−𝑦,ˆ 𝑥 0 − 𝑥⟩ + 𝑓 ∗∗ (𝑥 0 ) − 𝑓 (𝑥))
+(7.13)
+                                                                  ˆ −𝑥 0 ⟩ + 𝑓 ∗∗ (𝑥 0 ) + 𝑓 ∗ ( 𝑦)).
+                                                 ≤𝑐 1 − 𝑐 2 + 𝜀 (⟨𝑦,                             ˆ
+Perhatikan bahwa 𝑦ˆ dan 𝑥 0 tetap. Karena itu, 𝜀 > 0 dapat dipilih cukup kecil agar ruas
+kanan tetap negatif ketat. Tuliskan 𝑐 ≔ 𝑐 1 −𝑐 2 + 𝜀 (⟨−𝑦,    ˆ 𝑥 0 ⟩ + 𝑓 ∗∗ (𝑥 0 ) + 𝑓 ∗ ( 𝑦))
+                                                                                            ˆ < 0. Setelah
+membagi dengan 𝜀, diperoleh
+                                        
+                             𝑔ˆ                                     𝑐
+(7.14)                          , 𝑥 0 − 𝑥 + 𝑓 ∗∗ (𝑥 0 ) − 𝑓 (𝑥) ≤ < 0.
+                             𝜀                                      𝜀
+Sekali lagi mengambil supremum terhadap semua 𝑥 menghasilkan
+                                  
+                           𝑔ˆ                             𝑔ˆ  𝑐
+(7.15)                        , 𝑥 0 + 𝑓 ∗∗ (𝑥 0 ) + 𝑓 ∗ (− ) ≤ < 0,
+                           𝜀                              𝜀   𝜀
+Hal ini bertentangan dengan ketaksamaan Fenchel. Jadi, asumsi 𝑓 ∗∗ (𝑥 0 ) < 𝑓 (𝑥 0 ) selalu
+menimbulkan kontradiksi. Karena itu, 𝑓 ∗∗ (𝑥 0 ) ≥ 𝑓 (𝑥 0 ), dan bukti selesai.           □
+
+
+                                                       3
+                                                   7 dualitas
+
+
+   Catatan. Jika 𝑓 tidak sekaligus konveks dan tertutup, maka, selama keluarga minoran pro-
+   per di bawah tidak kosong, 𝑓 ∗∗ merupakan minoran konveks semikontinu bawah terbesar
+   dari 𝑓 , yang disebut regularisasi Γ. Lebih tepatnya, tuliskan
+
+   (7.16)            Γ(𝑉 ) = {ℓ : 𝑉 → (−∞, +∞] | ℓ proper, tertutup, dan konveks}.
+
+   Jika {ℓ ∈ Γ(𝑉 ) : ℓ ≤ 𝑓 } ≠ ∅, maka
+
+   (7.17)                                     𝑓 ∗∗ (𝑥) = sup ℓ (𝑥).
+                                                         ℓ∈Γ(𝑉 ),
+                                                           ℓ≤𝑓
+
+   Jika keluarga minoran tersebut kosong, supremum pada ruas kanan dipahami sebagai
+   fungsi yang identik −∞. Fungsi ini tidak termasuk dalam Γ(𝑉 ) dan, di bawah konven-
+   si bab ini yang mendefinisikan konjugasi hanya bagi masukan proper, tidak dinotasikan
+   sebagai 𝑓 ∗∗ .
+
+   Konjugat mempunyai hubungan yang erat dengan subgradien, sebagaimana ditunjukkan
+   oleh lema berikut.
+
+   Lema 7.7. Misalkan 𝑓 proper, konveks, dan tertutup. Pernyataan-pernyataan berikut ekuiva-
+   len:
+      (i) 𝑓 (𝑥) + 𝑓 ∗ (𝑥 ∗ ) = ⟨𝑥 ∗, 𝑥⟩.
+     (ii) 𝑥 ∗ ∈ 𝜕𝑓 (𝑥).
+     (iii) 𝑥 ∈ 𝜕𝑓 ∗ (𝑥 ∗ ).
+
+   Bukti.
+
+(i)→(ii): Pernyataan (i) menyiratkan bahwa untuk setiap 𝑧 ∈ 𝑉 ,
+
+            (7.18)                  −𝑓 (𝑥) + ⟨𝑥 ∗, 𝑥⟩ = 𝑓 ∗ (𝑥 ∗ ) ≥ ⟨𝑥 ∗, 𝑧⟩ − 𝑓 (𝑧).
+
+            Berdasarkan definisi, ini menyiratkan 𝑥 ∗ ∈ 𝜕𝑓 (𝑥).
+(ii)→(i): Sebaliknya, pernyataan (ii) menghasilkan, untuk setiap 𝑧,
+
+            (7.19)                         −𝑓 (𝑥) + ⟨𝑥 ∗, 𝑥⟩ ≥ ⟨𝑥 ∗, 𝑧⟩ − 𝑓 (𝑧).
+
+            Dengan mengambil supremum terhadap 𝑧, diperoleh ⟨𝑥 ∗, 𝑥⟩ ≥ 𝑓 (𝑥) + 𝑓 ∗ (𝑥 ∗ ). Ber-
+            sama ketaksamaan Fenchel, ini membuktikan hasilnya.
+(i)↔(iii): Karena 𝑓 proper, konveks, dan tertutup, pernyataan (i) ekuivalen dengan
+
+            (7.20)                            𝑓 ∗∗ (𝑥) + 𝑓 ∗ (𝑥 ∗ ) = ⟨𝑥 ∗, 𝑥⟩ .
+
+            Bukti kemudian diperoleh dengan mengulangi argumen di atas.
+
+
+                                                          4
+                                               7 dualitas
+
+
+                                                                                             □
+
+Teorema 7.8 (Identitas Moreau). Misalkan 𝑓 ∈ Γ0 (𝑉 ). Maka
+
+(7.21)                           𝑥 = prox 𝑓 (𝑥) + prox 𝑓 ∗ (𝑥).
+
+Bukti. Pertama, perhatikan bahwa kedua pemetaan proksimal terdefinisi dengan baik dan
+bernilai tunggal (mengapa?). Demi kesederhanaan, tuliskan 𝑝 = prox 𝑓 (𝑥). Dari syarat
+optimalitas diperoleh 𝑥 − 𝑝 ∈ 𝜕𝑓 (𝑝) dan, berdasarkan teorema 7.7, 𝑝 = 𝑥 − (𝑥 − 𝑝) ∈
+𝜕𝑓 ∗ (𝑥 −𝑝). Pernyataan terakhir menyiratkan prox 𝑓 ∗ (𝑥) = 𝑥 −𝑝, sehingga bukti selesai. □
+
+Teorema 7.9 (Fenchel–Rockafellar). Misalkan 𝑋 dan 𝑌 ruang Hilbert riil berdimensi hingga,
+𝑓 ∈ Γ0 (𝑋 ), 𝑔 ∈ Γ0 (𝑌 ), dan 𝐾 : 𝑋 → 𝑌 operator linear terbatas. Selain itu, andaikan terdapat
+𝑥 0 ∈ dom(𝑓 ) ∩ dom(𝑔 ◦ 𝐾) dengan 𝐾𝑥 0 ∈ dom(𝑔) ◦ . Andaikan masalah (primal)
+
+(7.22)                                 min 𝑓 (𝑥) + 𝑔(𝐾𝑥)
+                                           𝑥
+
+                 ˆ Maka masalah dual
+mempunyai solusi 𝑥.
+
+(7.23)                           max
+                                  ∗
+                                     −𝑓 ∗ (−𝐾 ∗𝑥 ∗ ) − 𝑔∗ (𝑥 ∗ )
+                                   𝑥
+
+juga mempunyai solusi 𝑥ˆ ∗ , dan berlaku dualitas kuat, yaitu
+
+(7.24)                min 𝑓 (𝑥) + 𝑔(𝐾𝑥) = max
+                                           ∗
+                                              −𝑓 ∗ (−𝐾 ∗𝑥 ∗ ) − 𝑔∗ (𝑥 ∗ ).
+                       𝑥                            𝑥
+
+Selain itu, solusi primal dan dual memenuhi
+                                    (
+                                      −𝐾 ∗𝑥ˆ ∗ ∈ 𝜕𝑓 (𝑥),
+                                                     ˆ
+(7.25)                                  ∗
+                                     𝑥ˆ                ˆ
+                                               ∈ 𝜕𝑔(𝐾 𝑥).
+
+Bukti. Pertama, secara langsung diperoleh
+
+                inf 𝑓 (𝑥) + 𝑔(𝐾𝑥) = inf 𝑓 (𝑥) + 𝑔∗∗ (𝐾𝑥)
+                 𝑥                     𝑥
+                                   = inf sup 𝑓 (𝑥) + ⟨𝐾𝑥, 𝑥 ∗ ⟩ − 𝑔∗ (𝑥 ∗ )
+                                       𝑥       𝑥∗
+
+(7.26)                             ≥ sup inf 𝑓 (𝑥) + ⟨𝐾𝑥, 𝑥 ∗ ⟩ − 𝑔∗ (𝑥 ∗ )
+                                       𝑥∗      𝑥
+
+                                   = sup − sup −𝑓 (𝑥) + ⟨𝑥, −𝐾 ∗𝑥 ∗ ⟩ − 𝑔∗ (𝑥 ∗ )
+                                       𝑥∗           𝑥
+                                                    ∗
+                                   = sup −𝑓 (−𝐾 ∗𝑥 ∗ ) − 𝑔∗ (𝑥 ∗ ).
+                                       𝑥∗
+
+Jadi, tinggal dibuktikan ketaksamaan sebaliknya. Hipotesis interior di atas memenuhi sya-
+rat kualifikasi bagi aturan jumlah dan rantai subdiferensial. Karena itu, kaidah Fermat
+pada peminimum 𝑥ˆ memberikan
+
+
+                                                        5
+                                           7 dualitas
+
+
+                                          ˆ + 𝐾 ∗ 𝜕𝑔(𝐾 𝑥).
+                                  0 ∈ 𝜕𝑓 (𝑥)           ˆ
+
+                                       ˆ sedemikian sehingga −𝐾 ∗𝑥ˆ ∗ ∈ 𝜕𝑓 (𝑥).
+Dengan kata lain, terdapat 𝑥ˆ ∗ ∈ 𝜕𝑔(𝐾 𝑥)                                   ˆ Berdasark-
+an teorema 7.7, hal ini menyiratkan
+
+                            ˆ + 𝑔∗ (𝑥ˆ ∗ ) = ⟨𝑥ˆ ∗, 𝐾 𝑥⟩
+                        𝑔(𝐾 𝑥)                        ˆ ,
+(7.27)                        ∗    ∗ ∗               ∗ ∗
+                        ˆ + 𝑓 (−𝐾 𝑥ˆ ) = − ⟨𝐾 𝑥ˆ , 𝑥⟩
+                     𝑓 (𝑥)                                ˆ = − ⟨𝑥ˆ ∗, 𝐾 𝑥⟩
+                                                                         ˆ .
+
+Oleh karena itu,
+
+                                 ˆ + 𝑔(𝐾 𝑥)
+           inf 𝑓 (𝑥) + 𝑔(𝐾𝑥) =𝑓 (𝑥)      ˆ
+            𝑥
+                              = − 𝑓 ∗ (−𝐾 ∗𝑥ˆ ∗ ) − ⟨𝑥ˆ ∗, 𝐾 𝑥⟩ˆ + − 𝑔∗ (𝑥ˆ ∗ ) + ⟨𝑥ˆ ∗, 𝐾 𝑥⟩
+                                                                                             
+                                                                                           ˆ
+(7.28)
+                              = − 𝑓 ∗ (−𝐾 ∗𝑥ˆ ∗ ) − 𝑔∗ (𝑥ˆ ∗ )
+                              ≤ sup −𝑓 ∗ (−𝐾 ∗𝑥 ∗ ) − 𝑔∗ (𝑥 ∗ ).
+                                 𝑥∗
+
+Ini membuktikan kesamaan dalam (7.26) sekaligus menunjukkan bahwa 𝑥ˆ ∗ adalah solusi
+masalah dual.                                                                     □
+
+
+7.2 optimisasi primal–dual
+
+Teorema 7.9 membuka kemungkinan beberapa metode untuk mencari solusi masalah ber-
+bentuk
+
+(7.29)                                min 𝑓 (𝑥) + 𝑔(𝐾𝑥).
+                                       𝑥
+
+Memang, berdasarkan dualitas kuat, kita dapat menangani masalah primal, masalah dual,
+atau masalah titik pelana
+
+(7.30)                min sup L (𝑥, 𝑦) := 𝑓 (𝑥) − 𝑔∗ (𝑦) + ⟨𝐾𝑥, 𝑦⟩ .
+                        𝑥    𝑦
+
+Tujuan utama peralihan di antara formulasi primal dan dual adalah untuk memindahkan
+operator 𝐾. Misalnya, jika 𝑔 tidak terdiferensialkan sehingga kita ingin menerapkan lang-
+kah proksimal pada 𝑔, operator 𝐾 dalam (7.29) pada umumnya membuat prox𝑔◦𝐾 tidak
+mempunyai bentuk eksplisit. Sebaliknya, dalam formulasi titik pelana (7.30), operator 𝐾
+hanya muncul dalam hasil kali skalar. Selain itu, perhatikan bahwa menurut teorema 7.8,
+proksimal suatu fungsi konjugat sama mudah atau sama sulit dihitung dengan proksimal
+fungsi asalnya. Lebih tepatnya, untuk 𝜎 > 0 berlaku prox𝜎𝑔∗ (𝑦) = 𝑦 − 𝜎prox𝑔/𝜎 (𝑦/𝜎).
+Kesenjangan primal–dual didefinisikan sebagai
+
+(7.31)             G(𝑥, 𝑦) = (𝑓 (𝑥) + 𝑔(𝐾𝑥)) − (−𝑓 ∗ (−𝐾 ∗ 𝑦) − 𝑔∗ (𝑦)).
+
+
+
+                                                6
+                                          7 dualitas
+
+
+Lema 7.10. Di bawah hipotesis dualitas kuat dan ketercapaian primal–dual yang baru saja
+dinyatakan, kita mempunyai G(𝑥, 𝑦) ≥ 0, dan G(𝑥,  ˆ = 0 jika dan hanya jika 𝑥ˆ menyelesa-
+                                                ˆ 𝑦)
+ikan masalah primal dan 𝑦ˆ menyelesaikan masalah dual. Kesenjangan tersebut mempunyai
+representasi
+
+(7.32)                   G(𝑥, 𝑦) = sup L (𝑥, 𝑦 ′) − inf′ L (𝑥 ′, 𝑦).
+                                     𝑦′                𝑥
+
+
+Khususnya, (𝑥,   ˆ masing-masing optimal untuk masalah primal dan dual jika dan hanya
+              ˆ 𝑦)
+jika, untuk setiap 𝑥, 𝑦,
+
+(7.33)                           ˆ 𝑦) ≤ L (𝑥,
+                              L (𝑥,           ˆ ≤ L(𝑥, 𝑦).
+                                           ˆ 𝑦)        ˆ
+
+Bukti. Latihan.                                                                         □
+
+Dengan melakukan optimisasi bergantian dalam (7.30), memakai langkah proksimal ter-
+hadap 𝑓 dan 𝑔∗ serta langkah gradien terhadap hasil kali dalam, kita memperoleh aturan
+pembaruan berikut yang dikenal sebagai metode Arrow–Hurwicz:
+                           (
+                            𝑥𝑘+1 = prox𝜏 𝑓 (𝑥𝑘 − 𝜏𝐾 ∗ 𝑦𝑘 )
+(7.34)
+                             𝑦𝑘+1 = prox𝜎𝑔∗ (𝑦𝑘 + 𝜎𝐾𝑥𝑘+1 ).
+
+Ternyata, dalam bentuk ini metode tersebut mempunyai sifat konvergensi yang lebih bu-
+ruk. Untuk memperoleh pembaruan yang lebih baik, algoritme ditulis ulang secara cer-
+mat. Dengan memakai prox𝜏 𝑓 (𝑥) = (Id +𝜏 𝜕𝑓 ) −1 (𝑥), dapat diperiksa secara langsung bah-
+wa (7.34) ekuivalen dengan
+                         (
+                           𝑥𝑘+1 + 𝜏 𝜕𝑓 (𝑥𝑘+1 ) = 𝑥𝑘 − 𝜏𝐾 ∗ 𝑦𝑘
+(7.35)
+                           𝑦𝑘+1 + 𝜎 𝜕𝑔∗ (𝑦𝑘+1 ) = 𝑦𝑘 + 𝜎𝐾𝑥𝑘+1 .
+
+Setelah membagi masing-masing persamaan dengan 𝜏 dan 𝜎, serta menggunakan notasi
+𝑧 = (𝑥, 𝑦), bentuk ini dapat ditulis sebagai
+                        1                            1
+                                                         Id −𝐾 ∗
+                                                                
+                           Id +𝜕𝑓       0
+(7.36)                   𝜏
+                                    1        ∗ 𝑧𝑘+1 =
+                                                       𝜏           𝑧 .
+                            −𝐾      𝜎 Id +𝜕𝑔             0 𝜎1 Id 𝑘
+
+Bahkan tanpa menelaah rincian bukti, wajar diharapkan bahwa pembaruan yang lebih si-
+metris akan lebih baik, khususnya karena sifat menguntungkan matriks simetris. Karena
+itu, kita mempertimbangkan skema berikut, yang tidak mengubah titik tetap yang mung-
+kin:
+                       1                        1       ∗
+                                                             
+                          Id +𝜕𝑓     0               Id −𝐾
+(7.37)                  𝜏
+                                 1        ∗ 𝑧𝑘+1 = −𝐾
+                                                   𝜏
+                                                        1      𝑧𝑘 .
+                          −2𝐾    𝜎 Id +𝜕𝑔               𝜎 Id
+
+
+
+
+                                              7
+                                            7 dualitas
+
+
+Matriks pada ruas kanan kini simetris dan definit positif selama 𝜎𝜏 ∥𝐾 ∥ 2 < 1. Kembali ke
+operator proksimal, metode gradien hibrida primal–dual ini, yang sering disebut metode
+Chambolle–Pock berdasarkan [Chambolle & Pock 2011], berbentuk
+                       (
+                        𝑥𝑘+1 = prox𝜏 𝑓 (𝑥𝑘 − 𝜏𝐾 ∗ 𝑦𝑘 )
+(7.38)
+                         𝑦𝑘+1 = prox𝜎𝑔∗ (𝑦𝑘 + 𝜎𝐾 (2𝑥𝑘+1 − 𝑥𝑘 )).
+
+Untuk analisis, PDHG akan ditulis dalam bentuk abstrak
+                   (
+                    𝑥 + = arg min𝑥 2𝜏1 |𝑥 − 𝑥 − | 2 + ⟨𝑥, 𝐾 ∗ 𝑦⟩
+                                                              ¯ + 𝑓 (𝑥)
+(7.39)                +               1        −   2
+                     𝑦 = arg min𝑦 2𝜎 |𝑦 − 𝑦 | − ⟨𝑦, 𝐾 𝑥⟩      ¯ + 𝑔∗ (𝑦).
+
+Di sini, superskrip plus menyatakan variabel yang telah diperbarui, superskrip minus me-
+nyatakan iterasi lama, sedangkan garis atas masing-masing menyatakan nilai 𝑥 yang di-
+gunakan untuk pembaruan 𝑦 dan nilai 𝑦 yang digunakan untuk pembaruan 𝑥.
+
+Lema 7.11. Misalkan 𝑋 dan 𝑌 ruang Hilbert riil berdimensi hingga, 𝑓 ∈ Γ0 (𝑋 ), 𝑔 ∈ Γ0 (𝑌 ),
+𝐾 : 𝑋 → 𝑌 linear terbatas, serta 𝜏, 𝜎 > 0. Aturan pembaruan (7.39) memenuhi
+(7.40)
+                              1                1
+   L (𝑥 +, 𝑦) − L (𝑥, 𝑦 + ) ≤ |𝑥 − 𝑥 − | 2 +     |𝑦 − 𝑦 − | 2
+                             2𝜏               2𝜎
+                                 1        + 2     1                 1                 1 +
+                             − |𝑥 − 𝑥 | −            |𝑦 − 𝑦 + | 2 − |𝑥 + − 𝑥 − | 2 −    |𝑦 − 𝑦 − | 2
+                                2𝜏               2𝜎                2𝜏                2𝜎
+                             + 𝑥 + − 𝑥, 𝐾 ∗ (𝑦 − 𝑦) ¯ − 𝑦 + − 𝑦, 𝐾 (𝑥 − 𝑥)  ¯ .
+
+Bukti. Berdasarkan kekonveksan kuat, pembaruan 𝑥 + dan 𝑦 + memenuhi
+(7.41)
+       1 +                                        1                1
+         |𝑥 − 𝑥 − | 2 + 𝑥 +, 𝐾 ∗ 𝑦¯ + 𝑓 (𝑥 + ) + |𝑥 − 𝑥 + | 2 ≤ |𝑥 − 𝑥 − | 2 + ⟨𝑥, 𝐾 ∗ 𝑦⟩
+                                                                                        ¯ + 𝑓 (𝑥)
+     2𝜏                                          2𝜏               2𝜏
+     1 +                                         1                 1
+        |𝑦 − 𝑦 − | 2 − 𝑦 +, 𝐾 𝑥¯ + 𝑔∗ (𝑦 + ) +                                          ¯ + 𝑔∗ (𝑦).
+                                                    |𝑦 − 𝑦 + | 2 ≤ |𝑦 − 𝑦 − | 2 − ⟨𝑦, 𝐾 𝑥⟩
+    2𝜎                                          2𝜎                2𝜎
+Menjumlahkan kedua ketaksamaan dan menyusun ulang suku-sukunya memberikan ha-
+sil yang diinginkan.                                                       □
+
+Teorema 7.12 (Konvergensi PDHG). Misalkan 𝑋 dan 𝑌 ruang Hilbert riil berdimensi hingga,
+𝑓 ∈ Γ0 (𝑋 ),𝑔 ∈ Γ0 (𝑌 ), 𝐾 : 𝑋 → 𝑌 linear terbatas, serta 𝜏, 𝜎 > 0. Perhatikan pembaruan (7.38)
+dan andaikan ukuran langkah memenuhi 𝜏𝜎 ≤ ∥𝐾 ∥ −2 ; untuk 𝐾 = 0, syarat ini dipahami
+otomatis terpenuhi. Untuk 𝑁 ≥ 1, definisikan rerata ergodik 𝑋 𝑁 = 𝑁1 𝑘=1
+                                                                             P𝑁
+                                                                                  𝑥𝑘 dan 𝑌𝑁 =
+ 1 P𝑁
+𝑁       𝑦 . Maka
+    𝑘=1 𝑘
+                                                                                          
+                                    1 1            2   1          2
+(7.42)   L (𝑋 𝑁 , 𝑦) − L (𝑥, 𝑌𝑁 ) ≤      |𝑥 − 𝑥 0 | +    |𝑦 − 𝑦0 | − ⟨𝑦 − 𝑦0, 𝐾 (𝑥 − 𝑥 0 )⟩ .
+                                    𝑁 2𝜏              2𝜎
+
+
+                                                  8
+                                                            7 dualitas
+
+
+Catatan. Perhatikan bahwa ukuran langkah sama sekali tidak bergantung pada fungsi 𝑓
+dan 𝑔, melainkan hanya pada operator 𝐾.
+
+Bukti.
+(7.43)
+                                         1                1
+  L (𝑥𝑘+1, 𝑦) − L (𝑥, 𝑦𝑘+1 ) ≤             |𝑥 − 𝑥𝑘 | 2 +    |𝑦 − 𝑦𝑘 | 2
+                                        2𝜏               2𝜎
+                                            1                  1                 1                 1
+                                        − |𝑥 − 𝑥𝑘+1 | 2 −        |𝑦 − 𝑦𝑘+1 | 2 − |𝑥𝑘+1 − 𝑥𝑘 | 2 −    |𝑦𝑘+1 − 𝑦𝑘 | 2
+                                           2𝜏                 2𝜎                2𝜏                2𝜎
+                                        + ⟨𝑥𝑘+1 − 𝑥, 𝐾 ∗ (𝑦 − 𝑦𝑘 )⟩ − ⟨𝑦𝑘+1 − 𝑦, 𝐾 (𝑥 − 𝑥𝑘+1 )⟩
+                                            + ⟨𝑦𝑘+1 − 𝑦, 𝐾 (𝑥𝑘+1 − 𝑥𝑘 )⟩
+                                                                                                  
+                                          1           2    1              2
+                                      ≤      |𝑥 − 𝑥𝑘 | +       |𝑦 − 𝑦𝑘 | − ⟨𝑦 − 𝑦𝑘 , 𝐾 (𝑥 − 𝑥𝑘 )⟩
+                                         2𝜏               2𝜎
+                                                                                                             
+                                              1            2      1              2
+                                        −       |𝑥 − 𝑥𝑘+1 | +         |𝑦 − 𝑦𝑘+1 | − ⟨𝑦 − 𝑦𝑘+1, 𝐾 (𝑥 − 𝑥𝑘+1 )⟩
+                                             2𝜏                  2𝜎
+                                           
+                                              1                     1
+                                        −       |𝑥𝑘+1 − 𝑥𝑘 | 2 +       |𝑦𝑘+1 − 𝑦𝑘 | 2
+                                             2𝜏                   2𝜎
+                                                                                   
+                                                                 ∗
+                                               − ⟨𝑥𝑘+1 − 𝑥𝑘 , 𝐾 (𝑦𝑘+1 − 𝑦𝑘 )⟩ .
+
+ Jika 𝐾 = 0, suku campuran dalam setiap tanda kurung siku lenyap, sehingga semua eksp-
+resi itu tidak negatif. Jika 𝐾 ≠ 0, nonnegativitas mengikuti
+                                                             𝛿          1        1         1
+                                                               ∥𝑥 ∥ 2 + ∥𝑦 ∥ 2 ≤ ∥𝑥 ∥ 2 +    ∥𝑦 ∥ 2 ,
+                                                                              
+                  ⟨𝐾𝑥, 𝑦⟩ ≤ ∥𝐾𝑥 ∥ ∥𝑦 ∥ ≤ ∥𝐾 ∥
+                                                             2         2𝛿       2𝜏        2𝜎
+dengan ketaksamaan terakhir diperoleh dari pilihan 𝛿 = 𝜏 ∥𝐾1 ∥ dan fakta bahwa ∥𝐾 ∥ 2 ≤ 𝜏𝜎1 .
+Penjumlahan terhadap 𝑘 menghasilkan
+       𝑁 −1                                                                                    
+       ∑︁                                   1           2   1          2
+(7.44)      L (𝑥𝑘+1, 𝑦) − L (𝑥, 𝑦𝑘+1 ) ≤      |𝑥 − 𝑥 0 | +    |𝑦 − 𝑦0 | − ⟨𝑦 − 𝑦0, 𝐾 (𝑥 − 𝑥 0 )⟩ .
+       𝑘=0                                 2𝜏              2𝜎
+Karena pemetaan (𝑥, 𝑦) ↦→ L (𝑥, 𝑦 ′) − L (𝑥 ′, 𝑦) konveks untuk 𝑥 ′, 𝑦 ′ tetap, kita mempero-
+leh
+                                        𝑁 −1                                                                                        
+                                      1 ∑︁                                1 1                  1
+(7.45)                                                                         |𝑥 − 𝑥 0 | 2 +    |𝑦 − 𝑦0 | 2 − ⟨𝑦 − 𝑦0, 𝐾 (𝑥 − 𝑥 0 )⟩ .
+                                                                       
+         L (𝑋 𝑁 , 𝑦) − L (𝑥, 𝑌𝑁 ) ≤          L (𝑥𝑘+1, 𝑦) − L (𝑥, 𝑦𝑘+1 ) ≤
+                                      𝑁 𝑘=0                               𝑁 2𝜏                2𝜎
+
+                                                                                                                                          □
+
+
+7.3 metode pengali arah bergantian (admm)
+
+Misalkan 𝑓 , 𝑔 ∈ Γ0 (ℝ𝑑 ),𝐴, 𝐵 : ℝ𝑑 → ℝ𝑚 linear, dan 𝑧 ∈ ℝ𝑚 . Perhatikan masalah optimisasi
+berkendala
+(7.46)                                                 min 𝑓 (𝑥) + 𝑔(𝑦).
+                                                    𝐴𝑥+𝐵𝑦=𝑧
+
+
+
+
+                                                                    9
+                                          7 dualitas
+
+
+Masalah ini dapat dirumuskan ulang sebagai masalah titik pelana tak berkendala untuk
+Lagrangian teraugmentasi; yaitu, untuk setiap 𝛾 > 0, kita mempertimbangkan
+                                                                   𝛾
+(7.47)    min sup 𝐿𝛾 (𝑥, 𝑦, 𝜆) := 𝑓 (𝑥) + 𝑔(𝑦) + ⟨𝜆, 𝐴𝑥 + 𝐵𝑦 − 𝑧⟩ + ∥𝐴𝑥 + 𝐵𝑦 − 𝑧 ∥ 2 .
+          𝑥,𝑦 𝜆                                                    2
+
+Pernyataan berikut dapat ditunjukkan secara langsung.
+
+Lema 7.13. Masalah (7.46) dan (7.47) ekuivalen.
+
+Bukti. Latihan!                                                                          □
+
+Salah satu cara langsung untuk menyelesaikan masalah titik pelana tersebut adalah meng-
+optimalkan secara bergantian terhadap 𝑥 dan 𝑦, lalu melakukan langkah kenaikan gradien
+terhadap 𝜆:
+
+                    𝑥 = arg min𝑥 𝑓 (𝑥) + ⟨𝜆𝑘 , 𝐴𝑥⟩ + 2 ∥𝐴𝑥 + 𝐵𝑦𝑘 − 𝑧 ∥ 2
+                                                      𝛾
+                   𝑘+1
+                  
+                  
+                  
+                    𝑦𝑘+1 = arg min𝑦 𝑔(𝑦) + ⟨𝜆𝑘 , 𝐵𝑦⟩ + 2 ∥𝐴𝑥𝑘+1 + 𝐵𝑦 − 𝑧∥ 2
+                                                       𝛾
+(7.48)
+                  
+                  𝜆𝑘+1 = 𝜆𝑘 + 𝛾 (𝐴𝑥𝑘+1 + 𝐵𝑦𝑘+1 − 𝑧).
+                  
+                  
+Perhatikan bahwa 𝛾 digunakan sebagai ukuran langkah untuk kenaikan gradien. Pilihan
+ini dapat dimotivasi secara intuitif oleh fakta bahwa, berdasarkan definisi pembaruan,
+
+(7.49)                  0 ∈ 𝜕𝑔(𝑦𝑘+1 ) + 𝐵 ∗𝜆𝑘 + 𝛾𝐵 ∗ (𝐴𝑥𝑘+1 + 𝐵𝑦𝑘+1 − 𝑧).
+
+Dengan mengalikan pembaruan 𝜆 oleh 𝐵 ∗ dan memasukkannya ke (7.49), diperoleh
+
+(7.50)                               𝐵 ∗𝜆𝑘+1 ∈ −𝜕𝑔(𝑦𝑘+1 ).
+
+Dengan demikian, tripel ADMM yang benar-benar diperbarui melalui (7.48) memenuhi
+0 ∈ 𝜕𝑦 𝐿0 (𝑥𝑘+1, 𝑦𝑘+1, 𝜆𝑘+1 ). Pembaruan bergantian tersebut pada umumnya tidak memberik-
+an stasioneritas terhadap 𝑥, karena submasalah 𝑥 masih memakai 𝑦𝑘 . Hanya dalam skema
+hipotetis yang meminimumkan 𝑥 dan 𝑦 secara bersama kondisi serupa diperoleh terha-
+dap 𝑥, sehingga tripel hasil pembaruan bersama itu memenuhi stasioneritas primal penuh
+untuk 𝐿0 . Kita dapat menunjukkan hasil konvergensi dasar berikut untuk ADMM.
+
+Teorema 7.14. Ambil 𝛾 > 0. Andaikan terdapat suatu titik pelana dari 𝐿0 (𝑥, 𝑦, 𝜆) dan, pa-
+da setiap iterasi, kedua submasalah minimisasi dalam algoritme ADMM di atas mencapai
+minimumnya; pilih sembarang peminimum tersebut. Dengan 𝑟𝑘 ≔ 𝐴𝑥𝑘 + 𝐵𝑦𝑘 − 𝑧, berlaku
+𝑟𝑘 → 0, 𝐵(𝑦𝑘+1 − 𝑦𝑘 ) → 0, dan
+
+(7.51)                      𝑓 (𝑥𝑘 ) + 𝑔(𝑦𝑘 ) → min 𝑓 (𝑥) + 𝑔(𝑦).
+                                               𝐴𝑥+𝐵𝑦=𝑧
+
+
+
+
+                                               10
+                                           7 dualitas
+
+
+Bukti. Bukti menggunakan suatu teknik penting, yaitu fungsional Lyapunov. Kita men-
+definisikan fungsional 𝑉 (𝑦, 𝜆) yang tidak negatif (terbatas dari bawah) dan menurun se-
+panjang iterasi. Pada dasarnya, fungsional Lyapunov menggantikan fungsi objektif ketika
+penurunan objektif itu sendiri tidak dapat dibuktikan. Dalam kasus ini, kita menggunakan
+
+(7.52)                   𝑉 (𝑦, 𝜆) = 𝛾 ∥𝐵(𝑦 − 𝑦 ∗ )∥ 2 + 𝛾 −1 ∥𝜆 − 𝜆 ∗ ∥ 2,
+
+dengan (𝑥 ∗, 𝑦 ∗, 𝜆 ∗ ) suatu titik pelana bagi 𝐿0 . Penurunan fungsional Lyapunov akan mem-
+berikan konvergensi melalui argumen penjumlahan teleskopik yang lazim. Akan tetapi,
+pembuktian penurunan ini memerlukan beberapa taksiran teknis. Demi kesederhanaan,
+tuliskan residu 𝑟𝑘 ≔ 𝐴𝑥𝑘 + 𝐵𝑦𝑘 − 𝑧 dan nilai objektif 𝑝𝑘 ≔ 𝑓 (𝑥𝑘 ) + 𝑔(𝑦𝑘 ); gunakan pula
+𝑟 ∗ dan 𝑝 ∗ untuk titik pelana. Bukti dibagi menjadi tiga langkah.
+
+
+Langkah 1 Karena (𝑥 ∗, 𝑦 ∗, 𝜆 ∗ ) merupakan titik pelana bagi 𝐿0 , untuk setiap 𝑘 berlaku
+𝐿0 (𝑥 ∗, 𝑦 ∗, 𝜆 ∗ ) ≤ 𝐿0 (𝑥𝑘+1, 𝑦𝑘+1, 𝜆 ∗ ). Pernyataan ini ekuivalen dengan
+
+(7.53)                              𝑝 ∗ − 𝑝𝑘+1 ≤ ⟨𝜆 ∗, 𝑟𝑘+1 ⟩ .
+
+
+Langkah 2    Di sisi lain, berdasarkan optimalitas 𝑥𝑘+1 dan 𝑦𝑘+1 dalam (7.48), kita mempe-
+roleh
+                      0 ∈ 𝜕𝑓 (𝑥𝑘+1 ) + 𝐴∗𝜆𝑘 + 𝛾𝐴∗ (𝑟𝑘+1 + 𝐵(𝑦𝑘 − 𝑦𝑘+1 ))
+(7.54)
+                      0 ∈ 𝜕𝑔(𝑦𝑘+1 ) + 𝐵 ∗𝜆𝑘 + 𝛾𝐵 ∗𝑟𝑘+1 .
+Selain itu, pembaruan 𝜆 dapat ditulis sebagai 𝜆𝑘+1 = 𝜆𝑘 + 𝛾𝑟𝑘+1 , sehingga
+                                   𝐴∗𝜆𝑘+1 = 𝐴∗𝜆𝑘 + 𝛾𝐴∗𝑟𝑘+1
+(7.55)
+                                   𝐵 ∗𝜆𝑘+1 = 𝐵 ∗𝜆𝑘 + 𝛾𝐵 ∗𝑟𝑘+1 .
+Ketika dimasukkan ke (7.54), persamaan ini memberikan
+                          0 ∈ 𝜕𝑓 (𝑥𝑘+1 ) + 𝐴∗ (𝜆𝑘+1 + 𝛾𝐵(𝑦𝑘 − 𝑦𝑘+1 ))
+(7.56)
+                          0 ∈ 𝜕𝑔(𝑦𝑘+1 ) + 𝐵 ∗𝜆𝑘+1 .
+Hal ini menyiratkan bahwa 𝑥𝑘+1 meminimumkan
+
+(7.57)                    𝑥 ↦→ 𝑓 (𝑥) + ⟨𝐴𝑥, 𝜆𝑘+1 + 𝛾𝐵(𝑦𝑘 − 𝑦𝑘+1 )⟩ ,
+
+sedangkan 𝑦𝑘+1 meminimumkan
+
+(7.58)                              𝑦 ↦→ 𝑔(𝑦) + ⟨𝐵𝑦, 𝜆𝑘+1 ⟩ .
+
+Akibatnya, dari optimalitas diperoleh
+            𝑓 (𝑥𝑘+1 )+ ⟨𝐴𝑥𝑘+1, 𝜆𝑘+1 + 𝛾𝐵(𝑦𝑘 − 𝑦𝑘+1 )⟩ + 𝑔(𝑦𝑘+1 ) + ⟨𝐵𝑦𝑘+1, 𝜆𝑘+1 ⟩
+(7.59)
+                       ≤ 𝑓 (𝑥 ∗ ) + ⟨𝐴𝑥 ∗, 𝜆𝑘+1 + 𝛾𝐵(𝑦𝑘 − 𝑦𝑘+1 )⟩ + 𝑔(𝑦 ∗ ) + ⟨𝐵𝑦 ∗, 𝜆𝑘+1 ⟩ .
+
+
+                                                11
+                                              7 dualitas
+
+
+Karena titik pelana pasti memenuhi 𝐴𝑥 ∗ +𝐵𝑦 ∗ = 𝑧, sedikit penyusunan ulang memberikan
+
+(7.60)            𝑝𝑘+1 − 𝑝 ∗ ≤ 𝛾 ⟨𝐴(𝑥 ∗ − 𝑥𝑘+1 ), 𝐵(𝑦𝑘 − 𝑦𝑘+1 )⟩ − ⟨𝑟𝑘+1, 𝜆𝑘+1 ⟩ .
+
+Terakhir, kita dapat memasukkan 𝐴(𝑥 ∗ − 𝑥𝑘+1 ) = 𝑧 − 𝐵𝑦 ∗ − (𝑟𝑘+1 + 𝑧 − 𝐵𝑦𝑘+1 ) = −𝑟𝑘+1 +
+𝐵(𝑦𝑘+1 − 𝑦 ∗ ) untuk memperoleh
+
+(7.61)       𝑝𝑘+1 − 𝑝 ∗ ≤ −𝛾 ⟨−𝑟𝑘+1 + 𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ − ⟨𝑟𝑘+1, 𝜆𝑘+1 ⟩ .
+
+
+Langkah 3     Dengan menjumlahkan (7.53) dan (7.61), lalu mengalikan dengan 2, diperoleh
+
+(7.62) −2𝛾 ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 2𝛾 ⟨𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 2 ⟨𝑟𝑘+1, 𝜆𝑘+1 − 𝜆 ∗ ⟩ ≤ 0.
+
+Kita akan mengolah ketaksamaan ini. Suku ketiga dapat ditulis ulang menggunakan 𝜆𝑘+1 =
+𝜆𝑘 + 𝛾𝑟𝑘+1 sebagai
+
+(7.63)           2 ⟨𝑟𝑘+1, 𝜆𝑘+1 − 𝜆 ∗ ⟩ = 𝛾 ∥𝑟𝑘+1 ∥ 2 + 𝛾 ∥𝑟𝑘+1 ∥ 2 + 2 ⟨𝑟𝑘+1, 𝜆𝑘 − 𝜆 ∗ ⟩ .
+
+Dengan mengganti 𝑟𝑘+1 = (𝜆𝑘+1 − 𝜆𝑘 )/𝛾 pada dua suku terakhir, diperoleh
+
+(7.64)             𝛾 ∥𝑟𝑘+1 ∥ 2 + 𝛾 −1 ∥𝜆𝑘+1 − 𝜆𝑘 ∥ 2 + 2𝛾 −1 ⟨𝜆𝑘+1 − 𝜆𝑘 , 𝜆𝑘 − 𝜆 ∗ ⟩ .
+
+Dengan mengganti 𝜆𝑘+1 − 𝜆𝑘 = 𝜆𝑘+1 − 𝜆 ∗ + 𝜆 ∗ − 𝜆𝑘 di atas, bentuk ini ekuivalen dengan
+
+                    𝛾 ∥𝑟𝑘+1 ∥ 2 + 𝛾 −1 ∥𝜆𝑘+1 − 𝜆 ∗ ∥ 2 − ∥𝜆𝑘 − 𝜆 ∗ ∥ 2 .
+                                                                      
+(7.65)
+
+Jadi, (7.62) ekuivalen dengan
+
+            0 ≥ − 2𝛾 ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 2𝛾 ⟨𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 𝛾 ∥𝑟𝑘+1 ∥ 2
+(7.66)
+                + 𝛾 −1 ∥𝜆𝑘+1 − 𝜆 ∗ ∥ 2 − ∥𝜆𝑘 − 𝜆 ∗ ∥ 2 .
+                                                      
+
+Sekarang kita tulis ulang tiga suku pertama,
+
+(7.67)        −2𝛾 ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 2𝛾 ⟨𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + 𝛾 ∥𝑟𝑘+1 ∥ 2 .
+
+Dengan memperhatikan bahwa
+
+(7.68)   −2 ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ + ∥𝑟𝑘+1 ∥ 2 = ∥𝑟𝑘+1 − 𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 − ∥𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2,
+
+kita mendapatkan bahwa (7.66) ekuivalen dengan
+
+(7.69)   𝛾 ∥𝑟𝑘+1 − 𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 − 𝛾 ∥𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 + 2𝛾 ⟨𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ ,
+
+yang ekuivalen dengan
+
+              𝛾 ∥𝑟𝑘+1 − 𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 + 𝛾 ∥𝐵(𝑦𝑘+1 − 𝑦 ∗ )∥ 2 − ∥𝐵(𝑦𝑘 − 𝑦 ∗ )∥ 2 .
+                                                                                  
+(7.70)
+
+
+                                                    12
+                                                  7 dualitas
+
+
+Secara keseluruhan, (7.66) kemudian menghasilkan
+
+(7.71) 0 ≥ 𝛾 ∥𝑟𝑘+1 −𝐵(𝑦𝑘+1 −𝑦𝑘 ) ∥ 2 +𝛾 ∥𝐵(𝑦𝑘+1 −𝑦 ∗ ) ∥ 2 −∥𝐵(𝑦𝑘 −𝑦 ∗ ) ∥ 2 +𝛾 −1 ∥𝜆𝑘+1 −𝜆 ∗ ∥ 2 −∥𝜆𝑘 −𝜆 ∗ ∥ 2 .
+                                                                                                              
+
+
+Terakhir, perhatikan bahwa
+
+(7.72)      ∥𝑟𝑘+1 − 𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 = ∥𝑟𝑘+1 ∥ 2 + ∥𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 − 2 ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ .
+
+Kita ingin menunjukkan bahwa suku
+
+(7.73)                                   ⟨𝑟𝑘+1, 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ ≤ 0.
+
+Untuk 𝑘 ≥ 1, ingat bahwa 𝑦𝑘 meminimumkan 𝑔(𝑦) + ⟨𝐵𝑦, 𝜆𝑘 ⟩. Dengan demikian,
+
+                                𝑔(𝑦𝑘 ) + ⟨𝐵𝑦𝑘 , 𝜆𝑘 ⟩ ≤ 𝑔(𝑦𝑘+1 ) + ⟨𝐵𝑦𝑘+1, 𝜆𝑘 ⟩
+(7.74)
+                           𝑔(𝑦𝑘+1 ) + ⟨𝐵𝑦𝑘+1, 𝜆𝑘+1 ⟩ ≤ 𝑔(𝑦𝑘 ) + ⟨𝐵𝑦𝑘 , 𝜆𝑘+1 ⟩ .
+
+Penjumlahan kedua ketaksamaan memberikan
+
+(7.75)                                ⟨𝐵(𝑦𝑘+1 − 𝑦𝑘 ), 𝜆𝑘+1 − 𝜆𝑘 ⟩ ≤ 0.
+
+Dengan memasukkan 𝜆𝑘+1 − 𝜆𝑘 = 𝛾𝑟𝑘+1 , diperoleh tanda yang diinginkan. Oleh karena itu,
+
+(7.76)       𝑉 (𝑦𝑘+1, 𝜆𝑘+1 ) + 𝛾 ∥𝑟𝑘+1 ∥ 2 + 𝛾 ∥𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 ≤ 𝑉 (𝑦𝑘 , 𝜆𝑘 ),             𝑘 ≥ 1.
+
+Menjumlahkan terhadap 𝑘 menghasilkan, untuk 𝐾 ≥ 2,
+                            𝐾−1
+                            ∑︁
+                                  𝛾 ∥𝑟𝑘+1 ∥ 2 + ∥𝐵(𝑦𝑘+1 − 𝑦𝑘 )∥ 2 ≤ 𝑉 (𝑦1, 𝜆1 ).
+                                                                 
+(7.77)
+                            𝑘=1
+
+Dari penurunan fungsional Lyapunov, segera diperoleh bahwa 𝜆𝑘 dan 𝐵𝑦𝑘 merupakan
+barisan terbatas. Selain itu,
+                              (
+                               𝑟𝑘             →0
+(7.78)
+                                𝐵(𝑦𝑘+1 − 𝑦𝑘 ) → 0.
+
+Berdasarkan (7.53) dan (7.61), kita mempunyai
+
+(7.79) − ⟨𝜆 ∗, 𝑟𝑘+1 ⟩ ≤ 𝑝𝑘+1 − 𝑝 ∗ ≤ −𝛾 ⟨−𝑟𝑘+1 + 𝐵(𝑦𝑘+1 − 𝑦 ∗ ), 𝐵(𝑦𝑘+1 − 𝑦𝑘 )⟩ − ⟨𝑟𝑘+1, 𝜆𝑘+1 ⟩ .
+
+Kemudian (7.78) dan keterbatasan 𝐵𝑦𝑘 menyiratkan bahwa 𝑝𝑘 → 𝑝 ∗ .                                               □
+
+
+
+
+                                                        13
+DAFTAR PUSTAKA
+
+
+
+A. Beck (2017), First-order methods in optimization, SIAM.
+A. Chambolle & T. Pock (2011), A first-order primal-dual algorithm for convex problems
+  with applications to imaging, Journal of mathematical imaging and vision 40(1), 120–145.
+
+
+
+
+                                           14
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-
+HAB-ADV-0050 sampai O015-HAB-ADV-0075 menyertai sumber edisi ini.
+
+  (i) Pada contoh konjugat, urutan pasangan dual dibetulkan menjadi ⟨𝑥 ∗, 𝑥⟩, dan kon-
+      jugat indikator bola satuan dual diidentifikasi sebagai norma asal pada 𝑉 setelah
+      identifikasi 𝑉 ∗∗  𝑉 .
+  (ii) Lema keproperan konjugat kini menyatakan hipotesis keberadaan sedikitnya satu
+       subgradien yang dipakai buktinya; evaluasi yang salah tipe 𝑓 ∗ (𝑥)
+                                                                       ˆ dibetulkan men-
+             ∗
+       jadi 𝑓 (𝑔), dan fungsi dalam supremum disebut afin kontinu.
+ (iii) Bukti bikonjugat memakai 𝑓 (𝑥) ketika memilih 𝑦 = 𝑥 dan memulihkan dua tanda
+       ketaksamaan yang hilang pada cabang 𝛼 = 0.
+ (iv) Identitas Moreau dinyatakan di bawah konvensi ruang Hilbert bab ini agar pemeta-
+      an proksimal yang dipakai memang terdefinisi dan bernilai tunggal dalam lingkup
+      bersama yang dinyatakan.
+  (v) Rumus kesenjangan primal–dual diperbaiki agar konsisten tipe dan tanda dengan
+      dual Fenchel: 𝑓 (𝑥) + 𝑔(𝐾𝑥) − [−𝑓 ∗ (−𝐾 ∗ 𝑦) − 𝑔∗ (𝑦)].
+ (vi) Pembaruan dual PDHG memakai prox𝜎𝑔∗ ; submasalah abstraknya diminimumkan
+      terhadap 𝑦; dan koefisien sisa kekonveksan kuat untuk 𝑦 memakai 1/(2𝜎).
+(vii) Rerata ergodik PDHG dan langkah penjumlahannya memakai iterasi 1 sampai 𝑁 ,
+      sesuai ketaksamaan satu langkah untuk 𝑥𝑘+1 dan 𝑦𝑘+1 .
+(viii) Submasalah kedua ADMM diminimumkan terhadap 𝑦. Notasi gradien yang tidak
+       berlaku bagi 𝑔 nonsmooth diganti dengan subdiferensial. Tripel ADMM aktual ha-
+       nya dinyatakan stasioner terhadap 𝑦; stasioneritas primal penuh dibatasi pada ske-
+       ma hipotetis dengan minimisasi bersama.
+ (ix) Substitusi residu ADMM dibetulkan menjadi 𝐴𝑥𝑘+1 = 𝑟𝑘+1 + 𝑧 − 𝐵𝑦𝑘+1 sebelum me-
+      nurunkan 𝐴(𝑥 ∗ − 𝑥𝑘+1 ).
+
+
+
+
+                                           15
+                                     7 daftar pustaka
+
+
+   (x) Dalam penurunan Lyapunov ADMM, tanda suku silang, tanda yang dibuktikan oleh
+       optimalitas, faktor 𝛾, dan indeks awal 𝑘 ≥ 1 dibetulkan. Penjumlahan teleskopik
+       dimulai dari iterasi pertama yang memenuhi kedua kondisi optimalitas 𝑦.
+  (xi) Batas atas terakhir untuk galat nilai objektif mengembalikan tanda minus dan faktor
+       𝛾 yang sudah terdapat pada ketaksamaan berlabel sebelumnya.
+ (xii) Kemunculan kedua label duality:eq:proof_admm6 dipetakan secara transparan ke
+       duality:eq:proof_admm7; rujukan tunggalnya diperbarui bersama-sama.
+ (xiii) Salah eja, frasa ganda, dan karakter kendali berlebih dalam prosa sumber dinormalk-
+        an dalam terjemahan tanpa mengubah matematika lain.
+ (xiv) Lingkup bab dibuat koheren sebagai ruang Hilbert riil berdimensi hingga dengan
+       dual kontinu dan identifikasi Riesz; 𝑋 dan 𝑌 dinyatakan eksplisit. Kelas Γ0 memakai
+       konvensi fungsi proper, konveks, semikontinu bawah dengan nilai dalam (−∞, +∞].
+ (xv) Karakterisasi regularisasi Γ dibatasi pada keluarga minoran proper yang tidak ko-
+      song; jika keluarga itu kosong, supremumnya secara eksplisit adalah fungsi yang
+      identik −∞.
+ (xvi) Dalam bukti Fenchel–Rockafellar, inklusi optimalitas kini dijustifikasi oleh kaidah
+       Fermat serta aturan jumlah dan rantai di bawah syarat kualifikasi interior yang telah
+       dinyatakan.
+(xvii) Maksimum titik demi titik yang ketercapaiannya tidak dijamin diganti dengan sup-
+       remum, dan karakterisasi kesenjangan nol dinyatakan di bawah hipotesis dualitas
+       kuat serta ketercapaian primal–dual.
+(xviii) Identitas Moreau berskala prox𝜎𝑔∗ (𝑦) = 𝑦 −𝜎prox𝑔/𝜎 (𝑦/𝜎) ditambahkan untuk men-
+        jelaskan langkah proksimal dual PDHG.
+ (xix) Teorema PDHG kini menyatakan fungsi dalam Γ0 , ruang dan operatornya, serta po-
+       sitifnya ukuran langkah; penghitung iterasi diganti dari 𝐾 menjadi 𝑁 agar tidak
+       bertabrakan dengan operator 𝐾, dan kasus operator nol dinyatakan otomatis meme-
+       nuhi syarat ukuran langkah.
+ (xx) Bagian ADMM kini memberi tipe 𝐴, 𝐵 : ℝ𝑑 → ℝ𝑚 dan 𝑧 ∈ ℝ𝑚 , mengasumsikan 𝛾 >
+      0 serta ketercapaian setiap submasalah eksak, dan menyatakan hanya konvergensi
+      residu, perubahan citra blok, serta nilai objektif yang benar-benar dibuktikan.
+ (xxi) Himpunan 𝐶 pada contoh fungsi indikator disyaratkan tak kosong agar 𝛿𝐶 proper
+       dan fungsi pendukungnya tetap berada dalam kodomain nilai diperluas yang dinya-
+       takan.
+(xxii) Tanda 𝛼 ≥ 0 dalam bukti Fenchel–Moreau kini diperoleh dari suatu 𝑥¯ ∈ dom(𝑓 )
+       yang dijamin oleh keproperan, lalu dengan membiarkan tinggi epigraf menuju tak
+       hingga; titik terpisah 𝑥 0 tidak lagi diasumsikan berada dalam domain efektif.
+
+
+
+
+                                             16
+                                    7 daftar pustaka
+
+
+(xxiii) Bukti PDHG menangani operator nol secara terpisah, ketika suku campuran lenyap,
+        dan hanya memakai 𝛿 = 1/(𝜏 ∥𝐾 ∥) ketika 𝐾 ≠ 0.
+(xxiv) Lema satu langkah PDHG kini menyatakan sendiri hipotesis ruang Hilbert berdi-
+       mensi hingga, fungsi dalam Γ0 , operator linear terbatas, dan ukuran langkah positif
+       yang diperlukan karena lema itu mendahului teorema konvergensi.
+(xxv) Bikonjugasi dan ketaksamaan 𝑓 ∗∗ ≤ 𝑓 kini mensyaratkan 𝑓 serta 𝑓 ∗ proper. Dalam
+      kasus keluarga minoran Γ kosong, hanya supremum ruas kanan yang didefinisik-
+      an sebagai fungsi identik −∞; di bawah konvensi masukan proper bab ini, fungsi
+      tersebut tidak dinotasikan sebagai 𝑓 ∗∗ .
+
+
+
+
+                                            17
+ATRIBUSI, LISENSI, DAN NONDUKUNGAN
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Crea-
+tive Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/
+licenses/by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung
+terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+
+
+
+                                           18
+

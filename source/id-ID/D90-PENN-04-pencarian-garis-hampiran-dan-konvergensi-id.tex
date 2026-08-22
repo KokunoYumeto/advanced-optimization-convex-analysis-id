@@ -1,0 +1,187 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[a4paper,openany,leqno,fleqn,12pt]{amsbook}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[small,bf]{caption}
+\usepackage{calc}
+\usepackage{float}
+\usepackage{mdwlist}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[pdftitle={Pencarian Garis Hampiran dan Konvergensi Pendakian Gradien - Edisi Bahasa Indonesia},
+pdfauthor={Christopher Griffin},pdflang={id-ID},
+colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=red]{hyperref}
+\microtypesetup{expansion=false}
+\setlength{\emergencystretch}{2em}
+
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+
+\floatstyle{boxed}
+\newfloat{cgalgorithm}{thp}{lop}
+\floatname{cgalgorithm}{Algoritma}
+\newenvironment{algorithm}
+{\begin{cgalgorithm}[htbp]\small}
+{\normalsize\end{cgalgorithm}}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposisi}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Korolari}
+\newtheorem{claim}{Klaim}
+\makeatletter
+\@addtoreset{claim}{theorem}
+\@addtoreset{claim}{lemma}
+\@addtoreset{claim}{proposition}
+\@addtoreset{claim}{corollary}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definisi}
+\newtheorem{assumption}{Asumsi}
+\newtheorem{assumptionx}{Asumsi}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Catatan}
+\newtheorem{example}[theorem]{Contoh}
+\newtheorem{exercise}{Latihan}
+
+\renewcommand{\chaptername}{Bab}
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\bibname}{Daftar Pustaka}
+\renewcommand{\proofname}{Bukti}
+
+\title{Pencarian Garis Hampiran dan Konvergensi Pendakian Gradien\\
+       {\large Bab 4 dari \emph{Nonlinear Programming}\\Edisi Bahasa Indonesia}}
+\author{Christopher Griffin\\
+{\small dengan kontribusi Simon Miller dan Douglas Mercer}}
+\date{Sumber TeX v1.0; saksi PDF publik v1.0.1}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\LARGE\bfseries Pencarian Garis Hampiran dan\\
+Konvergensi Pendakian Gradien\par}
+\vspace{0.8em}
+{\large Bab 4 dari \emph{Nonlinear Programming}\par}
+\vspace{0.8em}
+{\Large Edisi Bahasa Indonesia\par}
+\vspace{3em}
+{\large Christopher Griffin\par}
+\vspace{0.75em}
+{\small dengan kontribusi Simon Miller dan Douglas Mercer\par}
+\vfill
+{\small Sumber TeX v1.0; saksi PDF publik v1.0.1\par}
+\end{titlepage}
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 4 dari Christopher Griffin,
+\emph{Nonlinear Programming} / Penn State MATH 555. Otoritas yang dapat
+disunting ialah distribusi TeX v1.0; PDF publik v1.0.1 dipakai hanya sebagai
+saksi koreksi upstream yang kemudian diterbitkan. Karya sumber dan karya
+turunannya berada di bawah Creative Commons Attribution--NonCommercial--
+ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+
+\hypertarget{penn-external-references}{}%
+Bab 1--3 tidak diulang dalam pembaca mandiri ini. Sembilan rujukan prasyarat
+tetap memakai nomor sumber: Proposisi 1.20, Teorema 1.22, Teorema 2.2,
+Teorema 2.4, Definisi 3.2, Lema 3.8, serta Algoritma 2, 3, dan 5. Seluruh
+struktur Bab 4, empat latihan, lima gambar, formula, label, rujukan silang,
+dan sitasi dipertahankan dalam urutan sumber. Tiga permukaan listing Maple
+yang tidak dapat dipakai sebagai penutupan komputasi terbuka diganti oleh
+pseudokode mandiri yang dinyatakan secara eksplisit.
+
+Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin,
+para kontributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau
+mendukung edisi ini.
+
+\tableofcontents
+
+% Sembilan label eksternal diikat ke nomor resmi dari Math555.aux. Tautannya
+% kembali ke penjelasan nomor eksternal di halaman Tentang unit ini.
+\makeatletter
+\@namedef{r@prop:DirecDeriv}{{1.20}{4}{}{penn-external-references}{}}
+\@namedef{r@thm:DirDeriv}{{1.22}{5}{}{penn-external-references}{}}
+\@namedef{r@thm:MVT}{{2.2}{13}{Mean Value Theorem}{penn-external-references}{}}
+\@namedef{r@thm:MVT2}{{2.4}{14}{Second Order Mean Value Theorem}{penn-external-references}{}}
+\@namedef{r@def:AscentDir}{{3.2}{23}{}{penn-external-references}{}}
+\@namedef{r@lem:AscentDirection}{{3.8}{24}{}{penn-external-references}{}}
+\@namedef{r@alg:ModifiedGradientAscent}{{2}{23}{}{penn-external-references}{}}
+\@namedef{r@alg:Bracket}{{3}{26}{}{penn-external-references}{}}
+\@namedef{r@alg:GoldenSearch}{{5}{32}{}{penn-external-references}{}}
+\makeatother
+
+\mainmatter
+\setcounter{chapter}{3}
+% Nomor global algoritma sumber sebelum Bab 4 adalah 7; caption berikutnya
+% dengan demikian tetap menjadi Algoritma 8, lalu Algoritma 9.
+\setcounter{cgalgorithm}{7}
+\include{penn-04-pencarian-garis-hampiran-dan-konvergensi-id}
+
+\backmatter
+\input{references-penn-ch04-id.bbl}
+
+\chapter*{Catatan koreksi terhadap sumber}
+\markboth{Catatan koreksi terhadap sumber}{Catatan koreksi terhadap sumber}
+Rekaman terstruktur O015-PENN-ADV-0025 sampai O015-PENN-ADV-0037 menyertai
+edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia,
+bukan oleh penulis sumber.
+
+\begin{enumerate}
+  \item Turunan pembatas garis pada syarat kelengkungan dievaluasi di
+  $\mathbf{x}_k+\delta\mathbf{p}_k$, sesuai aturan rantai, dan tanda
+  pertidaksamaan bentuk pemaksimuman dipertahankan.
+  \item Lintasan contoh dua dimensi ditulis sebagai lintasan vektor; daerah
+  kelengkungan yang diterima dijelaskan sesuai pertidaksamaan yang ditampilkan.
+  \item Lema keberadaan Wolfe diberi kehalusan $C^1$ dan keterbatasan di atas
+  pada sinar; terminasi Armijo dibuktikan langsung dari turunan positif di nol.
+  \item Listing Maple pelacakan mundur diganti pseudokode mandiri dengan domain
+  masukan, perulangan penyusutan, penghentian, dan keluaran yang lengkap.
+  \item Teorema stasioner dibatasi pada pelacakan mundur berparameter tetap;
+  bukti memakai langkah pendahulu yang ditolak, subsekuens arah, dan limit
+  takketat yang benar.
+  \item Korolari pencarian eksak mensyaratkan pemaksimum garis berhingga dan
+  konvergensi iterat; korolari penskalaan memakai batas spektral seragam, dan
+  parameter Armijo yang tak terdefinisi dipulihkan menjadi $\sigma_1$.
+  \item Contoh kegagalan memakai langkah konstan, indeks bentuk tertutup yang
+  konsisten, serta limit subsekuens genap dan ganjil yang eksplisit.
+  \item Delimiter norma yang hilang pada teorema penangkapan dipulihkan dari
+  saksi PDF publik v1.0.1.
+  \item Faktor konvergensi $\rho$ dipisahkan dari bilangan kondisi spektral
+  $\kappa$; titik ujung nol, indeks nilai eigen, dan aljabar bukti diperbaiki.
+  \item Dua listing Maple pendakian gradien diganti pseudokode mandiri dua
+  bagian dengan kontrak pencarian garis, penghentian, lintasan, dan keluaran.
+  \item Matriks kuadratik contoh diperbaiki menjadi
+  $\operatorname{diag}(-4,-20)$; bilangan kondisi $5$ dibedakan dari faktor
+  konvergensi $2/3$.
+  \item Arah Newton ditulis lengkap; bukti langkah satu eventual mengendalikan
+  suku sisa secara seragam di atas arah ternormalisasi yang berubah.
+  \item Enam label sumber dipindahkan sebelum isi bernomor yang bersarang agar
+  tetap menunjuk lingkungan pemiliknya tanpa mengubah identifikator.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Christopher Griffin, \emph{Nonlinear Programming}, Penn State
+MATH 555, dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber
+v1.0 dan karya turunan ini tunduk pada
+\href{https://creativecommons.org/licenses/by-nc-sa/3.0/us/}
+{CC BY-NC-SA 3.0 US}. Edisi ini mengatribusikan sumber, menandai perubahan,
+bersifat nonkomersial, dan mempertahankan ShareAlike pada komponen Penn.
+
+Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak
+menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan
+nama-nama tersebut semata-mata untuk atribusi karya sumber.
+
+\end{document}

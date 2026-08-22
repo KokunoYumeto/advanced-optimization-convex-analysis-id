@@ -1,0 +1,192 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[a4paper,openany,leqno,fleqn,12pt]{amsbook}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[small,bf]{caption}
+\usepackage{calc}
+\usepackage{float}
+\usepackage{mdwlist}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[pdftitle={Pendakian Gradien dan Pencarian Garis - Edisi Bahasa Indonesia},
+pdfauthor={Christopher Griffin},pdflang={id-ID},
+colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=red]{hyperref}
+\microtypesetup{expansion=false}
+\setlength{\emergencystretch}{2em}
+
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+
+\floatstyle{boxed}
+\newfloat{cgalgorithm}{thp}{lop}
+\floatname{cgalgorithm}{Algoritma}
+\newenvironment{algorithm}
+{\begin{cgalgorithm}[htbp]\small}
+{\normalsize\end{cgalgorithm}}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposisi}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Korolari}
+\newtheorem{claim}{Klaim}
+\makeatletter
+\@addtoreset{claim}{theorem}
+\@addtoreset{claim}{lemma}
+\@addtoreset{claim}{proposition}
+\@addtoreset{claim}{corollary}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definisi}
+\newtheorem{assumption}{Asumsi}
+\newtheorem{assumptionx}{Asumsi}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Catatan}
+\newtheorem{example}[theorem]{Contoh}
+\newtheorem{exercise}{Latihan}
+
+\renewcommand{\chaptername}{Bab}
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\bibname}{Daftar Pustaka}
+\renewcommand{\proofname}{Bukti}
+
+\title{Pendakian Gradien dan Pencarian Garis\\
+       {\large Bab 3 dari \emph{Nonlinear Programming}\\Edisi Bahasa Indonesia}}
+\author{Christopher Griffin\\
+{\small dengan kontribusi Simon Miller dan Douglas Mercer}}
+\date{Sumber TeX v1.0; saksi PDF publik v1.0.1}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\LARGE\bfseries Pendakian Gradien dan Pencarian Garis\par}
+\vspace{0.8em}
+{\large Bab 3 dari \emph{Nonlinear Programming}\par}
+\vspace{0.8em}
+{\Large Edisi Bahasa Indonesia\par}
+\vspace{3em}
+{\large Christopher Griffin\par}
+\vspace{0.75em}
+{\small dengan kontribusi Simon Miller dan Douglas Mercer\par}
+\vfill
+{\small Sumber TeX v1.0; saksi PDF publik v1.0.1\par}
+\end{titlepage}
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 3 dari Christopher Griffin,
+\emph{Nonlinear Programming} / Penn State MATH 555. Otoritas yang dapat
+disunting ialah distribusi TeX v1.0; PDF publik v1.0.1 dipakai hanya sebagai
+saksi koreksi upstream yang kemudian diterbitkan. Karya sumber dan karya
+turunannya berada di bawah Creative Commons Attribution--NonCommercial--
+ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US).
+
+\hypertarget{penn-external-references}{}%
+Bab 1--2 tidak diulang dalam pembaca mandiri ini. Empat rujukan prasyarat
+tetap memakai nomor sumber: Teorema 1.23 (arah gradien), Korolari 1.37
+(invers matriks definit positif), Teorema 2.2 (nilai rata-rata), dan
+Teorema 2.12 (syarat perlu orde pertama). Rujukan ke Gambar 2.3 pada Bab 2 dan
+Bagian 2 pada Bab 4 juga mempertahankan nomor sumbernya. Seluruh struktur Bab 3, dua belas
+latihan, empat gambar, formula, label, rujukan silang, dan sitasi dipertahankan
+dalam urutan sumber. Enam permukaan Maple/keluaran program yang tidak dapat
+dipakai sebagai penutupan komputasi terbuka diganti oleh pseudokode mandiri
+atau saksi numerik yang dinyatakan secara eksplisit.
+
+Terjemahan, penataan pembaca, pseudokode pengganti, dan koreksi yang ditentukan
+secara matematis merupakan perubahan terhadap sumber. Christopher Griffin,
+para kontributor, dan Penn State tidak menyusun, memeriksa, menyetujui, atau
+mendukung edisi ini.
+
+\tableofcontents
+
+% Enam label eksternal diikat ke nomor resmi dari Math555.aux. Tautannya
+% kembali ke penjelasan nomor eksternal di halaman Tentang unit ini.
+\makeatletter
+\@namedef{r@thm:Gradient}{{1.23}{5}{}{penn-external-references}{}}
+\@namedef{r@cor:InversePositiveDefinite}{{1.37}{8}{}{penn-external-references}{}}
+\@namedef{r@thm:MVT}{{2.2}{13}{Mean Value Theorem}{penn-external-references}{}}
+\@namedef{r@thm:Necessary}{{2.12}{15}{}{penn-external-references}{}}
+\@namedef{r@fig:QuarticFunction}{{2.3}{19}{}{penn-external-references}{}}
+\@namedef{r@sec:Convergence}{{2}{44}{Algorithmic Convergence}{penn-external-references}{}}
+\makeatother
+
+\mainmatter
+\setcounter{chapter}{2}
+\include{penn-03-pendakian-gradien-dan-pencarian-garis-id}
+
+\backmatter
+\input{references-penn-ch03-id.bbl}
+
+\chapter*{Catatan koreksi terhadap sumber}
+\markboth{Catatan koreksi terhadap sumber}{Catatan koreksi terhadap sumber}
+Rekaman terstruktur O015-PENN-ADV-0004 sampai O015-PENN-ADV-0024 menyertai
+edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia,
+bukan oleh penulis sumber.
+
+\begin{enumerate}
+  \item Keadaan, indeks, penghentian, arah kenaikan, dan keluaran algoritma
+  pendakian dasar dibuat lengkap; ke-definit-positif-an yang diperlukan bagi
+  arah naik dinyatakan secara eksplisit.
+  \item Notasi pencarian garis dan syarat ketercapaian diperjelas; simpul
+  interpolasi kuadratik, klasifikasi titik stasioner, dan domain pengurung
+  diperbaiki.
+  \item Listing Maple pengurungan diganti pseudokode mandiri dengan usulan
+  parabolik terlindungi, kemajuan keluar kuantitatif, kontrak kegagalan, dan
+  teorema terminasi berdasarkan keunimodalan ketat serta pemaksimum berhingga.
+  \item Klasifikasi titik stasioner contoh kuartik diperbaiki: dua maksimum
+  lokal berada dekat 2.900627632 dan 7.131520555, sedangkan titik dekat
+  4.217851814 adalah minimum lokal.
+  \item Pencarian dikotomis dan bagian emas diberi pseudokode terbuka mandiri,
+  invarian interval, pemakaian ulang evaluasi, kriteria lebar, dan jaminan
+  galat yang konsisten.
+  \item Batas iterasi kontraksi interval tidak lagi negatif apabila interval
+  awal sudah memenuhi toleransi; keluaran numerik warisan yang diperlukan
+  dipertahankan sebagai saksi nilai, bukan sebagai ketergantungan program.
+  \item Biseksi memisahkan toleransi turunan dari toleransi posisi. Batas
+  $|u-x^*|\leq\varepsilon_g/m$ hanya dinyatakan di bawah kekonkavan kuat
+  berparameter $m>0$.
+  \item Ekspansi Taylor Newton dievaluasi di $x_k$; pseudokode mandiri
+  menangani Hessian nol, penghentian, klasifikasi kelengkungan, dan kegagalan
+  tanpa mengklaim konvergensi global.
+  \item Bukti kontraksi memakai kekompakan untuk memperoleh konstanta seragam,
+  membuktikan peta mengirim interval ke dirinya sendiri, dan benar-benar
+  menarik kesimpulan titik tetap tunggal.
+  \item Spesialisasi pemaksimuman memakai $h=-\phi'$ dan
+  $\gamma=-1/\phi''$, sehingga hipotesis tanda konsisten dan peta Newton tetap
+  $x-\phi'/\phi''$.
+  \item Definisi orde konvergensi memakai $p\geq1$ dan
+  $\alpha\in(0,\infty)$, dengan $\alpha<1$ untuk orde linear. Bukti Newton
+  membedakan taksiran Q-kuadratik dari orde tepat dua.
+  \item Empat label sumber dipindahkan sebelum permukaan bernomor yang
+  bersarang agar tetap menunjuk korolari, contoh, definisi, atau teorema yang
+  dimaksud tanpa mengganti identifikatornya.
+  \item Contoh kegagalan bagian emas diklasifikasikan sebagai unimodal lemah
+  tetapi tidak ketat. Mekanisme kegagalannya adalah cabang kesamaan satu sisi
+  ketika kedua titik uji jatuh pada plateau yang sama, bukan ketiadaan
+  keunimodalan dalam arti lemah.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Christopher Griffin, \emph{Nonlinear Programming}, Penn State
+MATH 555, dengan kontribusi Simon Miller dan Douglas Mercer. Distribusi sumber
+v1.0 dan karya turunan ini tunduk pada
+\href{https://creativecommons.org/licenses/by-nc-sa/3.0/us/}
+{CC BY-NC-SA 3.0 US}. Edisi ini mengatribusikan sumber, menandai perubahan,
+bersifat nonkomersial, dan mempertahankan ShareAlike pada komponen Penn.
+
+Christopher Griffin, Simon Miller, Douglas Mercer, dan Penn State tidak
+menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan
+nama-nama tersebut semata-mata untuk atribusi karya sumber.
+
+\end{document}

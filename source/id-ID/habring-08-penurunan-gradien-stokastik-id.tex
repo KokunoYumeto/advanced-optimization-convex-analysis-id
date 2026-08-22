@@ -1,0 +1,133 @@
+% H08-S001 | sumber authority/habring/source-v1/stochastic.tex baris 1--34
+% segment-id: d90.hab.v1.ch08.seg0001
+\chapter{Penurunan Gradien Stokastik}
+Andaikan kita ingin menyelesaikan
+\begin{equation}
+    \min_x f(x),
+\end{equation}
+tetapi hanya mempunyai akses ke estimasi acak yang tak bias bagi suatu subgradien $f$. Artinya, kita mengandaikan dapat mengevaluasi $G(x,z)$ yang memenuhi
+\begin{equation}\label{stochastic:eq:gradient}
+    \E[G(x,Z)] \in \partial f(x),
+\end{equation}
+dengan $Z$ suatu peubah acak.
+Ternyata banyak bukti konvergensi dapat dialihkan ke latar stokastik ini dengan hampir tanpa upaya tambahan. Sebelum menunjukkannya, mari kita berikan motivasi untuk latar ini.
+
+Dalam pembelajaran mesin modern, banyak masalah pembelajaran dapat dirumuskan sebagai masalah jumlah hingga. Agar pengambilan sampel seragam menghasilkan estimator gradien yang tak bias, kita memakai normalisasi rerata
+\begin{equation}
+    \min_x f(x)\coloneqq \frac{1}{N}\sum_{i=1}^N f_i(x),
+\end{equation}
+dengan $N$ biasanya merupakan banyaknya sampel pelatihan. Sebagai contoh, andaikan kita ingin mempelajari pemetaan berparameter $f_\theta$ yang seharusnya menghampiri relasi $x\mapsto y$ berdasarkan data pelatihan $(x_i,y_i)_{i=1}^N$. Masalah pelatihannya dapat berupa
+\begin{equation}
+    \min_\theta \frac{1}{N}\sum_{i=1}^N \|y_i-f_\theta(x_i)\|^2.
+\end{equation}
+Karena ukuran data pelatihan yang dijumpai, sering kali gradien penuh $f$ tidak dapat dihitung secara langsung akibat keterbatasan memori.
+Jika semua $f_i$ terdiferensialkan, salah satu jalan keluarnya adalah pembaruan stokastik
+\begin{equation}
+    \begin{cases}
+        \text{Pilih $i\in\Ic$ secara seragam}\\
+        x_{k+1} = x_k - \tau \nabla f_i(x_k)
+    \end{cases}
+\end{equation}
+dengan $\Ic=\{1,\dots,N\}$.
+Dengan mendefinisikan $(Z_k)_k$ sebagai barisan peubah acak iid yang berdistribusi seragam pada $\Ic$, pembaruan di atas dapat ditulis sebagai
+\begin{equation}
+    x_{k+1} = x_k - \tau G(x_k,Z_k)
+\end{equation}
+dengan $G(x,z) \coloneqq \nabla f_z(x)$. Memang,
+$\E[G(x,Z)]=N^{-1}\sum_{i=1}^N\nabla f_i(x)=\nabla f(x)$, sehingga $G$ memenuhi~\eqref{stochastic:eq:gradient}.
+
+% H08-S002 | sumber authority/habring/source-v1/stochastic.tex baris 36--50
+% segment-id: d90.hab.v1.ch08.seg0002
+\begin{theorem}
+    Misalkan $C\subseteq\R^d$ tak kosong, tertutup, dan konveks, serta misalkan $f:\R^d\rightarrow\R$ konveks dan $L$-Lipschitz. Andaikan masalah $\min_{x\in C}f(x)$ mempunyai solusi, pilih $x^*\in\arg\min_{x\in C}f(x)$, dan ambil $x_0\in C$. Untuk $k\geq0$, misalkan
+    $G_k\coloneqq G(x_k,Z_k)$ dan jalankan iterasi terproyeksi
+    $x_{k+1}=\proj_C(x_k-\tau_kG_k)$ dengan $\tau_k>0$.
+
+    Tuliskan $\mathcal F_k=\sigma(x_0,Z_0,\dots,Z_{k-1})$, sehingga $x_k$ terukur terhadap $\mathcal F_k$, dan definisikan $\bar g_k\coloneqq\E[G_k\mid\mathcal F_k]$. Andaikan, hampir pasti untuk setiap $k$,
+    \begin{equation}
+        \begin{cases}
+            \bar g_k \in \partial f(x_k),\\
+            \E[\|G_k-\bar g_k\|^2\mid\mathcal F_k]\leq \sigma^2<\infty.
+        \end{cases}
+    \end{equation}
+    Andaikan pula ukuran langkah memenuhi
+    \[
+        \sum_{k=0}^{K-1}\tau_k\longrightarrow\infty,
+        \qquad
+        \frac{\sum_{k=0}^{K-1}\tau_k^2}{\sum_{k=0}^{K-1}\tau_k}\longrightarrow0
+        \quad\text{ketika }K\longrightarrow\infty.
+    \]
+    Untuk $K\geq1$, definisikan
+    $f_{\mathrm{best}}^K\coloneqq\min_{0\leq k\leq K-1}f(x_k)$.
+    Maka $\E[f_{\mathrm{best}}^K-f(x^*)]\rightarrow0$ ketika $K\rightarrow\infty$.
+\end{theorem}
+
+% H08-S003 | sumber authority/habring/source-v1/stochastic.tex baris 51--107
+% segment-id: d90.hab.v1.ch08.seg0003
+\begin{proof}
+    Karena $x^*\in C$, kita mempunyai $\proj_C(x^*)=x^*$. Ketakmembangan proyeksi metrik memberikan
+    \begin{equation}
+        \begin{aligned}
+            \|x_{k+1}-x^*\|^2
+            &= \|\proj_C(x_{k}-\tau_k G_k)-\proj_C(x^*)\|^2\\
+            &\leq \|x_{k}-\tau_k G_k-x^*\|^2\\
+            &= \|x_{k}-x^*\|^2 - 2\tau_k\inner{x_k-x^*}{G_k} + \tau_k^2\|G_k\|^2.
+        \end{aligned}
+    \end{equation}
+    Perhatikan bahwa sifat terukur $x_k$ dan ketakbiasan bersyarat memberi
+    \begin{equation}
+        \begin{aligned}
+            \E[\inner{x_k-x^*}{G_k}]
+            &= \E\!\left[\E[\inner{x_k-x^*}{G_k}\mid\mathcal F_k]\right]\\
+            &= \E[\inner{x_k-x^*}{\bar g_k}]\\
+            &\geq \E[f(x_k)-f(x^*)]\\
+            &= \E[f(x_k)]-f(x^*),
+        \end{aligned}
+    \end{equation}
+    dengan ketaksamaan subgradien pada baris ketiga. Karena fungsi konveks $f$ bersifat $L$-Lipschitz pada $\R^d$, setiap subgradiennya mempunyai norma paling besar $L$. Identitas momen kedua bersyarat kemudian menghasilkan
+    \begin{equation}
+        \E[\|G_k\|^2\mid\mathcal F_k]
+        = \E[\|G_k-\bar g_k\|^2\mid\mathcal F_k]+\|\bar g_k\|^2
+        \leq \sigma^2+L^2\coloneqq M^2.
+    \end{equation}
+    Dengan mengambil ekspektasi pada ketaksamaan pertama, diperoleh
+    \begin{equation}
+        \begin{aligned}
+            \E[\|x_{k+1}-x^*\|^2]
+            \leq \E[\|x_k-x^*\|^2]
+            -2\tau_k\big(\E[f(x_k)]-f(x^*)\big)
+            +\tau_k^2M^2.
+        \end{aligned}
+    \end{equation}
+    Selebihnya mengikuti argumen pada kasus deterministik. Menjumlahkan dari $k=0$ sampai $K-1$, memakai ketaknegatifan suku jarak terakhir, lalu membagi dengan $2$ memberikan
+    \begin{equation}
+        \begin{aligned}
+            \sum_{k=0}^{K-1}\tau_k\big(\E[f(x_k)]-f(x^*)\big)
+            \leq \frac{1}{2}\|x_0-x^*\|^2
+            +\frac{M^2}{2}\sum_{k=0}^{K-1}\tau_k^2.
+        \end{aligned}
+    \end{equation}
+    Definisikan
+    \begin{equation}
+        S_K\coloneqq\sum_{k=0}^{K-1}\tau_k,
+        \qquad
+        Q_K\coloneqq\sum_{k=0}^{K-1}\tau_k^2.
+    \end{equation}
+    Karena $\tau_k>0$, minimum terbaik tidak melebihi rerata berbobot. Oleh karena itu,
+    \begin{equation}
+        \begin{aligned}
+            \E[f_{\mathrm{best}}^K-f(x^*)]
+            &\leq \frac{\sum_{k=0}^{K-1}\tau_k\E[f(x_k)-f(x^*)]}{S_K}\\
+            &\leq \frac{\|x_0-x^*\|^2}{2S_K}
+            +\frac{M^2Q_K}{2S_K}.
+        \end{aligned}
+    \end{equation}
+    Berdasarkan kedua syarat ukuran langkah,
+    \begin{equation}
+        0\leq\E[f_{\mathrm{best}}^K-f(x^*)]
+        \leq\frac{\|x_0-x^*\|^2}{2S_K}
+        +\frac{M^2Q_K}{2S_K}
+        \longrightarrow0
+        \qquad(K\rightarrow\infty).
+    \end{equation}
+\end{proof}

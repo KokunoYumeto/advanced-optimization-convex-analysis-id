@@ -1,0 +1,96 @@
+{
+  "article_id": 33314733,
+  "article_status": "public",
+  "article_version": 1,
+  "collection_public_ids": [
+    33314706,
+    33314724,
+    33314736,
+    33314739,
+    33314754,
+    33314766,
+    33314772,
+    33314775,
+    33314793,
+    33314796,
+    33314802,
+    33314805,
+    33314934
+  ],
+  "existing_file_count": 5,
+  "license_registry": {
+    "evidence": "Verified in the successful bounded preflight before the upload transaction; private and public article metadata are revalidated after mutation.",
+    "name": "CC BY 4.0",
+    "value": 1,
+    "verified": true
+  },
+  "local_payload": {
+    "file_count": 5,
+    "files": [
+      {
+        "bytes": 3090098,
+        "md5": "9b23674e5b308d3ac72bcf3b0a6287b1",
+        "name": "D90-HAB-03-09-modul-pendamping-id.pdf",
+        "sha256": "6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87"
+      },
+      {
+        "bytes": 160908,
+        "md5": "7bb43921cdc621054b508d8c96cb645e",
+        "name": "D90-HAB-03-09-sumber-id.zip",
+        "sha256": "be06ba070d97506970378cea801c2525abc69bb305c3770b59186a6e212a645f"
+      },
+      {
+        "bytes": 18657,
+        "md5": "2ab724713fdaf49e4523c4503bfd068d",
+        "name": "LICENSE_CC_BY_4.0.txt",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "bytes": 1111,
+        "md5": "5eabc4a18b6fe0bde249fdfccf0f3100",
+        "name": "FIGSHARE_MANIFEST.json",
+        "sha256": "29c574ae755abc18a157ad48f4222b9fb6f75ca015c647d9f0ba9575264d260e"
+      },
+      {
+        "bytes": 375,
+        "md5": "0a4eae3b79e47bf3cd4ba6076bd0c1c8",
+        "name": "SHA256SUMS",
+        "sha256": "b6f4a03048b057e45744d05e1a3dabc469240bdf977c4b1d99288f3c1780c885"
+      }
+    ],
+    "total_bytes": 3271149
+  },
+  "project_article_count": 24,
+  "project_cap_bytes": 20000000000,
+  "project_current_bytes": 207268626,
+  "project_file_count": 69,
+  "project_ids": [
+    33314706,
+    33314709,
+    33314724,
+    33314727,
+    33314730,
+    33314733,
+    33314736,
+    33314739,
+    33314745,
+    33314748,
+    33314751,
+    33314754,
+    33314766,
+    33314769,
+    33314772,
+    33314775,
+    33314784,
+    33314790,
+    33314793,
+    33314796,
+    33314802,
+    33314805,
+    33314856,
+    33314934
+  ],
+  "project_projected_bytes": 207268626,
+  "schema": "o015-figshare-reader-preflight-v1",
+  "target_public_collection_count": 0
+}

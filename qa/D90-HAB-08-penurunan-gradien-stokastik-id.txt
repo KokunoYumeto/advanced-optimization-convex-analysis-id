@@ -1,0 +1,263 @@
+                    OPTIMISASI KONVEKS
+                     Unit 8: Penurunan Gradien Stokastik
+                             Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 8, "Stochastic Gradient Descent", dari Andreas
+Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1. Sumber berwenang un-
+tuk unit ini adalah berkas stochastic.tex edisi v1 dengan SHA-256 berikut:
+
+                           610d11b59d8dfabbbbe6fbc509a0f9ac
+                           1727540458c67f8cd3b7bab49566a07d
+
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal fungsi konveks Li-
+pschitz, subgradien, proyeksi metrik pada himpunan konveks tertutup, ekspektasi bersya-
+rat, filtrasi, dan bukti konvergensi metode subgradien terproyeksi. Seluruh motivasi, algo-
+ritme, teorema, bukti, dan formula dalam bab sumber dipertahankan dalam urutan sumber.
+Kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka dan diring-
+kas pada akhir unit.
+Edisi ini berdiri sendiri untuk dibaca dan dibangun, tetapi tidak mengklaim menggantik-
+an konteks lengkap catatan kuliah asal. Notasi iid dipertahankan sebagai singkatan baku
+untuk peubah acak yang saling bebas dan berdistribusi identik.
+
+
+
+
+                                            i
+DAFTAR ISI
+
+
+
+
+8   penurunan gradien stokastik   1
+
+
+
+
+                                      ii
+8 PENURUNAN GRADIEN STOKASTIK
+
+
+
+Andaikan kita ingin menyelesaikan
+
+(8.1)                                     min 𝑓 (𝑥),
+                                            𝑥
+
+tetapi hanya mempunyai akses ke estimasi acak yang tak bias bagi suatu subgradien 𝑓 .
+Artinya, kita mengandaikan dapat mengevaluasi 𝐺 (𝑥, 𝑧) yang memenuhi
+
+(8.2)                                𝔼[𝐺 (𝑥, 𝑍 )] ∈ 𝜕𝑓 (𝑥),
+
+dengan 𝑍 suatu peubah acak. Ternyata banyak bukti konvergensi dapat dialihkan ke latar
+stokastik ini dengan hampir tanpa upaya tambahan. Sebelum menunjukkannya, mari kita
+berikan motivasi untuk latar ini.
+Dalam pembelajaran mesin modern, banyak masalah pembelajaran dapat dirumuskan se-
+bagai masalah jumlah hingga. Agar pengambilan sampel seragam menghasilkan estimator
+gradien yang tak bias, kita memakai normalisasi rerata
+                                                       𝑁
+                                                    1 ∑︁
+(8.3)                           min 𝑓 (𝑥) :=              𝑓𝑖 (𝑥),
+                                 𝑥                  𝑁 𝑖=1
+
+dengan 𝑁 biasanya merupakan banyaknya sampel pelatihan. Sebagai contoh, andaikan
+kita ingin mempelajari pemetaan berparameter 𝑓𝜃 yang seharusnya menghampiri relasi
+𝑥 ↦→ 𝑦 berdasarkan data pelatihan (𝑥𝑖 , 𝑦𝑖 )𝑖=1
+                                            𝑁 . Masalah pelatihannya dapat berupa
+
+
+                                          𝑁
+                                       1 ∑︁
+(8.4)                          min           ∥𝑦𝑖 − 𝑓𝜃 (𝑥𝑖 )∥ 2 .
+                                 𝜃     𝑁 𝑖=1
+
+Karena ukuran data pelatihan yang dijumpai, sering kali gradien penuh 𝑓 tidak dapat di-
+hitung secara langsung akibat keterbatasan memori. Jika semua 𝑓𝑖 terdiferensialkan, salah
+satu jalan keluarnya adalah pembaruan stokastik
+                             (
+                               Pilih 𝑖 ∈ I secara seragam
+(8.5)
+                              𝑥𝑘+1 = 𝑥𝑘 − 𝜏∇𝑓𝑖 (𝑥𝑘 )
+
+
+
+
+                                                1
+                               8 penurunan gradien stokastik
+
+
+dengan I = {1, . . . , 𝑁 }. Dengan mendefinisikan (𝑍𝑘 )𝑘 sebagai barisan peubah acak iid
+yang berdistribusi seragam pada I, pembaruan di atas dapat ditulis sebagai
+(8.6)                           𝑥𝑘+1 = 𝑥𝑘 − 𝜏𝐺 (𝑥𝑘 , 𝑍𝑘 )
+dengan 𝐺 (𝑥, 𝑧) := ∇𝑓𝑧 (𝑥). Memang, 𝔼[𝐺 (𝑥, 𝑍 )] = 𝑁 −1 𝑖=1 ∇𝑓𝑖 (𝑥) = ∇𝑓 (𝑥), sehingga 𝐺
+                                                         P𝑁
+memenuhi (8.2).
+
+Teorema 8.1. Misalkan 𝐶 ⊆ ℝ𝑑 tak kosong, tertutup, dan konveks, serta misalkan 𝑓 : ℝ𝑑 →
+ℝ konveks dan 𝐿-Lipschitz. Andaikan masalah min𝑥 ∈𝐶 𝑓 (𝑥) mempunyai solusi, pilih 𝑥 ∗ ∈
+arg min𝑥 ∈𝐶 𝑓 (𝑥), dan ambil 𝑥 0 ∈ 𝐶. Untuk 𝑘 ≥ 0, misalkan 𝐺𝑘 := 𝐺 (𝑥𝑘 , 𝑍𝑘 ) dan jalankan
+iterasi terproyeksi 𝑥𝑘+1 = proj𝐶 (𝑥𝑘 − 𝜏𝑘 𝐺𝑘 ) dengan 𝜏𝑘 > 0.
+Tuliskan F𝑘 = 𝜎 (𝑥 0, 𝑍 0, . . . , 𝑍𝑘−1 ), sehingga 𝑥𝑘 terukur terhadap F𝑘 , dan definisikan 𝑔¯𝑘 :=
+𝔼[𝐺𝑘 | F𝑘 ]. Andaikan, hampir pasti untuk setiap 𝑘,
+                                  (
+                                    𝑔¯𝑘 ∈ 𝜕𝑓 (𝑥𝑘 ),
+(8.7)
+                                    𝔼[∥𝐺𝑘 − 𝑔¯𝑘 ∥ 2 | F𝑘 ] ≤ 𝜎 2 < ∞.
+
+Andaikan pula ukuran langkah memenuhi
+                 𝐾−1
+                                 P𝐾−1 2
+                 ∑︁                   𝜏
+                                   𝑘=0 𝑘
+                     𝜏𝑘 −→ ∞,    P𝐾−1 −→ 0                     ketika 𝐾 −→ ∞.
+                 𝑘=0                  𝜏
+                                   𝑘=0 𝑘
+                           𝐾 := min
+Untuk 𝐾 ≥ 1, definisikan 𝑓best                                         ∗
+                                   0≤𝑘≤𝐾−1 𝑓 (𝑥𝑘 ). Maka 𝔼[𝑓best − 𝑓 (𝑥 )] → 0 ketika
+                                                             𝐾
+
+𝐾 → ∞.
+
+Bukti. Karena 𝑥 ∗ ∈ 𝐶, kita mempunyai proj𝐶 (𝑥 ∗ ) = 𝑥 ∗ . Ketakmembangan proyeksi metrik
+memberikan
+                  ∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 = ∥proj𝐶 (𝑥𝑘 − 𝜏𝑘 𝐺𝑘 ) − proj𝐶 (𝑥 ∗ )∥ 2
+(8.8)                            ≤ ∥𝑥𝑘 − 𝜏𝑘 𝐺𝑘 − 𝑥 ∗ ∥ 2
+                                 = ∥𝑥𝑘 − 𝑥 ∗ ∥ 2 − 2𝜏𝑘 ⟨𝑥𝑘 − 𝑥 ∗, 𝐺𝑘 ⟩ + 𝜏𝑘2 ∥𝐺𝑘 ∥ 2 .
+Perhatikan bahwa sifat terukur 𝑥𝑘 dan ketakbiasan bersyarat memberi
+                         𝔼[⟨𝑥𝑘 − 𝑥 ∗, 𝐺𝑘 ⟩] = 𝔼[𝔼[⟨𝑥𝑘 − 𝑥 ∗, 𝐺𝑘 ⟩ | F𝑘 ]]
+                                            = 𝔼[⟨𝑥𝑘 − 𝑥 ∗, 𝑔¯𝑘 ⟩]
+(8.9)
+                                            ≥ 𝔼[𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )]
+                                            = 𝔼[𝑓 (𝑥𝑘 )] − 𝑓 (𝑥 ∗ ),
+dengan ketaksamaan subgradien pada baris ketiga. Karena fungsi konveks 𝑓 bersifat 𝐿-
+Lipschitz pada ℝ𝑑 , setiap subgradiennya mempunyai norma paling besar 𝐿. Identitas mo-
+men kedua bersyarat kemudian menghasilkan
+(8.10)         𝔼[∥𝐺𝑘 ∥ 2 | F𝑘 ] = 𝔼[∥𝐺𝑘 − 𝑔¯𝑘 ∥ 2 | F𝑘 ] + ∥𝑔¯𝑘 ∥ 2 ≤ 𝜎 2 + 𝐿 2 := 𝑀 2 .
+
+
+                                                  2
+                               8 penurunan gradien stokastik
+
+
+Dengan mengambil ekspektasi pada ketaksamaan pertama, diperoleh
+
+         𝔼[∥𝑥𝑘+1 − 𝑥 ∗ ∥ 2 ] ≤ 𝔼[∥𝑥𝑘 − 𝑥 ∗ ∥ 2 ] − 2𝜏𝑘 𝔼[𝑓 (𝑥𝑘 )] − 𝑓 (𝑥 ∗ ) + 𝜏𝑘2 𝑀 2 .
+                                                                            
+(8.11)
+
+Selebihnya mengikuti argumen pada kasus deterministik. Menjumlahkan dari 𝑘 = 0 sam-
+pai 𝐾 −1, memakai ketaknegatifan suku jarak terakhir, lalu membagi dengan 2 memberikan
+                    𝐾−1
+                    ∑︁                           1                 𝑀 2 ∑︁
+                                                                        𝐾−1
+(8.12)                  𝜏𝑘 𝔼[𝑓 (𝑥𝑘 )] − 𝑓 (𝑥 ∗ ) ≤ ∥𝑥 0 − 𝑥 ∗ ∥ 2 +         𝜏𝑘2 .
+                    𝑘=0                           2                  2  𝑘=0
+
+Definisikan
+                                          𝐾−1
+                                          ∑︁                        𝐾−1
+                                                                    ∑︁
+(8.13)                           𝑆𝐾 :=          𝜏𝑘 ,       𝑄 𝐾 :=       𝜏𝑘2 .
+                                          𝑘=0                       𝑘=0
+
+Karena 𝜏𝑘 > 0, minimum terbaik tidak melebihi rerata berbobot. Oleh karena itu,
+
+                                               𝜏 𝔼[𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ )]
+                                         P𝐾−1
+                         𝐾         ∗       𝑘=0 𝑘
+                     𝔼[𝑓best − 𝑓 (𝑥 )] ≤
+(8.14)                                                𝑆𝐾
+                                                 ∗
+                                         ∥𝑥 0 − 𝑥 ∥ 2    𝑀 2𝑄 𝐾
+                                       ≤              +         .
+                                             2𝑆𝐾          2𝑆𝐾
+Berdasarkan kedua syarat ukuran langkah,
+
+                                          ∥𝑥 0 − 𝑥 ∗ ∥ 2 𝑀 2𝑄 𝐾
+(8.15)                𝐾
+              0 ≤ 𝔼[𝑓best − 𝑓 (𝑥 ∗ )] ≤                 +       −→ 0            (𝐾 → ∞).
+                                              2𝑆𝐾         2𝑆𝐾
+                                                                                           □
+
+
+
+
+                                                       3
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-
+HAB-ADV-0076 sampai O015-HAB-ADV-0083 menyertai sumber edisi ini.
+
+  (i) Objektif jumlah hingga dinormalisasi menjadi 𝑁 −1 𝑖 𝑓𝑖 . Dengan demikian, pengam-
+                                                        P
+      bilan indeks seragam dan pilihan 𝐺 (𝑥, 𝑧) = ∇𝑓𝑧 (𝑥) benar-benar memenuhi ketak-
+      biasan yang dinyatakan; pembagian dengan 𝑁 tidak mengubah himpunan pemini-
+      mum.
+  (ii) Teorema kini menyatakan fungsi konveks Lipschitz, himpunan kendala 𝐶 yang tak
+       kosong, tertutup, dan konveks, keberadaan solusi 𝑥 ∗ ∈ 𝐶, titik awal 𝑥 0 ∈ 𝐶, ukuran
+       langkah positif, serta iterasi SGD terproyeksi yang memang dipakai dalam bukti.
+ (iii) Ketakbiasan dan batas varians dirumuskan secara bersyarat terhadap filtrasi sebe-
+       lum sampel ke-𝑘. Hal ini menutup kesenjangan antara asumsi satu peubah acak
+       tetap dan pembuktian pada iterasi adaptif.
+                𝐾 didefinisikan sebagai nilai terbaik di antara iterasi 0 sampai 𝐾 − 1, dan
+ (iv) Besaran 𝑓best
+      seluruh penghitung pada pernyataan serta bukti dibuat konsisten dengan 𝐾.
+  (v) Identitas momen kedua memakai gradien rata-rata bersyarat 𝑔¯𝑘 dan menghasilkan
+      batas 𝑀 2 = 𝜎 2 + 𝐿 2 dari varians bersyarat serta sifat Lipschitz, bukan dengan meng-
+      urangkan norma ekspektasi tak bersyarat pada titik acak.
+ (vi) Setelah relasi satu langkah dibagi dua, faktor 1/2 yang hilang pada suku 𝑀 2 𝑘 𝜏𝑘2
+                                                                                       P
+      dalam sumber dipulihkan.
+                                                                                   P
+(vii) Definisi dan manipulasi 𝜎𝑛 yang tidak konsisten diganti dengan 𝑆𝐾 = 𝑘 𝜏𝑘 dan
+      𝑄 𝐾 = 𝑘 𝜏𝑘2 . Syarat konvergensi yang benar dinyatakan sebagai 𝑆𝐾 → ∞ dan
+              P
+      𝑄 𝐾 /𝑆𝐾 → 0, lalu diterapkan langsung pada batas galat.
+(viii) Salah ketik prosa, makro ekspektasi 𝐸 yang hilang garis miring, dan pemisah penja-
+       jaran yang salah tempat pada inklusi subgradien dinormalkan tanpa mengubah isi
+       lain.
+
+
+
+
+                                            4
+ATRIBUSI, LISENSI, DAN NONDUKUNGAN
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Crea-
+tive Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/
+licenses/by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung
+terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+
+
+
+                                           5
+

@@ -1,0 +1,430 @@
+{
+  "checks": [
+    {
+      "check_id": "authority_identity",
+      "evidence": {
+        "actual": {
+          "bytes": 41715,
+          "path": "authority/penn-state/source/ClassNotes/Section3.tex",
+          "sha256": "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+        },
+        "expected": [
+          41715,
+          "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+        ]
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "target_identity",
+      "evidence": {
+        "actual": {
+          "bytes": 44364,
+          "path": "source/id-ID/penn-03-pendakian-gradien-dan-pencarian-garis-id.tex",
+          "sha256": "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+        },
+        "expected": [
+          44364,
+          "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+        ]
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "renumbered_ledger_identity_is_frozen",
+      "evidence": {
+        "actual": {
+          "bytes": 14813,
+          "path": "qa/PENN_CH03_PROPOSED_LEDGER.jsonl",
+          "sha256": "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+        },
+        "expected": [
+          14813,
+          "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+        ]
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "validated_surfaces_present_in_pinned_target",
+      "evidence": [
+        "d90.penn.v1.ch03.seg0001",
+        "d90.penn.v1.ch03.seg0008",
+        "d-c\\geq\\tau(c-b)",
+        "|u-x^*|\\leq\\varepsilon_g/m",
+        "h(x)=-\\phi'(x)",
+        "\\gamma(x)=-1/\\phi''(x)",
+        "N(x)=x-\\frac{h(x)}{h'(x)}",
+        "\\frac{|h''(x^*)|}{2|h'(x^*)|}"
+      ],
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "quadratic_turning_point",
+      "evidence": {
+        "expected": 1.0,
+        "is_maximum": true,
+        "vertex": 1.0
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "quadratic_turning_point_singular_negative_control",
+      "evidence": {
+        "is_maximum": false,
+        "vertex_is_nan": true
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "guarded_bracket_strict_unimodal_success",
+      "evidence": {
+        "bracket": [
+          1.309016994374947,
+          3.000000000000003,
+          5.736067977499798
+        ],
+        "iterations": 3,
+        "status": "strict_bracket"
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "guarded_bracket_quantitative_progress",
+      "evidence": {
+        "minimum_gap_ratio": 1.618033988749895,
+        "required_tau": 1.618033988749895,
+        "steps": 3
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "guarded_bracket_equality_branch",
+      "evidence": {
+        "phi_b": -1.0,
+        "phi_c": -1.0,
+        "phi_mid": -0.0
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_attainment_only_bracketing_claim_negative_control",
+      "evidence": {
+        "algorithm_status": "invalid_initial_rise",
+        "global_maximizer": 1.0,
+        "meaning": "mere attainment does not repair an initial pair pointing away from the maximizer",
+        "phi_at_maximizer": -0.0,
+        "start": [
+          2.0,
+          3.0
+        ]
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "golden_section_strict_concave_solution",
+      "evidence": {
+        "error": 3.535509751628751e-08,
+        "interval": [
+          4.999999964644902,
+          5.000000149766595
+        ],
+        "iterations": 37,
+        "point": 5.000000035355098
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "golden_section_one_new_evaluation_per_iteration",
+      "evidence": {
+        "evaluations": 39,
+        "iterations": 37
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "golden_section_contraction_ratio",
+      "evidence": {
+        "expected": 0.6180339887498948,
+        "maximum_absolute_delta": 1.378154479425575e-09
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "golden_section_scipy_reference",
+      "evidence": {
+        "scipy_fun": -10.0,
+        "scipy_x": 5.0,
+        "success": true
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "weak_unimodal_plateau_equality_negative_control",
+      "evidence": {
+        "global_point": 0.5,
+        "global_value": 5.0,
+        "meaning": "the one-sided equality branch can discard the global maximizer on a lower plateau",
+        "returned_point": 8.998228440933868,
+        "returned_value": 2.5
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "bisection_position_tolerance_and_invariant",
+      "evidence": {
+        "error": 3.725290298461914e-08,
+        "invariant": true,
+        "iterations": 27,
+        "point": 5.000000037252903,
+        "status": "position_tolerance"
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "bisection_strong_concavity_bound",
+      "evidence": {
+        "epsilon_g_over_m": 0.005,
+        "error": 0.0009765625,
+        "m": 2.0,
+        "point": 5.0009765625,
+        "status": "derivative_tolerance"
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "plain_strict_concavity_residual_distance_negative_control",
+      "evidence": {
+        "derivative_residual": 1e-10,
+        "distance": 1.0,
+        "eta": 1e-10,
+        "meaning": "strict concavity without a uniform modulus gives no uniform residual-to-distance bound",
+        "optimizer": 0.0,
+        "phi": "-eta*x^2/2",
+        "test_point": 1.0
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "quartic_extrema_corrected_classification",
+      "evidence": {
+        "classifications": [
+          "maximum",
+          "minimum",
+          "maximum"
+        ],
+        "roots": [
+          2.900627631903008,
+          4.217851813541851,
+          7.131520554555141
+        ],
+        "second_derivatives": [
+          -22.29213787056813,
+          15.35181969179164,
+          -49.30968182122349
+        ]
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_middle_extremum_misclassification_negative_control",
+      "evidence": {
+        "classification": "minimum",
+        "point": 4.217851814,
+        "second_derivative": 15.35181969764292
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_quartic_maximization",
+      "evidence": {
+        "classification": "maximum",
+        "iterations": 3,
+        "point": 2.900627631903008
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_quartic_minimization_classification",
+      "evidence": {
+        "classification": "minimum",
+        "iterations": 4,
+        "point": 4.217851813541851
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_SciPy_stationary_reference",
+      "evidence": {
+        "maximum_root": 2.900627631903115,
+        "minimum_root": 4.217851813541851
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_zero_hessian_negative_control",
+      "evidence": {
+        "status": "zero_hessian"
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_maximization_sign_specialization",
+      "evidence": {
+        "Newton_map_value": 2.0,
+        "corrected_gamma": 1.0,
+        "corrected_h": -1.75,
+        "corrected_h_prime": 1.0,
+        "probe": 0.25
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_Newton_signs_violate_hypotheses_negative_control",
+      "evidence": {
+        "source_gamma": -1.0,
+        "source_h": 1.75,
+        "source_h_prime": -1.0
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_local_quadratic_constant",
+      "evidence": {
+        "expected_abs_h2_over_2_abs_h1": "0.35355339059327376220042218105242451964241796884424",
+        "final_error": "5.07083175173022744968876316695e-37",
+        "final_ratio": "0.35355339059327376220042218106166188121286655623432",
+        "h": "x^2-2",
+        "initial_error": "0.0142135623730950488016887242097"
+      },
+      "negative_control": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "Newton_zero_second_derivative_higher_order_negative_control",
+      "evidence": {
+        "final_cubic_ratio": "2.0",
+        "final_quadratic_ratio": "1.255654565095013883440542204474013215055e-23",
+        "h": "x+x^3",
+        "h_double_prime_at_root": 0,
+        "meaning": "a Q-quadratic upper bound does not imply exact order two"
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_symmetric_nonsingular_B_negative_control",
+      "evidence": {
+        "B": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        "gradient": [
+          0.0,
+          1.0
+        ],
+        "gradient_T_Binv_gradient": -1.0
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_zero_gradient_strict_ascent_negative_control",
+      "evidence": {
+        "gradient": [
+          0.0,
+          0.0
+        ],
+        "inner_product": 0.0,
+        "source_claimed_strictly_positive": true
+      },
+      "negative_control": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "source_Newton_Taylor_basepoint_negative_control",
+      "evidence": {
+        "correct_xk_Taylor": 1.003003,
+        "evaluation_point": 1.001,
+        "exact": 1.003003001,
+        "function": "x^3",
+        "source_x0_derivative_expression": 1.0,
+        "x0": 0.0,
+        "xk": 1.0
+      },
+      "negative_control": true,
+      "status": "PASS"
+    }
+  ],
+  "counts": {
+    "checks": 31,
+    "failed": 0,
+    "negative_controls": 11,
+    "passed": 31
+  },
+  "failures": [],
+  "identities": {
+    "ledger": {
+      "bytes": 14813,
+      "path": "qa/PENN_CH03_PROPOSED_LEDGER.jsonl",
+      "sha256": "80aa5a3f7b4f46c7dfe01f58f6f68555c9aeaeb91d0877eaf27cbb447c4a67fa"
+    },
+    "source": {
+      "bytes": 41715,
+      "path": "authority/penn-state/source/ClassNotes/Section3.tex",
+      "sha256": "d4ae6142e2366b12575eafddc833df067518af114e9816187668cc367be43010"
+    },
+    "target": {
+      "bytes": 44364,
+      "path": "source/id-ID/penn-03-pendakian-gradien-dan-pencarian-garis-id.tex",
+      "sha256": "7c75d0ae56a5a912d561d91ece607f088a4ff4f3de4dbc3396ce40d6d7d6a229"
+    }
+  },
+  "runtime": {
+    "mpmath": "1.3.0",
+    "numpy": "2.4.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9",
+    "randomness": "none",
+    "scipy": "1.17.1"
+  },
+  "schema": "o015.penn.chapter03.open-numerical-validation.v1",
+  "status": "PASS",
+  "validator_script": {
+    "bytes": 25232,
+    "path": "qa/validate_penn_ch03_unit.py",
+    "sha256": "56f17eba7f3c62c1b227621e76258aed304982a8f371b2f6a4c2c30f1894670f"
+  }
+}

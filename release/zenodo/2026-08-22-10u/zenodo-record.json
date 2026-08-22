@@ -1,0 +1,161 @@
+{
+  "access": {
+    "files": "public",
+    "record": "public"
+  },
+  "files": {
+    "enabled": true
+  },
+  "metadata": {
+    "contributors": [
+      {
+        "person_or_org": {
+          "family_name": "Miller",
+          "given_name": "Simon",
+          "name": "Miller, Simon",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Mercer",
+          "given_name": "Douglas",
+          "name": "Mercer, Douglas",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "TTP",
+          "type": "organizational"
+        },
+        "role": {
+          "id": "other"
+        }
+      }
+    ],
+    "creators": [
+      {
+        "person_or_org": {
+          "family_name": "Habring",
+          "given_name": "Andreas",
+          "name": "Habring, Andreas",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Griffin",
+          "given_name": "Christopher",
+          "name": "Griffin, Christopher",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>Checkpoint bertahap yang belum lengkap ini melestarikan sepuluh unit pendamping pembaca Bahasa Indonesia (id-ID) yang telah diterima: Bab 3-9 dari Andreas Habring, <em>Lecture Notes: Convex Optimization</em>, arXiv:2607.11664v1, serta Bab 3-5 dari Christopher Griffin, <em>Nonlinear Programming</em> / Penn State MATH 555, dengan kontribusi Simon Miller dan Douglas Mercer.</p><p>Setiap PDF telah melewati pemeriksaan struktur dan matematika, validasi komputasi terbuka yang relevan, pembangunan deterministik, dan pemeriksaan visual yang dicatat. Backend pendamping berisi 1.283 rekaman dan 84 segmen stabil. Korpus tetap belum selesai: pembaca utama MIT OpenCourseWare 6.253 dan Clément Royer, tinjauan bahasa Indonesia independen, HTML/EPUB semantik, PDF bertag, lapisan penilaian/solusi yang lengkap, dan permukaan interaktif belum hadir dalam versi ini. Penn Bab 6 dan kandidat setelahnya tidak disertakan.</p><p>Hak bersifat per komponen, bukan lisensi menyeluruh untuk semua berkas. Komponen turunan Habring berada di bawah CC BY 4.0. Komponen turunan Griffin/Penn berada di bawah CC BY-NC-SA 3.0 United States. Disposisi pseudokode mandiri, metadata, backend, dan bukti QA ditentukan secara rinci dalam <code>RIGHTS.md</code> dan <code>00_control/COMPONENT_RIGHTS.csv</code>. Empat belas listing Maple dan kode warisan yang haknya tidak jelas tidak disertakan.</p><p>Ini adalah terjemahan/adaptasi independen. Para penulis sumber, kontributor, Penn State, arXiv, dan institusi mereka tidak menyusun, memeriksa, menyetujui, mensponsori, atau mendukung checkpoint Bahasa Indonesia ini.</p>",
+    "languages": [
+      {
+        "id": "ind"
+      }
+    ],
+    "publication_date": "2026-08-22",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {
+        "identifier": "10.48550/arXiv.2607.11664",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-book"
+        },
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://sites.psu.edu/griffinch/files/2023/06/Math555_SRC.zip",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-book"
+        },
+        "scheme": "url"
+      }
+    ],
+    "resource_type": {
+      "id": "publication-other"
+    },
+    "rights": [
+      {
+        "id": "cc-by-4.0"
+      },
+      {
+        "description": {
+          "en": "Applies only to the Griffin/Penn-derived reader and source components; attribution, noncommercial use, ShareAlike, change identification, and non-endorsement are preserved."
+        },
+        "link": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/",
+        "title": {
+          "en": "CC BY-NC-SA 3.0 United States - Griffin/Penn components only"
+        }
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Bahasa Indonesia"
+      },
+      {
+        "subject": "id-ID"
+      },
+      {
+        "subject": "convex optimization"
+      },
+      {
+        "subject": "convex analysis"
+      },
+      {
+        "subject": "nonsmooth optimization"
+      },
+      {
+        "subject": "subgradient methods"
+      },
+      {
+        "subject": "proximal gradient methods"
+      },
+      {
+        "subject": "duality"
+      },
+      {
+        "subject": "stochastic gradient descent"
+      },
+      {
+        "subject": "optimal transport"
+      },
+      {
+        "subject": "gradient ascent"
+      },
+      {
+        "subject": "line search"
+      },
+      {
+        "subject": "Newton's method"
+      },
+      {
+        "subject": "open educational resources"
+      },
+      {
+        "subject": "mathematical translation"
+      },
+      {
+        "subject": "AI-assisted translation"
+      }
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia (id-ID): Checkpoint Sepuluh Unit (Belum Lengkap)",
+    "version": "checkpoint-2026.08.22-10u"
+  }
+}

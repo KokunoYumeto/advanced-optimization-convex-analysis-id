@@ -58,3 +58,64 @@ Anonymous public-byte readback from the immutable commit on `raw.githubuserconte
 - `00_control/ADVERSE_LEDGER.jsonl`: 27,742 bytes; SHA-256 `7e91f509c9c983e6bafa4d94beb07ab956a156c4f40de47d7aba05f47abd05c0`.
 
 The checkpoint adds the admitted Chapter 6 reader, complete editable source and wrapper, structural/formula and open-computation evidence, and the validated 449-record/39-segment backend. It remains an incremental publication, not a final-corpus or curriculum-admission claim. No upstream contact occurred.
+
+## 2026-08-22 — Public Zenodo nine-unit preservation checkpoint
+
+- Public record: https://zenodo.org/records/22059742
+- Version DOI: https://doi.org/10.5281/zenodo.22059742
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Version: `checkpoint-2026.08.22-9u`
+- Status/title: published; explicitly `Belum Lengkap`
+- Scope: Habring Chapters 3--9 and Penn Chapters 3--4 only
+- Rights: component-specific CC BY 4.0 for Habring-derived material and CC BY-NC-SA 3.0 United States for Griffin/Penn-derived material; no blanket record-level override
+- Organization metadata: exactly one `TTP` occurrence, only as an organizational contributor
+
+Anonymous credential-free downloads matched the exact local byte count and SHA-256 for all 15 public files:
+
+- `ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22.zip`: 1,600,529 bytes; SHA-256 `10d846f2ce49bf84d9c244e9dbfc84f64fc7d2e4cd55975742a2511e6300c1da`.
+- `D90-HAB-03-subgradien-id.pdf`: 516,084 bytes; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
+- `D90-HAB-04-metode-subgradien-terproyeksi-id.pdf`: 370,824 bytes; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
+- `D90-HAB-05-metode-gradien-proksimal-id.pdf`: 473,685 bytes; SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`.
+- `D90-HAB-06-akselerasi-id.pdf`: 392,662 bytes; SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`.
+- `D90-HAB-07-dualitas-id.pdf`: 445,733 bytes; SHA-256 `c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e`.
+- `D90-HAB-08-penurunan-gradien-stokastik-id.pdf`: 346,785 bytes; SHA-256 `c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a`.
+- `D90-HAB-09-transportasi-optimal-id.pdf`: 498,244 bytes; SHA-256 `edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214`.
+- `D90-PENN-03-pendakian-gradien-dan-pencarian-garis-id.pdf`: 515,851 bytes; SHA-256 `e1be82d06572c51b403608cd9595cc5adf2dc64cfa93f53001eba94e48f77e3e`.
+- `D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf`: 847,350 bytes; SHA-256 `c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a`.
+- `README.md`: 5,579 bytes; SHA-256 `c9a733b2f06f37a0356ca14f6cb047c6975ba98c9da19900865bee11106e6491`.
+- `README_RELEASE.md`: 1,737 bytes; SHA-256 `61410b3c2be0aee745feba48d2e1482af5f4d304884fa255df65ef6bbd24bf49`.
+- `RIGHTS.md`: 2,469 bytes; SHA-256 `f469a615dbf19ae29dfb76b51f28a1a3a0faf73cc6c502c96bcc5545e5b2c0e5`.
+- `SHA256SUMS`: 1,433 bytes; SHA-256 `691780d8e90560c73281292332e42b7841be0d5b706427a988699ad731fa1edc`.
+- `release-manifest.json`: 3,179 bytes; SHA-256 `ef3dcd353d348b74481c6c89feba48d4c1b85121aea778894cbdb2d725549ff9`.
+
+The public ZIP reopened successfully with 134 entries; all 132 manifest-bound payload entries matched their internal byte counts and hashes, and no Penn Chapter 5--11 candidate, Git metadata, build tree, temporary tree, credential/token filename, or Maple file was present. The sanitized machine receipt is `release/zenodo/2026-08-22/zenodo-public-readback.json`: 4,170 bytes; SHA-256 `e07913c1dfb3a26f9cd40be33ab1ca023ea9cc7698303e43d9311fa6f306bd7f`. The first binary-readback attempt returned HTTP 406 because the local script sent a JSON-oriented `Accept` header to the content endpoint; changing that request to `Accept: */*` resolved the client bug, after which every public check passed. Zenodo itself remained operational.
+
+## 2026-08-22 — Public Zenodo ten-unit preservation checkpoint
+
+- Public record: https://zenodo.org/records/22060447
+- Version DOI: https://doi.org/10.5281/zenodo.22060447
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Version: `checkpoint-2026.08.22-10u`
+- Status/title: published; explicitly `Belum Lengkap`
+- Scope: optional companion Habring Chapters 3--9 and Penn Chapters 3--5 only; the selected MIT/Royer primary course is explicitly absent
+- Rights: component-specific CC BY 4.0 for Habring-derived material and CC BY-NC-SA 3.0 United States for Griffin/Penn-derived material; no blanket license override
+- Organization metadata: exactly one `TTP` occurrence, only as an organizational contributor
+
+Anonymous credential-free downloads matched exact local byte counts and SHA-256 identities for all 16 public files. The added Penn Chapter 5 PDF is 2,691,780 bytes, SHA-256 `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`. The new source/backend bundle is `ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22_10U.zip`, 2,497,901 bytes, SHA-256 `0e2e5ac6452a50a5167e77da3ca5cc145406b61dfc11fe8d647a78052dab5274`. The nine earlier PDFs remained byte-identical to the preceding version.
+
+The public ZIP reopened successfully with 152 unique entries; all 150 manifest-bound payloads matched their internal byte counts and SHA-256 values. It contains the admitted Chapter 5 source, four figures, bibliography input, final audits, solver/visual/rereview receipts, and the 1,283-record backend. It contains no Penn Chapter 6+, stale `PENN_CH05_SOURCE_AUDIT_DRAFT.md` or `PENN_CH05_WORKLOG.md`, Maple/legacy code, Git metadata, build/temp/cache tree, or credential/token file. The sanitized receipt is `release/zenodo/2026-08-22-10u/zenodo-public-readback.json`: 4,398 bytes; SHA-256 `6227d77e4d8de04d47f28b63ed71796fa90d4e210d8393d8f6cb950751e44d7c`.
+
+## 2026-08-22 — Public Figshare reader-first Habring module
+
+- Existing article updated in place: ID `33314733`
+- Public version DOI: https://doi.org/10.6084/m9.figshare.33314733.v2
+- Public project: `280296`, *Open and Share-Alike Educational Materials — Translations*
+- Indonesian collection: `8668413`, public version DOI `10.6084/m9.figshare.c.8668413.v30`
+- Title: *Optimisasi Lanjut dan Analisis Konveks - Modul Pendamping Habring Bab 3-9 (Bahasa Indonesia; Parsial)*
+- Status: public, version 2, file-backed rather than metadata-only
+- License: exact Figshare registry value 1, CC BY 4.0
+- Creator metadata: Kokuno Yumeto; Andreas Habring is credited as source author in the description and `IsDerivedFrom` relation without implying translation authorship or endorsement
+
+The first/primary file is `D90-HAB-03-09-modul-pendamping-id.pdf`, 3,090,098 bytes, SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`. It is followed by the 29-entry resumable source ZIP, exact CC BY 4.0 legal code, release manifest, and checksums. Anonymous downloads matched every local byte count, MD5, and SHA-256. The public source ZIP reopened and all 28 manifest-bound entries matched. The PDF retained 103 pages, `/Lang id-ID`, eight outline destinations, no encryption, and the disclosed untagged limitation.
+
+The item contains no Penn or other mixed-license work byte, no TTP prose, and no false complete-course claim. It appears exactly once in the 24-item public project and exactly once in the 14-item Indonesian collection. Post-publication project usage was 207,268,626 bytes / 69 files, below the 20,000,000,000-byte cap; this task's five files total 3,271,149 bytes, below the 500,000,000-byte cap. Version history preserves immutable metadata-only version 1 and reader-first version 2. The sanitized receipt is `release/figshare/2026-08-22-reader/figshare-public-readback.json`: 3,988 bytes; SHA-256 `8c4a55aa504cd058be6b67cc8ae0d460ce6fd08c9532915aa3c74e468a4cd1ca`.

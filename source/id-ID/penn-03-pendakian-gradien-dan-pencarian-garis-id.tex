@@ -1,0 +1,646 @@
+% P03-S001 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 1--47
+% segment-id: d90.penn.v1.ch03.seg0001
+% Terjemahan Indonesia independen; lihat qa/PENN_CH03_PROPOSED_LEDGER.jsonl
+% untuk perubahan matematis, teknis, dan hak-komponen yang ditentukan.
+% !TEX root = Math555-id.tex
+\chapter{Pengantar Pendakian Gradien dan Metode Pencarian Garis}
+\section{Algoritma Pendakian Gradien}
+\begin{remark}
+Dalam Teorema \ref{thm:Gradient}, kita membuktikan bahwa gradien menunjuk ke arah kenaikan tercepat suatu fungsi $f:\mathbb{R}^n \rightarrow \mathbb{R}$. Jika kita ingin mengidentifikasi titik $\mathbf{x}^* \in \mathbb{R}^n$ yang merupakan maksimum lokal atau global bagi $f$, pendekatan yang wajar ialah bergerak sepanjang suatu arah $\mathbf{p}$ sehingga $\nabla f(\mathbf{x})^T\mathbf{p} > 0$.
+\end{remark}
+\begin{definition} Misalkan $f:\mathbb{R}^n \rightarrow \mathbb{R}$ terdiferensialkan secara kontinu dan $\mathbf{p} \in \mathbb{R}^n$. Jika $\nabla f(\mathbf{x})^T\mathbf{p} > 0$, maka $\mathbf{p}$ disebut \textit{arah naik} di $\mathbf{x}$.
+\label{def:AscentDir}
+\end{definition}
+\begin{remark}
+Namun, kita harus berhati-hati karena $\nabla f(\mathbf{x})$ hanya menyatakan arah kenaikan tercepat di $\mathbf{x}$. Oleh sebab itu, kita mengambil langkah yang sesuai di sepanjang $\mathbf{p}$, mengevaluasi kembali gradien di iterat baru, lalu melanjutkan sampai syarat penghentian terpenuhi.
+\end{remark}
+\begin{cgalgorithm}
+\caption{Algoritma Pendakian Dasar}
+\label{alg:ModifiedGradientAscent}
+\begin{minipage}[t]{\textwidth-1em}
+\underline{\textbf{Algoritma Pendakian Dasar}}\\
+\textbf{Masukan:} fungsi terdiferensialkan $f:\mathbb{R}^n \rightarrow \mathbb{R}$ yang akan dimaksimumkan, titik awal $\mathbf{x}_0 \in \mathbb{R}^n$, dan suatu uji penghentian\\
+\textbf{Inisialisasi}: $k = 0$
+\begin{enumerate*}
+\item \textbf{selama} uji penghentian belum terpenuhi, \textbf{lakukan}
+\item \hspace*{2em} jika $\nabla f(\mathbf{x}_k)=\mathbf{0}$, hentikan dan kembalikan $\mathbf{x}_k$;
+\item \hspace*{2em} pilih $\mathbf{p}_k \in \mathbb{R}^{n}$ dan $\delta_k > 0$ sehingga $\nabla f(\mathbf{x}_k)^T\mathbf{p}_k > 0$ dan $f(\mathbf{x}_k+\delta_k\mathbf{p}_k)>f(\mathbf{x}_k)$;
+\item \hspace*{2em} $\mathbf{x}_{k+1} := \mathbf{x}_k + \delta_k\mathbf{p}_k$;
+\item \hspace*{2em} $k := k+1$.
+\item \textbf{selesai}
+\end{enumerate*}
+\textbf{Keluaran:} $\mathbf{x}_{k}$
+\end{minipage}
+\end{cgalgorithm}
+
+\begin{remark} Algoritma \ref{alg:ModifiedGradientAscent} masih menyisakan beberapa pilihan yang harus ditentukan. Kita belum menjelaskan cara memilih $\mathbf{p}_k$ dan $\delta_k$, ataupun uji penghentiannya. Lebih penting lagi, kita ingin menemukan syarat yang menjamin bahwa iteratnya konvergen dan bahwa setiap titik limit memenuhi syarat perlu untuk maksimum lokal (lihat Teorema \ref{thm:Necessary}). Terminasi dalam sejumlah langkah hingga dan konvergensi suatu barisan tak hingga adalah dua hal yang berbeda; keduanya memerlukan hipotesis tambahan.
+\end{remark}
+
+\begin{remark} Untuk bagian selanjutnya dari catatan ini, kita akan menggunakan
+\begin{displaymath}
+\mathbf{p}_k = \mathbf{B}_k^{-1} \nabla f(\mathbf{x}_k),
+\end{displaymath}
+dengan $\mathbf{B}_k \in \mathbb{R}^{n \times n}$ simetris dan nonsingular. Agar $\mathbf{p}_k$ pasti menjadi arah naik ketika gradien tidak nol, kita secara khusus akan mensyaratkan $\mathbf{B}_k$ definit positif; pilihan Newton memerlukan hipotesis lokal tersendiri.
+\end{remark}
+
+\begin{definition}[Pendakian Gradien] Jika $\mathbf{B}_k = \mathbf{I}_n$, maka Algoritma \ref{alg:ModifiedGradientAscent} disebut \textit{pendakian gradien}.
+\end{definition}
+
+\begin{definition}[Metode Newton] Jika $\mathbf{B}_k = -\nabla^2f(\mathbf{x}_k)$ dan $\delta_k \in \mathbb{R}_+$, maka Algoritma \ref{alg:ModifiedGradientAscent} menghasilkan langkah \textit{metode Newton} untuk pemaksimuman. Metode ini akan dipelajari pada bab berikutnya; $-\nabla^2f(\mathbf{x}_k)$ definit positif hanya di wilayah tempat Hessian $f$ definit negatif.
+\end{definition}
+
+% P03-S002 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 48--80
+% segment-id: d90.penn.v1.ch03.seg0002
+\section{Beberapa Hasil tentang Algoritma Pendakian Dasar}
+\begin{lemma} Misalkan $\mathbf{B}_k$ definit positif dan $\nabla f(\mathbf{x}_k)\neq\mathbf{0}$. Maka
+$\mathbf{p}_k = \mathbf{B}_k^{-1} \nabla f(\mathbf{x}_k)$ adalah arah naik di $\mathbf{x}_k$; yakni, $\nabla f(\mathbf{x}_k)^T\mathbf{p}_k > 0$.
+\label{lem:AscentDirection}
+\end{lemma}
+\begin{proof} Berdasarkan Korolari \ref{cor:InversePositiveDefinite}, $\mathbf{B}_k^{-1}$ definit positif. Karena gradien tidak nol,
+\begin{displaymath}
+\nabla f(\mathbf{x}_k)^T\mathbf{p}_k = \nabla f(\mathbf{x}_k)^T\mathbf{B}_k^{-1} \nabla f(\mathbf{x}_k) > 0
+\end{displaymath}
+menurut definisi definit positif.
+\end{proof}
+\begin{remark} Karena $\mathbf{B}_k = \mathbf{I}_n$ selalu definit positif dan nonsingular, $\mathbf{p}_k = \nabla f(\mathbf{x}_k)$ merupakan arah naik yang terdefinisi dengan benar setiap kali $\nabla f(\mathbf{x}_k)\neq\mathbf{0}$. Jika gradiennya nol, $\mathbf{x}_k$ adalah titik stasioner dan tidak ada arah naik ketat yang diberikan oleh gradien.
+\end{remark}
+
+\begin{remark} Seperti telah dicatat, kita tidak boleh memilih $\delta_k$ secara sembarang dalam Algoritma \ref{alg:ModifiedGradientAscent}. Gradien hanya memberikan informasi lokal, sehingga $\mathbf{p}_k = \mathbf{B}_k^{-1} \nabla f(\mathbf{x}_k)$ hanya dijamin sebagai arah naik di sekitar $\mathbf{x}_k$. Jika kita mendefinisikan
+\begin{equation}
+\phi(\delta_k) = f(\mathbf{x}_k + \delta_k \mathbf{p}_k),
+\end{equation}
+maka persoalan kita adalah menyelesaikan
+\begin{equation}
+\left\{
+\begin{aligned}
+\max \;\; &\phi(\delta_k)\\
+\text{s.t.} \;\; & \delta_k \geq 0.
+\end{aligned}\right.
+\label{eqn:LineSearchProblem}
+\end{equation}
+Ini adalah persoalan optimisasi satu variabel, yaitu $\delta_k$. Dengan mengasumsikan solusi $\delta_k^*$ ada dan menetapkan $\mathbf{x}_{k+1}:=\mathbf{x}_k+\delta_k^*\mathbf{p}_k$, kita pasti menaikkan---atau setidaknya tidak menurunkan---nilai $f(\mathbf{x}_{k+1})$ dibandingkan dengan $f(\mathbf{x}_k)$.
+\end{remark}
+
+\begin{remark} Seperti akan kita lihat pada Bagian \ref{sec:Convergence}, sekadar menaikkan nilai $f(\mathbf{x}_k)$ pada setiap iterasi $k$ tidaklah cukup; kenaikannya harus memadai. Salah satu cara termudah, walaupun belum tentu paling efisien secara komputasi, ialah mencari solusi Persoalan \ref{eqn:LineSearchProblem}. Bagian-bagian berikut membahas beberapa metode untuk melakukannya.
+\end{remark}
+
+% P03-S003 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 81--160
+% segment-id: d90.penn.v1.ch03.seg0003
+\section{Pengurungan Maksimum}
+\begin{remark} Untuk seluruh bagian ini, misalkan $\phi(x)$ adalah fungsi satu variabel yang ingin kita maksimumkan. Salah satu kesulitan pada Persoalan \ref{eqn:LineSearchProblem} ialah bahwa setengah garis $\delta_k\geq0$ tak terbatas, sehingga pencarian dapat berjalan sangat jauh. Kita memperkenalkan pencarian terbatas pada interval $[a,c]$, dengan $a<b<c$ dan $\phi(a)<\phi(b)>\phi(c)$. Tripel $(a,b,c)$ seperti ini disebut \textit{pengurung}.
+\end{remark}
+
+\begin{proposition} Untuk meringkas notasi, tuliskan $\phi(x)=\phi_x\in\mathbb{R}$. Jika $a,b,c$ saling berbeda, koefisien kurva kuadratik $rx^2+sx+t$ yang melalui $(a,\phi_a)$, $(b,\phi_b)$, dan $(c,\phi_c)$ diberikan oleh
+\begin{gather*}
+r=-{\frac {-b\phi_{{a}}+b\phi_{{c}}-a\phi_{{c}}+\phi_{{a}}c-\phi_{{b}}
+c+\phi_{{b}}a}{{b}^{2}c-{b}^{2}a-b{c}^{2}+b{a}^{2}-{a}^{2}c+a{c}^{2}}}
+\\
+s={\frac {-{a}^{2}\phi_{{c}}+{a}^{2}\phi_{{b}}-\phi_{{a}}{b}^{2}+\phi_
+{{a}}{c}^{2}-{c}^{2}\phi_{{b}}+\phi_{{c}}{b}^{2}}{ \left( -c+a
+ \right)  \left( ab-ac-{b}^{2}+cb \right) }}
+\\
+t={\frac {-\phi_{{b}}{a}^{2}c+{a}^{2}b\phi_{{c}}+a{c}^{2}\phi_{{b}}-a
+\phi_{{c}}{b}^{2}-{c}^{2}b\phi_{{a}}+c\phi_{{a}}{b}^{2}}{ \left( -c+a
+ \right)  \left( ab-ac-{b}^{2}+cb \right) }}.
+\end{gather*}
+\label{prop:QuadFit}
+\end{proposition}
+
+\begin{exercise} Buktikan Proposisi \ref{prop:QuadFit} dengan menyelesaikan sistem linear bagi $r,s,t$. Anda boleh memeriksa aljabarnya dengan sistem aljabar komputer terbuka.
+\end{exercise}
+
+\begin{corollary} Jika $r\neq0$, titik stasioner kurva kuadratik $rx^2+sx+t$ yang melalui $(a,\phi_a)$, $(b,\phi_b)$, dan $(c,\phi_c)$ adalah
+\label{cor:QuadFitTurn}
+\begin{equation}
+u = \frac{1}{2}\,{\frac {-{a}^{2}\phi_{{c}}+{a}^{2}\phi_{{b}}-\phi_{{a}}{b}^{2}+
+\phi_{{a}}{c}^{2}-{c}^{2}\phi_{{b}}+\phi_{{c}}{b}^{2}}{-b\phi_{{a}}+b
+\phi_{{c}}-a\phi_{{c}}+\phi_{{a}}c-\phi_{{b}}c+\phi_{{b}}a}}.
+\end{equation}
+Titik ini adalah maksimum jika $r<0$ dan minimum jika $r>0$.
+\end{corollary}
+
+\begin{remark} Pseudokode berikut menghitung titik stasioner kuadratik yang melalui $(a,\phi_a)$, $(b,\phi_b)$, dan $(c,\phi_c)$. Pseudokode ini ditulis secara independen untuk edisi ini dan tidak menyalin implementasi Maple sumber.
+
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{TitikBalikKuadratik}$(a,f_a,b,f_b,c,f_c)$\\
+1. Selesaikan sistem Vandermonde untuk $(r,s,t)$ pada $r x^2+s x+t$.\\
+2. Jika sistem singular atau $r=0$, kembalikan $(\mathrm{NaN},\mathrm{salah})$.\\
+3. Tetapkan $u=-s/(2r)$ dan kembalikan $(u,\,r<0)$.
+}}
+
+Komponen kedua bernilai \textit{benar} tepat ketika interpolan mempunyai maksimum yang terdefinisi. Nama $f_a,f_b,f_c$ pada pseudokode menyatakan $\phi_a,\phi_b,\phi_c$.
+\end{remark}
+
+\begin{remark} Dalam pencarian garis, biasanya $a=0$ dan kita dapat memilih $b=a+\varepsilon$ yang kecil. Masalah berikutnya ialah menemukan $c$. Algoritma pengurungan pada Algoritma \ref{alg:Bracket} memperluas interval ke arah kenaikan, menggunakan interpolasi kuadratik jika usulannya aman dan kembali ke perluasan geometri jika tidak. Jaminan formal di bawah memerlukan keunimodalan serta penurunan pada ekor; kekonkavan lokal saja tidak cukup untuk menjamin terminasi global.
+\end{remark}
+
+\begin{algorithm}
+\caption{Algoritma Pengurungan dengan Usulan Parabolik Terlindungi}
+\label{alg:Bracket}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} $\phi$, $a<b$ dengan $\phi(b)>\phi(a)$, faktor $\tau>1$, batas iterasi $N$.\\
+1. Tetapkan $c\leftarrow b+\tau(b-a)$.\\
+2. Untuk $j=0,\ldots,N-1$: jika $\phi(b)>\phi(c)$, kembalikan pengurung ketat $(a,b,c)$.\\
+3. Jika $\phi(b)=\phi(c)$, tetapkan $m\leftarrow(b+c)/2$; jika $\phi(m)>\phi(b)$, kembalikan pengurung ketat $(b,m,c)$, dan jika tidak, laporkan bahwa hipotesis keunimodalan ketat gagal.\\
+4. Jika $\phi(b)<\phi(c)$, hitung usulan maksimum parabolik $u$ dari $(a,\phi(a))$, $(b,\phi(b))$, $(c,\phi(c))$.\\
+5. Jika $u$ terdefinisi dan $c+\tau(c-b)\leq u\leq c+\tau^2(c-b)$, tetapkan $d\leftarrow u$; selain itu tetapkan $d\leftarrow c+\tau(c-b)$. Dengan demikian $d>c$ dan $d-c\geq\tau(c-b)$.\\
+6. Tetapkan $(a,b,c)\leftarrow(b,c,d)$ dan lanjutkan. Jika batas iterasi tercapai, laporkan kegagalan alih-alih mengklaim suatu pengurung.
+}}
+\end{algorithm}
+
+\begin{remark} Pada Algoritma \ref{alg:Bracket}, $\tau$ dapat dipilih sebagai rasio emas dan nilai awalnya $c=b+\tau(b-a)$. Nilai ini juga digunakan ketika interpolasi parabolik gagal atau tidak aman. Dalam implementasi numerik, penyebut pada Korolari \ref{cor:QuadFitTurn} harus diuji terhadap toleransi, bukan sekadar ditambahi konstanta tanpa skala (lihat \cite{PTVF07}, hlm.~491). Nilai $\phi(a)$, $\phi(b)$, dan $\phi(c)$ juga harus disimpan agar tidak dievaluasi berulang kali (\cite{PTVF07}, hlm.~491).
+\end{remark}
+
+\begin{proposition} Misalkan $\phi:[0,\infty)\to\mathbb{R}$ kontinu dan unimodal ketat: ia naik ketat hingga suatu pemaksimum berhingga $x^*$ lalu turun ketat. Jika $0\leq a<b\leq x^*$ dan $\phi(b)>\phi(a)$, maka versi tak berbatas-iterasi dari Algoritma \ref{alg:Bracket} mengidentifikasi pengurung ketat yang memuat $x^*$ dalam sejumlah langkah hingga. Implementasi berbatas $N$ mempunyai jaminan yang sama apabila $N$ dipilih sekurang-kurangnya sebesar jumlah langkah tersebut.
+\end{proposition}
+\begin{proof} Selama pengurung belum ditemukan, setiap titik baru memenuhi $d-c\geq\tau(c-b)$ dengan $\tau>1$. Karena celah positif bertambah sekurang-kurangnya secara geometrik, titik kanan bertambah tanpa batas dan akhirnya melampaui $x^*$. Selama $b<c\leq x^*$, keunimodalan ketat memberi $\phi(c)>\phi(b)$, sehingga pencarian memang harus berlanjut. Setelah dua titik berurutan berada di kanan $x^*$, penurunan ketat memberi $\phi(b)>\phi(c)$, sedangkan invarian dari iterasi sebelumnya memberi $\phi(a)<\phi(b)$; algoritma lalu mengembalikan pengurung ketat. Jika pada langkah penyeberangan terjadi $\phi(b)=\phi(c)$, keunimodalan ketat menempatkan $x^*$ di antara keduanya dan memberi $\phi((b+c)/2)>\phi(b)$, sehingga cabang kesamaan juga mengembalikan pengurung ketat. Usulan parabolik yang diterima memenuhi batas kemajuan yang sama, jadi tidak mengubah argumen terminasi.
+\end{proof}
+
+\begin{example} Tinjau fungsi
+\begin{displaymath}
+\phi(x) = -(x-4)^4+3(x-4)^3+6(x-4)^2-3(x-4)+100.
+\end{displaymath}
+Grafik fungsi ini ditunjukkan pada Gambar \ref{fig:QuarticFunction}.
+Untuk titik awal $a=0$ dan $b=0.25$, saksi keluaran numerik sumber mencatat
+\[
+(a,b,c)=(2.864863884,\,2.899652455,\,2.904582162).
+\]
+Untuk titik awal $a=4.3$ dan $b=4.5$, saksi tersebut mencatat
+\[
+(a,b,c)=(6.194427192,\,7.317871765,\,7.565247585).
+\]
+Maksimum lokal sebenarnya terjadi pada $x\sim2.900627632$ dan $x\sim7.131520555$, sedangkan $x\sim4.217851814$ adalah minimum lokal. Kedua keluaran membentuk pengurung yang memuat maksimum lokal yang sesuai.
+\end{example}
+
+\begin{remark} Pencocokan parabolik sering terlalu rumit. Untuk fungsi yang unimodal, kita cukup menetapkan $c=b+\alpha(b-a)$ dengan $\alpha>1$, lalu berturut-turut menetapkan $a\leftarrow b$ dan $b\leftarrow c$ sampai ketaksamaan pengurung terpenuhi.
+\label{rem:SimpleBracketing}
+\end{remark}
+
+\begin{exercise} Tuliskan algoritma yang dibahas dalam Catatan \ref{rem:SimpleBracketing}. Buktikan bahwa jika $\phi$ kontinu dan unimodal ketat pada $[0,\infty)$, mempunyai pemaksimum hingga $x^*$, serta menurun ketat setelah $x^*$, maka algoritma tersebut akhirnya mengurung $x^*$ apabila dimulai dengan $a=0$, $b=a+\varepsilon\leq x^*$, dan $\phi(b)>\phi(a)$.
+\label{exer:BracketProof}
+\end{exercise}
+
+\begin{exercise} Bandingkan ukuran pengurung yang diperoleh dari Algoritma \ref{alg:Bracket} dengan ukuran pengurung dari algoritma yang Anda tulis dalam Latihan \ref{exer:BracketProof}. Apakah perbedaannya berarti?
+\end{exercise}
+
+% P03-S004 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 161--224
+% segment-id: d90.penn.v1.ch03.seg0004
+\section{Pencarian Dikotomis}
+\begin{remark} Dengan mengasumsikan bahwa kita telah mempunyai pengurung bagi suatu maksimum lokal $\phi(x)$, tujuan berikutnya ialah menemukan nilai yang dekat dengan $x^*$, yaitu titik tempat $\phi(x^*)$ mencapai maksimum tersebut. Pencarian dikotomis adalah metode yang populer, walaupun bukan yang paling efisien. Algoritma \ref{alg:DichotomousSearch} memberikan pseudokode terbuka yang ditulis secara independen untuk edisi ini.
+\end{remark}
+
+\begin{algorithm}
+\caption{Pencarian Dikotomis}
+\label{alg:DichotomousSearch}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} $\phi$, ujung $a<b$, toleransi posisi $\varepsilon>0$.\\
+1. Tetapkan $(\ell,r)\leftarrow(a,b)$.\\
+2. Selama $r-\ell>2\varepsilon$, tetapkan $u\leftarrow(\ell+r)/2$, $x_1\leftarrow(\ell+u)/2$, dan $x_2\leftarrow(u+r)/2$.\\
+3. Jika $\phi(x_1)>\phi(x_2)$, tetapkan $r\leftarrow x_2$; jika $\phi(x_1)<\phi(x_2)$, tetapkan $\ell\leftarrow x_1$; jika sama, tetapkan $(\ell,r)\leftarrow(x_1,x_2)$.\\
+4. Kembalikan $x^+\leftarrow(\ell+r)/2$ beserta interval akhir $[\ell,r]$.
+}}
+\end{algorithm}
+
+\begin{remark} Pencarian dikotomis dimulai dengan interval yang diketahui memuat maksimum. Interval ini diperkecil berulang kali sampai maksimum terlacak dalam interval yang cukup kecil. Dua titik uji dihitung di kiri dan kanan titik tengah, sebagaimana diilustrasikan pada Gambar \ref{fig:DichotomousSearch}. Perbandingan nilai $\phi$ menentukan bagian interval yang dapat dibuang. Jika nilainya sama, interval dapat dipersempit ke $[x_1,x_2]$. Varian yang lebih lazim memakai $x_1=u-\delta$ dan $x_2=u+\delta$ untuk suatu $\delta>0$ yang kecil; pemilihan $\delta$ harus selaras dengan toleransi akhir.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.35]{Figures/DichotomousSearch.pdf}
+\caption{Pencarian dikotomis memperkecil secara iteratif pengurung yang memuat maksimum $\phi$ dengan membandingkan dua titik uji di sekitar titik tengah.}
+\label{fig:DichotomousSearch}
+\end{figure}
+
+\begin{exercise} Untuk suatu $\delta$ kecil (misalnya $0.01$), bandingkan secara empiris laju konvergensi Algoritma Pencarian Dikotomis pada Algoritma \ref{alg:DichotomousSearch} dengan varian titik uji $u\pm\delta$.
+\end{exercise}
+
+\begin{theorem} Misalkan $\phi$ konkaf ketat pada $[a,b]$ dan mencapai maksimum tunggalnya di $x^*\in[a,b]$. Maka Pencarian Dikotomis pada Algoritma \ref{alg:DichotomousSearch} mempertahankan $x^*$ di setiap intervalnya dan berhenti pada titik $x^+$ dengan $|x^+-x^*|\leq\varepsilon$.
+\label{thm:DichotomousSearchProof}
+\end{theorem}
+\begin{proof} Misalkan $[\ell,r]$ adalah interval sekarang dan $\ell<x_1<x_2<r$. Untuk fungsi konkaf ketat, fungsi naik ketat di sebelah kiri pemaksimum dan turun ketat di sebelah kanannya. Karena itu, $\phi(x_1)>\phi(x_2)$ menyiratkan $x^*<x_2$, sedangkan $\phi(x_1)<\phi(x_2)$ menyiratkan $x^*>x_1$. Jika kedua nilai sama, kekonkavan ketat menempatkan $x^*$ di antara $x_1$ dan $x_2$. Dengan demikian, ketiga cabang pembaruan mempertahankan $x^*$ di interval baru. Induksi, dimulai dari $x^*\in[a,b]$, membuktikan invarian tersebut pada setiap iterasi. Panjang interval berkurang paling sedikit dengan faktor $3/4$, sehingga akhirnya $r-\ell\leq2\varepsilon$. Karena $x^*$ dan titik tengah $x^+$ sama-sama berada dalam interval akhir, $|x^+-x^*|\leq(r-\ell)/2\leq\varepsilon$.
+\end{proof}
+
+\begin{theorem} Misalkan $\phi$ konkaf pada $[a,b]$ dan mencapai maksimum di interval awal tersebut. Jika setiap iterasi mempertahankan setidaknya satu pemaksimum dan mengalikan panjang interval ketidakpastian dengan faktor paling besar $r\in(0,1)$, maka panjang interval tidak melebihi $\varepsilon$ setelah
+\begin{displaymath}
+n = \max\!\left\{0,\left\lceil\frac{\log\!\left(\varepsilon/|b-a|\right)}{\log(r)}\right\rceil\right\}
+\end{displaymath}
+iterasi.
+\label{thm:Convergence}
+\end{theorem}
+
+\begin{exercise} Buktikan Teorema \ref{thm:Convergence}. Ilustrasikan bukti Anda dengan mengimplementasikan pencarian dikotomis dan memaksimumkan $\phi(x)=10-(x-5)^2$ pada interval $[0,10]$.
+\end{exercise}
+
+\begin{example}
+\label{ex:DichotSearchExample}
+Asumsi kekonkavan pada $[a,b]$ tidak diperlukan apabila struktur unimodal yang lebih lemah tetap menjamin bahwa cabang yang dibuang tidak memuat pemaksimum. Sebagai contoh, tinjau
+\begin{displaymath}
+\phi(x) = \begin{cases}
+2x+1 & x < 2,\\
+5 & 2 \leq x \leq 8,\\
+x-3 & 8 < x \leq 9,\\
+-x + 15 & x>9.
+\end{cases}
+\end{displaymath}
+Fungsi ini diilustrasikan pada Gambar \ref{fig:NonConcave}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.25]{Figures/NonConcave.pdf}
+\caption{Fungsi tak konkaf yang mencapai maksimum pada interval $[0,15]$.}
+\label{fig:NonConcave}
+\end{figure}
+Jika Algoritma \ref{alg:DichotomousSearch} dijalankan pada $[0,15]$, algoritma tersebut konvergen ke interval sempit di sekitar $x=9$, walaupun fungsi ini tidak konkaf. Saksi keluaran numerik sumber mencatat
+$x^+\approx9.001215067$.
+\end{example}
+
+% P03-S005 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 225--312
+% segment-id: d90.penn.v1.ch03.seg0005
+\section{Pencarian Bagian Emas}
+\begin{remark} Pada pencarian dikotomis, setiap iterasi memerlukan dua evaluasi baru terhadap $\phi$. Jika evaluasi $\phi$ sangat mahal, algoritma yang menyusun interval sedemikian rupa sehingga hanya satu nilai baru perlu dihitung per iterasi dapat lebih efisien. Pencarian bagian emas melakukan tepat hal itu.
+\end{remark}
+
+\begin{remark} Pada setiap iterasi pencarian bagian emas, terdapat empat titik $x_1<x_2<x_3<x_4$, dengan $x_1$ dan $x_4$ sebagai ujung kiri dan kanan interval sekarang. Jika $\phi(x_2)>\phi(x_3)$, pada iterasi berikutnya $x_1$ tetap menjadi ujung kiri, $x_3$ menjadi ujung kanan, dan $x_2$ mengambil peran $x_3$. Jika $\phi(x_2)<\phi(x_3)$, $x_4$ tetap menjadi ujung kanan, $x_2$ menjadi ujung kiri, dan $x_3$ mengambil peran $x_2$. Tujuannya ialah mempertahankan rasio panjang subinterval yang sama selama algoritma berjalan.
+\end{remark}
+
+\begin{proposition} Diberikan interval awal $[x_1,x_4]$ yang memuat maksimum fungsi unimodal $\phi$. Agar rasio panjang subinterval tetap sama setelah salah satu titik interior dipakai kembali, pilih
+$x_2=(1/\tau)x_1+(1-1/\tau)x_4$ dan $x_3=(1-1/\tau)x_1+(1/\tau)x_4$, dengan $\tau=\tfrac12(1+\sqrt5)$ rasio emas.
+\end{proposition}
+\begin{proof} Tinjau Gambar \ref{fig:GoldenRatioProof}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{Figures/GoldenRatioProof.pdf}
+\caption{Ukuran relatif interval dan subinterval dalam pencarian bagian emas.}
+\label{fig:GoldenRatioProof}
+\end{figure}
+Pada interval awal, rasio $x_2-x_1$ terhadap $x_4-x_2$ adalah $a/b$. Pada iterasi berikutnya, salah satu titik interior akan dipakai kembali. Jika $\phi(x_2)>\phi(x_3)$, $x_2$ menjadi titik $x_3$ yang baru sehingga kita memerlukan
+\begin{displaymath}
+\frac{a}{b} = \frac{c}{a}.
+\end{displaymath}
+Sebaliknya, jika $\phi(x_2)<\phi(x_3)$, $x_3$ menjadi titik $x_2$ yang baru sehingga kita memerlukan
+\begin{displaymath}
+\frac{a}{b} = \frac{c}{b-c}.
+\end{displaymath}
+Dari persamaan pertama, $a^2/c=b$. Substitusi ke persamaan kedua menghasilkan
+\begin{displaymath}
+\left(\frac{a}{c}\right)^2 - \frac{a}{c} - 1 = 0,
+\end{displaymath}
+sehingga
+\begin{displaymath}
+\frac{a}{c} = \tau = \frac{b}{a}.
+\end{displaymath}
+Tanpa mengurangi keumuman, misalkan $x_1=0$ dan $x_4=1$. Untuk menghitung $x_2$,
+\begin{displaymath}
+\frac{a}{1-a} = \frac{1}{\tau} \implies a = \frac{1}{1+\tau}.
+\end{displaymath}
+Untuk rasio emas, $1/(1+\tau)=1-1/\tau$, sehingga $x_2=(1/\tau)x_1+(1-1/\tau)x_4$. Untuk menghitung $x_3$, misalkan $a+c=r$. Maka
+\begin{displaymath}
+\frac{r-x_2}{1-r} = \frac{1}{\tau}.
+\end{displaymath}
+Dengan mengganti $x_2$ oleh $1/(1+\tau)$, kita memperoleh
+\begin{displaymath}
+r = \frac{1+2\tau}{(1+\tau)^2}.
+\end{displaymath}
+Untuk rasio emas, pecahan terakhir menyederhana menjadi $r=1/\tau$. Jadi $x_3=(1-1/\tau)x_1+(1/\tau)x_4$, dan bukti selesai.
+\end{proof}
+
+\begin{remark} Algoritma \ref{alg:GoldenSearch} menyajikan pencarian bagian emas dalam pseudokode independen yang setara secara matematis. Struktur pemakaian ulang satu titik interior mengikuti metode pada \cite{PTVF07}, hlm.~495.
+\end{remark}
+
+\begin{algorithm}
+\caption{Pencarian Bagian Emas}
+\label{alg:GoldenSearch}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} fungsi unimodal $\phi$, interval $[a,b]$, toleransi $\varepsilon>0$.\\
+1. Tetapkan $\rho\leftarrow1/\tau$, $x_2\leftarrow b-\rho(b-a)$, dan $x_3\leftarrow a+\rho(b-a)$; hitung $\phi(x_2),\phi(x_3)$.\\
+2. Selama $b-a>2\varepsilon$: jika $\phi(x_2)>\phi(x_3)$, tetapkan $b\leftarrow x_3$, $x_3\leftarrow x_2$, lalu hitung $x_2\leftarrow b-\rho(b-a)$ dan $\phi(x_2)$.\\
+3. Jika tidak, tetapkan $a\leftarrow x_2$, $x_2\leftarrow x_3$, lalu hitung $x_3\leftarrow a+\rho(b-a)$ dan $\phi(x_3)$.\\
+4. Kembalikan titik interior bernilai terbesar beserta interval akhir $[a,b]$.
+}}
+\end{algorithm}
+
+\begin{theorem} Misalkan $\phi$ konkaf ketat dan mencapai maksimum tunggalnya pada interval awal $[a,b]$ di $x^*$. Maka pencarian bagian emas mempertahankan $x^*$ di dalam intervalnya dan konvergen ke titik $x^+$ dengan $|x^+-x^*|\leq\varepsilon$ ketika kriteria lebar pada Algoritma \ref{alg:GoldenSearch} digunakan.
+\label{thm:GoldenSectionSearchProof}
+\end{theorem}
+
+\begin{exercise} Buktikan Teorema \ref{thm:GoldenSectionSearchProof}.
+\end{exercise}
+
+\begin{example} Dalam Contoh \ref{ex:DichotSearchExample}, kita melihat fungsi tak konkaf yang tetap dapat ditangani pencarian dikotomis. Sekarang tinjau fungsi yang membuat pencarian bagian emas gagal menemukan maksimum global:
+\begin{displaymath}
+\phi(x) = \begin{cases}
+10 x & x < \frac{1}{2},\\
+-10x+10 & x\geq \frac{1}{2} \text{ dan } x < \frac{3}{4},\\
+\frac{5}{2} & x\geq \frac{3}{4} \text{ dan } x < 9,\\
+-x + \frac{23}{2} & x\geq 9.
+\end{cases}
+\end{displaymath}
+Fungsi ini ditunjukkan pada Gambar \ref{fig:SearchFailure}. Ia naik ketat hingga maksimum global di $x=1/2$, turun hingga $x=3/4$, konstan pada $[3/4,9]$, lalu turun lagi. Jadi fungsi ini unimodal dalam arti lemah, tetapi tidak unimodal ketat. Pada interval $[0,11]$, dua titik interior mula-mula dapat jatuh pada plateau yang sama. Cabang kesamaan Algoritma \ref{alg:GoldenSearch}, yang berada di dalam cabang ``jika tidak'', kemudian dapat membuang wilayah kiri yang memuat maksimum global. Contoh ini menegaskan perlunya hipotesis ketat atau kebijakan kesamaan yang mempertahankan kedua sisi yang masih mungkin memuat pemaksimum.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{Figures/GoldenSectionFail.pdf}
+\caption{Fungsi unimodal lemah dengan plateau panjang; kebijakan kesamaan satu sisi dapat membuang maksimum global.}
+\label{fig:SearchFailure}
+\end{figure}
+Saksi keluaran numerik sumber mencatat
+$x^+\approx8.998228439$, yang mempunyai nilai fungsi lebih rendah daripada maksimum global di $x=1/2$.
+\end{example}
+
+\begin{remark} Terdapat metode pencarian garis bebas-turunan lainnya. Salah satu yang paling sederhana memakai interpolasi parabolik seperti pada Algoritma \ref{alg:Bracket} (lihat \cite{BHS06} atau \cite{Bert99}). Metode Brent menggabungkan interpolasi parabolik dengan metode bagian emas (lihat \cite{PTVF07}, Bab~10). Teknik-teknik ini terutama meningkatkan efisiensi tanpa mengubah gagasan dasar metode bebas-turunan pada bagian ini.
+\end{remark}
+
+% P03-S006 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 313--404
+% segment-id: d90.penn.v1.ch03.seg0006
+\section{Pencarian Biseksi}
+\begin{remark} Sekarang kita mengasumsikan bahwa turunan pertama, dan mungkin turunan kedua, dari $\phi(x)$ dapat dihitung. Informasi ini memungkinkan metode baru untuk mencari titik yang memaksimumkan fungsi tersebut.
+\end{remark}
+
+\begin{remark} Sebelum melanjutkan, perlu ditekankan bahwa metode berbasis turunan sebaiknya memakai turunan fungsi yang sebenarnya, bukan hampiran yang tidak dikendalikan. Hampiran turunan memang sering diperlukan dalam optimisasi multidimensi, tetapi pencarian garis dapat peka terhadap turunan yang keliru. Karena itu, metode bebas-turunan kadang lebih aman walaupun mungkin kurang efisien.
+\end{remark}
+
+\begin{remark} Pencarian biseksi mengasumsikan bahwa untuk fungsi satu variabel $\phi(x)$ tersedia interval $[a,b]\subset\mathbb{R}$ yang memuat suatu maksimum lokal, $\phi$ terdiferensialkan pada interval tertutup tersebut, dan $\phi'(a)>0$ serta $\phi'(b)<0$. Kekonkavan menjamin bahwa tanda turunan dapat dipakai untuk mempertahankan interval yang memuat pemaksimum.
+\end{remark}
+
+\begin{remark} Algoritma \ref{alg:Bisection} memilih titik tengah $u=(\ell+r)/2$. Jika $\phi'(u)>0$, pemaksimum berada di sebelah kanan $u$ dan interval diperbarui menjadi $[u,r]$. Jika $\phi'(u)<0$, interval diperbarui menjadi $[\ell,u]$. Turunan nol memberi titik stasioner secara eksak. Dalam aritmetika titik-mengambang, algoritma juga memakai toleransi turunan $\varepsilon_g$ dan toleransi posisi $\varepsilon_x$; hanya toleransi posisi yang sendiri memberi batas jarak tanpa asumsi kelengkungan tambahan.
+\end{remark}
+
+\begin{algorithm}
+\caption{Pencarian Biseksi}
+\label{alg:Bisection}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} $\phi'$, $a<b$ dengan $\phi'(a)>0>\phi'(b)$, $\varepsilon_x>0$, $\varepsilon_g\geq0$, dan batas iterasi $N$.\\
+1. Tetapkan $(\ell,r)\leftarrow(a,b)$.\\
+2. Untuk $j=0,\ldots,N-1$, tetapkan $u\leftarrow(\ell+r)/2$ dan $g\leftarrow\phi'(u)$.\\
+3. Jika $g=0$, kembalikan $u$ sebagai pemaksimum; jika $r-\ell\leq2\varepsilon_x$, kembalikan $u$ beserta interval $[\ell,r]$.\\
+4. Jika $\varepsilon_g>0$ dan $|g|\leq\varepsilon_g$, kembalikan $u$ dengan penanda bahwa batas jarak memerlukan hipotesis kelengkungan.\\
+5. Jika $g>0$, tetapkan $\ell\leftarrow u$; jika $g<0$, tetapkan $r\leftarrow u$.\\
+6. Jika batas iterasi tercapai, laporkan kegagalan alih-alih mengklaim konvergensi.
+}}
+\end{algorithm}
+
+\begin{theorem} Misalkan $\phi$ konkaf dan terdiferensialkan secara kontinu pada $[a,b]$, dengan $\phi'(a)>0>\phi'(b)$, dan misalkan $M$ adalah himpunan pemaksimumnya. Algoritma \ref{alg:Bisection} mempertahankan $M\cap[\ell,r]\neq\varnothing$ pada setiap iterasi. Jika algoritma berhenti karena $r-\ell\leq2\varepsilon_x$, titik tengah yang dikembalikan memenuhi $|u-x^*|\leq\varepsilon_x$ untuk suatu $x^*\in M$. Jika, selain itu, $\phi$ adalah konkaf kuat dengan parameter $m>0$ dan algoritma berhenti karena $|\phi'(u)|\leq\varepsilon_g$, maka pemaksimum $x^*$ tunggal dan $|u-x^*|\leq\varepsilon_g/m$.
+\end{theorem}
+\begin{proof} Karena $\phi$ konkaf dan terdiferensialkan, $\phi'$ tidak menaik. Tanda ujung menjamin adanya pemaksimum di bagian dalam interval awal. Jika $\phi'(u)>0$, tidak ada pemaksimum di kiri $u$; jika $\phi'(u)<0$, tidak ada pemaksimum di kanan $u$; dan jika $\phi'(u)=0$, maka $u$ sendiri merupakan pemaksimum. Dengan demikian, setiap cabang pembaruan mempertahankan setidaknya satu pemaksimum. Panjang interval dibagi dua pada setiap pembaruan, sehingga penghentian berbasis lebar memberi $|u-x^*|\leq(r-\ell)/2\leq\varepsilon_x$. Untuk kekonkavan kuat, ketaksamaan monotonisitas kuat bagi $-\phi'$ memberi $m|u-x^*|\leq|\phi'(u)-\phi'(x^*)|=|\phi'(u)|$. Batas $\varepsilon_g/m$ segera mengikuti.
+\end{proof}
+
+\begin{remark} Kekonkavan biasa dan kontinuitas $\phi'$ cukup untuk invarian interval, tetapi tidak mengubah residu turunan kecil menjadi batas jarak seragam. Batas demikian memerlukan modulus kuantitatif, misalnya sifat bilipschitz bagi $\phi'$ atau kekonkavan kuat. Latihan \ref{exer:BisectionConverge} memberikan bentuk batas yang eksplisit.
+\end{remark}
+
+\begin{exercise} Fungsi $f:\mathbb{R}\rightarrow\mathbb{R}$ disebut kontinu Lipschitz jika ada $K>0$ sehingga untuk semua $x_1,x_2\in\mathbb{R}$ berlaku $|f(x_1)-f(x_2)|\leq K|x_1-x_2|$. Fungsi tersebut disebut bilipschitz jika ada $K\geq1$ sehingga
+\begin{equation}
+\frac{1}{K}|x_1-x_2|\leq|f(x_1)-f(x_2)|\leq K|x_1-x_2|.
+\end{equation}
+Misalkan $\phi'$ bilipschitz dan $|\phi'(u)|<\varepsilon_g$ sementara $\phi'(x^*)=0$. Temukan batas eksplisit bagi $|u-x^*|$.
+\end{exercise}
+
+\begin{exercise}
+Latihan ini memperkuat bukti konvergensi pencarian biseksi dengan asumsi kelengkungan kuantitatif.
+
+Misalkan $\phi:\mathbb{R}\rightarrow\mathbb{R}$ terdiferensialkan dua kali secara kontinu dan konkaf kuat pada $[a,b]$: ada $m>0$ sehingga $\phi''(x)\leq-m$ untuk setiap $x\in[a,b]$. Misalkan pemaksimum tunggalnya adalah $x^*\in(a,b)$, sehingga $\phi'(x^*)=0$, dan $|\phi'(u)|<\varepsilon_g$. Gunakan Teorema Nilai Rata-rata untuk membuktikan $|u-x^*|<\varepsilon_g/m$.
+\label{exer:BisectionConverge}
+\end{exercise}
+
+\begin{remark} Karena $\phi$ terdiferensialkan dua kali, ada $t$ di antara $u$ dan $x^*$ sehingga
+\begin{equation}
+\phi'(u)-\phi'(x^*)=\phi''(t)(u-x^*).
+\end{equation}
+Karena itu,
+\begin{equation}
+\left\lvert\phi'(u)-\phi'(x^*)\right\rvert=|\phi''(t)|\,|u-x^*|.
+\end{equation}
+Dari $\phi''(t)\leq-m$ dan $\phi'(x^*)=0$, diperoleh
+\begin{equation}
+m|u-x^*|\leq|\phi''(t)|\,|u-x^*|=|\phi'(u)|<\varepsilon_g.
+\end{equation}
+Jadi,
+\begin{equation}
+|u-x^*|<\frac{\varepsilon_g}{m}.
+\end{equation}
+\end{remark}
+
+\begin{exercise} Ubah pencarian biseksi agar mendeteksi minimum. Uji algoritma Anda pada fungsi $f(x)=(x-5)^2$.
+\end{exercise}
+
+\begin{example} Jalankan implementasi terbuka Pencarian Biseksi pada $\phi(x)=10-(x-5)^2$ di interval $[0,9]$ dengan $\varepsilon_g=0.01$. Jejak interval berakhir dengan $[4.9921875,5.009765625]$ dan mengembalikan $u=5.0009765625$. Karena $-\phi''=2$, batas kekonkavan-kuat memberi $|u-5|\leq0.01/2=0.005$, sebagaimana teramati.
+\end{example}
+
+% P03-S007 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 405--452
+% segment-id: d90.penn.v1.ch03.seg0007
+\section{Metode Newton}
+\begin{remark} Metode Newton adalah metode populer untuk mencari akar dan juga dapat diterapkan pada pemaksimuman atau peminimuman fungsi satu variabel apabila turunan keduanya dapat dihitung. Karena metode Newton untuk fungsi multidimensi dibahas pada bab berikutnya, di sini kita hanya menyajikan gagasan satu dimensinya. Secara teori metode Newton hanya memerlukan titik awal, bukan pengurung, walaupun pengurung berguna untuk memilih titik awal yang masuk akal.
+\end{remark}
+
+\begin{remark} Metode ini mengasumsikan bahwa hampiran Taylor kuadratik bagi $\phi$ cukup akurat di sekitar iterat sekarang $x_k$:
+\begin{equation}
+\phi(x)\approx\phi(x_k)+\phi'(x_k)(x-x_k)+\frac{1}{2}\phi''(x_k)(x-x_k)^2.
+\end{equation}
+Jika $\phi''(x_k)<0$, titik stasioner hampiran tersebut adalah maksimum, dan diferensiasi terhadap $x$ memberi
+\begin{equation}
+x_{k+1}=-\frac{\phi'(x_k)-\phi''(x_k)x_k}{\phi''(x_k)}=x_k-\frac{\phi'(x_k)}{\phi''(x_k)}.
+\end{equation}
+Iterasi dilanjutkan sampai suatu syarat penghentian terpenuhi. Algoritma \ref{alg:NewtonsMethod1} memberikan pseudokode terbuka yang ditulis secara independen untuk edisi ini.
+\end{remark}
+
+\begin{algorithm}
+\caption{Metode Newton Satu Dimensi}
+\label{alg:NewtonsMethod1}
+\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Masukan:} $\phi'$, $\phi''$, titik awal $x_0$, toleransi $\varepsilon_g,\varepsilon_x>0$, dan batas iterasi $N$.\\
+1. Untuk $k=0,\ldots,N-1$, hitung $g_k\leftarrow\phi'(x_k)$ dan $H_k\leftarrow\phi''(x_k)$.\\
+2. Jika $|g_k|\leq\varepsilon_g$, kembalikan $x_k$ beserta penanda maksimum $H_k<0$.\\
+3. Jika $H_k=0$, laporkan kegagalan karena langkah Newton tidak terdefinisi.\\
+4. Tetapkan $s_k\leftarrow-g_k/H_k$ dan $x_{k+1}\leftarrow x_k+s_k$.\\
+5. Jika $|s_k|\leq\varepsilon_x$, hitung ulang turunan di $x_{k+1}$ lalu kembalikan titik tersebut beserta penanda kelengkungannya.\\
+6. Jika batas iterasi tercapai, laporkan kegagalan; tanpa pelindung atau pencarian garis, konvergensi global tidak diklaim.
+}}
+\end{algorithm}
+
+\begin{remark} Pemeriksaan akhir $\phi''(x_k)<0$ membedakan titik stasioner yang merupakan maksimum lokal dari minimum lokal dalam kasus tak degenerat. Pemeriksaan itu tidak dengan sendirinya menjamin bahwa iterasi akan konvergen dari titik awal sembarang.
+\end{remark}
+
+\begin{example} Jalankan algoritma pengurungan pada
+\begin{displaymath}
+\phi(x)=-(x-4)^4+3(x-4)^3+6(x-4)^2-3(x-4)+100
+\end{displaymath}
+dari $0$ dan $0.25$. Diperoleh pengurung $(2.864863884,2.899652455,2.904582162)$. Jika metode Newton dimulai dari titik tengah $2.899652455$, jejak terbukanya adalah
+\begin{verbatim}
+x_0 = 2.899652455
+x_1 = 2.900626687
+x_2 = 2.900627632
+hasil = (2.900627632, maksimum)
+\end{verbatim}
+\end{example}
+
+\begin{exercise} Temukan suatu syarat perlu sederhana agar metode Newton konvergen dalam satu iterasi.
+\end{exercise}
+
+\begin{exercise} Implementasikan metode Newton dengan pelaporan kegagalan yang eksplisit. Untuk
+\begin{displaymath}
+\phi(x)=-(x-4)^4+3(x-4)^3+6(x-4)^2-3(x-4)+100,
+\end{displaymath}
+temukan satu titik awal yang membuat metode Newton konvergen ke maksimum dan satu titik awal yang membuatnya konvergen ke minimum.
+\end{exercise}
+
+% P03-S008 | sumber authority/penn-state/source/ClassNotes/Section3.tex baris 453--608
+% segment-id: d90.penn.v1.ch03.seg0008
+\section{Konvergensi Metode Newton}
+\begin{remark} Sebagian besar pembahasan ini diadaptasi dari Bab~8.1 \cite{Av03}. Pembahasan yang sedikit lebih umum terdapat dalam \cite{BHS06}.
+\end{remark}
+
+\begin{definition} Misalkan $S=[a,b]\subset\mathbb{R}$. Suatu fungsi kontinu $f:S\rightarrow S$ disebut \textit{pemetaan kontraksi} pada $S$ apabila ada $q\in(0,1)$ sehingga
+\label{def:Contraction}
+\begin{equation}
+|f(x_1)-f(x_2)|\leq q|x_1-x_2|
+\end{equation}
+untuk semua $x_1,x_2\in S$.
+\end{definition}
+
+\begin{remark} Definisi \ref{def:Contraction} adalah bentuk khusus kontinuitas Lipschitz dengan konstanta Lipschitz yang lebih kecil daripada $1$.
+\end{remark}
+
+\begin{lemma} Misalkan $f:S\rightarrow S$ merupakan pemetaan kontraksi pada $S=[a,b]\subset\mathbb{R}$. Definisikan $x^{(k+1)}=f(x^{(k)})$ dan ambil $x^{(0)}\in S$. Maka ada titik tetap tunggal $x^*$ yang dituju barisan $\{x^{(k)}\}$, dan
+\begin{equation}
+\lvert x^{(k+1)}-x^*\rvert\leq q^{k+1}\lvert x^{(0)}-x^*\rvert\quad k=0,1,\dots
+\label{eqn:ContractionRelation}
+\end{equation}
+\end{lemma}
+\begin{proof} Karena $f$ kontinu dan memetakan interval tertutup ke dirinya sendiri, fungsi $f(x)-x$ mempunyai nol di $S$; hal ini juga merupakan kasus satu dimensi dari teorema titik tetap (lihat \cite{Munk00}, hlm.~351--353). Namai titik tetap tersebut $x^*$. Sifat kontraksi memberi
+\begin{equation}
+\lvert f(x^{(0)})-x^*\rvert\leq q\lvert x^{(0)}-x^*\rvert,
+\end{equation}
+sehingga
+\begin{equation}
+\lvert x^{(1)}-x^*\rvert\leq q\lvert x^{(0)}-x^*\rvert.
+\end{equation}
+Sekarang asumsikan secara induktif bahwa
+\begin{equation}
+\lvert x^{(k)}-x^*\rvert\leq q^k\lvert x^{(0)}-x^*\rvert\quad k=0,1,\dots,K.
+\label{eqn:Induction}
+\end{equation}
+Dari Persamaan \ref{eqn:Induction},
+\begin{equation}
+\lvert f(x^{(K)})-x^*\rvert\leq q\lvert x^{(K)}-x^*\rvert\leq q^{K+1}\lvert x^{(0)}-x^*\rvert.
+\end{equation}
+Jadi,
+\begin{equation}
+\lvert x^{(K+1)}-x^*\rvert\leq q^{K+1}\lvert x^{(0)}-x^*\rvert.
+\end{equation}
+Persamaan \ref{eqn:ContractionRelation} mengikuti dengan induksi, dan $q<1$ menunjukkan bahwa $x^{(k)}\to x^*$. Untuk keunikan, andaikan ada titik tetap lain $x^+\neq x^*$. Maka
+\begin{equation}
+0<|x^*-x^+|=\lvert f(x^*)-f(x^+)\rvert\leq q|x^*-x^+|,
+\end{equation}
+yang mustahil untuk $0<q<1$. Jadi $x^*$ tunggal.
+\end{proof}
+
+\begin{lemma} Misalkan $f$ terdiferensialkan secara kontinu pada $S=[a,b]\subset\mathbb{R}$ dan memetakan $S$ ke dirinya sendiri. Jika $|f'(x)|<1$ untuk setiap $x\in S$, maka $f$ adalah pemetaan kontraksi.
+\label{lem:NMContractionDeriv}
+\end{lemma}
+\begin{proof} Untuk $x_1,x_2\in S$, Teorema Nilai Rata-rata (Teorema \ref{thm:MVT}) memberi suatu $\xi$ di antara keduanya sehingga
+\begin{equation}
+f(x_1)=f(x_2)+f'(\xi)(x_1-x_2).
+\end{equation}
+Karena itu,
+\begin{equation}
+|f(x_1)-f(x_2)|=|f'(\xi)|\,|x_1-x_2|.
+\end{equation}
+Kontinuitas $f'$ dan kekompakan $S$ menjamin bahwa $q:=\max_{x\in S}|f'(x)|$ ada. Hipotesis titik demi titik memberi $q<1$, sehingga ketaksamaan kontraksi mengikuti.
+\end{proof}
+
+\begin{theorem} Misalkan $h$ dan $\gamma$ terdiferensialkan secara kontinu pada $S=[a,b]\subset\mathbb{R}$. Andaikan
+\label{thm:NMPreReq}
+\begin{equation}
+h(a)h(b)<0
+\end{equation}
+dan, untuk semua $x\in S$,
+\begin{gather}
+\gamma(x)>0,\\
+h'(x)>0 \label{eqn:NMhDeriv}\\
+0\leq1-(\gamma(x)h(x))'\leq q<1.\label{eqn:NMDerivBound}
+\end{gather}
+Definisikan
+\begin{equation}
+x^{(k+1)}=x^{(k)}-\gamma(x^{(k)})h(x^{(k)})\quad k=0,1,\dots,
+\end{equation}
+dengan $x^{(0)}\in S$. Maka barisan $\{x^{(k)}\}$ konvergen ke solusi tunggal $x^*$ dari $h(x^*)=0$ di $S$.
+\end{theorem}
+\begin{proof} Definisikan
+\begin{gather}
+\rho(x)=x-\gamma(x)h(x) \label{eqn:NMDefRho}\\
+\rho'(x)=1-(\gamma(x)h(x))'.
+\end{gather}
+Dari Persamaan \ref{eqn:NMDefRho} dan Ketaksamaan \ref{eqn:NMDerivBound}, diperoleh $0\leq\rho'(x)\leq q<1$, sehingga $\rho$ tidak menurun. Ketaksamaan \ref{eqn:NMhDeriv} membuat $h$ naik ketat; bersama $h(a)h(b)<0$, hal ini memberi $h(a)<0<h(b)$. Karena $\gamma>0$, kita memperoleh $\rho(a)>a$ dan $\rho(b)<b$. Maka, untuk setiap $x\in[a,b]$,
+$a<\rho(a)\leq\rho(x)\leq\rho(b)<b$, sehingga $\rho$ memetakan $S$ ke dirinya sendiri. Lemma \ref{lem:NMContractionDeriv} menunjukkan bahwa $\rho$ adalah kontraksi. Lemma kontraksi di atas kemudian menyatakan bahwa setiap iterasi konvergen ke titik tetap tunggal $x^*=\rho(x^*)$. Karena $\gamma(x^*)>0$, identitas titik tetap ini setara dengan $h(x^*)=0$.
+\end{proof}
+
+\begin{corollary} Misalkan $\phi:\mathbb{R}\rightarrow\mathbb{R}$ adalah fungsi satu variabel yang akan dimaksimumkan dan terdiferensialkan tiga kali secara kontinu. Tetapkan $h(x)=-\phi'(x)$ dan $\gamma(x)=-1/\phi''(x)$. Maka
+$\rho(x)=x-\gamma(x)h(x)=x-\phi'(x)/\phi''(x)$ adalah peta iterasi Newton. Jika hipotesis Teorema \ref{thm:NMPreReq} bagi $h$ dan $\gamma$ berlaku---khususnya $\phi''<0$ pada $S$---metode Newton konvergen ke titik stasioner tunggal $\phi'(x^*)=0$ pada $S=[a,b]\subset\mathbb{R}$. \hfill\qed
+\label{cor:NMConverge}
+\end{corollary}
+
+\begin{definition}[Laju Konvergensi] Misalkan barisan $\{\mathbf{x}_k\}\subseteq\mathbb{R}^n$ konvergen ke $\mathbf{x}^*\in\mathbb{R}^n$ tanpa mencapai $\mathbf{x}^*$ dalam sejumlah langkah hingga. Jika ada $p\geq1$ dan $\alpha\in(0,\infty)$ sehingga
+\begin{equation}
+\lim_{k\to\infty}\frac{\lVert\mathbf{x}_{k+1}-\mathbf{x}^*\rVert}{\lVert\mathbf{x}_k-\mathbf{x}^*\rVert^p}=\alpha,
+\end{equation}
+dengan tambahan $\alpha<1$ ketika $p=1$, maka $p$ disebut \textit{orde konvergensi} barisan tersebut. Konvergensi berorde $p=1$ disebut \textit{linear}; orde $p>1$ disebut \textit{superlinear}; dan orde $p=2$ disebut \textit{kuadratik}.
+\end{definition}
+
+\begin{theorem} Korolari \ref{cor:NMConverge} memberi satu syarat cukup global bagi konvergensi. Untuk hasil laju lokal, misalkan $h$ terdiferensialkan dua kali secara kontinu pada suatu lingkungan titik $x^*$, dengan $h(x^*)=0$ dan $h'(x^*)\neq0$. Andaikan iterasi Newton
+$x_{k+1}=x_k-h(x_k)/h'(x_k)$ terdefinisi, konvergen ke $x^*$, dan tidak mencapai $x^*$ dalam sejumlah langkah hingga. Maka galatnya memenuhi taksiran Q-kuadratik untuk $k$ yang cukup besar. Jika $h''(x^*)\neq0$, orde konvergensinya tepat $2$ menurut definisi di atas; jika $h''(x^*)=0$, rasio kuadratiknya menuju nol dan konvergensinya dapat berorde lebih tinggi.
+\label{thm:NMConvergeRate}
+\end{theorem}
+\begin{proof} Tuliskan peta Newton sebagai
+\begin{equation}
+N(x)=x-\frac{h(x)}{h'(x)}.
+\end{equation}
+Karena $h(x^*)=0$ dan $h'(x^*)\neq0$, titik akar itu adalah titik tetap:
+\begin{equation}
+N(x^*)=x^*.
+\end{equation}
+Kontinuitas memberi lingkungan tertutup $I$ dari $x^*$ dan konstanta $m,M>0$ sehingga
+\begin{equation}
+|h'(x)|\geq m\quad\text{dan}\quad |h''(x)|\leq M
+\qquad(x\in I).
+\end{equation}
+Konvergensi $x_k\to x^*$ menjamin bahwa $x_k\in I$ untuk semua $k$ yang cukup besar. Teorema Taylor pada ruas antara $x_k$ dan $x^*$ memberi suatu $\xi_k$ di antara kedua titik itu sehingga
+\begin{equation}
+0=h(x^*)=h(x_k)+h'(x_k)(x^*-x_k)+\frac12h''(\xi_k)(x^*-x_k)^2.
+\label{eqn:NMConvergeRate1}
+\end{equation}
+Penyusunan ulang Persamaan \ref{eqn:NMConvergeRate1} memberi
+\begin{equation}
+\frac{h(x_k)}{h'(x_k)}=(x_k-x^*)-
+\frac{h''(\xi_k)}{2h'(x_k)}(x_k-x^*)^2.
+\end{equation}
+Dengan memakai definisi langkah Newton, diperoleh identitas galat
+\begin{equation}
+x_{k+1}-x^*=\frac{h''(\xi_k)}{2h'(x_k)}(x_k-x^*)^2.
+\label{eqn:NMConvergeRate2}
+\end{equation}
+Persamaan \ref{eqn:NMConvergeRate2} dan batas pada $I$ menghasilkan, untuk $k$ yang cukup besar,
+\begin{equation}
+|x_{k+1}-x^*|\leq\frac{M}{2m}|x_k-x^*|^2.
+\label{eqn:NMConvergeRate3}
+\end{equation}
+Dengan
+\begin{equation}
+\beta=\frac{M}{2m}<\infty,
+\end{equation}
+Ketaksamaan \ref{eqn:NMConvergeRate3} membuktikan taksiran Q-kuadratik. Karena iterat tidak mencapai akar dalam sejumlah langkah hingga, Persamaan \ref{eqn:NMConvergeRate2} juga memberi rasio eksak
+\begin{equation}
+\frac{|x_{k+1}-x^*|}{|x_k-x^*|^2}
+=\frac{|h''(\xi_k)|}{2|h'(x_k)|}.
+\end{equation}
+Karena $\xi_k$ terletak di antara $x_k$ dan $x^*$, konvergensi iterat memberi
+\begin{displaymath}
+\xi_k\longrightarrow x^*,\qquad h'(x_k)\longrightarrow h'(x^*),
+\qquad h''(\xi_k)\longrightarrow h''(x^*).
+\end{displaymath}
+Oleh karena itu,
+\begin{equation}
+\lim_{k\to\infty}\frac{|x_{k+1}-x^*|}{|x_k-x^*|^2}
+=\frac{|h''(x^*)|}{2|h'(x^*)|}.
+\end{equation}
+Jika $h''(x^*)\neq0$, limit tersebut positif dan berhingga, sehingga ordenya tepat $2$. Jika $h''(x^*)=0$, limitnya nol; taksiran Q-kuadratik tetap berlaku, tetapi orde eksak memerlukan informasi reguleritas yang lebih tinggi.
+\end{proof}
+
+\begin{exercise} Gunakan implementasi terbuka metode Newton yang Anda tulis untuk menunjukkan secara empiris bahwa konvergensinya kuadratik.
+\end{exercise}

@@ -1,0 +1,87 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+% Salinan metadata lokal ini memperbaiki nama pengarang tunggal pada entri
+% Villani tanpa mengubah berkas otoritas yang dibekukan.
+\addbibresource{references-ot-id.bib}
+\microtypesetup{expansion=false}
+\glsdisablehyper
+\setlength{\emergencystretch}{2em}
+
+% Lokalisasi ini sengaja hanya berlaku pada unit mandiri Bab 9.
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 9: Transportasi Optimal\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks - Unit 9: Transportasi Optimal - Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 9, "Excursion on Optimal Transport", dari Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1. Sumber berwenang untuk unit ini adalah berkas \texttt{optimal\_transport.tex} edisi v1 dengan SHA-256 berikut:
+\begin{center}
+\small\texttt{719df724b368126cc7540dffd461dc33}\\[-0.2em]
+\texttt{aba7d5b5b6060132181086dfa17649ba}
+\end{center}
+
+Bab-bab prasyarat tidak diulang. Pembaca diharapkan telah mengenal ruang terukur dan ukuran probabilitas, konvergensi lemah, ruang Polish dan keketatan, optimisasi konveks, dualitas, serta aljabar matriks. Seluruh definisi, gambar TikZ, teorema, sketsa bukti, lema, catatan, sitasi, catatan kaki, formula, rujukan silang, dan permukaan glosarium dalam bab sumber dipertahankan dalam urutan sumber. Kekeliruan yang dapat ditentukan secara matematis diperbaiki secara terbuka dan diringkas pada akhir unit.
+
+Uraian sumber menyebut dirinya sebagai selingan yang tidak sepenuhnya rigor. Edisi ini mempertahankan sifat pengantar tersebut, sambil menyatakan hipotesis minimum yang diperlukan agar klaim eksistensi, metrik Wasserstein, dualitas Kantorovich, serta faktorisasi dan iterasi Sinkhorn mempunyai makna yang tepat.
+
+\tableofcontents
+
+% Rujukan mandiri ke Bab 7 dibuat bernomor tanpa memasukkan ulang bab tersebut.
+\setcounter{chapter}{6}
+\refstepcounter{chapter}\label{chapter:duality}
+
+\mainmatter
+\setcounter{chapter}{8}
+\include{habring-09-transportasi-optimal-id}
+
+\backmatter
+\printbibliography[heading=bibintoc,title={Daftar pustaka}]
+
+\chapter*{Catatan koreksi terhadap sumber}
+\markboth{Catatan koreksi terhadap sumber}{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber. Rekaman terstruktur dengan identitas peristiwa O015-HAB-ADV-0084 sampai O015-HAB-ADV-0096 menyertai sumber edisi ini.
+
+\begin{enumerate}
+    \item Ruang terukur kini membawa aljabar-$\sigma$ bernama; setiap himpunan yang dipakai pada marginal dan hasil dorong disyaratkan terukur, serta peta transportasi dan fungsi biaya disyaratkan terukur.
+    \item Definisi ukuran membedakan ukuran bertanda hingga dari ukuran tak negatif dan melengkapi sifat aljabar-$\sigma$ yang diperlukan untuk kebermaknaan aditivitas terhitung.
+    \item Masalah Monge memakai infimum atas peta terukur yang layak, dengan konvensi $\inf\emptyset=+\infty$, karena keberadaan dan ketercapaian peta tidak dijamin.
+    \item Contoh ketidaklayakan Monge kini menyatakan $Y\subseteq\R^q$ sebelum menyebut ukuran Lebesgue; catatan kaki menyatakan ketiadaan atom sebagai konsekuensi kontinuitas mutlak, bukan sebagai definisi yang ekuivalen.
+    \item Teorema eksistensi kini mensyaratkan ruang Polish Borel. Sketsa bukti memakai keketatan marginal, kekompakan lemah melalui Prokhorov, ketertutupan himpunan kopling, dan semikontinuitas bawah biaya.
+    \item Jarak Wasserstein dibangun dari metrik $d$ pada ruang Polish dan dibatasi pada $\Pc_p(X)$, ruang ukuran probabilitas dengan momen ke-$p$ hingga.
+    \item Teorema dualitas Kantorovich kini menyatakan ruang Polish Borel, biaya semikontinu bawah tak negatif, serta kelas potensial $C_b(X)\times C_b(Y)$ dan kendala titik demi titik.
+    \item Sketsa dualitas membenarkan pemisahan marginal dengan fungsi kontinu terbatas, memperbaiki domain yang salah $\Mc_+(\alpha,\beta)$ menjadi $\Mc_+(X\times Y)$, dan mengidentifikasi secara terbuka pertukaran infimum--supremum sebagai teorema dualitas kuat, bukan akibat manipulasi formal.
+    \item Bobot diskret dinyatakan sebagai vektor $a\in\Delta_n$ dan $b\in\Delta_m$; vektor satuan pada kendala marginal diberi dimensi yang benar, transpos dipakai konsisten, dan pemisah kendala yang hilang dipulihkan.
+    \item Entropi didefinisikan pada ortan tak negatif dengan $0\log0=0$ dan bernilai $+\infty$ di luarnya; $\epsilon>0$ serta keberhinggaan semua entri matriks biaya dinyatakan sebelum masalah regularisasi.
+    \item Lema faktorisasi mensyaratkan marginal positif. Eksistensi dan keunikan dibuktikan dari kekompakan politop dan kekonveksan ketat; perturbasi menuju $ab^\top$ membuktikan positifnya setiap entri sebelum kondisi pengali Lagrange digunakan. Ambiguitas penskalaan juga dinyatakan.
+    \item Iterasi Sinkhorn diberi inisialisasi positif dan indeks yang lengkap. Positivitas penyebut serta konvergensi rencana penskalaan ke rencana entropik unik dinyatakan, sambil mempertahankan ambiguitas perkalian pasangan penskalaan.
+    \item Entri daftar pustaka Villani memakai pengarang tunggal C\'edric Villani sesuai metadata penerbit; penanda ``and others'' yang keliru pada berkas sumber tidak lagi menghasilkan nama tampilan ``andothers''.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0.
+
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+\end{document}
