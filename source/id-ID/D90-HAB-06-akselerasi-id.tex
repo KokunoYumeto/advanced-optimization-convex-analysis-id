@@ -1,0 +1,61 @@
+\pdfoutput=1
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+\pdfmapfile{+libertine.map}
+\pdfmapfile{+newtx.map}
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Konveks}
+\subtitle{Unit 6: Akselerasi\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam catatan koreksi.\\
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks - Unit 6: Akselerasi - Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh Bab 6, \emph{Acceleration}, dari versi sumber yang ditentukan di atas. Unit ini melanjutkan Unit 5. Pembaca diharapkan telah mengenal fungsi konveks dan konveks kuat, gradien Lipschitz, Hessian, radius spektral, operator proksimal, serta metode gradien proksimal.
+
+Urutan hasil, struktur bukti, seluruh rumus, tujuh pengenal rujukan silang, dan ajakan verifikasi sumber dipertahankan. Sejumlah kekeliruan matematis dalam sumber diperbaiki secara terbuka; ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap menyertai sumber edisi ini. Tidak ada sitasi, gambar, atau catatan kaki dalam bab sumber. Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca unit ini.
+
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{5}
+\include{habring-06-akselerasi-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan yang disahkan oleh penulis sumber.
+
+\begin{enumerate}
+    \item Batas bawah kompleksitas pembuka kini memulihkan urutan kuantor bahwa untuk setiap metode terdapat fungsi, memuat norma kuadrat yang hilang, dan menyatakan secara eksplisit data awal serta hipotesis bahwa fungsi konveks, bergradien \(L\)-Lipschitz, mempunyai peminim dan dimensinya cukup besar untuk jumlah iterasi yang ditinjau.
+    \item Bukti rumus Gelfand memakai norma operator yang jelas dan kompleksifikasi untuk nilai eigen nonreal. Bentuk Jordan hanya menempatkan satu pada superdiagonal di dalam satu blok, memakai indeks nilpotensi yang benar, menangani \(\rho(A)=0\) secara terpisah, dan memperbaiki pemilihan pangkat ekstrem pada batas.
+    \item Bukti korolari radius spektral membuktikan arah \(A^k\rightarrow0\Rightarrow\rho(A)<1\) melalui vektor eigen dan menangani indeks awal dalam batas geometrik secara eksplisit.
+    \item Teorema bola berat kini mensyaratkan fungsi \(C^2\) di sekitar peminim stasioner, \(0<\mu\leq L\), serta parameter konstan. Klaim parameter optimal dibatasi pada radius spektral kasus terburuk bagi model kuadratik atau linearisasi lokal.
+    \item Rekursi keadaan tidak lagi memfaktorkan gradien nonlinear sebagai matriks. Selisih gradien dilinearkan melalui Hessian, residu didefinisikan dengan tepat, dan tanda gangguan keadaan diperbaiki menjadi \((-\tau r_k,0)\).
+    \item Polinom karakteristik diturunkan tanpa membagi dengan nilai eigen, sehingga kasus \(\beta=0\) tercakup. Batas akar yang keliru diganti dengan kriteria Schur--Jury dan bukti kestabilan lokal dalam norma ekuivalen.
+    \item Parameter kasus terburuk kini disertai bukti batas bawah minimaks yang lengkap melalui kriteria Schur--Jury terskala, termasuk kasus kelengkungan tunggal \(L=\mu\); kondisi kesamaan menghasilkan penyeimbangan kedua ujung spektrum \([\mu,L]\). Klaim optimalitas tidak lagi digeneralisasi menjadi jaminan global bagi semua fungsi konveks mulus.
+    \item Bagian FISTA kini menyatakan domain, kekonveksan, semikontinuan bawah, keberadaan peminim, \(L>0\), \(0<\tau\leq1/L\), inisialisasi, dan rentang indeks secara lengkap.
+    \item Bukti ketaksamaan fundamental memperbaiki frasa kekonveksan \(g\), memulihkan kuadrat yang hilang pada \(\|z-y\|^2\), serta menata ulang substitusi fungsi model dengan benar.
+    \item Teorema FISTA kini menyatakan semua hipotesis komposit, menetapkan \(k\geq2\), dan memberi konstanta eksplisit yang bergantung pada inisialisasi. Identitas energi dan teleskop sumber dipertahankan.
+    \item Salah ketik pada notasi waktu, frasa \emph{bergantung pada iterasi}, komponen inersia, aljabar linear, pernyataan korolari, kemiripan FISTA, dan teks bukti diperbaiki tanpa mengubah isi matematis lainnya.
+\end{enumerate}
+
+\chapter*{Atribusi dan lisensi}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1, 13 Juli 2026, \url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0. Catatan koreksi dan materi penghubung baru dinyatakan sebagai perubahan edisi; tidak ada dukungan atau pengesahan oleh penulis sumber maupun institusinya.
+
+\end{document}

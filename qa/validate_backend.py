@@ -223,6 +223,7 @@ expected_segment_counts = {
     "unit.habring.v1.ch03": 11,
     "unit.habring.v1.ch04": 8,
     "unit.habring.v1.ch05": 8,
+    "unit.habring.v1.ch06": 12,
 }
 segments_by_unit: dict[str, list[dict[str, Any]]] = {}
 for segment in segments:
@@ -248,7 +249,7 @@ for unit_id, unit_segments in segments_by_unit.items():
 
 # Each admitted unit has the same nine-event evidence topology.  Expected
 # results are data-driven because Chapter 3 predates the explicit untagged-PDF
-# limitation used by Chapters 4--5.
+# limitation used by Chapters 4--6.
 admitted_unit_closure = {
     "unit.habring.v1.ch03": {
         "qa_prefix": "qa.o015.ch03",
@@ -264,6 +265,11 @@ admitted_unit_closure = {
         "qa_prefix": "qa.o015.ch05",
         "accessibility_result": "pass_with_limitation",
         "correction_range": range(28, 39),
+    },
+    "unit.habring.v1.ch06": {
+        "qa_prefix": "qa.o015.ch06",
+        "accessibility_result": "pass_with_limitation",
+        "correction_range": range(39, 50),
     },
 }
 qa_suffixes = {
@@ -323,13 +329,14 @@ for unit_id, closure in admitted_unit_closure.items():
             f"found {sorted(actual_correction_ids)}"
         )
 
-for segment in segments_by_unit.get("unit.habring.v1.ch05", []):
-    if segment.get("language_review_state") != "not_recorded":
-        error(f"{segment.get('id')}: language review must remain not_recorded")
-    if segment.get("mathematical_review_state") != (
-        "correction_audited_solver_checked_independent_rereview_passed"
-    ):
-        error(f"{segment.get('id')}: incomplete mathematical review state")
+for reviewed_unit_id in ("unit.habring.v1.ch05", "unit.habring.v1.ch06"):
+    for segment in segments_by_unit.get(reviewed_unit_id, []):
+        if segment.get("language_review_state") != "not_recorded":
+            error(f"{segment.get('id')}: language review must remain not_recorded")
+        if segment.get("mathematical_review_state") != (
+            "correction_audited_solver_checked_independent_rereview_passed"
+        ):
+            error(f"{segment.get('id')}: incomplete mathematical review state")
 
 required_ch05_ids = {
     "artifact.habring.source-ch05",
@@ -362,6 +369,149 @@ if ch05_pdf.get("pages") != 15:
     error("Chapter 5 PDF artifact does not record 15 pages")
 if ch05_pdf.get("accessibility") != "searchable id-ID PDF; untagged":
     error("Chapter 5 PDF accessibility limitation is not explicit")
+
+required_ch06_ids = {
+    "unit.habring.v1.ch06",
+    "artifact.habring.source-ch06",
+    "artifact.habring.target-ch06",
+    "artifact.habring.target-wrapper-ch06",
+    "artifact.habring.structure-report-ch06",
+    "artifact.habring.structure-audit-ch06",
+    "artifact.habring.solver-results-ch06",
+    "artifact.habring.solver-validator-ch06",
+    "artifact.habring.build-log-ch06",
+    "artifact.habring.target-pdf-ch06",
+    "artifact.habring.target-text-ch06",
+    "artifact.o015.backend-generator-ch06",
+    "rights.o015-habring-ch06-source",
+    "rights.o015-habring-id-ch06",
+    "rights.o015-acceleration-solver-validation",
+    "surface.habring.v1.ch06.prompt01",
+    "surface.habring.v1.ch06.hint-inventory",
+    "surface.habring.v1.ch06.answer-inventory",
+    "surface.habring.v1.ch06.solution-inventory",
+    "relation.unit.root-contains-ch06",
+    "relation.unit.ch05-precedes-ch06",
+    "relation.unit.ch06-depends-on-ch05",
+    "relation.segment.ch06-seg0003-proves-gelfand",
+    "relation.segment.ch06-seg0007-proves-heavy-ball-minimax",
+    "relation.segment.ch06-seg0010-proves-fundamental-inequality",
+    "relation.segment.ch06-seg0012-proves-fista-rate",
+    "relation.surface.ch06-prompt01-exercises-heavy-ball-minimax",
+}
+expected_ch06_concepts = {
+    "concept.first-order-complexity-lower-bound",
+    "concept.gradient-flow",
+    "concept.polyak-heavy-ball-method",
+    "concept.inertial-gradient-step",
+    "concept.spectral-radius",
+    "concept.gelfand-spectral-radius-formula",
+    "concept.spectral-radius-stability",
+    "concept.heavy-ball-linearization",
+    "concept.schur-jury-stability",
+    "concept.heavy-ball-local-convergence",
+    "concept.heavy-ball-minimax-parameters",
+    "concept.nesterov-acceleration",
+    "concept.fista",
+    "concept.fista-momentum-sequence",
+    "concept.fundamental-proximal-gradient-inequality",
+    "concept.fista-rate",
+}
+expected_ch06_terms = {
+    "term.first-order-method",
+    "term.gradient-flow",
+    "term.polyak-heavy-ball-method",
+    "term.inertia-term",
+    "term.spectral-radius",
+    "term.jordan-normal-form",
+    "term.schur-jury-criterion",
+    "term.worst-case-spectral-radius",
+    "term.nesterov-acceleration",
+    "term.fista",
+    "term.fast-proximal-gradient-method",
+    "term.inertia-parameter",
+    "term.fundamental-proximal-gradient-inequality",
+}
+for required_id in sorted(
+    required_ch06_ids | expected_ch06_concepts | expected_ch06_terms
+):
+    if required_id not in ids:
+        error(f"Chapter 6 closure is missing {required_id}")
+
+expected_ch06_segment_concepts = {
+    "d90.hab.v1.ch06.seg0001": ["concept.first-order-complexity-lower-bound"],
+    "d90.hab.v1.ch06.seg0002": ["concept.gradient-flow", "concept.polyak-heavy-ball-method", "concept.inertial-gradient-step"],
+    "d90.hab.v1.ch06.seg0003": ["concept.spectral-radius", "concept.gelfand-spectral-radius-formula"],
+    "d90.hab.v1.ch06.seg0004": ["concept.spectral-radius-stability"],
+    "d90.hab.v1.ch06.seg0005": ["concept.heavy-ball-local-convergence", "concept.heavy-ball-minimax-parameters"],
+    "d90.hab.v1.ch06.seg0006": ["concept.heavy-ball-linearization"],
+    "d90.hab.v1.ch06.seg0007": ["concept.schur-jury-stability", "concept.heavy-ball-local-convergence", "concept.heavy-ball-minimax-parameters"],
+    "d90.hab.v1.ch06.seg0008": ["concept.nesterov-acceleration", "concept.fista"],
+    "d90.hab.v1.ch06.seg0009": ["concept.fista-momentum-sequence"],
+    "d90.hab.v1.ch06.seg0010": ["concept.fundamental-proximal-gradient-inequality"],
+    "d90.hab.v1.ch06.seg0011": ["concept.fista-rate"],
+    "d90.hab.v1.ch06.seg0012": ["concept.fista-rate", "concept.fundamental-proximal-gradient-inequality"],
+}
+for segment_id, expected_concepts in expected_ch06_segment_concepts.items():
+    if ids.get(segment_id, {}).get("concept_ids") != expected_concepts:
+        error(f"{segment_id}: wrong Chapter 6 concept closure")
+
+expected_ch06_artifact_identities = {
+    "artifact.habring.source-ch06": (18873, "2ff1e10e9421c0fe01a09140e3e230cb2d3728c30c572bb6ca5513b229f1e605"),
+    "artifact.habring.target-ch06": (24690, "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"),
+    "artifact.habring.target-wrapper-ch06": (5491, "46903dd6b6ff8c845624931d37d9b24fd37cd89f0bf77601ba11539c59dfd5b9"),
+    "artifact.habring.structure-report-ch06": (37873, "e82f254fb7e69d498162ffcdfb70fe7d4929556351f892872bb8e65da3715b4b"),
+    "artifact.habring.solver-results-ch06": (37060, "135ded1ed0f4f3ca70616822d8856a85d3747458c9ca6e765dab72a11d3b88f0"),
+    "artifact.habring.build-log-ch06": (97942, "0775c19ecd2e8356e7b33bd50c30871f233e0c7d05dd703ba2ec19a4f7f560f0"),
+    "artifact.habring.target-pdf-ch06": (392662, "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0"),
+    "artifact.habring.target-text-ch06": (37033, "d2679e94ce7e44cdcf183b17e73295b5b5093a1612b2460c0c6ecba512431cda"),
+}
+for artifact_id, (expected_bytes, expected_sha256) in expected_ch06_artifact_identities.items():
+    artifact_record = ids.get(artifact_id, {})
+    if artifact_record.get("bytes") != expected_bytes:
+        error(f"{artifact_id}: wrong frozen byte count")
+    if artifact_record.get("sha256") != expected_sha256:
+        error(f"{artifact_id}: wrong frozen SHA-256")
+
+ch06_structure = ids.get("qa.o015.ch06.structure", {})
+for field, expected in {
+    "environment_count": 99,
+    "segment_count": 12,
+    "label_occurrences_preserved": 7,
+    "cref_occurrences_preserved": 4,
+    "eqref_occurrences_preserved": 4,
+}.items():
+    if ch06_structure.get(field) != expected:
+        error(f"Chapter 6 structure QA has wrong {field}")
+
+ch06_formula = ids.get("qa.o015.ch06.formula-delta", {})
+if ch06_formula.get("formula_delta_manifest_sha256") != (
+    "886d80e0a759977c0c176d9b97e595b4c3515ecd52446a8c8b714146a9be3f4a"
+):
+    error("Chapter 6 formula-delta manifest is not the admitted manifest")
+if ch06_formula.get("formula_delta_blocks") != 32:
+    error("Chapter 6 formula-delta block count differs from 32")
+if ch06_formula.get("correction_events") != 11:
+    error("Chapter 6 formula QA does not close 11 corrections")
+
+ch06_pdf = ids.get("artifact.habring.target-pdf-ch06", {})
+if ch06_pdf.get("pages") != 15:
+    error("Chapter 6 PDF artifact does not record 15 pages")
+if ch06_pdf.get("accessibility") != "searchable id-ID PDF; untagged":
+    error("Chapter 6 PDF accessibility limitation is not explicit")
+ch06_build = ids.get("qa.o015.ch06.build", {})
+if ch06_build.get("deterministic_rebuild") != "byte-identical":
+    error("Chapter 6 build does not record a byte-identical rebuild")
+ch06_visual = ids.get("qa.o015.ch06.visual", {})
+if ch06_visual.get("localization_check") != (
+    "Equation cross-reference names render in Indonesian."
+):
+    error("Chapter 6 visual QA does not close equation-reference localization")
+ch06_prompt = ids.get("surface.habring.v1.ch06.prompt01", {})
+if ch06_prompt.get("disposition") != (
+    "promoted_source_editorial_todo_to_rendered_self_study_verification_prompt"
+):
+    error("Chapter 6 informal verification prompt disposition differs")
 
 translation_states = set(schema.get("translation_states", []))
 for segment in segments:

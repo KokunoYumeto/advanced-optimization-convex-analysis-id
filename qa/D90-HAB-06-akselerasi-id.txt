@@ -1,0 +1,631 @@
+                    OPTIMISASI KONVEKS
+                                 Unit 6: Akselerasi
+                               Edisi Bahasa Indonesia
+
+
+                                 Andreas Habring
+
+                         Sumber edisi v1: 13 Juli 2026
+
+
+
+
+Terjemahan kerja bahasa Indonesia dari Lecture Notes: Convex Optimization, arXiv:2607.11664v1.
+Sumber asli dan terjemahan ini dilisensikan CC BY 4.0. Perubahan matematis dijelaskan dalam
+                                        catatan koreksi.
+Terjemahan mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+TENTANG UNIT INI
+
+
+
+Unit ini menerjemahkan secara utuh Bab 6, Acceleration, dari versi sumber yang diten-
+tukan di atas. Unit ini melanjutkan Unit 5. Pembaca diharapkan telah mengenal fungsi
+konveks dan konveks kuat, gradien Lipschitz, Hessian, radius spektral, operator proksi-
+mal, serta metode gradien proksimal.
+Urutan hasil, struktur bukti, seluruh rumus, tujuh pengenal rujukan silang, dan ajakan ve-
+rifikasi sumber dipertahankan. Sejumlah kekeliruan matematis dalam sumber diperbaiki
+secara terbuka; ringkasannya disertakan pada akhir unit dan rekaman terstruktur lengkap
+menyertai sumber edisi ini. Tidak ada sitasi, gambar, atau catatan kaki dalam bab sumber.
+Tidak ada layanan daring atau perangkat lunak tertutup yang diperlukan untuk membaca
+unit ini.
+
+
+
+
+                                            i
+DAFTAR ISI
+
+
+
+
+6 akselerasi 1
+  6.1 Metode bola berat Polyak   1
+  6.2 Akselerasi Nesterov 6
+
+
+
+
+                                     ii
+6 AKSELERASI
+
+
+
+Untuk setiap 𝐿 > 0, titik awal 𝑥 0 ∈ ℝ𝑑 , bilangan bulat 𝑘 ≥ 1, dan 𝑑 ≥ 2𝑘 + 1, serta untuk
+setiap metode orde pertama yang iterasinya memenuhi
+
+(6.1)                        𝑥𝑘 ∈ 𝑥 0 + span{∇𝑓 (𝑥 0 ), . . . , ∇𝑓 (𝑥𝑘−1 )}
+
+terdapat fungsi konveks 𝑓 : ℝ𝑑 → ℝ yang bergradien 𝐿-Lipschitz dan mempunyai pemi-
+nim 𝑥 ∗ , sedemikian sehingga
+
+                                                        3𝐿∥𝑥 0 − 𝑥 ∗ ∥ 2
+(6.2)                            𝑓 (𝑥𝑘 ) − 𝑓 (𝑥 ∗ ) ≥                    .
+                                                         32(𝑘 + 1) 2
+Perhatikan bahwa sejauh ini kita belum memperoleh laju konvergensi yang lebih baik
+daripada O (1/𝑘). Menutup kesenjangan menuju O (1/𝑘 2 ) merupakan tujuan bab ini.
+
+
+6.1 metode bola berat polyak
+
+Penurunan gradien untuk meminimumkan masalah tak berkendala
+
+(6.3)                                         min 𝑓 (𝑥)
+                                                𝑥
+
+dapat ditafsirkan sebagai diskretisasi dari aliran gradien
+
+(6.4)                                       𝑥¤ = −∇𝑓 (𝑥).
+
+Jika fungsi 𝑓 ditafsirkan sebagai potensial, maka −∇𝑓 merupakan gaya yang ditimbulkan
+potensial tersebut pada sebuah partikel bermassa satu. Secara alami kita dapat menam-
+bahkan gesekan ke dalam model ini. Gaya gesek biasanya dimodelkan sebanding dengan
+kecepatan, sehingga diperoleh
+
+(6.5)                                    𝑥¥ = −𝛾 𝑥¤ − ∇𝑓 (𝑥).
+
+Kita mendiskretkan persamaan diferensial biasa ini melalui 𝑥¤ (𝑡) ≈ 𝑥 (𝑡)−𝑥ℎ (𝑡−ℎ) dan
+
+                             𝑥¤ (𝑡 + ℎ) − 𝑥¤ (𝑡) 𝑥 (𝑡 + ℎ) − 2𝑥 (𝑡) + 𝑥 (𝑡 − ℎ)
+(6.6)             𝑥¥ (𝑡) ≈                      ≈                               .
+                                      ℎ                       ℎ2
+
+
+                                                    1
+                                          6 akselerasi
+
+
+Dengan menamai 𝑥 (𝑡 − ℎ) = 𝑥𝑘−1 , 𝑥 (𝑡) = 𝑥𝑘 , dan 𝑥 (𝑡 + ℎ) = 𝑥𝑘+1 , substitusi ke dalam per-
+samaan (6.5) memberikan
+(6.7)                𝑥𝑘+1 − 2𝑥𝑘 + 𝑥𝑘−1 = −ℎ𝛾 (𝑥𝑘 − 𝑥𝑘−1 ) − ℎ 2 ∇𝑓 (𝑥𝑘 ).
+Setelah ditata ulang, pembaruannya menjadi
+(6.8)                  𝑥𝑘+1 = 𝑥𝑘 + (1 − 𝛾ℎ)(𝑥𝑘 − 𝑥𝑘−1 ) − ℎ 2 ∇𝑓 (𝑥𝑘 ).
+Dengan menamai ulang konstanta dan mengizinkannya bergantung pada iterasi, kita sam-
+pai pada metode bola berat Polyak
+(6.9)                     𝑥𝑘+1 = 𝑥𝑘 + 𝛽𝑘 (𝑥𝑘 − 𝑥𝑘−1 ) − 𝜏𝑘 ∇𝑓 (𝑥𝑘 ).
+Bahkan tanpa penurunan dari sudut pandang persamaan diferensial, aturan pembaruan
+ini cukup intuitif: selain arah penurunan bagi 𝑓 , pembaruan tersebut memuat suku inersia
+yang menambahkan komponen searah dengan langkah sebelumnya.
+Bukti konvergensi metode bola berat akan memakai hasil dasar aljabar linear berikut, yang
+disertakan demi kelengkapan.
+
+Lema 6.1. Untuk setiap 𝐴 ∈ ℝ𝑑×𝑑 , dengan ∥ · ∥ norma operator yang diinduksi oleh norma
+Euclidean, berlaku lim𝑛→∞ ∥𝐴𝑛 ∥ 1/𝑛 = 𝜌 (𝐴), dengan
+(6.10)                              𝜌 (𝐴) = max |𝜆𝑖 (𝐴)|
+                                               𝑖
+
+dan 𝜆𝑖 (𝐴) nilai eigen 𝐴. Kesimpulan yang sama berlaku bagi setiap norma matriks yang
+kompatibel, karena semua norma pada ruang matriks berdimensi hingga ekuivalen.
+
+Bukti. Kompleksifikasikan 𝐴 ke operator pada ℂ𝑑 . Norma operator Euclidean untuk ma-
+triks real sama pada ℝ𝑑 dan ℂ𝑑 . Ambil nilai eigen kompleks 𝜆 dengan |𝜆| = 𝜌 (𝐴) serta
+vektor eigennya 𝑣 ∈ ℂ𝑑 yang dinormalisasi. Maka
+(6.11)                       ∥𝐴𝑛 ∥ 1/𝑛 ≥ ∥𝐴𝑛 𝑣 ∥ 1/𝑛 = |𝜆| = 𝜌 (𝐴),
+sehingga lim inf 𝑛→∞ ∥𝐴𝑛 ∥ 1/𝑛 ≥ 𝜌 (𝐴).
+Untuk ketaksamaan sebaliknya, gunakan bentuk normal Jordan kompleks
+(6.12)                                    𝐴 = 𝐵𝐷𝐵 −1 .
+Setelah blok-blok Jordan diurutkan, matriks 𝐷 dapat ditulis sebagai
+                                  𝜆 𝜀 ... ...
+                                 © 1 1
+                                 ­ 0 𝜆2 𝜀 2 . . .
+                                                         ª
+                                                         ®
+                                 ­       .     .         ®
+(6.13)                        𝐷 =­
+                                 ­         . .   . .     ®,
+                                                         ®
+                                 ­      . . . 𝜆𝑑−1 𝜀𝑑−1 ®®
+                                 ­
+                                 «               0   𝜆𝑑 ¬
+
+
+                                               2
+                                            6 akselerasi
+
+
+dengan 𝜀𝑖 ∈ {0, 1}, dan 𝜀𝑖 = 1 hanya jika posisi 𝑖 dan 𝑖 + 1 berada dalam blok Jordan yang
+sama sehingga 𝜆𝑖 = 𝜆𝑖+1 . Tuliskan 𝐷 = Λ + 𝑁 , dengan Λ diagonal dan 𝑁 bagian nilpoten.
+Kedua matriks ini komutatif. Jika ukuran blok Jordan terbesar adalah 𝑚, maka 𝑁 𝑚 = 0.
+Untuk 𝜌 (𝐴) > 0 dan 𝑛 ≥ 𝑚 − 1, ekspansi binomial memberi
+                                         𝑚−1  
+                                         ∑︁ 𝑛 𝑛−𝑗 𝑗
+                                  𝑛
+                                ∥𝐷 ∥ =            Λ 𝑁
+                                         𝑗=0
+                                               𝑗
+(6.14)                                  𝑚−1  
+                                        ∑︁ 𝑛
+                                     ≤           ∥Λ𝑛−𝑗 ∥ ∥𝑁 𝑗 ∥
+                                        𝑗=0
+                                             𝑗
+                                          ≤ 𝐶 𝜌 𝑛𝑚−1 𝜌 (𝐴) 𝑛−𝑚+1,
+untuk suatu konstanta 𝐶 𝜌 > 0 yang tidak bergantung pada 𝑛. Jika 𝜌 (𝐴) = 0, semua elemen
+diagonal nol, sehingga 𝐷 = 𝑁 dan 𝐷 𝑛 = 0 bagi 𝑛 ≥ 𝑚; jadi kesimpulan langsung berlaku.
+Untuk 𝜌 (𝐴) > 0, batas di atas menghasilkan
+
+(6.15)                        ∥𝐷 𝑛 ∥ 1/𝑛 ≤ 𝐶 𝜌1/𝑛𝑛 (𝑚−1)/𝑛 𝜌 (𝐴) 1−(𝑚−1)/𝑛 .
+
+Karena 𝐶 𝜌1/𝑛 → 1, 𝑛 1/𝑛 → 1, dan 𝜌 (𝐴) −(𝑚−1)/𝑛 → 1, kita memperoleh
+
+(6.16)                               lim sup ∥𝐷 𝑛 ∥ 1/𝑛 ≤ 𝜌 (𝐴).
+                                       𝑛→∞
+
+Akhirnya,
+
+(6.17) lim sup ∥𝐴𝑛 ∥ 1/𝑛 = lim sup ∥𝐵𝐷 𝑛 𝐵 −1 ∥ 1/𝑛 ≤ lim sup ∥𝐵∥ 1/𝑛 ∥𝐷 𝑛 ∥ 1/𝑛 ∥𝐵 −1 ∥ 1/𝑛 ≤ 𝜌 (𝐴),
+         𝑛→∞                  𝑛→∞                          𝑛→∞
+
+yang, bersama batas bawah, membuktikan hasilnya.                                                        □
+
+Korolari 6.2. Berlaku lim𝑘→∞ 𝐴𝑘 = 0 jika dan hanya jika 𝜌 (𝐴) < 1. Selain itu, dalam hal
+ini, untuk setiap 𝜀 > 0 terdapat 𝑐 (𝜀) > 0 sedemikian sehingga ∥𝐴𝑘 ∥ ≤ 𝑐 (𝜀)(𝜌 (𝐴) + 𝜀)𝑘 .
+
+Bukti. Jika 𝐴𝑘 → 0, maka untuk setiap pasangan eigen kompleks (𝜆, 𝑣) berlaku 𝐴𝑘 𝑣 =
+𝜆𝑘 𝑣 → 0; akibatnya |𝜆| < 1 dan 𝜌 (𝐴) < 1. Sebaliknya, jika 𝜌 (𝐴) < 1, pilih 0 < 𝜀 0 < 1−𝜌 (𝐴).
+Berdasarkan teorema 6.1, terdapat 𝑛 sedemikian sehingga untuk 𝑘 ≥ 𝑛,
+
+(6.18)                                 ∥𝐴𝑘 ∥ ≤ (𝜌 (𝐴) + 𝜀 0 )𝑘 ,
+
+yang menuju nol. Untuk pernyataan kuantitatif dan sembarang 𝜀 > 0, teorema 6.1 mem-
+berikan batas tersebut untuk semua 𝑘 yang cukup besar. Dengan memperbesar konstanta
+untuk indeks awal yang berhingga banyaknya, kita dapat memilih
+
+                                                       ∥𝐴𝑘 ∥
+(6.19)                               𝑐 (𝜀) ≥ max                ,
+                                             0≤𝑘<𝑛 (𝜌 (𝐴) + 𝜀)𝑘
+
+sehingga batas berlaku bagi setiap 𝑘 ≥ 0.                                                               □
+
+
+                                                    3
+                                                 6 akselerasi
+
+
+Sekarang kita dapat membuktikan konvergensi metode bola berat. Tekniknya baku: kita
+menganalisis nilai eigen linearisasi aturan pembaruan.
+
+Teorema 6.3 (Konvergensi bola berat). Misalkan 𝑓 ∈ 𝐶 2 (𝑈 ) pada suatu lingkungan 𝑈 ⊂ ℝ𝑑
+dari peminim stasioner lokal 𝑥 ∗ , dengan
+(6.20)
+                                                                                  2(1 + 𝛽)
+∇𝑓 (𝑥 ∗ ) = 0,   0 < 𝜇 ≤ 𝐿,         𝜇 Id ⪯ ∇2 𝑓 (𝑥 ∗ ) ⪯ 𝐿 Id, 0 ≤ 𝛽 < 1, 0 < 𝜏 <          .
+                                                                                     𝐿
+Gunakan parameter konstan 𝛽𝑘 = 𝛽 dan 𝜏𝑘 = 𝜏. Terdapat 𝜀 > 0 sedemikian sehingga, jika
+𝑥 0, 𝑥 1 ∈ 𝐵𝜀 (𝑥 ∗ ), maka 𝑥𝑘 → 𝑥 ∗ . Lebih khusus, dengan
+(6.21)       𝑞 = 𝜌 (H ) < 1,             ∥𝑥𝑘 − 𝑥 ∗ ∥ ≤ 𝑐 (𝛿)(𝑞 + 𝛿)𝑘−1 ∥(𝑥 1 − 𝑥 ∗, 𝑥 0 − 𝑥 ∗ )∥
+untuk setiap 0 < 𝛿 < 1 − 𝑞. Jika yang diketahui tentang kurvatur hanya selang [𝜇, 𝐿],
+parameter yang meminimumkan radius spektral kasus terburuk dari model kuadratik atau
+linearisasi lokal adalah
+                      √   √                                √    √ !2
+                        𝐿− 𝜇             4                  𝐿− 𝜇
+(6.22)         𝑞 wc = √   √ ,    𝜏= √      √ ,        𝛽= √      √     .
+                        𝐿+ 𝜇        ( 𝐿 + 𝜇) 2              𝐿+ 𝜇
+
+Bukti. Tetapkan 𝑢𝑘 = 𝑥𝑘 − 𝑥 ∗ . Karena ∇𝑓 (𝑥 ∗ ) = 0, rekursi kedalaman dua dapat ditulis
+tepat sebagai
+                       (1 + 𝛽)𝑢𝑘 − 𝛽𝑢𝑘−1 − 𝜏 ∇𝑓 (𝑥 ∗ + 𝑢𝑘 ) − ∇𝑓 (𝑥 ∗ )
+                                                                     
+             𝑢𝑘+1
+                   =
+              𝑢𝑘                            𝑢𝑘
+(6.23)                                      
+                       (1 + 𝛽) Id −𝛽 Id 𝑢𝑘
+                                                 − 𝜏 ∇𝑓 (𝑥 ∗ + 𝑢𝑘 ) − ∇𝑓 (𝑥 ∗ ), 0 .
+                                                                                  
+                   =
+                           Id       0     𝑢𝑘−1
+Untuk menyiapkan linearisasi, definisikan vektor keadaan dan matriks linear
+                                   (1 + 𝛽) Id −𝜏∇2 𝑓 (𝑥 ∗ ) −𝛽 Id
+                                                                               
+               𝑢𝑘                                                              𝑢𝑘+1
+(6.24) 𝑠𝑘 :=         ,   H :=                                       , 𝑠𝑘+1 :=         .
+              𝑢𝑘−1                           Id              0                  𝑢𝑘
+Teorema dasar kalkulus memberikan
+(6.25)                 ∫           1
+∇𝑓 (𝑥 ∗ + 𝑢𝑘 ) − ∇𝑓 (𝑥 ∗ ) =           ∇2 𝑓 (𝑥 ∗ + 𝑡𝑢𝑘 ) 𝑢𝑘 d𝑡
+                               0
+                                                                    ∫ 1                                 
+                               2         ∗                                  2    ∗           2     ∗ 
+                          = ∇ 𝑓 (𝑥 )𝑢𝑘 + 𝑟𝑘 ,               𝑟𝑘 :=          ∇ 𝑓 (𝑥 + 𝑡𝑢𝑘 ) − ∇ 𝑓 (𝑥 ) d𝑡 𝑢𝑘 .
+                                                                      0
+
+Dengan demikian, rekursi keadaan yang tepat ialah
+                       (1 + 𝛽) Id −𝜏∇2 𝑓 (𝑥 ∗ ) −𝛽 Id 𝑢𝑘
+                                                              
+              𝑢𝑘+1                                              −𝜏𝑟𝑘
+                    =                                        +         .
+(6.26)         𝑢𝑘                Id              0     𝑢𝑘−1      0
+                      |             {z               }
+                                                  H
+
+
+
+                                                        4
+                                            6 akselerasi
+
+
+Kontinuitas Hessian menunjukkan 𝑟𝑘 = 𝑜 (∥𝑢𝑘 ∥) ketika 𝑢𝑘 → 0.
+Berdasarkan teorema 6.2, kita menganalisis nilai eigen H . Jika (𝑣, 𝑤) merupakan vektor
+eigen dengan nilai eigen 𝜆, maka
+                         (
+                            (1 + 𝛽) Id −𝜏∇2 𝑓 (𝑥 ∗ ) 𝑣 − 𝛽𝑤 = 𝜆𝑣,
+                                                    
+(6.27)
+                          𝑣                                 = 𝜆𝑤 .
+
+Dengan menghitung determinan blok, atau mengeliminasi relasi di atas tanpa pernah
+membagi dengan 𝜆, setiap nilai eigen berkaitan dengan suatu 𝜂 ∈ [𝜇, 𝐿] dan memenu-
+hi
+
+(6.28)                       𝑝𝜂 (𝜆) := 𝜆 2 − (1 + 𝛽 − 𝜏𝜂)𝜆 + 𝛽 = 0.
+
+Jadi, dengan 𝑎𝜂 = 1 + 𝛽 − 𝜏𝜂, penyempurnaan kuadrat memberikan
+                                          𝑎𝜂  2  𝑎𝜂  2
+(6.29)                                  𝜆−       =         − 𝛽.
+                                           2        2
+Akar dalam (6.29) berada ketat di dalam lingkaran satuan jika dan hanya jika kriteria
+Schur–Jury untuk polinom monik kuadrat real berikut terpenuhi:
+(6.30)
+|𝛽 | < 1,  1 − 𝑎𝜂 + 𝛽 > 0,    1 + 𝑎𝜂 + 𝛽 > 0, ⇐⇒ 𝛽 < 1, 𝜏𝜂 > 0, 𝜏𝜂 < 2(1 + 𝛽).
+
+Hipotesis teorema memenuhi syarat ini bagi semua 𝜂 ∈ [𝜇, 𝐿], termasuk kasus 𝛽 = 0; oleh
+sebab itu 𝑞 = 𝜌 (H ) < 1.
+Ambil 0 < 𝛿 < 1 − 𝑞. Terdapat norma ekuivalen ∥ · ∥𝛿 pada ℝ2𝑑 yang norma operator
+terinduksinya memenuhi ∥H ∥𝛿 ≤ 𝑞 + 𝛿/2. Karena 𝑟 (𝑢) = 𝑜 (∥𝑢 ∥) dan semua norma
+berdimensi hingga ekuivalen, lingkungan 𝑥 ∗ dapat diperkecil sehingga suku gangguan
+memenuhi batas yang diperlukan. Maka rekursi keadaan menghasilkan
+
+(6.31) ∥𝑠𝑘+1 ∥𝛿 ≤ ∥H ∥𝛿 ∥𝑠𝑘 ∥𝛿 + ∥(−𝜏𝑟𝑘 , 0)∥𝛿 ≤ (𝑞 + 𝛿)∥𝑠𝑘 ∥𝛿 ,      ∥𝑠𝑘 ∥𝛿 ≤ (𝑞 + 𝛿)𝑘−1 ∥𝑠 1 ∥𝛿 .
+
+Dengan memilih 𝑥 0, 𝑥 1 cukup dekat ke 𝑥 ∗ , bola kecil yang digunakan di atas tetap invarian.
+Ekuivalensi norma lalu memberikan estimasi dalam pernyataan teorema dan konvergensi
+lokal.
+Tinggal membuktikan optimalitas kasus terburuk yang dinyatakan. Kasus 𝐿 = 𝜇 langsung:
+pilihan 𝛽 = 0 dan 𝜏 = 1/𝐿 membuat 𝑎𝜂 = 0 dan kedua akar nol. Sekarang andaikan
+𝐿 > 𝜇. Untuk setiap radius kasus terburuk yang diklaim 𝑟 > 0, kasus 𝑟 ≥ 1 tidak dapat
+memperbaiki laju yang akan diperoleh, jadi cukup tinjau 0 < 𝑟 < 1. Terapkan kriteria
+Schur–Jury setelah penskalaan 𝜆 = 𝑟𝑧. Agar kedua akar setiap polinom 𝑝𝜂 bermodulus
+paling besar 𝑟 , perlu 0 ≤ 𝛽 ≤ 𝑟 2 dan |𝑎 𝜇 |, |𝑎𝐿 | ≤ 𝑅, dengan 𝑅 := 𝑟 + 𝛽/𝑟 .
+Tetapkan ℎ = (𝐿 − 𝜇)/(𝐿 + 𝜇). Karena 𝐿𝑎 𝜇 − 𝜇𝑎𝐿 = (𝐿 − 𝜇)(1 + 𝛽), kelayakan kedua titik
+ujung mengharuskan 𝑅 ≥ ℎ(1 + 𝛽). Selisih 𝑅 − ℎ(1 + 𝛽) = 𝑟 − ℎ + 𝛽 (1/𝑟 − ℎ) meningkat
+
+
+                                                  5
+                                          6 akselerasi
+
+
+terhadap 𝛽 pada 0 ≤ 𝛽 ≤ 𝑟 2 , sebab 0 < 𝑟 < 1 dan 0 < ℎ < 1. Oleh karena itu, bahkan
+                                      2𝑟 − ℎ(1   2                        2
+nilai maksimumnya harus tak negatif:
+                                 √    √     √ + 𝑟√) ≥ 0. Jadi 2𝑟 ≥ ℎ(1 + 𝑟 ), yang pada
+0 < 𝑟 < 1 ekuivalen dengan 𝑟 ≥ ( 𝐿 − 𝜇)/( 𝐿 + 𝜇).
+Kesamaan memaksa 𝛽 = 𝑟 2 serta 𝑎 𝜇 = 2𝑟 dan 𝑎𝐿 = −2𝑟 . Menyelesaikan kedua hubungan
+ujung tersebut menghasilkan
+                            √︁                      √︁
+             1 + 𝛽 − 𝜏 𝜇 = 2 𝛽,      1 + 𝛽 − 𝜏𝐿 = −2 𝛽
+                                             √    √
+(6.32)                         √︁             𝐿− 𝜇               4
+                         =⇒       𝛽 = 𝑞 wc = √    √ ,   𝜏= √       √ .
+                                              𝐿+ 𝜇          ( 𝐿 + 𝜇) 2
+Dengan pilihan ini, 𝑎𝜂 bergerak linear dari 2𝑞 wc ke −2𝑞 wc , sehingga semua akar untuk
+𝜂 ∈ [𝜇, 𝐿] bermodulus paling besar 𝑞 wc . Batas bawah di atas membuktikan bahwa nilai
+maksimum tersebut tidak dapat diperkecil. Optimalitas ini merupakan optimalitas radius
+spektral kasus terburuk bagi fungsi kuadratik dan bagi model asimtotik lokal 𝐶 2 , bukan
+jaminan konvergensi global bagi semua fungsi konveks mulus.                            □
+
+
+Latihan verifikasi. Verifikasikan kriteria Schur–Jury di atas langsung dari rumus akar,
+termasuk kasus 𝛽 = 0, dan turunkan kembali parameter kasus terburuk dengan menya-
+makan perilaku pada 𝜂 = 𝜇 dan 𝜂 = 𝐿.
+
+
+6.2 akselerasi nesterov
+
+Metode Polyak optimal dalam arti radius spektral kasus terburuk bagi fungsi kuadratik
+konveks kuat, dan secara lokal bagi model 𝐶 2 di sekitar peminim. Akselerasi berikut men-
+capai laju orde optimal di bawah asumsi global yang lebih lemah. Kita kembali meninjau
+masalah
+(6.33)                             min 𝐹 (𝑥) := 𝑓 (𝑥) + 𝑔(𝑥),
+                                  𝑥 ∈ℝ𝑑
+
+dengan 𝑓 : ℝ𝑑 → ℝ konveks, terdiferensialkan, dan bergradien 𝐿-Lipschitz untuk 𝐿 >
+0, sedangkan 𝑔 : ℝ𝑑 → (−∞, ∞] proper, semikontinu bawah, dan konveks. Andaikan
+arg min 𝐹 ≠ ∅. Dengan 𝑥 0 = 𝑥 1 , 𝑡 1 = 1, ukuran langkah tetap 0 < 𝜏 ≤ 1/𝐿, dan 𝑘 = 1, 2, . . .,
+pembaruan fast iterative shrinkage-thresholding algorithm (FISTA, atau metode gradien
+proksimal cepat) ialah
+                                               √︃
+                                           1 +    1 + 4𝑡𝑘2
+                           
+                           
+                           
+                           
+                           
+                            𝑡𝑘+1 =                        ,
+                           
+                                                 2
+                           
+                           
+                                          𝑡𝑘 − 1
+(6.34)                       𝛽𝑘         =         ,
+                           
+                                           𝑡𝑘+1
+                           
+                           
+                           
+                            𝑦𝑘         = 𝑥𝑘 + 𝛽𝑘 (𝑥𝑘 − 𝑥𝑘−1 ),
+                           
+                           𝑥𝑘+1 = prox 𝑦𝑘 − 𝜏∇𝑓 (𝑦𝑘 )  .
+                           
+                                               𝜏𝑔
+
+
+
+                                               6
+                                          6 akselerasi
+
+
+Jika 𝑔 ≡ 0, metode ini sangat mirip dengan algoritma bola berat. Namun, gradien kini
+dievaluasi setelah suku inersia ditambahkan, dan konvergensinya bergantung pada pemi-
+lihan adaptif parameter inersia yang cermat.
+
+Lema 6.4. Tetapkan 𝑡 1 = 1. Maka
+                                                  𝑘 +1
+(6.35)                                     𝑡𝑘 ≥
+                                                    2
+untuk setiap 𝑘 ≥ 1.
+
+Bukti. Bukti mengikuti induksi langsung. Pernyataan benar untuk 𝑘 = 1. Dengan mema-
+kai hipotesis induksi, kita memperoleh
+                               √︃
+                            1 + 1 + 4𝑡𝑘2 1 + 1 + (𝑘 + 1) 2 𝑘 + 2
+                                            √︁
+(6.36)              𝑡𝑘+1 =              ≥                 ≥      .
+                                 2              2            2
+                                                                                 □
+
+Lema 6.5 (Ketaksamaan fundamental gradien proksimal). Definisikan
+                                                      
+(6.37)                     𝑃𝜏 (𝑥) = prox𝜏𝑔 𝑥 − 𝜏∇𝑓 (𝑥) .
+
+Di bawah hipotesis komposit di atas, untuk setiap 𝑥, 𝑦 ∈ ℝ𝑑 dan 0 < 𝜏 ≤ 1/𝐿, berlaku
+                                       1                  1
+(6.38)         𝐹 (𝑥) − 𝐹 (𝑃𝜏 (𝑦)) ≥      ∥𝑥 − 𝑃𝜏 (𝑦)∥ 2 − ∥𝑥 − 𝑦 ∥ 2 + ℓ𝑓 (𝑥, 𝑦),
+                                      2𝜏                 2𝜏
+dengan ℓ𝑓 (𝑥, 𝑦) = 𝑓 (𝑥) − 𝑓 (𝑦) − ⟨𝑥 − 𝑦, ∇𝑓 (𝑦)⟩.
+
+Bukti. Pertama, kita dapat menulis
+                                  1
+               𝑃𝜏 (𝑦) = arg min     ∥𝑧 − (𝑦 − 𝜏∇𝑓 (𝑦))∥ 2 + 𝑔(𝑧)
+                              𝑧 2𝜏
+(6.39)
+                                                            1
+                       = arg min 𝑓 (𝑦) + ⟨𝑧 − 𝑦, ∇𝑓 (𝑦)⟩ + ∥𝑧 − 𝑦 ∥ 2 + 𝑔(𝑧).
+                              𝑧                            2𝜏
+Sebagai catatan, identitas ini menunjukkan bahwa metode gradien proksimal dapat di-
+tafsirkan sebagai langkah proksimal terhadap 𝑔 ditambah pendekatan linear terhadap 𝑓 .
+Definisikan
+                                                             1
+(6.40)                𝜑 (𝑧) = 𝑓 (𝑦) + ⟨𝑧 − 𝑦, ∇𝑓 (𝑦)⟩ +        ∥𝑧 − 𝑦 ∥ 2 + 𝑔(𝑧).
+                                                            2𝜏
+Karena 𝑔 konveks, 𝜑 bersifat 1/𝜏-konveks kuat. Oleh karena itu,
+                                                       1
+(6.41)                       𝜑 (𝑥) − 𝜑 (𝑃𝜏 (𝑦)) ≥        ∥𝑥 − 𝑃𝜏 (𝑦)∥ 2 .
+                                                      2𝜏
+
+
+                                                  7
+                                             6 akselerasi
+
+
+Lebih lanjut, karena 𝑓 konveks dan 𝐿-halus serta 1/𝜏 ≥ 𝐿, lema penurunan memberikan
+                                        𝐿                                       1
+(6.42) 𝑓 (𝑧) ≤ 𝑓 (𝑦) + ⟨𝑧 − 𝑦, ∇𝑓 (𝑦)⟩ + ∥𝑧 − 𝑦 ∥ 2 ≤ 𝑓 (𝑦) + ⟨𝑧 − 𝑦, ∇𝑓 (𝑦)⟩ + ∥𝑧 − 𝑦 ∥ 2 .
+                                        2                                      2𝜏
+Khususnya, 𝜑 (𝑃𝜏 (𝑦)) ≥ 𝐹 (𝑃𝜏 (𝑦)), sehingga
+                                                          1
+(6.43)                          𝜑 (𝑥) − 𝐹 (𝑃𝜏 (𝑦)) ≥        ∥𝑥 − 𝑃𝜏 (𝑦)∥ 2 .
+                                                         2𝜏
+Dengan memasukkan definisi 𝜑 dan memakai 𝑓 (𝑦) + ⟨𝑥 − 𝑦, ∇𝑓 (𝑦)⟩ = 𝑓 (𝑥) − ℓ𝑓 (𝑥, 𝑦),
+penataan ulang hubungan terakhir tepat memberikan
+                                          1                  1
+(6.44)           𝐹 (𝑥) − 𝐹 (𝑃𝜏 (𝑦)) ≥       ∥𝑥 − 𝑃𝜏 (𝑦)∥ 2 − ∥𝑥 − 𝑦 ∥ 2 + ℓ𝑓 (𝑥, 𝑦),
+                                         2𝜏                 2𝜏
+dan bukti selesai.                                                                                         □
+
+Teorema 6.6 (Konvergensi FISTA). Misalkan 𝑓 : ℝ𝑑 → ℝ konveks, terdiferensialkan, dan
+bergradien 𝐿-Lipschitz dengan 𝐿 > 0; misalkan 𝑔 : ℝ𝑑 → (−∞, ∞] proper, semikontinu
+bawah, dan konveks; serta ambil 𝑥 ∗ ∈ arg min 𝐹 . Inisialisasikan FISTA dengan 𝑥 0 = 𝑥 1 ,
+𝑡 1 = 1, dan ukuran langkah tetap 0 < 𝜏 ≤ 1/𝐿. Untuk setiap 𝑘 ≥ 2,
+(6.45)
+                         𝐶
+    𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ ) ≤ 2 ,   𝐶 = 2 𝑡 22 ∥𝑥 ∗ − 𝑥 1 ∥ 2 + ∥𝑡 2 (𝑥 ∗ − 𝑥 2 ) + (𝑡 2 − 1)(𝑥 1 − 𝑥 ∗ )∥ 2 .
+                                                                                                       
+                        𝜏𝑘
+                  −1 𝑥 ∗ + (1 − 𝑡 −1 )𝑥 dan 𝑦 = 𝑦 dalam ketaksamaan fundamental gradien
+Bukti. Pilih 𝑥 = 𝑡𝑘+1            𝑘+1 𝑘           𝑘
+proksimal. Karena 𝑓 konveks, ℓ𝑓 (𝑥, 𝑦) ≥ 0. Maka
+                            −1 ∗          −1
+                        𝐹 (𝑡𝑘+1 𝑥 +(1 − 𝑡𝑘+1  )𝑥𝑘 ) − 𝐹 (𝑥𝑘+1 )
+                                     1 −1 ∗               −1
+                                 ≥ ∥𝑡𝑘+1     𝑥 + (1 − 𝑡𝑘+1   )𝑥𝑘 − 𝑥𝑘+1 ∥ 2
+                                    2𝜏
+                                        1 −1 ∗               −1
+                                    − ∥𝑡𝑘+1      𝑥 + (1 − 𝑡𝑘+1  )𝑥𝑘 − 𝑦𝑘 ∥ 2
+(6.46)                                 2𝜏
+                                       1
+                                  =     2
+                                            ∥𝑥 ∗ + (𝑡𝑘+1 − 1)𝑥𝑘 − 𝑡𝑘+1𝑥𝑘+1 ∥ 2
+                                    2𝜏𝑡𝑘+1
+                                          1
+                                    −      2
+                                               ∥𝑥 ∗ + (𝑡𝑘+1 − 1)𝑥𝑘 − 𝑡𝑘+1 𝑦𝑘 ∥ 2 .
+                                       2𝜏𝑡𝑘+1
+Di sisi lain, menurut kekonveksan 𝐹 dan fakta 𝑡𝑘 ≥ 1,
+(6.47)
+        −1 ∗          −1                       −1
+    𝐹 (𝑡𝑘+1 𝑥 + (1 − 𝑡𝑘+1 )𝑥𝑘 ) − 𝐹 (𝑥𝑘+1 ) ≤ 𝑡𝑘+1                  −1
+                                                   𝐹 (𝑥 ∗ ) + (1 − 𝑡𝑘+1 )𝐹 (𝑥𝑘 ) − 𝐹 (𝑥𝑘+1 )
+                                                     −1
+                                             = (1 − 𝑡𝑘+1 )(𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ )) − (𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ )).
+                     −1
+Karena 𝑦𝑘 = 𝑥𝑘 + 𝑡𝑡𝑘𝑘+1 (𝑥𝑘 − 𝑥𝑘−1 ), kita mempunyai
+
+(6.48)            ∥𝑥 ∗ + (𝑡𝑘+1 − 1)𝑥𝑘 − 𝑡𝑘+1 𝑦𝑘 ∥ 2 = ∥𝑥 ∗ − 𝑡𝑘 𝑥𝑘 + (𝑡𝑘 − 1)𝑥𝑘−1 ∥ 2 .
+
+
+                                                     8
+                                                6 akselerasi
+
+
+Menggabungkan (6.46), (6.47), dan (6.48) memberikan
+                              −1
+                    2
+                   𝑡𝑘+1 (1 − 𝑡𝑘+1 )(𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ )) − 𝑡𝑘+1
+                                                           2
+                                                               (𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ ))
+                                    1
+(6.49)                          ≥ ∥𝑥 ∗ − 𝑡𝑘+1𝑥𝑘+1 + (𝑡𝑘+1 − 1)𝑥𝑘 ∥ 2
+                                   2𝜏
+                                       1
+                                   − ∥𝑥 ∗ − 𝑡𝑘 𝑥𝑘 + (𝑡𝑘 − 1)𝑥𝑘−1 ∥ 2 .
+                                      2𝜏
+                              2 (1 − 𝑡 −1 ) = 𝑡 2 . Jadi,
+Dari pembaruan FISTA berlaku 𝑡𝑘+1     𝑘+1      𝑘
+
+                          𝑡𝑘2 (𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ )) − 𝑡𝑘+1
+                                                      2
+                                                          (𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ ))
+                               1
+(6.50)                    ≥ ∥𝑥 ∗ − 𝑡𝑘+1𝑥𝑘+1 + (𝑡𝑘+1 − 1)𝑥𝑘 ∥ 2
+                              2𝜏
+                                  1
+                              − ∥𝑥 ∗ − 𝑡𝑘 𝑥𝑘 + (𝑡𝑘 − 1)𝑥𝑘−1 ∥ 2 .
+                                 2𝜏
+Dengan demikian,
+                                          1 ∗
+               𝑡𝑘2 (𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ )) +   ∥𝑥 − 𝑡𝑘 𝑥𝑘 + (𝑡𝑘 − 1)𝑥𝑘−1 ∥ 2
+(6.51)                                  2𝜏
+                                               1
+                  2
+               ≥ 𝑡𝑘+1 (𝐹 (𝑥𝑘+1 ) − 𝐹 (𝑥 ∗ )) + ∥𝑥 ∗ − 𝑡𝑘+1𝑥𝑘+1 + (𝑡𝑘+1 − 1)𝑥𝑘 ∥ 2 .
+                                              2𝜏
+Dengan mengiterasikan ketaksamaan ini, untuk 𝑘 ≥ 2 diperoleh
+                                            1
+                 𝑡 22 (𝐹 (𝑥 2 ) − 𝐹 (𝑥 ∗ )) +  ∥𝑡 2 (𝑥 ∗ − 𝑥 2 ) + (𝑡 2 − 1)(𝑥 1 − 𝑥 ∗ )∥ 2
+(6.52)                                     2𝜏
+                                               1
+                ≥ 𝑡𝑘2 (𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ∗ )) + ∥𝑥 ∗ − 𝑡𝑘 𝑥𝑘 + (𝑡𝑘 − 1)𝑥𝑘−1 ∥ 2 .
+                                              2𝜏
+Selain itu, ketaksamaan fundamental gradien proksimal dengan 𝑥 = 𝑥 ∗ dan 𝑦 = 𝑦1 = 𝑥 0 =
+𝑥 1 memberikan
+                                                 1 ∗              1
+(6.53)                 𝐹 (𝑥 ∗ ) − 𝐹 (𝑥 2 ) ≥       ∥𝑥 − 𝑥 2 ∥ 2 − ∥𝑥 ∗ − 𝑥 1 ∥ 2 .
+                                                2𝜏               2𝜏
+Dengan membuang suku kuadrat nonnegatif pada ruas kanan estimasi energi dan mema-
+kai batas terakhir, kita menemukan
+                                  2                                                      
+                        ∗     −2  𝑡2 ∗         2  1      ∗                           ∗  2
+(6.54)    𝐹 (𝑥𝑘 ) − 𝐹 (𝑥 ) ≤ 𝑡𝑘      ∥𝑥 − 𝑥 1 ∥ + ∥𝑡 2 (𝑥 − 𝑥 2 ) + (𝑡 2 − 1)(𝑥 1 − 𝑥 )∥ .
+                                  2𝜏             2𝜏
+
+Karena 𝑡𝑘 ≥ (𝑘 + 1)/2, batas dalam pernyataan teorema mengikuti.                              □
+
+
+
+
+                                                      9
+CATATAN KOREKSI TERHADAP SUMBER
+
+
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber.
+
+  (i) Batas bawah kompleksitas pembuka kini memulihkan urutan kuantor bahwa untuk
+      setiap metode terdapat fungsi, memuat norma kuadrat yang hilang, dan menyatak-
+      an secara eksplisit data awal serta hipotesis bahwa fungsi konveks, bergradien 𝐿-
+      Lipschitz, mempunyai peminim dan dimensinya cukup besar untuk jumlah iterasi
+      yang ditinjau.
+ (ii) Bukti rumus Gelfand memakai norma operator yang jelas dan kompleksifikasi untuk
+      nilai eigen nonreal. Bentuk Jordan hanya menempatkan satu pada superdiagonal di
+      dalam satu blok, memakai indeks nilpotensi yang benar, menangani 𝜌 (𝐴) = 0 secara
+      terpisah, dan memperbaiki pemilihan pangkat ekstrem pada batas.
+ (iii) Bukti korolari radius spektral membuktikan arah 𝐴𝑘 → 0 ⇒ 𝜌 (𝐴) < 1 melalui
+       vektor eigen dan menangani indeks awal dalam batas geometrik secara eksplisit.
+ (iv) Teorema bola berat kini mensyaratkan fungsi 𝐶 2 di sekitar peminim stasioner, 0 <
+      𝜇 ≤ 𝐿, serta parameter konstan. Klaim parameter optimal dibatasi pada radius spek-
+      tral kasus terburuk bagi model kuadratik atau linearisasi lokal.
+  (v) Rekursi keadaan tidak lagi memfaktorkan gradien nonlinear sebagai matriks. Selisih
+      gradien dilinearkan melalui Hessian, residu didefinisikan dengan tepat, dan tanda
+      gangguan keadaan diperbaiki menjadi (−𝜏𝑟𝑘 , 0).
+ (vi) Polinom karakteristik diturunkan tanpa membagi dengan nilai eigen, sehingga ka-
+      sus 𝛽 = 0 tercakup. Batas akar yang keliru diganti dengan kriteria Schur–Jury dan
+      bukti kestabilan lokal dalam norma ekuivalen.
+(vii) Parameter kasus terburuk kini disertai bukti batas bawah minimaks yang lengkap
+      melalui kriteria Schur–Jury terskala, termasuk kasus kelengkungan tunggal 𝐿 = 𝜇;
+      kondisi kesamaan menghasilkan penyeimbangan kedua ujung spektrum [𝜇, 𝐿]. Kla-
+      im optimalitas tidak lagi digeneralisasi menjadi jaminan global bagi semua fungsi
+      konveks mulus.
+
+
+
+
+                                          10
+                                      6 akselerasi
+
+
+(viii) Bagian FISTA kini menyatakan domain, kekonveksan, semikontinuan bawah, kebe-
+       radaan peminim, 𝐿 > 0, 0 < 𝜏 ≤ 1/𝐿, inisialisasi, dan rentang indeks secara lengkap.
+ (ix) Bukti ketaksamaan fundamental memperbaiki frasa kekonveksan 𝑔, memulihkan
+      kuadrat yang hilang pada ∥𝑧 − 𝑦 ∥ 2 , serta menata ulang substitusi fungsi model de-
+      ngan benar.
+  (x) Teorema FISTA kini menyatakan semua hipotesis komposit, menetapkan 𝑘 ≥ 2, dan
+      memberi konstanta eksplisit yang bergantung pada inisialisasi. Identitas energi dan
+      teleskop sumber dipertahankan.
+ (xi) Salah ketik pada notasi waktu, frasa bergantung pada iterasi, komponen inersia, alja-
+      bar linear, pernyataan korolari, kemiripan FISTA, dan teks bukti diperbaiki tanpa
+      mengubah isi matematis lainnya.
+
+
+
+
+                                            11
+ATRIBUSI DAN LISENSI
+
+
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Crea-
+tive Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/
+licenses/by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0. Ca-
+tatan koreksi dan materi penghubung baru dinyatakan sebagai perubahan edisi; tidak ada
+dukungan atau pengesahan oleh penulis sumber maupun institusinya.
+
+
+
+
+                                           12
+

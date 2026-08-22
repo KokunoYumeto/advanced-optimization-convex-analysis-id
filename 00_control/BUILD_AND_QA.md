@@ -188,3 +188,63 @@ The final log contains only inherited/template/toolchain warnings: locale fallba
 ## Three-unit backend verification
 
 `python qa/extend_backend_ch05.py` followed by `python qa/validate_backend.py` passes with zero errors. The backend contains 337 records and 27 stable translation segments: Chapter 3 has 11, Chapter 4 has 8, and Chapter 5 has 8. The Chapter 5 extension adds 99 records across the unit, segments, concepts, terms, source learning surfaces, corrections, QA, artifacts, rights, and relations. Two generation/validation cycles were byte-identical, and a separate baseline reconstruction proved the 238 pre-Chapter-5 records semantically unchanged except for legitimate artifact byte/hash refreshes. Independent Indonesian language review remains `not_recorded`; PDF accessibility remains `pass_with_limitation` because the reader PDFs are untagged. Final JSONL/CSV hashes are refreshed after the current control records below and must be read from the validator output rather than this prose to avoid a self-referential artifact-hash loop.
+
+---
+
+# Habring Chapter 6 build and QA record
+
+As of: 2026-08-22  
+Unit: Habring Chapter 6 — Acceleration / Akselerasi  
+Admission: PASS
+
+## Build inputs
+
+- Wrapper: `source/id-ID/D90-HAB-06-akselerasi-id.tex` — 5,491 bytes — SHA-256 `46903dd6b6ff8c845624931d37d9b24fd37cd89f0bf77601ba11539c59dfd5b9`.
+- Translated chapter: `source/id-ID/habring-06-akselerasi-id.tex` — 24,690 bytes — SHA-256 `b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a`.
+- Authority chapter: `authority/habring/source-v1/acceleration.tex` — 18,873 bytes — SHA-256 `2ff1e10e9421c0fe01a09140e3e230cb2d3728c30c572bb6ca5513b229f1e605`.
+
+The retained build used pdfTeX 1.40.29 / MiKTeX 26.5 with `latexmk` 4.88 and Biber, from `source/id-ID`, with `SOURCE_DATE_EPOCH=1783900800`, `FORCE_SOURCE_DATE=1`, `TZ=UTC`, and output directed to `build/habring-unit-06-id`. The wrapper locally disables microtype expansion, loads the Libertine/newtx font maps, and localizes equation cross-references as Indonesian `persamaan`; shared Chapter 3–5 inputs were not changed.
+
+## Final artifact
+
+- Build and publication PDF: `output/pdf/D90-HAB-06-akselerasi-id.pdf` — 392,662 bytes; 15 A4 pages; SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`.
+- Final log: `build/habring-unit-06-id/D90-HAB-06-akselerasi-id.log` — 97,942 bytes; SHA-256 `0775c19ecd2e8356e7b33bd50c30871f233e0c7d05dd703ba2ec19a4f7f560f0`.
+- Final text extraction: `qa/D90-HAB-06-akselerasi-id.txt` — 37,033 bytes; SHA-256 `d2679e94ce7e44cdcf183b17e73295b5b5093a1612b2460c0c6ecba512431cda`.
+- Two forced fixed-epoch final builds reproduced the PDF byte-for-byte.
+
+## Structural and mathematical QA
+
+`python qa/audit_acceleration_unit.py` passes. The audit script is 17,917 bytes with SHA-256 `f97926aecce6f63a1dcc7733785e0f283e064888ed68d6642d676dcdac3fc8c4`; its 37,873-byte report has SHA-256 `e82f254fb7e69d498162ffcdfb70fe7d4929556351f892872bb8e65da3715b4b`.
+
+- all 99 ordered environments and all seven labels match the authority exactly;
+- all twelve stable segment markers occur in order;
+- the exact internal-reference surface is restored: four `cref` and four `eqref` invocations in authority order;
+- the source and target both contain no citation, figure, asset, footnote, or included-file surface;
+- the source editorial verification request is exposed as one rendered self-study verification prompt;
+- 166 authority and 241 target formula surfaces align into 32 explicit delta blocks, with manifest SHA-256 `886d80e0a759977c0c176d9b97e595b4c3515ecd52446a8c8b714146a9be3f4a`;
+- all 47 required correction surfaces are present and bound to exact ledger events O015-HAB-ADV-0039 through O015-HAB-ADV-0049.
+
+An independent complete review of the pre-fix target identified two P2 and one P3 findings. The frozen post-fix delta review of target SHA-256 `b1e27d912…` passes with P1=0, P2=0, P3=0. It confirms the lower-bound quantifier order and hypotheses, the complete scaled Schur–Jury minimax proof including the equal-curvature case, and the exact reference/topology closure. It separately confirmed the Gelfand/Jordan proof, spectral corollary, local heavy-ball analysis, and FISTA energy/rate argument.
+
+## Computation QA
+
+`python qa/validate_acceleration_unit.py` passes with Python 3.13.9, NumPy 2.4.4, and SciPy 1.17.1. The 33,735-byte validator has SHA-256 `12aa1feacc6230131ce9b82a769177449a8af7ed586ccbf56f0b7ce`; its 37,060-byte result has SHA-256 `135ded1ed0f4f3ca70616822d8856a85d3747458c9ca6e765dab72a11d3b88f0`.
+
+- Gelfand witnesses cover defective Jordan, nonnormal diagonalizable, complex-pair, and nilpotent matrices; the nilpotent case reaches exact zero at power four without dividing by a zero spectral radius.
+- Heavy-ball witnesses cover a general admissible case, the `beta=0` zero-root edge, and the minimax parameters. The optimal modal radius is `2/3`, with maximum modulus error `1.11e-16`.
+- FISTA passes 518 deterministic fundamental-inequality checks with maximum violation zero. The Lyapunov-energy drift is `4.62e-11`, below the `2e-9` tolerance, and both corrected explicit rate bounds have zero violation.
+- At 40 equal gradient/prox evaluations, the FISTA objective gap is `3.0715e-05`, versus `1.4867e-04` for proximal gradient. These are deterministic witnesses, not replacements for the analytic proofs.
+
+## Visual, text, and accessibility QA
+
+All 15 pages of the final post-localization PDF were rendered at 120 dpi and inspected in a five-row contact sheet; formula-heavy pages and the corrections appendix were inspected full size. No clipping, collision, blank page, broken glyph, or unreadable formula was found. A bounded English-residue scan is empty after localizing `Eq.` to `persamaan`.
+
+The PDF is unencrypted, searchable, and declares `/Lang` as `id-ID`; all fonts are embedded and expose Unicode mappings. It is not tagged, so accessibility remains `pass_with_limitation`; independent Indonesian language review remains `not_recorded`.
+
+The final log has no LaTeX error, undefined control sequence, unresolved reference or citation, or missing glyph. It retains two small mathematical overfull warnings (7.08 pt and 3.00 pt); both displays were inspected at full size and remain visibly within the page without clipping. Other warnings are inherited locale/class/toolchain fallbacks.
+
+## Four-unit backend verification
+
+`python qa/extend_backend_ch06.py` followed by `python qa/validate_backend.py` passes with zero errors across two final generation/validation cycles; the JSONL and CSV exports are byte-identical between cycles. The 40,091-byte Chapter 6 generator has SHA-256 `286a4fabd006e748c9681533338c172096c0f42252bb87836a2bf3b1cd77d6a7`; the 25,048-byte validator has SHA-256 `20c45a79ca698a45d640719da547fd27c045055665d4f4315f7e094e7e3574b5`.
+
+The backend contains 449 records, adding 112 Chapter 6 records to the 337-record baseline. Its 39 stable translation segments are distributed 11/8/8/12 across Chapters 3/4/5/6. Entity counts are: 52 artifacts, 4 assets, 55 concepts, 49 corrections, 1 course, 2 editions, 19 learning surfaces, 1 program, 36 QA events, 126 relations, 1 resource, 16 rights records, 39 segments, 43 terms, and 5 units. All 337 pre-Chapter-6 records match a freshly regenerated Chapter 5 baseline except legitimate current control/artifact byte and hash refreshes. Independent Indonesian language review remains `not_recorded`; PDF accessibility remains `pass_with_limitation` for all admitted untagged readers. Final JSONL/CSV byte identities are refreshed once more after the control updates in this paragraph and are taken from the terminal validator output to avoid a self-referential prose hash loop.

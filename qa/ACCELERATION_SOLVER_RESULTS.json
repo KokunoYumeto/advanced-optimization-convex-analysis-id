@@ -1,0 +1,1184 @@
+{
+  "checks": {
+    "fista_quadratic_l1": {
+      "L_exact": 16.0,
+      "comparison": {
+        "declared_equal_work_evaluations": 40,
+        "fista_gap_at_equal_work": 3.071464989901074e-05,
+        "milestones": [
+          {
+            "fista_gap": 26.80074630126953,
+            "fista_source_index": 2,
+            "fista_to_pg_gap_ratio": 1.0,
+            "prox_grad_evaluations": 1,
+            "proximal_gradient_gap": 26.80074630126953,
+            "proximal_gradient_iteration": 1
+          },
+          {
+            "fista_gap": 17.012322523811843,
+            "fista_source_index": 3,
+            "fista_to_pg_gap_ratio": 0.8997261323305459,
+            "prox_grad_evaluations": 2,
+            "proximal_gradient_gap": 18.90833433918953,
+            "proximal_gradient_iteration": 2
+          },
+          {
+            "fista_gap": 4.527065090085651,
+            "fista_source_index": 6,
+            "fista_to_pg_gap_ratio": 0.5284136880756712,
+            "prox_grad_evaluations": 5,
+            "proximal_gradient_gap": 8.567274452279811,
+            "proximal_gradient_iteration": 5
+          },
+          {
+            "fista_gap": 0.16315990250803925,
+            "fista_source_index": 11,
+            "fista_to_pg_gap_ratio": 0.04693497062685296,
+            "prox_grad_evaluations": 10,
+            "proximal_gradient_gap": 3.4762971048860183,
+            "proximal_gradient_iteration": 10
+          },
+          {
+            "fista_gap": 0.022099834441645427,
+            "fista_source_index": 21,
+            "fista_to_pg_gap_ratio": 0.0303691869469826,
+            "prox_grad_evaluations": 20,
+            "proximal_gradient_gap": 0.7277058315794394,
+            "proximal_gradient_iteration": 20
+          },
+          {
+            "fista_gap": 3.071464989901074e-05,
+            "fista_source_index": 41,
+            "fista_to_pg_gap_ratio": 0.20659809931066206,
+            "prox_grad_evaluations": 40,
+            "proximal_gradient_gap": 0.0001486685986051839,
+            "proximal_gradient_iteration": 40
+          },
+          {
+            "fista_gap": 6.310139966103634e-09,
+            "fista_source_index": 81,
+            "fista_to_pg_gap_ratio": 1.8500157800829313,
+            "prox_grad_evaluations": 80,
+            "proximal_gradient_gap": 3.4108573743196757e-09,
+            "proximal_gradient_iteration": 80
+          },
+          {
+            "fista_gap": 5.950795411990839e-14,
+            "fista_source_index": 161,
+            "fista_to_pg_gap_ratio": null,
+            "prox_grad_evaluations": 160,
+            "proximal_gradient_gap": 8.881784197001252e-16,
+            "proximal_gradient_iteration": 160
+          },
+          {
+            "fista_gap": 1.7763568394002505e-15,
+            "fista_source_index": 320,
+            "fista_to_pg_gap_ratio": null,
+            "prox_grad_evaluations": 319,
+            "proximal_gradient_gap": 8.881784197001252e-16,
+            "proximal_gradient_iteration": 319
+          }
+        ],
+        "proximal_gradient_gap_at_equal_work": 0.0001486685986051839,
+        "work_alignment": "FISTA x_{m+1} and proximal-gradient iterate m each use m gradient/prox evaluations"
+      },
+      "exact_hessian_eigenvalues": [
+        1.0,
+        2.0,
+        4.0,
+        8.0,
+        16.0
+      ],
+      "exact_objective": -5.140000000000001,
+      "exact_optimum_construction": "b=Q*x_star+lambda*s with valid s in partial ||x_star||_1",
+      "exact_optimum_gradient_mapping_norm": 0.0,
+      "exact_x_star": [
+        1.1,
+        -0.7,
+        0.0,
+        0.8,
+        0.0
+      ],
+      "fista": {
+        "beta_recursion": "beta_k=(t_k-1)/t_{k+1}",
+        "corrected_bound": "F(x_k)-F* <= E_1/t_k^2 <= 4*E_1/(k+1)^2, k>=1",
+        "energy": "E_k=t_k^2*(F(x_k)-F*)+||x*-t_k*x_k+(t_k-1)*x_{k-1}||^2/(2*tau)",
+        "final_gap": 1.7763568394002505e-15,
+        "final_objective": -5.139999999999999,
+        "indexing": "x_0=x_1, t_1=1; step k produces x_{k+1}",
+        "initial_energy_E1": 314.4565,
+        "iterations": 320,
+        "max_E1_over_tk_squared_signed_residual": -0.012016417367961621,
+        "max_E1_over_tk_squared_violation": 0.0,
+        "max_energy_monotonicity_violation": 4.619795785294355e-11,
+        "max_energy_signed_increase": 4.619795785294355e-11,
+        "max_explicit_O1_over_k2_signed_residual": -0.012207043798098009,
+        "max_explicit_O1_over_k2_violation": 0.0,
+        "max_t_identity_residual": 3.637978807091713e-12,
+        "min_t_lower_bound_margin": 0.0,
+        "t_recursion": "t_{k+1}=(1+sqrt(1+4*t_k^2))/2"
+      },
+      "fundamental_prox_grad_inequality": {
+        "formula": "F(x)-F(P_tau(y)) >= ||x-P_tau(y)||^2/(2*tau) - ||x-y||^2/(2*tau) + ell_f(x,y)",
+        "max_prox_step_kkt_residual": 5.662137425588298e-15,
+        "max_signed_residual_rhs_minus_lhs": 0.0,
+        "max_violation": 0.0,
+        "sample_pairs_per_step_size": 259,
+        "step_sizes": [
+          0.0625,
+          0.05
+        ]
+      },
+      "hessian_Q": [
+        [
+          5.0,
+          3.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          5.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          10.0,
+          6.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "independent_reference": {
+        "absolute_objective_gap": 8.881784197001252e-16,
+        "inf_error_to_exact_x_star": 2.1736329181010206e-08,
+        "iterations": 11,
+        "message": "Optimization terminated successfully",
+        "objective": -5.14,
+        "solver": "scipy.optimize.minimize(method='SLSQP') with l1 epigraph variables (x,u)",
+        "success": true,
+        "x": [
+          1.1000000217363293,
+          -0.7000000148280036,
+          1.1040608243828871e-16,
+          0.8000000090312309,
+          7.950354728440844e-17
+        ]
+      },
+      "lambda": 0.35,
+      "linear_term_b": [
+        3.7500000000000004,
+        -0.5499999999999997,
+        4.94,
+        8.35,
+        -0.22749999999999998
+      ],
+      "max_nonzero_coordinate_kkt_residual": 3.3306690738754696e-16,
+      "max_zero_coordinate_subgradient_excess": 0.0,
+      "numpy_eigvalsh": [
+        1.0,
+        2.0,
+        4.0,
+        8.0,
+        16.0
+      ],
+      "problem": "min_x 0.5*x^T Q*x-b^T*x+lambda*||x||_1",
+      "proximal_gradient": {
+        "final_gap": 8.881784197001252e-16,
+        "final_objective": -5.14,
+        "iterations": 320
+      },
+      "result": "PASS",
+      "step_condition": "tau <= 1/L",
+      "step_size_tau": 0.0625,
+      "tau_times_L": 1.0
+    },
+    "gelfand_spectral_radius": {
+      "cases": {
+        "defective_jordan": {
+          "description": "size-three Jordan block with eigenvalue 0.90",
+          "eigenvalues": [
+            {
+              "imag": 0.0,
+              "real": 0.9
+            },
+            {
+              "imag": 0.0,
+              "real": 0.9
+            },
+            {
+              "imag": 0.0,
+              "real": 0.9
+            }
+          ],
+          "limit_evidence": {
+            "final_absolute_error_to_rho": 0.006512557256425411,
+            "final_nth_root": 0.9065125572564254,
+            "limit_tolerance": 0.015,
+            "normalization_by_rho": "not needed for numerical limit check",
+            "rho_zero_branch": false
+          },
+          "matrix": [
+            [
+              0.9,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.9,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.9
+            ]
+          ],
+          "result": "PASS",
+          "samples": [
+            {
+              "absolute_error_to_rho": 0.8093762981117604,
+              "matrix_power_2_norm": 1.7093762981117604,
+              "n": 1,
+              "nth_root_of_norm": 1.7093762981117604
+            },
+            {
+              "absolute_error_to_rho": 0.7831793582400467,
+              "matrix_power_2_norm": 2.8330927520053755,
+              "n": 2,
+              "nth_root_of_norm": 1.6831793582400467
+            },
+            {
+              "absolute_error_to_rho": 0.69091487228629,
+              "matrix_power_2_norm": 6.406012282524571,
+              "n": 4,
+              "nth_root_of_norm": 1.59091487228629
+            },
+            {
+              "absolute_error_to_rho": 0.5124609046564353,
+              "matrix_power_2_norm": 15.842053914322976,
+              "n": 8,
+              "nth_root_of_norm": 1.4124609046564354
+            },
+            {
+              "absolute_error_to_rho": 0.3311115388923106,
+              "matrix_power_2_norm": 27.845718585566114,
+              "n": 16,
+              "nth_root_of_norm": 1.2311115388923106
+            },
+            {
+              "absolute_error_to_rho": 0.19997240921740278,
+              "matrix_power_2_norm": 21.09683655046796,
+              "n": 32,
+              "nth_root_of_norm": 1.0999724092174028
+            },
+            {
+              "absolute_error_to_rho": 0.11697583037644799,
+              "matrix_power_2_norm": 2.9368408865639037,
+              "n": 64,
+              "nth_root_of_norm": 1.016975830376448
+            },
+            {
+              "absolute_error_to_rho": 0.0671746373713854,
+              "matrix_power_2_norm": 0.013951699457303773,
+              "n": 128,
+              "nth_root_of_norm": 0.9671746373713854
+            },
+            {
+              "absolute_error_to_rho": 0.038062793620580404,
+              "matrix_power_2_norm": 7.78698228043441e-08,
+              "n": 256,
+              "nth_root_of_norm": 0.9380627936205804
+            },
+            {
+              "absolute_error_to_rho": 0.021328993776480343,
+              "matrix_power_2_norm": 6.03039927920418e-19,
+              "n": 512,
+              "nth_root_of_norm": 0.9213289937764804
+            },
+            {
+              "absolute_error_to_rho": 0.011836523803243848,
+              "matrix_power_2_norm": 9.015536712540783e-42,
+              "n": 1024,
+              "nth_root_of_norm": 0.9118365238032439
+            },
+            {
+              "absolute_error_to_rho": 0.006512557256425411,
+              "matrix_power_2_norm": 5.030283337534496e-88,
+              "n": 2048,
+              "nth_root_of_norm": 0.9065125572564254
+            }
+          ],
+          "spectral_radius": 0.9
+        },
+        "diagonalizable_nonnormal": {
+          "description": "A=S diag(0.82,-0.37,0.12) S^{-1}",
+          "eigenvalues": [
+            {
+              "imag": 0.0,
+              "real": 0.8200000000000003
+            },
+            {
+              "imag": 0.0,
+              "real": -0.3700000000000001
+            },
+            {
+              "imag": 0.0,
+              "real": 0.12000000000000006
+            }
+          ],
+          "limit_evidence": {
+            "final_absolute_error_to_rho": 0.00022409553073698962,
+            "final_nth_root": 0.8202240955307373,
+            "limit_tolerance": 0.015,
+            "normalization_by_rho": "not needed for numerical limit check",
+            "rho_zero_branch": false
+          },
+          "matrix": [
+            [
+              0.04999999999999999,
+              -0.8400000000000001,
+              0.77
+            ],
+            [
+              -0.1225,
+              -0.125,
+              0.1225
+            ],
+            [
+              0.175,
+              -0.35,
+              0.645
+            ]
+          ],
+          "result": "PASS",
+          "samples": [
+            {
+              "absolute_error_to_rho": 0.5366726390094427,
+              "matrix_power_2_norm": 1.356672639009443,
+              "n": 1,
+              "nth_root_of_norm": 1.356672639009443
+            },
+            {
+              "absolute_error_to_rho": 0.08606962295379361,
+              "matrix_power_2_norm": 0.8209621616396303,
+              "n": 2,
+              "nth_root_of_norm": 0.9060696229537939
+            },
+            {
+              "absolute_error_to_rho": 0.05558111537718935,
+              "matrix_power_2_norm": 0.5877404002110475,
+              "n": 4,
+              "nth_root_of_norm": 0.8755811153771896
+            },
+            {
+              "absolute_error_to_rho": 0.02910965562339185,
+              "matrix_power_2_norm": 0.2702154866606058,
+              "n": 8,
+              "nth_root_of_norm": 0.8491096556233921
+            },
+            {
+              "absolute_error_to_rho": 0.014466212982130466,
+              "matrix_power_2_norm": 0.055276446080490045,
+              "n": 16,
+              "nth_root_of_norm": 0.8344662129821308
+            },
+            {
+              "absolute_error_to_rho": 0.00720151641657818,
+              "matrix_power_2_norm": 0.0023097357724794236,
+              "n": 32,
+              "nth_root_of_norm": 0.8272015164165785
+            },
+            {
+              "absolute_error_to_rho": 0.003592886966414355,
+              "matrix_power_2_norm": 4.032789715647423e-06,
+              "n": 64,
+              "nth_root_of_norm": 0.8235928869664146
+            },
+            {
+              "absolute_error_to_rho": 0.0017944799720058802,
+              "matrix_power_2_norm": 1.2293969446499183e-11,
+              "n": 128,
+              "nth_root_of_norm": 0.8217944799720062
+            },
+            {
+              "absolute_error_to_rho": 0.000896749644585082,
+              "matrix_power_2_norm": 1.1425237445362127e-22,
+              "n": 256,
+              "nth_root_of_norm": 0.8208967496445854
+            },
+            {
+              "absolute_error_to_rho": 0.00044825230392164794,
+              "matrix_power_2_norm": 9.867597921013988e-45,
+              "n": 512,
+              "nth_root_of_norm": 0.8204482523039219
+            },
+            {
+              "absolute_error_to_rho": 0.00022409553073698962,
+              "matrix_power_2_norm": 7.360441499062905e-89,
+              "n": 1024,
+              "nth_root_of_norm": 0.8202240955307373
+            }
+          ],
+          "spectral_radius": 0.8200000000000003
+        },
+        "nilpotent_shift": {
+          "description": "size-four nilpotent Jordan shift",
+          "eigenvalues": [
+            {
+              "imag": 0.0,
+              "real": 0.0
+            },
+            {
+              "imag": 0.0,
+              "real": 0.0
+            },
+            {
+              "imag": 0.0,
+              "real": 0.0
+            },
+            {
+              "imag": 0.0,
+              "real": 0.0
+            }
+          ],
+          "limit_evidence": {
+            "final_nth_root": 0.0,
+            "first_sampled_zero_power": 4,
+            "limit_check": "exactly zero from the nilpotency index onward",
+            "nilpotency_index": 4,
+            "normalization_by_rho": "not formed (rho(A)=0)",
+            "rho_zero_branch": true
+          },
+          "matrix": [
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "result": "PASS",
+          "samples": [
+            {
+              "absolute_error_to_rho": 1.0,
+              "matrix_power_2_norm": 1.0,
+              "n": 1,
+              "nth_root_of_norm": 1.0
+            },
+            {
+              "absolute_error_to_rho": 1.0,
+              "matrix_power_2_norm": 1.0,
+              "n": 2,
+              "nth_root_of_norm": 1.0
+            },
+            {
+              "absolute_error_to_rho": 1.0,
+              "matrix_power_2_norm": 1.0,
+              "n": 3,
+              "nth_root_of_norm": 1.0
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.0,
+              "n": 4,
+              "nth_root_of_norm": 0.0
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.0,
+              "n": 8,
+              "nth_root_of_norm": 0.0
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.0,
+              "n": 16,
+              "nth_root_of_norm": 0.0
+            }
+          ],
+          "spectral_radius": 0.0
+        },
+        "real_matrix_complex_pair": {
+          "description": "real rotation-scaling block with eigenvalues 0.73 exp(+/-0.61 i)",
+          "eigenvalues": [
+            {
+              "imag": 0.4181932458733513,
+              "real": 0.5983430530272
+            },
+            {
+              "imag": -0.4181932458733513,
+              "real": 0.5983430530272
+            },
+            {
+              "imag": 0.0,
+              "real": 0.2
+            }
+          ],
+          "limit_evidence": {
+            "final_absolute_error_to_rho": 0.0,
+            "final_nth_root": 0.73,
+            "limit_tolerance": 0.015,
+            "normalization_by_rho": "not needed for numerical limit check",
+            "rho_zero_branch": false
+          },
+          "matrix": [
+            [
+              0.5983430530272,
+              -0.4181932458733513,
+              0.0
+            ],
+            [
+              0.4181932458733513,
+              0.5983430530272,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.2
+            ]
+          ],
+          "result": "PASS",
+          "samples": [
+            {
+              "absolute_error_to_rho": 1.1102230246251565e-16,
+              "matrix_power_2_norm": 0.7299999999999999,
+              "n": 1,
+              "nth_root_of_norm": 0.7299999999999999
+            },
+            {
+              "absolute_error_to_rho": 1.1102230246251565e-16,
+              "matrix_power_2_norm": 0.5329,
+              "n": 2,
+              "nth_root_of_norm": 0.7300000000000001
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.28398241,
+              "n": 4,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.0806460091894081,
+              "n": 8,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 0.006503778798178095,
+              "n": 16,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 4.22991386556309e-05,
+              "n": 32,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 1.789217131008288e-09,
+              "n": 64,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 3.2012979418935283e-18,
+              "n": 128,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 1.024830851277174e-35,
+              "n": 256,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 1.0502782737294972e-70,
+              "n": 512,
+              "nth_root_of_norm": 0.73
+            },
+            {
+              "absolute_error_to_rho": 0.0,
+              "matrix_power_2_norm": 1.1030844522682127e-140,
+              "n": 1024,
+              "nth_root_of_norm": 0.73
+            }
+          ],
+          "spectral_radius": 0.73
+        }
+      },
+      "formula": "lim_{n->infinity} ||A^n||_2^(1/n) = rho(A)",
+      "max_final_absolute_error_for_nonzero_radius_cases": 0.006512557256425411,
+      "result": "PASS",
+      "zero_radius_correction": "When rho(A)=0, finite-dimensional A is nilpotent; verify A^m=0 directly instead of dividing by rho(A)."
+    },
+    "heavy_ball_spd_quadratics": {
+      "L": 25.0,
+      "beta_zero_edge_contains_exact_zero_root": true,
+      "cases": [
+        {
+          "beta": 0.35,
+          "case": "general_admissible",
+          "companion_matrix_formula": "H=[[ (1+beta)I-tau*Q, -beta*I ], [ I, 0 ]]",
+          "companion_spectral_radius": 0.9019533031505926,
+          "expected_optimal_q": null,
+          "final_iterate_error": 9.612807486042494e-15,
+          "final_state_norm": 1.4352492797499026e-14,
+          "finite_horizon_root_rate": 0.9006155201936553,
+          "geometric_envelope": {
+            "delta": 0.02,
+            "formula": "||s_k|| <= c(delta)||s_0||(rho(H)+delta)^k",
+            "max_signed_residual": -6.436812103235768e-11,
+            "max_violation": 0.0,
+            "power_bound_constant": 2.498049407001269,
+            "rate_rho_plus_delta": 0.9219533031505921
+          },
+          "initial_iterate_error": 3.237282811247729,
+          "initial_state_norm": 5.061867244406949,
+          "iterations": 320,
+          "max_modal_root_radius": 0.9019533031505921,
+          "max_optimal_q_modulus_error": null,
+          "max_sorted_modal_vs_companion_root_modulus_error": 8.881784197001252e-16,
+          "max_transition_recurrence_residual": 2.7755575615628914e-16,
+          "modal_roots": [
+            {
+              "hessian_eigenvalue_eta": 1.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.9019533031505921,
+                0.38804669684940796
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.9019533031505921
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.38804669684940796
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 3.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5916079783099615,
+                0.5916079783099615
+              ],
+              "roots": [
+                {
+                  "imag": 0.08817596044274167,
+                  "real": 0.585
+                },
+                {
+                  "imag": -0.08817596044274167,
+                  "real": 0.585
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 7.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5916079783099616,
+                0.5916079783099616
+              ],
+              "roots": [
+                {
+                  "imag": 0.3657526486575317,
+                  "real": 0.46500000000000014
+                },
+                {
+                  "imag": -0.3657526486575317,
+                  "real": 0.46500000000000014
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 12.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5916079783099616,
+                0.5916079783099616
+              ],
+              "roots": [
+                {
+                  "imag": 0.5007744003041689,
+                  "real": 0.31500000000000006
+                },
+                {
+                  "imag": -0.5007744003041689,
+                  "real": 0.31500000000000006
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 18.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5916079783099616,
+                0.5916079783099616
+              ],
+              "roots": [
+                {
+                  "imag": 0.5759991319437904,
+                  "real": 0.135
+                },
+                {
+                  "imag": -0.5759991319437904,
+                  "real": 0.135
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 25.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5916079783099616,
+                0.5916079783099616
+              ],
+              "roots": [
+                {
+                  "imag": 0.5868347297152752,
+                  "real": -0.07499999999999996
+                },
+                {
+                  "imag": -0.5868347297152752,
+                  "real": -0.07499999999999996
+                }
+              ]
+            }
+          ],
+          "result": "PASS",
+          "stability_condition": "0<=beta<1 and 0<tau<2(1+beta)/L",
+          "stability_limit_2(1+beta)/L": 0.10800000000000001,
+          "stability_margin": 0.048000000000000015,
+          "tau": 0.06
+        },
+        {
+          "beta": 0.0,
+          "case": "beta_zero_gradient_descent_edge",
+          "companion_matrix_formula": "H=[[ (1+beta)I-tau*Q, -beta*I ], [ I, 0 ]]",
+          "companion_spectral_radius": 0.9399999999999991,
+          "expected_optimal_q": null,
+          "final_iterate_error": 6.150757123081648e-09,
+          "final_state_norm": 8.98038726890048e-09,
+          "finite_horizon_root_rate": 0.9389729385916756,
+          "geometric_envelope": {
+            "delta": 0.02,
+            "formula": "||s_k|| <= c(delta)||s_0||(rho(H)+delta)^k",
+            "max_signed_residual": -1.5348799236994094e-05,
+            "max_violation": 0.0,
+            "power_bound_constant": 1.4296282053581466,
+            "rate_rho_plus_delta": 0.96
+          },
+          "initial_iterate_error": 3.237282811247729,
+          "initial_state_norm": 5.061867244406949,
+          "iterations": 320,
+          "max_modal_root_radius": 0.94,
+          "max_optimal_q_modulus_error": null,
+          "max_sorted_modal_vs_companion_root_modulus_error": 8.881784197001252e-16,
+          "max_transition_recurrence_residual": 2.5438405243138006e-16,
+          "modal_roots": [
+            {
+              "hessian_eigenvalue_eta": 1.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.94,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.94
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 3.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.8200000000000001,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.8200000000000001
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 7.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5800000000000001,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.5800000000000001
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 12.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.28,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.28
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 18.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.08000000000000007,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": -0.08000000000000007
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 25.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.5,
+                0.0
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": -0.5
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.0
+                }
+              ]
+            }
+          ],
+          "result": "PASS",
+          "stability_condition": "0<=beta<1 and 0<tau<2(1+beta)/L",
+          "stability_limit_2(1+beta)/L": 0.08,
+          "stability_margin": 0.020000000000000004,
+          "tau": 0.06
+        },
+        {
+          "beta": 0.4444444444444444,
+          "case": "optimal_parameters",
+          "companion_matrix_formula": "H=[[ (1+beta)I-tau*Q, -beta*I ], [ I, 0 ]]",
+          "companion_spectral_radius": 0.6666666791287695,
+          "expected_optimal_q": 0.6666666666666666,
+          "final_iterate_error": 1.2056510015736546e-54,
+          "final_state_norm": 2.1687590103070044e-54,
+          "finite_horizon_root_rate": 0.6762381832360083,
+          "geometric_envelope": {
+            "delta": 0.02,
+            "formula": "||s_k|| <= c(delta)||s_0||(rho(H)+delta)^k",
+            "max_signed_residual": -7.830416729519761e-51,
+            "max_violation": 0.0,
+            "power_bound_constant": 26.97027563436981,
+            "rate_rho_plus_delta": 0.6866666666666668
+          },
+          "initial_iterate_error": 3.237282811247729,
+          "initial_state_norm": 5.061867244406949,
+          "iterations": 320,
+          "max_modal_root_radius": 0.6666666666666667,
+          "max_optimal_q_modulus_error": 1.1102230246251565e-16,
+          "max_sorted_modal_vs_companion_root_modulus_error": 1.246210279415294e-08,
+          "max_transition_recurrence_residual": 5.087681048627601e-16,
+          "modal_roots": [
+            {
+              "hessian_eigenvalue_eta": 1.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666667,
+                0.6666666666666667
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": 0.6666666666666667
+                },
+                {
+                  "imag": 0.0,
+                  "real": 0.6666666666666667
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 3.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666666,
+                0.6666666666666666
+              ],
+              "roots": [
+                {
+                  "imag": 0.3685138655950443,
+                  "real": 0.5555555555555556
+                },
+                {
+                  "imag": -0.3685138655950443,
+                  "real": 0.5555555555555556
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 7.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666667,
+                0.6666666666666667
+              ],
+              "roots": [
+                {
+                  "imag": 0.5773502691896258,
+                  "real": 0.33333333333333337
+                },
+                {
+                  "imag": -0.5773502691896258,
+                  "real": 0.33333333333333337
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 12.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666665,
+                0.6666666666666665
+              ],
+              "roots": [
+                {
+                  "imag": 0.6643478190611887,
+                  "real": 0.055555555555555594
+                },
+                {
+                  "imag": -0.6643478190611887,
+                  "real": 0.055555555555555594
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 18.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666666,
+                0.6666666666666666
+              ],
+              "roots": [
+                {
+                  "imag": 0.6060395619242063,
+                  "real": -0.2777777777777778
+                },
+                {
+                  "imag": -0.6060395619242063,
+                  "real": -0.2777777777777778
+                }
+              ]
+            },
+            {
+              "hessian_eigenvalue_eta": 25.0,
+              "polynomial": "lambda^2-(1+beta-tau*eta)*lambda+beta=0",
+              "root_moduli": [
+                0.6666666666666667,
+                0.6666666666666667
+              ],
+              "roots": [
+                {
+                  "imag": 0.0,
+                  "real": -0.6666666666666667
+                },
+                {
+                  "imag": 0.0,
+                  "real": -0.6666666666666667
+                }
+              ]
+            }
+          ],
+          "result": "PASS",
+          "stability_condition": "0<=beta<1 and 0<tau<2(1+beta)/L",
+          "stability_limit_2(1+beta)/L": 0.11555555555555555,
+          "stability_margin": 0.004444444444444445,
+          "tau": 0.1111111111111111
+        }
+      ],
+      "hessian_Q": [
+        [
+          11.641146280877944,
+          1.7195496086239876,
+          6.351595160249226,
+          -2.744663091225584,
+          2.783322283798424,
+          -3.1748034416764157
+        ],
+        [
+          1.7195496086239876,
+          7.196515564020371,
+          -2.4021779236086997,
+          3.373101716091805,
+          1.4939882085201868,
+          5.833234421476056
+        ],
+        [
+          6.351595160249226,
+          -2.4021779236086993,
+          15.253921950069918,
+          2.200266598026278,
+          2.152944334406016,
+          -3.974621500538969
+        ],
+        [
+          -2.744663091225584,
+          3.373101716091805,
+          2.2002665980262774,
+          11.389237427281591,
+          1.4423608342223784,
+          2.7640710362798657
+        ],
+        [
+          2.783322283798424,
+          1.4939882085201868,
+          2.152944334406016,
+          1.4423608342223784,
+          4.516772243581494,
+          2.418467602558325
+        ],
+        [
+          -3.174803441676416,
+          5.833234421476056,
+          -3.97462150053897,
+          2.7640710362798657,
+          2.418467602558325,
+          16.002406534168692
+        ]
+      ],
+      "max_beta_zero_minimum_modal_root_modulus": 0.0,
+      "max_constructed_spectrum_error": 1.4210854715202004e-14,
+      "mu": 1.0,
+      "numpy_eigvalsh": [
+        0.9999999999999993,
+        3.0000000000000036,
+        7.0000000000000036,
+        11.999999999999995,
+        18.000000000000014,
+        25.000000000000004
+      ],
+      "optimal_beta": 0.4444444444444444,
+      "optimal_parameter_formulas": {
+        "beta": "q^2",
+        "q": "(sqrt(L)-sqrt(mu))/(sqrt(L)+sqrt(mu))",
+        "tau": "4/(sqrt(L)+sqrt(mu))^2"
+      },
+      "optimal_q": 0.6666666666666666,
+      "optimal_tau": 0.1111111111111111,
+      "prescribed_eigenvalues": [
+        1.0,
+        3.0,
+        7.0,
+        12.0,
+        18.0,
+        25.0
+      ],
+      "problem": "min_x 0.5*x^T Q*x with Q symmetric positive definite",
+      "result": "PASS"
+    }
+  },
+  "reproducibility": {
+    "network_or_proprietary_solver": false,
+    "numpy_rng": "numpy.random.Generator(PCG64)",
+    "seed": 20260822
+  },
+  "result": "PASS",
+  "runtime": {
+    "numpy": "2.4.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9",
+    "scipy": "1.17.1"
+  },
+  "schema": "o015-acceleration-solver-check-v1",
+  "scope": "Habring Chapter 6: acceleration",
+  "tolerances": {
+    "analytic": 5e-10,
+    "finite_horizon_rate": 0.025,
+    "independent_solver": 7.5e-07,
+    "inequality": 2e-09,
+    "recurrence": 1e-11,
+    "root_match": 5e-08,
+    "spectral_limit": 0.015
+  }
+}

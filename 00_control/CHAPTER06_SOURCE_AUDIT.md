@@ -39,7 +39,6 @@ Every implemented substantive repair must receive a new event after `O015-HAB-AD
 - `d90.hab.v1.ch06.seg0011` — lines 333–339: FISTA theorem statement.
 - `d90.hab.v1.ch06.seg0012` — lines 340–404: FISTA proof.
 
-## Immediate production cursor
+## Admission outcome
 
-Translate all twelve segments contiguously in source order into `source/id-ID/habring-06-akselerasi-id.tex`, preserving the exact 99-environment topology and seven labels. Build a standalone id-ID wrapper, add open spectral-radius/heavy-ball/FISTA checks, expose every substantive repair in the adverse ledger and correction appendix, and do not claim independent language review or tagged-PDF accessibility before they exist.
-
+All twelve segments are translated contiguously in `source/id-ID/habring-06-akselerasi-id.tex` at SHA-256 `b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a`. The target preserves the exact 99-environment topology, seven labels, and eight internal-reference calls. Corrections O015-HAB-ADV-0039 through O015-HAB-ADV-0049 are integrated exactly; structural/formula, spectral-radius/heavy-ball/FISTA computation, deterministic-build, all-page visual, and independent mathematical rereview gates pass. The 15-page PDF is SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`. Independent language review remains unrecorded and the PDF remains untagged. The next source-order cursor is `authority/habring/source-v1/duality.tex`.

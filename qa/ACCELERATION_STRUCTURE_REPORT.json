@@ -1,0 +1,1196 @@
+{
+  "absent_surface_counts": {
+    "assets": {
+      "source": 0,
+      "target": 0
+    },
+    "citations": {
+      "source": 0,
+      "target": 0
+    },
+    "figures": {
+      "source": 0,
+      "target": 0
+    },
+    "footnotes": {
+      "source": 0,
+      "target": 0
+    },
+    "inputs": {
+      "source": 0,
+      "target": 0
+    }
+  },
+  "correction_surface_audit": [
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0039",
+      "required_surfaces": [
+        "Untuk setiap \\(L>0\\), titik awal \\(x_0\\in\\R^d\\), bilangan bulat \\(k\\geq1\\), dan \\(d\\geq2k+1\\)",
+        "terdapat fungsi konveks \\(f:\\R^d\\rightarrow\\R\\) yang bergradien \\(L\\)-Lipschitz dan mempunyai peminim \\(x^*\\)",
+        "\\frac{3L\\|x_0-x^*\\|^2}{32(k+1)^2}"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0040",
+      "required_surfaces": [
+        "norma operator yang diinduksi oleh norma Euclidean",
+        "Kompleksifikasikan \\(A\\) ke operator pada \\(\\mathbb{C}^d\\)",
+        "Jika ukuran blok Jordan terbesar adalah \\(m\\), maka \\(N^m=0\\)",
+        "Jika \\(\\rho(A)=0\\), semua elemen diagonal nol",
+        "C_{\\rho}\\,n^{m-1}\\rho(A)^{\\,n-m+1}"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0041",
+      "required_surfaces": [
+        "Jika \\(A^k\\rightarrow0\\), maka untuk setiap pasangan eigen kompleks",
+        "\\max_{0\\leq k<n}",
+        "Dengan memperbesar konstanta untuk indeks awal yang berhingga banyaknya"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0042",
+      "required_surfaces": [
+        "f\\in C^2(U)",
+        "peminim stasioner lokal \\(x^*\\)",
+        "0<\\mu\\leq L",
+        "Gunakan parameter konstan \\(\\beta_k=\\beta\\) dan \\(\\tau_k=\\tau\\)",
+        "parameter yang meminimumkan radius spektral kasus terburuk dari model kuadratik atau linearisasi lokal"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0043",
+      "required_surfaces": [
+        "rekursi kedalaman dua dapat ditulis tepat sebagai",
+        "\\nabla f(x^*+u_k)-\\nabla f(x^*)",
+        "r_k\\coloneqq",
+        "-\\tau r_k"
+      ],
+      "target_occurrences": [
+        1,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0044",
+      "required_surfaces": [
+        "tanpa pernah membagi dengan \\(\\lambda\\)",
+        "p_\\eta(\\lambda)",
+        "\\lambda^2-(1+\\beta-\\tau\\eta)\\lambda+\\beta=0",
+        "kriteria Schur--Jury",
+        "termasuk kasus \\(\\beta=0\\)"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0045",
+      "required_surfaces": [
+        "Terdapat norma ekuivalen \\(\\|\\cdot\\|_\\delta\\)",
+        "bola kecil yang digunakan di atas tetap invarian",
+        "Batas bawah di atas membuktikan bahwa nilai maksimum tersebut tidak dapat diperkecil",
+        "\\paragraph{Latihan verifikasi.}"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0046",
+      "required_surfaces": [
+        "f:\\R^d\\rightarrow\\R",
+        "g:\\R^d\\rightarrow(-\\infty,\\infty]",
+        "\\arg\\min F\\neq\\emptyset",
+        "Dengan \\(x_0=x_1\\), \\(t_1=1\\), ukuran langkah tetap \\(0<\\tau\\leq1/L\\), dan \\(k=1,2,\\dots\\)"
+      ],
+      "target_occurrences": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0047",
+      "required_surfaces": [
+        "Karena \\(g\\) konveks",
+        "\\frac{L}{2}\\|z-y\\|^2",
+        "Dengan memasukkan definisi \\(\\phi\\)",
+        "f(y)+\\langle x-y,\\nabla f(y)\\rangle=f(x)-\\ell_f(x,y)"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0048",
+      "required_surfaces": [
+        "Untuk setiap \\(k\\geq2\\)",
+        "C=2\\left(t_2^2\\|x^*-x_1\\|^2+",
+        "\\|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\\|^2\\right)",
+        "Misalkan \\(f:\\R^d\\rightarrow\\R\\) konveks, terdiferensialkan, dan bergradien \\(L\\)-Lipschitz dengan \\(L>0\\)"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "all_present": true,
+      "event_id": "O015-HAB-ADV-0049",
+      "required_surfaces": [
+        "x(t-h)=x_{k-1}",
+        "mengizinkannya bergantung pada iterasi",
+        "menambahkan komponen searah dengan langkah sebelumnya",
+        "hasil dasar aljabar linear",
+        "metode ini sangat mirip dengan algoritma bola berat",
+        "Dengan memasukkan definisi \\(\\phi\\)"
+      ],
+      "target_occurrences": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "cross_references": {
+    "cref_count": 4,
+    "eqref_count": 4,
+    "source_cref": [
+      "acceleration:eq:friction_ode",
+      "acceleration:lemma:spectral_radius",
+      "acceleration:lemma:spectral_radius",
+      "acceleration:cor:spectral_radius"
+    ],
+    "source_eqref": [
+      "acceleration:eq:heavy_ball1",
+      "eq:fista1",
+      "eq:fista2",
+      "eq:fista3"
+    ],
+    "target_cref": [
+      "acceleration:eq:friction_ode",
+      "acceleration:lemma:spectral_radius",
+      "acceleration:lemma:spectral_radius",
+      "acceleration:cor:spectral_radius"
+    ],
+    "target_eqref": [
+      "acceleration:eq:heavy_ball1",
+      "eq:fista1",
+      "eq:fista2",
+      "eq:fista3"
+    ]
+  },
+  "environment_count": 99,
+  "environment_counts": {
+    "aligned": 17,
+    "bmatrix": 8,
+    "cases": 2,
+    "cor": 1,
+    "equation": 54,
+    "lemma": 3,
+    "pmatrix": 6,
+    "proof": 6,
+    "theorem": 2
+  },
+  "environment_topology_equal": true,
+  "failures": [],
+  "forbidden_target_typo_counts": {
+    "Pugging": 0,
+    "compontent": 0,
+    "constnat": 0,
+    "depdendent": 0,
+    "follows from directly from": 0,
+    "linar": 0,
+    "resebles": 0,
+    "tha maximizing": 0,
+    "the the": 0,
+    "there exist": 0,
+    "x_{t-h}": 0
+  },
+  "formula_delta_count": 32,
+  "formula_delta_manifest_bytes": 19923,
+  "formula_delta_manifest_sha256": "886d80e0a759977c0c176d9b97e595b4c3515ecd52446a8c8b714146a9be3f4a",
+  "formula_deltas": [
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 0,
+      "source_start": 1,
+      "target": [
+        "L>0",
+        "x_0\\in\\R^d",
+        "k\\geq1",
+        "d\\geq2k+1"
+      ],
+      "target_end": 4,
+      "target_start": 1
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 1,
+      "source_start": 2,
+      "target": [
+        "f:\\R^d\\rightarrow\\R"
+      ],
+      "target_end": 6,
+      "target_start": 6
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f",
+        "f(x_k)-\\minf\\geq\\frac{3L\\|x_0-x^*\\|}{32(k+1)^2}."
+      ],
+      "source_end": 4,
+      "source_start": 3,
+      "target": [
+        "x^*",
+        "f(x_k)-f(x^*)\\geq\\frac{3L\\|x_0-x^*\\|^2}{32(k+1)^2}."
+      ],
+      "target_end": 9,
+      "target_start": 8
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\nablaf"
+      ],
+      "source_end": 10,
+      "source_start": 10,
+      "target": [
+        "-\\nablaf"
+      ],
+      "target_end": 15,
+      "target_start": 15
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "x_{t-h}=x_{k-1}"
+      ],
+      "source_end": 14,
+      "source_start": 14,
+      "target": [
+        "x(t-h)=x_{k-1}"
+      ],
+      "target_end": 19,
+      "target_start": 19
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "x_{k+1}-2x_k+x_{k-1}=-h\\gamma(x_{k}-x_{k-1})-h^2\\nablaf(x_k)",
+        "x_{k+1}=x_{k}+(1-\\gammah)(x_{k}-x_{k-1})-h^2\\nablaf(x_k).",
+        "x_{k+1}=x_{k}+\\beta_k(x_{k}-x_{k-1})-\\tau_k\\nablaf(x_k)."
+      ],
+      "source_end": 19,
+      "source_start": 17,
+      "target": [
+        "x_{k+1}-2x_k+x_{k-1}=-h\\gamma(x_k-x_{k-1})-h^2\\nablaf(x_k).",
+        "x_{k+1}=x_k+(1-\\gammah)(x_k-x_{k-1})-h^2\\nablaf(x_k).",
+        "x_{k+1}=x_k+\\beta_k(x_k-x_{k-1})-\\tau_k\\nablaf(x_k)."
+      ],
+      "target_end": 24,
+      "target_start": 22
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 21,
+      "source_start": 22,
+      "target": [
+        "\\|\\cdot\\|"
+      ],
+      "target_end": 27,
+      "target_start": 27
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\rho(A)=\\max_{i}|\\lambda_i(A)|"
+      ],
+      "source_end": 23,
+      "source_start": 23,
+      "target": [
+        "\\rho(A)=\\max_i|\\lambda_i(A)|"
+      ],
+      "target_end": 29,
+      "target_start": 29
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 25,
+      "source_start": 26,
+      "target": [
+        "A",
+        "\\mathbb{C}^d",
+        "\\R^d",
+        "\\mathbb{C}^d",
+        "\\lambda",
+        "|\\lambda|=\\rho(A)",
+        "v\\in\\mathbb{C}^d",
+        "\\|A^n\\|^{1/n}\\geq\\|A^nv\\|^{1/n}=|\\lambda|=\\rho(A),"
+      ],
+      "target_end": 39,
+      "target_start": 32
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "v",
+        "A",
+        "\\|A^n\\|^{1/n}\\geq\\|A^nv\\|^{1/n}=\\rho(A)",
+        "\\liminf_{n\\rightarrow\\infty}\\|A^n\\|^{1/n}\\geq\\rho(A)",
+        "A=B^{-1}DB",
+        "D=\\begin{pmatrix}\\lambda_1&\\rho_1&\\dots&\\dots&\\\\0&\\lambda_2&\\rho_2&\\dots&\\\\&&\\ddots&\\ddots&\\\\&&\\dots&\\lambda_{d-1}&\\rho_{d-1}&\\\\&&&\\dots&\\lambda_d\\\\\\end{pmatrix}",
+        "\\lambda_i",
+        "\\rho_i\\in\\{0,1\\}",
+        "D=\\Lambda+J"
+      ],
+      "source_end": 35,
+      "source_start": 27,
+      "target": [
+        "A=BDB^{-1}.",
+        "D",
+        "D=\\begin{pmatrix}\\lambda_1&\\varepsilon_1&\\dots&\\dots&\\\\0&\\lambda_2&\\varepsilon_2&\\dots&\\\\&&\\ddots&\\ddots&\\\\&&\\dots&\\lambda_{d-1}&\\varepsilon_{d-1}\\\\&&&0&\\lambda_d\\end{pmatrix},",
+        "\\varepsilon_i\\in\\{0,1\\}",
+        "\\varepsilon_i=1",
+        "i",
+        "i+1",
+        "\\lambda_i=\\lambda_{i+1}",
+        "D=\\Lambda+N"
+      ],
+      "target_end": 49,
+      "target_start": 41
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "J",
+        "J^k=0",
+        "k",
+        "J^k=0",
+        "k\\geqd-1",
+        "\\Lambda",
+        "J",
+        "\\begin{aligned}\\|D^n\\|=\\|\\sum_{k=0}^{d-2}\\begin{pmatrix}n\\\\k\\end{pmatrix}\\Lambda^{n-k}J^k\\|\\leq\\sum_{k=0}^{d-2}\\begin{pmatrix}n\\\\k\\end{pmatrix}\\|\\Lambda^{n-k}\\|\\leq&\\sum_{k=0}^{d-2}\\frac{n^k}{k!}\\|\\Lambda^{n-k}\\|\\\\\\leq&\\sum_{k=0}^{d-2}\\frac{n^k}{k!}\\rho(A)^{n-k}\\\\=&\\rho(A)^{n}\\sum_{k=0}^{d-2}\\frac{n^k}{k!}\\rho(A)^{-k}\\\\\\end{aligned}",
+        "\\begin{aligned}\\|D^n\\|^{1/n}\\leq&\\rho(A)\\left(\\sum_{k=0}^{d-2}\\frac{n^k}{k!}\\rho(A)^{-k}\\right)^{1/n}\\leq&\\rho(A)\\left((d-1)n^{d-2}\\max_{k=0,\\dots,d-2}\\rho(A)^{-k}\\right)^{1/n}\\end{aligned}",
+        "k",
+        "k=0",
+        "k=d-2",
+        "\\rho(A)\\leq1",
+        "\\rho(A)>1",
+        "\\lim_{n\\rightarrow\\infty}n^{1/n}=1",
+        "\\begin{aligned}\\limsup_n\\|D^n\\|^{1/n}\\leq\\rho(A).\\end{aligned}",
+        "\\limsup_n\\|A^n\\|^{1/n}=\\limsup_n\\|B^{-1}D^nB\\|^{1/n}\\leq\\limsup_n\\|B^{-1}\\|^{1/n}\\|D^n\\|^{1/n}\\|B\\|^{1/n}\\leq\\rho(A)",
+        "\\lim_kA^k=0"
+      ],
+      "source_end": 54,
+      "source_start": 37,
+      "target": [
+        "N",
+        "m",
+        "N^m=0",
+        "\\rho(A)>0",
+        "n\\geqm-1",
+        "\\begin{aligned}\\|D^n\\|&=\\left\\|\\sum_{j=0}^{m-1}\\begin{pmatrix}n\\\\j\\end{pmatrix}\\Lambda^{n-j}N^j\\right\\|\\\\&\\leq\\sum_{j=0}^{m-1}\\begin{pmatrix}n\\\\j\\end{pmatrix}\\|\\Lambda^{n-j}\\|\\,\\|N^j\\|\\\\&\\leqC_{\\rho}\\,n^{m-1}\\rho(A)^{\\,n-m+1},\\end{aligned}",
+        "C_{\\rho}>0",
+        "n",
+        "\\rho(A)=0",
+        "D=N",
+        "D^n=0",
+        "n\\geqm",
+        "\\rho(A)>0",
+        "\\begin{aligned}\\|D^n\\|^{1/n}\\leqC_{\\rho}^{1/n}n^{(m-1)/n}\\rho(A)^{\\,1-(m-1)/n}.\\end{aligned}",
+        "C_{\\rho}^{1/n}\\rightarrow1",
+        "n^{1/n}\\rightarrow1",
+        "\\rho(A)^{-(m-1)/n}\\rightarrow1",
+        "\\begin{aligned}\\limsup_{n\\rightarrow\\infty}\\|D^n\\|^{1/n}\\leq\\rho(A).\\end{aligned}",
+        "\\limsup_{n\\rightarrow\\infty}\\|A^n\\|^{1/n}=\\limsup_{n\\rightarrow\\infty}\\|BD^nB^{-1}\\|^{1/n}\\leq\\limsup_{n\\rightarrow\\infty}\\|B\\|^{1/n}\\|D^n\\|^{1/n}\\|B^{-1}\\|^{1/n}\\leq\\rho(A),",
+        "\\lim_{k\\rightarrow\\infty}A^k=0"
+      ],
+      "target_end": 70,
+      "target_start": 51
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 58,
+      "source_start": 59,
+      "target": [
+        "A^k\\rightarrow0",
+        "(\\lambda,v)",
+        "A^kv=\\lambda^kv\\rightarrow0",
+        "|\\lambda|<1",
+        "\\rho(A)<1",
+        "\\rho(A)<1",
+        "0<\\epsilon_0<1-\\rho(A)"
+      ],
+      "target_end": 81,
+      "target_start": 75
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "\\|A^k\\|^{1/k}\\leq\\rho(A)+\\epsilon"
+      ],
+      "source_end": 60,
+      "source_start": 60,
+      "target": [],
+      "target_end": 82,
+      "target_start": 83
+    },
+    {
+      "operation": "insert",
+      "source": [],
+      "source_end": 61,
+      "source_start": 62,
+      "target": [
+        "\\|A^k\\|\\leq(\\rho(A)+\\epsilon_0)^k,",
+        "\\epsilon>0"
+      ],
+      "target_end": 85,
+      "target_start": 84
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\|A^k\\|\\leq(\\rho(A)+\\epsilon)^k.",
+        "c>0",
+        "\\|A^k\\|\\leqc(\\rho(A)+\\epsilon)^k.",
+        "k\\leqn",
+        "0\\leq\\beta<1,\\quad0<\\tau<2(1+\\beta)/L,\\quad\\mu\\Id\\preceq\\nabla^2f(x^*)\\preceqL\\Id.",
+        "\\epsilon>0",
+        "x_0,x_1\\inB_\\epsilon(x^*)"
+      ],
+      "source_end": 69,
+      "source_start": 63,
+      "target": [
+        "c(\\epsilon)\\geq\\max_{0\\leqk<n}\\frac{\\|A^k\\|}{(\\rho(A)+\\epsilon)^k},",
+        "k\\geq0",
+        "f\\inC^2(U)",
+        "U\\subset\\R^d",
+        "x^*",
+        "\\nablaf(x^*)=0,\\qquad0<\\mu\\leqL,\\qquad\\mu\\Id\\preceq\\nabla^2f(x^*)\\preceqL\\Id,\\qquad0\\leq\\beta<1,\\quad0<\\tau<\\frac{2(1+\\beta)}{L}.",
+        "\\beta_k=\\beta",
+        "\\tau_k=\\tau",
+        "\\varepsilon>0",
+        "x_0,x_1\\inB_\\varepsilon(x^*)"
+      ],
+      "target_end": 96,
+      "target_start": 87
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\|x_k-x^*\\|\\leqc(\\delta)(q+\\delta)^k,\\quad0\\leqq<1,0<\\delta<1-q.",
+        "q",
+        "q=\\frac{\\sqrt{L}-\\sqrt{\\mu}}{\\sqrt{L}+\\sqrt{\\mu}},\\quad\\tau=\\frac{4}{(\\sqrt{L}+\\sqrt{\\mu})^2},\\quad\\beta=\\left(\\frac{\\sqrt{L}-\\sqrt{\\mu}}{\\sqrt{L}+\\sqrt{\\mu}}\\right)^2",
+        "\\begin{aligned}\\begin{bmatrix}x_{k+1}\\\\x_k\\end{bmatrix}&=\\begin{bmatrix}x_{k}+\\beta(x_{k}-x_{k-1})-\\tau\\nablaf(x_k)\\\\x_k\\end{bmatrix}\\\\&=\\begin{pmatrix}1+\\beta-\\tau\\nablaf&-\\beta\\\\1&0\\end{pmatrix}\\begin{bmatrix}x_k\\\\x_{k-1}\\end{bmatrix}.\\end{aligned}",
+        "x^*",
+        "\\begin{aligned}\\begin{bmatrix}x_{k+1}-x^*\\\\x_k-x^*\\end{bmatrix}&=\\begin{pmatrix}1+\\beta-\\tau\\nablaf&-\\beta\\\\1&0\\end{pmatrix}\\begin{bmatrix}x_k-x^*\\\\x_{k-1}-x^*\\end{bmatrix}.\\end{aligned}",
+        "\\begin{aligned}\\nablaf(x_k)-\\nablaf(x^*)=&\\int_0^1\\nabla^2f(x^*+t(x_k-x^*))\\ddt(x_k-x^*)\\\\=&\\nabla^2f(x^*)(x_k-x^*)+\\int_0^1\\nabla^2f(x^*+t(x_k-x^*))-\\nabla^2f(x^*)\\ddt(x_k-x^*).\\end{aligned}",
+        "z_k=\\int_0^1\\nabla^2f(x^*+t(x_k-x^*))-\\nabla^2f(x^*)\\ddt(x_k-x^*)",
+        "\\begin{aligned}\\begin{bmatrix}x_{k+1}-x^*\\\\x_k-x^*\\end{bmatrix}&=\\underbrace{\\begin{pmatrix}1+\\beta-\\tau\\nabla^2f(x^*)&-\\beta\\\\1&0\\end{pmatrix}}_{\\mathcal{H}}\\begin{bmatrix}x_k-x^*\\\\x_{k-1}-x^*\\end{bmatrix}+\\begin{bmatrix}z_k\\\\0\\end{bmatrix}\\end{aligned}"
+      ],
+      "source_end": 79,
+      "source_start": 71,
+      "target": [
+        "q=\\rho(\\mathcal{H})<1,\\qquad\\|x_k-x^*\\|\\leqc(\\delta)(q+\\delta)^{k-1}\\|(x_1-x^*,x_0-x^*)\\|",
+        "0<\\delta<1-q",
+        "[\\mu,L]",
+        "q_{\\mathrm{wc}}=\\frac{\\sqrt{L}-\\sqrt{\\mu}}{\\sqrt{L}+\\sqrt{\\mu}},\\qquad\\tau=\\frac{4}{(\\sqrt{L}+\\sqrt{\\mu})^2},\\qquad\\beta=\\left(\\frac{\\sqrt{L}-\\sqrt{\\mu}}{\\sqrt{L}+\\sqrt{\\mu}}\\right)^2.",
+        "u_k=x_k-x^*",
+        "\\nablaf(x^*)=0",
+        "\\begin{aligned}\\begin{bmatrix}u_{k+1}\\\\u_k\\end{bmatrix}&=\\begin{bmatrix}(1+\\beta)u_k-\\betau_{k-1}-\\tau\\bigl(\\nablaf(x^*+u_k)-\\nablaf(x^*)\\bigr)\\\\u_k\\end{bmatrix}\\\\&=\\begin{pmatrix}(1+\\beta)\\Id&-\\beta\\Id\\\\\\Id&0\\end{pmatrix}\\begin{bmatrix}u_k\\\\u_{k-1}\\end{bmatrix}-\\tau\\bigl(\\nablaf(x^*+u_k)-\\nablaf(x^*),0\\bigr).\\end{aligned}",
+        "\\begin{aligned}s_k&\\coloneqq\\begin{bmatrix}u_k\\\\u_{k-1}\\end{bmatrix},\\qquad\\mathcal{H}&\\coloneqq\\begin{pmatrix}(1+\\beta)\\Id-\\tau\\nabla^2f(x^*)&-\\beta\\Id\\\\\\Id&0\\end{pmatrix},\\qquads_{k+1}\\coloneqq\\begin{bmatrix}u_{k+1}\\\\u_k\\end{bmatrix}.\\end{aligned}",
+        "\\begin{aligned}\\nablaf(x^*+u_k)-\\nablaf(x^*)&=\\int_0^1\\nabla^2f(x^*+tu_k)\\,u_k\\,\\ddt\\\\&=\\nabla^2f(x^*)u_k+r_k,\\qquadr_k\\coloneqq\\left[\\int_0^1\\bigl(\\nabla^2f(x^*+tu_k)-\\nabla^2f(x^*)\\bigr)\\ddt\\right]u_k.\\end{aligned}",
+        "\\begin{aligned}\\begin{bmatrix}u_{k+1}\\\\u_k\\end{bmatrix}&=\\underbrace{\\begin{pmatrix}(1+\\beta)\\Id-\\tau\\nabla^2f(x^*)&-\\beta\\Id\\\\\\Id&0\\end{pmatrix}}_{\\mathcal{H}}\\begin{bmatrix}u_k\\\\u_{k-1}\\end{bmatrix}+\\begin{bmatrix}-\\taur_k\\\\0\\end{bmatrix}.\\end{aligned}",
+        "r_k=o(\\|u_k\\|)",
+        "u_k\\rightarrow0"
+      ],
+      "target_end": 109,
+      "target_start": 98
+    },
+    {
+      "operation": "delete",
+      "source": [
+        "\\mathcal{H}"
+      ],
+      "source_end": 82,
+      "source_start": 82,
+      "target": [],
+      "target_end": 111,
+      "target_start": 112
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{cases}(1+\\beta-\\tau\\nabla^2f(x^*))v-\\betaw&=\\lambdav\\\\v&=\\lambdaw.\\end{cases}",
+        "(1+\\beta-\\tau\\nabla^2f(x^*))v=\\lambdav+\\beta\\lambda^{-1}v.",
+        "\\eta",
+        "\\nabla^2f(x^*)",
+        "1+\\beta-\\tau\\eta=\\lambda+\\beta\\lambda^{-1},",
+        "\\lambda^2-\\lambda(1+\\beta-\\tau\\eta)=-\\beta",
+        "\\label{acceleration:eq:heavy_ball1}\\left(\\lambda-\\frac{1+\\beta-\\tau\\eta}{2}\\right)^2=\\left(\\frac{1+\\beta-\\tau\\eta}{2}\\right)^2-\\beta.",
+        "|\\lambda|<1"
+      ],
+      "source_end": 91,
+      "source_start": 84,
+      "target": [
+        "\\begin{cases}\\bigl((1+\\beta)\\Id-\\tau\\nabla^2f(x^*)\\bigr)v-\\betaw&=\\lambdav,\\\\v&=\\lambdaw.\\end{cases}"
+      ],
+      "target_end": 113,
+      "target_start": 113
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "c\\coloneqq\\frac{1+\\beta-\\tau\\eta}{2}",
+        "\\sqrt{c^2-\\beta}",
+        "\\lambda",
+        "c",
+        "c",
+        "\\tau\\eta>0",
+        "c=(1+\\beta)/2",
+        "\\begin{aligned}|\\lambda|\\leqc+c^2-\\beta=\\frac{3+\\beta^2}{4}<1\\end{aligned}",
+        "0\\leq\\beta<1",
+        "c",
+        "\\tau=2(1+\\beta)/L"
+      ],
+      "source_end": 103,
+      "source_start": 93,
+      "target": [
+        "\\eta\\in[\\mu,L]",
+        "p_\\eta(\\lambda)\\coloneqq\\lambda^2-(1+\\beta-\\tau\\eta)\\lambda+\\beta=0.",
+        "a_\\eta=1+\\beta-\\tau\\eta",
+        "\\label{acceleration:eq:heavy_ball1}\\left(\\lambda-\\frac{a_\\eta}{2}\\right)^2=\\left(\\frac{a_\\eta}{2}\\right)^2-\\beta.",
+        "|\\beta|<1,\\qquad1-a_\\eta+\\beta>0,\\qquad1+a_\\eta+\\beta>0,\\quad\\Longleftrightarrow\\quad\\beta<1,\\quad\\tau\\eta>0,\\quad\\tau\\eta<2(1+\\beta).",
+        "\\eta\\in[\\mu,L]",
+        "\\beta=0",
+        "q=\\rho(\\mathcal{H})<1",
+        "0<\\delta<1-q",
+        "\\|\\cdot\\|_\\delta",
+        "\\R^{2d}",
+        "\\|\\mathcal{H}\\|_\\delta\\leqq+\\delta/2",
+        "r(u)=o(\\|u\\|)",
+        "x^*",
+        "\\|s_{k+1}\\|_\\delta\\leq\\|\\mathcal{H}\\|_\\delta\\|s_k\\|_\\delta+\\|(-\\taur_k,0)\\|_\\delta\\leq(q+\\delta)\\|s_k\\|_\\delta,\\qquad\\|s_k\\|_\\delta\\leq(q+\\delta)^{k-1}\\|s_1\\|_\\delta.",
+        "x_0,x_1",
+        "x^*",
+        "L=\\mu",
+        "\\beta=0",
+        "\\tau=1/L",
+        "a_\\eta=0",
+        "L>\\mu",
+        "r>0",
+        "r\\geq1",
+        "0<r<1",
+        "\\lambda=rz",
+        "p_\\eta",
+        "r",
+        "0\\leq\\beta\\leqr^2",
+        "\\lverta_\\mu\\rvert,\\lverta_L\\rvert\\leqR",
+        "R\\coloneqqr+\\beta/r",
+        "h=(L-\\mu)/(L+\\mu)",
+        "La_\\mu-\\mua_L=(L-\\mu)(1+\\beta)",
+        "R\\geqh(1+\\beta)",
+        "R-h(1+\\beta)=r-h+\\beta(1/r-h)",
+        "\\beta",
+        "0\\leq\\beta\\leqr^2",
+        "0<r<1",
+        "0<h<1",
+        "2r-h(1+r^2)\\geq0",
+        "2r\\geqh(1+r^2)",
+        "0<r<1",
+        "r\\geq(\\sqrtL-\\sqrt\\mu)/(\\sqrtL+\\sqrt\\mu)",
+        "\\beta=r^2",
+        "a_\\mu=2r",
+        "a_L=-2r",
+        "\\begin{aligned}1+\\beta-\\tau\\mu&=2\\sqrt{\\beta},\\qquad1+\\beta-\\tauL=-2\\sqrt{\\beta}\\\\&\\Longrightarrow\\quad\\sqrt{\\beta}=q_{\\mathrm{wc}}=\\frac{\\sqrtL-\\sqrt\\mu}{\\sqrtL+\\sqrt\\mu},\\qquad\\tau=\\frac{4}{(\\sqrtL+\\sqrt\\mu)^2}.\\end{aligned}",
+        "a_\\eta",
+        "2q_{\\mathrm{wc}}",
+        "-2q_{\\mathrm{wc}}",
+        "\\eta\\in[\\mu,L]",
+        "q_{\\mathrm{wc}}",
+        "C^2",
+        "\\beta=0",
+        "\\eta=\\mu"
+      ],
+      "target_end": 169,
+      "target_start": 115
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "c=-(1+\\beta)",
+        "\\rho(\\mathcal{H})<1",
+        "z_k=o(x_k-x^*)",
+        "f",
+        "\\min_xF(x)\\coloneqqf(x)+g(x)",
+        "f"
+      ],
+      "source_end": 110,
+      "source_start": 105,
+      "target": [
+        "C^2",
+        "\\min_{x\\in\\R^d}F(x)\\coloneqqf(x)+g(x),",
+        "f:\\R^d\\rightarrow\\R"
+      ],
+      "target_end": 173,
+      "target_start": 171
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{cases}t_{k+1}=\\frac{1+\\sqrt{1+4t_k^2}}{2}\\\\\\beta_k=\\frac{t_k-1}{t_{k+1}}\\\\y_k=x_k+\\beta_k(x_k-x_{k-1})\\\\x_{k+1}=\\prox_{\\taug}(y_k-\\tau\\nablaf(y_k)).\\end{cases}"
+      ],
+      "source_end": 112,
+      "source_start": 112,
+      "target": [
+        "L>0",
+        "g:\\R^d\\rightarrow(-\\infty,\\infty]",
+        "\\arg\\minF\\neq\\emptyset",
+        "x_0=x_1",
+        "t_1=1",
+        "0<\\tau\\leq1/L",
+        "k=1,2,\\dots",
+        "\\begin{cases}t_{k+1}&=\\dfrac{1+\\sqrt{1+4t_k^2}}{2},\\\\\\beta_k&=\\dfrac{t_k-1}{t_{k+1}},\\\\y_k&=x_k+\\beta_k(x_k-x_{k-1}),\\\\x_{k+1}&=\\prox_{\\taug}\\bigl(y_k-\\tau\\nablaf(y_k)\\bigr).\\end{cases}"
+      ],
+      "target_end": 182,
+      "target_start": 175
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "k"
+      ],
+      "source_end": 116,
+      "source_start": 116,
+      "target": [
+        "k\\geq1"
+      ],
+      "target_end": 186,
+      "target_start": 186
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "t_{k+1}=\\frac{1+\\sqrt{1+4t_k^2}}{2}\\geq\\frac{1+\\sqrt{1+(k+1)^2}}{2}\\geq\\frac{1+(k+1)}{2}.",
+        "P_\\tau(x)=\\prox_{\\taug}(x-\\tau\\nablaf(x)).",
+        "\\tau\\leq\\frac{1}{L}",
+        "F(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2-\\frac{1}{2\\tau}\\|x-y\\|^2+\\ell_f(x,y)"
+      ],
+      "source_end": 121,
+      "source_start": 118,
+      "target": [
+        "t_{k+1}=\\frac{1+\\sqrt{1+4t_k^2}}{2}\\geq\\frac{1+\\sqrt{1+(k+1)^2}}{2}\\geq\\frac{k+2}{2}.",
+        "P_\\tau(x)=\\prox_{\\taug}\\bigl(x-\\tau\\nablaf(x)\\bigr).",
+        "x,y\\in\\R^d",
+        "0<\\tau\\leq1/L",
+        "F(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2-\\frac{1}{2\\tau}\\|x-y\\|^2+\\ell_f(x,y),"
+      ],
+      "target_end": 192,
+      "target_start": 188
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}P_\\tau(y)=&\\arg\\min_z\\frac{1}{2\\tau}\\|z-(y-\\tau\\nablaf(y))\\|^2+g(z)\\\\=&\\arg\\min_zf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{1}{2\\tau}\\|z-y\\|^2+g(z).\\end{aligned}"
+      ],
+      "source_end": 123,
+      "source_start": 123,
+      "target": [
+        "\\begin{aligned}P_\\tau(y)&=\\arg\\min_z\\frac{1}{2\\tau}\\|z-(y-\\tau\\nablaf(y))\\|^2+g(z)\\\\&=\\arg\\min_zf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{1}{2\\tau}\\|z-y\\|^2+g(z).\\end{aligned}"
+      ],
+      "target_end": 194,
+      "target_start": 194
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\phi(x)-\\phi(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2"
+      ],
+      "source_end": 130,
+      "source_start": 130,
+      "target": [
+        "\\phi(x)-\\phi(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2.",
+        "f"
+      ],
+      "target_end": 202,
+      "target_start": 201
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f",
+        "\\frac{1}{\\tau}\\geqL",
+        "f(z)\\leqf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{L}{2}\\|y-z\\|\\leqf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{1}{2\\tau}\\|z-y\\|^2",
+        "\\phi(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2"
+      ],
+      "source_end": 135,
+      "source_start": 132,
+      "target": [
+        "1/\\tau\\geqL",
+        "f(z)\\leqf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{L}{2}\\|z-y\\|^2\\leqf(y)+\\langlez-y,\\nablaf(y)\\rangle+\\frac{1}{2\\tau}\\|z-y\\|^2.",
+        "\\phi(P_\\tau(y))\\geqF(P_\\tau(y))",
+        "\\phi(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2."
+      ],
+      "target_end": 207,
+      "target_start": 204
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "f(y)+\\langlex-y,\\nablaf(y)\\rangle+\\frac{1}{2\\tau}\\|x-y\\|^2+g(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2"
+      ],
+      "source_end": 137,
+      "source_start": 137,
+      "target": [
+        "f(y)+\\langlex-y,\\nablaf(y)\\rangle=f(x)-\\ell_f(x,y)",
+        "F(x)-F(P_\\tau(y))\\geq\\frac{1}{2\\tau}\\|x-P_\\tau(y)\\|^2-\\frac{1}{2\\tau}\\|x-y\\|^2+\\ell_f(x,y),",
+        "f:\\R^d\\rightarrow\\R",
+        "L",
+        "L>0",
+        "g:\\R^d\\rightarrow(-\\infty,\\infty]",
+        "x^*\\in\\arg\\minF"
+      ],
+      "target_end": 215,
+      "target_start": 209
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\tau\\leq\\frac{1}{L}",
+        "L",
+        "\\nablaf",
+        "F(x_k)-F(x^*)\\leq\\frac{C}{k^2\\tau}",
+        "C"
+      ],
+      "source_end": 144,
+      "source_start": 140,
+      "target": [
+        "0<\\tau\\leq1/L",
+        "k\\geq2",
+        "F(x_k)-F(x^*)\\leq\\frac{C}{\\tauk^2},\\qquadC=2\\left(t_2^2\\|x^*-x_1\\|^2+\\|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\\|^2\\right)."
+      ],
+      "target_end": 220,
+      "target_start": 218
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{eq:fista1}\\begin{aligned}F(t_{k+1}^{-1}x^*+&(1-t_{k+1}^{-1})x_k)-F(x_{k+1})\\\\\\geq&\\frac{1}{2\\tau}\\|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-x_{k+1}\\|^2-\\frac{1}{2\\tau}\\|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-y_k\\|^2\\\\\\geq&\\frac{1}{2\\taut_{k+1}^2}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}x_{k+1}\\|^2-\\frac{1}{2\\taut_{k+1}^2}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\\|^2.\\end{aligned}"
+      ],
+      "source_end": 149,
+      "source_start": 149,
+      "target": [
+        "\\label{eq:fista1}\\begin{aligned}F(t_{k+1}^{-1}x^*+&(1-t_{k+1}^{-1})x_k)-F(x_{k+1})\\\\\\geq{}&\\frac{1}{2\\tau}\\|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-x_{k+1}\\|^2\\\\&-\\frac{1}{2\\tau}\\|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-y_k\\|^2\\\\={}&\\frac{1}{2\\taut_{k+1}^2}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}x_{k+1}\\|^2\\\\&-\\frac{1}{2\\taut_{k+1}^2}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\\|^2.\\end{aligned}",
+        "F"
+      ],
+      "target_end": 226,
+      "target_start": 225
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "k",
+        "\\label{eq:fista2}\\begin{aligned}F(t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k)-F(x_{k+1})\\leq&t_{k+1}^{-1}F(x^*)+(1-t_{k+1}^{-1})F(x_k)-F(x_{k+1})\\\\\\leq&(1-t_{k+1}^{-1})(F(x_k)-F(x^*))-(F(x_{k+1})-F(x^*)).\\end{aligned}"
+      ],
+      "source_end": 152,
+      "source_start": 151,
+      "target": [
+        "\\label{eq:fista2}\\begin{aligned}F(t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k)-F(x_{k+1})\\leq{}&t_{k+1}^{-1}F(x^*)+(1-t_{k+1}^{-1})F(x_k)-F(x_{k+1})\\\\={}&(1-t_{k+1}^{-1})(F(x_k)-F(x^*))-(F(x_{k+1})-F(x^*)).\\end{aligned}"
+      ],
+      "target_end": 228,
+      "target_start": 228
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\label{eq:fista3}\\begin{aligned}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\\|^2=\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2\\end{aligned}",
+        "\\begin{aligned}t_{k+1}^2(1-t_{k+1}^{-1})&(F(x_k)-F(x^*))-t_{k+1}^2(F(x_{k+1})-F(x^*))\\\\\\geq&\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2-\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2.\\end{aligned}",
+        "t_{k+1}^2(1-t_{k+1}^{-1})=t_{k}^2",
+        "\\begin{aligned}t_{k}^2&(F(x_k)-F(x^*))-t_{k+1}^2(F(x_{k+1})-F(x^*))\\\\\\geq&\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2-\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2\\end{aligned}",
+        "\\begin{aligned}t_{k}^2&(F(x_k)-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2\\\\\\geq&t_{k+1}^2(F(x_{k+1})-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2\\end{aligned}",
+        "k",
+        "x_0=x_1",
+        "\\begin{aligned}t_{2}^2&(F(x_2)-F(x^*))+\\frac{1}{2\\tau}\\|t_2(x^*-x_2)+(t_2-1)(x_{1}-x^*)\\|^2\\\\\\geq&t_{k}^2(F(x_{k})-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_{k}x_{k}+(t_{k}-1)x_{k-1}\\|^2\\end{aligned}"
+      ],
+      "source_end": 161,
+      "source_start": 154,
+      "target": [
+        "\\label{eq:fista3}\\begin{aligned}\\|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\\|^2=\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2.\\end{aligned}",
+        "\\begin{aligned}t_{k+1}^2(1-t_{k+1}^{-1})&(F(x_k)-F(x^*))-t_{k+1}^2(F(x_{k+1})-F(x^*))\\\\\\geq{}&\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2\\\\&-\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2.\\end{aligned}",
+        "t_{k+1}^2(1-t_{k+1}^{-1})=t_k^2",
+        "\\begin{aligned}t_k^2&(F(x_k)-F(x^*))-t_{k+1}^2(F(x_{k+1})-F(x^*))\\\\\\geq{}&\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2\\\\&-\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2.\\end{aligned}",
+        "\\begin{aligned}t_k^2&(F(x_k)-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2\\\\\\geq{}&t_{k+1}^2(F(x_{k+1})-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\\|^2.\\end{aligned}",
+        "k\\geq2",
+        "\\begin{aligned}t_2^2&(F(x_2)-F(x^*))+\\frac{1}{2\\tau}\\|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\\|^2\\\\\\geq{}&t_k^2(F(x_k)-F(x^*))+\\frac{1}{2\\tau}\\|x^*-t_kx_k+(t_k-1)x_{k-1}\\|^2.\\end{aligned}"
+      ],
+      "target_end": 236,
+      "target_start": 230
+    },
+    {
+      "operation": "replace",
+      "source": [
+        "\\begin{aligned}F(x_{k})-F(x^*)\\leqt_k^{-2}\\left(\\frac{t_2^2}{2\\tau}\\|x^*-x_1\\|^2+\\frac{1}{2\\tau}\\|t_2(x^*-x_2)+(t_2-1)(x_{1}-x^*)\\|^2\\right)\\end{aligned}",
+        "t_k\\geq\\frac{k+1}{2}"
+      ],
+      "source_end": 166,
+      "source_start": 165,
+      "target": [
+        "\\begin{aligned}F(x_k)-F(x^*)\\leqt_k^{-2}\\left(\\frac{t_2^2}{2\\tau}\\|x^*-x_1\\|^2+\\frac{1}{2\\tau}\\|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\\|^2\\right).\\end{aligned}",
+        "t_k\\geq(k+1)/2"
+      ],
+      "target_end": 241,
+      "target_start": 240
+    }
+  ],
+  "formula_surface_count": {
+    "source": 166,
+    "target": 241
+  },
+  "informal_prompt_count": {
+    "source": 1,
+    "target_dispositions": 1
+  },
+  "informal_prompt_disposition": {
+    "disposition": "promoted_source_editorial_todo_to_rendered_self_study_verification_prompt",
+    "source_occurrences": 1,
+    "source_surface": "% \\todo{@Alex: Exercise: prove local convergence from the linearization with hints! Prove optimal parameters with hints.}",
+    "target_heading": "\\paragraph{Latihan verifikasi.}",
+    "target_heading_occurrences": 1,
+    "target_surface": "Verifikasikan kriteria Schur--Jury di atas langsung dari rumus akar, termasuk kasus \\(\\beta=0\\), dan turunkan kembali parameter kasus terburuk dengan menyamakan perilaku pada \\(\\eta=\\mu\\) dan \\(\\eta=L\\).",
+    "target_surface_occurrences": 1
+  },
+  "integrated_ledger": {
+    "bytes": 27742,
+    "differing_ids": [],
+    "exact_records_match_proposal": true,
+    "missing_ids": [],
+    "path": "00_control/ADVERSE_LEDGER.jsonl",
+    "required_ids": [
+      "O015-HAB-ADV-0039",
+      "O015-HAB-ADV-0040",
+      "O015-HAB-ADV-0041",
+      "O015-HAB-ADV-0042",
+      "O015-HAB-ADV-0043",
+      "O015-HAB-ADV-0044",
+      "O015-HAB-ADV-0045",
+      "O015-HAB-ADV-0046",
+      "O015-HAB-ADV-0047",
+      "O015-HAB-ADV-0048",
+      "O015-HAB-ADV-0049"
+    ],
+    "sha256": "7e91f509c9c983e6bafa4d94beb07ab956a156c4f40de47d7aba05f47abd05c0"
+  },
+  "ordered_begin_environments": [
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "lemma",
+    "equation",
+    "proof",
+    "equation",
+    "equation",
+    "equation",
+    "pmatrix",
+    "equation",
+    "aligned",
+    "pmatrix",
+    "pmatrix",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "cor",
+    "proof",
+    "equation",
+    "equation",
+    "theorem",
+    "equation",
+    "equation",
+    "equation",
+    "proof",
+    "equation",
+    "aligned",
+    "bmatrix",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "equation",
+    "aligned",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "bmatrix",
+    "equation",
+    "cases",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "aligned",
+    "equation",
+    "equation",
+    "cases",
+    "lemma",
+    "equation",
+    "proof",
+    "equation",
+    "lemma",
+    "equation",
+    "equation",
+    "proof",
+    "equation",
+    "aligned",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "theorem",
+    "equation",
+    "proof",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "equation",
+    "aligned"
+  ],
+  "ordered_end_environments": [
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "lemma",
+    "equation",
+    "equation",
+    "pmatrix",
+    "equation",
+    "pmatrix",
+    "pmatrix",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "equation",
+    "proof",
+    "cor",
+    "equation",
+    "equation",
+    "proof",
+    "equation",
+    "equation",
+    "equation",
+    "theorem",
+    "bmatrix",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "aligned",
+    "equation",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "bmatrix",
+    "pmatrix",
+    "bmatrix",
+    "bmatrix",
+    "aligned",
+    "equation",
+    "cases",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "aligned",
+    "equation",
+    "proof",
+    "equation",
+    "cases",
+    "equation",
+    "equation",
+    "lemma",
+    "equation",
+    "proof",
+    "equation",
+    "equation",
+    "lemma",
+    "aligned",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "equation",
+    "proof",
+    "equation",
+    "theorem",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "aligned",
+    "equation",
+    "equation",
+    "aligned",
+    "equation",
+    "proof"
+  ],
+  "proposed_ledger": {
+    "bytes": 6756,
+    "path": "qa/CHAPTER06_PROPOSED_LEDGER.jsonl",
+    "sha256": "1268b365b19c701a1b7f5c5c0c466c72f5ed7205e3303e09f1122403f593abac"
+  },
+  "required_correction_event_count": 11,
+  "required_correction_surface_count": 47,
+  "result": "pass",
+  "schema": "o015-acceleration-structure-audit-v1",
+  "segments": [
+    "d90.hab.v1.ch06.seg0001",
+    "d90.hab.v1.ch06.seg0002",
+    "d90.hab.v1.ch06.seg0003",
+    "d90.hab.v1.ch06.seg0004",
+    "d90.hab.v1.ch06.seg0005",
+    "d90.hab.v1.ch06.seg0006",
+    "d90.hab.v1.ch06.seg0007",
+    "d90.hab.v1.ch06.seg0008",
+    "d90.hab.v1.ch06.seg0009",
+    "d90.hab.v1.ch06.seg0010",
+    "d90.hab.v1.ch06.seg0011",
+    "d90.hab.v1.ch06.seg0012"
+  ],
+  "source": {
+    "bytes": 18873,
+    "path": "authority/habring/source-v1/acceleration.tex",
+    "sha256": "2ff1e10e9421c0fe01a09140e3e230cb2d3728c30c572bb6ca5513b229f1e605"
+  },
+  "source_labels": [
+    "acceleration:eq:friction_ode",
+    "acceleration:lemma:spectral_radius",
+    "acceleration:cor:spectral_radius",
+    "acceleration:eq:heavy_ball1",
+    "eq:fista1",
+    "eq:fista2",
+    "eq:fista3"
+  ],
+  "target": {
+    "bytes": 24690,
+    "path": "source/id-ID/habring-06-akselerasi-id.tex",
+    "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+  },
+  "target_labels": [
+    "acceleration:eq:friction_ode",
+    "acceleration:lemma:spectral_radius",
+    "acceleration:cor:spectral_radius",
+    "acceleration:eq:heavy_ball1",
+    "eq:fista1",
+    "eq:fista2",
+    "eq:fista3"
+  ]
+}

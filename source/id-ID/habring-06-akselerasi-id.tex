@@ -1,0 +1,539 @@
+\chapter{Akselerasi}
+
+% segment-id: d90.hab.v1.ch06.seg0001
+Untuk setiap \(L>0\), titik awal \(x_0\in\R^d\), bilangan bulat \(k\geq1\), dan \(d\geq2k+1\), serta untuk setiap metode orde pertama yang iterasinya memenuhi
+\begin{equation}
+    x_k\in x_0+\mathrm{span}\{\nabla f(x_0),\dots,\nabla f(x_{k-1})\}
+\end{equation}
+terdapat fungsi konveks \(f:\R^d\rightarrow\R\) yang bergradien \(L\)-Lipschitz dan mempunyai peminim \(x^*\), sedemikian sehingga
+\begin{equation}
+    f(x_k)-f(x^*)\geq\frac{3L\|x_0-x^*\|^2}{32(k+1)^2}.
+\end{equation}
+Perhatikan bahwa sejauh ini kita belum memperoleh laju konvergensi yang lebih baik daripada \(\Oc(1/k)\). Menutup kesenjangan menuju \(\Oc(1/k^2)\) merupakan tujuan bab ini.
+
+% segment-id: d90.hab.v1.ch06.seg0002
+\section{Metode bola berat Polyak}
+
+Penurunan gradien untuk meminimumkan masalah tak berkendala
+\begin{equation}
+    \min_x f(x)
+\end{equation}
+dapat ditafsirkan sebagai diskretisasi dari \emph{aliran gradien}
+\begin{equation}
+    \dot x=-\nabla f(x).
+\end{equation}
+Jika fungsi \(f\) ditafsirkan sebagai potensial, maka \(-\nabla f\) merupakan gaya yang ditimbulkan potensial tersebut pada sebuah partikel bermassa satu. Secara alami kita dapat menambahkan gesekan ke dalam model ini. Gaya gesek biasanya dimodelkan sebanding dengan kecepatan, sehingga diperoleh
+\begin{equation}\label{acceleration:eq:friction_ode}
+    \ddot x=-\gamma\dot x-\nabla f(x).
+\end{equation}
+Kita mendiskretkan persamaan diferensial biasa ini melalui \(\dot x(t)\approx\frac{x(t)-x(t-h)}{h}\) dan
+\begin{equation}
+    \ddot x(t)
+    \approx\frac{\dot x(t+h)-\dot x(t)}{h}
+    \approx\frac{x(t+h)-2x(t)+x(t-h)}{h^2}.
+\end{equation}
+Dengan menamai \(x(t-h)=x_{k-1}\), \(x(t)=x_k\), dan \(x(t+h)=x_{k+1}\), substitusi ke dalam~\cref{acceleration:eq:friction_ode} memberikan
+\begin{equation}
+    x_{k+1}-2x_k+x_{k-1}
+    =-h\gamma(x_k-x_{k-1})-h^2\nabla f(x_k).
+\end{equation}
+Setelah ditata ulang, pembaruannya menjadi
+\begin{equation}
+    x_{k+1}=x_k+(1-\gamma h)(x_k-x_{k-1})-h^2\nabla f(x_k).
+\end{equation}
+Dengan menamai ulang konstanta dan mengizinkannya bergantung pada iterasi, kita sampai pada \emph{metode bola berat Polyak}
+\begin{equation}
+    x_{k+1}=x_k+\beta_k(x_k-x_{k-1})-\tau_k\nabla f(x_k).
+\end{equation}
+Bahkan tanpa penurunan dari sudut pandang persamaan diferensial, aturan pembaruan ini cukup intuitif: selain arah penurunan bagi \(f\), pembaruan tersebut memuat suku \emph{inersia} yang menambahkan komponen searah dengan langkah sebelumnya.
+
+% segment-id: d90.hab.v1.ch06.seg0003
+Bukti konvergensi metode bola berat akan memakai hasil dasar aljabar linear berikut, yang disertakan demi kelengkapan.
+
+\begin{lemma}\label{acceleration:lemma:spectral_radius}
+    Untuk setiap \(A\in\R^{d\times d}\), dengan \(\|\cdot\|\) norma operator yang diinduksi oleh norma Euclidean, berlaku \(\lim_{n\rightarrow\infty}\|A^n\|^{1/n}=\rho(A)\), dengan
+    \begin{equation}
+        \rho(A)=\max_i|\lambda_i(A)|
+    \end{equation}
+    dan \(\lambda_i(A)\) nilai eigen \(A\). Kesimpulan yang sama berlaku bagi setiap norma matriks yang kompatibel, karena semua norma pada ruang matriks berdimensi hingga ekuivalen.
+\end{lemma}
+\begin{proof}
+    Kompleksifikasikan \(A\) ke operator pada \(\mathbb{C}^d\). Norma operator Euclidean untuk matriks real sama pada \(\R^d\) dan \(\mathbb{C}^d\). Ambil nilai eigen kompleks \(\lambda\) dengan \(|\lambda|=\rho(A)\) serta vektor eigennya \(v\in\mathbb{C}^d\) yang dinormalisasi. Maka
+    \begin{equation}
+        \|A^n\|^{1/n}\geq\|A^nv\|^{1/n}=|\lambda|=\rho(A),
+    \end{equation}
+    sehingga \(\liminf_{n\rightarrow\infty}\|A^n\|^{1/n}\geq\rho(A)\).
+
+    Untuk ketaksamaan sebaliknya, gunakan bentuk normal Jordan kompleks
+    \begin{equation}
+        A=BDB^{-1}.
+    \end{equation}
+    Setelah blok-blok Jordan diurutkan, matriks \(D\) dapat ditulis sebagai
+    \begin{equation}
+        D=\begin{pmatrix}
+            \lambda_1&\varepsilon_1&\dots&\dots&\\
+            0&\lambda_2&\varepsilon_2&\dots&\\
+            &&\ddots&\ddots&\\
+            &&\dots&\lambda_{d-1}&\varepsilon_{d-1}\\
+            &&&0&\lambda_d
+        \end{pmatrix},
+    \end{equation}
+    dengan \(\varepsilon_i\in\{0,1\}\), dan \(\varepsilon_i=1\) hanya jika posisi \(i\) dan \(i+1\) berada dalam blok Jordan yang sama sehingga \(\lambda_i=\lambda_{i+1}\). Tuliskan \(D=\Lambda+N\), dengan \(\Lambda\) diagonal dan \(N\) bagian nilpoten. Kedua matriks ini komutatif. Jika ukuran blok Jordan terbesar adalah \(m\), maka \(N^m=0\). Untuk \(\rho(A)>0\) dan \(n\geq m-1\), ekspansi binomial memberi
+    \begin{equation}
+        \begin{aligned}
+            \|D^n\|
+            &=\left\|\sum_{j=0}^{m-1}
+            \begin{pmatrix}
+                n\\
+                j
+            \end{pmatrix}\Lambda^{n-j}N^j\right\|\\
+            &\leq\sum_{j=0}^{m-1}
+            \begin{pmatrix}
+                n\\
+                j
+            \end{pmatrix}\|\Lambda^{n-j}\|\,\|N^j\|\\
+            &\leq C_{\rho}\,n^{m-1}\rho(A)^{\,n-m+1},
+        \end{aligned}
+    \end{equation}
+    untuk suatu konstanta \(C_{\rho}>0\) yang tidak bergantung pada \(n\). Jika \(\rho(A)=0\), semua elemen diagonal nol, sehingga \(D=N\) dan \(D^n=0\) bagi \(n\geq m\); jadi kesimpulan langsung berlaku. Untuk \(\rho(A)>0\), batas di atas menghasilkan
+    \begin{equation}
+        \begin{aligned}
+            \|D^n\|^{1/n}
+            \leq C_{\rho}^{1/n}n^{(m-1)/n}
+            \rho(A)^{\,1-(m-1)/n}.
+        \end{aligned}
+    \end{equation}
+    Karena \(C_{\rho}^{1/n}\rightarrow1\), \(n^{1/n}\rightarrow1\), dan \(\rho(A)^{-(m-1)/n}\rightarrow1\), kita memperoleh
+    \begin{equation}
+        \begin{aligned}
+            \limsup_{n\rightarrow\infty}\|D^n\|^{1/n}
+            \leq\rho(A).
+        \end{aligned}
+    \end{equation}
+    Akhirnya,
+    \begin{equation}
+        \limsup_{n\rightarrow\infty}\|A^n\|^{1/n}
+        =\limsup_{n\rightarrow\infty}\|BD^nB^{-1}\|^{1/n}
+        \leq\limsup_{n\rightarrow\infty}
+        \|B\|^{1/n}\|D^n\|^{1/n}\|B^{-1}\|^{1/n}
+        \leq\rho(A),
+    \end{equation}
+    yang, bersama batas bawah, membuktikan hasilnya.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch06.seg0004
+\begin{cor}\label{acceleration:cor:spectral_radius}
+    Berlaku \(\lim_{k\rightarrow\infty}A^k=0\) jika dan hanya jika \(\rho(A)<1\). Selain itu, dalam hal ini, untuk setiap \(\epsilon>0\) terdapat \(c(\epsilon)>0\) sedemikian sehingga \(\|A^k\|\leq c(\epsilon)(\rho(A)+\epsilon)^k\).
+\end{cor}
+\begin{proof}
+    Jika \(A^k\rightarrow0\), maka untuk setiap pasangan eigen kompleks \((\lambda,v)\) berlaku \(A^kv=\lambda^kv\rightarrow0\); akibatnya \(|\lambda|<1\) dan \(\rho(A)<1\). Sebaliknya, jika \(\rho(A)<1\), pilih \(0<\epsilon_0<1-\rho(A)\). Berdasarkan~\cref{acceleration:lemma:spectral_radius}, terdapat \(n\) sedemikian sehingga untuk \(k\geq n\),
+    \begin{equation}
+        \|A^k\|\leq(\rho(A)+\epsilon_0)^k,
+    \end{equation}
+    yang menuju nol. Untuk pernyataan kuantitatif dan sembarang \(\epsilon>0\), \cref{acceleration:lemma:spectral_radius} memberikan batas tersebut untuk semua \(k\) yang cukup besar. Dengan memperbesar konstanta untuk indeks awal yang berhingga banyaknya, kita dapat memilih
+    \begin{equation}
+        c(\epsilon)\geq
+        \max_{0\leq k<n}
+        \frac{\|A^k\|}{(\rho(A)+\epsilon)^k},
+    \end{equation}
+    sehingga batas berlaku bagi setiap \(k\geq0\).
+\end{proof}
+
+% segment-id: d90.hab.v1.ch06.seg0005
+Sekarang kita dapat membuktikan konvergensi metode bola berat. Tekniknya baku: kita menganalisis nilai eigen linearisasi aturan pembaruan.
+
+\begin{theorem}[Konvergensi bola berat]
+    Misalkan \(f\in C^2(U)\) pada suatu lingkungan \(U\subset\R^d\) dari peminim stasioner lokal \(x^*\), dengan
+    \begin{equation}
+        \nabla f(x^*)=0,\qquad
+        0<\mu\leq L,\qquad
+        \mu\Id\preceq\nabla^2f(x^*)\preceq L\Id,
+        \qquad 0\leq\beta<1,\quad
+        0<\tau<\frac{2(1+\beta)}{L}.
+    \end{equation}
+    Gunakan parameter konstan \(\beta_k=\beta\) dan \(\tau_k=\tau\). Terdapat \(\varepsilon>0\) sedemikian sehingga, jika \(x_0,x_1\in B_\varepsilon(x^*)\), maka \(x_k\rightarrow x^*\). Lebih khusus, dengan
+    \begin{equation}
+        q=\rho(\mathcal{H})<1,\qquad
+        \|x_k-x^*\|\leq
+        c(\delta)(q+\delta)^{k-1}
+        \|(x_1-x^*,x_0-x^*)\|
+    \end{equation}
+    untuk setiap \(0<\delta<1-q\). Jika yang diketahui tentang kurvatur hanya selang \([\mu,L]\), parameter yang meminimumkan radius spektral kasus terburuk dari model kuadratik atau linearisasi lokal adalah
+    \begin{equation}
+        q_{\mathrm{wc}}=
+        \frac{\sqrt{L}-\sqrt{\mu}}{\sqrt{L}+\sqrt{\mu}},
+        \qquad
+        \tau=\frac{4}{(\sqrt{L}+\sqrt{\mu})^2},
+        \qquad
+        \beta=
+        \left(\frac{\sqrt{L}-\sqrt{\mu}}
+        {\sqrt{L}+\sqrt{\mu}}\right)^2.
+    \end{equation}
+\end{theorem}
+
+% segment-id: d90.hab.v1.ch06.seg0006
+\begin{proof}
+    Tetapkan \(u_k=x_k-x^*\). Karena \(\nabla f(x^*)=0\), rekursi kedalaman dua dapat ditulis tepat sebagai
+    \begin{equation}
+        \begin{aligned}
+            \begin{bmatrix}
+                u_{k+1}\\
+                u_k
+            \end{bmatrix}
+            &=
+            \begin{bmatrix}
+                (1+\beta)u_k-\beta u_{k-1}
+                -\tau\bigl(\nabla f(x^*+u_k)-\nabla f(x^*)\bigr)\\
+                u_k
+            \end{bmatrix}\\
+            &=
+            \begin{pmatrix}
+                (1+\beta)\Id&-\beta\Id\\
+                \Id&0
+            \end{pmatrix}
+            \begin{bmatrix}
+                u_k\\
+                u_{k-1}
+            \end{bmatrix}
+            -\tau\bigl(\nabla f(x^*+u_k)-\nabla f(x^*),0\bigr).
+        \end{aligned}
+    \end{equation}
+    Untuk menyiapkan linearisasi, definisikan vektor keadaan dan matriks linear
+    \begin{equation}
+        \begin{aligned}
+            s_k&\coloneqq
+            \begin{bmatrix}
+                u_k\\
+                u_{k-1}
+            \end{bmatrix},
+            \qquad
+            \mathcal{H}&\coloneqq
+            \begin{pmatrix}
+                (1+\beta)\Id-\tau\nabla^2f(x^*)&-\beta\Id\\
+                \Id&0
+            \end{pmatrix},
+            \qquad
+            s_{k+1}\coloneqq
+            \begin{bmatrix}
+                u_{k+1}\\
+                u_k
+            \end{bmatrix}.
+        \end{aligned}
+    \end{equation}
+    Teorema dasar kalkulus memberikan
+    \begin{equation}
+        \begin{aligned}
+            \nabla f(x^*+u_k)-\nabla f(x^*)
+            &=\int_0^1\nabla^2f(x^*+tu_k)\,u_k\,\dd t\\
+            &=\nabla^2f(x^*)u_k+r_k,\qquad
+            r_k\coloneqq
+            \left[\int_0^1
+            \bigl(\nabla^2f(x^*+tu_k)-\nabla^2f(x^*)\bigr)\dd t\right]u_k.
+        \end{aligned}
+    \end{equation}
+    Dengan demikian, rekursi keadaan yang tepat ialah
+    \begin{equation}
+        \begin{aligned}
+            \begin{bmatrix}
+                u_{k+1}\\
+                u_k
+            \end{bmatrix}
+            &=
+            \underbrace{\begin{pmatrix}
+                (1+\beta)\Id-\tau\nabla^2f(x^*)&-\beta\Id\\
+                \Id&0
+            \end{pmatrix}}_{\mathcal{H}}
+            \begin{bmatrix}
+                u_k\\
+                u_{k-1}
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+                -\tau r_k\\
+                0
+            \end{bmatrix}.
+        \end{aligned}
+    \end{equation}
+    Kontinuitas Hessian menunjukkan \(r_k=o(\|u_k\|)\) ketika \(u_k\rightarrow0\).
+
+% segment-id: d90.hab.v1.ch06.seg0007
+    Berdasarkan~\cref{acceleration:cor:spectral_radius}, kita menganalisis nilai eigen \(\mathcal{H}\). Jika \((v,w)\) merupakan vektor eigen dengan nilai eigen \(\lambda\), maka
+    \begin{equation}
+        \begin{cases}
+            \bigl((1+\beta)\Id-\tau\nabla^2f(x^*)\bigr)v-\beta w
+            &=\lambda v,\\
+            v&=\lambda w.
+        \end{cases}
+    \end{equation}
+    Dengan menghitung determinan blok, atau mengeliminasi relasi di atas tanpa pernah membagi dengan \(\lambda\), setiap nilai eigen berkaitan dengan suatu \(\eta\in[\mu,L]\) dan memenuhi
+    \begin{equation}
+        p_\eta(\lambda)
+        \coloneqq\lambda^2-(1+\beta-\tau\eta)\lambda+\beta=0.
+    \end{equation}
+    Jadi, dengan \(a_\eta=1+\beta-\tau\eta\), penyempurnaan kuadrat memberikan
+    \begin{equation}\label{acceleration:eq:heavy_ball1}
+        \left(\lambda-\frac{a_\eta}{2}\right)^2
+        =\left(\frac{a_\eta}{2}\right)^2-\beta.
+    \end{equation}
+    Akar dalam~\eqref{acceleration:eq:heavy_ball1} berada ketat di dalam lingkaran satuan jika dan hanya jika kriteria Schur--Jury untuk polinom monik kuadrat real berikut terpenuhi:
+    \begin{equation}
+        |\beta|<1,\qquad
+        1-a_\eta+\beta>0,\qquad
+        1+a_\eta+\beta>0,
+        \quad\Longleftrightarrow\quad
+        \beta<1,\quad\tau\eta>0,\quad
+        \tau\eta<2(1+\beta).
+    \end{equation}
+    Hipotesis teorema memenuhi syarat ini bagi semua \(\eta\in[\mu,L]\), termasuk kasus \(\beta=0\); oleh sebab itu \(q=\rho(\mathcal{H})<1\).
+
+    Ambil \(0<\delta<1-q\). Terdapat norma ekuivalen \(\|\cdot\|_\delta\) pada \(\R^{2d}\) yang norma operator terinduksinya memenuhi \(\|\mathcal{H}\|_\delta\leq q+\delta/2\). Karena \(r(u)=o(\|u\|)\) dan semua norma berdimensi hingga ekuivalen, lingkungan \(x^*\) dapat diperkecil sehingga suku gangguan memenuhi batas yang diperlukan. Maka rekursi keadaan menghasilkan
+    \begin{equation}
+        \|s_{k+1}\|_\delta
+        \leq\|\mathcal{H}\|_\delta\|s_k\|_\delta
+        +\|(-\tau r_k,0)\|_\delta
+        \leq(q+\delta)\|s_k\|_\delta,
+        \qquad
+        \|s_k\|_\delta
+        \leq(q+\delta)^{k-1}\|s_1\|_\delta.
+    \end{equation}
+    Dengan memilih \(x_0,x_1\) cukup dekat ke \(x^*\), bola kecil yang digunakan di atas tetap invarian. Ekuivalensi norma lalu memberikan estimasi dalam pernyataan teorema dan konvergensi lokal.
+
+    Tinggal membuktikan optimalitas kasus terburuk yang dinyatakan. Kasus \(L=\mu\) langsung: pilihan \(\beta=0\) dan \(\tau=1/L\) membuat \(a_\eta=0\) dan kedua akar nol. Sekarang andaikan \(L>\mu\). Untuk setiap radius kasus terburuk yang diklaim \(r>0\), kasus \(r\geq1\) tidak dapat memperbaiki laju yang akan diperoleh, jadi cukup tinjau \(0<r<1\). Terapkan kriteria Schur--Jury setelah penskalaan \(\lambda=rz\). Agar kedua akar setiap polinom \(p_\eta\) bermodulus paling besar \(r\), perlu
+    \(0\leq\beta\leq r^2\) dan
+    \(\lvert a_\mu\rvert,\lvert a_L\rvert\leq R\), dengan
+    \(R\coloneqq r+\beta/r\).
+
+    Tetapkan \(h=(L-\mu)/(L+\mu)\). Karena
+    \(L a_\mu-\mu a_L=(L-\mu)(1+\beta)\), kelayakan kedua titik ujung mengharuskan
+    \(R\geq h(1+\beta)\). Selisih
+    \(R-h(1+\beta)=r-h+\beta(1/r-h)\) meningkat terhadap \(\beta\) pada \(0\leq\beta\leq r^2\), sebab \(0<r<1\) dan \(0<h<1\). Oleh karena itu, bahkan nilai maksimumnya harus tak negatif:
+    \(2r-h(1+r^2)\geq0\). Jadi \(2r\geq h(1+r^2)\), yang pada \(0<r<1\) ekuivalen dengan
+    \(r\geq(\sqrt L-\sqrt\mu)/(\sqrt L+\sqrt\mu)\).
+
+    Kesamaan memaksa \(\beta=r^2\) serta
+    \(a_\mu=2r\) dan \(a_L=-2r\). Menyelesaikan kedua hubungan ujung tersebut menghasilkan
+    \begin{equation}
+        \begin{aligned}
+            1+\beta-\tau\mu&=2\sqrt{\beta},\qquad
+            1+\beta-\tau L=-2\sqrt{\beta}\\
+            &\Longrightarrow\quad
+            \sqrt{\beta}=q_{\mathrm{wc}}
+            =\frac{\sqrt L-\sqrt\mu}{\sqrt L+\sqrt\mu},
+            \qquad
+            \tau=\frac{4}{(\sqrt L+\sqrt\mu)^2}.
+        \end{aligned}
+    \end{equation}
+    Dengan pilihan ini, \(a_\eta\) bergerak linear dari \(2q_{\mathrm{wc}}\) ke \(-2q_{\mathrm{wc}}\), sehingga semua akar untuk \(\eta\in[\mu,L]\) bermodulus paling besar \(q_{\mathrm{wc}}\). Batas bawah di atas membuktikan bahwa nilai maksimum tersebut tidak dapat diperkecil. Optimalitas ini merupakan optimalitas radius spektral kasus terburuk bagi fungsi kuadratik dan bagi model asimtotik lokal \(C^2\), bukan jaminan konvergensi global bagi semua fungsi konveks mulus.
+\end{proof}
+
+\paragraph{Latihan verifikasi.}
+Verifikasikan kriteria Schur--Jury di atas langsung dari rumus akar, termasuk kasus \(\beta=0\), dan turunkan kembali parameter kasus terburuk dengan menyamakan perilaku pada \(\eta=\mu\) dan \(\eta=L\).
+
+% segment-id: d90.hab.v1.ch06.seg0008
+\section{Akselerasi Nesterov}
+Metode Polyak optimal dalam arti radius spektral kasus terburuk bagi fungsi kuadratik konveks kuat, dan secara lokal bagi model \(C^2\) di sekitar peminim. Akselerasi berikut mencapai laju orde optimal di bawah asumsi global yang lebih lemah. Kita kembali meninjau masalah
+\begin{equation}
+    \min_{x\in\R^d}F(x)\coloneqq f(x)+g(x),
+\end{equation}
+dengan \(f:\R^d\rightarrow\R\) konveks, terdiferensialkan, dan bergradien \(L\)-Lipschitz untuk \(L>0\), sedangkan \(g:\R^d\rightarrow(-\infty,\infty]\) proper, semikontinu bawah, dan konveks. Andaikan \(\arg\min F\neq\emptyset\). Dengan \(x_0=x_1\), \(t_1=1\), ukuran langkah tetap \(0<\tau\leq1/L\), dan \(k=1,2,\dots\), pembaruan \emph{fast iterative shrinkage-thresholding algorithm} (FISTA, atau metode gradien proksimal cepat) ialah
+\begin{equation}
+    \begin{cases}
+        t_{k+1}&=\dfrac{1+\sqrt{1+4t_k^2}}{2},\\
+        \beta_k&=\dfrac{t_k-1}{t_{k+1}},\\
+        y_k&=x_k+\beta_k(x_k-x_{k-1}),\\
+        x_{k+1}&=\prox_{\tau g}\bigl(y_k-\tau\nabla f(y_k)\bigr).
+    \end{cases}
+\end{equation}
+Jika \(g\equiv0\), metode ini sangat mirip dengan algoritma bola berat. Namun, gradien kini dievaluasi setelah suku inersia ditambahkan, dan konvergensinya bergantung pada pemilihan adaptif parameter inersia yang cermat.
+
+% segment-id: d90.hab.v1.ch06.seg0009
+\begin{lemma}
+    Tetapkan \(t_1=1\). Maka
+    \begin{equation}
+        t_k\geq\frac{k+1}{2}
+    \end{equation}
+    untuk setiap \(k\geq1\).
+\end{lemma}
+\begin{proof}
+    Bukti mengikuti induksi langsung. Pernyataan benar untuk \(k=1\). Dengan memakai hipotesis induksi, kita memperoleh
+    \begin{equation}
+        t_{k+1}
+        =\frac{1+\sqrt{1+4t_k^2}}{2}
+        \geq\frac{1+\sqrt{1+(k+1)^2}}{2}
+        \geq\frac{k+2}{2}.
+    \end{equation}
+\end{proof}
+
+% segment-id: d90.hab.v1.ch06.seg0010
+\begin{lemma}[Ketaksamaan fundamental gradien proksimal]
+    Definisikan
+    \begin{equation}
+        P_\tau(x)=\prox_{\tau g}\bigl(x-\tau\nabla f(x)\bigr).
+    \end{equation}
+    Di bawah hipotesis komposit di atas, untuk setiap \(x,y\in\R^d\) dan \(0<\tau\leq1/L\), berlaku
+    \begin{equation}
+        F(x)-F(P_\tau(y))
+        \geq\frac{1}{2\tau}\|x-P_\tau(y)\|^2
+        -\frac{1}{2\tau}\|x-y\|^2+\ell_f(x,y),
+    \end{equation}
+    dengan \(\ell_f(x,y)=f(x)-f(y)-\langle x-y,\nabla f(y)\rangle\).
+\end{lemma}
+\begin{proof}
+    Pertama, kita dapat menulis
+    \begin{equation}
+        \begin{aligned}
+            P_\tau(y)
+            &=\arg\min_z
+            \frac{1}{2\tau}\|z-(y-\tau\nabla f(y))\|^2+g(z)\\
+            &=\arg\min_z
+            f(y)+\langle z-y,\nabla f(y)\rangle
+            +\frac{1}{2\tau}\|z-y\|^2+g(z).
+        \end{aligned}
+    \end{equation}
+    Sebagai catatan, identitas ini menunjukkan bahwa metode gradien proksimal dapat ditafsirkan sebagai langkah proksimal terhadap \(g\) ditambah pendekatan linear terhadap \(f\). Definisikan
+    \begin{equation}
+        \phi(z)=f(y)+\langle z-y,\nabla f(y)\rangle
+        +\frac{1}{2\tau}\|z-y\|^2+g(z).
+    \end{equation}
+    Karena \(g\) konveks, \(\phi\) bersifat \(1/\tau\)-konveks kuat. Oleh karena itu,
+    \begin{equation}
+        \phi(x)-\phi(P_\tau(y))
+        \geq\frac{1}{2\tau}\|x-P_\tau(y)\|^2.
+    \end{equation}
+    Lebih lanjut, karena \(f\) konveks dan \(L\)-halus serta \(1/\tau\geq L\), lema penurunan memberikan
+    \begin{equation}
+        f(z)\leq f(y)+\langle z-y,\nabla f(y)\rangle
+        +\frac{L}{2}\|z-y\|^2
+        \leq f(y)+\langle z-y,\nabla f(y)\rangle
+        +\frac{1}{2\tau}\|z-y\|^2.
+    \end{equation}
+    Khususnya, \(\phi(P_\tau(y))\geq F(P_\tau(y))\), sehingga
+    \begin{equation}
+        \phi(x)-F(P_\tau(y))
+        \geq\frac{1}{2\tau}\|x-P_\tau(y)\|^2.
+    \end{equation}
+    Dengan memasukkan definisi \(\phi\) dan memakai
+    \(f(y)+\langle x-y,\nabla f(y)\rangle=f(x)-\ell_f(x,y)\),
+    penataan ulang hubungan terakhir tepat memberikan
+    \begin{equation}
+        F(x)-F(P_\tau(y))
+        \geq\frac{1}{2\tau}\|x-P_\tau(y)\|^2
+        -\frac{1}{2\tau}\|x-y\|^2+\ell_f(x,y),
+    \end{equation}
+    dan bukti selesai.
+\end{proof}
+
+% segment-id: d90.hab.v1.ch06.seg0011
+\begin{theorem}[Konvergensi FISTA]
+    Misalkan \(f:\R^d\rightarrow\R\) konveks, terdiferensialkan, dan bergradien \(L\)-Lipschitz dengan \(L>0\); misalkan \(g:\R^d\rightarrow(-\infty,\infty]\) proper, semikontinu bawah, dan konveks; serta ambil \(x^*\in\arg\min F\). Inisialisasikan FISTA dengan \(x_0=x_1\), \(t_1=1\), dan ukuran langkah tetap \(0<\tau\leq1/L\). Untuk setiap \(k\geq2\),
+    \begin{equation}
+        F(x_k)-F(x^*)\leq\frac{C}{\tau k^2},
+        \qquad
+        C=2\left(t_2^2\|x^*-x_1\|^2+
+        \|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\|^2\right).
+    \end{equation}
+\end{theorem}
+
+% segment-id: d90.hab.v1.ch06.seg0012
+\begin{proof}
+    Pilih \(x=t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k\) dan \(y=y_k\) dalam ketaksamaan fundamental gradien proksimal. Karena \(f\) konveks, \(\ell_f(x,y)\geq0\). Maka
+    \begin{equation}\label{eq:fista1}
+        \begin{aligned}
+            F(t_{k+1}^{-1}x^*+&(1-t_{k+1}^{-1})x_k)-F(x_{k+1})\\
+            \geq{}&
+            \frac{1}{2\tau}
+            \|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-x_{k+1}\|^2\\
+            &-\frac{1}{2\tau}
+            \|t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k-y_k\|^2\\
+            ={}&
+            \frac{1}{2\tau t_{k+1}^2}
+            \|x^*+(t_{k+1}-1)x_k-t_{k+1}x_{k+1}\|^2\\
+            &-\frac{1}{2\tau t_{k+1}^2}
+            \|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\|^2.
+        \end{aligned}
+    \end{equation}
+    Di sisi lain, menurut kekonveksan \(F\) dan fakta \(t_k\geq1\),
+    \begin{equation}\label{eq:fista2}
+        \begin{aligned}
+            F(t_{k+1}^{-1}x^*+(1-t_{k+1}^{-1})x_k)-F(x_{k+1})
+            \leq{}&t_{k+1}^{-1}F(x^*)
+            +(1-t_{k+1}^{-1})F(x_k)-F(x_{k+1})\\
+            ={}&(1-t_{k+1}^{-1})(F(x_k)-F(x^*))
+            -(F(x_{k+1})-F(x^*)).
+        \end{aligned}
+    \end{equation}
+    Karena \(y_k=x_k+\frac{t_k-1}{t_{k+1}}(x_k-x_{k-1})\), kita mempunyai
+    \begin{equation}\label{eq:fista3}
+        \begin{aligned}
+            \|x^*+(t_{k+1}-1)x_k-t_{k+1}y_k\|^2
+            =\|x^*-t_kx_k+(t_k-1)x_{k-1}\|^2.
+        \end{aligned}
+    \end{equation}
+    Menggabungkan~\eqref{eq:fista1}, \eqref{eq:fista2}, dan \eqref{eq:fista3} memberikan
+    \begin{equation}
+        \begin{aligned}
+            t_{k+1}^2(1-t_{k+1}^{-1})
+            &(F(x_k)-F(x^*))
+            -t_{k+1}^2(F(x_{k+1})-F(x^*))\\
+            \geq{}&
+            \frac{1}{2\tau}
+            \|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\|^2\\
+            &-\frac{1}{2\tau}
+            \|x^*-t_kx_k+(t_k-1)x_{k-1}\|^2.
+        \end{aligned}
+    \end{equation}
+    Dari pembaruan FISTA berlaku \(t_{k+1}^2(1-t_{k+1}^{-1})=t_k^2\). Jadi,
+    \begin{equation}
+        \begin{aligned}
+            t_k^2&(F(x_k)-F(x^*))
+            -t_{k+1}^2(F(x_{k+1})-F(x^*))\\
+            \geq{}&
+            \frac{1}{2\tau}
+            \|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\|^2\\
+            &-\frac{1}{2\tau}
+            \|x^*-t_kx_k+(t_k-1)x_{k-1}\|^2.
+        \end{aligned}
+    \end{equation}
+    Dengan demikian,
+    \begin{equation}
+        \begin{aligned}
+            t_k^2&(F(x_k)-F(x^*))
+            +\frac{1}{2\tau}
+            \|x^*-t_kx_k+(t_k-1)x_{k-1}\|^2\\
+            \geq{}&
+            t_{k+1}^2(F(x_{k+1})-F(x^*))
+            +\frac{1}{2\tau}
+            \|x^*-t_{k+1}x_{k+1}+(t_{k+1}-1)x_k\|^2.
+        \end{aligned}
+    \end{equation}
+    Dengan mengiterasikan ketaksamaan ini, untuk \(k\geq2\) diperoleh
+    \begin{equation}
+        \begin{aligned}
+            t_2^2&(F(x_2)-F(x^*))
+            +\frac{1}{2\tau}
+            \|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\|^2\\
+            \geq{}&
+            t_k^2(F(x_k)-F(x^*))
+            +\frac{1}{2\tau}
+            \|x^*-t_kx_k+(t_k-1)x_{k-1}\|^2.
+        \end{aligned}
+    \end{equation}
+    Selain itu, ketaksamaan fundamental gradien proksimal dengan \(x=x^*\) dan \(y=y_1=x_0=x_1\) memberikan
+    \begin{equation}
+        F(x^*)-F(x_2)
+        \geq\frac{1}{2\tau}\|x^*-x_2\|^2
+        -\frac{1}{2\tau}\|x^*-x_1\|^2.
+    \end{equation}
+    Dengan membuang suku kuadrat nonnegatif pada ruas kanan estimasi energi dan memakai batas terakhir, kita menemukan
+    \begin{equation}
+        \begin{aligned}
+            F(x_k)-F(x^*)
+            \leq t_k^{-2}\left(
+            \frac{t_2^2}{2\tau}\|x^*-x_1\|^2
+            +\frac{1}{2\tau}
+            \|t_2(x^*-x_2)+(t_2-1)(x_1-x^*)\|^2
+            \right).
+        \end{aligned}
+    \end{equation}
+    Karena \(t_k\geq(k+1)/2\), batas dalam pernyataan teorema mengikuti.
+\end{proof}

@@ -2,7 +2,7 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX yang dapat disunting, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3 (*Subgradien*), Bab 4 (*Metode subgradien terproyeksi*), dan Bab 5 (*Metode gradien proksimal*) telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual. Bab 6 adalah kursor produksi berikutnya. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
+**Status:** karya dalam proses. Unit Habring Bab 3 (*Subgradien*), Bab 4 (*Metode subgradien terproyeksi*), Bab 5 (*Metode gradien proksimal*), dan Bab 6 (*Akselerasi*) telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual. Bab 7 adalah kursor produksi berikutnya. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
@@ -11,6 +11,7 @@ English discovery label: **Advanced Optimization and Convex Analysis — Indones
 - `output/pdf/D90-HAB-03-subgradien-id.pdf` — 15 halaman; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
 - `output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf` — 13 halaman; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
 - `output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf` — 15 halaman; SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`.
+- `output/pdf/D90-HAB-06-akselerasi-id.pdf` — 15 halaman; SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`.
 
 Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca berada di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
 
@@ -22,19 +23,20 @@ Korpus lengkap nantinya juga akan memakai bagian terpilih dan tidak tumpang tind
 
 ## Membangun ulang
 
-Prasyarat yang telah diverifikasi: MiKTeX/pdfTeX, `latexmk`, dan Biber. Dari `source/id-ID`, bangun unit Bab 5 dengan:
+Prasyarat yang telah diverifikasi: MiKTeX/pdfTeX, `latexmk`, dan Biber. Dari `source/id-ID`, bangun unit Bab 6 dengan:
 
 ```powershell
-$env:SOURCE_DATE_EPOCH='1786665600'
+$env:SOURCE_DATE_EPOCH='1783900800'
+$env:FORCE_SOURCE_DATE='1'
 $env:TZ='UTC'
-latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir='..\..\build\habring-unit-05-id' 'D90-HAB-05-metode-gradien-proksimal-id.tex'
+latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir='..\..\build\habring-unit-06-id' 'D90-HAB-06-akselerasi-id.tex'
 ```
 
 Jalankan audit dan pemeriksaan numerik dari akar repositori:
 
 ```powershell
-python qa/audit_proximal_gradient_unit.py
-python qa/validate_proximal_gradient_unit.py
+python qa/audit_acceleration_unit.py
+python qa/validate_acceleration_unit.py
 python qa/validate_backend.py
 ```
 

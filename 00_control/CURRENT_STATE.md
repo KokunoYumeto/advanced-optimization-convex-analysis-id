@@ -1,9 +1,9 @@
 # O015 current state
 
-As of: 2026-08-21  
+As of: 2026-08-22  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: three bounded reader units admitted; Chapter 6 is active; corpus is incomplete
+Status: four bounded reader units admitted; Chapter 7 is active; corpus is incomplete
 
 ## Ownership and scope
 
@@ -30,27 +30,31 @@ Habring Chapter 3, “Subgradients,” has been translated contiguously as `sour
 - Chapter 5 authority source: 18,464 bytes; SHA-256 `59d5694742f0e2f9f46da0c1418b5fe0ff18521c49078ed29c843b6e8c701f6e`.
 - Chapter 5 Indonesian unit: 20,575 bytes; SHA-256 `1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691`.
 - Chapter 5 reader PDF: 15 A4 pages; 473,685 bytes; SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`.
-- Stable backend: 337 three-unit records, including 27 source-linked translation segments; deterministic JSONL and lossless CSV validate with zero errors.
+- Habring Chapter 6, “Acceleration,” is translated contiguously as `source/id-ID/habring-06-akselerasi-id.tex` and wrapped by `source/id-ID/D90-HAB-06-akselerasi-id.tex`.
+- Chapter 6 authority source: 18,873 bytes; SHA-256 `2ff1e10e9421c0fe01a09140e3e230cb2d3728c30c572bb6ca5513b229f1e605`.
+- Chapter 6 Indonesian unit: 24,690 bytes; SHA-256 `b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a`.
+- Chapter 6 reader PDF: 15 A4 pages; 392,662 bytes; SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`.
+- Stable backend: 449 four-unit records, including 39 source-linked translation segments (11/8/8/12 by Chapter 3/4/5/6); deterministic JSONL and lossless CSV validate with zero errors.
 
-Chapter 3 preserves all 61 source environments and eleven stable segments. Chapter 4 preserves all 67 source environments, four authority labels, and eight stable segments. Chapter 5 preserves all 78 source environments, nine label occurrences with the duplicate source label uniquely mapped, and eight stable segments. Thirty-eight mathematically determined source corrections across the three units are explicit in `ADVERSE_LEDGER.jsonl`; no correction was reported upstream during production.
+Chapter 3 preserves all 61 source environments and eleven stable segments. Chapter 4 preserves all 67 source environments, four authority labels, and eight stable segments. Chapter 5 preserves all 78 source environments, nine label occurrences with the duplicate source label uniquely mapped, and eight stable segments. Chapter 6 preserves all 99 ordered environments, seven labels, eight internal reference calls, and twelve stable segments. Forty-nine mathematically determined source corrections across the four units are explicit in `ADVERSE_LEDGER.jsonl`; no correction was reported upstream during production.
 
 ## Admission evidence
 
-- Structural/formula audits: PASS for all three units; Chapter 3 has 46 dispositioned formula-delta blocks (manifest `c979be4e…`), Chapter 4 has 40 (`d0453330…`), and Chapter 5 has 38 (`3b910b86…`).
-- Independent mathematical rereviews: PASS for all three units, each with P1=0, P2=0, P3=0.
+- Structural/formula audits: PASS for all four units; Chapter 3 has 46 dispositioned formula-delta blocks (manifest `c979be4e…`), Chapter 4 has 40 (`d0453330…`), Chapter 5 has 38 (`3b910b86…`), and Chapter 6 has 32 (`886d80e0…`).
+- Independent mathematical rereviews: PASS for all four units, each with P1=0, P2=0, P3=0 at its frozen admitted target.
 - Open computation checks: PASS with Python 3.13.9, NumPy 2.4.4, SciPy 1.17.1, HiGHS, and SLSQP.
-- PDF builds: forced final rebuilds produced byte-identical artifacts; no overfull/underfull boxes, unresolved references, or TeX errors.
-- Visual review: all 43 physical pages across the three PDFs inspected; selected mathematical and correction surfaces inspected at full size; no clipping, collision, or unreadable page found.
+- PDF builds: forced final rebuilds produced byte-identical artifacts; no unresolved references or TeX errors. Chapter 6 retains two small, visually contained display overfull warnings, recorded in `BUILD_AND_QA.md`.
+- Visual review: all 58 physical pages across the four PDFs inspected; selected mathematical and correction surfaces inspected at full size; no clipping, collision, or unreadable page found.
 - Accessibility: searchable text, `/Lang` set to `id-ID`, Indonesian descriptions for both figures. The PDF is untagged; semantic HTML/EPUB remains required before final corpus publication.
 
 ## Known incomplete surfaces
 
-The authority supplies sparse informal exercises and no systematic hints, answers, or solutions in the admitted units. Independent Indonesian language review has not yet been recorded. The full Habring module, Penn module, authored assessment layer, semantic HTML/EPUB reader, and final corpus publication remain incomplete.
+The authority supplies sparse informal exercises and no systematic hints, answers, or solutions in the admitted units. Independent Indonesian language review has not yet been recorded. Habring Chapters 7–9, the Penn module, authored assessment layer, semantic HTML/EPUB reader, and final corpus publication remain incomplete.
 
 ## Public corpus checkpoint
 
-The discoverable public corpus repository is `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its current `main` checkpoint contains the verified Chapter 3–5 readers and the 337-record backend. Public-byte readback matched the Chapter 5 TeX/PDF, README, backend, and structural report exactly. Details are in `PUBLICATION_RECEIPTS.md`. No upstream contact has occurred.
+The discoverable public corpus repository is `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its currently verified public `main` checkpoint contains the Chapter 3–5 readers and 337-record backend; the admitted Chapter 6 increment is the next authorized publication transaction. Public-byte readback for the preceding checkpoint is recorded in `PUBLICATION_RECEIPTS.md`. No upstream contact has occurred.
 
 ## Exact continuation
 
-Continue with `authority/habring/source-v1/acceleration.tex` (Chapter 6, acceleration; 18,873 bytes; 404 lines; SHA-256 `2ff1e10e9421c0fe01a09140e3e230cb2d3728c30c572bb6ca5513b229f1e605`). Its 99-environment topology, twelve stable segments, dependencies, and determined correction plan are frozen in `CHAPTER06_SOURCE_AUDIT.md`. Translate contiguously with ledger-bound corrections and open checks for spectral radius, heavy-ball iterates, and FISTA rates. Translation remains the dominant activity. Completion of this edition remains independent of the curriculum root's later admission decision.
+Continue with `authority/habring/source-v1/duality.tex` (Chapter 7, duality; 30,761 bytes; 597 lines; SHA-256 `0b112dee2582813cec5629c02df1dda329f690f944b60f4694b1c5762129bea9`). Translate Fenchel conjugacy/duality, primal–dual hybrid gradient, and ADMM contiguously, preserving the exact source topology while uniquely remapping the duplicated final source label. Translation remains the dominant activity. Completion of this edition remains independent of the curriculum root's later admission decision.
