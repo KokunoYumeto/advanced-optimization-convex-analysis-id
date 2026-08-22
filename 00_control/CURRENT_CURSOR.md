@@ -17,7 +17,7 @@ State: Chapters 3–5 admitted after independent audits; Chapter 6 is the active
 - Habring Chapter 4 has been translated contiguously with eight stable segments, all 67 ordered environments and four authority labels preserved.
 - Nine substantive authority defects are transparently corrected and ledger-bound; structural/formula audit, open-solver validation, deterministic rebuild, all-page visual inspection, and independent mathematical rereview all pass.
 - Chapter 5 authority identity, closure, topology, dependencies, and correction plan are frozen in `CHAPTER05_SOURCE_AUDIT.md`; the complete translation preserves 78 ordered environments in eight stable segments and has passed structural/formula, computation, deterministic-build, visual, and independent mathematical gates.
-- The public corpus repository at `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id` has a verified two-unit `main` checkpoint; exact commit/tree and byte-readback evidence are in `PUBLICATION_RECEIPTS.md`.
+- The public corpus repository at `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id` has a verified three-unit `main` checkpoint; exact commit/tree and byte-readback evidence are in `PUBLICATION_RECEIPTS.md`.
 - The three-unit backend now validates 337 records and 27 stable segments; Chapter 6's exact topology, twelve segments, dependencies, and correction plan are frozen in `CHAPTER06_SOURCE_AUDIT.md`.
 
 ## Exact cursor

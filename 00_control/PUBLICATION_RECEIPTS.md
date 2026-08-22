@@ -19,3 +19,19 @@ Public-byte readback from `raw.githubusercontent.com` matched local bytes for:
 
 This is an incremental publication, not a final-corpus completion claim. No upstream issue, comment, or other contact was made.
 
+## 2026-08-22 — Public Chapter 5 reader checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Visibility/default branch: public / `main`
+- Content commit: `fb4105434f01c8e1f9b62d0d0e6aeb0e166aa0ed`
+- Content tree: `545d25a5a263090b88f4d60b3382416491c4dfbd`
+
+Public-byte readback from `raw.githubusercontent.com` matched local bytes for:
+
+- `README.md`: 3,427 bytes; SHA-256 `87356b2f90ff7bd604d1ffd6906cef1a421272a0db72b5d9c0f3f1ea6c69cffa`.
+- `source/id-ID/habring-05-metode-gradien-proksimal-id.tex`: 20,575 bytes; SHA-256 `1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691`.
+- `output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf`: 473,685 bytes; SHA-256 `6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d`.
+- `backend/records.jsonl`: 234,106 bytes; SHA-256 `4cb50ca654031940d785fc543b841bbd889ad3b111a3e49e834b079fc216d14d`.
+- `qa/PROXIMAL_GRADIENT_STRUCTURE_REPORT.json`: 26,962 bytes; SHA-256 `8778d5217e9d18c57db590bcd92095050127cdecee1409a07e2673742c335ce4`.
+
+The checkpoint adds the admitted Chapter 5 reader, exact editable source, numerical and structural evidence, and the validated 337-record/27-segment backend. It remains an incremental publication, not a final-corpus or curriculum-admission claim. No upstream contact occurred.
