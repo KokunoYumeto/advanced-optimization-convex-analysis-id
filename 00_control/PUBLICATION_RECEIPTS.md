@@ -126,9 +126,11 @@ The item contains no Penn or other mixed-license work byte, no TTP prose, and no
 - Visibility/default branch: public / `main`
 - Content commit: `6900a39ce579ba5ca464fecc00b4575139fbc3ea`
 - Content tree: `8539cec4931da655e495a25eb3b05b25007208b5`
+- Receipt commit: `89708ae0e819a147549f32dc11c432d9b2a45ebf`
+- Receipt tree: `c178345f20f339394574fc03946031f5c923fba6`
 - Scope: admitted optional companion Habring Chapters 3--9 and Penn Chapters 3--5, the 103-page combined Habring reader, 1,283-record backend, exact QA/control records, and sanitized Zenodo/Figshare release evidence
 - Exclusions: unadmitted Penn Chapter 6 candidate, superseded drafts/worklogs, local build/temp/cache material, credential files, and upstream contact
 
 The credential-free GitHub commit API returned the exact content commit and tree. Anonymous immutable-commit downloads matched local byte counts and SHA-256 values for ten representative closure surfaces: `README.md`, `CURRENT_STATE.md`, both backend files, the terminal Habring and Penn source units, the combined Habring reader, the Penn Chapter 5 reader, and both Zenodo/Figshare public-readback receipts. The backend remained byte-identical after two final generation/validation cycles: JSONL `e57a457d20edfcf772f38f7dd9dfdd3368530d785bbf5b71179b90784b8130f9`; CSV `e2ca8f3b58dc74e208a579ff1b55997d0e5e202f49c2b018edce6358b7492c2f`.
 
-The sanitized machine receipt is `release/github/2026-08-22-10u/github-public-readback.json`. This remains an incomplete optional-companion checkpoint, not completion of the selected MIT/Royer D90 course. No upstream issue, comment, or other contact was made.
+The sanitized machine receipt is `release/github/2026-08-22-10u/github-public-readback.json`. At the receipt commit, anonymous raw download matched its 2,536 local bytes and SHA-256 `390920f48cca0c96c1393f6dabd8d0d47382a8cd73016577d175056d83248c07`; the then-current publication log also matched at 13,667 bytes and SHA-256 `42c9131ac7f26848b349ce8395823b8af603ec2d7d04bd7e7e2a0a4fb68129f5`. This remains an incomplete optional-companion checkpoint, not completion of the selected MIT/Royer D90 course. No upstream issue, comment, or other contact was made.

@@ -135,3 +135,7 @@ The later preservation route supersedes only D90-0027's zero-file disposition, n
 ## D90-0029 — Existing GitHub mirror resumes after provider reinstatement
 
 The user reported on 2026-08-22 that GitHub access is reinstated, ending D90-0024's provider-suspension hold. The existing repository `KokunoYumeto/advanced-optimization-convex-analysis-id` remains the sole GitHub mirror. After the active preservation transaction closes, task-local narrow Git inspection, commit, push, and immutable public-byte readback resume; no replacement repository or broad workspace Git scan is permitted.
+
+## D90-0030 — Restored GitHub checkpoint closes and primary production pivots
+
+The admitted ten-unit optional companion, 1,283-record backend, 103-page Habring reader, exact controls/QA, and sanitized release evidence are public at content commit `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / tree `8539cec4931da655e495a25eb3b05b25007208b5`. Anonymous GitHub API and immutable raw-file readback passed. The sanitized receipt is public and independently verified at commit `89708ae0e819a147549f32dc11c432d9b2a45ebf` / tree `c178345f20f339394574fc03946031f5c923fba6`. No unadmitted Penn Chapter 6 candidate, cache, credential, or upstream-contact artifact was included. With GitHub, Zenodo, and Figshare preservation closed, the active production cursor moves to the MIT/Royer authority freeze and fail-closed first MIT semantic-source pilot.

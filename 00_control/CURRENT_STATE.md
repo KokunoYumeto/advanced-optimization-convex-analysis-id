@@ -3,7 +3,7 @@
 As of: 2026-08-22  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: ten-unit Penn/Habring companion admitted through Penn Chapter 5; Zenodo/Figshare preservation complete; GitHub synchronization active; MIT/Royer semantic-source pilot follows
+Status: ten-unit Penn/Habring companion admitted through Penn Chapter 5 and preserved on GitHub/Zenodo/Figshare; MIT/Royer authority freeze and semantic-source pilot active
 
 ## Ownership and scope
 
@@ -40,9 +40,9 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
 - Current public version: `10.5281/zenodo.22060447`, explicitly incomplete through the ten optional-companion units Habring Chapters 3--9 and Penn Chapters 3--5. Anonymous readback passed all 16 public files and all 150 manifest-bound ZIP payloads.
 - Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
-- GitHub access was reinstated by the provider on 2026-08-22. The existing repository remains authoritative; the next bounded preservation action is a narrow task-local commit/push of this verified checkpoint followed by immutable public-byte readback. Do not run a broad workspace scan or create a replacement repository.
+- GitHub access was reinstated by the provider on 2026-08-22. The verified checkpoint is public in the existing repository at content commit `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / tree `8539cec4931da655e495a25eb3b05b25007208b5`; credential-free API and immutable raw-file readback passed. Sanitized evidence is public at receipt commit `89708ae0e819a147549f32dc11c432d9b2a45ebf` / tree `c178345f20f339394574fc03946031f5c923fba6`, and its receipt/control bytes also passed anonymous readback. No replacement repository was created.
 
-The Zenodo and Figshare preservation transactions are complete. The only remaining checkpoint-preservation action is the GitHub synchronization; after it closes, the primary production cursor moves to the MIT/Royer authority freeze and first MIT semantic-source pilot.
+The GitHub, Zenodo, and Figshare checkpoint-preservation transactions are complete. The primary production cursor is now the MIT/Royer authority freeze and first MIT semantic-source pilot.
 
 ## Known incomplete surfaces
 
@@ -50,10 +50,9 @@ MIT/Royer source bytes and teaching closure must be independently frozen in this
 
 ## Exact continuation
 
-1. Commit and push the verified ten-unit/reader-first preservation checkpoint to the existing GitHub repository using only narrow task-local Git operations; anonymously verify immutable public bytes and record both content and receipt commits.
-2. Re-run the backend generator/validator after any final public-receipt binding refresh and record terminal hashes if the generator treats those receipts as live artifacts.
-3. Freeze MIT and Royer official bytes/archives/rights/exercise-solution/notebook closure locally.
-4. Convert one complete MIT lecture block into semantic editable source and pass the fail-closed dual reconstruction, build, topology, page-map, accessibility, terminology, and figure-rights gates.
-5. Only then continue primary translation in source order. Do not resume automatic Penn expansion.
+1. Freeze MIT and Royer official bytes/archives/rights/exercise-solution/notebook closure locally.
+2. Select one complete MIT lecture block only after its official lecture-note page boundaries are exact.
+3. Convert that block into semantic editable source and pass the fail-closed dual reconstruction, build, topology, page-map, accessibility, terminology, and figure-rights gates.
+4. Only then continue primary translation in source order. Do not resume automatic Penn expansion.
 
 No upstream contact occurs during production.

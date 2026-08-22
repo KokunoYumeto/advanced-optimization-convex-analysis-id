@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-22  
-State: Penn/Habring companion admitted through Penn Chapter 5; Zenodo/Figshare preservation complete; GitHub synchronization active; selected primary cursor after synchronization is the MIT first-lecture semantic-source pilot
+State: Penn/Habring companion admitted through Penn Chapter 5 and preserved on GitHub/Zenodo/Figshare; active primary cursor is the MIT/Royer authority freeze followed by the MIT first-lecture semantic-source pilot
 
 ## Completed at this boundary
 
@@ -14,16 +14,17 @@ State: Penn/Habring companion admitted through Penn Chapter 5; Zenodo/Figshare p
 - The controlling primary-architecture handoff was read completely and verified at 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`. MIT OCW 6.253 + Royer is now the selected D90 primary; Penn/Habring remains an optional companion.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 
-## Active preservation cursor
+## Closed GitHub preservation boundary
 
-- Destination: existing GitHub repository `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`, now reinstated.
-- Scope: the verified ten-unit companion, 1,283-record backend, 103-page combined Habring reader, Zenodo/Figshare release scripts and sanitized receipts, current architecture/rights/cursor controls, and no unadmitted candidate or temporary/build/cache material.
-- Method: inspect, stage, commit, and push only this task-local repository; no broad workspace Git scan. Verify immutable commit/tree and selected public raw-file hashes anonymously.
-- Receipt closure: append the content commit/tree/readback receipt, commit that receipt separately if needed, push, and verify it publicly before moving to MIT/Royer.
+- Destination: existing GitHub repository `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`; no replacement repository was created.
+- Content commit/tree: `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / `8539cec4931da655e495a25eb3b05b25007208b5`.
+- Receipt commit/tree: `89708ae0e819a147549f32dc11c432d9b2a45ebf` / `c178345f20f339394574fc03946031f5c923fba6`.
+- Anonymous verification: the GitHub API returned both exact immutable identities; ten representative content files matched local byte counts and SHA-256 values; the public machine receipt (2,536 bytes, SHA-256 `390920f48cca0c96c1393f6dabd8d0d47382a8cd73016577d175056d83248c07`) and public publication log at the receipt commit also matched.
+- Exclusions: no Penn Chapter 6 candidate, superseded draft/worklog, build/temp/cache, credential file, or upstream-contact artifact entered the checkpoint.
 
-## Next primary production cursor
+## Active primary production cursor
 
-After preservation closes, stop automatic Penn source-order expansion and freeze the selected authorities locally:
+Stop automatic Penn source-order expansion and freeze the selected authorities locally:
 
 - MIT OCW 6.253 official course, repository commit `58d7c86195f09dd8708b84dde28205d3199207dd` / tree `26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6`, 340-page notes SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`, complete 13-PDF/395-page teaching package, CC BY-NC-SA 4.0.
 - Royer official 45-page notes SHA-256 `3290c61e870ef807ae92c4ace309449ee46ab3aa544e033c100f4a005311dfd3`, two laboratory ZIPs SHA-256 `88e18ea096b87bd12d182072bfbf6fd12ac73d666e16911a3f015ee9a574d461` / `0a0a908157dcf07f0dd3874c118e416dad3033a5f04f9cb37ae248b2f8feb623`, CC BY-NC 4.0.
@@ -45,6 +46,6 @@ A failed pilot reopens the conversion architecture. It does not authorize lossy 
 - Do not admit Penn Chapter 6 or begin Penn Chapter 7 as automatic continuation.
 - Do not restart source selection or inventory alternatives.
 - Do not overlap O018.
-- GitHub access is restored and the Figshare transaction is closed. Perform the active narrow task-local commit/push to the existing repository and public immutable-commit readback; never run a broad workspace scan.
+- GitHub synchronization is closed and verified. Continue to use only narrow task-local Git operations for later admitted boundaries; never run a broad workspace scan.
 - Do not contact upstream during production.
 - Do not publish a final-corpus claim until the full MIT/Royer route, bridges, labs, mastery/solution layer, accessible surfaces, backend, rights, and human-review status are complete.
