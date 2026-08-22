@@ -63,3 +63,7 @@ Habring Chapter 5 is admitted at target SHA-256 `1292f09d375ff0e0ff12e7c87e67359
 ## D90-0016 — Chapter 6 admitted
 
 Habring Chapter 6 is admitted at target SHA-256 `b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a` and PDF SHA-256 `cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0`. Eleven substantive authority repairs are explicit as O015-HAB-ADV-0039 through O015-HAB-ADV-0049, including the lower-bound quantifier/square repair, complete Gelfand/Jordan argument, local heavy-ball linearization/stability, scaled Schur–Jury minimax proof, and complete FISTA assumptions/rate. Exact 99-environment/seven-label/eight-reference topology, 32-block formula audit, deterministic open numerical checks, byte-identical builds, all-page visual review, and an independent frozen-target delta rereview pass with P1=0, P2=0, P3=0. The wrapper localizes equation references without changing shared earlier-unit inputs. The PDF remains untagged and language review remains unrecorded.
+
+## D90-0017 — Public Chapter 6 checkpoint
+
+Content commit `fd7aa44f06702c6ddf35886db9534b33411e6114` and tree `c99c0aec0a1819af49254282bcb32948e22aeff9` publish the fourth admitted Habring reader together with its exact TeX, audits, validators, ledger, and 449-record/39-segment backend. Anonymous immutable-commit readback matched every newly published Chapter 6 surface recorded in `PUBLICATION_RECEIPTS.md`. This remains an incremental corpus checkpoint and is not evidence for curriculum admission. No upstream contact occurred.

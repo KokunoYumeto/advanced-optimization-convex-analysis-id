@@ -53,7 +53,7 @@ The authority supplies sparse informal exercises and no systematic hints, answer
 
 ## Public corpus checkpoint
 
-The discoverable public corpus repository is `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its currently verified public `main` checkpoint contains the Chapter 3–5 readers and 337-record backend; the admitted Chapter 6 increment is the next authorized publication transaction. Public-byte readback for the preceding checkpoint is recorded in `PUBLICATION_RECEIPTS.md`. No upstream contact has occurred.
+The discoverable public corpus repository is `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`. Its verified public `main` checkpoint at content commit `fd7aa44f06702c6ddf35886db9534b33411e6114` contains the Chapter 3–6 readers and 449-record backend. Anonymous immutable-commit readback matched the Chapter 6 source, wrapper, PDF, backend exports, audits, validators, and correction ledger exactly. Details are in `PUBLICATION_RECEIPTS.md`. No upstream contact has occurred.
 
 ## Exact continuation
 
