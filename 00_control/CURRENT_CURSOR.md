@@ -249,3 +249,12 @@ readback matched all 50 public files and the exact receipt at
 The active source cursor does not change: complete Lecture 2 pages 20–28 are
 one in-progress batch, and page 29 begins Lecture 3. The remaining publication
 action for the admitted L05 boundary is the narrow GitHub checkpoint.
+
+## 2026-08-23 cursor refresh — L05 GitHub closed
+
+The preceding pending-GitHub sentence is superseded by public content commit
+`e18454bcb72251c3cc65a522046e6ed572792f7b`. All 42 changed paths passed
+credential-free immutable raw readback; receipt SHA-256 is
+`1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
+The source cursor is unchanged: finish and admit Lecture 2 pages 20–28 as one
+boundary; page 29 begins Lecture 3.

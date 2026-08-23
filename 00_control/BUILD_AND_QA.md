@@ -828,3 +828,14 @@ the public checksum file is 5,039 bytes / SHA-256
 `59c26562dd44d2ed4333ff21c674daccbea8077a0f8220a1c3564524ceba57cb`.
 The public receipt is 14,060 bytes / SHA-256
 `89266a7b3a332081aaef9d591eb1df449c6b0a1ab0a8526a1b91f27b8be01cd5`.
+
+## 2026-08-23 — L05 GitHub public-byte gate
+
+After pushing content commit `e18454bcb72251c3cc65a522046e6ed572792f7b`,
+the anonymous commit API returned HTTP 200 with exact tree
+`5a2841879dcc0122ad3e2243637cc5e257ee4a88`. Every one of the 42 paths
+changed from parent `c944f218ec6d806bbc0dd12623275819bdb022a3` was then downloaded from
+the immutable raw-commit surface; every response was HTTP 200 and matched the
+corresponding Git blob byte-for-byte and by SHA-256. Receipt:
+`release/github/2026-08-23-mit-l05/github-public-readback.json`, 10,947 bytes,
+SHA-256 `1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.

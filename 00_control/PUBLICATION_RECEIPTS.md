@@ -270,3 +270,24 @@ for L05 by this entry.
 MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
 NC/SA duties, and non-endorsement. Component-distinct inherited rights remain
 unchanged. No upstream contact occurred.
+
+## 2026-08-23 — Public GitHub MIT L05 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` /
+  `e18454bcb72251c3cc65a522046e6ed572792f7b`
+- Content tree: `5a2841879dcc0122ad3e2243637cc5e257ee4a88`
+- Parent: `c944f218ec6d806bbc0dd12623275819bdb022a3`
+- Scope: admitted MIT L05 pages 16–19, complete semantic source/readers/QA,
+  the final 1,605-record backend, exact controls and rights, the combined
+  L04+L05 Zenodo package/readback, and the frozen L06 boundary census. No L06
+  reader output is claimed.
+- Anonymous gate: the public commit API returned HTTP 200 and the exact tree;
+  all 42 changed paths were downloaded from the immutable raw-commit surface
+  and matched their Git blob bytes and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-23-mit-l05/github-public-readback.json`, 10,947 bytes;
+  SHA-256
+  `1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
+
+No upstream issue, comment, or other contact occurred.

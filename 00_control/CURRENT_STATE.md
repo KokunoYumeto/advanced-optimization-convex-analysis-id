@@ -301,3 +301,16 @@ The sanitized anonymous receipt is 14,060 bytes, SHA-256
 No standalone L04 record was created. GitHub preservation remains the only
 open L05 publication action. Lecture 2 pages 20–28 remain the active batch;
 page 29 remains the next-after-batch cursor.
+
+## 2026-08-23 — L05 GitHub preservation closed
+
+The pending GitHub action is superseded. Content commit
+`e18454bcb72251c3cc65a522046e6ed572792f7b` / tree
+`5a2841879dcc0122ad3e2243637cc5e257ee4a88` is public on `main`. Anonymous
+immutable-commit readback passed for every one of its 42 changed files, not a
+sample, including the L05 reader/source/QA, 1,605-record backend, exact control
+state, combined Zenodo release evidence, and the frozen Lecture 2 census. The
+sanitized receipt is 10,947 bytes, SHA-256
+`1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
+No L06 reader output is claimed by that content commit. The active production
+unit remains Lecture 2 pages 20–28.
