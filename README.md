@@ -8,12 +8,13 @@ English discovery label: **Advanced Optimization and Convex Analysis — Indones
 
 ## Preservasi dan mirror
 
-Checkpoint publik sepuluh unit yang belum lengkap dipreservasi dalam garis keturunan
-Zenodo yang sama: [DOI versi 10.5281/zenodo.22060447](https://doi.org/10.5281/zenodo.22060447)
-dan [DOI konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Rekaman tersebut menyertakan sepuluh PDF pembaca secara terpisah serta bundel
-sumber, backend, hak per komponen, manifest, dan checksum. Unduhan anonim cocok
-byte demi byte untuk seluruh 16 berkas dan seluruh 150 muatan yang terikat manifest.
+Checkpoint sepuluh unit yang belum lengkap dan pilot MIT pertama dipreservasi dalam
+garis keturunan Zenodo yang sama: [DOI versi terbaru
+10.5281/zenodo.22070474](https://doi.org/10.5281/zenodo.22070474) dan [DOI
+konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
+Versi terbaru mempertahankan 16 berkas sebelumnya byte demi byte dan menambahkan
+delapan berkas MIT-L01; unduhan anonim cocok untuk seluruh 24 berkas dan bundel
+delta 46-entri (45 muatan manifest).
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -22,11 +23,10 @@ dibangun ulang, lisensi, manifest, dan checksum. Komponen Penn berlisensi campur
 tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
 Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint ini
-telah disinkronkan ke [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
-pada [commit konten `6900a39`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/6900a39ce579ba5ca464fecc00b4575139fbc3ea);
+telah disinkronkan ke [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id);
 identitas commit/tree dan berkas pembaca, sumber, backend, serta resi publik
-telah dibaca kembali secara anonim dan cocok byte demi byte. Tidak dibuat
-repositori pengganti.
+dibaca kembali secara anonim dan cocok byte demi byte. Tidak dibuat repositori
+pengganti.
 
 ## Pembaca yang tersedia
 

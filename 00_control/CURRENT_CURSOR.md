@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-23  
-State: MIT/Royer authority frozen and first MIT semantic-source block (complete-notes pages 2--5) admitted; checkpoint preservation active; next source-order block is pages 6--13
+State: MIT/Royer authority frozen and first MIT semantic-source block (complete-notes pages 2--5) admitted; GitHub and Zenodo checkpoint preservation complete; next source-order block is pages 6--13
 
 ## Completed at this boundary
 
@@ -17,6 +17,7 @@ State: MIT/Royer authority frozen and first MIT semantic-source block (complete-
 - The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
 - The pilot passes exact page/item/formula topology, two byte-identical builds, desktop/mobile browser reflow, all-page visual inspection, terminology QA, and independent rereview with P1=0/P2=0/P3=0. It contains no Athena figure byte. Human/native-speaker Indonesian review and tagged PDF remain unrecorded.
 - The stable backend now contains 1,430 records. It adds 130 exact MIT/Royer/pilot IDs to the 1,300-record incoming baseline; the added-ID set has SHA-256 `fa0e7d763e2c3eab68ac32fe935d777f3c688c5d59cc509d93416608726cfaf5`. JSONL: 1,036,556 bytes, SHA-256 `ebf44ca94323584e40b548ce36da560899e39a1e76ed2c993a0786b4ee7c4a2b`; CSV: 1,244,072 bytes, SHA-256 `bc73abb3457cacc10423c1785a0db70a9007fdef8ac0a2be1de48d25d389fdf5`.
+- Zenodo version `10.5281/zenodo.22070474` (record `22070474`, version `checkpoint-2026.08.23-mit-l01`) is published in concept `10.5281/zenodo.22059741`. It preserves all 16 inherited files byte-for-byte and adds the eight MIT-L01 checkpoint files; anonymous readback passed all 24 files and the 46-entry delta ZIP. The sanitized readback is `release/zenodo/2026-08-23-mit-l01/zenodo-public-readback-mit-l01.json`, 7,238 bytes, SHA-256 `08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`.
 
 ## Closed GitHub preservation boundary
 
@@ -28,7 +29,7 @@ State: MIT/Royer authority frozen and first MIT semantic-source block (complete-
 
 ## Active primary production cursor
 
-Close the current MIT-pilot GitHub/Zenodo preservation transaction, then continue directly with the exact source-order block frozen in `MIT_L02_BOUNDARY_CENSUS.md`:
+Continue directly with the exact source-order block frozen in `MIT_L02_BOUNDARY_CENSUS.md`:
 
 - complete-notes PDF pages **6--13 inclusive**;
 - first heading **Duality**; terminal heading **Exceptional Behavior**;

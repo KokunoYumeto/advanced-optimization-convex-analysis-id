@@ -3,7 +3,7 @@
 As of: 2026-08-23  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: MIT/Royer authority frozen; MIT complete-notes pages 2--5 admitted as semantic HTML/PDF pilot; checkpoint preservation active; next source boundary pages 6--13
+Status: MIT/Royer authority frozen; MIT complete-notes pages 2--5 admitted as semantic HTML/PDF pilot; GitHub/Zenodo checkpoint preservation complete; next source boundary pages 6--13
 
 ## Ownership and scope
 
@@ -51,11 +51,11 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current public version: `10.5281/zenodo.22060447`, explicitly incomplete through the ten optional-companion units Habring Chapters 3--9 and Penn Chapters 3--5. Anonymous readback passed all 16 public files and all 150 manifest-bound ZIP payloads.
+- Current public version: `10.5281/zenodo.22070474`, explicitly incomplete through the ten optional-companion units Habring Chapters 3--9 and Penn Chapters 3--5 plus the admitted MIT pages 2--5 pilot. It preserves the prior 16 files unchanged and adds eight MIT-L01 files. Anonymous readback passed all 24 public files and all 45 manifest-bound delta payloads (46 ZIP entries including its manifest). The sanitized readback is `release/zenodo/2026-08-23-mit-l01/zenodo-public-readback-mit-l01.json` (7,238 bytes; SHA-256 `08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`).
 - Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
 - GitHub access was reinstated by the provider on 2026-08-22. The verified checkpoint is public in the existing repository at content commit `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / tree `8539cec4931da655e495a25eb3b05b25007208b5`; credential-free API and immutable raw-file readback passed. Sanitized evidence is public at receipt commit `89708ae0e819a147549f32dc11c432d9b2a45ebf` / tree `c178345f20f339394574fc03946031f5c923fba6`, and its receipt/control bytes also passed anonymous readback. No replacement repository was created.
 
-The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. The admitted MIT pilot is in its additive GitHub/Zenodo preservation transaction. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component.
+The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. The admitted MIT pilot is now preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component.
 
 ## Known incomplete surfaces
 
@@ -63,9 +63,8 @@ MIT/Royer authority and the first MIT topic are admitted, but the remaining 436 
 
 ## Exact continuation
 
-1. Complete the additive GitHub and existing-concept Zenodo preservation of the admitted pages 2--5 MIT pilot, with immutable/public byte readback; do not alter Figshare.
-2. Continue with exact complete-notes pages 6--13, “Duality” through “Exceptional Behavior,” under `MIT_L02_BOUNDARY_CENSUS.md`; page 14 is excluded and begins the next topic.
-3. Create the English semantic witness and contiguous id-ID source with exact item/formula/diagram-label mapping. Independently redraw necessary mathematics or omit it with exact locators; copy no Athena figure byte or layout.
-4. Repeat deterministic semantic HTML/PDF, topology, browser, visual, terminology, rereview, rights, and backend gates before admission. Do not resume automatic Penn expansion.
+1. Continue with exact complete-notes pages 6--13, “Duality” through “Exceptional Behavior,” under `MIT_L02_BOUNDARY_CENSUS.md`; page 14 is excluded and begins the next topic.
+2. Create the English semantic witness and contiguous id-ID source with exact item/formula/diagram-label mapping. Independently redraw necessary mathematics or omit it with exact locators; copy no Athena figure byte or layout.
+3. Repeat deterministic semantic HTML/PDF, topology, browser, visual, terminology, rereview, rights, and backend gates before admission. Do not resume automatic Penn expansion.
 
 No upstream contact occurs during production.

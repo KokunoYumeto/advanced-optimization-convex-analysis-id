@@ -1,5 +1,20 @@
 # O015 publication receipts
 
+## 2026-08-23 — Public MIT-L01 semantic pilot checkpoint
+
+- Public record: https://zenodo.org/records/22070474
+- Version DOI: https://doi.org/10.5281/zenodo.22070474
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Version: `checkpoint-2026.08.23-mit-l01`
+- Status/title: published; explicitly `Belum Lengkap`; admitted boundary is MIT complete-notes pages 2--5
+- Scope: the prior 16-file optional-companion checkpoint is retained unchanged; eight additions are the MIT-L01 HTML/PDF reader, compact delta source/backend bundle, three release notes, manifest, and checksums
+- Rights: MIT-derived material is CC BY-NC-SA 4.0; inherited Habring is CC BY 4.0; inherited Griffin/Penn is CC BY-NC-SA 3.0 United States; Royer remains a separately identified CC BY-NC 4.0 source-freeze component
+- Anonymous readback: all 24 public files passed exact byte/hash verification; the delta ZIP reopened with 46 unique entries and all 45 manifest-bound payloads matched
+- Key additions: HTML 20,613 bytes / `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; PDF 53,370 bytes / `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`; delta ZIP 477,802 bytes / `e3181a2746714a5cbc5e3059284c23665a9e1f9c6cdf5f70fc520f48af06c191`; manifest 5,318 bytes / `4865159ba970a794aa739f19091e23744a5a9a328a41d19817db6e219c738cb3`; checksums 2,337 bytes / `d9085ab665f8202bf240849674af974a458fa8828979756ac3088fbec905fd62`
+- Sanitized machine receipt: `release/zenodo/2026-08-23-mit-l01/zenodo-public-readback-mit-l01.json`, 7,238 bytes; SHA-256 `08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`
+- Draft receipt (sanitized): `release/zenodo/2026-08-23-mit-l01/zenodo-draft-mit-l01.json`, 478 bytes; SHA-256 `1d25fec53d9dcbc6a18b6b6c793b84654b419a589c61ec11a4f392c560a1da55`
+- No upstream issue, comment, or other contact was made.
+
 ## 2026-08-21 — Public two-unit reader checkpoint
 
 - Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id

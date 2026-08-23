@@ -1,0 +1,207 @@
+{
+  "addition_file_count": 8,
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "contributor_names": [
+    "Royer, Clément W.",
+    "Miller, Simon",
+    "Mercer, Douglas",
+    "TTP"
+  ],
+  "creator_names": [
+    "Bertsekas, Dimitri P.",
+    "Habring, Andreas",
+    "Griffin, Christopher"
+  ],
+  "delta_bundle_verification": {
+    "entries": 46,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 45
+  },
+  "file_count": 24,
+  "files": [
+    {
+      "bytes": 2497901,
+      "disposition": "inherited_unchanged",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22_10U.zip",
+      "public_byte_identity": "pass",
+      "sha256": "0e2e5ac6452a50a5167e77da3ca5cc145406b61dfc11fe8d647a78052dab5274"
+    },
+    {
+      "bytes": 477802,
+      "disposition": "mit_l01_addition",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L01_DELTA.zip",
+      "public_byte_identity": "pass",
+      "sha256": "e3181a2746714a5cbc5e3059284c23665a9e1f9c6cdf5f70fc520f48af06c191"
+    },
+    {
+      "bytes": 516084,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-03-subgradien-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4"
+    },
+    {
+      "bytes": 370824,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7"
+    },
+    {
+      "bytes": 473685,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-05-metode-gradien-proksimal-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d"
+    },
+    {
+      "bytes": 392662,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-06-akselerasi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0"
+    },
+    {
+      "bytes": 445733,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-07-dualitas-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e"
+    },
+    {
+      "bytes": 346785,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a"
+    },
+    {
+      "bytes": 498244,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-09-transportasi-optimal-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214"
+    },
+    {
+      "bytes": 20613,
+      "disposition": "mit_l01_addition",
+      "filename": "D90-MIT-01-peran-kekonveksan-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b"
+    },
+    {
+      "bytes": 53370,
+      "disposition": "mit_l01_addition",
+      "filename": "D90-MIT-01-peran-kekonveksan-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58"
+    },
+    {
+      "bytes": 515851,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-03-pendakian-gradien-dan-pencarian-garis-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "e1be82d06572c51b403608cd9595cc5adf2dc64cfa93f53001eba94e48f77e3e"
+    },
+    {
+      "bytes": 847350,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a"
+    },
+    {
+      "bytes": 2691780,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6"
+    },
+    {
+      "bytes": 6451,
+      "disposition": "inherited_unchanged",
+      "filename": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "8a83aaf6615c050ca0710f1cd7563f1d6d44b96f69255cfdb5d87bd9cf943556"
+    },
+    {
+      "bytes": 2424,
+      "disposition": "mit_l01_addition",
+      "filename": "README_MIT_L01.md",
+      "public_byte_identity": "pass",
+      "sha256": "b2832be26fd96bf74e245aacf5ad85abef88948b7d4231090c17f722825719ba"
+    },
+    {
+      "bytes": 1884,
+      "disposition": "inherited_unchanged",
+      "filename": "README_RELEASE.md",
+      "public_byte_identity": "pass",
+      "sha256": "b5484c58e15e13f7b0d12d818537154581572c312e5d9e753c9e179d3914bedd"
+    },
+    {
+      "bytes": 2792,
+      "disposition": "mit_l01_addition",
+      "filename": "README_RELEASE_MIT_L01.md",
+      "public_byte_identity": "pass",
+      "sha256": "cba63635ea6824278d1f2688d9513a9ca927fea437a2341cecb0f35d294f6a5b"
+    },
+    {
+      "bytes": 2688,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS.md",
+      "public_byte_identity": "pass",
+      "sha256": "22ca25d08904233a89e7cbc246ae0eff684ad6579e7749a192c86e050a8ef097"
+    },
+    {
+      "bytes": 2856,
+      "disposition": "mit_l01_addition",
+      "filename": "RIGHTS_MIT_L01.md",
+      "public_byte_identity": "pass",
+      "sha256": "9c4ce36267e03113907af96af7c5f24c806ddebbb87e48b8ca8cdeafdc2fa1d5"
+    },
+    {
+      "bytes": 1548,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS",
+      "public_byte_identity": "pass",
+      "sha256": "d9c2f084ad18e8692ff6c72bc16a1cc3491a4630c95be84149e4a65268baeaf4"
+    },
+    {
+      "bytes": 2337,
+      "disposition": "mit_l01_addition",
+      "filename": "SHA256SUMS-mit-l01",
+      "public_byte_identity": "pass",
+      "sha256": "d9085ab665f8202bf240849674af974a458fa8828979756ac3088fbec905fd62"
+    },
+    {
+      "bytes": 5318,
+      "disposition": "mit_l01_addition",
+      "filename": "release-manifest-mit-l01.json",
+      "public_byte_identity": "pass",
+      "sha256": "4865159ba970a794aa739f19091e23744a5a9a328a41d19817db6e219c738cb3"
+    },
+    {
+      "bytes": 3406,
+      "disposition": "inherited_unchanged",
+      "filename": "release-manifest.json",
+      "public_byte_identity": "pass",
+      "sha256": "ee2f432bf8eefd19b70b54e5a5a352407ebeb75624895b10187f0bcfec8e5a3f"
+    }
+  ],
+  "inherited_file_count": 16,
+  "inherited_identity": "pass",
+  "model_provenance_mentions": 1,
+  "parent_record_id": "22060447",
+  "publication_date": "2026-08-23",
+  "record_doi": "10.5281/zenodo.22070474",
+  "record_id": "22070474",
+  "record_url": "https://zenodo.org/records/22070474",
+  "resource_type": "publication-other",
+  "schema": "o015-zenodo-mit-l01-public-readback-v1",
+  "status": "published",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia (id-ID): Checkpoint MIT 6.253 L01 (Belum Lengkap)",
+  "ttp_metadata_mentions": 1,
+  "version": "checkpoint-2026.08.23-mit-l01"
+}

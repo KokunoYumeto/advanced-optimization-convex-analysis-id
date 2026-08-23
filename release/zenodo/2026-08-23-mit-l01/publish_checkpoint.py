@@ -13,6 +13,7 @@ import io
 import json
 import re
 import sys
+import time
 import zipfile
 from pathlib import Path
 
@@ -132,6 +133,12 @@ def remote_entries(client: requests.Session) -> dict[str, dict]:
     return normalize_entries(response.json().get("entries", []))
 
 
+def remote_entries_for(client: requests.Session, record_id: str) -> dict[str, dict]:
+    response = client.get(f"{API}/records/{record_id}/draft/files", timeout=60)
+    response.raise_for_status()
+    return normalize_entries(response.json().get("entries", []))
+
+
 def validate_metadata_shape(metadata: dict) -> None:
     serialized = json.dumps(metadata, ensure_ascii=False)
     title = metadata.get("title", "")
@@ -228,6 +235,41 @@ def verify_draft_inherited(client: requests.Session, entries: dict[str, dict] | 
     verify_expected_bytes(client, entries, build.inherited_inventory())
 
 
+def ensure_inherited_imported(client: requests.Session, record_id: str) -> dict[str, dict]:
+    """Import the prior version's files when a new-version draft starts empty.
+
+    InvenioRDM creates the draft record without files; its files-import action
+    copies the parent version's collection.  Do not touch a non-empty partial
+    namespace: fail closed rather than risking a silent replacement.
+    """
+    expected = set(build.inherited_inventory())
+    entries = remote_entries_for(client, record_id)
+    actual = set(entries)
+    if expected.issubset(actual):
+        return entries
+    if actual:
+        raise RuntimeError(
+            "Draft has a partial/unexpected file namespace before import: "
+            f"actual={sorted(actual)}, expected_inherited={sorted(expected)}"
+        )
+    response = client.post(
+        f"{API}/records/{record_id}/draft/actions/files-import", timeout=300
+    )
+    response.raise_for_status()
+    for _ in range(60):
+        entries = remote_entries_for(client, record_id)
+        if expected.issubset(set(entries)):
+            return entries
+        time.sleep(1)
+    raise RuntimeError("Zenodo files-import did not expose all inherited files within 60 seconds")
+
+
+def bind_release_manifest() -> None:
+    """Bind the deterministic manifest to the prepared draft without rebuilding the ZIP."""
+    verification = build.verify_bundle_bytes((HERE / build.BUNDLE_NAME).read_bytes())
+    build.build_release_metadata(verification)
+
+
 def prepare() -> dict:
     build.validate_local_release(require_draft_binding=False)
     template = json.loads(TEMPLATE_PATH.read_text(encoding="utf-8"))
@@ -249,19 +291,23 @@ def prepare() -> dict:
         updated = response.json()
         validate_metadata_shape(updated["metadata"])
         saved = save_state(updated)
+        ensure_inherited_imported(client, str(receipt["draft_id"]))
         verify_draft_inherited(client)
+        bind_release_manifest()
         return saved
 
     verify_parent_public()
     response = client.post(f"{API}/records/{build.PARENT_RECORD_ID}/versions", timeout=60)
     response.raise_for_status()
     created = response.json()
+    ensure_inherited_imported(client, str(created["id"]))
     response = client.put(f"{API}/records/{created['id']}/draft", json=template, timeout=60)
     response.raise_for_status()
     updated = response.json()
     validate_metadata_shape(updated["metadata"])
     saved = save_state(updated)
     verify_draft_inherited(client)
+    bind_release_manifest()
     return saved
 
 
