@@ -13,6 +13,7 @@
 - Key additions: HTML 20,613 bytes / `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; PDF 53,370 bytes / `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`; delta ZIP 477,802 bytes / `e3181a2746714a5cbc5e3059284c23665a9e1f9c6cdf5f70fc520f48af06c191`; manifest 5,318 bytes / `4865159ba970a794aa739f19091e23744a5a9a328a41d19817db6e219c738cb3`; checksums 2,337 bytes / `d9085ab665f8202bf240849674af974a458fa8828979756ac3088fbec905fd62`
 - Sanitized machine receipt: `release/zenodo/2026-08-23-mit-l01/zenodo-public-readback-mit-l01.json`, 7,238 bytes; SHA-256 `08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`
 - Draft receipt (sanitized): `release/zenodo/2026-08-23-mit-l01/zenodo-draft-mit-l01.json`, 478 bytes; SHA-256 `1d25fec53d9dcbc6a18b6b6c793b84654b419a589c61ec11a4f392c560a1da55`
+- GitHub checkpoint: existing repository `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`, commit `92040531272bd26556b0768406e0225105b16deb`, tree `cdf044c0aa0d7edb74cdd14d8094ae35bdfbf8f7`; anonymous raw readback passed eleven representative files, including the Zenodo readback and delta bundle.
 - No upstream issue, comment, or other contact was made.
 
 ## 2026-08-21 — Public two-unit reader checkpoint

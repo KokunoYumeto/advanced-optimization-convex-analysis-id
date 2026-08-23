@@ -22,9 +22,8 @@ State: MIT/Royer authority frozen and first MIT semantic-source block (complete-
 ## Closed GitHub preservation boundary
 
 - Destination: existing GitHub repository `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`; no replacement repository was created.
-- Content commit/tree: `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / `8539cec4931da655e495a25eb3b05b25007208b5`.
-- Receipt commit/tree: `89708ae0e819a147549f32dc11c432d9b2a45ebf` / `c178345f20f339394574fc03946031f5c923fba6`.
-- Anonymous verification: the GitHub API returned both exact immutable identities; ten representative content files matched local byte counts and SHA-256 values; the public machine receipt (2,536 bytes, SHA-256 `390920f48cca0c96c1393f6dabd8d0d47382a8cd73016577d175056d83248c07`) and public publication log at the receipt commit also matched.
+- Checkpoint commit/tree: `92040531272bd26556b0768406e0225105b16deb` / `cdf044c0aa0d7edb74cdd14d8094ae35bdfbf8f7`.
+- Anonymous verification: the credential-free GitHub API returned the exact immutable identity; eleven representative reader, source, backend, control, release, and receipt files matched local byte counts and SHA-256 values, including the 7,238-byte Zenodo readback (`08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`).
 - Exclusions: no Penn Chapter 6 candidate, superseded draft/worklog, build/temp/cache, credential file, or upstream-contact artifact entered the checkpoint.
 
 ## Active primary production cursor

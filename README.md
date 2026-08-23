@@ -23,10 +23,11 @@ dibangun ulang, lisensi, manifest, dan checksum. Komponen Penn berlisensi campur
 tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
 Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint ini
-telah disinkronkan ke [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id);
-identitas commit/tree dan berkas pembaca, sumber, backend, serta resi publik
-dibaca kembali secara anonim dan cocok byte demi byte. Tidak dibuat repositori
-pengganti.
+telah disinkronkan ke [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
+pada [commit `9204053`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/92040531272bd26556b0768406e0225105b16deb);
+identitas commit/tree dan sebelas berkas pembaca, sumber, backend, kontrol,
+rilis, serta resi publik dibaca kembali secara anonim dan cocok byte demi byte.
+Tidak dibuat repositori pengganti.
 
 ## Pembaca yang tersedia
 
