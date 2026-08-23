@@ -212,3 +212,25 @@ Credential-free raw downloads from the public `main` branch matched these exact 
 - Rights: MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking, NC/SA obligations, and non-endorsement; omitted Athena graphics are not silently licensed or copied.
 
 The anonymous public readback is `release/zenodo/2026-08-23-mit-l03/zenodo-public-readback-mit-l03.json`: 11,373 bytes, SHA-256 `3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`. The readback and all 40 public files matched the local release manifest and checksums; no L04 bytes are represented. No upstream issue, comment, or other contact was made.
+
+## 2026-08-23 — Public GitHub L04 preservation checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` / `f359ee76684d6bca37597a720cffaace806a7258`
+- Content tree: `ab5e7e61ff1d62abd57a058236eacbe45b0c673b`
+- Scope: the admitted MIT page-15 L04 witness, Indonesian source, semantic HTML,
+  searchable PDF, live-browser/visual/reader QA, 1,543-record backend, final
+  controls, and the public L03 Zenodo receipt. This preserves the already closed
+  L04 boundary; it does not establish a continuing one-page production cadence.
+
+Nine credential-free immutable-commit raw downloads returned HTTP 200 and
+matched their local byte counts and SHA-256 values: the L04 Indonesian source,
+HTML, PDF, reader validation, browser QA, backend validation, JSONL backend,
+L03 Zenodo public readback, and current cursor. The unauthenticated GitHub
+commit API returned HTTP 403 because its anonymous rate limit was exhausted;
+the immutable raw-commit surface itself remained public and passed. The
+sanitized machine receipt is
+`release/github/2026-08-23-mit-l04/github-public-readback.json`, 2,392 bytes,
+SHA-256 `77bf05160714d8cda6d571a64c3c7a8d3d6a431a796358e43d34cfb3b26e832b`.
+No upstream
+issue, comment, or other contact was made.

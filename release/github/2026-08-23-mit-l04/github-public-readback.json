@@ -1,0 +1,26 @@
+{
+  "schema": "o015-github-mit-l04-public-readback-v1",
+  "recorded_at": "2026-08-23T19:00:53Z",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "branch": "main",
+  "commit": "f359ee76684d6bca37597a720cffaace806a7258",
+  "tree": "ab5e7e61ff1d62abd57a058236eacbe45b0c673b",
+  "raw_base": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/f359ee76684d6bca37597a720cffaace806a7258",
+  "anonymous_raw_result": "pass",
+  "github_commit_api_status": 403,
+  "github_commit_api_note": "The unauthenticated commit endpoint was rate-limited; immutable raw-commit reads remained public and passed exact-byte verification.",
+  "files": [
+    {"path": "source/id-ID/mit-04-kebangkitan-era-algoritmik-id.md", "http_status": 200, "bytes": 4081, "sha256": "98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d"},
+    {"path": "output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html", "http_status": 200, "bytes": 9975, "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"},
+    {"path": "output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf", "http_status": 200, "bytes": 36971, "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"},
+    {"path": "qa/MIT_L04_VALIDATION.json", "http_status": 200, "bytes": 3400, "sha256": "891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd"},
+    {"path": "qa/MIT_L04_BROWSER_QA.json", "http_status": 200, "bytes": 1125, "sha256": "87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56"},
+    {"path": "qa/MIT_L04_BACKEND_VALIDATION.json", "http_status": 200, "bytes": 7178, "sha256": "59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204"},
+    {"path": "backend/records.jsonl", "http_status": 200, "bytes": 1102706, "sha256": "92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645"},
+    {"path": "release/zenodo/2026-08-23-mit-l03/zenodo-public-readback-mit-l03.json", "http_status": 200, "bytes": 11373, "sha256": "3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822"},
+    {"path": "00_control/CURRENT_CURSOR.md", "http_status": 200, "bytes": 18035, "sha256": "5ea4108b1e78903562a0f980d0e9ab180ee9a5a96de41278a4ce06a656bb52bd"}
+  ],
+  "file_count_verified": 9,
+  "public_byte_identity": "pass",
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra"
+}
