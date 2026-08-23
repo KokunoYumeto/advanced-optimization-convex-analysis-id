@@ -1,0 +1,62 @@
+{
+  "addition_file_count": 8,
+  "addition_material_files": [
+    {
+      "bytes": 484193,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L03_DELTA.zip",
+      "sha256": "16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f"
+    },
+    {
+      "bytes": 9762,
+      "filename": "D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+      "sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90"
+    },
+    {
+      "bytes": 34550,
+      "filename": "D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf",
+      "sha256": "3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136"
+    },
+    {
+      "bytes": 1996,
+      "filename": "README_MIT_L03.md",
+      "sha256": "3f12fa4cfaec3fccb84b610d61e6e3e72b42c305a18ac5c491850ea8dc2f150a"
+    },
+    {
+      "bytes": 1114,
+      "filename": "README_RELEASE_MIT_L03.md",
+      "sha256": "6e0103a020551b02cd2bb83cf9315f614419cf0861eb531ddab0fad990e8c0a6"
+    },
+    {
+      "bytes": 1229,
+      "filename": "RIGHTS_MIT_L03.md",
+      "sha256": "587b4f990e81259b2d4de933a4ce4c51932c3feb85d3695b4400232cc4003ee6"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes PDF page 14, Modern View of Convex Optimization",
+  "complete_corpus": false,
+  "delta_bundle_verification": {
+    "entries": 52,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 51
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l03.json",
+    "SHA256SUMS-mit-l03"
+  ],
+  "inherited_file_count": 32,
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "next_boundary": "MIT 6.253 complete-notes PDF page 15",
+  "parent_record_doi": "10.5281/zenodo.22071030",
+  "parent_record_id": "22071030",
+  "publication_date": "2026-08-23",
+  "release_file_count": 40,
+  "rights_notice": "Component-specific: new MIT-derived reader CC BY-NC-SA 4.0; inherited components retain their own rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v1",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.23-mit-l03",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": "10.5281/zenodo.22071175",
+  "zenodo_record_id": "22071175"
+}

@@ -563,3 +563,108 @@ Chapter 5 is 2,691,773 bytes,
 `dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96`, with
 wrapper SHA-256 `7de8bc61dc3f59999ac6414df90ef6925d5a7d4665f79d71998c8f0e45839c14`.
 They are not substituted into the immutable historical release.
+
+The preceding next-block note is historical now that the pages 6--13 boundary
+has passed; the next executable source cursor is page 14.
+
+# MIT OCW 6.253 pages 6--13 semantic-source build and QA
+
+As of: 2026-08-23  
+Unit: complete-notes pages 6--13 — Duality through Exceptional Behavior /
+Dualitas sampai Perilaku Pengecualian  
+Admission: PASS for this bounded semantic reader boundary; not a complete-course claim
+
+## Exact inputs and outputs
+
+- Authority PDF: `authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf` — 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+- English semantic witness: `source/en/mit-02-duality-semantic-witness.md` — 11,539 bytes / SHA-256 `6fc62cd32c9231c7f4b254ee2f0c46dbe2d4f19bcb23b5523c0aaaedb4762dde`.
+- Indonesian semantic source: `source/id-ID/mit-02-dualitas-dan-perilaku-pengecualian-id.md` — 12,895 bytes / SHA-256 `b3e26c12a934b023b7b7ad4933082e6b50d68cd09c948d079a6a01df6b478917`.
+- HTML: `output/html/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html` — 38,196 bytes / SHA-256 `d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`.
+- PDF: `output/pdf/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf` — 67,749 bytes / 5 A4 pages / SHA-256 `06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
+- Validation report: `qa/MIT_L02_VALIDATION.json` — 3,076 bytes / SHA-256 `59047c4b9185e56e9f68791a12c70099d3652e42ae04ca064d0ebeaf01e2fe95`.
+- Browser receipt: `qa/MIT_L02_BROWSER_QA.json` — 2,004 bytes / SHA-256 `a8f1e3fab187a21a1eee0a4362add3855648ccd3d0f249ec08216936db6dd6d1`.
+- Independent rereview: `qa/MIT_L02_INDEPENDENT_REREVIEW.md` — 2,850 bytes / SHA-256 `67e20f5dc42afadb52d8cf299b6a7a8891286d1aa70b9972a17c70b407ac4e2e`.
+
+## Topology, rights, and gates
+
+The source closure is exactly pages 6, 7, 8, 9, 10, 11, 12, and 13: 19
+top-level items, 7 nested lists, 4 freestanding display formulas, 2 explicit
+examples, 1 answered didactic prompt, 1 source-display, and 61 target MathML
+nodes. Seven of eight pages contain Athena Scientific permission-gated
+graphics. No source image byte, crop, or copied layout is redistributed; each
+surface is an exact-locator semantic description retaining labels and
+mathematical relationships. No exercises, hints, solutions, or interactive
+surface exists in this source boundary, and none is invented in the target.
+
+`qa/validate_mit_l02.py` reports `errors=[]` and `result=pass`; two deterministic
+HTML/PDF rebuilds are byte-identical. Browser evidence at 1280x720 and 390x844
+records zero horizontal overflow, duplicate IDs, bad overflow elements, or
+console warnings/errors. The PDF is searchable, A4, unencrypted, declares
+`/Lang id-ID`, and is explicitly untagged. The target carries the MIT CC
+BY-NC-SA 4.0 attribution, change marking, NC/SA obligations, and
+non-endorsement. No human/native-speaker Indonesian review is represented.
+
+## Continuation
+
+The preceding page-14 continuation wording is historical now that L03 is
+admitted. The next source cursor is complete-notes page 15. The additive backend
+extension is also admitted and idempotent:
+it adds 65 records (8 segments) to the protected 1,430-record baseline, for
+1,495 total records / 92 stable segments. `backend/records.jsonl` is 1,076,672
+bytes, SHA-256 `61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`;
+`backend/records.csv` is 1,293,072 bytes, SHA-256
+`146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`; the
+65-ID set is `1436ab92aa0c80e1aedaf5ae1dce1b2ba28b31a9a88695d6f6d2803bc41789c4`.
+The extension script is 27,926 bytes, SHA-256
+`9c13a77eb1bd6a4d440bd4f765099201ccf1e1bba611423a9689853cac1d8368`; the
+validator is 15,089 bytes, SHA-256
+`5b0999b563b7dd3afa199bd8d89d391772b026035b836d448f2cef418576811a`, and its
+passing receipt is 7,985 bytes, SHA-256
+`6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`.
+Only these final frozen backend identities are controlling; earlier
+intermediate L02 hash blocks (`b3f5...`, `2e2e...`, and related CSV/receipt
+values) are superseded and noncanonical. The remaining full-course bridges, labs, mastery/solution layer, capstone,
+semantic EPUB, tagged PDF, and human review remain open. Automatic Penn
+expansion remains stopped; page 14 is the next executable source cursor.
+
+# MIT OCW 6.253 page 14 semantic-source build and QA
+
+As of: 2026-08-23  
+Unit: complete-notes page 14 — Modern View of Convex Optimization /
+Pandangan Modern tentang Optimisasi Konveks  
+Admission: PASS for this bounded semantic reader boundary; not a complete-course claim
+
+## Exact inputs and outputs
+
+- Authority PDF: `authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf` — 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+- English semantic witness: `source/en/mit-03-modern-view-semantic-witness.md` — 3,961 bytes / SHA-256 `ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605`.
+- Indonesian semantic source: `source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md` — 4,758 bytes / SHA-256 `24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`.
+- HTML: `output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html` — 9,762 bytes / SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`.
+- PDF: `output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf` — 34,550 bytes / 2 A4 pages / SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
+- Validation: `qa/MIT_L03_VALIDATION.json` — 2,836 bytes / SHA-256 `fd92d811343e22192573293745c2f11175ba493f44bc5eb39801dfa6c47daff6`.
+- Browser QA: `qa/MIT_L03_BROWSER_QA.json` — 1,396 bytes / SHA-256 `3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e`.
+- Independent rereview: `qa/MIT_L03_INDEPENDENT_REREVIEW.md` — 2,163 bytes / SHA-256 `daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1`.
+
+## Topology, rights, and gates
+
+The source closure is exactly complete-notes page 14: 2 top-level items, 6
+nested bullets, 2 source-figure surfaces, zero display formulas, and zero image
+bytes in the derivative. The two Athena Scientific permission-only graphics are
+omitted as bytes, crops, and layout and replaced with exact-locator semantic
+descriptions retaining labels and mathematical relationships. The target keeps
+MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA obligations, and
+non-endorsement. The source has no learner exercises, hints, solutions, code, or
+interactive surface; none is invented or claimed.
+
+`qa/MIT_L03_VALIDATION.json` reports `errors=[]` and `result=pass`; two
+deterministic HTML/PDF rebuilds are byte-identical. Browser evidence at
+1280x720 and 390x844 records no horizontal overflow, duplicate IDs, unresolved
+fragments, images, or console warnings/errors. The PDF is searchable, A4,
+unencrypted, declares `/Lang id-ID`, and is explicitly untagged. No
+human/native-speaker Indonesian review is represented.
+
+The current public preservation baseline is corrected Zenodo record
+`10.5281/zenodo.22071030`; its sanitized readback is 9,338 bytes, SHA-256
+`4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. That
+record is the corrected L02 lineage and is not a claim that L03 files are
+already public. The next source cursor is complete-notes page 15.

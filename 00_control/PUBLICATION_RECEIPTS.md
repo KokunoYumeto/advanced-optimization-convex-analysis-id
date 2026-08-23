@@ -150,3 +150,43 @@ The item contains no Penn or other mixed-license work byte, no TTP prose, and no
 The credential-free GitHub commit API returned the exact content commit and tree. Anonymous immutable-commit downloads matched local byte counts and SHA-256 values for ten representative closure surfaces: `README.md`, `CURRENT_STATE.md`, both backend files, the terminal Habring and Penn source units, the combined Habring reader, the Penn Chapter 5 reader, and both Zenodo/Figshare public-readback receipts. The backend remained byte-identical after two final generation/validation cycles: JSONL `e57a457d20edfcf772f38f7dd9dfdd3368530d785bbf5b71179b90784b8130f9`; CSV `e2ca8f3b58dc74e208a579ff1b55997d0e5e202f49c2b018edce6358b7492c2f`.
 
 The sanitized machine receipt is `release/github/2026-08-22-10u/github-public-readback.json`. At the receipt commit, anonymous raw download matched its 2,536 local bytes and SHA-256 `390920f48cca0c96c1393f6dabd8d0d47382a8cd73016577d175056d83248c07`; the then-current publication log also matched at 13,667 bytes and SHA-256 `42c9131ac7f26848b349ce8395823b8af603ec2d7d04bd7e7e2a0a4fb68129f5`. This remains an incomplete optional-companion checkpoint, not completion of the selected MIT/Royer D90 course. No upstream issue, comment, or other contact was made.
+
+## 2026-08-23 — Public Zenodo MIT L02 checkpoint
+
+- Public record: https://zenodo.org/records/22070915
+- Version DOI: https://doi.org/10.5281/zenodo.22070915
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Version: `checkpoint-2026.08.23-mit-l02`
+- Status/title: published; explicitly `Belum Lengkap`
+- Scope: MIT OpenCourseWare 6.253 source pages 6--13 (Duality through Exceptional Behavior); page 14 is the next cursor. This is a partial primary-lane checkpoint, not a complete course claim.
+- Public file count/bytes: 32 files, 10,756,259 bytes; all 32 anonymous downloads matched local byte counts and SHA-256 values.
+- Rights: component-specific MIT-derived material under CC BY-NC-SA 4.0; inherited Habring CC BY 4.0, Griffin/Penn CC BY-NC-SA 3.0 US, and Royer metadata CC BY-NC 4.0 remain separately identified. The Athena permission-only graphics were not copied; semantic descriptions and source locators are retained.
+
+New reader files:
+
+- `D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf`: 67,749 bytes; SHA-256 `06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
+- `D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html`: 38,196 bytes; SHA-256 `d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`.
+- `ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L02_DELTA.zip`: 460,161 bytes; SHA-256 `2eea8c589f6a1c04ccbdc2b89b594e711d3f9f78596d712b31a702565659ee9a`.
+- `README_MIT_L02.md`: 1,973 bytes; SHA-256 `209d8739eca4aa40dd3c0f6f50d7f08fa8deaeb95f361f1e90f11cc8be67b8eb`.
+- `README_RELEASE_MIT_L02.md`: 1,058 bytes; SHA-256 `5ae794eb359b18141c196732b50fe469ff9d6d8f2d5323ce30d111f4b42dd0e2`.
+- `RIGHTS_MIT_L02.md`: 1,235 bytes; SHA-256 `cbffe2964211b42c43961ccc753d058828e5d859434cc00f31a75e2329efbc63`.
+- `release-manifest-mit-l02.json`: 2,331 bytes; SHA-256 `0f35bbf5cd087d46cef90bc389557190cb4c62749e0256291f134809d952d7d9`.
+- `SHA256SUMS-mit-l02`: 3,168 bytes; SHA-256 `ba20e78df263a389eec06780ceec8221ba85c8206c00edf8c34713916d63468d`.
+
+The delta ZIP reopened with 41 entries; all 40 manifest-bound payloads matched their internal sizes and hashes, with zero forbidden entries. The sanitized anonymous readback is `release/zenodo/2026-08-23-mit-l02/zenodo-public-readback-mit-l02.json`: 9,305 bytes; SHA-256 `692f4bc0be650e7ecaaf4602e65afed970e59fb3603dfe9b760a74f9a49a9076`.
+
+The L02 reader validation receipt is `qa/MIT_L02_VALIDATION.json` (3,076 bytes; SHA-256 `59047c4b9185e56e9f68791a12c70099d3652e42ae04ca064d0ebeaf01e2fe95`) and its public copy is included in the delta bundle. The immutable public bundle's backend snapshot is JSONL 1,076,672 bytes, SHA-256 `2e2ee2f9e2b6af1075ab1480281aa4d529f2b533e776c297a0a194365c216ec5`, and CSV 1,293,072 bytes, SHA-256 `35c73a16b9b58ef6daf53fd4280f57d93de4044d32feebcbb5ddf96ad6cd1532`; those are the exact bytes covered by the published ZIP hash above. After publication, the local canonical backend receipt was expanded and the controls were frozen: current local JSONL is SHA-256 `61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`, current local CSV is SHA-256 `146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`, and `qa/MIT_L02_BACKEND_VALIDATION.json` is 7,985 bytes, SHA-256 `6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`. These post-publication backend/control enrichments are not claimed as files in record 22070915 and are queued for the next checkpoint; no reader bytes changed. The PDF is searchable A4 with `/Lang id-ID` but untagged; no native-speaker review or exercises/solutions are claimed. No upstream contact occurred.
+
+## 2026-08-23 — Public Zenodo MIT L02 correction
+
+- Public record: https://zenodo.org/records/22071030
+- Version DOI: https://doi.org/10.5281/zenodo.22071030
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Version: `checkpoint-2026.08.23-mit-l02-correction`
+- Status/title: published; explicitly `Belum Lengkap`; correction of record `22070915` in the same concept lineage
+- Public file count: 32 files; the 29 unchanged parent files passed anonymous byte/hash readback and three same-name replacement files passed as corrections.
+- Corrected delta ZIP: 465,432 bytes; SHA-256 `b14e7707bbd0b94ad3de18e3e4db8f6b1f3d5a6609b18a544004e3b41ead93cb`.
+- Corrected `release-manifest-mit-l02.json`: 1,769 bytes; SHA-256 `ed163442e318368bdabf0c2ad189de45a8bd9f2477c0486358176ca1c3a82ebc`.
+- Corrected `SHA256SUMS-mit-l02`: 3,168 bytes; SHA-256 `a5b71518dcf3dd8e1a17a5119b99af8a8ff0be664d5c883f3652161df21f248a`.
+
+The corrected delta ZIP reopened with 42 entries; all 41 manifest-bound payloads matched their internal sizes and hashes, with zero forbidden entries. It includes the final 1,495-record backend, the complete 7,985-byte backend-validation receipt, and controls whose hashes agree with that backend. The sanitized anonymous readback is `release/zenodo/2026-08-23-mit-l02-correction/zenodo-public-readback-mit-l02-correction.json`: 9,338 bytes; SHA-256 `4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. No reader bytes changed, page 14 remains the next cursor, and no upstream contact occurred.

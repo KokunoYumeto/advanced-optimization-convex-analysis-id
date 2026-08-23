@@ -1,0 +1,46 @@
+{
+  "schema": "o015-mit-l03-browser-qa-v1",
+  "result": "pass",
+  "html": {
+    "path": "output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+    "bytes": 9762,
+    "sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90"
+  },
+  "desktop": {
+    "viewport": [1280, 720],
+    "client_width": 1265,
+    "scroll_width": 1265,
+    "horizontal_overflow": false,
+    "headings": {"h1": 1, "h2": 3},
+    "source_pages": 1,
+    "source_items": 2,
+    "source_figures": 2,
+    "source_displays": 0,
+    "mathml_nodes": 0,
+    "images": 0,
+    "duplicate_ids": 0,
+    "unresolved_fragments": 0,
+    "full_page_screenshot_bytes": 175702,
+    "full_page_screenshot_sha256": "ba5383961c3bf2a5ea75bc5569aef47b2a98976bc829b2fe6141a79e135f4f30"
+  },
+  "mobile": {
+    "viewport": [390, 844],
+    "client_width": 375,
+    "scroll_width": 375,
+    "horizontal_overflow": false,
+    "headings": {"h1": 1, "h2": 3},
+    "source_pages": 1,
+    "source_items": 2,
+    "source_figures": 2,
+    "images": 0,
+    "duplicate_ids": 0,
+    "unresolved_fragments": 0,
+    "full_page_screenshot_bytes": 169621,
+    "full_page_screenshot_sha256": "f0e6208005100ec7bf2d820d154990b50170a1db006ccc9955044fa648f097a4"
+  },
+  "lang": "id-ID",
+  "main_count": 1,
+  "skip_link": "#d90-mit-l03-p014",
+  "console_warnings_or_errors": [],
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra"
+}

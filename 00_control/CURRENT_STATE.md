@@ -3,7 +3,7 @@
 As of: 2026-08-23  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: MIT/Royer authority frozen; MIT complete-notes pages 2--5 admitted as semantic HTML/PDF pilot; GitHub/Zenodo checkpoint preservation complete; next source boundary pages 6--13
+Status: MIT/Royer authority frozen; MIT complete-notes pages 2--5, 6--13, and 14 admitted as semantic HTML/PDF units; GitHub/Zenodo checkpoint preservation complete; next source cursor page 15
 
 ## Ownership and scope
 
@@ -61,10 +61,98 @@ The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation trans
 
 MIT/Royer authority and the first MIT topic are admitted, but the remaining 436 external source pages are untranslated. The complete 18-unit learner route, original bridges, 36 mastery problems, solution repairs, labs, capstone, full-course semantic HTML/EPUB, tagged PDF, and human/native-speaker Indonesian review remain open. No final-corpus claim is allowed.
 
-## Exact continuation
+## Exact continuation (historical pre-L02 wording)
+
+The following three-step list records the pre-admission continuation and is
+retained for provenance. It is superseded by the L02 boundary state below; the
+next executable source cursor is page 14.
 
 1. Continue with exact complete-notes pages 6--13, “Duality” through “Exceptional Behavior,” under `MIT_L02_BOUNDARY_CENSUS.md`; page 14 is excluded and begins the next topic.
 2. Create the English semantic witness and contiguous id-ID source with exact item/formula/diagram-label mapping. Independently redraw necessary mathematics or omit it with exact locators; copy no Athena figure byte or layout.
 3. Repeat deterministic semantic HTML/PDF, topology, browser, visual, terminology, rereview, rights, and backend gates before admission. Do not resume automatic Penn expansion.
 
 No upstream contact occurs during production.
+
+## 2026-08-23 — MIT L02 pages 6--13 boundary state
+
+The semantic-source and reader boundary for complete-notes pages 6--13 is
+admitted and passes the bounded gates. The frozen authority PDF is 8,030,116
+bytes / 340 pages / SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+The English witness is 11,539 bytes (`6fc62cd32c9231c7f4b254ee2f0c46dbe2d4f19bcb23b5523c0aaaedb4762dde`),
+the Indonesian source is 12,895 bytes (`b3e26c12a934b023b7b7ad4933082e6b50d68cd09c948d079a6a01df6b478917`),
+the HTML is 38,196 bytes (`d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`),
+and the five-page A4 PDF is 67,749 bytes (`06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`).
+
+The exact topology is 8 pages, 19 top-level items, 7 nested lists, 4
+freestanding displays, 2 examples, 1 answered prompt, 1 source-display, and
+61 target MathML nodes. Seven permission-gated Athena graphics are omitted as
+bytes and layout; their page-addressed semantic descriptions retain labels and
+mathematical relationships. The component remains MIT CC BY-NC-SA 4.0 with
+attribution, change marking, NC/SA obligations, and non-endorsement. There are
+no source exercises, hints, solutions, or interactives in this block. Validation
+report `qa/MIT_L02_VALIDATION.json` is 3,076 bytes, SHA-256
+`59047c4b9185e56e9f68791a12c70099d3652e42ae04ca064d0ebeaf01e2fe95`; browser
+QA is 2,004 bytes, SHA-256
+`a8f1e3fab187a21a1eee0a4362add3855648ccd3d0f249ec08216936db6dd6d1`; rereview
+is 2,850 bytes, SHA-256
+`67e20f5dc42afadb52d8cf299b6a7a8891286d1aa70b9972a17c70b407ac4e2e`.
+
+The preceding page-14 continuation wording is historical now that L03 is
+admitted. The next source cursor is page 15; the prior “Modern View of Convex
+Optimization” sentence is retained for provenance. The
+remaining external-source accounting is reduced by these eight pages; the
+full-course bridges, labs, mastery/solution layer, capstone, semantic EPUB,
+tagged PDF, and human/native-speaker review remain open. The additive backend
+extension now passes idempotently: 1,495 total records / 92 stable segments,
+with 65 new L02 records. `backend/records.jsonl` is 1,076,672 bytes, SHA-256
+`61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`;
+lossless CSV is 1,293,072 bytes, SHA-256
+`146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`; the
+new-ID set is SHA-256
+`1436ab92aa0c80e1aedaf5ae1dce1b2ba28b31a9a88695d6f6d2803bc41789c4`.
+The additive script `qa/extend_backend_mit_l02.py` is 27,926 bytes, SHA-256
+`9c13a77eb1bd6a4d440bd4f765099201ccf1e1bba611423a9689853cac1d8368`; its
+validator is 15,089 bytes, SHA-256
+`5b0999b563b7dd3afa199bd8d89d391772b026035b836d448f2cef418576811a`, and its
+passing receipt is 7,985 bytes, SHA-256
+`6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`. Its
+protected 1,430-record baseline remains bound to the L01 hashes. Only these
+final frozen backend identities are controlling; any earlier intermediate L02
+hash blocks (including transient `b3f5...` and `2e2e...` values) are superseded
+and are not release or resume evidence. The next executable source cursor is
+page 14.
+
+## 2026-08-23 — MIT L03 page 14 boundary state
+
+The page-14 semantic-source and reader boundary is admitted and passes all
+bounded gates. The official authority remains the 8,030,116-byte, 340-page MIT
+6.253 PDF, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+The English witness is 3,961 bytes (`ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605`),
+the Indonesian target is 4,758 bytes (`24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`),
+the HTML is 9,762 bytes (`01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`),
+and the two-page A4 PDF is 34,550 bytes (`3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`).
+
+The exact topology is one source page, 2 top-level items, 6 nested bullets, 2
+omitted source figures, zero display formulas, and zero images. The two Athena
+Scientific permission-only graphics are replaced by page-addressed semantic
+descriptions; no source bytes, crops, or layout are copied. The component
+retains MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA obligations, and
+non-endorsement. No exercise, hint, solution, code, or interactive surface is
+present or claimed. Validation is 2,836 bytes, SHA-256
+`fd92d811343e22192573293745c2f11175ba493f44bc5eb39801dfa6c47daff6`;
+browser QA is 1,396 bytes, SHA-256
+`3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e`; rereview
+is 2,163 bytes, SHA-256
+`daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1`.
+The PDF is searchable, A4, `/Lang id-ID`, and untagged; human/native-speaker
+Indonesian review remains unrecorded.
+
+The corrected public preservation baseline remains Zenodo
+[10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030), with
+anonymous readback `release/zenodo/2026-08-23-mit-l02-correction/zenodo-public-readback-mit-l02-correction.json`,
+9,338 bytes, SHA-256
+`4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. This is
+the corrected L02 receipt and does not silently claim L03 bytes. The next
+source cursor is complete-notes page 15.

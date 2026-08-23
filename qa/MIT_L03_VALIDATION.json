@@ -1,0 +1,86 @@
+{
+  "boundary": {
+    "nested_bullets": 6,
+    "next_source_page": 15,
+    "source_displays": 0,
+    "source_figures": 2,
+    "source_items": 2,
+    "source_pdf_pages": [
+      14
+    ]
+  },
+  "build": {
+    "command": "python qa/build_mit_l03.py --html-output <html> --pdf-output <pdf>",
+    "deterministic_rebuilds": 2,
+    "html_sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90",
+    "pdf_sha256": "3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136",
+    "toolchain": "Pandoc HTML5/MathML and LuaLaTeX"
+  },
+  "errors": [],
+  "files": {
+    "browser_qa": {
+      "bytes": 1396,
+      "path": "qa/MIT_L03_BROWSER_QA.json",
+      "sha256": "3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e"
+    },
+    "html": {
+      "bytes": 9762,
+      "path": "output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+      "sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90"
+    },
+    "pdf": {
+      "bytes": 34550,
+      "path": "output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf",
+      "sha256": "3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136"
+    },
+    "rereview": {
+      "bytes": 2163,
+      "path": "qa/MIT_L03_INDEPENDENT_REREVIEW.md",
+      "sha256": "daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1"
+    },
+    "source_pdf": {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    "target": {
+      "bytes": 4758,
+      "path": "source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md",
+      "sha256": "24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060"
+    },
+    "witness": {
+      "bytes": 3961,
+      "path": "source/en/mit-03-modern-view-semantic-witness.md",
+      "sha256": "ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605"
+    }
+  },
+  "html": {
+    "duplicate_ids": [],
+    "headings": {
+      "h1": 1,
+      "h2": 3
+    },
+    "images": 0,
+    "lang": "id-ID",
+    "source_figures": 2,
+    "source_items": 2,
+    "source_pages": 1,
+    "unresolved_fragments": []
+  },
+  "human_native_speaker_review": false,
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "pdf": {
+    "page_size": "A4",
+    "pages": 2,
+    "render_sha256": [
+      "1231d4a105c5f1478a257830c73aff3ab55b22e786f88d31091398ef6dfb34ba",
+      "966b77bde6a9b2c172b56eba38d76e976457ccd77dabc02d77f559d0cb6254ba"
+    ],
+    "searchable": true,
+    "tagged": false
+  },
+  "recorded_at": "2026-08-23T19:45:00Z",
+  "result": "pass",
+  "schema": "o015-mit-l03-validation-v1",
+  "source_page_text_sha256": "3fc4d7c832ccfe16fe6a3a17f61fc6729757e130bbd1fffe7cab8f69b3cf2e35"
+}

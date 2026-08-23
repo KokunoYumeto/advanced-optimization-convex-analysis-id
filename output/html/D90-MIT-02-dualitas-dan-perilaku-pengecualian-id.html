@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="dcterms.date" content="2026-08-23" />
+  <meta name="keywords" content="dualitas, analisis konveks, fungsi
+konjugat, optimisasi Fenchel, id-ID" />
+  <meta name="description" content="Terjemahan Indonesia yang dapat mengalir ulang dari halaman sumber 6-13, dengan pengenal stabil, formula, label diagram, dan deskripsi semantik yang dapat diakses." />
+  <title>Dualitas dan Perilaku Pengecualian</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f4f6fb;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6fb; }
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus { transform: translateY(0); }
+body > main, body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header { padding: 3.5rem 0 1.25rem; }
+body > main > header h1 {
+max-width: 24ch;
+margin: 0;
+font-size: clamp(2.2rem, 5vw, 4.5rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 54rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c8d1e4;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 5rem; }
+main > section, .edition-notice, .source-page, .edition-backmatter {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.6rem);
+border: 1px solid #c8d1e4;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+h2 { margin-top: 0; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; }
+li + li { margin-top: 0.55rem; }
+.source-item { margin: 0.65rem 0; }
+.edition-notice {
+margin: 1.25rem 0;
+padding: 1rem 1.15rem;
+border-left: 0.32rem solid #5c3bbf;
+border-radius: 0.4rem;
+background: #f2effd;
+}
+.source-figure {
+margin: 1rem 0;
+padding: 1rem 1.15rem;
+border: 1px dashed #7481a0;
+border-radius: 0.55rem;
+background: #f7f9fd;
+color: #27324a;
+}
+.source-figure strong { color: #4b2d9c; }
+.source-locator { display: inline-block; margin-top: 1rem; color: #58647d; font-size: 0.92rem; }
+math[display="block"] { overflow-x: auto; padding: 0.4rem 0; }
+a { color: #244fa3; text-underline-offset: 0.16em; }
+a:focus-visible { outline: 0.2rem solid #f09a2b; outline-offset: 0.18rem; }
+@media (max-width: 48rem) {
+body > main, body > footer { width: min(94vw, 78rem); }
+#TOC ul { columns: 1; }
+.source-page, .edition-notice, .edition-backmatter { border-radius: 0.65rem; }
+}
+@media print {
+:root, body { background: white; }
+main > section, .edition-notice, .source-page, .edition-backmatter { box-shadow: none; break-inside: avoid; }
+.source-figure { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l02-p006">Langsung ke materi dualitas</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Dualitas dan Perilaku Pengecualian</h1>
+<p class="subtitle">MIT 6.253 - Edisi Indonesia, halaman sumber 6-13</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="date">2026-08-23</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tentang-batas-ini" id="toc-tentang-batas-ini"><span class="toc-section-number">1</span> Tentang batas ini</a></li>
+<li><a href="#dualitas" id="toc-dualitas"><span class="toc-section-number">2</span> Dualitas</a></li>
+<li><a href="#deskripsi-dual-fungsi-konveks" id="toc-deskripsi-dual-fungsi-konveks"><span class="toc-section-number">3</span> Deskripsi Dual Fungsi
+Konveks</a></li>
+<li><a href="#masalah-primal-dan-dual-fenchel" id="toc-masalah-primal-dan-dual-fenchel"><span class="toc-section-number">4</span> Masalah Primal dan Dual
+Fenchel</a></li>
+<li><a href="#dualitas-fenchel" id="toc-dualitas-fenchel"><span class="toc-section-number">5</span> Dualitas Fenchel</a></li>
+<li><a href="#pandangan-yang-lebih-abstrak-tentang-dualitas" id="toc-pandangan-yang-lebih-abstrak-tentang-dualitas"><span class="toc-section-number">6</span> Pandangan yang Lebih Abstrak tentang
+Dualitas</a></li>
+<li><a href="#dualitas-titik-persekutuan-minimumtitik-perpotongan-maksimum" id="toc-dualitas-titik-persekutuan-minimumtitik-perpotongan-maksimum"><span class="toc-section-number">7</span> Dualitas Titik Persekutuan
+Minimum/Titik Perpotongan Maksimum</a></li>
+<li><a href="#analisis-dualitas-abstrakumum" id="toc-analisis-dualitas-abstrakumum"><span class="toc-section-number">8</span> Analisis Dualitas
+Abstrak/Umum</a></li>
+<li><a href="#perilaku-pengecualian" id="toc-perilaku-pengecualian"><span class="toc-section-number">9</span>
+Perilaku Pengecualian</a></li>
+<li><a href="#identitas-sumber-dan-batas-edisi" id="toc-identitas-sumber-dan-batas-edisi"><span class="toc-section-number">10</span> Identitas sumber dan batas
+edisi</a></li>
+</ul>
+</nav>
+<div id="d90-mit-l02-edition-notice" class="edition-notice">
+<section id="tentang-batas-ini" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Tentang
+batas ini</h2>
+<p>Ini adalah rekonstruksi sumber semantik dan terjemahan bahasa
+Indonesia dari Dimitri P. Bertsekas, <em>Convex Analysis and
+Optimization</em>, MIT OpenCourseWare 6.253, Spring 2012, halaman PDF
+sumber 6-13. Batas ini dimulai pada <strong>Dualitas</strong> dan
+berakhir pada <strong>Perilaku Pengecualian</strong>; halaman 14,
+<strong>Pandangan Modern tentang Optimisasi Konveks</strong>, adalah
+topik berikutnya dan tidak disertakan. Materi sumber berada di bawah <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>.</p>
+<p>Tujuh permukaan grafik sumber sengaja tidak disalin karena catatan
+menyatakan bahwa grafik tersebut digunakan atas izin Athena Scientific.
+Tidak ada byte, potongan, atau tata letak grafik sumber yang masuk ke
+edisi ini. Sebagai gantinya, setiap grafik mempunyai lokator halaman
+yang tepat, deskripsi semantik yang rinci, serta semua label dan formula
+matematika yang dipertahankan. Ini menjaga aksesibilitas tanpa mengklaim
+hak untuk mendistribusikan grafik izin tersebut.</p>
+<p>Istilah teknis <em>primal</em> dan <em>dual</em> dipertahankan
+sebagai label standar; istilah lain yang dipakai konsisten di seluruh
+batas ini meliputi <strong>epigraf</strong>,
+<strong>hiperbidang</strong>, <strong>fungsi konjugat</strong>,
+<strong>titik persekutuan minimum</strong>, dan <strong>titik
+perpotongan maksimum</strong>. Bantuan produksi dan QA: <strong>OpenAI
+Codex gpt-5.6-sol, Ultra</strong>, atas arahan pengguna repositori.
+Sistem tersebut bukan penulis sumber atau pemberi lisensi. Tidak ada
+dukungan oleh MIT, Athena Scientific, atau penulis sumber yang tersirat.
+Tinjauan bahasa manusia/penutur asli belum tercatat.</p>
+<p>Setiap bagian bertanda “Halaman sumber” memetakan tepat satu halaman
+PDF. Pengenal stabil tetap melekat pada halaman, butir, dan deskripsi
+grafik, meskipun HTML atau PDF mengalir ulang ke ukuran layar atau
+halaman yang berbeda.</p>
+</section>
+</div>
+<div id="d90-mit-l02-p006" class="source-page" data-source-page="6" data-source-order="1">
+<section id="dualitas" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span>
+Dualitas</h2>
+<div id="d90-mit-l02-p006-i001" class="source-item" data-source-page="6" data-source-order="1">
+<ul>
+<li>Dua pandangan berbeda atas objek yang sama.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p006-i002" class="source-item" data-source-page="6" data-source-order="2">
+<ul>
+<li><strong>Contoh: deskripsi dual sinyal.</strong></li>
+</ul>
+<div id="d90-mit-l02-p006-f001" class="source-figure" data-source-page="6" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 6, contoh
+sinyal).</strong> Dua persegi panjang berlabel <strong>Ranah
+waktu</strong> dan <strong>Ranah frekuensi</strong> dihubungkan oleh
+panah dua arah. Intinya adalah bahwa sinyal yang sama dapat
+direpresentasikan pada kedua ranah; halaman ini tidak menyatakan formula
+transformasi tertentu. Grafik sumber dihilangkan karena batas hak yang
+dijelaskan di atas.</p>
+<p><strong>Deskripsi grafik sumber (halaman sumber 6, himpunan konveks
+tertutup).</strong> Pandangan kiri adalah gabungan titik-titik yang
+mengisi suatu daerah konveks tertutup. Pandangan kanan adalah irisan
+setengah-ruang yang garis batasnya menopang daerah yang sama. Kedua
+pandangan itu merupakan deskripsi alternatif untuk satu himpunan konveks
+tertutup.</p>
+</div>
+</div>
+<div id="d90-mit-l02-p006-i003" class="source-item" data-source-page="6" data-source-order="3">
+<ul>
+<li><strong>Deskripsi dual himpunan konveks tertutup.</strong></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 6</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p007" class="source-page" data-source-page="7" data-source-order="2">
+<section id="deskripsi-dual-fungsi-konveks" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span>
+Deskripsi Dual Fungsi Konveks</h2>
+<div id="d90-mit-l02-p007-i001" class="source-item" data-source-page="7" data-source-order="1">
+<ul>
+<li>Definisikan fungsi konveks tertutup melalui epigrafnya.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p007-i002" class="source-item" data-source-page="7" data-source-order="2">
+<ul>
+<li>Deskripsikan epigraf itu melalui hiperbidang.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p007-i003" class="source-item" data-source-page="7" data-source-order="3">
+<ul>
+<li>Kaitkan hiperbidang dengan titik perpotongan (fungsi konjugat).</li>
+</ul>
+<div id="d90-mit-l02-p007-f001" class="source-figure" data-source-page="7" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 7, epigraf dan
+konjugat).</strong> Dalam koordinat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,f(x))</annotation></semantics></math>,
+suatu kurva konveks tertutup disentuh oleh garis dengan kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.
+Garis tersebut diberi label titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-y,1)</annotation></semantics></math>;
+label yang dipertahankan adalah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>,
+<strong>Kemiringan =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math></strong>,
+sumbu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+dan titik asal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+serta pembedaan antara <strong>Deskripsi Primal: Nilai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></strong>
+dan <strong>Deskripsi Dual: Titik perpotongan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^*(y)</annotation></semantics></math></strong>.
+Sumber juga mencetak identitas berikut:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">inf</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>x</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>−</mi><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\inf_{x\in\mathbb{R}^n}\{f(x)-x^\mathsf{T}y\}=-f^*(y).
+</annotation></semantics></math></p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 7</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p008" class="source-page" data-source-page="8" data-source-order="3">
+<section id="masalah-primal-dan-dual-fenchel" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span> Masalah
+Primal dan Dual Fenchel</h2>
+<div id="d90-mit-l02-p008-i001" class="source-item" data-source-page="8" data-source-order="1">
+<ul>
+<li><p><strong>Masalah primal:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">min</mi><mi>x</mi></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\min_x\{f_1(x)+f_2(x)\}.
+</annotation></semantics></math></p></li>
+</ul>
+</div>
+<div id="d90-mit-l02-p008-i002" class="source-item" data-source-page="8" data-source-order="2">
+<ul>
+<li><p><strong>Masalah dual:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">max</mi><mi>y</mi></munder><mo stretchy="false" form="prefix">{</mo><mi>−</mi><msubsup><mi>f</mi><mn>1</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msubsup><mi>f</mi><mn>2</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\max_y\{-f_1^*(y)-f_2^*(-y)\}.
+</annotation></semantics></math></p>
+<p>Di sini
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mn>1</mn><mo>*</mo></msubsup><annotation encoding="application/x-tex">f_1^*</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mn>2</mn><mo>*</mo></msubsup><annotation encoding="application/x-tex">f_2^*</annotation></semantics></math>
+adalah fungsi konjugat.</p></li>
+</ul>
+<div id="d90-mit-l02-p008-f001" class="source-figure" data-source-page="8" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 8, geometri
+primal/dual Fenchel).</strong> Panel primal membandingkan jarak vertikal
+antara grafik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_1(x)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-f_2(x)</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>.
+Panel dual membandingkan perbedaan titik perpotongan dua garis sejajar
+dengan kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.
+Label yang dipertahankan meliputi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_1(x)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-f_2(x)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mn>1</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_1^*(y)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mn>2</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_2^*(-y)</annotation></semantics></math>,
+<strong>Kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math></strong>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>,
+serta deskripsi primal/dual <strong>Jarak Vertikal</strong> dan
+<strong>Perbedaan Titik Perpotongan</strong>.</p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 8</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p009" class="source-page" data-source-page="9" data-source-order="4">
+<section id="dualitas-fenchel" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span>
+Dualitas Fenchel</h2>
+<div id="d90-mit-l02-p009-d001" class="source-display" data-source-page="9" data-display-order="1">
+<p>Kesetaraan Fenchel adalah</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">min</mi><mi>x</mi></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>=</mo><munder><mi mathvariant="normal">max</mi><mi>y</mi></munder><mo stretchy="false" form="prefix">{</mo><mi>−</mi><msubsup><mi>f</mi><mn>1</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msubsup><mi>f</mi><mn>2</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+  \min_x\{f_1(x)+f_2(x)\}
+  =
+  \max_y\{-f_1^*(y)-f_2^*(-y)\}.
+  </annotation></semantics></math></p>
+<div id="d90-mit-l02-p009-f001" class="source-figure" data-source-page="9" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 9, geometri Fenchel
+yang menguntungkan).</strong> Konstruksi dua kurva yang sama ditampilkan
+dengan satu garis berkemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mo>*</mo></msup><annotation encoding="application/x-tex">y^*</annotation></semantics></math>
+pada perpotongan optimal dan garis lain berkemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.
+Labelnya mencakup
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_1(x)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-f_2(x)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mn>1</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_1^*(y)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mn>2</mn><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_2^*(-y)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>,
+<strong>Kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mo>*</mo></msup><annotation encoding="application/x-tex">y^*</annotation></semantics></math></strong>,
+dan <strong>Kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math></strong>.
+Kesetaraan di atas dicetak di bawah gambar sumber.</p>
+</div>
+</div>
+<div id="d90-mit-l02-p009-i001" class="source-item" data-source-page="9" data-source-order="1">
+<ul>
+<li><p>Dalam kondisi yang menguntungkan (kekonveksan):</p>
+<ul>
+<li>Nilai optimal primal dan dual sama.</li>
+<li>Solusi optimal primal dan dual saling berkaitan.</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 9</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p010" class="source-page" data-source-page="10" data-source-order="5">
+<section id="pandangan-yang-lebih-abstrak-tentang-dualitas" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span>
+Pandangan yang Lebih Abstrak tentang Dualitas</h2>
+<div id="d90-mit-l02-p010-i001" class="source-item" data-source-page="10" data-source-order="1">
+<ul>
+<li>Walaupun elegan, kerangka Fenchel agak tidak langsung.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p010-i002" class="source-item" data-source-page="10" data-source-order="2">
+<ul>
+<li><p>Dari dualitas deskripsi himpunan, menuju</p>
+<ul>
+<li>dualitas deskripsi fungsional, lalu</li>
+<li>dualitas deskripsi masalah.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l02-p010-i003" class="source-item" data-source-page="10" data-source-order="3">
+<ul>
+<li><p>Pendekatan yang lebih langsung:</p>
+<ul>
+<li>Mulai dari suatu himpunan, lalu</li>
+<li>Definisikan dua masalah prototipe yang saling dual.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l02-p010-i004" class="source-item" data-source-page="10" data-source-order="4">
+<ul>
+<li>Hindari deskripsi fungsional (kerangka yang lebih sederhana dan
+lebih sedikit kendalanya).</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 10</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p011" class="source-page" data-source-page="11" data-source-order="6">
+<section id="dualitas-titik-persekutuan-minimumtitik-perpotongan-maksimum" class="level2" data-number="7">
+<h2 data-number="7"><span class="header-section-number">7</span>
+Dualitas Titik Persekutuan Minimum/Titik Perpotongan Maksimum</h2>
+<div id="d90-mit-l02-p011-f001" class="source-figure" data-source-page="11" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 11, panel
+(a)-(c)).</strong> Setiap panel menggunakan koordinat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,w)</annotation></semantics></math>
+dan menandai himpunan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+kadang-kadang bersama penutupnya
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>M</mi><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{M}</annotation></semantics></math>.
+Sebuah garis pendukung mengidentifikasi <strong>Titik Persekutuan
+Minimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>w</mi><mo>*</mo></msup><annotation encoding="application/x-tex">w^*</annotation></semantics></math></strong>,
+sedangkan konstruksi pendukung kedua mengidentifikasi <strong>Titik
+Perpotongan Maksimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mo>*</mo></msup><annotation encoding="application/x-tex">q^*</annotation></semantics></math></strong>.
+Panel (a) dan (b) menunjukkan konfigurasi geometris yang teratur; panel
+(c) menunjukkan konfigurasi pengecualian/patologis ketika kedua titik
+itu tidak harus berperilaku teratur. Label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>M</mi><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline M</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>w</mi><mo>*</mo></msup><annotation encoding="application/x-tex">w^*</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mo>*</mo></msup><annotation encoding="application/x-tex">q^*</annotation></semantics></math>
+dipertahankan dalam deskripsi semantik ini.</p>
+</div>
+<div id="d90-mit-l02-p011-i001" class="source-item" data-source-page="11" data-source-order="1">
+<ul>
+<li>Seluruh teori dualitas dan seluruh teori minimaks (konveks/konkaf)
+dapat dikembangkan/dijelaskan dalam kerangka satu gambar ini.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p011-i002" class="source-item" data-source-page="11" data-source-order="2">
+<ul>
+<li>Perangkat analisis konveks diperlukan untuk menguraikan gambar ini
+dan untuk menyingkirkan perilaku pengecualian/patologis yang ditunjukkan
+pada (c).</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 11</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p012" class="source-page" data-source-page="12" data-source-order="7">
+<section id="analisis-dualitas-abstrakumum" class="level2" data-number="8">
+<h2 data-number="8"><span class="header-section-number">8</span>
+Analisis Dualitas Abstrak/Umum</h2>
+<div id="d90-mit-l02-p012-f001" class="source-figure" data-source-page="12" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 12, alur
+analisis).</strong> Alur dimulai dari <strong>Kerangka Geometris Abstrak
+(Himpunan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>)</strong>
+dan menunjuk ke <strong>Teorema Titik Persekutuan Minimum/Titik
+Perpotongan Maksimum</strong>. Pilihan khusus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+bercabang menjadi <strong>Dualitas Minimax
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">MinMax</mi><mo>⁡</mo></mrow><mo>=</mo><mi mathvariant="normal">MaxMin</mi></mrow><annotation encoding="application/x-tex">\operatorname{MinMax}=\operatorname{MaxMin}</annotation></semantics></math>)</strong>,
+<strong>Dualitas Optimisasi Berkendala</strong>, dan <strong>Teorema
+Alternatif, dll.</strong> Label <strong>Pilihan khusus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math></strong>
+berada di titik percabangan. Halaman ini tidak memuat butir prosa
+tambahan di luar diagram alur.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 12</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-p013" class="source-page" data-source-page="13" data-source-order="8">
+<section id="perilaku-pengecualian" class="level2" data-number="9">
+<h2 data-number="9"><span class="header-section-number">9</span>
+Perilaku Pengecualian</h2>
+<div id="d90-mit-l02-p013-i001" class="source-item" data-source-page="13" data-source-order="1">
+<ul>
+<li>Jika struktur konveks begitu menguntungkan, apa sumber perilaku
+pengecualian/patologis?</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p013-i002" class="source-item" data-source-page="13" data-source-order="2">
+<ul>
+<li><strong>Jawaban:</strong> Beberapa operasi umum pada himpunan
+konveks tidak mempertahankan beberapa sifat dasar.</li>
+</ul>
+</div>
+<div id="d90-mit-l02-p013-i003" class="source-item" data-source-page="13" data-source-order="3">
+<ul>
+<li><p><strong>Contoh:</strong> Himpunan konveks tertutup hasil
+transformasi linear tidak harus tertutup (berbeda dari himpunan kompak
+dan polihedral).</p>
+<ul>
+<li>Selain itu, jumlah vektor dua himpunan konveks tertutup tidak harus
+tertutup.</li>
+</ul></li>
+</ul>
+<div id="d90-mit-l02-p013-f001" class="source-figure" data-source-page="13" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 13,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>).</strong>
+Pada bidang
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x_1,x_2)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+adalah daerah di kuadran positif yang berada pada atau di atas kurva
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_1x_2=1</annotation></semantics></math>,
+sedangkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+adalah garis vertikal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_1=0</annotation></semantics></math>.
+Sumbu horizontal diberi label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>,
+sumbu vertikal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math>,
+dan kedua himpunan diberi definisi tepat berikut:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><msub><mi>x</mi><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+C_1=\{(x_1,x_2)\mid x_1&gt;0,\ x_2&gt;0,\ x_1x_2\ge 1\},
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+C_2=\{(x_1,x_2)\mid x_1=0\}.
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l02-p013-i004" class="source-item" data-source-page="13" data-source-order="4">
+<ul>
+<li>Ini adalah salah satu alasan utama bagi kesulitan analitis dalam
+analisis konveks dan perilaku patologis dalam optimisasi konveks (serta
+karakter yang menguntungkan dari himpunan polihedral).</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 13</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l02-backmatter" class="edition-backmatter">
+<section id="identitas-sumber-dan-batas-edisi" class="level2" data-number="10">
+<h2 data-number="10"><span class="header-section-number">10</span>
+Identitas sumber dan batas edisi</h2>
+<ul>
+<li>Sumber: Dimitri P. Bertsekas, <em>Lecture Slides on Convex Analysis
+and Optimization</em>, berdasarkan MIT 6.253, Spring 2012.</li>
+<li>Batas tepat: PDF lengkap halaman 6-13; halaman 14 memulai topik
+terpisah <strong>Pandangan Modern tentang Optimisasi Konveks</strong>
+dan dikecualikan.</li>
+<li>Grafik: tujuh grafik sumber yang digunakan atas izin dihilangkan.
+Lokator halaman, label, formula, dan deskripsi semantik dipertahankan;
+tidak ada byte, potongan, atau tata letak Athena Scientific yang
+disalin.</li>
+<li>Hak: komponen turunan ini tetap CC BY-NC-SA 4.0, dengan kewajiban
+atribusi, penandaan perubahan, penggunaan nonkomersial, ShareAlike, dan
+nondukungan tetap berlaku.</li>
+<li>Batas ini tidak memuat latihan pembelajar, petunjuk, solusi, atau
+permukaan komputasi interaktif. Ini bukan keseluruhan kuliah MIT atau
+keseluruhan mata kuliah.</li>
+</ul>
+</section>
+</div>
+<p><em><span class="source-locator">Halaman sumber 6-13</span></em></p>
+</main>
+</body>
+</html>

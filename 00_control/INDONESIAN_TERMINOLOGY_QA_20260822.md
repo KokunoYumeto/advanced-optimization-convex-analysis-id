@@ -45,3 +45,15 @@ No admitted mathematical statement has a meaning error. The differences involvin
 The machine glossary is refined with the evidence-backed preferred/variant distinctions, and the MIT pilot introduces a generic objective as `fungsi tujuan` while retaining compact variants where context makes them unambiguous.
 
 The one consistency rule that is enforced going forward is semantic rather than cosmetic: `fungsi biaya` is reserved for a cost objective, while `fungsi tujuan` is the neutral generic term. The frozen UNY PDF supplies terminology evidence only; none of its prose, formulas, or layout enters the derivative.
+
+## L03 page-14 terminology extension (2026-08-23)
+
+The bounded page-14 unit adds only standard method labels and the LP/NLP
+abbreviations. `optimisasi konveks`, `program/pemrograman linear`, and
+`pemrograman nonlinier` remain the preferred Indonesian forms. `simpleks` is
+retained as the established Indonesian spelling of *simplex*; `nonsimpleks`
+is used as the compact contrastive adjective in the source sentence.
+`bidang potong`, `titik interior`, and `subgradien` are retained as the
+standard method names already compatible with the lane glossary. `dualitas`
+remains the source label; no alternative `dualisme` term is introduced. No
+L03 term required propagation into earlier units.

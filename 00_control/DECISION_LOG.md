@@ -147,3 +147,73 @@ The official MIT OCW 6.253 and Royer source closures pass the bounded authority,
 The first MIT block, exact complete-notes pages 2--5, is admitted at Indonesian source SHA-256 `2170dec12e707782c7677647f77ad8ee3360b282a8dbb9fb5620170106004bf3`, semantic HTML SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`, and PDF SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`. It preserves all 21 top-level items, 12 nested bullets, two displays, and page/item anchors; contains zero figures; integrates disclosed corrections `O015-MIT-SEM-0001`--`0003`; and passes two deterministic builds, exact structural/formula validation, desktop/mobile browser reflow, all-page visual inspection, terminology QA, and independent rereview with P1=0/P2=0/P3=0. The untagged-PDF and absent human/native-speaker review limitations remain explicit.
 
 The stable backend adds 130 exact MIT/Royer/pilot IDs to the 1,300-record baseline without renumbering it; the added-ID set is SHA-256 `fa0e7d763e2c3eab68ac32fe935d777f3c688c5d59cc509d93416608726cfaf5`. The next production boundary is exact complete-notes pages 6--13, “Duality” through “Exceptional Behavior,” recorded in `MIT_L02_BOUNDARY_CENSUS.md`; page 14 begins the next topic. Seven of those eight pages have Athena-risk diagrams, so no copied byte or layout may enter the derivative. The admitted pilot is preserved additively in the existing GitHub and Zenodo lineages before page 6 production scales; Figshare remains unchanged.
+
+## D90-0032 — MIT L02 pages 6--13 admitted; cursor advances to page 14
+
+The exact source-order boundary frozen in `MIT_L02_BOUNDARY_CENSUS.md` is now
+admitted: complete-notes PDF pages 6--13, “Duality” through “Exceptional
+Behavior.” The authority PDF remains 8,030,116 bytes / 340 pages, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`. The
+English witness, Indonesian source, HTML, and five-page A4 PDF bind to
+`6fc62cd32c9231c7f4b254ee2f0c46dbe2d4f19bcb23b5523c0aaaedb4762dde`,
+`b3e26c12a934b023b7b7ad4933082e6b50d68cd09c948d079a6a01df6b478917`,
+`d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`, and
+`06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
+
+The 8-page closure preserves 19 top-level items, 7 nested lists, 4 displays,
+2 examples, 1 answered prompt, 1 source-display, and 61 target MathML nodes.
+Seven Athena Scientific permission-gated graphics are omitted as bytes and
+layout and replaced with exact-locator semantic descriptions. MIT CC BY-NC-SA
+4.0 attribution, change marking, NC/SA obligations, and non-endorsement are
+retained. The source has no exercises, hints, solutions, or interactives, so no
+such surfaces are claimed. Validation, browser, visual, terminology, and
+independent rereview gates pass with P1=0/P2=0/P3=0; validation/browser/rereview
+receipt hashes are `59047c4b9185e56e9f68791a12c70099d3652e42ae04ca064d0ebeaf01e2fe95`,
+`a8f1e3fab187a21a1eee0a4362add3855648ccd3d0f249ec08216936db6dd6d1`, and
+`67e20f5dc42afadb52d8cf299b6a7a8891286d1aa70b9972a17c70b407ac4e2e`.
+
+This is a bounded unit admission, not completion of D90. The PDF remains
+untagged and human/native-speaker review is absent. The additive backend
+extension passes idempotently at 1,495 records / 92 stable segments (65 new
+records): JSONL
+`61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`, CSV
+`146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`, and
+new-ID set `1436ab92aa0c80e1aedaf5ae1dce1b2ba28b31a9a88695d6f6d2803bc41789c4`.
+The validator receipt is `qa/MIT_L02_BACKEND_VALIDATION.json`, 7,985 bytes,
+SHA-256 `6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`.
+Earlier intermediate backend hash blocks (`b3f5...`, `2e2e...`, and related
+CSV/receipt values) are explicitly superseded and are not evidence. The full
+learner route remains open. The next source cursor is page 14,
+“Modern View of Convex Optimization”; no automatic Penn Chapter 6/7 work is
+authorized.
+
+## D90-0033 — MIT L03 page 14 admitted; cursor advances to page 15
+
+The exact source-order boundary after L02 is admitted: complete-notes PDF page
+14, “Modern View of Convex Optimization.” The authority remains the frozen MIT
+6.253 PDF at 8,030,116 bytes / 340 pages, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`. The
+English witness, Indonesian source, HTML, and two-page A4 PDF bind to
+`ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605`,
+`24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`,
+`01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`, and
+`3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
+
+The one-page closure preserves 2 top-level items, 6 nested bullets, and 2
+source-figure descriptions; it has zero display formulas and zero copied image
+bytes. Both Athena Scientific permission-only graphics are omitted as bytes,
+crops, and layout. MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA
+obligations, and non-endorsement remain explicit. No exercises, hints,
+solutions, code, or interactive surface is present or claimed. Deterministic,
+browser, visual, and independent rereview gates pass with P1=0/P2=0/P3=0;
+the PDF remains untagged and human/native-speaker review is absent. The QA
+receipt hashes are `fd92d811343e22192573293745c2f11175ba493f44bc5eb39801dfa6c47daff6`,
+`3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e`, and
+`daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1`.
+
+The current public preservation baseline remains corrected Zenodo DOI
+`10.5281/zenodo.22071030`; its 9,338-byte anonymous readback is bound to
+`4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. This is
+the corrected L02 public lineage and does not silently claim L03 publication.
+The next source cursor is complete-notes page 15; no automatic Penn expansion
+is authorized.

@@ -1,0 +1,44 @@
+{
+  "addition_file_count": 3,
+  "addition_material_files": [
+    {
+      "bytes": 465432,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L02_DELTA.zip",
+      "sha256": "b14e7707bbd0b94ad3de18e3e4db8f6b1f3d5a6609b18a544004e3b41ead93cb"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes PDF pages 6-13, Duality through Exceptional Behavior",
+  "complete_corpus": false,
+  "correction_of_record_doi": "10.5281/zenodo.22070915",
+  "correction_of_record_id": "22070915",
+  "delta_bundle_verification": {
+    "entries": 42,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 41
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l02.json",
+    "SHA256SUMS-mit-l02"
+  ],
+  "inherited_file_count": 32,
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "next_boundary": "MIT 6.253 complete-notes PDF page 14, Modern View of Convex Optimization",
+  "parent_record_doi": "10.5281/zenodo.22070915",
+  "parent_record_id": "22070915",
+  "publication_date": "2026-08-23",
+  "release_file_count": 32,
+  "replacement_filenames": [
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L02_DELTA.zip",
+    "release-manifest-mit-l02.json",
+    "SHA256SUMS-mit-l02"
+  ],
+  "rights_notice": "Component-specific: new MIT-derived reader CC BY-NC-SA 4.0; inherited components retain their own rights.",
+  "schema": "o015-zenodo-correction-checkpoint-v1",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.23-mit-l02-correction",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": "10.5281/zenodo.22071030",
+  "zenodo_record_id": "22071030"
+}

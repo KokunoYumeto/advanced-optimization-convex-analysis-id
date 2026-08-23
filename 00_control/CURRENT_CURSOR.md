@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-23  
-State: MIT/Royer authority frozen and first MIT semantic-source block (complete-notes pages 2--5) admitted; GitHub and Zenodo checkpoint preservation complete; next source-order block is pages 6--13
+State: MIT/Royer authority frozen and MIT semantic-source blocks on complete-notes pages 2--5, 6--13, and 14 admitted; GitHub and Zenodo checkpoint preservation complete; next source-order cursor is page 15
 
 ## Completed at this boundary
 
@@ -26,7 +26,7 @@ State: MIT/Royer authority frozen and first MIT semantic-source block (complete-
 - Anonymous verification: the credential-free GitHub API returned the exact immutable identity; eleven representative reader, source, backend, control, release, and receipt files matched local byte counts and SHA-256 values, including the 7,238-byte Zenodo readback (`08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`).
 - Exclusions: no Penn Chapter 6 candidate, superseded draft/worklog, build/temp/cache, credential file, or upstream-contact artifact entered the checkpoint.
 
-## Active primary production cursor
+## Active primary production cursor (historical pre-L02 wording)
 
 Continue directly with the exact source-order block frozen in `MIT_L02_BOUNDARY_CENSUS.md`:
 
@@ -46,3 +46,83 @@ Create the page-addressed English semantic witness and id-ID source contiguously
 - GitHub synchronization is closed and verified. Continue to use only narrow task-local Git operations for later admitted boundaries; never run a broad workspace scan.
 - Do not contact upstream during production.
 - Do not publish a final-corpus claim until the full MIT/Royer route, bridges, labs, mastery/solution layer, accessible surfaces, backend, rights, and human-review status are complete.
+
+## 2026-08-23 boundary update — MIT L02 admitted; next cursor page 14
+
+The complete-notes source-order block on pages 6--13 ("Duality" through
+"Exceptional Behavior") is now admitted as a bounded semantic reader unit.
+The official authority remains
+`authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf`
+(8,030,116 bytes, 340 pages, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`).
+
+- English semantic witness: `source/en/mit-02-duality-semantic-witness.md`, 11,539 bytes, SHA-256 `6fc62cd32c9231c7f4b254ee2f0c46dbe2d4f19bcb23b5523c0aaaedb4762dde`.
+- Indonesian semantic source: `source/id-ID/mit-02-dualitas-dan-perilaku-pengecualian-id.md`, 12,895 bytes, SHA-256 `b3e26c12a934b023b7b7ad4933082e6b50d68cd09c948d079a6a01df6b478917`.
+- Deterministic HTML: `output/html/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html`, 38,196 bytes, SHA-256 `d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`.
+- Reflowed PDF: `output/pdf/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf`, 67,749 bytes, 5 A4 pages, SHA-256 `06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
+- Validation: `qa/MIT_L02_VALIDATION.json`, 3,076 bytes, SHA-256 `59047c4b9185e56e9f68791a12c70099d3652e42ae04ca064d0ebeaf01e2fe95`; browser QA `qa/MIT_L02_BROWSER_QA.json`, 2,004 bytes, SHA-256 `a8f1e3fab187a21a1eee0a4362add3855648ccd3d0f249ec08216936db6dd6d1`; independent rereview `qa/MIT_L02_INDEPENDENT_REREVIEW.md`, 2,850 bytes, SHA-256 `67e20f5dc42afadb52d8cf299b6a7a8891286d1aa70b9972a17c70b407ac4e2e`.
+
+The admitted topology is 8 source pages, 19 top-level items, 7 nested lists,
+4 freestanding display formulas, 2 explicit examples, 1 answered didactic
+prompt, 1 source-display surface, and 61 target MathML nodes. Seven pages carry
+Athena Scientific permission-gated graphics. No source image byte, crop, or
+layout was copied: each is represented by a page-addressed semantic description
+with labels and mathematical relationships. The MIT CC BY-NC-SA 4.0 notice,
+attribution, change marking, noncommercial/ShareAlike obligations, and
+non-endorsement remain in the source and reader. This block has no learner
+exercises, hints, solutions, or interactive computation; that absence is
+recorded, not filled by invention. Browser checks at 1280x720 and 390x844 show
+zero horizontal overflow, duplicate IDs, or console findings. The PDF is
+searchable and `/Lang id-ID` but untagged; human/native-speaker Indonesian
+review remains unrecorded.
+
+The preceding active-cursor wording is historical. The next executable source
+cursor is complete-notes **page 14**, “Modern View of Convex Optimization”; no
+automatic Penn Chapter 6/7 expansion is authorized.
+
+The additive backend gate for this boundary also passes idempotently. It adds
+65 L02 records (8 ordered page segments) to the protected 1,430-record
+baseline, yielding 1,495 records / 92 stable segments. JSONL is 1,076,672
+bytes, SHA-256 `61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`;
+lossless CSV is 1,293,072 bytes, SHA-256
+`146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`; the
+new-ID set is SHA-256
+`1436ab92aa0c80e1aedaf5ae1dce1b2ba28b31a9a88695d6f6d2803bc41789c4`.
+The extension script is 27,926 bytes, SHA-256
+`9c13a77eb1bd6a4d440bd4f765099201ccf1e1bba611423a9689853cac1d8368`; the
+validator is 15,089 bytes, SHA-256
+`5b0999b563b7dd3afa199bd8d89d391772b026035b836d448f2cef418576811a`, and its
+passing receipt is 7,985 bytes, SHA-256
+`6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`.
+
+## 2026-08-23 boundary update — MIT L03 page 14 admitted; next cursor page 15
+
+The complete-notes source-order unit on page 14, “Modern View of Convex
+Optimization,” is admitted as a bounded semantic reader unit. The authority is
+the same MIT 6.253 PDF (8,030,116 bytes / 340 pages / SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`).
+
+- English witness: `source/en/mit-03-modern-view-semantic-witness.md`, 3,961 bytes, SHA-256 `ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605`.
+- Indonesian target: `source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md`, 4,758 bytes, SHA-256 `24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`.
+- HTML: `output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html`, 9,762 bytes, SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`.
+- PDF: `output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf`, 34,550 bytes, 2 A4 pages, SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
+- Validation: `qa/MIT_L03_VALIDATION.json`, 2,836 bytes, SHA-256 `fd92d811343e22192573293745c2f11175ba493f44bc5eb39801dfa6c47daff6`; browser QA `qa/MIT_L03_BROWSER_QA.json`, 1,396 bytes, SHA-256 `3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e`; rereview `qa/MIT_L03_INDEPENDENT_REREVIEW.md`, 2,163 bytes, SHA-256 `daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1`.
+
+The one-page closure has 2 top-level items, 6 nested bullets, 2 omitted source
+figures, zero display formulas, zero images, and no exercises, hints, solutions,
+code, or interactive surface. The two Athena Scientific permission-only
+graphics are represented by exact-locator semantic descriptions; no source
+bytes, crops, or layout were copied. The MIT CC BY-NC-SA 4.0 attribution,
+change marking, NC/SA obligations, and non-endorsement remain explicit. Two
+deterministic builds, desktop/mobile reflow, visual inspection, and independent
+rereview pass with P1=0/P2=0/P3=0. The PDF is searchable, A4, `/Lang id-ID`,
+and untagged; human/native-speaker Indonesian review remains unrecorded.
+
+The current public preservation baseline is corrected Zenodo record
+[10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030), whose
+sanitized anonymous readback is
+`release/zenodo/2026-08-23-mit-l02-correction/zenodo-public-readback-mit-l02-correction.json`,
+9,338 bytes, SHA-256
+`4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. That
+receipt is the corrected L02 lineage; L03 is not silently represented as a
+file in it. The next executable source cursor is complete-notes **page 15**.

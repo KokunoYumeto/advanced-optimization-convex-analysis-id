@@ -2,7 +2,7 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual sebagai pendamping opsional sepuluh unit. Korpus utama D90 yang dipilih adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Pilot sumber semantik MIT pertama, yang mencakup tepat halaman sumber 2–5, telah lolos dan diterima. Batas produksi berikutnya sudah dibekukan sebagai halaman 6–13, dari “Duality” sampai “Exceptional Behavior”; halaman 14 memulai topik berikutnya. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
+**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual sebagai pendamping opsional sepuluh unit. Korpus utama D90 yang dipilih adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT halaman 2–5, 6–13, dan 14 (“Modern View of Convex Optimization”) telah lolos dan diterima. Kursor produksi berikutnya adalah halaman 15. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
@@ -33,6 +33,10 @@ Tidak dibuat repositori pengganti.
 
 - `output/html/D90-MIT-01-peran-kekonveksan-id.html` — permukaan semantik utama pilot MIT halaman sumber 2–5; 20.613 byte; SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`.
 - `output/pdf/D90-MIT-01-peran-kekonveksan-id.pdf` — pembaca A4 pilot MIT halaman sumber 2–5, 3 halaman; SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
+- `output/html/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html` — permukaan semantik MIT halaman sumber 6–13; 38.196 byte; SHA-256 `d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007`.
+- `output/pdf/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf` — pembaca A4 MIT halaman sumber 6–13, 5 halaman; 67.749 byte; SHA-256 `06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
+- `output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html` — permukaan semantik MIT halaman sumber 14; 9.762 byte; SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`.
+- `output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf` — pembaca A4 MIT halaman sumber 14, 2 halaman; 34.550 byte; SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
 - `output/pdf/D90-HAB-03-09-modul-pendamping-id.pdf` — modul Habring Bab 3–9 gabungan, 103 halaman; SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`.
 - `output/pdf/D90-HAB-03-subgradien-id.pdf` — 15 halaman; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
 - `output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf` — 13 halaman; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
@@ -45,7 +49,7 @@ Tidak dibuat repositori pengganti.
 - `output/pdf/D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf` — 17 halaman; current working-tree SHA-256 `18e7162f8d1e55a050ee96a6ba05a2ffaa0d5cb578f96e264152666a79dc83a8` (the previously published Zenodo bytes remain `c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a`).
 - `output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf` — 15 halaman; current working-tree SHA-256 `dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96` (the previously published Zenodo bytes remain `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`).
 
-Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca 1.430-rekaman berada di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
+Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca 1.495-rekaman berada di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
 
 ## Provenans produksi
 
@@ -64,6 +68,10 @@ Prasyarat yang telah diverifikasi: Pandoc, LuaLaTeX, MiKTeX/pdfTeX, `latexmk`, d
 ```powershell
 python qa/build_mit_pilot.py --output-root output/mit-pilot-rebuild
 python qa/validate_mit_pilot.py
+python qa/build_mit_l02.py --output-root output/mit-l02-rebuild
+python qa/validate_mit_l02.py
+python qa/build_mit_l03.py --html-output output/mit-l03-rebuild.html --pdf-output output/mit-l03-rebuild.pdf
+python qa/validate_mit_l03.py
 ```
 
 Dari `source/id-ID`, bangun unit Penn Bab 3–5 dengan pola berikut:
@@ -88,6 +96,8 @@ python qa/audit_penn_ch05_candidate.py
 python qa/validate_penn_ch05_math.py
 python qa/extend_backend_mit_l01.py
 python qa/validate_backend_mit_l01.py
+python qa/extend_backend_mit_l02.py
+python qa/validate_backend_mit_l02.py
 ```
 
 Generator Penn/Habring terdahulu tetap disimpan sebagai bukti transaksi historis, tetapi tidak dijalankan setelah ekstensi MIT; pintu masuk backend hidup adalah pasangan `extend_backend_mit_l01.py` / `validate_backend_mit_l01.py`.
@@ -97,3 +107,67 @@ Rekaman pembangunan lengkap ada di `00_control/BUILD_AND_QA.md`.
 ## Aksesibilitas dan batas saat ini
 
 Semua PDF bersifat dapat dicari dan mendeklarasikan bahasa `id-ID`, tetapi belum bertanda semantik. Sebagian font internal pada gambar vektor Penn Bab 3–4 tidak memiliki peta Unicode lengkap; Penn Bab 5 dan pilot MIT memetakan seluruh fontnya. Pilot MIT mempunyai HTML semantik yang dapat mengalir ulang, dengan struktur heading, MathML, navigasi, tautan lompat, dan pengenal halaman/butir yang telah diuji pada lebar desktop dan ponsel tanpa luapan horizontal. HTML/EPUB semantik untuk korpus lengkap, permukaan komputasi interaktif, lapisan latihan/hint/solusi lengkap, dan peninjauan bahasa independen masih harus diselesaikan. Penn Bab 6 yang sudah diterjemahkan disimpan sebagai kandidat pendamping yang belum diterima; produksi utama tidak berlanjut otomatis ke bab tersebut.
+
+## Batas MIT L02 yang diterima (23 Agustus 2026)
+
+Unit pembaca semantik kedua MIT mencakup tepat halaman sumber 6–13, dari
+“Duality” hingga “Exceptional Behavior”; halaman 14, “Modern View of Convex
+Optimization”, adalah kursor yang berlaku sebelum penerimaan L03. Sumber bahasa Inggris dan bahasa
+Indonesia, HTML, PDF A4 lima halaman, validasi, QA browser, dan peninjauan
+independen tercatat dengan hash lengkap di `00_control/CURRENT_STATE.md` dan
+`00_control/BUILD_AND_QA.md`.
+
+Topologinya adalah 8 halaman, 19 butir tingkat atas, 7 daftar bersarang, 4
+rumus display, 2 contoh, 1 pertanyaan didaktik berjawab, 1 permukaan display,
+dan 61 simpul MathML. Tujuh grafik Athena Scientific yang terikat izin tidak
+disalin sebagai byte atau tata letak; masing-masing diganti deskripsi semantik
+berlokator tepat yang mempertahankan label dan hubungan matematis. Komponen
+MIT tetap CC BY-NC-SA 4.0 dengan atribusi, penandaan perubahan, kewajiban NC/SA,
+dan nondukungan. Batas ini tidak memiliki latihan, petunjuk, solusi, atau
+interaktivitas sumber; tidak ada yang diada-adakan. Validasi, reflow desktop/
+ponsel, pemeriksaan visual, dan rereview independen lulus (P1=0/P2=0/P3=0).
+
+Ini masih karya parsial: halaman sumber yang tersisa, empat jembatan asli,
+laboratorium, lapisan mastery/solusi, capstone, EPUB semantik,
+PDF bertag, dan tinjauan bahasa Indonesia oleh manusia masih terbuka. Tidak ada
+klaim penyelesaian korpus penuh.
+
+Ekstensi backend L02 lulus secara idempoten dan mempertahankan baseline 1.430
+rekaman: backend kini 1.495 rekaman / 92 segmen stabil, dengan 65 rekaman baru.
+`backend/records.jsonl` berukuran 1.076.672 byte (SHA-256
+`61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`) dan
+`backend/records.csv` 1.293.072 byte (SHA-256
+`146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82`). Set ID
+baru SHA-256 `1436ab92aa0c80e1aedaf5ae1dce1b2ba28b31a9a88695d6f6d2803bc41789c4`;
+skrip ekstensi 27.926 byte SHA-256
+`9c13a77eb1bd6a4d440bd4f765099201ccf1e1bba611423a9689853cac1d8368`, validator
+15.089 byte SHA-256
+`5b0999b563b7dd3afa199bd8d89d391772b026035b836d448f2cef418576811a`, dan resi
+`qa/MIT_L02_BACKEND_VALIDATION.json` 7.985 byte SHA-256
+`6a325456a0591b6fe17704b7d0139247bbed8d1a622a18702f86048b45939005`.
+
+## Batas MIT L03 yang diterima (23 Agustus 2026)
+
+Unit pembaca semantik ketiga MIT mencakup tepat halaman sumber 14, “Modern
+View of Convex Optimization”; halaman 15 adalah kursor berikutnya. Sumber
+bahasa Inggris dan bahasa Indonesia, HTML, PDF A4 dua halaman, validasi, QA
+browser, dan rereview independen tercatat dengan hash lengkap di
+`00_control/CURRENT_STATE.md` dan `00_control/BUILD_AND_QA.md`.
+
+Topologinya adalah 1 halaman, 2 butir tingkat atas, 6 butir bersarang, 2
+permukaan grafik yang dihilangkan, 0 rumus display, dan 0 byte gambar. Grafik
+Athena Scientific yang terikat izin tidak disalin sebagai byte, potongan, atau
+tata letak; masing-masing diganti deskripsi semantik berlokator tepat yang
+mempertahankan label dan hubungan matematis. Komponen MIT tetap CC BY-NC-SA 4.0
+dengan atribusi, penandaan perubahan, kewajiban NC/SA, dan nondukungan. Batas
+ini tidak memiliki latihan, petunjuk, solusi, kode, atau interaktivitas sumber;
+tidak ada yang diada-adakan. Validasi, reflow desktop/ponsel, pemeriksaan
+visual, dan rereview independen lulus; PDF dapat dicari, `/Lang id-ID`, tetapi
+belum bertag. Tinjauan bahasa Indonesia oleh manusia belum tercatat.
+
+Preservasi publik saat ini tetap berada pada koreksi Zenodo
+[10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030), dengan resi
+baca anonim 9.338 byte SHA-256
+`4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. Resi itu
+adalah garis keturunan koreksi L02 dan tidak secara diam-diam mengklaim berkas
+L03 sebagai sudah publik. Korpus lengkap tetap belum selesai.

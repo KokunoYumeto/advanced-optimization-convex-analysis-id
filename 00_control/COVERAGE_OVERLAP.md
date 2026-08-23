@@ -45,4 +45,53 @@ MIT has 27 numbered homework problems with paired solutions and four top-level m
 
 Do not claim editable mathematical TeX for MIT or Royer: both selected mathematical surfaces are currently PDF-derived, while the MIT repository is OCW/Hugo metadata rather than the mathematical source. Do not use lossy OCR, Athena figure bytes/layout, a blanket repository license, systematic solutions not actually present, complete human Indonesian review, tagged PDF, or completed semantic HTML/EPUB unless separately proved.
 
-The earlier three-candidate comparator supported Penn/Habring as an editable production choice, but the later full-course curriculum decision superseded it for the primary spine because that composite lacks a complete solved KKT/variational/stochastic course arc. The bounded search is closed. Production now proceeds from the admitted MIT source-pages 2--5 pilot to the exact page 6--13 block, “Duality” through “Exceptional Behavior,” frozen in `MIT_L02_BOUNDARY_CENSUS.md`. Page 14 starts the next topic. This is a production cursor, not another inventory loop.
+The earlier three-candidate comparator supported Penn/Habring as an editable production choice, but the later full-course curriculum decision superseded it for the primary spine because that composite lacks a complete solved KKT/variational/stochastic course arc. The bounded search is closed. The preceding sentence's production-cursor wording is historical: the exact page 6--13 block, “Duality” through “Exceptional Behavior,” is now admitted, and page 14 starts the next topic. This remains a production cursor, not another inventory loop.
+
+## MIT L02 boundary admitted (2026-08-23)
+
+Pages 6--13 are now a bounded admitted semantic reader unit. The block covers
+Fenchel/conjugate duality, geometric min-common/max-crossing duality, the
+abstract framework, and exceptional nonclosed behavior. It is additive to the
+MIT pages 2--5 pilot and does not duplicate O018's LP/MIP, tableau, network, or
+operations-research workflow. The preceding L02 statement that page 14 was
+excluded is historical; page 14 is now admitted by the L03 section below, and
+page 15 is the next source cursor.
+
+The exact closure is 8 pages, 19 top-level items, 7 nested lists, 4 display
+formulas, 2 examples, 1 answered prompt, 1 source-display, and 61 target
+MathML nodes. Seven source graphics are Athena Scientific permission-gated;
+none is copied as an image byte, crop, or layout. Page-addressed semantic
+descriptions preserve the mathematical labels and relationships. The MIT
+component remains CC BY-NC-SA 4.0 with its own attribution, change marking,
+NC/SA obligations, and non-endorsement. The source boundary has no exercises,
+hints, solutions, or interactives, so those remain a documented learner gap.
+
+The unit's source, witness, HTML, PDF, and QA identities are controlled in
+`CURRENT_STATE.md` and `BUILD_AND_QA.md`; validation returns `errors=[]` and
+the deterministic/browser/visual/rereview gates pass. Remaining curriculum
+gaps are the untranslated MIT/Royer pages, original bridges, laboratories,
+mastery/solution layer, capstone, semantic EPUB, tagged PDF, and human
+Indonesian review. No final-corpus or complete-course claim is permitted.
+
+## MIT L03 page-14 boundary admitted (2026-08-23)
+
+Page 14, “Modern View of Convex Optimization,” is now an admitted one-page
+semantic reader unit following the L02 duality block. It records the source's
+traditional/modern framing and remains distinct from O018's LP/MIP, tableau,
+network, and operations-research workflow. Page 15 is the next source cursor.
+
+The exact closure is 2 top-level items, 6 nested bullets, 2 source-figure
+surfaces, zero display formulas, and zero copied image bytes. Both Athena
+Scientific permission-only graphics are represented by page-addressed semantic
+descriptions retaining labels and mathematical relationships. The MIT component
+remains CC BY-NC-SA 4.0 with its own attribution, change marking, NC/SA
+obligations, and non-endorsement. No exercises, hints, solutions, code, or
+interactive surface occurs in this boundary, so none is claimed.
+
+The source, witness, target, HTML, PDF, validation, browser, and rereview
+identities are controlled in `CURRENT_STATE.md` and `BUILD_AND_QA.md`; all
+bounded gates pass. The corrected Zenodo record `10.5281/zenodo.22071030` is
+the current public L02 preservation baseline, not silent publication evidence
+for L03. Remaining gaps are the untranslated source pages, original bridges,
+laboratories, mastery/solution layer, capstone, semantic EPUB, tagged PDF, and
+human Indonesian review.
