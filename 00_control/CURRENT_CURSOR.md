@@ -193,3 +193,59 @@ The failed L04 HTTP 504 transaction published no L04 record, and no standalone
 L04 release will be made. The next source cursor is page 16, which opens a
 coherent multi-page source section/batch; translation, QA, backend admission,
 and preservation must close once for that batch rather than per page.
+
+## 2026-08-23 controlling refresh — L05 admitted; Lecture 2 pages 20–28 active
+
+This entry supersedes the page-16-open cursor. MIT L05 now admits the coherent
+course-orientation boundary on complete-notes pages 16–19. Its exact reader
+identities are: English witness 7,120 bytes /
+`3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f`;
+Indonesian target 8,702 bytes /
+`65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc`;
+HTML 16,029 bytes /
+`424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`;
+PDF 46,785 bytes /
+`2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`;
+and CSS 2,636 bytes /
+`d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645`.
+
+Validation, live-browser, visual, and rereview receipts are respectively 4,195
+bytes / `2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa`,
+1,271 bytes / `24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342`,
+1,544 bytes / `d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04`,
+and 3,066 bytes / `c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9`;
+all pass. Correction `O015-MIT-SEM-0004` is admitted and frozen in the
+642-byte snapshot SHA-256
+`c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+
+The final L05 backend gate passes at 1,605 records, 62 additions over the exact
+1,543-record protected L04 baseline. JSONL is 1,142,443 bytes /
+`30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b`;
+CSV is 1,373,874 bytes /
+`f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3`.
+Generator, validator, and final passing-receipt hashes are
+`6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c`,
+`d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab`,
+and `7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc`.
+
+The active production unit is the complete Lecture 2 boundary, pages 20–28.
+Its controlling census is `00_control/MIT_L06_LECTURE_2_PAGES_020-028_BOUNDARY_CENSUS.md`,
+9,962 bytes, SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`.
+The English witness and Indonesian target are drafted but not admitted;
+building and consolidated QA remain in progress. Page 29 begins Lecture 3 and
+is the next-after-batch cursor. No standalone L04 Zenodo version exists; the
+combined L04+L05 Zenodo checkpoint and the L05 GitHub push are pending.
+`00_control/CURRENT_GOAL_AND_WORKFLOW.md` remains the resumption authority.
+
+## 2026-08-23 cursor refresh — L04+L05 Zenodo closed
+
+The pending-Zenodo wording above is superseded by public record `22072071`,
+DOI `10.5281/zenodo.22072071`, in the existing concept lineage. Anonymous
+readback matched all 50 public files and the exact receipt at
+`release/zenodo/2026-08-23-mit-l04-l05/zenodo-public-readback-mit-l04-l05.json`
+(14,060 bytes; SHA-256
+`89266a7b3a332081aaef9d591eb1df449c6b0a1ab0a8526a1b91f27b8be01cd5`).
+The active source cursor does not change: complete Lecture 2 pages 20–28 are
+one in-progress batch, and page 29 begins Lecture 3. The remaining publication
+action for the admitted L05 boundary is the narrow GitHub checkpoint.

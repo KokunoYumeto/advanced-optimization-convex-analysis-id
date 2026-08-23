@@ -1,0 +1,130 @@
+{
+  "boundary": {
+    "inline_math_surfaces": 0,
+    "nested_bullets": 26,
+    "next_heading": "LECTURE 2",
+    "next_source_page": 20,
+    "source_displays": 0,
+    "source_figures": 0,
+    "source_headings": [
+      "METHODOLOGICAL TRENDS",
+      "COURSE OUTLINE",
+      "WHAT TO EXPECT FROM THIS COURSE",
+      "A NOTE ON THESE SLIDES"
+    ],
+    "source_items": 16,
+    "source_pdf_pages": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "source_uris": [
+      "http://www.athenasc.com/convexduality.html",
+      "http://www.stanford.edu/~boyd/cvxbook/"
+    ]
+  },
+  "browser_measurement": "pass",
+  "build": {
+    "command": "python qa/build_mit_l05.py --html-output <html> --pdf-output <pdf>",
+    "deterministic_rebuilds": 2,
+    "html_sha256": "424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83",
+    "pdf_sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0",
+    "toolchain": "Pandoc HTML5 and LuaLaTeX"
+  },
+  "errors": [],
+  "files": {
+    "browser_qa": {
+      "bytes": 1271,
+      "path": "qa/MIT_L05_BROWSER_QA.json",
+      "sha256": "24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342"
+    },
+    "builder": {
+      "bytes": 3598,
+      "path": "qa/build_mit_l05.py",
+      "sha256": "e73c411cb4e1619b326af78b2cc8e72c4fcc80bc9e404b7077ece948bf8c6df8"
+    },
+    "css": {
+      "bytes": 2636,
+      "path": "source/id-ID/mit-l05.css",
+      "sha256": "d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645"
+    },
+    "html": {
+      "bytes": 16029,
+      "path": "output/html/D90-MIT-05-orientasi-kursus-id.html",
+      "sha256": "424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83"
+    },
+    "pdf": {
+      "bytes": 46785,
+      "path": "output/pdf/D90-MIT-05-orientasi-kursus-id.pdf",
+      "sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0"
+    },
+    "rereview": {
+      "bytes": 3066,
+      "path": "qa/MIT_L05_INDEPENDENT_REREVIEW.md",
+      "sha256": "c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9"
+    },
+    "source_pdf": {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    "target": {
+      "bytes": 8702,
+      "path": "source/id-ID/mit-05-orientasi-kursus-id.md",
+      "sha256": "65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc"
+    },
+    "visual_qa": {
+      "bytes": 1544,
+      "path": "qa/MIT_L05_VISUAL_QA.json",
+      "sha256": "d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04"
+    },
+    "witness": {
+      "bytes": 7120,
+      "path": "source/en/mit-05-course-orientation-semantic-witness.md",
+      "sha256": "3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f"
+    }
+  },
+  "html": {
+    "duplicate_ids": [],
+    "headings": {
+      "h1": 1,
+      "h2": 6
+    },
+    "images": 0,
+    "lang": "id-ID",
+    "math": 0,
+    "source_figures": 0,
+    "source_items": 16,
+    "source_pages": 4,
+    "unresolved_fragments": []
+  },
+  "human_native_speaker_review": false,
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "pdf": {
+    "page_size": "A4",
+    "pages": 3,
+    "render_sha256": [
+      "8eb2b8ef60b5bd96f63f4d8523b406106cce198370481eb4c93224412440f3d7",
+      "162ec00ed10f6b95a3b31c8456fcc44c69f82972758827e979a8b5aca933f7fe",
+      "f351a2a526ae555f5d487121b0d20d43e458775cfbf7ddb6dc90371d4697869f"
+    ],
+    "searchable": true,
+    "tagged": false
+  },
+  "recorded_at": "2026-08-23T21:30:00Z",
+  "result": "pass",
+  "rights": {
+    "component": "MIT OCW 6.253 complete-notes",
+    "license": "CC BY-NC-SA 4.0",
+    "non_endorsement": true,
+    "source_graphics": 0
+  },
+  "schema": "o015-mit-l05-validation-v2",
+  "source_page_text_sha256": {
+    "16": "5192187d4f6f53dfcbe2e0d79beff210f965b12d37cf494a8ceb26ce56ca2383",
+    "17": "7b90f697624e842c3f211d24bee9c1f22c8dc5925163425d400eec49ebbf8f94",
+    "18": "389f37d1667406925e647eb187a2bb1a41607870490b0c1826f9e63ec47d8a58",
+    "19": "400b53bb05d046cc9d8f8608ee761dc1b26851bff312ff36b54b2192fa6fd38e"
+  }
+}

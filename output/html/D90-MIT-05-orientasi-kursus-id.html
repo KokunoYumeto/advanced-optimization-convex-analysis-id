@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="dcterms.date" content="2026-08-23" />
+  <meta name="keywords" content="tren metodologis, garis besar
+kursus, analisis kompleksitas, optimisasi konveks, id-ID" />
+  <meta name="description" content="Rekonstruksi semantik yang dapat mengalir ulang dari blok orientasi kursus empat halaman, dengan pengenal stabil, referensi, dan tautan yang dapat diakses." />
+  <title>Tren Metodologis dan Orientasi Kursus</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f4f6fb;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6fb; }
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus { transform: translateY(0); }
+body > main, body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header { padding: 3.5rem 0 1.25rem; }
+body > main > header h1 {
+max-width: 24ch;
+margin: 0;
+font-size: clamp(2.2rem, 5vw, 4.5rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 54rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c8d1e4;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 5rem; }
+main > section, .edition-notice, .source-page, .edition-backmatter {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.6rem);
+border: 1px solid #c8d1e4;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+h2 { margin-top: 0; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; }
+li + li { margin-top: 0.55rem; }
+.source-item { margin: 0.65rem 0; }
+.edition-notice {
+margin: 1.25rem 0;
+padding: 1rem 1.15rem;
+border-left: 0.32rem solid #5c3bbf;
+border-radius: 0.4rem;
+background: #f2effd;
+}
+.source-figure {
+margin: 1rem 0;
+padding: 1rem 1.15rem;
+border: 1px dashed #7481a0;
+border-radius: 0.55rem;
+background: #f7f9fd;
+color: #27324a;
+}
+.source-figure strong { color: #4b2d9c; }
+.source-locator { display: inline-block; margin-top: 1rem; color: #58647d; font-size: 0.92rem; }
+math[display="block"] { overflow-x: auto; padding: 0.4rem 0; }
+a { color: #244fa3; text-underline-offset: 0.16em; }
+a.uri { overflow-wrap: anywhere; word-break: break-word; }
+a:focus-visible { outline: 0.2rem solid #f09a2b; outline-offset: 0.18rem; }
+@media (max-width: 48rem) {
+body > main, body > footer { width: min(94vw, 78rem); }
+#TOC ul { columns: 1; }
+.source-page, .edition-notice, .edition-backmatter { border-radius: 0.65rem; }
+}
+@media print {
+:root, body { background: white; }
+main > section, .edition-notice, .source-page, .edition-backmatter { box-shadow: none; break-inside: avoid; }
+.source-figure { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l05-p016">Langsung ke blok orientasi kursus</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Tren Metodologis dan Orientasi Kursus</h1>
+<p class="subtitle">MIT 6.253 - Edisi Indonesia, halaman sumber
+16-19</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="date">2026-08-23</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tentang-batas-ini" id="toc-tentang-batas-ini"><span class="toc-section-number">1</span> Tentang batas ini</a></li>
+<li><a href="#tren-metodologis" id="toc-tren-metodologis"><span class="toc-section-number">2</span> Tren Metodologis</a></li>
+<li><a href="#garis-besar-kursus" id="toc-garis-besar-kursus"><span class="toc-section-number">3</span> Garis Besar Kursus</a></li>
+<li><a href="#apa-yang-dapat-diharapkan-dari-kursus-ini" id="toc-apa-yang-dapat-diharapkan-dari-kursus-ini"><span class="toc-section-number">4</span> Apa yang Dapat Diharapkan dari
+Kursus Ini</a></li>
+<li><a href="#catatan-tentang-slide-ini" id="toc-catatan-tentang-slide-ini"><span class="toc-section-number">5</span> Catatan tentang Slide Ini</a></li>
+<li><a href="#identitas-sumber-dan-batas-edisi" id="toc-identitas-sumber-dan-batas-edisi"><span class="toc-section-number">6</span> Identitas Sumber dan Batas
+Edisi</a></li>
+</ul>
+</nav>
+<div id="d90-mit-l05-edition-notice" class="edition-notice">
+<section id="tentang-batas-ini" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Tentang
+batas ini</h2>
+<p>Ini adalah rekonstruksi sumber semantik dan terjemahan bahasa
+Indonesia dari Dimitri P. Bertsekas, <em>Convex Analysis and
+Optimization</em>, MIT OpenCourseWare 6.253, Spring 2012, halaman PDF
+sumber 16-19. Keempat halaman ini membentuk blok orientasi kursus
+penutup yang utuh: tren metodologis, garis besar kursus, harapan dan
+persyaratan kursus, serta catatan tentang fungsi slide. Halaman 20
+memulai <strong>Kuliah 2</strong> dan tidak termasuk. Materi sumber
+berada di bawah <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>.</p>
+<p>Keempat halaman sumber hanya berupa teks dan daftar; tidak ada grafik
+atau aset gambar yang disalin. Dua URI hidup pada halaman sumber 17
+dipertahankan sebagai tautan semantik. Bantuan produksi dan QA:
+<strong>OpenAI Codex gpt-5.6-sol, Ultra</strong>, atas arahan pengguna
+repositori. Sistem tersebut bukan penulis sumber atau pemberi lisensi.
+Tidak ada dukungan oleh MIT atau penulis sumber yang tersirat. Tinjauan
+bahasa manusia/penutur asli belum tercatat.</p>
+<p>Istilah teknis dipertahankan secara konsisten: <em>interior
+point</em> menjadi “titik interior”, <em>subgradient</em> menjadi
+“subgradien”, <em>proximal</em> menjadi “proksimal”, dan
+<em>polyhedral</em> menjadi “polihedral”. Istilah <em>incremental</em>
+diterjemahkan sebagai “inkremental”; pengulangan istilah pada sumber
+sengaja dipertahankan. Halaman 17 mencetak nama “Vanderbergue”,
+sedangkan halaman 18 mencetak “Vandenberghe”. Edisi pembelajar memakai
+ejaan penulis yang benar, “Vandenberghe”, dan mencatat koreksi nama
+sumber ini sebagai <code>O015-MIT-SEM-0004</code>.</p>
+<p>Pengenal stabil tetap melekat pada keempat halaman dan keenam belas
+butirnya, meskipun HTML atau PDF mengalir ulang ke ukuran layar atau
+halaman yang berbeda.</p>
+</section>
+</div>
+<div id="d90-mit-l05-p016" class="source-page" data-source-page="16" data-source-order="1">
+<section id="tren-metodologis" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span> Tren
+Metodologis</h2>
+<div id="d90-mit-l05-p016-i001" class="source-item" data-source-page="16" data-source-order="1">
+<ul>
+<li><p><strong>Metode baru, minat yang diperbarui pada metode
+lama.</strong></p>
+<ul>
+<li>Metode titik interior</li>
+<li>Metode subgradien/inkremental</li>
+<li>Aproksimasi polihedral/metode bidang potong</li>
+<li>Metode regularisasi/proksimal</li>
+<li>Metode inkremental</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p016-i002" class="source-item" data-source-page="16" data-source-order="2">
+<ul>
+<li><p><strong>Penekanan kembali pada analisis kompleksitas</strong></p>
+<ul>
+<li>Nesterov, Nemirovski, dan lain-lain …</li>
+<li>“Algoritme optimal” (misalnya, metode gradien terekstrapolasi)</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p016-i003" class="source-item" data-source-page="16" data-source-order="3">
+<ul>
+<li><strong>Penekanan pada struktur khusus berskala besar yang menarik
+(sering kali berkaitan dengan dualitas)</strong></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 16.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l05-p017" class="source-page" data-source-page="17" data-source-order="2">
+<section id="garis-besar-kursus" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span> Garis
+Besar Kursus</h2>
+<div id="d90-mit-l05-p017-i001" class="source-item" data-source-page="17" data-source-order="1">
+<ul>
+<li><p><strong>Kita akan mengikuti dengan saksama buku teks</strong></p>
+<ul>
+<li>Bertsekas, <em>Convex Optimization Theory</em>, Athena Scientific,
+2009, termasuk Bab 6 daring dan materi pelengkap di <a href="http://www.athenasc.com/convexduality.html" class="uri">http://www.athenasc.com/convexduality.html</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p017-i002" class="source-item" data-source-page="17" data-source-order="2">
+<ul>
+<li><p><strong>Referensi buku tambahan:</strong></p>
+<ul>
+<li>Rockafellar, <em>Convex Analysis</em>, 1970.</li>
+<li>Boyd dan Vandenberghe, <em>Convex Optimization</em>, Cambridge U.
+Press, 2004. (Daring di <a href="http://www.stanford.edu/~boyd/cvxbook/" class="uri">http://www.stanford.edu/~boyd/cvxbook/</a>.)</li>
+<li>Bertsekas, Nedic, dan Ozdaglar, <em>Convex Analysis and
+Optimization</em>, Ath. Scientific, 2003.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p017-i003" class="source-item" data-source-page="17" data-source-order="3">
+<ul>
+<li><p><strong>Topik</strong> (rancangan teks bersifat modular, dan
+urutan berikut tidak menghilangkan kesinambungan):</p>
+<ul>
+<li><strong>Konsep Dasar Kekonveksan:</strong> Bag. 1.1-1.4.</li>
+<li><strong>Kekonveksan dan Optimisasi:</strong> Bab 3.</li>
+<li><strong>Hiperbidang dan Konjugasi:</strong> Bag. 1.5, 1.6.</li>
+<li><strong>Kekonveksan Polihedral:</strong> Bab 2.</li>
+<li><strong>Kerangka Dualitas Geometris:</strong> Bab 4.</li>
+<li><strong>Teori Dualitas:</strong> Bag. 5.1-5.3.</li>
+<li><strong>Subgradien:</strong> Bag. 5.4.</li>
+<li><strong>Algoritme:</strong> Bab 6.</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 17.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l05-p018" class="source-page" data-source-page="18" data-source-order="3">
+<section id="apa-yang-dapat-diharapkan-dari-kursus-ini" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span> Apa
+yang Dapat Diharapkan dari Kursus Ini</h2>
+<div id="d90-mit-l05-p018-i001" class="source-item" data-source-page="18" data-source-order="1">
+<ul>
+<li><strong>Persyaratan:</strong> tugas rumah (25%), ujian tengah
+semester (25%), dan makalah akhir (50%)</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p018-i002" class="source-item" data-source-page="18" data-source-order="2">
+<ul>
+<li><p><strong>Tujuan kita:</strong></p>
+<ul>
+<li>Mengembangkan wawasan dan pemahaman mendalam tentang suatu topik
+optimisasi yang fundamental</li>
+<li>Membahas dengan ketelitian matematis suatu cabang penting penelitian
+metodologis dan memberikan gambaran tentang keadaan mutakhir bidang
+ini</li>
+<li>Memahami keunggulan, keterbatasan, dan karakteristik dari beragam
+algoritme yang tersedia</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p018-i003" class="source-item" data-source-page="18" data-source-order="3">
+<ul>
+<li><p><strong>Tingkat matematis:</strong></p>
+<ul>
+<li>Prasyaratnya adalah aljabar linear (sebaiknya abstrak) dan analisis
+real (masing-masing satu mata kuliah)</li>
+<li>Bukti akan penting … tetapi geometri subjek yang kaya membantu
+memandu matematikanya</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l05-p018-i004" class="source-item" data-source-page="18" data-source-order="4">
+<ul>
+<li><p><strong>Aplikasi:</strong></p>
+<ul>
+<li>Aplikasinya banyak dan tersebar luas … tetapi jangan mengharapkan
+banyak aplikasi dalam kursus ini. Buku Boyd dan Vandenberghe menjelaskan
+banyak model praktis optimisasi konveks</li>
+<li>Makalah akhir dapat dikerjakan mengenai suatu bidang aplikasi</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 18.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l05-p019" class="source-page" data-source-page="19" data-source-order="4">
+<section id="catatan-tentang-slide-ini" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span> Catatan
+tentang Slide Ini</h2>
+<div id="d90-mit-l05-p019-i001" class="source-item" data-source-page="19" data-source-order="1">
+<ul>
+<li>Slide ini merupakan alat bantu pengajaran, bukan buku teks</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p019-i002" class="source-item" data-source-page="19" data-source-order="2">
+<ul>
+<li>Jangan mengharapkan pengembangan matematis yang ketat</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p019-i003" class="source-item" data-source-page="19" data-source-order="3">
+<ul>
+<li>Pernyataan teorema cukup presisi, tetapi buktinya tidak</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p019-i004" class="source-item" data-source-page="19" data-source-order="4">
+<ul>
+<li>Banyak bukti telah dihilangkan atau sangat dipersingkat</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p019-i005" class="source-item" data-source-page="19" data-source-order="5">
+<ul>
+<li>Gambar dimaksudkan untuk menyampaikan dan meningkatkan pemahaman
+gagasan, bukan untuk mengungkapkannya secara presisi</li>
+</ul>
+</div>
+<div id="d90-mit-l05-p019-i006" class="source-item" data-source-page="19" data-source-order="6">
+<ul>
+<li>Bukti yang dihilangkan dan pembahasan yang lebih lengkap dapat
+ditemukan dalam buku teks <em>Convex Optimization Theory</em> dan materi
+pelengkapnya</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 19.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l05-backmatter" class="edition-backmatter">
+<section id="identitas-sumber-dan-batas-edisi" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span>
+Identitas Sumber dan Batas Edisi</h2>
+<ul>
+<li>Sumber: Dimitri P. Bertsekas, <em>Lecture Slides on Convex Analysis
+and Optimization</em>, berdasarkan MIT 6.253, Spring 2012.</li>
+<li>Batas tepat: halaman PDF lengkap 16-19. Halaman 20 memulai
+<strong>Kuliah 2</strong> dan merupakan penerus bersih dalam urutan
+sumber.</li>
+<li>Topologi: empat halaman sumber, empat judul, enam belas butir
+tingkat atas, dan dua puluh enam butir bertingkat. Halaman 17 membawa
+dua anotasi URI hidup; keduanya dipertahankan sebagai tautan
+semantik.</li>
+<li>Permukaan: keempat halaman ini tidak memuat rumus matematika, grafik
+sumber, tabel, contoh yang dikerjakan, latihan pembelajar, petunjuk,
+solusi, kode, atau komputasi interaktif. Halaman 19 membahas peran
+gambar dalam rangkaian slide, tetapi tidak memuat gambar. Tidak ada byte
+gambar, potongan, atau tata letak sumber yang disalin.</li>
+<li>Koreksi nama sumber <code>O015-MIT-SEM-0004</code>: halaman 17
+mencetak “Vanderbergue”, sedangkan halaman 18 mencetak “Vandenberghe”.
+Edisi pembelajar menggunakan ejaan penulis yang benar, “Vandenberghe”,
+dan mengungkapkan perubahan tersebut alih-alih memperbaikinya secara
+diam-diam.</li>
+<li>Hak: komponen turunan ini tetap CC BY-NC-SA 4.0, dengan kewajiban
+atribusi, penandaan perubahan, penggunaan nonkomersial, ShareAlike, dan
+nondukungan.</li>
+</ul>
+</section>
+</div>
+<p><em><span class="source-locator">Halaman sumber
+16-19.</span></em></p>
+</main>
+</body>
+</html>

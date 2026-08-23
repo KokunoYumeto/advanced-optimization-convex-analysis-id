@@ -1,0 +1,134 @@
+{
+  "addition_file_count": 10,
+  "addition_material_files": [
+    {
+      "bytes": 482954,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L04_L05_DELTA.zip",
+      "sha256": "96e323fb190462747a3e4b97c21211fc63f7e555ae029c7b683078ac28ac8c17"
+    },
+    {
+      "bytes": 9975,
+      "filename": "D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+      "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"
+    },
+    {
+      "bytes": 36971,
+      "filename": "D90-MIT-04-kebangkitan-era-algoritmik-id.pdf",
+      "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"
+    },
+    {
+      "bytes": 16029,
+      "filename": "D90-MIT-05-orientasi-kursus-id.html",
+      "sha256": "424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83"
+    },
+    {
+      "bytes": 46785,
+      "filename": "D90-MIT-05-orientasi-kursus-id.pdf",
+      "sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0"
+    },
+    {
+      "bytes": 1261,
+      "filename": "README_MIT_L04_L05.md",
+      "sha256": "35d909feff9c2ba7f36f350cb182e47b2bad3234ff68c0449096745582c7e917"
+    },
+    {
+      "bytes": 916,
+      "filename": "README_RELEASE_MIT_L04_L05.md",
+      "sha256": "ebc9153a4a7bb0edfedf5631f2b0d1adce8b68b87c3cbd4d25419cf1dab9d482"
+    },
+    {
+      "bytes": 988,
+      "filename": "RIGHTS_MIT_L04_L05.md",
+      "sha256": "616717d5773e02600ad5fb0602460fb77cf6e3e3d3f53a6453d53a54fb8c30c6"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes PDF pages 15-19, L04 and L05",
+  "admitted_source_pages": [
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "complete_corpus": false,
+  "component_rights": {
+    "inherited_griffin_penn_components": "CC BY-NC-SA 3.0 United States",
+    "inherited_habring_components": "CC BY 4.0",
+    "inherited_royer_source_freeze": "CC BY-NC 4.0",
+    "new_mit_readers_and_semantic_sources": "CC BY-NC-SA 4.0",
+    "new_project_build_qa_backend_and_control": "project-local tooling and evidence; no blanket reuse grant asserted"
+  },
+  "delta_bundle_verification": {
+    "entries": 53,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 52
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l04-l05.json",
+    "SHA256SUMS-mit-l04-l05"
+  ],
+  "human_native_speaker_review": false,
+  "inherited_file_count": 40,
+  "lane_closure": {
+    "l04": {
+      "backend_validation": {
+        "bytes": 7178,
+        "filename": "MIT_L04_BACKEND_VALIDATION.json",
+        "sha256": "59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204"
+      },
+      "content_validation": {
+        "bytes": 3400,
+        "filename": "MIT_L04_VALIDATION.json",
+        "sha256": "891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd"
+      },
+      "next_source_page": 16,
+      "result": "pass",
+      "source_pages": [
+        15
+      ]
+    },
+    "l05": {
+      "backend_validation": {
+        "bytes": 5108,
+        "filename": "MIT_L05_BACKEND_VALIDATION.json",
+        "sha256": "7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc"
+      },
+      "content_validation": {
+        "bytes": 4195,
+        "filename": "MIT_L05_VALIDATION.json",
+        "sha256": "2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa"
+      },
+      "next_source_page": 20,
+      "result": "pass",
+      "source_pages": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  "metadata_template": {
+    "bytes": 4822,
+    "filename": "zenodo-record-mit-l04-l05.json",
+    "sha256": "6adfcead0af4d6d6e1b61616bd8ed4320862e5be502694fc82408d5f6d615ba9"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "next_boundary": "MIT 6.253 complete-notes PDF page 20, LECTURE 2",
+  "parent_record_doi": "10.5281/zenodo.22071175",
+  "parent_record_id": "22071175",
+  "publication_date": "2026-08-23",
+  "reader_pdfs_tagged": false,
+  "release_file_count": 50,
+  "rights_notice": "Rights are component-specific; no umbrella license replaces inherited component rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v1",
+  "semantic_html_primary": true,
+  "status": "partial / finishing",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.23-mit-p15-19",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": "10.5281/zenodo.22072071",
+  "zenodo_record_id": "22072071"
+}

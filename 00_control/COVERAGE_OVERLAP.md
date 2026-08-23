@@ -136,3 +136,33 @@ coverage, overlap, rights, QA, backend, and preservation are evaluated once at
 that batch boundary. Remaining gaps are later MIT/Royer material, original
 bridges, laboratories, mastery/solution coverage, capstone, semantic EPUB,
 tagged PDF, and human Indonesian review.
+
+## MIT L05 pages 16–19 admitted; Lecture 2 draft remains outside coverage (2026-08-23)
+
+Pages 16–19 close the course-orientation material as one admitted L05 boundary:
+methodological trends, course outline, expectations, and the note on slide use.
+This is historical and curricular framing for convex analysis and optimization,
+not O018's LP/MIP modelling, simplex/tableau, finite LP duality/sensitivity,
+network, discrete-optimization, or general operations-research workflow. The
+closure has 16 top-level items, 26 nested bullets, two source URIs, zero formula
+surfaces, zero figures, and no exercises, solutions, code, or interactivity.
+`O015-MIT-SEM-0004` is admitted as a disclosed correction of the printed author
+surname, with its immutable 642-byte snapshot bound to SHA-256
+`c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+
+All L05 reader, browser, visual, rereview, rights, and backend gates pass; the
+1,605-record backend adds 62 records to the exact protected 1,543-record L04
+baseline. Exact artifact identities are controlled in `CURRENT_STATE.md` and
+`BUILD_AND_QA.md`. No standalone L04 Zenodo version exists. The combined
+L04+L05 Zenodo checkpoint and the GitHub push containing L05 are pending, so
+the local L05 bytes are not represented as public here.
+
+The next coherent production boundary is complete Lecture 2, pages 20–28. Its
+9,962-byte census (SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`)
+freezes the batch and its separation from page 29, which begins Lecture 3. The
+Lecture 2 witness and Indonesian target are drafts only: they are unadmitted and
+their build/QA is in progress, so they do not yet enlarge admitted coverage.
+Remaining gaps are later MIT/Royer material, original bridges, laboratories,
+mastery/solution coverage, capstone, semantic EPUB, tagged PDF, and human
+Indonesian review.

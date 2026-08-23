@@ -1,0 +1,149 @@
+{
+  "admission": {
+    "correction_id": "correction.o015-mit-sem-0004",
+    "external_uris": [
+      "http://www.athenasc.com/convexduality.html",
+      "http://www.stanford.edu/~boyd/cvxbook/"
+    ],
+    "nested_bullets": 26,
+    "new_entity_counts": {
+      "artifact": 19,
+      "correction": 1,
+      "learning_surface": 2,
+      "qa_event": 16,
+      "relation": 19,
+      "segment": 4,
+      "unit": 1
+    },
+    "new_ids_sha256": "6fd361454905c89abac7b717c768ff8a37e54eba46b21b90de9956bcd8ab829a",
+    "new_record_count": 62,
+    "segment_ids": [
+      "d90.mit.ocw-6.253.l05.p016",
+      "d90.mit.ocw-6.253.l05.p017",
+      "d90.mit.ocw-6.253.l05.p018",
+      "d90.mit.ocw-6.253.l05.p019"
+    ],
+    "top_level_items": 16,
+    "unit_id": "unit.mit.ocw-6.253.l05"
+  },
+  "backend": {
+    "csv": {
+      "bytes": 1373874,
+      "sha256": "f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3"
+    },
+    "jsonl": {
+      "bytes": 1142443,
+      "sha256": "30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b"
+    },
+    "record_count": 1605
+  },
+  "canonical_identities": {
+    "authority_pdf": {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    "backend_generator": {
+      "bytes": 35174,
+      "path": "qa/extend_backend_mit_l05.py",
+      "sha256": "6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c"
+    },
+    "backend_validator": {
+      "bytes": 27004,
+      "path": "qa/validate_backend_mit_l05.py",
+      "sha256": "d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab"
+    },
+    "browser_qa": {
+      "bytes": 1271,
+      "path": "qa/MIT_L05_BROWSER_QA.json",
+      "sha256": "24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342"
+    },
+    "builder": {
+      "bytes": 3598,
+      "path": "qa/build_mit_l05.py",
+      "sha256": "e73c411cb4e1619b326af78b2cc8e72c4fcc80bc9e404b7077ece948bf8c6df8"
+    },
+    "content_validation": {
+      "bytes": 4195,
+      "path": "qa/MIT_L05_VALIDATION.json",
+      "sha256": "2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa"
+    },
+    "content_validator": {
+      "bytes": 22229,
+      "path": "qa/validate_mit_l05.py",
+      "sha256": "1022321da23091c1923e4051f51e6a5162b13cf3f9f6645424ce41222eb8dc3e"
+    },
+    "css": {
+      "bytes": 2636,
+      "path": "source/id-ID/mit-l05.css",
+      "sha256": "d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645"
+    },
+    "html": {
+      "bytes": 16029,
+      "path": "output/html/D90-MIT-05-orientasi-kursus-id.html",
+      "sha256": "424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83"
+    },
+    "independent_rereview": {
+      "bytes": 3066,
+      "path": "qa/MIT_L05_INDEPENDENT_REREVIEW.md",
+      "sha256": "c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9"
+    },
+    "ledger_snapshot": {
+      "bytes": 642,
+      "path": "00_control/MIT_L05_CORRECTION_SNAPSHOT.jsonl",
+      "sha256": "c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595"
+    },
+    "pdf": {
+      "bytes": 46785,
+      "path": "output/pdf/D90-MIT-05-orientasi-kursus-id.pdf",
+      "sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0"
+    },
+    "target": {
+      "bytes": 8702,
+      "path": "source/id-ID/mit-05-orientasi-kursus-id.md",
+      "sha256": "65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc"
+    },
+    "visual_qa": {
+      "bytes": 1544,
+      "path": "qa/MIT_L05_VISUAL_QA.json",
+      "sha256": "d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04"
+    },
+    "witness": {
+      "bytes": 7120,
+      "path": "source/en/mit-05-course-orientation-semantic-witness.md",
+      "sha256": "3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f"
+    }
+  },
+  "errors": [],
+  "limitations": [
+    "PDF is searchable but untagged.",
+    "Independent human/native-speaker Indonesian review is not recorded."
+  ],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 1325476,
+      "expected": {
+        "bytes": 1325476,
+        "sha256": "fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d"
+      },
+      "sha256": "fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d"
+    },
+    "id_set_sha256": "7ebf6de13fc7bbe8ae8993f24a01d31e63b9bdc31b9758510f3961a81d103774",
+    "jsonl": {
+      "bytes": 1102706,
+      "expected": {
+        "bytes": 1102706,
+        "sha256": "92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645"
+      },
+      "sha256": "92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645"
+    },
+    "preserved_record_count": 1543,
+    "raw_bytes_reconstructed_exactly": true,
+    "record_count": 1543,
+    "record_set_sha256": "26ef92dc4ac4c1c6dd29396ae5b85795ba67d4d078377aee891abbf337c7c84a"
+  },
+  "recorded_at": "2026-08-23T22:00:00Z",
+  "result": "pass",
+  "schema": "o015-mit-l05-backend-validation-v1",
+  "workflow": "o015-mit-l05-backend-v1"
+}

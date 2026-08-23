@@ -283,3 +283,53 @@ The failed L04 HTTP 504 transaction created no public record; no standalone L04
 release will be attempted. Page 16 begins a coherent multi-page source section,
 and the next admission/release gate applies once to that batch rather than to
 each page.
+
+## D90-0036 — MIT L05 pages 16–19 admitted; Lecture 2 becomes the active batch
+
+The complete course-orientation close on pages 16–19 is admitted as one L05
+semantic reader boundary. Its witness, target, HTML, three-page PDF, validation,
+live browser QA, visual QA, rereview, and CSS are frozen respectively at
+`3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f`,
+`65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc`,
+`424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`,
+`2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`,
+`2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa`,
+`24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342`,
+`d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04`,
+`c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9`,
+and `d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645`.
+All bounded reader gates pass. The block preserves 16 top-level items, 26
+nested bullets, two live source URIs, and no formula, figure, image, exercise,
+solution, code, or interactive surface.
+
+Determined source-name correction `O015-MIT-SEM-0004` is admitted and bound to
+the immutable 642-byte snapshot SHA-256
+`c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+The L05 backend passes at 1,605 records, 62 additions over the exact 1,543-record
+protected baseline. JSONL and CSV identities are
+`30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b` and
+`f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3`;
+generator, validator, and 5,108-byte receipt identities are
+`6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c`,
+`d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab`,
+and `7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc`.
+
+No standalone L04 Zenodo version exists. Preservation proceeds as one pending
+combined L04+L05 Zenodo checkpoint; the GitHub push containing L05 is also
+pending, so no new public-byte identity is claimed. The active production unit
+is complete Lecture 2, pages 20–28. Its 9,962-byte boundary census is SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`;
+witness and target drafts exist but remain unadmitted while build/QA proceeds.
+Page 29 begins Lecture 3 and is the next-after-batch cursor. The current goal
+control file remains the resumption authority.
+
+## 2026-08-23 — Publish L04 and L05 as one additive Zenodo version
+
+Decision: close the previously pending L04/L05 preservation as one version in
+the existing Zenodo concept rather than creating a standalone L04 record.
+Rationale: L04 was already preserved on GitHub, the user required non-spam
+publication, and L05 supplies the next coherent multi-page boundary. The new
+version inherits all 40 parent files unchanged and adds only the 10 verified
+L04/L05 reader/release files. Public record `22072071` and its anonymous
+50-file readback prove the transaction. This decision does not change the
+Lecture 2 production cursor or authorize per-page release cadence.

@@ -1,0 +1,29 @@
+{
+  "schema": "o015-mit-l05-visual-qa-v2",
+  "result": "pass",
+  "boundary": "MIT complete-notes pages 16-19",
+  "surface": {
+    "path": "output/pdf/D90-MIT-05-orientasi-kursus-id.pdf",
+    "bytes": 46785,
+    "sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0"
+  },
+  "render": {
+    "tool": "pdftoppm",
+    "dpi": 160,
+    "pages": 3,
+    "files": [
+      {"name": "page-1.png", "width": 1323, "height": 1871, "bytes": 344390, "sha256": "8eb2b8ef60b5bd96f63f4d8523b406106cce198370481eb4c93224412440f3d7"},
+      {"name": "page-2.png", "width": 1323, "height": 1871, "bytes": 345621, "sha256": "162ec00ed10f6b95a3b31c8456fcc44c69f82972758827e979a8b5aca933f7fe"},
+      {"name": "page-3.png", "width": 1323, "height": 1871, "bytes": 278665, "sha256": "f351a2a526ae555f5d487121b0d20d43e458775cfbf7ddb6dc90371d4697869f"}
+    ]
+  },
+  "observations": [
+    "All three A4 reader pages render without clipping, overlap, missing glyphs, black boxes, or broken lists.",
+    "The four source-page sections, sixteen top-level items, and twenty-six nested bullets remain legible across reflowed page breaks.",
+    "Both preserved source URLs are readable on reader page 2 and remain live PDF URI annotations.",
+    "No source image, figure, or raster asset is present; page 19 discusses figures but contains no figure surface.",
+    "PDF remains intentionally untagged; searchable text and /Lang id-ID are checked by the validator."
+  ],
+  "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "human_native_speaker_review": false
+}

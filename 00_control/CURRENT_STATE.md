@@ -225,3 +225,79 @@ The L04 HTTP 504 attempt produced no public L04 record; no standalone L04
 release is planned. Page 16 is the next source cursor and begins a coherent
 multi-page section/batch whose reader, QA, backend, and preservation gates close
 once at the batch boundary.
+
+## 2026-08-23 — Controlling MIT L05 pages 16–19 boundary and Lecture 2 production state
+
+The coherent course-orientation block on complete-notes pages 16–19 is admitted
+as MIT L05. The frozen authority remains the 8,030,116-byte, 340-page MIT 6.253
+PDF, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+The English witness is 7,120 bytes, SHA-256
+`3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f`;
+the Indonesian target is 8,702 bytes, SHA-256
+`65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc`;
+the HTML is 16,029 bytes, SHA-256
+`424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`;
+and the three-page A4 PDF is 46,785 bytes, SHA-256
+`2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`.
+The shared CSS is 2,636 bytes, SHA-256
+`d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645`.
+
+The exact closure is four source pages, 16 top-level items, 26 nested bullets,
+zero mathematical formula surfaces, zero figures, and zero copied image bytes.
+The two source URIs remain live. MIT CC BY-NC-SA 4.0 attribution, change
+marking, NC/SA obligations, and non-endorsement remain explicit. Determined
+name correction `O015-MIT-SEM-0004` is admitted: the witness preserves the
+printed “Vanderbergue,” while the learner-facing target uses “Vandenberghe” and
+discloses the correction. Its immutable 642-byte snapshot has SHA-256
+`c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+
+Reader validation (4,195 bytes /
+`2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa`),
+live browser QA (1,271 bytes /
+`24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342`),
+visual QA (1,544 bytes /
+`d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04`),
+and independent rereview (3,066 bytes /
+`c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9`)
+all pass. The PDF is searchable, A4, `/Lang id-ID`, and untagged;
+human/native-speaker Indonesian review remains unrecorded.
+
+The frozen L05 backend contains 1,605 records, adding 62 to the exactly
+reconstructed and byte-preserved 1,543-record L04 baseline. JSONL is 1,142,443
+bytes, SHA-256
+`30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b`;
+CSV is 1,373,874 bytes, SHA-256
+`f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3`.
+The 35,174-byte generator, 27,004-byte validator, and final 5,108-byte passing
+receipt have SHA-256 values
+`6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c`,
+`d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab`,
+and `7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc`.
+
+No standalone L04 Zenodo version exists. One combined L04+L05 Zenodo
+checkpoint is pending, and the GitHub push containing L05 is pending; no L05
+public-byte claim is made. Current production is the complete Lecture 2 batch,
+pages 20–28. Its boundary census is 9,962 bytes, SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`;
+the witness and target are drafted but unadmitted, and build/QA is in progress.
+Page 29 begins Lecture 3 and is the next-after-batch cursor.
+`00_control/CURRENT_GOAL_AND_WORKFLOW.md` remains the resumption authority.
+
+## 2026-08-23 — L04+L05 Zenodo preservation closed
+
+The preceding pending-publication statement is superseded. The combined MIT
+L04+L05 checkpoint is public in the existing concept lineage at
+`https://doi.org/10.5281/zenodo.22072071` (record `22072071`; parent
+`22071175`; concept `10.5281/zenodo.22059741`). It contains 50 files: all 40
+parent files were inherited byte-identically and 10 L04/L05 additions passed
+anonymous public-byte readback. The L04/L05 delta ZIP is 482,954 bytes,
+SHA-256 `96e323fb190462747a3e4b97c21211fc63f7e555ae029c7b683078ac28ac8c17`;
+its 53 ZIP entries include 52 manifest-bound payloads, all verified, with zero
+forbidden entries. The bound manifest is 4,486 bytes, SHA-256
+`437179a80f28091b0351172d8b56a0c46d945efe292da6e63c28b62b0da96b9a`.
+The sanitized anonymous receipt is 14,060 bytes, SHA-256
+`89266a7b3a332081aaef9d591eb1df449c6b0a1ab0a8526a1b91f27b8be01cd5`.
+No standalone L04 record was created. GitHub preservation remains the only
+open L05 publication action. Lecture 2 pages 20–28 remain the active batch;
+page 29 remains the next-after-batch cursor.

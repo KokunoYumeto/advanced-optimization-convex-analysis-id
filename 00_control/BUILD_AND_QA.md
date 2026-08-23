@@ -750,3 +750,81 @@ is claimed or planned. Page 16 begins the next coherent multi-page source
 section/batch; it receives one consolidated semantic, build, browser, visual,
 backend, rights, and preservation gate at the batch boundary rather than a
 page-level project/release cycle.
+
+# MIT OCW 6.253 pages 16–19 semantic-source build and QA (L05)
+
+As of: 2026-08-23
+Unit: complete-notes pages 16–19 — closing course-orientation block
+Admission: PASS; one coherent four-page boundary, not a complete-course claim
+
+## Exact inputs, outputs, and QA evidence
+
+- Authority PDF: `authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf` — 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+- English semantic witness: `source/en/mit-05-course-orientation-semantic-witness.md` — 7,120 bytes / SHA-256 `3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f`.
+- Indonesian semantic source: `source/id-ID/mit-05-orientasi-kursus-id.md` — 8,702 bytes / SHA-256 `65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc`.
+- HTML: `output/html/D90-MIT-05-orientasi-kursus-id.html` — 16,029 bytes / SHA-256 `424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`.
+- PDF: `output/pdf/D90-MIT-05-orientasi-kursus-id.pdf` — 46,785 bytes / 3 A4 pages / SHA-256 `2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`.
+- CSS: `source/id-ID/mit-l05.css` — 2,636 bytes / SHA-256 `d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645`.
+- Validation: `qa/MIT_L05_VALIDATION.json` — 4,195 bytes / SHA-256 `2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa`.
+- Live browser QA: `qa/MIT_L05_BROWSER_QA.json` — 1,271 bytes / SHA-256 `24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342`.
+- Visual QA: `qa/MIT_L05_VISUAL_QA.json` — 1,544 bytes / SHA-256 `d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04`.
+- Independent rereview: `qa/MIT_L05_INDEPENDENT_REREVIEW.md` — 3,066 bytes / SHA-256 `c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9`.
+- Immutable correction snapshot: `00_control/MIT_L05_CORRECTION_SNAPSHOT.jsonl` — 642 bytes / SHA-256 `c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+
+## Topology, rights, and reader gates
+
+The boundary is exactly four source pages with four ordered source headings,
+16 top-level items, 26 nested bullets, two unique live source URIs, zero
+mathematical formula surfaces, zero figures, and zero image bytes. It contains
+no table, worked example, exercise, hint, solution, code, or interactive
+surface. MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA obligations,
+and non-endorsement remain explicit. `O015-MIT-SEM-0004` is admitted as a
+determined name correction: the witness preserves the printed “Vanderbergue,”
+and the learner-facing target uses and discloses “Vandenberghe.”
+
+Two deterministic builds are byte-identical. Validation reports `errors=[]`
+and `result=pass`. Live browser QA at 1280×720 and 390×844 reports no horizontal
+overflow or console findings, with zero duplicate IDs and unresolved
+fragments. All three A4 PDF pages pass 160-dpi visual inspection without
+clipping, overlap, missing glyphs, black boxes, or malformed lists. The PDF is
+searchable, unencrypted, `/Lang id-ID`, and untagged. Independent rereview
+closes P1=0/P2=0/P3=0; human/native-speaker Indonesian review is unrecorded.
+
+## Backend and continuation gates
+
+The final additive L05 backend has 1,605 records, adding 62 records to the
+exactly reconstructed, byte-preserved 1,543-record L04 baseline. The protected
+baseline is JSONL 1,102,706 bytes /
+`92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645`
+and CSV 1,325,476 bytes /
+`fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d`.
+Final L05 identities are:
+
+- `backend/records.jsonl`: 1,142,443 bytes; SHA-256 `30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b`.
+- `backend/records.csv`: 1,373,874 bytes; SHA-256 `f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3`.
+- `qa/extend_backend_mit_l05.py`: 35,174 bytes; SHA-256 `6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c`.
+- `qa/validate_backend_mit_l05.py`: 27,004 bytes; SHA-256 `d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab`.
+- `qa/MIT_L05_BACKEND_VALIDATION.json`: 5,108 bytes; SHA-256 `7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc`; `result=pass`, `errors=[]`.
+
+No standalone L04 Zenodo version exists. A combined L04+L05 Zenodo checkpoint
+and the GitHub push containing L05 remain pending. The active production batch
+is complete Lecture 2, pages 20–28: its 9,962-byte census has SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`.
+Its witness and target are drafted but unadmitted, and build/QA is in progress.
+Page 29 begins Lecture 3 and is the next-after-batch cursor.
+
+## 2026-08-23 — Consolidated L04+L05 release gate
+
+`release/zenodo/2026-08-23-mit-l04-l05/build_l04_l05.py` passed twice with
+byte-identical outputs before publication. The frozen delta ZIP is 482,954
+bytes / SHA-256
+`96e323fb190462747a3e4b97c21211fc63f7e555ae029c7b683078ac28ac8c17`;
+the archive reopens with 53 entries, all 52 manifest-bound payloads match, and
+the forbidden-entry count is zero. Publication and credential-free readback
+then passed for 50 public files (40 inherited unchanged, 10 additions). The
+public bound manifest is 4,486 bytes / SHA-256
+`437179a80f28091b0351172d8b56a0c46d945efe292da6e63c28b62b0da96b9a`;
+the public checksum file is 5,039 bytes / SHA-256
+`59c26562dd44d2ed4333ff21c674daccbea8077a0f8220a1c3564524ceba57cb`.
+The public receipt is 14,060 bytes / SHA-256
+`89266a7b3a332081aaef9d591eb1df449c6b0a1ab0a8526a1b91f27b8be01cd5`.

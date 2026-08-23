@@ -223,3 +223,54 @@ tidak akan dibuat rilis L04 tersendiri. Halaman 16 memulai bagian sumber
 multi-halaman yang koheren. Terjemahan, pemeriksaan pembaca, backend, hak, dan
 preservasi berikutnya akan ditutup sekali pada batas batch itu, bukan sebagai
 proyek atau rilis per halaman.
+
+## Batas MIT L05 yang diterima (23 Agustus 2026)
+
+L05 menerima satu blok orientasi kursus yang koheren pada halaman sumber
+16–19. Saksi Inggris 7.120 byte memiliki SHA-256
+`3acbde47074da0429419e5c702785ee0490efa5e43f2b07cbac497f0d480492f`;
+target Indonesia 8.702 byte
+`65cb7fec2d6b1aeda69837e10568f2410a9f4bded2b835b8dac59a9b516444cc`;
+HTML 16.029 byte
+`424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`;
+PDF A4 tiga halaman 46.785 byte
+`2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`;
+dan CSS 2.636 byte
+`d8d8417c4d2f9e01852cd30bc97552f377da3a6d1f9bbee25c25d47e16ce9645`.
+
+Batas ini memuat 16 butir tingkat atas, 26 butir bersarang, dua URI sumber yang
+tetap aktif, serta nol rumus, gambar, latihan, solusi, kode, atau interaktivitas.
+Validasi 4.195 byte
+(`2ef09a674c6bcc586cd13dd513a2f0f24aade6d10d2d11ccdfe317b7307dc3aa`),
+QA browser langsung 1.271 byte
+(`24b775fb6afc271a16a62097151175852a4a01eb1c41605a196258e19f01d342`),
+QA visual 1.544 byte
+(`d32b4e66cf7c1fd4f9fa06c75f88bfb80404caeefe894ba92396c548d126af04`),
+dan rereview independen 3.066 byte
+(`c1c358c32f245ca4ef1c15efe3ed4d319f9bdef758319bce04f501bb525f7fb9`)
+semuanya lulus. Koreksi nama `O015-MIT-SEM-0004` diterima dan dibekukan dalam
+snapshot 642 byte, SHA-256
+`c701e631c4839aa07a2f8a4b8e8f026394c66bd709ffa37318431bbc461e1595`.
+Hak komponen tetap MIT CC BY-NC-SA 4.0. PDF dapat dicari dan berbahasa
+`id-ID`, tetapi belum bertag; tinjauan penutur asli belum tercatat.
+
+Backend L05 final berisi 1.605 rekaman, 62 tambahan terhadap baseline L04
+1.543 rekaman yang direkonstruksi tepat dan dipertahankan byte demi byte. JSONL
+1.142.443 byte memiliki SHA-256
+`30c6f3257d481136995acd7947a725da003c4ab2ea2e9049de53a23fa681658b`;
+CSV 1.373.874 byte memiliki SHA-256
+`f66227edc14e953b44d833b87b0373f76d87bf04fdd32d2f50552597915746e3`.
+Hash generator 35.174 byte, validator 27.004 byte, dan resi lulus final 5.108
+byte masing-masing adalah
+`6a1b0c319e3a59820bcd18b257b9d160d0c39ae21f1dcf772df9bb8a61c7b36c`,
+`d4572ac9c0924459beebb225f8184b60b8e6a022fe1bdcccba2a6409a4f6fbab`,
+dan `7e653889523fdf6da918a0403e230b7f3a185107ed87ca22cc6936f37db57afc`.
+
+Tidak ada versi Zenodo L04 tersendiri. Checkpoint Zenodo gabungan L04+L05 dan
+push GitHub yang memuat L05 masih tertunda; belum ada klaim byte publik L05.
+Produksi aktif adalah seluruh Kuliah 2, halaman 20–28. Sensus batasnya 9.962
+byte, SHA-256
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`;
+saksi dan target sudah berupa draf tetapi belum diterima, sementara build/QA
+sedang berjalan. Halaman 29 memulai Kuliah 3 dan menjadi kursor sesudah batch.
+`00_control/CURRENT_GOAL_AND_WORKFLOW.md` tetap menjadi otoritas pelanjutan.

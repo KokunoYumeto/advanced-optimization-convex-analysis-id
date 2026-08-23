@@ -234,3 +234,39 @@ sanitized machine receipt is
 SHA-256 `77bf05160714d8cda6d571a64c3c7a8d3d6a431a796358e43d34cfb3b26e832b`.
 No upstream
 issue, comment, or other contact was made.
+
+## 2026-08-23 — Combined MIT L04+L05 publication pending
+
+No standalone L04 Zenodo version exists. The combined L04+L05 Zenodo
+checkpoint is pending, and the GitHub push containing L05 is pending. No DOI,
+public file inventory, public-byte identity, or anonymous readback is claimed
+for L05 by this entry.
+
+## 2026-08-23 — Public Zenodo combined MIT L04+L05 checkpoint
+
+- Public record: https://zenodo.org/records/22072071
+- Version DOI: https://doi.org/10.5281/zenodo.22072071
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22071175`
+- Version: `checkpoint-2026.08.23-mit-p15-19`
+- Scope/status: MIT 6.253 pages 15–19, explicitly incomplete; page 20 begins
+  the next substantive lecture batch. No standalone L04 Zenodo record exists.
+- Public closure: 50 files, comprising 40 inherited byte-identical files and
+  10 L04/L05 additions. Every anonymous download matched its expected byte
+  count and SHA-256 identity.
+- Delta ZIP: 482,954 bytes; SHA-256
+  `96e323fb190462747a3e4b97c21211fc63f7e555ae029c7b683078ac28ac8c17`.
+  It reopens with 53 entries; all 52 manifest-bound payloads passed and zero
+  forbidden entries were present.
+- Public bound manifest: 4,486 bytes; SHA-256
+  `437179a80f28091b0351172d8b56a0c46d945efe292da6e63c28b62b0da96b9a`.
+- Public checksum file: 5,039 bytes; SHA-256
+  `59c26562dd44d2ed4333ff21c674daccbea8077a0f8220a1c3564524ceba57cb`.
+- Sanitized readback:
+  `release/zenodo/2026-08-23-mit-l04-l05/zenodo-public-readback-mit-l04-l05.json`,
+  14,060 bytes; SHA-256
+  `89266a7b3a332081aaef9d591eb1df449c6b0a1ab0a8526a1b91f27b8be01cd5`.
+
+MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA duties, and non-endorsement. Component-distinct inherited rights remain
+unchanged. No upstream contact occurred.
