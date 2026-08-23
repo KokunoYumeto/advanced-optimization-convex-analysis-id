@@ -197,6 +197,18 @@ The corrected delta ZIP reopened with 42 entries; all 41 manifest-bound payloads
 - Visibility/default branch: public / `main`
 - Content commit: `12bc0070e334452ce7b47499c4d30d959740d934`
 - Content tree: `5340b0813dbe8e31054f70303f5bfd926f4e76da`
+- Receipt commit: `0e35955037c938fa8a5030ba3c9adea8bfa7ec52`
+- Receipt tree: `55fbf85508f23ce27cca5e01f24539bed6b2b854`
 - Scope: MIT 6.253 Indonesian reader checkpoints L02 (pages 6–13) and L03 (page 14), semantic witnesses, source/backend QA, component-rights controls, and the corrected Zenodo lineage package. Page 15 remains the next production cursor.
 
 Credential-free raw downloads from the public `main` branch matched these exact local identities: L03 source `source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md` (4,758 bytes; SHA-256 `24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`), L03 HTML (9,762 bytes; SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`), L03 PDF (34,550 bytes; SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`), and the draft-bound L03 release manifest (2,291 bytes; SHA-256 `3401e6e9b9357e794a398d514549e8cca029ef94469849a0db5b3f1383f20cd9`). No upstream issue, comment, or other contact was made.
+
+## 2026-08-23 — Public Zenodo MIT L03 checkpoint
+
+- Public record: https://zenodo.org/records/22071175
+- Version DOI: https://doi.org/10.5281/zenodo.22071175
+- Scope/status: MIT 6.253 Indonesian semantic reader page 14, published as a partial checkpoint; page 15 remains local and is not claimed in this record.
+- Public file closure: 40 files (32 inherited files plus 8 L03 additions); the L03 delta ZIP is 484,193 bytes, SHA-256 `16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f`.
+- Rights: MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking, NC/SA obligations, and non-endorsement; omitted Athena graphics are not silently licensed or copied.
+
+The anonymous public readback is `release/zenodo/2026-08-23-mit-l03/zenodo-public-readback-mit-l03.json`: 11,373 bytes, SHA-256 `3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`. The readback and all 40 public files matched the local release manifest and checksums; no L04 bytes are represented. No upstream issue, comment, or other contact was made.

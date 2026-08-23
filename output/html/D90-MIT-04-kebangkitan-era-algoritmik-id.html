@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="dcterms.date" content="2026-08-23" />
+  <meta name="keywords" content="era algoritmik, optimisasi
+konveks, dualitas, pemrograman konik, pembelajaran mesin, id-ID" />
+  <meta name="description" content="Rekonstruksi semantik yang dapat mengalir ulang dari satu halaman sumber, dengan pengenal stabil dan struktur daftar yang dapat diakses." />
+  <title>Kebangkitan Era Algoritmik</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f4f6fb;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6fb; }
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus { transform: translateY(0); }
+body > main, body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header { padding: 3.5rem 0 1.25rem; }
+body > main > header h1 {
+max-width: 24ch;
+margin: 0;
+font-size: clamp(2.2rem, 5vw, 4.5rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 54rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c8d1e4;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 5rem; }
+main > section, .edition-notice, .source-page, .edition-backmatter {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.6rem);
+border: 1px solid #c8d1e4;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+h2 { margin-top: 0; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; }
+li + li { margin-top: 0.55rem; }
+.source-item { margin: 0.65rem 0; }
+.edition-notice {
+margin: 1.25rem 0;
+padding: 1rem 1.15rem;
+border-left: 0.32rem solid #5c3bbf;
+border-radius: 0.4rem;
+background: #f2effd;
+}
+.source-figure {
+margin: 1rem 0;
+padding: 1rem 1.15rem;
+border: 1px dashed #7481a0;
+border-radius: 0.55rem;
+background: #f7f9fd;
+color: #27324a;
+}
+.source-figure strong { color: #4b2d9c; }
+.source-locator { display: inline-block; margin-top: 1rem; color: #58647d; font-size: 0.92rem; }
+math[display="block"] { overflow-x: auto; padding: 0.4rem 0; }
+a { color: #244fa3; text-underline-offset: 0.16em; }
+a:focus-visible { outline: 0.2rem solid #f09a2b; outline-offset: 0.18rem; }
+@media (max-width: 48rem) {
+body > main, body > footer { width: min(94vw, 78rem); }
+#TOC ul { columns: 1; }
+.source-page, .edition-notice, .edition-backmatter { border-radius: 0.65rem; }
+}
+@media print {
+:root, body { background: white; }
+main > section, .edition-notice, .source-page, .edition-backmatter { box-shadow: none; break-inside: avoid; }
+.source-figure { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l04-p015">Langsung ke materi kebangkitan era algoritmik</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Kebangkitan Era Algoritmik</h1>
+<p class="subtitle">MIT 6.253 - Edisi Indonesia, halaman sumber 15</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="date">2026-08-23</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tentang-batas-ini" id="toc-tentang-batas-ini"><span class="toc-section-number">1</span> Tentang batas ini</a></li>
+<li><a href="#kebangkitan-era-algoritmik" id="toc-kebangkitan-era-algoritmik"><span class="toc-section-number">2</span> Kebangkitan Era Algoritmik</a></li>
+<li><a href="#identitas-sumber-dan-batas-edisi" id="toc-identitas-sumber-dan-batas-edisi"><span class="toc-section-number">3</span> Identitas sumber dan batas
+edisi</a></li>
+</ul>
+</nav>
+<div id="d90-mit-l04-edition-notice" class="edition-notice">
+<section id="tentang-batas-ini" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Tentang
+batas ini</h2>
+<p>Ini adalah rekonstruksi sumber semantik dan terjemahan bahasa
+Indonesia dari Dimitri P. Bertsekas, <em>Convex Analysis and
+Optimization</em>, MIT OpenCourseWare 6.253, Spring 2012, halaman PDF
+sumber 15. Halaman ini merangkum hubungan antara program konveks, LP,
+dualitas, algoritme, paradigma baru, pemrograman konik, dan pembelajaran
+mesin. Materi sumber berada di bawah <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>.</p>
+<p>Halaman sumber ini hanya berupa teks dan daftar; tidak ada grafik
+atau aset gambar yang disalin. Bantuan produksi dan QA: <strong>OpenAI
+Codex gpt-5.6-sol, Ultra</strong>, atas arahan pengguna repositori.
+Sistem tersebut bukan penulis sumber atau pemberi lisensi. Tidak ada
+dukungan oleh MIT atau penulis sumber yang tersirat. Tinjauan bahasa
+manusia/penutur asli belum tercatat.</p>
+<p>Istilah teknis diterjemahkan secara konsisten: <em>piecewise
+linear</em> menjadi “linear sepotong-sepotong”, <em>robust</em>
+dipertahankan sebagai istilah bidang, dan <em>compressed sensing</em>
+menjadi “penginderaan terkompresi”. Notasi sumber
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℓ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\ell_1</annotation></semantics></math>
+dipertahankan sebagai notasi matematika inline.</p>
+<p>Pengenal stabil tetap melekat pada halaman dan keenam butirnya,
+meskipun HTML atau PDF mengalir ulang ke ukuran layar atau halaman yang
+berbeda.</p>
+</section>
+</div>
+<div id="d90-mit-l04-p015" class="source-page" data-source-page="15" data-source-order="1">
+<section id="kebangkitan-era-algoritmik" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span>
+Kebangkitan Era Algoritmik</h2>
+<div id="d90-mit-l04-p015-i001" class="source-item" data-source-page="15" data-source-order="1">
+<ul>
+<li><p><strong>Program konveks dan LP terhubung melalui</strong></p>
+<ul>
+<li>Dualitas</li>
+<li>Masalah linear sepotong-sepotong berskala besar</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l04-p015-i002" class="source-item" data-source-page="15" data-source-order="2">
+<ul>
+<li><p><strong>Sinergi antara:</strong></p>
+<ul>
+<li>Dualitas</li>
+<li>Algoritme</li>
+<li>Aplikasi</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l04-p015-i003" class="source-item" data-source-page="15" data-source-order="3">
+<ul>
+<li><strong>Paradigma masalah baru dengan aplikasi yang
+kaya</strong></li>
+</ul>
+</div>
+<div id="d90-mit-l04-p015-i004" class="source-item" data-source-page="15" data-source-order="4">
+<ul>
+<li><p><strong>Dekomposisi berbasis dualitas</strong></p>
+<ul>
+<li>Alokasi sumber daya berskala besar</li>
+<li>Relaksasi Lagrange, optimisasi diskret</li>
+<li>Pemrograman stokastik</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l04-p015-i005" class="source-item" data-source-page="15" data-source-order="5">
+<ul>
+<li><p><strong>Pemrograman konik</strong></p>
+<ul>
+<li>Optimisasi robust</li>
+<li>Pemrograman semidefinit</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l04-p015-i006" class="source-item" data-source-page="15" data-source-order="6">
+<ul>
+<li><p><strong>Pembelajaran mesin</strong></p>
+<ul>
+<li>Mesin vektor pendukung</li>
+<li>Regularisasi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℓ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\ell_1</annotation></semantics></math>/regresi
+robust/penginderaan terkompresi</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 15.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l04-backmatter" class="edition-backmatter">
+<section id="identitas-sumber-dan-batas-edisi" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span>
+Identitas sumber dan batas edisi</h2>
+<ul>
+<li>Sumber: Dimitri P. Bertsekas, <em>Lecture Slides on Convex Analysis
+and Optimization</em>, berdasarkan MIT 6.253, Spring 2012.</li>
+<li>Batas tepat: hanya halaman PDF lengkap 15; halaman berikutnya adalah
+halaman 16 dalam kelanjutan catatan lengkap.</li>
+<li>Topologi: enam butir tingkat atas dan dua belas butir bertingkat.
+Tidak ada rumus tampilan terpisah; satu-satunya notasi matematika adalah
+label inline
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℓ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\ell_1</annotation></semantics></math>
+pada butir terakhir.</li>
+<li>Permukaan: halaman sumber hanya berupa teks dan daftar. Halaman ini
+tidak memuat grafik, tabel, contoh, latihan pembelajar, petunjuk,
+solusi, kode, tautan, atau komputasi interaktif. Tidak ada byte gambar,
+potongan, atau tata letak sumber yang disalin.</li>
+<li>Hak: komponen turunan ini tetap CC BY-NC-SA 4.0, dengan kewajiban
+atribusi, penandaan perubahan, penggunaan nonkomersial, ShareAlike, dan
+nondukungan.</li>
+</ul>
+</section>
+</div>
+<p><em><span class="source-locator">Halaman sumber 15.</span></em></p>
+</main>
+</body>
+</html>

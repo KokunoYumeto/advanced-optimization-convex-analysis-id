@@ -1,0 +1,27 @@
+{
+  "schema": "o015-mit-l04-visual-qa-v1",
+  "result": "pass",
+  "surface": {
+    "path": "output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf",
+    "bytes": 36971,
+    "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"
+  },
+  "render": {
+    "tool": "pdftoppm",
+    "dpi": 160,
+    "pages": 2,
+    "files": [
+      {"name": "page-1.png", "width": 1323, "height": 1871, "bytes": 292367, "sha256": "f5b6b4f40f499be3ffd87642422e3cdd126e1ba7839028066dee99ece81023bb"},
+      {"name": "page-2.png", "width": 1323, "height": 1871, "bytes": 221792, "sha256": "161ac7c3fda20bda210e64153df5df76044e6052c6da14a7abaff76d3de42533"}
+    ]
+  },
+  "observations": [
+    "Both A4 pages render without clipping or missing glyphs.",
+    "The six source items and twelve nested bullets remain readable; the list continuation at the page break is unambiguous.",
+    "Inline ell-sub-one notation renders as a searchable mathematical glyph.",
+    "No source image, figure, or raster asset is present; the text-only boundary has no rights-sensitive graphic surface.",
+    "PDF remains intentionally untagged; searchable text and /Lang id-ID are checked by the validator."
+  ],
+  "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "human_native_speaker_review": false
+}

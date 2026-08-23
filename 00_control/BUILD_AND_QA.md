@@ -668,3 +668,85 @@ The current public preservation baseline is corrected Zenodo record
 `4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. That
 record is the corrected L02 lineage and is not a claim that L03 files are
 already public. The next source cursor is complete-notes page 15.
+
+# MIT OCW 6.253 page 15 semantic-source build and QA
+
+As of: 2026-08-23  
+Unit: complete-notes page 15 — The Rise of the Algorithmic Era /
+Kebangkitan Era Algoritmik  
+Admission: PASS after live browser QA for this bounded semantic reader boundary; not a complete-course claim
+
+## Exact inputs and outputs
+
+- Authority PDF: `authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf` — 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+- English semantic witness: `source/en/mit-04-rise-algorithmic-era-semantic-witness.md` — 3,225 bytes / SHA-256 `1c6afe0318471c2680291c2968a348ff84ad3dbeb702218d1496412b3871c5f8`.
+- Indonesian semantic source: `source/id-ID/mit-04-kebangkitan-era-algoritmik-id.md` — 4,081 bytes / SHA-256 `98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d`.
+- HTML: `output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html` — 9,975 bytes / SHA-256 `c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e`.
+- PDF: `output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf` — 36,971 bytes / 2 A4 pages / SHA-256 `9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f`.
+- Validation: `qa/MIT_L04_VALIDATION.json` — 3,400 bytes / SHA-256 `891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`.
+- Builder: `qa/build_mit_l04.py` — 3,614 bytes / SHA-256 `733a186a8eb98bc418926ac2642b4e2b6093ef6432ba3471f4df9b9ffe00f9e7`.
+- Validator: `qa/validate_mit_l04.py` — 18,735 bytes / SHA-256 `b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`.
+- Browser QA: `qa/MIT_L04_BROWSER_QA.json` — 1,125 bytes / SHA-256 `87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`.
+- Visual QA: `qa/MIT_L04_VISUAL_QA.json` — 1,275 bytes / SHA-256 `6da40ec0179d47143a4f99bea9a8e3e899d776773de6580afb1417085e8ff1bf`.
+- Independent rereview: `qa/MIT_L04_INDEPENDENT_REREVIEW.md` — 1,906 bytes / SHA-256 `39dc3005a3f16445eccdb73363719b3b03224efc573f7c8a45f9c73bc8a3b7d4`.
+
+## Topology, rights, and gates
+
+The source closure is exactly complete-notes page 15: 6 top-level items, 12
+nested bullets, 1 inline math surface, zero display formulas, zero figures, and
+zero image bytes. The MIT component remains CC BY-NC-SA 4.0 with attribution,
+change marking, NC/SA obligations, and non-endorsement. The source has no
+learner exercises, hints, solutions, code, or interactive surface, and none is
+invented in the target.
+
+`qa/MIT_L04_VALIDATION.json` reports `errors=[]` and `result=pass`; two
+deterministic HTML/PDF rebuilds are byte-identical. Its live browser QA reports
+`result=pass` at desktop 1280×720 and mobile 390×844, with no horizontal
+overflow or console findings and zero duplicate IDs, unresolved fragments, or
+images. The PDF is searchable, A4, unencrypted, declares `/Lang id-ID`, and is
+explicitly untagged. No human/native-speaker Indonesian review is represented.
+
+## Publication and continuation
+
+Zenodo publication for L04 is pending after an HTTP 504; no L04 DOI or public
+byte identity is claimed. The corrected L02 record remains the last verified
+public checkpoint. The next source cursor is complete-notes page 16; automatic
+Penn expansion remains stopped.
+
+## 2026-08-23 final L04 gate refresh and consolidated continuation
+
+The earlier `pass_with_limitation` browser wording in this L04 record is
+superseded. Live browser QA now reports `result=pass` in
+`qa/MIT_L04_BROWSER_QA.json` (1,125 bytes; SHA-256
+`87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`).
+At 1280×720 and 390×844 the DOM has no horizontal overflow, console findings,
+duplicate IDs, unresolved fragments, or images. Final validation reports
+`errors=[]`, `result=pass`: `qa/MIT_L04_VALIDATION.json` is 3,400 bytes,
+SHA-256 `891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`;
+`qa/validate_mit_l04.py` is 18,735 bytes, SHA-256
+`b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`.
+The reader PDF remains untagged and human/native-speaker Indonesian review is
+still unrecorded; those limitations are unchanged.
+
+The additive L04 backend gate passes over the byte-preserved 1,495-record L02
+baseline. It adds 48 records (17 artifacts, 1 learning surface, 14 QA events,
+14 relations, 1 segment, and 1 unit), yielding 1,543 total. Exact frozen
+identities are:
+
+- `backend/records.jsonl`: 1,102,706 bytes; SHA-256 `92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645`.
+- `backend/records.csv`: 1,325,476 bytes; SHA-256 `fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d`.
+- New-ID set: SHA-256 `8216b6f6713c519699e42923138a3f5e1f374000f3a494ececc646b9819dbb2d`.
+- `qa/extend_backend_mit_l04.py`: 26,315 bytes; SHA-256 `19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272`.
+- `qa/validate_backend_mit_l04.py`: 14,123 bytes; SHA-256 `d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46`.
+- `qa/MIT_L04_BACKEND_VALIDATION.json`: 7,178 bytes; SHA-256 `59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204`; `result=pass`, `errors=[]`.
+
+L03 publication is now verified at DOI `10.5281/zenodo.22071175`: 40 public
+files (32 inherited plus 8 additions), a 484,193-byte delta ZIP SHA-256
+`16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f`,
+and an 11,373-byte anonymous readback SHA-256
+`3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`.
+The L04 HTTP 504 attempt published nothing, so no standalone L04 release or DOI
+is claimed or planned. Page 16 begins the next coherent multi-page source
+section/batch; it receives one consolidated semantic, build, browser, visual,
+backend, rights, and preservation gate at the batch boundary rather than a
+page-level project/release cycle.

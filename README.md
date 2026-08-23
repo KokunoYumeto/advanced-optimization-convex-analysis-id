@@ -2,19 +2,19 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual sebagai pendamping opsional sepuluh unit. Korpus utama D90 yang dipilih adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT halaman 2–5, 6–13, dan 14 (“Modern View of Convex Optimization”) telah lolos dan diterima. Kursor produksi berikutnya adalah halaman 15. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
+**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual sebagai pendamping opsional sepuluh unit. Korpus utama D90 yang dipilih adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT halaman 2–5, 6–13, 14, dan 15 (“The Rise of the Algorithmic Era”) telah lolos dan diterima; QA browser langsung L04 lulus, sedangkan PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat. Halaman 16 membuka bagian multi-halaman berikutnya yang akan ditutup dengan satu gerbang gabungan. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint sepuluh unit yang belum lengkap dan pilot MIT pertama dipreservasi dalam
-garis keturunan Zenodo yang sama: [DOI versi terbaru
-10.5281/zenodo.22070474](https://doi.org/10.5281/zenodo.22070474) dan [DOI
+Checkpoint sepuluh unit yang belum lengkap dan pilot MIT dipreservasi dalam
+garis keturunan Zenodo yang sama: [koreksi publik terbaru
+10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030) dan [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Versi terbaru mempertahankan 16 berkas sebelumnya byte demi byte dan menambahkan
-delapan berkas MIT-L01; unduhan anonim cocok untuk seluruh 24 berkas dan bundel
-delta 46-entri (45 muatan manifest).
+Koreksi tersebut mempertahankan berkas parent byte demi byte dan telah dibaca
+kembali secara anonim. Publikasi L04 belum berhasil karena transaksi Zenodo
+mengembalikan HTTP 504; tidak ada klaim bahwa byte L04 sudah publik.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -37,6 +37,8 @@ Tidak dibuat repositori pengganti.
 - `output/pdf/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf` — pembaca A4 MIT halaman sumber 6–13, 5 halaman; 67.749 byte; SHA-256 `06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b`.
 - `output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html` — permukaan semantik MIT halaman sumber 14; 9.762 byte; SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`.
 - `output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf` — pembaca A4 MIT halaman sumber 14, 2 halaman; 34.550 byte; SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
+- `output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html` — permukaan semantik MIT halaman sumber 15; 9.975 byte; SHA-256 `c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e`.
+- `output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf` — pembaca A4 MIT halaman sumber 15, 2 halaman; 36.971 byte; SHA-256 `9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f`.
 - `output/pdf/D90-HAB-03-09-modul-pendamping-id.pdf` — modul Habring Bab 3–9 gabungan, 103 halaman; SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`.
 - `output/pdf/D90-HAB-03-subgradien-id.pdf` — 15 halaman; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
 - `output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf` — 13 halaman; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
@@ -49,7 +51,7 @@ Tidak dibuat repositori pengganti.
 - `output/pdf/D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf` — 17 halaman; current working-tree SHA-256 `18e7162f8d1e55a050ee96a6ba05a2ffaa0d5cb578f96e264152666a79dc83a8` (the previously published Zenodo bytes remain `c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a`).
 - `output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf` — 15 halaman; current working-tree SHA-256 `dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96` (the previously published Zenodo bytes remain `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`).
 
-Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca 1.495-rekaman berada di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
+Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca beku L04 berisi 1.543 rekaman di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
 
 ## Provenans produksi
 
@@ -72,6 +74,8 @@ python qa/build_mit_l02.py --output-root output/mit-l02-rebuild
 python qa/validate_mit_l02.py
 python qa/build_mit_l03.py --html-output output/mit-l03-rebuild.html --pdf-output output/mit-l03-rebuild.pdf
 python qa/validate_mit_l03.py
+python qa/build_mit_l04.py --html-output output/mit-l04-rebuild.html --pdf-output output/mit-l04-rebuild.pdf
+python qa/validate_mit_l04.py
 ```
 
 Dari `source/id-ID`, bangun unit Penn Bab 3–5 dengan pola berikut:
@@ -98,9 +102,11 @@ python qa/extend_backend_mit_l01.py
 python qa/validate_backend_mit_l01.py
 python qa/extend_backend_mit_l02.py
 python qa/validate_backend_mit_l02.py
+python qa/extend_backend_mit_l04.py
+python qa/validate_backend_mit_l04.py
 ```
 
-Generator Penn/Habring terdahulu tetap disimpan sebagai bukti transaksi historis, tetapi tidak dijalankan setelah ekstensi MIT; pintu masuk backend hidup adalah pasangan `extend_backend_mit_l01.py` / `validate_backend_mit_l01.py`.
+Generator Penn/Habring terdahulu tetap disimpan sebagai bukti transaksi historis. Rantai backend MIT hidup berakhir pada pasangan `extend_backend_mit_l04.py` / `validate_backend_mit_l04.py`; baseline L02 dipertahankan byte demi byte.
 
 Rekaman pembangunan lengkap ada di `00_control/BUILD_AND_QA.md`.
 
@@ -133,7 +139,8 @@ PDF bertag, dan tinjauan bahasa Indonesia oleh manusia masih terbuka. Tidak ada
 klaim penyelesaian korpus penuh.
 
 Ekstensi backend L02 lulus secara idempoten dan mempertahankan baseline 1.430
-rekaman: backend kini 1.495 rekaman / 92 segmen stabil, dengan 65 rekaman baru.
+rekaman: snapshot L02 berisi 1.495 rekaman / 92 segmen stabil, dengan 65 rekaman
+baru; snapshot ini adalah baseline byte-preserved bagi backend L04 1.543 rekaman.
 `backend/records.jsonl` berukuran 1.076.672 byte (SHA-256
 `61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7`) dan
 `backend/records.csv` 1.293.072 byte (SHA-256
@@ -165,9 +172,54 @@ tidak ada yang diada-adakan. Validasi, reflow desktop/ponsel, pemeriksaan
 visual, dan rereview independen lulus; PDF dapat dicari, `/Lang id-ID`, tetapi
 belum bertag. Tinjauan bahasa Indonesia oleh manusia belum tercatat.
 
-Preservasi publik saat ini tetap berada pada koreksi Zenodo
+Preservasi publik L02 tetap berada pada koreksi Zenodo
 [10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030), dengan resi
 baca anonim 9.338 byte SHA-256
 `4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. Resi itu
-adalah garis keturunan koreksi L02 dan tidak secara diam-diam mengklaim berkas
-L03 sebagai sudah publik. Korpus lengkap tetap belum selesai.
+adalah garis keturunan koreksi L02. L03 kini dipreservasi tersendiri pada
+[10.5281/zenodo.22071175](https://doi.org/10.5281/zenodo.22071175): 40 berkas,
+ZIP delta 484.193 byte SHA-256
+`16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f`, dan resi
+baca anonim 11.373 byte SHA-256
+`3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`.
+Korpus lengkap tetap belum selesai.
+
+## Batas MIT L04 yang diterima (23 Agustus 2026)
+
+Unit pembaca semantik keempat MIT mencakup tepat halaman sumber 15, “The Rise
+of the Algorithmic Era”; halaman 16 adalah kursor berikutnya. Sumber bahasa
+Inggris dan bahasa Indonesia, HTML, PDF A4 dua halaman, validasi, QA browser,
+QA visual, dan rereview independen tercatat dengan hash lengkap di
+`00_control/CURRENT_STATE.md` dan `00_control/BUILD_AND_QA.md`.
+
+Topologinya adalah 1 halaman, 6 butir tingkat atas, 12 butir bersarang, 1
+permukaan matematika inline, 0 rumus display, 0 grafik, dan 0 byte gambar. Hak
+MIT tetap CC BY-NC-SA 4.0 dengan atribusi, penandaan perubahan, kewajiban NC/SA,
+dan nondukungan. Batas ini tidak memiliki latihan, petunjuk, solusi, kode, atau
+interaktivitas sumber; tidak ada yang diada-adakan. Validasi, pembangunan
+deterministik, pemeriksaan visual, dan rereview independen lulus.
+
+QA browser kini berstatus `pass`: pemeriksaan DOM langsung pada desktop 1280×720
+dan ponsel 390×844 tidak menemukan luapan horizontal atau temuan konsol, serta
+tidak ada ID duplikat, fragmen tak terselesaikan, atau gambar. Zenodo sedang
+mengalami HTTP 504 pada transaksi L04; oleh karena itu belum ada DOI atau klaim
+byte publik untuk L04. PDF tetap tidak ditag dan tinjauan bahasa Indonesia oleh
+penutur asli belum tercatat. Korpus lengkap tetap belum selesai.
+
+Backend L04 beku pada 1.543 rekaman, yaitu 48 tambahan terhadap baseline L02
+1.495 rekaman. JSONL 1.102.706 byte memiliki SHA-256
+`92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645`; CSV
+1.325.476 byte memiliki SHA-256
+`fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d`; set ID
+baru memiliki SHA-256
+`8216b6f6713c519699e42923138a3f5e1f374000f3a494ececc646b9819dbb2d`.
+Hash skrip ekstensi, validator, dan resi lulus masing-masing adalah
+`19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272`,
+`d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46`, dan
+`59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204`.
+
+Transaksi L04 yang mengembalikan HTTP 504 tidak menghasilkan rekaman publik;
+tidak akan dibuat rilis L04 tersendiri. Halaman 16 memulai bagian sumber
+multi-halaman yang koheren. Terjemahan, pemeriksaan pembaca, backend, hak, dan
+preservasi berikutnya akan ditutup sekali pada batas batch itu, bukan sebagai
+proyek atau rilis per halaman.

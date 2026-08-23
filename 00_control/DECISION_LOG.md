@@ -217,3 +217,69 @@ The current public preservation baseline remains corrected Zenodo DOI
 the corrected L02 public lineage and does not silently claim L03 publication.
 The next source cursor is complete-notes page 15; no automatic Penn expansion
 is authorized.
+
+## D90-0034 — MIT L04 page 15 admitted; live browser QA pass; cursor advances to page 16
+
+The next source-order boundary is admitted locally: complete-notes PDF page 15,
+“The Rise of the Algorithmic Era.” The authority remains the frozen MIT 6.253
+PDF at 8,030,116 bytes / 340 pages, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`. The
+English witness, Indonesian source, HTML, and two-page A4 PDF bind to
+`1c6afe0318471c2680291c2968a348ff84ad3dbeb702218d1496412b3871c5f8`,
+`98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d`,
+`c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e`, and
+`9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f`.
+
+The one-page closure preserves 6 top-level items, 12 nested bullets, 1 inline
+math surface, zero display formulas, zero figures, and zero copied image bytes.
+MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA obligations, and
+non-endorsement remain explicit. No exercises, hints, solutions, code, or
+interactive surface is present or claimed. Deterministic, live browser, static
+visual, and independent rereview gates pass with P1=0/P2=0/P3=0. The validator
+reports `result=pass`; live desktop/mobile viewport, reflow, and console checks
+also report `pass` with no overflow or console findings. The PDF remains
+searchable, A4, `/Lang id-ID`, and untagged; human/native-speaker review is
+absent. QA hashes are validation `891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`,
+browser `87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`,
+visual `6da40ec0179d47143a4f99bea9a8e3e899d776773de6580afb1417085e8ff1bf`, and
+`39dc3005a3f16445eccdb73363719b3b03224efc573f7c8a45f9c73bc8a3b7d4`.
+The validator script is `qa/validate_mit_l04.py`, 18,735 bytes, SHA-256
+`b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`.
+
+Zenodo publication is pending after HTTP 504; no L04 DOI or public-byte claim
+is made. The corrected L02 record remains the last verified public checkpoint.
+The next source cursor is complete-notes page 16; no automatic Penn expansion
+is authorized.
+
+## D90-0035 — L04 gates close; page 16 starts one coherent multi-page batch
+
+D90-0034's earlier browser-limitation and standalone-Zenodo-pending wording is
+superseded. L04 live browser QA and reader validation now both pass. Their final
+receipts are respectively 1,125 bytes / SHA-256
+`87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`
+and 3,400 bytes / SHA-256
+`891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`;
+the 18,735-byte reader validator is
+`b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`.
+
+The additive L04 backend passes at 1,543 records / 48 additions, with JSONL
+1,102,706 bytes / SHA-256
+`92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645`, CSV
+1,325,476 bytes / SHA-256
+`fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d`,
+and new-ID-set SHA-256
+`8216b6f6713c519699e42923138a3f5e1f374000f3a494ececc646b9819dbb2d`.
+Extension, validator, and receipt hashes are
+`19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272`,
+`d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46`, and
+`59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204`.
+
+L03 is now public and anonymously verified at DOI
+`10.5281/zenodo.22071175`: 40 files, delta ZIP 484,193 bytes / SHA-256
+`16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f`,
+and readback 11,373 bytes / SHA-256
+`3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`.
+The failed L04 HTTP 504 transaction created no public record; no standalone L04
+release will be attempted. Page 16 begins a coherent multi-page source section,
+and the next admission/release gate applies once to that batch rather than to
+each page.

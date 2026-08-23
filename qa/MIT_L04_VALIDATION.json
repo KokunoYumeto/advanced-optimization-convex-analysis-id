@@ -1,0 +1,105 @@
+{
+  "boundary": {
+    "inline_math_surfaces": 1,
+    "nested_bullets": 12,
+    "next_source_page": 16,
+    "source_displays": 0,
+    "source_figures": 0,
+    "source_items": 6,
+    "source_pdf_pages": [
+      15
+    ]
+  },
+  "browser_measurement": "pass",
+  "build": {
+    "command": "python qa/build_mit_l04.py --html-output <html> --pdf-output <pdf>",
+    "deterministic_rebuilds": 2,
+    "html_sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e",
+    "pdf_sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f",
+    "toolchain": "Pandoc HTML5/MathML and LuaLaTeX"
+  },
+  "errors": [],
+  "files": {
+    "browser_qa": {
+      "bytes": 1125,
+      "path": "qa/MIT_L04_BROWSER_QA.json",
+      "sha256": "87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56"
+    },
+    "builder": {
+      "bytes": 3614,
+      "path": "qa/build_mit_l04.py",
+      "sha256": "733a186a8eb98bc418926ac2642b4e2b6093ef6432ba3471f4df9b9ffe00f9e7"
+    },
+    "html": {
+      "bytes": 9975,
+      "path": "output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+      "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"
+    },
+    "pdf": {
+      "bytes": 36971,
+      "path": "output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf",
+      "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"
+    },
+    "rereview": {
+      "bytes": 1906,
+      "path": "qa/MIT_L04_INDEPENDENT_REREVIEW.md",
+      "sha256": "39dc3005a3f16445eccdb73363719b3b03224efc573f7c8a45f9c73bc8a3b7d4"
+    },
+    "source_pdf": {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    "target": {
+      "bytes": 4081,
+      "path": "source/id-ID/mit-04-kebangkitan-era-algoritmik-id.md",
+      "sha256": "98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d"
+    },
+    "visual_qa": {
+      "bytes": 1275,
+      "path": "qa/MIT_L04_VISUAL_QA.json",
+      "sha256": "6da40ec0179d47143a4f99bea9a8e3e899d776773de6580afb1417085e8ff1bf"
+    },
+    "witness": {
+      "bytes": 3225,
+      "path": "source/en/mit-04-rise-algorithmic-era-semantic-witness.md",
+      "sha256": "1c6afe0318471c2680291c2968a348ff84ad3dbeb702218d1496412b3871c5f8"
+    }
+  },
+  "html": {
+    "display_math": 0,
+    "duplicate_ids": [],
+    "headings": {
+      "h1": 1,
+      "h2": 3
+    },
+    "images": 0,
+    "lang": "id-ID",
+    "source_figures": 0,
+    "source_items": 6,
+    "source_pages": 1,
+    "unresolved_fragments": []
+  },
+  "human_native_speaker_review": false,
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "pdf": {
+    "page_size": "A4",
+    "pages": 2,
+    "render_sha256": [
+      "f5b6b4f40f499be3ffd87642422e3cdd126e1ba7839028066dee99ece81023bb",
+      "161ac7c3fda20bda210e64153df5df76044e6052c6da14a7abaff76d3de42533"
+    ],
+    "searchable": true,
+    "tagged": false
+  },
+  "recorded_at": "2026-08-23T20:30:00Z",
+  "result": "pass",
+  "rights": {
+    "component": "MIT OCW 6.253 complete-notes",
+    "license": "CC BY-NC-SA 4.0",
+    "non_endorsement": true,
+    "source_graphics": 0
+  },
+  "schema": "o015-mit-l04-validation-v1",
+  "source_page_text_sha256": "68020f6263dc48b854f0f86080e71197e2b024eadfda003406277c1febd4f0fc"
+}

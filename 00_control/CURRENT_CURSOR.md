@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-23  
-State: MIT/Royer authority frozen and MIT semantic-source blocks on complete-notes pages 2--5, 6--13, and 14 admitted; GitHub and Zenodo checkpoint preservation complete; next source-order cursor is page 15
+State: MIT/Royer authority frozen and MIT semantic-source blocks on complete-notes pages 2--5, 6--13, 14, and 15 admitted; L03 Zenodo preservation verified; L04 reader/browser/backend gates closed without a standalone release; page 16 opens the next coherent multi-page batch
 
 ## Completed at this boundary
 
@@ -126,3 +126,70 @@ sanitized anonymous readback is
 `4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. That
 receipt is the corrected L02 lineage; L03 is not silently represented as a
 file in it. The next executable source cursor is complete-notes **page 15**.
+
+## 2026-08-23 boundary update — MIT L04 page 15 admitted; live browser QA pass; next cursor page 16
+
+The complete-notes source-order unit on page 15, “The Rise of the Algorithmic
+Era,” is admitted as a bounded semantic reader unit. The frozen MIT authority
+PDF remains 8,030,116 bytes / 340 pages, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+
+- English witness: `source/en/mit-04-rise-algorithmic-era-semantic-witness.md`, 3,225 bytes, SHA-256 `1c6afe0318471c2680291c2968a348ff84ad3dbeb702218d1496412b3871c5f8`.
+- Indonesian target: `source/id-ID/mit-04-kebangkitan-era-algoritmik-id.md`, 4,081 bytes, SHA-256 `98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d`.
+- HTML: `output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html`, 9,975 bytes, SHA-256 `c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e`.
+- PDF: `output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf`, 36,971 bytes, 2 A4 pages, SHA-256 `9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f`.
+- QA: `qa/MIT_L04_VALIDATION.json`, 3,400 bytes, SHA-256 `891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`; validator `qa/validate_mit_l04.py`, 18,735 bytes, SHA-256 `b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`; browser QA `qa/MIT_L04_BROWSER_QA.json`, 1,125 bytes, SHA-256 `87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`; visual QA `qa/MIT_L04_VISUAL_QA.json`, 1,275 bytes, SHA-256 `6da40ec0179d47143a4f99bea9a8e3e899d776773de6580afb1417085e8ff1bf`; rereview `qa/MIT_L04_INDEPENDENT_REREVIEW.md`, 1,906 bytes, SHA-256 `39dc3005a3f16445eccdb73363719b3b03224efc573f7c8a45f9c73bc8a3b7d4`.
+
+The one-page closure has 6 top-level items, 12 nested bullets, 1 inline math
+surface, zero display formulas, zero figures, and zero image bytes. It preserves
+the MIT CC BY-NC-SA 4.0 attribution, change marking, NC/SA obligations, and
+non-endorsement. There are no exercises, hints, solutions, code, or interactive
+surfaces. Two deterministic builds and static structural/visual checks pass.
+The validator now reports `result=pass`, and live browser QA reports `result=pass`:
+desktop 1280×720 and mobile 390×844 have no horizontal overflow or console findings,
+with zero duplicate IDs, unresolved fragments, or images. The PDF is searchable,
+A4, `/Lang id-ID`, and untagged; human/native-speaker Indonesian review remains
+unrecorded.
+
+Zenodo publication of this L04 boundary is pending because the attempted API
+transaction returned HTTP 504. No L04 public DOI or public-byte claim is made;
+the corrected L02 receipt remains the last verified public checkpoint. The next
+executable source cursor is complete-notes **page 16**.
+
+## 2026-08-23 controlling refresh — L04 closed; page 16 opens a consolidated batch
+
+This section supersedes the earlier L04 browser-limitation and standalone-
+publication-pending wording. The page-15 reader boundary remains admitted, and
+its final live browser receipt is `qa/MIT_L04_BROWSER_QA.json`, 1,125 bytes,
+SHA-256 `87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56`,
+with `result=pass` at 1280×720 and 390×844, no horizontal overflow, no console
+findings, zero duplicate IDs, and zero unresolved fragments. The final reader
+validation is `qa/MIT_L04_VALIDATION.json`, 3,400 bytes, SHA-256
+`891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd`;
+`qa/validate_mit_l04.py` is 18,735 bytes, SHA-256
+`b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17`.
+
+The additive page-15 backend gate passes and freezes 1,543 records, 48 above
+the byte-preserved 1,495-record L02 baseline. `backend/records.jsonl` is
+1,102,706 bytes, SHA-256 `92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645`;
+`backend/records.csv` is 1,325,476 bytes, SHA-256
+`fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d`;
+the new-ID set is SHA-256
+`8216b6f6713c519699e42923138a3f5e1f374000f3a494ececc646b9819dbb2d`.
+The 26,315-byte extension `qa/extend_backend_mit_l04.py` has SHA-256
+`19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272`;
+the 14,123-byte validator `qa/validate_backend_mit_l04.py` has SHA-256
+`d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46`;
+the 7,178-byte passing receipt `qa/MIT_L04_BACKEND_VALIDATION.json` has SHA-256
+`59277c7f61b350625d829b079b8800343489a97591c7f4cbf56d01e2c82c1204`.
+
+L03 is now independently public at
+[10.5281/zenodo.22071175](https://doi.org/10.5281/zenodo.22071175): 40 files
+(32 inherited plus 8 additions). The 484,193-byte delta ZIP has SHA-256
+`16116f249ffd4fc731a01de8f748b13c9e32c6734ca60c035098420e40b2909f`;
+the 11,373-byte anonymous readback has SHA-256
+`3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`.
+The failed L04 HTTP 504 transaction published no L04 record, and no standalone
+L04 release will be made. The next source cursor is page 16, which opens a
+coherent multi-page source section/batch; translation, QA, backend admission,
+and preservation must close once for that batch rather than per page.

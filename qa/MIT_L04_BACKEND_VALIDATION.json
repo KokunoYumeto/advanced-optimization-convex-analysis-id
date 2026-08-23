@@ -1,0 +1,195 @@
+{
+  "artifact_bindings": {
+    "artifact.mit.l04.after-body": {
+      "bytes": 8,
+      "path": "source/id-ID/mit-l03-after-body.html",
+      "sha256": "c529a821ba488b08d7968807e395f22f820af99d41f82ffe77de18200d2007b0"
+    },
+    "artifact.mit.l04.before-body": {
+      "bytes": 121,
+      "path": "source/id-ID/mit-l04-before-body.html",
+      "sha256": "c0061004c928630abd161589b1e2f216265662e806631ef3ba31c11a56bf86e8"
+    },
+    "artifact.mit.l04.browser-qa": {
+      "bytes": 1125,
+      "path": "qa/MIT_L04_BROWSER_QA.json",
+      "sha256": "87a619e7df2a4226fe6f27307659b049e2176795b11488401dc05a6a34c86e56"
+    },
+    "artifact.mit.l04.builder": {
+      "bytes": 3614,
+      "path": "qa/build_mit_l04.py",
+      "sha256": "733a186a8eb98bc418926ac2642b4e2b6093ef6432ba3471f4df9b9ffe00f9e7"
+    },
+    "artifact.mit.l04.css": {
+      "bytes": 2577,
+      "path": "source/id-ID/mit-l02.css",
+      "sha256": "80062b9daea244d491ed7d1ff8f7c5974d224b163496c0b58058f6831de6fe88"
+    },
+    "artifact.mit.l04.independent-rereview": {
+      "bytes": 1906,
+      "path": "qa/MIT_L04_INDEPENDENT_REREVIEW.md",
+      "sha256": "39dc3005a3f16445eccdb73363719b3b03224efc573f7c8a45f9c73bc8a3b7d4"
+    },
+    "artifact.mit.l04.pdf-filter": {
+      "bytes": 296,
+      "path": "source/id-ID/mit-l03-pdf-filter.lua",
+      "sha256": "bd9b7bfe76b22af847b19271782c9c26e6afd23017067fc3d871f8bf29c7994d"
+    },
+    "artifact.mit.l04.pdf-preamble": {
+      "bytes": 1220,
+      "path": "source/id-ID/mit-l04-preamble.tex",
+      "sha256": "95299b90116cf3b5ab84b58677fbb0762456f9754861d1ba7dcca9813ae1e7de"
+    },
+    "artifact.mit.l04.semantic-witness": {
+      "bytes": 3225,
+      "path": "source/en/mit-04-rise-algorithmic-era-semantic-witness.md",
+      "sha256": "1c6afe0318471c2680291c2968a348ff84ad3dbeb702218d1496412b3871c5f8"
+    },
+    "artifact.mit.l04.target-html": {
+      "bytes": 9975,
+      "path": "output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+      "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"
+    },
+    "artifact.mit.l04.target-pdf": {
+      "bytes": 36971,
+      "path": "output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf",
+      "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"
+    },
+    "artifact.mit.l04.target-source": {
+      "bytes": 4081,
+      "path": "source/id-ID/mit-04-kebangkitan-era-algoritmik-id.md",
+      "sha256": "98d4a0d31241e626e96b7929cb2cda135c8559d829326711f7dff436b8cdab0d"
+    },
+    "artifact.mit.l04.validation": {
+      "bytes": 3400,
+      "path": "qa/MIT_L04_VALIDATION.json",
+      "sha256": "891dc5639a16099b81667fa2101df0992cf4d4c83654f44a2921ba12831717cd"
+    },
+    "artifact.mit.l04.validator": {
+      "bytes": 18735,
+      "path": "qa/validate_mit_l04.py",
+      "sha256": "b2b5f289b35e4dadc2a49fb367b1373094789061aab31bf2b99056541052ab17"
+    },
+    "artifact.mit.l04.visual-qa": {
+      "bytes": 1275,
+      "path": "qa/MIT_L04_VISUAL_QA.json",
+      "sha256": "6da40ec0179d47143a4f99bea9a8e3e899d776773de6580afb1417085e8ff1bf"
+    },
+    "artifact.o015.backend-generator-mit-l04": {
+      "bytes": 26315,
+      "path": "qa/extend_backend_mit_l04.py",
+      "sha256": "19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272"
+    },
+    "artifact.o015.backend-validator-mit-l04": {
+      "bytes": 14123,
+      "path": "qa/validate_backend_mit_l04.py",
+      "sha256": "d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46"
+    }
+  },
+  "backend": {
+    "csv": {
+      "bytes": 1325476,
+      "sha256": "fedc1855df37e006e52ba76d99af2ee132accfa3b416519c39c036454f378a7d"
+    },
+    "jsonl": {
+      "bytes": 1102706,
+      "sha256": "92f6b805a83361f29a830b8c37b1c52f3468cb420d10b9a3a810cf0f8ac20645"
+    },
+    "record_count": 1543
+  },
+  "errors": [],
+  "extension_script": {
+    "bytes": 26315,
+    "path": "qa/extend_backend_mit_l04.py",
+    "sha256": "19d315c38d77691b067050e6a09ffb411767008a41582b1674c90d37087f7272"
+  },
+  "new_entity_counts": {
+    "artifact": 17,
+    "learning_surface": 1,
+    "qa_event": 14,
+    "relation": 14,
+    "segment": 1,
+    "unit": 1
+  },
+  "new_ids": [
+    "artifact.mit.l04.after-body",
+    "artifact.mit.l04.before-body",
+    "artifact.mit.l04.browser-qa",
+    "artifact.mit.l04.builder",
+    "artifact.mit.l04.css",
+    "artifact.mit.l04.independent-rereview",
+    "artifact.mit.l04.pdf-filter",
+    "artifact.mit.l04.pdf-preamble",
+    "artifact.mit.l04.semantic-witness",
+    "artifact.mit.l04.target-html",
+    "artifact.mit.l04.target-pdf",
+    "artifact.mit.l04.target-source",
+    "artifact.mit.l04.validation",
+    "artifact.mit.l04.validator",
+    "artifact.mit.l04.visual-qa",
+    "artifact.o015.backend-generator-mit-l04",
+    "artifact.o015.backend-validator-mit-l04",
+    "d90.mit.ocw-6.253.l04.p015",
+    "qa.o015.mit-l04.accessibility",
+    "qa.o015.mit-l04.backend-integration",
+    "qa.o015.mit-l04.browser",
+    "qa.o015.mit-l04.build",
+    "qa.o015.mit-l04.formulas",
+    "qa.o015.mit-l04.html",
+    "qa.o015.mit-l04.language",
+    "qa.o015.mit-l04.math-rereview",
+    "qa.o015.mit-l04.pdf",
+    "qa.o015.mit-l04.rights",
+    "qa.o015.mit-l04.semantic-reconstruction",
+    "qa.o015.mit-l04.source-freeze",
+    "qa.o015.mit-l04.topology",
+    "qa.o015.mit-l04.visual",
+    "relation.mit.browser-qa-depends-on-html-l04",
+    "relation.mit.html-adapts-target-l04",
+    "relation.mit.inline-math-depends-on-segment-l04",
+    "relation.mit.l04.contains-p015",
+    "relation.mit.pdf-adapts-target-l04",
+    "relation.mit.target-edition-contains-l04",
+    "relation.mit.target-translates-witness-l04",
+    "relation.mit.validation-depends-on-browser-qa-l04",
+    "relation.mit.validation-depends-on-rereview-l04",
+    "relation.mit.validation-depends-on-visual-qa-l04",
+    "relation.mit.visual-qa-depends-on-pdf-l04",
+    "relation.mit.witness-adapts-authority-pdf-l04",
+    "relation.mit.witness-edition-contains-l04",
+    "relation.mit.work-contains-l04",
+    "surface.mit.l04.inline-math-ell-one",
+    "unit.mit.ocw-6.253.l04"
+  ],
+  "new_ids_sha256": "8216b6f6713c519699e42923138a3f5e1f374000f3a494ececc646b9819dbb2d",
+  "new_record_count": 48,
+  "page_segment": {
+    "id": "d90.mit.ocw-6.253.l04.p015",
+    "inline_math_surface": "surface.mit.l04.inline-math-ell-one",
+    "nested_bullets": 12,
+    "source_items": 6,
+    "source_pdf_page": 15
+  },
+  "protected_baseline": {
+    "csv": {
+      "bytes": 1293072,
+      "sha256": "146f9a251bcd6b7c9938debc5e9b3f8d680cb51b6d6309bc9a85c90269d22f82"
+    },
+    "id_set_sha256": "0bd88fee9666181e30211465d7e4674f9f90022cee68eb02e21d6419279482b5",
+    "jsonl": {
+      "bytes": 1076672,
+      "sha256": "61422fc3d0a1dfa3fed57f3710ae0ffbefb48b8b45957c25ed7455d3a9bd05e7"
+    },
+    "record_count": 1495,
+    "record_set_sha256": "8b9fc6f5aafad76c2df350d3142ff05aefeaba97034b5136db080e2ac08e2b1c"
+  },
+  "recorded_at": "2026-08-23T20:30:00Z",
+  "result": "pass",
+  "schema": "o015-mit-l04-backend-validation-v1",
+  "validator_script": {
+    "bytes": 14123,
+    "path": "qa/validate_backend_mit_l04.py",
+    "sha256": "d218daa09e803be9dd9c6401a5aace85f5340a88dbb7cf53b3563728bbb79c46"
+  },
+  "workflow": "o015-mit-l04-backend-v1"
+}

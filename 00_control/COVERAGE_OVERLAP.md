@@ -95,3 +95,44 @@ the current public L02 preservation baseline, not silent publication evidence
 for L03. Remaining gaps are the untranslated source pages, original bridges,
 laboratories, mastery/solution layer, capstone, semantic EPUB, tagged PDF, and
 human Indonesian review.
+
+## MIT L04 page-15 boundary admitted; live browser QA pass (2026-08-23)
+
+Page 15, “The Rise of the Algorithmic Era,” is now an admitted local semantic
+reader unit following L03. It remains distinct from O018's LP/MIP, tableau,
+network, and operations-research workflow. Page 16 is the next source cursor.
+
+The exact closure is 1 page, 6 top-level items, 12 nested bullets, 1 inline
+math surface, zero display formulas, zero figures, and zero copied image bytes.
+The MIT component remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA obligations, and non-endorsement. No exercises, hints, solutions, code,
+or interactive surface occurs in this boundary, so none is claimed.
+
+The source, witness, target, HTML, PDF, validation, browser, visual, and
+rereview identities are controlled in `CURRENT_STATE.md` and `BUILD_AND_QA.md`.
+The validator and live browser result are `pass`; desktop 1280×720 and mobile
+390×844 reflow checks report no horizontal overflow or console findings, with no
+duplicate IDs, unresolved fragments, or images. Zenodo publication is pending
+after HTTP 504; no L04 public DOI or public-byte claim is made. Remaining gaps
+are later source pages, original bridges, laboratories, mastery/solution layer,
+capstone, semantic EPUB, tagged PDF, and human Indonesian review.
+
+## L04 final gate and page-16 batch correction (2026-08-23)
+
+The earlier L04 browser limitation is superseded: live desktop/mobile browser
+QA and the corrected validator both pass. L04's backend is frozen at 1,543
+records, adding 48 to the protected 1,495-record baseline; exact bytes, hashes,
+and validator receipts are bound in `CURRENT_STATE.md` and `BUILD_AND_QA.md`.
+This does not change the overlap boundary: the material remains historical and
+conceptual convex-optimization framing, not O018's LP/MIP, tableau, network, or
+operations-research workflow.
+
+L03 is separately public at DOI `10.5281/zenodo.22071175`, with 40 files and an
+11,373-byte anonymous readback SHA-256
+`3d3a22a371eb267915f19773e8d4fc94b482840d808a46b0b376e98518ad8822`.
+The L04 HTTP 504 attempt produced no public L04 record, and no standalone L04
+release is planned. Page 16 begins the next coherent multi-page section/batch;
+coverage, overlap, rights, QA, backend, and preservation are evaluated once at
+that batch boundary. Remaining gaps are later MIT/Royer material, original
+bridges, laboratories, mastery/solution coverage, capstone, semantic EPUB,
+tagged PDF, and human Indonesian review.

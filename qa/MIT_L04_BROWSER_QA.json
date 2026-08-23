@@ -1,0 +1,42 @@
+{
+  "schema": "o015-mit-l04-browser-qa-v2",
+  "result": "pass",
+  "method": "Codex in-app browser live DOM/reflow check",
+  "browser_available": true,
+  "html": {
+    "path": "output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+    "bytes": 9975,
+    "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"
+  },
+  "topology": {
+    "lang": "id-ID",
+    "main_count": 1,
+    "headings": {"h1": 1, "h2": 3},
+    "source_pages": 1,
+    "source_items": 6,
+    "nested_lists": 5,
+    "nested_bullets": 12,
+    "source_figures": 0,
+    "source_displays": 0,
+    "inline_math_nodes": 3,
+    "images": 0,
+    "duplicate_ids": 0,
+    "unresolved_fragments": 0,
+    "skip_link": "#d90-mit-l04-p015"
+  },
+  "desktop": {
+    "viewport": [1280, 720],
+    "client_width": 1265,
+    "scroll_width": 1265,
+    "horizontal_overflow": false,
+    "console_warnings_or_errors": []
+  },
+  "mobile": {
+    "viewport": [390, 844],
+    "client_width": 375,
+    "scroll_width": 375,
+    "horizontal_overflow": false,
+    "console_warnings_or_errors": []
+  },
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra"
+}
