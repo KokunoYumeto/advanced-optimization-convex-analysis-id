@@ -190,3 +190,13 @@ The L02 reader validation receipt is `qa/MIT_L02_VALIDATION.json` (3,076 bytes; 
 - Corrected `SHA256SUMS-mit-l02`: 3,168 bytes; SHA-256 `a5b71518dcf3dd8e1a17a5119b99af8a8ff0be664d5c883f3652161df21f248a`.
 
 The corrected delta ZIP reopened with 42 entries; all 41 manifest-bound payloads matched their internal sizes and hashes, with zero forbidden entries. It includes the final 1,495-record backend, the complete 7,985-byte backend-validation receipt, and controls whose hashes agree with that backend. The sanitized anonymous readback is `release/zenodo/2026-08-23-mit-l02-correction/zenodo-public-readback-mit-l02-correction.json`: 9,338 bytes; SHA-256 `4d1ec4e50c2428a6c0cbad1e8e530892f1bc0b6c6eeb7da89b48e987932c6dbb`. No reader bytes changed, page 14 remains the next cursor, and no upstream contact occurred.
+
+## 2026-08-23 — Public GitHub MIT L02/L03 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Visibility/default branch: public / `main`
+- Content commit: `12bc0070e334452ce7b47499c4d30d959740d934`
+- Content tree: `5340b0813dbe8e31054f70303f5bfd926f4e76da`
+- Scope: MIT 6.253 Indonesian reader checkpoints L02 (pages 6–13) and L03 (page 14), semantic witnesses, source/backend QA, component-rights controls, and the corrected Zenodo lineage package. Page 15 remains the next production cursor.
+
+Credential-free raw downloads from the public `main` branch matched these exact local identities: L03 source `source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md` (4,758 bytes; SHA-256 `24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060`), L03 HTML (9,762 bytes; SHA-256 `01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90`), L03 PDF (34,550 bytes; SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`), and the draft-bound L03 release manifest (2,291 bytes; SHA-256 `3401e6e9b9357e794a398d514549e8cca029ef94469849a0db5b3f1383f20cd9`). No upstream issue, comment, or other contact was made.
