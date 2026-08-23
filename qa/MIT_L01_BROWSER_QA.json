@@ -1,0 +1,61 @@
+{
+  "schema": "o015-mit-l01-browser-qa-v1",
+  "recorded_at": "2026-08-22T21:28:10Z",
+  "surface": {
+    "path": "output/html/D90-MIT-01-peran-kekonveksan-id.html",
+    "bytes": 20613,
+    "sha256": "fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b"
+  },
+  "browser": "Codex in-app browser",
+  "desktop": {
+    "viewport_css_px": [1280, 720],
+    "title": "Peran Kekonveksan dalam Optimisasi",
+    "lang": "id-ID",
+    "main_landmarks": 1,
+    "headings": {
+      "h1": 1,
+      "h2": 6,
+      "h3": 1
+    },
+    "toc_role": "doc-toc",
+    "source_pages": [
+      ["d90-mit-l01-p002", "2", "1"],
+      ["d90-mit-l01-p003", "3", "2"],
+      ["d90-mit-l01-p004", "4", "3"],
+      ["d90-mit-l01-p005", "5", "4"]
+    ],
+    "source_items": 21,
+    "edition_notes": 3,
+    "mathml_nodes": 14,
+    "display_mathml_nodes": 2,
+    "images": 0,
+    "duplicate_ids": [],
+    "unresolved_fragments": [],
+    "horizontal_overflow": false,
+    "display_math_overflow": false,
+    "exact_model_provenance_present": true
+  },
+  "mobile": {
+    "viewport_css_px": [390, 844],
+    "document_client_width_css_px": 375,
+    "document_scroll_width_css_px": 375,
+    "main_left_css_px": 4,
+    "main_right_css_px": 371,
+    "main_width_css_px": 367,
+    "body_font_size_css_px": 16,
+    "horizontal_overflow": false,
+    "all_source_items_fit": true,
+    "display_math": [
+      {"client_width_css_px": 285, "scroll_width_css_px": 285},
+      {"client_width_css_px": 285, "scroll_width_css_px": 285}
+    ],
+    "skip_link": {
+      "text": "Langsung ke materi kuliah",
+      "target": "#d90-mit-l01-p002",
+      "target_exists": true
+    }
+  },
+  "console_warnings_or_errors": [],
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "result": "pass"
+}

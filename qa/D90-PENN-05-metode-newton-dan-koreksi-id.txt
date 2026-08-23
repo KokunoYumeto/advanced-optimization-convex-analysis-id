@@ -501,7 +501,7 @@ oleh penulis sumber.
      (3) Contoh Hessian tak tentu membedakan arah Newton dari arah naik dan
           memeriksa fungsi garis skalar yang sebenarnya.
      (4) Norma matriks pada analisis lokal dinyatakan sebagai norma terinduksi, sehingga
-          pertidaksamaan operator yang dipakai dalam bukti terikat sah.
+          ketaksamaan operator yang dipakai dalam bukti terikat sah.
      (5) Teorema konvergensi lokal Newton memuat lingkungan invarian, kontinuitas in-
          vers Hessian, dan argumen modulus kontinuitas yang lengkap.
      (6) Hibrida gradien–Newton memakai titik ujung stasioner yang benar serta hipotesis

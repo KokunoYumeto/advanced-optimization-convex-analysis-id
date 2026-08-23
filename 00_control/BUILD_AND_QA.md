@@ -519,3 +519,47 @@ The combined reader is 3,090,098 bytes / 103 A4 pages, SHA-256 `6cd291cc447999b7
 All 103 final pages were rendered at 80 dpi and inspected across five contact sheets; the cover was inspected full size. No blank page, clipping, collision, broken figure, malformed transition, or unreadable glyph was found.
 
 The compact source release `release/figshare/2026-08-22-reader/D90-HAB-03-09-sumber-id.zip` is 160,908 bytes, SHA-256 `be06ba070d97506970378cea801c2525abc69bb305c3770b59186a6e212a645f`, with 29 unique entries. It includes all seven wrappers and chapter bodies, class, macros, both figures, complete bibliography closure, exact CC BY 4.0 legal code, Habring-only corrections/rights/source authority, pinned Python requirements, the combined-reader builder, and `BUILD_MODULE.ps1`. A fresh extraction built all seven standalone PDFs and the combined reader successfully; the clean combined output was byte-identical at SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`. No Penn, Griffin, Maple, `.mpl`, Git, credential/token, cache, or temporary entry is present.
+
+---
+
+# MIT OCW 6.253 first-topic semantic-source build and QA
+
+As of: 2026-08-23  
+Unit: complete-notes pages 2--5 — The Role of Convexity in Optimization / Peran Kekonveksan dalam Optimisasi  
+Admission: PASS
+
+## Exact inputs and outputs
+
+- Authority PDF: 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+- English semantic witness: `source/en/mit-01-role-of-convexity-semantic-witness.md`, 5,752 bytes, SHA-256 `a18aefa9e1ffa29d0a3cea21d0df34f05025cb7c2008ae57b5db44730c9d1f58`.
+- Indonesian semantic source: `source/id-ID/mit-01-peran-kekonveksan-id.md`, 8,641 bytes, SHA-256 `2170dec12e707782c7677647f77ad8ee3360b282a8dbb9fb5620170106004bf3`.
+- Semantic HTML: `output/html/D90-MIT-01-peran-kekonveksan-id.html`, 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`.
+- Reflowed PDF: `output/pdf/D90-MIT-01-peran-kekonveksan-id.pdf`, 53,370 bytes / 3 A4 pages, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
+
+The exact source boundary is four PDF pages with 21 top-level items distributed 4/3/5/9, 12 nested bullets distributed 0/8/4/0, and two freestanding display formulas. There are no source figures, theorem statements, learner exercises, hints, answers, solutions, or interactivities in this block. Corrections `O015-MIT-SEM-0001`--`0003` disclose the discrete-dual scope, self-dual/involution meaning, and normalization of a source function-type arrow.
+
+## Deterministic and semantic validation
+
+`qa/build_mit_pilot.py`, 3,025 bytes, SHA-256 `b109c24f01feb1f57193a05b56ae662902078c5fd63f457084379f7db66dac74`, builds HTML5/MathML and LuaLaTeX output. Two clean bounded-output builds reproduce the admitted HTML/PDF hashes exactly. `qa/validate_mit_pilot.py`, 19,571 bytes, SHA-256 `16dacd29912fd8b749f8d6ae8d44b716f814111c0a40eed27799e64fe6bf1108`, reparses both semantic sources, verifies exact page/item anchors, recomputes list/math topology and all three corrections, rebuilds twice, rerenders the PDF, and checks document metadata/font maps. Its passing 4,167-byte report has SHA-256 `1e11642f8c1ab1ade013c4377f4dc0bc119ec0e89e6073eec787c7c341de0970`.
+
+The actual HTML passes browser measurement at 1280-by-720 and 390-by-844 with zero horizontal or display-math overflow, one main landmark, semantic heading/TOC/skip-link structure, 14 MathML nodes including two displays, no images, no duplicate IDs, no unresolved fragments, and no console warning/error. `qa/MIT_L01_BROWSER_QA.json` is 1,757 bytes, SHA-256 `2d5c90b3343040c4ed3dfbdb3714737dfba8317d1781c1e5c27145f5afbbb76d`.
+
+All three PDF pages were rendered at 160 dpi and inspected individually; there is no clipping, overlap, unreadable formula, broken heading, blank page, or stranded correction. The PDF is searchable, unencrypted, declares `/Lang id-ID`, and all six font resources expose ToUnicode maps. It is not tagged. Independent semantic/math rereview is P1=0/P2=0/P3=0 at `qa/MIT_L01_INDEPENDENT_REREVIEW.md`, 2,691 bytes, SHA-256 `8259c6631c1c8645684c75a0244feedfc7289023d13e909cfdc73941eed35e50`. Independent human/native-speaker Indonesian review remains unrecorded.
+
+## Backend and next source boundary
+
+`qa/extend_backend_mit_l01.py`, 62,794 bytes, SHA-256 `b206d3e64628ed8a98ba7a776bcc34c1d6bec19175ec59082950fe6d2e63cf79`, and `qa/validate_backend_mit_l01.py`, 39,185 bytes, SHA-256 `be59f34bc8aa083f31a7f2a62a72aa20ab264167f6288d03b04247c8ef54d19e`, add and validate 130 exact MIT/Royer/pilot records over the 1,300-record incoming baseline. The resulting backend contains 1,430 records; the added-ID set has SHA-256 `fa0e7d763e2c3eab68ac32fe935d777f3c688c5d59cc509d93416608726cfaf5`. JSONL is 1,036,556 bytes, SHA-256 `ebf44ca94323584e40b548ce36da560899e39a1e76ed2c993a0786b4ee7c4a2b`; lossless CSV is 1,244,072 bytes, SHA-256 `bc73abb3457cacc10423c1785a0db70a9007fdef8ac0a2be1de48d25d389fdf5`. Two terminal generation/validation cycles are byte-identical and return `errors=[]`.
+
+The next coherent source-order block is complete-notes pages 6--13, from “Duality” through “Exceptional Behavior”; page 14 begins “Modern View of Convex Optimization.” Its exact topology and material Athena-figure risk are frozen in `MIT_L02_BOUNDARY_CENSUS.md`.
+
+## Current descendant byte note
+
+The historical ten-unit Zenodo release preserves the Penn Chapter 4 and 5
+reader bytes recorded in its public receipt. The current working-tree
+descendants include the later bounded terminology normalization and therefore
+have distinct identities: Penn Chapter 4 is 847,337 bytes,
+`18e7162f8d1e55a050ee96a6ba05a2ffaa0d5cb578f96e264152666a79dc83a8`; Penn
+Chapter 5 is 2,691,773 bytes,
+`dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96`, with
+wrapper SHA-256 `7de8bc61dc3f59999ac6414df90ef6925d5a7d4665f79d71998c8f0e45839c14`.
+They are not substituted into the immutable historical release.

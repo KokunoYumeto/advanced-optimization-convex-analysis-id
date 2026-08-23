@@ -5,7 +5,7 @@ Disposition: controlling curriculum architecture received at the required safe b
 
 ## Exact controlling handoff
 
-- Path: `C:\Users\Floris\Documents\interlanguage\outputs\01a01ec1-e685-70d0-b022-211396334723\curriculum_logbook\42_O015_SELECTION_AND_EXISTING_TASK_HANDOFF_20260822.md`
+- Path: `%USERPROFILE%\Documents\interlanguage\outputs\01a01ec1-e685-70d0-b022-211396334723\curriculum_logbook\42_O015_SELECTION_AND_EXISTING_TASK_HANDOFF_20260822.md`
 - Bytes: 13,143
 - SHA-256: `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`
 - Read completely and independently hash-verified on 2026-08-22.

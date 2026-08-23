@@ -2,6 +2,22 @@
 
 This repository deliberately has no blanket license statement. Rights are tracked per component in `00_control/COMPONENT_RIGHTS.csv`.
 
+## MIT OpenCourseWare primary spine
+
+Dimitri P. Bertsekas's MIT OpenCourseWare 6.253 material, *Convex Analysis and Optimization* (Spring 2012), is handled under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). The English semantic transcription witnesses, Indonesian semantic sources, HTML readers, and PDF readers derived from that material retain MIT OCW/source attribution, identify transcription, translation, reflow, and corrections, remain noncommercial and ShareAlike, link the license, impose no additional restrictions, respect MIT name/logo restrictions, and disclaim endorsement.
+
+The official repository is OCW/Hugo metadata rather than mathematical TeX. Project-made English semantic witnesses are line-addressable transcriptions bound to exact PDF pages; they are not represented as official editable MIT source. The complete-notes title page says figures are courtesy of Athena Scientific and used with permission. That statement is not treated as a sublicensable adaptation grant. No Athena figure byte or copied layout is admitted; required diagrams must be independently redrawn from mathematical primitives with separate rights/provenance or omitted with an exact source locator. The admitted first-topic pilot contains zero figures. Its three disclosed corrections are `O015-MIT-SEM-0001` through `O015-MIT-SEM-0003`.
+
+License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+## Royer stochastic-gradient primary component
+
+Clément W. Royer's *Optimization for Machine Learning -- Stochastic Gradient* notes and the official course-page laboratory packages are handled under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), as declared on the official course page. The notes, two notebook laboratories, and supplementary virtual-board PDFs remain component-distinct from the MIT ShareAlike material. Adaptations must retain attribution, identify changes, remain noncommercial, link the license, impose no additional restrictions, and disclaim endorsement.
+
+The notes are PDF-only; no mathematical TeX source is claimed. The notebooks retain their embedded credits to A. Gramfort and Robert Gower. The official packages do not pin a reproducible environment, and laboratory 2 contains unanswered discussion cells plus an unimplemented optional Momentum/Adam surface. Any completion is separately authored and attributed rather than silently imputed to Royer.
+
+License: https://creativecommons.org/licenses/by-nc/4.0/
+
 ## Habring-derived units in the edition
 
 Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv:2607.11664v1, is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). The Indonesian Chapter 3--9 sources and reader PDFs are independent translations/adaptations distributed under CC BY 4.0. They identify the source, the license, the fact of translation and correction, and non-endorsement. Exact mathematical and bibliographic corrections are listed in `00_control/ADVERSE_LEDGER.jsonl`.

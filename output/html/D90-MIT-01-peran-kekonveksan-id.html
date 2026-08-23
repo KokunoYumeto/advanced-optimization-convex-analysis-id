@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="dcterms.date" content="2026-08-22" />
+  <meta name="keywords" content="optimisasi konveks, analisis
+konveks, dualitas, id-ID" />
+  <meta name="description" content="Terjemahan Indonesia yang dapat mengalir ulang dari topik pertama Kuliah 1 MIT OCW 6.253, dengan pengenal stabil dan peta halaman sumber." />
+  <title>Peran Kekonveksan dalam Optimisasi</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f4f6fb;
+}
+* {
+box-sizing: border-box;
+}
+body {
+margin: 0;
+background: #f4f6fb;
+}
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus {
+transform: translateY(0);
+}
+body > main,
+body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header {
+padding: 3.5rem 0 1.25rem;
+}
+body > main > header h1 {
+max-width: 22ch;
+margin: 0;
+font-size: clamp(2.2rem, 5vw, 4.5rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 54rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c8d1e4;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul {
+columns: 2 20rem;
+gap: 2rem;
+}
+main {
+padding-bottom: 5rem;
+}
+main > section,
+.edition-notice,
+.source-page,
+.edition-backmatter {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.6rem);
+border: 1px solid #c8d1e4;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+h2 {
+margin-top: 0;
+font-size: clamp(1.7rem, 3vw, 2.5rem);
+line-height: 1.15;
+}
+h3 {
+font-size: 1.25rem;
+}
+li + li {
+margin-top: 0.55rem;
+}
+.source-item {
+margin: 0.65rem 0;
+}
+.edition-note {
+margin: 1.25rem 0;
+padding: 1rem 1.15rem;
+border-left: 0.32rem solid #5c3bbf;
+border-radius: 0.4rem;
+background: #f2effd;
+}
+.source-locator {
+display: inline-block;
+margin-top: 1rem;
+color: #58647d;
+font-size: 0.92rem;
+}
+math[display="block"] {
+overflow-x: auto;
+padding: 0.4rem 0;
+}
+a {
+color: #244fa3;
+text-underline-offset: 0.16em;
+}
+a:focus-visible {
+outline: 0.2rem solid #f09a2b;
+outline-offset: 0.18rem;
+}
+@media (max-width: 48rem) {
+body > main,
+body > footer {
+width: min(94vw, 78rem);
+}
+#TOC ul {
+columns: 1;
+}
+.source-page,
+.edition-notice,
+.edition-backmatter {
+border-radius: 0.65rem;
+}
+}
+@media print {
+:root,
+body {
+background: white;
+}
+main > section,
+.edition-notice,
+.source-page,
+.edition-backmatter {
+box-shadow: none;
+break-inside: avoid;
+}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l01-p002">Langsung ke materi kuliah</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Peran Kekonveksan dalam Optimisasi</h1>
+<p class="subtitle">Pilot sumber semantik - Kuliah 1, halaman sumber
+2-5</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="date">2026-08-22</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tentang-pilot-ini" id="toc-tentang-pilot-ini"><span class="toc-section-number">1</span> Tentang pilot ini</a></li>
+<li><a href="#kuliah-1-pengantar-mata-kuliah" id="toc-kuliah-1-pengantar-mata-kuliah"><span class="toc-section-number">2</span> Kuliah 1: Pengantar Mata Kuliah</a>
+<ul>
+<li><a href="#garis-besar-kuliah" id="toc-garis-besar-kuliah"><span class="toc-section-number">2.1</span> Garis Besar Kuliah</a></li>
+</ul></li>
+<li><a href="#sejarah-dan-prasejarah" id="toc-sejarah-dan-prasejarah"><span class="toc-section-number">3</span> Sejarah dan Prasejarah</a></li>
+<li><a href="#masalah-optimisasi" id="toc-masalah-optimisasi"><span class="toc-section-number">4</span> Masalah Optimisasi</a></li>
+<li><a href="#mengapa-kekonveksan-begitu-istimewa" id="toc-mengapa-kekonveksan-begitu-istimewa"><span class="toc-section-number">5</span> Mengapa Kekonveksan Begitu
+Istimewa?</a></li>
+<li><a href="#identitas-sumber-dan-perubahan" id="toc-identitas-sumber-dan-perubahan"><span class="toc-section-number">6</span> Identitas sumber dan
+perubahan</a></li>
+</ul>
+</nav>
+<div id="d90-mit-l01-edition-notice" class="edition-notice">
+<section id="tentang-pilot-ini" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Tentang
+pilot ini</h2>
+<p>Ini adalah rekonstruksi sumber semantik dan terjemahan bahasa
+Indonesia dari Dimitri P. Bertsekas, <em>Convex Analysis and
+Optimization</em>, MIT OpenCourseWare 6.253, Spring 2012, topik pertama
+Kuliah 1 pada halaman PDF sumber 2–5. Materi sumber tersedia di bawah <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>. Edisi ini mengubah bahasa, tata letak slide menjadi pembaca
+yang dapat mengalir ulang, hierarki semantik, dan penandaan sumber.
+Tidak ada dukungan oleh MIT, Athena Scientific, atau penulis sumber yang
+tersirat.</p>
+<p>Halaman judul sumber menyatakan bahwa semua gambar digunakan atas
+izin Athena Scientific. Batas pilot ini tidak memuat gambar; tidak ada
+byte atau tata letak gambar Athena yang disalin. Bantuan produksi dan
+QA: <strong>OpenAI Codex gpt-5.6-sol, Ultra</strong>, atas arahan
+pengguna repositori. Sistem tersebut bukan penulis sumber atau pemberi
+lisensi. Tinjauan bahasa manusia/penutur asli belum tercatat.</p>
+<p>Setiap bagian bertanda “Halaman sumber” memetakan tepat satu halaman
+PDF. Pengenal stabil tetap melekat pada bagian dan butir, meskipun HTML
+atau PDF mengalir ulang ke ukuran layar atau halaman yang berbeda.</p>
+</section>
+</div>
+<div id="d90-mit-l01-p002" class="source-page" data-source-page="2" data-source-order="1">
+<section id="kuliah-1-pengantar-mata-kuliah" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span> Kuliah
+1: Pengantar Mata Kuliah</h2>
+<section id="garis-besar-kuliah" class="level3" data-number="2.1">
+<h3 data-number="2.1"><span class="header-section-number">2.1</span>
+Garis Besar Kuliah</h3>
+<div id="d90-mit-l01-p002-i001" class="source-item" data-source-page="2" data-source-order="1">
+<ul>
+<li>Peran kekonveksan dalam optimisasi</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p002-i002" class="source-item" data-source-page="2" data-source-order="2">
+<ul>
+<li>Teori dualitas</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p002-i003" class="source-item" data-source-page="2" data-source-order="3">
+<ul>
+<li>Algoritma dan dualitas</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p002-i004" class="source-item" data-source-page="2" data-source-order="4">
+<ul>
+<li>Organisasi mata kuliah</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 2</span></em></p>
+</section>
+</section>
+</div>
+<div id="d90-mit-l01-p003" class="source-page" data-source-page="3" data-source-order="2">
+<section id="sejarah-dan-prasejarah" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span> Sejarah
+dan Prasejarah</h2>
+<div id="d90-mit-l01-p003-i001" class="source-item" data-source-page="3" data-source-order="1">
+<ul>
+<li><p><strong>Prasejarah: awal 1900-an–1949.</strong></p>
+<ul>
+<li>Caratheodory, Minkowski, Steinitz, Farkas.</li>
+<li>Sifat-sifat himpunan dan fungsi konveks.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l01-p003-i002" class="source-item" data-source-page="3" data-source-order="2">
+<ul>
+<li><p><strong>Era Fenchel–Rockafellar: 1949–pertengahan
+1980-an.</strong></p>
+<ul>
+<li>Teori dualitas.</li>
+<li>Teori minimaks/permainan (von Neumann).</li>
+<li>(Sub)diferensiabilitas, syarat optimalitas, sensitivitas.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l01-p003-i003" class="source-item" data-source-page="3" data-source-order="3">
+<ul>
+<li><p><strong>Era modern–pergeseran paradigma: pertengahan
+1980-an–sekarang.</strong></p>
+<ul>
+<li>Analisis nonsmooth (arah teoretis/esoteris).</li>
+<li>Algoritma (arah praktis/berdampak tinggi).</li>
+<li>Perubahan asumsi yang mendasari bidang ini.</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 3</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l01-p004" class="source-page" data-source-page="4" data-source-order="3">
+<section id="masalah-optimisasi" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span> Masalah
+Optimisasi</h2>
+<div id="d90-mit-l01-p004-i001" class="source-item" data-source-page="4" data-source-order="1">
+<ul>
+<li><p><strong>Bentuk umum:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">minimalkan</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">dengan syarat</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>x</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{minimalkan}\quad &amp; f(x) \\
+\text{dengan syarat}\quad &amp; x\in C.
+\end{aligned}
+</annotation></semantics></math></p>
+<p>Fungsi biaya
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n\to\mathbb{R}</annotation></semantics></math>
+dan himpunan kendala
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>;
+misalnya,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>C</mi><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>X</mi><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∣</mo><msub><mi>h</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>h</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mrow></mrow><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∣</mo><msub><mi>g</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>g</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+C ={}&amp; X\cap\{x\mid h_1(x)=0,\ldots,h_m(x)=0\}\\
+     &amp; {}\cap\{x\mid g_1(x)\leq 0,\ldots,g_r(x)\leq 0\}.
+\end{aligned}
+</annotation></semantics></math></p></li>
+</ul>
+</div>
+<div id="d90-mit-l01-note-function-arrow" class="edition-note" data-correction-id="O015-MIT-SEM-0003">
+<p><strong>Catatan edisi.</strong> Sumber menulis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>↦</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n\mapsto\mathbb{R}</annotation></semantics></math>.
+Edisi menormalkan panah itu menjadi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math>
+untuk notasi tipe fungsi; simbol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↦</mo><annotation encoding="application/x-tex">\mapsto</annotation></semantics></math>
+lazimnya dipakai antara suatu argumen dan nilainya, misalnya
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>↦</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x\mapsto f(x)</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l01-p004-i002" class="source-item" data-source-page="4" data-source-order="2">
+<ul>
+<li>Pembedaan antara masalah kontinu dan masalah diskret.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p004-i003" class="source-item" data-source-page="4" data-source-order="3">
+<ul>
+<li><p>Masalah pemrograman konveks adalah masalah dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+konveks.</p>
+<ul>
+<li>Masalah tersebut bersifat kontinu.</li>
+<li>Masalah tersebut tertata baik, dengan struktur yang indah dan
+intuitif.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l01-p004-i004" class="source-item" data-source-page="4" data-source-order="4">
+<ul>
+<li>Namun, kekonveksan meresap ke seluruh optimisasi, termasuk masalah
+diskret.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p004-i005" class="source-item" data-source-page="4" data-source-order="5">
+<ul>
+<li><p>Sarana utama yang menghubungkan masalah kontinu dan diskret
+adalah dualitas:</p>
+<ul>
+<li>Dalam kerangka dualitas yang dimaksud di sini, masalah dual dari
+masalah diskret bersifat kontinu/konveks.</li>
+<li>Masalah dual memberikan informasi penting untuk menyelesaikan primal
+diskret, misalnya batas bawah.</li>
+</ul></li>
+</ul>
+</div>
+<div id="d90-mit-l01-note-dual-discrete" class="edition-note" data-correction-id="O015-MIT-SEM-0001">
+<p><strong>Catatan edisi.</strong> Sumber menyatakan klaim
+kontinu/konveks di atas tanpa membatasi pengertian dual. Edisi
+menambahkan frasa “dalam kerangka dualitas yang dimaksud di sini”: untuk
+masalah diskret secara umum, sifat dual bergantung pada formulasi,
+relaksasi, dan konstruksi dual yang dipilih.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 4</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l01-p005" class="source-page" data-source-page="5" data-source-order="4">
+<section id="mengapa-kekonveksan-begitu-istimewa" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span> Mengapa
+Kekonveksan Begitu Istimewa?</h2>
+<div id="d90-mit-l01-p005-i001" class="source-item" data-source-page="5" data-source-order="1">
+<ul>
+<li>Fungsi konveks tidak mempunyai minimum lokal yang bukan minimum
+global.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i002" class="source-item" data-source-page="5" data-source-order="2">
+<ul>
+<li>Fungsi nonkonveks dapat “dikonvekskan” sambil mempertahankan
+optimalitas minimum globalnya.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i003" class="source-item" data-source-page="5" data-source-order="3">
+<ul>
+<li>Himpunan konveks mempunyai interior relatif yang tak kosong.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i004" class="source-item" data-source-page="5" data-source-order="4">
+<ul>
+<li>Himpunan konveks terhubung dan mempunyai arah layak pada setiap
+titik.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i005" class="source-item" data-source-page="5" data-source-order="5">
+<ul>
+<li>Keberadaan minimum global suatu fungsi konveks pada himpunan konveks
+dapat dicirikan dengan mudah melalui arah resesi.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i006" class="source-item" data-source-page="5" data-source-order="6">
+<ul>
+<li>Himpunan konveks polihedral dicirikan oleh suatu himpunan hingga
+yang terdiri dari titik ekstrem dan arah ekstrem.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i007" class="source-item" data-source-page="5" data-source-order="7">
+<ul>
+<li>Fungsi konveks bernilai real bersifat kontinu dan mempunyai sifat
+diferensiabilitas yang baik.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i008" class="source-item" data-source-page="5" data-source-order="8">
+<ul>
+<li>Kerucut konveks tertutup pulih kembali melalui bipolaritas:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mrow><mi>∘</mi><mo>∘</mo></mrow></msup><mo>=</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">K^{\circ\circ}=K</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-p005-i009" class="source-item" data-source-page="5" data-source-order="9">
+<ul>
+<li>Fungsi konveks semikontinu bawah pulih kembali melalui bikonjugasi:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f^{**}=f</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l01-note-self-dual" class="edition-note" data-correction-id="O015-MIT-SEM-0002">
+<p><strong>Catatan edisi.</strong> Dua butir terakhir membuat makna
+istilah <em>self-dual</em> pada sumber menjadi eksplisit. Yang dimaksud
+adalah pemulihan setelah operasi dual diterapkan dua kali, bukan klaim
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><msup><mi>K</mi><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">K=K^\circ</annotation></semantics></math>
+atau
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><msup><mi>f</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f=f^*</annotation></semantics></math>.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 5</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l01-edition-backmatter" class="edition-backmatter">
+<section id="identitas-sumber-dan-perubahan" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span>
+Identitas sumber dan perubahan</h2>
+<ul>
+<li>Sumber: Dimitri P. Bertsekas, <em>Lecture Slides on Convex Analysis
+and Optimization</em>, berdasarkan kuliah MIT 6.253, Spring 2012.</li>
+<li>Batas: PDF lengkap halaman 2–5; halaman 6 memulai topik
+“Duality”.</li>
+<li>Perubahan: terjemahan bahasa Indonesia, reflow slide menjadi
+pembaca, hierarki semantik, pengenal stabil, peta halaman, serta tiga
+klarifikasi atau koreksi matematika berlabel
+<code>O015-MIT-SEM-0001</code>, <code>O015-MIT-SEM-0002</code>, dan
+<code>O015-MIT-SEM-0003</code>.</li>
+<li>Hak: komponen turunan MIT tetap CC BY-NC-SA 4.0. Tidak ada gambar
+dalam batas ini dan tidak ada komponen Athena Scientific yang
+disalin.</li>
+<li>Keterbatasan: pilot ini belum merupakan keseluruhan Kuliah 1 atau
+keseluruhan mata kuliah; PDF belum bertanda semantik dan tinjauan bahasa
+manusia belum tercatat. HTML adalah permukaan semantik utama pada batas
+ini.</li>
+</ul>
+</section>
+</div>
+</main>
+</body>
+</html>

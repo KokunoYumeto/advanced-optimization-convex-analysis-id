@@ -125,7 +125,7 @@ Two fixed-epoch builds produced identical PDF bytes:
 
 The deterministic epoch is SOURCE_DATE_EPOCH=1783900800, equal to 2026-07-13T00:00:00Z; FORCE_SOURCE_DATE=1 and TZ=UTC were also set. The retained build used pdfTeX 1.40.29 / MiKTeX 26.5, LaTeX2e 2025-11-01, latexmk 4.88, and Biber 2.21. The exact command, run from source/id-ID, was:
 
-    latexmk -gg -pdf -interaction=nonstopmode -halt-on-error -file-line-error "-outdir=C:\Users\Floris\Documents\interlanguage\04_mirrors\id\advanced-optimization-convex-analysis-id\build\habring-unit-09-id" D90-HAB-09-transportasi-optimal-id.tex
+    latexmk -gg -pdf -interaction=nonstopmode -halt-on-error -file-line-error "-outdir=<repository-root>\build\habring-unit-09-id" D90-HAB-09-transportasi-optimal-id.tex
 
 The reproducibility run differed only by the output directory habring-unit-09-id-repro. The final logs contain no TeX error, undefined control sequence, unresolved citation/reference, missing glyph, overfull/underfull box, or rerun request. Remaining notices are inherited Indonesian locale/bibliography fallbacks.
 

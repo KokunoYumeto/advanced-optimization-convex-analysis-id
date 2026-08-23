@@ -804,9 +804,9 @@ lim
 Rekaman terstruktur O015-PENN-ADV-0025 sampai O015-PENN-ADV-0037 menyertai edisi ini. Perubahan tersebut dilakukan oleh penyusun edisi bahasa Indonesia, bukan
 oleh penulis sumber.
 (1) Turunan pembatas garis pada syarat kelengkungan dievaluasi di xk + δpk , sesuai
-aturan rantai, dan tanda pertidaksamaan bentuk pemaksimuman dipertahankan.
+aturan rantai, dan tanda ketaksamaan bentuk pemaksimuman dipertahankan.
 (2) Lintasan contoh dua dimensi ditulis sebagai lintasan vektor; daerah kelengkungan
-yang diterima dijelaskan sesuai pertidaksamaan yang ditampilkan.
+yang diterima dijelaskan sesuai ketaksamaan yang ditampilkan.
 (3) Lema keberadaan Wolfe diberi kehalusan C 1 dan keterbatasan di atas pada sinar;
 terminasi Armijo dibuktikan langsung dari turunan positif di nol.
 (4) Listing Maple pelacakan mundur diganti pseudokode mandiri dengan domain

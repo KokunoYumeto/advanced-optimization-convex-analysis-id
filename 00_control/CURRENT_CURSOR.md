@@ -1,7 +1,7 @@
 # O015 production cursor
 
-As of: 2026-08-22  
-State: Penn/Habring companion admitted through Penn Chapter 5 and preserved on GitHub/Zenodo/Figshare; active primary cursor is the MIT/Royer authority freeze followed by the MIT first-lecture semantic-source pilot
+As of: 2026-08-23  
+State: MIT/Royer authority frozen and first MIT semantic-source block (complete-notes pages 2--5) admitted; checkpoint preservation active; next source-order block is pages 6--13
 
 ## Completed at this boundary
 
@@ -13,6 +13,10 @@ State: Penn/Habring companion admitted through Penn Chapter 5 and preserved on G
 - Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
 - The controlling primary-architecture handoff was read completely and verified at 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`. MIT OCW 6.253 + Royer is now the selected D90 primary; Penn/Habring remains an optional companion.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
+- The MIT/Royer source freeze and closure audit pass. The MIT teaching closure is 13 PDFs / 395 pages / 10,417,664 bytes under CC BY-NC-SA 4.0; the Royer notes and two laboratory archives are separately frozen under CC BY-NC 4.0. Neither mathematical source is misrepresented as TeX.
+- The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
+- The pilot passes exact page/item/formula topology, two byte-identical builds, desktop/mobile browser reflow, all-page visual inspection, terminology QA, and independent rereview with P1=0/P2=0/P3=0. It contains no Athena figure byte. Human/native-speaker Indonesian review and tagged PDF remain unrecorded.
+- The stable backend now contains 1,430 records. It adds 130 exact MIT/Royer/pilot IDs to the 1,300-record incoming baseline; the added-ID set has SHA-256 `fa0e7d763e2c3eab68ac32fe935d777f3c688c5d59cc509d93416608726cfaf5`. JSONL: 1,036,556 bytes, SHA-256 `ebf44ca94323584e40b548ce36da560899e39a1e76ed2c993a0786b4ee7c4a2b`; CSV: 1,244,072 bytes, SHA-256 `bc73abb3457cacc10423c1785a0db70a9007fdef8ac0a2be1de48d25d389fdf5`.
 
 ## Closed GitHub preservation boundary
 
@@ -24,22 +28,15 @@ State: Penn/Habring companion admitted through Penn Chapter 5 and preserved on G
 
 ## Active primary production cursor
 
-Stop automatic Penn source-order expansion and freeze the selected authorities locally:
+Close the current MIT-pilot GitHub/Zenodo preservation transaction, then continue directly with the exact source-order block frozen in `MIT_L02_BOUNDARY_CENSUS.md`:
 
-- MIT OCW 6.253 official course, repository commit `58d7c86195f09dd8708b84dde28205d3199207dd` / tree `26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6`, 340-page notes SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`, complete 13-PDF/395-page teaching package, CC BY-NC-SA 4.0.
-- Royer official 45-page notes SHA-256 `3290c61e870ef807ae92c4ace309449ee46ab3aa544e033c100f4a005311dfd3`, two laboratory ZIPs SHA-256 `88e18ea096b87bd12d182072bfbf6fd12ac73d666e16911a3f015ee9a574d461` / `0a0a908157dcf07f0dd3874c118e416dad3033a5f04f9cb37ae248b2f8feb623`, CC BY-NC 4.0.
+- complete-notes PDF pages **6--13 inclusive**;
+- first heading **Duality**; terminal heading **Exceptional Behavior**;
+- page 14, **Modern View of Convex Optimization**, is the excluded successor and next cursor after this block;
+- 8 headings, 19 top-level items, 7 nested bullets, 4 freestanding display formulas, 2 explicit examples, 1 answered didactic prompt, and no learner exercise/hint/solution surface;
+- figure-risk surface on 7 of 8 pages. No Athena byte, crop, or copied layout may enter the derivative; redraw necessary mathematics independently with separate rights/provenance or omit it with an exact locator and semantic description.
 
-The first translation/conversion target is one complete MIT lecture block, selected only after the official lecture-note page boundaries are frozen. Create exact page and segment IDs and independently reconstruct it twice. Admission requires:
-
-1. every source page/segment, theorem, formula, definition, example, prompt, and reference accounted for;
-2. exact source-page mapping and stable IDs;
-3. no Athena Scientific figure bytes or copied layout; independently redraw required mathematics with separate rights or omit it with an exact locator;
-4. deterministic semantic HTML and PDF builds;
-5. searchable text, `id-ID` language metadata, semantic headings/math/navigation/alt text, and explicit limitations;
-6. terminology and mathematical rereview with P1/P2/P3 closed;
-7. second clean reconstruction matching the admitted semantic record.
-
-A failed pilot reopens the conversion architecture. It does not authorize lossy OCR or bulk translation.
+Create the page-addressed English semantic witness and id-ID source contiguously. Preserve every item and diagram-label formula, assign stable page/item IDs, then repeat the admitted pilot's deterministic HTML/PDF, formula/topology, browser reflow, all-page visual, terminology, independent rereview, rights, and backend gates. Do not weaken the gate merely because the first pilot passed.
 
 ## Stop rules
 

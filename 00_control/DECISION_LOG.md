@@ -38,7 +38,7 @@ Continue in Habring source order with Chapter 4, `projected_subgradient_method.t
 
 ## D90-0010 — Actual task authority and repository ownership
 
-The user-authored task in `C:\Users\Floris\Documents\Obsidian notes\Untitled 1693.md` supersedes conflicting delegated restrictions. This lane owns the individual O015 corpus, modular backend, and single corpus GitHub repository. The curriculum coordinator owns the later global hub. Significant verified chunks are committed and pushed without repeated confirmation. Upstream contact is prohibited during production.
+The user-authored task in `%USERPROFILE%\Documents\Obsidian notes\Untitled 1693.md` supersedes conflicting delegated restrictions. This lane owns the individual O015 corpus, modular backend, and single corpus GitHub repository. The curriculum coordinator owns the later global hub. Significant verified chunks are committed and pushed without repeated confirmation. Upstream contact is prohibited during production.
 
 ## D90-0011 — Chapter 3 admitted
 
@@ -139,3 +139,11 @@ The user reported on 2026-08-22 that GitHub access is reinstated, ending D90-002
 ## D90-0030 — Restored GitHub checkpoint closes and primary production pivots
 
 The admitted ten-unit optional companion, 1,283-record backend, 103-page Habring reader, exact controls/QA, and sanitized release evidence are public at content commit `6900a39ce579ba5ca464fecc00b4575139fbc3ea` / tree `8539cec4931da655e495a25eb3b05b25007208b5`. Anonymous GitHub API and immutable raw-file readback passed. The sanitized receipt is public and independently verified at commit `89708ae0e819a147549f32dc11c432d9b2a45ebf` / tree `c178345f20f339394574fc03946031f5c923fba6`. No unadmitted Penn Chapter 6 candidate, cache, credential, or upstream-contact artifact was included. With GitHub, Zenodo, and Figshare preservation closed, the active production cursor moves to the MIT/Royer authority freeze and fail-closed first MIT semantic-source pilot.
+
+## D90-0031 — MIT/Royer authority and first semantic-source block admitted
+
+The official MIT OCW 6.253 and Royer source closures pass the bounded authority, rights, teaching-package, exercise/solution/notebook, and source-format audit. MIT's 13-PDF teaching closure remains CC BY-NC-SA 4.0; Royer's notes and laboratories remain separately CC BY-NC 4.0. Neither PDF mathematical surface is called TeX, and the Athena Scientific permission-only figure surface is excluded from adaptation unless independently redrawn from mathematical primitives.
+
+The first MIT block, exact complete-notes pages 2--5, is admitted at Indonesian source SHA-256 `2170dec12e707782c7677647f77ad8ee3360b282a8dbb9fb5620170106004bf3`, semantic HTML SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`, and PDF SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`. It preserves all 21 top-level items, 12 nested bullets, two displays, and page/item anchors; contains zero figures; integrates disclosed corrections `O015-MIT-SEM-0001`--`0003`; and passes two deterministic builds, exact structural/formula validation, desktop/mobile browser reflow, all-page visual inspection, terminology QA, and independent rereview with P1=0/P2=0/P3=0. The untagged-PDF and absent human/native-speaker review limitations remain explicit.
+
+The stable backend adds 130 exact MIT/Royer/pilot IDs to the 1,300-record baseline without renumbering it; the added-ID set is SHA-256 `fa0e7d763e2c3eab68ac32fe935d777f3c688c5d59cc509d93416608726cfaf5`. The next production boundary is exact complete-notes pages 6--13, “Duality” through “Exceptional Behavior,” recorded in `MIT_L02_BOUNDARY_CENSUS.md`; page 14 begins the next topic. Seven of those eight pages have Athena-risk diagrams, so no copied byte or layout may enter the derivative. The admitted pilot is preserved additively in the existing GitHub and Zenodo lineages before page 6 production scales; Figshare remains unchanged.

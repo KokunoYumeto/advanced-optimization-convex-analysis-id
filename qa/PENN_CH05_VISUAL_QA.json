@@ -14,8 +14,8 @@
   },
   "wrapper": {
     "path": "source/id-ID/D90-PENN-05-metode-newton-dan-koreksi-id.tex",
-    "bytes": 7230,
-    "sha256": "82450c4cdbe6de904c7cba1ee22922869f5d2e2caf19be69285092a5ea987e55"
+    "bytes": 7227,
+    "sha256": "7de8bc61dc3f59999ac6414df90ef6925d5a7d4665f79d71998c8f0e45839c14"
   },
   "bibliography_input": {
     "path": "source/id-ID/references-penn-ch05-id.bbl",
@@ -24,9 +24,9 @@
   },
   "pdf": {
     "path": "output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
-    "bytes": 2691780,
+    "bytes": 2691773,
     "pages": 15,
-    "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6",
+    "sha256": "dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96",
     "canonical_and_repro_builds_byte_identical": true,
     "page_size": "A4",
     "pdf_version": "1.5",
@@ -43,9 +43,9 @@
   },
   "canonical_log": {
     "path": "build/penn-unit-05-id/D90-PENN-05-metode-newton-dan-koreksi-id.log",
-    "bytes": 27062,
-    "lines": 700,
-    "sha256": "bb3e9416233d14400ced235b69eeb95f76e6347dfeabbfd2c06727b543aed8be",
+    "bytes": 27150,
+    "lines": 701,
+    "sha256": "377549051f61dcee9dcebcc72821c76c4c3f659119313f84552923895bcf3d3c",
     "tex_errors": 0,
     "undefined_references_or_citations": 0,
     "overfull_boxes": 0,
@@ -54,13 +54,13 @@
     "accepted_underfull_caption_warning": 1
   },
   "render": {
-    "directory": "tmp/pdfs/penn-ch05-final-427db2c5",
-    "renderer": "pdftoppm 120 dpi PNG",
+    "directory": "tmp/pdfs/terminology-render/penn05",
+    "renderer": "pdftoppm 110 dpi PNG",
     "rendered_pages": 15,
     "contact_sheet": {
-      "path": "tmp/pdfs/penn-ch05-final-427db2c5/contact.png",
-      "bytes": 990958,
-      "sha256": "bc38b77f5e9aebe13a6218269a803eac69e01ff4203b247234b00cc01c91aafd"
+      "path": "tmp/pdfs/terminology-render/penn05-contact.png",
+      "bytes": 4025418,
+      "sha256": "29e7c62c4a9c3e5ac0a5851c6f151b2a474d88c17a2eea9a58c2a148c4561196"
     }
   },
   "inspection": {
@@ -72,7 +72,8 @@
     "broken_figures": 0,
     "unreadable_glyphs": 0,
     "stranded_algorithm_only_pages": 0,
-    "result": "pass"
+    "result": "pass",
+    "terminology_propagation": "One isolated correction-note occurrence of pertidaksamaan was normalized to ketaksamaan; the deterministic rebuild retained all 15 pages."
   },
   "limitations": [
     "The PDF is not semantically tagged.",

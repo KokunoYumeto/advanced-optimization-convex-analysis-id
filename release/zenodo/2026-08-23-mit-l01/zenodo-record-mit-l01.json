@@ -1,0 +1,191 @@
+{
+  "access": {
+    "files": "public",
+    "record": "public"
+  },
+  "files": {
+    "enabled": true
+  },
+  "metadata": {
+    "contributors": [
+      {
+        "person_or_org": {
+          "family_name": "Royer",
+          "given_name": "Clément W.",
+          "name": "Royer, Clément W.",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Miller",
+          "given_name": "Simon",
+          "name": "Miller, Simon",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Mercer",
+          "given_name": "Douglas",
+          "name": "Mercer, Douglas",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "TTP",
+          "type": "organizational"
+        },
+        "role": {
+          "id": "other"
+        }
+      }
+    ],
+    "creators": [
+      {
+        "person_or_org": {
+          "family_name": "Bertsekas",
+          "given_name": "Dimitri P.",
+          "name": "Bertsekas, Dimitri P.",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Habring",
+          "given_name": "Andreas",
+          "name": "Habring, Andreas",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Griffin",
+          "given_name": "Christopher",
+          "name": "Griffin, Christopher",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>Checkpoint bertahap yang belum lengkap ini menambahkan unit pembaca pertama dari tulang punggung utama terpilih: halaman 2-5 catatan lengkap Dimitri P. Bertsekas untuk MIT OpenCourseWare 6.253, <em>Convex Analysis and Optimization</em>, topik ‘The Role of Convexity in Optimization’. Berkas baru terdiri atas HTML semantik yang responsif, PDF A4 tiga halaman yang direflow, dan paket delta sumber/backend yang dapat dilanjutkan. Keenam belas berkas dari versi 10.5281/zenodo.22060447 dipertahankan tanpa perubahan.</p><p>Batas ini memuat 21 butir tingkat atas, 12 butir bersarang, dua rumus display, dan nol gambar, latihan, petunjuk, jawaban, solusi, kode, atau prompt komputasi interaktif. Tiga klarifikasi/koreksi terungkap dicatat sebagai O015-MIT-SEM-0001 sampai O015-MIT-SEM-0003. HTML adalah permukaan aksesibel utama; PDF dapat dicari tetapi belum bertag. Batas berikutnya adalah halaman 6-13, ‘Duality’ sampai ‘Exceptional Behavior’, dan belum termasuk dalam checkpoint ini; halaman 14 memulai ‘Modern View of Convex Optimization’.</p><p>Hak berlaku per komponen, bukan sebagai lisensi menyeluruh. Komponen turunan MIT berada di bawah CC BY-NC-SA 4.0; unit turunan Habring yang diwarisi berada di bawah CC BY 4.0; unit turunan Griffin/Penn yang diwarisi berada di bawah CC BY-NC-SA 3.0 United States. Bahan Clément W. Royer hanya hadir sebagai rekaman pembekuan sumber prospektif CC BY-NC 4.0; belum ada pembaca Bahasa Indonesia turunan Royer dalam versi ini. Tidak ada byte atau tata letak gambar Athena Scientific yang disalin.</p><p>Korpus tetap belum lengkap: tinjauan manusia/penutur asli independen, keseluruhan pembaca mata kuliah, PDF bertag, EPUB semantik, serta lapisan penguasaan/solusi dan interaktif yang lengkap belum tersedia. Production and QA assistance: OpenAI Codex gpt-5.6-sol, Ultra, acting at the repository user's direction. Ini adalah terjemahan/adaptasi independen dan tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan oleh penulis atau institusi sumber.</p>",
+    "languages": [
+      {
+        "id": "ind"
+      }
+    ],
+    "publication_date": "2026-08-23",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {
+        "identifier": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-other"
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.48550/arXiv.2607.11664",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-book"
+        },
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://sites.psu.edu/griffinch/files/2023/06/Math555_SRC.zip",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-book"
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://www.lamsade.dauphine.fr/~croyer/teachSG.html",
+        "relation_type": {
+          "id": "references"
+        },
+        "resource_type": {
+          "id": "publication-other"
+        },
+        "scheme": "url"
+      }
+    ],
+    "resource_type": {
+      "id": "publication-other"
+    },
+    "rights": [
+      {
+        "id": "cc-by-nc-sa-4.0"
+      },
+      {
+        "id": "cc-by-4.0"
+      },
+      {
+        "description": {
+          "en": "Applies only to the inherited Griffin/Penn-derived reader and source components; attribution, noncommercial use, ShareAlike, change identification, and non-endorsement are preserved."
+        },
+        "link": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/",
+        "title": {
+          "en": "CC BY-NC-SA 3.0 United States - inherited Griffin/Penn components only"
+        }
+      },
+      {
+        "description": {
+          "en": "Applies to the prospective Royer source component represented by freeze and authority metadata; no Royer-derived Indonesian reader is included in this checkpoint."
+        },
+        "link": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "title": {
+          "en": "CC BY-NC 4.0 - Royer source-freeze component only"
+        }
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Bahasa Indonesia"
+      },
+      {
+        "subject": "id-ID"
+      },
+      {
+        "subject": "convex analysis"
+      },
+      {
+        "subject": "convex optimization"
+      },
+      {
+        "subject": "duality"
+      },
+      {
+        "subject": "semantic mathematical transcription"
+      },
+      {
+        "subject": "open educational resources"
+      },
+      {
+        "subject": "mathematical translation"
+      },
+      {
+        "subject": "AI-assisted translation"
+      }
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia (id-ID): Checkpoint MIT 6.253 L01 (Belum Lengkap)",
+    "version": "checkpoint-2026.08.23-mit-l01"
+  }
+}

@@ -1,0 +1,38 @@
+\usepackage[a4paper,top=23mm,bottom=24mm,left=24mm,right=24mm]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{hyperref}
+\providecommand{\xmpquote}[1]{#1}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont{Latin Modern Mono}
+\definecolor{PilotBlue}{HTML}{244FA3}
+\definecolor{PilotPurple}{HTML}{5C3BBF}
+\definecolor{PilotInk}{HTML}{172033}
+\definecolor{PilotPale}{HTML}{F2EFFD}
+\color{PilotInk}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PilotBlue,
+  urlcolor=PilotBlue,
+  citecolor=PilotBlue,
+  pdflang={id-ID},
+  pdfcreator={Pandoc and LuaLaTeX},
+  pdfproducer={OpenAI Codex gpt-5.6-sol, Ultra - user-directed production assistance}
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.48em}
+\setlist[itemize]{leftmargin=1.55em,itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=0.25em,topsep=0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small MIT OCW 6.253 -- Pilot id-ID}
+\fancyhead[R]{\small Peran Kekonveksan}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\AtBeginEnvironment{quote}{\color{PilotInk}}

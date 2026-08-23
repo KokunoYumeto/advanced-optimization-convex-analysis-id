@@ -1,0 +1,757 @@
+{
+  "frozen_on": "2026-08-22",
+  "lane": "O015",
+  "mit_ocw_6_253": {
+    "course_archive": {
+      "archive": {
+        "bytes": 41452759,
+        "path": "authority/mit-ocw-6.253/downloads/6.253-spring-2012.zip",
+        "sha256": "32e241f7101943e285c8b56ca61ae117b647d67015ff8b1048ab598319d7389f"
+      },
+      "duplicates": 0,
+      "entry_count": 412,
+      "entry_manifest": {
+        "bytes": 52632,
+        "path": "authority/mit-ocw-6.253/downloads/6.253-spring-2012.entries.sha256.tsv",
+        "sha256": "661f7293afd5a1e44742d7ea9a316c9c1474b6c94ede94c4044084a5f51f42a0"
+      },
+      "extracted_identity": "pass",
+      "file_count": 344,
+      "uncompressed_bytes": 69160743,
+      "unsafe_entries": 0
+    },
+    "creator": "Dimitri P. Bertsekas",
+    "known_solution_gap": "the Spring 2012 midterm solution contains the literal placeholder '(a) To be added.'; repair must be separately authored and attributed",
+    "license": {
+      "expression": "CC BY-NC-SA 4.0",
+      "requirements": [
+        "attribution",
+        "license link",
+        "identify changes",
+        "noncommercial use",
+        "ShareAlike",
+        "no additional restrictions",
+        "MIT name and logo restrictions",
+        "no implied endorsement"
+      ],
+      "third_party_exception": "complete-notes page 1 says all figures are courtesy of Athena Scientific and used with permission; no Athena figure bytes or layout are admitted into the derivative",
+      "translation_permitted": true
+    },
+    "official_assignments": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/assignments/",
+    "official_course": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/",
+    "official_download": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/6.253-spring-2012.zip",
+    "official_exams": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/exams/",
+    "official_lecture_notes": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/lecture-notes/",
+    "official_pages": [
+      {
+        "bytes": 43639,
+        "path": "authority/mit-ocw-6.253/official-pages/course.html",
+        "sha256": "dbb1042e841414f5eb16feb4c40ac7dce6a186a1b5e721d7c4265a4716523afc"
+      },
+      {
+        "bytes": 57489,
+        "path": "authority/mit-ocw-6.253/official-pages/lecture-notes.html",
+        "sha256": "5f8ceddd312afb0fa86ff7a4daa89ed524a446e07e3a055e0eab829727cb8d77"
+      },
+      {
+        "bytes": 47790,
+        "path": "authority/mit-ocw-6.253/official-pages/assignments.html",
+        "sha256": "eead7bd736da88f56a48bcde41f766df31745e988c967afb0b8c8dc20a6b575b"
+      },
+      {
+        "bytes": 46367,
+        "path": "authority/mit-ocw-6.253/official-pages/exams.html",
+        "sha256": "1f8b2d1483c12a59099a156a5ef8978c6791fae5784a3abf3d5a46ba1e2425f2"
+      },
+      {
+        "bytes": 79702,
+        "path": "authority/mit-ocw-6.253/official-pages/download.html",
+        "sha256": "d7330e8f5e23a22b045426dbbb774de9542b1e374a468451ca7360c1c1079960"
+      },
+      {
+        "bytes": 27702,
+        "path": "authority/mit-ocw-6.253/official-pages/terms.html",
+        "sha256": "ef64424314e90fbd66fc4125a5f2715b35aca58219e681b12be7238fdf346a78"
+      },
+      {
+        "bytes": 20850,
+        "path": "authority/mit-ocw-6.253/official-pages/CC-BY-NC-SA-4.0-legalcode.txt",
+        "sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd"
+      }
+    ],
+    "pilot_boundary": {
+      "athena_figures_in_boundary": 0,
+      "authority_pdf": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "disposition": "admitted for fail-closed semantic-source pilot",
+      "next_topic_starts_page": 6,
+      "pdf_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "title": "Lecture 1 - The Role of Convexity in Optimization"
+    },
+    "repository": {
+      "archive": {
+        "archive": {
+          "bytes": 32975,
+          "path": "authority/mit-ocw-6.253/repository/6.253-spring-2012-58d7c86195f09dd8708b84dde28205d3199207dd.zip",
+          "sha256": "e0ded208972802866e0a5a733163c4792f487a2367ee008f7fb9a1f919853f28"
+        },
+        "duplicates": 0,
+        "entry_count": 55,
+        "entry_manifest": {
+          "bytes": 9487,
+          "path": "authority/mit-ocw-6.253/repository/6.253-spring-2012-58d7c86195f09dd8708b84dde28205d3199207dd.entries.sha256.tsv",
+          "sha256": "00f45de6ce5ef49559d62597974254173f50bd84604eec96d3237862bd92beeb"
+        },
+        "extracted_identity": "pass",
+        "file_count": 48,
+        "uncompressed_bytes": 35771,
+        "unsafe_entries": 0
+      },
+      "branch_api": {
+        "bytes": 1895,
+        "path": "authority/mit-ocw-6.253/repository/branch-main-observed-20260822.json",
+        "sha256": "3f2c299d464ec1cba0c5066bc58cb898e86c42a90f49e4c8c03ecb40156398d2"
+      },
+      "commit": "58d7c86195f09dd8708b84dde28205d3199207dd",
+      "commit_api": {
+        "bytes": 69873,
+        "path": "authority/mit-ocw-6.253/repository/commit-58d7c86195f09dd8708b84dde28205d3199207dd.json",
+        "sha256": "c99c1cedf5e41cfba6ca23b82b0fd8276585e710404a42bf9b35786f053ed741"
+      },
+      "disposition": "OCW/Hugo metadata only; not mathematical editable source",
+      "main_observed_at_commit": true,
+      "mathematical_tex_files": 0,
+      "pdf_files": 0,
+      "snapshot_extensions": {
+        ".json": 1,
+        ".md": 46,
+        ".yaml": 1
+      },
+      "snapshot_files": 48,
+      "tree": "26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6",
+      "tree_api": {
+        "bytes": 13909,
+        "path": "authority/mit-ocw-6.253/repository/tree-26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6.json",
+        "sha256": "e9def5c34cc21e454eb5387e4483ebb9a5ca8646c987d69619ae2d0ac65ee661"
+      },
+      "tree_blobs": 48,
+      "tree_directories": 6,
+      "tree_entries": 54,
+      "url": "https://github.com/mitocwcontent/6.253-spring-2012"
+    },
+    "resource_pdf_inventory": [
+      {
+        "bytes": 800223,
+        "name": "08cf1b8b29d9b0b3d793e0ee91ce58a2_MIT6_253S12_lec04.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/08cf1b8b29d9b0b3d793e0ee91ce58a2_MIT6_253S12_lec04.pdf",
+        "pages": 12,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/08cf1b8b29d9b0b3d793e0ee91ce58a2_MIT6_253S12_lec04.pdf",
+        "sha256": "4808352cb58ef62729dafcf6dce2174274e06966f52df0d6cff1f8154d77bea0"
+      },
+      {
+        "bytes": 1221961,
+        "name": "0bf9cd597d0ab693bab75f83ae5e61a3_MIT6_253S12_lec08.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/0bf9cd597d0ab693bab75f83ae5e61a3_MIT6_253S12_lec08.pdf",
+        "pages": 15,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/0bf9cd597d0ab693bab75f83ae5e61a3_MIT6_253S12_lec08.pdf",
+        "sha256": "cf75becd6e3f094a2b761cc4294191255d01aa70f5c3d812e8c7665fa269f1e7"
+      },
+      {
+        "bytes": 899201,
+        "name": "1814d845fc72f1ad285be44cf8cb3663_MIT6_253S12_lec15.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/1814d845fc72f1ad285be44cf8cb3663_MIT6_253S12_lec15.pdf",
+        "pages": 9,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/1814d845fc72f1ad285be44cf8cb3663_MIT6_253S12_lec15.pdf",
+        "sha256": "3b65f0122a025766fc35d8fed1f70e1f40c823b5a64e3837e0bc41d628f1eb92"
+      },
+      {
+        "bytes": 848003,
+        "name": "19c72f4d87303765c3925112f5926282_MIT6_253S12_lec11.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/19c72f4d87303765c3925112f5926282_MIT6_253S12_lec11.pdf",
+        "pages": 14,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/19c72f4d87303765c3925112f5926282_MIT6_253S12_lec11.pdf",
+        "sha256": "81db754a8e1698780d7571a47a2bb5a7667f4aec397ed3d371f6bcd9d20923d3"
+      },
+      {
+        "bytes": 211540,
+        "name": "1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+        "pages": 5,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+        "sha256": "39f84dd18de4597968bfc57266f6751225d3a30d07c7d9b0d57b68796781df15"
+      },
+      {
+        "bytes": 817974,
+        "name": "20b272ad85dd2b1c0912db39ab30e0c0_MIT6_253S12_lec09.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/20b272ad85dd2b1c0912db39ab30e0c0_MIT6_253S12_lec09.pdf",
+        "pages": 17,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/20b272ad85dd2b1c0912db39ab30e0c0_MIT6_253S12_lec09.pdf",
+        "sha256": "3200c5ebe5f9fefb86069d68ada44574844ba3aa53fc0afe26ece03827caa933"
+      },
+      {
+        "bytes": 186659,
+        "name": "22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+        "sha256": "c10268ae65bdea3815494829077d0af9b5499ec893b4084c655a0d6996a781ba"
+      },
+      {
+        "bytes": 666995,
+        "name": "239d3e6ba9f112780468ab4d1fc5fb4b_MIT6_253S12_lec24.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/239d3e6ba9f112780468ab4d1fc5fb4b_MIT6_253S12_lec24.pdf",
+        "pages": 9,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/239d3e6ba9f112780468ab4d1fc5fb4b_MIT6_253S12_lec24.pdf",
+        "sha256": "c61d58e13f624103bb30ab16140cc043fa36366d367f6c68efa127b7bb525d4e"
+      },
+      {
+        "bytes": 1026006,
+        "name": "2710d17aff6b2989d7c1b2eac2af2c84_MIT6_253S12_lec17.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/2710d17aff6b2989d7c1b2eac2af2c84_MIT6_253S12_lec17.pdf",
+        "pages": 12,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/2710d17aff6b2989d7c1b2eac2af2c84_MIT6_253S12_lec17.pdf",
+        "sha256": "857ac3826ae408cd71515db4fe584eb5f19f3e42a53305d2768572a92942ed1e"
+      },
+      {
+        "bytes": 961994,
+        "name": "27b2c620989feee3c112cd36241eb464_MIT6_253S12_lec19.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/27b2c620989feee3c112cd36241eb464_MIT6_253S12_lec19.pdf",
+        "pages": 8,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/27b2c620989feee3c112cd36241eb464_MIT6_253S12_lec19.pdf",
+        "sha256": "c18c6acf394bc66ef2e78bcffbdc065910c0f88f81176703dc95714f74bf527c"
+      },
+      {
+        "bytes": 867406,
+        "name": "3e2a100d7fa327637ed8e31771a22c18_MIT6_253S12_lec03.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/3e2a100d7fa327637ed8e31771a22c18_MIT6_253S12_lec03.pdf",
+        "pages": 11,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/3e2a100d7fa327637ed8e31771a22c18_MIT6_253S12_lec03.pdf",
+        "sha256": "d9e7292871067b07a544ede62798dbe47dc6753359be3293b2ddfb03dc1716ca"
+      },
+      {
+        "bytes": 592657,
+        "name": "4b208d42aadbed082ef428f2e9638ebd_MIT6_253S12_lec22.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/4b208d42aadbed082ef428f2e9638ebd_MIT6_253S12_lec22.pdf",
+        "pages": 12,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/4b208d42aadbed082ef428f2e9638ebd_MIT6_253S12_lec22.pdf",
+        "sha256": "9067858e0bacfd9171d8aa49a20f2b88d7f3e7a377df8148b4c03aec13299b84"
+      },
+      {
+        "bytes": 1134681,
+        "name": "5e4388c415e627098cf68bb4f4d7aa44_MIT6_253S12_lec20.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/5e4388c415e627098cf68bb4f4d7aa44_MIT6_253S12_lec20.pdf",
+        "pages": 15,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/5e4388c415e627098cf68bb4f4d7aa44_MIT6_253S12_lec20.pdf",
+        "sha256": "ecd51cac4750fc54a400e91727cdf3dd4bd668824dc54f6f6eb5d6a6f7c070c2"
+      },
+      {
+        "bytes": 1066300,
+        "name": "69136e797daa75d9481c21d1f6b84a31_MIT6_253S12_lec05.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/69136e797daa75d9481c21d1f6b84a31_MIT6_253S12_lec05.pdf",
+        "pages": 15,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/69136e797daa75d9481c21d1f6b84a31_MIT6_253S12_lec05.pdf",
+        "sha256": "6678d1e74a35ba15e1919f88764d580404d692859d1f83d5abad09308dee820a"
+      },
+      {
+        "bytes": 177116,
+        "name": "6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+        "sha256": "6be9f55ea72cd6bccfee8e975e82531542cff68cd88dbfb3f8f5085632a6bfb5"
+      },
+      {
+        "bytes": 8030116,
+        "name": "6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+        "pages": 340,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+        "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+      },
+      {
+        "bytes": 90469,
+        "name": "772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+        "sha256": "292ab2a877cf5bb5d667d444466e93a8d7e33ddae51b2a366c88a06c6b222df7"
+      },
+      {
+        "bytes": 863540,
+        "name": "7bc6c1c8119cb8c024a6cb36687bad5d_MIT6_253S12_lec16.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/7bc6c1c8119cb8c024a6cb36687bad5d_MIT6_253S12_lec16.pdf",
+        "pages": 14,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/7bc6c1c8119cb8c024a6cb36687bad5d_MIT6_253S12_lec16.pdf",
+        "sha256": "e44068e8289cff5b0de3fec5384275b4c9dfcdabe8618a14d2b58f2a861f7745"
+      },
+      {
+        "bytes": 255819,
+        "name": "7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+        "pages": 8,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+        "sha256": "0243459446272a447edbf77f79c67d4cdffd45a9b0b2509005f20e03cce63891"
+      },
+      {
+        "bytes": 1274528,
+        "name": "8508c98dd2a400f91035eb2241727d7a_MIT6_253S12_lec01.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/8508c98dd2a400f91035eb2241727d7a_MIT6_253S12_lec01.pdf",
+        "pages": 20,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/8508c98dd2a400f91035eb2241727d7a_MIT6_253S12_lec01.pdf",
+        "sha256": "cfd802aca4a63e685749e5a24ae10dcea8a9f565cadc4192f204fd0d49406aae"
+      },
+      {
+        "bytes": 978504,
+        "name": "8726621a456705432028ab7053c8900f_MIT6_253S12_lec14.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/8726621a456705432028ab7053c8900f_MIT6_253S12_lec14.pdf",
+        "pages": 14,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/8726621a456705432028ab7053c8900f_MIT6_253S12_lec14.pdf",
+        "sha256": "aba6f516c931727de1347fcacb106ead0029c6437026ee5296d7e80e81a0e70b"
+      },
+      {
+        "bytes": 177482,
+        "name": "8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+        "sha256": "5bd07862c860acf7458cc68851542678457e47d9cbdd2354e573e67b916428df"
+      },
+      {
+        "bytes": 254533,
+        "name": "906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+        "pages": 7,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+        "sha256": "1dacf0cd66658667b6ff209b4b8eb31fda5a0ce88e48a6c214fcefea97b538ca"
+      },
+      {
+        "bytes": 183551,
+        "name": "970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+        "sha256": "bb650282ff26ad48dd65247732762820fe62bf6629291366564ce5328dac02c9"
+      },
+      {
+        "bytes": 218513,
+        "name": "9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+        "pages": 7,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+        "sha256": "17db963e6b634dac5c983f1577cf75715f5a0217969829ee46c6fdaa72f7dc3a"
+      },
+      {
+        "bytes": 858225,
+        "name": "9f80ea2051c10cc0f8cf3839983c381a_MIT6_253S12_lec10.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/9f80ea2051c10cc0f8cf3839983c381a_MIT6_253S12_lec10.pdf",
+        "pages": 18,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/9f80ea2051c10cc0f8cf3839983c381a_MIT6_253S12_lec10.pdf",
+        "sha256": "bef168949774be7572ec302dca60ee7ea1ae4882089e3acec758d6f017d9fe1b"
+      },
+      {
+        "bytes": 852017,
+        "name": "ab62379c355a1a624961bc43162761a7_MIT6_253S12_lec21.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/ab62379c355a1a624961bc43162761a7_MIT6_253S12_lec21.pdf",
+        "pages": 10,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/ab62379c355a1a624961bc43162761a7_MIT6_253S12_lec21.pdf",
+        "sha256": "fff6e655df221f93c5cdcdeb6e1dcc671d32b1f952107f21a7bc9ba7f8526577"
+      },
+      {
+        "bytes": 930322,
+        "name": "b12e49c694b211b30d7ce6fffc81ff08_MIT6_253S12_lec12.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/b12e49c694b211b30d7ce6fffc81ff08_MIT6_253S12_lec12.pdf",
+        "pages": 16,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/b12e49c694b211b30d7ce6fffc81ff08_MIT6_253S12_lec12.pdf",
+        "sha256": "19ca547be2cb102d28bb51cabaa984395cd3d689cbdf373803f6b7b20d228849"
+      },
+      {
+        "bytes": 855295,
+        "name": "be0c57671f3f5058c20fdbf7bf5ecdb8_MIT6_253S12_lec02.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/be0c57671f3f5058c20fdbf7bf5ecdb8_MIT6_253S12_lec02.pdf",
+        "pages": 10,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/be0c57671f3f5058c20fdbf7bf5ecdb8_MIT6_253S12_lec02.pdf",
+        "sha256": "c03a59052c954a83e814db9d39fc059224153fb4ac8672e87eac1a1a32a0d048"
+      },
+      {
+        "bytes": 193313,
+        "name": "c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+        "pages": 4,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+        "sha256": "69ef38d494964f41591104fea0f0da855997e0cf40da11b14b3aa12dd0642785"
+      },
+      {
+        "bytes": 681341,
+        "name": "d3a21ae8133b7e0806993b28ad8317e9_MIT6_253S12_lec23.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/d3a21ae8133b7e0806993b28ad8317e9_MIT6_253S12_lec23.pdf",
+        "pages": 9,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/d3a21ae8133b7e0806993b28ad8317e9_MIT6_253S12_lec23.pdf",
+        "sha256": "454e0355d6bba9cfb25565d2622856ad720d36c919f5207dd0d3906c928b8e3c"
+      },
+      {
+        "bytes": 963909,
+        "name": "d69d863d4f2164ecf27850221ebb3b59_MIT6_253S12_lec07.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/d69d863d4f2164ecf27850221ebb3b59_MIT6_253S12_lec07.pdf",
+        "pages": 13,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/d69d863d4f2164ecf27850221ebb3b59_MIT6_253S12_lec07.pdf",
+        "sha256": "1839b84948e22c01954f157facbc07cee3cf6a94e711a4af9ff0fc859909c025"
+      },
+      {
+        "bytes": 448647,
+        "name": "db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "pages": 59,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "sha256": "d8b8b69d5a4266da291ec10441d92ac6dcf29f84db3f7959a4bc07b6c585a48b"
+      },
+      {
+        "bytes": 209838,
+        "name": "e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+        "pages": 3,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+        "sha256": "f36b1802b80553e6ba73fda4db634878f29d0a84be20e29f25315bb57c4f793c"
+      },
+      {
+        "bytes": 778770,
+        "name": "ee4dd519ad015412b40f60545c339c99_MIT6_253S12_lec18.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/ee4dd519ad015412b40f60545c339c99_MIT6_253S12_lec18.pdf",
+        "pages": 31,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/ee4dd519ad015412b40f60545c339c99_MIT6_253S12_lec18.pdf",
+        "sha256": "faa22a3a2984e83256d8414c60c13ab7567f6032302b0f38413f0e324ce94aaa"
+      },
+      {
+        "bytes": 228715,
+        "name": "f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+        "pages": 6,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+        "sha256": "a6cc7ff66f5445d633ec2cc79256df405166f2789c9b6a5157acd1a7b70cfb93"
+      },
+      {
+        "bytes": 2095702,
+        "name": "f54a926df3346e5d23ca59548cce103a_MIT6_253S12_lec25.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/f54a926df3346e5d23ca59548cce103a_MIT6_253S12_lec25.pdf",
+        "pages": 24,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/f54a926df3346e5d23ca59548cce103a_MIT6_253S12_lec25.pdf",
+        "sha256": "f44f35cb20ac6aa45cc0777d0b51ca5764feb3d9152011c290e5f20e3475880f"
+      },
+      {
+        "bytes": 632749,
+        "name": "f9db676d7b12959724c5302cb5c70c67_MIT6_253S12_lec13.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/f9db676d7b12959724c5302cb5c70c67_MIT6_253S12_lec13.pdf",
+        "pages": 13,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/f9db676d7b12959724c5302cb5c70c67_MIT6_253S12_lec13.pdf",
+        "sha256": "fbc7461d894d8a3af45431814d0900f36f2e295d6a2a2ee5ecb3f2755209a75f"
+      },
+      {
+        "bytes": 1479043,
+        "name": "f9fe72e7516eb399aa23cd268d29b918_MIT6_253S12_lec06.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/f9fe72e7516eb399aa23cd268d29b918_MIT6_253S12_lec06.pdf",
+        "pages": 23,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/f9fe72e7516eb399aa23cd268d29b918_MIT6_253S12_lec06.pdf",
+        "sha256": "def546d1e8ff6f303cdddfea72838ef1032182f8d4a6378d038a2cbc6d33370d"
+      }
+    ],
+    "selected_teaching_closure": {
+      "bytes": 10417664,
+      "count": 13,
+      "files": [
+        {
+          "bytes": 8030116,
+          "name": "6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+          "pages": 340,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+          "role": "lecture-notes",
+          "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+        },
+        {
+          "bytes": 177116,
+          "name": "6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/6b7e833111c72d30c8dc133595ae56e3_MIT6_253S12_hw01.pdf",
+          "role": "homework-01-prompt",
+          "sha256": "6be9f55ea72cd6bccfee8e975e82531542cff68cd88dbfb3f8f5085632a6bfb5"
+        },
+        {
+          "bytes": 211540,
+          "name": "1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+          "pages": 5,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/1c82f0600edfc8ab4da06362882b5d7b_MIT6_253S12_hw01_sol.pdf",
+          "role": "homework-01-solution",
+          "sha256": "39f84dd18de4597968bfc57266f6751225d3a30d07c7d9b0d57b68796781df15"
+        },
+        {
+          "bytes": 177482,
+          "name": "8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/8822623ef1e07e150f9c7f1b187b413e_MIT6_253S12_hw02.pdf",
+          "role": "homework-02-prompt",
+          "sha256": "5bd07862c860acf7458cc68851542678457e47d9cbdd2354e573e67b916428df"
+        },
+        {
+          "bytes": 218513,
+          "name": "9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+          "pages": 7,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/9930cdcf286c1f320c414b9cebaa1b47_MIT6_253S12_hw02_sol.pdf",
+          "role": "homework-02-solution",
+          "sha256": "17db963e6b634dac5c983f1577cf75715f5a0217969829ee46c6fdaa72f7dc3a"
+        },
+        {
+          "bytes": 209838,
+          "name": "e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/e348281657308eca9dfffffa70e80328_MIT6_253S12_hw03.pdf",
+          "role": "homework-03-prompt",
+          "sha256": "f36b1802b80553e6ba73fda4db634878f29d0a84be20e29f25315bb57c4f793c"
+        },
+        {
+          "bytes": 255819,
+          "name": "7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+          "pages": 8,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/7cac6d51273426678c66de3949ec8f41_MIT6_253S12_hw03_sol.pdf",
+          "role": "homework-03-solution",
+          "sha256": "0243459446272a447edbf77f79c67d4cdffd45a9b0b2509005f20e03cce63891"
+        },
+        {
+          "bytes": 183551,
+          "name": "970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/970fa2cdff9b50292b977eb5b7d88da8_MIT6_253S12_hw04.pdf",
+          "role": "homework-04-prompt",
+          "sha256": "bb650282ff26ad48dd65247732762820fe62bf6629291366564ce5328dac02c9"
+        },
+        {
+          "bytes": 228715,
+          "name": "f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+          "pages": 6,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/f3c9d9506f80f996010915cf8a86b57d_MIT6_253S12_hw04_sol.pdf",
+          "role": "homework-04-solution",
+          "sha256": "a6cc7ff66f5445d633ec2cc79256df405166f2789c9b6a5157acd1a7b70cfb93"
+        },
+        {
+          "bytes": 193313,
+          "name": "c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+          "pages": 4,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/c55025e7eddd84b56c166e7d4bdce687_MIT6_253S12_hw05.pdf",
+          "role": "homework-05-prompt",
+          "sha256": "69ef38d494964f41591104fea0f0da855997e0cf40da11b14b3aa12dd0642785"
+        },
+        {
+          "bytes": 254533,
+          "name": "906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+          "pages": 7,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/906236c9b1adcc1aac789d7cd04ebe1a_MIT6_253S12_hw05_sol.pdf",
+          "role": "homework-05-solution",
+          "sha256": "1dacf0cd66658667b6ff209b4b8eb31fda5a0ce88e48a6c214fcefea97b538ca"
+        },
+        {
+          "bytes": 186659,
+          "name": "22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/22c593932434f1bb33f1ddcf7f52f367_MIT6_253S12_mid_S10_sol.pdf",
+          "role": "spring-2010-midterm-with-solution",
+          "sha256": "c10268ae65bdea3815494829077d0af9b5499ec893b4084c655a0d6996a781ba"
+        },
+        {
+          "bytes": 90469,
+          "name": "772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+          "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+          "pages": 3,
+          "path": "authority/mit-ocw-6.253/course-archive/static_resources/772b8b0aace4b5eaa1397b2da8adad87_MIT6_253S12_midterm_sol.pdf",
+          "role": "spring-2012-midterm-with-solution",
+          "sha256": "292ab2a877cf5bb5d667d444466e93a8d7e33ddae51b2a366c88a06c6b222df7"
+        }
+      ],
+      "homework_prompt_pages": 16,
+      "homework_solution_pages": 33,
+      "midterm_pages": 6,
+      "pages": 395
+    },
+    "supplementary_or_redundant": {
+      "athena_summary_pdf": {
+        "bytes": 448647,
+        "name": "db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "official_url": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "pages": 59,
+        "path": "authority/mit-ocw-6.253/course-archive/static_resources/db7bde2cd43e8dbaba11f6911311b87c_MIT6_253S12_summary.pdf",
+        "sha256": "d8b8b69d5a4266da291ec10441d92ac6dcf29f84db3f7959a4bc07b6c585a48b"
+      },
+      "disposition": "individual lecture PDFs duplicate the complete notes; the 59-page Athena Scientific summary is a third-party, permission-ambiguous component and is excluded",
+      "individual_lecture_pdfs": 25
+    },
+    "term": "Spring 2012",
+    "title": "Convex Analysis and Optimization"
+  },
+  "result": "pass_with_declared_gaps",
+  "role": "D90 Advanced Optimization and Convex Analysis",
+  "royer_stochastic_gradient": {
+    "component_credits": [
+      "A. Gramfort",
+      "Robert Gower"
+    ],
+    "creator": "Clément W. Royer",
+    "editable_source": {
+      "notebook_dependencies_unpinned": true,
+      "notebooks": true,
+      "notes_tex": false
+    },
+    "exercise_solution_closure": {
+      "formal_exercises": 3,
+      "hints": 0,
+      "lab01": "substantially executed",
+      "lab02": "not answer-complete: four unanswered discussion cells and an unimplemented optional Momentum/Adam section",
+      "solutions": 3
+    },
+    "laboratory_archives": [
+      {
+        "archive": {
+          "bytes": 382975,
+          "path": "authority/royer-stochastic-gradient/downloads/SourcesLabSG01.zip",
+          "sha256": "88e18ea096b87bd12d182072bfbf6fd12ac73d666e16911a3f015ee9a574d461"
+        },
+        "duplicates": 0,
+        "entry_count": 1,
+        "entry_manifest": {
+          "bytes": 158,
+          "path": "authority/royer-stochastic-gradient/downloads/SourcesLabSG01.entries.sha256.tsv",
+          "sha256": "679e9ee74402e08fa35d495ff324ccbcf0e55331934461ea2812507ef0bc5ea2"
+        },
+        "extracted_identity": "pass",
+        "file_count": 1,
+        "uncompressed_bytes": 591695,
+        "unsafe_entries": 0
+      },
+      {
+        "archive": {
+          "bytes": 371793,
+          "path": "authority/royer-stochastic-gradient/downloads/SourcesLabSG02.zip",
+          "sha256": "0a0a908157dcf07f0dd3874c118e416dad3033a5f04f9cb37ae248b2f8feb623"
+        },
+        "duplicates": 0,
+        "entry_count": 1,
+        "entry_manifest": {
+          "bytes": 153,
+          "path": "authority/royer-stochastic-gradient/downloads/SourcesLabSG02.entries.sha256.tsv",
+          "sha256": "f2964d38865ddf4d46dba15e98fff29ef5657b7ff4846aecd0a8605c0947b440"
+        },
+        "extracted_identity": "pass",
+        "file_count": 1,
+        "uncompressed_bytes": 529952,
+        "unsafe_entries": 0
+      }
+    ],
+    "license": {
+      "declared_on_official_course_page_for_materials_on_page": true,
+      "expression": "CC BY-NC 4.0",
+      "legalcode": {
+        "bytes": 19347,
+        "path": "authority/royer-stochastic-gradient/official-pages/CC-BY-NC-4.0-legalcode.txt",
+        "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+      },
+      "requirements": [
+        "attribution",
+        "license link",
+        "identify changes",
+        "noncommercial use",
+        "no additional restrictions",
+        "no implied endorsement"
+      ],
+      "translation_permitted": true
+    },
+    "notebooks": [
+      {
+        "bytes": 591695,
+        "cells": 55,
+        "code_cells": 18,
+        "code_cells_with_outputs": 12,
+        "empty_code_cells": 0,
+        "markdown_cells": 37,
+        "null_execution_count": 0,
+        "path": "authority/royer-stochastic-gradient/labs/lab01/LabSG01-2324.ipynb",
+        "role": "laboratory-01",
+        "sha256": "a40429fd34995a055bf1421cde8cc0d7c6a44bbe971107460ab16548152e847b",
+        "total_outputs": 21
+      },
+      {
+        "bytes": 529952,
+        "cells": 53,
+        "code_cells": 18,
+        "code_cells_with_outputs": 6,
+        "empty_code_cells": 4,
+        "markdown_cells": 35,
+        "null_execution_count": 5,
+        "path": "authority/royer-stochastic-gradient/labs/lab02/LabSG02.ipynb",
+        "role": "laboratory-02",
+        "sha256": "b9a9f791b679307f1f3c0fa77c32cd238a303ea7e36f338f4bea463e9782c319",
+        "total_outputs": 13
+      }
+    ],
+    "notes": {
+      "bytes": 684631,
+      "official_url": "https://www.lamsade.dauphine.fr/~croyer/ensdocs/SG/LectureNotesOML-SG.pdf",
+      "pages": 45,
+      "path": "authority/royer-stochastic-gradient/downloads/LectureNotesOML-SG.pdf",
+      "role": "stochastic-gradient-notes",
+      "sha256": "3290c61e870ef807ae92c4ace309449ee46ab3aa544e033c100f4a005311dfd3"
+    },
+    "official_course": "https://www.lamsade.dauphine.fr/~croyer/teachSG.html",
+    "official_page": {
+      "bytes": 6381,
+      "path": "authority/royer-stochastic-gradient/official-pages/teachSG.html",
+      "sha256": "7b03656d07edf4bdb7b524ff20a41d06511a23e0b75a04cdaff309ab0817f88c"
+    },
+    "selected_core_pages": 45,
+    "title": "Optimization for Machine Learning - Stochastic Gradient",
+    "virtual_board_pages_not_counted_in_core": 36,
+    "virtual_boards": [
+      {
+        "bytes": 1932521,
+        "official_url": "https://www.lamsade.dauphine.fr/~croyer/ensdocs/SG/boardSG01.pdf",
+        "pages": 10,
+        "path": "authority/royer-stochastic-gradient/downloads/boardSG01.pdf",
+        "role": "virtual-board-1",
+        "sha256": "e68fcd2d9bb7a2b712c128af6fe22bd2217b2c8d5cfbd8201dab98e8f2f4aa37"
+      },
+      {
+        "bytes": 2293823,
+        "official_url": "https://www.lamsade.dauphine.fr/~croyer/ensdocs/SG/boardSG02.pdf",
+        "pages": 12,
+        "path": "authority/royer-stochastic-gradient/downloads/boardSG02.pdf",
+        "role": "virtual-board-2",
+        "sha256": "3439ed737973d75280e5d7f384ec14083895009426e98a3145637eb932ad8554"
+      },
+      {
+        "bytes": 2221564,
+        "official_url": "https://www.lamsade.dauphine.fr/~croyer/ensdocs/SG/boardSG03.pdf",
+        "pages": 14,
+        "path": "authority/royer-stochastic-gradient/downloads/boardSG03.pdf",
+        "role": "virtual-board-3",
+        "sha256": "2539895172e6d88c6841b52775fbb253db9843ee69e6d2d54b57b9c4f7b4f99a"
+      }
+    ]
+  },
+  "schema": "o015-mit-royer-source-freeze-v1",
+  "selected_external_core": {
+    "expected_pages": 440,
+    "mit_pages": 395,
+    "pages": 440,
+    "royer_pages": 45
+  }
+}
