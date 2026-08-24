@@ -1,9 +1,9 @@
 # O015 current state
 
-As of: 2026-08-23  
+As of: 2026-08-24  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: MIT/Royer authority frozen; MIT complete-notes pages 2--5, 6--13, 14, and 15 admitted as semantic HTML/PDF units; L03 Zenodo preservation verified; L04 live-browser/backend gates closed without a standalone release; page 16 begins the next coherent multi-page batch
+Status: MIT/Royer authority frozen; MIT complete-notes pages 2--63 admitted through L09 with semantic HTML/PDF readers and a 2,099-record backend; L08 is publicly preserved; L09 preservation is pending; page 64 begins Lecture 6 and is the next source cursor
 
 ## Ownership and scope
 
@@ -51,15 +51,15 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current public version: `10.5281/zenodo.22070474`, explicitly incomplete through the ten optional-companion units Habring Chapters 3--9 and Penn Chapters 3--5 plus the admitted MIT pages 2--5 pilot. It preserves the prior 16 files unchanged and adds eight MIT-L01 files. Anonymous readback passed all 24 public files and all 45 manifest-bound delta payloads (46 ZIP entries including its manifest). The sanitized readback is `release/zenodo/2026-08-23-mit-l01/zenodo-public-readback-mit-l01.json` (7,238 bytes; SHA-256 `08136c7695a7667cd550b355ad8a3debe4e3afc5c8b1d9bd1ec0e924186b8f60`).
+- Current verified public version: `10.5281/zenodo.22074528`, explicitly incomplete through MIT L08 / complete-notes pages 39--49. It inherits 66 files, adds eight L08 files, and passed anonymous exact-byte readback for all 74 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l08/zenodo-public-readback-mit-l08.json` (20,320 bytes; SHA-256 `3c162ec07d5fd17accf417ec4659ef1b5849c8b83873ab93720fd9d8326fe9ea`). L09 is admitted locally but is not yet represented by a public DOI version.
 - Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
-- GitHub access was reinstated by the provider on 2026-08-22. The verified MIT-L01 checkpoint is public in the existing repository at commit `92040531272bd26556b0768406e0225105b16deb` / tree `cdf044c0aa0d7edb74cdd14d8094ae35bdfbf8f7`; credential-free API and immutable raw-file readback passed for eleven representative reader, source, backend, control, release, and receipt files. No replacement repository was created.
+- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `024fd4eaf185b44250ab4ed41eb46afb660b4fbd` / tree `03a703dcac06356b7439ada876175ed80664525d`; all 42 changed L08 paths passed immutable anonymous raw-file readback. No replacement repository was created, and no GitHub identity is yet claimed for L09.
 
-The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. The admitted MIT pilot is now preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component.
+The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. MIT L01--L08 are preserved additively in the existing GitHub and Zenodo lineages; L09 preservation remains the current transaction. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component.
 
 ## Known incomplete surfaces
 
-MIT/Royer authority and the first MIT topic are admitted, but the remaining 436 external source pages are untranslated. The complete 18-unit learner route, original bridges, 36 mastery problems, solution repairs, labs, capstone, full-course semantic HTML/EPUB, tagged PDF, and human/native-speaker Indonesian review remain open. No final-corpus claim is allowed.
+MIT/Royer authority and MIT complete-notes pages 2--63 are admitted, but 378 external source pages remain untranslated under the established 440-page accounting. The complete 18-unit learner route, original bridges, 36 mastery problems, solution repairs, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Human/native-speaker Indonesian review remains unrecorded optional evidence, not a hold. No final-corpus claim is allowed.
 
 ## Exact continuation (historical pre-L02 wording)
 
@@ -514,3 +514,51 @@ readback for all 42 changed paths. Zenodo record `22074528` / DOI
 readback, with 66 inherited unchanged and eight L08 additions. The next
 production cursor is page 50, beginning one coherent multi-page Lecture 5
 batch.
+
+## 2026-08-24 — MIT L09 complete Lecture 5 admitted; preservation pending
+
+MIT complete-notes pages 50--63 are admitted as one coherent Lecture 5
+semantic-reader boundary; page 64 is the verified start of Lecture 6 and is
+excluded. The boundary contains 14 ordered source pages, 41 top-level items,
+17 nested items, 19 display surfaces, seven independently worded semantic
+figure descriptions comprising 12 panels, and two explicit examples. It has
+no source exercise, hint, answer, solution, code, or interactive surface. No
+Athena Scientific image byte, crop, or source layout enters the derivative.
+
+The census is 19,753 bytes / SHA-256
+`e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85`;
+the immutable eight-event correction snapshot for
+`O015-MIT-SEM-0012`--`0019` is 5,506 bytes /
+`e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc`.
+The witness, Indonesian target, semantic HTML, and seven-page A4 PDF are
+25,798 / 28,712 / 118,805 / 101,797 bytes with SHA-256
+`5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff`,
+`a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9`,
+`1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9`,
+and `34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
+
+The 57,332-byte reader validator and 21,488-byte passing receipt have SHA-256
+`f9bd7204bd2a2eabe3b91dfe1d5c3e0a9c3021b39c3874bcde9d8a2db90cdd9b`
+and `d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2`.
+Browser, visual, and independent-rereview evidence are 1,903 / 2,281 / 2,860
+bytes with SHA-256
+`e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619`,
+`f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b`,
+and `95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c`.
+Deterministic reader validation, desktop/mobile reflow, all-page visual QA,
+and independent rereview pass. The PDF is searchable, A4, unencrypted,
+declares `/Lang id-ID`, and remains untagged.
+
+Backend admission adds 142 records to the exact protected 1,957-record L08
+baseline and closes at 2,099 records. JSONL is 1,577,079 bytes / SHA-256
+`b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8`;
+CSV is 1,886,451 bytes /
+`297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`.
+The generator, validator, and passing receipt are 59,113 / 39,600 / 7,456
+bytes with SHA-256
+`bbe16a599e71aada89c9ab48e963b2a306d51e6fed6b8a906c78e8b7f61b7203`,
+`e7d290e4061f8a5e64a09ad3b892e84d4110367c79385fe151d9c6f7f8e6e7d8`,
+and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
+L09 public preservation is pending in the existing GitHub and Zenodo lineages;
+no commit, DOI, or public-byte identity is claimed yet. After that transaction,
+the executable translation cursor is page 64, the beginning of Lecture 6.

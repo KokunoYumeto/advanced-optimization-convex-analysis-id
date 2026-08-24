@@ -1,7 +1,7 @@
 # O015 production cursor
 
-As of: 2026-08-23  
-State: MIT/Royer authority frozen and MIT semantic-source blocks on complete-notes pages 2--5, 6--13, 14, and 15 admitted; L03 Zenodo preservation verified; L04 reader/browser/backend gates closed without a standalone release; page 16 opens the next coherent multi-page batch
+As of: 2026-08-24  
+State: MIT/Royer authority frozen and complete-notes pages 2--63 admitted through L09; the additive backend contains 2,099 records; L08 is publicly preserved, L09 preservation is pending, and page 64 opens Lecture 6 as the next coherent source batch
 
 ## Completed at this boundary
 
@@ -383,3 +383,38 @@ matched immutable anonymous raw downloads. Zenodo record `22074528`, DOI
 66 unchanged inherited files and eight L08 additions. The current executable
 cursor is complete-notes page 50. Freeze one coherent multi-page Lecture 5
 batch before translating; do not resume page-level production.
+
+## 2026-08-24 cursor refresh — L09 admitted; page 64 follows preservation
+
+The preceding page-50 cursor is superseded. Complete Lecture 5, pages 50--63,
+is admitted as one L09 boundary; page 64 is the verified `LECTURE 6`
+delimiter. The census / English witness / Indonesian target are 19,753 /
+25,798 / 28,712 bytes with SHA-256
+`e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85`,
+`5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff`,
+and `a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9`.
+The semantic HTML is 118,805 bytes /
+`1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9`;
+the seven-page A4 PDF is 101,797 bytes /
+`34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
+
+Reader validation, desktop/mobile browser reflow, all-seven-page visual QA,
+and independent rereview pass. Their receipts are bound in
+`00_control/BUILD_AND_QA.md`; corrections `O015-MIT-SEM-0012`--`0019` are
+frozen in the 5,506-byte snapshot with SHA-256
+`e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc`.
+No Athena image byte or layout is admitted, and the source boundary has no
+exercise, hint, answer, solution, code, or interactive surface.
+
+The additive backend adds 142 records to the byte-protected 1,957-record L08
+baseline and passes at 2,099 records. JSONL and CSV are 1,577,079 / 1,886,451
+bytes with SHA-256
+`b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8`
+and `297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`;
+the backend receipt is 7,456 bytes /
+`57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
+
+Preserve L09 once in the existing GitHub and Zenodo lineages and anonymously
+read back its public bytes. No L09 public identity exists yet. Once that
+transaction closes, continue from page 64 in one coherent multi-page Lecture 6
+batch; do not return to page-level production.

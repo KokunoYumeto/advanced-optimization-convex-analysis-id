@@ -427,3 +427,24 @@ eight bound L08 files, makes the L08 PDF the default preview, and passes full
 anonymous readback for all 74 files. Component rights remain distinct, status
 remains partial, and no upstream contact occurred. Production advances to one
 coherent Lecture 5 batch beginning on page 50.
+
+## D90-0042 — Admit complete Lecture 5 and advance to Lecture 6
+
+Decision: admit MIT L09 as the single complete page-50–63 Lecture 5 boundary.
+The final gate binds the immutable MIT authority, 14 ordered source pages, 41
+top-level items, 17 nested items, 19 display surfaces, seven independently
+worded figure descriptions / 12 panels, two examples, no copied Athena image
+bytes or layouts, deterministic reader validation, desktop/mobile reflow,
+all-seven-page visual inspection, and independent P1=0/P2=0/P3=0 rereview.
+Corrections `O015-MIT-SEM-0012`–`0019` are disclosed and frozen. The source
+contains no exercise, hint, answer, solution, code, or interactive surface, and
+none is invented.
+
+The additive backend preserves the exact 1,957-record L08 baseline, adds 142
+records, and passes at 2,099. JSONL, CSV, and backend-receipt SHA-256 values are
+`b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8`,
+`297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`,
+and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
+Preserve L09 once in the existing GitHub/Zenodo lineages and anonymously read
+back its public bytes; this admission decision makes no premature public
+claim. Page 64 is the verified Lecture 6 delimiter and next production cursor.

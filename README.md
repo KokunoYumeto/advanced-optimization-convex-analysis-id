@@ -2,19 +2,18 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit struktural, matematika, komputasi, pembangunan deterministik, dan pemeriksaan visual sebagai pendamping opsional sepuluh unit. Korpus utama D90 yang dipilih adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT halaman 2–5, 6–13, 14, dan 15 (“The Rise of the Algorithmic Era”) telah lolos dan diterima; QA browser langsung L04 lulus, sedangkan PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat. Halaman 16 membuka bagian multi-halaman berikutnya yang akan ditutup dengan satu gerbang gabungan. Status ini bukan klaim bahwa keseluruhan korpus telah selesai.
+**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L09 kini menerima halaman sumber 2–63 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.099 rekaman. L08 telah dipreservasi publik; preservasi L09 masih tertunda dan belum memiliki identitas publik. Halaman 64, awal Kuliah 6, adalah kursor berikutnya. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint sepuluh unit yang belum lengkap dan pilot MIT dipreservasi dalam
-garis keturunan Zenodo yang sama: [koreksi publik terbaru
-10.5281/zenodo.22071030](https://doi.org/10.5281/zenodo.22071030) dan [DOI
+Checkpoint publik terbaru yang terverifikasi berada pada [MIT L08,
+10.5281/zenodo.22074528](https://doi.org/10.5281/zenodo.22074528) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Koreksi tersebut mempertahankan berkas parent byte demi byte dan telah dibaca
-kembali secara anonim. Publikasi L04 belum berhasil karena transaksi Zenodo
-mengembalikan HTTP 504; tidak ada klaim bahwa byte L04 sudah publik.
+Semua 74 berkas—66 warisan dan delapan tambahan L08—telah dibaca kembali
+secara anonim dan cocok byte demi byte. L09 sudah diterima secara lokal tetapi
+belum dipreservasi; tidak ada DOI atau klaim byte publik L09 di sini.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -22,12 +21,11 @@ dengan PDF gabungan 103 halaman sebagai berkas pertama, paket sumber yang dapat
 dibangun ulang, lisensi, manifest, dan checksum. Komponen Penn berlisensi campuran
 tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
-Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint ini
-telah disinkronkan ke [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
-pada [commit `9204053`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/92040531272bd26556b0768406e0225105b16deb);
-identitas commit/tree dan sebelas berkas pembaca, sumber, backend, kontrol,
-rilis, serta resi publik dibaca kembali secara anonim dan cocok byte demi byte.
-Tidak dibuat repositori pengganti.
+Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint
+terverifikasi terbaru berada di [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
+pada [commit `024fd4e`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/024fd4eaf185b44250ab4ed41eb46afb660b4fbd);
+seluruh 42 jalur yang berubah pada L08 cocok dengan unduhan raw anonim. Tidak
+dibuat repositori pengganti dan belum ada commit publik yang diklaim untuk L09.
 
 ## Pembaca yang tersedia
 
@@ -39,6 +37,16 @@ Tidak dibuat repositori pengganti.
 - `output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf` — pembaca A4 MIT halaman sumber 14, 2 halaman; 34.550 byte; SHA-256 `3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136`.
 - `output/html/D90-MIT-04-kebangkitan-era-algoritmik-id.html` — permukaan semantik MIT halaman sumber 15; 9.975 byte; SHA-256 `c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e`.
 - `output/pdf/D90-MIT-04-kebangkitan-era-algoritmik-id.pdf` — pembaca A4 MIT halaman sumber 15, 2 halaman; 36.971 byte; SHA-256 `9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f`.
+- `output/html/D90-MIT-05-orientasi-kursus-id.html` — permukaan semantik MIT halaman sumber 16–19; 16.029 byte; SHA-256 `424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83`.
+- `output/pdf/D90-MIT-05-orientasi-kursus-id.pdf` — pembaca A4 MIT halaman sumber 16–19, 3 halaman; 46.785 byte; SHA-256 `2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0`.
+- `output/html/D90-MIT-06-kuliah-2-landasan-konveks-id.html` — permukaan semantik Kuliah 2, halaman sumber 20–28; SHA-256 `94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`.
+- `output/pdf/D90-MIT-06-kuliah-2-landasan-konveks-id.pdf` — pembaca A4 Kuliah 2, 4 halaman; SHA-256 `84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`.
+- `output/html/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html` — permukaan semantik Kuliah 3, halaman sumber 29–38; SHA-256 `cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13`.
+- `output/pdf/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf` — pembaca A4 Kuliah 3, 4 halaman; SHA-256 `2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec`.
+- `output/html/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html` — permukaan semantik Kuliah 4, halaman sumber 39–49; 113.898 byte; SHA-256 `b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a`.
+- `output/pdf/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf` — pembaca A4 Kuliah 4, 6 halaman; 91.293 byte; SHA-256 `b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62`.
+- `output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html` — permukaan semantik Kuliah 5, halaman sumber 50–63; 118.805 byte; SHA-256 `1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9`.
+- `output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf` — pembaca A4 Kuliah 5, 7 halaman; 101.797 byte; SHA-256 `34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
 - `output/pdf/D90-HAB-03-09-modul-pendamping-id.pdf` — modul Habring Bab 3–9 gabungan, 103 halaman; SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`.
 - `output/pdf/D90-HAB-03-subgradien-id.pdf` — 15 halaman; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
 - `output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf` — 13 halaman; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
@@ -51,7 +59,7 @@ Tidak dibuat repositori pengganti.
 - `output/pdf/D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf` — 17 halaman; current working-tree SHA-256 `18e7162f8d1e55a050ee96a6ba05a2ffaa0d5cb578f96e264152666a79dc83a8` (the previously published Zenodo bytes remain `c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a`).
 - `output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf` — 15 halaman; current working-tree SHA-256 `dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96` (the previously published Zenodo bytes remain `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`).
 
-Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca beku L04 berisi 1.543 rekaman di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
+Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca beku L09 berisi 2.099 rekaman di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
 
 ## Provenans produksi
 
@@ -76,6 +84,16 @@ python qa/build_mit_l03.py --html-output output/mit-l03-rebuild.html --pdf-outpu
 python qa/validate_mit_l03.py
 python qa/build_mit_l04.py --html-output output/mit-l04-rebuild.html --pdf-output output/mit-l04-rebuild.pdf
 python qa/validate_mit_l04.py
+python qa/build_mit_l05.py
+python qa/validate_mit_l05.py
+python qa/build_mit_l06.py
+python qa/validate_mit_l06.py
+python qa/build_mit_l07.py
+python qa/validate_mit_l07.py
+python qa/build_mit_l08.py
+python qa/validate_mit_l08.py
+python qa/build_mit_l09.py
+python qa/validate_mit_l09.py
 ```
 
 Dari `source/id-ID`, bangun unit Penn Bab 3–5 dengan pola berikut:
@@ -104,15 +122,25 @@ python qa/extend_backend_mit_l02.py
 python qa/validate_backend_mit_l02.py
 python qa/extend_backend_mit_l04.py
 python qa/validate_backend_mit_l04.py
+python qa/extend_backend_mit_l05.py
+python qa/validate_backend_mit_l05.py
+python qa/extend_backend_mit_l06.py
+python qa/validate_backend_mit_l06.py
+python qa/extend_backend_mit_l07.py
+python qa/validate_backend_mit_l07.py
+python qa/extend_backend_mit_l08.py
+python qa/validate_backend_mit_l08.py
+python qa/extend_backend_mit_l09.py
+python qa/validate_backend_mit_l09.py
 ```
 
-Generator Penn/Habring terdahulu tetap disimpan sebagai bukti transaksi historis. Rantai backend MIT hidup berakhir pada pasangan `extend_backend_mit_l04.py` / `validate_backend_mit_l04.py`; baseline L02 dipertahankan byte demi byte.
+Generator Penn/Habring terdahulu tetap disimpan sebagai bukti transaksi historis. Rantai backend MIT hidup berakhir pada pasangan `extend_backend_mit_l09.py` / `validate_backend_mit_l09.py`; setiap baseline terdahulu dipertahankan byte demi byte dan tidak ada pengenal yang dinomori ulang.
 
 Rekaman pembangunan lengkap ada di `00_control/BUILD_AND_QA.md`.
 
 ## Aksesibilitas dan batas saat ini
 
-Semua PDF bersifat dapat dicari dan mendeklarasikan bahasa `id-ID`, tetapi belum bertanda semantik. Sebagian font internal pada gambar vektor Penn Bab 3–4 tidak memiliki peta Unicode lengkap; Penn Bab 5 dan pilot MIT memetakan seluruh fontnya. Pilot MIT mempunyai HTML semantik yang dapat mengalir ulang, dengan struktur heading, MathML, navigasi, tautan lompat, dan pengenal halaman/butir yang telah diuji pada lebar desktop dan ponsel tanpa luapan horizontal. HTML/EPUB semantik untuk korpus lengkap, permukaan komputasi interaktif, lapisan latihan/hint/solusi lengkap, dan peninjauan bahasa independen masih harus diselesaikan. Penn Bab 6 yang sudah diterjemahkan disimpan sebagai kandidat pendamping yang belum diterima; produksi utama tidak berlanjut otomatis ke bab tersebut.
+Semua PDF bersifat dapat dicari dan mendeklarasikan bahasa `id-ID`, tetapi belum bertanda semantik. Sebagian font internal pada gambar vektor Penn Bab 3–4 tidak memiliki peta Unicode lengkap; Penn Bab 5 dan pembaca MIT memetakan teksnya. Semua HTML MIT L01–L09 bersifat semantik dan dapat mengalir ulang, dengan heading, MathML, navigasi, tautan lompat, serta pengenal halaman/butir yang telah diuji pada lebar desktop dan ponsel tanpa luapan horizontal. EPUB semantik korpus lengkap, PDF bertag, permukaan komputasi interaktif, dan lapisan latihan/petunjuk/solusi lengkap masih harus diselesaikan. Tinjauan bahasa independen manusia belum tercatat dan bukan penahan kerja atau publikasi. Penn Bab 6 yang sudah diterjemahkan disimpan sebagai kandidat pendamping yang belum diterima; produksi utama tidak berlanjut otomatis ke bab tersebut.
 
 ## Batas MIT L02 yang diterima (23 Agustus 2026)
 
@@ -383,3 +411,37 @@ berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256 tepat;
 66 berkas Zenodo diwarisi tanpa perubahan dan delapan berkas merupakan tambahan
 L08. PDF L08 menjadi pratinjau utama. Halaman 50 memulai Kuliah 5 dan merupakan
 kursor produksi berikutnya.
+
+## Batas MIT L09 yang diterima (24 Agustus 2026)
+
+L09 menerima seluruh Kuliah 5 pada halaman sumber 50–63 sebagai satu batch:
+arah dan kerucut resesi, ruang kelinieran, fungsi resesi, serta struktur
+asimtotik dan keberadaan minimum. Sensus, saksi Inggris, target Indonesia,
+HTML semantik, dan PDF A4 tujuh halaman memiliki SHA-256
+`e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85`,
+`5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff`,
+`a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9`,
+`1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9`,
+dan `34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
+
+Batas ini memuat 14 halaman, 41 butir tingkat atas, 17 butir bersarang, 19
+permukaan rumus tampil, tujuh deskripsi gambar semantik / 12 panel, dan dua
+contoh. Tidak ada byte, potongan, atau tata letak grafik Athena Scientific yang
+disalin. Batas sumber tidak mempunyai latihan, petunjuk, jawaban, solusi, kode,
+atau interaktivitas; tidak ada yang diada-adakan. Koreksi
+`O015-MIT-SEM-0012`–`0019` diungkapkan dalam snapshot 5.506 byte, SHA-256
+`e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc`.
+Validasi deterministik, QA browser desktop/ponsel, inspeksi visual semua tujuh
+halaman, dan rereview independen lulus tanpa temuan terbuka P1/P2/P3. PDF dapat
+dicari, berbahasa `id-ID`, dan belum bertag.
+
+Backend kini memuat 2.099 rekaman, 142 tambahan terhadap baseline L08 1.957
+rekaman yang dipertahankan tepat. JSONL 1.577.079 byte dan CSV 1.886.451 byte
+memiliki SHA-256
+`b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8`
+dan `297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`;
+resi backend lulus pada
+`57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
+Preservasi GitHub dan Zenodo L09 masih tertunda, sehingga belum ada identitas
+publik L09 yang diklaim. Setelah preservasi terverifikasi, halaman 64—awal
+Kuliah 6—adalah kursor produksi berikutnya.

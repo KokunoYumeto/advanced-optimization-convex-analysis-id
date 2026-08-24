@@ -303,6 +303,89 @@
           "O015-MIT-SEM-0003"
         ]
       },
+      "derivative_progress": {
+        "status": "partial",
+        "admitted_complete_notes_pdf_pages": {
+          "first": 2,
+          "last": 63
+        },
+        "latest_boundary": {
+          "boundary_id": "MIT-L09",
+          "title": "Lecture 5 - Recession and Minima",
+          "complete_notes_pdf_pages": {
+            "first": 50,
+            "last": 63
+          },
+          "next_topic_starts_page": 64,
+          "source_witness": {
+            "path": "source/en/mit-09-lecture-5-recession-minima-semantic-witness.md",
+            "bytes": 25798,
+            "sha256": "5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff"
+          },
+          "target": {
+            "path": "source/id-ID/mit-09-kuliah-5-resesi-dan-minimum-id.md",
+            "bytes": 28712,
+            "sha256": "a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9"
+          },
+          "html": {
+            "path": "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+            "bytes": 118805,
+            "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+          },
+          "pdf": {
+            "path": "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
+            "bytes": 101797,
+            "pages": 7,
+            "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+          },
+          "validation": {
+            "path": "qa/MIT_L09_VALIDATION.json",
+            "bytes": 21488,
+            "sha256": "d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2",
+            "result": "pass"
+          },
+          "browser_qa": {
+            "path": "qa/MIT_L09_BROWSER_QA.json",
+            "bytes": 1903,
+            "sha256": "e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619",
+            "result": "pass"
+          },
+          "visual_qa": {
+            "path": "qa/MIT_L09_VISUAL_QA.json",
+            "bytes": 2281,
+            "sha256": "f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b",
+            "result": "pass"
+          },
+          "independent_rereview": {
+            "path": "qa/MIT_L09_INDEPENDENT_REREVIEW.md",
+            "bytes": 2860,
+            "sha256": "95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c",
+            "p1_open": 0,
+            "p2_open": 0,
+            "p3_open": 0
+          },
+          "correction_ids": [
+            "O015-MIT-SEM-0012",
+            "O015-MIT-SEM-0013",
+            "O015-MIT-SEM-0014",
+            "O015-MIT-SEM-0015",
+            "O015-MIT-SEM-0016",
+            "O015-MIT-SEM-0017",
+            "O015-MIT-SEM-0018",
+            "O015-MIT-SEM-0019"
+          ],
+          "backend": {
+            "records": 2099,
+            "jsonl_bytes": 1577079,
+            "jsonl_sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8",
+            "csv_bytes": 1886451,
+            "csv_sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574",
+            "validation_receipt_sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"
+          },
+          "public_preservation": "pending"
+        },
+        "upstream_authority_unchanged": true
+      },
       "admission": "selected D90 primary theory and algorithm spine",
       "component_caveat": "The complete-notes title page states that all figures are courtesy of Athena Scientific and used with permission. That is not treated as a sublicensable adaptation grant. The 59-page Athena Scientific summary is third-party and permission-ambiguous and is excluded. No Athena figure bytes or layout may enter the derivative; necessary diagrams require independent redraw and rights records.",
       "known_solution_gap": "The Spring 2012 midterm solution contains the literal placeholder '(a) To be added.' Any repair must be independently authored and separately attributed."

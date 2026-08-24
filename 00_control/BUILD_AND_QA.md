@@ -1043,3 +1043,62 @@ and `68b62dd5c424a97ebed0268ab08c091be1d64acb1f063942c62e29d3c545b8b1`.
 The 20,320-byte public receipt has SHA-256
 `3c162ec07d5fd17accf417ec4659ef1b5849c8b83873ab93720fd9d8326fe9ea`.
 Next: freeze and translate one coherent Lecture 5 batch from page 50.
+
+# MIT OCW 6.253 Lecture 5 pages 50–63 consolidated build and QA (L09)
+
+As of: 2026-08-24  
+Admission: PASS; complete Lecture 5, not a complete-course or public-preservation claim
+
+The boundary census, witness, target, semantic HTML, and seven-page A4 PDF are
+respectively 19,753 / 25,798 / 28,712 / 118,805 / 101,797 bytes with SHA-256
+values
+`e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85`,
+`5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff`,
+`a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9`,
+`1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9`,
+and `34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
+The reader validator is 57,332 bytes /
+`f9bd7204bd2a2eabe3b91dfe1d5c3e0a9c3021b39c3874bcde9d8a2db90cdd9b`;
+its passing receipt is 21,488 bytes /
+`d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2`.
+
+The gate proves complete-notes pages 50--63 and page 64 as the clean Lecture 6
+delimiter. It binds 14 ordered pages, 41 top-level items, 17 nested items, 19
+display surfaces, seven independently worded figure descriptions / 12 panels,
+and two examples. There are no source exercises, hints, answers, solutions,
+code, interactives, or admitted images. No Athena Scientific image byte, crop,
+or layout is copied. The immutable eight-event correction snapshot for
+`O015-MIT-SEM-0012`--`0019` is 5,506 bytes /
+`e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc`.
+
+Deterministic validation reproduces the canonical reader bytes and closes with
+no errors. Desktop 1280×720 and mobile 390×844 have no page or formula
+overflow, duplicate IDs, unresolved fragments, or console findings. The
+browser receipt is 1,903 bytes /
+`e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619`.
+All seven PDF pages pass 160-dpi visual inspection; its 2,281-byte receipt has
+SHA-256
+`f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b`.
+Independent rereview closes P1=0/P2=0/P3=0 in a 2,860-byte receipt with
+SHA-256
+`95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c`.
+The PDF is searchable, A4, unencrypted, declares `/Lang id-ID`, and remains
+untagged. Unrecorded human review is disclosed evidence, not a gate.
+
+The additive backend preserves the exact 1,957-record L08 baseline and adds
+142 records, yielding 2,099. JSONL is 1,577,079 bytes / SHA-256
+`b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8`;
+CSV is 1,886,451 bytes /
+`297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`.
+The generator, validator, and passing receipt are 59,113 / 39,600 / 7,456
+bytes with SHA-256
+`bbe16a599e71aada89c9ab48e963b2a306d51e6fed6b8a906c78e8b7f61b7203`,
+`e7d290e4061f8a5e64a09ad3b892e84d4110367c79385fe151d9c6f7f8e6e7d8`,
+and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
+Repeated generation/validation is idempotent and never renumbers the protected
+baseline.
+
+Preservation gate: PENDING. No GitHub commit, Zenodo record/DOI, manifest, or
+public-byte identity is claimed for L09. Preserve it once in the existing
+lineages, read back the exact public bytes, and then continue with one coherent
+Lecture 6 batch from page 64.

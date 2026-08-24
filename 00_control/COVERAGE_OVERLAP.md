@@ -1,6 +1,7 @@
 # O015 coverage and overlap boundary
 
-Date: 2026-08-22  
+Architecture frozen: 2026-08-22  
+Coverage updated through: 2026-08-24 — MIT L09 / complete-notes page 63  
 Role: D90 — Advanced Optimization and Convex Analysis  
 Current architecture: MIT OCW 6.253 + Royer stochastic-gradient core; Penn/Habring preserved companion
 
@@ -207,3 +208,37 @@ coverage until its coherent multi-page boundary is frozen, translated, and
 validated. Remaining gaps are later MIT/Royer content, bridges, four labs,
 mastery/solution coverage, capstone, semantic EPUB, tagged PDF, and optional
 human-review evidence; the latter is not a hold.
+
+## MIT L08 complete Lecture 4 admitted; page 50 remains outside coverage (2026-08-24)
+
+Pages 39–49 add relative interiors, closure properties of convex sets, linear
+images and preimages, and continuity of convex functions. These are
+convex-analysis foundations and do not duplicate O018's finite LP/MIP,
+simplex/tableau, LP duality/sensitivity, network, or discrete-optimization
+workflow.
+
+The admitted closure has 11 pages, 27 top-level items, 16 nested items, 26
+display formulas, five independently worded semantic figure descriptions, and
+zero copied Athena graphic bytes or layouts. It has no exercise, hint, answer,
+solution, code, or interactive surface. Reader, rights, formula, browser,
+visual, rereview, and 1,957-record backend gates pass. Page 50 begins Lecture 5
+and remained outside coverage at this historical boundary.
+
+## MIT L09 complete Lecture 5 admitted; page 64 remains outside coverage (2026-08-24)
+
+Pages 50–63 add recession directions and cones, lineality, recession functions,
+and the asymptotic structure and existence of minima. This remains advanced
+convex analysis. It does not repeat O018's LP/MIP modelling, simplex mechanics,
+finite LP sensitivity, network optimization, or general operations-research
+solver workflow.
+
+The admitted closure has 14 pages, 41 top-level items, 17 nested items, 19
+display surfaces, seven semantic figure descriptions / 12 panels, two examples,
+and zero copied images. It contains no exercise, hint, answer, solution, code,
+or interactive surface. Reader, rights, topology, browser, visual, independent-
+rereview, and 2,099-record backend gates pass. Corrections
+`O015-MIT-SEM-0012`–`0019` are explicit. Page 64 begins Lecture 6 and remains
+outside admitted coverage until its coherent multi-page boundary is translated
+and validated. Remaining gaps are later MIT/Royer material, bridges, four labs,
+mastery/solution coverage, capstone, semantic EPUB, and tagged PDF; optional
+human-review evidence is not a hold.

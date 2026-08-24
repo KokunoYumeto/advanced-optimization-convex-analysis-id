@@ -1,0 +1,49 @@
+{
+  "schema": "o015.mit.reader-visual-qa.v1",
+  "unit_id": "D90-MIT-09",
+  "checked_at": "2026-08-24",
+  "result": "pass",
+  "pdf": {
+    "path": "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
+    "bytes": 101797,
+    "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721",
+    "pages": 7,
+    "media_box_points": [595.276, 841.89],
+    "language": "id-ID",
+    "searchable_text_chars": 17852,
+    "encrypted": false,
+    "tagged": false,
+    "raster_images": 0
+  },
+  "render": {
+    "engine": "Poppler pdftoppm",
+    "dpi": 160,
+    "all_pages_inspected": true,
+    "pages": [
+      {"page": 1, "bytes": 390688, "sha256": "ad84266e87ac00fa9fb0b4fe065b356d1de842f0604c5f49e23d3ba2be370392"},
+      {"page": 2, "bytes": 475603, "sha256": "916cb6786287e71dca7baf23b718554da4d180d5d21ece954e65f166f0b89537"},
+      {"page": 3, "bytes": 331236, "sha256": "b0e234f6d900a7d21ec334f8ff527653b1a1109fc6024be7a12cf7ee1f36f07c"},
+      {"page": 4, "bytes": 417013, "sha256": "b52d9e42042439a8744f4ecb6ebd20e67334a25ba2b6ebe05a98b3c7eccc560a"},
+      {"page": 5, "bytes": 355029, "sha256": "d76d06a3b1d143cdbd6108c63ef7776911747408673fc20833acde0f7925b3df"},
+      {"page": 6, "bytes": 474325, "sha256": "54ad562b68c07cfcaf6a7f3b6cd4bf6fafc457fd8ef1ca9698816d1b1d28d8a1"},
+      {"page": 7, "bytes": 135923, "sha256": "680989bab8aa21cd182dd6acd76582ea52def5d96b24ed7e9405b4dbca571a94"}
+    ]
+  },
+  "defects": {
+    "clipped_text": 0,
+    "overlap": 0,
+    "broken_glyphs": 0,
+    "unreadable_formulas": 0,
+    "margin_violations": 0,
+    "orphaned_headings": 0,
+    "inconsistent_running_headers": 0,
+    "incorrect_page_numbers": 0,
+    "copied_source_images": 0
+  },
+  "observations": [
+    "The title page is intentionally headerless and carries page number 1; pages 2 through 7 carry the same running header and centered page number.",
+    "The table of contents, correction notice, formulas, semantic figure descriptions, and section transitions are legible and remain within the text block.",
+    "Pages 2 through 6 are page-filling. Page 7 is the naturally short terminal section of the complete lecture, not a clipped or artificially isolated fragment.",
+    "No Athena Scientific source figure byte, crop, or layout appears in the reader."
+  ]
+}

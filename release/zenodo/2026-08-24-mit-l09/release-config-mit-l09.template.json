@@ -1,0 +1,36 @@
+{
+  "schema": "o015-mit-l09-release-config-v1",
+  "parent_record_id": "22074528",
+  "parent_record_doi": "10.5281/zenodo.22074528",
+  "concept_id": "22059741",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "boundary": {
+    "source_pages": [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63],
+    "next_source_page": 64,
+    "next_source_heading": "LECTURE 6 - LECTURE OUTLINE"
+  },
+  "backend": {
+    "protected_record_count": 1957,
+    "new_record_count": 142,
+    "record_count": 2099,
+    "jsonl": {"bytes": 1577079, "sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8"},
+    "csv": {"bytes": 1886451, "sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574"},
+    "validation": {"bytes": 7456, "sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"}
+  },
+  "controls": {
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {"bytes": null, "sha256": null},
+    "00_control/CURRENT_STATE.md": {"bytes": null, "sha256": null},
+    "00_control/CURRENT_CURSOR.md": {"bytes": null, "sha256": null},
+    "00_control/SOURCE_AUTHORITY.json": {"bytes": null, "sha256": null},
+    "00_control/COMPONENT_RIGHTS.csv": {"bytes": null, "sha256": null},
+    "00_control/COVERAGE_OVERLAP.md": {"bytes": null, "sha256": null},
+    "00_control/DECISION_LOG.md": {"bytes": null, "sha256": null},
+    "00_control/ADVERSE_LEDGER.jsonl": {"bytes": null, "sha256": null},
+    "00_control/BUILD_AND_QA.md": {"bytes": null, "sha256": null},
+    "00_control/PUBLICATION_RECEIPTS.md": {"bytes": null, "sha256": null}
+  },
+  "expected_inherited_file_count": 74,
+  "expected_addition_file_count": 8,
+  "expected_release_file_count": 82,
+  "status": "partial"
+}

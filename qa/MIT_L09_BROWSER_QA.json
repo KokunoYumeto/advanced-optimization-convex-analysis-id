@@ -1,0 +1,58 @@
+{
+  "schema": "o015.mit.reader-browser-qa.v1",
+  "unit_id": "D90-MIT-09",
+  "checked_at": "2026-08-24",
+  "result": "pass",
+  "html": {
+    "path": "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+    "bytes": 118805,
+    "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9",
+    "title": "Kuliah 5: Kerucut Resesi dan Titik Peminimum",
+    "language": "id-ID"
+  },
+  "surface": {
+    "main_landmarks": 1,
+    "skip_link_href": "#d90-mit-l09-p050",
+    "skip_target_exists": true,
+    "ids": 116,
+    "duplicate_ids": 0,
+    "broken_internal_fragments": 0,
+    "source_pages": 14,
+    "source_items": 41,
+    "source_displays": 19,
+    "source_figures": 7,
+    "figure_panels": 12,
+    "mathml_nodes": 294,
+    "images": 0,
+    "forms": 0
+  },
+  "desktop": {
+    "viewport": [1280, 720],
+    "document_client_width": 1265,
+    "document_scroll_width": 1265,
+    "body_scroll_width": 1265,
+    "horizontal_overflow": 0,
+    "uncontained_math_overflow": 0,
+    "console_warnings_or_errors": 0,
+    "visual_result": "pass"
+  },
+  "mobile": {
+    "viewport": [390, 844],
+    "document_client_width": 375,
+    "document_scroll_width": 375,
+    "body_scroll_width": 375,
+    "main_width_css_px": 366.806,
+    "horizontal_overflow": 0,
+    "raw_math_surfaces_wider_than_their_inline_box": 4,
+    "contained_scrollable_math_surfaces": 4,
+    "uncontained_math_overflow": 0,
+    "toc_columns": 1,
+    "console_warnings_or_errors": 0,
+    "visual_result": "pass"
+  },
+  "notes": [
+    "The reader reflows to the mobile viewport and retains a single-column table of contents.",
+    "Four long display formulas use their declared local horizontal-scrolling containment at 390 pixels; none widens the document or escapes its reader card.",
+    "No duplicate identifiers, unresolved fragments, missing skip target, document-level overflow, or console finding was observed."
+  ]
+}

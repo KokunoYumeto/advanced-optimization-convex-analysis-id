@@ -1,0 +1,158 @@
+{
+  "backend_record_count": 2099,
+  "boundary": {
+    "next_source_heading": "LECTURE 6 - LECTURE OUTLINE",
+    "next_source_page": 64,
+    "source_pages": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ]
+  },
+  "control_file_count": 10,
+  "files": {
+    "00_control/ADVERSE_LEDGER.jsonl": {
+      "bytes": 106867,
+      "sha256": "4bffba1077aab63bfbe07c30d305fdc763f1599360a2adc2b910c53477e18be2"
+    },
+    "00_control/BUILD_AND_QA.md": {
+      "bytes": 93269,
+      "sha256": "c8cf97339847696e577bd7660765ecf3fa0c6ad4999598953c9fde1885443280"
+    },
+    "00_control/COMPONENT_RIGHTS.csv": {
+      "bytes": 34052,
+      "sha256": "a74ac6533452679c066f9d1843f85b7a5af98867d4e25841b5b980318f442911"
+    },
+    "00_control/COVERAGE_OVERLAP.md": {
+      "bytes": 18081,
+      "sha256": "cbbfea7fcc859f29df6ad3d42d655ab9660aafda7c76b0af6d3bd5d06051ab95"
+    },
+    "00_control/CURRENT_CURSOR.md": {
+      "bytes": 30438,
+      "sha256": "e3ca3c1213ebc914072bdafbe8d752852c38e8547c34eee01bfa626b793836be"
+    },
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+      "bytes": 4064,
+      "sha256": "6e3c66a0c2eadf3b19300f7425d19394a6a4d0475d55982fd0d39bbb4749c827"
+    },
+    "00_control/CURRENT_STATE.md": {
+      "bytes": 38858,
+      "sha256": "4db0e68779e20151b77bc2655eeb54b30befa497acded4924aa5ba3850239cc5"
+    },
+    "00_control/DECISION_LOG.md": {
+      "bytes": 43329,
+      "sha256": "c2fd4696f4db0427278d1acbbadebf73d1f84185c037fa46881258de7afa54ac"
+    },
+    "00_control/MIT_L09_CORRECTION_SNAPSHOT.jsonl": {
+      "bytes": 5506,
+      "sha256": "e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc"
+    },
+    "00_control/MIT_L09_LECTURE_5_BOUNDARY_CENSUS.md": {
+      "bytes": 19753,
+      "sha256": "e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85"
+    },
+    "00_control/PUBLICATION_RECEIPTS.md": {
+      "bytes": 34751,
+      "sha256": "a550f2af14360ed047755c3110025c251e428acdbccd442a5834c11266014106"
+    },
+    "00_control/SOURCE_AUTHORITY.json": {
+      "bytes": 19601,
+      "sha256": "a004021f750c8c24018ece45be08b59ad27fe65112be1ce3f67795985dd6f69c"
+    },
+    "backend/records.csv": {
+      "bytes": 1886451,
+      "sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574"
+    },
+    "backend/records.jsonl": {
+      "bytes": 1577079,
+      "sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8"
+    },
+    "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html": {
+      "bytes": 118805,
+      "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+    },
+    "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf": {
+      "bytes": 101797,
+      "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+    },
+    "qa/MIT_L09_BACKEND_VALIDATION.json": {
+      "bytes": 7456,
+      "sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"
+    },
+    "qa/MIT_L09_BROWSER_QA.json": {
+      "bytes": 1903,
+      "sha256": "e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619"
+    },
+    "qa/MIT_L09_INDEPENDENT_REREVIEW.md": {
+      "bytes": 2860,
+      "sha256": "95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c"
+    },
+    "qa/MIT_L09_VALIDATION.json": {
+      "bytes": 21488,
+      "sha256": "d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2"
+    },
+    "qa/MIT_L09_VISUAL_QA.json": {
+      "bytes": 2281,
+      "sha256": "f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b"
+    },
+    "qa/build_mit_l09.py": {
+      "bytes": 4043,
+      "sha256": "f7ebf13f3e075cc5ede3cb53764e77002278a0c5e443545919955d0b4c6cf3c6"
+    },
+    "qa/extend_backend_mit_l09.py": {
+      "bytes": 59113,
+      "sha256": "bbe16a599e71aada89c9ab48e963b2a306d51e6fed6b8a906c78e8b7f61b7203"
+    },
+    "qa/validate_backend_mit_l09.py": {
+      "bytes": 39600,
+      "sha256": "e7d290e4061f8a5e64a09ad3b892e84d4110367c79385fe151d9c6f7f8e6e7d8"
+    },
+    "qa/validate_mit_l09.py": {
+      "bytes": 57332,
+      "sha256": "f9bd7204bd2a2eabe3b91dfe1d5c3e0a9c3021b39c3874bcde9d8a2db90cdd9b"
+    },
+    "source/en/mit-09-lecture-5-recession-minima-semantic-witness.md": {
+      "bytes": 25798,
+      "sha256": "5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff"
+    },
+    "source/id-ID/mit-09-kuliah-5-resesi-dan-minimum-id.md": {
+      "bytes": 28712,
+      "sha256": "a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9"
+    },
+    "source/id-ID/mit-l09-after-body.html": {
+      "bytes": 170,
+      "sha256": "8cf22b6016b2185e801cef6226143e6f4a184cbeb93598f4b790d8ce8e78501f"
+    },
+    "source/id-ID/mit-l09-before-body.html": {
+      "bytes": 96,
+      "sha256": "b415e2359bd3bb339735144477c01321013f61972769bc4771cccc6c624e923a"
+    },
+    "source/id-ID/mit-l09-pdf-filter.lua": {
+      "bytes": 499,
+      "sha256": "b8f11b413c30aaccaa0e014821e4e8fc32eb322a10734d092ee5ccdd46f8f9be"
+    },
+    "source/id-ID/mit-l09-preamble.tex": {
+      "bytes": 1891,
+      "sha256": "bd118f2181817e73328b501db17d1e78914d334d0287633cab0ab33a092046bd"
+    },
+    "source/id-ID/mit-l09.css": {
+      "bytes": 2777,
+      "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"
+    }
+  },
+  "material_file_count": 22,
+  "new_backend_record_count": 142,
+  "protected_backend_record_count": 1957,
+  "schema": "o015-mit-l09-release-input-lock-v1"
+}

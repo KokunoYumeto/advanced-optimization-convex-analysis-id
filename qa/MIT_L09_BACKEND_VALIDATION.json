@@ -1,0 +1,219 @@
+{
+  "admission": {
+    "artifact_ids": [
+      "artifact.mit.l09.after-body",
+      "artifact.mit.l09.before-body",
+      "artifact.mit.l09.boundary-census",
+      "artifact.mit.l09.browser-qa",
+      "artifact.mit.l09.builder",
+      "artifact.mit.l09.correction-snapshot",
+      "artifact.mit.l09.css",
+      "artifact.mit.l09.independent-rereview",
+      "artifact.mit.l09.pdf-filter",
+      "artifact.mit.l09.pdf-preamble",
+      "artifact.mit.l09.semantic-witness",
+      "artifact.mit.l09.target-html",
+      "artifact.mit.l09.target-pdf",
+      "artifact.mit.l09.target-source",
+      "artifact.mit.l09.validation",
+      "artifact.mit.l09.validator",
+      "artifact.mit.l09.visual-qa",
+      "artifact.o015.backend-generator-mit-l09",
+      "artifact.o015.backend-validator-mit-l09"
+    ],
+    "correction_record_ids": [
+      "correction.o015-mit-sem-0012",
+      "correction.o015-mit-sem-0013",
+      "correction.o015-mit-sem-0014",
+      "correction.o015-mit-sem-0015",
+      "correction.o015-mit-sem-0016",
+      "correction.o015-mit-sem-0017",
+      "correction.o015-mit-sem-0018",
+      "correction.o015-mit-sem-0019"
+    ],
+    "example_surface_ids": [
+      "surface.mit.l09.example.p058.i003",
+      "surface.mit.l09.example.p063.i004"
+    ],
+    "expected_new_record_count": 142,
+    "figure_description_surface_ids": [
+      "surface.mit.l09.figure-description.p051.f001",
+      "surface.mit.l09.figure-description.p053.f001",
+      "surface.mit.l09.figure-description.p054.f001",
+      "surface.mit.l09.figure-description.p055.f001",
+      "surface.mit.l09.figure-description.p057.f001",
+      "surface.mit.l09.figure-description.p058.f001",
+      "surface.mit.l09.figure-description.p060.f001"
+    ],
+    "formula_surface_ids": [
+      "surface.mit.l09.formula.p051.d001",
+      "surface.mit.l09.formula.p052.d001",
+      "surface.mit.l09.formula.p052.d002",
+      "surface.mit.l09.formula.p053.d001",
+      "surface.mit.l09.formula.p053.d002",
+      "surface.mit.l09.formula.p054.d001",
+      "surface.mit.l09.formula.p054.d002",
+      "surface.mit.l09.formula.p056.d001",
+      "surface.mit.l09.formula.p056.d002",
+      "surface.mit.l09.formula.p058.d001",
+      "surface.mit.l09.formula.p058.d002",
+      "surface.mit.l09.formula.p059.d001",
+      "surface.mit.l09.formula.p059.d002",
+      "surface.mit.l09.formula.p059.d003",
+      "surface.mit.l09.formula.p059.d004",
+      "surface.mit.l09.formula.p062.d001",
+      "surface.mit.l09.formula.p062.d002",
+      "surface.mit.l09.formula.p062.d003",
+      "surface.mit.l09.formula.p063.d001"
+    ],
+    "new_entity_counts": {
+      "artifact": 19,
+      "correction": 8,
+      "learning_surface": 28,
+      "qa_event": 17,
+      "relation": 55,
+      "segment": 14,
+      "unit": 1
+    },
+    "new_id_set_sha256": "62d133b0c6821ecf7a1ea98263ebd12184280fff1595bf8dd9601790d490c6c1",
+    "new_record_count": 142,
+    "qa_event_ids": [
+      "qa.o015.mit-l09.accessibility",
+      "qa.o015.mit-l09.backend-integration",
+      "qa.o015.mit-l09.browser",
+      "qa.o015.mit-l09.build",
+      "qa.o015.mit-l09.corrections",
+      "qa.o015.mit-l09.csv-losslessness",
+      "qa.o015.mit-l09.figures",
+      "qa.o015.mit-l09.formulas",
+      "qa.o015.mit-l09.html",
+      "qa.o015.mit-l09.language",
+      "qa.o015.mit-l09.pdf",
+      "qa.o015.mit-l09.rights",
+      "qa.o015.mit-l09.semantic-reconstruction",
+      "qa.o015.mit-l09.semantic-rereview",
+      "qa.o015.mit-l09.source-freeze",
+      "qa.o015.mit-l09.topology",
+      "qa.o015.mit-l09.visual"
+    ],
+    "relation_count": 55,
+    "segment_ids": [
+      "d90.mit.ocw-6.253.l09.p050",
+      "d90.mit.ocw-6.253.l09.p051",
+      "d90.mit.ocw-6.253.l09.p052",
+      "d90.mit.ocw-6.253.l09.p053",
+      "d90.mit.ocw-6.253.l09.p054",
+      "d90.mit.ocw-6.253.l09.p055",
+      "d90.mit.ocw-6.253.l09.p056",
+      "d90.mit.ocw-6.253.l09.p057",
+      "d90.mit.ocw-6.253.l09.p058",
+      "d90.mit.ocw-6.253.l09.p059",
+      "d90.mit.ocw-6.253.l09.p060",
+      "d90.mit.ocw-6.253.l09.p061",
+      "d90.mit.ocw-6.253.l09.p062",
+      "d90.mit.ocw-6.253.l09.p063"
+    ],
+    "topology": {
+      "corrections": 8,
+      "display_surfaces": 19,
+      "examples": 2,
+      "figure_blocks": 7,
+      "figure_panels": 12,
+      "nested_items": 17,
+      "pages": 14,
+      "top_level_items": 41
+    }
+  },
+  "correction_snapshot": {
+    "bytes": 5506,
+    "event_ids": [
+      "O015-MIT-SEM-0012",
+      "O015-MIT-SEM-0013",
+      "O015-MIT-SEM-0014",
+      "O015-MIT-SEM-0015",
+      "O015-MIT-SEM-0016",
+      "O015-MIT-SEM-0017",
+      "O015-MIT-SEM-0018",
+      "O015-MIT-SEM-0019"
+    ],
+    "sha256": "e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc"
+  },
+  "errors": [],
+  "final_backend": {
+    "csv": {
+      "bytes": 1886451,
+      "sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574"
+    },
+    "csv_projection_lossless": true,
+    "entity_counts": {
+      "artifact": 318,
+      "asset": 19,
+      "concept": 140,
+      "correction": 161,
+      "course": 1,
+      "edition": 8,
+      "learning_surface": 192,
+      "program": 1,
+      "qa_event": 231,
+      "relation": 659,
+      "resource": 4,
+      "rights": 68,
+      "segment": 145,
+      "term": 127,
+      "unit": 25
+    },
+    "id_set_sha256": "316351a09581ac2bf8640e6d4ca76c8924a013b39aa4e03b074252aca427d209",
+    "jsonl": {
+      "bytes": 1577079,
+      "sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8"
+    },
+    "record_count": 2099,
+    "record_set_sha256": "4447a2fa4766ceee9c3c87374e38648dfd3e25c6fee30ba23191615700e482ff",
+    "references_closed": true
+  },
+  "independent_validation_runs_required": 2,
+  "input": {
+    "csv": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\backend\\records.csv",
+    "jsonl": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\backend\\records.jsonl"
+  },
+  "protected_baseline": {
+    "csv": {
+      "bytes": 1727978,
+      "sha256": "ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836"
+    },
+    "id_set_sha256": "0a83c8e41324ebb19a9473b61dffc3091330e66d5b6ebba5a46f0079df20c749",
+    "jsonl": {
+      "bytes": 1441643,
+      "sha256": "0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085"
+    },
+    "raw_reconstruction_passed": true,
+    "record_count": 1957,
+    "record_set_sha256": "7e127fc2e2fe3e300af69a7127337786fa551cf181caa1d0a31a836212434864"
+  },
+  "reader_bindings": {
+    "html": {
+      "bytes": 118805,
+      "path": "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+      "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+    },
+    "pdf": {
+      "bytes": 101797,
+      "path": "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
+      "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+    },
+    "rereview": {
+      "bytes": 2860,
+      "path": "qa/MIT_L09_INDEPENDENT_REREVIEW.md",
+      "sha256": "95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c"
+    },
+    "target": {
+      "bytes": 28712,
+      "path": "source/id-ID/mit-09-kuliah-5-resesi-dan-minimum-id.md",
+      "sha256": "a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9"
+    }
+  },
+  "recorded_at": "2026-08-24T12:00:00Z",
+  "result": "pass",
+  "schema": "o015-mit-l09-backend-validation-v1",
+  "workflow": "o015-mit-l09-backend-v1"
+}
