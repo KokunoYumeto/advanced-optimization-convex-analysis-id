@@ -1,0 +1,111 @@
+{
+  "all_changed_files_read_back": true,
+  "branch": "main",
+  "changed_file_count": 13,
+  "commit": "1acb0cb992bab13ddd89ac7212592d544aebd95c",
+  "commit_patch": {
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "417580fe189ed50c7ba4818999d47473b7b619f3332200851ce87a583b84b18a",
+    "url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/1acb0cb992bab13ddd89ac7212592d544aebd95c.patch"
+  },
+  "files": [
+    {
+      "bytes": 102991,
+      "http_status": 200,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "12021b1283e7c72fb09a85239d743eafb67751f5c5c845c18df01a792cbc399b"
+    },
+    {
+      "bytes": 35520,
+      "http_status": 200,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "9596d5eedc370f155eb27a177984e124f5024735457d5f8337186dbb3d6310ac"
+    },
+    {
+      "bytes": 4298,
+      "http_status": 200,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "35f3f8af8e4bbe5ab3e73cb51591ce68c4a94f155767f082cbf863fbe0c90094"
+    },
+    {
+      "bytes": 48915,
+      "http_status": 200,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "ff95ab1c72a4e370fbe16a33e714691cc6a5f47c65c4e138d3e1cdbf7012bbfc"
+    },
+    {
+      "bytes": 49425,
+      "http_status": 200,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "bc54435eac96502b9f4bd859edd22b299bcc78f6b12c8b98a78d9a57745ab04d"
+    },
+    {
+      "bytes": 41694,
+      "http_status": 200,
+      "path": "00_control/PUBLICATION_RECEIPTS.md",
+      "public_byte_identity": "pass",
+      "sha256": "e7ff76ffafd8a350ed1859e4474e41336bc8c10b8a3548ab784aaa28f3efa8e9"
+    },
+    {
+      "bytes": 24954,
+      "http_status": 200,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "public_byte_identity": "pass",
+      "sha256": "d35aec32e59ca50d717706b7b66264968b3e50c5d3718df8edf69a29e88e1fad"
+    },
+    {
+      "bytes": 36232,
+      "http_status": 200,
+      "path": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "0a501ccb380d84ff9b930f5d65a64390ca9fd42c7bfa4ff495c1e2c338a4a722"
+    },
+    {
+      "bytes": 13135,
+      "http_status": 200,
+      "path": "release/github/2026-08-24-mit-l11/github-public-readback.json",
+      "public_byte_identity": "pass",
+      "sha256": "33385fc3b94844c2df8e2ac1314366280dded69eff3ed28d597b9548ae0c5dff"
+    },
+    {
+      "bytes": 10071,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l11/SHA256SUMS-mit-l11",
+      "public_byte_identity": "pass",
+      "sha256": "bdf0171a198d201e3e267ca5732ed78e1a9463d8ac433ddd84c67a0490253f31"
+    },
+    {
+      "bytes": 7254,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l11/release-manifest-mit-l11.json",
+      "public_byte_identity": "pass",
+      "sha256": "214e90b6aa7f63e59feeac1ded513df6d6b0df32e7f3b728a95eb2defc08b728"
+    },
+    {
+      "bytes": 505,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l11/zenodo-draft-mit-l11.json",
+      "public_byte_identity": "pass",
+      "sha256": "2e4db2c22b2e66a5d88874bdcb4fe61bdcaf6c011acd37311a64b2ca624f6ae2"
+    },
+    {
+      "bytes": 26639,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l11/zenodo-public-readback-mit-l11.json",
+      "public_byte_identity": "pass",
+      "sha256": "008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101"
+    }
+  ],
+  "parent": "c51e1131c34e6e937197ee118b072269a5a4af23",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-mit-l11-evidence-public-readback-v1",
+  "tree": "2be7428f8f3c970f1afc027b5a70e33e15d90f4a",
+  "upstream_contact": false
+}
