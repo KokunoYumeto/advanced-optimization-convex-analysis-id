@@ -24,6 +24,7 @@ ROOT = HERE.parents[2]
 PREVIOUS_READBACK = HERE.parent / "2026-08-23-mit-l06" / "zenodo-public-readback-mit-l06.json"
 TEMPLATE_PATH = HERE / "zenodo-record-mit-l07.json"
 INPUT_LOCK_PATH = HERE / "release-input-lock-mit-l07.json"
+STATE_PATH = HERE / "zenodo-draft-mit-l07.json"
 FIXED_ZIP_TIME = (2026, 8, 24, 0, 0, 0)
 
 PARENT_RECORD_ID = "22073743"
@@ -480,7 +481,22 @@ def addition_paths() -> list[Path]:
     return paths
 
 
+def draft_identity() -> tuple[str | None, str | None]:
+    if not STATE_PATH.is_file():
+        return None, None
+    data = read_json(STATE_PATH)
+    if (
+        data.get("schema") != "o015-zenodo-mit-l07-draft-receipt-v1"
+        or data.get("parent_record_id") != PARENT_RECORD_ID
+        or data.get("concept_id") != CONCEPT_ID
+        or data.get("version") != VERSION
+    ):
+        raise RuntimeError("local draft receipt belongs to a different L07 lineage/version")
+    return str(data["draft_id"]), str(data["draft_doi"])
+
+
 def build_release_metadata(bundle_verification: dict[str, object], lane_closure: dict[str, object]) -> None:
+    record_id, record_doi = draft_identity()
     material = [identity(path) for path in sorted(addition_material_paths(), key=lambda path: path.name)]
     manifest = {
         "schema": "o015-zenodo-additive-checkpoint-v1",
@@ -493,8 +509,8 @@ def build_release_metadata(bundle_verification: dict[str, object], lane_closure:
         "parent_record_doi": PARENT_RECORD_DOI,
         "zenodo_concept_id": CONCEPT_ID,
         "zenodo_concept_doi": CONCEPT_DOI,
-        "zenodo_record_id": None,
-        "zenodo_record_doi": None,
+        "zenodo_record_id": record_id,
+        "zenodo_record_doi": record_doi,
         "release_file_count": EXPECTED_RELEASE_COUNT,
         "inherited_file_count": EXPECTED_INHERITED_COUNT,
         "addition_file_count": EXPECTED_ADDITION_COUNT,
@@ -543,7 +559,7 @@ def checksum_inventory() -> dict[str, str]:
     return result
 
 
-def validate_local_release() -> dict[str, object]:
+def validate_local_release(require_draft_binding: bool = False) -> dict[str, object]:
     validate_template()
     validate_release_docs()
     lane_closure = validate_lane_closure()
@@ -568,6 +584,12 @@ def validate_local_release() -> dict[str, object]:
         raise RuntimeError("release manifest material identities differ")
     if manifest.get("lane_closure") != lane_closure or manifest.get("delta_bundle_verification") != bundle_result:
         raise RuntimeError("release manifest QA/bundle closure differs")
+    if require_draft_binding:
+        record_id, record_doi = draft_identity()
+        if not record_id or not record_doi:
+            raise RuntimeError("release manifest cannot bind an absent prepared draft")
+        if manifest.get("zenodo_record_id") != record_id or manifest.get("zenodo_record_doi") != record_doi:
+            raise RuntimeError("release manifest is not bound to the prepared L07 draft")
     paths = addition_paths()
     expected_checksums = {name: item["sha256"] for name, item in inherited_inventory().items()}
     expected_checksums.update({path.name: file_digest(path) for path in paths if path.name != SUMS_NAME})

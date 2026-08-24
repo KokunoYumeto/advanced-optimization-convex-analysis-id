@@ -439,3 +439,27 @@ and passes a 27-entry / 26-manifest-bound-payload integrity gate twice. The
 planned version preserves all 58 parent files and adds eight files with the
 L07 PDF as default preview. This does not claim a public record; publication
 and anonymous byte readback remain open.
+
+## 2026-08-24 — L07 public preservation closed
+
+GitHub content commit `c9cbd848a97b535049355d756de5e53d650fa25d` / tree
+`4345de52cea5c3d5d0665484faff3b9ff8c84eef` is public. Its immutable commit
+patch and all 40 changed raw paths passed anonymous exact-byte readback. Receipt:
+`release/github/2026-08-24-mit-l07/github-public-readback.json`, 10,827 bytes /
+SHA-256
+`d3596d7f91afebced0fa1ba5ab85d99b09d10ba5549b57d7660bd41b9b98e0b5`.
+The anonymous REST endpoint returned 403 once because its shared rate budget
+was exhausted; no retry was made, and this did not affect the immutable patch
+or raw-byte gate.
+
+Zenodo record `22074102` / DOI `10.5281/zenodo.22074102` is published in the
+existing concept `10.5281/zenodo.22059741` and is its latest version. The
+public inventory has 66 files: 58 inherited unchanged and eight additions.
+Every public file matched its expected bytes and SHA-256; the L07 PDF is the
+default preview. The manifest is bound to the public record at 5,423 bytes /
+`743fec5b9dce1e7464af5c8d31c755e6cc04f37e1f0fdb91f827ca3feaddfe07`;
+checksums are 6,723 bytes /
+`9f0ca3ccf05b91917267fc54b35d0e4bc8aa3c3b2bbf7abeb2623283bf53ecaa`.
+Anonymous receipt: 18,225 bytes /
+`cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
+No upstream contact occurred. Page 39 is the active source cursor.

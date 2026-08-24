@@ -340,3 +340,11 @@ resi backend lulus pada
 Checkpoint L07 akan dipreservasi sekali dalam garis GitHub dan Zenodo yang
 sudah ada. Setelah itu, produksi berlanjut pada batch Kuliah 4 yang koheren,
 mulai halaman 39—bukan sebagai proyek per halaman.
+
+L07 kini dipreservasi publik pada commit GitHub
+`c9cbd848a97b535049355d756de5e53d650fa25d` dan DOI Zenodo
+`10.5281/zenodo.22074102`. Seluruh 40 jalur GitHub yang berubah dan semua 66
+berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256
+tepat; 58 berkas Zenodo diwarisi tanpa perubahan dan delapan berkas merupakan
+tambahan L07. PDF L07 menjadi pratinjau utama. Kursor produksi sekarang adalah
+halaman 39, awal Kuliah 4.

@@ -969,3 +969,26 @@ and `de5ef346e2a00cdd6dd62b392af1e1e9010e458c8361e6037e990bf660ff8910`.
 The intended public inventory is 58 inherited files plus eight additions,
 with the L07 PDF as default preview. This is preparation evidence only until
 the existing-lineage publication and anonymous readback close.
+
+## 2026-08-24 — L07 public preservation and bound-manifest gate
+
+GitHub content commit `c9cbd848a97b535049355d756de5e53d650fa25d` / tree
+`4345de52cea5c3d5d0665484faff3b9ff8c84eef` passed anonymous immutable-patch
+and exact-byte readback for all 40 changed paths. Receipt: 10,827 bytes /
+SHA-256
+`d3596d7f91afebced0fa1ba5ab85d99b09d10ba5549b57d7660bd41b9b98e0b5`.
+
+The local release builder was extended fail-closed so draft creation binds the
+manifest to record `22074102` / DOI `10.5281/zenodo.22074102` before upload.
+The final bound manifest and checksum file supersede their pre-draft hashes:
+5,423 bytes /
+`743fec5b9dce1e7464af5c8d31c755e6cc04f37e1f0fdb91f827ca3feaddfe07`
+and 6,723 bytes /
+`9f0ca3ccf05b91917267fc54b35d0e4bc8aa3c3b2bbf7abeb2623283bf53ecaa`.
+The ZIP remains 410,297 bytes /
+`767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40`
+and passes 27-entry / 26-bound-payload verification. All 66 public files—58
+inherited and eight additions—passed anonymous byte/SHA-256 readback, with
+the L07 PDF as default preview. The public receipt is 18,225 bytes /
+`cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
+No L07 preservation action remains; page 39 is next.

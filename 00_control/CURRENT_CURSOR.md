@@ -318,3 +318,23 @@ Preserve this admitted L07 boundary once in the existing GitHub and Zenodo
 lineages. Then resume at complete-notes page 39, `LECTURE 4` / `LECTURE
 OUTLINE`, and freeze a coherent multi-page Lecture 4 boundary before
 translation. Do not restart page-level production.
+
+## 2026-08-24 cursor refresh — L07 public; Lecture 4 page 39 active
+
+L07 preservation is closed. GitHub content commit
+`c9cbd848a97b535049355d756de5e53d650fa25d` / tree
+`4345de52cea5c3d5d0665484faff3b9ff8c84eef` is public; all 40 changed paths
+passed immutable raw-commit byte/SHA-256 readback. The sanitized receipt is
+10,827 bytes / SHA-256
+`d3596d7f91afebced0fa1ba5ab85d99b09d10ba5549b57d7660bd41b9b98e0b5`.
+
+Zenodo record `22074102`, DOI `10.5281/zenodo.22074102`, is the latest public
+version in existing concept `10.5281/zenodo.22059741`. All 66 files passed
+anonymous exact-byte readback: 58 inherited unchanged and eight L07 additions,
+with the L07 PDF as default preview. The sanitized receipt is 18,225 bytes /
+SHA-256
+`cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
+
+The executable source cursor is now complete-notes page 39, `LECTURE 4` /
+`LECTURE OUTLINE`. Bound the next coherent multi-page Lecture 4 unit before
+translation and perform one consolidated gate for that batch.

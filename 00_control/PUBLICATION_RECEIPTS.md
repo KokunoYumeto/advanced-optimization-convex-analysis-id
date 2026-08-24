@@ -335,3 +335,48 @@ No upstream issue, comment, or other contact occurred.
 MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
 NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
 No upstream issue, comment, or other contact occurred.
+
+## 2026-08-24 — Public GitHub MIT L07 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` /
+  `c9cbd848a97b535049355d756de5e53d650fa25d`
+- Content tree: `4345de52cea5c3d5d0665484faff3b9ff8c84eef`
+- Parent: `fce6112f5f2776d4ba175fe91e39bee46222572f`
+- Scope: complete MIT L07 Lecture 3, pages 29–38; exact reader/source/QA,
+  1,820-record backend, durable controls, and prepared Zenodo release bytes.
+- Anonymous gate: the immutable commit patch returned HTTP 200 and all 40
+  changed raw paths matched local Git bytes and SHA-256. The anonymous REST
+  endpoint returned rate-limit HTTP 403 once; it was not retried.
+- Sanitized receipt:
+  `release/github/2026-08-24-mit-l07/github-public-readback.json`, 10,827 bytes;
+  SHA-256
+  `d3596d7f91afebced0fa1ba5ab85d99b09d10ba5549b57d7660bd41b9b98e0b5`.
+
+## 2026-08-24 — Public Zenodo MIT L07 checkpoint
+
+- Public record: https://zenodo.org/records/22074102
+- Version DOI: https://doi.org/10.5281/zenodo.22074102
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22073743`
+- Version: `checkpoint-2026.08.24-mit-l07-p29-38`
+- Scope/status: complete MIT 6.253 Lecture 3 pages 29–38, explicitly partial;
+  page 39 begins the next Lecture 4 batch.
+- Public closure: 66 files, comprising 58 inherited byte-identical files and
+  eight L07 additions; every anonymous download matched expected bytes and
+  SHA-256. The L07 PDF is the default preview.
+- Delta ZIP: 410,297 bytes; SHA-256
+  `767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40`;
+  27 entries, all 26 manifest-bound payloads pass, zero forbidden entries.
+- Public bound manifest: 5,423 bytes; SHA-256
+  `743fec5b9dce1e7464af5c8d31c755e6cc04f37e1f0fdb91f827ca3feaddfe07`.
+- Public checksum file: 6,723 bytes; SHA-256
+  `9f0ca3ccf05b91917267fc54b35d0e4bc8aa3c3b2bbf7abeb2623283bf53ecaa`.
+- Sanitized readback:
+  `release/zenodo/2026-08-24-mit-l07/zenodo-public-readback-mit-l07.json`,
+  18,225 bytes; SHA-256
+  `cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
+
+MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
+No upstream issue, comment, or other contact occurred.

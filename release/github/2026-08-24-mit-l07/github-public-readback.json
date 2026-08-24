@@ -1,0 +1,307 @@
+{
+  "all_changed_files_read_back": true,
+  "branch": "main",
+  "changed_file_count": 40,
+  "commit": "c9cbd848a97b535049355d756de5e53d650fa25d",
+  "commit_api": {
+    "attempted_once": true,
+    "http_status": 403,
+    "note": "Anonymous REST rate budget was exhausted; no retry was made."
+  },
+  "commit_patch": {
+    "commit": "c9cbd848a97b535049355d756de5e53d650fa25d",
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "acef0b5e8ca0d6877c445465f3f0f7da81ed58a1330e1929769a5489b4b16360",
+    "url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/c9cbd848a97b535049355d756de5e53d650fa25d.patch"
+  },
+  "files": [
+    {
+      "bytes": 85899,
+      "http_status": 200,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "7e41a29c23e7d12f9c3152d325b2bdbb193ca1dd0cd1a82c22080e50fed3b738"
+    },
+    {
+      "bytes": 29969,
+      "http_status": 200,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "public_byte_identity": "pass",
+      "sha256": "e17989727ff4426f7c57b83afca98d806409ee84b4d16b4d2a9a415c28cb5062"
+    },
+    {
+      "bytes": 16006,
+      "http_status": 200,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "public_byte_identity": "pass",
+      "sha256": "5cacfa8d4e9d5450fe9723c00b578dd8be2187817c204da06e28fe486b986ce9"
+    },
+    {
+      "bytes": 25041,
+      "http_status": 200,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "6cd3a11e40eedbb5b0e10b612e41debbbda649c4f1f14f9049de1cf575d03d75"
+    },
+    {
+      "bytes": 4097,
+      "http_status": 200,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "b59d250990248385da9740b41ebe2c99c1d6780e769effc618a0daa7ba689194"
+    },
+    {
+      "bytes": 31846,
+      "http_status": 200,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "275f0a1d56d070d6ea207b0df7b358724ff577542df1a8454d70291de0fac6f9"
+    },
+    {
+      "bytes": 39211,
+      "http_status": 200,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "3c36ac68bce1aaab741978cead4e8fd6921ddc9726e7ea171b1208d3576cb26c"
+    },
+    {
+      "bytes": 1490,
+      "http_status": 200,
+      "path": "00_control/MIT_L07_CORRECTION_SNAPSHOT.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "eba6c2039e1f893287921d72f5169e14861d95955acd7c6682e59cabcd030084"
+    },
+    {
+      "bytes": 11013,
+      "http_status": 200,
+      "path": "00_control/MIT_L07_LECTURE_3_PAGES_029-038_BOUNDARY_CENSUS.md",
+      "public_byte_identity": "pass",
+      "sha256": "3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f"
+    },
+    {
+      "bytes": 24482,
+      "http_status": 200,
+      "path": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "09f0e3fcf6c75f7fbb487bcd5b77d0d03491a13941f998f3ba20cf948c9b066e"
+    },
+    {
+      "bytes": 1586211,
+      "http_status": 200,
+      "path": "backend/records.csv",
+      "public_byte_identity": "pass",
+      "sha256": "a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985"
+    },
+    {
+      "bytes": 1321559,
+      "http_status": 200,
+      "path": "backend/records.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843"
+    },
+    {
+      "bytes": 77399,
+      "http_status": 200,
+      "path": "output/html/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"
+    },
+    {
+      "bytes": 75885,
+      "http_status": 200,
+      "path": "output/pdf/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+    },
+    {
+      "bytes": 7879,
+      "http_status": 200,
+      "path": "qa/MIT_L07_BACKEND_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948"
+    },
+    {
+      "bytes": 2468,
+      "http_status": 200,
+      "path": "qa/MIT_L07_BROWSER_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "f29fdb2086693efe892ac0a0d346fa19c7d57de8371d7ccc0317edaf6e8bf9d7"
+    },
+    {
+      "bytes": 4136,
+      "http_status": 200,
+      "path": "qa/MIT_L07_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "d5f0bfc23b7a9b74d30570de9b2bd058c0ded84b51414b7b0b929349764ea86d"
+    },
+    {
+      "bytes": 8176,
+      "http_status": 200,
+      "path": "qa/MIT_L07_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1"
+    },
+    {
+      "bytes": 2472,
+      "http_status": 200,
+      "path": "qa/MIT_L07_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "1caf7ebc941616122adade72ecc7efbf68e9b8a9499290f0782bf2e11e0cadd2"
+    },
+    {
+      "bytes": 4115,
+      "http_status": 200,
+      "path": "qa/build_mit_l07.py",
+      "public_byte_identity": "pass",
+      "sha256": "d777599f7529449c5c10a130afd32a1e67338ae7edf19b0dca00fdbd91724d01"
+    },
+    {
+      "bytes": 46906,
+      "http_status": 200,
+      "path": "qa/extend_backend_mit_l07.py",
+      "public_byte_identity": "pass",
+      "sha256": "f2e6bdc042bfd1fe39e902aa4c413b6d421e7bf0ce491cf805dd4a709922c993"
+    },
+    {
+      "bytes": 40896,
+      "http_status": 200,
+      "path": "qa/validate_backend_mit_l07.py",
+      "public_byte_identity": "pass",
+      "sha256": "7d9a47c70186e456b3281230223a89e1e8af9382509125e8de2d55af0386e867"
+    },
+    {
+      "bytes": 28883,
+      "http_status": 200,
+      "path": "qa/validate_mit_l07.py",
+      "public_byte_identity": "pass",
+      "sha256": "9dd39156c3591c0a771cc894ac5085fb5c787b5a472b722be24eb4d84c2d16ca"
+    },
+    {
+      "bytes": 410297,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L07_DELTA.zip",
+      "public_byte_identity": "pass",
+      "sha256": "767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40"
+    },
+    {
+      "bytes": 1445,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/LICENSE_MIT_L07.md",
+      "public_byte_identity": "pass",
+      "sha256": "fdaf8dea4ddeca8dcca2d146771f92133f395b6acc626f6f1bc897253e27fe1c"
+    },
+    {
+      "bytes": 1945,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/README_MIT_L07.md",
+      "public_byte_identity": "pass",
+      "sha256": "a3595e145cf33e1dd88a8a32c4c1ff9b1973a69e9f3359b46c9133188603d61b"
+    },
+    {
+      "bytes": 1132,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/README_RELEASE_MIT_L07.md",
+      "public_byte_identity": "pass",
+      "sha256": "97cf553d349aab38288aec355dac88880afdd08682bbc1fa1bed1f804d209395"
+    },
+    {
+      "bytes": 6723,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/SHA256SUMS-mit-l07",
+      "public_byte_identity": "pass",
+      "sha256": "de5ef346e2a00cdd6dd62b392af1e1e9010e458c8361e6037e990bf660ff8910"
+    },
+    {
+      "bytes": 29409,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/build_l07.py",
+      "public_byte_identity": "pass",
+      "sha256": "83e03bfe22ff76723ec9a5aba872c59bdb68157d319a3d26d6a461d0561ced62"
+    },
+    {
+      "bytes": 3550,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/local-preparation-mit-l07.json",
+      "public_byte_identity": "pass",
+      "sha256": "493dfa76891c42a3e17fb5f7a2d3b38e2ed6f42c4b2c1cc32b9d63a876cbe4be"
+    },
+    {
+      "bytes": 3507,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/release-input-lock-mit-l07.json",
+      "public_byte_identity": "pass",
+      "sha256": "77019c5afadf05c2563db3f44fdc2cec230f30da59f7c367e7dc368926b2f455"
+    },
+    {
+      "bytes": 5396,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/release-manifest-mit-l07.json",
+      "public_byte_identity": "pass",
+      "sha256": "3465065b4062a7cfe9361b4efc20f60930e2584c496bd8651f50365266a5139e"
+    },
+    {
+      "bytes": 5296,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l07/zenodo-record-mit-l07.json",
+      "public_byte_identity": "pass",
+      "sha256": "a25e50f92eceac9687ec76208938e6974ce8fbc27daad3366794ea0d72fd792d"
+    },
+    {
+      "bytes": 13879,
+      "http_status": 200,
+      "path": "source/en/mit-07-lecture-3-differentiable-convex-functions-caratheodory-semantic-witness.md",
+      "public_byte_identity": "pass",
+      "sha256": "ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b"
+    },
+    {
+      "bytes": 16518,
+      "http_status": 200,
+      "path": "source/id-ID/mit-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.md",
+      "public_byte_identity": "pass",
+      "sha256": "b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd"
+    },
+    {
+      "bytes": 176,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l07-after-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "ce35e12f0a05dda23a0f55e9b5dfb1f26e5f4c8d3b1c7439ac401227366580b9"
+    },
+    {
+      "bytes": 96,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l07-before-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "1e979724f5ee0f65feda5442d9307df710a3f2d8203f5d7051b390dc42ce61b7"
+    },
+    {
+      "bytes": 302,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l07-pdf-filter.lua",
+      "public_byte_identity": "pass",
+      "sha256": "2a39c4aeb5b6587e4ff7db483f130cb88c8fdbc74f9e83f8fd939d37f6e75421"
+    },
+    {
+      "bytes": 1499,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l07-preamble.tex",
+      "public_byte_identity": "pass",
+      "sha256": "11dc4cdb79b1b1cffba021c2571451edac343a8763769552e9d1cb846ca1b6e0"
+    },
+    {
+      "bytes": 2777,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l07.css",
+      "public_byte_identity": "pass",
+      "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"
+    }
+  ],
+  "parent": "fce6112f5f2776d4ba175fe91e39bee46222572f",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-mit-l07-public-readback-v1",
+  "scope": "MIT L07 pages 29-38, exact reader/source/QA/backend/control and prepared Zenodo release bytes; page 39 is not claimed.",
+  "tree": "4345de52cea5c3d5d0665484faff3b9ff8c84eef",
+  "upstream_contact": false
+}

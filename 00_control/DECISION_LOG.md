@@ -380,3 +380,17 @@ Preserve this coherent boundary once in the existing GitHub/Zenodo lineages;
 do not create page-level versions. Page 39 is the next cursor and begins
 Lecture 4. Missing human review remains recorded evidence and cannot delay
 admission or preservation.
+
+## D90-0039 — Preserve L07 once and advance the public lineage
+
+Decision: publish the admitted complete-Lecture-3 boundary as one additive
+checkpoint, not as ten page-level versions. GitHub commit
+`c9cbd848a97b535049355d756de5e53d650fa25d` preserves the exact reader,
+source, QA, backend, controls, and prepared release bytes; every one of its 40
+changed paths passed anonymous raw readback. Zenodo DOI
+`10.5281/zenodo.22074102` inherits all 58 prior files unchanged, adds eight
+L07 files, keeps the L07 PDF first, and passed anonymous readback for all 66
+files. The public manifest is draft-ID/DOI-bound, component rights remain
+distinct, status remains partial, and no complete-corpus claim or upstream
+contact is made. Production advances to a coherent Lecture 4 batch beginning
+on page 39.
