@@ -1,0 +1,43 @@
+{
+  "as_of": "2026-08-24",
+  "browser_surface": "Codex in-app browser",
+  "build": {
+    "html_bytes": 113898,
+    "html_path": "output/html/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+    "html_sha256": "b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a"
+  },
+  "desktop": {
+    "broken_fragments": [],
+    "client_width": 1265,
+    "console_warnings_or_errors": [],
+    "display_overflow_ids": [],
+    "document_width": 1265,
+    "duplicate_ids": [],
+    "horizontal_overflow": false,
+    "main_width": 1178,
+    "math_overflow_ids": [],
+    "source_displays": 26,
+    "source_figures": 5,
+    "source_items": 27,
+    "source_pages": 11,
+    "viewport": [1280, 720]
+  },
+  "mobile": {
+    "broken_fragments": [],
+    "client_width": 375,
+    "console_warnings_or_errors": [],
+    "display_overflow_ids": [],
+    "document_width": 375,
+    "duplicate_ids": [],
+    "horizontal_overflow": false,
+    "math_overflow_ids": [],
+    "source_displays": 26,
+    "source_figures": 5,
+    "source_items": 27,
+    "source_pages": 11,
+    "toc_columns": 1,
+    "viewport": [390, 844]
+  },
+  "result": "pass",
+  "test_url": "http://127.0.0.1:8765/output/html/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html"
+}

@@ -463,3 +463,47 @@ checksums are 6,723 bytes /
 Anonymous receipt: 18,225 bytes /
 `cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
 No upstream contact occurred. Page 39 is the active source cursor.
+
+## 2026-08-24 — MIT L08 complete Lecture 4 admitted; preservation pending
+
+MIT complete-notes pages 39-49 are admitted as the complete Lecture 4
+semantic reader boundary. It preserves 11 ordered source pages, 27 top-level
+items, 16 nested items, 26 display formulas, and five independently worded
+figure descriptions. There are no source exercises, hints, solutions, code,
+or interactive surfaces, and no Athena Scientific image byte, crop, or layout
+enters the derivative. Page 50 begins Lecture 5 and is excluded.
+
+Corrections `O015-MIT-SEM-0009` through `0011` disclose the recurring
+function-type-arrow normalization, the missing feasibility hypothesis for
+linear praimages, and the inaccurate sphere-to-sphere intuition. The immutable
+snapshot is 2,347 bytes /
+`d99f8df4e722a9c98368bb169df17aa41d21754766b9ee19747a52569b40cb17`.
+The witness / target / HTML / PDF identities are 22,457 / 24,496 / 113,898 /
+91,293 bytes with hashes
+`db45c443fb4e978b6bb4681a228a279f83048b8210530f77ed772a82c5f324a4`,
+`b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758`,
+`b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a`,
+and `b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62`.
+
+Reader validation, browser QA, visual QA, and rereview are respectively
+10,509 / 1,258 / 1,380 / 4,514 bytes with SHA-256
+`da2448349a7075fe20008df94f2f3a45d472df5ab1d3631a43a3f12f6352c745`,
+`fae4f199316c1592256b46a5cc0a2099397ba9316d56cd00fda144c5fc83bcb8`,
+`ee2d7378d90b51bc9ba167fee95fe7d56d2022d21145a6db8cba45a6dcd8fcfe`,
+and `04c9c89f4782a89d0c4f57867e1564db2100a2cb24fed8cfa2f67796e60b7e82`.
+All pass; root repeated the reader validator twice. The PDF is searchable,
+unencrypted, A4, `/Lang id-ID`, and untagged. Human/native-speaker review is
+unrecorded evidence, not a release hold.
+
+Backend admission adds 137 records to the exact 1,820-record protected L07
+baseline and passes two additional root-repeated cycles at 1,957 records.
+JSONL is 1,441,643 bytes /
+`0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085`;
+CSV is 1,727,978 bytes /
+`ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`.
+The new-ID-set hash is
+`407216b4f4337bb2c55716c81cad231ca596d65df250297fbaff57e1f295db59`;
+the passing backend receipt is 6,631 bytes /
+`98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
+L08 preservation in the existing GitHub and Zenodo lineages is the only open
+action for this boundary. The next production cursor is page 50.

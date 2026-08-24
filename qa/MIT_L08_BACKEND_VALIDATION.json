@@ -1,0 +1,193 @@
+{
+  "admission": {
+    "artifact_ids": [
+      "artifact.mit.l08.after-body",
+      "artifact.mit.l08.before-body",
+      "artifact.mit.l08.boundary-census",
+      "artifact.mit.l08.browser-qa",
+      "artifact.mit.l08.builder",
+      "artifact.mit.l08.correction-snapshot",
+      "artifact.mit.l08.css",
+      "artifact.mit.l08.independent-rereview",
+      "artifact.mit.l08.pdf-filter",
+      "artifact.mit.l08.pdf-preamble",
+      "artifact.mit.l08.semantic-witness",
+      "artifact.mit.l08.target-html",
+      "artifact.mit.l08.target-pdf",
+      "artifact.mit.l08.target-source",
+      "artifact.mit.l08.validation",
+      "artifact.mit.l08.validator",
+      "artifact.mit.l08.visual-qa",
+      "artifact.o015.backend-generator-mit-l08",
+      "artifact.o015.backend-validator-mit-l08"
+    ],
+    "correction_record_ids": [
+      "correction.o015-mit-sem-0009",
+      "correction.o015-mit-sem-0010",
+      "correction.o015-mit-sem-0011"
+    ],
+    "expected_new_record_count": 137,
+    "figure_description_surface_ids": [
+      "surface.mit.l08.figure-description.p040.f001",
+      "surface.mit.l08.figure-description.p041.f001",
+      "surface.mit.l08.figure-description.p042.f001",
+      "surface.mit.l08.figure-description.p044.f001",
+      "surface.mit.l08.figure-description.p048.f001"
+    ],
+    "formula_surface_ids": [
+      "surface.mit.l08.formula.p041.d001",
+      "surface.mit.l08.formula.p042.d001",
+      "surface.mit.l08.formula.p044.d001",
+      "surface.mit.l08.formula.p045.d001",
+      "surface.mit.l08.formula.p046.d001",
+      "surface.mit.l08.formula.p046.d002",
+      "surface.mit.l08.formula.p046.d003",
+      "surface.mit.l08.formula.p046.d004",
+      "surface.mit.l08.formula.p046.d005",
+      "surface.mit.l08.formula.p046.d006",
+      "surface.mit.l08.formula.p046.d007",
+      "surface.mit.l08.formula.p047.d001",
+      "surface.mit.l08.formula.p047.d002",
+      "surface.mit.l08.formula.p047.d003",
+      "surface.mit.l08.formula.p047.d004",
+      "surface.mit.l08.formula.p047.d005",
+      "surface.mit.l08.formula.p047.d006",
+      "surface.mit.l08.formula.p048.d001",
+      "surface.mit.l08.formula.p048.d002",
+      "surface.mit.l08.formula.p048.d003",
+      "surface.mit.l08.formula.p048.d004",
+      "surface.mit.l08.formula.p049.d001",
+      "surface.mit.l08.formula.p049.d002",
+      "surface.mit.l08.formula.p049.d003",
+      "surface.mit.l08.formula.p049.d004",
+      "surface.mit.l08.formula.p049.d005"
+    ],
+    "new_entity_counts": {
+      "artifact": 19,
+      "correction": 3,
+      "learning_surface": 31,
+      "qa_event": 17,
+      "relation": 55,
+      "segment": 11,
+      "unit": 1
+    },
+    "new_id_set_sha256": "407216b4f4337bb2c55716c81cad231ca596d65df250297fbaff57e1f295db59",
+    "new_record_count": 137,
+    "qa_event_ids": [
+      "qa.o015.mit-l08.accessibility",
+      "qa.o015.mit-l08.backend-integration",
+      "qa.o015.mit-l08.browser",
+      "qa.o015.mit-l08.build",
+      "qa.o015.mit-l08.corrections",
+      "qa.o015.mit-l08.csv-losslessness",
+      "qa.o015.mit-l08.figures",
+      "qa.o015.mit-l08.formulas",
+      "qa.o015.mit-l08.html",
+      "qa.o015.mit-l08.language",
+      "qa.o015.mit-l08.pdf",
+      "qa.o015.mit-l08.rights",
+      "qa.o015.mit-l08.semantic-reconstruction",
+      "qa.o015.mit-l08.semantic-rereview",
+      "qa.o015.mit-l08.source-freeze",
+      "qa.o015.mit-l08.topology",
+      "qa.o015.mit-l08.visual"
+    ],
+    "relation_count": 55,
+    "segment_ids": [
+      "d90.mit.ocw-6.253.l08.p039",
+      "d90.mit.ocw-6.253.l08.p040",
+      "d90.mit.ocw-6.253.l08.p041",
+      "d90.mit.ocw-6.253.l08.p042",
+      "d90.mit.ocw-6.253.l08.p043",
+      "d90.mit.ocw-6.253.l08.p044",
+      "d90.mit.ocw-6.253.l08.p045",
+      "d90.mit.ocw-6.253.l08.p046",
+      "d90.mit.ocw-6.253.l08.p047",
+      "d90.mit.ocw-6.253.l08.p048",
+      "d90.mit.ocw-6.253.l08.p049"
+    ]
+  },
+  "correction_snapshot": {
+    "bytes": 2347,
+    "event_ids": [
+      "O015-MIT-SEM-0009",
+      "O015-MIT-SEM-0010",
+      "O015-MIT-SEM-0011"
+    ],
+    "sha256": "d99f8df4e722a9c98368bb169df17aa41d21754766b9ee19747a52569b40cb17"
+  },
+  "errors": [],
+  "final_backend": {
+    "csv": {
+      "bytes": 1727978,
+      "sha256": "ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836"
+    },
+    "csv_projection_lossless": true,
+    "entity_counts": {
+      "artifact": 299,
+      "asset": 19,
+      "concept": 140,
+      "correction": 153,
+      "course": 1,
+      "edition": 8,
+      "learning_surface": 164,
+      "program": 1,
+      "qa_event": 214,
+      "relation": 604,
+      "resource": 4,
+      "rights": 68,
+      "segment": 131,
+      "term": 127,
+      "unit": 24
+    },
+    "id_set_sha256": "0a83c8e41324ebb19a9473b61dffc3091330e66d5b6ebba5a46f0079df20c749",
+    "jsonl": {
+      "bytes": 1441643,
+      "sha256": "0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085"
+    },
+    "record_count": 1957,
+    "record_set_sha256": "7e127fc2e2fe3e300af69a7127337786fa551cf181caa1d0a31a836212434864",
+    "references_closed": true
+  },
+  "independent_validation_runs_required": 2,
+  "protected_baseline": {
+    "csv": {
+      "bytes": 1586211,
+      "sha256": "a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985"
+    },
+    "id_set_sha256": "18e876349873e4e0579cf45c539392e798486dbcb8e4be8a6ebfe1d912f873c6",
+    "jsonl": {
+      "bytes": 1321559,
+      "sha256": "1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843"
+    },
+    "raw_reconstruction_passed": true,
+    "record_count": 1820,
+    "record_set_sha256": "5dbe23efc914bb90e6949470cf20b9be5981df4345576a1c3846fdb765012091"
+  },
+  "reader_bindings": {
+    "html": {
+      "bytes": 113898,
+      "path": "output/html/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+      "sha256": "b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a"
+    },
+    "pdf": {
+      "bytes": 91293,
+      "path": "output/pdf/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+      "sha256": "b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62"
+    },
+    "rereview": {
+      "bytes": 4514,
+      "path": "qa/MIT_L08_INDEPENDENT_REREVIEW.md",
+      "sha256": "04c9c89f4782a89d0c4f57867e1564db2100a2cb24fed8cfa2f67796e60b7e82"
+    },
+    "target": {
+      "bytes": 24496,
+      "path": "source/id-ID/mit-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.md",
+      "sha256": "b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758"
+    }
+  },
+  "recorded_at": "2026-08-24T03:00:00Z",
+  "result": "pass",
+  "schema": "o015-mit-l08-backend-validation-v1",
+  "workflow": "o015-mit-l08-backend-v1"
+}

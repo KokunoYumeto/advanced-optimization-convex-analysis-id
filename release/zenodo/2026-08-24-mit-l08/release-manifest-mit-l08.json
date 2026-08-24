@@ -1,0 +1,163 @@
+{
+  "addition_file_count": 8,
+  "addition_material_files": [
+    {
+      "bytes": 439723,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L08_DELTA.zip",
+      "sha256": "0b571eee80a5d9e2792b00a976b73bf3ba89575687c42b76cd27a80308e46ed5"
+    },
+    {
+      "bytes": 113898,
+      "filename": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+      "sha256": "b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a"
+    },
+    {
+      "bytes": 91293,
+      "filename": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+      "sha256": "b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62"
+    },
+    {
+      "bytes": 1417,
+      "filename": "LICENSE_MIT_L08.md",
+      "sha256": "433a6208ac1bd06913e9dd2a98197a7a3d7b5b94d1f8214214fba51799afda76"
+    },
+    {
+      "bytes": 2036,
+      "filename": "README_MIT_L08.md",
+      "sha256": "20ad77cad4a9ed9390eb35d782efbafc2714d9f6c398fbeb512fedb8d36885df"
+    },
+    {
+      "bytes": 1177,
+      "filename": "README_RELEASE_MIT_L08.md",
+      "sha256": "a582d96145ccc6881d34c26fa613a0cd49fa080f37ebbef217fb492e0eac9c5a"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes Lecture 4, PDF pages 39-49, L08",
+  "admitted_source_pages": [
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "backend_record_count": 1957,
+  "complete_corpus": false,
+  "component_rights": {
+    "athena_scientific_graphics": "permission-only; zero source graphic bytes or layouts redistributed",
+    "inherited_griffin_penn_components": "CC BY-NC-SA 3.0 United States",
+    "inherited_habring_components": "CC BY 4.0",
+    "inherited_royer_source_freeze": "CC BY-NC 4.0",
+    "new_mit_reader_semantic_source_and_adaptation": "CC BY-NC-SA 4.0",
+    "new_project_build_qa_backend_and_boundary_evidence": "project-local tooling and evidence; no blanket reuse grant asserted"
+  },
+  "default_preview": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+  "delta_bundle_verification": {
+    "entries": 27,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 26,
+    "mutable_global_control_files": 0
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l08.json",
+    "SHA256SUMS-mit-l08"
+  ],
+  "human_native_speaker_review": false,
+  "inherited_file_count": 66,
+  "lane_closure": {
+    "athena_source_graphic_bytes": 0,
+    "backend": {
+      "csv": {
+        "bytes": 1727978,
+        "filename": "records.csv",
+        "sha256": "ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836"
+      },
+      "jsonl": {
+        "bytes": 1441643,
+        "filename": "records.jsonl",
+        "sha256": "0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085"
+      },
+      "new_record_count": 137,
+      "protected_record_count": 1820,
+      "record_count": 1957
+    },
+    "backend_validation": {
+      "bytes": 6631,
+      "filename": "MIT_L08_BACKEND_VALIDATION.json",
+      "sha256": "98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a"
+    },
+    "browser_validation": {
+      "bytes": 1258,
+      "filename": "MIT_L08_BROWSER_QA.json",
+      "sha256": "fae4f199316c1592256b46a5cc0a2099397ba9316d56cd00fda144c5fc83bcb8"
+    },
+    "content_validation": {
+      "bytes": 10509,
+      "filename": "MIT_L08_VALIDATION.json",
+      "sha256": "da2448349a7075fe20008df94f2f3a45d472df5ab1d3631a43a3f12f6352c745"
+    },
+    "human_native_speaker_review": false,
+    "independent_rereview": {
+      "bytes": 4514,
+      "filename": "MIT_L08_INDEPENDENT_REREVIEW.md",
+      "sha256": "04c9c89f4782a89d0c4f57867e1564db2100a2cb24fed8cfa2f67796e60b7e82"
+    },
+    "input_lock": {
+      "bytes": 3947,
+      "filename": "release-input-lock-mit-l08.json",
+      "sha256": "efafdbadfde90d28f7bb7b2f684d844a1e5e6c51732c533917f6af20c9a72010"
+    },
+    "mutable_global_control_files_in_bundle": 0,
+    "next_source_page": 50,
+    "reader_pdf_tagged": false,
+    "result": "pass",
+    "source_pages": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "visual_validation": {
+      "bytes": 1380,
+      "filename": "MIT_L08_VISUAL_QA.json",
+      "sha256": "ee2d7378d90b51bc9ba167fee95fe7d56d2022d21145a6db8cba45a6dcd8fcfe"
+    }
+  },
+  "metadata_template": {
+    "bytes": 5356,
+    "filename": "zenodo-record-mit-l08.json",
+    "sha256": "3ed89b684d4e32240932851487c1bdb431d2dfde953ab89ea1b8b529dd121f95"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "new_backend_record_count": 137,
+  "next_boundary": "MIT 6.253 complete-notes PDF page 50, Lecture 5",
+  "parent_record_doi": "10.5281/zenodo.22074102",
+  "parent_record_id": "22074102",
+  "protected_backend_record_count": 1820,
+  "publication_date": "2026-08-24",
+  "reader_pdf_tagged": false,
+  "release_file_count": 74,
+  "rights_notice": "Rights are component-specific; no umbrella license replaces inherited component rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v1",
+  "semantic_html_primary": true,
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.24-mit-l08-p39-49",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": null,
+  "zenodo_record_id": null
+}

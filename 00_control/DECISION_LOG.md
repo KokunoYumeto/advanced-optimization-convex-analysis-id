@@ -394,3 +394,24 @@ files. The public manifest is draft-ID/DOI-bound, component rights remain
 distinct, status remains partial, and no complete-corpus claim or upstream
 contact is made. Production advances to a coherent Lecture 4 batch beginning
 on page 39.
+
+## D90-0040 — Admit complete Lecture 4 and advance to Lecture 5
+
+Decision: admit MIT L08 as the single complete page-39–49 Lecture 4 boundary.
+The final gate binds the exact authority fingerprint, 11 ordered pages, 27
+top-level items, 16 nested items, 26 display formulas, five independently
+worded figure descriptions, no copied Athena graphic bytes/layouts, two
+byte-identical builds, desktop/mobile reflow, all-page visual inspection, and
+independent P1=0/P2=0/P3=0 rereview. Corrections `O015-MIT-SEM-0009`–`0011`
+are disclosed and frozen in the immutable correction snapshot.
+
+The additive backend adds 137 records to the exact protected 1,820-record L07
+baseline and passes two repeated generation/validation cycles at 1,957 records.
+JSONL, CSV, and backend-receipt SHA-256 values are
+`0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085`,
+`ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`,
+and `98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
+Preserve L08 once in the existing GitHub/Zenodo lineages and read back every
+public byte; do not create a page-level series. Page 50 is the verified Lecture
+5 delimiter and next production cursor. Missing human review remains disclosed
+evidence and cannot delay admission or preservation.

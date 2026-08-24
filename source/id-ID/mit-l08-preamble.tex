@@ -1,0 +1,45 @@
+\usepackage[a4paper,top=18mm,bottom=16mm,left=20mm,right=20mm]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{hyperref}
+\providecommand{\xmpquote}[1]{#1}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont{Latin Modern Mono}
+\definecolor{L08Blue}{HTML}{24529B}
+\definecolor{L08Purple}{HTML}{7651BD}
+\definecolor{L08Ink}{HTML}{172033}
+\color{L08Ink}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=L08Blue,
+  urlcolor=L08Blue,
+  citecolor=L08Blue,
+  pdflang={id-ID},
+  pdfcreator={Pandoc and LuaLaTeX},
+  pdfproducer={OpenAI Codex gpt-5.6-sol, Ultra - user-directed production assistance}
+}
+\setlength{\parindent}{0pt}
+\AtBeginDocument{\fontsize{9.5pt}{11.1pt}\selectfont}
+\setlength{\parskip}{0.3em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.12em,topsep=0.16em,parsep=0.05em}
+\setlist[enumerate]{leftmargin=1.65em,itemsep=0.12em,topsep=0.16em,parsep=0.05em}
+\setlength{\abovedisplayskip}{0.35em}
+\setlength{\belowdisplayskip}{0.35em}
+\setlength{\abovedisplayshortskip}{0.2em}
+\setlength{\belowdisplayshortskip}{0.2em}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\hspace{0.8em}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small MIT OCW 6.253 -- Kuliah 4 id-ID}
+\fancyhead[R]{\small Halaman sumber 39--49}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\AtBeginEnvironment{quote}{\color{L08Ink}}

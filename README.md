@@ -348,3 +348,34 @@ berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256
 tepat; 58 berkas Zenodo diwarisi tanpa perubahan dan delapan berkas merupakan
 tambahan L07. PDF L07 menjadi pratinjau utama. Kursor produksi sekarang adalah
 halaman 39, awal Kuliah 4.
+
+## Batas MIT L08 yang diterima (24 Agustus 2026)
+
+L08 menerima seluruh Kuliah 4 pada halaman sumber 39–49 sebagai satu batch:
+interior relatif, penutupan himpunan konveks, transformasi linear, dan
+kontinuitas fungsi konveks. Saksi Inggris, target Indonesia, HTML semantik,
+dan PDF A4 enam halaman memiliki SHA-256
+`db45c443fb4e978b6bb4681a228a279f83048b8210530f77ed772a82c5f324a4`,
+`b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758`,
+`b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a`,
+dan `b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62`.
+
+Batas ini memuat 11 halaman, 27 butir tingkat atas, 16 butir bersarang, 26
+rumus tampil, dan lima deskripsi gambar semantik. Tidak ada byte, potongan,
+atau tata letak grafik Athena Scientific yang disalin. Koreksi
+`O015-MIT-SEM-0009`–`0011` mengungkapkan normalisasi panah tipe, hipotesis
+kelayakan praimaji yang hilang, dan perbaikan intuisi transformasi linear.
+Validasi deterministik, QA browser desktop/ponsel, inspeksi visual semua enam
+halaman, dan rereview independen lulus tanpa temuan P1/P2/P3. PDF dapat dicari
+dan berbahasa `id-ID`, tetapi belum bertag; tinjauan penutur asli belum
+tercatat dan bukan penahan kerja.
+
+Backend kini memuat 1.957 rekaman, 137 tambahan terhadap baseline L07 yang
+direkonstruksi tepat. JSONL dan CSV memiliki SHA-256
+`0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085`
+dan `ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`;
+resi backend lulus pada
+`98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
+Preservasi L08 dalam garis GitHub dan Zenodo yang sudah ada adalah satu-satunya
+tindakan terbuka untuk batas ini. Halaman 50 memulai Kuliah 5 dan merupakan
+kursor produksi berikutnya.

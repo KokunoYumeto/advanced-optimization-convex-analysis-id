@@ -913,7 +913,7 @@ admit it once into the stable backend, and advance to page 39.
 
 # MIT OCW 6.253 Lecture 3 pages 29–38 consolidated build and QA (L07)
 
-As of: 2026-08-24  
+As of: 2026-08-24
 Admission: PASS; complete Lecture 3, not a complete-course claim
 
 The boundary census, witness, target, HTML, and PDF are respectively 11,013 /
@@ -992,3 +992,44 @@ inherited and eight additions—passed anonymous byte/SHA-256 readback, with
 the L07 PDF as default preview. The public receipt is 18,225 bytes /
 `cc2681664e065d897e104218a086e9f113e8149ac474eedd026dcf51d28bfc81`.
 No L07 preservation action remains; page 39 is next.
+
+# MIT OCW 6.253 Lecture 4 pages 39–49 consolidated build and QA (L08)
+
+As of: 2026-08-24
+Admission: PASS; complete Lecture 4, not a complete-course claim
+
+The boundary census, witness, target, HTML, and six-page PDF are respectively
+11,700 / 22,457 / 24,496 / 113,898 / 91,293 bytes with SHA-256 values
+`20ef255184a6e31476b368bd8b1ad08c39ea2ab9f6fdc1fa2c53574471a95055`,
+`db45c443fb4e978b6bb4681a228a279f83048b8210530f77ed772a82c5f324a4`,
+`b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758`,
+`b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a`,
+and `b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62`.
+The validator is 33,409 bytes /
+`48d83f7bb0b4cb115ea91ccc9e98daf5c88e86faaedc425adccfeea20ea040e0`;
+its receipt reproduced unchanged at 10,509 bytes /
+`da2448349a7075fe20008df94f2f3a45d472df5ab1d3631a43a3f12f6352c745`.
+
+The gate proves pages 39-49, page 50 as the clean delimiter, 27 top-level
+items, 16 nested items, 26 display formulas, and five semantic figure
+descriptions. Corrections `0009`-`0011` are bound. Two deterministic builds
+match canonical bytes. Desktop 1280×720 and mobile 390×844 have no horizontal
+or formula overflow, duplicate IDs, broken fragments, or console findings.
+All six A4 pages pass 160-dpi visual inspection. Independent rereview closes
+P1=0/P2=0/P3=0. The PDF is searchable, `/Lang id-ID`, and untagged.
+
+The immutable correction snapshot is 2,347 bytes /
+`d99f8df4e722a9c98368bb169df17aa41d21754766b9ee19747a52569b40cb17`.
+Two further root-repeated backend generator/validator cycles are identical.
+They add 137 records with new-ID-set SHA-256
+`407216b4f4337bb2c55716c81cad231ca596d65df250297fbaff57e1f295db59`
+and yield 1,957 records. JSONL and CSV identities are 1,441,643 bytes /
+`0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085`
+and 1,727,978 /
+`ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`.
+Generator, validator, and passing receipt hashes are
+`6920fe6c673fddb80d018ea29814c26ed64741d0241a7ce73ea9580c760262d0`,
+`9e884f1dcc4d71ff149468ffaa0804deb0b772ff93a923ad6468777b970e0be8`,
+and `98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
+Next: preserve L08 once in the existing GitHub/Zenodo lineages, then advance
+to complete Lecture 5 beginning on page 50.

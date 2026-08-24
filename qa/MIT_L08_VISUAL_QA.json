@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-08-24",
+  "inspection": {
+    "black_boxes": 0,
+    "clipped_content": 0,
+    "formula_damage": 0,
+    "malformed_lists": 0,
+    "missing_glyphs": 0,
+    "overlap": 0,
+    "pages_inspected": [1, 2, 3, 4, 5, 6],
+    "render_dpi": 160,
+    "result": "pass"
+  },
+  "pdf": {
+    "bytes": 91293,
+    "embedded_files": 0,
+    "encrypted": false,
+    "lang": "id-ID",
+    "page_size": "A4",
+    "pages": 6,
+    "path": "output/pdf/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+    "searchable_text_chars": 14222,
+    "sha256": "b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62",
+    "tagged": false
+  },
+  "renders": [
+    {"page": 1, "bytes": 420735, "sha256": "cfe58afab4f8f8b0385b8d579a144c366d02fafe542541760c4399f22cffed2d"},
+    {"page": 2, "bytes": 452447, "sha256": "9dd395c3e778a97196a039a66d778259ee52b46277f2aa03e2c5f4c7b91f8186"},
+    {"page": 3, "bytes": 384157, "sha256": "63ccc60daf2a9b3bdd5b28c7b889b936efe46709bd5263ca2fb5033ee9437529"},
+    {"page": 4, "bytes": 268255, "sha256": "94f49edb656d6c0305ed2ec9d4c24e5635a52027894d2dcf7ba9571b10a42988"},
+    {"page": 5, "bytes": 244540, "sha256": "014aeef713579ea1e340cff84b042a9226b79cdce6badcdbb276b32db88c60d3"},
+    {"page": 6, "bytes": 132203, "sha256": "721352d2d324f75b70ee8be7629bbfec4d0430272c9456940ae28cee06a51409"}
+  ],
+  "renderer": "Poppler pdftoppm"
+}

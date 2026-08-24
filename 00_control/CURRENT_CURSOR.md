@@ -338,3 +338,36 @@ SHA-256
 The executable source cursor is now complete-notes page 39, `LECTURE 4` /
 `LECTURE OUTLINE`. Bound the next coherent multi-page Lecture 4 unit before
 translation and perform one consolidated gate for that batch.
+
+## 2026-08-24 cursor refresh — L08 admitted; page 50 is next
+
+The preceding cursor is superseded. Complete Lecture 4, pages 39-49, is
+admitted as one L08 boundary; page 50 is the verified `LECTURE 5` delimiter.
+The census / English witness / Indonesian target are 11,700 / 22,457 / 24,496
+bytes with SHA-256 values
+`20ef255184a6e31476b368bd8b1ad08c39ea2ab9f6fdc1fa2c53574471a95055`,
+`db45c443fb4e978b6bb4681a228a279f83048b8210530f77ed772a82c5f324a4`,
+and `b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758`.
+The reflowable HTML is 113,898 bytes /
+`b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a`;
+the six-page A4 PDF is 91,293 bytes /
+`b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62`.
+
+Two root-repeated reader validations reproduce the canonical bytes and close
+with `errors=[]`; receipt: 10,509 bytes /
+`da2448349a7075fe20008df94f2f3a45d472df5ab1d3631a43a3f12f6352c745`.
+Live browser QA passes at 1280×720 and 390×844 with no page or formula
+overflow, duplicate IDs, broken fragments, or console findings. All six PDF
+pages pass 160-dpi visual inspection. Independent rereview closes P1=P2=P3=0.
+
+The additive backend passes two further root-repeated cycles at 1,957 records,
+adding 137 records to the protected 1,820-record L07 baseline. JSONL and CSV
+are 1,441,643 / 1,727,978 bytes with SHA-256
+`0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085`
+and `ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`.
+The backend receipt is 6,631 bytes /
+`98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
+
+Preserve L08 once in the existing GitHub and Zenodo lineages. Then resume at
+complete-notes page 50 and freeze one coherent multi-page Lecture 5 batch;
+do not return to page-level production.

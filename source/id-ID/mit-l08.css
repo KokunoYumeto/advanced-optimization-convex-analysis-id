@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.62;
+  color: #172033;
+  background: #f3f6fb;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.7rem 1rem;
+  transform: translateY(-160%);
+  border-radius: 0.4rem;
+  color: #fff;
+  background: #172033;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+body > main, body > footer {
+  width: min(92vw, 78rem);
+  margin-inline: auto;
+}
+
+body > main > header { padding: 3.5rem 0 1.25rem; }
+
+body > main > header h1 {
+  max-width: 24ch;
+  margin: 0;
+  font-size: clamp(2.15rem, 5vw, 4.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+body > main > header .subtitle {
+  max-width: 58rem;
+  margin-top: 1rem;
+  color: #48536b;
+  font-size: 1.12rem;
+}
+
+#TOC {
+  margin-bottom: 2rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #c5d1e2;
+  border-radius: 0.9rem;
+  background: #fff;
+}
+
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 3rem; }
+
+.edition-notice, .source-page {
+  margin: 0 0 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2.55rem);
+  border: 1px solid #c5d1e2;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+
+.source-page { scroll-margin-top: 1rem; }
+h2 { margin-top: 0; font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.16; }
+h3 { font-size: 1.24rem; }
+li + li { margin-top: 0.5rem; }
+.source-item { margin: 0.62rem 0; }
+
+.edition-notice {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.15rem;
+  border-left: 0.32rem solid #7651bd;
+  border-radius: 0.4rem;
+  background: #f2effa;
+}
+
+.source-figure {
+  margin: 1rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px dashed #71809b;
+  border-radius: 0.55rem;
+  background: #f7f9fc;
+  color: #27324a;
+}
+
+.source-figure strong { color: #553398; }
+.source-locator { display: inline-block; margin-top: 0.9rem; color: #58647d; font-size: 0.92rem; }
+.source-display { max-width: 100%; overflow-x: auto; }
+math[display="block"] { overflow-x: auto; padding: 0.35rem 0; }
+a { color: #24529b; text-underline-offset: 0.16em; }
+a:focus-visible { outline: 0.2rem solid #ef9b2d; outline-offset: 0.18rem; }
+
+body > footer {
+  padding: 0 0 2.5rem;
+  color: #58647d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 48rem) {
+  body > main, body > footer { width: min(94vw, 78rem); }
+  #TOC ul { columns: 1; }
+  .source-page, .edition-notice { border-radius: 0.65rem; }
+  .source-page, .edition-notice { padding: 1.15rem; }
+}
+
+@media print {
+  :root, body { background: white; }
+  .edition-notice, .source-page { box-shadow: none; break-inside: avoid; }
+  .source-figure, .source-display { break-inside: avoid; }
+}
