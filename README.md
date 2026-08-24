@@ -305,3 +305,10 @@ Resi backend lulus pada SHA-256
 Batch aktif berikutnya adalah seluruh Kuliah 3, halaman 29–38. Halaman 39
 memulai Kuliah 4. Sensus dan saksi semantik Kuliah 3 sudah dibekukan; edisi
 Indonesia dan pembacanya harus ditutup sekali sebagai L07, bukan per halaman.
+
+L06 kini dipreservasi publik pada commit GitHub
+`283998197adeccbc1cf731f8cd4748295e5ba171` dan DOI Zenodo
+`10.5281/zenodo.22073743`. Seluruh 41 jalur GitHub yang berubah dan semua 58
+berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256 tepat.
+Publikasi L06 tidak lagi menjadi pekerjaan tertunda; produksi tetap berlanjut
+pada satu batch L07 halaman 29–38.

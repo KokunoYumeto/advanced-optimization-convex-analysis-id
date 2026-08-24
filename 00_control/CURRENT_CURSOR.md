@@ -277,3 +277,18 @@ at `3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f`
 and `ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`.
 Translate/build/validate these ten pages once as L07; do not revert to
 page-level production. Preserve L06 publicly before or alongside that work.
+
+## 2026-08-24 cursor refresh — L06 public preservation closed
+
+The final sentence above is superseded. L06 is public on GitHub at immutable
+content commit `283998197adeccbc1cf731f8cd4748295e5ba171`, tree
+`c95e59cdce36c5942e8e1cf97c78a7c4f7bcc7bc`; all 41 changed paths passed
+anonymous exact-byte readback. Zenodo record `22073743`, DOI
+`10.5281/zenodo.22073743`, is published in the existing concept and all 58
+public files passed anonymous byte/SHA-256 readback: 50 inherited unchanged
+and 8 L06 additions. No additional L06 publication action remains.
+
+The executable cursor remains complete Lecture 3, pages 29–38, as one L07
+batch. Page 39 begins Lecture 4. Finish the already drafted L07 reader gate,
+then admit its additive backend and advance to page 39 without reverting to a
+page-level workflow.

@@ -886,3 +886,27 @@ so later append-only ledger growth cannot invalidate this unit.
 
 Next: publish this admitted boundary once in the existing GitHub/Zenodo
 lineages, then build Lecture 3 pages 29–38 as one consolidated L07 batch.
+
+## 2026-08-24 — L06 publication and public-byte gates
+
+GitHub content commit `283998197adeccbc1cf731f8cd4748295e5ba171` / tree
+`c95e59cdce36c5942e8e1cf97c78a7c4f7bcc7bc` is public. The anonymous
+commit API returned HTTP 200, and all 41 changed paths were downloaded from
+the immutable raw-commit surface and matched local bytes and SHA-256 values.
+Receipt: `release/github/2026-08-24-mit-l06/github-public-readback.json`,
+10,580 bytes / SHA-256
+`f0ca9b3edead3308793daf9f1b2f60dc1019def0cdf59e54f0e483d630db64e4`.
+
+The repaired Zenodo release gate proved the exact latest parent, concept
+lineage, PDF default preview, ambiguous-publish recovery path, 50 inherited
+files, and 8 additions. The local package reproduced byte-identically twice
+before mutation. Public record `22073743` / DOI `10.5281/zenodo.22073743`
+then passed anonymous inventory and full-byte readback for all 58 files. The
+523,322-byte delta ZIP remains
+`2e8806904a65e3f09143c0f7a0b5371b009b7b54f50392d21079907261d15fd1`;
+its 40 entries and 39 manifest-bound payloads pass with zero forbidden
+entries. Public receipt: 16,084 bytes / SHA-256
+`083df9f3bcef845e8eb55b6a99e8e51b6cd8d3294e9f5818e6abbf684f31986e`.
+
+Next: close the existing L07 pages 29–38 reader/build/visual/browser gate,
+admit it once into the stable backend, and advance to page 39.

@@ -375,3 +375,25 @@ and English witness is 13,879 bytes /
 `ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`.
 The Indonesian target is a draft until its consolidated reader gate passes.
 L06 GitHub and Zenodo preservation are the immediate publication transaction.
+
+## 2026-08-24 — L06 public preservation closed; L07 remains active
+
+L06 content commit `283998197adeccbc1cf731f8cd4748295e5ba171` is public on
+GitHub with tree `c95e59cdce36c5942e8e1cf97c78a7c4f7bcc7bc`. Anonymous
+immutable-commit readback matched all 41 changed paths. The sanitized GitHub
+receipt is 10,580 bytes, SHA-256
+`f0ca9b3edead3308793daf9f1b2f60dc1019def0cdf59e54f0e483d630db64e4`.
+
+Zenodo record `22073743`, DOI `10.5281/zenodo.22073743`, is published in
+concept `10.5281/zenodo.22059741`. Its 58-file public inventory comprises 50
+inherited byte-identical files and 8 additions. Anonymous download and
+SHA-256 verification passed for every file. The L06 PDF is the default
+preview. The public-bound manifest is 6,409 bytes / SHA-256
+`797a6f1d0e05c1fdd186dd10a5899c474a21d03ae33a6d3482ded2a80951e5ba`;
+the checksum file is 5,857 bytes /
+`d886503cdc91d5b98882d5a6b800be050049512d336aade138e81b739a7135f7`;
+and the sanitized anonymous receipt is 16,084 bytes /
+`083df9f3bcef845e8eb55b6a99e8e51b6cd8d3294e9f5818e6abbf684f31986e`.
+No upstream contact occurred.
+
+L07 pages 29–38 remains the active production boundary; page 39 is next.
