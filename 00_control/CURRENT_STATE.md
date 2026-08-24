@@ -3,20 +3,21 @@
 As of: 2026-08-24  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: MIT/Royer authority frozen; MIT complete-notes pages 2--63 admitted through L09 with semantic HTML/PDF readers and a 2,099-record backend; L09 is publicly preserved on GitHub and Zenodo with full anonymous readback; page 64 begins Lecture 6 and is the active source cursor
+Status: Habring v1 is the canonical structured-source spine and active production lane; MIT L01--L11/pages 2--97 are admitted as a separately licensed companion with a 2,472-record backend and are publicly preserved on GitHub and Zenodo with full anonymous readback; MIT page 98 is a dormant companion cursor
 
 ## Ownership and scope
 
-This task is the sole O015 production owner. It owns the Indonesian reader corpus, locale-neutral stable-ID backend, exact component rights/provenance, QA, and existing public lineages. O018 is adjacent but disjoint and owns LP/MIP modelling, simplex/tableaux, finite LP duality and sensitivity, network/discrete optimization, and general OR workflows. The selected D90 primary course is MIT OCW 6.253 plus Royer stochastic-gradient material; the existing Penn/Habring work is preserved as an optional companion rather than discarded or misrepresented as the primary spine.
+This task is the sole O015 production owner. It owns the Indonesian reader corpus, locale-neutral stable-ID backend, exact component rights/provenance, QA, and existing public lineages. O018 is adjacent but disjoint and owns LP/MIP modelling, simplex/tableaux, finite LP duality and sensitivity, network/discrete optimization, and general OR workflows. Habring arXiv `2607.11664v1` is the canonical structured-source spine. MIT OCW 6.253, Royer, and Penn remain useful separately licensed companions; every accepted artifact and stable ID is preserved.
 
-The controlling architecture receipt is `O015_PRIMARY_ARCHITECTURE_PIVOT_20260822.md`. Its exact upstream handoff is 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`.
+The controlling architecture receipt is `C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`, 68,481 bytes, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
 
 ## Selected primary authority
 
-- MIT OpenCourseWare 6.253, *Convex Analysis and Optimization*, official course/lecture/assignment/exam surfaces and official metadata repository commit `58d7c86195f09dd8708b84dde28205d3199207dd`, tree `26d3136df9d5d7f564f0b1d068ec8d7a7c8818d6`. Complete notes: 8,030,116 bytes / 340 pages / SHA-256 `41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`. Complete teaching package: 13 PDFs / 395 pages / 10,417,664 bytes. Rights: CC BY-NC-SA 4.0. The repository is OCW/Hugo metadata, not mathematical TeX. Athena Scientific figure bytes/layout are excluded unless separate rights are proved; required diagrams must be independently redrawn from mathematical primitives or omitted with exact locators.
-- Clément Royer, *Optimization for Machine Learning -- Stochastic Gradient*, official 45-page notes: 684,631 bytes, SHA-256 `3290c61e870ef807ae92c4ace309449ee46ab3aa544e033c100f4a005311dfd3`; official laboratory ZIPs SHA-256 `88e18ea096b87bd12d182072bfbf6fd12ac73d666e16911a3f015ee9a574d461` and `0a0a908157dcf07f0dd3874c118e416dad3033a5f04f9cb37ae248b2f8feb623`. Rights: CC BY-NC 4.0. No mathematical TeX source is claimed.
+- Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv `2607.11664v1`: exact 230,116-byte source tar, SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`; 836,977-byte / 84-page PDF, SHA-256 `d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d`; CC BY 4.0. Its modular TeX/class/figures/BibLaTeX/README closure is the canonical editable spine.
+- Stephen Becker's MIT-licensed TeX course at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` is only a bounded future supplement. Admit no module until the exact nonduplicative subset, component rights, `../preamble.tex` repair, and deterministic build close.
+- MIT OCW 6.253, Royer notes/labs, and Penn MATH 555 retain their exact authority and separate licenses as companions. MIT pages 2--97 are accepted and preserved; no Athena Scientific figure byte or layout is admitted.
 
-The selected external core count is 440 pages: 395 MIT plus 45 Royer. The final learner edition also requires four original bridge units, four open laboratories, 36 new route-mastery problems with hints/solutions, repair of published solution omissions, and one cumulative capstone. MIT/Royer remain component-distinct.
+The finite original layer must close unified KKT/Slater/Lagrangian duality, modern stochastic methods, variational inequalities and maximal-monotone/resolvent/splitting material, connective proofs, substantive exercises, and complete solutions. Imports remain component-distinct.
 
 ## Admitted MIT first-topic block
 
@@ -51,15 +52,15 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified public version: `10.5281/zenodo.22076259`, explicitly incomplete through MIT L09 / complete-notes pages 50--63. It inherits 74 files, adds eight L09 files, and passed anonymous exact-byte readback for all 82 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l09/zenodo-public-readback-mit-l09.json` (22,376 bytes; SHA-256 `aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`).
+- Current verified public version: `10.5281/zenodo.22086656`, explicitly incomplete through MIT L11 / complete-notes pages 86--97. It inherits 90 files, adds eight L11 files, and passed anonymous exact-byte readback for all 98 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l11/zenodo-public-readback-mit-l11.json` (26,639 bytes; SHA-256 `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`).
 - Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
-- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `06247a233dc9c9de85fc2a9ea1ff305e3907a1b7` / tree `5b0082178eb0adef5f945bd603d98cacfcbeea85`; all 50 changed L09 paths passed immutable anonymous raw-file readback. No replacement repository was created.
+- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `c51e1131c34e6e937197ee118b072269a5a4af23` / tree `464b8bad46b862842f8970df290d8ba4fbc0efba`; all 50 changed L11 paths passed immutable anonymous raw-file readback. No replacement repository was created.
 
-The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. MIT L01--L09 are preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component. Page 64 is the active production cursor.
+The GitHub, Zenodo, and Figshare checkpoint-preservation transactions are complete through L11. MIT L01--L11 are preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component. Active production now returns to the Habring spine; MIT page 98 is dormant.
 
 ## Known incomplete surfaces
 
-MIT/Royer authority and MIT complete-notes pages 2--63 are admitted, but 378 external source pages remain untranslated under the established 440-page accounting. The complete 18-unit learner route, original bridges, 36 mastery problems, solution repairs, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Human/native-speaker Indonesian review remains unrecorded optional evidence, not a hold. No final-corpus claim is allowed.
+Habring Chapters 3--9 and MIT pages 2--97 are admitted, but the canonical structured spine and original closure remain incomplete. Becker's subset is not yet frozen or admitted. Unified KKT/duality, modern stochastic, variational/monotone, exercises and complete solutions, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Human/native-speaker Indonesian review remains unrecorded optional evidence, not a hold. No final-corpus claim is allowed.
 
 ## Exact continuation (historical pre-L02 wording)
 
@@ -716,3 +717,26 @@ close KKT/Slater/Lagrangian duality, modern stochastic methods, variational and
 monotone-operator methods, connective proofs, exercises, and full solutions.
 After L11 preservation, production pivots to Habring; page 98 remains a
 preserved MIT-companion cursor rather than an automatic next batch.
+
+## 2026-08-24 — L11 public preservation closed; Habring production active
+
+The pending-publication wording above is superseded. GitHub content commit
+`c51e1131c34e6e937197ee118b072269a5a4af23`, tree
+`464b8bad46b862842f8970df290d8ba4fbc0efba`, and parent
+`11b3f779456bda9951e22910775aee05a830cb1f` are public. All 50 changed paths
+passed immutable anonymous exact-byte/SHA-256 readback. The 13,135-byte
+sanitized receipt has SHA-256
+`33385fc3b94844c2df8e2ac1314366280dded69eff3ed28d597b9548ae0c5dff`.
+
+Zenodo record `22086656`, DOI `10.5281/zenodo.22086656`, is public in concept
+`10.5281/zenodo.22059741` after parent `22077419`. Its 98 files comprise 90
+inherited byte-identical files and eight L11 additions; every anonymous
+download passed, and the L11 PDF is the default preview. The 7,254-byte public
+manifest, 10,071-byte checksum file, 558,826-byte delta ZIP, and 26,639-byte
+sanitized receipt have SHA-256
+`214e90b6aa7f63e59feeac1ded513df6d6b0df32e7f3b728a95eb2defc08b728`,
+`bdf0171a198d201e3e267ca5732ed78e1a9463d8ac433ddd84c67a0490253f31`,
+`dfa5691563029b510451c1d5296364a5aec824bc76b32b54502d0b149260b133`,
+and `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`.
+No upstream contact occurred. Active production now pivots to Habring v1;
+MIT page 98 remains the dormant companion cursor.

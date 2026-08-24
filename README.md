@@ -2,18 +2,18 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L10 kini menerima halaman sumber 2–85 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.324 rekaman. L10 adalah checkpoint publik terbaru pada GitHub dan DOI `10.5281/zenodo.22077419`; seluruh byte yang diwajibkan telah dibaca kembali secara anonim. Halaman 86, awal Kuliah 7, adalah kursor aktif. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
+**Status:** karya dalam proses. Habring arXiv `2607.11664v1` adalah spine sumber-terstruktur kanonis; Bab 3–9 Habring dan Bab 3–5 Penn sudah diterjemahkan. MIT OpenCourseWare 6.253 tetap pendamping berlisensi terpisah: L01–L11 menerima halaman 2–97 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.472 rekaman. L11 adalah checkpoint publik terbaru pada GitHub dan DOI `10.5281/zenodo.22086656`; seluruh byte wajib telah dibaca kembali secara anonim. Produksi aktif kembali ke Habring, sedangkan halaman MIT 98 adalah kursor pendamping dorman. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint publik terbaru yang terverifikasi berada pada [MIT L10,
-10.5281/zenodo.22077419](https://doi.org/10.5281/zenodo.22077419) dalam [DOI
+Checkpoint publik terbaru yang terverifikasi berada pada [MIT L11,
+10.5281/zenodo.22086656](https://doi.org/10.5281/zenodo.22086656) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Semua 90 berkas—82 warisan dan delapan tambahan L10—telah dibaca kembali
-secara anonim dan cocok byte demi byte; PDF L10 adalah pratinjau utama. Status
-tetap parsial dan halaman 86 memulai batch Kuliah 7 berikutnya.
+Semua 98 berkas—90 warisan dan delapan tambahan L11—telah dibaca kembali
+secara anonim dan cocok byte demi byte; PDF L11 adalah pratinjau utama. Status
+tetap parsial; produksi aktif adalah spine Habring v1 dan halaman MIT 98 dorman.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -23,8 +23,8 @@ tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
 Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint
 terverifikasi terbaru berada di [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
-pada [commit `06247a2`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/06247a233dc9c9de85fc2a9ea1ff305e3907a1b7);
-seluruh 50 jalur yang berubah pada L09 cocok dengan unduhan raw anonim. Tidak
+pada [commit `c51e113`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/c51e1131c34e6e937197ee118b072269a5a4af23);
+seluruh 50 jalur yang berubah pada L11 cocok dengan unduhan raw anonim. Tidak
 dibuat repositori pengganti.
 
 ## Pembaca yang tersedia
@@ -49,6 +49,8 @@ dibuat repositori pengganti.
 - `output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf` — pembaca A4 Kuliah 5, 7 halaman; 101.797 byte; SHA-256 `34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721`.
 - `output/html/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html` — permukaan semantik Kuliah 6, halaman sumber 64–85; 169.871 byte; SHA-256 `2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038`.
 - `output/pdf/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf` — pembaca A4 Kuliah 6, 10 halaman; 133.787 byte; SHA-256 `3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0`.
+- `output/html/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html` — permukaan semantik Kuliah 7, halaman sumber 86–97; 96.216 byte; SHA-256 `19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d`.
+- `output/pdf/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf` — pembaca A4 Kuliah 7, 6 halaman; 89.771 byte; SHA-256 `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
 - `output/pdf/D90-HAB-03-09-modul-pendamping-id.pdf` — modul Habring Bab 3–9 gabungan, 103 halaman; SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`.
 - `output/pdf/D90-HAB-03-subgradien-id.pdf` — 15 halaman; SHA-256 `45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4`.
 - `output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf` — 13 halaman; SHA-256 `5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7`.
@@ -491,10 +493,12 @@ PDF A4 enam halaman memiliki SHA-256
 dan `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
 Validasi deterministik, reflow browser desktop/ponsel, inspeksi visual seluruh
 PDF, rereview independen P1=P2=P3=0, dan backend 2.472 rekaman semuanya lulus.
-Preservasi publik L11 masih menunggu satu transaksi pada garis GitHub dan
-Zenodo yang sudah ada; belum ada identitas publik L11 yang diklaim. Halaman 98
-adalah delimiter Kuliah 8 dan menjadi kursor berikutnya hanya setelah
-preservasi tersebut ditutup.
+L11 dipreservasi publik pada commit GitHub
+`c51e1131c34e6e937197ee118b072269a5a4af23` dan DOI Zenodo
+`10.5281/zenodo.22086656`. Seluruh 50 jalur commit dan semua 98 berkas Zenodo
+lulus pembacaan balik anonim; 90 berkas diwarisi tanpa perubahan dan delapan
+berkas merupakan tambahan L11. PDF L11 menjadi pratinjau utama. Halaman 98
+adalah kursor pendamping dorman, bukan batch otomatis berikutnya.
 
 ## Koreksi arsitektur sumber O015 (24 Agustus 2026)
 

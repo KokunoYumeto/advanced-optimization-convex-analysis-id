@@ -511,3 +511,49 @@ NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
 Metadata contains the short organization contributor exactly once and exact
 model provenance exactly once. No upstream issue, comment, or other contact
 occurred.
+
+## 2026-08-24 — Public GitHub MIT L11 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` / `c51e1131c34e6e937197ee118b072269a5a4af23`
+- Content tree: `464b8bad46b862842f8970df290d8ba4fbc0efba`
+- Parent: `11b3f779456bda9951e22910775aee05a830cb1f`
+- Scope: complete MIT L11 Lecture 7, pages 86–97; exact reader/source/QA,
+  2,472-record backend, durable controls, and prepared Zenodo release bytes.
+- Anonymous gate: the immutable public patch and all 50 changed raw paths
+  matched their local Git bytes and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-24-mit-l11/github-public-readback.json`, 13,135
+  bytes; SHA-256
+  `33385fc3b94844c2df8e2ac1314366280dded69eff3ed28d597b9548ae0c5dff`.
+
+## 2026-08-24 — Public Zenodo MIT L11 checkpoint
+
+- Public record: https://zenodo.org/records/22086656
+- Version DOI: https://doi.org/10.5281/zenodo.22086656
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22077419`
+- Version: `checkpoint-2026.08.24-mit-l11-p86-97`
+- Scope/status: complete MIT 6.253 Lecture 7 pages 86–97, explicitly partial;
+  MIT page 98 remains a dormant companion cursor while production pivots to
+  Habring v1.
+- Public closure: 98 files, comprising 90 inherited byte-identical files and
+  eight L11 additions; every anonymous download matched expected bytes and
+  SHA-256. The L11 PDF is the default preview.
+- Delta ZIP: 558,826 bytes; SHA-256
+  `dfa5691563029b510451c1d5296364a5aec824bc76b32b54502d0b149260b133`;
+  27 entries, all 26 manifest-bound payloads pass, zero forbidden entries.
+- Public bound manifest: 7,254 bytes; SHA-256
+  `214e90b6aa7f63e59feeac1ded513df6d6b0df32e7f3b728a95eb2defc08b728`.
+- Public checksum file: 10,071 bytes; SHA-256
+  `bdf0171a198d201e3e267ca5732ed78e1a9463d8ac433ddd84c67a0490253f31`.
+- Sanitized readback:
+  `release/zenodo/2026-08-24-mit-l11/zenodo-public-readback-mit-l11.json`,
+  26,639 bytes; SHA-256
+  `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`.
+
+MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
+Metadata contains the short organization contributor exactly once and exact
+model provenance exactly once. No upstream issue, comment, or other contact
+occurred.

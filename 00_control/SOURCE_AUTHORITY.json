@@ -446,8 +446,31 @@
             "validation_receipt_sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"
           },
           "public_preservation": {
-            "status": "pending_existing_github_and_zenodo_lineages",
-            "public_ids": []
+            "status": "published_and_anonymously_verified",
+            "github": {
+              "commit": "c51e1131c34e6e937197ee118b072269a5a4af23",
+              "parent": "11b3f779456bda9951e22910775aee05a830cb1f",
+              "tree": "464b8bad46b862842f8970df290d8ba4fbc0efba",
+              "changed_paths": 50,
+              "receipt_path": "release/github/2026-08-24-mit-l11/github-public-readback.json",
+              "receipt_bytes": 13135,
+              "receipt_sha256": "33385fc3b94844c2df8e2ac1314366280dded69eff3ed28d597b9548ae0c5dff"
+            },
+            "zenodo": {
+              "record_id": "22086656",
+              "doi": "10.5281/zenodo.22086656",
+              "concept_doi": "10.5281/zenodo.22059741",
+              "parent_record_id": "22077419",
+              "file_count": 98,
+              "inherited_file_count": 90,
+              "addition_file_count": 8,
+              "default_preview": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+              "receipt_path": "release/zenodo/2026-08-24-mit-l11/zenodo-public-readback-mit-l11.json",
+              "receipt_bytes": 26639,
+              "receipt_sha256": "008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101"
+            },
+            "next_production_lane": "Habring arXiv 2607.11664v1 canonical structured-source spine",
+            "dormant_companion_cursor": "MIT complete-notes page 98"
           }
         },
         "upstream_authority_unchanged": true

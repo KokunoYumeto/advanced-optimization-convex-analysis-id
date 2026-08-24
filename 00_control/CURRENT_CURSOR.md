@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-24  
-State: MIT/Royer authority frozen and complete-notes pages 2--63 admitted through L09; the additive backend contains 2,099 records; L09 is publicly preserved on GitHub and Zenodo with full anonymous readback, and page 64 opens Lecture 6 as the active coherent source batch
+State: Habring arXiv `2607.11664v1` is the canonical structured-source spine and active production lane; MIT L01--L11/pages 2--97 are admitted as a separately licensed companion with a 2,472-record backend and are publicly preserved on GitHub and Zenodo; page 98 is a dormant MIT-companion cursor
 
 ## Completed at this boundary
 
@@ -11,7 +11,7 @@ State: MIT/Royer authority frozen and complete-notes pages 2--63 admitted throug
 - The previous public Zenodo version `10.5281/zenodo.22059742` preserves the first nine units through Penn Chapter 4 and passed anonymous exact-byte readback for all 15 files and all 132 manifest-bound ZIP payloads.
 - Zenodo version `10.5281/zenodo.22060447` now preserves all ten optional-companion units through Penn Chapter 5 and passed anonymous exact-byte readback for all 16 files and all 150 manifest-bound ZIP payloads.
 - Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
-- The controlling primary-architecture handoff was read completely and verified at 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`. MIT OCW 6.253 + Royer is now the selected D90 primary; Penn/Habring remains an optional companion.
+- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions; Becker remains an unfrozen bounded supplement target.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 - The MIT/Royer source freeze and closure audit pass. The MIT teaching closure is 13 PDFs / 395 pages / 10,417,664 bytes under CC BY-NC-SA 4.0; the Royer notes and two laboratory archives are separately frozen under CC BY-NC 4.0. Neither mathematical source is misrepresented as TeX.
 - The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
@@ -486,3 +486,21 @@ as the dormant MIT-companion cursor; do not automatically expand MIT. The
 active production route pivots to the complete Habring v1 structured-source
 spine, followed only by a frozen/build-admitted nonduplicative Becker subset
 and the finite original closure recorded in `CURRENT_GOAL_AND_WORKFLOW.md`.
+
+## 2026-08-24 cursor refresh — L11 public; Habring v1 active
+
+L11 preservation is closed. GitHub content commit
+`c51e1131c34e6e937197ee118b072269a5a4af23` / tree
+`464b8bad46b862842f8970df290d8ba4fbc0efba` passed anonymous exact-byte
+readback for all 50 changed paths. Zenodo record `22086656`, DOI
+`10.5281/zenodo.22086656`, is public in concept `10.5281/zenodo.22059741`;
+all 98 files passed anonymous readback, comprising 90 inherited unchanged
+files and eight L11 additions, with the L11 PDF as default preview.
+
+The executable production cursor is now the Habring v1 structured-source
+spine: freeze its next nonduplicative coherent chapter/topic batch against the
+already admitted Chapters 3--9 and the full O015 coverage map, then translate
+and close one consolidated reader/backend/preservation gate. MIT complete-notes
+page 98 remains a frozen dormant companion locator and must not trigger
+automatic MIT expansion. Becker remains unadmitted until its exact subset,
+rights, `../preamble.tex` repair, and deterministic build pass.

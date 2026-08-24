@@ -531,3 +531,20 @@ separately licensed companions; preserve every released byte, correction, and
 stable ID. After L11 preservation, pivot production to Habring and the finite
 original KKT/duality, stochastic, variational/monotone, exercise, and
 complete-solution closure. Do not automatically advance the MIT page-98 cursor.
+
+## D90-0048 — Preserve L11 once and activate the Habring spine
+
+Decision: close the admitted Lecture-7 companion boundary as one additive
+checkpoint without altering prior releases or the corrected O015 architecture.
+GitHub commit `c51e1131c34e6e937197ee118b072269a5a4af23` exposes the exact L11
+reader/source/QA/backend/control and prepared release bytes; all 50 changed
+paths passed immutable anonymous readback. Zenodo DOI
+`10.5281/zenodo.22086656` inherits all 90 L10 files byte-identically, adds the
+eight bound L11 files, makes the L11 PDF the default preview, and passes full
+anonymous readback for all 98 files. Component rights remain distinct, status
+remains partial, and no upstream contact occurred.
+
+This completes only the L11 preservation transaction. Active production now
+pivots to the canonical Habring v1 structured-source spine. MIT page 98 remains
+a dormant companion cursor; Becker remains unadmitted pending its bounded
+freeze, rights, `../preamble.tex` repair, and deterministic build.

@@ -1252,3 +1252,26 @@ Architecture supersession: after the pending L11 preservation gate, the next
 build lane is the Habring structured-source spine. Page 98 is retained only as
 the MIT-companion cursor; no Becker file or build is admitted until its exact
 nonduplicative subset, `../preamble.tex` repair, and deterministic build pass.
+
+## L11 public preservation gate
+
+Preservation gate: PASS. GitHub content commit
+`c51e1131c34e6e937197ee118b072269a5a4af23`, tree
+`464b8bad46b862842f8970df290d8ba4fbc0efba`, parent
+`11b3f779456bda9951e22910775aee05a830cb1f`, and all 50 changed paths passed
+immutable anonymous exact-byte/SHA-256 readback. Its 13,135-byte sanitized
+receipt has SHA-256
+`33385fc3b94844c2df8e2ac1314366280dded69eff3ed28d597b9548ae0c5dff`.
+
+Zenodo record `22086656`, DOI `10.5281/zenodo.22086656`, is published in the
+existing concept `10.5281/zenodo.22059741` after parent `22077419`. All 98
+files passed anonymous byte verification: 90 inherited unchanged and eight
+L11 additions; the L11 PDF is the default preview. The public manifest,
+checksum file, delta ZIP, and sanitized receipt are respectively 7,254 /
+10,071 / 558,826 / 26,639 bytes with SHA-256
+`214e90b6aa7f63e59feeac1ded513df6d6b0df32e7f3b728a95eb2defc08b728`,
+`bdf0171a198d201e3e267ca5732ed78e1a9463d8ac433ddd84c67a0490253f31`,
+`dfa5691563029b510451c1d5296364a5aec824bc76b32b54502d0b149260b133`,
+and `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`.
+No upstream contact occurred. The next build lane is Habring v1; MIT page 98
+is dormant.
