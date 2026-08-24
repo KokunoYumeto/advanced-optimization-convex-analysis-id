@@ -482,3 +482,15 @@ and `0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd`.
 Preserve L10 once in the existing GitHub/Zenodo lineages and anonymously read
 back its public bytes; this admission makes no premature public claim. Page 86
 is the verified Lecture 7 delimiter and next coherent production cursor.
+
+## D90-0045 — Preserve L10 once and advance the public lineage
+
+Decision: preserve the admitted complete-Lecture-6 boundary as one additive
+checkpoint. GitHub commit `2f39b8146db59eb89243ec15cd0c430c1cdda0cf`
+contains the exact L10 reader/source/QA/backend/controls and prepared release
+bytes; all 43 changed paths passed immutable anonymous readback. Zenodo DOI
+`10.5281/zenodo.22077419` inherits all 82 L09 files byte-identically, adds the
+eight bound L10 files, makes the L10 PDF the default preview, and passes full
+anonymous readback for all 90 files. Component rights remain distinct, status
+remains partial, and no upstream contact occurred. Production advances to one
+coherent Lecture 7 batch beginning on page 86.

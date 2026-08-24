@@ -466,3 +466,48 @@ No upstream issue, comment, or other contact occurred.
 MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
 NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
 No upstream issue, comment, or other contact occurred.
+
+## 2026-08-24 — Public GitHub MIT L10 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` / `2f39b8146db59eb89243ec15cd0c430c1cdda0cf`
+- Content tree: `178cdd4e6b8d90720cb43b9d8c7268fab10e1a12`
+- Parent: `d978d74ef3e40b40f59ccf1431d7d26df64210f2`
+- Scope: complete MIT L10 Lecture 6, pages 64–85; exact reader/source/QA,
+  2,324-record backend, durable controls, and prepared Zenodo release bytes.
+- Anonymous gate: the immutable public patch and all 43 changed raw paths
+  matched their local Git bytes and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-24-mit-l10/github-public-readback.json`, 11,449
+  bytes; SHA-256
+  `750b97f06f85f0aa6cba9a6cd9082e1f13e1fc374b84f14ab80c2a80aeb0fd7b`.
+
+## 2026-08-24 — Public Zenodo MIT L10 checkpoint
+
+- Public record: https://zenodo.org/records/22077419
+- Version DOI: https://doi.org/10.5281/zenodo.22077419
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22076259`
+- Version: `checkpoint-2026.08.24-mit-l10-p64-85`
+- Scope/status: complete MIT 6.253 Lecture 6 pages 64–85, explicitly partial;
+  page 86 begins the next Lecture 7 batch.
+- Public closure: 90 files, comprising 82 inherited byte-identical files and
+  eight L10 additions; every anonymous download matched expected bytes and
+  SHA-256. The L10 PDF is the default preview.
+- Delta ZIP: 542,215 bytes; SHA-256
+  `e488b6f31ab35b6a3099f92e72be32b49198dc78cc21056824ba7cdc586ca7a6`;
+  27 entries, all 26 manifest-bound payloads pass, zero forbidden entries.
+- Public bound manifest: 7,245 bytes; SHA-256
+  `6a62b171368591390bb7ac2dbbfa3e367196dfe26c66913367928ef81dfe5f69`.
+- Public checksum file: 9,243 bytes; SHA-256
+  `5e8b9f7f3f89ae1c9288060d97aae7a8f10df6694a26b6af3dd83137ecfb0998`.
+- Sanitized readback:
+  `release/zenodo/2026-08-24-mit-l10/zenodo-public-readback-mit-l10.json`,
+  24,582 bytes; SHA-256
+  `e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e`.
+
+MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
+Metadata contains the short organization contributor exactly once and exact
+model provenance exactly once. No upstream issue, comment, or other contact
+occurred.

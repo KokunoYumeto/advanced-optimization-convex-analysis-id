@@ -621,3 +621,26 @@ The schema is unchanged, all prior record bytes/order recover exactly, and
 One additive GitHub/Zenodo preservation transaction remains for this boundary;
 no L10 public identity is claimed yet. The executable source cursor is page
 86, beginning one coherent multi-page Lecture 7 batch.
+
+## 2026-08-24 — L10 public preservation closed; Lecture 7 page 86 active
+
+The pending-publication wording immediately above is superseded. GitHub
+content commit `2f39b8146db59eb89243ec15cd0c430c1cdda0cf`, tree
+`178cdd4e6b8d90720cb43b9d8c7268fab10e1a12`, and parent
+`d978d74ef3e40b40f59ccf1431d7d26df64210f2` are public. The immutable patch
+and all 43 changed paths passed anonymous exact-byte/SHA-256 readback. The
+11,449-byte sanitized receipt has SHA-256
+`750b97f06f85f0aa6cba9a6cd9082e1f13e1fc374b84f14ab80c2a80aeb0fd7b`.
+
+Zenodo record `22077419`, DOI `10.5281/zenodo.22077419`, is published in the
+existing concept `10.5281/zenodo.22059741`. Its 90-file inventory comprises
+82 inherited byte-identical files and eight L10 additions; every anonymous
+download matched expected bytes and SHA-256, and the L10 PDF is the default
+preview. The public bound manifest is 7,245 bytes / SHA-256
+`6a62b171368591390bb7ac2dbbfa3e367196dfe26c66913367928ef81dfe5f69`;
+the checksum file is 9,243 bytes /
+`5e8b9f7f3f89ae1c9288060d97aae7a8f10df6694a26b6af3dd83137ecfb0998`;
+the 24,582-byte sanitized receipt has SHA-256
+`e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e`.
+No upstream contact occurred. The executable cursor is page 86, the start of
+one coherent multi-page Lecture 7 batch.

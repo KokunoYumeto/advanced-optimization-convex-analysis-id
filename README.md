@@ -2,18 +2,17 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L10 kini menerima halaman sumber 2–85 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.324 rekaman. L09 adalah checkpoint publik terakhir pada GitHub dan DOI `10.5281/zenodo.22076259`; L10 telah diterima secara lokal dan sedang dipreservasi satu kali dalam lini yang sama. Halaman 86, awal Kuliah 7, adalah kursor aktif. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
+**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L10 kini menerima halaman sumber 2–85 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.324 rekaman. L10 adalah checkpoint publik terbaru pada GitHub dan DOI `10.5281/zenodo.22077419`; seluruh byte yang diwajibkan telah dibaca kembali secara anonim. Halaman 86, awal Kuliah 7, adalah kursor aktif. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint publik terbaru yang terverifikasi berada pada [MIT L09,
-10.5281/zenodo.22076259](https://doi.org/10.5281/zenodo.22076259) dalam [DOI
+Checkpoint publik terbaru yang terverifikasi berada pada [MIT L10,
+10.5281/zenodo.22077419](https://doi.org/10.5281/zenodo.22077419) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Semua 82 berkas—74 warisan dan delapan tambahan L09—telah dibaca kembali
-secara anonim dan cocok byte demi byte. L10 (Kuliah 6, halaman 64–85) telah
-lolos seluruh gerbang lokal; preservasi publiknya sedang berlangsung. Status
+Semua 90 berkas—82 warisan dan delapan tambahan L10—telah dibaca kembali
+secara anonim dan cocok byte demi byte; PDF L10 adalah pratinjau utama. Status
 tetap parsial dan halaman 86 memulai batch Kuliah 7 berikutnya.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
@@ -465,6 +464,8 @@ dan 16 deskripsi semantik gambar / 24 panel tanpa menyalin byte atau tata letak
 gambar Athena Scientific. Sebelas koreksi `O015-MIT-SEM-0020`–`0030` terbuka
 dan terikat pada saksi sumber. Dua build deterministik, validasi struktur dan
 formula, reflow desktop/ponsel, inspeksi seluruh 10 halaman PDF, rereview
-P1=P2=P3=0, dan backend 2.324 rekaman semuanya lulus. L10 belum diklaim publik
-di bagian ini sampai transaksi GitHub/Zenodo dan pembacaan balik anonim selesai.
-Halaman 86 adalah delimiter Kuliah 7 dan kursor produksi berikutnya.
+P1=P2=P3=0, dan backend 2.324 rekaman semuanya lulus. L10 dipreservasi pada
+commit GitHub `2f39b8146db59eb89243ec15cd0c430c1cdda0cf` dan DOI Zenodo
+`10.5281/zenodo.22077419`; semua 43 jalur commit dan 90 berkas Zenodo cocok
+byte demi byte pada pembacaan balik anonim. Halaman 86 adalah delimiter Kuliah
+7 dan kursor produksi berikutnya.

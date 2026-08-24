@@ -441,7 +441,13 @@ all-ten-page visual QA, independent P1=P2=P3=0 rereview, rights/asset closure,
 and the 2,324-record backend gate all pass. The backend adds 225 stable records
 without changing any of the protected 2,099 prior records.
 
-Preserve L10 once in the existing GitHub and Zenodo lineages and anonymously
-read back the public bytes. No L10 commit, DOI, or public-byte identity exists
-yet. The executable translation cursor is page 86; freeze and translate one
-coherent multi-page Lecture 7 boundary, never a page-level reader series.
+L10 preservation is closed. GitHub content commit
+`2f39b8146db59eb89243ec15cd0c430c1cdda0cf` / tree
+`178cdd4e6b8d90720cb43b9d8c7268fab10e1a12` passed anonymous exact-byte
+readback for all 43 changed paths. Zenodo record `22077419`, DOI
+`10.5281/zenodo.22077419`, is public in existing concept
+`10.5281/zenodo.22059741`; all 90 files passed anonymous readback, comprising
+82 inherited unchanged files and eight L10 additions. The executable source
+cursor is complete-notes page 86, `LECTURE 7` / `LECTURE OUTLINE`. Freeze and
+translate one coherent multi-page Lecture 7 boundary, never a page-level
+reader series.

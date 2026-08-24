@@ -386,14 +386,18 @@
             "validation_receipt_sha256": "0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd"
           },
           "public_preservation": {
-            "status": "pending",
-            "github_commit": null,
-            "github_tree": null,
-            "github_receipt_sha256": null,
-            "zenodo_record_id": null,
-            "zenodo_doi": null,
-            "zenodo_file_count": null,
-            "zenodo_receipt_sha256": null
+            "status": "published_and_anonymously_verified",
+            "github_commit": "2f39b8146db59eb89243ec15cd0c430c1cdda0cf",
+            "github_parent": "d978d74ef3e40b40f59ccf1431d7d26df64210f2",
+            "github_tree": "178cdd4e6b8d90720cb43b9d8c7268fab10e1a12",
+            "github_changed_file_count": 43,
+            "github_receipt_sha256": "750b97f06f85f0aa6cba9a6cd9082e1f13e1fc374b84f14ab80c2a80aeb0fd7b",
+            "zenodo_record_id": "22077419",
+            "zenodo_doi": "10.5281/zenodo.22077419",
+            "zenodo_file_count": 90,
+            "zenodo_inherited_file_count": 82,
+            "zenodo_addition_file_count": 8,
+            "zenodo_receipt_sha256": "e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e"
           }
         },
         "upstream_authority_unchanged": true

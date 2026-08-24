@@ -432,6 +432,7 @@ def readback(wait_for_publication: bool = False) -> dict:
     serialized = json.dumps(record["metadata"], ensure_ascii=False)
     receipt = {
         "schema": "o015-zenodo-mit-l10-public-readback-v1",
+        "result": "pass",
         "record_id": draft_id(),
         "record_doi": record.get("pids", {}).get("doi", {}).get("identifier") or record.get("metadata", {}).get("doi"),
         "record_url": record.get("links", {}).get("self_html"),
@@ -440,6 +441,8 @@ def readback(wait_for_publication: bool = False) -> dict:
         "parent_record_id": build.PARENT_RECORD_ID,
         "parent_record_doi": build.PARENT_RECORD_DOI,
         "status": record.get("status"),
+        "is_latest": record.get("versions", {}).get("is_latest"),
+        "default_preview": record.get("files", {}).get("default_preview"),
         "title": record["metadata"]["title"],
         "version": record["metadata"]["version"],
         "publication_date": record["metadata"]["publication_date"],
@@ -456,7 +459,10 @@ def readback(wait_for_publication: bool = False) -> dict:
         "delta_bundle_verification": build.verify_bundle(download_entry(client, entries[build.BUNDLE_NAME])),
     }
     if (
-        receipt["status"] != "published"
+        receipt["result"] != "pass"
+        or receipt["status"] != "published"
+        or receipt["is_latest"] is not True
+        or receipt["default_preview"] != build.READER_PATHS[0].name
         or receipt["file_count"] != build.EXPECTED_RELEASE_COUNT
         or receipt["inherited_file_count"] != build.EXPECTED_INHERITED_COUNT
         or receipt["addition_file_count"] != build.EXPECTED_ADDITION_COUNT
@@ -531,4 +537,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

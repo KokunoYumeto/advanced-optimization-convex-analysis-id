@@ -1,0 +1,322 @@
+{
+  "all_changed_files_read_back": true,
+  "branch": "main",
+  "changed_file_count": 43,
+  "commit": "2f39b8146db59eb89243ec15cd0c430c1cdda0cf",
+  "commit_patch": {
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "4f850e74b0365f2e87cb2df9f9e471f698d9b3dab910fee9f3e342afc7c1bd70",
+    "url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/2f39b8146db59eb89243ec15cd0c430c1cdda0cf.patch"
+  },
+  "files": [
+    {
+      "bytes": 114320,
+      "http_status": 200,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "049e6ecc3886e525c1f1fbe41a06da05b0ea7ea7ed4a030a80bfc9df283d7930"
+    },
+    {
+      "bytes": 97269,
+      "http_status": 200,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "dfbce272d39a5068cda887b94e8f781888ddc056017649969fb3793fd42c6fab"
+    },
+    {
+      "bytes": 35019,
+      "http_status": 200,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "public_byte_identity": "pass",
+      "sha256": "625f1a484768e0acab4eae3449e66039808487e6f0393fa061da0bb78fd4503e"
+    },
+    {
+      "bytes": 19257,
+      "http_status": 200,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "public_byte_identity": "pass",
+      "sha256": "e19abc9a2879104e324b63a25c9c410c3ad6bd50d536480186afeb2ab4f2f554"
+    },
+    {
+      "bytes": 32038,
+      "http_status": 200,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "14c6966341309f64e6b0428c7ffa54aa6e54501cc13c6ed593ffbfb6987187d1"
+    },
+    {
+      "bytes": 4103,
+      "http_status": 200,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "9087ec700705d5dfb21b5fb4dd588088d67002d1b1ca4ef788703c3352097721"
+    },
+    {
+      "bytes": 42117,
+      "http_status": 200,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "2f9f39977e956c0754cb1b975ef950c911de129c74df0b30817c646dfd6d557f"
+    },
+    {
+      "bytes": 45401,
+      "http_status": 200,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "c6ccd0fe2492974751b1e49eb18176568d2aa0d492df4762d959244ac6b168fe"
+    },
+    {
+      "bytes": 7453,
+      "http_status": 200,
+      "path": "00_control/MIT_L10_CORRECTION_SNAPSHOT.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "72a8a2da79ea31e2587e42e5e6f54ec4662a749717d5c9c6119c707beef094ee"
+    },
+    {
+      "bytes": 17483,
+      "http_status": 200,
+      "path": "00_control/MIT_L10_LECTURE_6_BOUNDARY_CENSUS.md",
+      "public_byte_identity": "pass",
+      "sha256": "ab8c8ce397df3b57f1ae426687fba2b14d51313c7a6b4596369eae07116fb13e"
+    },
+    {
+      "bytes": 20084,
+      "http_status": 200,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "public_byte_identity": "pass",
+      "sha256": "42dc3331ebc512b49d475c58907d56b87b35ae21d55174436b9fa8f872bc2054"
+    },
+    {
+      "bytes": 33465,
+      "http_status": 200,
+      "path": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "d2a86494eeb251f3087c67d37e5292f7b25aba53f2628c28a29b21538e5ee46f"
+    },
+    {
+      "bytes": 2144290,
+      "http_status": 200,
+      "path": "backend/records.csv",
+      "public_byte_identity": "pass",
+      "sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367"
+    },
+    {
+      "bytes": 1797378,
+      "http_status": 200,
+      "path": "backend/records.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c"
+    },
+    {
+      "bytes": 169871,
+      "http_status": 200,
+      "path": "output/html/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038"
+    },
+    {
+      "bytes": 133787,
+      "http_status": 200,
+      "path": "output/pdf/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0"
+    },
+    {
+      "bytes": 3911,
+      "http_status": 200,
+      "path": "qa/MIT_L10_BACKEND_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd"
+    },
+    {
+      "bytes": 1445,
+      "http_status": 200,
+      "path": "qa/MIT_L10_BROWSER_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "ab8524f5097ee52c2a802212f4aabedadfb437afeadd5020659f1ab8a882ebbb"
+    },
+    {
+      "bytes": 8023,
+      "http_status": 200,
+      "path": "qa/MIT_L10_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "6d450dde5c3a0bdaa2404abc576a4b43b5d774a1d7b5a44fc7856c3e6097fa63"
+    },
+    {
+      "bytes": 22193,
+      "http_status": 200,
+      "path": "qa/MIT_L10_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "f700ad7d811e7c244285533deef8a492783918b7d6c0f7943f922a09edd77640"
+    },
+    {
+      "bytes": 1298,
+      "http_status": 200,
+      "path": "qa/MIT_L10_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "17b24989fe86dbf34b5db47240d601606425500905cb3611b535d6ed5d50532d"
+    },
+    {
+      "bytes": 4082,
+      "http_status": 200,
+      "path": "qa/build_mit_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "56cffed47a05122b9ab4936ee35c72f13582a7e7e6bf9773510a99bf02556a1b"
+    },
+    {
+      "bytes": 58954,
+      "http_status": 200,
+      "path": "qa/extend_backend_mit_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "29dde5ef886914d57b5c5f1e32228371d6ce95101b351cd5a83a9d328dac6af3"
+    },
+    {
+      "bytes": 24177,
+      "http_status": 200,
+      "path": "qa/validate_backend_mit_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "736e1084a26fd23f2ec6fd1628ec1f1c94be76f4b34c44d62368a6bf3cd1cb5b"
+    },
+    {
+      "bytes": 47560,
+      "http_status": 200,
+      "path": "qa/validate_mit_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "9b6f96dbdea58ab61ddaff92ccdf924e4cc80e92b21f6ca0ed13e08d03095328"
+    },
+    {
+      "bytes": 3905,
+      "http_status": 200,
+      "path": "release/github/2026-08-24-mit-l09/github-evidence-public-readback.json",
+      "public_byte_identity": "pass",
+      "sha256": "b358bcbd4f94a3cc9b9eeca41601067c998996f5baf5b101584d8f570d8046d9"
+    },
+    {
+      "bytes": 542215,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L10_DELTA.zip",
+      "public_byte_identity": "pass",
+      "sha256": "e488b6f31ab35b6a3099f92e72be32b49198dc78cc21056824ba7cdc586ca7a6"
+    },
+    {
+      "bytes": 1453,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/LICENSE_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "b2ef5517cc535c88833510a6c5ba5d2890cb9c0f4c84e8f89155c87ab7205e2d"
+    },
+    {
+      "bytes": 2152,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/README_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "352c263bed758f26926679b3a571e3aae28edd59bdc7b83adf62832c9ae810b1"
+    },
+    {
+      "bytes": 1455,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/README_RELEASE_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "6e44fd95b077b0c759efdd029375611295a63523391fbc1571f3e2ce7461e80a"
+    },
+    {
+      "bytes": 9243,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/SHA256SUMS-mit-l10",
+      "public_byte_identity": "pass",
+      "sha256": "45b2507f9e04ad3df539114e0cf08d96f3a1d9e6e5edd2595f23a3920f61e56a"
+    },
+    {
+      "bytes": 35970,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/build_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "aff18dab2a80df4070bb9d6a152d15d19a6609a841b32d7773441485325d09f7"
+    },
+    {
+      "bytes": 11327,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/generate_input_lock_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "5072536dc09f8cd38c30c68503de083b90775de7019c8d755f4e9edb105e4674"
+    },
+    {
+      "bytes": 6157,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/local-preparation-mit-l10.json",
+      "public_byte_identity": "pass",
+      "sha256": "fd6eb46627ffdc73af45640b6226a108b53872a4c2c3d31451f8944f0de9a3ab"
+    },
+    {
+      "bytes": 6134,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/prepare_local_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "4b13e7c599d781590cc81ab604bd99d20477c17ad7047307bda9d05d207b4b62"
+    },
+    {
+      "bytes": 22410,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/publish_l10.py",
+      "public_byte_identity": "pass",
+      "sha256": "2be3cdaf85cd2a64122e731be7ab8441ee3bc305177eeddc1a804b9359281f1d"
+    },
+    {
+      "bytes": 2364,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/release-config-mit-l10.json",
+      "public_byte_identity": "pass",
+      "sha256": "c7ee6d37382b0c6c9f76164bc293c47bdcd2dcc5a4b38c7beec2660bf425fa68"
+    },
+    {
+      "bytes": 1543,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/release-config-mit-l10.template.json",
+      "public_byte_identity": "pass",
+      "sha256": "ce66a1ded7a5bb36520fe9d14dc7f112292c82c5d9f5e4d7385738f60e7663f1"
+    },
+    {
+      "bytes": 5614,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/release-input-lock-mit-l10.json",
+      "public_byte_identity": "pass",
+      "sha256": "b75bf9fe63a076239d731835fc9a9edb5f10f23c2f20ab35dadf367aec400e2d"
+    },
+    {
+      "bytes": 7218,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/release-manifest-mit-l10.json",
+      "public_byte_identity": "pass",
+      "sha256": "2b1636c48f8d30e556b5bcdb8a0f036d29c70f18cd8416ddc1927b0da59e0d3d"
+    },
+    {
+      "bytes": 5336,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l10/zenodo-record-mit-l10.json",
+      "public_byte_identity": "pass",
+      "sha256": "8c66b2b1e16af9b2d9cf97ec1dad17397193f857399fef36cfe10ff5663341bf"
+    },
+    {
+      "bytes": 43575,
+      "http_status": 200,
+      "path": "source/en/mit-10-lecture-6-closed-intersections-hyperplanes-semantic-witness.md",
+      "public_byte_identity": "pass",
+      "sha256": "0dfe2c694fad607cef6c37ea7e84a0da359cedee6dc0bf023010f9c8a647c455"
+    },
+    {
+      "bytes": 45994,
+      "http_status": 200,
+      "path": "source/id-ID/mit-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.md",
+      "public_byte_identity": "pass",
+      "sha256": "be2dd29422f5e14ce26315258e772143335475cc2ee9c0d6bfc25f2ff05c8a53"
+    }
+  ],
+  "parent": "d978d74ef3e40b40f59ccf1431d7d26df64210f2",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-mit-l10-public-readback-v1",
+  "scope": "MIT L10 complete Lecture 6 pages 64-85, exact reader/source/QA/backend/control and prepared Zenodo release bytes; page 86 is not claimed.",
+  "tree": "178cdd4e6b8d90720cb43b9d8c7268fab10e1a12",
+  "upstream_contact": false
+}

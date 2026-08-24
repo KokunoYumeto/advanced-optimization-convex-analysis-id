@@ -1170,5 +1170,16 @@ Two canonical validator runs agree; stripping the L10 workflow recovers the
 prior JSONL/CSV records and order exactly. The schema is unchanged and
 `relation.mit.l09-precedes-l10` links the units.
 
-Preservation is pending once in the existing GitHub and Zenodo lineages. The
-next source cursor is page 86, beginning one coherent Lecture 7 batch.
+Preservation gate: PASS. GitHub content commit
+`2f39b8146db59eb89243ec15cd0c430c1cdda0cf` / tree
+`178cdd4e6b8d90720cb43b9d8c7268fab10e1a12` exposes all 43 changed paths with
+exact anonymous byte identity; its 11,449-byte receipt has SHA-256
+`750b97f06f85f0aa6cba9a6cd9082e1f13e1fc374b84f14ab80c2a80aeb0fd7b`.
+Zenodo DOI `10.5281/zenodo.22077419` exposes 90 files, 82 inherited unchanged
+and eight L10 additions, all anonymously byte-matched. Its public bound
+manifest and checksum file are 7,245 / 9,243 bytes with SHA-256
+`6a62b171368591390bb7ac2dbbfa3e367196dfe26c66913367928ef81dfe5f69`
+and `5e8b9f7f3f89ae1c9288060d97aae7a8f10df6694a26b6af3dd83137ecfb0998`.
+The 24,582-byte public receipt has SHA-256
+`e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e`.
+Next: freeze and translate one coherent Lecture 7 batch from page 86.
