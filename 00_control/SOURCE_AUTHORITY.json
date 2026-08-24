@@ -307,90 +307,93 @@
         "status": "partial",
         "admitted_complete_notes_pdf_pages": {
           "first": 2,
-          "last": 63
+          "last": 85
         },
         "latest_boundary": {
-          "boundary_id": "MIT-L09",
-          "title": "Lecture 5 - Recession and Minima",
+          "boundary_id": "MIT-L10",
+          "title": "Lecture 6 - Closed Intersections, Closedness, and Hyperplanes",
           "complete_notes_pdf_pages": {
-            "first": 50,
-            "last": 63
+            "first": 64,
+            "last": 85
           },
-          "next_topic_starts_page": 64,
+          "next_topic_starts_page": 86,
           "source_witness": {
-            "path": "source/en/mit-09-lecture-5-recession-minima-semantic-witness.md",
-            "bytes": 25798,
-            "sha256": "5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff"
+            "path": "source/en/mit-10-lecture-6-closed-intersections-hyperplanes-semantic-witness.md",
+            "bytes": 43575,
+            "sha256": "0dfe2c694fad607cef6c37ea7e84a0da359cedee6dc0bf023010f9c8a647c455"
           },
           "target": {
-            "path": "source/id-ID/mit-09-kuliah-5-resesi-dan-minimum-id.md",
-            "bytes": 28712,
-            "sha256": "a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9"
+            "path": "source/id-ID/mit-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.md",
+            "bytes": 45994,
+            "sha256": "be2dd29422f5e14ce26315258e772143335475cc2ee9c0d6bfc25f2ff05c8a53"
           },
           "html": {
-            "path": "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
-            "bytes": 118805,
-            "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+            "path": "output/html/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
+            "bytes": 169871,
+            "sha256": "2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038"
           },
           "pdf": {
-            "path": "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
-            "bytes": 101797,
-            "pages": 7,
-            "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+            "path": "output/pdf/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf",
+            "bytes": 133787,
+            "pages": 10,
+            "sha256": "3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0"
           },
           "validation": {
-            "path": "qa/MIT_L09_VALIDATION.json",
-            "bytes": 21488,
-            "sha256": "d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2",
+            "path": "qa/MIT_L10_VALIDATION.json",
+            "bytes": 22193,
+            "sha256": "f700ad7d811e7c244285533deef8a492783918b7d6c0f7943f922a09edd77640",
             "result": "pass"
           },
           "browser_qa": {
-            "path": "qa/MIT_L09_BROWSER_QA.json",
-            "bytes": 1903,
-            "sha256": "e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619",
+            "path": "qa/MIT_L10_BROWSER_QA.json",
+            "bytes": 1445,
+            "sha256": "ab8524f5097ee52c2a802212f4aabedadfb437afeadd5020659f1ab8a882ebbb",
             "result": "pass"
           },
           "visual_qa": {
-            "path": "qa/MIT_L09_VISUAL_QA.json",
-            "bytes": 2281,
-            "sha256": "f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b",
+            "path": "qa/MIT_L10_VISUAL_QA.json",
+            "bytes": 1298,
+            "sha256": "17b24989fe86dbf34b5db47240d601606425500905cb3611b535d6ed5d50532d",
             "result": "pass"
           },
           "independent_rereview": {
-            "path": "qa/MIT_L09_INDEPENDENT_REREVIEW.md",
-            "bytes": 2860,
-            "sha256": "95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c",
+            "path": "qa/MIT_L10_INDEPENDENT_REREVIEW.md",
+            "bytes": 8023,
+            "sha256": "6d450dde5c3a0bdaa2404abc576a4b43b5d774a1d7b5a44fc7856c3e6097fa63",
             "p1_open": 0,
             "p2_open": 0,
             "p3_open": 0
           },
           "correction_ids": [
-            "O015-MIT-SEM-0012",
-            "O015-MIT-SEM-0013",
-            "O015-MIT-SEM-0014",
-            "O015-MIT-SEM-0015",
-            "O015-MIT-SEM-0016",
-            "O015-MIT-SEM-0017",
-            "O015-MIT-SEM-0018",
-            "O015-MIT-SEM-0019"
+            "O015-MIT-SEM-0020",
+            "O015-MIT-SEM-0021",
+            "O015-MIT-SEM-0022",
+            "O015-MIT-SEM-0023",
+            "O015-MIT-SEM-0024",
+            "O015-MIT-SEM-0025",
+            "O015-MIT-SEM-0026",
+            "O015-MIT-SEM-0027",
+            "O015-MIT-SEM-0028",
+            "O015-MIT-SEM-0029",
+            "O015-MIT-SEM-0030"
           ],
           "backend": {
-            "records": 2099,
-            "jsonl_bytes": 1577079,
-            "jsonl_sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8",
-            "csv_bytes": 1886451,
-            "csv_sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574",
-            "validation_receipt_sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"
+            "records": 2324,
+            "jsonl_bytes": 1797378,
+            "jsonl_sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c",
+            "csv_bytes": 2144290,
+            "csv_sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367",
+            "validation_receipt_sha256": "0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd"
           },
           "public_preservation": {
-            "status": "published",
-            "github_commit": "06247a233dc9c9de85fc2a9ea1ff305e3907a1b7",
-            "github_tree": "5b0082178eb0adef5f945bd603d98cacfcbeea85",
-            "github_receipt_sha256": "018357e9643a608bdb9b7b5386c58765af87829ce6200a5701e8d2471abf62a1",
-            "zenodo_record_id": "22076259",
-            "zenodo_doi": "10.5281/zenodo.22076259",
-            "zenodo_file_count": 82,
-            "zenodo_receipt_sha256": "aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360"
+            "status": "pending",
+            "github_commit": null,
+            "github_tree": null,
+            "github_receipt_sha256": null,
+            "zenodo_record_id": null,
+            "zenodo_doi": null,
+            "zenodo_file_count": null,
+            "zenodo_receipt_sha256": null
           }
         },
         "upstream_authority_unchanged": true

@@ -1,0 +1,48 @@
+{
+  "schema": "o015-reader-browser-qa-v1",
+  "checked_at": "2026-08-24T09:02:19+02:00",
+  "artifact": {
+    "path": "output/html/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
+    "bytes": 169871,
+    "sha256": "2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038"
+  },
+  "desktop": {
+    "viewport_css_px": [1280, 800],
+    "document_scroll_width": 1265,
+    "document_client_width": 1265,
+    "main_width": 1177.5972900390625,
+    "viewport_overflow": false,
+    "visual_result": "pass"
+  },
+  "mobile": {
+    "viewport_css_px": [390, 844],
+    "document_scroll_width": 375,
+    "document_client_width": 375,
+    "main_width": 366.8055725097656,
+    "viewport_overflow": false,
+    "wide_math_blocks": [
+      "d90-mit-l10-p065-d002",
+      "d90-mit-l10-p077-d002"
+    ],
+    "wide_math_containment": "Both blocks remain inside source-display containers with overflow-x:auto; neither widens the body or document.",
+    "visual_result": "pass"
+  },
+  "structure": {
+    "document_language": "id-ID",
+    "main_id": "main-content",
+    "source_pages": 22,
+    "source_items": 70,
+    "source_figures": 16,
+    "source_displays": 41,
+    "math_nodes": 394,
+    "duplicate_ids": 0,
+    "broken_fragment_targets": 0,
+    "skip_link_href": "#d90-mit-l10-p064",
+    "skip_link_target_exists": true,
+    "unexpected_controls": 0,
+    "images": 0,
+    "audio_or_video": 0,
+    "console_entries": 0
+  },
+  "result": "pass"
+}

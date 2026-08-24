@@ -431,3 +431,17 @@ readback for all 50 changed paths. Zenodo record `22076259`, DOI
 cursor is complete-notes page 64, `LECTURE 6` / `LECTURE OUTLINE`. Freeze and
 translate one coherent multi-page Lecture 6 batch, then run one consolidated
 reader/backend/preservation gate; do not resume page-level production.
+
+## 2026-08-24 cursor refresh — L10 admitted; page 86 is next
+
+The preceding page-64 cursor is superseded. Complete Lecture 6, pages 64–85,
+is admitted as one L10 boundary; page 86 is the verified `LECTURE 7` /
+`LECTURE OUTLINE` delimiter. Strict reader validation, desktop/mobile reflow,
+all-ten-page visual QA, independent P1=P2=P3=0 rereview, rights/asset closure,
+and the 2,324-record backend gate all pass. The backend adds 225 stable records
+without changing any of the protected 2,099 prior records.
+
+Preserve L10 once in the existing GitHub and Zenodo lineages and anonymously
+read back the public bytes. No L10 commit, DOI, or public-byte identity exists
+yet. The executable translation cursor is page 86; freeze and translate one
+coherent multi-page Lecture 7 boundary, never a page-level reader series.

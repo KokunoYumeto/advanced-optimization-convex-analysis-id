@@ -1,0 +1,41 @@
+{
+  "schema": "o015-pdf-visual-qa-v1",
+  "checked_at": "2026-08-24T09:02:19+02:00",
+  "artifact": {
+    "path": "output/pdf/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf",
+    "bytes": 133787,
+    "sha256": "3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0"
+  },
+  "pdf_structure": {
+    "pages": 10,
+    "page_size": "A4",
+    "encrypted": false,
+    "forms": false,
+    "javascript": false,
+    "tagged": false,
+    "searchable": true,
+    "embedded_unicode_fonts": true
+  },
+  "text_extraction": {
+    "bytes": 38809,
+    "characters": 35662,
+    "replacement_characters": 0,
+    "nul_characters": 0,
+    "title_present": true,
+    "final_theorem_present": true
+  },
+  "render": {
+    "dpi": 160,
+    "pages_rendered": 10,
+    "pages_inspected": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "page_75_proof_displays_checked_on_reader_page": 6,
+    "clipped_text": 0,
+    "overlapping_elements": 0,
+    "broken_glyphs": 0,
+    "unreadable_math": 0,
+    "margin_or_header_footer_defects": 0,
+    "visual_result": "pass"
+  },
+  "accessibility_note": "This checkpoint PDF is searchable but not tagged. The complete-edition goal retains tagged/accessible PDF and EPUB as terminal deliverables; responsive semantic HTML is the accessible checkpoint surface.",
+  "result": "pass"
+}

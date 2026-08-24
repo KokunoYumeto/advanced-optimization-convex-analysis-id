@@ -460,3 +460,25 @@ eight bound L09 files, makes the L09 PDF the default preview, and passes full
 anonymous readback for all 82 files. Component rights remain distinct, status
 remains partial, and no upstream contact occurred. Production advances to one
 coherent Lecture 6 batch beginning on page 64.
+
+## D90-0044 — Admit complete Lecture 6 and advance to Lecture 7
+
+Decision: admit MIT L10 as the single complete page-64–85 Lecture 6 boundary.
+The gate binds the immutable MIT authority, 22 ordered source pages, 70
+top-level items, 41 display formulas, 16 independently worded figure
+descriptions / 24 panels, no copied Athena image bytes or layouts, two
+byte-identical reader builds, desktop/mobile reflow, all-ten-page inspection,
+and independent P1=0/P2=0/P3=0 rereview. Corrections
+`O015-MIT-SEM-0020`–`0030` are disclosed and frozen; the English witness keeps
+the printed source state while the learner-facing edition repairs the recorded
+proof, binder, label, notation, and grammar defects.
+
+The additive backend preserves the exact 2,099-record L09 baseline, adds 225
+records, and passes two canonical regeneration/validation cycles at 2,324.
+JSONL, CSV, and backend-receipt SHA-256 values are
+`d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c`,
+`fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367`,
+and `0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd`.
+Preserve L10 once in the existing GitHub/Zenodo lineages and anonymously read
+back its public bytes; this admission makes no premature public claim. Page 86
+is the verified Lecture 7 delimiter and next coherent production cursor.

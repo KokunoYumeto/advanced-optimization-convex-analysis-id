@@ -585,3 +585,39 @@ the 22,376-byte sanitized receipt has SHA-256
 `aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`.
 No upstream contact occurred. The executable cursor is now page 64, the start
 of one coherent multi-page Lecture 6 batch.
+
+## 2026-08-24 — MIT L10 complete Lecture 6 admitted; preservation pending
+
+Complete-notes pages 64–85 are admitted as one coherent Lecture 6 semantic
+reader boundary; page 86 is the verified `LECTURE 7` delimiter. The closure
+preserves 22 ordered source pages, 70 top-level items, 41 display formulas,
+and 16 independently worded figure descriptions / 24 panels. It contains no
+source exercise, hint, answer, solution, code, or interactive surface. No
+Athena image byte, crop, or source layout enters the derivative.
+
+The census / witness / target / HTML / ten-page PDF are 17,483 / 43,575 /
+45,994 / 169,871 / 133,787 bytes with SHA-256
+`ab8c8ce397df3b57f1ae426687fba2b14d51313c7a6b4596369eae07116fb13e`,
+`0dfe2c694fad607cef6c37ea7e84a0da359cedee6dc0bf023010f9c8a647c455`,
+`be2dd29422f5e14ce26315258e772143335475cc2ee9c0d6bfc25f2ff05c8a53`,
+`2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038`,
+and `3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0`.
+The strict reader receipt is 22,193 bytes /
+`f700ad7d811e7c244285533deef8a492783918b7d6c0f7943f922a09edd77640`;
+browser, visual, and independent rereview pass, with P1=P2=P3=0. Corrections
+`O015-MIT-SEM-0020`–`0030` are frozen in the immutable snapshot. The PDF is
+searchable A4 with embedded Unicode fonts and remains untagged.
+
+The additive backend preserves the exact 2,099-record L09 baseline, adds 225
+records, and passes twice at 2,324. JSONL is 1,797,378 bytes /
+`d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c`;
+CSV is 2,144,290 bytes /
+`fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367`.
+The 3,911-byte backend receipt has SHA-256
+`0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd`.
+The schema is unchanged, all prior record bytes/order recover exactly, and
+`relation.mit.l09-precedes-l10` links the admitted units.
+
+One additive GitHub/Zenodo preservation transaction remains for this boundary;
+no L10 public identity is claimed yet. The executable source cursor is page
+86, beginning one coherent multi-page Lecture 7 batch.

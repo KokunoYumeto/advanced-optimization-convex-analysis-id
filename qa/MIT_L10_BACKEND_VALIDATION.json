@@ -1,0 +1,134 @@
+{
+  "admission": {
+    "csv": {
+      "bytes": 2144290,
+      "sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367"
+    },
+    "final_id_set_sha256": "47e46b474fa854ecfc4adbc658c0fa1d6e449f4c6aefa2e1284c1f9807d9c108",
+    "final_record_set_sha256": "a7c2de2ad5f362e40b026d905ce90fc8117095ed40c2a1f12a0a36767a698675",
+    "final_records": 2324,
+    "jsonl": {
+      "bytes": 1797378,
+      "sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c"
+    },
+    "new_entity_counts": {
+      "artifact": 19,
+      "correction": 11,
+      "learning_surface": 60,
+      "qa_event": 17,
+      "relation": 95,
+      "segment": 22,
+      "unit": 1
+    },
+    "new_id_set_sha256": "061a0217179705756f28d4ebdbb708925081d1c5632ae0e5975fd48f43e4b14d",
+    "new_records": 225
+  },
+  "commands": {
+    "admission": "python qa/extend_backend_mit_l10.py --write-canonical",
+    "regeneration_template": "python qa/extend_backend_mit_l10.py --input-jsonl <jsonl> --input-csv <csv> --output-dir <dir>",
+    "validation": "python qa/validate_backend_mit_l10.py"
+  },
+  "deterministic_regeneration": {
+    "canonical_match": true,
+    "identities": [
+      {
+        "csv": {
+          "bytes": 2144290,
+          "sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367"
+        },
+        "jsonl": {
+          "bytes": 1797378,
+          "sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c"
+        },
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 2144290,
+          "sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367"
+        },
+        "jsonl": {
+          "bytes": 1797378,
+          "sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c"
+        },
+        "run": 2
+      }
+    ],
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 1886451,
+      "sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574"
+    },
+    "id_order_sha256": "0b353161f3a53734566e12f82eeeed09d306d11543b4ac6a060312506cb005da",
+    "id_set_sha256": "316351a09581ac2bf8640e6d4ca76c8924a013b39aa4e03b074252aca427d209",
+    "jsonl": {
+      "bytes": 1577079,
+      "sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "4447a2fa4766ceee9c3c87374e38648dfd3e25c6fee30ba23191615700e482ff",
+    "records": 2099
+  },
+  "result": "pass",
+  "schema": "o015-mit-l10-backend-validation-v1",
+  "schema_constraint": {
+    "note": "The existing metadata schema admits an additive relation record; global entity/id sorting means the old whole file is not a literal prefix, so stability is proved by exact workflow stripping and ordered-record recovery.",
+    "precedes_relation_supported": true,
+    "schema_changed": false
+  },
+  "topology": {
+    "correction_event_ids": [
+      "O015-MIT-SEM-0020",
+      "O015-MIT-SEM-0021",
+      "O015-MIT-SEM-0022",
+      "O015-MIT-SEM-0023",
+      "O015-MIT-SEM-0024",
+      "O015-MIT-SEM-0025",
+      "O015-MIT-SEM-0026",
+      "O015-MIT-SEM-0027",
+      "O015-MIT-SEM-0028",
+      "O015-MIT-SEM-0029",
+      "O015-MIT-SEM-0030"
+    ],
+    "corrections": 11,
+    "display_surfaces": 41,
+    "figure_blocks": 16,
+    "figure_panels": 24,
+    "nested_items": 14,
+    "predecessor_relation": "relation.mit.l09-precedes-l10",
+    "segments": 22,
+    "source_pages": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85
+    ],
+    "top_level_items": 70,
+    "unit_id": "unit.mit.ocw-6.253.l10",
+    "worked_examples": 3
+  },
+  "validated_at": "2026-08-24T15:00:00Z",
+  "workflow": "o015-mit-l10-backend-v1"
+}

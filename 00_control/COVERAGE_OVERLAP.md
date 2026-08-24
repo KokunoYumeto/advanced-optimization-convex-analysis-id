@@ -242,3 +242,22 @@ outside admitted coverage until its coherent multi-page boundary is translated
 and validated. Remaining gaps are later MIT/Royer material, bridges, four labs,
 mastery/solution coverage, capstone, semantic EPUB, and tagged PDF; optional
 human-review evidence is not a hold.
+
+## MIT L10 complete Lecture 6 admitted; page 86 remains outside coverage (2026-08-24)
+
+Pages 64–85 add nonemptiness of nested closed-set intersections, preservation
+of closedness under partial minimization and linear maps, asymptotic and
+retractive sequences, closed vector sums, and supporting/separating/strictly
+separating hyperplanes. This is advanced convex-analysis topology and does not
+duplicate O018's finite LP/MIP modelling, simplex/tableau mechanics, finite LP
+duality/sensitivity, network optimization, or discrete-optimization workflow.
+
+The admitted closure has 22 pages, 70 top-level items, 41 display formulas,
+16 semantic figure descriptions / 24 panels, and zero copied graphics. It has
+no exercise, hint, answer, solution, code, or interactive surface. Reader,
+rights, topology, browser, visual, independent-rereview, and 2,324-record
+backend gates pass; corrections `O015-MIT-SEM-0020`–`0030` are explicit.
+Page 86 begins Lecture 7 and remains outside admitted coverage. Remaining gaps
+are later MIT/Royer material, bridges, four labs, mastery/solution coverage,
+capstone, semantic EPUB, and tagged PDF; optional human-review evidence is not
+a hold.

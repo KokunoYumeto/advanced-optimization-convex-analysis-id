@@ -1111,3 +1111,64 @@ and `935849dad70bbaaefc807e242b6521012d742de3e50e4b0923b886d715ac82d6`.
 The 22,376-byte public receipt has SHA-256
 `aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`.
 Next: freeze and translate one coherent Lecture 6 batch from page 64.
+
+# MIT OCW 6.253 Lecture 6 pages 64–85 consolidated build and QA (L10)
+
+As of: 2026-08-24  
+Admission: PASS; complete Lecture 6, not a complete-course or public-preservation claim
+
+The boundary census is 17,483 bytes / SHA-256
+`ab8c8ce397df3b57f1ae426687fba2b14d51313c7a6b4596369eae07116fb13e`.
+The English semantic witness, Indonesian target, reflowable HTML, and ten-page
+A4 PDF are 43,575 / 45,994 / 169,871 / 133,787 bytes with SHA-256
+`0dfe2c694fad607cef6c37ea7e84a0da359cedee6dc0bf023010f9c8a647c455`,
+`be2dd29422f5e14ce26315258e772143335475cc2ee9c0d6bfc25f2ff05c8a53`,
+`2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038`,
+and `3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0`.
+
+The strict reader validator and passing receipt are 47,560 / 22,193 bytes with
+SHA-256
+`9b6f96dbdea58ab61ddaff92ccdf924e4cc80e92b21f6ca0ed13e08d03095328`
+and `f700ad7d811e7c244285533deef8a492783918b7d6c0f7943f922a09edd77640`.
+Root repeated the complete validator after the independent run; each run makes
+two byte-identical HTML/PDF builds. The gate binds pages 64–85 and page 86 as
+the `LECTURE 7` delimiter, 70 top-level items, 41 stable display blocks, 16
+independently worded figure descriptions / 24 panels, and 394 MathML nodes.
+There are no source exercises, hints, answers, solutions, code, interactive
+surfaces, copied images, media, or forms.
+
+Corrections `O015-MIT-SEM-0020`–`0030` are frozen in the 7,453-byte snapshot,
+SHA-256
+`72a8a2da79ea31e2587e42e5e6f54ec4662a749717d5c9c6119c707beef094ee`.
+They include explicit repairs to nonnested neighborhood radii, the part-(b)
+proof scope, an unbound projection variable, and a reversed set-difference
+label; the English witness preserves the printed source state.
+
+Live browser QA passes at 1280×800 and 390×844 with all 41 display blocks,
+zero page-width overflow, duplicate IDs, broken fragments, or console entries.
+Its 1,445-byte receipt has SHA-256
+`ab8524f5097ee52c2a802212f4aabedadfb437afeadd5020659f1ab8a882ebbb`.
+The two widest mobile formulas remain inside explicit horizontal-scroll
+containers. All ten PDF pages pass 160-dpi inspection; the 1,298-byte visual
+receipt has SHA-256
+`17b24989fe86dbf34b5db47240d601606425500905cb3611b535d6ed5d50532d`.
+The PDF is searchable, A4, unencrypted, and uses embedded Unicode fonts; it
+remains untagged. The independent rereview closes P1=P2=P3=0 at 8,023 bytes /
+`6d450dde5c3a0bdaa2404abc576a4b43b5d774a1d7b5a44fc7856c3e6097fa63`.
+
+The additive backend preserves the exact 2,099-record L09 baseline and adds
+225 records, yielding 2,324. JSONL is 1,797,378 bytes / SHA-256
+`d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c`;
+CSV is 2,144,290 bytes /
+`fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367`.
+The generator, validator, and deterministic passing receipt are 58,954 /
+24,177 / 3,911 bytes with SHA-256
+`29dde5ef886914d57b5c5f1e32228371d6ce95101b351cd5a83a9d328dac6af3`,
+`736e1084a26fd23f2ec6fd1628ec1f1c94be76f4b34c44d62368a6bf3cd1cb5b`,
+and `0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd`.
+Two canonical validator runs agree; stripping the L10 workflow recovers the
+prior JSONL/CSV records and order exactly. The schema is unchanged and
+`relation.mit.l09-precedes-l10` links the units.
+
+Preservation is pending once in the existing GitHub and Zenodo lineages. The
+next source cursor is page 86, beginning one coherent Lecture 7 batch.
