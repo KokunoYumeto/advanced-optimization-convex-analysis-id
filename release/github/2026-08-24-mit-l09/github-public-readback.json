@@ -1,0 +1,371 @@
+{
+  "all_changed_files_read_back": true,
+  "branch": "main",
+  "changed_file_count": 50,
+  "commit": "06247a233dc9c9de85fc2a9ea1ff305e3907a1b7",
+  "commit_patch": {
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "9cbbb26d6e45fe1b43f6117eb3e0c2910b73513aa70f7fce749f685f18ea41bd",
+    "url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/06247a233dc9c9de85fc2a9ea1ff305e3907a1b7.patch"
+  },
+  "files": [
+    {
+      "bytes": 106867,
+      "http_status": 200,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "4bffba1077aab63bfbe07c30d305fdc763f1599360a2adc2b910c53477e18be2"
+    },
+    {
+      "bytes": 93269,
+      "http_status": 200,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "c8cf97339847696e577bd7660765ecf3fa0c6ad4999598953c9fde1885443280"
+    },
+    {
+      "bytes": 34052,
+      "http_status": 200,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "public_byte_identity": "pass",
+      "sha256": "a74ac6533452679c066f9d1843f85b7a5af98867d4e25841b5b980318f442911"
+    },
+    {
+      "bytes": 18081,
+      "http_status": 200,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "public_byte_identity": "pass",
+      "sha256": "cbbfea7fcc859f29df6ad3d42d655ab9660aafda7c76b0af6d3bd5d06051ab95"
+    },
+    {
+      "bytes": 30438,
+      "http_status": 200,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "e3ca3c1213ebc914072bdafbe8d752852c38e8547c34eee01bfa626b793836be"
+    },
+    {
+      "bytes": 4064,
+      "http_status": 200,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "6e3c66a0c2eadf3b19300f7425d19394a6a4d0475d55982fd0d39bbb4749c827"
+    },
+    {
+      "bytes": 38858,
+      "http_status": 200,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "4db0e68779e20151b77bc2655eeb54b30befa497acded4924aa5ba3850239cc5"
+    },
+    {
+      "bytes": 43329,
+      "http_status": 200,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "c2fd4696f4db0427278d1acbbadebf73d1f84185c037fa46881258de7afa54ac"
+    },
+    {
+      "bytes": 5506,
+      "http_status": 200,
+      "path": "00_control/MIT_L09_CORRECTION_SNAPSHOT.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "e5ef98e4218d768cd51053e08d55c5ef44a44afa26237be652152eecd1052acc"
+    },
+    {
+      "bytes": 19753,
+      "http_status": 200,
+      "path": "00_control/MIT_L09_LECTURE_5_BOUNDARY_CENSUS.md",
+      "public_byte_identity": "pass",
+      "sha256": "e4357023e0c2a6d4478adb904e9fec2789bc616f56bfba07d05789f74cc0cd85"
+    },
+    {
+      "bytes": 19601,
+      "http_status": 200,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "public_byte_identity": "pass",
+      "sha256": "a004021f750c8c24018ece45be08b59ad27fe65112be1ce3f67795985dd6f69c"
+    },
+    {
+      "bytes": 31589,
+      "http_status": 200,
+      "path": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "b43d1afeeb268bb3b14f8b0878d652c06710d488eec0b1164e2d405284151c31"
+    },
+    {
+      "bytes": 1886451,
+      "http_status": 200,
+      "path": "backend/records.csv",
+      "public_byte_identity": "pass",
+      "sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574"
+    },
+    {
+      "bytes": 1577079,
+      "http_status": 200,
+      "path": "backend/records.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "b483dfba003cd9fb422055c7836f62dd326575afcfc9b3c0a9a54aa6e1ad7ef8"
+    },
+    {
+      "bytes": 118805,
+      "http_status": 200,
+      "path": "output/html/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+    },
+    {
+      "bytes": 101797,
+      "http_status": 200,
+      "path": "output/pdf/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+    },
+    {
+      "bytes": 7456,
+      "http_status": 200,
+      "path": "qa/MIT_L09_BACKEND_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"
+    },
+    {
+      "bytes": 1903,
+      "http_status": 200,
+      "path": "qa/MIT_L09_BROWSER_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "e7b4c8984efa9ab560894d61b3b9d54db11549cfb7bd42f99e9c105e4cd93619"
+    },
+    {
+      "bytes": 2860,
+      "http_status": 200,
+      "path": "qa/MIT_L09_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "95f21db8e7657ceac3b3c992214cc754bdcfda3b4a71446e868e2b51f990fe4c"
+    },
+    {
+      "bytes": 21488,
+      "http_status": 200,
+      "path": "qa/MIT_L09_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "d4659f5dbf81ec931eb665b71fadf0d46d0940952557f1147cacdcf63b7608b2"
+    },
+    {
+      "bytes": 2281,
+      "http_status": 200,
+      "path": "qa/MIT_L09_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "f113bdd70a3ef20907d7a50c9832cacd26d68fbe532593357d1e84cd61c4048b"
+    },
+    {
+      "bytes": 4043,
+      "http_status": 200,
+      "path": "qa/build_mit_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "f7ebf13f3e075cc5ede3cb53764e77002278a0c5e443545919955d0b4c6cf3c6"
+    },
+    {
+      "bytes": 59113,
+      "http_status": 200,
+      "path": "qa/extend_backend_mit_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "bbe16a599e71aada89c9ab48e963b2a306d51e6fed6b8a906c78e8b7f61b7203"
+    },
+    {
+      "bytes": 39600,
+      "http_status": 200,
+      "path": "qa/validate_backend_mit_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "e7d290e4061f8a5e64a09ad3b892e84d4110367c79385fe151d9c6f7f8e6e7d8"
+    },
+    {
+      "bytes": 57332,
+      "http_status": 200,
+      "path": "qa/validate_mit_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "f9bd7204bd2a2eabe3b91dfe1d5c3e0a9c3021b39c3874bcde9d8a2db90cdd9b"
+    },
+    {
+      "bytes": 1024,
+      "http_status": 200,
+      "path": "release/github/2026-08-24-mit-l09/README.md",
+      "public_byte_identity": "pass",
+      "sha256": "fcb7b150b9a1be6263d7ef1288df5beecdf583085e3c8219eda55be432ccedb8"
+    },
+    {
+      "bytes": 4598,
+      "http_status": 200,
+      "path": "release/github/2026-08-24-mit-l09/verify_github_evidence_public.py",
+      "public_byte_identity": "pass",
+      "sha256": "1227d6e672b6789199f6345fa8cd5387bf51131499a5a448701440d68a42c61a"
+    },
+    {
+      "bytes": 5064,
+      "http_status": 200,
+      "path": "release/github/2026-08-24-mit-l09/verify_github_public.py",
+      "public_byte_identity": "pass",
+      "sha256": "046b566e8d05e18f799d3bbc2179afc5ad50e99ef65c7e1a407a8de2f6385ad8"
+    },
+    {
+      "bytes": 491255,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L09_DELTA.zip",
+      "public_byte_identity": "pass",
+      "sha256": "4df168935e5b397e32e7c1e3ba34c2d6dba33ef93a8ba2eec574bb85be5b11a0"
+    },
+    {
+      "bytes": 1448,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/LICENSE_MIT_L09.md",
+      "public_byte_identity": "pass",
+      "sha256": "2e16c5a249dc2a09ec5d45a3684e6ed31b1b991e0af55b6771323a15eb1ad47e"
+    },
+    {
+      "bytes": 2141,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/README_MIT_L09.md",
+      "public_byte_identity": "pass",
+      "sha256": "98bfc3b36407d6e024d2958d342333cf3d52c8ae5f259c8dc1136136c23a1404"
+    },
+    {
+      "bytes": 1498,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/README_RELEASE_MIT_L09.md",
+      "public_byte_identity": "pass",
+      "sha256": "bb4271ee85862d67ba0768521144b864cb27235b399dbcbc99bb0f8c4db45d1d"
+    },
+    {
+      "bytes": 8399,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/SHA256SUMS-mit-l09",
+      "public_byte_identity": "pass",
+      "sha256": "f2242962015bcf584fd88fcfaa6cfaa9d2a87f4a5100c1a5f59700c2b45d3e04"
+    },
+    {
+      "bytes": 34404,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/build_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "19ee013220f644c31099c453dc17950e96905f0436542074276108d2272a2bac"
+    },
+    {
+      "bytes": 10504,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/generate_input_lock_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "12471ca6628431ec55215e7f3ae59df16f077db5b1e911b1b22fd960a6d67b29"
+    },
+    {
+      "bytes": 6041,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/local-preparation-mit-l09.json",
+      "public_byte_identity": "pass",
+      "sha256": "6cc46c765f86647ba5097b09a73806c2ced9da9e9c21776cc16d6338b064b4c2"
+    },
+    {
+      "bytes": 6133,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/prepare_local_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "4f18d1103b090e54e1a1ba78d42495b73ad7e19d973dc0ee569c92b76e258468"
+    },
+    {
+      "bytes": 22412,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/publish_l09.py",
+      "public_byte_identity": "pass",
+      "sha256": "157ad700c36b8b5464bf1453a5f65e6e9d195b7c395e85bccaf5c5cf1e660e6d"
+    },
+    {
+      "bytes": 2332,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/release-config-mit-l09.json",
+      "public_byte_identity": "pass",
+      "sha256": "b06e499f5586c5f752edd406a43ffd46f41af1d712e613192c9f55651130bfa4"
+    },
+    {
+      "bytes": 1702,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/release-config-mit-l09.template.json",
+      "public_byte_identity": "pass",
+      "sha256": "d19b7dd29111954f71cc5f135a14f925a6c2ade233bdf0cf4dd31d73c8df07b6"
+    },
+    {
+      "bytes": 5479,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/release-input-lock-mit-l09.json",
+      "public_byte_identity": "pass",
+      "sha256": "6144029d4cd7f9fce19ddcdbd7de0e2564d49f7b68edb51730488e0fc1e77378"
+    },
+    {
+      "bytes": 7035,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/release-manifest-mit-l09.json",
+      "public_byte_identity": "pass",
+      "sha256": "0e7d87697820906b7e016ce0bbbf8b8069af034928ac44d825365f68edfe8ff3"
+    },
+    {
+      "bytes": 5352,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l09/zenodo-record-mit-l09.json",
+      "public_byte_identity": "pass",
+      "sha256": "5fd6d92c879dd2a32e0029b36290b5e04fcfce9a270fc92a12dd0b24748df66d"
+    },
+    {
+      "bytes": 25798,
+      "http_status": 200,
+      "path": "source/en/mit-09-lecture-5-recession-minima-semantic-witness.md",
+      "public_byte_identity": "pass",
+      "sha256": "5a262868b3d9091dd62123a2d1679e876f957cb640f104ad998a519214ced8ff"
+    },
+    {
+      "bytes": 28712,
+      "http_status": 200,
+      "path": "source/id-ID/mit-09-kuliah-5-resesi-dan-minimum-id.md",
+      "public_byte_identity": "pass",
+      "sha256": "a84e4173125a8f8606d14793bd5779efa82da1ae5a549e8a78422ac83af001d9"
+    },
+    {
+      "bytes": 170,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l09-after-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "8cf22b6016b2185e801cef6226143e6f4a184cbeb93598f4b790d8ce8e78501f"
+    },
+    {
+      "bytes": 96,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l09-before-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "b415e2359bd3bb339735144477c01321013f61972769bc4771cccc6c624e923a"
+    },
+    {
+      "bytes": 499,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l09-pdf-filter.lua",
+      "public_byte_identity": "pass",
+      "sha256": "b8f11b413c30aaccaa0e014821e4e8fc32eb322a10734d092ee5ccdd46f8f9be"
+    },
+    {
+      "bytes": 1891,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l09-preamble.tex",
+      "public_byte_identity": "pass",
+      "sha256": "bd118f2181817e73328b501db17d1e78914d334d0287633cab0ab33a092046bd"
+    },
+    {
+      "bytes": 2777,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l09.css",
+      "public_byte_identity": "pass",
+      "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"
+    }
+  ],
+  "parent": "48409468ded8ae39ed1c058700f390d586ce6d0b",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-mit-l09-public-readback-v1",
+  "scope": "MIT L09 complete Lecture 5 pages 50-63, exact reader/source/QA/backend/control and prepared Zenodo release bytes; page 64 is not claimed.",
+  "tree": "5b0082178eb0adef5f945bd603d98cacfcbeea85",
+  "upstream_contact": false
+}

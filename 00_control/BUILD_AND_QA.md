@@ -1098,7 +1098,16 @@ and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
 Repeated generation/validation is idempotent and never renumbers the protected
 baseline.
 
-Preservation gate: PENDING. No GitHub commit, Zenodo record/DOI, manifest, or
-public-byte identity is claimed for L09. Preserve it once in the existing
-lineages, read back the exact public bytes, and then continue with one coherent
-Lecture 6 batch from page 64.
+Preservation gate: PASS. GitHub content commit
+`06247a233dc9c9de85fc2a9ea1ff305e3907a1b7` / tree
+`5b0082178eb0adef5f945bd603d98cacfcbeea85` exposes all 50 changed paths with
+exact anonymous byte identity; its 13,044-byte receipt has SHA-256
+`018357e9643a608bdb9b7b5386c58765af87829ce6200a5701e8d2471abf62a1`.
+Zenodo DOI `10.5281/zenodo.22076259` exposes 82 files, 74 inherited unchanged
+and eight L09 additions, all anonymously byte-matched. Its bound manifest and
+checksum file are 7,062 / 8,399 bytes with SHA-256
+`0dba56a45bf4dbea33f3a9295f870bc3eeb9d35303e9bb36fbc1bd14f2a159d8`
+and `935849dad70bbaaefc807e242b6521012d742de3e50e4b0923b886d715ac82d6`.
+The 22,376-byte public receipt has SHA-256
+`aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`.
+Next: freeze and translate one coherent Lecture 6 batch from page 64.

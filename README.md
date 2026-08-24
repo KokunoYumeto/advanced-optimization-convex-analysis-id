@@ -2,18 +2,18 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L09 kini menerima halaman sumber 2–63 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.099 rekaman. L08 telah dipreservasi publik; preservasi L09 masih tertunda dan belum memiliki identitas publik. Halaman 64, awal Kuliah 6, adalah kursor berikutnya. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
+**Status:** karya dalam proses. Unit Habring Bab 3–9 dan Penn Bab 3–5 telah diterjemahkan serta lolos audit sebagai pendamping opsional sepuluh unit. Korpus utama D90 adalah MIT OpenCourseWare 6.253 ditambah materi gradien stokastik Clément Royer. Unit semantik MIT L01–L09 kini menerima halaman sumber 2–63 dengan pembaca HTML/PDF, koreksi terbuka, dan backend stabil 2.099 rekaman. L09 telah dipreservasi publik pada GitHub dan DOI `10.5281/zenodo.22076259`, dengan pembacaan balik anonim lengkap. Halaman 64, awal Kuliah 6, adalah kursor aktif. PDF tetap belum bertag dan tinjauan bahasa Indonesia manusia belum tercatat; keduanya tidak mengubah status parsial ini menjadi klaim penyelesaian korpus.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint publik terbaru yang terverifikasi berada pada [MIT L08,
-10.5281/zenodo.22074528](https://doi.org/10.5281/zenodo.22074528) dalam [DOI
+Checkpoint publik terbaru yang terverifikasi berada pada [MIT L09,
+10.5281/zenodo.22076259](https://doi.org/10.5281/zenodo.22076259) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Semua 74 berkas—66 warisan dan delapan tambahan L08—telah dibaca kembali
-secara anonim dan cocok byte demi byte. L09 sudah diterima secara lokal tetapi
-belum dipreservasi; tidak ada DOI atau klaim byte publik L09 di sini.
+Semua 82 berkas—74 warisan dan delapan tambahan L09—telah dibaca kembali
+secara anonim dan cocok byte demi byte. Status tetap parsial; halaman 64
+memulai batch Kuliah 6 berikutnya.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -23,9 +23,9 @@ tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
 Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint
 terverifikasi terbaru berada di [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
-pada [commit `024fd4e`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/024fd4eaf185b44250ab4ed41eb46afb660b4fbd);
-seluruh 42 jalur yang berubah pada L08 cocok dengan unduhan raw anonim. Tidak
-dibuat repositori pengganti dan belum ada commit publik yang diklaim untuk L09.
+pada [commit `06247a2`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/06247a233dc9c9de85fc2a9ea1ff305e3907a1b7);
+seluruh 50 jalur yang berubah pada L09 cocok dengan unduhan raw anonim. Tidak
+dibuat repositori pengganti.
 
 ## Pembaca yang tersedia
 
@@ -442,6 +442,10 @@ memiliki SHA-256
 dan `297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574`;
 resi backend lulus pada
 `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
-Preservasi GitHub dan Zenodo L09 masih tertunda, sehingga belum ada identitas
-publik L09 yang diklaim. Setelah preservasi terverifikasi, halaman 64—awal
-Kuliah 6—adalah kursor produksi berikutnya.
+L09 kini dipreservasi publik pada commit GitHub
+`06247a233dc9c9de85fc2a9ea1ff305e3907a1b7` dan DOI Zenodo
+`10.5281/zenodo.22076259`. Seluruh 50 jalur GitHub yang berubah dan semua 82
+berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256 tepat;
+74 berkas Zenodo diwarisi tanpa perubahan dan delapan berkas merupakan tambahan
+L09. PDF L09 menjadi pratinjau utama. Halaman 64—awal Kuliah 6—adalah kursor
+produksi aktif berikutnya dan harus dikerjakan sebagai satu batch koheren.

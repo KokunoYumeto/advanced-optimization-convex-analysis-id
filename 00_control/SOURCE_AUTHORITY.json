@@ -382,7 +382,16 @@
             "csv_sha256": "297629b3d20bd51bafd50cd5ecd0de70bd397b603a572e45083ca61b247f2574",
             "validation_receipt_sha256": "57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7"
           },
-          "public_preservation": "pending"
+          "public_preservation": {
+            "status": "published",
+            "github_commit": "06247a233dc9c9de85fc2a9ea1ff305e3907a1b7",
+            "github_tree": "5b0082178eb0adef5f945bd603d98cacfcbeea85",
+            "github_receipt_sha256": "018357e9643a608bdb9b7b5386c58765af87829ce6200a5701e8d2471abf62a1",
+            "zenodo_record_id": "22076259",
+            "zenodo_doi": "10.5281/zenodo.22076259",
+            "zenodo_file_count": 82,
+            "zenodo_receipt_sha256": "aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360"
+          }
         },
         "upstream_authority_unchanged": true
       },

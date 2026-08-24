@@ -3,7 +3,7 @@
 As of: 2026-08-24  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: MIT/Royer authority frozen; MIT complete-notes pages 2--63 admitted through L09 with semantic HTML/PDF readers and a 2,099-record backend; L08 is publicly preserved; L09 preservation is pending; page 64 begins Lecture 6 and is the next source cursor
+Status: MIT/Royer authority frozen; MIT complete-notes pages 2--63 admitted through L09 with semantic HTML/PDF readers and a 2,099-record backend; L09 is publicly preserved on GitHub and Zenodo with full anonymous readback; page 64 begins Lecture 6 and is the active source cursor
 
 ## Ownership and scope
 
@@ -51,11 +51,11 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified public version: `10.5281/zenodo.22074528`, explicitly incomplete through MIT L08 / complete-notes pages 39--49. It inherits 66 files, adds eight L08 files, and passed anonymous exact-byte readback for all 74 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l08/zenodo-public-readback-mit-l08.json` (20,320 bytes; SHA-256 `3c162ec07d5fd17accf417ec4659ef1b5849c8b83873ab93720fd9d8326fe9ea`). L09 is admitted locally but is not yet represented by a public DOI version.
+- Current verified public version: `10.5281/zenodo.22076259`, explicitly incomplete through MIT L09 / complete-notes pages 50--63. It inherits 74 files, adds eight L09 files, and passed anonymous exact-byte readback for all 82 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l09/zenodo-public-readback-mit-l09.json` (22,376 bytes; SHA-256 `aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`).
 - Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
-- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `024fd4eaf185b44250ab4ed41eb46afb660b4fbd` / tree `03a703dcac06356b7439ada876175ed80664525d`; all 42 changed L08 paths passed immutable anonymous raw-file readback. No replacement repository was created, and no GitHub identity is yet claimed for L09.
+- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `06247a233dc9c9de85fc2a9ea1ff305e3907a1b7` / tree `5b0082178eb0adef5f945bd603d98cacfcbeea85`; all 50 changed L09 paths passed immutable anonymous raw-file readback. No replacement repository was created.
 
-The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. MIT L01--L08 are preserved additively in the existing GitHub and Zenodo lineages; L09 preservation remains the current transaction. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component.
+The earlier GitHub, Zenodo, and Figshare companion checkpoint-preservation transactions are complete. MIT L01--L09 are preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component. Page 64 is the active production cursor.
 
 ## Known incomplete surfaces
 
@@ -562,3 +562,26 @@ and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
 L09 public preservation is pending in the existing GitHub and Zenodo lineages;
 no commit, DOI, or public-byte identity is claimed yet. After that transaction,
 the executable translation cursor is page 64, the beginning of Lecture 6.
+
+## 2026-08-24 — L09 public preservation closed; Lecture 6 page 64 active
+
+The pending-publication wording immediately above is superseded. GitHub
+content commit `06247a233dc9c9de85fc2a9ea1ff305e3907a1b7`, tree
+`5b0082178eb0adef5f945bd603d98cacfcbeea85`, and parent
+`48409468ded8ae39ed1c058700f390d586ce6d0b` are public. The immutable patch
+and all 50 changed paths passed anonymous exact-byte/SHA-256 readback. The
+13,044-byte sanitized receipt has SHA-256
+`018357e9643a608bdb9b7b5386c58765af87829ce6200a5701e8d2471abf62a1`.
+
+Zenodo record `22076259`, DOI `10.5281/zenodo.22076259`, is published in the
+existing concept `10.5281/zenodo.22059741`. Its 82-file inventory comprises
+74 inherited byte-identical files and eight L09 additions; every anonymous
+download matched expected bytes and SHA-256, and the L09 PDF is the default
+preview. The bound manifest is 7,062 bytes / SHA-256
+`0dba56a45bf4dbea33f3a9295f870bc3eeb9d35303e9bb36fbc1bd14f2a159d8`;
+the checksum file is 8,399 bytes /
+`935849dad70bbaaefc807e242b6521012d742de3e50e4b0923b886d715ac82d6`;
+the 22,376-byte sanitized receipt has SHA-256
+`aaf48c68d4935edf036c97c1ffc470fff7d12609c18c1049def3f8d689e14360`.
+No upstream contact occurred. The executable cursor is now page 64, the start
+of one coherent multi-page Lecture 6 batch.

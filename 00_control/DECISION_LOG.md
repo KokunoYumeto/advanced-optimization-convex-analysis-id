@@ -448,3 +448,15 @@ and `57415a985dc106a29812595ae081418cde80e99be186be04dd60db3eecc298c7`.
 Preserve L09 once in the existing GitHub/Zenodo lineages and anonymously read
 back its public bytes; this admission decision makes no premature public
 claim. Page 64 is the verified Lecture 6 delimiter and next production cursor.
+
+## D90-0043 — Preserve L09 once and advance the public lineage
+
+Decision: preserve the admitted complete-Lecture-5 boundary as one additive
+checkpoint. GitHub commit `06247a233dc9c9de85fc2a9ea1ff305e3907a1b7`
+contains the exact L09 reader/source/QA/backend/controls and prepared release
+bytes; all 50 changed paths passed immutable anonymous readback. Zenodo DOI
+`10.5281/zenodo.22076259` inherits all 74 L08 files byte-identically, adds the
+eight bound L09 files, makes the L09 PDF the default preview, and passes full
+anonymous readback for all 82 files. Component rights remain distinct, status
+remains partial, and no upstream contact occurred. Production advances to one
+coherent Lecture 6 batch beginning on page 64.

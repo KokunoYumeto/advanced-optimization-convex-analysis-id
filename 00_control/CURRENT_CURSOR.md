@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-24  
-State: MIT/Royer authority frozen and complete-notes pages 2--63 admitted through L09; the additive backend contains 2,099 records; L08 is publicly preserved, L09 preservation is pending, and page 64 opens Lecture 6 as the next coherent source batch
+State: MIT/Royer authority frozen and complete-notes pages 2--63 admitted through L09; the additive backend contains 2,099 records; L09 is publicly preserved on GitHub and Zenodo with full anonymous readback, and page 64 opens Lecture 6 as the active coherent source batch
 
 ## Completed at this boundary
 
@@ -418,3 +418,16 @@ Preserve L09 once in the existing GitHub and Zenodo lineages and anonymously
 read back its public bytes. No L09 public identity exists yet. Once that
 transaction closes, continue from page 64 in one coherent multi-page Lecture 6
 batch; do not return to page-level production.
+
+## 2026-08-24 cursor refresh — L09 public; page 64 active
+
+The preceding preservation instruction is complete. GitHub content commit
+`06247a233dc9c9de85fc2a9ea1ff305e3907a1b7` / tree
+`5b0082178eb0adef5f945bd603d98cacfcbeea85` passed anonymous exact-byte
+readback for all 50 changed paths. Zenodo record `22076259`, DOI
+`10.5281/zenodo.22076259`, is public in existing concept
+`10.5281/zenodo.22059741`; all 82 files passed anonymous readback, comprising
+74 inherited unchanged files and eight L09 additions. The executable source
+cursor is complete-notes page 64, `LECTURE 6` / `LECTURE OUTLINE`. Freeze and
+translate one coherent multi-page Lecture 6 batch, then run one consolidated
+reader/backend/preservation gate; do not resume page-level production.
