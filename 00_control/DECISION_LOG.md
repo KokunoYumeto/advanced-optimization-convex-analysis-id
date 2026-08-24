@@ -494,3 +494,40 @@ eight bound L10 files, makes the L10 PDF the default preview, and passes full
 anonymous readback for all 90 files. Component rights remain distinct, status
 remains partial, and no upstream contact occurred. Production advances to one
 coherent Lecture 7 batch beginning on page 86.
+
+## D90-0046 — Admit complete Lecture 7; preserve before advancing to Lecture 8
+
+Decision: admit MIT L11 as the single complete page-86–97 Lecture 7 boundary.
+The gate binds the immutable MIT authority, 12 ordered pages, 36 semantic
+items, eight nested items, 21 display formulas, seven independently worded
+figure descriptions / 16 panels, three worked examples, one counterexample,
+no copied Athena image bytes or layouts, two byte-identical reader rebuilds,
+desktop/mobile reflow, all-six-page inspection, and independent P1=P2=P3=0
+rereview. The source contains no exercise, hint, answer, solution, code, or
+interactive surface, and none is invented.
+
+Ten disclosed corrections are frozen in exact source-page order as
+`O015-MIT-SEM-0034`, `0035`, `0036`, `0037`, `0040`, `0031`, `0038`,
+`0039`, `0032`, and `0033`. The additive backend preserves the exact
+2,324-record L10 baseline, adds 148, and passes two regeneration/validation
+cycles at 2,472. JSONL, CSV, and backend-receipt SHA-256 values are
+`b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78`,
+`8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66`,
+and `1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f`.
+Preserve L11 once in the existing GitHub/Zenodo lineages and anonymously read
+back its public bytes. No public identity is asserted by this admission.
+Page 98 is the verified Lecture 8 delimiter and becomes executable only after
+preservation closes.
+
+## D90-0047 — Correct the canonical spine without discarding companions
+
+Decision: bind the stable 68,481-byte coordinator authority, SHA-256
+`af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
+Habring arXiv `2607.11664v1` becomes the canonical structured-source spine.
+Becker commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` is only a future
+nonduplicative MIT-licensed supplement, admitted after exact freeze, marked
+`../preamble.tex` repair, and deterministic build. MIT/Royer/Penn remain
+separately licensed companions; preserve every released byte, correction, and
+stable ID. After L11 preservation, pivot production to Habring and the finite
+original KKT/duality, stochastic, variational/monotone, exercise, and
+complete-solution closure. Do not automatically advance the MIT page-98 cursor.

@@ -1,0 +1,460 @@
+{
+  "authority": {
+    "combined_pages_86_97": {
+      "bytes": 10934,
+      "sha256": "d47d9562b3f7987cb39372915cfcf3ee0904e67d432f00f3ef7beaa84be84564"
+    },
+    "source_page_text": {
+      "86": {
+        "bytes": 258,
+        "sha256": "5bb20e6003c022244d8baeae9365ca1e85571b9021b7ebbca76bfb0068ac4288"
+      },
+      "87": {
+        "bytes": 934,
+        "sha256": "6d34b9c20adbcab3d9b94f51255e380495c884082496d49333063ffa56b0d7a6"
+      },
+      "88": {
+        "bytes": 918,
+        "sha256": "2f2b8d01a7f09944b217e000a71b24dd0b77258159ef40a5f697dbd5eaa16fe4"
+      },
+      "89": {
+        "bytes": 980,
+        "sha256": "7a386ae891bcf77999b700d0561b5d9b05b61ddc2742c5aeeaf6ec6a7d3597ff"
+      },
+      "90": {
+        "bytes": 1148,
+        "sha256": "f998269d35b74761acae48995eaf7e10c461e1b7d030105a3c3fea2a8465d7b1"
+      },
+      "91": {
+        "bytes": 871,
+        "sha256": "21fec334f9e91b1d6b25fe29c80078d1c650ca0dbb05e6696e2065b8b101f70e"
+      },
+      "92": {
+        "bytes": 1150,
+        "sha256": "f670d867bbc0bcf5f2fb85148b6aef06f5d32961c8ab1985d392e2d59a006f47"
+      },
+      "93": {
+        "bytes": 740,
+        "sha256": "7abcde78433beca5672e4b117c096e3a69cd8e9a4f0d37705b6c3f380dd83bca"
+      },
+      "94": {
+        "bytes": 1185,
+        "sha256": "e09d900a215c55ae6f3b96f1b66d312c0b73fc372df5908cbaf6ab0cc09701c4"
+      },
+      "95": {
+        "bytes": 841,
+        "sha256": "77d25710689b28c92637366a852b0adc2a9dd1cbaefd60675961a4f3cbecfa11"
+      },
+      "96": {
+        "bytes": 1370,
+        "sha256": "d9768a6d5c70120083db44722b2430942a6bfcded41baa053bd58dbc0cb59f0e"
+      },
+      "97": {
+        "bytes": 539,
+        "sha256": "d91b7761241b77874e9a3b2a85b8e702a068a0583b70946f52ad64089ff53c1f"
+      },
+      "98": {
+        "bytes": 247,
+        "sha256": "089e122ba925acf0cb958abb5cc7a1949a0074e421f1317d94d5567e07a53247"
+      }
+    }
+  },
+  "boundary": {
+    "answers": 0,
+    "code_surfaces": 0,
+    "copied_source_graphics": 0,
+    "display_formula_blocks": 21,
+    "exercises": 0,
+    "hints": 0,
+    "interactive_surfaces": 0,
+    "next_heading": "LECTURE 8 - LECTURE OUTLINE",
+    "next_source_page": 98,
+    "solutions": 0,
+    "source_display_wrappers": 21,
+    "source_figure_panels": 16,
+    "source_figures": 7,
+    "source_items": 36,
+    "source_pages": 12,
+    "source_pdf_pages": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ]
+  },
+  "build": {
+    "canonical": {
+      "html": {
+        "bytes": 96216,
+        "path": "output/html/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+        "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+      },
+      "pdf": {
+        "bytes": 89771,
+        "path": "output/pdf/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+        "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+      },
+      "status": "bound"
+    },
+    "command": "python qa/build_mit_l11.py --html-output <html> --pdf-output <pdf>",
+    "deterministic_rebuilds": 2,
+    "expected": {
+      "html": [
+        96216,
+        "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+      ],
+      "pdf": [
+        89771,
+        "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+      ]
+    },
+    "rebuild_identities": [
+      {
+        "html": [
+          96216,
+          "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+        ],
+        "pdf": [
+          89771,
+          "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+        ]
+      },
+      {
+        "html": [
+          96216,
+          "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+        ],
+        "pdf": [
+          89771,
+          "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+        ]
+      }
+    ]
+  },
+  "correction_bindings": [
+    {
+      "event_id": "O015-MIT-SEM-0034",
+      "notice_id": "d90-mit-l11-p088-n001",
+      "source_page_locator": "88"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0035",
+      "notice_id": "d90-mit-l11-p089-n001",
+      "source_page_locator": "89"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0036",
+      "notice_id": "d90-mit-l11-p090-n001",
+      "source_page_locator": "90"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0037",
+      "notice_id": "d90-mit-l11-p091-n001",
+      "source_page_locator": "91"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0040",
+      "notice_id": "d90-mit-l11-p091-n002",
+      "source_page_locator": "91,95"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0031",
+      "notice_id": "d90-mit-l11-p092-n001",
+      "source_page_locator": "92"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0038",
+      "notice_id": "d90-mit-l11-p093-n001",
+      "source_page_locator": "93"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0039",
+      "notice_id": "d90-mit-l11-p094-n001",
+      "source_page_locator": "94"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0032",
+      "notice_id": "d90-mit-l11-p096-n001",
+      "source_page_locator": "96"
+    },
+    {
+      "event_id": "O015-MIT-SEM-0033",
+      "notice_id": "d90-mit-l11-p097-n001",
+      "source_page_locator": "97"
+    }
+  ],
+  "errors": [],
+  "evidence": {
+    "browser": {
+      "bytes": 1465,
+      "path": "qa/MIT_L11_BROWSER_QA.json",
+      "result": "pass",
+      "sha256": "03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf",
+      "status": "validated"
+    },
+    "required_for_strict_final": [
+      "visual",
+      "browser",
+      "rereview"
+    ],
+    "rereview": {
+      "bytes": 7395,
+      "disposition": "pass",
+      "path": "qa/MIT_L11_INDEPENDENT_REREVIEW.md",
+      "sha256": "5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8",
+      "status": "validated"
+    },
+    "stage": "strict-final",
+    "visual": {
+      "bytes": 2590,
+      "path": "qa/MIT_L11_VISUAL_QA.json",
+      "result": "pass",
+      "sha256": "8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed",
+      "status": "validated"
+    }
+  },
+  "files": [
+    {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    {
+      "bytes": 23801,
+      "path": "source/en/mit-11-lecture-7-separation-conjugacy-semantic-witness.md",
+      "sha256": "625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c"
+    },
+    {
+      "bytes": 25023,
+      "path": "source/id-ID/mit-11-kuliah-7-pemisahan-dan-konjugasi-id.md",
+      "sha256": "f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b"
+    },
+    {
+      "bytes": 2976,
+      "path": "source/id-ID/mit-l11.css",
+      "sha256": "7f1418005edaf4d9d263d528af630357f24c55abb930be9b27f9ac9d170c522e"
+    },
+    {
+      "bytes": 1891,
+      "path": "source/id-ID/mit-l11-preamble.tex",
+      "sha256": "b26fea2b2410ab3a9aea8102784e2532436f9062a95ed1a0c2b3a27bf69c89f1"
+    },
+    {
+      "bytes": 888,
+      "path": "source/id-ID/mit-l11-pdf-filter.lua",
+      "sha256": "fdb42ee5c762b91e9a38cb2425ff6cf322f97476e72cb2b99b8a0dc49912c750"
+    },
+    {
+      "bytes": 96,
+      "path": "source/id-ID/mit-l11-before-body.html",
+      "sha256": "c02ee74ffa764e276af676187a9391e17dcb6703526625db3bd9667fc5ef910c"
+    },
+    {
+      "bytes": 170,
+      "path": "source/id-ID/mit-l11-after-body.html",
+      "sha256": "07c10aa60b71a729577ae7bf3add87057986aef55128b71591ca9e02169af80b"
+    },
+    {
+      "bytes": 4058,
+      "path": "qa/build_mit_l11.py",
+      "sha256": "84d246ac5c11a84dc43e3ea33f9b553a5df01c5e3765633b03500ca941abf8f1"
+    }
+  ],
+  "formula_inventory": {
+    "target": {
+      "display_blocks": 21,
+      "intentional_cross_language_difference": true,
+      "sequence_sha256": "c3bcd768f0f82ec64a6af7843f28c21a588bfb5390bca74ce1881d7d5e839d9b"
+    },
+    "witness": {
+      "display_blocks": 21,
+      "intentional_cross_language_difference": true,
+      "sequence_sha256": "bc3004045a0901dc03b2f4ae8bbaf9f8cb92846654df5c4a8137522d8da04bc4"
+    }
+  },
+  "html": {
+    "display_math_nodes": 21,
+    "duplicate_ids": [],
+    "form_controls": 0,
+    "headings": {
+      "h1": 1,
+      "h2": 12
+    },
+    "images": 0,
+    "lang": "id-ID",
+    "main_ids": [
+      "main-content"
+    ],
+    "math_nodes": 204,
+    "media_or_embeds": 0,
+    "source_displays": 21,
+    "source_figures": 7,
+    "source_items": 36,
+    "source_pages": 12,
+    "unresolved_fragments": []
+  },
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "pdf": {
+    "encrypted": false,
+    "images": 0,
+    "lang": "id-ID",
+    "page_filled": true,
+    "page_size_points": [
+      [
+        595.276,
+        841.89
+      ],
+      [
+        595.276,
+        841.89
+      ],
+      [
+        595.276,
+        841.89
+      ],
+      [
+        595.276,
+        841.89
+      ],
+      [
+        595.276,
+        841.89
+      ],
+      [
+        595.276,
+        841.89
+      ]
+    ],
+    "pages": 6,
+    "searchable_chars_per_page": [
+      1830,
+      2404,
+      3318,
+      1618,
+      2090,
+      788
+    ],
+    "searchable_text_chars": 12048,
+    "tagged": false,
+    "to_unicode_all_fonts": true,
+    "uri_annotations": []
+  },
+  "release_ready": true,
+  "result": "pass",
+  "rights": {
+    "athena_source_figure_blocks_omitted": 7,
+    "athena_source_figure_panels_omitted": 16,
+    "component": "MIT OCW 6.253 complete-notes, Lecture 7",
+    "copied_source_image_bytes": 0,
+    "license": "CC BY-NC-SA 4.0",
+    "non_endorsement": true
+  },
+  "schema": "o015-mit-l11-validation-v1",
+  "stage": "strict-final",
+  "topology": {
+    "figure_panel_map": {
+      "d90-mit-l11-p087-f001": 3,
+      "d90-mit-l11-p088-f001": 2,
+      "d90-mit-l11-p089-f001": 2,
+      "d90-mit-l11-p091-f001": 1,
+      "d90-mit-l11-p092-f001": 6,
+      "d90-mit-l11-p094-f001": 1,
+      "d90-mit-l11-p096-f001": 1
+    },
+    "page_counts": {
+      "86": {
+        "display_wrappers": 0,
+        "figure_blocks": 0,
+        "figure_panels": 0,
+        "heading": "LECTURE 7",
+        "items": 6
+      },
+      "87": {
+        "display_wrappers": 1,
+        "figure_blocks": 1,
+        "figure_panels": 3,
+        "heading": "ADDITIONAL THEOREMS",
+        "items": 3
+      },
+      "88": {
+        "display_wrappers": 2,
+        "figure_blocks": 1,
+        "figure_panels": 2,
+        "heading": "PROPER POLYHEDRAL SEPARATION",
+        "items": 3
+      },
+      "89": {
+        "display_wrappers": 0,
+        "figure_blocks": 1,
+        "figure_panels": 2,
+        "heading": "NONVERTICAL HYPERPLANES",
+        "items": 4
+      },
+      "90": {
+        "display_wrappers": 1,
+        "figure_blocks": 0,
+        "figure_panels": 0,
+        "heading": "NONVERTICAL HYPERPLANE THEOREM",
+        "items": 4
+      },
+      "91": {
+        "display_wrappers": 2,
+        "figure_blocks": 1,
+        "figure_panels": 1,
+        "heading": "CONJUGATE CONVEX FUNCTIONS",
+        "items": 2
+      },
+      "92": {
+        "display_wrappers": 1,
+        "figure_blocks": 1,
+        "figure_panels": 6,
+        "heading": "EXAMPLES",
+        "items": 1
+      },
+      "93": {
+        "display_wrappers": 3,
+        "figure_blocks": 0,
+        "figure_panels": 0,
+        "heading": "CONJUGATE OF CONJUGATE",
+        "items": 5
+      },
+      "94": {
+        "display_wrappers": 2,
+        "figure_blocks": 1,
+        "figure_panels": 1,
+        "heading": "CONJUGACY THEOREM - VISUALIZATION",
+        "items": 1
+      },
+      "95": {
+        "display_wrappers": 4,
+        "figure_blocks": 0,
+        "figure_panels": 0,
+        "heading": "CONJUGACY THEOREM",
+        "items": 1
+      },
+      "96": {
+        "display_wrappers": 1,
+        "figure_blocks": 1,
+        "figure_panels": 1,
+        "heading": "PROOF OF CONJUGACY THEOREM (A), (C)",
+        "items": 3
+      },
+      "97": {
+        "display_wrappers": 4,
+        "figure_blocks": 0,
+        "figure_panels": 0,
+        "heading": "A COUNTEREXAMPLE",
+        "items": 3
+      }
+    }
+  },
+  "validation_epoch": "2026-08-24"
+}

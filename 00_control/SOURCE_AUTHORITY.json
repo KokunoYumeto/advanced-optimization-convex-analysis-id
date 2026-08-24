@@ -3,6 +3,45 @@
   "lane": "O015",
   "role": "D90 Advanced Optimization and Convex Analysis",
   "frozen_on": "2026-08-22",
+  "selection_architecture": {
+    "authority_record": {
+      "path": "C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json",
+      "bytes": 68481,
+      "sha256": "af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c"
+    },
+    "classification": "original_coursebook_with_lawful_structured_source_donors",
+    "decision_state": "confirmed_original_synthesis_rigorously_required",
+    "selection_complete": true,
+    "canonical_structured_source_spine": {
+      "authority_id": "o015-habring-arxiv-2607.11664v1",
+      "source_tar_bytes": 230116,
+      "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748",
+      "pdf_bytes": 836977,
+      "pdf_pages": 84,
+      "pdf_sha256": "d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d",
+      "license": "CC BY 4.0"
+    },
+    "bounded_structured_supplement_target": {
+      "name": "Stephen Becker, Advanced Convex Optimization class",
+      "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+      "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+      "license": "MIT",
+      "status": "not_yet_frozen_or_admitted_in_lane",
+      "admission_gate": "Freeze exact nonduplicative TeX modules, repair the principal master's ../preamble.tex reference with change marking, and prove a deterministic build. Canvas-only solutions are not public."
+    },
+    "preserved_companions": [
+      "o015-mit-ocw-6.253-spring-2012",
+      "o015-royer-stochastic-gradient-2023-2024",
+      "o015-penn-math555-v1.0-source"
+    ],
+    "original_completion_required": [
+      "coherent constrained optimality, KKT, Slater, and Lagrangian duality",
+      "stochastic subgradient, proximal, and mirror methods with assumptions, rates, minibatching, and variance reduction",
+      "variational inequalities, maximal monotone operators, resolvents, and splitting",
+      "connective proofs, substantive exercises, progressive hints, answers, complete solutions, cumulative tests, alternate forms, proof rubrics, open-solver labs, and capstone"
+    ],
+    "build_contract": "Normalize only admitted Habring CC BY 4.0 and Becker MIT source into a new master with retained notices and change marking; pin TeX Live 2025, latexmk, and Biber; preserve per-component provenance."
+  },
   "authorities": [
     {
       "authority_id": "o015-penn-math555-v1.0-source",
@@ -75,7 +114,7 @@
         "theorems": 73,
         "proofs": 81
       },
-      "admission": "smooth numerical optimization donor only",
+      "admission": "optional separately attributed noncommercial ShareAlike companion",
       "exclusions": [
         "Chapter 9 LP/simplex/LP duality overlaps O018",
         "Chapter 11 SQP/barrier/interior-point sections are empty headings",
@@ -158,7 +197,7 @@
         "code": 0,
         "raster_figures": 7
       },
-      "admission": "modern convex and nonsmooth module",
+      "admission": "canonical structured-source spine; incomplete course without the bounded supplement and original closure",
       "component_caveat": "The CC BY record applies to the arXiv submission, but the custom class and raster figures have no separate embedded notices or generating-source provenance. The preface credits Thomas Pock's lecture slides and Christian Clason's template; this is retained in the component ledger."
     },
     {
@@ -307,102 +346,113 @@
         "status": "partial",
         "admitted_complete_notes_pdf_pages": {
           "first": 2,
-          "last": 85
+          "last": 97
         },
         "latest_boundary": {
-          "boundary_id": "MIT-L10",
-          "title": "Lecture 6 - Closed Intersections, Closedness, and Hyperplanes",
+          "boundary_id": "MIT-L11",
+          "title": "Lecture 7 - Separation, Nonvertical Hyperplanes, and Conjugacy",
           "complete_notes_pdf_pages": {
-            "first": 64,
-            "last": 85
+            "first": 86,
+            "last": 97
           },
-          "next_topic_starts_page": 86,
+          "next_topic_starts_page": 98,
+          "boundary_census": {
+            "path": "00_control/MIT_L11_LECTURE_7_BOUNDARY_CENSUS.md",
+            "bytes": 5840,
+            "sha256": "6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a"
+          },
+          "correction_snapshot": {
+            "path": "00_control/MIT_L11_CORRECTION_SNAPSHOT.jsonl",
+            "bytes": 15532,
+            "sha256": "8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016"
+          },
           "source_witness": {
-            "path": "source/en/mit-10-lecture-6-closed-intersections-hyperplanes-semantic-witness.md",
-            "bytes": 43575,
-            "sha256": "0dfe2c694fad607cef6c37ea7e84a0da359cedee6dc0bf023010f9c8a647c455"
+            "path": "source/en/mit-11-lecture-7-separation-conjugacy-semantic-witness.md",
+            "bytes": 23801,
+            "sha256": "625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c"
           },
           "target": {
-            "path": "source/id-ID/mit-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.md",
-            "bytes": 45994,
-            "sha256": "be2dd29422f5e14ce26315258e772143335475cc2ee9c0d6bfc25f2ff05c8a53"
+            "path": "source/id-ID/mit-11-kuliah-7-pemisahan-dan-konjugasi-id.md",
+            "bytes": 25023,
+            "sha256": "f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b"
           },
           "html": {
-            "path": "output/html/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
-            "bytes": 169871,
-            "sha256": "2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038"
+            "path": "output/html/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+            "bytes": 96216,
+            "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
           },
           "pdf": {
-            "path": "output/pdf/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf",
-            "bytes": 133787,
-            "pages": 10,
-            "sha256": "3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0"
+            "path": "output/pdf/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+            "bytes": 89771,
+            "pages": 6,
+            "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
           },
           "validation": {
-            "path": "qa/MIT_L10_VALIDATION.json",
-            "bytes": 22193,
-            "sha256": "f700ad7d811e7c244285533deef8a492783918b7d6c0f7943f922a09edd77640",
+            "path": "qa/MIT_L11_VALIDATION.json",
+            "bytes": 12136,
+            "sha256": "c70e7c16984d02e50c5e40a6ba7833bcff622c271b486db8c0eee358b71a2d0d",
+            "validator_path": "qa/validate_mit_l11.py",
+            "validator_bytes": 43578,
+            "validator_sha256": "6935a6b6cfe99b8f65e576d201a042a5df1ca2f619f52095e8a9d27a709fbd3f",
             "result": "pass"
           },
           "browser_qa": {
-            "path": "qa/MIT_L10_BROWSER_QA.json",
-            "bytes": 1445,
-            "sha256": "ab8524f5097ee52c2a802212f4aabedadfb437afeadd5020659f1ab8a882ebbb",
+            "path": "qa/MIT_L11_BROWSER_QA.json",
+            "bytes": 1465,
+            "sha256": "03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf",
             "result": "pass"
           },
           "visual_qa": {
-            "path": "qa/MIT_L10_VISUAL_QA.json",
-            "bytes": 1298,
-            "sha256": "17b24989fe86dbf34b5db47240d601606425500905cb3611b535d6ed5d50532d",
+            "path": "qa/MIT_L11_VISUAL_QA.json",
+            "bytes": 2590,
+            "sha256": "8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed",
             "result": "pass"
           },
           "independent_rereview": {
-            "path": "qa/MIT_L10_INDEPENDENT_REREVIEW.md",
-            "bytes": 8023,
-            "sha256": "6d450dde5c3a0bdaa2404abc576a4b43b5d774a1d7b5a44fc7856c3e6097fa63",
+            "path": "qa/MIT_L11_INDEPENDENT_REREVIEW.md",
+            "bytes": 7395,
+            "sha256": "5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8",
             "p1_open": 0,
             "p2_open": 0,
             "p3_open": 0
           },
           "correction_ids": [
-            "O015-MIT-SEM-0020",
-            "O015-MIT-SEM-0021",
-            "O015-MIT-SEM-0022",
-            "O015-MIT-SEM-0023",
-            "O015-MIT-SEM-0024",
-            "O015-MIT-SEM-0025",
-            "O015-MIT-SEM-0026",
-            "O015-MIT-SEM-0027",
-            "O015-MIT-SEM-0028",
-            "O015-MIT-SEM-0029",
-            "O015-MIT-SEM-0030"
+            "O015-MIT-SEM-0034",
+            "O015-MIT-SEM-0035",
+            "O015-MIT-SEM-0036",
+            "O015-MIT-SEM-0037",
+            "O015-MIT-SEM-0040",
+            "O015-MIT-SEM-0031",
+            "O015-MIT-SEM-0038",
+            "O015-MIT-SEM-0039",
+            "O015-MIT-SEM-0032",
+            "O015-MIT-SEM-0033"
           ],
           "backend": {
-            "records": 2324,
-            "jsonl_bytes": 1797378,
-            "jsonl_sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c",
-            "csv_bytes": 2144290,
-            "csv_sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367",
-            "validation_receipt_sha256": "0ab18adef83d7e8cc8899ce3100a8003671f48c180447c4334e6ee6dce5c15dd"
+            "records": 2472,
+            "added_records": 148,
+            "jsonl_bytes": 1942530,
+            "jsonl_sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78",
+            "csv_bytes": 2313694,
+            "csv_sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66",
+            "generator_path": "qa/extend_backend_mit_l11.py",
+            "generator_bytes": 61263,
+            "generator_sha256": "48ac891056bcfd49f1b17ba59053d6c89a03f5efa85578d0dd59f59942e66f0d",
+            "validator_path": "qa/validate_backend_mit_l11.py",
+            "validator_bytes": 27437,
+            "validator_sha256": "dc4479cc79161ab256491399627330fb3df71ba142647e7c4166b730edc96c1d",
+            "validation_receipt_path": "qa/MIT_L11_BACKEND_VALIDATION.json",
+            "validation_receipt_bytes": 3968,
+            "validation_receipt_sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"
           },
           "public_preservation": {
-            "status": "published_and_anonymously_verified",
-            "github_commit": "2f39b8146db59eb89243ec15cd0c430c1cdda0cf",
-            "github_parent": "d978d74ef3e40b40f59ccf1431d7d26df64210f2",
-            "github_tree": "178cdd4e6b8d90720cb43b9d8c7268fab10e1a12",
-            "github_changed_file_count": 43,
-            "github_receipt_sha256": "750b97f06f85f0aa6cba9a6cd9082e1f13e1fc374b84f14ab80c2a80aeb0fd7b",
-            "zenodo_record_id": "22077419",
-            "zenodo_doi": "10.5281/zenodo.22077419",
-            "zenodo_file_count": 90,
-            "zenodo_inherited_file_count": 82,
-            "zenodo_addition_file_count": 8,
-            "zenodo_receipt_sha256": "e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e"
+            "status": "pending_existing_github_and_zenodo_lineages",
+            "public_ids": []
           }
         },
         "upstream_authority_unchanged": true
       },
-      "admission": "selected D90 primary theory and algorithm spine",
+      "admission": "preserved separately licensed PDF-led convex-analysis companion; not the canonical structured-source spine",
       "component_caveat": "The complete-notes title page states that all figures are courtesy of Athena Scientific and used with permission. That is not treated as a sublicensable adaptation grant. The 59-page Athena Scientific summary is third-party and permission-ambiguous and is excluded. No Athena figure bytes or layout may enter the derivative; necessary diagrams require independent redraw and rights records.",
       "known_solution_gap": "The Spring 2012 midterm solution contains the literal placeholder '(a) To be added.' Any repair must be independently authored and separately attributed."
     },
@@ -468,7 +518,7 @@
         "A. Gramfort",
         "Robert Gower"
       ],
-      "admission": "selected D90 stochastic-gradient component",
+      "admission": "preserved separately licensed PDF-led stochastic-gradient companion; not the canonical structured-source spine",
       "component_caveat": "Notes and virtual boards are PDF-only. Laboratory notebooks are editable but have no pinned environment; lab 2 is not a solution-complete learner surface."
     }
   ]

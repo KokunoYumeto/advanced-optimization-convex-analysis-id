@@ -1,0 +1,210 @@
+{
+  "addition_file_count": 8,
+  "addition_material_files": [
+    {
+      "bytes": 558826,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L11_DELTA.zip",
+      "sha256": "dfa5691563029b510451c1d5296364a5aec824bc76b32b54502d0b149260b133"
+    },
+    {
+      "bytes": 96216,
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+      "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+    },
+    {
+      "bytes": 89771,
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+      "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+    },
+    {
+      "bytes": 1448,
+      "filename": "LICENSE_MIT_L11.md",
+      "sha256": "60d4cbb608e8240b18e2618aeb351ac485b62710bb0a068909ce29a28e42b1fd"
+    },
+    {
+      "bytes": 2479,
+      "filename": "README_MIT_L11.md",
+      "sha256": "7ba6a27c4163616df35e25f83e6c671890709ae7d66961fa9f6d1fdd06cfe864"
+    },
+    {
+      "bytes": 1657,
+      "filename": "README_RELEASE_MIT_L11.md",
+      "sha256": "203dedf12ca8eb49ae3898f0d1d119fad4be464ab5b01287fcfd023194c3f3c4"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes Lecture 7, PDF pages 86-97, L11",
+  "admitted_source_pages": [
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "backend_record_count": 2472,
+  "canonical_editable_spine": "Andreas Habring, arXiv:2607.11664v1",
+  "complete_corpus": false,
+  "component_rights": {
+    "athena_scientific_graphics": "permission-only; zero source graphic bytes or layouts redistributed",
+    "inherited_griffin_penn_components": "CC BY-NC-SA 3.0 United States",
+    "inherited_habring_components": "CC BY 4.0",
+    "inherited_royer_source_freeze": "CC BY-NC 4.0",
+    "new_mit_reader_semantic_source_and_adaptation": "CC BY-NC-SA 4.0",
+    "new_project_build_qa_backend_and_boundary_evidence": "project-local tooling and evidence; no blanket reuse grant asserted"
+  },
+  "corpus_role": "separately licensed MIT 6.253 companion within O015; not the final canonical editable-source spine",
+  "default_preview": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+  "delta_bundle_verification": {
+    "entries": 27,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 26,
+    "mutable_global_control_files": 0
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l11.json",
+    "SHA256SUMS-mit-l11"
+  ],
+  "human_native_speaker_review": false,
+  "inherited_file_count": 90,
+  "lane_closure": {
+    "athena_source_graphic_bytes": 0,
+    "backend": {
+      "csv": {
+        "bytes": 2313694,
+        "filename": "records.csv",
+        "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+      },
+      "jsonl": {
+        "bytes": 1942530,
+        "filename": "records.jsonl",
+        "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+      },
+      "new_record_count": 148,
+      "protected_record_count": 2324,
+      "record_count": 2472
+    },
+    "backend_validation": {
+      "bytes": 3968,
+      "filename": "MIT_L11_BACKEND_VALIDATION.json",
+      "sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"
+    },
+    "browser_validation": {
+      "bytes": 1465,
+      "filename": "MIT_L11_BROWSER_QA.json",
+      "sha256": "03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf"
+    },
+    "content_validation": {
+      "bytes": 12136,
+      "filename": "MIT_L11_VALIDATION.json",
+      "sha256": "c70e7c16984d02e50c5e40a6ba7833bcff622c271b486db8c0eee358b71a2d0d"
+    },
+    "control_bindings": {
+      "00_control/ADVERSE_LEDGER.jsonl": {
+        "bytes": 129852,
+        "sha256": "0d5ba296523f8be175b6e383fbe9881114fed7a33677d267ce7dd032f177f757"
+      },
+      "00_control/BUILD_AND_QA.md": {
+        "bytes": 101788,
+        "sha256": "ed4de2e4abc84b09135e5574afb1c6eecb6023df0116e15c5614e1b3d40d3839"
+      },
+      "00_control/COMPONENT_RIGHTS.csv": {
+        "bytes": 37165,
+        "sha256": "af69dde258fbc8649ae6c57db1dcde76318c579cd912b9db48a4ed8b1f116580"
+      },
+      "00_control/COVERAGE_OVERLAP.md": {
+        "bytes": 21198,
+        "sha256": "062ef0186f275428e03391d5de08fb761c103ac37389b84c78351cf4cfed7264"
+      },
+      "00_control/CURRENT_CURSOR.md": {
+        "bytes": 34436,
+        "sha256": "0ff25ca305ea15dae7a6ad983ae9d76897cec740bfd423b0375f688d1c6483dc"
+      },
+      "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+        "bytes": 4297,
+        "sha256": "5ad4c09e872893898e6d3b7c37859c97cbbce4ed727960cec403184152fc8c25"
+      },
+      "00_control/CURRENT_STATE.md": {
+        "bytes": 47774,
+        "sha256": "da246b94d7f9c742b31433df52e3dd741ca89305c79ae0807915f45fbe18f5d6"
+      },
+      "00_control/DECISION_LOG.md": {
+        "bytes": 48412,
+        "sha256": "b8392ea5e698f5717f719c88a3d1ea3ead107707514921a68b5cd5c1d0329d82"
+      },
+      "00_control/PUBLICATION_RECEIPTS.md": {
+        "bytes": 39312,
+        "sha256": "8fbcbe06654aeb06f664665c2bd2c42f9a4f8a98298dd1dca3b027828422371e"
+      },
+      "00_control/SOURCE_AUTHORITY.json": {
+        "bytes": 23646,
+        "sha256": "d633d97eb43dae9ccabe6a80776ba0e8145fc3fde50daae8e77261992ec085d5"
+      }
+    },
+    "human_native_speaker_review": false,
+    "independent_rereview": {
+      "bytes": 7395,
+      "filename": "MIT_L11_INDEPENDENT_REREVIEW.md",
+      "sha256": "5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8"
+    },
+    "input_lock": {
+      "bytes": 5477,
+      "filename": "release-input-lock-mit-l11.json",
+      "sha256": "ec6bf0de521291efb69dc1a5823cfcb8bc7bcf921baff1f237e0cab23dd4ae18"
+    },
+    "mutable_global_control_files_in_bundle": 0,
+    "next_source_page": 98,
+    "reader_pdf_tagged": false,
+    "result": "pass",
+    "source_pages": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "visual_validation": {
+      "bytes": 2590,
+      "filename": "MIT_L11_VISUAL_QA.json",
+      "sha256": "8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed"
+    }
+  },
+  "metadata_template": {
+    "bytes": 5712,
+    "filename": "zenodo-record-mit-l11.json",
+    "sha256": "49b4d1fcc619a4fb7fdf926266113b8eb22b9c14adad3cdae38f2fc3e12d75a1"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "new_backend_record_count": 148,
+  "new_habring_bytes": 0,
+  "next_boundary": "MIT 6.253 complete-notes PDF page 98, Lecture 8",
+  "parent_record_doi": "10.5281/zenodo.22077419",
+  "parent_record_id": "22077419",
+  "protected_backend_record_count": 2324,
+  "publication_date": "2026-08-24",
+  "reader_pdf_tagged": false,
+  "release_file_count": 98,
+  "rights_notice": "Rights are component-specific; no umbrella license replaces inherited component rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v1",
+  "semantic_html_primary": true,
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.24-mit-l11-p86-97",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": null,
+  "zenodo_record_id": null
+}

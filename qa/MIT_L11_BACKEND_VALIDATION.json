@@ -1,0 +1,126 @@
+{
+  "admission": {
+    "canonical_backend_written": true,
+    "csv": {
+      "bytes": 2313694,
+      "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+    },
+    "disposition": "validated_canonical_backend",
+    "final_id_set_sha256": "14bfd29f686f2452a4b59881240f7ae1db7b87fc9ca8c44e3f703372e5b07c46",
+    "final_record_set_sha256": "74f0dc0f3f2a15e4bcb17ec1a3870d1db0e464663f8d9adf5b2df1a0d020314e",
+    "final_records": 2472,
+    "jsonl": {
+      "bytes": 1942530,
+      "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+    },
+    "new_entity_counts": {
+      "artifact": 19,
+      "correction": 10,
+      "learning_surface": 32,
+      "qa_event": 17,
+      "relation": 57,
+      "segment": 12,
+      "unit": 1
+    },
+    "new_id_set_sha256": "ebcd337c9125dad4f0b1f3bad6ffeffcdb6a7bf8a707144bc642dca92e8a4bb7",
+    "new_records": 148
+  },
+  "commands": {
+    "regeneration_template": "python qa/extend_backend_mit_l11.py --input-jsonl <jsonl> --input-csv <csv> --output-dir <dir>",
+    "staging": "python qa/extend_backend_mit_l11.py --output-dir <dir>",
+    "validation_template": "python qa/validate_backend_mit_l11.py --input-jsonl <jsonl> --input-csv <csv> --receipt <receipt>"
+  },
+  "deterministic_regeneration": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 2313694,
+          "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+        },
+        "jsonl": {
+          "bytes": 1942530,
+          "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+        },
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 2313694,
+          "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+        },
+        "jsonl": {
+          "bytes": 1942530,
+          "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+        },
+        "run": 2
+      }
+    ],
+    "input_dataset_match": true,
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 2144290,
+      "sha256": "fb9c84063bf976ddf5e2e15f435617c1cca346eebfd08051d9927a34ffcba367"
+    },
+    "id_order_sha256": "d8dd895a08136ab98001076b59de2312881b6610dc3f50b7cceb4368dc940de2",
+    "id_set_sha256": "47e46b474fa854ecfc4adbc658c0fa1d6e449f4c6aefa2e1284c1f9807d9c108",
+    "jsonl": {
+      "bytes": 1797378,
+      "sha256": "d8694c14afa0933132504c32ea6e2e5862606f913d4b6626bffd35b2bfbee75c"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "a7c2de2ad5f362e40b026d905ce90fc8117095ed40c2a1f12a0a36767a698675",
+    "records": 2324
+  },
+  "result": "pass",
+  "schema": "o015-mit-l11-backend-validation-v1",
+  "schema_constraint": {
+    "note": "The existing metadata schema admits an additive relation record; global entity/id sorting means the old whole file is not a literal prefix, so stability is proved by exact workflow stripping and ordered-record recovery.",
+    "precedes_relation_supported": true,
+    "schema_changed": false
+  },
+  "topology": {
+    "correction_event_ids": [
+      "O015-MIT-SEM-0034",
+      "O015-MIT-SEM-0035",
+      "O015-MIT-SEM-0036",
+      "O015-MIT-SEM-0037",
+      "O015-MIT-SEM-0040",
+      "O015-MIT-SEM-0031",
+      "O015-MIT-SEM-0038",
+      "O015-MIT-SEM-0039",
+      "O015-MIT-SEM-0032",
+      "O015-MIT-SEM-0033"
+    ],
+    "corrections": 10,
+    "counterexamples": 1,
+    "display_surfaces": 21,
+    "figure_blocks": 7,
+    "figure_panels": 16,
+    "nested_items": 8,
+    "predecessor_relation": "relation.mit.l10-precedes-l11",
+    "segments": 12,
+    "semantic_items": 36,
+    "source_pages": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "unit_id": "unit.mit.ocw-6.253.l11",
+    "worked_examples": 3
+  },
+  "validated_at": "2026-08-24T19:00:00Z",
+  "workflow": "o015-mit-l11-backend-v1"
+}

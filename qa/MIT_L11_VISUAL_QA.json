@@ -1,0 +1,59 @@
+{
+  "schema": "o015-mit-l11-visual-qa-v1",
+  "inspection_epoch": "2026-08-24",
+  "result": "pass",
+  "artifact": {
+    "path": "output/pdf/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+    "bytes": 89771,
+    "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+  },
+  "render": {
+    "command": "pdftoppm -png -r 160 <pdf> tmp/pdfs/mit-l11-validation-20260824/render-canonical/page",
+    "dpi": 160,
+    "pages": [
+      {"page": 1, "bytes": 324381, "sha256": "3486f00a31ee57ad219c0bac7d3a0f4277e8e81049325efeb02b0fdb897650e9"},
+      {"page": 2, "bytes": 414210, "sha256": "63cecda3303c7925a2745d41141fde44f05483d70afd74c90ac32d4ac76430ff"},
+      {"page": 3, "bytes": 539979, "sha256": "d581eb54964a71b91cec7ccc1d46111f30b360eda81df62c25d9488b19d8c9e9"},
+      {"page": 4, "bytes": 298878, "sha256": "962bb0f2a0918a9cf143b7567f0f64cb781285212c6fb847cf320077f8357b93"},
+      {"page": 5, "bytes": 354404, "sha256": "d1739945f939afb5fa51aff70359b1e74e7a93cfb951a003842bd97379063499"},
+      {"page": 6, "bytes": 154081, "sha256": "fe908c8c11863c1009a17179fd3e4198313913c937aab3c42aa3ff6e9eb0ed6f"}
+    ]
+  },
+  "inspection": {
+    "all_pages_inspected_at_original_render_resolution": true,
+    "reader_pages": 6,
+    "page_size": "A4",
+    "front_matter_is_a_deliberate_complete_first_page": true,
+    "lecture_outline_starts_intact_on_page_2": true,
+    "page_96_concluding_inequality_and_contradiction_are_kept_together": true,
+    "closing_counterexample_is_not_split": true,
+    "clipping": 0,
+    "overlap": 0,
+    "truncated_text": 0,
+    "orphaned_outline_items": 0,
+    "isolated_proof_conclusions": 0,
+    "broken_glyphs": 0,
+    "unreadable_formulas": 0,
+    "source_graphic_bytes": 0,
+    "comments": "The final six-page reflow uses full-width readable text and consistent margins. The shorter closing page is the natural end of a compact counterexample, not missing content."
+  },
+  "searchability": {
+    "pdftotext_layout_chars": 18949,
+    "pdftotext_layout_sha256": "21c11d209ef84955a1ff19b3415821e0893c09e9d15f0945b1ca31887c59359a",
+    "title_found": true,
+    "corrected_proof_found": true,
+    "counterexample_found": true,
+    "to_unicode_text_available": true
+  },
+  "pdf_structure": {
+    "lang": "id-ID",
+    "tagged": false,
+    "encrypted": false,
+    "form_fields": 0,
+    "javascript": false,
+    "embedded_files": false,
+    "image_xobjects": 0,
+    "link_annotations": 12,
+    "accessibility_disposition": "The semantic HTML is the accessible checkpoint surface; final tagged PDF remains a corpus-completion requirement."
+  }
+}

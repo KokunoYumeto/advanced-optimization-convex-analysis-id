@@ -261,3 +261,35 @@ Page 86 begins Lecture 7 and remains outside admitted coverage. Remaining gaps
 are later MIT/Royer material, bridges, four labs, mastery/solution coverage,
 capstone, semantic EPUB, and tagged PDF; optional human-review evidence is not
 a hold.
+
+## MIT L11 complete Lecture 7 admitted; page 98 remains outside coverage (2026-08-24)
+
+Pages 86–97 add further separation results, proper polyhedral separation,
+nonvertical hyperplanes, conjugate convex functions, the biconjugacy theorem
+and its proof, and a counterexample delimiting the theorem's hypotheses. This
+is advanced convex analysis and does not duplicate O018's finite LP/MIP
+modelling, simplex/tableau mechanics, finite LP duality/sensitivity, network
+optimization, or discrete-optimization solver workflow.
+
+The admitted closure has 12 pages, 36 semantic items, eight nested items, 21
+display formulas, seven semantic figure descriptions / 16 panels, three
+worked examples, one counterexample, and zero copied graphics. It has no
+exercise, hint, answer, solution, code, or interactive surface. Reader,
+rights, topology, browser, visual, independent-rereview, and 2,472-record
+backend gates pass; ten corrections are explicit in source-page order as
+`O015-MIT-SEM-0034`, `0035`, `0036`, `0037`, `0040`, `0031`, `0038`,
+`0039`, `0032`, and `0033`. Page 98 begins Lecture 8 and remains outside
+admitted coverage until L11 preservation closes and the next coherent boundary
+is frozen. Remaining gaps are later MIT/Royer material, bridges, four labs,
+mastery/solution coverage, capstone, semantic EPUB, and tagged PDF; optional
+human-review evidence is not a hold.
+
+## O015 architecture correction after L11 admission (2026-08-24)
+
+Habring v1 now supplies the canonical structured-source spine; only
+nonduplicative, frozen, build-admitted Becker modules may supplement it.
+MIT/Royer/Penn coverage remains useful companion material and all existing
+work is preserved, but it cannot by itself close the structured-source,
+modern stochastic, variational/monotone, exercise, and complete-solution
+requirements. The finite original layer closes those gaps while the O018
+finite/discrete-optimization boundary above remains unchanged.

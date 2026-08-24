@@ -469,3 +469,41 @@ commit GitHub `2f39b8146db59eb89243ec15cd0c430c1cdda0cf` dan DOI Zenodo
 `10.5281/zenodo.22077419`; semua 43 jalur commit dan 90 berkas Zenodo cocok
 byte demi byte pada pembacaan balik anonim. Halaman 86 adalah delimiter Kuliah
 7 dan kursor produksi berikutnya.
+
+## Batas MIT L11 yang diterima (24 Agustus 2026)
+
+Kuliah 7 lengkap, halaman sumber 86–97, diterima sebagai satu batch koheren:
+teorema pemisahan tambahan, pemisahan polihedral wajar, hiperbidang
+nonvertikal, fungsi konjugat, teorema bikonjugasi beserta buktinya, dan satu
+kontracontoh. Batas ini memuat 12 halaman, 36 butir semantik, delapan butir
+bersarang, 21 rumus tampilan, tujuh deskripsi semantik gambar / 16 panel, tiga
+contoh terselesaikan, dan satu kontracontoh. Tidak ada byte atau tata letak
+gambar Athena Scientific yang disalin, serta tidak ada latihan, petunjuk,
+jawaban, solusi, kode, atau interaktivitas pada sumber.
+
+Sensus, snapshot sepuluh koreksi, saksi Inggris, target Indonesia, HTML, dan
+PDF A4 enam halaman memiliki SHA-256
+`6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a`,
+`8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016`,
+`625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c`,
+`f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b`,
+`19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d`,
+dan `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
+Validasi deterministik, reflow browser desktop/ponsel, inspeksi visual seluruh
+PDF, rereview independen P1=P2=P3=0, dan backend 2.472 rekaman semuanya lulus.
+Preservasi publik L11 masih menunggu satu transaksi pada garis GitHub dan
+Zenodo yang sudah ada; belum ada identitas publik L11 yang diklaim. Halaman 98
+adalah delimiter Kuliah 8 dan menjadi kursor berikutnya hanya setelah
+preservasi tersebut ditutup.
+
+## Koreksi arsitektur sumber O015 (24 Agustus 2026)
+
+Habring arXiv `2607.11664v1` kini menjadi spine sumber-terstruktur kanonis.
+Subset TeX Becker pada commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e` belum dibekukan atau diterima;
+hanya modul nonduplikatif yang lulus perbaikan `../preamble.tex`, audit hak,
+dan build deterministik yang boleh masuk. MIT, Royer, dan Penn tetap menjadi
+pendamping berlisensi terpisah, dan seluruh hasil/ID yang sudah ada tetap
+dipertahankan. Sesudah preservasi L11, produksi beralih ke Habring dan lapisan
+orisinal terbatas; halaman MIT 98 disimpan sebagai kursor pendamping, bukan
+batch otomatis berikutnya.

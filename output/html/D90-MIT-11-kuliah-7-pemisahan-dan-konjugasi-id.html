@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="author" content="Edisi Bahasa Indonesia (terjemahan dan rekonstruksi semantik)" />
+  <meta name="dcterms.date" content="2026-08-24" />
+  <title>Kuliah 7: Pemisahan, Hiperbidang Nonvertikal, dan Konjugasi</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f3f6fb;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; }
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus { transform: translateY(0); }
+body > main, body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header { padding: 3.5rem 0 1.25rem; }
+body > main > header h1 {
+max-width: 24ch;
+margin: 0;
+font-size: clamp(2.15rem, 5vw, 4.4rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 58rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c5d1e2;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 3rem; }
+.edition-notice, .source-page {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.55rem);
+border: 1px solid #c5d1e2;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+.source-page { scroll-margin-top: 1rem; }
+h2 { margin-top: 0; font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.16; }
+h3 { font-size: 1.24rem; }
+li + li { margin-top: 0.5rem; }
+.source-item { margin: 0.62rem 0; }
+.edition-notice, .edition-correction, .edition-note, .edition-ambiguity-note {
+margin: 1.25rem 0 1.5rem;
+padding: 1rem 1.15rem;
+border: 1px solid #cbbde9;
+border-left: 0.32rem solid #7651bd;
+border-radius: 0.4rem;
+background: #f2effa;
+}
+.source-figure {
+margin: 1rem 0;
+padding: 1rem 1.15rem;
+border: 1px dashed #71809b;
+border-radius: 0.55rem;
+background: #f7f9fc;
+color: #27324a;
+}
+.source-figure strong { color: #553398; }
+.source-figure ol { padding-left: 1.35rem; }
+.source-locator { display: inline-block; margin-top: 0.9rem; color: #58647d; font-size: 0.92rem; }
+.source-display { max-width: 100%; overflow-x: auto; }
+math[display="block"] { max-width: 100%; overflow-x: auto; padding: 0.35rem 0; }
+a { color: #24529b; text-underline-offset: 0.16em; }
+a:focus-visible { outline: 0.2rem solid #ef9b2d; outline-offset: 0.18rem; }
+body > footer {
+padding: 0 0 2.5rem;
+color: #58647d;
+font-size: 0.9rem;
+}
+@media (max-width: 48rem) {
+body > main, body > footer { width: min(94vw, 78rem); }
+#TOC ul { columns: 1; }
+.source-page, .edition-notice { border-radius: 0.65rem; padding: 1.15rem; }
+.edition-correction, .edition-note, .edition-ambiguity-note { margin-inline: 0; }
+}
+@media print {
+:root, body { background: white; }
+.edition-notice, .source-page { box-shadow: none; }
+.source-figure, .source-display, .edition-correction { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l11-p086">Langsung ke Kuliah 7</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Kuliah 7: Pemisahan, Hiperbidang Nonvertikal, dan
+Konjugasi</h1>
+<p class="subtitle">Edisi semantik Bahasa Indonesia - MIT OpenCourseWare
+6.253, halaman sumber 86-97</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="author">Edisi Bahasa Indonesia (terjemahan dan rekonstruksi
+semantik)</p>
+<p class="date">2026-08-24</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#kuliah-7---garis-besar-kuliah" id="toc-kuliah-7---garis-besar-kuliah"><span class="toc-section-number">1</span> Kuliah 7 - Garis Besar
+Kuliah</a></li>
+<li><a href="#teorema-tambahan" id="toc-teorema-tambahan"><span class="toc-section-number">2</span> Teorema Tambahan</a></li>
+<li><a href="#pemisahan-polihedral-proper" id="toc-pemisahan-polihedral-proper"><span class="toc-section-number">3</span> Pemisahan Polihedral Proper</a></li>
+<li><a href="#hiperbidang-nonvertikal" id="toc-hiperbidang-nonvertikal"><span class="toc-section-number">4</span> Hiperbidang Nonvertikal</a></li>
+<li><a href="#teorema-hiperbidang-nonvertikal" id="toc-teorema-hiperbidang-nonvertikal"><span class="toc-section-number">5</span> Teorema Hiperbidang
+Nonvertikal</a></li>
+<li><a href="#fungsi-konjugat-konveks" id="toc-fungsi-konjugat-konveks"><span class="toc-section-number">6</span> Fungsi Konjugat Konveks</a></li>
+<li><a href="#contoh" id="toc-contoh"><span class="toc-section-number">7</span> Contoh</a></li>
+<li><a href="#konjugat-dari-konjugat" id="toc-konjugat-dari-konjugat"><span class="toc-section-number">8</span> Konjugat dari Konjugat</a></li>
+<li><a href="#teorema-konjugasi---visualisasi" id="toc-teorema-konjugasi---visualisasi"><span class="toc-section-number">9</span> Teorema Konjugasi -
+Visualisasi</a></li>
+<li><a href="#teorema-konjugasi" id="toc-teorema-konjugasi"><span class="toc-section-number">10</span> Teorema Konjugasi</a></li>
+<li><a href="#bukti-teorema-konjugasi-a-c" id="toc-bukti-teorema-konjugasi-a-c"><span class="toc-section-number">11</span> Bukti Teorema Konjugasi (a),
+(c)</a></li>
+<li><a href="#sebuah-kontra-contoh" id="toc-sebuah-kontra-contoh"><span class="toc-section-number">12</span> Sebuah Kontra-Contoh</a></li>
+</ul>
+</nav>
+<div class="edition-notice">
+<p><strong>Tentang edisi ini.</strong> Unit ini menerjemahkan seluruh
+Kuliah 7 pada halaman PDF sumber 86-97. Halaman 98 memulai Kuliah 8 dan
+tidak termasuk. Saksi Inggris yang dapat dialamatkan baris berada di
+<code>source/en/mit-11-lecture-7-separation-conjugacy-semantic-witness.md</code>;
+saksi tersebut adalah transkripsi proyek, bukan sumber sunting resmi
+MIT.</p>
+<p>Materi turunan MIT tetap berada di bawah <strong>CC BY-NC-SA
+4.0</strong> dengan atribusi, penandaan perubahan, kewajiban
+nonkomersial dan BerbagiSerupa, serta tanpa dukungan tersirat. Tidak ada
+byte, potongan, atau tata letak gambar Athena Scientific yang disalin.
+Tujuh blok gambar dengan enam belas panel diganti oleh deskripsi
+semantik mandiri yang mempertahankan label dan hubungan
+matematisnya.</p>
+<p>Batas sumber ini tidak mempunyai latihan peserta didik, petunjuk,
+jawaban, solusi latihan, kode, data, tautan, anotasi, widget, media,
+atau permukaan interaktif. Tiga contoh dan satu kontra-contoh
+ekspositori dipertahankan. Tidak ada isi yang diada-adakan. Rumus
+diketik ulang dan diperiksa terhadap render karena pemetaan glif sumber
+merusak beberapa simbol ketika diekstrak sebagai teks. Sepuluh koreksi
+yang dapat ditentukan secara matematis diungkapkan di dekat lokatornya
+dan dicatat dalam ledger proyek.</p>
+<p>Terjemahan, rekonstruksi semantik, pembangunan pembaca, dan QA
+dibantu oleh <strong>OpenAI Codex gpt-5.6-sol, Ultra</strong> atas
+arahan pengguna repositori. Sistem tersebut bukan penulis sumber,
+pemberi lisensi, atau wakil MIT. Tinjauan manusia/penutur asli belum
+tercatat dan bukan penahan penerbitan.</p>
+</div>
+<div id="d90-mit-l11-p086" class="source-page" data-source-page="86" data-source-order="1">
+<section id="kuliah-7---garis-besar-kuliah" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Kuliah
+7 - Garis Besar Kuliah</h2>
+<div id="d90-mit-l11-p086-i001" class="source-item" data-source-page="86" data-source-order="1">
+<ul>
+<li>Tinjauan pemisahan hiperbidang</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p086-i002" class="source-item" data-source-page="86" data-source-order="2">
+<ul>
+<li>Hiperbidang nonvertikal</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p086-i003" class="source-item" data-source-page="86" data-source-order="3">
+<ul>
+<li>Fungsi konjugat konveks</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p086-i004" class="source-item" data-source-page="86" data-source-order="4">
+<ul>
+<li>Teorema konjugasi</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p086-i005" class="source-item" data-source-page="86" data-source-order="5">
+<ul>
+<li>Contoh</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p086-i006" class="source-item" data-source-page="86" data-source-order="6">
+<p><strong>Bacaan:</strong> Bagian 1.5 dan 1.6.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 86.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p087" class="source-page" data-source-page="87" data-source-order="2">
+<section id="teorema-tambahan" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span> Teorema
+Tambahan</h2>
+<div id="d90-mit-l11-p087-i001" class="source-item" data-source-page="87" data-source-order="1">
+<ul>
+<li><strong>Karakterisasi fundamental:</strong> Tutupan selubung konveks
+suatu himpunan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>⊂</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">C\subset\mathbb R^n</annotation></semantics></math>
+adalah irisan semua setengah ruang tertutup yang memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+(Buktinya memakai teorema pemisahan ketat.)</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p087-i002" class="source-item" data-source-page="87" data-source-order="2">
+<ul>
+<li>Suatu hiperbidang <em>memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+secara proper</em> jika hiperbidang itu memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+serta tidak sepenuhnya memuat keduanya.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p087-f001" class="source-figure" data-source-page="87" data-figure-disposition="omitted-source-graphic" data-panel-count="3">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Tiga panel
+membandingkan geometri pemisahan proper. Panel (a) memperlihatkan dua
+himpunan konveks yang bertemu garis pemisah pada bagian berbeda, tanpa
+keduanya termuat di dalam garis itu. Panel (b) memperlihatkan dua
+himpunan konveks tipis pada sisi berlawanan suatu pemisah miring dan
+menyentuhnya di lokasi berbeda. Panel (c) menempatkan kedua himpunan
+tipis pada garis miring yang sama; inilah kasus yang dikecualikan,
+karena hiperbidang memuat keduanya sepenuhnya. Setiap panel menandai
+vektor normal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l11-p087-i003" class="source-item" data-source-page="87" data-source-order="3">
+<ul>
+<li><strong>Teorema pemisahan proper:</strong> Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+dua himpunan bagian konveks tak kosong dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>.
+Ada hiperbidang yang memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+secara proper jika dan hanya jika</li>
+</ul>
+<div id="d90-mit-l11-p087-d001" class="source-display" data-source-page="87" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{ri}(C_1)\cap\operatorname{ri}(C_2)=\varnothing.
+</annotation></semantics></math></p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 87.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p088-n001" class="edition-correction" data-source-page="88" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0034">
+<p><strong>Koreksi cakupan yang ditentukan.</strong> Teorema tidak
+mengasumsikan bahwa
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+nonpolihedral, walaupun sumber menyebut “the nonpolyhedral set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.”
+Edisi ini memakai cakupan sebenarnya:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+tidak harus polihedral.</p>
+</div>
+<div id="d90-mit-l11-p088" class="source-page" data-source-page="88" data-source-order="3">
+<section id="pemisahan-polihedral-proper" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span>
+Pemisahan Polihedral Proper</h2>
+<div id="d90-mit-l11-p088-i001" class="source-item" data-source-page="88" data-source-order="1">
+<ul>
+<li>Ingat bahwa dua himpunan konveks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+yang memenuhi</li>
+</ul>
+<div id="d90-mit-l11-p088-d001" class="source-display" data-source-page="88" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{ri}(C)\cap\operatorname{ri}(P)=\varnothing
+</annotation></semantics></math></p>
+</div>
+<p>dapat dipisahkan secara proper, yaitu oleh hiperbidang yang tidak
+memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+sekaligus.</p>
+</div>
+<div id="d90-mit-l11-p088-i002" class="source-item" data-source-page="88" data-source-order="2">
+<ul>
+<li>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+polihedral dan syarat yang sedikit lebih kuat</li>
+</ul>
+<div id="d90-mit-l11-p088-d002" class="source-display" data-source-page="88" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mi>P</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{ri}(C)\cap P=\varnothing
+</annotation></semantics></math></p>
+</div>
+<p>berlaku, hiperbidang pemisah proper dapat dipilih agar tidak memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+yang tidak harus polihedral, sedangkan hiperbidang itu boleh memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l11-p088-f001" class="source-figure" data-source-page="88" data-figure-disposition="omitted-source-graphic" data-panel-count="2">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Panel (a)
+memperlihatkan himpunan polihedral
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+yang bertemu himpunan konveks tipis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+pada garis pemisah. Pemisah miring kedua dengan normal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+dapat diputar sehingga tidak memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Panel (b) mengganti
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+dengan oval mulus yang menyinggung himpunan tipis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>;
+satu-satunya pemisah yang ditampilkan adalah garis singgung bersama dan
+karena itu memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Perbandingan tersebut mengisolasi peran polihedralitas.</p>
+</div>
+<div id="d90-mit-l11-p088-i003" class="source-item" data-source-page="88" data-source-order="3">
+<p>Di sebelah kiri, hiperbidang pemisah dapat dipilih agar tidak memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Di sebelah kanan, ketika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+tidak polihedral, pilihan semacam itu tidak mungkin.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 88.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p089-n001" class="edition-correction" data-source-page="89" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0035">
+<p><strong>Klarifikasi geometri yang ditentukan.</strong> Setiap epigraf
+memuat sinar vertikal ke atas, sehingga frasa sumber “vertical line”
+dapat menyesatkan. Pernyataan yang diperlukan adalah tidak adanya garis
+vertikal dua arah yang lengkap; edisi ini menyatakannya secara
+eksplisit.</p>
+</div>
+<div id="d90-mit-l11-p089" class="source-page" data-source-page="89" data-source-order="4">
+<section id="hiperbidang-nonvertikal" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span>
+Hiperbidang Nonvertikal</h2>
+<div id="d90-mit-l11-p089-i001" class="source-item" data-source-page="89" data-source-order="1">
+<p>Hiperbidang di
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathbb R^{n+1}</annotation></semantics></math>
+dengan normal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mu,\beta)</annotation></semantics></math>
+disebut nonvertikal jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\neq0</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l11-p089-i002" class="source-item" data-source-page="89" data-source-order="2">
+<ul>
+<li>Hiperbidang itu memotong sumbu
+ke-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n+1)</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mi>/</mi><mi>β</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>+</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\xi=(\mu/\beta)&#39;\bar u+\bar w</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar u,\bar w)</annotation></semantics></math>
+sebarang vektor pada hiperbidang tersebut.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p089-f001" class="source-figure" data-source-page="89" data-figure-disposition="omitted-source-graphic" data-panel-count="2">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Pada sistem sumbu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,w)</annotation></semantics></math>
+yang sama terdapat dua konstruksi yang terpisah secara visual. Di kiri,
+hiperbidang nonvertikal miring melalui
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar u,\bar w)</annotation></semantics></math>
+dan memotong sumbu vertikal pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mi>/</mi><mi>β</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>+</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">(\mu/\beta)&#39;\bar u+\bar w</annotation></semantics></math>;
+normalnya ialah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mu,\beta)</annotation></semantics></math>.
+Di kanan, hiperbidang vertikal digambar pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+tetap dengan normal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mu,0)</annotation></semantics></math>.
+Perbandingan itu membuat perbedaan kedua jenis hiperbidang menjadi
+eksplisit.</p>
+</div>
+<div id="d90-mit-l11-p089-i003" class="source-item" data-source-page="89" data-source-order="3">
+<ul>
+<li>Hiperbidang nonvertikal yang menempatkan epigraf suatu fungsi di
+setengah ruang “atas” memberikan batas bawah bagi nilai fungsi
+tersebut.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p089-i004" class="source-item" data-source-page="89" data-source-order="4">
+<ul>
+<li>Epigraf fungsi konveks proper tidak memuat garis vertikal dua arah
+yang lengkap. Karena itu, masuk akal bahwa epigraf tersebut termuat
+dalam setengah ruang “atas” suatu hiperbidang nonvertikal.</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 89.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p090-n001" class="edition-correction" data-source-page="90" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0036">
+<p><strong>Perincian langkah bukti yang ditentukan.</strong> Sumber
+hanya menyuruh “menambahkan”
+kelipatan-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>
+kecil dari suatu hiperbidang nonvertikal. Edisi ini menyatakan
+orientasi, pelestarian tanda pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+dan margin positif kecil yang membuat perturbasi itu sah.</p>
+</div>
+<div id="d90-mit-l11-p090" class="source-page" data-source-page="90" data-source-order="5">
+<section id="teorema-hiperbidang-nonvertikal" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span> Teorema
+Hiperbidang Nonvertikal</h2>
+<div id="d90-mit-l11-p090-i001" class="source-item" data-source-page="90" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+himpunan bagian konveks tak kosong dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathbb R^{n+1}</annotation></semantics></math>
+yang tidak memuat garis vertikal dua arah. Maka:</p>
+<ol type="a">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+termuat dalam setengah ruang tertutup suatu hiperbidang nonvertikal.
+Dengan kata lain, terdapat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mu\in\mathbb R^n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">\beta\in\mathbb R</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\neq0</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">\gamma\in\mathbb R</annotation></semantics></math>
+sedemikian sehingga</li>
+</ol></li>
+</ul>
+<div id="d90-mit-l11-p090-d001" class="source-display" data-source-page="90" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>μ</mi><mo>′</mo></msup><mi>u</mi><mo>+</mo><mi>β</mi><mi>w</mi><mo>≥</mo><mi>γ</mi><mspace width="2.0em"></mspace><mrow><mtext mathvariant="normal">untuk semua </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mu&#39;u+\beta w\geq\gamma
+\qquad\text{untuk semua }(u,w)\in C.
+</annotation></semantics></math></p>
+</div>
+<ol start="2" type="a">
+<li>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>∉</mo><mrow><mi mathvariant="normal">cl</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar u,\bar w)\notin\operatorname{cl}(C)</annotation></semantics></math>,
+terdapat hiperbidang nonvertikal yang memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar u,\bar w)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+secara ketat.</li>
+</ol>
+</div>
+<div id="d90-mit-l11-p090-i002" class="source-item" data-source-page="90" data-source-order="2">
+<p><strong>Bukti:</strong> Perhatikan bahwa
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cl</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}(C)</annotation></semantics></math>
+tidak memuat garis vertikal dua arah. Memang,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+tidak memuat garis demikian,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{ri}(C)</annotation></semantics></math>
+juga tidak, sedangkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ri</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{ri}(C)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cl</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}(C)</annotation></semantics></math>
+mempunyai kerucut resesi yang sama. Jadi cukup ditinjau kasus ketika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+tertutup.</p>
+</div>
+<div id="d90-mit-l11-p090-i003" class="source-item" data-source-page="90" data-source-order="3">
+<p><strong>(a)</strong> Himpunan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+adalah irisan semua setengah ruang tertutup yang memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Jika semuanya bersesuaian dengan hiperbidang vertikal,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+akan memuat garis vertikal dua arah.</p>
+</div>
+<div id="d90-mit-l11-p090-i004" class="source-item" data-source-page="90" data-source-order="4">
+<p><strong>(b)</strong> Ada hiperbidang yang memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar u,\bar w)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+secara ketat. Jika hiperbidang itu nonvertikal, hasilnya langsung
+diperoleh. Jika vertikal, orientasikan fungsi afin pemisahnya
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mn>0</mn></msub><annotation encoding="application/x-tex">g_0</annotation></semantics></math>
+sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mn>0</mn></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_0\geq0</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_0(\bar u,\bar w)&lt;0</annotation></semantics></math>.
+Dari bagian (a), orientasikan fungsi setengah ruang nonvertikal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h\geq0</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon&gt;0</annotation></semantics></math>,
+fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>ϵ</mi></msub><mo>=</mo><msub><mi>g</mi><mn>0</mn></msub><mo>+</mo><mi>ϵ</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">g_\epsilon=g_0+\epsilon h</annotation></semantics></math>
+tetap tak negatif pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+dan nonvertikal. Karena
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_0(\bar u,\bar w)&lt;0</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">h(\bar u,\bar w)</annotation></semantics></math>
+berhingga,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>ϵ</mi></msub><mo stretchy="false" form="prefix">(</mo><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_\epsilon(\bar u,\bar w)&lt;0</annotation></semantics></math>
+tetap berlaku untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon&gt;0</annotation></semantics></math>
+yang cukup kecil. Jadi hiperbidang
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>ϵ</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_\epsilon=0</annotation></semantics></math>
+memberikan pemisahan ketat yang diminta.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 90.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p091-n001" class="edition-correction" data-source-page="91" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0037">
+<p><strong>Koreksi syarat ketercapaian yang ditentukan.</strong> Batas
+bawah afin nonvertikal tidak harus menyentuh
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{epi}(f)</annotation></semantics></math>
+ketika supremum yang mendefinisikan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^*(y)</annotation></semantics></math>
+tidak tercapai. Edisi ini menyebutnya hiperbidang pemberi batas bawah;
+hiperbidang tersebut disebut pendukung hanya jika supremumnya
+tercapai.</p>
+</div>
+<div id="d90-mit-l11-p091-n002" class="edition-correction" data-source-pages="91,95" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0040">
+<p><strong>Koreksi tanda tipe fungsi yang ditentukan.</strong> Sumber
+memakai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↦</mo><annotation encoding="application/x-tex">\mapsto</annotation></semantics></math>
+di antara domain dan kodomain pada halaman 91 dan 95. Edisi ini memakai
+tanda tipe fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math>;
+tanda
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↦</mo><annotation encoding="application/x-tex">\mapsto</annotation></semantics></math>
+dicadangkan untuk pemetaan unsur ke nilai.</p>
+</div>
+<div id="d90-mit-l11-p091" class="source-page" data-source-page="91" data-source-order="6">
+<section id="fungsi-konjugat-konveks" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span> Fungsi
+Konjugat Konveks</h2>
+<div id="d90-mit-l11-p091-i001" class="source-item" data-source-page="91" data-source-order="1">
+<p>Perhatikan fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+dan epigrafnya. Hiperbidang nonvertikal yang memberi batas bawah pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{epi}(f)</annotation></semantics></math>
+bersesuaian dengan titik potong pada sumbu vertikal; bila supremum
+berikut tercapai, hiperbidangnya benar-benar pendukung:</p>
+<div id="d90-mit-l11-p091-d001" class="source-display" data-source-page="91" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^*(y)=\sup_{x\in\mathbb R^n}\{x&#39;y-f(x)\},
+\qquad y\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l11-p091-f001" class="source-figure" data-source-page="91" data-figure-disposition="omitted-source-graphic" data-panel-count="1">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Kurva
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+diberi batas bawah oleh garis berkemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+dan bernormal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-y,1)</annotation></semantics></math>.
+Garis tersebut menjadi garis pendukung ketika menyentuh grafik pada
+suatu pemaksimum. Titik potongnya pada sumbu vertikal berlabel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">inf</mi><mo>⁡</mo></mrow><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></msub><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>−</mi><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\inf_{x\in\mathbb R^n}\{f(x)-x&#39;y\}=-f^*(y)</annotation></semantics></math>.
+Geometri itu menghubungkan parameter kemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+dengan nilai konjugat konveks.</p>
+</div>
+<div id="d90-mit-l11-p091-i002" class="source-item" data-source-page="91" data-source-order="2">
+<ul>
+<li>Untuk sebarang
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>+</mi><mi>∞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f:\mathbb R^n\to[-\infty,+\infty]</annotation></semantics></math>,
+fungsi konjugat konveksnya didefinisikan oleh</li>
+</ul>
+<div id="d90-mit-l11-p091-d002" class="source-display" data-source-page="91" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^*(y)=\sup_{x\in\mathbb R^n}\{x&#39;y-f(x)\},
+\qquad y\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 91.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p092-n001" class="edition-correction" data-source-page="92" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0031">
+<p><strong>Koreksi asumsi yang ditentukan.</strong> Contoh kuadratik
+sumber tidak menyatakan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c&gt;0</annotation></semantics></math>.
+Positivitas diperlukan agar fungsi yang ditampilkan proper dan konveks
+serta agar rumus konjugat berhingga yang dicetak berlaku; edisi ini
+menambahkannya.</p>
+</div>
+<div id="d90-mit-l11-p092" class="source-page" data-source-page="92" data-source-order="7">
+<section id="contoh" class="level2" data-number="7">
+<h2 data-number="7"><span class="header-section-number">7</span>
+Contoh</h2>
+<div id="d90-mit-l11-p092-i001" class="source-item" data-source-page="92" data-source-order="1">
+<p>Ketiga contoh memakai definisi</p>
+<div id="d90-mit-l11-p092-d001" class="source-display" data-source-page="92" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^*(y)=\sup_{x\in\mathbb R^n}\{x&#39;y-f(x)\},
+\qquad y\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l11-p092-f001" class="source-figure" data-source-page="92" data-figure-disposition="omitted-source-graphic" data-panel-count="6">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Enam panel sumber
+direka ulang secara semantik sebagai tiga pasangan yang ditumpuk agar
+terbaca pada layar sempit:</p>
+<ol type="1">
+<li><strong>Fungsi afin.</strong> Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi><mi>x</mi><mo>−</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">f(x)=\alpha x-\beta</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">f^*(y)=\beta</annotation></semantics></math>
+untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">y=\alpha</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">f^*(y)=+\infty</annotation></semantics></math>
+untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≠</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">y\neq\alpha</annotation></semantics></math>.
+Grafik memasangkan sebuah garis dengan satu titik konjugat
+berhingga.</li>
+<li><strong>Nilai mutlak.</strong> Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">f(x)=|x|</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f^*(y)=0</annotation></semantics></math>
+untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|y|\leq1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">f^*(y)=+\infty</annotation></semantics></math>
+untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|y|&gt;1</annotation></semantics></math>.
+Grafik memasangkan bentuk V dengan indikator konveks interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math>.</li>
+<li><strong>Kuadratik.</strong> Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x)=(c/2)x^2</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c&gt;0</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f^*(y)=(1/2c)y^2</annotation></semantics></math>.
+Grafik memasangkan dua parabola dengan kelengkungan resiprokal.</li>
+</ol>
+</div>
+<p><em><span class="source-locator">Halaman sumber 92.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p093-n001" class="edition-correction" data-source-page="93" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0038">
+<p><strong>Koreksi istilah yang ditentukan.</strong> Untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+tetap, fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>↦</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y\mapsto x&#39;y-f(x)</annotation></semantics></math>
+bersifat afin dan hanya linear ketika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(x)=0</annotation></semantics></math>.
+Edisi ini memakai istilah “fungsi afin.”</p>
+</div>
+<div id="d90-mit-l11-p093" class="source-page" data-source-page="93" data-source-order="8">
+<section id="konjugat-dari-konjugat" class="level2" data-number="8">
+<h2 data-number="8"><span class="header-section-number">8</span>
+Konjugat dari Konjugat</h2>
+<div id="d90-mit-l11-p093-i001" class="source-item" data-source-page="93" data-source-order="1">
+<ul>
+<li>Dari definisi</li>
+</ul>
+<div id="d90-mit-l11-p093-d001" class="source-display" data-source-page="93" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+f^*(y)=\sup_{x\in\mathbb R^n}\{x&#39;y-f(x)\},
+\qquad y\in\mathbb R^n,
+</annotation></semantics></math></p>
+</div>
+<p>tampak bahwa
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mo>*</mo></msup><annotation encoding="application/x-tex">f^*</annotation></semantics></math>
+konveks dan tertutup.</p>
+</div>
+<div id="d90-mit-l11-p093-i002" class="source-item" data-source-page="93" data-source-order="2">
+<ul>
+<li><strong>Alasan:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{epi}(f^*)</annotation></semantics></math>
+adalah irisan epigraf fungsi-fungsi afin terhadap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,</li>
+</ul>
+<div id="d90-mit-l11-p093-d002" class="source-display" data-source-page="93" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+x&#39;y-f(x),
+</annotation></semantics></math></p>
+</div>
+<p>ketika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+merentang
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l11-p093-i003" class="source-item" data-source-page="93" data-source-order="3">
+<ul>
+<li>Perhatikan konjugat dari konjugat:</li>
+</ul>
+<div id="d90-mit-l11-p093-d003" class="source-display" data-source-page="93" data-display-order="3">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{**}(x)=\sup_{y\in\mathbb R^n}\{y&#39;x-f^*(y)\},
+\qquad x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l11-p093-i004" class="source-item" data-source-page="93" data-source-order="4">
+<ul>
+<li>Fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><annotation encoding="application/x-tex">f^{**}</annotation></semantics></math>
+konveks dan tertutup.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p093-i005" class="source-item" data-source-page="93" data-source-order="5">
+<ul>
+<li><strong>Fakta penting / teorema konjugasi:</strong> Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+tertutup, proper, dan konveks, maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f^{**}=f</annotation></semantics></math>.</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 93.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p094-n001" class="edition-correction" data-source-page="94" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0039">
+<p><strong>Klarifikasi visual yang ditentukan.</strong> Gambar sumber
+tampak memakai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+yang nonkonveks, tepat setelah pernyataan kesamaan untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+tertutup, proper, dan konveks. Edisi ini menyatakan bahwa gambar
+memperlihatkan hubungan amplop umum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo>≤</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f^{**}\leq f</annotation></semantics></math>;
+kesamaan adalah kasus khusus di bawah hipotesis teorema.</p>
+</div>
+<div id="d90-mit-l11-p094" class="source-page" data-source-page="94" data-source-order="9">
+<section id="teorema-konjugasi---visualisasi" class="level2" data-number="9">
+<h2 data-number="9"><span class="header-section-number">9</span> Teorema
+Konjugasi - Visualisasi</h2>
+<div id="d90-mit-l11-p094-i001" class="source-item" data-source-page="94" data-source-order="1">
+<p>Visualisasi mengulangi</p>
+<div id="d90-mit-l11-p094-d001" class="source-display" data-source-page="94" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+f^*(y)=\sup_{x\in\mathbb R^n}\{x&#39;y-f(x)\},
+\qquad y\in\mathbb R^n,
+</annotation></semantics></math></p>
+</div>
+<p>dan</p>
+<div id="d90-mit-l11-p094-d002" class="source-display" data-source-page="94" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{**}(x)=\sup_{y\in\mathbb R^n}\{y&#39;x-f^*(y)\},
+\qquad x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+<ul>
+<li>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+tertutup, konveks, dan proper, maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f^{**}=f</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p094-f001" class="source-figure" data-source-page="94" data-figure-disposition="omitted-source-graphic" data-panel-count="1">
+<p><strong>Deskripsi semantik gambar sumber.</strong> Grafik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+yang mungkin nonkonveks dibandingkan dengan amplop bawah yang
+direkonstruksi oleh bikonjugatnya, sehingga secara umum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo>≤</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f^{**}\leq f</annotation></semantics></math>.
+Garis berkemiringan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+dan bernormal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>y</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-y,1)</annotation></semantics></math>
+memberi batas bawah; titik potong vertikalnya ialah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-f^*(y)</annotation></semantics></math>.
+Pada koordinat horizontal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+yang tetap, supremum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y&#39;x-f^*(y)</annotation></semantics></math>
+ditandai pada kurva rekonstruksi. Sumber memberi label hiperbidang
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>w</mi><mo>−</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>=</mo><mi>−</mi><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">H=\{(x,w)\mid w-x&#39;y=-f^*(y)\}</annotation></semantics></math>
+dan menghubungkan titik potongnya dengan dua rumus konjugasi. Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+tertutup, proper, dan konveks, amplop ini sama dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 94.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p095" class="source-page" data-source-page="95" data-source-order="10">
+<section id="teorema-konjugasi" class="level2" data-number="10">
+<h2 data-number="10"><span class="header-section-number">10</span>
+Teorema Konjugasi</h2>
+<div id="d90-mit-l11-p095-i001" class="source-item" data-source-page="95" data-source-order="1">
+<ul>
+<li>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>+</mi><mi>∞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f:\mathbb R^n\to(-\infty,+\infty]</annotation></semantics></math>
+suatu fungsi, misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi mathvariant="normal">cl</mi><mo accent="true">̌</mo></mover><mi>f</mi></mrow><annotation encoding="application/x-tex">\check{\operatorname{cl}}f</annotation></semantics></math>
+tutupan konveksnya, misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mo>*</mo></msup><annotation encoding="application/x-tex">f^*</annotation></semantics></math>
+konjugat konveksnya, dan perhatikan konjugat dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mo>*</mo></msup><annotation encoding="application/x-tex">f^*</annotation></semantics></math>,</li>
+</ul>
+<div id="d90-mit-l11-p095-d001" class="source-display" data-source-page="95" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">sup</mi><mrow><mi>y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow></munder><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{**}(x)=\sup_{y\in\mathbb R^n}\{y&#39;x-f^*(y)\},
+\qquad x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+<ol type="a">
+<li>Kita mempunyai</li>
+</ol>
+<div id="d90-mit-l11-p095-d002" class="source-display" data-source-page="95" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f(x)\geq f^{**}(x),
+\qquad\forall x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+<ol start="2" type="a">
+<li><p>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks, keproperan salah satu dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mo>*</mo></msup><annotation encoding="application/x-tex">f^*</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><annotation encoding="application/x-tex">f^{**}</annotation></semantics></math>
+mengakibatkan keproperan dua yang lain.</p></li>
+<li><p>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+tertutup, proper, dan konveks, maka</p></li>
+</ol>
+<div id="d90-mit-l11-p095-d003" class="source-display" data-source-page="95" data-display-order="3">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f(x)=f^{**}(x),
+\qquad\forall x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+<ol start="4" type="a">
+<li>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi mathvariant="normal">cl</mi><mo accent="true">̌</mo></mover><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">\check{\operatorname{cl}}f(x)&gt;-\infty</annotation></semantics></math>
+untuk semua
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x\in\mathbb R^n</annotation></semantics></math>,
+maka</li>
+</ol>
+<div id="d90-mit-l11-p095-d004" class="source-display" data-source-page="95" data-display-order="4">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi mathvariant="normal">cl</mi><mo accent="true">̌</mo></mover><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\check{\operatorname{cl}}f(x)=f^{**}(x),
+\qquad\forall x\in\mathbb R^n.
+</annotation></semantics></math></p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 95.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p096-n001" class="edition-correction" data-source-page="96" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0032">
+<p><strong>Perbaikan bukti yang ditentukan.</strong> Label titik potong
+vertikal sumber
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x&#39;y-f(x)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi><mo>−</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x&#39;y-f^{**}(x)</annotation></semantics></math>
+mempunyai tanda berlawanan dari titik potong sebenarnya untuk
+hiperbidang bernormal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,-1)</annotation></semantics></math>,
+dan baris akhir tidak menyatakan kontradiksinya. Edisi ini mengganti
+simpulan geometris yang cacat dengan argumen ketaksamaan langsung dari
+pemisah ketat yang sama.</p>
+</div>
+<div id="d90-mit-l11-p096" class="source-page" data-source-page="96" data-source-order="11">
+<section id="bukti-teorema-konjugasi-a-c" class="level2" data-number="11">
+<h2 data-number="11"><span class="header-section-number">11</span> Bukti
+Teorema Konjugasi (a), (c)</h2>
+<div id="d90-mit-l11-p096-i001" class="source-item" data-source-page="96" data-source-order="1">
+<ul>
+<li><strong>(a)</strong> Untuk semua
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>,
+berlaku
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^*(y)\geq y&#39;x-f(x)</annotation></semantics></math>.
+Akibatnya,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msub><mrow><mi mathvariant="normal">sup</mi><mo>⁡</mo></mrow><mi>y</mi></msub><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>=</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)\geq\sup_y\{y&#39;x-f^*(y)\}=f^{**}(x)</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p096-i002" class="source-item" data-source-page="96" data-source-order="2">
+<ul>
+<li><strong>(c)</strong> Dengan kontradiksi, andaikan ada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,\gamma)\in\operatorname{epi}(f^{**})</annotation></semantics></math>
+tetapi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo><mo>∉</mo><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,\gamma)\notin\operatorname{epi}(f)</annotation></semantics></math>.
+Ada hiperbidang nonvertikal bernormal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,-1)</annotation></semantics></math>
+yang memisahkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,\gamma)</annotation></semantics></math>
+dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{epi}(f)</annotation></semantics></math>
+secara ketat. (Komponen vertikal vektor normal dinormalkan menjadi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.)</li>
+</ul>
+</div>
+<div id="d90-mit-l11-p096-f001" class="source-figure" data-source-page="96" data-figure-disposition="omitted-source-graphic" data-panel-count="1">
+<p><strong>Deskripsi semantik gambar sumber dengan tanda yang
+diperbaiki.</strong> Epigraf
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+berada di atas epigraf
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><annotation encoding="application/x-tex">f^{**}</annotation></semantics></math>.
+Pada koordinat horizontal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+yang sama, titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,f(x))</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,\gamma)</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,f^{**}(x))</annotation></semantics></math>
+segaris vertikal. Hiperbidang bernormal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,-1)</annotation></semantics></math>
+memisahkan titik tengah dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{epi}(f)</annotation></semantics></math>,
+sedangkan dua translasi sejajar melalui titik grafik atas dan bawah.
+Untuk normal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,-1)</annotation></semantics></math>,
+titik potong vertikal kedua translasi yang benar ialah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x)-x&#39;y</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>x</mi><mo>′</mo></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">f^{**}(x)-x&#39;y</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l11-p096-i003" class="source-item keep-proof-conclusion" data-source-page="96" data-source-order="3">
+<ul>
+<li>Orientasikan pemisah ketat sebagai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>y</mi><mo>′</mo></msup><mi>u</mi><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">f(u)\geq y&#39;u-c</annotation></semantics></math>
+untuk semua
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>&lt;</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">\gamma&lt;y&#39;x-c</annotation></semantics></math>.
+Ketaksamaan pertama memberi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mrow><mi mathvariant="normal">sup</mi><mo>⁡</mo></mrow><mi>u</mi></msub><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mo>′</mo></msup><mi>u</mi><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">f^*(y)=\sup_u\{y&#39;u-f(u)\}\leq c</annotation></semantics></math>.
+Karena itu,</li>
+</ul>
+<div id="d90-mit-l11-p096-d001" class="source-display" data-source-page="96" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>y</mi><mo>′</mo></msup><mi>x</mi><mo>−</mo><mi>c</mi><mo>&gt;</mo><mi>γ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{**}(x)
+\geq y&#39;x-f^*(y)
+\geq y&#39;x-c
+&gt;\gamma.
+</annotation></semantics></math></p>
+</div>
+<p>Akan tetapi,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mrow><mi mathvariant="normal">epi</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,\gamma)\in\operatorname{epi}(f^{**})</annotation></semantics></math>
+berarti
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>≥</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma\geq f^{**}(x)</annotation></semantics></math>.
+Ini kontradiksi. <strong>Terbukti.</strong></p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 96.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l11-p097-n001" class="edition-correction" data-source-page="97" data-correction-status="determined" data-correction-event="O015-MIT-SEM-0033">
+<p><strong>Koreksi dimensi dan kodomain yang ditentukan.</strong>
+Kontra-contoh membandingkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+sehingga bersifat skalar, tetapi dua kuantor sumber memakai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>.
+Contoh ini juga mengizinkan nilai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>,
+berbeda dari kodomain pada halaman 95. Edisi ini menyatakan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi mathvariant="double-struck">ℝ</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>+</mi><mi>∞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f:\mathbb R\to[-\infty,+\infty]</annotation></semantics></math>
+dan memakai kuantor pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+secara konsisten.</p>
+</div>
+<div id="d90-mit-l11-p097" class="source-page" data-source-page="97" data-source-order="12">
+<section id="sebuah-kontra-contoh" class="level2" data-number="12">
+<h2 data-number="12"><span class="header-section-number">12</span>
+Sebuah Kontra-Contoh</h2>
+<div id="d90-mit-l11-p097-i001" class="source-item" data-source-page="97" data-source-order="1">
+<p>Sebuah kontra-contoh dengan fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi mathvariant="double-struck">ℝ</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>+</mi><mi>∞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f:\mathbb R\to[-\infty,+\infty]</annotation></semantics></math>
+yang tertutup dan konveks tetapi tak proper menunjukkan perlunya asumsi
+proper agar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup></mrow><annotation encoding="application/x-tex">f=f^{**}</annotation></semantics></math>:</p>
+<div id="d90-mit-l11-p097-d001" class="source-display" data-source-page="97" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>+</mi><mi>∞</mi><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>−</mi><mi>∞</mi><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>x</mi><mo>≤</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+f(x)=
+\begin{cases}
++\infty,&amp;x&gt;0,\\
+-\infty,&amp;x\leq0.
+\end{cases}
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l11-p097-i002" class="source-item" data-source-page="97" data-source-order="2">
+<p>Kita mempunyai</p>
+<div id="d90-mit-l11-p097-d002" class="source-display" data-source-page="97" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>+</mi><mi>∞</mi><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>y</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+f^*(y)=+\infty,
+\qquad\forall y\in\mathbb R,
+</annotation></semantics></math></p>
+</div>
+<p>dan</p>
+<div id="d90-mit-l11-p097-d003" class="source-display" data-source-page="97" data-display-order="3">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{**}(x)=-\infty,
+\qquad\forall x\in\mathbb R.
+</annotation></semantics></math></p>
+</div>
+</div>
+<div id="d90-mit-l11-p097-i003" class="source-item" data-source-page="97" data-source-order="3">
+<p>Namun,</p>
+<div id="d90-mit-l11-p097-d004" class="source-display" data-source-page="97" data-display-order="4">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi mathvariant="normal">cl</mi><mo accent="true">̌</mo></mover><mi>f</mi><mo>=</mo><mi>f</mi><mo>,</mo><mspace width="2.0em"></mspace><mtext mathvariant="normal">sehingga</mtext><mspace width="2.0em"></mspace><mover><mi mathvariant="normal">cl</mi><mo accent="true">̌</mo></mover><mi>f</mi><mo>≠</mo><msup><mi>f</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\check{\operatorname{cl}}f=f,
+\qquad\text{sehingga}\qquad
+\check{\operatorname{cl}}f\neq f^{**}.
+</annotation></semantics></math></p>
+</div>
+</div>
+<p><em><span class="source-locator">Halaman sumber 97.</span></em></p>
+</section>
+</div>
+</main>
+<footer role="contentinfo">
+  <p>Edisi Indonesia semantik MIT OCW 6.253, halaman sumber 86-97. Grafik sumber dijelaskan tanpa menyalin byte gambar.</p>
+</footer>
+</body>
+</html>

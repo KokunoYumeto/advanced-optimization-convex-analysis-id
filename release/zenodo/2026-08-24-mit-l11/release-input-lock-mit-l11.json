@@ -1,0 +1,156 @@
+{
+  "backend_record_count": 2472,
+  "boundary": {
+    "next_source_heading": "LECTURE 8 - LECTURE OUTLINE",
+    "next_source_page": 98,
+    "source_pages": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ]
+  },
+  "control_file_count": 10,
+  "files": {
+    "00_control/ADVERSE_LEDGER.jsonl": {
+      "bytes": 129852,
+      "sha256": "0d5ba296523f8be175b6e383fbe9881114fed7a33677d267ce7dd032f177f757"
+    },
+    "00_control/BUILD_AND_QA.md": {
+      "bytes": 101788,
+      "sha256": "ed4de2e4abc84b09135e5574afb1c6eecb6023df0116e15c5614e1b3d40d3839"
+    },
+    "00_control/COMPONENT_RIGHTS.csv": {
+      "bytes": 37165,
+      "sha256": "af69dde258fbc8649ae6c57db1dcde76318c579cd912b9db48a4ed8b1f116580"
+    },
+    "00_control/COVERAGE_OVERLAP.md": {
+      "bytes": 21198,
+      "sha256": "062ef0186f275428e03391d5de08fb761c103ac37389b84c78351cf4cfed7264"
+    },
+    "00_control/CURRENT_CURSOR.md": {
+      "bytes": 34436,
+      "sha256": "0ff25ca305ea15dae7a6ad983ae9d76897cec740bfd423b0375f688d1c6483dc"
+    },
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+      "bytes": 4297,
+      "sha256": "5ad4c09e872893898e6d3b7c37859c97cbbce4ed727960cec403184152fc8c25"
+    },
+    "00_control/CURRENT_STATE.md": {
+      "bytes": 47774,
+      "sha256": "da246b94d7f9c742b31433df52e3dd741ca89305c79ae0807915f45fbe18f5d6"
+    },
+    "00_control/DECISION_LOG.md": {
+      "bytes": 48412,
+      "sha256": "b8392ea5e698f5717f719c88a3d1ea3ead107707514921a68b5cd5c1d0329d82"
+    },
+    "00_control/MIT_L11_CORRECTION_SNAPSHOT.jsonl": {
+      "bytes": 15532,
+      "sha256": "8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016"
+    },
+    "00_control/MIT_L11_LECTURE_7_BOUNDARY_CENSUS.md": {
+      "bytes": 5840,
+      "sha256": "6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a"
+    },
+    "00_control/PUBLICATION_RECEIPTS.md": {
+      "bytes": 39312,
+      "sha256": "8fbcbe06654aeb06f664665c2bd2c42f9a4f8a98298dd1dca3b027828422371e"
+    },
+    "00_control/SOURCE_AUTHORITY.json": {
+      "bytes": 23646,
+      "sha256": "d633d97eb43dae9ccabe6a80776ba0e8145fc3fde50daae8e77261992ec085d5"
+    },
+    "backend/records.csv": {
+      "bytes": 2313694,
+      "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+    },
+    "backend/records.jsonl": {
+      "bytes": 1942530,
+      "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+    },
+    "output/html/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html": {
+      "bytes": 96216,
+      "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+    },
+    "output/pdf/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf": {
+      "bytes": 89771,
+      "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+    },
+    "qa/MIT_L11_BACKEND_VALIDATION.json": {
+      "bytes": 3968,
+      "sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"
+    },
+    "qa/MIT_L11_BROWSER_QA.json": {
+      "bytes": 1465,
+      "sha256": "03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf"
+    },
+    "qa/MIT_L11_INDEPENDENT_REREVIEW.md": {
+      "bytes": 7395,
+      "sha256": "5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8"
+    },
+    "qa/MIT_L11_VALIDATION.json": {
+      "bytes": 12136,
+      "sha256": "c70e7c16984d02e50c5e40a6ba7833bcff622c271b486db8c0eee358b71a2d0d"
+    },
+    "qa/MIT_L11_VISUAL_QA.json": {
+      "bytes": 2590,
+      "sha256": "8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed"
+    },
+    "qa/build_mit_l11.py": {
+      "bytes": 4058,
+      "sha256": "84d246ac5c11a84dc43e3ea33f9b553a5df01c5e3765633b03500ca941abf8f1"
+    },
+    "qa/extend_backend_mit_l11.py": {
+      "bytes": 61263,
+      "sha256": "48ac891056bcfd49f1b17ba59053d6c89a03f5efa85578d0dd59f59942e66f0d"
+    },
+    "qa/validate_backend_mit_l11.py": {
+      "bytes": 27437,
+      "sha256": "dc4479cc79161ab256491399627330fb3df71ba142647e7c4166b730edc96c1d"
+    },
+    "qa/validate_mit_l11.py": {
+      "bytes": 43578,
+      "sha256": "6935a6b6cfe99b8f65e576d201a042a5df1ca2f619f52095e8a9d27a709fbd3f"
+    },
+    "source/en/mit-11-lecture-7-separation-conjugacy-semantic-witness.md": {
+      "bytes": 23801,
+      "sha256": "625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c"
+    },
+    "source/id-ID/mit-11-kuliah-7-pemisahan-dan-konjugasi-id.md": {
+      "bytes": 25023,
+      "sha256": "f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b"
+    },
+    "source/id-ID/mit-l11-after-body.html": {
+      "bytes": 170,
+      "sha256": "07c10aa60b71a729577ae7bf3add87057986aef55128b71591ca9e02169af80b"
+    },
+    "source/id-ID/mit-l11-before-body.html": {
+      "bytes": 96,
+      "sha256": "c02ee74ffa764e276af676187a9391e17dcb6703526625db3bd9667fc5ef910c"
+    },
+    "source/id-ID/mit-l11-pdf-filter.lua": {
+      "bytes": 888,
+      "sha256": "fdb42ee5c762b91e9a38cb2425ff6cf322f97476e72cb2b99b8a0dc49912c750"
+    },
+    "source/id-ID/mit-l11-preamble.tex": {
+      "bytes": 1891,
+      "sha256": "b26fea2b2410ab3a9aea8102784e2532436f9062a95ed1a0c2b3a27bf69c89f1"
+    },
+    "source/id-ID/mit-l11.css": {
+      "bytes": 2976,
+      "sha256": "7f1418005edaf4d9d263d528af630357f24c55abb930be9b27f9ac9d170c522e"
+    }
+  },
+  "material_file_count": 22,
+  "new_backend_record_count": 148,
+  "protected_backend_record_count": 2324,
+  "schema": "o015-mit-l11-release-input-lock-v1"
+}

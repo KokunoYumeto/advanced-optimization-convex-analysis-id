@@ -1,0 +1,36 @@
+{
+  "schema": "o015-mit-l11-release-config-v1",
+  "parent_record_id": "22077419",
+  "parent_record_doi": "10.5281/zenodo.22077419",
+  "concept_id": "22059741",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "boundary": {
+    "source_pages": [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97],
+    "next_source_page": 98,
+    "next_source_heading": "LECTURE 8 - LECTURE OUTLINE"
+  },
+  "backend": {
+    "protected_record_count": 2324,
+    "new_record_count": 148,
+    "record_count": 2472,
+    "jsonl": {"bytes": 1942530, "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"},
+    "csv": {"bytes": 2313694, "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"},
+    "validation": {"bytes": 3968, "sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"}
+  },
+  "controls": {
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {"bytes": 4297, "sha256": "5ad4c09e872893898e6d3b7c37859c97cbbce4ed727960cec403184152fc8c25"},
+    "00_control/CURRENT_STATE.md": {"bytes": 47774, "sha256": "da246b94d7f9c742b31433df52e3dd741ca89305c79ae0807915f45fbe18f5d6"},
+    "00_control/CURRENT_CURSOR.md": {"bytes": 34436, "sha256": "0ff25ca305ea15dae7a6ad983ae9d76897cec740bfd423b0375f688d1c6483dc"},
+    "00_control/SOURCE_AUTHORITY.json": {"bytes": 23646, "sha256": "d633d97eb43dae9ccabe6a80776ba0e8145fc3fde50daae8e77261992ec085d5"},
+    "00_control/COMPONENT_RIGHTS.csv": {"bytes": 37165, "sha256": "af69dde258fbc8649ae6c57db1dcde76318c579cd912b9db48a4ed8b1f116580"},
+    "00_control/COVERAGE_OVERLAP.md": {"bytes": 21198, "sha256": "062ef0186f275428e03391d5de08fb761c103ac37389b84c78351cf4cfed7264"},
+    "00_control/DECISION_LOG.md": {"bytes": 48412, "sha256": "b8392ea5e698f5717f719c88a3d1ea3ead107707514921a68b5cd5c1d0329d82"},
+    "00_control/ADVERSE_LEDGER.jsonl": {"bytes": 129852, "sha256": "0d5ba296523f8be175b6e383fbe9881114fed7a33677d267ce7dd032f177f757"},
+    "00_control/BUILD_AND_QA.md": {"bytes": 101788, "sha256": "ed4de2e4abc84b09135e5574afb1c6eecb6023df0116e15c5614e1b3d40d3839"},
+    "00_control/PUBLICATION_RECEIPTS.md": {"bytes": 39312, "sha256": "8fbcbe06654aeb06f664665c2bd2c42f9a4f8a98298dd1dca3b027828422371e"}
+  },
+  "expected_inherited_file_count": 90,
+  "expected_addition_file_count": 8,
+  "expected_release_file_count": 98,
+  "status": "partial"
+}

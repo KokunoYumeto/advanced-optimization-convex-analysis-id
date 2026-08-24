@@ -1,0 +1,51 @@
+{
+  "schema": "o015-mit-l11-browser-qa-v1",
+  "inspection_epoch": "2026-08-24",
+  "result": "pass",
+  "artifact": {
+    "path": "output/html/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+    "bytes": 96216,
+    "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+  },
+  "browser": "Codex in-app browser",
+  "desktop": {
+    "viewport": {"width": 1280, "height": 720},
+    "document_scroll_width": 1265,
+    "horizontal_overflow": false,
+    "visual_inspection": "pass"
+  },
+  "mobile": {
+    "viewport": {"width": 390, "height": 844},
+    "document_scroll_width": 375,
+    "body_scroll_width": 375,
+    "main_width": 366.8055725097656,
+    "source_page_width": 366.8055725097656,
+    "horizontal_overflow": false,
+    "overflowing_elements": [],
+    "wide_math_containers": [],
+    "toc_columns": 1,
+    "visual_inspection": "pass"
+  },
+  "semantics": {
+    "lang": "id-ID",
+    "main_landmarks": 1,
+    "source_pages": 12,
+    "source_items": 36,
+    "source_displays": 21,
+    "source_figures": 7,
+    "edition_corrections": 10,
+    "mathml_nodes": 204,
+    "display_mathml_nodes": 21,
+    "images": 0,
+    "interactive_controls_or_embeds": 0,
+    "duplicate_ids": [],
+    "unresolved_fragments": []
+  },
+  "navigation": {
+    "skip_link_href": "#d90-mit-l11-p086",
+    "target_exists": true,
+    "click_resolved_hash": "#d90-mit-l11-p086",
+    "target_top_after_activation_px": 15.909722328186035
+  },
+  "console_findings": []
+}

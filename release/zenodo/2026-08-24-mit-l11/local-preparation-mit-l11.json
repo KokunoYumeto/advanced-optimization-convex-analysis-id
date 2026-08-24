@@ -1,0 +1,173 @@
+{
+  "addition_file_count": 8,
+  "backend_record_count": 2472,
+  "checksums": {
+    "bytes": 10071,
+    "filename": "SHA256SUMS-mit-l11",
+    "sha256": "a94d4a6ad5bad2dec68a9ecdcff46d5b521814052cb0868f1f6c58e5c621d75a"
+  },
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "credential_reads": 0,
+  "delta_bundle": {
+    "bytes": 558826,
+    "credential_shaped_entries": 0,
+    "entry_size_hashes": "pass",
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L11_DELTA.zip",
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "inventory_exact": true,
+    "manifest_bound_entries": 26,
+    "mutable_global_control_files": 0,
+    "sha256": "dfa5691563029b510451c1d5296364a5aec824bc76b32b54502d0b149260b133",
+    "uncompressed_bytes": 4540991,
+    "unique_names": true,
+    "zip_entries": 27
+  },
+  "deterministic_identity_match": true,
+  "deterministic_local_builds": 2,
+  "draft_state_file_exists": false,
+  "final_backend": {
+    "correction_snapshot": {
+      "bytes": 15532,
+      "filename": "MIT_L11_CORRECTION_SNAPSHOT.jsonl",
+      "sha256": "8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016"
+    },
+    "csv": {
+      "bytes": 2313694,
+      "filename": "records.csv",
+      "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+    },
+    "jsonl": {
+      "bytes": 1942530,
+      "filename": "records.jsonl",
+      "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+    },
+    "validation": {
+      "bytes": 3968,
+      "filename": "MIT_L11_BACKEND_VALIDATION.json",
+      "sha256": "1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f"
+    }
+  },
+  "git_operations": 0,
+  "inherited_file_count": 90,
+  "input_lock": {
+    "bytes": 5477,
+    "filename": "release-input-lock-mit-l11.json",
+    "sha256": "ec6bf0de521291efb69dc1a5823cfcb8bc7bcf921baff1f237e0cab23dd4ae18"
+  },
+  "input_lock_generator": {
+    "bytes": 11512,
+    "filename": "generate_input_lock_l11.py",
+    "sha256": "ceb30775ce8fa382929fd1a97c663a710c8439449c7815cd420f7c8e14b2f9c8"
+  },
+  "manifest": {
+    "bytes": 7227,
+    "filename": "release-manifest-mit-l11.json",
+    "sha256": "397e7377206255be063c98140cfa4df30a4c43964d81cce015681411b434d1b1"
+  },
+  "metadata_template": {
+    "bytes": 5712,
+    "default_preview": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+    "filename": "zenodo-record-mit-l11.json",
+    "sha256": "49b4d1fcc619a4fb7fdf926266113b8eb22b9c14adad3cdae38f2fc3e12d75a1"
+  },
+  "network_operations": 0,
+  "new_backend_record_count": 148,
+  "next_source_page": 98,
+  "note": "Local deterministic preservation package only. A future publisher must create one new version from record 22077419 in concept 10.5281/zenodo.22059741, inherit all 90 parent files byte-for-byte, bind the manifest to that record, publish, and anonymously read back all 98 public files.",
+  "parent_record_doi": "10.5281/zenodo.22077419",
+  "parent_record_id": "22077419",
+  "prepublication_control_bindings": {
+    "00_control/ADVERSE_LEDGER.jsonl": {
+      "bytes": 129852,
+      "sha256": "0d5ba296523f8be175b6e383fbe9881114fed7a33677d267ce7dd032f177f757"
+    },
+    "00_control/BUILD_AND_QA.md": {
+      "bytes": 101788,
+      "sha256": "ed4de2e4abc84b09135e5574afb1c6eecb6023df0116e15c5614e1b3d40d3839"
+    },
+    "00_control/COMPONENT_RIGHTS.csv": {
+      "bytes": 37165,
+      "sha256": "af69dde258fbc8649ae6c57db1dcde76318c579cd912b9db48a4ed8b1f116580"
+    },
+    "00_control/COVERAGE_OVERLAP.md": {
+      "bytes": 21198,
+      "sha256": "062ef0186f275428e03391d5de08fb761c103ac37389b84c78351cf4cfed7264"
+    },
+    "00_control/CURRENT_CURSOR.md": {
+      "bytes": 34436,
+      "sha256": "0ff25ca305ea15dae7a6ad983ae9d76897cec740bfd423b0375f688d1c6483dc"
+    },
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+      "bytes": 4297,
+      "sha256": "5ad4c09e872893898e6d3b7c37859c97cbbce4ed727960cec403184152fc8c25"
+    },
+    "00_control/CURRENT_STATE.md": {
+      "bytes": 47774,
+      "sha256": "da246b94d7f9c742b31433df52e3dd741ca89305c79ae0807915f45fbe18f5d6"
+    },
+    "00_control/DECISION_LOG.md": {
+      "bytes": 48412,
+      "sha256": "b8392ea5e698f5717f719c88a3d1ea3ead107707514921a68b5cd5c1d0329d82"
+    },
+    "00_control/PUBLICATION_RECEIPTS.md": {
+      "bytes": 39312,
+      "sha256": "8fbcbe06654aeb06f664665c2bd2c42f9a4f8a98298dd1dca3b027828422371e"
+    },
+    "00_control/SOURCE_AUTHORITY.json": {
+      "bytes": 23646,
+      "sha256": "d633d97eb43dae9ccabe6a80776ba0e8145fc3fde50daae8e77261992ec085d5"
+    }
+  },
+  "protected_backend_record_count": 2324,
+  "public_readback_file_exists": false,
+  "publication_operations": 0,
+  "publisher": {
+    "bytes": 22788,
+    "filename": "publish_l11.py",
+    "sha256": "36f34922d61aa16a99ba86192a71478fff1d4573e513dec35577cd17bbf6e82f"
+  },
+  "reader": {
+    "default_preview": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+    "html": {
+      "bytes": 96216,
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+      "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+    },
+    "pdf": {
+      "bytes": 89771,
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+      "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+    }
+  },
+  "recorded_at": "2026-08-24",
+  "release_builder": {
+    "bytes": 37645,
+    "filename": "build_l11.py",
+    "sha256": "fb0d27058d08a0bd77022994795efb698a76b4bb00e12f8efe3cb801a65c6e83"
+  },
+  "release_config": {
+    "bytes": 2325,
+    "filename": "release-config-mit-l11.json",
+    "sha256": "3a93e570a5e5d3834c6e3919815d55a4a7026743b5b68212c794ec8974afa724"
+  },
+  "release_file_count": 98,
+  "schema": "o015-zenodo-mit-l11-local-preparation-v1",
+  "source_pages": [
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "status": "prepared locally; not authenticated, drafted, uploaded, published, or read back",
+  "version": "checkpoint-2026.08.24-mit-l11-p86-97"
+}

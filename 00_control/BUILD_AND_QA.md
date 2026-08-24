@@ -1046,7 +1046,7 @@ Next: freeze and translate one coherent Lecture 5 batch from page 50.
 
 # MIT OCW 6.253 Lecture 5 pages 50–63 consolidated build and QA (L09)
 
-As of: 2026-08-24  
+As of: 2026-08-24
 Admission: PASS; complete Lecture 5, not a complete-course or public-preservation claim
 
 The boundary census, witness, target, semantic HTML, and seven-page A4 PDF are
@@ -1183,3 +1183,72 @@ and `5e8b9f7f3f89ae1c9288060d97aae7a8f10df6694a26b6af3dd83137ecfb0998`.
 The 24,582-byte public receipt has SHA-256
 `e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e`.
 Next: freeze and translate one coherent Lecture 7 batch from page 86.
+
+# MIT OCW 6.253 Lecture 7 pages 86–97 consolidated build and QA (L11)
+
+As of: 2026-08-24
+Admission: PASS; complete Lecture 7, not a complete-course or public-preservation claim
+
+The boundary census and immutable correction snapshot are 5,840 / 15,532
+bytes with SHA-256
+`6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a`
+and `8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016`.
+The English semantic witness, Indonesian target, reflowable HTML, and six-page
+A4 PDF are 23,801 / 25,023 / 96,216 / 89,771 bytes with SHA-256
+`625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c`,
+`f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b`,
+`19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d`,
+and `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
+
+The gate binds 12 source pages, 36 semantic items, eight nested items, 21
+display blocks, seven independently worded figure descriptions / 16 panels,
+three worked examples, and one counterexample. It also binds page 98 as the
+excluded `LECTURE 8 - LECTURE OUTLINE` delimiter. There are no exercises,
+hints, answers, solutions, code, interactive surfaces, or copied Athena image
+bytes/layouts.
+
+Corrections are frozen in exact source-page order as `O015-MIT-SEM-0034`,
+`0035`, `0036`, `0037`, `0040`, `0031`, `0038`, `0039`, `0032`, and
+`0033`. The 43,578-byte strict reader validator has SHA-256
+`6935a6b6cfe99b8f65e576d201a042a5df1ca2f619f52095e8a9d27a709fbd3f`;
+its 12,136-byte passing receipt has SHA-256
+`c70e7c16984d02e50c5e40a6ba7833bcff622c271b486db8c0eee358b71a2d0d`.
+Two deterministic rebuilds reproduce the canonical HTML and PDF byte for
+byte, and strict-final validation closes with `errors=[]` and
+`release_ready=true`.
+
+Live browser QA passes at 1280×720 and 390×844 with no page-width overflow,
+duplicate IDs, unresolved fragments, wide mobile math, or console findings;
+its 1,465-byte receipt has SHA-256
+`03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf`.
+All six PDF pages pass 160-dpi inspection with no clipping, overlap,
+truncation, broken glyphs, orphaned outline items, or split conclusions; its
+2,590-byte receipt has SHA-256
+`8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed`.
+The PDF is searchable, A4, unencrypted, declares `/Lang id-ID`, and remains
+untagged. Independent rereview closes P1=P2=P3=0 in a 7,395-byte receipt with
+SHA-256
+`5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8`.
+
+The additive backend preserves the exact 2,324-record L10 baseline and adds
+148 records, yielding 2,472. JSONL is 1,942,530 bytes / SHA-256
+`b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78`;
+CSV is 2,313,694 bytes /
+`8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66`.
+The generator, validator, and deterministic passing receipt are 61,263 /
+27,437 / 3,968 bytes with SHA-256
+`48ac891056bcfd49f1b17ba59053d6c89a03f5efa85578d0dd59f59942e66f0d`,
+`dc4479cc79161ab256491399627330fb3df71ba142647e7c4166b730edc96c1d`,
+and `1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f`.
+Two regeneration/validation cycles agree; stripping the L11 workflow recovers
+the prior records and order exactly, and the schema is unchanged.
+
+Preservation gate: PENDING. Preserve L11 once in the existing GitHub and
+Zenodo lineages and anonymously verify every new public byte. Do not claim an
+L11 public identity until that transaction succeeds; page 98 is next only
+after preservation closes.
+
+Architecture supersession: after the pending L11 preservation gate, the next
+build lane is the Habring structured-source spine. Page 98 is retained only as
+the MIT-companion cursor; no Becker file or build is admitted until its exact
+nonduplicative subset, `../preamble.tex` repair, and deterministic build pass.

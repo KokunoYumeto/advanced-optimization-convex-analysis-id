@@ -451,3 +451,38 @@ readback for all 43 changed paths. Zenodo record `22077419`, DOI
 cursor is complete-notes page 86, `LECTURE 7` / `LECTURE OUTLINE`. Freeze and
 translate one coherent multi-page Lecture 7 boundary, never a page-level
 reader series.
+
+## 2026-08-24 cursor refresh — L11 admitted; preservation pending
+
+The preceding page-86 cursor is superseded. Complete Lecture 7, pages 86–97,
+is admitted as one L11 boundary; page 98 is the verified `LECTURE 8` /
+`LECTURE OUTLINE` delimiter and remains excluded until preservation closes.
+The census / correction snapshot / English witness / Indonesian target are
+5,840 / 15,532 / 23,801 / 25,023 bytes with SHA-256
+`6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a`,
+`8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016`,
+`625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c`,
+and `f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b`.
+The HTML and six-page A4 PDF are 96,216 / 89,771 bytes with SHA-256
+`19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d`
+and `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
+
+Strict reader validation, desktop/mobile browser reflow, all-page visual QA,
+and independent rereview pass with P1=P2=P3=0. The additive backend preserves
+all 2,324 L10 records, adds 148, and passes twice at 2,472 records. JSONL and
+CSV are 1,942,530 / 2,313,694 bytes with SHA-256
+`b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78`
+and `8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66`.
+
+Preserve this admitted L11 boundary once in the existing GitHub and Zenodo
+lineages and anonymously read back its public bytes. No L11 public identity is
+claimed yet. Only after that transaction closes does page 98 become the
+executable translation cursor; do not return to page-level production.
+
+## 2026-08-24 architecture correction — Habring spine follows L11 preservation
+
+The last sentence above is superseded. Preserve L11 first, then freeze page 98
+as the dormant MIT-companion cursor; do not automatically expand MIT. The
+active production route pivots to the complete Habring v1 structured-source
+spine, followed only by a frozen/build-admitted nonduplicative Becker subset
+and the finite original closure recorded in `CURRENT_GOAL_AND_WORKFLOW.md`.

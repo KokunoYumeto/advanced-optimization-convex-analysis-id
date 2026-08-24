@@ -644,3 +644,75 @@ the 24,582-byte sanitized receipt has SHA-256
 `e2502d2192a803fbd22f4ac2017772d6de37208b5d261568c89a30f073bb260e`.
 No upstream contact occurred. The executable cursor is page 86, the start of
 one coherent multi-page Lecture 7 batch.
+
+## 2026-08-24 — MIT L11 complete Lecture 7 admitted; preservation pending
+
+Complete-notes pages 86–97 are admitted as one coherent Lecture 7 semantic
+reader boundary; page 98 is the verified Lecture 8 delimiter and is excluded.
+The closure contains 12 ordered source pages, 36 semantic items, eight nested
+items, 21 display surfaces, seven independently worded figure descriptions /
+16 panels, three worked examples, and one counterexample. It has no source
+exercise, hint, answer, solution, code, or interactive surface. No Athena
+Scientific image byte, crop, or source layout enters the derivative.
+
+The census and immutable ten-event correction snapshot are 5,840 / 15,532
+bytes with SHA-256
+`6586e3feb4463da884027c778a70c0f066b48d2948c38d1ba9a80ebde98c6f6a`
+and `8acc411765e4d5e29f9e89447c26f2b37f00110d43ac2b0043c0762ed070a016`.
+Corrections occur in source-page order as `O015-MIT-SEM-0034`, `0035`,
+`0036`, `0037`, `0040`, `0031`, `0038`, `0039`, `0032`, and `0033`.
+The English witness, Indonesian target, reflowable HTML, and six-page A4 PDF
+are 23,801 / 25,023 / 96,216 / 89,771 bytes with SHA-256
+`625efb8801d24c270d2bf851bf1c7fb27cb307146742d7cbddc00b5cb5873c8c`,
+`f908901609e1a1e6091734b55ba63b980f491dd5a5e4e813621816cbceb1c32b`,
+`19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d`,
+and `82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8`.
+
+The 43,578-byte reader validator and 12,136-byte passing receipt have SHA-256
+`6935a6b6cfe99b8f65e576d201a042a5df1ca2f619f52095e8a9d27a709fbd3f`
+and `c70e7c16984d02e50c5e40a6ba7833bcff622c271b486db8c0eee358b71a2d0d`.
+Browser, visual, and independent-rereview evidence are 1,465 / 2,590 / 7,395
+bytes with SHA-256
+`03a7d0caf238595fae71facd891098213328744e172b58ee0c2359530400eeaf`,
+`8878aca621d4428e1053420a5f5f1252043b18c9c0cca39862e5f4328aac57ed`,
+and `5c58bd030b99fd488fdd49082cf92e1714f0e36a09d39da3b625f7a16e028ff8`.
+Deterministic reader validation, desktop/mobile reflow, all-six-page visual
+inspection, and independent P1=P2=P3=0 rereview pass. The PDF is searchable,
+A4, unencrypted, declares `/Lang id-ID`, and remains untagged.
+
+Backend admission preserves the exact 2,324-record L10 baseline and adds 148
+records, closing at 2,472. JSONL is 1,942,530 bytes / SHA-256
+`b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78`;
+CSV is 2,313,694 bytes /
+`8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66`.
+The generator, backend validator, and passing receipt are 61,263 / 27,437 /
+3,968 bytes with SHA-256
+`48ac891056bcfd49f1b17ba59053d6c89a03f5efa85578d0dd59f59942e66f0d`,
+`dc4479cc79161ab256491399627330fb3df71ba142647e7c4166b730edc96c1d`,
+and `1d7d27001595d1312600fe39ebc980ec5b473699d466caf28920eb286db5449f`.
+The schema is unchanged, all prior record bytes/order recover exactly, and
+`relation.mit.l10-precedes-l11` links the admitted units.
+
+One additive GitHub/Zenodo preservation transaction remains; no L11 commit,
+DOI, or public-byte identity is claimed. Page 98 becomes the next executable
+cursor only after that transaction closes.
+
+## 2026-08-24 — O015 source architecture reconciled
+
+The stable coordinator authority is
+`C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`,
+68,481 bytes / SHA-256
+`af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
+It classifies O015 as an original coursebook with lawful structured-source
+donors. Habring arXiv `2607.11664v1` is the canonical spine: the live
+230,116-byte source tar and 836,977-byte/84-page PDF match SHA-256
+`d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`
+and `d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d`.
+Becker commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` is a future bounded
+MIT-licensed supplement target, not frozen or admitted in this lane; its exact
+subset, `../preamble.tex` repair, rights, and deterministic build must close
+first. MIT/Royer/Penn remain preserved companions. The original layer must
+close KKT/Slater/Lagrangian duality, modern stochastic methods, variational and
+monotone-operator methods, connective proofs, exercises, and full solutions.
+After L11 preservation, production pivots to Habring; page 98 remains a
+preserved MIT-companion cursor rather than an automatic next batch.
