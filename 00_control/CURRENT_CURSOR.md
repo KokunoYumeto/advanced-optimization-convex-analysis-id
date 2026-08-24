@@ -258,3 +258,22 @@ credential-free immutable raw readback; receipt SHA-256 is
 `1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
 The source cursor is unchanged: finish and admit Lecture 2 pages 20–28 as one
 boundary; page 29 begins Lecture 3.
+
+## 2026-08-23 cursor refresh — L06 admitted; Lecture 3 pages 29–38 active
+
+The preceding cursor is superseded. Complete Lecture 2, pages 20–28, is
+admitted with a passing four-surface reader gate and deterministic 1,714-record
+backend. Its canonical target, HTML, and PDF hashes are
+`a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e`,
+`94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`,
+and `84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`.
+The backend JSONL/CSV hashes are
+`9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e`
+and `f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f`.
+
+The executable production cursor is now complete Lecture 3, pages 29–38,
+ending before Lecture 4 on page 39. Its census and English witness are frozen
+at `3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f`
+and `ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`.
+Translate/build/validate these ten pages once as L07; do not revert to
+page-level production. Preserve L06 publicly before or alongside that work.

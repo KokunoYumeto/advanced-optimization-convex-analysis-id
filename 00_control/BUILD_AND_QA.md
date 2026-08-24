@@ -839,3 +839,50 @@ the immutable raw-commit surface; every response was HTTP 200 and matched the
 corresponding Git blob byte-for-byte and by SHA-256. Receipt:
 `release/github/2026-08-23-mit-l05/github-public-readback.json`, 10,947 bytes,
 SHA-256 `1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
+
+# MIT OCW 6.253 Lecture 2 pages 20–28 consolidated build and QA (L06)
+
+As of: 2026-08-23  
+Admission: PASS; complete Lecture 2, not a complete-course claim
+
+Exact witness, target, HTML, and PDF identities are respectively 15,594 bytes /
+`a8094ad892a90a20d271e961504fb418b1ea241859b072cf5ba56317783b809a`,
+17,772 /
+`a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e`,
+70,446 /
+`94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`,
+and 74,235 /
+`84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`.
+The boundary census is 9,962 bytes /
+`fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4`.
+
+The 6,086-byte fail-closed reader receipt has SHA-256
+`6a8eab2cb69bf1403a8da3f9fbcc40f482c4b9a18e3ebbba24ac82ccee989257`
+and reproduced unchanged after another full run. It verifies nine source
+pages, 32 top-level items, 17 nested items, 12 display formulas, five semantic
+figure descriptions, source-page 29 as the clean delimiter, exact rights and
+correction bindings, two deterministic builds, searchable A4 PDF, and zero
+copied image surfaces. Browser QA at desktop 1280×720 and mobile 390×844 has
+no horizontal/formula overflow, duplicate IDs, unresolved fragments, or
+console findings. Four-page 160-dpi visual inspection is clean. Rereview closes
+P1=0/P2=0/P3=0. The PDF remains untagged; missing human review is recorded but
+is not a gate.
+
+The backend extension and independent validator pass two successive cycles
+with identical output. They add 109 records with new-ID-set SHA-256
+`756dced298991b810b3d153159379728f714beee2bbe188ab07c004bdbed7b82`,
+yielding 1,714 records. JSONL is 1,231,983 bytes /
+`9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e`;
+CSV is 1,480,312 bytes /
+`f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f`.
+Generator, validator, and receipt identities are
+`33fe4df3d268cf6a4e2656befe66d517e35634c6c1387244762da524df8c1df0`,
+`565f600cc936ecbbf60eaa9a9d80ea535f5b4b49934418f8a22e0571af26f5b5`,
+and `247fd848a4b4d0c3960ee82d48b7648304215ca69dddf1736305734106615c4c`.
+The backend binds corrections through
+`00_control/MIT_L06_CORRECTION_SNAPSHOT.jsonl` (1,406 bytes /
+`4049f5ed333489bc0b8942e91ae3ab05f43677f13de1e532d544d7691724737f`)
+so later append-only ledger growth cannot invalidate this unit.
+
+Next: publish this admitted boundary once in the existing GitHub/Zenodo
+lineages, then build Lecture 3 pages 29–38 as one consolidated L07 batch.

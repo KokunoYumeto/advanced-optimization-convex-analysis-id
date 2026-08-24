@@ -166,3 +166,25 @@ their build/QA is in progress, so they do not yet enlarge admitted coverage.
 Remaining gaps are later MIT/Royer material, original bridges, laboratories,
 mastery/solution coverage, capstone, semantic EPUB, tagged PDF, and human
 Indonesian review.
+
+## MIT L06 complete Lecture 2 admitted; L07 remains outside coverage (2026-08-23)
+
+Pages 20–28 now enlarge admitted primary coverage with mathematical
+conventions; convex sets and functions; extended-real functions, epigraphs and
+effective domains; lower semicontinuity and closedness; proper/improper convex
+functions; and basic convexity-preserving constructions. This is convex-
+analysis foundation, not O018's finite LP/MIP, simplex/tableaux, LP
+duality/sensitivity, network, or discrete-optimization workflow.
+
+The closure has 32 top-level items, 17 nested items, 12 display formulas, five
+text-only figure descriptions, zero copied graphics, and no exercise/solution,
+code, or interactive surface. All reader, rights, formula, visual, browser,
+rereview, and 1,714-record backend gates pass. Exact identities are controlled
+in `CURRENT_STATE.md` and `BUILD_AND_QA.md`.
+
+Lecture 3 pages 29–38 are prepared as the next coherent batch but remain
+outside admitted coverage until their Indonesian reader and consolidated gate
+pass. Page 39 begins Lecture 4. Remaining gaps include later MIT/Royer
+material, bridges, laboratories, mastery/solution coverage, capstone,
+accessible EPUB/tagged PDF, and optional human-review evidence; the latter is
+not a hold.

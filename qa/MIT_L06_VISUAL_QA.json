@@ -1,0 +1,33 @@
+{
+  "schema": "o015-mit-l06-visual-qa-v1",
+  "recorded_at": "2026-08-23T21:03:00Z",
+  "result": "pass",
+  "boundary": "MIT complete-notes pages 20-28",
+  "surface": {
+    "path": "output/pdf/D90-MIT-06-kuliah-2-landasan-konveks-id.pdf",
+    "bytes": 74235,
+    "sha256": "84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75"
+  },
+  "render": {
+    "tool": "pdftoppm",
+    "dpi": 160,
+    "pages": 4,
+    "files": [
+      {"name": "page-1.png", "width": 1323, "height": 1871, "bytes": 394314, "sha256": "20d3ece52164fb4eb819cbfa3bc011f8879e8a53d214c2d4ba86033f74cefabd"},
+      {"name": "page-2.png", "width": 1323, "height": 1871, "bytes": 309189, "sha256": "55ef1185f2d236220bc7cbe573b1fac5ca47f3d79a8a20dfcd715cb3602ff14e"},
+      {"name": "page-3.png", "width": 1323, "height": 1871, "bytes": 396743, "sha256": "c5f98c13023a7dfc52f9b75b86c2558ac10de887835b7d3929de657316c904f1"},
+      {"name": "page-4.png", "width": 1323, "height": 1871, "bytes": 369621, "sha256": "4b5ac1a5bde3091a3d2039af3b2d573ad8a31130ff1bfd1601d0bebd792a1794"}
+    ]
+  },
+  "observations": [
+    "All four A4 reader pages were inspected at full-page resolution and render without clipping, overlap, missing glyphs, black boxes, or broken headings.",
+    "The nine ordered source-page sections, thirty-two top-level items, seventeen nested items, twelve display formulas, and five text-only figure descriptions remain legible across reflowed page breaks.",
+    "The lower-Roman proposition list on source page 25 and lower-alpha proposition list on source page 28 render as coherent three-part lists; no part runs into the preceding line.",
+    "The five Athena Scientific figure blocks are descriptions only. The output PDF has no raster image XObjects or copied figure bytes.",
+    "The page-28 proposition explicitly pairs convex inputs with convex output and closed inputs with closed output in each of parts (a)-(c), without clipping or ambiguous line fusion.",
+    "Headers, footers, page numbers, mathematical symbols, overbars, hats, infinity signs, transpose marks, and inequality directions are visually intact.",
+    "The two-digit section number 10 has explicit separation from its heading text; the earlier fused-number rendering is corrected."
+  ],
+  "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "human_native_speaker_review": false
+}

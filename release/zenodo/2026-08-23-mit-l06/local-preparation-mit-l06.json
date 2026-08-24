@@ -1,0 +1,54 @@
+{
+  "schema": "o015-zenodo-mit-l06-local-preparation-v1",
+  "recorded_at": "2026-08-23T23:30:00Z",
+  "parent_record_id": "22072071",
+  "parent_record_doi": "10.5281/zenodo.22072071",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "version": "checkpoint-2026.08.23-mit-l06-p20-28",
+  "status": "prepared locally; not authenticated, drafted, uploaded, published, or read back",
+  "source_pages": [20, 21, 22, 23, 24, 25, 26, 27, 28],
+  "next_source_page": 29,
+  "backend_record_count": 1714,
+  "release_file_count": 58,
+  "inherited_file_count": 50,
+  "addition_file_count": 8,
+  "deterministic_local_builds": 2,
+  "deterministic_identity_match": true,
+  "delta_bundle": {
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.23_MIT_L06_DELTA.zip",
+    "bytes": 523322,
+    "sha256": "2e8806904a65e3f09143c0f7a0b5371b009b7b54f50392d21079907261d15fd1",
+    "zip_entries": 40,
+    "manifest_bound_entries": 39,
+    "integrity": "pass",
+    "forbidden_entries": 0
+  },
+  "manifest_before_draft_binding": {
+    "filename": "release-manifest-mit-l06.json",
+    "bytes": 6382,
+    "sha256": "748cca83659204b0ac74edf57846b1ed0757f7dbf699d7de54b0519c3fe9986d"
+  },
+  "checksums_before_draft_binding": {
+    "filename": "SHA256SUMS-mit-l06",
+    "bytes": 5857,
+    "sha256": "2b72c14ccf8011235a7363fc76fc76ae9caa3753540fd84b67a401ff9c3ecae6"
+  },
+  "final_backend": {
+    "jsonl": {"bytes": 1231983, "sha256": "9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e"},
+    "csv": {"bytes": 1480312, "sha256": "f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f"},
+    "validation": {"bytes": 8473, "sha256": "247fd848a4b4d0c3960ee82d48b7648304215ca69dddf1736305734106615c4c"},
+    "correction_snapshot": {"bytes": 1406, "sha256": "4049f5ed333489bc0b8942e91ae3ab05f43677f13de1e532d544d7691724737f"}
+  },
+  "network_operations": 0,
+  "credential_reads": 0,
+  "git_operations": 0,
+  "draft_state_file_exists": false,
+  "public_readback_file_exists": false,
+  "publisher_safety": {
+    "latest_parent_resolution_required_before_version_creation": true,
+    "exact_remote_concept_lineage_required": true,
+    "ambiguous_publish_response_public_reconciliation": true,
+    "default_preview": "D90-MIT-06-kuliah-2-landasan-konveks-id.pdf"
+  },
+  "note": "The manifest and checksum identities are intentionally pre-draft. publish_l06.py prepare rebinds them to the created draft DOI and reruns every local gate before any upload."
+}

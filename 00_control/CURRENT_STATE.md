@@ -314,3 +314,64 @@ sanitized receipt is 10,947 bytes, SHA-256
 `1ecd35857a60b122d925b4ac53dca185cfae337b89f0552713167a8902595b7c`.
 No L06 reader output is claimed by that content commit. The active production
 unit remains Lecture 2 pages 20–28.
+
+## 2026-08-23 — MIT L06 Lecture 2 pages 20–28 admitted; Lecture 3 active
+
+The complete Lecture 2 boundary on MIT complete-notes pages 20–28 is admitted
+as one coherent L06 semantic reader unit. The authority remains the 8,030,116-
+byte, 340-page PDF, SHA-256
+`41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181`.
+The English witness is 15,594 bytes /
+`a8094ad892a90a20d271e961504fb418b1ea241859b072cf5ba56317783b809a`;
+the Indonesian target is 17,772 bytes /
+`a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e`;
+HTML is 70,446 bytes /
+`94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`;
+and the four-page A4 PDF is 74,235 bytes /
+`84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`.
+
+The closure is nine source pages, 32 top-level items, 17 ordered nested items,
+12 display formulas, and five semantic figure descriptions. No Athena
+Scientific figure byte, crop, or layout enters either reader. There are no
+source exercises, hints, answers, solutions, code, or interactivity.
+Corrections `O015-MIT-SEM-0005` and `0006` disclose the source's printed
+function-type `mapsto` arrows and strict-convexity parameter switch. The
+page-28 convex/closed implications are explicitly paired in Indonesian.
+
+Reader validation, browser QA, visual QA, and independent rereview pass at
+6,086 bytes /
+`6a8eab2cb69bf1403a8da3f9fbcc40f482c4b9a18e3ebbba24ac82ccee989257`,
+1,584 /
+`b98ac5b2ea7df5b5d7b1263595b777269db1acc9c996fe7135a338366fb2d64d`,
+2,342 /
+`9643896538a3704626d100c3775e3329bf082feda0e981977593f7ff6d25c680`,
+and 4,104 /
+`dab732ea3b5096ee9d186775aca9064781e0026e15ea8943c2c8e637e6a64afb`.
+The PDF is searchable, unencrypted, A4, and `/Lang id-ID`; it remains
+untagged. Human-language review is unrecorded evidence, not a hold.
+
+The additive backend passes twice at 1,714 records, adding 109 records to the
+byte-protected 1,605-record L05 baseline. JSONL is 1,231,983 bytes /
+`9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e`;
+CSV is 1,480,312 bytes /
+`f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f`.
+The new-ID set is
+`756dced298991b810b3d153159379728f714beee2bbe188ab07c004bdbed7b82`.
+Generator, independent validator, and passing receipt are respectively 49,767
+bytes /
+`33fe4df3d268cf6a4e2656befe66d517e35634c6c1387244762da524df8c1df0`,
+43,894 /
+`565f600cc936ecbbf60eaa9a9d80ea535f5b4b49934418f8a22e0571af26f5b5`,
+and 8,473 /
+`247fd848a4b4d0c3960ee82d48b7648304215ca69dddf1736305734106615c4c`.
+The immutable two-event L06 correction snapshot is 1,406 bytes /
+`4049f5ed333489bc0b8942e91ae3ab05f43677f13de1e532d544d7691724737f`;
+later append-only ledger events cannot invalidate this admission.
+
+The next coherent batch is complete Lecture 3, pages 29–38; page 39 begins
+Lecture 4. Its census is 11,013 bytes /
+`3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f`,
+and English witness is 13,879 bytes /
+`ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`.
+The Indonesian target is a draft until its consolidated reader gate passes.
+L06 GitHub and Zenodo preservation are the immediate publication transaction.

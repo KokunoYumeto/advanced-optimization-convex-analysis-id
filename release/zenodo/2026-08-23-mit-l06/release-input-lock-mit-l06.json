@@ -1,0 +1,33 @@
+{
+  "schema": "o015-mit-l06-release-input-lock-v1",
+  "boundary": {
+    "source_pages": [20, 21, 22, 23, 24, 25, 26, 27, 28],
+    "next_source_page": 29,
+    "next_heading": "LECTURE 3 - LECTURE OUTLINE"
+  },
+  "backend_record_count": 1714,
+  "files": {
+    "source/en/mit-06-lecture-2-convex-foundations-semantic-witness.md": {"bytes": 15594, "sha256": "a8094ad892a90a20d271e961504fb418b1ea241859b072cf5ba56317783b809a"},
+    "source/id-ID/mit-06-kuliah-2-landasan-konveks-id.md": {"bytes": 17772, "sha256": "a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e"},
+    "source/id-ID/mit-l06.css": {"bytes": 2777, "sha256": "6b17b29f419896e8a53000316cf9c52a393168032f811f4346b295ca6e7a045c"},
+    "source/id-ID/mit-l06-preamble.tex": {"bytes": 1499, "sha256": "a561a9dccaf4997e1a82064bf09ad20baf07f85e50441f1b11cfbd31c3993f6a"},
+    "source/id-ID/mit-l06-pdf-filter.lua": {"bytes": 302, "sha256": "2a39c4aeb5b6587e4ff7db483f130cb88c8fdbc74f9e83f8fd939d37f6e75421"},
+    "source/id-ID/mit-l06-before-body.html": {"bytes": 96, "sha256": "86eb76132a49810cb5316e2fef333c61318ab9062a74cb1f0c6b018ee49f7c63"},
+    "source/id-ID/mit-l06-after-body.html": {"bytes": 175, "sha256": "3d3f8d0250a87e2b34cb8fc39b32f4b63f2d2a2ad16f13be20a751b13a0f6020"},
+    "output/pdf/D90-MIT-06-kuliah-2-landasan-konveks-id.pdf": {"bytes": 74235, "sha256": "84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75"},
+    "output/html/D90-MIT-06-kuliah-2-landasan-konveks-id.html": {"bytes": 70446, "sha256": "94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6"},
+    "qa/build_mit_l06.py": {"bytes": 4037, "sha256": "c4ff8f99a7c265ee8314a9a98abfdab12d85a1826852c4512720ecf4ab44f8af"},
+    "qa/validate_mit_l06.py": {"bytes": 25152, "sha256": "88ef1aa2e81c7a31b1a044e28e42805d53da90930aab5cca3eb776db7a01370e"},
+    "qa/MIT_L06_VALIDATION.json": {"bytes": 6086, "sha256": "6a8eab2cb69bf1403a8da3f9fbcc40f482c4b9a18e3ebbba24ac82ccee989257"},
+    "qa/MIT_L06_BROWSER_QA.json": {"bytes": 1584, "sha256": "b98ac5b2ea7df5b5d7b1263595b777269db1acc9c996fe7135a338366fb2d64d"},
+    "qa/MIT_L06_VISUAL_QA.json": {"bytes": 2342, "sha256": "9643896538a3704626d100c3775e3329bf082feda0e981977593f7ff6d25c680"},
+    "qa/MIT_L06_INDEPENDENT_REREVIEW.md": {"bytes": 4104, "sha256": "dab732ea3b5096ee9d186775aca9064781e0026e15ea8943c2c8e637e6a64afb"},
+    "qa/extend_backend_mit_l06.py": {"bytes": 49767, "sha256": "33fe4df3d268cf6a4e2656befe66d517e35634c6c1387244762da524df8c1df0"},
+    "qa/validate_backend_mit_l06.py": {"bytes": 43894, "sha256": "565f600cc936ecbbf60eaa9a9d80ea535f5b4b49934418f8a22e0571af26f5b5"},
+    "qa/MIT_L06_BACKEND_VALIDATION.json": {"bytes": 8473, "sha256": "247fd848a4b4d0c3960ee82d48b7648304215ca69dddf1736305734106615c4c"},
+    "backend/records.jsonl": {"bytes": 1231983, "sha256": "9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e"},
+    "backend/records.csv": {"bytes": 1480312, "sha256": "f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f"},
+    "00_control/MIT_L06_LECTURE_2_PAGES_020-028_BOUNDARY_CENSUS.md": {"bytes": 9962, "sha256": "fc0cb5b863652aa810ed765f247a248be1510cd61f240277b896e605a41b3ea4"},
+    "00_control/MIT_L06_CORRECTION_SNAPSHOT.jsonl": {"bytes": 1406, "sha256": "4049f5ed333489bc0b8942e91ae3ab05f43677f13de1e532d544d7691724737f"}
+  }
+}

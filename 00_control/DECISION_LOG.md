@@ -333,3 +333,29 @@ version inherits all 40 parent files unchanged and adds only the 10 verified
 L04/L05 reader/release files. Public record `22072071` and its anonymous
 50-file readback prove the transaction. This decision does not change the
 Lecture 2 production cursor or authorize per-page release cadence.
+
+## D90-0037 — Admit complete Lecture 2 and advance to complete Lecture 3
+
+Decision: admit MIT L06 as the complete page-20–28 Lecture 2 boundary after
+post-correction deterministic reader and backend gates pass. The page-28
+“respectively” relation is expanded into explicit convex/closed cases; the
+nested-item notice now claims stable IDs only for pages, top-level items,
+displays, and figures. These corrections change the reader identities and all
+receipts were regenerated before admission.
+
+The admitted target, HTML, PDF, and reader-validation hashes are
+`a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e`,
+`94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`,
+`84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`,
+and `6a8eab2cb69bf1403a8da3f9fbcc40f482c4b9a18e3ebbba24ac82ccee989257`.
+The backend adds 109 records and passes at 1,714 records; JSONL and CSV hashes
+are `9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e`
+and `f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f`.
+Corrections `0005`–`0006` are bound through the immutable L06 snapshot
+`4049f5ed333489bc0b8942e91ae3ab05f43677f13de1e532d544d7691724737f`,
+not the subsequently extended global ledger.
+
+The next unit is not page 29 alone: complete Lecture 3 spans pages 29–38 and
+page 39 starts Lecture 4. Its census and semantic witness are already frozen.
+Preserve L06 in the existing GitHub/Zenodo lineages and translate L07 as one
+ten-page batch. Missing human review cannot delay either operation.

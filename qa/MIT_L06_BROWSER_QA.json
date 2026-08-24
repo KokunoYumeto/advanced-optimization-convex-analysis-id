@@ -1,0 +1,52 @@
+{
+  "schema": "o015-mit-l06-browser-qa-v1",
+  "recorded_at": "2026-08-23T21:01:51Z",
+  "result": "pass",
+  "boundary": "MIT complete-notes pages 20-28",
+  "method": "Codex in-app browser live DOM, reflow, fragment, asset, and console checks",
+  "browser_available": true,
+  "html": {
+    "path": "output/html/D90-MIT-06-kuliah-2-landasan-konveks-id.html",
+    "bytes": 70446,
+    "sha256": "94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6"
+  },
+  "topology": {
+    "lang": "id-ID",
+    "main_count": 1,
+    "headings": {"h1": 1, "h2": 10},
+    "source_pages": 9,
+    "source_items": 32,
+    "source_figures": 5,
+    "source_displays": 12,
+    "math_nodes": 153,
+    "display_math_nodes": 12,
+    "ordered_lists": {"lower_roman": 1, "lower_alpha": 1},
+    "ordered_items": {"lower_roman": 3, "lower_alpha": 3},
+    "images": 0,
+    "media_or_embeds": 0,
+    "unique_source_uris": [
+      "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    ],
+    "duplicate_ids": 0,
+    "unresolved_fragments": 0,
+    "skip_link": "#d90-mit-l06-p020",
+    "source_page_order": [20, 21, 22, 23, 24, 25, 26, 27, 28]
+  },
+  "desktop": {
+    "viewport": [1280, 720],
+    "client_width": 1265,
+    "scroll_width": 1265,
+    "horizontal_overflow": false,
+    "console_warnings_or_errors": []
+  },
+  "mobile": {
+    "viewport": [390, 844],
+    "client_width": 375,
+    "scroll_width": 375,
+    "horizontal_overflow": false,
+    "toc_columns": 1,
+    "display_math_overflow": false,
+    "console_warnings_or_errors": []
+  },
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra"
+}

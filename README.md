@@ -274,3 +274,34 @@ byte, SHA-256
 saksi dan target sudah berupa draf tetapi belum diterima, sementara build/QA
 sedang berjalan. Halaman 29 memulai Kuliah 3 dan menjadi kursor sesudah batch.
 `00_control/CURRENT_GOAL_AND_WORKFLOW.md` tetap menjadi otoritas pelanjutan.
+
+## Batas MIT L06 yang diterima (23 Agustus 2026)
+
+L06 menerima seluruh Kuliah 2 pada halaman sumber 20–28 sebagai satu batch.
+Saksi Inggris, target Indonesia, HTML, dan PDF A4 empat halaman masing-masing
+memiliki SHA-256
+`a8094ad892a90a20d271e961504fb418b1ea241859b072cf5ba56317783b809a`,
+`a9e8b353adddc4919b6244e27df4365a33e74d4b034b9d99fff6eb3f93e0b23e`,
+`94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6`,
+dan `84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75`.
+
+Batas ini memuat sembilan halaman, 32 butir tingkat atas, 17 butir bersarang,
+12 rumus display, dan lima deskripsi grafik. Tidak ada byte, potongan, atau tata
+letak grafik Athena Scientific yang disalin. Koreksi notasi
+`O015-MIT-SEM-0005` dan `0006` diungkapkan. Validasi deterministik, QA
+browser desktop/ponsel, inspeksi visual empat halaman, dan rereview independen
+semuanya lulus. PDF dapat dicari, A4, dan berbahasa `id-ID`, tetapi belum
+bertag. Tidak adanya tinjauan penutur asli dicatat sebagai bukti yang belum
+tersedia, bukan sebagai penahan kerja atau publikasi.
+
+Backend kini memuat 1.714 rekaman, 109 tambahan terhadap baseline L05. JSONL
+1.231.983 byte memiliki SHA-256
+`9ad375756d2ee3159acf760f5d68084d2921e665cf993e2aaa6514f1e710337e`;
+CSV 1.480.312 byte memiliki SHA-256
+`f5c81e38ee9d1b4e9d2bcc7632603266fcf271b9b8c6454e99ba3e4b0041f72f`.
+Resi backend lulus pada SHA-256
+`247fd848a4b4d0c3960ee82d48b7648304215ca69dddf1736305734106615c4c`.
+
+Batch aktif berikutnya adalah seluruh Kuliah 3, halaman 29–38. Halaman 39
+memulai Kuliah 4. Sensus dan saksi semantik Kuliah 3 sudah dibekukan; edisi
+Indonesia dan pembacanya harus ditutup sekali sebagai L07, bukan per halaman.

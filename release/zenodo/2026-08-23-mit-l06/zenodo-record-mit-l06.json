@@ -1,0 +1,51 @@
+{
+  "access": {"files": "public", "record": "public"},
+  "files": {
+    "enabled": true,
+    "default_preview": "D90-MIT-06-kuliah-2-landasan-konveks-id.pdf"
+  },
+  "metadata": {
+    "contributors": [
+      {"person_or_org": {"family_name": "Royer", "given_name": "Clément W.", "name": "Royer, Clément W.", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"family_name": "Miller", "given_name": "Simon", "name": "Miller, Simon", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"family_name": "Mercer", "given_name": "Douglas", "name": "Mercer, Douglas", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"name": "TTP", "type": "organizational"}, "role": {"id": "other"}}
+    ],
+    "creators": [
+      {"person_or_org": {"family_name": "Bertsekas", "given_name": "Dimitri P.", "name": "Bertsekas, Dimitri P.", "type": "personal"}},
+      {"person_or_org": {"family_name": "Habring", "given_name": "Andreas", "name": "Habring, Andreas", "type": "personal"}},
+      {"person_or_org": {"family_name": "Griffin", "given_name": "Christopher", "name": "Griffin, Christopher", "type": "personal"}}
+    ],
+    "description": "<p>Checkpoint reader-first parsial untuk Kuliah 2, halaman 20-28, dari catatan lengkap Dimitri P. Bertsekas, <em>Convex Analysis and Optimization</em>, MIT OpenCourseWare 6.253. Halaman 29 memulai Kuliah 3 dan merupakan kursor produksi berikutnya. Rilis ini mewarisi tanpa perubahan seluruh 50 berkas induk dari 10.5281/zenodo.22072071 dan menambahkan reader, sumber semantik, QA, backend, kontrol, lisensi, manifest, dan checksum yang terikat hash.</p><p>Sembilan halaman ini memuat 32 butir tingkat atas, 17 butir bersarang, 12 rumus tampil, dan relasi lima gambar. Sumber tidak menyediakan latihan, petunjuk, jawaban, solusi, kode, data, atau interaktivitas pada batas ini; tidak ada yang diciptakan atau diklaim. Tidak ada byte atau tata letak grafik Athena Scientific yang disalin: lima relasi gambar disajikan melalui deskripsi teks independen dan locator sumber. HTML semantik adalah permukaan aksesibilitas utama; PDF A4 dapat dicari tetapi belum bertag.</p><p>Hak berlaku per komponen. Turunan MIT berada di bawah CC BY-NC-SA 4.0; berkas induk mempertahankan hak Habring CC BY 4.0, Griffin/Penn CC BY-NC-SA 3.0 United States, dan metadata/pembekuan sumber Royer CC BY-NC 4.0. Ini adalah terjemahan/adaptasi independen dan tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan oleh penulis atau institusi sumber.</p><p>Korpus tetap belum lengkap: Kuliah 3 dan materi MIT berikutnya, modul Royer, pembaca penuh, EPUB semantik, PDF bertag, jembatan, empat laboratorium, 36 soal penguasaan beserta petunjuk/solusi, perbaikan solusi, dan capstone belum selesai. Tinjauan manusia/penutur asli belum dicatat dan bukan klaim rilis. Bantuan produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas arahan pengguna repositori.</p>",
+    "languages": [{"id": "ind"}],
+    "publication_date": "2026-08-23",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {"identifier": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-other"}, "scheme": "url"},
+      {"identifier": "10.48550/arXiv.2607.11664", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-book"}, "scheme": "doi"},
+      {"identifier": "https://sites.psu.edu/griffinch/files/2023/06/Math555_SRC.zip", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-book"}, "scheme": "url"},
+      {"identifier": "https://www.lamsade.dauphine.fr/~croyer/teachSG.html", "relation_type": {"id": "references"}, "resource_type": {"id": "publication-other"}, "scheme": "url"}
+    ],
+    "resource_type": {"id": "publication-other"},
+    "rights": [
+      {"id": "cc-by-nc-sa-4.0"},
+      {"id": "cc-by-4.0"},
+      {"description": {"en": "Applies only to inherited Griffin/Penn-derived reader and source components."}, "link": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/", "title": {"en": "CC BY-NC-SA 3.0 United States - inherited Griffin/Penn components only"}},
+      {"description": {"en": "Applies to the inherited Royer source-freeze component; no Royer-derived reader is included here."}, "link": "https://creativecommons.org/licenses/by-nc/4.0/", "title": {"en": "CC BY-NC 4.0 - inherited Royer source-freeze component only"}}
+    ],
+    "subjects": [
+      {"subject": "Bahasa Indonesia"},
+      {"subject": "id-ID"},
+      {"subject": "convex analysis"},
+      {"subject": "convex optimization"},
+      {"subject": "convex sets"},
+      {"subject": "convex functions"},
+      {"subject": "semantic mathematical transcription"},
+      {"subject": "open educational resources"},
+      {"subject": "mathematical translation"},
+      {"subject": "AI-assisted translation"}
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia (id-ID): Checkpoint MIT 6.253 Kuliah 2, Halaman 20-28 (Belum Lengkap)",
+    "version": "checkpoint-2026.08.23-mit-l06-p20-28"
+  }
+}
