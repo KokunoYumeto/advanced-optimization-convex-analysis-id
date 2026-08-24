@@ -371,3 +371,15 @@ The backend receipt is 6,631 bytes /
 Preserve L08 once in the existing GitHub and Zenodo lineages. Then resume at
 complete-notes page 50 and freeze one coherent multi-page Lecture 5 batch;
 do not return to page-level production.
+
+## 2026-08-24 cursor refresh — L08 preservation closed; page 50 active
+
+The preceding preservation instruction is complete. GitHub content commit
+`024fd4eaf185b44250ab4ed41eb46afb660b4fbd` / tree
+`03a703dcac06356b7439ada876175ed80664525d` is public; all 42 changed paths
+matched immutable anonymous raw downloads. Zenodo record `22074528`, DOI
+`10.5281/zenodo.22074528`, is public in the existing concept
+`10.5281/zenodo.22059741`; all 74 files matched anonymous readback, comprising
+66 unchanged inherited files and eight L08 additions. The current executable
+cursor is complete-notes page 50. Freeze one coherent multi-page Lecture 5
+batch before translating; do not resume page-level production.

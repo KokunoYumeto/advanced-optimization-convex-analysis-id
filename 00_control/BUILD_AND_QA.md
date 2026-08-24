@@ -1031,5 +1031,15 @@ Generator, validator, and passing receipt hashes are
 `6920fe6c673fddb80d018ea29814c26ed64741d0241a7ce73ea9580c760262d0`,
 `9e884f1dcc4d71ff149468ffaa0804deb0b772ff93a923ad6468777b970e0be8`,
 and `98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
-Next: preserve L08 once in the existing GitHub/Zenodo lineages, then advance
-to complete Lecture 5 beginning on page 50.
+Preservation gate: PASS. GitHub commit
+`024fd4eaf185b44250ab4ed41eb46afb660b4fbd` exposes all 42 changed paths with
+exact anonymous byte identity; receipt is 11,195 bytes / SHA-256
+`98396b8be5dc814443a47a4054e42f730b09bc3f9e0a1c384fca1f6771f32b40`.
+Zenodo DOI `10.5281/zenodo.22074528` exposes 74 files, 66 inherited unchanged
+and eight additions, all anonymously byte-matched. Its bound manifest and
+checksum file are 5,431 / 7,581 bytes with SHA-256
+`32b734818f143de77de420d985a0c4c6ac4f55a262b5330014be496e2fb84277`
+and `68b62dd5c424a97ebed0268ab08c091be1d64acb1f063942c62e29d3c545b8b1`.
+The 20,320-byte public receipt has SHA-256
+`3c162ec07d5fd17accf417ec4659ef1b5849c8b83873ab93720fd9d8326fe9ea`.
+Next: freeze and translate one coherent Lecture 5 batch from page 50.

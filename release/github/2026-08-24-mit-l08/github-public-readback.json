@@ -1,0 +1,316 @@
+{
+  "all_changed_files_read_back": true,
+  "branch": "main",
+  "changed_file_count": 42,
+  "commit": "024fd4eaf185b44250ab4ed41eb46afb660b4fbd",
+  "commit_patch": {
+    "commit": "024fd4eaf185b44250ab4ed41eb46afb660b4fbd",
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "a691d5a18a506374546b3953a35c4d7b2f4ba6710b6bd6834eefd45f08ca466f",
+    "url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/024fd4eaf185b44250ab4ed41eb46afb660b4fbd.patch"
+  },
+  "files": [
+    {
+      "bytes": 101361,
+      "http_status": 200,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "0f2400288816e3b68cac674a68331df6e51b831b0e5456c6ab1c80784efc79bb"
+    },
+    {
+      "bytes": 89411,
+      "http_status": 200,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "75304087868ad36b69965240e2e3f856ceea31ae940ef8a2cae013847e0a22cc"
+    },
+    {
+      "bytes": 27847,
+      "http_status": 200,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "078ccb042b212e1ec8cfa6d0cd47559eaec783c9e70667474f233c22d74da86e"
+    },
+    {
+      "bytes": 4102,
+      "http_status": 200,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "705993ca722bab9eb50a648ce636c496482d542cdf2b1bd4edba9d32029cd29c"
+    },
+    {
+      "bytes": 35660,
+      "http_status": 200,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "5fd659f9601fa6d82a1a8b41dcb28f778792306cf4019a3b105c664fec7de675"
+    },
+    {
+      "bytes": 41303,
+      "http_status": 200,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "f31dd52eabf13810d7b9fbf103c77b5769d280f8ce369909804da5505a8de1f9"
+    },
+    {
+      "bytes": 2347,
+      "http_status": 200,
+      "path": "00_control/MIT_L08_CORRECTION_SNAPSHOT.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "d99f8df4e722a9c98368bb169df17aa41d21754766b9ee19747a52569b40cb17"
+    },
+    {
+      "bytes": 11700,
+      "http_status": 200,
+      "path": "00_control/MIT_L08_LECTURE_4_BOUNDARY_CENSUS.md",
+      "public_byte_identity": "pass",
+      "sha256": "20ef255184a6e31476b368bd8b1ad08c39ea2ab9f6fdc1fa2c53574471a95055"
+    },
+    {
+      "bytes": 26690,
+      "http_status": 200,
+      "path": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "26d47a20cd6c5d38251c81e4d660ebd3734d8c4a159a956db130afc208bd3e76"
+    },
+    {
+      "bytes": 1727978,
+      "http_status": 200,
+      "path": "backend/records.csv",
+      "public_byte_identity": "pass",
+      "sha256": "ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836"
+    },
+    {
+      "bytes": 1441643,
+      "http_status": 200,
+      "path": "backend/records.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "0779f8bc03d437da72adafe2daf99c820d5849f0e14b630a0c3bd6f512b10085"
+    },
+    {
+      "bytes": 113898,
+      "http_status": 200,
+      "path": "output/html/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a"
+    },
+    {
+      "bytes": 91293,
+      "http_status": 200,
+      "path": "output/pdf/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62"
+    },
+    {
+      "bytes": 6631,
+      "http_status": 200,
+      "path": "qa/MIT_L08_BACKEND_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a"
+    },
+    {
+      "bytes": 1258,
+      "http_status": 200,
+      "path": "qa/MIT_L08_BROWSER_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "fae4f199316c1592256b46a5cc0a2099397ba9316d56cd00fda144c5fc83bcb8"
+    },
+    {
+      "bytes": 4514,
+      "http_status": 200,
+      "path": "qa/MIT_L08_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "04c9c89f4782a89d0c4f57867e1564db2100a2cb24fed8cfa2f67796e60b7e82"
+    },
+    {
+      "bytes": 10509,
+      "http_status": 200,
+      "path": "qa/MIT_L08_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "da2448349a7075fe20008df94f2f3a45d472df5ab1d3631a43a3f12f6352c745"
+    },
+    {
+      "bytes": 1380,
+      "http_status": 200,
+      "path": "qa/MIT_L08_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "ee2d7378d90b51bc9ba167fee95fe7d56d2022d21145a6db8cba45a6dcd8fcfe"
+    },
+    {
+      "bytes": 4103,
+      "http_status": 200,
+      "path": "qa/build_mit_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "310afb3855091dfda44f39dcce99d560d5805ea2eae2fdef6d3d09345e62ec4d"
+    },
+    {
+      "bytes": 49826,
+      "http_status": 200,
+      "path": "qa/extend_backend_mit_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "6920fe6c673fddb80d018ea29814c26ed64741d0241a7ce73ea9580c760262d0"
+    },
+    {
+      "bytes": 37314,
+      "http_status": 200,
+      "path": "qa/validate_backend_mit_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "9e884f1dcc4d71ff149468ffaa0804deb0b772ff93a923ad6468777b970e0be8"
+    },
+    {
+      "bytes": 33409,
+      "http_status": 200,
+      "path": "qa/validate_mit_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "48d83f7bb0b4cb115ea91ccc9e98daf5c88e86faaedc425adccfeea20ea040e0"
+    },
+    {
+      "bytes": 439723,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L08_DELTA.zip",
+      "public_byte_identity": "pass",
+      "sha256": "0b571eee80a5d9e2792b00a976b73bf3ba89575687c42b76cd27a80308e46ed5"
+    },
+    {
+      "bytes": 1417,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/LICENSE_MIT_L08.md",
+      "public_byte_identity": "pass",
+      "sha256": "433a6208ac1bd06913e9dd2a98197a7a3d7b5b94d1f8214214fba51799afda76"
+    },
+    {
+      "bytes": 2036,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/README_MIT_L08.md",
+      "public_byte_identity": "pass",
+      "sha256": "20ad77cad4a9ed9390eb35d782efbafc2714d9f6c398fbeb512fedb8d36885df"
+    },
+    {
+      "bytes": 1177,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/README_RELEASE_MIT_L08.md",
+      "public_byte_identity": "pass",
+      "sha256": "a582d96145ccc6881d34c26fa613a0cd49fa080f37ebbef217fb492e0eac9c5a"
+    },
+    {
+      "bytes": 7581,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/SHA256SUMS-mit-l08",
+      "public_byte_identity": "pass",
+      "sha256": "5d85369f35b2466a6bb8b044829d766ee59c0a77eb7da7495676ac2c9db6e914"
+    },
+    {
+      "bytes": 30820,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/build_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "cb37458222fac46eb36fadfef529a82cf716a6ef9082040eed4b5dfc066dbd91"
+    },
+    {
+      "bytes": 6213,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/generate_input_lock_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "23aacc82d31ddfc3c50fa33916a703204fe978b8ae0ff50f2fcf9abf2a1161f4"
+    },
+    {
+      "bytes": 4354,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/local-preparation-mit-l08.json",
+      "public_byte_identity": "pass",
+      "sha256": "abbe1a941c584c6b8b6c8fb9bacf9e074d9a78d8e73ca273a0a0de7ea90ba6ac"
+    },
+    {
+      "bytes": 5842,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/prepare_local_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "fa277d91aa564d150e1c706b4c043b9e5b12ae2943d796c08e74cec9f734ad5a"
+    },
+    {
+      "bytes": 22005,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/publish_l08.py",
+      "public_byte_identity": "pass",
+      "sha256": "15f161dbd83c7ad98ac93692c4414ee667d1f47aa35ac52bd9a5336a7eec5191"
+    },
+    {
+      "bytes": 3947,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/release-input-lock-mit-l08.json",
+      "public_byte_identity": "pass",
+      "sha256": "efafdbadfde90d28f7bb7b2f684d844a1e5e6c51732c533917f6af20c9a72010"
+    },
+    {
+      "bytes": 5404,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/release-manifest-mit-l08.json",
+      "public_byte_identity": "pass",
+      "sha256": "33808bc2426d13bb193d33191205c6ded2f22d4981fcca9b7db7b440395adbdc"
+    },
+    {
+      "bytes": 5356,
+      "http_status": 200,
+      "path": "release/zenodo/2026-08-24-mit-l08/zenodo-record-mit-l08.json",
+      "public_byte_identity": "pass",
+      "sha256": "3ed89b684d4e32240932851487c1bdb431d2dfde953ab89ea1b8b529dd121f95"
+    },
+    {
+      "bytes": 22457,
+      "http_status": 200,
+      "path": "source/en/mit-08-lecture-4-relative-interior-closure-continuity-semantic-witness.md",
+      "public_byte_identity": "pass",
+      "sha256": "db45c443fb4e978b6bb4681a228a279f83048b8210530f77ed772a82c5f324a4"
+    },
+    {
+      "bytes": 24496,
+      "http_status": 200,
+      "path": "source/id-ID/mit-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.md",
+      "public_byte_identity": "pass",
+      "sha256": "b0c8b0418db9029441db23ad7deac1bed8a187ef9ae5ecd61ccfb56ce2a78758"
+    },
+    {
+      "bytes": 170,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l08-after-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "045428641fba6fc618c15fec3c5ca3558def4b0f946e1d53094eba4e4972794c"
+    },
+    {
+      "bytes": 96,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l08-before-body.html",
+      "public_byte_identity": "pass",
+      "sha256": "d01225930c277dbd82aff342aa0addb5fb8b626dc734e4594dbdc86e481a1e8c"
+    },
+    {
+      "bytes": 499,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l08-pdf-filter.lua",
+      "public_byte_identity": "pass",
+      "sha256": "b8f11b413c30aaccaa0e014821e4e8fc32eb322a10734d092ee5ccdd46f8f9be"
+    },
+    {
+      "bytes": 1499,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l08-preamble.tex",
+      "public_byte_identity": "pass",
+      "sha256": "992ea616347c2719f9a42770a14efff6c8086bcff13c47308774b0333491575d"
+    },
+    {
+      "bytes": 2777,
+      "http_status": 200,
+      "path": "source/id-ID/mit-l08.css",
+      "public_byte_identity": "pass",
+      "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"
+    }
+  ],
+  "parent": "08482b8630367b858e741d32a5376b9f1ddada66",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-mit-l08-public-readback-v1",
+  "scope": "MIT L08 complete Lecture 4 pages 39-49, exact reader/source/QA/backend/control and prepared Zenodo release bytes; page 50 is not claimed.",
+  "tree": "03a703dcac06356b7439ada876175ed80664525d",
+  "upstream_contact": false
+}

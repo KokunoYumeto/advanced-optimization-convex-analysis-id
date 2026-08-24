@@ -376,6 +376,10 @@ direkonstruksi tepat. JSONL dan CSV memiliki SHA-256
 dan `ed209ae9325d27b5e1360b59804833e91ab014c821741f2f52badfc5f0eda836`;
 resi backend lulus pada
 `98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
-Preservasi L08 dalam garis GitHub dan Zenodo yang sudah ada adalah satu-satunya
-tindakan terbuka untuk batas ini. Halaman 50 memulai Kuliah 5 dan merupakan
+L08 kini dipreservasi publik pada commit GitHub
+`024fd4eaf185b44250ab4ed41eb46afb660b4fbd` dan DOI Zenodo
+`10.5281/zenodo.22074528`. Seluruh 42 jalur GitHub yang berubah dan semua 74
+berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256 tepat;
+66 berkas Zenodo diwarisi tanpa perubahan dan delapan berkas merupakan tambahan
+L08. PDF L08 menjadi pratinjau utama. Halaman 50 memulai Kuliah 5 dan merupakan
 kursor produksi berikutnya.

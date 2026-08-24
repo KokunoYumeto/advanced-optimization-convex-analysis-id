@@ -415,3 +415,15 @@ Preserve L08 once in the existing GitHub/Zenodo lineages and read back every
 public byte; do not create a page-level series. Page 50 is the verified Lecture
 5 delimiter and next production cursor. Missing human review remains disclosed
 evidence and cannot delay admission or preservation.
+
+## D90-0041 — Preserve L08 once and advance the public lineage
+
+Decision: preserve the admitted complete-Lecture-4 boundary as one additive
+checkpoint. GitHub commit `024fd4eaf185b44250ab4ed41eb46afb660b4fbd`
+contains the exact L08 reader/source/QA/backend/controls and prepared release
+bytes; all 42 changed paths passed immutable anonymous readback. Zenodo DOI
+`10.5281/zenodo.22074528` inherits all 66 L07 files byte-identically, adds the
+eight bound L08 files, makes the L08 PDF the default preview, and passes full
+anonymous readback for all 74 files. Component rights remain distinct, status
+remains partial, and no upstream contact occurred. Production advances to one
+coherent Lecture 5 batch beginning on page 50.

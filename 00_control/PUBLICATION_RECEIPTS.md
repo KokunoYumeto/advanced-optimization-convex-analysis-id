@@ -380,3 +380,46 @@ No upstream issue, comment, or other contact occurred.
 MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
 NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
 No upstream issue, comment, or other contact occurred.
+
+## 2026-08-24 — Public GitHub MIT L08 checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` / `024fd4eaf185b44250ab4ed41eb46afb660b4fbd`
+- Content tree: `03a703dcac06356b7439ada876175ed80664525d`
+- Parent: `08482b8630367b858e741d32a5376b9f1ddada66`
+- Scope: complete MIT L08 Lecture 4, pages 39–49; exact reader/source/QA,
+  1,957-record backend, durable controls, and prepared Zenodo release bytes.
+- Anonymous gate: the immutable commit patch returned HTTP 200 and all 42
+  changed raw paths matched their local Git bytes and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-24-mit-l08/github-public-readback.json`, 11,195
+  bytes; SHA-256
+  `98396b8be5dc814443a47a4054e42f730b09bc3f9e0a1c384fca1f6771f32b40`.
+
+## 2026-08-24 — Public Zenodo MIT L08 checkpoint
+
+- Public record: https://zenodo.org/records/22074528
+- Version DOI: https://doi.org/10.5281/zenodo.22074528
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22074102`
+- Version: `checkpoint-2026.08.24-mit-l08-p39-49`
+- Scope/status: complete MIT 6.253 Lecture 4 pages 39–49, explicitly partial;
+  page 50 begins the next Lecture 5 batch.
+- Public closure: 74 files, comprising 66 inherited byte-identical files and
+  eight L08 additions; every anonymous download matched expected bytes and
+  SHA-256. The L08 PDF is the default preview.
+- Delta ZIP: 439,723 bytes; SHA-256
+  `0b571eee80a5d9e2792b00a976b73bf3ba89575687c42b76cd27a80308e46ed5`;
+  27 entries, all 26 manifest-bound payloads pass, zero forbidden entries.
+- Public bound manifest: 5,431 bytes; SHA-256
+  `32b734818f143de77de420d985a0c4c6ac4f55a262b5330014be496e2fb84277`.
+- Public checksum file: 7,581 bytes; SHA-256
+  `68b62dd5c424a97ebed0268ab08c091be1d64acb1f063942c62e29d3c545b8b1`.
+- Sanitized readback:
+  `release/zenodo/2026-08-24-mit-l08/zenodo-public-readback-mit-l08.json`,
+  20,320 bytes; SHA-256
+  `3c162ec07d5fd17accf417ec4659ef1b5849c8b83873ab93720fd9d8326fe9ea`.
+
+MIT-derived material remains CC BY-NC-SA 4.0 with attribution, change marking,
+NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
+No upstream issue, comment, or other contact occurred.

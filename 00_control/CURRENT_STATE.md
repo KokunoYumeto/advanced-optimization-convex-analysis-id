@@ -505,5 +505,12 @@ The new-ID-set hash is
 `407216b4f4337bb2c55716c81cad231ca596d65df250297fbaff57e1f295db59`;
 the passing backend receipt is 6,631 bytes /
 `98a726263b5ec30a3fbadc6080afc38472338831f7a176aa0e81c1bad8635d4a`.
-L08 preservation in the existing GitHub and Zenodo lineages is the only open
-action for this boundary. The next production cursor is page 50.
+L08 preservation is closed. GitHub commit
+`024fd4eaf185b44250ab4ed41eb46afb660b4fbd` / tree
+`03a703dcac06356b7439ada876175ed80664525d` passed anonymous exact-byte
+readback for all 42 changed paths. Zenodo record `22074528` / DOI
+`10.5281/zenodo.22074528` is published in concept
+`10.5281/zenodo.22059741`; all 74 public files passed full anonymous byte/hash
+readback, with 66 inherited unchanged and eight L08 additions. The next
+production cursor is page 50, beginning one coherent multi-page Lecture 5
+batch.
