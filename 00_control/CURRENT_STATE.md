@@ -740,3 +740,46 @@ sanitized receipt have SHA-256
 and `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`.
 No upstream contact occurred. Active production now pivots to Habring v1;
 MIT page 98 remains the dormant companion cursor.
+
+## 2026-08-25 controlling refresh — complete Habring v1 spine admitted; preservation pending
+
+The complete Habring v1 structured-source spine is now translated and
+admitted in Bahasa Indonesia. The new contiguous boundary covers the preface,
+Chapter 1 (*Preliminaries*), and Chapter 2 (*Convexity*), closing the already
+admitted Chapters 3–9. The exact localized sources are 31,009 and 42,828 bytes
+with SHA-256 `6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7`
+and `99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22`.
+All five inherited raster assets match the authority bytes. The 65 determined
+corrections `O015-HAB-ADV-0097`–`0161` are admitted; the full adverse ledger is
+171,225 bytes / SHA-256
+`40b2e36e843d743f2b40ac9669d290e52204a80d1da1cc648eaee23e8198657a`.
+
+The new 36-page unit PDF is 720,624 bytes /
+`5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf`.
+The complete Habring reader is now available as a 139-page PDF (3,779,312
+bytes / `da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41`),
+reflowable HTML (1,669,938 bytes /
+`717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4`),
+and EPUB 3 (231,700 bytes /
+`c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41`).
+Deterministic builds, exact topology/formula/asset closure, 32 open-computation
+gates and nine negative controls, desktop/mobile browser reflow, all-page PDF
+inspection, PDF link/outline resolution, EPUB structure/MathML/navigation, and
+independent rereview all pass. The audit correctly records that 0097–0161 is
+65 events, not 61.
+
+The locale-neutral backend preserves all 2,472 prior records byte-for-byte and
+adds 624, yielding 3,096 records. JSONL is 2,408,339 bytes /
+`21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667`;
+CSV is 2,875,457 bytes /
+`f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f`.
+Before preservation, a fail-closed review reconciled the wrapper's new
+correction/access-description license from CC BY-SA 4.0 to CC BY 4.0, matching
+the Habring-only derivative and its component ledger; both PDFs and all bound
+reports/backend records were rebuilt and revalidated after that correction.
+Admission is complete, but this boundary is not yet claimed public. Preserve
+it once in the existing GitHub, Zenodo, and Habring Figshare lineages and
+anonymously read back the bytes. The larger O015 coursebook remains partial:
+the next post-preservation cursor is the bounded Becker freeze/build/dedup
+gate, followed by the finite original KKT/stochastic/variational/exercise-and-
+solution closure. MIT page 98 remains dormant.

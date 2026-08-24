@@ -1,0 +1,319 @@
+{
+  "admission": {
+    "correction_event_ids": [
+      "O015-HAB-ADV-0097",
+      "O015-HAB-ADV-0098",
+      "O015-HAB-ADV-0099",
+      "O015-HAB-ADV-0100",
+      "O015-HAB-ADV-0101",
+      "O015-HAB-ADV-0102",
+      "O015-HAB-ADV-0103",
+      "O015-HAB-ADV-0104",
+      "O015-HAB-ADV-0105",
+      "O015-HAB-ADV-0106",
+      "O015-HAB-ADV-0107",
+      "O015-HAB-ADV-0108",
+      "O015-HAB-ADV-0109",
+      "O015-HAB-ADV-0110",
+      "O015-HAB-ADV-0111",
+      "O015-HAB-ADV-0112",
+      "O015-HAB-ADV-0113",
+      "O015-HAB-ADV-0114",
+      "O015-HAB-ADV-0115",
+      "O015-HAB-ADV-0116",
+      "O015-HAB-ADV-0117",
+      "O015-HAB-ADV-0118",
+      "O015-HAB-ADV-0119",
+      "O015-HAB-ADV-0120",
+      "O015-HAB-ADV-0121",
+      "O015-HAB-ADV-0122",
+      "O015-HAB-ADV-0123",
+      "O015-HAB-ADV-0124",
+      "O015-HAB-ADV-0125",
+      "O015-HAB-ADV-0126",
+      "O015-HAB-ADV-0127",
+      "O015-HAB-ADV-0128",
+      "O015-HAB-ADV-0129",
+      "O015-HAB-ADV-0130",
+      "O015-HAB-ADV-0131",
+      "O015-HAB-ADV-0132",
+      "O015-HAB-ADV-0133",
+      "O015-HAB-ADV-0134",
+      "O015-HAB-ADV-0135",
+      "O015-HAB-ADV-0136",
+      "O015-HAB-ADV-0137",
+      "O015-HAB-ADV-0138",
+      "O015-HAB-ADV-0139",
+      "O015-HAB-ADV-0140",
+      "O015-HAB-ADV-0141",
+      "O015-HAB-ADV-0142",
+      "O015-HAB-ADV-0143",
+      "O015-HAB-ADV-0144",
+      "O015-HAB-ADV-0145",
+      "O015-HAB-ADV-0146",
+      "O015-HAB-ADV-0147",
+      "O015-HAB-ADV-0148",
+      "O015-HAB-ADV-0149",
+      "O015-HAB-ADV-0150",
+      "O015-HAB-ADV-0151",
+      "O015-HAB-ADV-0152",
+      "O015-HAB-ADV-0153",
+      "O015-HAB-ADV-0154",
+      "O015-HAB-ADV-0155",
+      "O015-HAB-ADV-0156",
+      "O015-HAB-ADV-0157",
+      "O015-HAB-ADV-0158",
+      "O015-HAB-ADV-0159",
+      "O015-HAB-ADV-0160",
+      "O015-HAB-ADV-0161"
+    ],
+    "entity_counts": {
+      "artifact": 25,
+      "asset": 5,
+      "correction": 65,
+      "learning_surface": 225,
+      "qa_event": 11,
+      "relation": 258,
+      "rights": 8,
+      "segment": 25,
+      "unit": 2
+    },
+    "formal_absence_surfaces": 6,
+    "inherited_exact_copy_assets": 5,
+    "new_id_set_sha256": "353893682973c2d98586328e43a833465ede0a7d21748c40fba8af759008cbc8",
+    "new_records": 624,
+    "present_learning_surfaces": 219,
+    "stable_segment_count": 25,
+    "stable_segment_ids": [
+      "d90.hab.v1.ch01.seg0001",
+      "d90.hab.v1.ch01.seg0002",
+      "d90.hab.v1.ch01.seg0003",
+      "d90.hab.v1.ch01.seg0004",
+      "d90.hab.v1.ch01.seg0005",
+      "d90.hab.v1.ch01.seg0006",
+      "d90.hab.v1.ch01.seg0007",
+      "d90.hab.v1.ch01.seg0008",
+      "d90.hab.v1.ch02.seg0001",
+      "d90.hab.v1.ch02.seg0002",
+      "d90.hab.v1.ch02.seg0003",
+      "d90.hab.v1.ch02.seg0004",
+      "d90.hab.v1.ch02.seg0005",
+      "d90.hab.v1.ch02.seg0006",
+      "d90.hab.v1.ch02.seg0007",
+      "d90.hab.v1.ch02.seg0008",
+      "d90.hab.v1.ch02.seg0009",
+      "d90.hab.v1.ch02.seg0010",
+      "d90.hab.v1.ch02.seg0011",
+      "d90.hab.v1.ch02.seg0012",
+      "d90.hab.v1.ch02.seg0013",
+      "d90.hab.v1.ch02.seg0014",
+      "d90.hab.v1.ch02.seg0015",
+      "d90.hab.v1.ch02.seg0016",
+      "d90.hab.v1.ch02.seg0017"
+    ]
+  },
+  "canonical_backend": {
+    "csv": {
+      "bytes": 2875457,
+      "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+    },
+    "id_set_sha256": "485526ff222b7e84f6e5232775e6186345a4b10b3c44751e7deff4577bcae4f0",
+    "jsonl": {
+      "bytes": 2408339,
+      "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+    },
+    "record_set_sha256": "b0757ffa96ccaba79aa3fe770e35310cd46afa2175b48bf1ab7e9e28edf7dd2e",
+    "records": 3096
+  },
+  "checks": [
+    "lossless CSV projection equals JSONL",
+    "schema-required fields and every declared reference resolve",
+    "all 2,472 baseline record bytes and their relative order are unchanged",
+    "25 stable segments bind exact source and target line slices",
+    "219 semantic/math surfaces bind exact target slices",
+    "65 correction records bind exact lines in two correction snapshots",
+    "five inherited raster assets are byte-identical to authority files",
+    "all recorded artifact byte counts and SHA-256 values match live files",
+    "two regenerated backend pairs are byte-identical to each other and canonical"
+  ],
+  "deterministic_regeneration": {
+    "byte_identical_between_runs": true,
+    "byte_identical_to_canonical": true,
+    "runs": 2
+  },
+  "generation_runs": [
+    {
+      "csv": {
+        "bytes": 2875457,
+        "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+      },
+      "final_record_count": 3096,
+      "jsonl": {
+        "bytes": 2408339,
+        "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+      },
+      "new_record_count": 624,
+      "run": 1
+    },
+    {
+      "csv": {
+        "bytes": 2875457,
+        "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+      },
+      "final_record_count": 3096,
+      "jsonl": {
+        "bytes": 2408339,
+        "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+      },
+      "new_record_count": 624,
+      "run": 2
+    }
+  ],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 2313694,
+      "sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66"
+    },
+    "jsonl": {
+      "bytes": 1942530,
+      "sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "records": 2472
+  },
+  "reader_artifacts": {
+    "full_epub": {
+      "bytes": 231700,
+      "chapter_h1_count": 13,
+      "environment_class_counts": {
+        "cor": 4,
+        "defn": 33,
+        "example": 15,
+        "exercise": 3,
+        "lemma": 34,
+        "proof": 71,
+        "prop": 2,
+        "rem": 8,
+        "theorem": 39
+      },
+      "external_image_dependencies": [],
+      "failures": [],
+      "internal_reference_count": 114,
+      "manifest_item_count": 20,
+      "manifest_resource_closure": true,
+      "mathml_count": 2206,
+      "navigation_link_count": 25,
+      "nonempty_image_alt_count": 5,
+      "path": "output/epub/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+      "preserved_source_label_count": 71,
+      "raster_image_count": 5,
+      "raw_math_span_count": 0,
+      "raw_tex_annotation_count": 0,
+      "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41",
+      "source_label_count": 71,
+      "spine_item_count": 13,
+      "tikz_figure_fallback_count": 6,
+      "unresolved_internal_references": [],
+      "xhtml_member_count": 13,
+      "xml_member_count": 17,
+      "xml_parse_failures": [],
+      "zip_entry_count": 24
+    },
+    "full_html": {
+      "bytes": 1669938,
+      "chapter_h1_count": 11,
+      "embedded_image_count": 5,
+      "failures": [],
+      "math_display_count": 414,
+      "math_inline_count": 1792,
+      "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+      "section_h2_count": 13,
+      "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+    },
+    "full_reader_pdf": {
+      "bytes": 3779312,
+      "catalog_lang": "id-ID",
+      "components": [
+        {
+          "bytes": 720624,
+          "pages": 36,
+          "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+          "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+          "title": "Prakata, Bab 1 - Prasyarat, dan Bab 2 - Kekonveksan"
+        },
+        {
+          "bytes": 516084,
+          "pages": 15,
+          "path": "output/pdf/D90-HAB-03-subgradien-id.pdf",
+          "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4",
+          "title": "Bab 3 - Subgradien"
+        },
+        {
+          "bytes": 370824,
+          "pages": 13,
+          "path": "output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+          "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7",
+          "title": "Bab 4 - Metode Subgradien Terproyeksi"
+        },
+        {
+          "bytes": 473685,
+          "pages": 15,
+          "path": "output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf",
+          "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d",
+          "title": "Bab 5 - Metode Gradien Proksimal"
+        },
+        {
+          "bytes": 392662,
+          "pages": 15,
+          "path": "output/pdf/D90-HAB-06-akselerasi-id.pdf",
+          "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0",
+          "title": "Bab 6 - Akselerasi"
+        },
+        {
+          "bytes": 445733,
+          "pages": 21,
+          "path": "output/pdf/D90-HAB-07-dualitas-id.pdf",
+          "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e",
+          "title": "Bab 7 - Dualitas"
+        },
+        {
+          "bytes": 346785,
+          "pages": 8,
+          "path": "output/pdf/D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+          "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a",
+          "title": "Bab 8 - Penurunan Gradien Stokastik"
+        },
+        {
+          "bytes": 498244,
+          "pages": 15,
+          "path": "output/pdf/D90-HAB-09-transportasi-optimal-id.pdf",
+          "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214",
+          "title": "Bab 9 - Selingan tentang Transportasi Optimal"
+        }
+      ],
+      "encrypted": false,
+      "outline_entries": 9,
+      "pages": 139,
+      "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    "unit_pdf": {
+      "bytes": 720624,
+      "catalog_lang": "id-ID",
+      "encrypted": false,
+      "page_sizes_points": [
+        [
+          595.276,
+          841.89
+        ]
+      ],
+      "pages": 36,
+      "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+      "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+    }
+  },
+  "recorded_at": "2026-08-25T00:15:00Z",
+  "result": "pass",
+  "schema": "o015-habring-ch01-ch02-backend-validation-v1",
+  "workflow": "o015-habring-ch01-ch02-backend-v1"
+}

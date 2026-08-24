@@ -1,0 +1,65 @@
+{
+  "schema": "o015-habring-full-html-browser-qa-v1",
+  "recorded_at": "2026-08-25",
+  "artifact": {
+    "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+    "bytes": 1669938,
+    "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4",
+    "build_receipt": "qa/HABRING_FULL_HTML_BUILD.json",
+    "build_receipt_sha256": "dceb65f4d5366699e18f5f825987c2c2172d1626fceb89e22918c875f00bcfa9"
+  },
+  "method": {
+    "surface": "Codex in-app browser",
+    "origin": "task-local HTTP server on 127.0.0.1",
+    "visual_review": "top-of-document title and navigation inspected at both viewports",
+    "console_log_count": 0
+  },
+  "desktop": {
+    "viewport_css_px": [1280, 720],
+    "document_client_width": 1265,
+    "document_scroll_width": 1265,
+    "horizontal_page_overflow_px": 0,
+    "body_width_px": 1264.9,
+    "representative_paragraph_width_px": 780.5,
+    "toc_width_px": 1216.0,
+    "duplicate_id_count": 0,
+    "broken_fragment_count": 0,
+    "image_count": 5,
+    "broken_image_count": 0,
+    "missing_alt_count": 0,
+    "external_image_count": 0,
+    "source_display_math_count": 414,
+    "rendered_display_math_count": 414,
+    "unscrollable_display_math_count": 0,
+    "unscrollable_inline_math_count": 0,
+    "model_provenance_present": true,
+    "cc_by_4_notice_present": true,
+    "result": "pass"
+  },
+  "mobile": {
+    "viewport_css_px": [390, 844],
+    "document_client_width": 375,
+    "document_scroll_width": 375,
+    "horizontal_page_overflow_px": 0,
+    "duplicate_id_count": 0,
+    "broken_fragment_count": 0,
+    "image_count": 5,
+    "broken_image_count": 0,
+    "missing_alt_count": 0,
+    "external_image_count": 0,
+    "source_display_math_count": 414,
+    "rendered_display_math_count": 414,
+    "source_inline_math_count": 1792,
+    "unscrollable_display_math_count": 0,
+    "unscrollable_inline_math_count": 0,
+    "model_provenance_present": true,
+    "cc_by_4_notice_present": true,
+    "result": "pass"
+  },
+  "adverse_check": {
+    "finding": "The first 390-by-844 check exposed 214 CSS pixels of page-level overflow propagated by long MathJax inline surfaces.",
+    "remedy": "The deterministic builder now confines inline mathematics to its own horizontal scroll surface and clips page-level overflow; the complete mobile gate was rerun after two byte-identical builds.",
+    "post_fix_result": "pass"
+  },
+  "result": "pass"
+}

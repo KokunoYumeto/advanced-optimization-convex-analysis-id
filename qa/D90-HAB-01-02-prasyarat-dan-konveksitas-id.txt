@@ -1,0 +1,1718 @@
+OPTIMISASI KONVEKS
+Prakata dan Bab 1–2: Prasyarat dan Kekonveksan
+Edisi Bahasa Indonesia
+
+Andreas Habring
+Sumber edisi v1: 13 Juli 2026
+
+Terjemahan lengkap bahasa Indonesia dari prakata dan Bab 1–2 Lecture Notes: Convex
+Optimization, arXiv:2607.11664v1.
+Karya sumber dan terjemahan/adaptasi ini tersedia berdasarkan CC BY 4.0; perubahan
+matematis dijelaskan secara terbuka.
+Edisi mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.
+
+TENTANG UNIT INI
+
+Unit ini menerjemahkan secara utuh prakata, Bab 1 “Preliminaries”, dan Bab 2 “Convexity” dari Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1. Batas
+ini mencakup halaman cetak 1–29 dan melengkapi Bab 3–9 yang sudah diterjemahkan
+sebelumnya.
+Tiga berkas sumber berwenang untuk unit ini dibekukan sebagai berikut:
+preface.tex
+
+d6ec9d0522446fc65f3868d0b7cd1d22
+1462c3099fbd0b2d6ea412ab53315967
+
+preliminaries.tex
+
+8c1e4bdad36f2dcb57867c475afa5adc
+e12a3951fc650e8667f2e4d82d3b569d
+
+convexity.tex
+
+e5cf93ad93cb2064bdff6c1ea200f20b
+4eb94351127185a01d678c3fb5a662b8
+
+Semua definisi, contoh, lema, teorema, proposisi, bukti, latihan, catatan kaki, rujukan silang, gambar yang berlisensi, dan urutan sumber dipertahankan. Kekeliruan sumber yang
+dapat ditentukan diperbaiki dengan penandaan perubahan dan direkam dalam ledger edisi. Deskripsi teks ditambahkan untuk setiap gambar. Provenans produksi: OpenAI Codex
+gpt-5.6-sol, Ultra, atas instruksi pengguna repositori; seluruh kredit penulis dan sumber
+tetap dipertahankan.
+
+i
+
+DAFTAR ISI
+
+1
+
+2
+
+prasyarat 2
+1.1 Ruang vektor, norma, dan hasil kali dalam
+1.2 Barisan dan topologi dasar 7
+1.3 Fungsi 9
+kekonveksan 15
+2.1 Himpunan konveks 15
+2.2 Fungsi konveks 20
+
+ii
+
+2
+
+PRAKATA
+
+Catatan ini dibangun di atas slide kuliah yang disusun oleh Prof. Thomas Pock. Naskah
+ini belum merupakan versi final dan mungkin masih memuat salah ketik atau kesalahan,
+serta kekurangan teks penghubung di antara hasil-hasilnya. Catatan ini terutama berfungsi sebagai kumpulan materi untuk kuliah terkait yang saya ampu pada semester musim
+panas 2026 di Graz University of Technology.
+Saya berterima kasih kepada Prof. Christian Clason atas templat LATEX yang indah ini.
+
+1
+
+1 PRASYARAT
+
+1.1 ruang vektor, norma, dan hasil kali dalam
+Definisi 1.1 (Ruang vektor). Ruang vektor atas suatu medan 𝔽 adalah himpunan 𝑉 yang
+dilengkapi dengan dua operasi + : 𝑉 × 𝑉 → 𝑉 , (𝑢, 𝑣) ↦→ 𝑢 + 𝑣, dan · : 𝔽 × 𝑉 → 𝑉 ,
+(𝜆, 𝑣) ↦→ 𝜆 · 𝑣, sedemikian sehingga
+(i) (𝑉 , +) merupakan grup Abel; yaitu, untuk setiap 𝑢, 𝑣, 𝑤 ∈ 𝑉 berlaku:
+(i) Asosiativitas: (𝑢 + 𝑣) + 𝑤 = 𝑢 + (𝑣 + 𝑤).
+(ii) Unsur netral: terdapat 𝑒 ∈ 𝑉 sehingga 𝑣 + 𝑒 = 𝑒 + 𝑣 = 𝑣. Kita menuliskan 𝑒 = 0.
+(iii) Unsur invers: terdapat e
+𝑣 ∈ 𝑉 sehingga 𝑣 + e
+𝑣 = 0. Kita menuliskan e
+𝑣 = −𝑣.
+(iv) Komutativitas: 𝑣 + 𝑤 = 𝑤 + 𝑣.
+(ii) Hukum-hukum skalar berikut berlaku untuk setiap 𝑢, 𝑣 ∈ 𝑉 dan 𝜆, 𝜇 ∈ 𝔽 :
+(i) 𝜆 · (𝜇 · 𝑣) = (𝜆𝜇) · 𝑣.
+(ii) 𝜆 · (𝑢 + 𝑣) = (𝜆 · 𝑢) + (𝜆 · 𝑣).
+(iii) (𝜆 + 𝜇) · 𝑣 = (𝜆 · 𝑣) + (𝜇 · 𝑣).
+(iv) 1 · 𝑣 = 𝑣.
+Kita menuliskan 𝜆 · 𝑣 = 𝜆𝑣.
+Mulai sekarang kita membatasi pembahasan pada 𝔽 = ℝ.
+(i) ℝ𝑑 : ruang vektor yang terdiri atas
+
+Contoh 1.2 (Ruang-ruang vektor penting).
+vektor berbentuk
+(1.1)
+
+𝑣
+© .1 ª
+𝑣 = ­­ .. ®® ,
+«𝑣𝑑 ¬
+
+dengan 𝑣𝑖 ∈ ℝ, penjumlahan dilakukan komponen demi komponen, dan perka-
+
+2
+
+1 prasyarat
+lian skalar diterapkan pada setiap komponen. Suatu hasil matematika penting
+menyatakan bahwa setiap ruang vektor berdimensi hingga dapat diidentifikasi
+dengan ℝ𝑑 , dengan 𝑑 dimensinya. Karena itu, ketika bekerja dengan ruang berdimensi hingga, kita biasanya dapat membayangkan ℝ𝑑 .
+(ii) Ruang fungsi: misalkan Ω ⊂ ℝ𝑑 dan 𝑓 , 𝑔 : Ω → ℝ. Kita dapat mendefinisikan
+𝑓 + 𝑔 serta, untuk 𝜆 ∈ ℝ, 𝜆𝑓 secara titik demi titik melalui
+(1.2)
+(1.3)
+
+(𝑓 + 𝑔)(𝑥) = 𝑓 (𝑥) + 𝑔(𝑥),
+(𝜆𝑓 )(𝑥) = 𝜆𝑓 (𝑥).
+
+Dengan cara ini kita dapat membentuk berbagai ruang fungsi. Salah satu contohnya ialah ruang fungsi linear. Mengapa ini benar-benar merupakan ruang vektor
+yang terdefinisi dengan baik?
+Definisi 1.3 (Norma). Norma adalah fungsi ∥ · ∥ : 𝑉 → [0, ∞) sedemikian sehingga, untuk
+setiap 𝜆 ∈ ℝ dan 𝑢, 𝑣 ∈ 𝑉 , berlaku
+(i) Ketegasan positif: ∥𝑣 ∥ = 0 jika dan hanya jika 𝑣 = 0.
+(ii) Homogenitas: ∥𝜆𝑢 ∥ = |𝜆|∥𝑢 ∥.
+(iii) Ketaksamaan segitiga: ∥𝑢 + 𝑣 ∥ ≤ ∥𝑢 ∥ + ∥𝑣 ∥.
+Pasangan (𝑉 , ∥ · ∥) disebut ruang bernorma.
+Catatan. Berdasarkan kodomainnya, norma selalu tak negatif.
+Mulai sekarang semua ruang vektor dianggap bernorma. Jika tidak menimbulkan ambiguitas, kita cukup menuliskan normanya sebagai ∥ · ∥. Untuk menyatakan norma tertentu
+kita menggunakan, misalnya, ∥ · ∥ ⋆ , dengan ⋆ suatu simbol yang menandai norma tersebut; bandingkan teorema 1.4.
+(i) Norma ℓ 𝑝 : untuk 𝑝 ∈ [1, ∞) kita menuliskan
+
+Contoh 1.4 (Norma-norma umum).
+(1.4)
+
+∥𝑣 ∥ 𝑝 =
+
+ 𝑑
+∑︁
+
+ 1/𝑝
+|𝑣𝑖 |
+
+𝑝
+
+.
+
+𝑖=1
+
+Untuk 𝑝 = ∞ kita menuliskan
+(1.5)
+
+∥𝑣 ∥ ∞ = max |𝑣𝑖 |.
+𝑖=1,...,𝑑
+
+(ii) Tinjau ruang matriks 𝑛 × 𝑚, yaitu ℝ𝑛×𝑚 . Setiap matriks 𝐴 ∈ ℝ𝑛×𝑚 dapat diiden-
+
+3
+
+1 prasyarat
+tifikasi dengan fungsi linear melalui
+(1.6)
+
+(𝐴𝑣)𝑖 =
+
+𝑚
+∑︁
+
+𝑖 = 1, . . . , 𝑛.
+
+𝐴𝑖,𝑗 𝑣 𝑗 ,
+
+𝑗=1
+
+Norma-norma berikut sering digunakan pada ℝ𝑛×𝑚 :
+√︁P
+2
+• Norma Frobenius: ∥𝐴∥ 𝐹 =
+𝑖,𝑗 |𝐴𝑖,𝑗 | .
+• Norma terinduksi: untuk setiap pasangan norma ∥ · ∥𝑎 pada ℝ𝑚 dan ∥ · ∥𝑏
+pada ℝ𝑛 , kita mendefinisikan
+(1.7)
+
+∥𝐴𝑣 ∥𝑏
+.
+𝑣≠0 ∥𝑣 ∥ 𝑎
+
+∥𝐴∥𝑎,𝑏 ≔ sup ∥𝐴𝑣 ∥𝑏 = sup
+∥𝑣 ∥𝑎 ≤1
+
+Norma terinduksi memenuhi ∥𝐴𝑣 ∥𝑏 ≤ ∥𝐴∥𝑎,𝑏 ∥𝑣 ∥𝑎 . Jika 𝑎 = 𝑏, kita menuliskan ∥ · ∥𝑎,𝑎 = ∥ · ∥𝑎 . Secara khusus,
+∑︁
+(1.8)
+∥𝐴∥ 1 = max
+|𝐴𝑖,𝑗 |,
+𝑗
+𝑖
+∑︁
+(1.9)
+∥𝐴∥ ∞ = max
+|𝐴𝑖,𝑗 |,
+𝑖
+
+𝑗
+
+√︁
+∥𝐴∥ 2 = 𝜆max (𝐴⊤𝐴).
+
+(1.10)
+
+Di sini 𝜆max menyatakan nilai eigen terbesar.
+(iii) Untuk fungsi terukur Lebesgue 𝑓 : Ω → ℝ, dengan Ω ⊂ ℝ𝑑 terukur, kita dapat
+mendefinisikan norma 𝐿𝑝 melalui
+∫
+ 1/𝑝
+𝑝
+(1.11)
+∥𝑓 ∥ 𝑝 =
+|𝑓 (𝑥)| d𝑥
+,
+1 ≤ 𝑝 < ∞,
+Ω
+
+dana
+(1.12)
+
+∥𝑓 ∥ ∞ = ess sup |𝑓 (𝑥)|.
+𝑥 ∈Ω
+
+Dengan mengidentifikasi fungsi-fungsi yang sama hampir di mana-mana, ∥ · ∥ 𝑝
+mendefinisikan norma pada ruang vektor
+(1.13)
+
+𝐿𝑝 (Ω) = {𝑓 : Ω → ℝ | 𝑓 terukur dan ∥𝑓 ∥ 𝑝 < ∞}/∼a.e. .
+
+a Secara tepat, fungsi-fungsi diidentifikasi apabila sama hampir di mana-mana. Norma 𝐿 ∞ adalah sup-
+
+remum esensial, ∥ 𝑓 ∥ ∞ = inf 𝑁 ⊂Ω sup𝑥 ∈Ω\𝑁 |𝑓 (𝑥)|. Rincian teori ukuran ini tidak diperlukan dalam
+kuliah ini.
+
+|𝑁 |=0
+
+4
+
+1 prasyarat
+Teorema 1.5 (Ekuivalensi norma). Semua norma pada ℝ𝑑 ekuivalen. Artinya, untuk setiap
+dua norma ∥ · ∥𝑎 dan ∥ · ∥𝑏 , terdapat 𝑚, 𝑀 > 0 sedemikian sehingga untuk setiap 𝑣 ∈ ℝ𝑑
+berlaku
+(1.14)
+
+𝑚∥𝑣 ∥𝑎 ≤ ∥𝑣 ∥𝑏 ≤ 𝑀 ∥𝑣 ∥𝑎 .
+
+Definisi 1.6 (Hasil kali dalam). Pemetaan ⟨ · , · ⟩ : 𝑉 ×𝑉 → ℝ disebut hasil kali skalar atau
+hasil kali dalam jika, untuk setiap 𝑢, 𝑣, 𝑤 ∈ 𝑉 dan skalar yang relevan, berlaku
+(i) Bilinearitas: pemetaan 𝑤 ↦→ ⟨𝑤, 𝑢⟩ dan 𝑤 ↦→ ⟨𝑢, 𝑤⟩ bersifat linear.
+(ii) Ketegasan positif: ⟨𝑢, 𝑢⟩ ≥ 0, dan kesamaan berlaku jika dan hanya jika 𝑢 = 0.
+(iii) Simetri: ⟨𝑢, 𝑣⟩ = ⟨𝑣, 𝑢⟩.
+Setiap hasil kali dalam mendefinisikan norma melalui ∥𝑣 ∥ ≔
+disebut ruang hasil kali dalam.
+
+√︁
+
+⟨𝑣, 𝑣⟩. Dalam hal ini, 𝑉
+
+Korolari 1.7 (Cauchy–Schwarz). Pada setiap ruang hasil kali dalam 𝑉 berlaku
+(1.15)
+
+⟨𝑣, 𝑤⟩ ≤ | ⟨𝑣, 𝑤⟩ | ≤ ∥𝑣 ∥∥𝑤 ∥,
+
+𝑣, 𝑤 ∈ 𝑉 ,
+
+dan ketaksamaan kedua bersifat ketat apabila 𝑣 dan 𝑤 tidak kolinear.
+Bukti. Kita boleh mengandaikan 𝑣, 𝑤 ≠ 0, sebab jika tidak hasilnya langsung berlaku.
+Untuk setiap 𝜆 ∈ ℝ,
+(1.16)
+
+0 ≤ ⟨𝑣 − 𝜆𝑤, 𝑣 − 𝜆𝑤⟩ = ∥𝑣 ∥ 2 − 2𝜆 ⟨𝑣, 𝑤⟩ + 𝜆 2 ∥𝑤 ∥ 2 .
+
+Ambil 𝜆 = ⟨𝑣, 𝑤⟩ /∥𝑤 ∥ 2 . Maka
+(1.17)
+
+| ⟨𝑣, 𝑤⟩ | 2
+,
+0 ≤ ∥𝑣 ∥ −
+∥𝑤 ∥ 2
+2
+
+yang memberikan | ⟨𝑣, 𝑤⟩ | ≤ ∥𝑣 ∥∥𝑤 ∥. Jika 𝑣 dan 𝑤 tidak kolinear, maka 𝑣 − 𝜆𝑤 ≠ 0 untuk
+setiap 𝜆, sehingga ketaksamaan dalam (1.16), dan dengan demikian ketaksamaan Cauchy–
+Schwarz, bersifat ketat.
+□
+Teorema 1.8 (Hölder). Misalkan 𝑝, 𝑞 ∈ [1, ∞] memenuhi 𝑝1 + 𝑞1 = 11 . Untuk setiap 𝑢, 𝑣 ∈ ℝ𝑑
+yang dilengkapi dengan hasil kali dalam baku, berlaku
+(1.18)
+
+⟨𝑢, 𝑣⟩ ≤ | ⟨𝑢, 𝑣⟩ | ≤ ∥𝑢 ∥ 𝑝 ∥𝑣 ∥𝑞 .
+
+Bukti. Kita membedakan kasus-kasus berikut.
+1 𝑝 dan 𝑞 disebut eksponen konjugat Hölder.
+
+5
+
+1 prasyarat
+• 𝑝 = 1 dan 𝑞 = ∞: dengan mudah diperoleh
+∑︁
+∑︁
+(1.19)
+| ⟨𝑢, 𝑣⟩ | ≤
+|𝑢𝑖 ||𝑣𝑖 | ≤
+|𝑢𝑖 |∥𝑣 ∥ ∞ = ∥𝑣 ∥ ∞ ∥𝑢 ∥ 1 .
+𝑖
+
+𝑖
+
+Kasus 𝑝 = ∞, 𝑞 = 1 mengikuti dengan menukar 𝑢 dan 𝑣.
+• 1 < 𝑝 < ∞: ketaksamaan jelas benar jika 𝑢 = 0 atau 𝑣 = 0, sehingga andaikan 𝑢, 𝑣 ≠
+0. Ketaksamaan Young menyatakan bahwa untuk eksponen konjugat 1 < 𝑝, 𝑞 < ∞
+dan 𝑎, 𝑏 ≥ 0 berlaku 𝑎𝑏 ≤ 𝑎𝑝 /𝑝 + 𝑏𝑞 /𝑞. Karena itu,
+(1.20)
+
+| ⟨𝑢, 𝑣⟩ | ≤
+
+∑︁
+𝑖
+
+
+
+𝑝
+∑︁ |𝑢𝑖 |𝑝 |𝑣𝑖 |𝑞
+∥𝑢 ∥ 𝑝 ∥𝑣 ∥𝑞𝑞
++
+=
++
+.
+|𝑢𝑖 ||𝑣𝑖 | ≤
+𝑝
+𝑞
+𝑝
+𝑞
+𝑖
+
+Mengganti 𝑢 dengan 𝑢/∥𝑢 ∥ 𝑝 dan 𝑣 dengan 𝑣/∥𝑣 ∥𝑞 dalam (1.20) memberikan
+
+
+| ⟨𝑢, 𝑣⟩ |
+𝑣
+𝑢
+=
+,
+∥𝑢 ∥ 𝑝 ∥𝑣 ∥𝑞
+∥𝑢 ∥ 𝑝 ∥𝑣 ∥𝑞
+(1.21)
+𝑝
+𝑞
+𝑢/∥𝑢 ∥ 𝑝 𝑝
+𝑣/∥𝑣 ∥𝑞 𝑞
+1 1
+≤
++
+= + = 1.
+𝑝
+𝑞
+𝑝 𝑞
+□
+Dengan ketaksamaan Hölder, kita dapat menunjukkan bahwa norma ℓ 𝑝 memenuhi ketaksamaan segitiga, yaitu bagian tersulit dalam membuktikan bahwa besaran tersebut benarbenar merupakan norma.
+Teorema 1.9. Untuk setiap 𝑝 ∈ [1, ∞] berlaku
+(1.22)
+
+𝑥, 𝑦 ∈ ℝ𝑑 .
+
+∥𝑥 + 𝑦 ∥ 𝑝 ≤ ∥𝑥 ∥ 𝑝 + ∥𝑦 ∥ 𝑝 ,
+
+Bukti. Kasus 𝑝 ∈ {1, ∞} ditinggalkan sebagai latihan sederhana. Jadi, andaikan 1 < 𝑝 < ∞.
+Kita boleh mengandaikan ∥𝑥+𝑦 ∥ 𝑝 ≠ 0, sebab jika tidak hasilnya langsung berlaku. Dengan
+ketaksamaan Hölder dan hubungan 𝑝 − 1 = 𝑝/𝑞, diperoleh
+∑︁
+𝑝
+∥𝑥 + 𝑦 ∥ 𝑝 =
+|𝑥𝑖 + 𝑦𝑖 ||𝑥𝑖 + 𝑦𝑖 |𝑝−1
+𝑖
+∑︁
+∑︁
+≤
+|𝑥𝑖 ||𝑥𝑖 + 𝑦𝑖 |𝑝−1 +
+|𝑦𝑖 ||𝑥𝑖 + 𝑦𝑖 |𝑝−1
+(1.23)
+
+𝑖
+
+𝑖
+
+
+≤ (∥𝑥 ∥ 𝑝 + ∥𝑦 ∥ 𝑝 )
+
+∑︁
+
+|𝑥𝑖 + 𝑦𝑖 |
+
+(𝑝−1)𝑞
+
+ 1/𝑞
+
+𝑖
+𝑝/𝑞
+
+= (∥𝑥 ∥ 𝑝 + ∥𝑦 ∥ 𝑝 )∥𝑥 + 𝑦 ∥ 𝑝 .
+Membagi kedua ruas dengan ∥𝑥 + 𝑦 ∥ 𝑝
+
+𝑝/𝑞
+
+menyelesaikan bukti.
+
+6
+
+□
+
+1 prasyarat
+
+1.2 barisan dan topologi dasar
+Definisi 1.10 (Kekonvergenan barisan). Barisan (𝑥𝑛 )𝑛 ⊂ ℝ𝑑 disebut konvergen jika terdapat 𝑥 ∈ ℝ𝑑 sedemikian sehingga untuk setiap 𝜀 > 0 terdapat 𝑁 ∈ ℕ dengan
+(1.24)
+
+𝑛≥𝑁
+
+∥𝑥 − 𝑥𝑛 ∥ ≤ 𝜀.
+
+=⇒
+
+Catatan. Berdasarkan ekuivalensi norma, kekonvergenan tidak bergantung pada pilihan
+norma.
+Definisi 1.11 (Barisan Cauchy). Barisan (𝑥𝑛 )𝑛 ⊂ 𝑉 disebut barisan Cauchy jika dan hanya
+jika untuk setiap 𝜀 > 0 terdapat 𝑁 ∈ ℕ sedemikian sehingga ∥𝑥𝑛 − 𝑥𝑚 ∥ < 𝜀 bagi setiap
+𝑛, 𝑚 ≥ 𝑁 .
+Sifat Cauchy serupa dengan kekonvergenan. Namun, perhatikan bahwa sifat Cauchy dapat dirumuskan tanpa gagasan titik limit. Hasil berikut mudah dibuktikan.
+Teorema 1.12. Setiap barisan konvergen merupakan barisan Cauchy.
+ˆ Ketaksamaan segitiga memberikan
+Bukti. Misalkan 𝑥𝑛 → 𝑥.
+(1.25)
+
+∥𝑥𝑛 − 𝑥𝑚 ∥ ≤ ∥𝑥𝑛 − 𝑥ˆ ∥ + ∥𝑥𝑚 − 𝑥ˆ ∥,
+
+dan kedua suku di ruas kanan dapat dibuat sekecil yang diinginkan dengan memilih 𝑛, 𝑚
+cukup besar.
+□
+Definisi 1.13 (Ruang Banach dan Hilbert). Ruang bernorma (𝑉 , ∥ · ∥) disebut ruang Banach jika setiap barisan Cauchy konvergen. Artinya, jika (𝑥𝑛 )𝑛 merupakan barisan Cauchy,
+terdapat 𝑥 ∈ 𝑉 sehingga ∥𝑥𝑛 − 𝑥 ∥ → 0 ketika 𝑛 → ∞. Jika normanya berasal dari suatu
+hasil kali dalam, ruang Banach tersebut disebut ruang Hilbert.
+Contoh 1.14. Ruang (ℝ𝑑 , ∥ · ∥ 𝑝 ) merupakan ruang Banach untuk setiap 1 ≤ 𝑝 ≤ ∞.
+Definisi 1.15 (Topologi dasar). Suatu himpunan 𝐴 ⊂ ℝ𝑑 disebut
+• terbuka jika untuk setiap 𝑥 ∈ 𝐴 terdapat 𝜀 > 0 sehingga 𝐵𝜀 (𝑥) ⊂ 𝐴;
+• tertutup jika 𝐴𝑐 terbuka. Ketertutupan ekuivalen dengan sifat berikut: jika (𝑥𝑛 )𝑛 ⊂ 𝐴
+dan 𝑥𝑛 → 𝑥 ∈ ℝ𝑑 , maka 𝑥 ∈ 𝐴.
+
+7
+
+1 prasyarat
+Definisi 1.16 (Kekompakan sekuensial). Himpunan 𝐴 ⊂ ℝ𝑑 disebut kompak secara sekuensial jika setiap barisan di 𝐴 mempunyai suatu subbarisan yang konvergen ke titik di
+𝐴. Dengan kata lain, untuk setiap (𝑥𝑛 )𝑛 ⊂ 𝐴 terdapat subbarisan (𝑥𝑛(𝑘) )𝑘 dan titik 𝑥 ∈ 𝐴
+sedemikian sehingga 𝑥𝑛(𝑘) → 𝑥.
+Teorema 1.17 (Bolzano–Weierstrass). Dalam ruang vektor berdimensi hingga, setiap barisan
+terbatas mempunyai subbarisan konvergen.
+Bukti. Pertama andaikan dimensinya satu, sehingga ruangnya adalah ℝ. Misalkan (𝑥𝑛 )𝑛 ⊂
+ℝ terbatas. Secara induktif kita membangun dua barisan (𝑎𝑛 )𝑛 dan (𝑏𝑛 )𝑛 dengan 𝑎𝑛 ≤ 𝑏𝑛 ,
+[𝑎𝑛 , 𝑏𝑛 ] ⊂ [𝑎𝑛−1, 𝑏𝑛−1 ], 𝑏𝑛 − 𝑎𝑛 = (𝑏𝑛−1 − 𝑎𝑛−1 )/2, dan, yang terpenting, [𝑎𝑛 , 𝑏𝑛 ] memuat tak
+hingga banyaknya suku 𝑥𝑘 untuk setiap 𝑛.
+Karena barisan terbatas, pilih 𝑎 0, 𝑏 0 sehingga (𝑥𝑛 )𝑛 ⊂ [𝑎 0, 𝑏 0 ]. Jelas interval ini memuat
+tak hingga banyaknya suku 𝑥𝑘 . Andaikan 𝑎𝑛 , 𝑏𝑛 telah dipilih dan tetapkan 𝑚𝑛 = (𝑎𝑛 +
+𝑏𝑛 )/2. Karena [𝑎𝑛 , 𝑏𝑛 ] memuat tak hingga banyaknya suku 𝑥𝑘 , setidaknya salah satu dari
+[𝑎𝑛 , 𝑚𝑛 ] dan [𝑚𝑛 , 𝑏𝑛 ] juga memuat tak hingga banyaknya suku. Pilih interval tersebut
+sebagai [𝑎𝑛+1, 𝑏𝑛+1 ].
+Sekarang kita membangun subbarisan (𝑥𝑛(𝑘) )𝑘 secara induktif. Pilih 𝑛(0) sehingga 𝑥𝑛(0) ∈
+[𝑎 0, 𝑏 0 ]. Jika 𝑛(0), . . . , 𝑛(𝑚) telah dipilih, tetapkan, misalnya, 𝑛(𝑚 + 1) = min{ 𝑗 ∈ ℕ | 𝑗 >
+𝑛(𝑚), 𝑥 𝑗 ∈ [𝑎𝑚+1, 𝑏𝑚+1 ]}. Pilihan ini selalu mungkin karena interval tersebut memuat tak
+hingga banyaknya suku barisan.
+Akhirnya, ambil sembarang 𝑘 ≤ ℓ. Karena 𝑥𝑛(𝑘) , 𝑥𝑛(ℓ) ∈ [𝑎𝑘 , 𝑏𝑘 ], berlaku
+(1.26)
+
+|𝑥𝑛(𝑘) − 𝑥𝑛(ℓ) | ≤ 𝑏𝑘 − 𝑎𝑘 = 2−𝑘 (𝑏 0 − 𝑎 0 ).
+
+Jadi (𝑥𝑛(𝑘) )𝑘 merupakan barisan Cauchy dan karenanya konvergen.
+Untuk dimensi lebih besar, yaitu ℝ𝑑 , mula-mula pilih subbarisan yang komponen pertamanya konvergen. Dari subbarisan itu pilih lagi subbarisan yang komponen keduanya
+konvergen, dan lanjutkan demikian. Subbarisan diagonal yang diperoleh setelah langkah
+ke-𝑑 mempunyai semua komponen yang konvergen; khususnya, subbarisan itu konvergen dalam norma satu. Ekuivalensi norma kemudian memberikan kekonvergenan dalam
+setiap norma.
+□
+Sebagai akibatnya, kita memperoleh hasil berikut.
+Korolari 1.18. Di ℝ𝑑 , suatu himpunan kompak jika dan hanya jika tertutup dan terbatas.
+
+8
+
+1 prasyarat
+Bukti. Misalkan 𝐴 ⊂ ℝ𝑑 tertutup dan terbatas, serta (𝑥𝑛 )𝑛 ⊂ 𝐴. Berdasarkan keterbatasan dan teorema 1.17, terdapat subbarisan konvergen; berdasarkan ketertutupan, limitnya
+berada di 𝐴. Jadi 𝐴 kompak.
+Sebaliknya, andaikan 𝐴 kompak. Jika 𝐴 tidak terbatas, untuk setiap 𝑛 ∈ ℕ kita dapat memilih 𝑥𝑛 ∈ 𝐴 dengan ∥𝑥𝑛 ∥ ≥ 𝑛. Barisan ini tidak mempunyai subbarisan konvergen, bertentangan dengan kekompakan. Jadi 𝐴 terbatas. Selanjutnya, misalkan (𝑥𝑛 )𝑛 ⊂ 𝐴 dan
+𝑥𝑛 → 𝑥 ∈ ℝ𝑑 . Berdasarkan kekompakan, (𝑥𝑛 )𝑛 mempunyai subbarisan (𝑥𝑛(𝑘) )𝑘 yang konvergen ke suatu titik di 𝐴. Setiap subbarisan dari barisan konvergen mempunyai limit
+yang sama, sehingga 𝑥 = lim𝑘 𝑥𝑛(𝑘) ∈ 𝐴. Jadi 𝐴 tertutup.
+□
+
+1.3 fungsi
+Definisi 1.19 (Kontinuitas). Misalkan 𝑓 : 𝑉 → 𝐸 suatu pemetaan di antara dua ruang
+bernorma. Fungsi 𝑓 disebut kontinu di 𝑣 ∈ 𝑉 jika salah satu dari dua syarat ekuivalen
+berikut dipenuhi:
+• untuk setiap barisan 𝑣𝑛 → 𝑣, berlaku 𝑓 (𝑣𝑛 ) → 𝑓 (𝑣);
+• untuk setiap 𝜀 > 0 terdapat 𝛿 > 0 sedemikian sehingga
+(1.27)
+
+∥𝑢 − 𝑣 ∥ ≤ 𝛿
+
+=⇒
+
+∥𝑓 (𝑢) − 𝑓 (𝑣)∥ ≤ 𝜀.
+
+Jika 𝑓 kontinu pada setiap 𝑣 ∈ 𝑉 , kita cukup mengatakan bahwa 𝑓 kontinu.
+Definisi 1.20 (Kontinuitas Lipschitz). Misalkan 𝑓 : 𝑉 → 𝐸 suatu pemetaan di antara dua
+ruang bernorma. Fungsi 𝑓 disebut kontinu Lipschitz jika terdapat 𝐿 ≥ 0 sedemikian sehingga
+(1.28)
+
+∥𝑓 (𝑢) − 𝑓 (𝑣)∥ ≤ 𝐿∥𝑢 − 𝑣 ∥,
+
+𝑢, 𝑣 ∈ 𝑉 .
+
+1.3.1 pemetaan linear dan ruang dual
+Definisi 1.21 (Pemetaan linear). Fungsi 𝑓 : ℝ𝑛 → ℝ𝑚 disebut linear jika
+(1.29)
+
+𝑓 (𝜆𝑥 + 𝜇𝑦) = 𝜆𝑓 (𝑥) + 𝜇 𝑓 (𝑦),
+
+𝑥, 𝑦 ∈ ℝ𝑛 ,
+
+𝜆, 𝜇 ∈ ℝ.
+
+Pemetaan linear dapat diidentifikasi dengan matriks.
+Teorema 1.22. Ruang semua fungsi linear ℝ𝑛 → ℝ𝑚 isomorfik2 dengan ruang semua matriks
+𝐴 ∈ ℝ𝑚×𝑛 .
+2 Secara informal: keduanya mempunyai struktur yang sama.
+
+9
+
+1 prasyarat
+Bukti. Kita mendefinisikan korespondensi satu-ke-satu dengan mengaitkan setiap
+𝑓 : ℝ𝑛 → ℝ𝑚 pada matriks 𝐴 𝑓 yang diberikan oleh
+(1.30)
+
+(𝐴 𝑓 )𝑖,𝑗 = 𝑓 (𝑒 𝑗 )𝑖 .
+
+Pembuktian bahwa korespondensi ini bijektif dan linear ditinggalkan sebagai latihan.
+
+□
+
+Definisi 1.23 (Ruang dual). Misalkan 𝑉 suatu ruang bernorma. Ruang dual 𝑉 ∗ adalah ruang vektor semua fungsional linear kontinu dari 𝑉 ke ℝ, yaitu
+(1.31)
+
+𝑉 ∗ = {𝑓 : 𝑉 → ℝ | 𝑓 linear dan kontinu}.
+
+Unsur 𝑉 ∗ disebut fungsional linear pada 𝑉 . Norma kanonik pada 𝑉 ∗ adalah norma dual
+(1.32)
+
+∥𝑣 ∗ ∥𝑉 ∗ ≔ sup |𝑣 ∗ (𝑣)|.
+𝑣 ∈𝑉
+∥𝑣 ∥𝑉 ≤1
+
+Dengan sedikit penyalahgunaan notasi, penerapan suatu unsur dual juga sering ditulis
+memakai notasi hasil kali dalam:
+(1.33)
+
+⟨𝑣 ∗, 𝑣⟩ ≔ 𝑣 ∗ (𝑣).
+
+Langsung dari definisi diperoleh
+(1.34)
+
+|𝑣 ∗ (𝑣)| ≤ ∥𝑣 ∗ ∥∥𝑣 ∥.
+
+Hasil berikut sangat penting: pada ruang Hilbert, ruang dual dapat diidentifikasi dengan
+ruang itu sendiri. Hasil ini juga membenarkan penggunaan notasi hasil kali dalam untuk
+penerapan unsur dual.
+Teorema 1.24 (Riesz). Misalkan 𝑉 ruang Hilbert. Untuk setiap 𝑣 ∗ ∈ 𝑉 ∗ terdapat tepat satu
+𝑣 ∈ 𝑉 sedemikian sehingga
+(1.35)
+
+𝑣 ∗ (𝑤) = ⟨𝑣, 𝑤⟩,
+
+𝑤 ∈ 𝑉.
+
+Pemetaan 𝑣 ∗ ↦→ 𝑣 linear dan memenuhi ∥𝑣 ∥ = ∥𝑣 ∗ ∥. Secara khusus, 𝑉 ∗  𝑉 .
+Bukti. Jika 𝑣 ∗ = 0, ambil 𝑣 = 0. Jadi, andaikan 𝑣 ∗ ≠ 0. Karena ker(𝑣 ∗ ) merupakan subruang tertutup, teorema proyeksi ortogonal pada ruang Hilbert memberikan 𝑉 = ker(𝑣 ∗ ) ⊕
+ker(𝑣 ∗ ) ⊥ . Komponen ortogonal dari sembarang titik di luar kernel tidak nol; setelah dinormalkan, kita memperoleh 𝑧 ∈ ker(𝑣 ∗ ) ⊥ dengan 𝑣 ∗ (𝑧) ≠ 0 dan ∥𝑧∥ = 1. Untuk sembarang
+𝑤 ∈ 𝑉,
+
+(1.36)
+𝑣 ∗ 𝑧𝑣 ∗ (𝑤) − 𝑤𝑣 ∗ (𝑧) = 0,
+
+10
+
+1 prasyarat
+sehingga, berdasarkan ortogonalitas 𝑧 terhadap ker(𝑣 ∗ ),
+(1.37)
+
+⟨𝑧𝑣 ∗ (𝑤) − 𝑤𝑣 ∗ (𝑧), 𝑧⟩ = 0.
+
+Akibatnya,
+(1.38)
+
+𝑣 ∗ (𝑤) = 𝑣 ∗ (𝑤) ⟨𝑧, 𝑧⟩ = ⟨𝑧𝑣 ∗ (𝑤), 𝑧⟩
+= ⟨𝑧𝑣 ∗ (𝑤) − 𝑤𝑣 ∗ (𝑧), 𝑧⟩ + ⟨𝑤𝑣 ∗ (𝑧), 𝑧⟩
+= ⟨𝑤, 𝑣 ∗ (𝑧)𝑧⟩ .
+
+Jadi 𝑣 = 𝑣 ∗ (𝑧)𝑧 merupakan unsur yang dicari. Ketunggalan, linearitas pemetaan representasi, dan kesamaan normanya ditinggalkan sebagai latihan.
+□
+Contoh 1.25 (Dual). Pada ℝ𝑑 , untuk 1 ≤ 𝑝 ≤ ∞, norma dual dari ∥ · ∥ 𝑝 tepat sama
+dengan ∥ · ∥𝑞 , dengan 𝑝1 + 𝑞1 = 1.
+Sebagian besar pembaca mungkin telah mengenal adjoin atau transpos suatu matriks,
+yang diperoleh dengan menukar baris dan kolom. Untuk 𝐴 ∈ ℝ𝑛×𝑚 , adjoin 𝐴⊤ ∈ ℝ𝑚×𝑛
+didefinisikan oleh
+(1.39)
+
+(𝐴⊤ )𝑖,𝑗 = 𝐴 𝑗,𝑖 .
+
+Dengan hasil kali dalam baku, mudah diperiksa bahwa untuk setiap 𝑥 ∈ ℝ𝑚 dan 𝑦 ∈ ℝ𝑛
+berlaku
+(1.40)
+
+⟨𝐴𝑥, 𝑦⟩ = 𝑥, 𝐴⊤ 𝑦 .
+
+Sifat terakhir inilah yang mencirikan definisi formal adjoin suatu pemetaan linear. Secara
+khusus, adjoin bergantung pada hasil kali dalam yang dipilih.
+Definisi 1.26. Misalkan 𝐴 : 𝑉 → 𝑊 pemetaan linear kontinu di antara dua ruang Hilbert.
+Operator adjoin 𝐴∗ : 𝑊 → 𝑉 didefinisikan oleh
+(1.41)
+
+⟨𝐴𝑥, 𝑦⟩ = ⟨𝑥, 𝐴∗ 𝑦⟩ ,
+
+𝑥 ∈ 𝑉,
+
+𝑦 ∈𝑊.
+
+Latihan 1.27. Tunjukkan bahwa adjoin merupakan operator linear yang terdefinisi dengan
+baik.
+Lema 1.28. Misalkan 𝑈 , 𝑉 ,𝑊 ruang Hilbert. Untuk pemetaan linear kontinu 𝐴, 𝐵 : 𝑉 → 𝑊
+dan 𝜆 ∈ ℝ, berlaku
+(i) (𝐴∗ ) ∗ = 𝐴;
+
+11
+
+1 prasyarat
+(ii) (𝜆𝐴 + 𝐵) ∗ = 𝜆𝐴∗ + 𝐵 ∗ ;
+(iii) jika 𝐴 : 𝑈 → 𝑉 dan 𝐵 : 𝑉 → 𝑊 linear kontinu, maka (𝐵𝐴) ∗ = 𝐴∗ 𝐵 ∗ .
+Bukti. Latihan.
+
+□
+
+Definisi 1.29 (Fungsi bernilai real diperluas). Misalkan 𝑉 ruang vektor. Fungsi 𝑓 : 𝑉 →
+[−∞, ∞] disebut fungsi bernilai real diperluas. Fungsi 𝑓 disebut proper jika tidak pernah
+bernilai −∞ dan terdapat 𝑥 ∈ 𝑉 dengan 𝑓 (𝑥) < ∞. Domain efektif suatu fungsi proper 𝑓
+didefinisikan sebagai
+(1.42)
+
+dom(𝑓 ) = {𝑥 ∈ 𝑉 | 𝑓 (𝑥) < ∞}.
+
+Contoh 1.30. Fungsi bernilai real diperluas yang sering digunakan adalah fungsi indikator. Untuk 𝐴 ⊂ 𝑉 , fungsi indikator didefinisikan oleh
+(
+0, 𝑥 ∈ 𝐴,
+(1.43)
+𝛿𝐴 (𝑥) =
+∞, 𝑥 ∉ 𝐴.
+Dengan fungsi indikator, masalah optimisasi berkendala dapat ditulis ulang sebagai
+masalah tak berkendala:
+
+(1.44)
+min 𝑓 (𝑥) = min 𝑓 (𝑥) + 𝛿𝐶 (𝑥) .
+𝑥 ∈𝐶
+
+𝑥 ∈𝑉
+
+Definisi 1.31 (Epigraf dan fungsi tertutup). Epigraf fungsi 𝑓 : 𝑉 → (−∞, ∞] didefinisikan
+sebagai
+(1.45)
+
+epi(𝑓 ) = {(𝑥, 𝑡) ∈ 𝑉 × ℝ | 𝑓 (𝑥) ≤ 𝑡 }.
+
+Fungsi disebut tertutup jika epigrafnya merupakan himpunan tertutup.
+Latihan 1.32. Jika 𝐴 tertutup, tunjukkan bahwa 𝛿𝐴 juga tertutup.
+Latihan 1.33. Apakah domain suatu fungsi tertutup harus tertutup? Buktikan atau berikan
+contoh penyangkal.
+Definisi 1.34 (Semikontinuitas bawah). Fungsi 𝑓 : 𝑉 → (−∞, ∞] disebut semikontinu
+bawah (lower semicontinuous, lsc) jika untuk setiap barisan 𝑥𝑛 → 𝑥 di 𝑉 berlaku
+(1.46)
+
+𝑓 (𝑥) ≤ lim inf 𝑓 (𝑥𝑛 ).
+𝑛→∞
+
+Lema 1.35. Fungsi 𝑓 : 𝑉 → (−∞, ∞] tertutup jika dan hanya jika semikontinu bawah.
+
+12
+
+1 prasyarat
+
+Minimum tercapai
+
+Minimum tidak tercapai
+
+Gambar 1.1: Kegagalan semikontinuitas bawah dapat menyebabkan infimum tidak tercapai.
+Bukti. ⇒: andaikan 𝑓 tertutup, 𝑥𝑛 → 𝑥, dan tuliskan 𝐿 = lim inf 𝑛 𝑓 (𝑥𝑛 ). Jika 𝐿 = +∞,
+ketaksamaan yang diinginkan langsung berlaku. Jika 𝐿 ∈ ℝ, ambil subbarisan 𝑛(𝑘) dengan
+(1.47)
+
+𝐿 = lim inf 𝑓 (𝑥𝑛 ) = lim 𝑓 (𝑥𝑛(𝑘) ).
+𝑛
+
+𝑘
+
+Untuk 𝑘 cukup besar nilainya hingga, sehingga (𝑥𝑛(𝑘) , 𝑓 (𝑥𝑛(𝑘) )) ∈ epi(𝑓 ) dan
+(1.48)
+
+(𝑥𝑛(𝑘) , 𝑓 (𝑥𝑛(𝑘) )) −→ (𝑥, 𝐿).
+
+Ketertutupan epigraf memberikan (𝑥, 𝐿) ∈ epi(𝑓 ), jadi 𝑓 (𝑥) ≤ 𝐿. Terakhir, 𝐿 = −∞ tidak mungkin: untuk setiap 𝑀 ∈ ℝ kita dapat memilih subbarisan dengan 𝑓 (𝑥𝑛(𝑘) ) ≤ 𝑀;
+maka (𝑥𝑛(𝑘) , 𝑀) ∈ epi(𝑓 ) dan ketertutupan akan memberikan 𝑓 (𝑥) ≤ 𝑀 untuk setiap 𝑀,
+bertentangan dengan kodomain (−∞, +∞].
+⇐: sekarang andaikan 𝑓 semikontinu bawah dan (𝑥𝑛 , 𝑡𝑛 )𝑛 ⊂ epi(𝑓 ) dengan (𝑥𝑛 , 𝑡𝑛 ) →
+(𝑥, 𝑡) dalam 𝑉 × ℝ. Khususnya, 𝑥𝑛 → 𝑥. Oleh semikontinuitas bawah,
+(1.49)
+
+𝑓 (𝑥) ≤ lim inf 𝑓 (𝑥𝑛 ) ≤ lim inf 𝑡𝑛 = lim 𝑡𝑛 = 𝑡 .
+𝑛
+
+𝑛
+
+𝑛
+
+Jadi (𝑥, 𝑡) ∈ epi(𝑓 ), yang membuktikan bahwa epigrafnya tertutup.
+
+□
+
+Lema 1.36. Jika pembatasan 𝑓 pada dom(𝑓 ) kontinu dan dom(𝑓 ) tertutup, maka 𝑓 tertutup.
+Bukti. Latihan.
+
+□
+
+Deskripsi gambar. Kedua panel menampilkan fungsi sepotong-sepotong yang mempunyai lompatan di 𝑥 = 0. Pada panel kiri, cabang kanan mendekati titik kosong (0, 0) sementara nilai fungsi di 𝑥 = 0 adalah titik penuh (0, 1); infimum 0 tidak tercapai. Pada
+panel kanan, titik (0, 0) diisi dan titik (0, 1) dibiarkan kosong, sehingga nilai minimum 0
+tercapai.
+
+13
+
+1 prasyarat
+Definisi 1.37 (Koersif). Fungsi 𝑓 : 𝑉 → (−∞, +∞] disebut koersif jika
+(1.50)
+
+lim 𝑓 (𝑥) = ∞.
+
+∥𝑥 ∥→∞
+
+Teorema 1.38. Misalkan 𝑉 berdimensi hingga dan 𝑓 : 𝑉 → (−∞, ∞] proper, koersif, serta
+semikontinu bawah. Maka 𝑓 mencapai minimumnya pada 𝑉 .3
+Bukti. Bukti mengikuti apa yang disebut metode langsung.
+Langkah 1: Ambil barisan peminimum.
+(1.51)
+
+Misalkan (𝑥𝑛 )𝑛 suatu barisan peminimum4 , yaitu
+
+lim 𝑓 (𝑥𝑛 ) = inf 𝑓 (𝑥).
+𝑥 ∈𝑉
+
+𝑛
+
+Langkah 2: Tunjukkan keterbatasan barisan. Karena 𝑓 koersif, barisan peminimum harus terbatas. Jika tidak, terdapat subbarisan (𝑥𝑛(𝑘) )𝑘 dengan ∥𝑥𝑛(𝑘) ∥ → ∞. Koersivitas
+kemudian memberikan
+(1.52)
+
+𝑓 (𝑥𝑛(𝑘) ) → ∞,
+
+yang bertentangan dengan
+(1.53)
+
+𝑓 (𝑥𝑛(𝑘) ) → inf 𝑓 < ∞.
+
+Langkah 3: Gunakan kekompakan untuk mengambil subbarisan konvergen. Berdasarkan teorema 1.17, setiap barisan terbatas dalam ruang vektor berdimensi hingga mempunyai subbarisan konvergen. Jadi kita dapat mengambil subbarisan (𝑥𝑛(𝑘) )𝑘 dengan limit
+ˆ
+lim𝑘 𝑥𝑛(𝑘) = 𝑥.
+Langkah 4: Simpulkan dengan semikontinuitas bawah.
+wah 𝑓 ,
+(1.54)
+
+Berdasarkan semikontinuitas ba-
+
+ˆ ≤ lim inf 𝑓 (𝑥𝑛(𝑘) ) = lim 𝑓 (𝑥𝑛 ) = inf 𝑓 (𝑥) ≤ 𝑓 (𝑥).
+ˆ
+𝑓 (𝑥)
+𝑘→∞
+
+𝑛
+
+𝑥
+
+Jadi semua ketaksamaan merupakan kesamaan dan 𝑥ˆ adalah peminim.
+
+□
+
+3Asumsi dimensi hingga menyediakan kekompakan sekuensial yang dipakai bukti ini. Generalisasi ke
+
+dimensi tak hingga memerlukan hipotesis tambahan, misalnya refleksivitas dan semikontinuitas bawah
+lemah; ketiga asumsi yang ditampilkan saja tidak cukup.
+4 Sebagai latihan: mengapa barisan seperti ini selalu ada?
+
+14
+
+2 KEKONVEKSAN
+
+Tujuan kita dalam kuliah ini adalah menyelesaikan masalah berbentuk
+(2.1)
+
+min 𝑓 (𝑥),
+𝑥 ∈𝐶
+
+dengan 𝐶 ⊂ 𝑉 suatu himpunan bagian konveks dari ruang 𝑉 dan 𝑓 : 𝐶 → (−∞, ∞]
+suatu fungsi konveks. Oleh karena itu, pada bagian berikut kita menganalisis secara lebih
+terperinci arti tepat kekonveksan himpunan dan fungsi serta akibat yang dapat ditarik
+dari sifat-sifat tersebut.
+
+2.1 himpunan konveks
+Suatu himpunan disebut konveks apabila, untuk setiap dua titik di dalamnya, seluruh ruas
+garis lurus yang menghubungkan kedua titik itu juga termuat di dalam himpunan tersebut.
+Secara lebih formal:
+Definisi 2.1. Suatu himpunan 𝐶 ⊂ 𝑉 disebut konveks jika dan hanya jika, untuk setiap
+𝑥, 𝑦 ∈ 𝐶 dan 𝜆 ∈ (0, 1), berlaku
+(2.2)
+
+𝜆𝑥 + (1 − 𝜆)𝑦 ∈ 𝐶.
+
+Perhatikan bahwa
+(2.3)
+
+𝜆𝑥 + (1 − 𝜆)𝑦 = 𝑦 + 𝜆(𝑥 − 𝑦),
+
+yang memperlihatkan dengan lebih jelas bahwa 𝜆𝑥 + (1 − 𝜆)𝑦 menelusuri ruas garis yang
+menghubungkan 𝑥 dan 𝑦.
+Lebih lanjut, dengan menggunakan kombinasi konveks yang lebih umum, kita dapat dengan mudah menunjukkan hasil berikut.
+Lema 2.2. Himpunan 𝐶 ⊂ 𝑉 konveks jika dan hanya jika, untuk setiap 𝑛 ∈ ℕ, 𝑥𝑖 ∈ 𝐶, dan
+P
+𝜆𝑖 ∈ [0, 1], 𝑖 = 1, . . . , 𝑛, yang memenuhi 𝑛𝑖=1 𝜆𝑖 = 1, berlaku
+(2.4)
+
+𝑛
+∑︁
+
+𝜆𝑖 𝑥𝑖 ∈ 𝐶.
+
+𝑖=1
+
+15
+
+2 kekonveksan
+Bukti. Latihan.
+
+□
+
+Untuk memudahkan notasi, kita mendefinisikan simpleks satuan sebagai
+(2.5)
+
+Δ = {(𝜆1, . . . , 𝜆𝑘 ) ∈ [0, 1] |
+𝑘
+
+𝑘
+
+𝑘
+∑︁
+
+𝜆𝑖 = 1}.
+
+𝑖=1
+
+Sekarang kita dapat mendefinisikan himpunan konveks terkecil yang memuat suatu himpunan, yaitu selubung konveks.
+Definisi 2.3 (Selubung konveks). Misalkan 𝐶 ⊂ 𝑉 . Selubung konveks dari 𝐶 didefinisikan
+sebagai himpunan
+\
+(2.6)
+conv(𝐶) :=
+𝑆.
+𝑆 ⊂𝑉 konveks
+𝐶 ⊂𝑆
+
+Lema 2.4. Berlaku
+(2.7)
+
+conv(𝐶) =
+
+ 𝑛
+∑︁
+
+
+
+𝜆𝑖 𝑥𝑖 | 𝑛 ∈ ℕ, 𝑥𝑖 ∈ 𝐶, (𝜆1, . . . , 𝜆𝑛 ) ∈ Δ .
+𝑛
+
+𝑖=1
+
+Bukti. Nyatakan ruas kanan (2.7) dengan 𝐴. Kita akan menunjukkan bahwa conv(𝐶) ⊂ 𝐴
+dan 𝐴 ⊂ conv(𝐶).
+P
+𝐴 ⊂ conv(𝐶): Misalkan 𝑥 = 𝑛𝑖=1 𝜆𝑖 𝑥𝑖 ∈ 𝐴. Untuk setiap 𝑆 ⊂ 𝑉 yang konveks dan memenuhi 𝐶 ⊂ 𝑆, berlaku 𝑥 ∈ 𝑆. Oleh karena itu, berdasarkan definisi pada (2.6), diperoleh
+𝑥 ∈ conv(𝐶).
+conv(𝐶) ⊂ 𝐴: Dapat diperiksa langsung bahwa 𝐴 memang merupakan himpunan konveks. Selain itu, 𝐶 ⊂ 𝐴. Dengan demikian, 𝐴 termasuk salah satu himpunan 𝑆 dalam (2.6),
+sehingga conv(𝐶) ⊂ 𝐴.
+□
+Deskripsi gambar. Baris atas memperlihatkan beberapa daerah yang memuat seluruh
+ruas garis di antara setiap dua titik di dalamnya. Baris bawah memperlihatkan daerah yang
+memiliki lekukan atau bagian terpisah sehingga terdapat dua titik di dalam himpunan
+yang ruas penghubungnya keluar dari himpunan.
+Contoh 2.5. Himpunan-himpunan berikut bersifat konveks (buktinya ditinggalkan sebagai latihan):
+• Himpunan kosong ∅.
+• Setiap ruang vektor.
+• Setiap bola norma; yaitu, untuk setiap norma ∥ · ∥, setiap 𝑐 ∈ 𝑉 , dan setiap 𝑅 ≥ 0,
+
+16
+
+2 kekonveksan
+
+Gambar 2.1: Baris atas: himpunan konveks. Baris bawah: himpunan tak konveks.
+
+Gambar 2.2: Bola norma 𝐵 ∥ · ∥𝑝 ,𝑅 (0) untuk beberapa norma ℓ 𝑝 . Perhatikan bahwa himpunan untuk 𝑝 = 1/2 tidak konveks karena pilihan ini tidak menghasilkan norma:
+ketaksamaan segitiga tidak berlaku.
+himpunan
+(2.8)
+
+𝐵 ∥ · ∥,𝑅 (𝑐) = {𝑥 ∈ 𝑉 | ∥𝑥 − 𝑐 ∥ < 𝑅}
+
+dan
+(2.9)
+
+𝐵 ∥ · ∥,𝑅 (𝑐) = {𝑥 ∈ 𝑉 | ∥𝑥 − 𝑐 ∥ ≤ 𝑅}.
+
+• Setiap subruang afin; yaitu, untuk setiap vektor 𝑧, 𝑥 1, . . . , 𝑥𝑘 ∈ 𝑉 , himpunan
+(2.10)
+
+
+
+𝑘
+∑︁
+𝑥 ∈𝑉 | 𝑥 =𝑧 +
+𝜆𝑖 𝑥𝑖 , 𝜆𝑖 ∈ ℝ .
+𝑖=1
+
+17
+
+2 kekonveksan
+Deskripsi gambar. Gambar membandingkan bola satuan dua dimensi untuk beberapa
+nilai 𝑝. Bentuknya berubah dari belah ketupat melalui lingkaran menuju bentuk yang
+semakin menyerupai persegi ketika 𝑝 bertambah; untuk 𝑝 = 1/2, sisi-sisinya melengkung
+ke dalam sehingga himpunannya tidak konveks.
+Lema 2.6 (Operasi yang mempertahankan kekonveksan). Pernyataan-pernyataan berikut
+berlaku:
+(i) Irisan. Misalkan 𝐶𝑖 ⊂ 𝑉 konveks untuk 𝑖 ∈ 𝐼 , dengan 𝐼 suatu himpunan indeks sembarang. Maka irisan
+\
+𝐶𝑖 := {𝑥 ∈ 𝑉 | 𝑥 ∈ 𝐶𝑖 ∀𝑖 ∈ 𝐼 }
+(2.11)
+𝑖∈𝐼
+
+bersifat konveks.
+(ii) Jumlah berbobot. Misalkan 𝐶𝑖 ⊂ 𝑉 konveks untuk 𝑖 = 1, . . . , 𝑁 , dan misalkan 𝜆𝑖 ∈ ℝ
+untuk 𝑖 = 1, . . . , 𝑁 . Maka himpunan
+𝑁
+∑︁
+
+(2.12)
+
+𝜆𝑖 𝐶𝑖 :=
+
+𝑖=1
+
+ 𝑁
+∑︁
+
+𝜆𝑖 𝑥𝑖 | 𝑥𝑖 ∈ 𝐶𝑖 ∀𝑖 = 1, . . . , 𝑁
+
+
+
+𝑖=1
+
+bersifat konveks.
+(iii) Produk Kartesius. Misalkan 𝐶𝑖 ⊂ 𝑉 konveks untuk 𝑖 ∈ 𝐼 , dengan 𝐼 suatu himpunan
+indeks sembarang. Maka produk Kartesius
+Y
+(2.13)
+𝐶𝑖 := {(𝑥𝑖 )𝑖∈𝐼 | 𝑥𝑖 ∈ 𝐶𝑖 ∀𝑖 ∈ 𝐼 }
+𝑖∈𝐼
+
+bersifat konveks.
+(iv) Citra dan pracitra1 di bawah pemetaan linear bersifat konveks. Secara khusus, untuk
+𝐴 : 𝑉 → 𝑊 linear serta 𝑆 ⊂ 𝑉 dan 𝑇 ⊂ 𝑊 keduanya konveks, himpunan-himpunan
+berikut bersifat konveks:
+(2.14)
+
+𝐴−1 (𝑇 ) = {𝑥 ∈ 𝑉 | 𝐴𝑥 ∈ 𝑇 }.
+
+𝐴(𝑆) = {𝐴𝑥 | 𝑥 ∈ 𝑆 },
+
+Bukti. Kita hanya membuktikan bagian pertama dan meninggalkan sisanya sebagai latihT
+an. Buktinya langsung. Misalkan 𝑥, 𝑦 ∈ 𝑖∈𝐼 𝐶𝑖 dan 𝜆 ∈ (0, 1). Karena 𝑥, 𝑦 ∈ 𝐶𝑖 untuk
+setiap 𝑖 dan setiap 𝐶𝑖 konveks, diperoleh 𝜆𝑥 + (1 − 𝜆)𝑦 ∈ 𝐶𝑖 untuk setiap 𝑖. Dengan demiT
+kian, 𝜆𝑥 + (1 − 𝜆)𝑦 ∈ 𝑖∈𝐼 𝐶𝑖 .
+□
+Kita hendak mendefinisikan secara formal pengertian hiperbidang, yaitu perumuman bidang dua dimensi di ℝ3 ke dimensi sembarang.
+1 Pracitra terdefinisi dengan baik juga untuk pemetaan yang tidak invertibel.
+
+18
+
+2 kekonveksan
+Definisi 2.7 (Hiperbidang). Misalkan 𝑉 suatu ruang hasil kali dalam. Hiperbidang adalah
+himpunan 𝐻 berbentuk
+(2.15)
+
+𝐻 = {𝑥 ∈ 𝑉 | ⟨𝑥, 𝑎⟩ = 𝑏}
+
+untuk suatu 𝑎 ∈ 𝑉 \ {0} dan 𝑏 ∈ ℝ.
+Parameter 𝑎 menentukan orientasi bidang dan 𝑏 menentukan geserannya. Secara khusus,
+0 ∈ 𝐻 jika dan hanya jika 𝑏 = 0; dalam kasus ini 𝐻 merupakan subruang. Jika 𝑏 ≠ 0, 𝐻
+hanya merupakan subruang afin.
+Perhatikan bahwa jika 𝑥 0 ∈ 𝐻 , maka
+(2.16)
+
+𝐻 = {𝑥 ∈ 𝑉 | ⟨𝑥 − 𝑥 0, 𝑎⟩ = 0}.
+
+Jadi, 𝑎 adalah vektor normal terhadap bidang tersebut. Selain itu, dapat diperiksa sebagai
+|𝑏 |
+adalah jarak bidang dari titik asal.
+latihan bahwa ∥𝑎∥
+Setiap hiperbidang membagi ruang menjadi dua setengah ruang.
+Definisi 2.8 (Setengah ruang). Misalkan 𝑉 suatu ruang hasil kali dalam. Setengah ruang
+adalah himpunan 𝐻 − berbentuk
+(2.17)
+
+𝐻 − = {𝑥 ∈ 𝑉 | ⟨𝑥, 𝑎⟩ ≤ 𝑏}
+
+untuk suatu 𝑎 ∈ 𝑉 \ {0} dan 𝑏 ∈ ℝ.
+Teorema berikut menyatakan bahwa pemisahan tersebut dapat dipilih dengan cara tertentu. Hasil ini ternyata sangat penting dalam optimisasi dan analisis fungsional.
+Teorema 2.9 (Teorema pemisahan Hahn–Banach). Misalkan 𝑆,𝑇 dua himpunan bagian
+konveks yang tak kosong dan saling lepas dari suatu ruang bernorma real 𝑉 , dan misalkan
+𝑆 terbuka. Maka terdapat 𝑎 ∈ 𝑉 ∗ yang kontinu dan tak nol serta 𝛼 ∈ ℝ sedemikian sehingga
+(2.18)
+
+⟨𝑎, 𝑥⟩ < 𝛼 ≤ ⟨𝑎, 𝑦⟩,
+
+𝑥 ∈ 𝑆, 𝑦 ∈ 𝑇 .
+
+Jika 𝑆 dan 𝑇 keduanya tertutup dan salah satunya kompak, maka terdapat 𝑎 ∈ 𝑉 ∗ yang
+kontinu dan tak nol, 𝛼 ∈ ℝ, dan 𝜀 > 0 sedemikian sehingga
+(2.19)
+
+⟨𝑎, 𝑥⟩ ≤ 𝛼 < 𝛼 + 𝜀 ≤ ⟨𝑎, 𝑦⟩,
+
+𝑥 ∈ 𝑆, 𝑦 ∈ 𝑇 .
+
+Versi kedua memungkinkan kita memperoleh selisih positif tegas antara
+sup ⟨𝑎, 𝑥⟩
+
+dan
+
+𝑥 ∈𝑆
+
+inf ⟨𝑎, 𝑦⟩.
+
+𝑦∈𝑇
+
+Deskripsi gambar. Panel kiri menampilkan dua himpunan konveks tak beririsan yang
+dipisahkan oleh sebuah garis putus-putus. Panel kanan menampilkan salah satu himpunan
+yang tak konveks dan melingkupi sebagian himpunan lainnya, sehingga tidak ada satu
+garis lurus yang dapat memisahkan keduanya.
+
+19
+
+2 kekonveksan
+
+𝑆
+
+𝑆
+
+𝑇
+
+𝑇
+
+Gambar 2.3: Ilustrasi teorema pemisahan Hahn–Banach dan alasan pemisahan dapat gagal tanpa kekonveksan.
+
+Gambar 2.4: Contoh fungsi konveks dan fungsi tak konveks dalam satu dimensi.
+
+2.2 fungsi konveks
+Seperti diperlihatkan pada Fig. 2.4, kekonveksan sangat memengaruhi pertanyaan tentang
+keberadaan dan ketunggalan minimum.
+Deskripsi gambar. Gambar membandingkan grafik satu dimensi berbentuk mangkuk,
+yang konveks dan memiliki struktur minimum yang teratur, dengan grafik tak konveks
+yang memiliki lekukan serta beberapa minimum lokal.
+Definisi 2.10 (Syarat orde nol untuk kekonveksan). Misalkan 𝐶 ⊂ 𝑉 konveks dan 𝑓 : 𝐶 →
+(−∞, ∞].
+
+20
+
+2 kekonveksan
+
+(1 −
+𝜆 𝑓 (𝑥 ) +
+
+𝜆) 𝑓 ( 𝑦 )
+
+𝑓 (𝑦)
+
+𝑓 (𝑥)
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦)
+
+𝑥
+
+𝑦
+
+Gambar 2.5: Penafsiran geometris syarat orde nol bagi kekonveksan suatu fungsi.
+• Fungsi 𝑓 disebut konveks jika dan hanya jika, untuk setiap 𝑥, 𝑦 ∈ 𝐶 dan 𝜆 ∈ (0, 1),
+berlaku
+(2.20)
+
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦) ≤ 𝜆𝑓 (𝑥) + (1 − 𝜆)𝑓 (𝑦).
+
+• Fungsi 𝑓 disebut konveks tegas jika dan hanya jika, untuk setiap 𝑥, 𝑦 ∈ dom(𝑓 )
+dengan 𝑥 ≠ 𝑦 dan setiap 𝜆 ∈ (0, 1), berlaku
+(2.21)
+
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦) < 𝜆𝑓 (𝑥) + (1 − 𝜆)𝑓 (𝑦).
+
+• Fungsi 𝑓 disebut konveks kuat dengan parameter 𝜇 > 0 jika dan hanya jika, untuk
+setiap 𝑥, 𝑦 ∈ dom(𝑓 ) dan 𝜆 ∈ (0, 1), berlaku
+(2.22)
+
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦) ≤ 𝜆𝑓 (𝑥) + (1 − 𝜆)𝑓 (𝑦) −
+
+𝜆(1 − 𝜆)𝜇
+∥𝑥 − 𝑦 ∥ 2 .
+2
+
+Syarat orde nol menyatakan bahwa ruas garis yang menghubungkan dua titik pada grafik,
+yaitu garis sekan, selalu berada di atas fungsi. Untuk fungsi konveks tegas, garis sekan
+berada secara tegas di atas fungsi, sedangkan dalam kasus konveks kuat kita bahkan dapat
+menyisipkan fungsi kuadrat di antara keduanya.
+Deskripsi gambar. Sebuah kurva konveks biru ditampilkan bersama dua titik pada grafik
+dan ruas sekan yang menghubungkannya. Nilai fungsi pada kombinasi konveks kedua
+titik berada di bawah nilai yang diperoleh melalui interpolasi linear di sepanjang sekan.
+Contoh 2.11. Fungsi-fungsi berikut konveks (bukti: latihan):
+(i) Fungsi afin 𝑓 (𝑥) = ⟨𝑎, 𝑥⟩ + 𝑏 dengan 𝑎 ∈ 𝑉 ∗ dan 𝑏 ∈ ℝ; khususnya, fungsi linear
+ketika 𝑏 = 0.
+
+21
+
+2 kekonveksan
+(ii) Semua norma merupakan fungsi konveks.
+Serupa dengan hasil untuk himpunan konveks, kekonveksan dapat diperluas ke kombinasi
+konveks dengan banyak titik yang sembarang.
+Teorema 2.12 (Jensen). Misalkan 𝐶 ⊂ 𝑉 konveks dan 𝑓 : 𝐶 → (−∞, +∞]. Dengan konvensi
+0 · (+∞) = 0, fungsi 𝑓 konveks jika dan hanya jika, untuk setiap 𝑘 ∈ ℕ, 𝜆 ∈ Δ𝑘 , dan 𝑥𝑖 ∈ 𝐶,
+berlaku
+ 𝑘
+
+𝑘
+∑︁
+∑︁
+𝜆𝑖 𝑓 (𝑥𝑖 ).
+(2.23)
+𝑓
+𝜆𝑖 𝑥𝑖 ≤
+𝑖=1
+
+𝑖=1
+
+Di atas kita melihat bahwa kekonveksan berarti garis sekan berada di atas fungsi. Kekonveksan juga berarti garis singgung berada di bawah fungsi (bandingkan Fig. 2.6).
+Teorema 2.13 (Karakterisasi orde pertama kekonveksan). Misalkan 𝐶 ⊂ ℝ𝑑 konveks dan 𝑓 :
+𝐶 → ℝ mempunyai perluasan yang terdiferensialkan secara kontinu pada suatu lingkungan
+terbuka dari 𝐶.
+• Fungsi 𝑓 konveks jika dan hanya jika, untuk semua 𝑥, 𝑦 ∈ 𝐶,
+𝑓 (𝑥) + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦).
+• Fungsi 𝑓 konveks tegas jika dan hanya jika ketaksamaan di atas berlaku tegas untuk
+semua 𝑥 ≠ 𝑦.
+Bukti. Kita terlebih dahulu membuktikan butir pertama.
+⇒: Misalkan 𝑓 konveks. Maka
+(2.24)
+
+𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) = 𝑓 (𝜆𝑦 + (1 − 𝜆)𝑥) ≤ 𝜆𝑓 (𝑦) + (1 − 𝜆)𝑓 (𝑥).
+
+Dengan menyusun ulang, diperoleh
+(2.25)
+
+𝑓 (𝑥 + 𝜆(𝑦 − 𝑥)) − 𝑓 (𝑥)
+≤ 𝑓 (𝑦) − 𝑓 (𝑥).
+𝜆
+
+Membiarkan 𝜆 → 0 memberikan hasil yang diinginkan.
+⇐: Sekarang andaikan syarat gradien berlaku. Tuliskan 𝑥 𝜆 = 𝑥 + 𝜆(𝑦 − 𝑥). Maka
+𝑓 (𝑥 𝜆 ) + ⟨∇𝑓 (𝑥 𝜆 ), 𝑦 − 𝑥 𝜆 ⟩ = 𝑓 (𝑥 𝜆 ) + ⟨∇𝑓 (𝑥 𝜆 ), (1 − 𝜆)(𝑦 − 𝑥)⟩ ≤ 𝑓 (𝑦)
+dan
+𝑓 (𝑥 𝜆 ) + ⟨∇𝑓 (𝑥 𝜆 ), 𝑥 − 𝑥 𝜆 ⟩ = 𝑓 (𝑥 𝜆 ) + ⟨∇𝑓 (𝑥 𝜆 ), −𝜆(𝑦 − 𝑥)⟩ ≤ 𝑓 (𝑥).
+
+22
+
+2 kekonveksan
+
+𝑓
+𝑓 (𝑥)
++
+𝑓 (𝑥 )
+→
+↦
+𝑦
+
+𝑥)
+⟨∇ 𝑓 (
+
+,𝑦 −
+
+𝑥⟩
+
+𝑥
+Gambar 2.6: Penafsiran geometris syarat orde pertama bagi fungsi konveks.
+Kalikan ketaksamaan pertama dengan 𝜆, ketaksamaan kedua dengan 1−𝜆, lalu jumlahkan.
+Hasilnya
+𝑓 (𝑥 𝜆 ) ≤ 𝜆𝑓 (𝑦) + (1 − 𝜆)𝑓 (𝑥).
+Untuk butir kedua, arah dari syarat orde pertama tegas menuju kekonveksan tegas langsung mengikuti argumen yang sama. Sebaliknya, jika 𝑓 konveks tegas dan 𝑥 ≠ 𝑦, fungsi satu variabel 𝑔(𝑡) = 𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥)) konveks tegas pada [0, 1]. Kemiringan sekan
+(𝑔(𝑡) − 𝑔(0))/𝑡 tak menurun dalam 𝑡 > 0 dan, untuk setiap 𝑡 0 ∈ (0, 1), bernilai tegas
+lebih kecil daripada 𝑔(1) − 𝑔(0). Mengambil limit 𝑡 ↓ 0 memberikan ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ <
+𝑓 (𝑦) − 𝑓 (𝑥).
+□
+Deskripsi gambar. Grafik sebuah fungsi konveks ditampilkan bersama garis singgungnya pada titik 𝑥. Garis afin 𝑦 ↦→ 𝑓 (𝑥) + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ berada di bawah grafik fungsi di
+seluruh domain yang diperlihatkan.
+Definisi 2.14 (Minimum). Misalkan 𝑓 : 𝐶 → ℝ dan 𝑥 ∗ ∈ 𝐶.
+• Titik 𝑥 ∗ disebut minimum lokal jika dan hanya jika terdapat 𝜀 > 0 sedemikian sehingga
+𝑓 (𝑥 ∗ ) ≤ 𝑓 (𝑥),
+∀𝑥 ∈ 𝐵𝜀 (𝑥 ∗ ) ∩ 𝐶.
+• Titik 𝑥 ∗ disebut minimum global jika dan hanya jika
+𝑓 (𝑥 ∗ ) ≤ 𝑓 (𝑥),
+
+∀𝑥 ∈ 𝐶.
+
+Minimum disebut tegas apabila ketaksamaan yang bersesuaian berlaku tegas untuk semua
+titik pembanding 𝑥 ≠ 𝑥 ∗ .
+
+23
+
+2 kekonveksan
+Sekarang kita dapat membuktikan hasil penting pertama dalam optimisasi konveks.
+Proposisi 2.15. Misalkan 𝐶 ⊂ ℝ𝑑 konveks, 𝑓 : 𝐶 → ℝ konveks dan mempunyai perluasan
+yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari 𝐶, serta 𝑥 ∗ ∈ 𝐶.
+Jika ∇𝑓 (𝑥 ∗ ) = 0, maka 𝑥 ∗ adalah peminimum global.
+Bukti. Berdasarkan karakterisasi orde pertama kekonveksan,
+(2.26)
+
+𝑓 (𝑥) ≥ 𝑓 (𝑥 ∗ ) + ⟨∇𝑓 (𝑥 ∗ ), 𝑥 − 𝑥 ∗ ⟩ = 𝑓 (𝑥 ∗ ) + 0.
+□
+
+Perhatikan bahwa kebalikan teorema 2.15, yaitu implikasi
+(2.27)
+
+𝑥 ∗ adalah minimum ⇒ ∇𝑓 (𝑥 ∗ ) = 0,
+
+secara umum hanya benar apabila 𝑥 ∗ berada di interior 𝐶, yang dinyatakan dengan 𝐶 ◦ ;
+yaitu, terdapat 𝜀 > 0 sedemikian sehingga 𝐵𝜀 (𝑥 ∗ ) ⊂ 𝐶.
+Teorema 2.16. Misalkan 𝐶 ⊂ ℝ𝑑 konveks, 𝑓 : 𝐶 → ℝ konveks dan mempunyai perluasan
+yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari 𝐶, serta 𝑥 ∗ ∈ 𝐶 ◦ .
+Maka ∇𝑓 (𝑥 ∗ ) = 0 jika dan hanya jika 𝑥 ∗ adalah peminimum global.
+Bukti. Satu arah mengikuti teorema 2.15. Untuk arah lainnya, andaikan 𝑥 ∗ suatu minimum.
+Untuk setiap 𝑣 ∈ ℝ𝑑 , jika 𝑡 > 0 cukup kecil, optimalitas memberikan
+(2.28)
+
+𝑓 (𝑥 ∗ + 𝑡𝑣) − 𝑓 (𝑥 ∗ ) ≥ 0.
+
+Karena 𝑡 > 0, pembagian dengan 𝑡 menghasilkan
+(2.29)
+
+𝑓 (𝑥 ∗ + 𝑡𝑣) − 𝑓 (𝑥 ∗ )
+≥ 0.
+𝑡
+
+Dengan membiarkan 𝑡 → 0, diperoleh
+(2.30)
+
+⟨∇𝑓 (𝑥 ∗ ), 𝑣⟩ ≥ 0.
+
+Karena 𝑣 sembarang, argumen yang sama dapat diterapkan pada −𝑣. Hasilnya
+⟨∇𝑓 (𝑥 ∗ ), 𝑣⟩ ≤ 0.
+Jadi ⟨∇𝑓 (𝑥 ∗ ), 𝑣⟩ = 0 untuk setiap 𝑣, dan karenanya ∇𝑓 (𝑥 ∗ ) = 0 (mengapa?).
+
+□
+
+Dalam satu dimensi, jika suatu fungsi terdiferensialkan, kekonveksannya dapat dikarakterisasi melalui kemonotonan turunannya. Dalam dimensi sembarang berlaku hasil berikut.
+
+24
+
+2 kekonveksan
+Teorema 2.17 (Kemonotonan gradien). Misalkan 𝐶 ⊂ ℝ𝑑 konveks dan 𝑓 : 𝐶 → ℝ mempunyai perluasan yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari
+𝐶. Maka 𝑓 konveks jika dan hanya jika, untuk setiap 𝑥, 𝑦 ∈ 𝐶,
+(2.31)
+
+⟨∇𝑓 (𝑥) − ∇𝑓 (𝑦), 𝑥 − 𝑦⟩ ≥ 0.
+
+Bukti. ⇒: Andaikan 𝑓 konveks. Berdasarkan karakterisasi orde pertama kekonveksan,
+𝑓 (𝑥) + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦),
+𝑓 (𝑦) + ⟨∇𝑓 (𝑦), 𝑥 − 𝑦⟩ ≤ 𝑓 (𝑥).
+
+(2.32)
+
+Menjumlahkan kedua ketaksamaan memberikan hasil yang diinginkan.
+⇐: Andaikan ∇𝑓 monoton. Berdasarkan teorema dasar kalkulus,
+∫ 1
+d
+𝑓 (𝑦) − 𝑓 (𝑥) =
+𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥))d𝑡
+0 d𝑡
+∫ 1
+⟨∇𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥)), 𝑦 − 𝑥⟩d𝑡
+=
+0
+∫ 1
+(2.33)
+=
+⟨∇𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥)) − ∇𝑓 (𝑥), 𝑦 − 𝑥⟩d𝑡 + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩
+0
+∫ 1
+1
+=
+⟨∇𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥)) − ∇𝑓 (𝑥), 𝑡 (𝑦 − 𝑥)⟩ d𝑡 + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩
+{z
+}
+0 𝑡 |
+≥0
+
+≥ ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩.
+Pada 𝑡 = 0, integran dipahami melalui perpanjangan kontinu; ketaksamaan monoton digunakan untuk 𝑡 ∈ (0, 1].
+□
+Terakhir, turunan kedua juga dapat digunakan untuk mengarakterisasi kekonveksan. Secara intuitif, kekonveksan berarti kelengkungan positif. Untuk memformalkan hal ini, ingat
+kembali cara mengurutkan matriks. Untuk dua matriks simetris 𝐴, 𝐵 ∈ ℝ𝑑×𝑑 , kita menuliskan
+(2.34)
+
+𝐴 ⪰ 𝐵 ⇐⇒ ⟨𝑥, 𝐴𝑥⟩ ≥ ⟨𝑥, 𝐵𝑥⟩,
+
+∀𝑥 ∈ ℝ𝑑
+
+dan, serupa dengan itu,
+(2.35)
+
+𝐴 ≻ 𝐵 ⇐⇒ ⟨𝑥, 𝐴𝑥⟩ > ⟨𝑥, 𝐵𝑥⟩,
+
+∀𝑥 ∈ ℝ𝑑 \ {0}.
+
+Teorema 2.18 (Karakterisasi orde kedua kekonveksan). Misalkan 𝐶 ⊂ ℝ𝑑 terbuka dan konveks, serta 𝑓 : 𝐶 → ℝ terdiferensialkan secara kontinu dua kali.
+(i) Fungsi 𝑓 konveks jika dan hanya jika ∇2 𝑓 (𝑥) ⪰ 0 untuk setiap 𝑥 ∈ 𝐶.
+
+25
+
+2 kekonveksan
+(ii) Jika ∇2 𝑓 (𝑥) ≻ 0 untuk setiap 𝑥 ∈ 𝐶, maka 𝑓 konveks tegas.
+Bukti. Kita membuktikan pernyataan pertama dan arah cukup pada pernyataan kedua.
+⇒: Andaikan 𝑓 konveks. Berdasarkan kemonotonan gradien, untuk 𝑡 > 0 berlaku
+(2.36)
+
+⟨∇𝑓 (𝑥 + 𝑡𝑣) − ∇𝑓 (𝑥), 𝑣⟩
+≥ 0.
+𝑡
+
+Dengan membiarkan 𝑡 → 0, diperoleh
+(2.37)
+
+⟨𝑣, ∇2 𝑓 (𝑥)𝑣⟩ ≥ 0.
+
+Karena 𝑣 sembarang, hasilnya mengikuti.
+⇐: Andaikan ∇2 𝑓 ⪰ 0. Berdasarkan teorema dasar kalkulus,
+∫ 1
+d
+∇𝑓 (𝑦) − ∇𝑓 (𝑥) =
+∇𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥))d𝑡
+0 d𝑡
+(2.38)
+∫ 1
+=
+∇2 𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥))(𝑦 − 𝑥)d𝑡 .
+0
+
+Mengambil hasil kali dalam dengan 𝑦 − 𝑥 menghasilkan
+∫ 1
+⟨∇𝑓 (𝑦) − ∇𝑓 (𝑥), 𝑦 − 𝑥⟩ =
+⟨𝑦 − 𝑥, ∇2 𝑓 (𝑥 + 𝑡 (𝑦 − 𝑥))(𝑦 − 𝑥)⟩ d𝑡
+|
+{z
+}
+0
+(2.39)
+≥0
+
+≥ 0.
+Kemonotonan gradien kini menyiratkan kekonveksan. Untuk membuktikan bagian tegas,
+tuliskan 𝑑 = 𝑦 − 𝑥 ≠ 0. Jika Hessian positif definit pada setiap titik, maka
+∫ 1∫ 𝑡
+𝑓 (𝑦) − 𝑓 (𝑥) − ⟨∇𝑓 (𝑥), 𝑑⟩ =
+⟨𝑑, ∇2 𝑓 (𝑥 + 𝑠𝑑)𝑑⟩ d𝑠 d𝑡 > 0.
+0
+
+0
+
+Jadi ketaksamaan orde pertama berlaku tegas dan 𝑓 konveks tegas.
+
+□
+
+Lema 2.19 (Operasi yang mempertahankan kekonveksan). Misalkan 𝑓 , 𝑓1, . . . , 𝑓𝑛 : 𝐶 → ℝ
+konveks pada suatu himpunan konveks.
+(i) Untuk setiap 𝛼 ≥ 0, fungsi 𝛼 𝑓 konveks.
+P
+(ii) Fungsi 𝑖 𝑓𝑖 konveks.
+Bukti. Latihan.
+
+□
+
+26
+
+2 kekonveksan
+Lema 2.20 (Operasi yang mempertahankan kekonveksan, lanjutan). Misalkan 𝑓 : ℝ𝑛 ⊃
+𝐶 → ℝ konveks, 𝐴 ∈ ℝ𝑛×𝑚 , dan 𝑏 ∈ ℝ𝑛 . Maka
+(2.40)
+
+𝑔(𝑥) = 𝑓 (𝐴𝑥 + 𝑏)
+
+konveks pada {𝑥 ∈ ℝ𝑚 | 𝐴𝑥 + 𝑏 ∈ 𝐶}.
+Bukti. Latihan.
+
+□
+
+Lema 2.21 (Operasi yang mempertahankan kekonveksan, lanjutan). Misalkan 𝑓 : 𝐶 → ℝ
+konveks dan 𝑔 : 𝐼 → ℝ konveks serta tak menurun, dengan 𝐼 ⊂ ℝ suatu interval yang
+memenuhi 𝑓 (𝐶) ⊂ 𝐼 . Maka 𝑔 ◦ 𝑓 konveks.
+Bukti. Latihan.
+Contoh 2.22.
+(2.41)
+
+□
+(i) Fungsi log-sum-exp bersifat konveks:
+ 𝑛
+
+∑︁ 𝑥
+𝑓 (𝑥) = log
+𝑒 𝑖 .
+𝑖=1
+
+(ii) Fungsi kuadratik-per-linear
+𝑥 12
+𝑓 (𝑥) =
+𝑥2
+
+(2.42)
+konveks pada ℝ × (0, ∞).
+2
+
+(iii) Fungsi ℎ(𝑥) = 𝑒 ∥𝑥 ∥ konveks pada ℝ𝑑 karena 𝑓 (𝑥) = ∥𝑥 ∥ 2 konveks dan 𝑔(𝑡) = 𝑒 𝑡
+konveks serta tak menurun.
+(iv) Pertimbangkan ℎ(𝑥) = (∥𝑥 ∥ 2 + 1) 2 pada ℝ𝑑 . Fungsi 𝑓 (𝑥) = ∥𝑥 ∥ 2 + 1 dan 𝑔(𝑡) =
+𝑡 2 keduanya konveks. Fungsi 𝑔 tidak tak menurun pada seluruh ℝ, tetapi tak
+menurun pada 𝑓 (ℝ𝑑 ) = [1, ∞). Akibatnya, ℎ konveks.
+(v) Pada contoh sebelumnya, jika 𝑓 diganti dengan ∥ · ∥ 2 − 1, maka 𝑔 tidak tak menurun pada 𝑓 (ℝ𝑑 ) = [−1, ∞); lihat Fig. 2.7.
+Deskripsi gambar. Panel kiri menampilkan 𝑓1 (𝑥) = 𝑥 2 + 1 dan 𝑓2 (𝑥) = 𝑥 2 − 1. Panel
+tengah menampilkan 𝑔(𝑡) = 𝑡 2 serta rentang kedua fungsi tersebut; 𝑔 tak menurun pada
+rentang 𝑓1 tetapi tidak pada seluruh rentang 𝑓2 . Panel kanan memperlihatkan bahwa 𝑔 ◦ 𝑓1
+konveks, sedangkan 𝑔 ◦ 𝑓2 memiliki lekukan tak konveks di sekitar titik asal.
+
+27
+
+2 kekonveksan
+𝑓1 : 𝑥 ↦→ 𝑥 2 + 1
+𝑓2 : 𝑥 ↦→ 𝑥 2 − 1
+2
+
+2
+
+1
+
+1
+
+0
+
+0
+
+−1
+−1
+
+0
+
+𝑔 ◦ 𝑓1
+𝑔 ◦ 𝑓2
+
+𝑔 : 𝑥 ↦→ 𝑥 2
+2
+
+𝑓2 (ℝ)
+
+−1
+
+1
+
+1
+
+𝑓1 (ℝ)
+0
+
+−1
+
+0
+−1
+
+1
+
+−1
+
+0
+
+1
+
+Gambar 2.7: Kekonveksan komposisi fungsi.
+Lema 2.23 (Operasi yang mempertahankan kekonveksan, lanjutan). Misalkan 𝑓𝑖 : 𝐶 → ℝ,
+𝑖 = 1, . . . , 𝑛, konveks pada himpunan konveks 𝐶. Maka
+(2.43)
+
+𝑓 (𝑥) = max 𝑓𝑖 (𝑥)
+𝑖=1,...,𝑛
+
+konveks.
+Bukti. Kita hitung langsung:
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦) = max 𝑓𝑖 (𝜆𝑥 + (1 − 𝜆)𝑦)
+𝑖
+
+≤ max{𝜆𝑓𝑖 (𝑥) + (1 − 𝜆)𝑓𝑖 (𝑦)}
+
+(2.44)
+
+𝑖
+
+≤ 𝜆 max 𝑓 𝑗 (𝑥) + (1 − 𝜆) max 𝑓 𝑗 (𝑦)
+𝑗
+
+𝑗
+
+= 𝜆𝑓 (𝑥) + (1 − 𝜆)𝑓 (𝑦).
+□
+Teorema 2.24. Misalkan 𝑓 : 𝐶 × 𝐷 → ℝ konveks pada 𝐶 × 𝐷, dengan 𝐶 dan 𝐷 keduanya
+konveks. Definisikan
+(2.45)
+
+𝑔(𝑥) = inf 𝑓 (𝑥, 𝑦),
+𝑦∈𝐷
+
+dan andaikan infimum tersebut hingga untuk setiap 𝑥 ∈ 𝐶. Maka 𝑔 konveks.
+Bukti. Pilih barisan 𝑦𝑛𝑥 dan 𝑦𝑛𝑧 sedemikian sehingga
+(2.46)
+
+𝑔(𝑥) = lim 𝑓 (𝑥, 𝑦𝑛𝑥 ),
+
+𝑔(𝑧) = lim 𝑓 (𝑧, 𝑦𝑛𝑧 ).
+
+𝑛
+
+𝑛
+
+Maka
+(2.47)
+
+𝑔(𝜆𝑥 + (1 − 𝜆)𝑧) ≤ 𝑓 (𝜆𝑥 + (1 − 𝜆)𝑧, 𝜆𝑦𝑛𝑥 + (1 − 𝜆)𝑦𝑛𝑧 )
+≤ 𝜆𝑓 (𝑥, 𝑦𝑛𝑥 ) + (1 − 𝜆)𝑓 (𝑧, 𝑦𝑛𝑧 ).
+
+Mengambil limit ketika 𝑛 → ∞ menyelesaikan bukti.
+
+28
+
+□
+
+2 kekonveksan
+
+Contoh 2.25. Jarak suatu titik ke himpunan tak kosong dan konveks merupakan fungsi
+konveks. Jadi, untuk setiap himpunan tak kosong dan konveks 𝐶 ⊂ ℝ𝑑 , pemetaan
+berikut konveks:
+𝑥 ↦→ 𝑑 (𝑥, 𝐶) := inf ∥𝑥 − 𝑦 ∥.
+
+(2.48)
+
+𝑦∈𝐶
+
+Teorema 2.26. Misalkan 𝐶 ⊂ ℝ𝑑 konveks dan 𝑓 : 𝐶 → ℝ. Maka 𝑓 konveks jika dan hanya
+jika, untuk setiap 𝑥 ∈ 𝐶 dan 𝑣 ∈ ℝ𝑑 , fungsi
+𝑔 : 𝐼𝑥,𝑣 → ℝ,
+𝑡 ↦→ 𝑔(𝑡) = 𝑓 (𝑥 + 𝑡𝑣),
+
+(2.49)
+
+konveks pada interval 𝐼𝑥,𝑣 := {𝑡 ∈ ℝ | 𝑥 + 𝑡𝑣 ∈ 𝐶}.
+Bukti. ⇐: Andaikan 𝑔 konveks untuk setiap 𝑥 dan 𝑣. Misalkan 𝑥, 𝑦 ∈ 𝐶 dan 𝜆 ∈ (0, 1).
+Pertimbangkan
+(2.50)
+
+𝑔(𝑡) = 𝑓 (𝑦 + 𝑡 (𝑥 − 𝑦)).
+
+Karena 𝑔 konveks pada interval yang memuat 0 dan 1,
+(2.51)
+
+𝑓 (𝜆𝑥 + (1 − 𝜆)𝑦) = 𝑔(𝜆) = 𝑔(𝜆 · 1 + (1 − 𝜆) · 0)
+≤ 𝜆𝑔(1) + (1 − 𝜆)𝑔(0)
+= 𝜆𝑓 (𝑥) + (1 − 𝜆)𝑓 (𝑦).
+
+Arah sebaliknya ditinggalkan sebagai latihan.
+Contoh 2.27 (Fungsi konveks yang umum).
+
+□
+• Contoh pada ℝ:
+
+– Fungsi konveks:
+∗ Fungsi eksponensial 𝑓 (𝑥) = exp(𝑎𝑥) pada ℝ, dengan 𝑎 ∈ ℝ.
+∗ Fungsi pangkat 𝑓 (𝑥) = 𝑥 𝑝 pada (0, ∞) untuk 𝑝 ≥ 1 atau 𝑝 ≤ 0.
+∗ Pangkat nilai mutlak 𝑓 (𝑥) = |𝑥 |𝑝 pada ℝ untuk 𝑝 ≥ 1.
+∗ Entropi negatif 𝑓 (𝑥) = 𝑥 log(𝑥) pada (0, ∞).
+– Fungsi konkaf:
+∗ Fungsi pangkat 𝑓 (𝑥) = 𝑥 𝑝 pada (0, ∞) untuk 0 ≤ 𝑝 ≤ 1.
+∗ Logaritma 𝑓 (𝑥) = log(𝑥) pada (0, ∞).
+• Contoh pada ruang Euklides berdimensi hingga:
+– Fungsi konveks:
+
+29
+
+2 kekonveksan
+∗ Norma-𝑝, 𝑓 (𝑥) = ∥𝑥 ∥ 𝑝 .
+∗ Pangkat norma-𝑝, 𝑓 (𝑥) = ∥𝑥 ∥ 𝑝 , untuk 1 ≤ 𝑝 < ∞.
+𝑝
+
+∗ Kuadrat terkecil, 𝑓 (𝑥) = 21 ∥𝐴𝑥 − 𝑏 ∥ 22 , dengan 𝐴 ∈ ℝ𝑚×𝑛 dan 𝑏 ∈ ℝ𝑚 .
+∗ Maksimum fungsi-fungsi afin:
+𝑓 (𝑥) = max{⟨𝑎 1, 𝑥⟩ + 𝑏 1, . . . , ⟨𝑎𝑚 , 𝑥⟩ + 𝑏𝑚 },
+dengan 𝑎𝑖 ∈ ℝ𝑛 dan 𝑏𝑖 ∈ ℝ.
+∗ Perspektif suatu fungsi, 𝑓 (𝑥, 𝑦) = 𝑦𝑔(𝑥/𝑦), dengan 𝑔 : ℝ𝑛 → ℝ fungsi
+konveks, 𝑥 ∈ ℝ𝑛 , dan 𝑦 ∈ (0, ∞). Jadi domain perspektif ini adalah
+ℝ𝑛 × (0, ∞).
+– Fungsi konkaf:
+∗ Minimum fungsi-fungsi afin:
+𝑓 (𝑥) = min{⟨𝑎 1, 𝑥⟩ + 𝑏 1, . . . , ⟨𝑎𝑚 , 𝑥⟩ + 𝑏𝑚 }.
+• Contoh pada ℝ𝑚×𝑛 :
+– Fungsi konveks:
+∗ Fungsi afin
+𝑓 (𝑋 ) = tr(𝐴⊤𝑋 ) + 𝑏 =
+
+𝑚 ∑︁
+𝑛
+∑︁
+
+𝐴𝑖 𝑗 𝑋𝑖 𝑗 + 𝑏
+
+𝑖=1 𝑗=1
+
+pada ℝ𝑚×𝑛 , dengan 𝐴 ∈ ℝ𝑚×𝑛 dan 𝑏 ∈ ℝ.
+√︁
+∗ Norma spektral 𝑓 (𝑋 ) = ∥𝑋 ∥ 2 = 𝜎max (𝑋 ) = 𝜆max (𝑋 ⊤𝑋 ).
+∗ Fungsi penghalang untuk matriks definit positif, 𝑓 (𝑋 ) = − log det 𝑋
+pada 𝕊𝑛++ .
+Serupa dengan hasil-hasil di atas, kita dapat menunjukkan karakterisasi kekonveksan kuat
+berikut.
+Teorema 2.28. Misalkan 𝑓 : 𝐶 → ℝ, dengan 𝐶 ⊂ ℝ𝑑 konveks, serta 𝜇 > 0. Karakterisasi
+berikut berlaku:
+• Fungsi 𝑓 konveks kuat berparameter 𝜇 jika dan hanya jika 𝑓 − 2 ∥ · ∥ 2 konveks.
+𝜇
+
+• Syarat orde pertama: jika 𝑓 mempunyai perluasan yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari 𝐶, maka 𝑓 konveks kuat berparameter 𝜇 jika
+
+30
+
+2 kekonveksan
+dan hanya jika, untuk setiap 𝑥, 𝑦 ∈ 𝐶,
+𝜇
+𝑓 (𝑥) + ⟨∇𝑓 (𝑥), 𝑦 − 𝑥⟩ ≤ 𝑓 (𝑦) − ∥𝑥 − 𝑦 ∥ 2 .
+2
+• Syarat orde kedua: jika 𝐶 terbuka dan 𝑓 terdiferensialkan secara kontinu dua kali
+pada 𝐶, maka 𝑓 konveks kuat berparameter 𝜇 jika dan hanya jika, untuk setiap 𝑥 ∈ 𝐶,
+∇2 𝑓 (𝑥) ⪰ 𝜇𝐼 .
+Bukti. Buktinya merupakan penyesuaian langsung dari bukti untuk kekonveksan biasa
+dan ditinggalkan sebagai latihan.
+□
+
+31
+
+CATATAN KOREKSI TERHADAP SUMBER
+
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat ditentukan
+berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan bukan perubahan
+yang disahkan oleh penulis sumber. Rekaman terstruktur lengkap dengan pelacak sumber,
+alasan, dan disposisi menyertai edisi ini dalam 00_control/ADVERSE_LEDGER.jsonl.
+(i) Tipe operasi ruang vektor, hukum distributif, kodomain norma, norma operator terinduksi, serta definisi ruang 𝐿𝑝 dan supremum esensial dibetulkan agar terdefinisi
+secara matematis.
+(ii) Kuantifier hasil kali dalam, bukti Cauchy–Schwarz, kasus ujung Hölder, ketaksamaan Young, dan kasus nol dalam bukti Minkowski dilengkapi.
+(iii) Bukti Bolzano–Weierstrass, definisi dual kontinu, representasi Riesz, eksistensi adjoin, dan hukum komposisi adjoin diperbaiki pada titik salah tipe atau hipotesis yang
+hilang.
+(iv) Semikontinuitas bawah, koersivitas, dan metode langsung diberi penanganan nilai
+tak hingga dan lingkup berdimensi hingga yang tepat.
+(v) Simpleks, selubung konveks, bola norma, jumlah berbobot, produk Kartesius, pracitra, dan teorema pemisahan dibetulkan pada indeks, tanda, tipe, atau hipotesis yang
+dapat ditentukan.
+(vi) Kekonveksan tegas dan kuat dibatasi pada domain efektif bila fungsi bernilai diperluas; koefisien afin, konvensi Jensen, dan syarat titik pembanding minimum dibuat
+eksplisit.
+(vii) Karakterisasi orde pertama, kemonotonan gradien, dan syarat stasioneritas diberi
+domain Euklides serta hipotesis keterdiferensialan dan kekonveksan yang diperlukan.
+(viii) Urutan Löwner, karakterisasi Hessian, operasi komposisi, dimensi matriks, jarak ke
+himpunan, dan restriksi pada garis diperbaiki agar semua pernyataan sah dan bertipe konsisten.
+(ix) Karakterisasi kekonveksan kuat memulihkan faktor 𝜇, matriks 𝜇𝐼 , rentang pangkat
+norma, dan struktur ekuivalensi sesuai regularitas.
+
+32
+
+ATRIBUSI, LISENSI, DAN NONDUKUNGAN
+
+Karya sumber: Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1,
+13 Juli 2026, https://arxiv.org/abs/2607.11664v1. Karya sumber tersedia berdasarkan Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/
+licenses/by/4.0/.
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber tetap pada
+pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan atribusi yang
+sesuai, tautan lisensi, dan penandaan perubahan sebagaimana disyaratkan CC BY 4.0. Koreksi dan deskripsi akses baru dalam edisi ini juga ditawarkan berdasarkan CC BY 4.0
+sejauh hak terpisah dapat berlaku; bagian sumber tetap CC BY 4.0.
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau mendukung
+terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi karya sumber.
+
+33
+
+

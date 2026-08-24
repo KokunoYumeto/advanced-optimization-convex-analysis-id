@@ -1,0 +1,1367 @@
+{
+  "audit_script": {
+    "bytes": 45546,
+    "path": "qa/audit_habring_ch01_ch02.py",
+    "sha256": "43fb244689a12ec0d830e5e1df168e9c8e0df5860e30378f38d854b8a959dc53"
+  },
+  "authority": {
+    "arxiv": "2607.11664v1",
+    "license": "CC BY 4.0",
+    "rights_markers": {
+      "abs_arxiv_id": true,
+      "abs_author": true,
+      "abs_cc_by_4_url": true,
+      "api_author": true,
+      "api_exact_version": true,
+      "api_title": true,
+      "legalcode_identity": true,
+      "wrapper_authority": true,
+      "wrapper_cc_by_4": true,
+      "wrapper_model_provenance": true,
+      "wrapper_nonendorsement": true
+    },
+    "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748",
+    "work": "Andreas Habring, Lecture Notes: Convex Optimization"
+  },
+  "build_and_reader_verification": {
+    "build_reports": [
+      {
+        "determinism": {
+          "builds": 2,
+          "byte_identical": true,
+          "first_sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+          "second_sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+        },
+        "report": {
+          "bytes": 2214,
+          "path": "qa/HABRING_CH01_CH02_BUILD.json",
+          "sha256": "5c98d7f71f7ec68ffb7f2a76c4c3fb455f86d93b3d7741014ea8020180499724"
+        },
+        "result": "pass",
+        "schema": "o015-habring-ch01-ch02-build-v1",
+        "verified_live_files": [
+          {
+            "bytes": 720624,
+            "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+            "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+          },
+          {
+            "bytes": 5357,
+            "path": "source/id-ID/D90-HAB-01-02-prasyarat-dan-konveksitas-id.tex",
+            "sha256": "301d45dc305ee86f439ed1056a62b47199f3439d88ba66436f127a5cee0e35b2"
+          },
+          {
+            "bytes": 59808,
+            "path": "qa/D90-HAB-01-02-prasyarat-dan-konveksitas-id.txt",
+            "sha256": "8e2f3d0e9555a138faeffada4e6fd07baf66d96055c018cf7b3554fbfe5491b0"
+          },
+          {
+            "bytes": 107350,
+            "path": "build/habring-unit-01-02-id/D90-HAB-01-02-prasyarat-dan-konveksitas-id.log",
+            "sha256": "c4e8ad3ce78e736d7edd2f7b6715c779f159c7203840cfa7a4c7a67bd1781e24"
+          },
+          {
+            "bytes": 31009,
+            "path": "source/id-ID/habring-01-prasyarat-id.tex",
+            "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+          },
+          {
+            "bytes": 42828,
+            "path": "source/id-ID/habring-02-konveksitas-id.tex",
+            "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+          },
+          {
+            "bytes": 4465,
+            "path": "source/id-ID/macros-id.tex",
+            "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+          },
+          {
+            "bytes": 10133,
+            "path": "source/id-ID/shinybook.cls",
+            "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+          }
+        ]
+      },
+      {
+        "determinism": {
+          "builds": 2,
+          "byte_identical": true
+        },
+        "report": {
+          "bytes": 2182,
+          "path": "qa/HABRING_FULL_HTML_BUILD.json",
+          "sha256": "dceb65f4d5366699e18f5f825987c2c2172d1626fceb89e22918c875f00bcfa9"
+        },
+        "result": "pass",
+        "schema": "o015-habring-full-html-build-v1",
+        "verified_live_files": [
+          {
+            "bytes": 1669938,
+            "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+            "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+          },
+          {
+            "bytes": 31009,
+            "path": "source/id-ID/habring-01-prasyarat-id.tex",
+            "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+          },
+          {
+            "bytes": 42828,
+            "path": "source/id-ID/habring-02-konveksitas-id.tex",
+            "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+          },
+          {
+            "bytes": 19266,
+            "path": "source/id-ID/habring-03-subgradien-id.tex",
+            "sha256": "d04ff82898c157f56924c6c08fd204bcd97625f060847fd8a0b6f7a2b90b0a5c"
+          },
+          {
+            "bytes": 16612,
+            "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+            "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+          },
+          {
+            "bytes": 20575,
+            "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+            "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+          },
+          {
+            "bytes": 24690,
+            "path": "source/id-ID/habring-06-akselerasi-id.tex",
+            "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+          },
+          {
+            "bytes": 35428,
+            "path": "source/id-ID/habring-07-dualitas-id.tex",
+            "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+          },
+          {
+            "bytes": 6378,
+            "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+            "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+          },
+          {
+            "bytes": 21252,
+            "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+            "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+          }
+        ]
+      },
+      {
+        "determinism": {
+          "builds": 2,
+          "byte_identical": true
+        },
+        "report": {
+          "bytes": 2619,
+          "path": "qa/HABRING_FULL_READER_BUILD.json",
+          "sha256": "35dc5e27a54db1392c97950c4e9f39f22e655312d37226c80f545c683316112c"
+        },
+        "result": "pass",
+        "schema": "o015-habring-full-reader-build-v1",
+        "verified_live_files": [
+          {
+            "bytes": 3779312,
+            "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+            "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+          },
+          {
+            "bytes": 720624,
+            "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+            "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+          },
+          {
+            "bytes": 516084,
+            "path": "output/pdf/D90-HAB-03-subgradien-id.pdf",
+            "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4"
+          },
+          {
+            "bytes": 370824,
+            "path": "output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+            "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7"
+          },
+          {
+            "bytes": 473685,
+            "path": "output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf",
+            "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d"
+          },
+          {
+            "bytes": 392662,
+            "path": "output/pdf/D90-HAB-06-akselerasi-id.pdf",
+            "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0"
+          },
+          {
+            "bytes": 445733,
+            "path": "output/pdf/D90-HAB-07-dualitas-id.pdf",
+            "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e"
+          },
+          {
+            "bytes": 346785,
+            "path": "output/pdf/D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+            "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a"
+          },
+          {
+            "bytes": 498244,
+            "path": "output/pdf/D90-HAB-09-transportasi-optimal-id.pdf",
+            "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214"
+          }
+        ]
+      }
+    ],
+    "full_pdf": {
+      "catalog_lang": "id-ID",
+      "encrypted": false,
+      "identity": {
+        "bytes": 3779312,
+        "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+        "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+      },
+      "markers": [
+        "Prakata",
+        "Prasyarat",
+        "Kekonveksan",
+        "Subgradien",
+        "Metode Gradien Proksimal",
+        "Akselerasi",
+        "Dualitas",
+        "Penurunan Gradien Stokastik",
+        "Transportasi Optimal"
+      ],
+      "missing_markers": [],
+      "outline_entries": 9,
+      "pages": 139,
+      "text_bytes_utf8": 206060,
+      "text_sha256": "d9fa36c79e151e0bb3e2452f34e9a232a48ce33df80dca738c39e02d61168b40"
+    },
+    "html": {
+      "embedded_image_count": 5,
+      "identity": {
+        "bytes": 1669938,
+        "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+        "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+      },
+      "markers": [
+        "lang=\"id-ID\"",
+        "<meta name=\"license\" content=\"CC BY 4.0\">",
+        "<section id=\"prakata\"",
+        "<section id=\"prasyarat\"",
+        "<section id=\"kekonveksan\"",
+        "OpenAI",
+        "gpt-5.6-sol, Ultra"
+      ],
+      "missing_markers": []
+    },
+    "unit_pdf": {
+      "catalog_lang": "id-ID",
+      "encrypted": false,
+      "identity": {
+        "bytes": 720624,
+        "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+        "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+      },
+      "markers": [
+        "Optimisasi Konveks",
+        "Prakata",
+        "Prasyarat",
+        "Kekonveksan",
+        "Andreas Habring",
+        "CC BY 4.0",
+        "OpenAI Codex",
+        "gpt-5.6-sol",
+        "Ultra"
+      ],
+      "missing_markers": [],
+      "outline_entries": 7,
+      "pages": 36,
+      "text_bytes_utf8": 54957,
+      "text_sha256": "2439e44dc6f5908cc9240f1c23bea55874fceb19bc26959fdef0850591ac2813"
+    },
+    "unit_pdftotext_markers": [
+      "OPTIMISASI KONVEKS",
+      "PRAKATA",
+      "1 PRASYARAT",
+      "2 KEKONVEKSAN",
+      "CC BY 4.0",
+      "OpenAI Codex",
+      "gpt-5.6-sol, Ultra"
+    ],
+    "unit_pdftotext_missing": []
+  },
+  "exact_file_identities": [
+    {
+      "bytes": 230116,
+      "path": "authority/habring/2607.11664v1-source.tar",
+      "sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748"
+    },
+    {
+      "bytes": 836977,
+      "path": "authority/habring/2607.11664v1.pdf",
+      "sha256": "d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d"
+    },
+    {
+      "bytes": 1737,
+      "path": "authority/habring/2607.11664v1-api.xml",
+      "sha256": "c59dd51fda285214335e2ec00e53f967be44fddca2394ca690c00da70c9dd1d3"
+    },
+    {
+      "bytes": 38042,
+      "path": "authority/habring/arxiv-2607.11664v1-abs.html",
+      "sha256": "606022f0531509d4aaab191504c023c9d5c09afac615401f0009f4cc0d33e11b"
+    },
+    {
+      "bytes": 18657,
+      "path": "authority/habring/CC-BY-4.0-legalcode.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "bytes": 307,
+      "path": "authority/habring/source-v1/00README.json",
+      "sha256": "ffd889928d5e0eddf937eb35daff0659ac8864a715438f482f22813e661833bf"
+    },
+    {
+      "bytes": 492,
+      "path": "authority/habring/source-v1/preface.tex",
+      "sha256": "d6ec9d0522446fc65f3868d0b7cd1d221462c3099fbd0b2d6ea412ab53315967"
+    },
+    {
+      "bytes": 26946,
+      "path": "authority/habring/source-v1/preliminaries.tex",
+      "sha256": "8c1e4bdad36f2dcb57867c475afa5adce12a3951fc650e8667f2e4d82d3b569d"
+    },
+    {
+      "bytes": 29947,
+      "path": "authority/habring/source-v1/convexity.tex",
+      "sha256": "e5cf93ad93cb2064bdff6c1ea200f20b4eb94351127185a01d678c3fb5a662b8"
+    },
+    {
+      "bytes": 31009,
+      "path": "source/id-ID/habring-01-prasyarat-id.tex",
+      "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+    },
+    {
+      "bytes": 42828,
+      "path": "source/id-ID/habring-02-konveksitas-id.tex",
+      "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+    },
+    {
+      "bytes": 5357,
+      "path": "source/id-ID/D90-HAB-01-02-prasyarat-dan-konveksitas-id.tex",
+      "sha256": "301d45dc305ee86f439ed1056a62b47199f3439d88ba66436f127a5cee0e35b2"
+    },
+    {
+      "bytes": 12339,
+      "path": "qa/HABRING_CH01_CH02_PROPOSED_LEDGER.jsonl",
+      "sha256": "ceb880ccc6d5fadccd622662cb41886fa851c58a20e782fc0245d61092e92aff"
+    },
+    {
+      "bytes": 29034,
+      "path": "qa/HABRING_CH02_PROPOSED_LEDGER.jsonl",
+      "sha256": "585e2f40004c3b31cc766c46acdd86f939bcb4bba33dc024448a660ae44fdc78"
+    },
+    {
+      "bytes": 2214,
+      "path": "qa/HABRING_CH01_CH02_BUILD.json",
+      "sha256": "5c98d7f71f7ec68ffb7f2a76c4c3fb455f86d93b3d7741014ea8020180499724"
+    },
+    {
+      "bytes": 2182,
+      "path": "qa/HABRING_FULL_HTML_BUILD.json",
+      "sha256": "dceb65f4d5366699e18f5f825987c2c2172d1626fceb89e22918c875f00bcfa9"
+    },
+    {
+      "bytes": 2619,
+      "path": "qa/HABRING_FULL_READER_BUILD.json",
+      "sha256": "35dc5e27a54db1392c97950c4e9f39f22e655312d37226c80f545c683316112c"
+    },
+    {
+      "bytes": 59808,
+      "path": "qa/D90-HAB-01-02-prasyarat-dan-konveksitas-id.txt",
+      "sha256": "8e2f3d0e9555a138faeffada4e6fd07baf66d96055c018cf7b3554fbfe5491b0"
+    },
+    {
+      "bytes": 720624,
+      "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+      "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+    },
+    {
+      "bytes": 3779312,
+      "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    {
+      "bytes": 1669938,
+      "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+      "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+    }
+  ],
+  "failures": [],
+  "formula_surface_accounting": {
+    "chapter2_bracket_mapping": [
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0129",
+        "source": {
+          "line": 167,
+          "normalized_sha256": "18b469bbd016a3bafb7b09501b513ab95d7472ab852127ea1ef36e2148797b5c"
+        },
+        "source_ordinal": 0,
+        "target": {
+          "line": 189,
+          "normalized_sha256": "b2f881cea9d3f149574396dc3e0d6b147cdac4305cf349e31df998d67d605f5b"
+        },
+        "target_ordinal": 0
+      },
+      {
+        "category": "frozen-equivalent",
+        "event_id": null,
+        "source": {
+          "line": 267,
+          "normalized_sha256": "e39145d6144d23c2a8a6448595b6a64d4ad33726a457c61b5ee78ecd5473a1b4"
+        },
+        "source_ordinal": 1,
+        "target": {
+          "line": 310,
+          "normalized_sha256": "e39145d6144d23c2a8a6448595b6a64d4ad33726a457c61b5ee78ecd5473a1b4"
+        },
+        "target_ordinal": 1
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0138",
+        "source": {
+          "line": 328,
+          "normalized_sha256": "a0929c631dfa0ac69c70039e6e324fd4772a8164c3c8b18580de31d6976245e1"
+        },
+        "source_ordinal": 2,
+        "target": {
+          "line": 387,
+          "normalized_sha256": "c8e7a9244174ba2d986043ef35596289732c3b8d16f2d258fde40c79fa464d21"
+        },
+        "target_ordinal": 2
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0137",
+        "source": {
+          "line": 332,
+          "normalized_sha256": "5ba0c5f28452dd1f4c1e54a8d8e9fc6fda2dede16c9efc63043a7ad8b77518ae"
+        },
+        "source_ordinal": 3,
+        "target": {
+          "line": 392,
+          "normalized_sha256": "5ba0c5f28452dd1f4c1e54a8d8e9fc6fda2dede16c9efc63043a7ad8b77518ae"
+        },
+        "target_ordinal": 3
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0142",
+        "source": null,
+        "source_ordinal": null,
+        "target": {
+          "line": 444,
+          "normalized_sha256": "94c16bba8450c171b53808a01e1fb6a9b6a1138c47ada997338f8d196fded8c1"
+        },
+        "target_ordinal": 4
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0148",
+        "source": null,
+        "source_ordinal": null,
+        "target": {
+          "line": 544,
+          "normalized_sha256": "7021a4f983cef60785fbd512392c886242bd50a5514e016e42b5213e60c21260"
+        },
+        "target_ordinal": 5
+      },
+      {
+        "category": "frozen-equivalent",
+        "event_id": null,
+        "source": {
+          "line": 651,
+          "normalized_sha256": "57be6c4c681840c96bd71fc1cf872497519df8aabd3cdd0c7199955f964d43d0"
+        },
+        "source_ordinal": 4,
+        "target": {
+          "line": 766,
+          "normalized_sha256": "57be6c4c681840c96bd71fc1cf872497519df8aabd3cdd0c7199955f964d43d0"
+        },
+        "target_ordinal": 6
+      },
+      {
+        "category": "frozen-equivalent",
+        "event_id": null,
+        "source": {
+          "line": 660,
+          "normalized_sha256": "59475e79b6e9ea60c91b5c7acae200d48a1fe71e18c8a632f3a0dbe8caf91fdf"
+        },
+        "source_ordinal": 5,
+        "target": {
+          "line": 779,
+          "normalized_sha256": "59475e79b6e9ea60c91b5c7acae200d48a1fe71e18c8a632f3a0dbe8caf91fdf"
+        },
+        "target_ordinal": 7
+      },
+      {
+        "category": "frozen-equivalent",
+        "event_id": null,
+        "source": {
+          "line": 670,
+          "normalized_sha256": "0ba7c48b3983792841d4215140accf0781d5fd220728ea5f977edb86e63a8893"
+        },
+        "source_ordinal": 6,
+        "target": {
+          "line": 789,
+          "normalized_sha256": "0ba7c48b3983792841d4215140accf0781d5fd220728ea5f977edb86e63a8893"
+        },
+        "target_ordinal": 8
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0157",
+        "source": {
+          "line": 688,
+          "normalized_sha256": "5e6db4396bb45f29db4eedf83a1f6a1eaf5c919a636dbf5c86b8f1c206a847d0"
+        },
+        "source_ordinal": 7,
+        "target": {
+          "line": 817,
+          "normalized_sha256": "5e6db4396bb45f29db4eedf83a1f6a1eaf5c919a636dbf5c86b8f1c206a847d0"
+        },
+        "target_ordinal": 9
+      },
+      {
+        "category": "ledger-bound-delta",
+        "event_id": "O015-HAB-ADV-0159",
+        "source": {
+          "line": 692,
+          "normalized_sha256": "781479b7a94c58049d72c4613247ee3972fb8adb7ef7d2cbce8aabb8a0fda19d"
+        },
+        "source_ordinal": 8,
+        "target": {
+          "line": 823,
+          "normalized_sha256": "2f48d3a090b9714b371bc37ac26c8393b02ad56dd0bdc11ab5b7d6ef3cd34b00"
+        },
+        "target_ordinal": 10
+      }
+    ],
+    "chapter2_bracket_mapping_sha256": "fbc6c283f368f14914fb993fe150ad0502086c031a952c11ce243628e1109821",
+    "display_environments": {
+      "convexity.tex": {
+        "category_counts": {
+          "ledger-bound-delta": 15,
+          "normalized-identical": 39
+        },
+        "pairs_sha256": "7760f9997d7731586576591d0e87d8d2201c2a686832578367e315632ead43ac",
+        "source_count": 54,
+        "target_count": 54,
+        "unaccounted": []
+      },
+      "preliminaries.tex": {
+        "category_counts": {
+          "frozen-presentational-equivalent": 5,
+          "ledger-bound-delta": 17,
+          "normalized-identical": 29
+        },
+        "pairs_sha256": "6596c9bea320c412c6d0ab5b22dcc9c69ff49cbf2124157a623eeaec81629316",
+        "source_count": 51,
+        "target_count": 51,
+        "unaccounted": []
+      }
+    },
+    "inventories": {
+      "convexity.tex": {
+        "count": 363,
+        "inventory_sha256": "e6cf8d32f192b56e4936f2f7a9dda8c35f763a98067b5d4252a84e534df9428d",
+        "kind_counts": {
+          "bracket": 9,
+          "env:equation": 51,
+          "env:equation*": 3,
+          "inline-dollar": 286,
+          "inline-paren": 14
+        }
+      },
+      "habring-01-prasyarat-id.tex": {
+        "count": 380,
+        "inventory_sha256": "e1b7b169d7248834cf618fb1579b7d555eb74683274f75a37db11d4a4baa4bfa",
+        "kind_counts": {
+          "env:equation": 49,
+          "env:gather": 2,
+          "inline-dollar": 329
+        }
+      },
+      "habring-02-konveksitas-id.tex": {
+        "count": 420,
+        "inventory_sha256": "26106d5d9a0b62b8c2bb44407dcbbef574e4c8ad74cec1fbd78b7ce3cdbec2fd",
+        "kind_counts": {
+          "bracket": 11,
+          "env:equation": 51,
+          "env:equation*": 3,
+          "inline-dollar": 348,
+          "inline-paren": 7
+        }
+      },
+      "preface.tex": {
+        "count": 0,
+        "inventory_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "kind_counts": {}
+      },
+      "preliminaries.tex": {
+        "count": 356,
+        "inventory_sha256": "913bf67ede98e5ebdff9102fee2fa9f6b5f8003c0dee667c4c6b4c605cda604f",
+        "kind_counts": {
+          "env:equation": 49,
+          "env:gather": 2,
+          "inline-dollar": 305
+        }
+      }
+    },
+    "policy": "Every math surface is frozen by an inventory digest. Every non-presentational display delta and every deliberate correction has a formal ledger binding; inserted/moved bracket displays have an explicit bijective map."
+  },
+  "ledger": {
+    "chapter1_records": 25,
+    "chapter2_records": 40,
+    "correction_bindings": [
+      {
+        "anchor_sha256": "bb53680225d41ef44cf9963f51aa7e3e37fd8ebba8896c5bd50c82a71cef911a",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0097",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "c573511ae15c555fd48d91b71a016aea90aff3c8107a8700b641f9afd4d74497",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0098",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "243e971549bb1c8559757904040f86bf04d212f754ff7e9410de87b136ba478d",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0099",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "2f1cd135fb53f672a86812875ab4cf1958bd1a670e064c48828e7b351e54f3c1",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0100",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "eea99949637e205b81aeaf4352fffcd8166da667944c780ad4b7c3dff1348ce5",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0101",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "39d47bac6370e9443e9b7df10fe46fd32cf52787d2143474797788c5e682d57a",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0102",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "9c2cb9ec313405f2957195b7dfae9b0d43d81758cdc24cb93676cbf78d975f1e",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0103",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "665bb8f6e8103208bddcefe6eb416ea9c337d0711d2305195435ee397c806635",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0104",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "fd8d642b9fc8204d510b214b02f29f7447bf3b464a055e0b2f37a646bf7c7abb",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0105",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "076897508a4ee1be6f3ba6e33a4a7f341d386bba22f5441cd7f238f595bae3e2",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0106",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "02493935d3cc2c8dfa2f27164b25709fad12015334ea065ed7c2d45cb4d73987",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0107",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "12384c55eddc13b955598b23dc71b27250aee32c0cf17daab59495398987dfa6",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0108",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "602ad35d361f3bd937aca4206bc9ade577dea1fd757d724d4112686345653112",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0109",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "72e4591893dbf4b7a8f9b11a3bfb6dfb8c4381aee5776f04764214a7207de772",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0110",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "3cf4db7f78a3adf50ade3241b699ac0b4ccf0e421d47a0ef98600d955b57e662",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0111",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "6a8eb59de8954a1f958d7fbeec61f5dd3dce45f72b0a33c13f03b10c7d07a275",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0112",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "e74dc0bf31b5d0f1b92f14cfabe3759ef2500b3a258c8619344187091c6347f7",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0113",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "ffffd69f975eafdbb54b784591823be1e8c4f6f676f3336036044167619fbea2",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0114",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "4b37b70eba286c4929923a86f409ed64fa5bf3725e19bafb8821096698add6e0",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0115",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "5182db529ff4274babdac946eb889dcaf183fb1b4b4ea269d9e660d3f07a1b2f",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0116",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "b7612608bdb6efdb924834b89cd4c63788091a5b23a7fc6304c8618e7501a8e5",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0117",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "1ea6cae84841b501a5f96850289969a2e552d8895277cb1592b0bac0ce05ba1a",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0118",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "0c0e6add33798d43824e090faf9a86601c9409cbc6edfce4f381bcf9c5314bc4",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0119",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "af946ecdb5f49e3b1203eef7d163f0876229bf086c9f37d019526b2f4c047e4b",
+        "binding": "target-negative-anchor",
+        "event_id": "O015-HAB-ADV-0120",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "ebd899958395fc76d4fcd20f28e4afc636c085c14e314ca031dd8eecb42b305f",
+        "binding": "target-negative-anchor",
+        "event_id": "O015-HAB-ADV-0121",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "e49863fe998d340e357220ee4b86e07ed9203db8a8bcc7dd36993086f95312be",
+        "binding": "H02-C001",
+        "event_id": "O015-HAB-ADV-0122",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "145e328b302d44427e880178a07caf5065d7abd994591b9ea6c32654c7432ea8",
+        "binding": "H02-C028",
+        "event_id": "O015-HAB-ADV-0123",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "b39bd4164593abd01203cef8b45a06037aa6c65075e903b617d8454589e3bfc7",
+        "binding": "H02-C002",
+        "event_id": "O015-HAB-ADV-0124",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "a29c86b44c07c2fee2d00a39e39d0a8bd3e531bfa0dbb10de662c6cf90318d67",
+        "binding": "H02-C003",
+        "event_id": "O015-HAB-ADV-0125",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "5e342cb4ce4f329eacb212080feeb5da8af7f4547a3ee9f18af61b64aa65e392",
+        "binding": "H02-C004",
+        "event_id": "O015-HAB-ADV-0126",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "9cb4d5726609db66111d5efae1b763646a242502e3fea94eb0402c48a8238687",
+        "binding": "H02-C029",
+        "event_id": "O015-HAB-ADV-0127",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "ed3503f82d485e76ea945690b24aac0bfd66aac3c3cb33e56515a4a7a815236e",
+        "binding": "H02-C005",
+        "event_id": "O015-HAB-ADV-0128",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "ff4142789fac11aa6b2dfb026948535bc7a4a52ef565f56038d85c2d3ccef877",
+        "binding": "H02-C006",
+        "event_id": "O015-HAB-ADV-0129",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "f06b1284d5dd5f943626f423444bfe23da297d02d041f1f7811005885ef77ef3",
+        "binding": "H02-C007",
+        "event_id": "O015-HAB-ADV-0130",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "872e6bb4e7be7673f5c619e313aca9f1db6bd5e4f4a574e3ffc09c941fef467e",
+        "binding": "H02-C025",
+        "event_id": "O015-HAB-ADV-0131",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "5fd6ac84095f0276b2f6862ee54e4148905fe175dada9916bb156784f21e8d1b",
+        "binding": "H02-C037",
+        "event_id": "O015-HAB-ADV-0132",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "aac76cdfda2c24fab9d9a759318fbaa00ffcef55101b0aac7e8d3105c227ab8a",
+        "binding": "H02-C008",
+        "event_id": "O015-HAB-ADV-0133",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "716ca867b9012b514bd7a1654e053c3877f0d80bb146768d7aefb30413db7535",
+        "binding": "H02-C026",
+        "event_id": "O015-HAB-ADV-0134",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "db7e718aee47fe0538d01d1f75c31f4bff6e30b3b0e0f0bd5a81c5a98c899cfa",
+        "binding": "H02-C030",
+        "event_id": "O015-HAB-ADV-0135",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "2ce2f3ac428a58b83545b5cfc7f395f91e49ec68a2a57443af9c3de4e20f7bc5",
+        "binding": "H02-C036",
+        "event_id": "O015-HAB-ADV-0136",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "b6e4e06cbc11a05a91dfd46ce5194f1076b593db35c25f66cf224fdc1d3e7279",
+        "binding": "H02-C021",
+        "event_id": "O015-HAB-ADV-0137",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "1332b273d6520582e9b43df53e6f3a22651bee25d1fafa37189c3b67558abdf1",
+        "binding": "H02-C009",
+        "event_id": "O015-HAB-ADV-0138",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "d82a69d8e0a6e11e67414b8fc05555acf5cf8c2d607904cfb84facf3b1a42d00",
+        "binding": "H02-C010",
+        "event_id": "O015-HAB-ADV-0139",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "cf42fdaddef09b8f52be4e5d0bff9424794bdf8aad2207e3ccef4847dad167f6",
+        "binding": "H02-C011",
+        "event_id": "O015-HAB-ADV-0140",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "348b0782e3c705aa484d608b47ae9b01eaf1dce75bd60f7571ae34b983faf583",
+        "binding": "H02-C031",
+        "event_id": "O015-HAB-ADV-0141",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "1ae2eeda03ce0e8f3b7175fda17a5349a2d342c3b02db996c6e93541fb8b79ae",
+        "binding": "H02-C012",
+        "event_id": "O015-HAB-ADV-0142",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "3ddc95008f12773f5600cb05f45fb279d37ad2016a205bd2221db4fd5464a9f2",
+        "binding": "H02-C032",
+        "event_id": "O015-HAB-ADV-0143",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "7af32887ea8ef86623037e799be9b6a8be83b57ff63d024640fc6ea5d0507c1b",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0144",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "1410952c8b2c0edc83a5aa03a7e3b90ab00b539d755f5c531f9569c752611479",
+        "binding": "H02-C022",
+        "event_id": "O015-HAB-ADV-0145",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "f76f4546007cd62dcd54c09db0b028e6378652252b53e409c0db54c3435a85d1",
+        "binding": "H02-C013",
+        "event_id": "O015-HAB-ADV-0146",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "b8d873e29bea5302750390c63268317a63b8a749e870a7c0c95544fc492dea96",
+        "binding": "H02-C027",
+        "event_id": "O015-HAB-ADV-0147",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "0e8edfaf79101bc384b2fb05ca754e88e2016ebab8d420851e2097c386b53c08",
+        "binding": "H02-C014",
+        "event_id": "O015-HAB-ADV-0148",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "9df9368737efa73e1412d59175e4b2a7cd5d49084d044f35e7f67c4ffc878a5a",
+        "binding": "H02-C015",
+        "event_id": "O015-HAB-ADV-0149",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "14ebede992f51e1ec2470ffd62fea5f43712a60abd037e3499f88e76e44a2d54",
+        "binding": "H02-C033",
+        "event_id": "O015-HAB-ADV-0150",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "9d5201ef38c44376f62c61ad5dd622df6b8d75fef8f308d5eea093732704ef1f",
+        "binding": "target-positive-anchor",
+        "event_id": "O015-HAB-ADV-0151",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "46688e8eb8eeb888244053eb442c529779f1dfea576871385e2a592dc3856a27",
+        "binding": "H02-C016",
+        "event_id": "O015-HAB-ADV-0152",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "78270d3731882543928d3732aeaf69b3572a78f62e3461d31c062bd54e8a5b1c",
+        "binding": "H02-C017",
+        "event_id": "O015-HAB-ADV-0153",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "b97e473714591dba34c15808c5ff2d7927ea46cf20374756dce6955552a8b71d",
+        "binding": "H02-C023",
+        "event_id": "O015-HAB-ADV-0154",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "d0eac16a89ec4716d138ef51097324f4e5a83d0ec5f66d45c94c9bf458732017",
+        "binding": "H02-C034",
+        "event_id": "O015-HAB-ADV-0155",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "bc29953b434dd83b5bd6162352a1968a255e27e2e9e5d1c9d175e055cfcf0b07",
+        "binding": "H02-C018",
+        "event_id": "O015-HAB-ADV-0156",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "6cd55e42359ea126bc3d5622a0a5ffb20866025ba711e774cf410652fbf9e215",
+        "binding": "H02-C024",
+        "event_id": "O015-HAB-ADV-0157",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "213af292e423a27e4a9c796451f10d326d72e47fe9a3dd66565e4a5cfae29532",
+        "binding": "H02-C019",
+        "event_id": "O015-HAB-ADV-0158",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "5e3294396986f8d0e811c5468811b9ef8729abc149522d9829dad7c2bf1849a5",
+        "binding": "H02-C020",
+        "event_id": "O015-HAB-ADV-0159",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "0ec5572171f748a388eccd996e21abc1857e407d6921459ef57c73ab624b5619",
+        "binding": "H02-C035",
+        "event_id": "O015-HAB-ADV-0160",
+        "pass": true
+      },
+      {
+        "anchor_sha256": "7da5307c2fda66fdca5074d6fa72b2e05dc0d74e4918c8ed7549ed67d7ae0ddb",
+        "binding": "H02-C038",
+        "event_id": "O015-HAB-ADV-0161",
+        "pass": true
+      }
+    ],
+    "correction_bindings_sha256": "e97b30ed5d654ced06cd65422049274818ee2c3003f7ef0a118381babf308b59",
+    "correction_event_count": 65,
+    "event_ids_sha256": "b0fa40899580f751f0ba643ee51726246bba5dcb39a7c6b3712c0d9971050235",
+    "field_profiles": {
+      "chapter1": [
+        "event_id",
+        "authority",
+        "source",
+        "surface",
+        "source_issue",
+        "target_action",
+        "class"
+      ],
+      "chapter2": [
+        "event_id",
+        "authority",
+        "source",
+        "surface",
+        "source_issue",
+        "target_action",
+        "class",
+        "correction_authorship",
+        "source_rights",
+        "target_status",
+        "target_rights"
+      ]
+    },
+    "first_event": "O015-HAB-ADV-0097",
+    "h02_marker_count": 38,
+    "h02_markers": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010",
+      "011",
+      "012",
+      "013",
+      "014",
+      "015",
+      "016",
+      "017",
+      "018",
+      "019",
+      "020",
+      "021",
+      "022",
+      "023",
+      "024",
+      "025",
+      "026",
+      "027",
+      "028",
+      "029",
+      "030",
+      "031",
+      "032",
+      "033",
+      "034",
+      "035",
+      "036",
+      "037",
+      "038"
+    ],
+    "last_event": "O015-HAB-ADV-0161",
+    "range_cardinality_note": "The inclusive integer range 0097--0161 contains 65 events; 61 would be arithmetically inconsistent."
+  },
+  "result": "pass",
+  "schema": "o015-habring-ch01-ch02-structure-audit-v1",
+  "structure": {
+    "chapters": {
+      "convexity.tex": {
+        "figures": 7,
+        "footnotes_source": [
+          {
+            "line": 117,
+            "sha256": "83193859d8903155e2695cb442aa755fcc5e0e30593815b24849fcd2862b05f7"
+          }
+        ],
+        "footnotes_target": [
+          {
+            "line": 135,
+            "sha256": "60ec1699a1f86ae9ba344b6ddc6c0763a5332275c9d1225f2065461b32ae5a63"
+          }
+        ],
+        "items": 52,
+        "labels": [
+          "eq:convex_sets:defin_conv_hull",
+          "eq:convex_sets:conv_hull",
+          "convexity:lemma:ops preserving convexity",
+          "fig:convexity:1d_example",
+          "convexity:thm:first_order",
+          "convexity:fig:gradients",
+          "convexity:prop:OC1",
+          "convexity:fig:compositions",
+          "convexity:thm:minimum"
+        ],
+        "ordered_begin_end_sha256": "4cb3a16fb4287e7d2f5e7f41bdc436fbdbeb60ab4f01e20900043bce53dd8c96",
+        "ordered_begin_end_tokens": 280,
+        "raster_paths": [
+          "figures/sets.png",
+          "figures/balls.png",
+          "figures/convex_fct.png"
+        ],
+        "refs": [
+          "eq:convex_sets:conv_hull",
+          "eq:convex_sets:defin_conv_hull",
+          "eq:convex_sets:defin_conv_hull",
+          "fig:convexity:1d_example",
+          "convexity:fig:gradients",
+          "convexity:prop:OC1",
+          "convexity:prop:OC1",
+          "convexity:fig:compositions"
+        ],
+        "tikz_source": [
+          {
+            "line": 177,
+            "normalized_sha256": "3bd0bec69e021c42fd5f1ca311bd2fb4abddbe55e321b5b4053b39450cb41b26"
+          },
+          {
+            "line": 184,
+            "normalized_sha256": "37c3990ae126398a45399c5792b18c6f8e157070b35d4367d8ac831fb17f0d2c"
+          },
+          {
+            "line": 224,
+            "normalized_sha256": "9852da07625b9d65c8faa201573c569963365dbef5aa18a4b7f6899a5d356019"
+          },
+          {
+            "line": 303,
+            "normalized_sha256": "6d022913beb8648b1f87e9893ed15821c153968f7422fb707940cb861a9371a9"
+          },
+          {
+            "line": 505,
+            "normalized_sha256": "8767dcdeac6c6f0fbc2afe739de645f1ce90688ad8cd74c8208530ae81bf52e0"
+          }
+        ],
+        "tikz_target": [
+          {
+            "line": 199,
+            "normalized_sha256": "3bd0bec69e021c42fd5f1ca311bd2fb4abddbe55e321b5b4053b39450cb41b26"
+          },
+          {
+            "line": 206,
+            "normalized_sha256": "37c3990ae126398a45399c5792b18c6f8e157070b35d4367d8ac831fb17f0d2c"
+          },
+          {
+            "line": 257,
+            "normalized_sha256": "9852da07625b9d65c8faa201573c569963365dbef5aa18a4b7f6899a5d356019"
+          },
+          {
+            "line": 357,
+            "normalized_sha256": "6d022913beb8648b1f87e9893ed15821c153968f7422fb707940cb861a9371a9"
+          },
+          {
+            "line": 607,
+            "normalized_sha256": "8767dcdeac6c6f0fbc2afe739de645f1ce90688ad8cd74c8208530ae81bf52e0"
+          }
+        ]
+      },
+      "preliminaries.tex": {
+        "figures": 1,
+        "footnotes_source": [
+          {
+            "line": 96,
+            "sha256": "fc3bc650468d7ec8b95033bfccd34ba5131643d2c2a7afb44a0b1fa5970a8cdb"
+          },
+          {
+            "line": 144,
+            "sha256": "1758351b54e4c13809e12c113e009f1ca8786ae189eb272bf9053fca0fde04d7"
+          },
+          {
+            "line": 309,
+            "sha256": "73e0e6e4a1ac9d73a9d2d4df4db361f6a50469dcf8a38229a9f929d846596b16"
+          },
+          {
+            "line": 505,
+            "sha256": "2ddd295cb82eb44c3c7fdd7df75a73f0fbe2e591743ded3baeedd374db76eb2a"
+          },
+          {
+            "line": 510,
+            "sha256": "50ea096dd85a0a67ea84a20c68869d4e7b73c9575de9226d81e71efabd56a051"
+          }
+        ],
+        "footnotes_target": [
+          {
+            "line": 150,
+            "sha256": "03426354f425832d57d8d8e78983cac8bb5484d12a67b5207604a59d97530f93"
+          },
+          {
+            "line": 222,
+            "sha256": "c8996baee02a8e0b53e9e3c42da8d8b3cec75eb84afc73be6c1457eafc9b5df2"
+          },
+          {
+            "line": 483,
+            "sha256": "4bcf7e5238405fe73a1bc3565d8b1b6d6f06a072d50f330fbedfd3a7ffa5d95e"
+          },
+          {
+            "line": 750,
+            "sha256": "78b289898b3e15776bc3d5d7084d15d531807a7bd5a9bdb69eb9c376a6ad8858"
+          },
+          {
+            "line": 760,
+            "sha256": "a046ca210dd57540e6d6105e7b6465c1ee8eeba9c07afefd6a3322640c5941d0"
+          }
+        ],
+        "items": 32,
+        "labels": [
+          "preliminaries:defn:vectorspace",
+          "preliminiaries:example:norms",
+          "preliminaries:eq:CS",
+          "eq:prelim:hoelder",
+          "thm:bolzano",
+          "prelim:fig:lsc",
+          "preliminaries:thm:direct_method"
+        ],
+        "ordered_begin_end_sha256": "19fd5bb8df4bee27086a10a8442e307406ed428f6056434e3ea1baaabdfd52fc",
+        "ordered_begin_end_tokens": 244,
+        "raster_paths": [
+          "figures/discontinuous_function.png",
+          "figures/lsc_function.png"
+        ],
+        "refs": [
+          "preliminiaries:example:norms",
+          "preliminaries:eq:CS",
+          "eq:prelim:hoelder",
+          "thm:bolzano",
+          "thm:bolzano"
+        ],
+        "tikz_source": [
+          {
+            "line": 486,
+            "normalized_sha256": "313af08fc2dc1eaf2ed6aea2580e3b5d67de13b410f83ccb63ba613d8168223f"
+          }
+        ],
+        "tikz_target": [
+          {
+            "line": 719,
+            "normalized_sha256": "313af08fc2dc1eaf2ed6aea2580e3b5d67de13b410f83ccb63ba613d8168223f"
+          }
+        ]
+      }
+    },
+    "figure_description_count": 8,
+    "placeholder_findings": [],
+    "preface_formula_surfaces": 0,
+    "raster_byte_identity": [
+      {
+        "authority": {
+          "bytes": 20911,
+          "path": "authority/habring/source-v1/figures/discontinuous_function.png",
+          "sha256": "fc5b5b3135eb726c58ef8e299751d310dfc363f7d31d7c28930ad018388397fa"
+        },
+        "filename": "discontinuous_function.png",
+        "target": {
+          "bytes": 20911,
+          "path": "source/id-ID/figures/discontinuous_function.png",
+          "sha256": "fc5b5b3135eb726c58ef8e299751d310dfc363f7d31d7c28930ad018388397fa"
+        }
+      },
+      {
+        "authority": {
+          "bytes": 20904,
+          "path": "authority/habring/source-v1/figures/lsc_function.png",
+          "sha256": "2edde214506a703a0e40d5e32a1df5ae50809c0698cec2a3d7cd248647010547"
+        },
+        "filename": "lsc_function.png",
+        "target": {
+          "bytes": 20904,
+          "path": "source/id-ID/figures/lsc_function.png",
+          "sha256": "2edde214506a703a0e40d5e32a1df5ae50809c0698cec2a3d7cd248647010547"
+        }
+      },
+      {
+        "authority": {
+          "bytes": 36071,
+          "path": "authority/habring/source-v1/figures/sets.png",
+          "sha256": "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e"
+        },
+        "filename": "sets.png",
+        "target": {
+          "bytes": 36071,
+          "path": "source/id-ID/figures/sets.png",
+          "sha256": "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e"
+        }
+      },
+      {
+        "authority": {
+          "bytes": 14419,
+          "path": "authority/habring/source-v1/figures/balls.png",
+          "sha256": "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31"
+        },
+        "filename": "balls.png",
+        "target": {
+          "bytes": 14419,
+          "path": "source/id-ID/figures/balls.png",
+          "sha256": "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31"
+        }
+      },
+      {
+        "authority": {
+          "bytes": 31570,
+          "path": "authority/habring/source-v1/figures/convex_fct.png",
+          "sha256": "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b"
+        },
+        "filename": "convex_fct.png",
+        "target": {
+          "bytes": 31570,
+          "path": "source/id-ID/figures/convex_fct.png",
+          "sha256": "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b"
+        }
+      }
+    ],
+    "stable_segments": {
+      "chapter1": [
+        "d90.hab.v1.ch01.seg0001",
+        "d90.hab.v1.ch01.seg0002",
+        "d90.hab.v1.ch01.seg0003",
+        "d90.hab.v1.ch01.seg0004",
+        "d90.hab.v1.ch01.seg0005",
+        "d90.hab.v1.ch01.seg0006",
+        "d90.hab.v1.ch01.seg0007",
+        "d90.hab.v1.ch01.seg0008"
+      ],
+      "chapter2": [
+        "d90.hab.v1.ch02.seg0001",
+        "d90.hab.v1.ch02.seg0002",
+        "d90.hab.v1.ch02.seg0003",
+        "d90.hab.v1.ch02.seg0004",
+        "d90.hab.v1.ch02.seg0005",
+        "d90.hab.v1.ch02.seg0006",
+        "d90.hab.v1.ch02.seg0007",
+        "d90.hab.v1.ch02.seg0008",
+        "d90.hab.v1.ch02.seg0009",
+        "d90.hab.v1.ch02.seg0010",
+        "d90.hab.v1.ch02.seg0011",
+        "d90.hab.v1.ch02.seg0012",
+        "d90.hab.v1.ch02.seg0013",
+        "d90.hab.v1.ch02.seg0014",
+        "d90.hab.v1.ch02.seg0015",
+        "d90.hab.v1.ch02.seg0016",
+        "d90.hab.v1.ch02.seg0017"
+      ],
+      "combined_unique": 25
+    }
+  }
+}

@@ -1,0 +1,832 @@
+\chapter{Kekonveksan}
+
+% H02-S001 | sumber authority/habring/source-v1/convexity.tex baris 1--40
+% segment-id: d90.hab.v1.ch02.seg0001
+Tujuan kita dalam kuliah ini adalah menyelesaikan masalah berbentuk
+\begin{equation}
+    \min_{x\in C} f(x),
+\end{equation}
+dengan $C\subset V$ suatu \emph{himpunan bagian konveks} dari ruang $V$ dan $f:C\rightarrow (-\infty,\infty]$ suatu \emph{fungsi konveks}. Oleh karena itu, pada bagian berikut kita menganalisis secara lebih terperinci arti tepat kekonveksan himpunan dan fungsi serta akibat yang dapat ditarik dari sifat-sifat tersebut.
+
+\section{Himpunan konveks}
+Suatu himpunan disebut konveks apabila, untuk setiap dua titik di dalamnya, seluruh ruas garis lurus yang menghubungkan kedua titik itu juga termuat di dalam himpunan tersebut. Secara lebih formal:
+\begin{defn}
+    Suatu himpunan $C\subset V$ disebut konveks jika dan hanya jika, untuk setiap $x,y\in C$ dan $\lambda\in (0,1)$, berlaku
+    \begin{equation}
+        \lambda x + (1-\lambda) y\in C.
+    \end{equation}
+\end{defn}
+
+Perhatikan bahwa
+\begin{equation}
+    \lambda x + (1-\lambda) y = y + \lambda(x-y),
+\end{equation}
+yang memperlihatkan dengan lebih jelas bahwa $\lambda x + (1-\lambda)y$ menelusuri ruas garis yang menghubungkan $x$ dan $y$.
+
+Lebih lanjut, dengan menggunakan \emph{kombinasi konveks} yang lebih umum, kita dapat dengan mudah menunjukkan hasil berikut.
+
+\begin{lemma}
+    Himpunan $C\subset V$ konveks jika dan hanya jika, untuk setiap $n\in \N$, $x_i\in C$, dan $\lambda_i\in [0,1]$, $i=1,\dots,n$, yang memenuhi $\sum_{i=1}^n\lambda_i=1$, berlaku
+    \begin{equation}
+        \sum_{i=1}^n\lambda_i x_i \in C.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Latihan.
+\end{proof}
+
+Untuk memudahkan notasi, kita mendefinisikan \emph{simpleks satuan} sebagai
+\begin{equation}
+    % Koreksi H02-C001 (sumber baris 37): batas penjumlahan n diganti k agar sesuai dengan Delta^k dan k komponen lambda.
+    \Delta^k = \{(\lambda_1,\dots,\lambda_k)\in [0,1]^k\;|\;\sum_{i=1}^k\lambda_i = 1\}.
+\end{equation}
+Sekarang kita dapat mendefinisikan himpunan konveks terkecil yang memuat suatu himpunan, yaitu \emph{selubung konveks}.
+
+% H02-S002 | sumber authority/habring/source-v1/convexity.tex baris 42--65
+% segment-id: d90.hab.v1.ch02.seg0002
+\begin{defn}[Selubung konveks]
+    Misalkan $C\subset V$. Selubung konveks dari $C$ didefinisikan sebagai himpunan
+    \begin{equation}\label{eq:convex_sets:defin_conv_hull}
+        \conv(C) \coloneqq \bigcap_{\substack{S\subset V \text{ konveks}\\C\subset S}}S.
+    \end{equation}
+\end{defn}
+
+\begin{lemma}
+    Berlaku
+    \begin{equation}\label{eq:convex_sets:conv_hull}
+        % Koreksi H02-C028: vektor bobot ditulis lengkap, bukan skalar lambda.
+        \conv(C) = \bigg\{ \sum_{i=1}^n\lambda_i x_i\;|\; n\in \N,\;x_i\in C, \;
+        (\lambda_1,\ldots,\lambda_n)\in \Delta^n\bigg\}.
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Nyatakan ruas kanan \eqref{eq:convex_sets:conv_hull} dengan $A$.
+    Kita akan menunjukkan bahwa $\conv(C)\subset A$ dan $A\subset\conv(C)$.
+
+    \underline{$A\subset\conv(C)$:}
+    Misalkan $x=\sum_{i=1}^n\lambda_i x_i\in A$. Untuk setiap $S\subset V$ yang konveks dan memenuhi $C\subset S$, berlaku $x\in S$. Oleh karena itu, berdasarkan definisi pada \eqref{eq:convex_sets:defin_conv_hull}, diperoleh $x\in\conv(C)$.
+
+    \underline{$\conv(C)\subset A$:}
+    Dapat diperiksa langsung bahwa $A$ memang merupakan himpunan konveks. Selain itu, $C\subset A$. Dengan demikian, $A$ termasuk salah satu himpunan $S$ dalam \eqref{eq:convex_sets:defin_conv_hull}, sehingga $\conv(C)\subset A$.
+\end{proof}
+
+% H02-S003 | sumber authority/habring/source-v1/convexity.tex baris 67--97
+% segment-id: d90.hab.v1.ch02.seg0003
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\textwidth]{figures/sets.png}
+    \caption{Baris atas: himpunan konveks. Baris bawah: himpunan tak konveks.}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Baris atas memperlihatkan beberapa daerah yang memuat seluruh ruas garis di antara setiap dua titik di dalamnya. Baris bawah memperlihatkan daerah yang memiliki lekukan atau bagian terpisah sehingga terdapat dua titik di dalam himpunan yang ruas penghubungnya keluar dari himpunan.
+
+\begin{example}
+    Himpunan-himpunan berikut bersifat konveks (buktinya ditinggalkan sebagai latihan):
+    \begin{itemize}
+        \item Himpunan kosong $\emptyset$.
+        \item Setiap ruang vektor.
+        \item Setiap bola norma; yaitu, untuk setiap norma $\|\emptyarg\|$, setiap $c\in V$, dan setiap $R\geq 0$, himpunan
+        \begin{equation}
+            % Koreksi H02-C002 (sumber baris 80--82): tanda sama dengan yang hilang ditambahkan.
+            B_{\|\emptyarg\|,R}(c)=\{x\in V\;|\; \|x-c\|<R\}
+        \end{equation}
+        dan
+        \begin{equation}
+            % Koreksi H02-C003 (sumber baris 84--86): tanda sama dengan yang hilang ditambahkan.
+            \overline{B}_{\|\emptyarg\|,R}(c)=\{x\in V\;|\; \|x-c\|\leq R\}.
+        \end{equation}
+        \item Setiap subruang afin; yaitu, untuk setiap vektor $z,x_1,\dots,x_k\in V$, himpunan
+        \begin{equation}
+            \bigg\{ x\in V\;|\; x = z + \sum_{i=1}^k\lambda_i x_i,\; \lambda_i\in \R \bigg\}.
+        \end{equation}
+    \end{itemize}
+\end{example}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/balls.png}
+    \caption{Bola norma $\overline{B}_{\|\emptyarg\|_p,R}(0)$ untuk beberapa norma $\ell^p$. Perhatikan bahwa himpunan untuk $p=1/2$ tidak konveks karena pilihan ini tidak menghasilkan norma: ketaksamaan segitiga tidak berlaku.}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Gambar membandingkan bola satuan dua dimensi untuk beberapa nilai $p$. Bentuknya berubah dari belah ketupat melalui lingkaran menuju bentuk yang semakin menyerupai persegi ketika $p$ bertambah; untuk $p=1/2$, sisi-sisinya melengkung ke dalam sehingga himpunannya tidak konveks.
+
+% H02-S004 | sumber authority/habring/source-v1/convexity.tex baris 99--126
+% segment-id: d90.hab.v1.ch02.seg0004
+\begin{lemma}[Operasi yang mempertahankan kekonveksan]\label{convexity:lemma:ops preserving convexity}
+    Pernyataan-pernyataan berikut berlaku:
+    \begin{enumerate}
+        \item Irisan. Misalkan $C_i\subset V$ konveks untuk $i\in I$, dengan $I$ suatu himpunan indeks sembarang. Maka irisan
+        \begin{equation}
+            \bigcap_{i\in I} C_i \coloneqq \{x\in V\;|\; x\in C_i\; \forall i\in I\}
+        \end{equation}
+        bersifat konveks.
+        \item Jumlah berbobot. Misalkan $C_i\subset V$ konveks untuk $i=1,\dots,N$, dan misalkan $\lambda_i\in\R$ untuk $i=1,\dots,N$. Maka himpunan
+        \begin{equation}
+            % Koreksi H02-C004 (sumber baris 108--110): n dan indeks I yang tidak didefinisikan diseragamkan menjadi N dan i=1,...,N.
+            \sum_{i=1}^N \lambda_i C_i \coloneqq \bigg\{\sum_{i=1}^N \lambda_i x_i\;|\; x_i\in C_i\; \forall i=1,\dots,N\bigg\}
+        \end{equation}
+        bersifat konveks.
+        \item Produk Kartesius. Misalkan $C_i\subset V$ konveks untuk $i\in I$, dengan $I$ suatu himpunan indeks sembarang. Maka produk Kartesius
+        \begin{equation}
+            % Koreksi H02-C029: produk Kartesius memakai simbol produk, bukan produk tensor.
+            \prod_{i\in I} C_i \coloneqq \{(x_i)_{i\in I}\;|\; x_i\in C_i\; \forall i\in I\}
+        \end{equation}
+        bersifat konveks.
+        \item Citra dan pracitra\footnote{Pracitra terdefinisi dengan baik juga untuk pemetaan yang tidak invertibel.} di bawah pemetaan linear bersifat konveks. Secara khusus, untuk $A:V\rightarrow W$ linear serta $S\subset V$ dan $T\subset W$ keduanya konveks, himpunan-himpunan berikut bersifat konveks:
+        \begin{equation}
+            % Koreksi H02-C005 (sumber baris 120--122): pracitra diberi argumen T dan variabel himpunannya diperbaiki dari y menjadi x.
+            A(S)=\{Ax\;|\;x\in S\},\qquad A^{-1}(T)=\{x\in V\;|\;Ax\in T\}.
+        \end{equation}
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    Kita hanya membuktikan bagian pertama dan meninggalkan sisanya sebagai latihan. Buktinya langsung. Misalkan $x,y\in\bigcap_{i\in I}C_i$ dan $\lambda\in(0,1)$. Karena $x,y\in C_i$ untuk setiap $i$ dan setiap $C_i$ konveks, diperoleh $\lambda x+(1-\lambda)y\in C_i$ untuk setiap $i$. Dengan demikian, $\lambda x+(1-\lambda)y\in\bigcap_{i\in I}C_i$.
+\end{proof}
+
+% H02-S005 | sumber authority/habring/source-v1/convexity.tex baris 128--191
+% segment-id: d90.hab.v1.ch02.seg0005
+Kita hendak mendefinisikan secara formal pengertian hiperbidang, yaitu perumuman bidang dua dimensi di $\R^3$ ke dimensi sembarang.
+
+\begin{defn}[Hiperbidang]
+    Misalkan $V$ suatu ruang hasil kali dalam. Hiperbidang adalah himpunan $H$ berbentuk
+    \begin{equation}
+        H=\{x\in V\;|\;\inner{x}{a}=b\}
+    \end{equation}
+    untuk suatu $a\in V\setminus\{0\}$ dan $b\in\R$.
+\end{defn}
+
+Parameter $a$ menentukan orientasi bidang dan $b$ menentukan geserannya. Secara khusus, $0\in H$ jika dan hanya jika $b=0$; dalam kasus ini $H$ merupakan subruang. Jika $b\neq0$, $H$ hanya merupakan subruang afin.
+
+Perhatikan bahwa jika $x_0\in H$, maka
+\begin{equation}
+    H=\{x\in V\;|\;\inner{x-x_0}{a}=0\}.
+\end{equation}
+Jadi, $a$ adalah vektor normal terhadap bidang tersebut. Selain itu, dapat diperiksa sebagai latihan bahwa $\frac{|b|}{\|a\|}$ adalah jarak bidang dari titik asal.
+
+Setiap hiperbidang membagi ruang menjadi dua setengah ruang.
+\begin{defn}[Setengah ruang]
+    Misalkan $V$ suatu ruang hasil kali dalam. Setengah ruang adalah himpunan $H^-$ berbentuk
+    \begin{equation}
+        H^-=\{x\in V\;|\;\inner{x}{a}\leq b\}
+    \end{equation}
+    untuk suatu $a\in V\setminus\{0\}$ dan $b\in\R$.
+\end{defn}
+
+Teorema berikut menyatakan bahwa pemisahan tersebut dapat dipilih dengan cara tertentu. Hasil ini ternyata sangat penting dalam optimisasi dan analisis fungsional.
+
+\begin{theorem}[Teorema pemisahan Hahn--Banach]
+    % Koreksi H02-C006 (sumber baris 156--166): ruang topologis, fungsional kontinu, dan ambang alpha yang semula dideklarasikan tetapi tidak dipakai dibuat eksplisit.
+    Misalkan $S,T$ dua himpunan bagian konveks yang tak kosong dan saling lepas dari suatu ruang bernorma real $V$, dan misalkan $S$ terbuka. Maka terdapat $a\in V^*$ yang kontinu dan tak nol serta $\alpha\in\R$ sedemikian sehingga
+    \begin{equation}
+        \langle a,x\rangle<\alpha\leq\langle a,y\rangle,\qquad x\in S,\;y\in T.
+    \end{equation}
+    Jika $S$ dan $T$ keduanya tertutup dan salah satunya kompak, maka terdapat $a\in V^*$ yang kontinu dan tak nol, $\alpha\in\R$, dan $\epsilon>0$ sedemikian sehingga
+    \begin{equation}
+        \langle a,x\rangle\leq\alpha<\alpha+\epsilon\leq\langle a,y\rangle,\qquad x\in S,\;y\in T.
+    \end{equation}
+\end{theorem}
+Versi kedua memungkinkan kita memperoleh selisih positif tegas antara
+\[
+    \sup_{x\in S}\langle a,x\rangle
+    \quad
+    \text{dan}
+    \quad
+    \inf_{y\in T}\langle a,y\rangle.
+\]
+
+\begin{figure}
+    \centering
+            \begin{tikzpicture}[font=\sffamily]
+                \draw[dashed] (-2.5,3) -- (2.5,-0.5);
+                \node[circle,draw,fill=gray,minimum size=2.4cm] at (1,2.4) {$S$};
+                \draw[fill=gray,rounded corners] (-2,2) -- (-0.2,1) -- (0.2,-1) -- (-1.5,0) -- (-2.2,1.5) --cycle;
+                \path (-2,2) --  (0.2,-1)  node[midway] {$T$};
+                \draw[ultra thin] (-3,0) -- (3,0) (0,-2) -- (0,4);
+            \end{tikzpicture}\hfill%
+            \begin{tikzpicture}[font=\sffamily]
+                \node[circle,draw,fill=gray,minimum size=2.4cm] at (1,2.4) {$S$};
+                \draw[fill=gray,rounded corners] (0,4) -- (-0.5,1) -- (.5,.8) -- (2,.5) -- (0,-.5) -- (-1.5,0) -- (-2.2,1.5) --cycle;
+                \path (-2,2) --  (0.2,-1)  node[midway] {$T$};
+                \draw[ultra thin] (-3,0) -- (3,0) (0,-2) -- (0,4);
+            \end{tikzpicture}
+    \caption{Ilustrasi teorema pemisahan Hahn--Banach dan alasan pemisahan dapat gagal tanpa kekonveksan.}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Panel kiri menampilkan dua himpunan konveks tak beririsan yang dipisahkan oleh sebuah garis putus-putus. Panel kanan menampilkan salah satu himpunan yang tak konveks dan melingkupi sebagian himpunan lainnya, sehingga tidak ada satu garis lurus yang dapat memisahkan keduanya.
+
+\section{Fungsi konveks}
+
+% H02-S006 | sumber authority/habring/source-v1/convexity.tex baris 193--261
+% segment-id: d90.hab.v1.ch02.seg0006
+Seperti diperlihatkan pada \cref{fig:convexity:1d_example}, kekonveksan sangat memengaruhi pertanyaan tentang keberadaan dan ketunggalan minimum.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/convex_fct.png}
+    \caption{Contoh fungsi konveks dan fungsi tak konveks dalam satu dimensi.}
+    \label{fig:convexity:1d_example}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Gambar membandingkan grafik satu dimensi berbentuk mangkuk, yang konveks dan memiliki struktur minimum yang teratur, dengan grafik tak konveks yang memiliki lekukan serta beberapa minimum lokal.
+
+\begin{defn}[Syarat orde nol untuk kekonveksan]
+    Misalkan $C\subset V$ konveks dan $f:C\rightarrow(-\infty,\infty]$.
+    \begin{itemize}
+        \item Fungsi $f$ disebut konveks jika dan hanya jika, untuk setiap $x,y\in C$ dan $\lambda\in(0,1)$, berlaku
+        \begin{equation}
+            f(\lambda x+(1-\lambda)y)\leq\lambda f(x)+(1-\lambda)f(y).
+        \end{equation}
+        \item Fungsi $f$ disebut konveks tegas jika dan hanya jika, untuk setiap
+        $x,y\in\dom(f)$ dengan $x\neq y$ dan setiap $\lambda\in(0,1)$, berlaku
+        \begin{equation}
+            % Koreksi H02-C007 (sumber baris 210--213): syarat x tidak sama dengan y ditambahkan; tanpa syarat ini ketaksamaan tegas mustahil saat x=y.
+            f(\lambda x+(1-\lambda)y)<\lambda f(x)+(1-\lambda)f(y).
+        \end{equation}
+        \item Fungsi $f$ disebut konveks kuat dengan parameter $\mu>0$ jika dan
+        hanya jika, untuk setiap $x,y\in\dom(f)$ dan $\lambda\in(0,1)$, berlaku
+        % Koreksi H02-C025 (sumber baris 214): syarat mu>0 dibuat eksplisit; mu=0 hanya menghasilkan kekonveksan biasa.
+        % Koreksi H02-C037: untuk fungsi nilai-diperluas, syarat tegas/kuat dibatasi pada domain efektif.
+        \begin{equation}
+            f(\lambda x+(1-\lambda)y)\leq\lambda f(x)+(1-\lambda)f(y)-\frac{\lambda(1-\lambda)\mu}{2}\|x-y\|^2.
+        \end{equation}
+    \end{itemize}
+\end{defn}
+Syarat orde nol menyatakan bahwa ruas garis yang menghubungkan dua titik pada grafik, yaitu garis sekan, selalu berada di atas fungsi. Untuk fungsi konveks tegas, garis sekan berada secara tegas di atas fungsi, sedangkan dalam kasus konveks kuat kita bahkan dapat \emph{menyisipkan} fungsi kuadrat di antara keduanya.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[inner sep=.5mm,
+            declare function={
+                f(\x)= (\x-3)^2+3*\x-4;
+            }
+            ]
+            \begin{axis}[axis lines=middle,domain=-1:4,samples=200,xtick={0.5,3},xticklabels={$x$,$y$},ytick=\empty,xmin=-.2,xmax=3.7,ymin=-.1,ymax=10]
+                \addplot[blue,very thick,name path=f] {f(x)};
+                \pgfplotsinvokeforeach{.5,3}{
+                    \path[name path=x] (#1,0) -- (#1,6);
+                    \draw[black!50,thick,dashed,name intersections={of=f and x, name=i}] (#1,0) -- (i-1);
+                }
+                \draw[very thick] ($(.5,{f(.5)})$) node[circle,fill=blue,label=left:{$f(x)$}]{} -- ($(3,{f(3)})$) node[circle,fill=blue,label=right:{$f(y)$}]{};
+                \node[text=blue] at (1.75,2) {$f(\lambda x+(1-\lambda)y)$};
+                \node[rotate=10] at (1.75,5) {$\lambda f(x)+(1-\lambda)f(y)$};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Penafsiran geometris syarat orde nol bagi kekonveksan suatu fungsi.}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Sebuah kurva konveks biru ditampilkan bersama dua titik pada grafik dan ruas sekan yang menghubungkannya. Nilai fungsi pada kombinasi konveks kedua titik berada di bawah nilai yang diperoleh melalui interpolasi linear di sepanjang sekan.
+
+\begin{example}
+    Fungsi-fungsi berikut konveks (bukti: latihan):
+    \begin{enumerate}
+        \item Fungsi afin $f(x)=\langle a,x\rangle+b$ dengan $a\in V^*$ dan $b\in\R$; khususnya, fungsi linear ketika $b=0$.
+        % Koreksi H02-C008 (sumber baris 247): simbol y/a yang tidak konsisten diseragamkan menjadi a, dan koefisien dinyatakan sebagai fungsional linear a di V^*.
+        \item Semua norma merupakan fungsi konveks.
+    \end{enumerate}
+\end{example}
+
+Serupa dengan hasil untuk himpunan konveks, kekonveksan dapat diperluas ke kombinasi konveks dengan banyak titik yang sembarang.
+
+\begin{theorem}[Jensen]
+    % Koreksi H02-C026 (sumber baris 255): kodomain nilai-diperluas dibuat konsisten dan kasus bobot nol dinyatakan.
+    Misalkan $C\subset V$ konveks dan
+    $f:C\rightarrow(-\infty,+\infty]$. Dengan konvensi
+    $0\cdot(+\infty)=0$, fungsi $f$ konveks jika dan hanya jika, untuk setiap
+    $k\in\N$, $\lambda\in\Delta^k$, dan $x_i\in C$, berlaku
+    \begin{equation}
+        f\bigg(\sum_{i=1}^k\lambda_i x_i\bigg)\leq\sum_{i=1}^k\lambda_i f(x_i).
+    \end{equation}
+\end{theorem}
+
+% H02-S007 | sumber authority/habring/source-v1/convexity.tex baris 262--322
+% segment-id: d90.hab.v1.ch02.seg0007
+Di atas kita melihat bahwa kekonveksan berarti garis sekan berada di atas fungsi. Kekonveksan juga berarti garis singgung berada di bawah fungsi (\cf~\cref{convexity:fig:gradients}).
+
+\begin{theorem}[Karakterisasi orde pertama kekonveksan]\label{convexity:thm:first_order}
+    % Koreksi H02-C030: turunan pada titik batas didefinisikan melalui perluasan ke lingkungan terbuka.
+    Misalkan $C\subset\R^d$ konveks dan $f:C\rightarrow\R$ mempunyai perluasan
+    yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari $C$.
+    \begin{itemize}
+        \item Fungsi $f$ konveks jika dan hanya jika, untuk semua $x,y\in C$,
+        \[
+            f(x)+\langle\nabla f(x),y-x\rangle\leq f(y).
+        \]
+        \item Fungsi $f$ konveks tegas jika dan hanya jika ketaksamaan di atas berlaku tegas untuk semua $x\neq y$.
+    \end{itemize}
+\end{theorem}
+\begin{proof}
+    Kita terlebih dahulu membuktikan butir pertama.
+
+    $\Rightarrow$: Misalkan $f$ konveks. Maka
+    \begin{equation}
+        f(x+\lambda(y-x))=f(\lambda y+(1-\lambda)x)\leq\lambda f(y)+(1-\lambda)f(x).
+    \end{equation}
+    Dengan menyusun ulang, diperoleh
+    \begin{equation}
+        \frac{f(x+\lambda(y-x))-f(x)}{\lambda}\leq f(y)-f(x).
+    \end{equation}
+    Membiarkan $\lambda\rightarrow0$ memberikan hasil yang diinginkan.
+
+    $\Leftarrow$: Sekarang andaikan syarat gradien berlaku. Tuliskan $x_\lambda=x+\lambda(y-x)$. Maka
+    \begin{equation*}
+        f(x_\lambda)+\langle\nabla f(x_\lambda),y-x_\lambda\rangle
+        =f(x_\lambda)+\langle\nabla f(x_\lambda),(1-\lambda)(y-x)\rangle\leq f(y)
+    \end{equation*}
+    dan
+    \begin{equation*}
+        f(x_\lambda)+\langle\nabla f(x_\lambda),x-x_\lambda\rangle
+        =f(x_\lambda)+\langle\nabla f(x_\lambda),-\lambda(y-x)\rangle\leq f(x).
+    \end{equation*}
+    Kalikan ketaksamaan pertama dengan $\lambda$, ketaksamaan kedua dengan $1-\lambda$, lalu jumlahkan. Hasilnya
+    \begin{equation*}
+        f(x_\lambda)\leq\lambda f(y)+(1-\lambda)f(x).
+    \end{equation*}
+
+    % Koreksi H02-C036 (sumber baris 270 dan 273--274): bukti karakterisasi tegas yang hilang dilengkapi.
+    Untuk butir kedua, arah dari syarat orde pertama tegas menuju kekonveksan
+    tegas langsung mengikuti argumen yang sama. Sebaliknya, jika $f$ konveks
+    tegas dan $x\neq y$, fungsi satu variabel
+    $g(t)=f(x+t(y-x))$ konveks tegas pada $[0,1]$. Kemiringan sekan
+    $(g(t)-g(0))/t$ tak menurun dalam $t>0$ dan, untuk setiap $t_0\in(0,1)$,
+    bernilai tegas lebih kecil daripada $g(1)-g(0)$. Mengambil limit
+    $t\downarrow0$ memberikan
+    $\langle\nabla f(x),y-x\rangle< f(y)-f(x)$.
+\end{proof}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[inner sep=.5mm,
+            declare function={
+                f(\x)=  (\x-3)^2+3*\x-4;
+            }
+            ]
+            \begin{axis}[axis lines=middle,domain=-1:4,samples=200,xtick={2},xticklabels={$x$},ytick=\empty,xmin=-.2,xmax=3.7,ymin=-.1,ymax=10]
+                \addplot[blue,very thick,name path=f] {f(x)};
+                \pgfplotsinvokeforeach{2}{
+                    \path[name path=x] (#1,0) -- (#1,6);
+                    \draw[black!50,thick,dashed,name intersections={of=f and x, name=i}] (#1,0) -- (i-1);
+                }
+                \addplot[very thick] {f(2)+1*(x-2)};
+                \node[circle,fill=blue,label=above:{$f(x)$}] at ($(2,{f(2)})$) {};
+                \node[text=blue,yshift=5mm] at ($(.5,{f(.5)})$) {$f$};
+            \end{axis}
+            \node[rotate=17,yshift=-3mm] at (6, 2.5) {$\textcolor{black}{y \mapsto f(x)+\inner{\nabla f(x)}{y-x}}$};
+        \end{tikzpicture}
+        \caption{Penafsiran geometris syarat orde pertama bagi fungsi konveks.}
+        \label{convexity:fig:gradients}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Grafik sebuah fungsi konveks ditampilkan bersama garis singgungnya pada titik $x$. Garis afin $y\mapsto f(x)+\langle\nabla f(x),y-x\rangle$ berada di bawah grafik fungsi di seluruh domain yang diperlihatkan.
+
+% H02-S008 | sumber authority/habring/source-v1/convexity.tex baris 324--376
+% segment-id: d90.hab.v1.ch02.seg0008
+\begin{defn}[Minimum]
+    % Koreksi H02-C021 (sumber baris 324--325): x^* dinyatakan berada di domain C.
+    Misalkan $f:C\rightarrow\R$ dan $x^*\in C$.
+    \begin{itemize}
+        \item Titik $x^*$ disebut minimum lokal jika dan hanya jika terdapat $\epsilon>0$ sedemikian sehingga
+        \[
+            % Koreksi H02-C009 (sumber baris 328--330): pembanding dibatasi pada domain C.
+            f(x^*)\leq f(x),\qquad \forall x\in B_\epsilon(x^*)\cap C.
+        \]
+        \item Titik $x^*$ disebut minimum global jika dan hanya jika
+        \[
+            f(x^*)\leq f(x),\qquad \forall x\in C.
+        \]
+    \end{itemize}
+    Minimum disebut \emph{tegas} apabila ketaksamaan yang bersesuaian berlaku tegas untuk semua titik pembanding $x\neq x^*$.
+    % Koreksi H02-C010 (sumber baris 336): pengecualian x=x^* dibuat eksplisit karena ketaksamaan tegas tidak mungkin berlaku di titik yang sama.
+\end{defn}
+
+Sekarang kita dapat membuktikan hasil penting pertama dalam optimisasi konveks.
+\begin{prop}\label{convexity:prop:OC1}
+    % Koreksi H02-C011 (sumber baris 340--342): asumsi bahwa f konveks ditambahkan; tanpa asumsi ini titik stasioner tidak harus menjadi minimum global.
+    % Koreksi H02-C031: titik stasioner dinyatakan berada di domain dan hipotesis diferensial diselaraskan dengan teorema sebelumnya.
+    Misalkan $C\subset\R^d$ konveks, $f:C\rightarrow\R$ konveks dan mempunyai
+    perluasan yang terdiferensialkan secara kontinu pada suatu lingkungan
+    terbuka dari $C$, serta $x^*\in C$. Jika $\nabla f(x^*)=0$, maka $x^*$
+    adalah peminimum \textbf{global}.
+\end{prop}
+\begin{proof}
+    Berdasarkan karakterisasi orde pertama kekonveksan,
+    \begin{equation}
+        f(x)\geq f(x^*)+\langle\nabla f(x^*),x-x^*\rangle
+        =f(x^*)+0.
+    \end{equation}
+\end{proof}
+
+Perhatikan bahwa kebalikan \cref{convexity:prop:OC1}, yaitu implikasi
+\begin{equation}
+    \text{$x^*$ adalah minimum}\Rightarrow\nabla f(x^*)=0,
+\end{equation}
+secara umum hanya benar apabila $x^*$ berada di interior $C$, yang dinyatakan dengan $C^\circ$; yaitu, terdapat $\epsilon>0$ sedemikian sehingga $B_\epsilon(x^*)\subset C$.
+
+\begin{theorem}
+    % Koreksi H02-C012 (sumber baris 357--359): domain Euklides dan asumsi kekonveksan f dibuat eksplisit agar ekuivalensi sah.
+    Misalkan $C\subset\R^d$ konveks, $f:C\rightarrow\R$ konveks dan mempunyai
+    perluasan yang terdiferensialkan secara kontinu pada suatu lingkungan
+    terbuka dari $C$, serta $x^*\in C^\circ$. Maka $\nabla f(x^*)=0$ jika dan
+    hanya jika $x^*$ adalah peminimum global.
+\end{theorem}
+\begin{proof}
+    Satu arah mengikuti \cref{convexity:prop:OC1}. Untuk arah lainnya, andaikan $x^*$ suatu minimum. Untuk setiap $v\in\R^d$, jika $t>0$ cukup kecil, optimalitas memberikan
+    \begin{equation}
+        f(x^*+tv)-f(x^*)\geq0.
+    \end{equation}
+    Karena $t>0$, pembagian dengan $t$ menghasilkan
+    \begin{equation}
+        \frac{f(x^*+tv)-f(x^*)}{t}\geq0.
+    \end{equation}
+    Dengan membiarkan $t\rightarrow0$, diperoleh
+    \begin{equation}
+        \langle\nabla f(x^*),v\rangle\geq0.
+    \end{equation}
+    Karena $v$ sembarang, argumen yang sama dapat diterapkan pada $-v$. Hasilnya
+    \[
+        \langle\nabla f(x^*),v\rangle\leq0.
+    \]
+
+    Jadi $\langle\nabla f(x^*),v\rangle=0$ untuk setiap $v$, dan karenanya
+    $\nabla f(x^*)=0$ (mengapa?).
+\end{proof}
+
+% H02-S009 | sumber authority/habring/source-v1/convexity.tex baris 378--403
+% segment-id: d90.hab.v1.ch02.seg0009
+Dalam satu dimensi, jika suatu fungsi terdiferensialkan, kekonveksannya dapat dikarakterisasi melalui kemonotonan turunannya. Dalam dimensi sembarang berlaku hasil berikut.
+
+\begin{theorem}[Kemonotonan gradien]
+    % Koreksi H02-C032: domain, perluasan diferensial, dan kuantifier x,y dibuat eksplisit.
+    Misalkan $C\subset\R^d$ konveks dan $f:C\rightarrow\R$ mempunyai perluasan
+    yang terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari
+    $C$. Maka $f$ konveks jika dan hanya jika, untuk setiap $x,y\in C$,
+    \begin{equation}
+        \langle\nabla f(x)-\nabla f(y),x-y\rangle\geq0.
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    $\Rightarrow$: Andaikan $f$ konveks. Berdasarkan karakterisasi orde pertama kekonveksan,
+    \begin{equation}
+        \begin{aligned}
+            &f(x)+\langle\nabla f(x),y-x\rangle\leq f(y),\\
+            &f(y)+\langle\nabla f(y),x-y\rangle\leq f(x).
+        \end{aligned}
+    \end{equation}
+    Menjumlahkan kedua ketaksamaan memberikan hasil yang diinginkan.
+
+    $\Leftarrow$: Andaikan $\nabla f$ monoton. Berdasarkan teorema dasar kalkulus,
+    \begin{equation}
+        \begin{aligned}
+            f(y)-f(x)
+            &=\int_0^1\frac{\dd}{\dd t}f(x+t(y-x))\dd t\\
+            &=\int_0^1\langle\nabla f(x+t(y-x)),y-x\rangle\dd t\\
+            &=\int_0^1\langle\nabla f(x+t(y-x))-\nabla f(x),y-x\rangle\dd t+\langle\nabla f(x),y-x\rangle\\
+            &=\int_0^1\frac{1}{t}\underbrace{\langle\nabla f(x+t(y-x))-\nabla f(x),t(y-x)\rangle}_{\geq0}\dd t+\langle\nabla f(x),y-x\rangle\\
+            &\geq\langle\nabla f(x),y-x\rangle.
+        \end{aligned}
+    \end{equation}
+    Pada $t=0$, integran dipahami melalui perpanjangan kontinu; ketaksamaan monoton digunakan untuk $t\in(0,1]$.
+\end{proof}
+
+% H02-S010 | sumber authority/habring/source-v1/convexity.tex baris 405--453
+% segment-id: d90.hab.v1.ch02.seg0010
+Terakhir, turunan kedua juga dapat digunakan untuk mengarakterisasi kekonveksan. Secara intuitif, kekonveksan berarti \emph{kelengkungan positif}. Untuk memformalkan hal ini, ingat kembali cara mengurutkan matriks. Untuk dua matriks simetris $A,B\in\R^{d\times d}$, kita menuliskan
+    % Koreksi H02-C022 (sumber baris 407--414): A dan B dinyatakan simetris karena urutan Loewner digunakan pada matriks simetris.
+\begin{equation}
+    A\succeq B\Longleftrightarrow\langle x,Ax\rangle\geq\langle x,Bx\rangle,\quad\forall x\in\R^d
+\end{equation}
+dan, serupa dengan itu,
+\begin{equation}
+    % Koreksi H02-C013 (sumber baris 411--413): x=0 dikecualikan dari urutan positif tegas.
+    A\succ B\Longleftrightarrow\langle x,Ax\rangle>\langle x,Bx\rangle,\quad\forall x\in\R^d\setminus\{0\}.
+\end{equation}
+
+\begin{theorem}[Karakterisasi orde kedua kekonveksan]
+    % Koreksi H02-C027 (sumber baris 416--417): C dinyatakan terbuka di R^d; tanpa domain berdimensi penuh, Hessian pada arah normal tidak mengarakterisasi kekonveksan restriksi.
+    Misalkan $C\subset\R^d$ terbuka dan konveks, serta $f:C\rightarrow\R$ terdiferensialkan secara kontinu dua kali.
+    \begin{enumerate}
+        \item Fungsi $f$ konveks jika dan hanya jika $\nabla^2f(x)\succeq0$ untuk setiap $x\in C$.
+        \item Jika $\nabla^2f(x)\succ0$ untuk setiap $x\in C$, maka $f$ konveks tegas.
+        % Koreksi H02-C014 (sumber baris 420): ekuivalensi yang salah diganti dengan implikasi; fungsi x^4 konveks tegas tetapi Hessian-nya nol di x=0.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Kita membuktikan pernyataan pertama dan arah cukup pada pernyataan kedua.
+
+    $\Rightarrow$: Andaikan $f$ konveks. Berdasarkan kemonotonan gradien, untuk $t>0$ berlaku
+    \begin{equation}
+        \frac{\inner{\nabla f(x+tv)-\nabla f(x)}{v}}{t}\geq0.
+    \end{equation}
+    Dengan membiarkan $t\rightarrow0$, diperoleh
+    \begin{equation}
+        \langle v,\nabla^2f(x)v\rangle\geq0.
+    \end{equation}
+    Karena $v$ sembarang, hasilnya mengikuti.
+
+    $\Leftarrow$: Andaikan $\nabla^2f\succeq0$. Berdasarkan teorema dasar kalkulus,
+    \begin{equation}
+        \begin{aligned}
+            \nabla f(y)-\nabla f(x)
+            &=\int_0^1\frac{\dd}{\dd t}\nabla f(x+t(y-x))\dd t\\
+            &=\int_0^1\nabla^2f(x+t(y-x))(y-x)\dd t.
+        \end{aligned}
+    \end{equation}
+    Mengambil hasil kali dalam dengan $y-x$ menghasilkan
+    \begin{equation}
+        \begin{aligned}
+            % Koreksi H02-C015 (sumber baris 444--449): integran vektor yang salah pada ruas kanan diganti dengan bentuk kuadratik skalar.
+            \langle\nabla f(y)-\nabla f(x),y-x\rangle
+            &=\int_0^1\underbrace{\langle y-x,\nabla^2f(x+t(y-x))(y-x)\rangle}_{\geq0}\dd t\\
+            &\geq0.
+        \end{aligned}
+    \end{equation}
+    Kemonotonan gradien kini menyiratkan kekonveksan. Untuk membuktikan bagian
+    tegas, tuliskan $d=y-x\neq0$. Jika Hessian positif definit pada setiap titik,
+    maka
+    \[
+        f(y)-f(x)-\langle\nabla f(x),d\rangle
+        =\int_0^1\int_0^t
+        \langle d,\nabla^2f(x+sd)d\rangle\,\dd s\,\dd t>0.
+    \]
+    Jadi ketaksamaan orde pertama berlaku tegas dan $f$ konveks tegas.
+\end{proof}
+
+% \subsubsection{Operasi yang mempertahankan kekonveksan}
+
+% H02-S011 | sumber authority/habring/source-v1/convexity.tex baris 457--484
+% segment-id: d90.hab.v1.ch02.seg0011
+\begin{lemma}[Operasi yang mempertahankan kekonveksan]
+    Misalkan $f,f_1,\dots,f_n:C\rightarrow\R$ konveks pada suatu himpunan konveks.
+    \begin{enumerate}
+        \item Untuk setiap $\alpha\geq0$, fungsi $\alpha f$ konveks.
+        \item Fungsi $\sum_i f_i$ konveks.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    Latihan.
+\end{proof}
+
+\begin{lemma}[Operasi yang mempertahankan kekonveksan, lanjutan]
+    Misalkan $f:\R^n\supset C\rightarrow\R$ konveks, $A\in\R^{n\times m}$, dan $b\in\R^n$. Maka
+    \begin{equation}
+        g(x)=f(Ax+b)
+    \end{equation}
+    konveks pada $\{x\in\R^m\;|\;Ax+b\in C\}$.
+\end{lemma}
+\begin{proof}
+    Latihan.
+\end{proof}
+
+\begin{lemma}[Operasi yang mempertahankan kekonveksan, lanjutan]
+    Misalkan $f:C\rightarrow\R$ konveks dan $g:I\rightarrow\R$ konveks serta tak menurun, dengan $I\subset\R$ suatu interval yang memenuhi $f(C)\subset I$. Maka $g\circ f$ konveks.
+\end{lemma}
+\begin{proof}
+    Latihan.
+\end{proof}
+
+% H02-S012 | sumber authority/habring/source-v1/convexity.tex baris 486--543
+% segment-id: d90.hab.v1.ch02.seg0012
+\begin{example}
+    \begin{enumerate}
+        \item Fungsi \emph{log-sum-exp} bersifat konveks:
+        \begin{equation}
+            f(x)=\log\bigg(\sum_{i=1}^n e^{x_i}\bigg).
+        \end{equation}
+        \item Fungsi kuadratik-per-linear
+        \begin{equation}
+            f(x)=\frac{x_1^2}{x_2}
+        \end{equation}
+        konveks pada $\R\times(0,\infty)$.
+        \item Fungsi $h(x)=e^{\|x\|^2}$ konveks pada $\R^d$ karena $f(x)=\|x\|^2$ konveks dan $g(t)=e^t$ konveks serta tak menurun.
+        \item Pertimbangkan $h(x)=(\|x\|^2+1)^2$ pada $\R^d$. Fungsi $f(x)=\|x\|^2+1$ dan $g(t)=t^2$ keduanya konveks. Fungsi $g$ tidak tak menurun pada seluruh $\R$, tetapi tak menurun pada $f(\R^d)=[1,\infty)$. Akibatnya, $h$ konveks.
+        \item Pada contoh sebelumnya, jika $f$ diganti dengan $\|\emptyarg\|^2-1$, maka $g$ tidak tak menurun pada $f(\R^d)=[-1,\infty)$; lihat \cref{convexity:fig:compositions}.
+        % Koreksi H02-C033: dimensi domain fungsi diseragamkan dari n menjadi d.
+    \end{enumerate}
+\end{example}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[declare function={
+            f1(\x) =  \x^2 + 1;
+            f2(\x) =  \x^2 - 1;
+            g(\x) = \x^2;
+            h1(\x) = g(f1(\x));
+            h2(\x) = g(f2(\x));
+        }
+        ]
+        \begin{groupplot}[
+            group style={group size= 3 by 1,vertical sep=1.5cm}, height=4.5cm, width=5.3cm,ymin=-1.2,ymax=2.5,domain=-2:2,xmin=-1.6,xmax=1.6,samples=200,grid
+        ]
+            \nextgroupplot[
+                align=center,
+                title={%
+                    \( \textcolor{teal}{f_1 : x \mapsto x^2 + 1} \) \\
+                    \( \textcolor{red}{f_2 : x \mapsto x^2 - 1} \)
+                }
+            ]
+                \addplot[teal, very thick] {f1(x)};
+                \addplot[red, very thick] {f2(x)};
+            \nextgroupplot[title={\( g : x \mapsto x^2\)}]
+                \draw[->, teal, very thick] (axis cs:1, 0) -- (axis cs:1.5, 0) node [midway, above] {\( \textcolor{teal}{f_1(\R)} \)};
+                \draw[->, red, very thick] (axis cs:-1, 0) -- (axis cs:.5, 0) node [midway, below] {\( \textcolor{red}{f_2(\R)} \)};
+                \addplot[blue, very thick] {g(x)};
+            \nextgroupplot[
+                align=center,
+                title={%
+                    \( \textcolor{teal}{g \circ f_1 } \) \\
+                    \( \textcolor{red}{g \circ f_2 } \)
+                }
+            ]
+                \addplot[teal, very thick] {h1(x)};
+                \addplot[red, very thick] {h2(x)};
+        \end{groupplot}
+    \end{tikzpicture}
+    \caption{Kekonveksan komposisi fungsi.}
+    \label{convexity:fig:compositions}
+\end{figure}
+
+\noindent\textbf{Deskripsi gambar.} Panel kiri menampilkan $f_1(x)=x^2+1$ dan $f_2(x)=x^2-1$. Panel tengah menampilkan $g(t)=t^2$ serta rentang kedua fungsi tersebut; $g$ tak menurun pada rentang $f_1$ tetapi tidak pada seluruh rentang $f_2$. Panel kanan memperlihatkan bahwa $g\circ f_1$ konveks, sedangkan $g\circ f_2$ memiliki lekukan tak konveks di sekitar titik asal.
+
+% H02-S013 | sumber authority/habring/source-v1/convexity.tex baris 545--564
+% segment-id: d90.hab.v1.ch02.seg0013
+\begin{lemma}[Operasi yang mempertahankan kekonveksan, lanjutan]
+    Misalkan $f_i:C\rightarrow\R$, $i=1,\dots,n$, konveks pada himpunan konveks $C$. Maka
+    \begin{equation}
+        f(x)=\max_{i=1,\dots,n}f_i(x)
+    \end{equation}
+    konveks.
+\end{lemma}
+\begin{proof}
+    Kita hitung langsung:
+    \begin{equation}
+        \begin{aligned}
+            f(\lambda x+(1-\lambda)y)
+            &=\max_i f_i(\lambda x+(1-\lambda)y)\\
+            &\leq\max_i\{\lambda f_i(x)+(1-\lambda)f_i(y)\}\\
+            &\leq\lambda\max_jf_j(x)+(1-\lambda)\max_jf_j(y)\\
+            &=\lambda f(x)+(1-\lambda)f(y).
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+% H02-S014 | sumber authority/habring/source-v1/convexity.tex baris 566--596
+% segment-id: d90.hab.v1.ch02.seg0014
+\begin{theorem}\label{convexity:thm:minimum}
+    Misalkan $f:C\times D\rightarrow\R$ konveks pada $C\times D$, dengan $C$ dan $D$ keduanya konveks. Definisikan
+    \begin{equation}
+        g(x)=\inf_{y\in D}f(x,y),
+    \end{equation}
+    dan andaikan infimum tersebut hingga untuk setiap $x\in C$. Maka $g$ konveks.
+\end{theorem}
+\begin{proof}
+    Pilih barisan $y_n^x$ dan $y_n^z$ sedemikian sehingga
+    \begin{equation}
+        g(x)=\lim_n f(x,y_n^x),\qquad g(z)=\lim_n f(z,y_n^z).
+    \end{equation}
+    Maka
+    \begin{equation}
+        \begin{aligned}
+            g(\lambda x+(1-\lambda)z)
+            &\leq f(\lambda x+(1-\lambda)z,\lambda y_n^x+(1-\lambda)y_n^z)\\
+            &\leq\lambda f(x,y_n^x)+(1-\lambda)f(z,y_n^z).
+        \end{aligned}
+    \end{equation}
+    Mengambil limit ketika $n\rightarrow\infty$ menyelesaikan bukti.
+\end{proof}
+
+\begin{example}
+    % Koreksi H02-C016 (sumber baris 589--595): C harus tak kosong dan konveks; jarak ke himpunan tak konveks tidak selalu konveks.
+    Jarak suatu titik ke himpunan tak kosong dan konveks merupakan fungsi konveks. Jadi, untuk setiap himpunan tak kosong dan konveks $C\subset\R^d$, pemetaan berikut konveks:
+    \begin{equation}
+        \begin{aligned}
+            x\mapsto d(x,C)\coloneqq\inf_{y\in C}\|x-y\|.
+        \end{aligned}
+    \end{equation}
+\end{example}
+
+% H02-S015 | sumber authority/habring/source-v1/convexity.tex baris 598--624
+% segment-id: d90.hab.v1.ch02.seg0015
+\begin{theorem}
+    % Koreksi H02-C017 (sumber baris 598--606): klausa g konveks dan domain garis yang berada di C ditambahkan; rumus sumber berakhir tanpa predikat dan memakai seluruh R walau x+tv dapat keluar dari C.
+    Misalkan $C\subset\R^d$ konveks dan $f:C\rightarrow\R$. Maka $f$ konveks jika dan hanya jika, untuk setiap $x\in C$ dan $v\in\R^d$, fungsi
+    \begin{equation}
+        \begin{aligned}
+            g:I_{x,v}&\rightarrow\R,\\
+            t&\mapsto g(t)=f(x+tv),
+        \end{aligned}
+    \end{equation}
+    konveks pada interval $I_{x,v}\coloneqq\{t\in\R\mid x+tv\in C\}$.
+\end{theorem}
+\begin{proof}
+    $\Leftarrow$: Andaikan $g$ konveks untuk setiap $x$ dan $v$. Misalkan $x,y\in C$ dan $\lambda\in(0,1)$. Pertimbangkan
+    \begin{equation}
+        g(t)=f(y+t(x-y)).
+    \end{equation}
+    Karena $g$ konveks pada interval yang memuat $0$ dan $1$,
+    \begin{equation}
+        \begin{aligned}
+            f(\lambda x+(1-\lambda)y)
+            =g(\lambda)
+            &=g(\lambda\cdot1+(1-\lambda)\cdot0)\\
+            &\leq\lambda g(1)+(1-\lambda)g(0)\\
+            &=\lambda f(x)+(1-\lambda)f(y).
+        \end{aligned}
+    \end{equation}
+    Arah sebaliknya ditinggalkan sebagai latihan.
+\end{proof}
+
+% H02-S016 | sumber authority/habring/source-v1/convexity.tex baris 626--681
+% segment-id: d90.hab.v1.ch02.seg0016
+\begin{example}[Fungsi konveks yang umum]
+    % Koreksi H02-C023 (sumber baris 626): garis miring terbalik yatim setelah pembuka lingkungan example dihapus.
+    \begin{itemize}
+        \item Contoh pada $\R$:
+        \begin{itemize}
+            \item Fungsi konveks:
+            \begin{itemize}
+                \item Fungsi eksponensial $f(x)=\exp(ax)$ pada $\R$, dengan $a\in\R$.
+                \item Fungsi pangkat $f(x)=x^p$ pada $(0,\infty)$ untuk $p\geq1$ atau $p\leq0$.
+                \item Pangkat nilai mutlak $f(x)=|x|^p$ pada $\R$ untuk $p\geq1$.
+                \item Entropi negatif $f(x)=x\log(x)$ pada $(0,\infty)$.
+            \end{itemize}
+            \item Fungsi konkaf:
+            \begin{itemize}
+                \item Fungsi pangkat $f(x)=x^p$ pada $(0,\infty)$ untuk $0\leq p\leq1$.
+                \item Logaritma $f(x)=\log(x)$ pada $(0,\infty)$.
+            \end{itemize}
+        \end{itemize}
+        \item Contoh pada ruang Euklides berdimensi hingga:
+        \begin{itemize}
+            \item Fungsi konveks:
+            \begin{itemize}
+                \item Norma-$p$, $f(x)=\|x\|_p$.
+                \item Pangkat norma-$p$, $f(x)=\|x\|_p^p$, untuk
+                $1\leq p<\infty$.
+                % Koreksi H02-C034: p=infinity dikecualikan karena pangkat tak hingga tidak terdefinisi.
+                \item Kuadrat terkecil, $f(x)=\frac12\|Ax-b\|_2^2$, dengan $A\in\R^{m\times n}$ dan $b\in\R^m$.
+                \item Maksimum fungsi-fungsi afin:
+                    \[
+                        f(x)=\max\{\inner{a_1}{x}+b_1,\ldots,\inner{a_m}{x}+b_m\},
+                    \]
+                dengan $a_i\in\R^n$ dan $b_i\in\R$.
+                \item Perspektif suatu fungsi, $f(x,y)=yg(x/y)$, dengan
+                $g:\R^n\rightarrow\R$ fungsi konveks, $x\in\R^n$, dan
+                $y\in(0,\infty)$. Jadi domain perspektif ini adalah
+                $\R^n\times(0,\infty)$.
+                % Koreksi H02-C038: domain perspektif dibedakan dari domain R^n pada judul daftar sumber.
+            \end{itemize}
+            \item Fungsi konkaf:
+            \begin{itemize}
+                \item Minimum fungsi-fungsi afin:
+                    \[
+                        f(x)=\min\{\inner{a_1}{x}+b_1,\ldots,\inner{a_m}{x}+b_m\}.
+                    \]
+            \end{itemize}
+        \end{itemize}
+        \item Contoh pada $\R^{m\times n}$:
+        \begin{itemize}
+            \item Fungsi konveks:
+            \begin{itemize}
+                \item Fungsi afin
+                    \[
+                        f(X)=\tr(A^\top X)+b=\sum_{i=1}^m\sum_{j=1}^n A_{ij}X_{ij}+b
+                    \]
+                    pada $\R^{m\times n}$, dengan $A\in\R^{m\times n}$ dan $b\in\R$.
+                    % Koreksi H02-C018 (sumber baris 669--673): dimensi A diperbaiki dari n x m menjadi m x n agar A^T X dan penjumlahan A_ij X_ij terdefinisi.
+                \item Norma spektral $f(X)=\|X\|_2=\sigma_{\text{max}}(X)=\sqrt{\lambda_{\text{max}}(X^\top X)}$.
+                \item Fungsi penghalang untuk matriks definit positif, $f(X)=-\log\det X$ pada $\mathbb{S}_{++}^n$.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{example}
+
+% H02-S017 | sumber authority/habring/source-v1/convexity.tex baris 683--699
+% segment-id: d90.hab.v1.ch02.seg0017
+Serupa dengan hasil-hasil di atas, kita dapat menunjukkan karakterisasi kekonveksan kuat berikut.
+
+\begin{theorem}
+    % Koreksi H02-C024 (sumber baris 683--697): domain Euklides dan syarat mu>0 dibuat eksplisit; setiap syarat diferensial diberi domain yang tepat.
+    Misalkan $f:C\rightarrow\R$, dengan $C\subset\R^d$ konveks, serta
+    $\mu>0$. Karakterisasi berikut berlaku:
+    \begin{itemize}
+        \item Fungsi $f$ konveks kuat berparameter $\mu$ jika dan hanya jika
+        $f-\frac{\mu}{2}\|\emptyarg\|^2$ konveks.
+        % Koreksi H02-C019 (sumber baris 686): faktor mu yang hilang dipulihkan.
+        \item \emph{Syarat orde pertama}: jika $f$ mempunyai perluasan yang
+        terdiferensialkan secara kontinu pada suatu lingkungan terbuka dari
+        $C$, maka $f$ konveks kuat berparameter $\mu$ jika dan hanya jika, untuk
+        setiap $x,y\in C$,
+        \[
+            f(x)+\inner{\nabla f(x)}{y-x}\leq f(y)-\frac{\mu}{2}\|x-y\|^2.
+        \]
+        \item \emph{Syarat orde kedua}: jika $C$ terbuka dan $f$
+        terdiferensialkan secara kontinu dua kali pada $C$, maka $f$ konveks
+        kuat berparameter $\mu$ jika dan hanya jika, untuk setiap $x\in C$,
+        \[
+            \nabla^2 f(x)\succeq\mu I.
+        \]
+        % Koreksi H02-C020 (sumber baris 691--694): skalar mu diganti mu I agar perbandingan matriks terdefinisi.
+        % Koreksi H02-C035: setiap butir dinyatakan sebagai ekuivalensi dengan hipotesis regularitasnya sendiri.
+    \end{itemize}
+\end{theorem}
+\begin{proof}
+    Buktinya merupakan penyesuaian langsung dari bukti untuk kekonveksan biasa dan ditinggalkan sebagai latihan.
+\end{proof}

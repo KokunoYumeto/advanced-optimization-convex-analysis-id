@@ -1,0 +1,64 @@
+{
+  "schema": "o015-habring-pdf-navigation-qa-v1",
+  "artifacts": [
+    {
+      "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+      "bytes": 720624,
+      "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+      "pages": 36,
+      "catalog_lang": "id-ID",
+      "encrypted": false,
+      "page_sizes_points": [
+        [
+          595.276,
+          841.89
+        ]
+      ],
+      "searchable_pages": 36,
+      "named_destination_count": 287,
+      "annotation_subtypes": {
+        "/Link": 29
+      },
+      "annotation_actions": {
+        "/GoTo": 26,
+        "/URI": 3
+      },
+      "outline_entry_count": 7,
+      "unresolved_destinations": [],
+      "invalid_annotation_rectangles": [],
+      "outline_failures": [],
+      "failures": [],
+      "result": "pass"
+    },
+    {
+      "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "bytes": 3779312,
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41",
+      "pages": 139,
+      "catalog_lang": "id-ID",
+      "encrypted": false,
+      "page_sizes_points": [
+        [
+          595.276,
+          841.89
+        ]
+      ],
+      "searchable_pages": 139,
+      "named_destination_count": 482,
+      "annotation_subtypes": {
+        "/Link": 156
+      },
+      "annotation_actions": {
+        "/GoTo": 131,
+        "/URI": 25
+      },
+      "outline_entry_count": 9,
+      "unresolved_destinations": [],
+      "invalid_annotation_rectangles": [],
+      "outline_failures": [],
+      "failures": [],
+      "result": "pass"
+    }
+  ],
+  "result": "pass"
+}

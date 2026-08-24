@@ -1,0 +1,111 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+\emergencystretch=2em
+
+\title{Optimisasi Konveks}
+\subtitle{Prakata dan Bab 1--2: Prasyarat dan Kekonveksan\\Edisi Bahasa Indonesia}
+\author{Andreas Habring}
+\date{Sumber edisi v1: 13 Juli 2026}
+\publishers{\small
+Terjemahan lengkap bahasa Indonesia dari prakata dan Bab 1--2 \emph{Lecture Notes: Convex Optimization}, arXiv:2607.11664v1.\\
+Karya sumber dan terjemahan/adaptasi ini tersedia berdasarkan CC BY 4.0; perubahan matematis dijelaskan secara terbuka.\\
+Edisi mandiri ini bukan karya resmi atau dukungan Andreas Habring maupun TU Graz.}
+\hypersetup{
+    pdftitle={Optimisasi Konveks -- Prakata dan Bab 1--2: Prasyarat dan Kekonveksan -- Edisi Bahasa Indonesia},
+    pdfauthor={Andreas Habring},
+    pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang unit ini}
+Unit ini menerjemahkan secara utuh prakata, Bab 1 ``Preliminaries'', dan Bab 2
+``Convexity'' dari Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+arXiv:2607.11664v1. Batas ini mencakup halaman cetak 1--29 dan melengkapi
+Bab 3--9 yang sudah diterjemahkan sebelumnya.
+
+Tiga berkas sumber berwenang untuk unit ini dibekukan sebagai berikut:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\texttt{preface.tex} & \texttt{d6ec9d0522446fc65f3868d0b7cd1d22}\\
+                     & \texttt{1462c3099fbd0b2d6ea412ab53315967}\\[0.25em]
+\texttt{preliminaries.tex} & \texttt{8c1e4bdad36f2dcb57867c475afa5adc}\\
+                           & \texttt{e12a3951fc650e8667f2e4d82d3b569d}\\[0.25em]
+\texttt{convexity.tex} & \texttt{e5cf93ad93cb2064bdff6c1ea200f20b}\\
+                       & \texttt{4eb94351127185a01d678c3fb5a662b8}
+\end{tabular}
+\end{center}
+
+Semua definisi, contoh, lema, teorema, proposisi, bukti, latihan, catatan kaki,
+rujukan silang, gambar yang berlisensi, dan urutan sumber dipertahankan.
+Kekeliruan sumber yang dapat ditentukan diperbaiki dengan penandaan perubahan
+dan direkam dalam ledger edisi. Deskripsi teks ditambahkan untuk setiap gambar.
+Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi pengguna
+repositori; seluruh kredit penulis dan sumber tetap dipertahankan.
+
+\tableofcontents
+\mainmatter
+\include{habring-01-prasyarat-id}
+\include{habring-02-konveksitas-id}
+
+\backmatter
+\chapter*{Catatan koreksi terhadap sumber}
+Terjemahan ini mempertahankan isi sumber kecuali pada koreksi yang dapat
+ditentukan berikut. Koreksi dilakukan oleh penyusun edisi bahasa Indonesia dan
+bukan perubahan yang disahkan oleh penulis sumber. Rekaman terstruktur lengkap
+dengan pelacak sumber, alasan, dan disposisi menyertai edisi ini dalam
+\texttt{00\_control/ADVERSE\_LEDGER.jsonl}.
+
+\begin{enumerate}
+    \item Tipe operasi ruang vektor, hukum distributif, kodomain norma, norma
+    operator terinduksi, serta definisi ruang $L^p$ dan supremum esensial
+    dibetulkan agar terdefinisi secara matematis.
+    \item Kuantifier hasil kali dalam, bukti Cauchy--Schwarz, kasus ujung
+    H\"older, ketaksamaan Young, dan kasus nol dalam bukti Minkowski dilengkapi.
+    \item Bukti Bolzano--Weierstrass, definisi dual kontinu, representasi Riesz,
+    eksistensi adjoin, dan hukum komposisi adjoin diperbaiki pada titik salah
+    tipe atau hipotesis yang hilang.
+    \item Semikontinuitas bawah, koersivitas, dan metode langsung diberi
+    penanganan nilai tak hingga dan lingkup berdimensi hingga yang tepat.
+    \item Simpleks, selubung konveks, bola norma, jumlah berbobot, produk
+    Kartesius, pracitra, dan teorema pemisahan dibetulkan pada indeks, tanda,
+    tipe, atau hipotesis yang dapat ditentukan.
+    \item Kekonveksan tegas dan kuat dibatasi pada domain efektif bila fungsi
+    bernilai diperluas; koefisien afin, konvensi Jensen, dan syarat titik
+    pembanding minimum dibuat eksplisit.
+    \item Karakterisasi orde pertama, kemonotonan gradien, dan syarat
+    stasioneritas diberi domain Euklides serta hipotesis keterdiferensialan dan
+    kekonveksan yang diperlukan.
+    \item Urutan L\"owner, karakterisasi Hessian, operasi komposisi, dimensi
+    matriks, jarak ke himpunan, dan restriksi pada garis diperbaiki agar semua
+    pernyataan sah dan bertipe konsisten.
+    \item Karakterisasi kekonveksan kuat memulihkan faktor $\mu$, matriks
+    $\mu I$, rentang pangkat norma, dan struktur ekuivalensi sesuai regularitas.
+\end{enumerate}
+
+\chapter*{Atribusi, lisensi, dan nondukungan}
+Karya sumber: Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+arXiv:2607.11664v1, 13 Juli 2026,
+\url{https://arxiv.org/abs/2607.11664v1}. Karya sumber tersedia berdasarkan
+Creative Commons Attribution 4.0 International (CC BY 4.0),
+\url{https://creativecommons.org/licenses/by/4.0/}.
+
+Edisi bahasa Indonesia ini merupakan karya turunan. Hak cipta materi sumber
+tetap pada pemegang haknya. Anda boleh membagikan dan mengadaptasinya dengan
+atribusi yang sesuai, tautan lisensi, dan penandaan perubahan sebagaimana
+disyaratkan CC BY 4.0. Koreksi dan deskripsi akses baru dalam edisi ini juga
+ditawarkan berdasarkan CC BY 4.0 sejauh hak terpisah dapat berlaku; bagian
+sumber tetap CC BY 4.0.
+
+Andreas Habring dan TU Graz tidak menyusun, memeriksa, menyetujui, atau
+mendukung terjemahan ini. Penyebutan nama mereka semata-mata untuk atribusi
+karya sumber.
+
+\end{document}

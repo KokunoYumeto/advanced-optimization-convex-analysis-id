@@ -504,3 +504,27 @@ and close one consolidated reader/backend/preservation gate. MIT complete-notes
 page 98 remains a frozen dormant companion locator and must not trigger
 automatic MIT expansion. Becker remains unadmitted until its exact subset,
 rights, `../preamble.tex` repair, and deterministic build pass.
+
+## 2026-08-25 controlling cursor — preserve the complete Habring v1 spine
+
+The preceding open-Habring-batch cursor is superseded. Preface and Chapters
+1–2 are admitted, so Chapters 1–9 now form a complete translated Habring v1
+spine with passing PDF, HTML, EPUB, structural, computation, accessibility,
+visual, rights, and 3,096-record backend gates. The exact reader identities and
+validation receipts are recorded in `CURRENT_STATE.md`, `SOURCE_AUTHORITY.json`,
+and `BUILD_AND_QA.md`.
+
+Immediate executable action: preserve this one coherent checkpoint in the
+existing GitHub repository, existing Zenodo concept
+`10.5281/zenodo.22059741`, and existing Habring Figshare item `33314733`, then
+perform anonymous exact-byte readback and record sanitized receipts. Do not
+create a duplicate concept, change immutable prior releases, or combine MIT,
+Penn, or Royer bytes into the Habring-only Figshare item.
+
+After preservation closes, freeze and audit the exact nonduplicative Becker
+subset at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, repair
+`../preamble.tex` with explicit change marking, and prove a deterministic
+build before any module is admitted. Then author only the remaining original
+KKT/Slater/duality, modern stochastic, variational/monotone, connective proof,
+exercise, complete-solution, lab, and capstone layer. MIT page 98 remains a
+dormant companion locator and is not the active translation cursor.

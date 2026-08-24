@@ -293,3 +293,23 @@ work is preserved, but it cannot by itself close the structured-source,
 modern stochastic, variational/monotone, exercise, and complete-solution
 requirements. The finite original layer closes those gaps while the O018
 finite/discrete-optimization boundary above remains unchanged.
+
+## Complete Habring v1 spine admitted (2026-08-25)
+
+The preface and Chapters 1–2 now add the missing Habring foundations: normed
+and inner-product spaces, sequences, finite-dimensional compactness, continuity,
+linear maps and duals, extended-real functions, lower semicontinuity,
+coercivity/direct-method existence, convex sets and separation, convex and
+strongly convex functions, first- and second-order characterizations, and
+convexity-preserving operations. Together with admitted Chapters 3–9, the
+complete 84-page Habring source is represented by a 139-page Indonesian reader,
+reflowable HTML, and EPUB.
+
+This closes the canonical structured-spine translation, not the D90 coursebook.
+It does not supply a unified KKT/Slater/Lagrangian-duality progression, broad
+stochastic proximal/mirror/minibatch/variance-reduction coverage, variational
+inequalities and maximal-monotone/resolvent/splitting theory, or a substantive
+exercise/hint/answer/complete-solution/lab/capstone layer. Those remain the
+bounded Becker and original-synthesis work. The new foundations do not overlap
+O018's finite LP/MIP modelling, simplex/tableau mechanics, LP sensitivity,
+network optimization, or general discrete-optimization workflow.

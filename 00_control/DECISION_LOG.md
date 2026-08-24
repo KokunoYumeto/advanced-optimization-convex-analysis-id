@@ -548,3 +548,28 @@ This completes only the L11 preservation transaction. Active production now
 pivots to the canonical Habring v1 structured-source spine. MIT page 98 remains
 a dormant companion cursor; Becker remains unadmitted pending its bounded
 freeze, rights, `../preamble.tex` repair, and deterministic build.
+
+## D90-0049 — Admit the complete Habring v1 structured-source spine
+
+Decision: admit the contiguous preface/Chapter-1/Chapter-2 boundary and thereby
+close the complete Habring v1 translation across Chapters 1–9. The admission
+binds the exact arXiv v1 TeX and five inherited raster bytes, complete localized
+sources, 65 determined corrections `O015-HAB-ADV-0097`–`0161`, exact topology
+and formula accounting, 32 open-computation gates and nine adverse controls,
+byte-identical builds, desktop/mobile reflow, all-page PDF inspection, PDF
+navigation, EPUB 3/MathML closure, rights, attribution, non-endorsement, and
+independent audit. The arithmetic correction is explicit: the inclusive event
+range contains 65 records, not 61.
+
+The additive backend preserves every one of the 2,472 MIT-companion baseline
+records and adds 624, yielding 3,096. JSONL, CSV, and backend-receipt SHA-256
+values are `21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667`,
+`f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f`,
+and `929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed`.
+The prepublication rights audit also reconciled the independently authored
+correction/access-description notice to CC BY 4.0, so the Habring-only
+derivative and its repository/DOI metadata have one accurate license label.
+Preserve this boundary once in the existing GitHub, Zenodo, and Habring-only
+Figshare lineages and anonymously read it back. This is not a final-course
+claim: Becker remains unadmitted and the finite original KKT, stochastic,
+variational/monotone, exercise, solution, lab, and capstone layer remains open.

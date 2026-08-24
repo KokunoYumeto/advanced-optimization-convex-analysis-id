@@ -1,0 +1,67 @@
+{
+  "artifact": {
+    "bytes": 720624,
+    "catalog_lang": "id-ID",
+    "encrypted": false,
+    "page_sizes_points": [
+      [
+        595.276,
+        841.89
+      ]
+    ],
+    "pages": 36,
+    "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+    "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+  },
+  "console_sha256": {
+    "first": "05f42b67680b1696d36182846b869f5722eb35f271cd3669972a64033b13b356",
+    "second": "05f42b67680b1696d36182846b869f5722eb35f271cd3669972a64033b13b356"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true,
+    "first_sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+    "second_sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+  },
+  "final_log": {
+    "bytes": 107350,
+    "forbidden_findings": [],
+    "path": "build/habring-unit-01-02-id/D90-HAB-01-02-prasyarat-dan-konveksitas-id.log",
+    "sha256": "c4e8ad3ce78e736d7edd2f7b6715c779f159c7203840cfa7a4c7a67bd1781e24"
+  },
+  "inputs": [
+    {
+      "bytes": 31009,
+      "path": "source/id-ID/habring-01-prasyarat-id.tex",
+      "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+    },
+    {
+      "bytes": 42828,
+      "path": "source/id-ID/habring-02-konveksitas-id.tex",
+      "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+    },
+    {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  ],
+  "result": "pass",
+  "schema": "o015-habring-ch01-ch02-build-v1",
+  "source_date_epoch": "1783900800",
+  "text_extract": {
+    "bytes": 59808,
+    "path": "qa/D90-HAB-01-02-prasyarat-dan-konveksitas-id.txt",
+    "sha256": "8e2f3d0e9555a138faeffada4e6fd07baf66d96055c018cf7b3554fbfe5491b0"
+  },
+  "wrapper": {
+    "bytes": 5357,
+    "path": "source/id-ID/D90-HAB-01-02-prasyarat-dan-konveksitas-id.tex",
+    "sha256": "301d45dc305ee86f439ed1056a62b47199f3439d88ba66436f127a5cee0e35b2"
+  }
+}

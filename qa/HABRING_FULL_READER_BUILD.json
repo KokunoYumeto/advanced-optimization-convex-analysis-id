@@ -1,0 +1,75 @@
+{
+  "artifact": {
+    "bytes": 3779312,
+    "catalog_lang": "id-ID",
+    "components": [
+      {
+        "bytes": 720624,
+        "pages": 36,
+        "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+        "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+        "title": "Prakata, Bab 1 - Prasyarat, dan Bab 2 - Kekonveksan"
+      },
+      {
+        "bytes": 516084,
+        "pages": 15,
+        "path": "output/pdf/D90-HAB-03-subgradien-id.pdf",
+        "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4",
+        "title": "Bab 3 - Subgradien"
+      },
+      {
+        "bytes": 370824,
+        "pages": 13,
+        "path": "output/pdf/D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+        "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7",
+        "title": "Bab 4 - Metode Subgradien Terproyeksi"
+      },
+      {
+        "bytes": 473685,
+        "pages": 15,
+        "path": "output/pdf/D90-HAB-05-metode-gradien-proksimal-id.pdf",
+        "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d",
+        "title": "Bab 5 - Metode Gradien Proksimal"
+      },
+      {
+        "bytes": 392662,
+        "pages": 15,
+        "path": "output/pdf/D90-HAB-06-akselerasi-id.pdf",
+        "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0",
+        "title": "Bab 6 - Akselerasi"
+      },
+      {
+        "bytes": 445733,
+        "pages": 21,
+        "path": "output/pdf/D90-HAB-07-dualitas-id.pdf",
+        "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e",
+        "title": "Bab 7 - Dualitas"
+      },
+      {
+        "bytes": 346785,
+        "pages": 8,
+        "path": "output/pdf/D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+        "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a",
+        "title": "Bab 8 - Penurunan Gradien Stokastik"
+      },
+      {
+        "bytes": 498244,
+        "pages": 15,
+        "path": "output/pdf/D90-HAB-09-transportasi-optimal-id.pdf",
+        "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214",
+        "title": "Bab 9 - Selingan tentang Transportasi Optimal"
+      }
+    ],
+    "encrypted": false,
+    "outline_entries": 9,
+    "pages": 139,
+    "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true
+  },
+  "result": "pass",
+  "schema": "o015-habring-full-reader-build-v1"
+}

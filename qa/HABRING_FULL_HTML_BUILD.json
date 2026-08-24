@@ -1,0 +1,66 @@
+{
+  "artifact": {
+    "bytes": 1669938,
+    "chapter_h1_count": 11,
+    "embedded_image_count": 5,
+    "failures": [],
+    "math_display_count": 414,
+    "math_inline_count": 1792,
+    "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+    "section_h2_count": 13,
+    "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true
+  },
+  "inputs": [
+    {
+      "bytes": 31009,
+      "path": "source/id-ID/habring-01-prasyarat-id.tex",
+      "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+    },
+    {
+      "bytes": 42828,
+      "path": "source/id-ID/habring-02-konveksitas-id.tex",
+      "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+    },
+    {
+      "bytes": 19266,
+      "path": "source/id-ID/habring-03-subgradien-id.tex",
+      "sha256": "d04ff82898c157f56924c6c08fd204bcd97625f060847fd8a0b6f7a2b90b0a5c"
+    },
+    {
+      "bytes": 16612,
+      "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+      "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+    },
+    {
+      "bytes": 20575,
+      "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+      "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+    },
+    {
+      "bytes": 24690,
+      "path": "source/id-ID/habring-06-akselerasi-id.tex",
+      "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+    },
+    {
+      "bytes": 35428,
+      "path": "source/id-ID/habring-07-dualitas-id.tex",
+      "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+    },
+    {
+      "bytes": 6378,
+      "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+      "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+    },
+    {
+      "bytes": 21252,
+      "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+      "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+    }
+  ],
+  "result": "pass",
+  "schema": "o015-habring-full-html-build-v1"
+}

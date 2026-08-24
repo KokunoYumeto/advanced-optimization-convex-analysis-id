@@ -1275,3 +1275,72 @@ checksum file, delta ZIP, and sanitized receipt are respectively 7,254 /
 and `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`.
 No upstream contact occurred. The next build lane is Habring v1; MIT page 98
 is dormant.
+
+# Habring v1 preface and Chapters 1–2 consolidated admission; full-spine readers
+
+As of: 2026-08-25
+Admission: PASS; Habring v1 Chapters 1–9 complete, larger O015 coursebook partial
+
+The exact authority inputs `preface.tex`, `preliminaries.tex`, and
+`convexity.tex` are 492 / 26,946 / 29,947 bytes with SHA-256
+`d6ec9d0522446fc65f3868d0b7cd1d221462c3099fbd0b2d6ea412ab53315967`,
+`8c1e4bdad36f2dcb57867c475afa5adce12a3951fc650e8667f2e4d82d3b569d`,
+and `e5cf93ad93cb2064bdff6c1ea200f20b4eb94351127185a01d678c3fb5a662b8`.
+The localized Chapter 1 and Chapter 2 sources are 31,009 / 42,828 bytes with
+SHA-256 `6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7`
+and `99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22`.
+
+The independent structural audit passes twice with byte-identical receipt:
+`qa/HABRING_CH01_CH02_STRUCTURE_REPORT.json`, 46,054 bytes /
+`cc7d31e36b7f04e9fcb14692b53ce460be58958e3c0bb66b44af85e6282451bc`.
+It verifies 244 / 280 ordered environment tokens, 32 / 52 items, exact label
+and reference closure, one plus seven figures, all five inherited raster bytes,
+25 stable segments, all 65 correction bindings, all 38 Chapter-2 correction
+markers, and zero unaccounted display-formula deltas. The event interval
+`0097`–`0161` contains 65 events; the earlier count of 61 is rejected.
+
+The 36-page A4 unit PDF is 720,624 bytes /
+`5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf`;
+two builds are byte-identical and the final TeX log has no error, undefined
+reference, or overfull box. The open-math receipt is 6,909 bytes /
+`3debf7f8875c1dc5ce89f8c163f0cd349edb62849e861719aa80bd6931009587`;
+all 32 gates and nine adverse controls pass.
+
+The complete nine-chapter reader PDF is 3,779,312 bytes / 139 A4 pages /
+`da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41`.
+All 139 pages and all 36 unit pages passed rendered visual inspection. The PDF
+navigation gate resolves all 287 / 482 named destinations, 29 / 156 links,
+and seven / nine outlines with no invalid annotation rectangle; receipt:
+1,687 bytes / `eded727695f3d632920e408b4c7e5e13184ae11ca34631e9b7921c09a6ce97cc`.
+The visual receipt is 2,571 bytes /
+`7aed39e74194591d51fcb168cdfff26a9bfb330a35fc56a7d7302fbd2de7ddbe`.
+After the rights-label correction, unit page 36 and its identical full-reader
+page 37 were rerendered at 160 dpi and visually reinspected without defects.
+
+The complete HTML is 1,669,938 bytes /
+`717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4`.
+After the first 390×844 test exposed 214 CSS pixels of page overflow, the
+builder confined long inline formulas to their own scroll surfaces. The final
+1280×720 and 390×844 runs have zero page overflow, duplicate IDs, broken
+fragments, broken/missing-alt/external images, unscrollable math, or browser
+diagnostics; all 414 display formulas render. Browser receipt: 2,415 bytes /
+`cbd89cf154c9b044d3792b6888dcc7635e082b912572b1ecc85ae3a13a308701`.
+
+The EPUB 3 is 231,700 bytes /
+`c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41`.
+Two normalized builds are byte-identical; 71 source labels, 2,206 MathML
+surfaces, internal navigation, five raster alternatives, six TikZ semantic
+fallbacks, XML/resource closure, language, license, and model provenance pass.
+Receipt: 4,247 bytes /
+`824f0bf53305f68d2ac46ecee04a03151fe224297efbf11ed0c5bef928b484cf`.
+
+The additive backend preserves all 2,472 L11 records and adds 624 records in
+25 stable segments. The canonical 3,096-record JSONL / CSV are 2,408,339 /
+2,875,457 bytes with SHA-256
+`21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667`
+and `f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f`.
+Two staged generations and two root validation cycles reproduce them exactly;
+receipt: 10,298 bytes /
+`929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed`.
+All component rights remain CC BY 4.0 with attribution, change disclosure,
+license link, and non-endorsement. Preservation gate: PENDING.

@@ -42,6 +42,98 @@
     ],
     "build_contract": "Normalize only admitted Habring CC BY 4.0 and Becker MIT source into a new master with retained notices and change marking; pin TeX Live 2025, latexmk, and Biber; preserve per-component provenance."
   },
+  "current_habring_spine_admission": {
+    "recorded_on": "2026-08-25",
+    "status": "complete_habring_v1_spine_translation_admitted_coursebook_still_partial",
+    "scope": "Preface and Chapters 1-2 close the previously admitted Chapters 3-9, yielding a complete Indonesian translation and reader suite for the Habring v1 structured-source spine. Becker and the finite original course closure remain unadmitted and unfinished.",
+    "authority_inputs": [
+      {
+        "path": "authority/habring/source-v1/preface.tex",
+        "bytes": 492,
+        "sha256": "d6ec9d0522446fc65f3868d0b7cd1d221462c3099fbd0b2d6ea412ab53315967"
+      },
+      {
+        "path": "authority/habring/source-v1/preliminaries.tex",
+        "bytes": 26946,
+        "sha256": "8c1e4bdad36f2dcb57867c475afa5adce12a3951fc650e8667f2e4d82d3b569d"
+      },
+      {
+        "path": "authority/habring/source-v1/convexity.tex",
+        "bytes": 29947,
+        "sha256": "e5cf93ad93cb2064bdff6c1ea200f20b4eb94351127185a01d678c3fb5a662b8"
+      }
+    ],
+    "localized_sources": [
+      {
+        "path": "source/id-ID/habring-01-prasyarat-id.tex",
+        "bytes": 31009,
+        "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+      },
+      {
+        "path": "source/id-ID/habring-02-konveksitas-id.tex",
+        "bytes": 42828,
+        "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+      },
+      {
+        "path": "source/id-ID/D90-HAB-01-02-prasyarat-dan-konveksitas-id.tex",
+      "bytes": 5357,
+      "sha256": "301d45dc305ee86f439ed1056a62b47199f3439d88ba66436f127a5cee0e35b2"
+      }
+    ],
+    "reader_artifacts": [
+      {
+        "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+      "bytes": 720624,
+        "pages": 36,
+      "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf"
+      },
+      {
+        "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "bytes": 3779312,
+        "pages": 139,
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+      },
+      {
+        "path": "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+        "bytes": 1669938,
+        "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+      },
+      {
+        "path": "output/epub/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+        "bytes": 231700,
+        "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+      }
+    ],
+    "corrections": {
+      "event_range": "O015-HAB-ADV-0097 through O015-HAB-ADV-0161",
+      "event_count": 65,
+      "ledger_path": "00_control/ADVERSE_LEDGER.jsonl",
+      "ledger_bytes": 171225,
+      "ledger_sha256": "40b2e36e843d743f2b40ac9669d290e52204a80d1da1cc648eaee23e8198657a"
+    },
+    "validation": {
+      "structure_report": "qa/HABRING_CH01_CH02_STRUCTURE_REPORT.json",
+    "structure_report_sha256": "cc7d31e36b7f04e9fcb14692b53ce460be58958e3c0bb66b44af85e6282451bc",
+      "open_math_report": "qa/HABRING_CH01_CH02_SOLVER_RESULTS.json",
+      "open_math_report_sha256": "3debf7f8875c1dc5ce89f8c163f0cd349edb62849e861719aa80bd6931009587",
+      "browser_report": "qa/HABRING_FULL_HTML_BROWSER_QA.json",
+      "browser_report_sha256": "cbd89cf154c9b044d3792b6888dcc7635e082b912572b1ecc85ae3a13a308701",
+      "pdf_visual_report": "qa/HABRING_PDF_VISUAL_QA.json",
+    "pdf_visual_report_sha256": "7aed39e74194591d51fcb168cdfff26a9bfb330a35fc56a7d7302fbd2de7ddbe",
+      "backend_report": "qa/HABRING_CH01_CH02_BACKEND_VALIDATION.json",
+    "backend_report_sha256": "929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed"
+    },
+    "backend": {
+      "records": 3096,
+      "added_records": 624,
+      "jsonl_bytes": 2408339,
+    "jsonl_sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667",
+      "csv_bytes": 2875457,
+    "csv_sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+    },
+    "license": "CC BY 4.0",
+    "nonendorsement": true
+  },
   "authorities": [
     {
       "authority_id": "o015-penn-math555-v1.0-source",

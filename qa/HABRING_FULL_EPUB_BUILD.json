@@ -1,0 +1,138 @@
+{
+  "artifact": {
+    "bytes": 231700,
+    "chapter_h1_count": 13,
+    "environment_class_counts": {
+      "cor": 4,
+      "defn": 33,
+      "example": 15,
+      "exercise": 3,
+      "lemma": 34,
+      "proof": 71,
+      "prop": 2,
+      "rem": 8,
+      "theorem": 39
+    },
+    "external_image_dependencies": [],
+    "failures": [],
+    "internal_reference_count": 114,
+    "manifest_item_count": 20,
+    "manifest_resource_closure": true,
+    "mathml_count": 2206,
+    "navigation_link_count": 25,
+    "nonempty_image_alt_count": 5,
+    "path": "output/epub/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+    "preserved_source_label_count": 71,
+    "raster_image_count": 5,
+    "raw_math_span_count": 0,
+    "raw_tex_annotation_count": 0,
+    "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41",
+    "source_label_count": 71,
+    "spine_item_count": 13,
+    "tikz_figure_fallback_count": 6,
+    "unresolved_internal_references": [],
+    "xhtml_member_count": 13,
+    "xml_member_count": 17,
+    "xml_parse_failures": [],
+    "zip_entry_count": 24
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true,
+    "opf_modified": "2026-08-25T00:00:00Z",
+    "zip_entry_order": "mimetype first; remaining entries sorted lexicographically",
+    "zip_timestamps": "1980-01-01T00:00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 31009,
+      "path": "source/id-ID/habring-01-prasyarat-id.tex",
+      "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+    },
+    {
+      "bytes": 42828,
+      "path": "source/id-ID/habring-02-konveksitas-id.tex",
+      "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+    },
+    {
+      "bytes": 19266,
+      "path": "source/id-ID/habring-03-subgradien-id.tex",
+      "sha256": "d04ff82898c157f56924c6c08fd204bcd97625f060847fd8a0b6f7a2b90b0a5c"
+    },
+    {
+      "bytes": 16612,
+      "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+      "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+    },
+    {
+      "bytes": 20575,
+      "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+      "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+    },
+    {
+      "bytes": 24690,
+      "path": "source/id-ID/habring-06-akselerasi-id.tex",
+      "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+    },
+    {
+      "bytes": 35428,
+      "path": "source/id-ID/habring-07-dualitas-id.tex",
+      "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+    },
+    {
+      "bytes": 6378,
+      "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+      "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+    },
+    {
+      "bytes": 21252,
+      "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+      "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+    }
+  ],
+  "packaged_images": {
+    "balls.png": {
+      "bytes": 14419,
+      "path": "EPUB/media/file1.png",
+      "sha256": "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31"
+    },
+    "convex_fct.png": {
+      "bytes": 31570,
+      "path": "EPUB/media/file2.png",
+      "sha256": "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b"
+    },
+    "gradient.png": {
+      "bytes": 29813,
+      "path": "EPUB/media/file3.png",
+      "sha256": "1c237c8642b1a12197a12c337242815dafe90b310796dc877b699f0467a4ecce"
+    },
+    "sets.png": {
+      "bytes": 36071,
+      "path": "EPUB/media/file0.png",
+      "sha256": "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e"
+    },
+    "subgradient.png": {
+      "bytes": 36625,
+      "path": "EPUB/media/file4.png",
+      "sha256": "4d41bd11afbd1c6c7b6b360d3edeffcd06ab1cdbc699f8909103f5928c737ba0"
+    }
+  },
+  "pandoc": {
+    "version": "pandoc 3.9.0.2",
+    "warnings_build_1": [],
+    "warnings_build_2": []
+  },
+  "result": "pass",
+  "schema": "o015-habring-full-epub-build-v1",
+  "source_environment_counts": {
+    "cor": 4,
+    "defn": 33,
+    "example": 15,
+    "exercise": 3,
+    "lemma": 34,
+    "proof": 71,
+    "prop": 2,
+    "rem": 8,
+    "theorem": 39
+  }
+}

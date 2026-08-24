@@ -1,0 +1,68 @@
+{
+  "schema": "o015-habring-pdf-visual-qa-v1",
+  "recorded_at": "2026-08-25",
+  "method": {
+    "renderer": "Poppler pdftoppm",
+    "unit_render_dpi": 120,
+    "full_reader_render_dpi": 72,
+    "inspection": "Every rendered page was inspected in ordered contact sheets; the unit used four pages per sheet and the full reader used sixteen pages per sheet. After the rights-label correction, unit page 36 and the corresponding full-reader page 37 were rerendered at 160 dpi and visually reinspected; both render to the same 162088-byte PNG with SHA-256 984e30e659f88106476d3f89dd6e5fa8a12602036bb4f6fcc943f72bdaf67de3.",
+    "contact_sheet_builder": "qa/make_habring_visual_contact_sheets.py"
+  },
+  "unit_reader": {
+    "path": "output/pdf/D90-HAB-01-02-prasyarat-dan-konveksitas-id.pdf",
+    "bytes": 720624,
+    "sha256": "5fc51737b0ec2d2342e93c0a53a997cd1f81a3df2d15415ef5fdd9c2c4a9dbdf",
+    "expected_pages": 36,
+    "rendered_pages": 36,
+    "contact_sheets_inspected": 9,
+    "checks": {
+      "clipped_or_overlapping_text": 0,
+      "broken_or_unreadable_glyphs": 0,
+      "cropped_formulas": 0,
+      "cropped_figures": 0,
+      "blank_unexpected_pages": 0,
+      "header_footer_page_number_defects": 0,
+      "section_transition_defects": 0,
+      "license_or_attribution_layout_defects": 0
+    },
+    "result": "pass"
+  },
+  "full_reader": {
+    "path": "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "bytes": 3779312,
+    "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41",
+    "expected_pages": 139,
+    "rendered_pages": 139,
+    "contact_sheets_inspected": 9,
+    "verified_component_boundaries": {
+      "reader_cover": [1, 1],
+      "chapters_01_02": [2, 37],
+      "chapter_03": [38, 52],
+      "chapter_04": [53, 65],
+      "chapter_05": [66, 80],
+      "chapter_06": [81, 95],
+      "chapter_07": [96, 116],
+      "chapter_08": [117, 124],
+      "chapter_09": [125, 139]
+    },
+    "checks": {
+      "missing_or_duplicate_assembled_pages": 0,
+      "clipped_or_overlapping_text": 0,
+      "broken_or_unreadable_glyphs": 0,
+      "cropped_formulas": 0,
+      "cropped_figures": 0,
+      "blank_unexpected_pages": 0,
+      "header_footer_page_number_defects": 0,
+      "section_transition_defects": 0,
+      "license_or_attribution_layout_defects": 0
+    },
+    "result": "pass"
+  },
+  "navigation_qa": {
+    "path": "qa/HABRING_PDF_NAVIGATION_QA.json",
+    "bytes": 1687,
+    "sha256": "eded727695f3d632920e408b4c7e5e13184ae11ca34631e9b7921c09a6ce97cc",
+    "result": "pass"
+  },
+  "result": "pass"
+}
