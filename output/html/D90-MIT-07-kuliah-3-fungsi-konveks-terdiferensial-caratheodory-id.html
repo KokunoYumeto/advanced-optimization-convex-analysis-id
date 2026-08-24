@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dimitri P. Bertsekas (penulis sumber)" />
+  <meta name="dcterms.date" content="2026-08-23" />
+  <meta name="keywords" content="fungsi konveks
+terdiferensialkan, syarat optimalitas, proyeksi, selubung
+konveks, Teorema Caratheodory, id-ID" />
+  <meta name="description" content="Rekonstruksi semantik yang dapat mengalir ulang dari Kuliah 3 lengkap, dengan pengenal stabil, formula, bukti, serta deskripsi grafik yang dapat diakses." />
+  <title>Kuliah 3: Fungsi Konveks Terdiferensialkan dan Teorema Caratheodory</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+color-scheme: light;
+font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+line-height: 1.62;
+color: #172033;
+background: #f3f6fb;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; }
+.skip-link {
+position: fixed;
+z-index: 100;
+top: 0.5rem;
+left: 0.5rem;
+padding: 0.7rem 1rem;
+transform: translateY(-160%);
+border-radius: 0.4rem;
+color: #fff;
+background: #172033;
+}
+.skip-link:focus { transform: translateY(0); }
+body > main, body > footer {
+width: min(92vw, 78rem);
+margin-inline: auto;
+}
+body > main > header { padding: 3.5rem 0 1.25rem; }
+body > main > header h1 {
+max-width: 24ch;
+margin: 0;
+font-size: clamp(2.15rem, 5vw, 4.4rem);
+line-height: 1.04;
+letter-spacing: -0.035em;
+}
+body > main > header .subtitle {
+max-width: 58rem;
+margin-top: 1rem;
+color: #48536b;
+font-size: 1.12rem;
+}
+#TOC {
+margin-bottom: 2rem;
+padding: 1.2rem 1.4rem;
+border: 1px solid #c5d1e2;
+border-radius: 0.9rem;
+background: #fff;
+}
+#TOC ul { columns: 2 20rem; gap: 2rem; }
+main { padding-bottom: 3rem; }
+.edition-notice, .source-page {
+margin: 0 0 1.5rem;
+padding: clamp(1.25rem, 3vw, 2.55rem);
+border: 1px solid #c5d1e2;
+border-radius: 1rem;
+background: #fff;
+box-shadow: 0 0.35rem 1.4rem rgba(47, 61, 91, 0.08);
+}
+.source-page { scroll-margin-top: 1rem; }
+h2 { margin-top: 0; font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.16; }
+h3 { font-size: 1.24rem; }
+li + li { margin-top: 0.5rem; }
+.source-item { margin: 0.62rem 0; }
+.edition-notice {
+margin: 1.25rem 0 1.5rem;
+padding: 1rem 1.15rem;
+border-left: 0.32rem solid #7651bd;
+border-radius: 0.4rem;
+background: #f2effa;
+}
+.source-figure {
+margin: 1rem 0;
+padding: 1rem 1.15rem;
+border: 1px dashed #71809b;
+border-radius: 0.55rem;
+background: #f7f9fc;
+color: #27324a;
+}
+.source-figure strong { color: #553398; }
+.source-locator { display: inline-block; margin-top: 0.9rem; color: #58647d; font-size: 0.92rem; }
+.source-display { max-width: 100%; overflow-x: auto; }
+math[display="block"] { overflow-x: auto; padding: 0.35rem 0; }
+a { color: #24529b; text-underline-offset: 0.16em; }
+a:focus-visible { outline: 0.2rem solid #ef9b2d; outline-offset: 0.18rem; }
+body > footer {
+padding: 0 0 2.5rem;
+color: #58647d;
+font-size: 0.9rem;
+}
+@media (max-width: 48rem) {
+body > main, body > footer { width: min(94vw, 78rem); }
+#TOC ul { columns: 1; }
+.source-page, .edition-notice { border-radius: 0.65rem; }
+.source-page, .edition-notice { padding: 1.15rem; }
+}
+@media print {
+:root, body { background: white; }
+.edition-notice, .source-page { box-shadow: none; break-inside: avoid; }
+.source-figure, .source-display { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#d90-mit-l07-p029">Langsung ke Kuliah 3</a>
+<main id="main-content">
+<header id="title-block-header">
+<h1 class="title">Kuliah 3: Fungsi Konveks Terdiferensialkan dan Teorema
+Caratheodory</h1>
+<p class="subtitle">MIT 6.253 - Edisi Indonesia, halaman sumber
+29-38</p>
+<p class="author">Dimitri P. Bertsekas (penulis sumber)</p>
+<p class="date">2026-08-23</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#tentang-batas-ini" id="toc-tentang-batas-ini"><span class="toc-section-number">1</span> Tentang batas ini</a></li>
+<li><a href="#kuliah-3---garis-besar-kuliah" id="toc-kuliah-3---garis-besar-kuliah"><span class="toc-section-number">2</span> Kuliah 3 - Garis Besar
+Kuliah</a></li>
+<li><a href="#fungsi-konveks-terdiferensialkan" id="toc-fungsi-konveks-terdiferensialkan"><span class="toc-section-number">3</span> Fungsi Konveks
+Terdiferensialkan</a></li>
+<li><a href="#gagasan-bukti" id="toc-gagasan-bukti"><span class="toc-section-number">4</span> Gagasan Bukti</a></li>
+<li><a href="#syarat-optimalitas" id="toc-syarat-optimalitas"><span class="toc-section-number">5</span> Syarat Optimalitas</a></li>
+<li><a href="#teorema-proyeksi" id="toc-teorema-proyeksi"><span class="toc-section-number">6</span> Teorema Proyeksi</a></li>
+<li><a href="#fungsi-konveks-yang-terdiferensialkan-dua-kali" id="toc-fungsi-konveks-yang-terdiferensialkan-dua-kali"><span class="toc-section-number">7</span> Fungsi Konveks yang
+Terdiferensialkan Dua Kali</a></li>
+<li><a href="#selubung-konveks-dan-afin" id="toc-selubung-konveks-dan-afin"><span class="toc-section-number">8</span> Selubung Konveks dan Afin</a></li>
+<li><a href="#teorema-caratheodory" id="toc-teorema-caratheodory"><span class="toc-section-number">9</span> Teorema Caratheodory</a></li>
+<li><a href="#bukti-teorema-caratheodory" id="toc-bukti-teorema-caratheodory"><span class="toc-section-number">10</span> Bukti Teorema Caratheodory</a></li>
+<li><a href="#penerapan-teorema-caratheodory" id="toc-penerapan-teorema-caratheodory"><span class="toc-section-number">11</span> Penerapan Teorema
+Caratheodory</a></li>
+</ul>
+</nav>
+<div id="d90-mit-l07-edition-notice" class="edition-notice">
+<section id="tentang-batas-ini" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Tentang
+batas ini</h2>
+<p>Ini adalah rekonstruksi sumber semantik dan terjemahan bahasa
+Indonesia dari Dimitri P. Bertsekas, <em>Convex Analysis and
+Optimization</em>, MIT OpenCourseWare 6.253, Spring 2012, halaman PDF
+sumber 29-38. Kesepuluh halaman ini membentuk <strong>Kuliah 3</strong>
+lengkap: fungsi konveks terdiferensialkan, syarat optimalitas, proyeksi,
+selubung konveks dan afin, serta Teorema Caratheodory beserta
+penerapannya. Halaman 39 memulai <strong>Kuliah 4</strong> dan tidak
+termasuk. Materi sumber berada di bawah <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>.</p>
+<p>Empat blok grafik sumber sengaja tidak disalin karena rantai hak
+catatan menyatakan grafik digunakan atas izin Athena Scientific. Setiap
+grafik diwakili oleh lokator halaman yang tepat, deskripsi semantik yang
+disusun secara independen, dan hubungan matematika yang dipertahankan.
+Tidak ada byte, potongan, atau tata letak grafik sumber dalam edisi
+ini.</p>
+<p>Dua koreksi yang dapat ditentukan dinyatakan secara terbuka. Tanda
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↦</mo><annotation encoding="application/x-tex">\mapsto</annotation></semantics></math>
+yang tercetak dalam deklarasi tipe fungsi pada halaman 30, 32, dan 34
+diganti dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math>
+karena deklarasi tersebut menyatakan domain dan kodomain, bukan pemetaan
+unsur (O015-MIT-SEM-0007). Pada Teorema Proyeksi, frasa sumber “minimum
+tunggal” dibetulkan menjadi “titik peminimum tunggal”: proyeksi adalah
+titik yang meminimumkan fungsi jarak kuadrat, bukan nilai minimum fungsi
+tersebut (O015-MIT-SEM-0008). Saksi bahasa Inggris mempertahankan kedua
+bentuk sumber.</p>
+<p>Istilah teknis mengikuti bagian sebelumnya: <em>differentiable</em>
+menjadi “terdiferensialkan”, <em>convex hull</em> menjadi “selubung
+konveks”, <em>affine hull</em> menjadi “selubung afin”, <em>positive
+semidefinite</em> menjadi “semidefinit positif”, dan <em>projection</em>
+menjadi “proyeksi”. Ejaan nama <strong>Caratheodory</strong>
+dipertahankan sebagaimana tercetak pada judul sumber.</p>
+<p>Bantuan produksi dan QA: <strong>OpenAI Codex gpt-5.6-sol,
+Ultra</strong>, atas arahan pengguna repositori. Sistem tersebut bukan
+penulis sumber atau pemberi lisensi. Tidak ada dukungan oleh MIT, Athena
+Scientific, atau penulis sumber yang tersirat. Tinjauan bahasa
+manusia/penutur asli belum tercatat.</p>
+<p>Pengenal stabil tetap melekat pada sepuluh halaman, enam belas butir
+tingkat atas, tiga belas blok formula, dan empat deskripsi grafik
+meskipun HTML atau PDF mengalir ulang. Empat belas butir bersarang
+mempertahankan urutan dan hubungannya di dalam butir induk, tetapi tidak
+diklaim memiliki pengenal tersendiri.</p>
+</section>
+</div>
+<div id="d90-mit-l07-p029" class="source-page" data-source-page="29" data-source-order="1">
+<section id="kuliah-3---garis-besar-kuliah" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span> Kuliah
+3 - Garis Besar Kuliah</h2>
+<div id="d90-mit-l07-p029-i001" class="source-item" data-source-page="29" data-source-order="1">
+<ul>
+<li>Fungsi konveks terdiferensialkan</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p029-i002" class="source-item" data-source-page="29" data-source-order="2">
+<ul>
+<li>Selubung konveks dan afin</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p029-i003" class="source-item" data-source-page="29" data-source-order="3">
+<ul>
+<li>Teorema Caratheodory</li>
+</ul>
+</div>
+<p><strong>Bacaan:</strong> Bagian 1.1 dan 1.2.</p>
+<p><em><span class="source-locator">Halaman sumber 29.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p030" class="source-page" data-source-page="30" data-source-order="2">
+<section id="fungsi-konveks-terdiferensialkan" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span> Fungsi
+Konveks Terdiferensialkan</h2>
+<div id="d90-mit-l07-p030-f001" class="source-figure" data-source-page="30" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 30, garis pendukung
+orde pertama).</strong> Sebuah kurva konveks tebal diberi label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+di atas sumbu horizontal dengan variabel berjalan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.
+Garis vertikal putus-putus menandai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+Garis singgung yang melalui kurva di
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+terletak di bawah kurva dan diberi label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)+\nabla f(x)&#39;(z-x)</annotation></semantics></math>.</p>
+</div>
+<div id="d90-mit-l07-p030-i001" class="source-item" data-source-page="30" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>⊂</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">C\subset\mathbb{R}^n</annotation></semantics></math>
+adalah himpunan konveks dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n\to\mathbb{R}</annotation></semantics></math>
+terdiferensialkan pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>Fungsi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+jika dan hanya jika</p>
+<div id="d90-mit-l07-p030-d001" class="source-display" data-source-page="30" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f(z)\geq f(x)+(z-x)&#39;\nabla f(x),
+\qquad \forall x,z\in C.
+</annotation></semantics></math></p>
+</div></li>
+<li><p>Jika ketaksamaan tersebut ketat setiap kali
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x\neq z</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks ketat pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p></li>
+</ol></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 30.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p031" class="source-page" data-source-page="31" data-source-order="3">
+<section id="gagasan-bukti" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span> Gagasan
+Bukti</h2>
+<div id="d90-mit-l07-p031-f001" class="source-figure" data-source-page="31" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 31, dua panel gagasan
+bukti).</strong> Panel (a) menandai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>α</mi><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">z=\alpha x+(1-\alpha)y</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+di bawah suatu kurva konveks. Tali busur dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,f(x))</annotation></semantics></math>
+ke
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,f(y))</annotation></semantics></math>
+mempunyai tinggi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\alpha f(x)+(1-\alpha)f(y)</annotation></semantics></math>
+di
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.
+Garis singgung pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+diberi label pada kedua titik ujung dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>z</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(z)+(x-z)&#39;\nabla f(z)</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>z</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(z)+(y-z)&#39;\nabla f(z)</annotation></semantics></math>.
+Panel (b) menandai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x+\alpha(z-x)</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+di bawah suatu kurva konveks. Pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>,
+konstruksi garis potong diberi label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mi>/</mi><mi>α</mi></mrow><annotation encoding="application/x-tex">f(x)+\bigl(f(x+\alpha(z-x))-f(x)\bigr)/\alpha</annotation></semantics></math>,
+sedangkan konstruksi garis singgung di bawahnya diberi label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)+(z-x)&#39;\nabla f(x)</annotation></semantics></math>.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 31.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p032" class="source-page" data-source-page="32" data-source-order="4">
+<section id="syarat-optimalitas" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span> Syarat
+Optimalitas</h2>
+<div id="d90-mit-l07-p032-i001" class="source-item" data-source-page="32" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+adalah subhimpunan konveks tak kosong dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n\to\mathbb{R}</annotation></semantics></math>
+konveks serta terdiferensialkan pada suatu himpunan terbuka yang memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Maka vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>*</mo></msup><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x^*\in C</annotation></semantics></math>
+meminimumkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+jika dan hanya jika</p>
+<div id="d90-mit-l07-p032-d001" class="source-display" data-source-page="32" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\nabla f(x^*)&#39;(x-x^*)\geq 0,
+\qquad \forall x\in C.
+</annotation></semantics></math></p>
+</div></li>
+</ul>
+</div>
+<p><strong>Bukti:</strong> Jika syarat tersebut berlaku, maka</p>
+<div id="d90-mit-l07-p032-d002" class="source-display" data-source-page="32" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>C</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+f(x)\geq f(x^*)+(x-x^*)&#39;\nabla f(x^*)\geq f(x^*),
+\qquad \forall x\in C,
+</annotation></semantics></math></p>
+</div>
+<p>sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>
+meminimumkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p>
+<p>Sebaliknya, andaikan untuk memperoleh kontradiksi bahwa
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>
+meminimumkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\nabla f(x^*)&#39;(x-x^*)&lt;0</annotation></semantics></math>
+untuk suatu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>.
+Dari keterdiferensialan, diperoleh</p>
+<div id="d90-mit-l07-p032-d003" class="source-display" data-source-page="32" data-display-order="3">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">lim</mi><mrow><mi>α</mi><mo>↓</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo></mrow><mi>α</mi></mfrac><mo>=</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\lim_{\alpha\downarrow 0}
+\frac{f\bigl(x^*+\alpha(x-x^*)\bigr)-f(x^*)}{\alpha}
+=\nabla f(x^*)&#39;(x-x^*)&lt;0,
+</annotation></semantics></math></p>
+</div>
+<p>sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f\bigl(x^*+\alpha(x-x^*)\bigr)</annotation></semantics></math>
+berkurang secara ketat untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha&gt;0</annotation></semantics></math>
+yang cukup kecil; hal ini bertentangan dengan optimalitas
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>.
+<strong>Q.E.D.</strong></p>
+<p><em><span class="source-locator">Halaman sumber 32.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p033" class="source-page" data-source-page="33" data-source-order="5">
+<section id="teorema-proyeksi" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span> Teorema
+Proyeksi</h2>
+<div id="d90-mit-l07-p033-i001" class="source-item" data-source-page="33" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+adalah himpunan konveks tertutup tak kosong dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>Untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">z\in\mathbb{R}^n</annotation></semantics></math>,
+terdapat titik peminimum tunggal bagi</p>
+<div id="d90-mit-l07-p033-d001" class="source-display" data-source-page="33" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">‖</mo><mi>z</mi><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">‖</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">
+f(x)=\lVert z-x\rVert^2
+</annotation></semantics></math></p>
+</div>
+<p>atas semua
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>
+(disebut <em>proyeksi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></em>).</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>
+adalah proyeksi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+jika dan hanya jika</p>
+<div id="d90-mit-l07-p033-d002" class="source-display" data-source-page="33" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(x-x^*)&#39;(z-x^*)\leq 0,
+\qquad \forall x\in C.
+</annotation></semantics></math></p>
+</div></li>
+</ol></li>
+</ul>
+</div>
+<p><strong>Bukti:</strong> (a)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks ketat dan mempunyai himpunan aras kompak.</p>
+<p><strong>(b)</strong> Ini hanyalah syarat optimalitas perlu dan
+cukup</p>
+<div id="d90-mit-l07-p033-d003" class="source-display" data-source-page="33" data-display-order="3">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\nabla f(x^*)&#39;(x-x^*)\geq 0,
+\qquad \forall x\in C.
+</annotation></semantics></math></p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 33.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p034" class="source-page" data-source-page="34" data-source-order="6">
+<section id="fungsi-konveks-yang-terdiferensialkan-dua-kali" class="level2" data-number="7">
+<h2 data-number="7"><span class="header-section-number">7</span> Fungsi
+Konveks yang Terdiferensialkan Dua Kali</h2>
+<div id="d90-mit-l07-p034-i001" class="source-item" data-source-page="34" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+adalah subhimpunan konveks dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>→</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n\to\mathbb{R}</annotation></semantics></math>
+terdiferensialkan dua kali secara kontinu pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>∇</mi><mn>2</mn></msup><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla^2f(x)</annotation></semantics></math>
+semidefinit positif untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p></li>
+<li><p>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>∇</mi><mn>2</mn></msup><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla^2f(x)</annotation></semantics></math>
+definit positif untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks ketat pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p></li>
+<li><p>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+terbuka dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+maka
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>∇</mi><mn>2</mn></msup><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla^2f(x)</annotation></semantics></math>
+semidefinit positif untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>.</p></li>
+</ol></li>
+</ul>
+</div>
+<p><strong>Bukti:</strong> (a) Menurut Teorema Nilai Rata-rata, untuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x,y\in C</annotation></semantics></math>,</p>
+<div id="d90-mit-l07-p034-d001" class="source-display" data-source-page="34" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><msup><mi>∇</mi><mn>2</mn></msup><mi>f</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+f(y)=f(x)+(y-x)&#39;\nabla f(x)
++\frac{1}{2}(y-x)&#39;\nabla^2f\bigl(x+\alpha(y-x)\bigr)(y-x)
+</annotation></semantics></math></p>
+</div>
+<p>untuk suatu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha\in[0,1]</annotation></semantics></math>.
+Dengan menggunakan sifat semidefinit positif dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>∇</mi><mn>2</mn></msup><mi>f</mi></mrow><annotation encoding="application/x-tex">\nabla^2f</annotation></semantics></math>,
+diperoleh</p>
+<div id="d90-mit-l07-p034-d002" class="source-display" data-source-page="34" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f(y)\geq f(x)+(y-x)&#39;\nabla f(x),
+\qquad \forall x,y\in C.
+</annotation></semantics></math></p>
+</div>
+<p>Dari hasil sebelumnya,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+konveks.</p>
+<p><strong>(b)</strong> Serupa dengan (a), diperoleh
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>−</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(y)&gt;f(x)+(y-x)&#39;\nabla f(x)</annotation></semantics></math>
+untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x,y\in C</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\neq y</annotation></semantics></math>,
+lalu kita menggunakan hasil sebelumnya.</p>
+<p><strong>(c)</strong> Dengan kontradiksi … serupa.</p>
+<p><em><span class="source-locator">Halaman sumber 34.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p035" class="source-page" data-source-page="35" data-source-order="7">
+<section id="selubung-konveks-dan-afin" class="level2" data-number="8">
+<h2 data-number="8"><span class="header-section-number">8</span>
+Selubung Konveks dan Afin</h2>
+<div id="d90-mit-l07-p035-i001" class="source-item" data-source-page="35" data-source-order="1">
+<ul>
+<li>Diberikan suatu himpunan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>⊆</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">X\subseteq\mathbb{R}^n</annotation></semantics></math>:</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p035-i002" class="source-item" data-source-page="35" data-source-order="2">
+<ul>
+<li><em>Kombinasi konveks</em> unsur-unsur
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+adalah vektor berbentuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></msubsup><msub><mi>α</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^m\alpha_i x_i</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x_i\in X</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i\geq0</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></msubsup><msub><mi>α</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^m\alpha_i=1</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p035-i003" class="source-item" data-source-page="35" data-source-order="3">
+<ul>
+<li><em>Selubung konveks</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+yang dilambangkan dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>,
+adalah irisan semua himpunan konveks yang memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+(Dapat ditunjukkan bahwa himpunan ini sama dengan himpunan semua
+kombinasi konveks dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.)</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p035-i004" class="source-item" data-source-page="35" data-source-order="4">
+<ul>
+<li><em>Selubung afin</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+yang dilambangkan dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">aff</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{aff}(X)</annotation></semantics></math>,
+adalah irisan semua himpunan afin yang memuat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+(himpunan afin adalah himpunan berbentuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">\bar{x}+S</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+suatu subruang).</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p035-i005" class="source-item" data-source-page="35" data-source-order="5">
+<ul>
+<li><em>Kombinasi nonnegatif</em> unsur-unsur
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+adalah vektor berbentuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></msubsup><msub><mi>α</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^m\alpha_i x_i</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x_i\in X</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i\geq0</annotation></semantics></math>
+untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div id="d90-mit-l07-p035-i006" class="source-item" data-source-page="35" data-source-order="6">
+<ul>
+<li><p><em>Kerucut yang dibangkitkan oleh
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math></em>,
+yang dilambangkan dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cone</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cone}(X)</annotation></semantics></math>,
+adalah himpunan semua kombinasi nonnegatif dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>:</p>
+<ul>
+<li>Himpunan ini merupakan kerucut konveks yang memuat titik asal.</li>
+<li>Himpunan ini tidak harus tertutup!</li>
+<li>Jika
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+adalah himpunan hingga,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cone</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cone}(X)</annotation></semantics></math>
+tertutup (tidak mudah untuk ditunjukkan!).</li>
+</ul></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 35.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p036" class="source-page" data-source-page="36" data-source-order="8">
+<section id="teorema-caratheodory" class="level2" data-number="9">
+<h2 data-number="9"><span class="header-section-number">9</span> Teorema
+Caratheodory</h2>
+<div id="d90-mit-l07-p036-f001" class="source-figure" data-source-page="36" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 36, panel kerucut dan
+selubung konveks).</strong> Panel (a) menempatkan himpunan tak beraturan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+di antara dua sinar dari titik asal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+dengan titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math>
+pada kedua sinar serta vektor tak nol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+di dalam daerah berlabel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cone</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cone}(X)</annotation></semantics></math>.
+Panel (b) menggambar segiempat berlabel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+dengan titik sudut
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>x</mi><mn>3</mn></msub><mo>,</mo><msub><mi>x</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">x_1,x_2,x_3,x_4</annotation></semantics></math>
+dan sebuah titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+di interiornya.</p>
+</div>
+<div id="d90-mit-l07-p036-i001" class="source-item" data-source-page="36" data-source-order="1">
+<ul>
+<li><p>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+adalah subhimpunan tak kosong dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>Setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\neq0</annotation></semantics></math>
+dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cone</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cone}(X)</annotation></semantics></math>
+dapat dinyatakan sebagai kombinasi positif dari vektor-vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\ldots,x_m</annotation></semantics></math>
+dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+yang bebas linear (sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m\leq n</annotation></semantics></math>).</p></li>
+<li><p>Setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\notin X</annotation></semantics></math>
+yang termasuk dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+dapat dinyatakan sebagai kombinasi konveks dari vektor-vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\ldots,x_m</annotation></semantics></math>
+dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m\leq n+1</annotation></semantics></math>.</p></li>
+</ol></li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 36.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p037" class="source-page" data-source-page="37" data-source-order="9">
+<section id="bukti-teorema-caratheodory" class="level2" data-number="10">
+<h2 data-number="10"><span class="header-section-number">10</span> Bukti
+Teorema Caratheodory</h2>
+<ol type="a">
+<li>Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+adalah vektor tak nol dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cone</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cone}(X)</annotation></semantics></math>,
+dan misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+adalah bilangan bulat terkecil sedemikian sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+berbentuk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></msubsup><msub><mi>α</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^m\alpha_i x_i</annotation></semantics></math>,
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i&gt;0</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x_i\in X</annotation></semantics></math>
+untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">i=1,\ldots,m</annotation></semantics></math>.
+Jika vektor-vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+bergantung linear, akan terdapat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>λ</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">\lambda_1,\ldots,\lambda_m</annotation></semantics></math>,
+dengan</li>
+</ol>
+<div id="d90-mit-l07-p037-d001" class="source-display" data-source-page="37" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msub><mi>λ</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\sum_{i=1}^m\lambda_i x_i=0
+</annotation></semantics></math></p>
+</div>
+<p>dan setidaknya satu dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\lambda_i</annotation></semantics></math>
+positif. Tinjau</p>
+<div id="d90-mit-l07-p037-d002" class="source-display" data-source-page="37" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mi>i</mi></msub><mo>−</mo><mover><mi>γ</mi><mo accent="true">‾</mo></mover><msub><mi>λ</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\sum_{i=1}^m(\alpha_i-\bar{\gamma}\lambda_i)x_i,
+</annotation></semantics></math></p>
+</div>
+<p>dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>γ</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{\gamma}</annotation></semantics></math>
+adalah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+terbesar sedemikian sehingga
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>−</mo><mi>γ</mi><msub><mi>λ</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i-\gamma\lambda_i\geq0</annotation></semantics></math>
+untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+Kombinasi ini memberikan representasi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+sebagai kombinasi positif yang melibatkan kurang dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+vektor dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>—sebuah
+kontradiksi. Oleh karena itu,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\ldots,x_m</annotation></semantics></math>
+bebas linear.</p>
+<ol start="2" type="a">
+<li>Gunakan argumen “pengangkatan”: terapkan bagian (a) pada
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>x</mi><mo>∈</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{(x,1)\mid x\in X\}</annotation></semantics></math>.</li>
+</ol>
+<div id="d90-mit-l07-p037-f001" class="source-figure" data-source-page="37" data-figure-disposition="omitted-source-graphic">
+<p><strong>Deskripsi grafik sumber (halaman sumber 37, argumen
+pengangkatan).</strong> Titik asal berlabel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+berada di salinan bawah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.
+Himpunan melengkung
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+dan titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+terletak di bawah himpunan melengkung terangkat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+dan titik
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,1)</annotation></semantics></math>
+pada aras berlabel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+Sinar-sinar dari titik asal membentuk kerucut pengangkatan, dan garis
+bantu putus-putus menghubungkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+dengan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,1)</annotation></semantics></math>
+serta menandai aras satuan. Label yang dipertahankan ialah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,1)</annotation></semantics></math>.</p>
+</div>
+<p><em><span class="source-locator">Halaman sumber 37.</span></em></p>
+</section>
+</div>
+<div id="d90-mit-l07-p038" class="source-page" data-source-page="38" data-source-order="10">
+<section id="penerapan-teorema-caratheodory" class="level2" data-number="11">
+<h2 data-number="11"><span class="header-section-number">11</span>
+Penerapan Teorema Caratheodory</h2>
+<div id="d90-mit-l07-p038-i001" class="source-item" data-source-page="38" data-source-order="1">
+<ul>
+<li><p>Selubung konveks suatu himpunan kompak bersifat kompak.</p>
+<p><strong>Bukti:</strong> Misalkan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+kompak. Kita mengambil suatu barisan dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+dan menunjukkan bahwa barisan itu mempunyai subbarisan konvergen yang
+limitnya berada dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>.</p>
+<p>Menurut Caratheodory, suatu barisan dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+dapat dinyatakan sebagai
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">{</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup><msubsup><mi>α</mi><mi>i</mi><mi>k</mi></msubsup><msubsup><mi>x</mi><mi>i</mi><mi>k</mi></msubsup><mo stretchy="true" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\left\{\sum_{i=1}^{n+1}\alpha_i^k x_i^k\right\}</annotation></semantics></math>,
+dengan untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>α</mi><mi>i</mi><mi>k</mi></msubsup><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i^k\geq0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mi>i</mi><mi>k</mi></msubsup><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x_i^k\in X</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup><msubsup><mi>α</mi><mi>i</mi><mi>k</mi></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n+1}\alpha_i^k=1</annotation></semantics></math>.
+Karena barisan</p>
+<div id="d90-mit-l07-p038-d001" class="source-display" data-source-page="38" data-display-order="1">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>α</mi><mn>1</mn><mi>k</mi></msubsup><mo>,</mo><mi>…</mi><mo>,</mo><msubsup><mi>α</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mo>,</mo><msubsup><mi>x</mi><mn>1</mn><mi>k</mi></msubsup><mo>,</mo><mi>…</mi><mo>,</mo><msubsup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+\left\{
+(\alpha_1^k,\ldots,\alpha_{n+1}^k,x_1^k,\ldots,x_{n+1}^k)
+\right\}
+</annotation></semantics></math></p>
+</div>
+<p>terbatas, barisan tersebut mempunyai titik limit</p>
+<div id="d90-mit-l07-p038-d002" class="source-display" data-source-page="38" data-display-order="2">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>α</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">}</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\left\{
+(\alpha_1,\ldots,\alpha_{n+1},x_1,\ldots,x_{n+1})
+\right\},
+</annotation></semantics></math></p>
+</div>
+<p>yang harus memenuhi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup><msub><mi>α</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n+1}\alpha_i=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i\geq0</annotation></semantics></math>,
+dan
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x_i\in X</annotation></semantics></math>
+untuk setiap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+Vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup><msub><mi>α</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n+1}\alpha_i x_i</annotation></semantics></math>
+termasuk dalam
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+dan merupakan titik limit dari
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">{</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup><msubsup><mi>α</mi><mi>i</mi><mi>k</mi></msubsup><msubsup><mi>x</mi><mi>i</mi><mi>k</mi></msubsup><mo stretchy="true" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\left\{\sum_{i=1}^{n+1}\alpha_i^k x_i^k\right\}</annotation></semantics></math>;
+ini menunjukkan bahwa
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">conv</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{conv}(X)</annotation></semantics></math>
+kompak. <strong>Q.E.D.</strong></p></li>
+</ul>
+</div>
+<div id="d90-mit-l07-p038-i002" class="source-item" data-source-page="38" data-source-order="2">
+<ul>
+<li>Perhatikan bahwa selubung konveks suatu himpunan tertutup tidak
+harus tertutup!</li>
+</ul>
+</div>
+<p><em><span class="source-locator">Halaman sumber 38.</span></em></p>
+</section>
+</div>
+</main>
+<footer role="contentinfo">
+  <p>Edisi Indonesia semantik MIT OCW 6.253, halaman sumber 29-38. Empat grafik sumber dijelaskan tanpa menyalin byte gambar.</p>
+</footer>
+</body>
+</html>

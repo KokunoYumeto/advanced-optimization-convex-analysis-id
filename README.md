@@ -312,3 +312,31 @@ L06 kini dipreservasi publik pada commit GitHub
 berkas Zenodo lulus pembacaan balik anonim dengan identitas byte/SHA-256 tepat.
 Publikasi L06 tidak lagi menjadi pekerjaan tertunda; produksi tetap berlanjut
 pada satu batch L07 halaman 29–38.
+
+## Batas MIT L07 yang diterima (24 Agustus 2026)
+
+L07 menerima seluruh Kuliah 3 pada halaman sumber 29–38 sebagai satu batch:
+fungsi konveks terdiferensialkan, kondisi optimalitas orde pertama, proyeksi,
+uji Hessian, selubung konveks dan afin, Teorema Caratheodory beserta buktinya,
+dan aplikasi kekompakan. Target Indonesia, HTML, dan PDF A4 empat halaman
+memiliki SHA-256
+`b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd`,
+`cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13`,
+dan `2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec`.
+
+Validasi deterministik, QA browser desktop/ponsel, inspeksi visual semua
+halaman, dan rereview independen semuanya lulus. Tidak ada byte atau tata
+letak grafik Athena Scientific yang disalin; empat grafik dengan enam panel
+diwakili oleh deskripsi semantik mandiri. Koreksi `O015-MIT-SEM-0007` dan
+`0008` diungkapkan. PDF dapat dicari dan berbahasa `id-ID`, tetapi belum
+bertag; tinjauan penutur asli belum tercatat dan bukan penahan kerja.
+
+Backend kini memuat 1.820 rekaman, 106 tambahan terhadap baseline L06 yang
+direkonstruksi tepat. JSONL dan CSV memiliki SHA-256
+`1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843`
+dan `a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985`;
+resi backend lulus pada
+`37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948`.
+Checkpoint L07 akan dipreservasi sekali dalam garis GitHub dan Zenodo yang
+sudah ada. Setelah itu, produksi berlanjut pada batch Kuliah 4 yang koheren,
+mulai halaman 39—bukan sebagai proyek per halaman.

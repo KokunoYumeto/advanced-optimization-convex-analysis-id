@@ -397,3 +397,45 @@ and the sanitized anonymous receipt is 16,084 bytes /
 No upstream contact occurred.
 
 L07 pages 29–38 remains the active production boundary; page 39 is next.
+
+## 2026-08-24 — MIT L07 complete Lecture 3 admitted; preservation pending
+
+MIT complete-notes pages 29–38 are now admitted as the complete Lecture 3
+semantic reader boundary. The closure preserves ten ordered source pages, 16
+top-level items, 14 nested items, 13 display formulas, and four figure
+descriptions with six panels. It contains no source exercises, hints,
+solutions, code, or interactivity. No Athena Scientific byte, crop, or layout
+enters the derivative. Corrections `O015-MIT-SEM-0007` and `0008` disclose the
+function-type arrow normalization and projection-minimizer terminology repair.
+
+The exact witness / target / HTML / PDF identities are 13,879 bytes /
+`ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`,
+16,518 / `b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd`,
+77,399 / `cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13`,
+and 75,885 / `2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec`.
+The rereview-bound reader receipt is 8,176 bytes /
+`c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1`;
+errors are empty and P1=P2=P3=0. The PDF is searchable A4 and `/Lang id-ID`
+but untagged. Human/native-speaker review remains unrecorded evidence, not a
+hold.
+
+Backend admission adds 106 records to the exact 1,714-record baseline and
+passes twice at 1,820 records. JSONL is 1,321,559 bytes /
+`1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843`;
+CSV is 1,586,211 bytes /
+`a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985`.
+The new-ID set is
+`a7ff4f1545568ab41e9e47fade09c80258750639781f5724d3e2a0792e7c2e66`;
+the backend receipt is 7,879 bytes /
+`37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948`.
+The next source cursor is page 39, which begins Lecture 4. L07 public
+preservation in the existing lineages is the only open action for this
+boundary.
+
+The deterministic L07 preservation package is also prepared: its 410,297-byte
+delta ZIP has SHA-256
+`767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40`
+and passes a 27-entry / 26-manifest-bound-payload integrity gate twice. The
+planned version preserves all 58 parent files and adds eight files with the
+L07 PDF as default preview. This does not claim a public record; publication
+and anonymous byte readback remain open.

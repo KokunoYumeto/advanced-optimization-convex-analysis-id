@@ -292,3 +292,29 @@ The executable cursor remains complete Lecture 3, pages 29–38, as one L07
 batch. Page 39 begins Lecture 4. Finish the already drafted L07 reader gate,
 then admit its additive backend and advance to page 39 without reverting to a
 page-level workflow.
+
+## 2026-08-24 cursor refresh — L07 admitted; page 39 is next
+
+The preceding cursor is superseded. Complete Lecture 3, pages 29–38, is
+admitted as one L07 boundary. Its witness, target, HTML, and four-page PDF are
+13,879 / 16,518 / 77,399 / 75,885 bytes with SHA-256 values
+`ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`,
+`b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd`,
+`cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13`,
+and `2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec`.
+Reader validation, browser QA, visual QA, and independent rereview all pass;
+the bound receipt is 8,176 bytes / SHA-256
+`c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1`.
+
+The additive backend passes two root-repeated cycles at 1,820 records, adding
+106 stable records to the exact 1,714-record L06 baseline. JSONL and CSV are
+1,321,559 and 1,586,211 bytes with SHA-256
+`1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843`
+and `a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985`.
+The passing backend receipt is 7,879 bytes / SHA-256
+`37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948`.
+
+Preserve this admitted L07 boundary once in the existing GitHub and Zenodo
+lineages. Then resume at complete-notes page 39, `LECTURE 4` / `LECTURE
+OUTLINE`, and freeze a coherent multi-page Lecture 4 boundary before
+translation. Do not restart page-level production.

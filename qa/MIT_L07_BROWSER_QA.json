@@ -1,0 +1,63 @@
+{
+  "schema": "o015-mit-l07-browser-qa-v1",
+  "recorded_at": "2026-08-24T01:20:11Z",
+  "result": "pass",
+  "surface": {
+    "path": "output/html/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html",
+    "bytes": 77399,
+    "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"
+  },
+  "desktop": {
+    "viewport": {"width": 1280, "height": 720},
+    "document_client_width": 1265,
+    "document_scroll_width": 1265,
+    "main_left": 43.64583206176758,
+    "main_right": 1221.24312210083,
+    "main_width": 1177.5972900390625,
+    "horizontal_overflow": false,
+    "math_overflow_count": 0
+  },
+  "mobile": {
+    "viewport": {"width": 390, "height": 844},
+    "document_client_width": 375,
+    "document_scroll_width": 375,
+    "main_left": 4.152777671813965,
+    "main_right": 370.9583501815796,
+    "main_width": 366.8055725097656,
+    "horizontal_overflow": false,
+    "math_overflow_count": 0
+  },
+  "semantic_surface": {
+    "main_landmarks": 1,
+    "source_pages": 10,
+    "source_items": 16,
+    "source_displays": 13,
+    "source_figures": 4,
+    "math_nodes": 195,
+    "display_math_nodes": 13,
+    "duplicate_ids": [],
+    "unresolved_fragments": []
+  },
+  "skip_link": {
+    "tag": "A",
+    "href": "#d90-mit-l07-p029",
+    "target_exists": true,
+    "tab_index": 0,
+    "aria_disabled": null,
+    "computed_display": "block",
+    "computed_visibility": "visible",
+    "pointer_activation_hash": "#d90-mit-l07-p029",
+    "pointer_activation_target_top": 16.0625,
+    "keyboard_focus_delivery_observed": false,
+    "keyboard_focus_note": "Two in-app control key-delivery attempts remained on BODY; the native anchor is enabled, visible, tabIndex 0, has an exact fragment target, and activated correctly through the browser. This records a control-surface limitation rather than claiming an unobserved keyboard event."
+  },
+  "console_warnings_or_errors": [],
+  "visual_observations": [
+    "At 1280 x 720 the reader is centered and fills 1177.6 of 1265 CSS pixels, with balanced side margins and a two-column contents panel.",
+    "At 390 x 844 the title, metadata, and contents panel reflow into one readable column with no horizontal or formula overflow.",
+    "The reader preserves all ten source sections and all mathematical surfaces without copied image or embedded-media bytes."
+  ],
+  "browser": "Codex in-app browser",
+  "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "human_native_speaker_review": false
+}

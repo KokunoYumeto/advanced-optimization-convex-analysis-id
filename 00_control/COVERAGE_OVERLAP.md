@@ -188,3 +188,22 @@ pass. Page 39 begins Lecture 4. Remaining gaps include later MIT/Royer
 material, bridges, laboratories, mastery/solution coverage, capstone,
 accessible EPUB/tagged PDF, and optional human-review evidence; the latter is
 not a hold.
+
+## MIT L07 complete Lecture 3 admitted; page 39 remains outside coverage (2026-08-24)
+
+Pages 29–38 now add differentiable convex functions, first-order optimality,
+Euclidean projection, Hessian tests, convex and affine hulls, Caratheodory's
+theorem and proof, and compactness of the convex hull of a compact set. This is
+advanced convex-analysis foundation and does not duplicate O018's finite
+LP/MIP, simplex/tableau, LP duality/sensitivity, network, or discrete-
+optimization workflow.
+
+The admitted closure has ten pages, 16 top-level items, 14 nested items, 13
+display formulas, four semantic figure descriptions / six panels, zero copied
+graphics, and no exercise, solution, code, or interactive surface. Reader,
+rights, formula, browser, visual, independent-rereview, and 1,820-record
+backend gates all pass. Page 39 begins Lecture 4 and remains outside admitted
+coverage until its coherent multi-page boundary is frozen, translated, and
+validated. Remaining gaps are later MIT/Royer content, bridges, four labs,
+mastery/solution coverage, capstone, semantic EPUB, tagged PDF, and optional
+human-review evidence; the latter is not a hold.

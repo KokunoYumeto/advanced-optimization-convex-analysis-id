@@ -910,3 +910,62 @@ entries. Public receipt: 16,084 bytes / SHA-256
 
 Next: close the existing L07 pages 29–38 reader/build/visual/browser gate,
 admit it once into the stable backend, and advance to page 39.
+
+# MIT OCW 6.253 Lecture 3 pages 29–38 consolidated build and QA (L07)
+
+As of: 2026-08-24  
+Admission: PASS; complete Lecture 3, not a complete-course claim
+
+The boundary census, witness, target, HTML, and PDF are respectively 11,013 /
+13,879 / 16,518 / 77,399 / 75,885 bytes with SHA-256 values
+`3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f`,
+`ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b`,
+`b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd`,
+`cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13`,
+and `2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec`.
+The validator is 28,883 bytes /
+`9dd39156c3591c0a771cc894ac5085fb5c787b5a472b722be24eb4d84c2d16ca`;
+its rereview-bound receipt reproduced unchanged at 8,176 bytes /
+`c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1`.
+
+The gate verifies ten source pages, 16 top-level items, 14 nested items, 13
+display formulas, four text-only figure blocks / six panels, and source page
+39 as the clean Lecture 4 delimiter. Two deterministic HTML/PDF builds match
+the canonical bytes. Desktop 1280×720 and mobile 390×844 have no horizontal
+or formula overflow, duplicate IDs, unresolved fragments, or console
+findings. All four PDF pages pass 160-dpi visual inspection. Independent
+rereview is 4,136 bytes /
+`d5f0bfc23b7a9b74d30570de9b2bd058c0ded84b51414b7b0b929349764ea86d`
+and closes P1=0/P2=0/P3=0. The searchable A4 PDF is `/Lang id-ID` and untagged.
+
+The immutable correction snapshot is 1,490 bytes /
+`eba6c2039e1f893287921d72f5169e14861d95955acd7c6682e59cabcd030084`.
+Two root-repeated backend generator/validator cycles are identical. They add
+106 records with new-ID-set SHA-256
+`a7ff4f1545568ab41e9e47fade09c80258750639781f5724d3e2a0792e7c2e66`
+and yield 1,820 records. JSONL and CSV identities are 1,321,559 bytes /
+`1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843`
+and 1,586,211 /
+`a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985`.
+Generator, validator, and passing receipt hashes are
+`f2e6bdc042bfd1fe39e902aa4c413b6d421e7bf0ce491cf805dd4a709922c993`,
+`7d9a47c70186e456b3281230223a89e1e8af9382509125e8de2d55af0386e867`,
+and `37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948`.
+Next: preserve L07 once in the existing public lineages, then freeze the
+coherent Lecture 4 batch beginning on page 39.
+
+## 2026-08-24 — L07 local preservation package gate
+
+`release/zenodo/2026-08-24-mit-l07/build_l07.py` was repeated twice after
+backend admission and reproduced the same release bytes. The delta ZIP is
+410,297 bytes / SHA-256
+`767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40`;
+it reopens with 27 unique entries, all 26 manifest-bound payloads pass exact
+size/hash checks, and forbidden, credential-shaped, and mutable-global-control
+entry counts are zero. The manifest and checksum file are 5,396 and 6,723
+bytes / SHA-256
+`3465065b4062a7cfe9361b4efc20f60930e2584c496bd8651f50365266a5139e`
+and `de5ef346e2a00cdd6dd62b392af1e1e9010e458c8361e6037e990bf660ff8910`.
+The intended public inventory is 58 inherited files plus eight additions,
+with the L07 PDF as default preview. This is preparation evidence only until
+the existing-lineage publication and anonymous readback close.

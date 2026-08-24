@@ -1,0 +1,192 @@
+{
+  "adverse_event_bindings": {
+    "O015-MIT-SEM-0007": {
+      "authority": "o015-mit-ocw-6.253-spring-2012",
+      "class": "determined_notation_correction",
+      "event_id": "O015-MIT-SEM-0007",
+      "source": "complete-notes PDF pages 30, 32, and 34; source/en/mit-07-lecture-3-differentiable-convex-functions-caratheodory-semantic-witness.md",
+      "source_issue": "Three declarations use the element-mapping arrow in expressions that state only a function's domain and codomain, repeating the determined notation issue in earlier lectures.",
+      "surface": "Function-type arrows in Lecture 3",
+      "target_action": "Preserved the printed mapsto arrows in the English semantic witness, normalized them to right arrows in the learner-facing Indonesian type declarations, and disclosed the correction in the edition notice."
+    },
+    "O015-MIT-SEM-0008": {
+      "authority": "o015-mit-ocw-6.253-spring-2012",
+      "class": "determined_semantic_terminology_correction",
+      "event_id": "O015-MIT-SEM-0008",
+      "source": "complete-notes PDF page 33; source/en/mit-07-lecture-3-differentiable-convex-functions-caratheodory-semantic-witness.md",
+      "source_issue": "The printed statement says there exists a unique minimum of the squared-distance function but then denotes the projection point; the object asserted unique is the minimizer, not the scalar minimum value.",
+      "surface": "Projection theorem minimizing point",
+      "target_action": "Preserved the printed wording in the English semantic witness, translated the learner-facing statement as a unique minimizing point, and disclosed the determined semantic terminology correction in the edition notice."
+    }
+  },
+  "boundary": {
+    "copied_source_graphics": 0,
+    "nested_items": 14,
+    "next_heading": "LECTURE 4 - LECTURE OUTLINE",
+    "next_source_page": 39,
+    "source_displays": 13,
+    "source_figure_panels": 6,
+    "source_figures": 4,
+    "source_items": 16,
+    "source_pdf_pages": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ]
+  },
+  "build": {
+    "command": "python qa/build_mit_l07.py --html-output <html> --pdf-output <pdf>",
+    "deterministic_rebuilds": 2,
+    "html_sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13",
+    "pdf_sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec",
+    "rebuild_hashes": [
+      [
+        "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13",
+        "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+      ],
+      [
+        "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13",
+        "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+      ]
+    ]
+  },
+  "errors": [],
+  "files": {
+    "6c63c6219c60378bc27d5b4a9167f1bc_mit6_253s12_lec_comp": {
+      "bytes": 8030116,
+      "path": "authority/mit-ocw-6.253/course-archive/static_resources/6c63c6219c60378bc27d5b4a9167f1bc_MIT6_253S12_lec_comp.pdf",
+      "sha256": "41afb47e0f6ce328298d386d16c15defa1d98c88802175a22ba80b619bd18181"
+    },
+    "build_mit_l07": {
+      "bytes": 4115,
+      "path": "qa/build_mit_l07.py",
+      "sha256": "d777599f7529449c5c10a130afd32a1e67338ae7edf19b0dca00fdbd91724d01"
+    },
+    "d90_mit_07_kuliah_3_fungsi_konveks_terdiferensial_caratheodory_id": {
+      "bytes": 75885,
+      "path": "output/pdf/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+      "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+    },
+    "mit_07_kuliah_3_fungsi_konveks_terdiferensial_caratheodory_id": {
+      "bytes": 16518,
+      "path": "source/id-ID/mit-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.md",
+      "sha256": "b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd"
+    },
+    "mit_07_lecture_3_differentiable_convex_functions_caratheodory_semantic_witness": {
+      "bytes": 13879,
+      "path": "source/en/mit-07-lecture-3-differentiable-convex-functions-caratheodory-semantic-witness.md",
+      "sha256": "ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b"
+    },
+    "mit_l07": {
+      "bytes": 2777,
+      "path": "source/id-ID/mit-l07.css",
+      "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"
+    },
+    "mit_l07_after_body": {
+      "bytes": 176,
+      "path": "source/id-ID/mit-l07-after-body.html",
+      "sha256": "ce35e12f0a05dda23a0f55e9b5dfb1f26e5f4c8d3b1c7439ac401227366580b9"
+    },
+    "mit_l07_before_body": {
+      "bytes": 96,
+      "path": "source/id-ID/mit-l07-before-body.html",
+      "sha256": "1e979724f5ee0f65feda5442d9307df710a3f2d8203f5d7051b390dc42ce61b7"
+    },
+    "mit_l07_browser_qa": {
+      "bytes": 2468,
+      "path": "qa/MIT_L07_BROWSER_QA.json",
+      "sha256": "f29fdb2086693efe892ac0a0d346fa19c7d57de8371d7ccc0317edaf6e8bf9d7"
+    },
+    "mit_l07_independent_rereview": {
+      "bytes": 4136,
+      "path": "qa/MIT_L07_INDEPENDENT_REREVIEW.md",
+      "sha256": "d5f0bfc23b7a9b74d30570de9b2bd058c0ded84b51414b7b0b929349764ea86d"
+    },
+    "mit_l07_lecture_3_pages_029_038_boundary_census": {
+      "bytes": 11013,
+      "path": "00_control/MIT_L07_LECTURE_3_PAGES_029-038_BOUNDARY_CENSUS.md",
+      "sha256": "3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f"
+    },
+    "mit_l07_pdf_filter": {
+      "bytes": 302,
+      "path": "source/id-ID/mit-l07-pdf-filter.lua",
+      "sha256": "2a39c4aeb5b6587e4ff7db483f130cb88c8fdbc74f9e83f8fd939d37f6e75421"
+    },
+    "mit_l07_preamble": {
+      "bytes": 1499,
+      "path": "source/id-ID/mit-l07-preamble.tex",
+      "sha256": "11dc4cdb79b1b1cffba021c2571451edac343a8763769552e9d1cb846ca1b6e0"
+    },
+    "mit_l07_visual_qa": {
+      "bytes": 2472,
+      "path": "qa/MIT_L07_VISUAL_QA.json",
+      "sha256": "1caf7ebc941616122adade72ecc7efbf68e9b8a9499290f0782bf2e11e0cadd2"
+    }
+  },
+  "formula_sequence_match": true,
+  "html": {
+    "display_math_nodes": 13,
+    "duplicate_ids": [],
+    "headings": {
+      "h1": 1,
+      "h2": 11
+    },
+    "images": 0,
+    "lang": "id-ID",
+    "math_nodes": 195,
+    "media_or_embeds": 0,
+    "ordered_nested_items": 11,
+    "source_displays": 13,
+    "source_figure_panels": 6,
+    "source_figures": 4,
+    "source_items": 16,
+    "source_pages": 10,
+    "unresolved_fragments": []
+  },
+  "human_native_speaker_review": false,
+  "model_identification": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "pdf": {
+    "images": 0,
+    "page_size": "A4",
+    "pages": 4,
+    "render_sha256": [
+      "e132994bcafed753b1c2043d1435ac52ef4d245cde9f0cdbea9dd65ed7cb5c5e",
+      "1e5e4dbde11e20c6734d13b35d96f27a4bc2c4dfcbe85d704d865ac730f4f1a8",
+      "d049d80f54193b24512261e5764f89dd8f88392d6ef99e2d9bc7d9c66f76da99",
+      "21b087239f1967147b7a065be06a31f0b6608e17b7d10f603bf009aaa386f39d"
+    ],
+    "searchable": true,
+    "tagged": false
+  },
+  "recorded_at": "2026-08-24T01:28:42Z",
+  "result": "pass",
+  "rights": {
+    "athena_source_figure_blocks_omitted": 4,
+    "athena_source_figure_panels_omitted": 6,
+    "component": "MIT OCW 6.253 complete-notes",
+    "license": "CC BY-NC-SA 4.0",
+    "license_uri": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "non_endorsement": true
+  },
+  "schema": "o015-mit-l07-validation-v1",
+  "source_page_text_sha256": {
+    "29": "c15536202c7266b03878d0c26e7eb7f16fd66914dc8f1e3130a6bda4331a2a86",
+    "30": "9d98e3ccc8484700cfb18da53d957f3e76baec9eafdce7c7f32a8830cf403085",
+    "31": "6e0c1295f1123cf1f21a00eaa7a56dffdae5687012636037ad4af3b135fa6a88",
+    "32": "839ab088b6e14506263f00c7c16f1ef7305e4b064a056206b39676a1f9381b4d",
+    "33": "0fd72c6f78ea30001a3090e3d53b852b29e61ad6892bcc44150934d20417c085",
+    "34": "7c31d76eb0766e97a33bec9c2e788bbdb1a22019a3058ad13e00babb8ecfaeaf",
+    "35": "cd5b3f0e30c9fa5662ba24784ff87ea2dc73cf909f406cdab776791688812604",
+    "36": "2b49f0fe0cd826f7abd9fee09cf1491ac082e7601b6b5c9573e9da508fb82872",
+    "37": "1eef14b9a3c143879b7567e2c4ea128562251801f0dd006688dafbb564c0425c",
+    "38": "2861b4fec0e91b47654e551a8336f4805b20befd1cad2aa5e1035ca500145c5f",
+    "39": "7eea461ea346ad1d4f43be4350ca2597d2efe0270b41967307600a521de03b05"
+  }
+}

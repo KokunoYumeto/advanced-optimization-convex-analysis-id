@@ -1,0 +1,35 @@
+{
+  "schema": "o015-mit-l07-release-input-lock-v1",
+  "boundary": {
+    "source_pages": [29, 30, 31, 32, 33, 34, 35, 36, 37, 38],
+    "next_source_page": 39,
+    "next_source_heading": "LECTURE 4 - LECTURE OUTLINE"
+  },
+  "backend_record_count": 1820,
+  "protected_backend_record_count": 1714,
+  "new_backend_record_count": 106,
+  "files": {
+    "00_control/MIT_L07_CORRECTION_SNAPSHOT.jsonl": {"bytes": 1490, "sha256": "eba6c2039e1f893287921d72f5169e14861d95955acd7c6682e59cabcd030084"},
+    "00_control/MIT_L07_LECTURE_3_PAGES_029-038_BOUNDARY_CENSUS.md": {"bytes": 11013, "sha256": "3c7400bdd092cffe358e852e5304091bfd53b10fb36d366f558e1b0f9c8bee2f"},
+    "backend/records.csv": {"bytes": 1586211, "sha256": "a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985"},
+    "backend/records.jsonl": {"bytes": 1321559, "sha256": "1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843"},
+    "output/html/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html": {"bytes": 77399, "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"},
+    "output/pdf/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf": {"bytes": 75885, "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"},
+    "qa/MIT_L07_BACKEND_VALIDATION.json": {"bytes": 7879, "sha256": "37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948"},
+    "qa/MIT_L07_BROWSER_QA.json": {"bytes": 2468, "sha256": "f29fdb2086693efe892ac0a0d346fa19c7d57de8371d7ccc0317edaf6e8bf9d7"},
+    "qa/MIT_L07_INDEPENDENT_REREVIEW.md": {"bytes": 4136, "sha256": "d5f0bfc23b7a9b74d30570de9b2bd058c0ded84b51414b7b0b929349764ea86d"},
+    "qa/MIT_L07_VALIDATION.json": {"bytes": 8176, "sha256": "c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1"},
+    "qa/MIT_L07_VISUAL_QA.json": {"bytes": 2472, "sha256": "1caf7ebc941616122adade72ecc7efbf68e9b8a9499290f0782bf2e11e0cadd2"},
+    "qa/build_mit_l07.py": {"bytes": 4115, "sha256": "d777599f7529449c5c10a130afd32a1e67338ae7edf19b0dca00fdbd91724d01"},
+    "qa/extend_backend_mit_l07.py": {"bytes": 46906, "sha256": "f2e6bdc042bfd1fe39e902aa4c413b6d421e7bf0ce491cf805dd4a709922c993"},
+    "qa/validate_backend_mit_l07.py": {"bytes": 40896, "sha256": "7d9a47c70186e456b3281230223a89e1e8af9382509125e8de2d55af0386e867"},
+    "qa/validate_mit_l07.py": {"bytes": 28883, "sha256": "9dd39156c3591c0a771cc894ac5085fb5c787b5a472b722be24eb4d84c2d16ca"},
+    "source/en/mit-07-lecture-3-differentiable-convex-functions-caratheodory-semantic-witness.md": {"bytes": 13879, "sha256": "ab9fb12728b53c0369094a347827aa40d74332b811976b8e0733caf245bce18b"},
+    "source/id-ID/mit-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.md": {"bytes": 16518, "sha256": "b1554fcb455bb43ecd72aa4c4e0f70d6d502c885009ba5e6a799e639e69441dd"},
+    "source/id-ID/mit-l07-after-body.html": {"bytes": 176, "sha256": "ce35e12f0a05dda23a0f55e9b5dfb1f26e5f4c8d3b1c7439ac401227366580b9"},
+    "source/id-ID/mit-l07-before-body.html": {"bytes": 96, "sha256": "1e979724f5ee0f65feda5442d9307df710a3f2d8203f5d7051b390dc42ce61b7"},
+    "source/id-ID/mit-l07-pdf-filter.lua": {"bytes": 302, "sha256": "2a39c4aeb5b6587e4ff7db483f130cb88c8fdbc74f9e83f8fd939d37f6e75421"},
+    "source/id-ID/mit-l07-preamble.tex": {"bytes": 1499, "sha256": "11dc4cdb79b1b1cffba021c2571451edac343a8763769552e9d1cb846ca1b6e0"},
+    "source/id-ID/mit-l07.css": {"bytes": 2777, "sha256": "4f5bb04dc8f30c5e383fc901dea1817168446ad6f6761e21a8dfdd9fb961ab1b"}
+  }
+}

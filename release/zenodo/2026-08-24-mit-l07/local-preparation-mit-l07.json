@@ -1,0 +1,79 @@
+{
+  "schema": "o015-zenodo-mit-l07-local-preparation-v1",
+  "recorded_at": "2026-08-24T01:47:15Z",
+  "parent_record_id": "22073743",
+  "parent_record_doi": "10.5281/zenodo.22073743",
+  "concept_id": "22059741",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "version": "checkpoint-2026.08.24-mit-l07-p29-38",
+  "status": "prepared locally; not authenticated, drafted, uploaded, published, or read back",
+  "source_pages": [29, 30, 31, 32, 33, 34, 35, 36, 37, 38],
+  "next_source_page": 39,
+  "backend_record_count": 1820,
+  "protected_backend_record_count": 1714,
+  "new_backend_record_count": 106,
+  "release_file_count": 66,
+  "inherited_file_count": 58,
+  "addition_file_count": 8,
+  "deterministic_local_builds": 2,
+  "deterministic_identity_match": true,
+  "delta_bundle": {
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L07_DELTA.zip",
+    "bytes": 410297,
+    "sha256": "767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40",
+    "zip_entries": 27,
+    "manifest_bound_entries": 26,
+    "uncompressed_bytes": 3141247,
+    "unique_names": true,
+    "inventory_exact": true,
+    "entry_size_hashes": "pass",
+    "integrity": "pass",
+    "forbidden_entries": 0,
+    "credential_shaped_entries": 0,
+    "mutable_global_control_files": 0
+  },
+  "manifest": {
+    "filename": "release-manifest-mit-l07.json",
+    "bytes": 5396,
+    "sha256": "3465065b4062a7cfe9361b4efc20f60930e2584c496bd8651f50365266a5139e"
+  },
+  "checksums": {
+    "filename": "SHA256SUMS-mit-l07",
+    "bytes": 6723,
+    "sha256": "de5ef346e2a00cdd6dd62b392af1e1e9010e458c8361e6037e990bf660ff8910"
+  },
+  "reader": {
+    "default_preview": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+    "pdf": {"bytes": 75885, "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"},
+    "html": {"bytes": 77399, "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"}
+  },
+  "final_backend": {
+    "jsonl": {"bytes": 1321559, "sha256": "1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843"},
+    "csv": {"bytes": 1586211, "sha256": "a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985"},
+    "validation": {"bytes": 7879, "sha256": "37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948"},
+    "correction_snapshot": {"bytes": 1490, "sha256": "eba6c2039e1f893287921d72f5169e14861d95955acd7c6682e59cabcd030084"}
+  },
+  "release_builder": {
+    "filename": "build_l07.py",
+    "bytes": 29409,
+    "sha256": "83e03bfe22ff76723ec9a5aba872c59bdb68157d319a3d26d6a461d0561ced62"
+  },
+  "input_lock": {
+    "filename": "release-input-lock-mit-l07.json",
+    "bytes": 3507,
+    "sha256": "77019c5afadf05c2563db3f44fdc2cec230f30da59f7c367e7dc368926b2f455"
+  },
+  "metadata_template": {
+    "filename": "zenodo-record-mit-l07.json",
+    "bytes": 5296,
+    "sha256": "a25e50f92eceac9687ec76208938e6974ce8fbc27daad3366794ea0d72fd792d",
+    "default_preview": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf"
+  },
+  "network_operations": 0,
+  "credential_reads": 0,
+  "git_operations": 0,
+  "publication_operations": 0,
+  "draft_state_file_exists": false,
+  "public_readback_file_exists": false,
+  "note": "This is a local deterministic preservation package only. A future authorized publisher must create a new version from the latest record in concept 10.5281/zenodo.22059741, inherit all 58 parent files byte-for-byte, bind the manifest to the created record, publish, and anonymously read back every public byte."
+}

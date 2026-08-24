@@ -1,0 +1,161 @@
+{
+  "addition_file_count": 8,
+  "addition_material_files": [
+    {
+      "bytes": 410297,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.24_MIT_L07_DELTA.zip",
+      "sha256": "767d3d21dd587f328c6c631ff9ba1febca6e3168474c2d264d90fa0b040bea40"
+    },
+    {
+      "bytes": 77399,
+      "filename": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html",
+      "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"
+    },
+    {
+      "bytes": 75885,
+      "filename": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+      "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+    },
+    {
+      "bytes": 1445,
+      "filename": "LICENSE_MIT_L07.md",
+      "sha256": "fdaf8dea4ddeca8dcca2d146771f92133f395b6acc626f6f1bc897253e27fe1c"
+    },
+    {
+      "bytes": 1945,
+      "filename": "README_MIT_L07.md",
+      "sha256": "a3595e145cf33e1dd88a8a32c4c1ff9b1973a69e9f3359b46c9133188603d61b"
+    },
+    {
+      "bytes": 1132,
+      "filename": "README_RELEASE_MIT_L07.md",
+      "sha256": "97cf553d349aab38288aec355dac88880afdd08682bbc1fa1bed1f804d209395"
+    }
+  ],
+  "admitted_boundary": "MIT 6.253 complete-notes Lecture 3, PDF pages 29-38, L07",
+  "admitted_source_pages": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+  ],
+  "backend_record_count": 1820,
+  "complete_corpus": false,
+  "component_rights": {
+    "athena_scientific_graphics": "permission-only; zero source graphic bytes or layouts redistributed",
+    "inherited_griffin_penn_components": "CC BY-NC-SA 3.0 United States",
+    "inherited_habring_components": "CC BY 4.0",
+    "inherited_royer_source_freeze": "CC BY-NC 4.0",
+    "new_mit_reader_semantic_source_and_adaptation": "CC BY-NC-SA 4.0",
+    "new_project_build_qa_backend_and_boundary_evidence": "project-local tooling and evidence; no blanket reuse grant asserted"
+  },
+  "default_preview": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+  "delta_bundle_verification": {
+    "entries": 27,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_entries_verified": 26,
+    "mutable_global_control_files": 0
+  },
+  "generated_addition_files": [
+    "release-manifest-mit-l07.json",
+    "SHA256SUMS-mit-l07"
+  ],
+  "human_native_speaker_review": false,
+  "inherited_file_count": 58,
+  "lane_closure": {
+    "athena_source_graphic_bytes": 0,
+    "backend": {
+      "csv": {
+        "bytes": 1586211,
+        "filename": "records.csv",
+        "sha256": "a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985"
+      },
+      "jsonl": {
+        "bytes": 1321559,
+        "filename": "records.jsonl",
+        "sha256": "1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843"
+      },
+      "new_record_count": 106,
+      "protected_record_count": 1714,
+      "record_count": 1820
+    },
+    "backend_validation": {
+      "bytes": 7879,
+      "filename": "MIT_L07_BACKEND_VALIDATION.json",
+      "sha256": "37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948"
+    },
+    "browser_validation": {
+      "bytes": 2468,
+      "filename": "MIT_L07_BROWSER_QA.json",
+      "sha256": "f29fdb2086693efe892ac0a0d346fa19c7d57de8371d7ccc0317edaf6e8bf9d7"
+    },
+    "content_validation": {
+      "bytes": 8176,
+      "filename": "MIT_L07_VALIDATION.json",
+      "sha256": "c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1"
+    },
+    "human_native_speaker_review": false,
+    "independent_rereview": {
+      "bytes": 4136,
+      "filename": "MIT_L07_INDEPENDENT_REREVIEW.md",
+      "sha256": "d5f0bfc23b7a9b74d30570de9b2bd058c0ded84b51414b7b0b929349764ea86d"
+    },
+    "input_lock": {
+      "bytes": 3507,
+      "filename": "release-input-lock-mit-l07.json",
+      "sha256": "77019c5afadf05c2563db3f44fdc2cec230f30da59f7c367e7dc368926b2f455"
+    },
+    "mutable_global_control_files_in_bundle": 0,
+    "next_source_page": 39,
+    "reader_pdf_tagged": false,
+    "result": "pass",
+    "source_pages": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "visual_validation": {
+      "bytes": 2472,
+      "filename": "MIT_L07_VISUAL_QA.json",
+      "sha256": "1caf7ebc941616122adade72ecc7efbf68e9b8a9499290f0782bf2e11e0cadd2"
+    }
+  },
+  "metadata_template": {
+    "bytes": 5296,
+    "filename": "zenodo-record-mit-l07.json",
+    "sha256": "a25e50f92eceac9687ec76208938e6974ce8fbc27daad3366794ea0d72fd792d"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "new_backend_record_count": 106,
+  "next_boundary": "MIT 6.253 complete-notes PDF page 39, Lecture 4",
+  "parent_record_doi": "10.5281/zenodo.22073743",
+  "parent_record_id": "22073743",
+  "protected_backend_record_count": 1714,
+  "publication_date": "2026-08-24",
+  "reader_pdf_tagged": false,
+  "release_file_count": 66,
+  "rights_notice": "Rights are component-specific; no umbrella license replaces inherited component rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v1",
+  "semantic_html_primary": true,
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.24-mit-l07-p29-38",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741",
+  "zenodo_record_doi": null,
+  "zenodo_record_id": null
+}

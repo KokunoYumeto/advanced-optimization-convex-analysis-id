@@ -1,0 +1,32 @@
+{
+  "schema": "o015-mit-l07-visual-qa-v1",
+  "recorded_at": "2026-08-24T01:13:24Z",
+  "result": "pass",
+  "boundary": "MIT complete-notes pages 29-38",
+  "surface": {
+    "path": "output/pdf/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+    "bytes": 75885,
+    "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+  },
+  "render": {
+    "tool": "pdftoppm",
+    "dpi": 160,
+    "pages": 4,
+    "files": [
+      {"name": "page-1.png", "width": 1323, "height": 1871, "bytes": 415341, "sha256": "e132994bcafed753b1c2043d1435ac52ef4d245cde9f0cdbea9dd65ed7cb5c5e"},
+      {"name": "page-2.png", "width": 1323, "height": 1871, "bytes": 320167, "sha256": "1e5e4dbde11e20c6734d13b35d96f27a4bc2c4dfcbe85d704d865ac730f4f1a8"},
+      {"name": "page-3.png", "width": 1323, "height": 1871, "bytes": 363389, "sha256": "d049d80f54193b24512261e5764f89dd8f88392d6ef99e2d9bc7d9c66f76da99"},
+      {"name": "page-4.png", "width": 1323, "height": 1871, "bytes": 409315, "sha256": "21b087239f1967147b7a065be06a31f0b6608e17b7d10f603bf009aaa386f39d"}
+    ]
+  },
+  "observations": [
+    "All four A4 reader pages were inspected at full-page resolution and render without clipping, overlap, missing glyphs, black boxes, broken headings, or unintended blank pages.",
+    "The ten ordered source-page sections, sixteen top-level items, fourteen nested items, thirteen display formulas, and four text-only figure descriptions remain legible across the reflowed page breaks.",
+    "The four Athena Scientific figure blocks are descriptions only; their six source panels remain semantically distinguished without source image bytes or copied layouts, and the output PDF has no raster image XObjects.",
+    "The first-order inequality, variational optimality condition, projection characterization, Hessian tests, coefficient-reduction proof, and compact-convex-hull application are fully visible with intact transpose marks, bars, norms, arrows, limits, and inequality directions.",
+    "The projection statement visibly uses the corrected object 'titik peminimum tunggal', while the three function-type declarations use the domain-to-codomain arrow and both changes are disclosed by event identifier.",
+    "Headers, source-page range, footers, page numbers, section-number spacing, list indentation, and display centering remain consistent on every page."
+  ],
+  "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "human_native_speaker_review": false
+}

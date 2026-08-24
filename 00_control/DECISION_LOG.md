@@ -359,3 +359,24 @@ The next unit is not page 29 alone: complete Lecture 3 spans pages 29–38 and
 page 39 starts Lecture 4. Its census and semantic witness are already frozen.
 Preserve L06 in the existing GitHub/Zenodo lineages and translate L07 as one
 ten-page batch. Missing human review cannot delay either operation.
+
+## D90-0038 — Admit complete Lecture 3 and advance to Lecture 4
+
+Decision: admit MIT L07 as the single complete page-29–38 Lecture 3 boundary.
+The reader gate binds the exact authority fingerprints, formula and topology
+sequence, disclosed corrections `O015-MIT-SEM-0007` and `0008`, no-copy figure
+treatment, two deterministic builds, desktop/mobile reflow, all-page visual
+inspection, and independent P1/P2/P3 rereview. The final reader receipt is
+8,176 bytes / SHA-256
+`c076f79323c21186ceab5cbb56a128c71a31c67aa55b635f1eeebe313b4bd7e1`.
+
+The additive backend adds 106 records to the exact protected 1,714-record L06
+baseline and passes two root-repeated cycles at 1,820 records. JSONL, CSV, and
+backend-receipt hashes are
+`1f6384b25937765bdd32e9ae59d68ac11772c15ddd250861d7d051742ad43843`,
+`a6986c21e9757dd1750dd5e515e9038a973ecbeeae22db07d99ff81ea3f92985`,
+and `37ddb31f13788e7e0ae6622304b38ec456693b78726bdf2625c5a7797be9d948`.
+Preserve this coherent boundary once in the existing GitHub/Zenodo lineages;
+do not create page-level versions. Page 39 is the next cursor and begins
+Lecture 4. Missing human review remains recorded evidence and cannot delay
+admission or preservation.
