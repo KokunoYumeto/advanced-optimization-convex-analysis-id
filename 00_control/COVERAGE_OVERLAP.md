@@ -1,13 +1,13 @@
 # O015 coverage and overlap boundary
 
 Architecture controlling record: 2026-08-24  
-Coverage updated through: 2026-08-25 — complete Habring v1 plus Becker-01  
+Coverage updated through: 2026-08-25 — complete Habring v1 plus Becker-01 and Becker-02
 Role: D90 — Advanced Optimization and Convex Analysis  
 Current architecture: Habring v1 canonical editable spine; bounded Becker supplement; MIT/Royer/Penn companions; finite original closure
 
 ## Selected D90 primary architecture
 
-The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 now supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression. Douglas–Rachford and the short variance-reduction slice remain frozen candidates, not yet admitted.
+The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression; Becker-02 supplies Douglas–Rachford. The short variance-reduction slice remains the active frozen candidate.
 
 MIT OCW 6.253, Royer, and Penn remain separately licensed companions. Every accepted translation, stable ID, correction, release, source credit, and component right is preserved, but these companions do not displace the editable spine or automatically drive source-order expansion. The original layer still must close stochastic proximal/mirror/minibatch and rigorous variance-reduction theory, variational inequalities/maximal monotone operators/resolvents/splitting, connective proofs, substantive exercises, hints, answers, complete solutions, tests, open-solver labs, and capstone. The later historical sections remain evidence of how already accepted companion boundaries were produced; they are not the current architecture.
 
@@ -368,3 +368,10 @@ minibatch methods; a rigorous variance-reduction bridge; variational
 inequalities, maximal monotonicity, resolvents/splitting beyond this one method;
 and the full exercise, hint, answer, complete-solution, lab, capstone,
 tagged-PDF, and accessibility closure.
+
+Public preservation does not change this coverage judgment. Becker-02 is now
+public at GitHub commit `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7` and
+Zenodo DOI `10.5281/zenodo.22098168`, with anonymous exact-byte readback
+complete. The active nonduplicative source boundary is variance reduction at
+Becker lines 2971--2988; the original stochastic, variational/monotone,
+assessment/solution, lab, capstone, tagged-PDF, and accessibility gaps remain.

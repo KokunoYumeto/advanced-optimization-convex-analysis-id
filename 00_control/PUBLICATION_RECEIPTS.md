@@ -740,7 +740,7 @@ a new content release. No upstream issue, comment, or other contact occurred.
   4,985 bytes; SHA-256
   `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
 
-## 2026-08-25 — Becker-02 verified local publication candidate
+## 2026-08-25 — Becker-02 verified local publication candidate (historical)
 
 - Scope: exact Becker donor lines 2750--2797, the independent Indonesian
   Douglas--Rachford reader/source, QA evidence, additive stable-ID receipts,
@@ -762,6 +762,47 @@ a new content release. No upstream issue, comment, or other contact occurred.
   documentation; exact credits, change disclosure, model provenance, and
   nonendorsement present. Larger course status remains partial.
 
-This entry proves readiness only. It claims no public Becker-02 commit, DOI, or
-remote byte until the existing GitHub and Zenodo transactions and anonymous
-readbacks pass. No upstream contact occurred.
+This historical entry proved readiness only; the public transactions are
+recorded in the superseding sections below. No upstream contact occurred.
+
+## 2026-08-25 — Public Becker-02 GitHub checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/commit: `main` / `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`
+- Tree/parent: `b44b2d044d015ead4913f332588170238549820f` /
+  `de9026a6e84f53bb3243b10827a7e708716cfd97`
+- Scope: 59 Becker-02 source, reader, QA, backend, release, and durable-control
+  files / 8,172,433 aggregate bytes.
+- Anonymous gate: public commit page and patch resolve; every immutable raw path
+  matches the exact local byte count and SHA-256, including the primary PDF.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-02/github-public-readback-becker-02.json`,
+  36,917 bytes; SHA-256
+  `01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab`.
+
+## 2026-08-25 — Public Becker-02 Zenodo checkpoint
+
+- Record: https://zenodo.org/records/22098168
+- Version DOI: `10.5281/zenodo.22098168`
+- Concept DOI: `10.5281/zenodo.22059741`
+- Parent: record `22096817`, DOI `10.5281/zenodo.22096817`
+- Inventory: 99 files; 91 inherited byte-identical and eight Becker-02
+  additions. Every anonymous download matches expected bytes and SHA-256.
+- Default preview: `D90-BECKER-02-pemisahan-douglas-rachford-id.pdf` according
+  to the authoritative public file-state endpoint. The legacy thumbnail cache
+  still names MIT-09 but does not control the configured preview.
+- Bounded pruning: two superseded backend snapshots and six redundant early-MIT
+  release-metadata files are absent only from this version; prior immutable
+  versions remain unchanged.
+- Metadata gate: truthful partial status, exact per-component rights and
+  provenance, the organization contributor exactly once, model provenance
+  exactly once, no credential material, and no upstream contact.
+- Sanitized public receipt:
+  `release/zenodo/2026-08-25-becker-02/zenodo-public-readback-becker-02.json`,
+  26,801 bytes; SHA-256
+  `8920dcfad62b0f4d34642b60f35b5b8d7f7a901ad430b75b90d35683a5bb9b24`.
+- Authenticated closure: direct draft lookup returns 404 and the concept has
+  zero open drafts. Receipt:
+  `release/zenodo/2026-08-25-becker-02/zenodo-draft-closure-becker-02.json`,
+  394 bytes; SHA-256
+  `4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.

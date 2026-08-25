@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-25  
-State: complete Habring v1 and Becker-01 are admitted and publicly verified with a protected 3,320-record backend; Douglas–Rachford is the active translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
+State: complete Habring v1 plus Becker-01 and Becker-02 are admitted and publicly verified with a protected 3,430-record backend; variance reduction is the active translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
 
 ## Completed at this boundary
 
@@ -11,7 +11,7 @@ State: complete Habring v1 and Becker-01 are admitted and publicly verified with
 - The previous public Zenodo version `10.5281/zenodo.22059742` preserves the first nine units through Penn Chapter 4 and passed anonymous exact-byte readback for all 15 files and all 132 manifest-bound ZIP payloads.
 - Zenodo version `10.5281/zenodo.22060447` now preserves all ten optional-companion units through Penn Chapter 5 and passed anonymous exact-byte readback for all 16 files and all 150 manifest-bound ZIP payloads.
 - Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
-- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions. Becker authority is frozen and Becker-01 is admitted; later exact slices remain gated.
+- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions. Becker authority is frozen; Becker-01 and Becker-02 are admitted/public, and the exact variance-reduction slice remains gated next.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 - The MIT/Royer source freeze and closure audit pass. The MIT teaching closure is 13 PDFs / 395 pages / 10,417,664 bytes under CC BY-NC-SA 4.0; the Royer notes and two laboratory archives are separately frozen under CC BY-NC 4.0. Neither mathematical source is misrepresented as TeX.
 - The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
@@ -636,3 +636,25 @@ Reconfirm nonduplication against Habring and the preserved stochastic-gradient
 companions, then translate it as one coherent unit and repeat the consolidated
 reader/math/rights/visual/accessibility/rereview/backend gate. The finite
 original closure remains mandatory afterward.
+
+## 2026-08-25 controlling cursor — Becker-02 public; variance reduction active
+
+The preservation instruction above is complete and superseded. GitHub content
+commit `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, tree
+`b44b2d044d015ead4913f332588170238549820f`, passed anonymous exact-byte
+readback for all 59 changed files. Zenodo record `22098168`, DOI
+`10.5281/zenodo.22098168`, is published/latest in concept
+`10.5281/zenodo.22059741`; all 99 files passed anonymous exact-byte readback,
+the Becker-02 PDF is the configured default preview, and authenticated checks
+prove zero open drafts in the concept.
+
+Execute `BECKER-VARIANCE-REDUCTION` now: exact frozen
+`TypedNotes/APPM5720Notes.tex` lines 2971--2988, 18 lines / 900 bytes, slice
+SHA-256 `b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+Recompute the live slice, confirm it is nonduplicative relative to Habring and
+the preserved stochastic-gradient companions, translate it as one coherent
+module with MIT credits and component-distinct CC BY-SA 4.0 new wording, then
+run one consolidated deterministic PDF/HTML, math, rights, visual,
+accessibility, independent-rereview, compact-package, and additive-backend
+gate. After admission, continue the finite original closure in
+`CURRENT_GOAL_AND_WORKFLOW.md`; do not mark the overall goal complete.

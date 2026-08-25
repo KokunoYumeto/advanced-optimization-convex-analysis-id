@@ -1509,7 +1509,7 @@ Publication-evidence descendant gate: PASS. GitHub commit
 # Becker-02 Douglas--Rachford consolidated build and QA
 
 As of: 2026-08-25  
-Admission: PASS locally; public preservation pending; larger O015 course partial
+Admission: PASS locally and publicly preserved; larger O015 course partial
 
 Boundary gate: PASS. Frozen donor `APPM5720Notes.tex` is 130,911 bytes /
 SHA-256 `dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8`.
@@ -1582,3 +1582,20 @@ verification is 7,368 bytes / SHA-256
 `5d8972d9ccdcd378fd4a0fad464918afbd1907a08c6ba603ea51f05acc57c7ea`.
 No raw authority archive, full backend, build/cache tree, credential, bulk
 provenance dump, or forbidden project-label prose is packaged.
+
+Public-preservation gate: PASS. GitHub content commit
+`2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, tree
+`b44b2d044d015ead4913f332588170238549820f`, passed anonymous exact-byte
+readback for 59 changed files / 8,172,433 aggregate bytes. Receipt: 36,917
+bytes / SHA-256
+`01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab`.
+
+Zenodo record `22098168`, DOI `10.5281/zenodo.22098168`, is published/latest in
+concept `10.5281/zenodo.22059741`. All 99 files passed anonymous size/SHA-256
+readback: 91 inherited unchanged plus eight Becker-02 additions. The configured
+default preview is the Becker-02 PDF. Receipt: 26,801 bytes / SHA-256
+`8920dcfad62b0f4d34642b60f35b5b8d7f7a901ad430b75b90d35683a5bb9b24`.
+Authenticated closure returns HTTP 404 for the record draft and finds zero open
+lineage drafts; receipt: 394 bytes / SHA-256
+`4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
+No credential material was recorded and no upstream contact occurred.

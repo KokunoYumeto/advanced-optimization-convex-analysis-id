@@ -207,7 +207,7 @@
   },
   "current_becker_supplement_admission": {
     "recorded_on": "2026-08-25",
-    "status": "becker_01_public_becker_02_admitted_pending_preservation",
+    "status": "becker_01_and_becker_02_public_variance_reduction_active",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
     "scope": "Exact non-LP source ranges 1263-1321, 1398-1405, 1414-1499, 1652-1726, and 1731-1743: Lagrangian duality, Slater, saddle points, and KKT. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 are excluded for O018.",
     "corrections": {
@@ -333,7 +333,7 @@
       "upstream_contact": false
     },
     "becker_02_admission": {
-      "status": "admitted_pending_public_preservation",
+      "status": "admitted_and_publicly_preserved",
       "scope": "Exact APPM5720Notes.tex lines 2750-2797: Douglas--Rachford splitting, shadow-limit theorem and proof, fixed-point derivation, and the qualified ADMM relation. Adjacent ADMM and all LP material are excluded.",
       "source_boundary": {
         "path": "qa/BECKER_02_SOURCE_BOUNDARY.json",
@@ -396,21 +396,57 @@
         "translation_and_correction_wording": "CC BY-SA 4.0",
         "nonendorsement": true
       },
+      "public_preservation": {
+        "status": "github_and_zenodo_public_exact_byte_readback_pass",
+        "github": {
+          "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+          "commit": "2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7",
+          "tree": "b44b2d044d015ead4913f332588170238549820f",
+          "parent": "de9026a6e84f53bb3243b10827a7e708716cfd97",
+          "changed_files": 59,
+          "aggregate_bytes": 8172433,
+          "anonymous_readback": "pass",
+          "receipt_path": "release/github/2026-08-25-becker-02/github-public-readback-becker-02.json",
+          "receipt_bytes": 36917,
+          "receipt_sha256": "01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab"
+        },
+        "zenodo": {
+          "record_id": "22098168",
+          "record_doi": "10.5281/zenodo.22098168",
+          "record_url": "https://zenodo.org/records/22098168",
+          "concept_doi": "10.5281/zenodo.22059741",
+          "parent_record_id": "22096817",
+          "status": "published_latest",
+          "file_count": 99,
+          "inherited_file_count": 91,
+          "addition_file_count": 8,
+          "removed_parent_file_count": 8,
+          "default_preview": "D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+          "anonymous_readback": "pass",
+          "receipt_path": "release/zenodo/2026-08-25-becker-02/zenodo-public-readback-becker-02.json",
+          "receipt_bytes": 26801,
+          "receipt_sha256": "8920dcfad62b0f4d34642b60f35b5b8d7f7a901ad430b75b90d35683a5bb9b24",
+          "authenticated_open_draft_status": 404,
+          "concept_open_draft_count": 0,
+          "draft_closure_receipt_path": "release/zenodo/2026-08-25-becker-02/zenodo-draft-closure-becker-02.json",
+          "draft_closure_receipt_bytes": 394,
+          "draft_closure_receipt_sha256": "4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5"
+        }
+      },
       "upstream_contact": false
     }
   },
   "current_production_cursor": {
     "recorded_on": "2026-08-25",
-    "authority_kind": "becker_02_preservation_then_bounded_supplement_next_module",
-    "name": "BECKER-02-PRESERVATION-THEN-VARIANCE-REDUCTION",
+    "authority_kind": "becker_bounded_supplement_next_module",
+    "name": "BECKER-VARIANCE-REDUCTION",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
     "source": "TypedNotes/APPM5720Notes.tex",
     "source_lines": "2971-2988",
     "source_slice_sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-    "state": "queued_after_becker_02_public_preservation",
+    "state": "active_after_becker_02_public_preservation",
     "admitted": false,
     "required_actions": [
-      "publish the admitted Becker-02 boundary once in the existing GitHub and Zenodo lineages and anonymously read back every public byte",
       "reconfirm exact variance-reduction slice and nonduplication against Habring and preserved stochastic-gradient companions",
       "translate one coherent variance-reduction module with retained source rights and credits",
       "run deterministic reader, math, visual, accessibility, rereview, and backend gates"
@@ -989,20 +1025,20 @@
           "1406-1413",
           "1727-1730"
         ],
-        "remaining_candidates": [
+        "bounded_modules": [
           {
             "name": "BECKER-DOUGLAS-RACHFORD",
             "lines": "2750-2797",
             "bytes": 1285,
             "sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2",
-            "admission": "admitted_pending_public_preservation"
+            "admission": "admitted_and_publicly_preserved"
           },
           {
             "name": "BECKER-VARIANCE-REDUCTION",
             "lines": "2971-2988",
             "bytes": 900,
             "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-            "admission": "gated_next_candidate"
+            "admission": "active_next_candidate"
           }
         ]
       },
@@ -1020,7 +1056,7 @@
         "BSD-3-Clause utilities are not automatically admitted",
         "GPLv3 ADiGator components are not automatically admitted"
       ],
-      "admission": "bounded MIT supplement; Becker-01 is public, Becker-02 Douglas-Rachford is locally admitted pending preservation, and variance reduction remains gated"
+      "admission": "bounded MIT supplement; Becker-01 and Becker-02 Douglas-Rachford are public with exact-byte readback, and variance reduction is the active bounded candidate"
     }
   ]
 }

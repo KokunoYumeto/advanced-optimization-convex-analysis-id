@@ -3,7 +3,7 @@
 As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: complete Habring v1 spine and Becker-01 are public; Becker-02 Douglas–Rachford is locally admitted and awaiting one preservation transaction; the protected additive backend has 3,430 records; variance reduction is the following source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
+Status: complete Habring v1 spine plus Becker-01 and Becker-02 are public; the protected additive backend has 3,430 records; variance reduction is the active source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -14,7 +14,7 @@ The controlling architecture receipt is `C:/Users/Floris/Documents/interlanguage
 ## Selected primary authority
 
 - Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv `2607.11664v1`: exact 230,116-byte source tar, SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`; 836,977-byte / 84-page PDF, SHA-256 `d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d`; CC BY 4.0. Its modular TeX/class/figures/BibLaTeX/README closure is the canonical editable spine.
-- Stephen Becker's MIT-licensed TeX course is frozen at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`. `TypedNotes/APPM5720Notes.tex` is the sole source-closed donor; Becker-01 is admitted. The broken Jaden master remains excluded rather than repaired. Douglas–Rachford and variance reduction remain gated candidates.
+- Stephen Becker's MIT-licensed TeX course is frozen at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`. `TypedNotes/APPM5720Notes.tex` is the sole source-closed donor; Becker-01 and Becker-02 Douglas–Rachford are admitted and public. The broken Jaden master remains excluded rather than repaired. Variance reduction is the active bounded candidate.
 - MIT OCW 6.253, Royer notes/labs, and Penn MATH 555 retain their exact authority and separate licenses as companions. MIT pages 2--97 are accepted and preserved; no Athena Scientific figure byte or layout is admitted.
 
 The finite original layer must close assessment and connective proofs for the admitted KKT/Slater/Lagrangian progression, modern stochastic methods, variational inequalities and maximal-monotone/resolvent/splitting material, substantive exercises, and complete solutions. Imports remain component-distinct.
@@ -979,3 +979,36 @@ that, translate exact variance-reduction lines 2971--2988 (900 bytes, SHA-256
 The original stochastic, variational/monotone, assessment, complete-solution,
 lab, capstone, tagged-PDF, and accessibility closure remains unfinished; the
 overall goal is not complete.
+
+## 2026-08-25 controlling refresh — Becker-02 public; variance reduction active
+
+The pending-preservation instruction above is complete and superseded.
+Becker-02 is public in the existing GitHub repository at content commit
+`2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, tree
+`b44b2d044d015ead4913f332588170238549820f`, parent
+`de9026a6e84f53bb3243b10827a7e708716cfd97`. Anonymous readback verifies all
+59 changed files / 8,172,433 aggregate bytes; the 36,917-byte sanitized receipt
+has SHA-256
+`01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab`.
+
+Zenodo record `22098168`, DOI `10.5281/zenodo.22098168`, is published/latest
+in existing concept `10.5281/zenodo.22059741` after parent `22096817`. Its 99
+files comprise 91 inherited byte-identical files and eight Becker-02 additions;
+all passed anonymous size/SHA-256 readback. Eight superseded backend/MIT-release
+metadata files are omitted only from this version; immutable earlier versions
+remain unchanged. The authoritative public file state selects
+`D90-BECKER-02-pemisahan-douglas-rachford-id.pdf` as default preview. Zenodo's
+legacy thumbnail cache still names MIT-09, but does not control the configured
+preview. The 26,801-byte readback receipt has SHA-256
+`8920dcfad62b0f4d34642b60f35b5b8d7f7a901ad430b75b90d35683a5bb9b24`.
+Authenticated lookup returns 404 and the concept has zero open drafts; the
+394-byte closure receipt has SHA-256
+`4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
+
+The executable production cursor is now `BECKER-VARIANCE-REDUCTION`, exact
+`TypedNotes/APPM5720Notes.tex` lines 2971--2988, 18 lines / 900 bytes, SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+Reconfirm nonduplication, translate the coherent unit, and run the consolidated
+reader/math/rights/visual/accessibility/rereview/backend gate. The finite
+original stochastic, variational/monotone, assessment/solutions, lab, capstone,
+tagged-PDF, and accessibility closure remains unfinished; the goal is active.

@@ -719,3 +719,29 @@ record byte and relative order. The deterministic 22-entry compact package is
 Preserve this fixed boundary once in the existing GitHub and Zenodo lineages,
 perform public-byte readback, then advance to exact variance-reduction lines
 2971--2988. The full O015 course remains partial; no upstream contact occurred.
+
+## D90-0056 — Close Becker-02 public preservation and activate variance reduction
+
+Decision: accept Becker-02 as publicly preserved once in the existing GitHub
+and Zenodo lineages. GitHub content commit
+`2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, tree
+`b44b2d044d015ead4913f332588170238549820f`, exposes 59 changed files /
+8,172,433 aggregate bytes; every immutable raw byte passes anonymous readback.
+The 36,917-byte receipt has SHA-256
+`01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab`.
+
+Zenodo record `22098168`, DOI `10.5281/zenodo.22098168`, is published/latest in
+concept `10.5281/zenodo.22059741`. The exact 99-file namespace retains 91 parent
+files byte-identically and adds eight Becker-02 files; all pass anonymous
+size/SHA-256 readback. The Becker-02 PDF is the configured default preview.
+Eight superseded backend/MIT-release metadata files are absent only from this
+version, without altering prior immutable versions. The 26,801-byte public
+receipt has SHA-256
+`8920dcfad62b0f4d34642b60f35b5b8d7f7a901ad430b75b90d35683a5bb9b24`.
+Authenticated lookup proves HTTP 404 for the published record draft and zero
+open drafts in the concept; the 394-byte closure receipt has SHA-256
+`4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
+
+Activate exact Becker variance-reduction lines 2971--2988. This preservation
+decision changes no coverage or license judgment, creates no duplicate concept,
+claims no full-course completion, and involved no upstream contact.
