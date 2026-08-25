@@ -1,0 +1,615 @@
+{
+  "aggregate_bytes": 8512495,
+  "all_immutable_raw_paths_exact": true,
+  "authentication": "none; public HTTPS only",
+  "branch": "main",
+  "changed_paths": 58,
+  "commit": "09cc7e554b87c735428fb8cf3320a3d499956894",
+  "credentials_recorded": false,
+  "files": [
+    {
+      "bytes": 191353,
+      "etag": "\"ac2e9c910da598b2cddcdcf0fe284e34a202b62d8c295af12f1f3a64a7b1a7d4\"",
+      "exact_match": true,
+      "git_blob_sha1": "453db2f2513cdb53abe62e980641db6e419734d4",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/ADVERSE_LEDGER.jsonl",
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "sha256": "5e3208a4deb92f54eac095e8a81256f154ea45b9ea893b04241b0047e35ee73a",
+      "status": "M"
+    },
+    {
+      "bytes": 125326,
+      "etag": "\"e7e55eb87c3e3ee112226b6d34d2646da707660f565a4d16c4b31d45ccef1b53\"",
+      "exact_match": true,
+      "git_blob_sha1": "9c6109566790fb8520de8726398e2a95b9e2b579",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/BUILD_AND_QA.md",
+      "path": "00_control/BUILD_AND_QA.md",
+      "sha256": "2dc0139dd90aaeb5084db5fd3fac2a96c96de0ee372ae0455fcfda1051e64ae2",
+      "status": "M"
+    },
+    {
+      "bytes": 52007,
+      "etag": "\"80c96c36f03e906b02a2ab37650ff0d1d74716ca629bc84775ce13cc7b95b606\"",
+      "exact_match": true,
+      "git_blob_sha1": "c8ba26af3087f3cf84ac8b68c35b4e42cb7f40ea",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/COMPONENT_RIGHTS.csv",
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "sha256": "208fc856d762f97bcbd8da655f95b5e8db0f3e7248c1ece16ab848963731b557",
+      "status": "M"
+    },
+    {
+      "bytes": 26762,
+      "etag": "\"a29709f7a5356648ac00f7a4c63d34ccc8a3aa2bf49c623016f35d07934a7ad4\"",
+      "exact_match": true,
+      "git_blob_sha1": "19de64f36694fe52e0582a0aa00630da1cc0c937",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/COVERAGE_OVERLAP.md",
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "sha256": "341defe810bdf0cdc71f3de58dd4872ae5180c37ffd18902333ed4e9df9f9adb",
+      "status": "M"
+    },
+    {
+      "bytes": 46937,
+      "etag": "\"7112fd0efa72947df2d02dde99f3a943061643301a1cc76088f5f9575df42464\"",
+      "exact_match": true,
+      "git_blob_sha1": "94d564765492387b8d55f4059868ec9701b4e064",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/CURRENT_CURSOR.md",
+      "path": "00_control/CURRENT_CURSOR.md",
+      "sha256": "ac1006b209b9caceff78a962a32f98a1ac42e18793de78fdbacc752a4ffdeeb5",
+      "status": "M"
+    },
+    {
+      "bytes": 4163,
+      "etag": "\"006862f51723432ebbe89afe63c40875f2e6acc11f781475fc8cae04c79ab204\"",
+      "exact_match": true,
+      "git_blob_sha1": "1ffa8e947948f4a6cf2192e37ec4f7f0c59b7fe3",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "sha256": "2dd8533f6f6fe1073a3b840fc640086a56998b31060267a02aead0b315572076",
+      "status": "M"
+    },
+    {
+      "bytes": 67250,
+      "etag": "\"9807678a6802c39056591ada87831e13f6d718308d1a9ea9e11dbf890a6dd4b4\"",
+      "exact_match": true,
+      "git_blob_sha1": "3461733346e0e4683aa8f8aee01decefe4c3d695",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/CURRENT_STATE.md",
+      "path": "00_control/CURRENT_STATE.md",
+      "sha256": "9388670df527ed29e58d1163d53829566bf5fb475e383a2b1c927fb01259f772",
+      "status": "M"
+    },
+    {
+      "bytes": 63244,
+      "etag": "\"921a98316c1c8c76bf3b22c0f0b77bbb36bf2309ce1fbd7ef69726c0d3ba0fa7\"",
+      "exact_match": true,
+      "git_blob_sha1": "c0ab394ed7be156f8c1e725da33a07fefcbb9766",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/DECISION_LOG.md",
+      "path": "00_control/DECISION_LOG.md",
+      "sha256": "bf1d1a10000140c8655f27b63879e3212fe1b75ea0d708c7845a6beccc1f03f2",
+      "status": "M"
+    },
+    {
+      "bytes": 9211,
+      "etag": "\"dd20daeb57d750105074e557601db49507ca95bd5c70a2d31fa56bbc96bf47ac\"",
+      "exact_match": true,
+      "git_blob_sha1": "988851138056b04cb6bef2f5c2256cddfcb77baf",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/INDONESIAN_TERMINOLOGY_QA_20260822.md",
+      "path": "00_control/INDONESIAN_TERMINOLOGY_QA_20260822.md",
+      "sha256": "b573509aa741ae9da8401030e664385fe93c34a22c503910e73a1bbeb40e4d0b",
+      "status": "M"
+    },
+    {
+      "bytes": 57745,
+      "etag": "\"7abcb00a93f9aede1e3108878cc8e79bfdfbe38726c943e591344a975f2ee6ab\"",
+      "exact_match": true,
+      "git_blob_sha1": "b7dd578227234857c43d125dccf6766b7c8505ac",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/PUBLICATION_RECEIPTS.md",
+      "path": "00_control/PUBLICATION_RECEIPTS.md",
+      "sha256": "c7f830595901b5464a271d715eb3ed3e15cf7e50e2f4332c267cc9ec9c9791e4",
+      "status": "M"
+    },
+    {
+      "bytes": 55194,
+      "etag": "\"38b188035c58e5a79159e44a023bbf3cab43ef95a3488d4e730fedf45f39be4c\"",
+      "exact_match": true,
+      "git_blob_sha1": "f4cb480f2c6094d0ff0ae677d688dc9f142e1841",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/00_control/SOURCE_AUTHORITY.json",
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "sha256": "8ab793fd3a4e1c922fc9059025adee4131885ad73fdc99cce630b391491b95e0",
+      "status": "M"
+    },
+    {
+      "bytes": 3267489,
+      "etag": "\"d0a0a03818d5e0b23d69af667de402e9a9bec7a9a90fb204df8f79fd0f6f67c9\"",
+      "exact_match": true,
+      "git_blob_sha1": "1c3f4d915feb80b05f4e416ced9b051c2941cb25",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/backend/records.csv",
+      "path": "backend/records.csv",
+      "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72",
+      "status": "M"
+    },
+    {
+      "bytes": 2724813,
+      "etag": "\"52e26d15d66fa6201471c02940466caccfa91a8153add87538f21ccfca0573f1\"",
+      "exact_match": true,
+      "git_blob_sha1": "5b391d3bace22a81274896f298dd8706fc508876",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/backend/records.jsonl",
+      "path": "backend/records.jsonl",
+      "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb",
+      "status": "M"
+    },
+    {
+      "bytes": 24322,
+      "etag": "\"210f15e19470ccad0e84f1eff7ddfc44c58503460922f6922bf3e778282b16e1\"",
+      "exact_match": true,
+      "git_blob_sha1": "6afdc17142e28c0b0807f8c8d27239b510fc61d0",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/output/html/D90-BECKER-03-reduksi-varians-id.html",
+      "path": "output/html/D90-BECKER-03-reduksi-varians-id.html",
+      "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb",
+      "status": "A"
+    },
+    {
+      "bytes": 476357,
+      "etag": "\"e2a095920376b5b6e65d407bd01e3473f8c508d58a7b043995e2673963bef497\"",
+      "exact_match": true,
+      "git_blob_sha1": "3480e9c62080eb64ac6c3fd9d49a015b8b3319ec",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/output/pdf/D90-BECKER-03-reduksi-varians-id.pdf",
+      "path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf",
+      "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a",
+      "status": "A"
+    },
+    {
+      "bytes": 2931,
+      "etag": "\"05469e73fa806015ae9bd12640712e28d6f3b4730503eeabb5b2bbea6eae13a5\"",
+      "exact_match": true,
+      "git_blob_sha1": "6b4215553d5cc18231a7b6b00b849845382a2aeb",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_BACKEND_EXTENSION.json",
+      "path": "qa/BECKER_03_BACKEND_EXTENSION.json",
+      "sha256": "8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9",
+      "status": "A"
+    },
+    {
+      "bytes": 4856,
+      "etag": "\"7b74efd3ed56505234bba92eb0819049cf84d26284a74ba9ea3868dae586bb07\"",
+      "exact_match": true,
+      "git_blob_sha1": "69b6a6055f23e731a77c92bbb187ca72b2ec335e",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_BACKEND_VALIDATION.json",
+      "path": "qa/BECKER_03_BACKEND_VALIDATION.json",
+      "sha256": "e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0",
+      "status": "A"
+    },
+    {
+      "bytes": 2523,
+      "etag": "\"ea6b5bf468b8eccba6a834fb05aac1b48fcf1782e707109c93e91f9502d823ce\"",
+      "exact_match": true,
+      "git_blob_sha1": "9e74620e715ab7d5e997fad1014edec32da37413",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_HTML_BROWSER_QA.json",
+      "path": "qa/BECKER_03_HTML_BROWSER_QA.json",
+      "sha256": "87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec",
+      "status": "A"
+    },
+    {
+      "bytes": 4636,
+      "etag": "\"dc9b307a435fd98482b4ef3fda27f65dcf99b42575fbc8436c9984cd845bc06f\"",
+      "exact_match": true,
+      "git_blob_sha1": "158a4658cf99188c2b174111d2cba8c5a822f6f8",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_HTML_BUILD.json",
+      "path": "qa/BECKER_03_HTML_BUILD.json",
+      "sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13",
+      "status": "A"
+    },
+    {
+      "bytes": 3799,
+      "etag": "\"b5d267e3f84e78a4c84dc452332b2f6ead5659c542b86a37d12c758025de74b5\"",
+      "exact_match": true,
+      "git_blob_sha1": "6121175b0c1a5256a74aa24cc8891491575e7022",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_INDEPENDENT_REREVIEW.json",
+      "path": "qa/BECKER_03_INDEPENDENT_REREVIEW.json",
+      "sha256": "ec8a9cc7429440abc8b2cb371dbe41318774eecc09fcccbffdc1dc2333a9a338",
+      "status": "A"
+    },
+    {
+      "bytes": 6375,
+      "etag": "\"d8ed0965dcaf0ca04b718709aff5c7faf41c3405ade31821fbdb6d716102de76\"",
+      "exact_match": true,
+      "git_blob_sha1": "e7f7ce08e1a6bd44ae95d3ccf58a158584901812",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_MATH_VALIDATION.json",
+      "path": "qa/BECKER_03_MATH_VALIDATION.json",
+      "sha256": "51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f",
+      "status": "A"
+    },
+    {
+      "bytes": 4920,
+      "etag": "\"712efa6cfca1642c938dbce4722f7cdb08f7e973f068b59bd523be132be4402c\"",
+      "exact_match": true,
+      "git_blob_sha1": "1dd8eaab95c6d0c3d41fc4a94ad5c195ecddb0e8",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_PDF_BUILD.json",
+      "path": "qa/BECKER_03_PDF_BUILD.json",
+      "sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727",
+      "status": "A"
+    },
+    {
+      "bytes": 2472,
+      "etag": "\"7d23c403e80e2c32db02f8c1e8dae6ba41f6ceb5f8290a634dbc261f70b56523\"",
+      "exact_match": true,
+      "git_blob_sha1": "a3193a682321b82e68f2d406846eb4d73647d20e",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_PDF_VISUAL_QA.json",
+      "path": "qa/BECKER_03_PDF_VISUAL_QA.json",
+      "sha256": "1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48",
+      "status": "A"
+    },
+    {
+      "bytes": 1815,
+      "etag": "\"95ef522397e7fc8a088d09841b116b1887fe9eb01da348f302a29b41fcce4e3a\"",
+      "exact_match": true,
+      "git_blob_sha1": "5d95c392c04ce78ab5880cc1522c1a1618ad84a2",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3",
+      "status": "A"
+    },
+    {
+      "bytes": 16244,
+      "etag": "\"5487a8f0af12b9fe5ef6744bc20992995663e56674f6cb92dc58963c3a72095f\"",
+      "exact_match": true,
+      "git_blob_sha1": "bdf23dfe7708d6bd051544553972c8f86c1812e8",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/build_becker_variance_reduction_html.py",
+      "path": "qa/build_becker_variance_reduction_html.py",
+      "sha256": "5cba8c7877c5496fa102a8e463da84a25f2de74772bfcd601feea7b922be2494",
+      "status": "A"
+    },
+    {
+      "bytes": 8609,
+      "etag": "\"28475d960e54800742f9c46a8d7ee0b9747ce5cf4c9f8c69ab60c9a24ef5b217\"",
+      "exact_match": true,
+      "git_blob_sha1": "fdede83b665c30e1eeae9529eb93cf3eb2e81fa6",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/build_becker_variance_reduction_pdf.py",
+      "path": "qa/build_becker_variance_reduction_pdf.py",
+      "sha256": "abc19eb1029cad37aba656905aaf1a7219a47d0fd405d8163c46436447e63bb3",
+      "status": "A"
+    },
+    {
+      "bytes": 59515,
+      "etag": "\"4610714848c61922483351155ca12cf030813fdc6e366f4e2a9f4952bea5216d\"",
+      "exact_match": true,
+      "git_blob_sha1": "9d679c9c448583eac056a738d1e6a9c0a16a0ba7",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/extend_backend_becker_03.py",
+      "path": "qa/extend_backend_becker_03.py",
+      "sha256": "fa6ced12fbd7968239ebd8a2c84c598b08501d8ee335994fb48224cabe29776e",
+      "status": "A"
+    },
+    {
+      "bytes": 5892,
+      "etag": "\"76cd9b776c79cb95d122f730b2e248da096512d999993516545dc724cfe63e20\"",
+      "exact_match": true,
+      "git_blob_sha1": "61227144824662ad2d27719e8d09a6304eaec472",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/extract_becker_variance_reduction_source.py",
+      "path": "qa/extract_becker_variance_reduction_source.py",
+      "sha256": "b7c06d2f4035e66d5c0df169b022601e9c6c3c582f1a0dc2f6cd5f125b7f8012",
+      "status": "A"
+    },
+    {
+      "bytes": 41671,
+      "etag": "\"51afe17c3ff65693f453dc7d5646dcac63519c877ebc75d6275db16ae8151ea9\"",
+      "exact_match": true,
+      "git_blob_sha1": "070046aee3196ee49479b4b07924653f181b0357",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/validate_backend_becker_03.py",
+      "path": "qa/validate_backend_becker_03.py",
+      "sha256": "16fa54491c567d194d9e36856cc49936d65c23781fe17f5519e65af12cc0c4f5",
+      "status": "A"
+    },
+    {
+      "bytes": 15746,
+      "etag": "\"353f0cd3dc518099590bc657b9921992dc31742e0596e89c65d2316dcf1a8ba4\"",
+      "exact_match": true,
+      "git_blob_sha1": "bf3efc970f2a36a143a806e9e3c8aab3c1b39bad",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/qa/validate_becker_variance_reduction_math.py",
+      "path": "qa/validate_becker_variance_reduction_math.py",
+      "sha256": "ffaf35ca147a4f94515f1043b8795451d68144cb3d47625ca81c445256467b97",
+      "status": "A"
+    },
+    {
+      "bytes": 501094,
+      "etag": "\"9589b07cdf20a040f6c424c2d46b6b31291b24dd5cc2069ea09232a8363f46c9\"",
+      "exact_match": true,
+      "git_blob_sha1": "2fe4c96fa5591f54e2679d3720a6f6d6b04d4833",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_03_2026.08.25.zip",
+      "path": "release/becker-03/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_03_2026.08.25.zip",
+      "sha256": "49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3",
+      "status": "A"
+    },
+    {
+      "bytes": 7359,
+      "etag": "\"e45a9f7b0e15534315475ccbc9cbfb174ab5d06c077d5dec977ff9cb8b17af74\"",
+      "exact_match": true,
+      "git_blob_sha1": "466986aac2b8401591300c3503b548c46ee73e88",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/local-verification-becker-03.json",
+      "path": "release/becker-03/2026-08-25/local-verification-becker-03.json",
+      "sha256": "f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b",
+      "status": "A"
+    },
+    {
+      "bytes": 24322,
+      "etag": "\"210f15e19470ccad0e84f1eff7ddfc44c58503460922f6922bf3e778282b16e1\"",
+      "exact_match": true,
+      "git_blob_sha1": "6afdc17142e28c0b0807f8c8d27239b510fc61d0",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/D90-BECKER-03-reduksi-varians-id.html",
+      "path": "release/becker-03/2026-08-25/package/D90-BECKER-03-reduksi-varians-id.html",
+      "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb",
+      "status": "A"
+    },
+    {
+      "bytes": 476357,
+      "etag": "\"e2a095920376b5b6e65d407bd01e3473f8c508d58a7b043995e2673963bef497\"",
+      "exact_match": true,
+      "git_blob_sha1": "3480e9c62080eb64ac6c3fd9d49a015b8b3319ec",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/D90-BECKER-03-reduksi-varians-id.pdf",
+      "path": "release/becker-03/2026-08-25/package/D90-BECKER-03-reduksi-varians-id.pdf",
+      "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a",
+      "status": "A"
+    },
+    {
+      "bytes": 1071,
+      "etag": "\"436755c14eef977d40f55e3652a2c778371ea20514c512c1486612ec04ec5360\"",
+      "exact_match": true,
+      "git_blob_sha1": "b0406f4d25b6f885422e48e06a73b638d3c5d39d",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/LICENSE_BECKER_MIT.txt",
+      "path": "release/becker-03/2026-08-25/package/LICENSE_BECKER_MIT.txt",
+      "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+      "status": "A"
+    },
+    {
+      "bytes": 1003,
+      "etag": "\"a884cf282abf57bf072807cfcdbde7ad17e5dc62026146c6ff6c60528b31fb8c\"",
+      "exact_match": true,
+      "git_blob_sha1": "ded591ed62f1a1b85f4870115672f29758f0a9d9",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "path": "release/becker-03/2026-08-25/package/LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "sha256": "3a5c7c99881b44ac9ec1573f2ab21a3e5344c8dd016f390329bc9339a009756d",
+      "status": "A"
+    },
+    {
+      "bytes": 2920,
+      "etag": "\"50d33bf3b584a24cae6914eefecb70982c870f281e57f26634f164e08fbf60eb\"",
+      "exact_match": true,
+      "git_blob_sha1": "28effd09a1960337de23b99ff7e66426a5465351",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/README_BECKER_03.md",
+      "path": "release/becker-03/2026-08-25/package/README_BECKER_03.md",
+      "sha256": "9c209fbac59fdf8d5926700882ce49959d8cef6039e60d8161dcefca1ce78faf",
+      "status": "A"
+    },
+    {
+      "bytes": 2112,
+      "etag": "\"288407b469f9e0c76e0730483e0757a1532d686356ad3827554f299f24db85b8\"",
+      "exact_match": true,
+      "git_blob_sha1": "67bdb9c186f49efb7d9aba5874445eaf2413a69a",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/SHA256SUMS",
+      "path": "release/becker-03/2026-08-25/package/SHA256SUMS",
+      "sha256": "5a19d1c136ec10ee248b32fe6804c726bb0404d62e941a90a75867184a1bc272",
+      "status": "A"
+    },
+    {
+      "bytes": 8935,
+      "etag": "\"8828db24b076d8815652f9f829254de4843e826b279a07fb7e9f847706231f34\"",
+      "exact_match": true,
+      "git_blob_sha1": "2dd5e289755f525db6cff1082963330775b6d15f",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/authority/BECKER_AUTHORITY_FREEZE.md",
+      "path": "release/becker-03/2026-08-25/package/authority/BECKER_AUTHORITY_FREEZE.md",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7",
+      "status": "A"
+    },
+    {
+      "bytes": 2931,
+      "etag": "\"05469e73fa806015ae9bd12640712e28d6f3b4730503eeabb5b2bbea6eae13a5\"",
+      "exact_match": true,
+      "git_blob_sha1": "6b4215553d5cc18231a7b6b00b849845382a2aeb",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_BACKEND_EXTENSION.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_BACKEND_EXTENSION.json",
+      "sha256": "8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9",
+      "status": "A"
+    },
+    {
+      "bytes": 4856,
+      "etag": "\"7b74efd3ed56505234bba92eb0819049cf84d26284a74ba9ea3868dae586bb07\"",
+      "exact_match": true,
+      "git_blob_sha1": "69b6a6055f23e731a77c92bbb187ca72b2ec335e",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_BACKEND_VALIDATION.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_BACKEND_VALIDATION.json",
+      "sha256": "e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0",
+      "status": "A"
+    },
+    {
+      "bytes": 2523,
+      "etag": "\"ea6b5bf468b8eccba6a834fb05aac1b48fcf1782e707109c93e91f9502d823ce\"",
+      "exact_match": true,
+      "git_blob_sha1": "9e74620e715ab7d5e997fad1014edec32da37413",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_HTML_BROWSER_QA.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_HTML_BROWSER_QA.json",
+      "sha256": "87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec",
+      "status": "A"
+    },
+    {
+      "bytes": 4636,
+      "etag": "\"dc9b307a435fd98482b4ef3fda27f65dcf99b42575fbc8436c9984cd845bc06f\"",
+      "exact_match": true,
+      "git_blob_sha1": "158a4658cf99188c2b174111d2cba8c5a822f6f8",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_HTML_BUILD.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_HTML_BUILD.json",
+      "sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13",
+      "status": "A"
+    },
+    {
+      "bytes": 3799,
+      "etag": "\"b5d267e3f84e78a4c84dc452332b2f6ead5659c542b86a37d12c758025de74b5\"",
+      "exact_match": true,
+      "git_blob_sha1": "6121175b0c1a5256a74aa24cc8891491575e7022",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_INDEPENDENT_REREVIEW.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_INDEPENDENT_REREVIEW.json",
+      "sha256": "ec8a9cc7429440abc8b2cb371dbe41318774eecc09fcccbffdc1dc2333a9a338",
+      "status": "A"
+    },
+    {
+      "bytes": 6375,
+      "etag": "\"d8ed0965dcaf0ca04b718709aff5c7faf41c3405ade31821fbdb6d716102de76\"",
+      "exact_match": true,
+      "git_blob_sha1": "e7f7ce08e1a6bd44ae95d3ccf58a158584901812",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_MATH_VALIDATION.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_MATH_VALIDATION.json",
+      "sha256": "51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f",
+      "status": "A"
+    },
+    {
+      "bytes": 4920,
+      "etag": "\"712efa6cfca1642c938dbce4722f7cdb08f7e973f068b59bd523be132be4402c\"",
+      "exact_match": true,
+      "git_blob_sha1": "1dd8eaab95c6d0c3d41fc4a94ad5c195ecddb0e8",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_PDF_BUILD.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_PDF_BUILD.json",
+      "sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727",
+      "status": "A"
+    },
+    {
+      "bytes": 2472,
+      "etag": "\"7d23c403e80e2c32db02f8c1e8dae6ba41f6ceb5f8290a634dbc261f70b56523\"",
+      "exact_match": true,
+      "git_blob_sha1": "a3193a682321b82e68f2d406846eb4d73647d20e",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_PDF_VISUAL_QA.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_PDF_VISUAL_QA.json",
+      "sha256": "1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48",
+      "status": "A"
+    },
+    {
+      "bytes": 1815,
+      "etag": "\"95ef522397e7fc8a088d09841b116b1887fe9eb01da348f302a29b41fcce4e3a\"",
+      "exact_match": true,
+      "git_blob_sha1": "5d95c392c04ce78ab5880cc1522c1a1618ad84a2",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "path": "release/becker-03/2026-08-25/package/qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3",
+      "status": "A"
+    },
+    {
+      "bytes": 9081,
+      "etag": "\"47c54d9520296762a68754d08751ff06832163156d23cb5ef5d9a09c994eb4a5\"",
+      "exact_match": true,
+      "git_blob_sha1": "a462703e0731bec83700c87dddc281990a9ea3f6",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/release-manifest-becker-03.json",
+      "path": "release/becker-03/2026-08-25/package/release-manifest-becker-03.json",
+      "sha256": "fff18d2e4e89a6e6e92b4434534a16c9021dd0352cc0851af022a8c10f27b459",
+      "status": "A"
+    },
+    {
+      "bytes": 977,
+      "etag": "\"a3027b81ebbafb6a09cf27c8b5d38a0b6006fd53804f6ea6656c49c50fab899f\"",
+      "exact_match": true,
+      "git_blob_sha1": "3eb019cd5f706a1758ed218137ef1d5fcb45af2d",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/source/en/becker-03-variance-reduction-source.tex",
+      "path": "release/becker-03/2026-08-25/package/source/en/becker-03-variance-reduction-source.tex",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607",
+      "status": "A"
+    },
+    {
+      "bytes": 7776,
+      "etag": "\"800c35e2d2f500390ea9a591234c7e5dcef1d757374fcb85d77c37788a0d373f\"",
+      "exact_match": true,
+      "git_blob_sha1": "b4ca4cf8ecf1d9169bb1b5a82610610132eea690",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "path": "release/becker-03/2026-08-25/package/source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e",
+      "status": "A"
+    },
+    {
+      "bytes": 8298,
+      "etag": "\"943ec0c62a708c17a4161b44b087db1ad3a5342cc83017ecf46de290cd5991ab\"",
+      "exact_match": true,
+      "git_blob_sha1": "2287a0b149c36c3acd4de2068b29c5b44cfa862d",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/source/id-ID/becker-03-reduksi-varians-id.tex",
+      "path": "release/becker-03/2026-08-25/package/source/id-ID/becker-03-reduksi-varians-id.tex",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b",
+      "status": "A"
+    },
+    {
+      "bytes": 4465,
+      "etag": "\"3bc00cd7ea184496e8e8e81eff8a7b53f1c43d9f51c510acf8f87acb71adfdd6\"",
+      "exact_match": true,
+      "git_blob_sha1": "e9d8b689f5d1f484a55174cff0d89b407f436aa5",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/source/id-ID/macros-id.tex",
+      "path": "release/becker-03/2026-08-25/package/source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+      "status": "A"
+    },
+    {
+      "bytes": 10133,
+      "etag": "\"74823d50729fd8dff707386921d4a50a31eb4d0f46dbd798574bb3c6599d3601\"",
+      "exact_match": true,
+      "git_blob_sha1": "f86c0da6d367b4e416c41f93b3d672fdcc645abc",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/package/source/id-ID/shinybook.cls",
+      "path": "release/becker-03/2026-08-25/package/source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0",
+      "status": "A"
+    },
+    {
+      "bytes": 21037,
+      "etag": "\"25eb8c832461c81420f1bbbadce2d64c2449e78d2fbbc08931c4256150acb245\"",
+      "exact_match": true,
+      "git_blob_sha1": "84835921e200f1f71723d812a1f3dbf097617f5c",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/release/becker-03/2026-08-25/prepare_becker_03_release.py",
+      "path": "release/becker-03/2026-08-25/prepare_becker_03_release.py",
+      "sha256": "0413afbde110162632ab93b1e66f79452976681d79b571d7003df6ce5888d3a4",
+      "status": "A"
+    },
+    {
+      "bytes": 977,
+      "etag": "\"a3027b81ebbafb6a09cf27c8b5d38a0b6006fd53804f6ea6656c49c50fab899f\"",
+      "exact_match": true,
+      "git_blob_sha1": "3eb019cd5f706a1758ed218137ef1d5fcb45af2d",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/source/en/becker-03-variance-reduction-source.tex",
+      "path": "source/en/becker-03-variance-reduction-source.tex",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607",
+      "status": "A"
+    },
+    {
+      "bytes": 7776,
+      "etag": "\"800c35e2d2f500390ea9a591234c7e5dcef1d757374fcb85d77c37788a0d373f\"",
+      "exact_match": true,
+      "git_blob_sha1": "b4ca4cf8ecf1d9169bb1b5a82610610132eea690",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e",
+      "status": "A"
+    },
+    {
+      "bytes": 8298,
+      "etag": "\"943ec0c62a708c17a4161b44b087db1ad3a5342cc83017ecf46de290cd5991ab\"",
+      "exact_match": true,
+      "git_blob_sha1": "2287a0b149c36c3acd4de2068b29c5b44cfa862d",
+      "immutable_raw_url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/09cc7e554b87c735428fb8cf3320a3d499956894/source/id-ID/becker-03-reduksi-varians-id.tex",
+      "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b",
+      "status": "A"
+    }
+  ],
+  "main_primary_pdf": {
+    "bytes": 476357,
+    "exact_match": true,
+    "path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf",
+    "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a",
+    "url": "https://raw.githubusercontent.com/KokunoYumeto/advanced-optimization-convex-analysis-id/main/output/pdf/D90-BECKER-03-reduksi-varians-id.pdf"
+  },
+  "parent": "64b60dae61096a265c6deec8e7defb21b1d917d5",
+  "public_commit_api": {
+    "bytes": 500772,
+    "etag": "W/\"47bc2421230a95a3f396d628a7abf6a635906f4447f0299301d3c92e9df21445\"",
+    "identity_exact": true,
+    "sha256": "47bc2421230a95a3f396d628a7abf6a635906f4447f0299301d3c92e9df21445",
+    "url": "https://api.github.com/repos/KokunoYumeto/advanced-optimization-convex-analysis-id/commits/09cc7e554b87c735428fb8cf3320a3d499956894"
+  },
+  "public_commit_page_contains_full_sha": true,
+  "public_commit_url": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/09cc7e554b87c735428fb8cf3320a3d499956894",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-becker-03-github-public-readback-v1",
+  "tree": "babb37fc16f31f95fee3e34a9b941d23e25a564b",
+  "upstream_contact": false,
+  "verification_source": "immutable committed bytes from git show COMMIT:path",
+  "verified_at_utc": "2026-08-25T20:38:58.278536Z"
+}

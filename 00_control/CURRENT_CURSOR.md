@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-25  
-State: complete Habring v1 plus Becker-01 and Becker-02 are public; Becker-03 variance reduction is locally admitted with a protected 3,585-record backend and publication is the immediate cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
+State: complete Habring v1 plus Becker-01, Becker-02, and Becker-03 are public; `FINITE-ORIGINAL-CLOSURE` tranche 1 is the immediate cursor with a protected 3,585-record backend; MIT L01–L11 remain a preserved companion and page 98 is dormant
 
 ## Completed at this boundary
 
@@ -11,7 +11,7 @@ State: complete Habring v1 plus Becker-01 and Becker-02 are public; Becker-03 va
 - The previous public Zenodo version `10.5281/zenodo.22059742` preserves the first nine units through Penn Chapter 4 and passed anonymous exact-byte readback for all 15 files and all 132 manifest-bound ZIP payloads.
 - Zenodo version `10.5281/zenodo.22060447` now preserves all ten optional-companion units through Penn Chapter 5 and passed anonymous exact-byte readback for all 16 files and all 150 manifest-bound ZIP payloads.
 - Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
-- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions. Becker authority is frozen; Becker-01 and Becker-02 are admitted/public, and the exact variance-reduction slice remains gated next.
+- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions. Becker authority is frozen; Becker-01, Becker-02, and Becker-03 are admitted and public, and the finite original closure is active.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 - The MIT/Royer source freeze and closure audit pass. The MIT teaching closure is 13 PDFs / 395 pages / 10,417,664 bytes under CC BY-NC-SA 4.0; the Royer notes and two laboratory archives are separately frozen under CC BY-NC 4.0. Neither mathematical source is misrepresented as TeX.
 - The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
@@ -691,3 +691,39 @@ integration, variational-inequality/maximal-monotone/resolvent/splitting
 material, connective proofs, substantive exercises/hints/answers/complete
 solutions, tests, proof rubrics, open-solver labs, capstone, and final
 accessible reader closure. The overall goal remains active.
+
+## 2026-08-25 controlling cursor — FINITE-ORIGINAL-CLOSURE tranche 1 active
+
+The Becker-03 preservation instruction above is complete and superseded.
+GitHub content commit `09cc7e554b87c735428fb8cf3320a3d499956894`, tree
+`babb37fc16f31f95fee3e34a9b941d23e25a564b`, parent
+`64b60dae61096a265c6deec8e7defb21b1d917d5`, is public. Its 36,273-byte
+anonymous-readback receipt is
+`release/github/2026-08-25-becker-03/github-public-readback-becker-03.json`,
+SHA-256
+`78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2`.
+
+Zenodo record `22102236` / DOI `10.5281/zenodo.22102236` is public in concept
+`10.5281/zenodo.22059741` with exactly 100 files: 92 inherited plus eight
+additions. Seven parent release aids are omitted only from this version. The
+Becker-03 PDF is the default preview; no preview repair is needed. The
+27,084-byte anonymous readback has SHA-256
+`a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d`.
+Authenticated draft lookup is HTTP 404 and concept open-draft count is zero;
+the 394-byte closure receipt has SHA-256
+`94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
+The release manifest and checksum list are respectively 17,356 / 761 bytes,
+with SHA-256
+`84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136`
+and `4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
+
+Immediate executable action: start `FINITE-ORIGINAL-CLOSURE` tranche 1 by
+authoring the missing stochastic proximal, mirror, and minibatch progression
+and rigorously integrating variance reduction with one notation, explicit
+assumptions, convergence statements, connective proofs, and aligned
+assessment. Deduplicate against canonical Habring and the admitted Becker
+slice; use MIT, Royer, and Penn only as companions with component-distinct
+rights. Run the existing deterministic source/reader, math, nonoverlap, rights,
+visual, accessibility, rereview, assessment/solution, and additive-backend
+gates before the next boundary. Do not reopen Becker publication or claim the
+overall course complete.

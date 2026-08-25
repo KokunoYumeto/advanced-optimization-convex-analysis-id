@@ -1664,3 +1664,36 @@ CRC, safe paths, fixed timestamps, package-tree identity, and `SHA256SUMS` pass.
 Local verification: 7,359 bytes /
 `f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b`.
 Public-preservation gate: pending immediate execution in existing lineages.
+
+## 2026-08-25 — Becker-03 public-preservation gate
+
+Public-preservation gate: PASS. GitHub commit
+`09cc7e554b87c735428fb8cf3320a3d499956894`, tree
+`babb37fc16f31f95fee3e34a9b941d23e25a564b`, and parent
+`64b60dae61096a265c6deec8e7defb21b1d917d5` expose 58 changed paths /
+8,512,495 aggregate bytes. Every immutable raw path passed anonymous exact-byte
+readback. Receipt:
+`release/github/2026-08-25-becker-03/github-public-readback-becker-03.json`,
+36,273 bytes / SHA-256
+`78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2`.
+
+Zenodo record `22102236`, version DOI `10.5281/zenodo.22102236`, in concept
+`10.5281/zenodo.22059741` is published/latest with exactly 100 files: 92
+inherited byte-identical files and eight additions. Seven parent release aids
+are omitted only from this version and remain in earlier immutable versions.
+All public downloads passed anonymous byte/SHA-256 readback, and
+`D90-BECKER-03-reduksi-varians-id.pdf` is the default preview without a repair.
+Receipt:
+`release/zenodo/2026-08-25-becker-03/zenodo-public-readback-becker-03.json`,
+27,084 bytes / SHA-256
+`a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d`.
+The 17,356-byte release manifest and 761-byte checksum file have SHA-256
+`84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136`
+and `4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
+Authenticated draft lookup returns 404 and the concept contains zero open
+drafts; the 394-byte closure receipt has SHA-256
+`94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
+No preview repair, credential recording, or upstream contact occurred. No
+receipt/control evidence-descendant commit is claimed. All three bounded Becker
+modules are now publicly preserved, and the production cursor advances to
+`FINITE-ORIGINAL-CLOSURE`.

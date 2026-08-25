@@ -1,13 +1,13 @@
 # O015 coverage and overlap boundary
 
 Architecture controlling record: 2026-08-24  
-Coverage updated through: 2026-08-25 — complete Habring v1 plus Becker-01 and Becker-02
+Coverage updated through: 2026-08-25 — complete Habring v1 plus public Becker-01, Becker-02, and Becker-03
 Role: D90 — Advanced Optimization and Convex Analysis  
 Current architecture: Habring v1 canonical editable spine; bounded Becker supplement; MIT/Royer/Penn companions; finite original closure
 
 ## Selected D90 primary architecture
 
-The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression; Becker-02 supplies Douglas–Rachford. The short variance-reduction slice remains the active frozen candidate.
+The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression; Becker-02 supplies Douglas–Rachford; Becker-03 supplies the bounded corrected SAGA/variance-reduction bridge. All three Becker modules are public, and the finite original closure is active.
 
 MIT OCW 6.253, Royer, and Penn remain separately licensed companions. Every accepted translation, stable ID, correction, release, source credit, and component right is preserved, but these companions do not displace the editable spine or automatically drive source-order expansion. The original layer still must close stochastic proximal/mirror/minibatch and rigorous variance-reduction theory, variational inequalities/maximal monotone operators/resolvents/splitting, connective proofs, substantive exercises, hints, answers, complete solutions, tests, open-solver labs, and capstone. The later historical sections remain evidence of how already accepted companion boundaries were produced; they are not the current architecture.
 
@@ -24,6 +24,11 @@ Consequences:
 - MO-book application notebooks remain reference material; no printed-book rights are inferred from a repository license.
 
 ## Exact selected-source accounting
+
+> **Historical/superseded MIT-primary accounting.** D90-0047 supersedes this
+> section's classification of MIT/Royer as the selected primary core. The
+> quantities below remain preserved inventory evidence only. Habring v1 is the
+> canonical spine; MIT, Royer, and Penn are companions.
 
 - MIT external teaching package: 395 pages across 13 PDFs: 340 lecture-note pages, 16 homework-question pages, 33 homework-solution pages, and six midterm/solution pages.
 - Royer external component: 45 note pages plus two public notebook-source laboratories.
@@ -400,3 +405,24 @@ not close broader stochastic proximal/mirror/minibatch integration, SVRG/SAG
 development, variational inequalities, maximal monotonicity, resolvents and
 splitting beyond admitted modules, or the course-wide proof, assessment,
 complete-solution, lab, capstone, tagged-PDF, and accessibility layers.
+
+## Becker-03 public closure and active original tranche (2026-08-25)
+
+Public preservation does not expand the admitted Becker-03 coverage boundary.
+The unit is public at GitHub content commit
+`09cc7e554b87c735428fb8cf3320a3d499956894` and Zenodo DOI
+`10.5281/zenodo.22102236` in concept `10.5281/zenodo.22059741`, with anonymous
+readback complete. Zenodo contains exactly 100 files: 92 inherited and eight
+additions; seven parent release aids are omitted only from this version. The
+Becker-03 PDF is the default preview and needs no preview repair. Authenticated
+checks show HTTP 404 for the draft and zero concept open drafts.
+
+All earlier MIT L02--L11 source-order sections above are historical companion
+admission records, not a live MIT-primary production program. D90-0047 controls:
+Habring remains the canonical structured-source spine, and MIT, Royer, and Penn
+remain separately licensed companions. `FINITE-ORIGINAL-CLOSURE` is active.
+Its first tranche must add the missing stochastic proximal, mirror, and
+minibatch progression plus rigorous variance-reduction integration without
+duplicating Habring, Becker-03, the companions, or O018. The later
+variational/monotone, course-wide assessment/complete-solution, lab, capstone,
+tagged-PDF, and accessibility gaps remain open.

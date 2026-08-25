@@ -120,6 +120,11 @@ Repeated structural and SymPy validation, independent rereview, two byte-identic
 
 ## D90-0026 — Primary architecture pivots to MIT OCW 6.253 plus Royer
 
+> **Historical/superseded annotation (2026-08-25):** D90-0047 supersedes this
+> decision's MIT-primary architecture. D90-0026 is retained unchanged below as
+> the record of the earlier decision; Habring is now canonical, while MIT,
+> Royer, and Penn are companions.
+
 The later full-course curriculum decision supersedes D90-0018 for the primary spine. Its verified controlling handoff is 13,143 bytes, SHA-256 `cd2b47ed14d55bf9de7881fdf977b0479c9d79eab296bd436e65e229bd2c210e`, and is recorded in `O015_PRIMARY_ARCHITECTURE_PIVOT_20260822.md`. The selected primary course is the complete MIT OCW 6.253 teaching package under CC BY-NC-SA 4.0 plus Clément Royer's stochastic-gradient notes and two notebook laboratories under CC BY-NC 4.0, followed by the specified four original bridges, four labs, solved-mastery layer, and capstone.
 
 The decision rests on complete course and self-study coverage, not sunk work: Penn/Habring is valuable and editable but does not provide a complete solved KKT/variational/stochastic arc. All admitted Penn/Habring artifacts and stable IDs remain a separately identified optional companion. Penn Chapter 6 is preserved but unadmitted; automatic Penn expansion stops after Chapter 5. The primary next production gate is one complete MIT lecture-block PDF-to-semantic-source pilot. Bulk translation is forbidden until the pilot proves page/topology completeness, source-page mapping, deterministic HTML/PDF, accessibility, terminology, a second clean reconstruction, and independent redraw or omission of Athena figure bytes.
@@ -777,3 +782,40 @@ and relative order. The 22-entry package is 501,094 bytes / SHA-256
 Preserve this fixed boundary in the existing GitHub/Zenodo lineages, read it
 back anonymously, then activate finite original closure. The larger course
 remains partial and no upstream contact occurred.
+
+## D90-0058 — Close Becker-03 public preservation and activate original tranche 1
+
+Decision: accept Becker-03 as publicly preserved once in the existing GitHub
+and Zenodo lineages. GitHub content commit
+`09cc7e554b87c735428fb8cf3320a3d499956894`, tree
+`babb37fc16f31f95fee3e34a9b941d23e25a564b`, parent
+`64b60dae61096a265c6deec8e7defb21b1d917d5`, is public. The existing
+anonymous-readback receipt
+`release/github/2026-08-25-becker-03/github-public-readback-becker-03.json` is
+36,273 bytes / SHA-256
+`78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2`.
+
+Zenodo record `22102236`, DOI `10.5281/zenodo.22102236`, is public in existing
+concept `10.5281/zenodo.22059741`. The exact 100-file inventory comprises 92
+inherited files plus eight additions. Seven parent release aids are omitted
+only from this version, without changing immutable earlier versions. The
+Becker-03 PDF is the configured default preview and no preview repair is
+needed. The 27,084-byte anonymous receipt
+`release/zenodo/2026-08-25-becker-03/zenodo-public-readback-becker-03.json` has
+SHA-256
+`a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d`.
+Authenticated draft lookup returns HTTP 404 and the concept has zero open
+drafts. The 394-byte sanitized closure receipt
+`release/zenodo/2026-08-25-becker-03/zenodo-draft-closure-becker-03.json` has
+SHA-256
+`94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
+The 17,356-byte manifest and 761-byte checksum file have SHA-256 values
+`84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136`
+and `4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
+
+Activate `FINITE-ORIGINAL-CLOSURE`, beginning with original stochastic
+proximal, mirror, and minibatch methods plus rigorous variance-reduction
+integration. Habring remains the canonical structured-source spine; MIT,
+Royer, and Penn remain companions. This closes publication only, changes no
+component-rights or overlap judgment, creates no duplicate lineage, and does
+not claim full-course completion.

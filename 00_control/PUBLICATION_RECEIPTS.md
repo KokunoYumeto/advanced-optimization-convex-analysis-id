@@ -86,6 +86,11 @@ The checkpoint adds the admitted Chapter 6 reader, complete editable source and 
 - Rights: component-specific CC BY 4.0 for Habring-derived material and CC BY-NC-SA 3.0 United States for Griffin/Penn-derived material; no blanket record-level override
 - Organization metadata: exactly one `TTP` occurrence, only as an organizational contributor
 
+Historical architecture note (2026-08-25): D90-0047 supersedes this receipt's
+then-current MIT/Royer-primary wording. The release facts remain unchanged;
+Habring is now the canonical structured-source spine, while MIT, Royer, and
+Penn are preserved companions.
+
 Anonymous credential-free downloads matched the exact local byte count and SHA-256 for all 15 public files:
 
 - `ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22.zip`: 1,600,529 bytes; SHA-256 `10d846f2ce49bf84d9c244e9dbfc84f64fc7d2e4cd55975742a2511e6300c1da`.
@@ -821,7 +826,7 @@ recorded in the superseding sections below. No upstream contact occurred.
   11,792 bytes; SHA-256
   `74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5`.
 
-## 2026-08-25 — Becker-03 verified local publication candidate
+## 2026-08-25 — Becker-03 verified local publication candidate (historical)
 
 - Scope: exact Becker donor lines 2971--2988, the independent Indonesian SAGA
   orientation and assessment layer, QA evidence, additive stable-ID receipts,
@@ -847,6 +852,58 @@ recorded in the superseding sections below. No upstream contact occurred.
   change disclosure, model provenance, nonendorsement, and partial-course
   status are explicit.
 
-This entry proves local readiness only. Publish immediately in the existing
-GitHub repository and Zenodo concept, then supersede it with exact public-byte
-receipts. No upstream contact occurred.
+This historical entry proved local readiness only. The superseding public
+transactions and exact-byte receipts are recorded below. No upstream contact
+occurred.
+
+## 2026-08-25 — Public Becker-03 GitHub checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/commit: `main` / `09cc7e554b87c735428fb8cf3320a3d499956894`
+- Tree/parent: `babb37fc16f31f95fee3e34a9b941d23e25a564b` /
+  `64b60dae61096a265c6deec8e7defb21b1d917d5`
+- Scope: 58 Becker-03 source, reader, QA, backend, release, and durable-control
+  paths / 8,512,495 aggregate bytes.
+- Anonymous gate: every immutable raw path matches its committed byte count and
+  SHA-256 identity, including the primary Becker-03 PDF.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-03/github-public-readback-becker-03.json`,
+  36,273 bytes; SHA-256
+  `78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2`.
+
+No receipt/control evidence-descendant commit is claimed at this checkpoint.
+No credential material was recorded and no upstream contact occurred.
+
+## 2026-08-25 — Public Becker-03 Zenodo checkpoint
+
+- Record: https://zenodo.org/records/22102236
+- Version DOI: `10.5281/zenodo.22102236`
+- Concept DOI: `10.5281/zenodo.22059741`
+- Parent: record `22098168`, DOI `10.5281/zenodo.22098168`
+- Inventory: exactly 100 files; 92 inherited byte-identical files and eight
+  additions. Every anonymous download matches its expected bytes and SHA-256.
+- Bounded omission: seven parent release aids are absent only from this version
+  and remain available in earlier immutable versions.
+- Default preview: `D90-BECKER-03-reduksi-varians-id.pdf`; the public file state
+  already names it, so no preview repair was required or performed.
+- Bound release manifest:
+  `release/zenodo/2026-08-25-becker-03/release-manifest-becker-03-zenodo.json`,
+  17,356 bytes; SHA-256
+  `84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136`.
+- Bound checksum file:
+  `release/zenodo/2026-08-25-becker-03/SHA256SUMS-becker-03`, 761 bytes;
+  SHA-256
+  `4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
+- Sanitized public readback:
+  `release/zenodo/2026-08-25-becker-03/zenodo-public-readback-becker-03.json`,
+  27,084 bytes; SHA-256
+  `a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d`.
+- Authenticated closure: direct draft lookup returns 404 and the concept has
+  zero open drafts. Receipt:
+  `release/zenodo/2026-08-25-becker-03/zenodo-draft-closure-becker-03.json`,
+  394 bytes; SHA-256
+  `94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
+
+This closes public preservation for all three bounded Becker modules and
+advances production to `FINITE-ORIGINAL-CLOSURE`. No credential material was
+recorded and no upstream contact occurred.

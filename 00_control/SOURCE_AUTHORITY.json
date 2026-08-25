@@ -206,7 +206,7 @@
   },
   "current_becker_supplement_admission": {
     "recorded_on": "2026-08-25",
-    "status": "becker_01_and_becker_02_public_becker_03_admitted_publication_pending",
+    "status": "all_three_becker_modules_admitted_and_publicly_preserved",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
     "scope": "Three exact nonduplicative Becker modules: non-LP Lagrangian duality/Slater/KKT ranges, Douglas--Rachford lines 2750-2797, and variance reduction lines 2971-2988. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 remain excluded for O018.",
     "corrections": {
@@ -446,7 +446,7 @@
       "upstream_contact": false
     },
     "becker_03_admission": {
-      "status": "admitted_publication_pending",
+      "status": "admitted_and_publicly_preserved",
       "scope": "Exact APPM5720Notes.tex lines 2971-2988: finite-sum SAA and a bounded SAGA orientation, with corrected table semantics, independent unbiasedness/variance proof, scoped rate statements, and two original exercises with hints and complete solutions. Earlier stochastic-gradient material and the document terminator are excluded.",
       "source_boundary": {
         "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
@@ -517,25 +517,67 @@
         "saga_result": "mathematical result separately attributed; paper not redistributed",
         "nonendorsement": true
       },
+      "public_preservation": {
+        "status": "github_and_zenodo_public_exact_byte_readback_pass",
+        "github": {
+          "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+          "commit": "09cc7e554b87c735428fb8cf3320a3d499956894",
+          "tree": "babb37fc16f31f95fee3e34a9b941d23e25a564b",
+          "parent": "64b60dae61096a265c6deec8e7defb21b1d917d5",
+          "changed_files": 58,
+          "aggregate_bytes": 8512495,
+          "anonymous_readback": "pass",
+          "receipt_path": "release/github/2026-08-25-becker-03/github-public-readback-becker-03.json",
+          "receipt_bytes": 36273,
+          "receipt_sha256": "78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2"
+        },
+        "zenodo": {
+          "record_id": "22102236",
+          "record_doi": "10.5281/zenodo.22102236",
+          "record_url": "https://zenodo.org/records/22102236",
+          "concept_doi": "10.5281/zenodo.22059741",
+          "parent_record_id": "22098168",
+          "status": "published_latest",
+          "file_count": 100,
+          "inherited_file_count": 92,
+          "addition_file_count": 8,
+          "removed_parent_file_count": 7,
+          "removed_parent_file_scope": "release aids only; retained in earlier immutable versions",
+          "default_preview": "D90-BECKER-03-reduksi-varians-id.pdf",
+          "default_preview_repair_performed": false,
+          "anonymous_readback": "pass",
+          "receipt_path": "release/zenodo/2026-08-25-becker-03/zenodo-public-readback-becker-03.json",
+          "receipt_bytes": 27084,
+          "receipt_sha256": "a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d",
+          "authenticated_open_draft_status": 404,
+          "concept_open_draft_count": 0,
+          "draft_closure_receipt_path": "release/zenodo/2026-08-25-becker-03/zenodo-draft-closure-becker-03.json",
+          "draft_closure_receipt_bytes": 394,
+          "draft_closure_receipt_sha256": "94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b",
+          "release_manifest": {
+            "path": "release/zenodo/2026-08-25-becker-03/release-manifest-becker-03-zenodo.json",
+            "bytes": 17356,
+            "sha256": "84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136"
+          },
+          "checksum_file": {
+            "path": "release/zenodo/2026-08-25-becker-03/SHA256SUMS-becker-03",
+            "bytes": 761,
+            "sha256": "4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0"
+          }
+        }
+      },
       "upstream_contact": false
     }
   },
   "current_production_cursor": {
     "recorded_on": "2026-08-25",
-    "authority_kind": "becker_bounded_supplement_publication_gate",
-    "name": "BECKER-03-PUBLIC-PRESERVATION",
-    "authority_id": "o015-becker-convex-optimization-class-98ed693",
-    "source": "TypedNotes/APPM5720Notes.tex",
-    "source_lines": "2971-2988",
-    "source_slice_sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-    "state": "locally_admitted_publication_pending",
-    "admitted": true,
+    "authority_kind": "finite_original_coursebook_closure",
+    "name": "FINITE-ORIGINAL-CLOSURE",
+    "state": "next_production_boundary_after_all_three_becker_modules_publicly_preserved",
+    "scope_reference": "selection_architecture.original_completion_required",
     "required_actions": [
-      "commit and push the exact Becker-03 boundary to the existing GitHub repository",
-      "publish one new version in the existing Zenodo concept 10.5281/zenodo.22059741",
-      "anonymously verify every new public byte and persist sanitized receipts"
-    ],
-    "next_after_gate": "finite original closure"
+      "construct and validate the finite original closure defined by selection_architecture.original_completion_required"
+    ]
   },
   "authorities": [
     {
@@ -1122,7 +1164,7 @@
             "lines": "2971-2988",
             "bytes": 900,
             "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-            "admission": "admitted_publication_pending"
+            "admission": "admitted_and_publicly_preserved"
           }
         ]
       },
@@ -1140,7 +1182,7 @@
         "BSD-3-Clause utilities are not automatically admitted",
         "GPLv3 ADiGator components are not automatically admitted"
       ],
-      "admission": "bounded MIT supplement; Becker-01 and Becker-02 are public with exact-byte readback, and Becker-03 variance reduction is locally admitted with publication pending"
+      "admission": "bounded MIT supplement; Becker-01, Becker-02, and Becker-03 are admitted and publicly preserved with exact-byte readback"
     }
   ]
 }

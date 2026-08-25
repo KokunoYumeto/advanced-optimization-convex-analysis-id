@@ -3,7 +3,7 @@
 As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: complete Habring v1 spine plus Becker-01 and Becker-02 are public; Becker-03 variance reduction is locally admitted and awaiting immediate preservation; the protected additive backend has 3,585 records; MIT L01–L11 remain a preserved companion and page 98 remains dormant
+Status: complete Habring v1 spine plus Becker-01, Becker-02, and Becker-03 are public; `FINITE-ORIGINAL-CLOSURE` tranche 1 is active; the protected additive backend has 3,585 records; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -52,11 +52,11 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified Zenodo version: `10.5281/zenodo.22098168`, exactly 99 files with 91 inherited byte-identical files and eight Becker-02 additions. Full anonymous readback passed and the Becker-02 PDF is the configured default preview.
-- Current verified GitHub content: Becker-02 content commit `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, with receipt/control evidence through descendant `64b60dae61096a265c6deec8e7defb21b1d917d5`; anonymous immutable readback passed.
+- Current verified Zenodo version: `10.5281/zenodo.22102236`, exactly 100 files with 92 inherited byte-identical files and eight Becker-03 additions. Full anonymous readback passed, the Becker-03 PDF is the configured default preview, and the concept has zero open drafts.
+- Current verified GitHub content: Becker-03 content commit `09cc7e554b87c735428fb8cf3320a3d499956894`; anonymous immutable readback passed. Its publication-receipt/control evidence descendant is the next narrow preservation step.
 - Figshare article `33314733` remains the intended Habring-only lineage, but authenticated requests return `403 InactiveAccount`; zero mutation occurred. This destination failure does not hold production and does not authorize a replacement item.
 
-Habring, all MIT companion releases, Becker-01, and Becker-02 have complete public-byte evidence. Becker-03 is locally release-ready. MIT page 98 is dormant.
+Habring, all MIT companion releases, Becker-01, Becker-02, and Becker-03 have complete public-byte evidence. MIT page 98 is dormant.
 
 ## Known incomplete surfaces
 
@@ -1061,3 +1061,43 @@ its local verification is 7,359 bytes / SHA-256
 Immediate action is publication in the existing GitHub repository and Zenodo
 concept, followed by anonymous byte readback. Then activate the finite original
 closure; the overall course goal remains active.
+
+## 2026-08-25 controlling refresh — Becker-03 public; original closure active
+
+The pending-publication wording above is complete and superseded. Becker-03
+GitHub content is public at commit
+`09cc7e554b87c735428fb8cf3320a3d499956894`, tree
+`babb37fc16f31f95fee3e34a9b941d23e25a564b`, parent
+`64b60dae61096a265c6deec8e7defb21b1d917d5`. Its existing anonymous public
+readback is
+`release/github/2026-08-25-becker-03/github-public-readback-becker-03.json`,
+36,273 bytes / SHA-256
+`78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2`.
+
+Zenodo record `22102236`, DOI `10.5281/zenodo.22102236`, is published in
+concept `10.5281/zenodo.22059741`. The exact 100-file public inventory comprises
+92 inherited byte-identical files and eight Becker-03 additions. Seven parent
+release aids are omitted only from this version; no immutable parent is
+changed. Becker-03 PDF is the default preview, and the public landing/file
+state requires no preview repair. All public files pass anonymous size and
+SHA-256 readback. The sanitized readback
+`release/zenodo/2026-08-25-becker-03/zenodo-public-readback-becker-03.json` is
+27,084 bytes / SHA-256
+`a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d`.
+
+Authenticated draft lookup returns HTTP 404, and the concept reports zero open
+drafts. The closure evidence
+`release/zenodo/2026-08-25-becker-03/zenodo-draft-closure-becker-03.json` is
+394 bytes / SHA-256
+`94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
+The bound release manifest is 17,356 bytes / SHA-256
+`84c41fe28ba4879f9022d091b9c2c45aa2656b8bf89dbe4fb8b8f4399246b136`;
+the checksum list is 761 bytes / SHA-256
+`4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
+
+The production phase is now `FINITE-ORIGINAL-CLOSURE`. Begin its first tranche
+with stochastic proximal, mirror, and minibatch methods and rigorous
+variance-reduction integration, including precise assumptions and rates.
+Habring remains canonical; MIT, Royer, and Penn remain companions. The later
+variational/monotone, assessment/complete-solution, lab, capstone, tagged-PDF,
+and accessibility work remains unfinished, so the overall goal is active.
