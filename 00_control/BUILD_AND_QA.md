@@ -1343,4 +1343,35 @@ Two staged generations and two root validation cycles reproduce them exactly;
 receipt: 10,298 bytes /
 `929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed`.
 All component rights remain CC BY 4.0 with attribution, change disclosure,
-license link, and non-endorsement. Preservation gate: PENDING.
+license link, and non-endorsement. Preservation gate: PASS for GitHub and
+Zenodo; Figshare is an independently recorded operational retry, not a build or
+production hold.
+
+## Complete Habring v1 public-preservation gate
+
+GitHub commit `46d5753e853397e013d21b01872d789f7ee07a63`, tree
+`97581caaced321b85b0131ba3df0e671ff3afa8a`, and all 46 changed paths pass
+immutable anonymous byte readback. Receipt: 11,883 bytes / SHA-256
+`0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352`.
+
+Zenodo DOI `10.5281/zenodo.22088305` is public/latest in the existing concept.
+The exact 100-file namespace contains 98 inherited unchanged files plus the
+3,779,312-byte Habring PDF and 1,856,748-byte comprehensive ZIP. All 100 public
+downloads match their expected SHA-256 identities. The Habring PDF is the
+anonymous default preview. The comprehensive ZIP passes CRC, seven unique
+nonrecursive members, six inner checksum bindings, nested 56-entry source
+bundle verification, and zero self-reference. Receipt: 27,419 bytes /
+`49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca`.
+The ZIP intentionally binds the prepublication control snapshot recorded in
+its input lock; these postpublication receipt/cursor updates are later evidence
+and are not substituted into the immutable published ZIP. Reproducing the
+published release means verifying the frozen ZIP and its manifest, not
+rebuilding it from subsequently advanced live controls.
+
+The prepared Figshare payload independently passes all local gates at seven
+files / 6,007,269 bytes, but authenticated preflight returns HTTP 403
+`InactiveAccount`. Zero mutation occurred. The 2,924-byte sanitized failure
+receipt has SHA-256
+`a8686c9a558954911d61b81762c5d571e0fc656286f25d6b7b506cf8c08ae218`.
+Retrying the same article when the account is active is additive and does not
+block the Becker build lane.

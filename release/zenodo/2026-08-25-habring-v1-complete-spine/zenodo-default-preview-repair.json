@@ -1,0 +1,38 @@
+{
+  "schema": "o015-zenodo-habring-spine-default-preview-repair-v1",
+  "recorded_at": "2026-08-25T00:34:47.703297+00:00",
+  "result": "pass",
+  "record_id": "22088305",
+  "record_doi": "10.5281/zenodo.22088305",
+  "concept_id": "22059741",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "operation": "same-record metadata/file-order edit and republish",
+  "new_version_created": false,
+  "file_bytes_changed": false,
+  "file_count_before": 100,
+  "file_count_after": 100,
+  "default_preview_before": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+  "default_preview_after": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+  "repair_route": "POST /api/records/22088305/draft; PUT /api/records/22088305/draft; POST /api/records/22088305/draft/actions/publish",
+  "file_order_prefix": [
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip"
+  ],
+  "anonymous_post_repair_state": {
+    "status": "published",
+    "latest": true,
+    "file_count": 100,
+    "thumbnail_files": [
+      "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf"
+    ],
+    "all_100_file_byte_identities": "pass",
+    "public_readback_receipt": "zenodo-public-readback-habring-spine.json",
+    "public_readback_receipt_sha256": "49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca"
+  },
+  "frozen_publisher_restored": {
+    "filename": "publish_habring_spine.py",
+    "bytes": 29445,
+    "sha256": "87899a4b3ac2de71c9923aa1de4db2c7b0a9f6bf4131f4f18bf9ee9d1404f861"
+  },
+  "credential_material_recorded": false
+}

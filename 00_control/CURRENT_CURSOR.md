@@ -528,3 +528,31 @@ build before any module is admitted. Then author only the remaining original
 KKT/Slater/duality, modern stochastic, variational/monotone, connective proof,
 exercise, complete-solution, lab, and capstone layer. MIT page 98 remains a
 dormant companion locator and is not the active translation cursor.
+
+## 2026-08-25 controlling cursor — Becker authority freeze active
+
+The preceding three-destination preservation instruction is closed as far as
+the available destinations permit. GitHub content commit
+`46d5753e853397e013d21b01872d789f7ee07a63` / tree
+`97581caaced321b85b0131ba3df0e671ff3afa8a` passed anonymous byte readback for
+all 46 changed paths. Zenodo record `22088305`, DOI
+`10.5281/zenodo.22088305`, is public/latest in concept
+`10.5281/zenodo.22059741`; all 100 files passed anonymous readback, comprising
+98 inherited byte-identical files and the complete Habring PDF plus one
+comprehensive continuation ZIP. The Habring PDF is the verified default
+preview. Figshare article `33314733` could not be mutated because authenticated
+article/project/collection requests return `403 InactiveAccount`; its exact
+seven-file payload and retry receipt are preserved, and this destination-only
+failure is not a production hold.
+
+The executable cursor is Becker commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e`. Freeze its official API/archive
+identity and MIT license without Git; inventory every TeX root, dependency,
+PDF, homework, solution-access boundary, asset, and build path; identify and
+change-mark the principal master's `../preamble.tex` repair; deduplicate its
+concept/proof/algorithm/example/assessment coverage against Habring and the
+preserved companions; and prove a deterministic clean build before admitting
+any bounded module. Do not translate the entire repository or claim Canvas-only
+solutions. The following cursor is the first coherent nonduplicative admitted
+Becker module; after the bounded subset, execute the finite original closure in
+`CURRENT_GOAL_AND_WORKFLOW.md`.

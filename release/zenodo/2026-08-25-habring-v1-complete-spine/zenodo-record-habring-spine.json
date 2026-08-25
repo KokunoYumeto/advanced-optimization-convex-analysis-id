@@ -1,0 +1,53 @@
+{
+  "access": {"files": "public", "record": "public"},
+  "files": {
+    "enabled": true,
+    "default_preview": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf"
+  },
+  "metadata": {
+    "contributors": [
+      {"person_or_org": {"family_name": "Royer", "given_name": "Clément W.", "name": "Royer, Clément W.", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"family_name": "Miller", "given_name": "Simon", "name": "Miller, Simon", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"family_name": "Mercer", "given_name": "Douglas", "name": "Mercer, Douglas", "type": "personal"}, "role": {"id": "other"}},
+      {"person_or_org": {"name": "TTP", "type": "organizational"}, "role": {"id": "other"}}
+    ],
+    "creators": [
+      {"person_or_org": {"family_name": "Habring", "given_name": "Andreas", "name": "Habring, Andreas", "type": "personal"}},
+      {"person_or_org": {"family_name": "Bertsekas", "given_name": "Dimitri P.", "name": "Bertsekas, Dimitri P.", "type": "personal"}},
+      {"person_or_org": {"family_name": "Griffin", "given_name": "Christopher", "name": "Griffin, Christopher", "type": "personal"}}
+    ],
+    "description": "<p>Checkpoint reader-first Bahasa Indonesia yang menyelesaikan seluruh tulang punggung sumber-editabel Andreas Habring, <em>Lecture Notes: Convex Optimization</em>, arXiv:2607.11664v1: prakata dan Bab 1-9. Buku kursus O015 yang lebih besar tetap parsial. Rilis ini mewarisi tanpa perubahan 98 berkas induk dari 10.5281/zenodo.22086656 dan menambahkan tepat delapan berkas: PDF lengkap 139 halaman, HTML responsif, EPUB 3, bundel sumber/backend yang ringkas, catatan pembaca, catatan lisensi Habring, manifest, dan checksum.</p><p>PDF lengkap adalah pratinjau utama. HTML memuat 414 permukaan matematika tampil dan 1.792 permukaan matematika sebaris; EPUB memuat 2.206 simpul MathML. Build deterministik, audit struktur dan formula, 32 uji komputasi terbuka beserta sembilan kontrol negatif, reflow desktop/seluler, inspeksi visual seluruh halaman, tautan PDF, struktur EPUB, backend, dan rereview independen semuanya lulus. Backend mempertahankan 2.472 rekaman lama byte demi byte dan menambahkan 624 rekaman, sehingga berjumlah 3.096. Enam puluh lima koreksi editorial O015-HAB-ADV-0097 sampai O015-HAB-ADV-0161 diumumkan.</p><p>Komponen Habring dan adaptasinya berada di bawah CC BY 4.0. Hak berlaku per komponen: berkas induk mempertahankan lisensi MIT CC BY-NC-SA 4.0, Griffin/Penn CC BY-NC-SA 3.0 United States, dan Royer CC BY-NC 4.0. Ini adalah terjemahan/adaptasi independen dan tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan oleh penulis, arXiv, maupun institusi sumber.</p><p>Tulang punggung Habring v1 lengkap, tetapi O015 belum lengkap. Kursor berikutnya adalah pembekuan/build/deduplikasi subset TeX Becker yang nonduplikatif, kemudian lapisan asli terbatas untuk KKT/Slater/dualitas Lagrangian, metode stokastik modern, ketaksamaan variasional dan operator monoton, bukti penghubung, latihan substantif, serta solusi lengkap. PDF belum bertag dan tinjauan manusia/penutur asli belum dicatat. Bantuan produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas arahan pengguna repositori.</p>",
+    "languages": [{"id": "ind"}],
+    "publication_date": "2026-08-25",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {"identifier": "10.48550/arXiv.2607.11664", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-book"}, "scheme": "doi"},
+      {"identifier": "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-other"}, "scheme": "url"},
+      {"identifier": "https://sites.psu.edu/griffinch/files/2023/06/Math555_SRC.zip", "relation_type": {"id": "isderivedfrom"}, "resource_type": {"id": "publication-book"}, "scheme": "url"},
+      {"identifier": "https://www.lamsade.dauphine.fr/~croyer/teachSG.html", "relation_type": {"id": "references"}, "resource_type": {"id": "publication-other"}, "scheme": "url"}
+    ],
+    "resource_type": {"id": "publication-other"},
+    "rights": [
+      {"id": "cc-by-4.0"},
+      {"id": "cc-by-nc-sa-4.0"},
+      {"description": {"en": "Applies only to inherited Griffin/Penn-derived reader and source components."}, "link": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/", "title": {"en": "CC BY-NC-SA 3.0 United States - inherited Griffin/Penn components only"}},
+      {"description": {"en": "Applies to the inherited Royer source-freeze component; no Royer-derived reader is included in this Habring delta."}, "link": "https://creativecommons.org/licenses/by-nc/4.0/", "title": {"en": "CC BY-NC 4.0 - inherited Royer source-freeze component only"}}
+    ],
+    "subjects": [
+      {"subject": "Bahasa Indonesia"},
+      {"subject": "id-ID"},
+      {"subject": "convex analysis"},
+      {"subject": "convex optimization"},
+      {"subject": "subgradient methods"},
+      {"subject": "proximal gradient methods"},
+      {"subject": "convex duality"},
+      {"subject": "stochastic gradient descent"},
+      {"subject": "optimal transport"},
+      {"subject": "open educational resources"},
+      {"subject": "mathematical translation"},
+      {"subject": "AI-assisted translation"}
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia (id-ID): Tulang Punggung Habring v1 Lengkap; Kursus O015 Parsial",
+    "version": "checkpoint-2026.08.25-habring-v1-complete-spine"
+  }
+}

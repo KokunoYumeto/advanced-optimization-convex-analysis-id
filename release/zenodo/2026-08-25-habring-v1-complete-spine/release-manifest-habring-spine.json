@@ -1,0 +1,246 @@
+{
+  "addition_file_count": 2,
+  "admitted_boundary": "complete Habring v1 preface and chapters 1-9 in id-ID",
+  "canonical_editable_spine": "Andreas Habring, arXiv:2607.11664v1",
+  "complete_corpus": false,
+  "component_rights": {
+    "inherited_griffin_penn_components": "CC BY-NC-SA 3.0 United States",
+    "inherited_mit_components": "CC BY-NC-SA 4.0",
+    "inherited_royer_source_freeze": "CC BY-NC 4.0",
+    "new_habring_v1_spine_and_adaptation": "CC BY 4.0",
+    "project_build_qa_backend_and_boundary_evidence": "component-specific; no blanket reuse grant asserted"
+  },
+  "component_status": "Habring v1 spine complete; larger O015 coursebook partial",
+  "comprehensive_bundle": {
+    "contains_itself": false,
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+    "identity_location": "local preparation receipt and public readback receipt",
+    "member_count": 7,
+    "members": [
+      "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+      "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+      "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.25_HABRING_V1.zip",
+      "LICENSE_HABRING_CC_BY_4.0.md",
+      "README_HABRING_SPINE.md",
+      "release-manifest-habring-spine.json",
+      "SHA256SUMS-habring-spine"
+    ]
+  },
+  "default_preview": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+  "epub3_available": true,
+  "generated_packaged_files": [
+    "release-manifest-habring-spine.json",
+    "SHA256SUMS-habring-spine"
+  ],
+  "human_native_speaker_review": false,
+  "inherited_file_count": 98,
+  "lane_closure": {
+    "backend": {
+      "csv": {
+        "bytes": 2875457,
+        "filename": "records.csv",
+        "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+      },
+      "jsonl": {
+        "bytes": 2408339,
+        "filename": "records.jsonl",
+        "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+      },
+      "new_records": 624,
+      "protected_records": 2472,
+      "records": 3096
+    },
+    "control_bindings": {
+      "00_control/ADVERSE_LEDGER.jsonl": {
+        "bytes": 171225,
+        "sha256": "40b2e36e843d743f2b40ac9669d290e52204a80d1da1cc648eaee23e8198657a"
+      },
+      "00_control/BUILD_AND_QA.md": {
+        "bytes": 107005,
+        "sha256": "0dbd4282db06e279a73c6212c622ea65ae0b27d8d8103858958dffb8602c0256"
+      },
+      "00_control/COMPONENT_RIGHTS.csv": {
+        "bytes": 40865,
+        "sha256": "02bfad6784cc44b873fc6e468436f23f20ea6b7154ddeb02c103ff30097f10c9"
+      },
+      "00_control/COVERAGE_OVERLAP.md": {
+        "bytes": 22424,
+        "sha256": "23825e0a8a372af3266b25ea47df3ba2a72fb3efc5b52e31d44a003a54b0ecd8"
+      },
+      "00_control/CURRENT_CURSOR.md": {
+        "bytes": 36950,
+        "sha256": "e32e27cd40b835781366963e3f68fb29a3fe05fcd09359b93f0a58e8939a19cc"
+      },
+      "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+        "bytes": 4744,
+        "sha256": "b499bc06630c0c3ab31661559f43430b4d14f9ccd66c042e03e6bd7d6c649d4e"
+      },
+      "00_control/CURRENT_STATE.md": {
+        "bytes": 51558,
+        "sha256": "3fa6607310cf888231d0ef94a413182bab97159b65190df541f482f836fdf819"
+      },
+      "00_control/DECISION_LOG.md": {
+        "bytes": 51062,
+        "sha256": "1e9aa856246f37b7ec8ebd15a5bf8a5463e573753bf83b42adf5ccb392ed9d48"
+      },
+      "00_control/PUBLICATION_RECEIPTS.md": {
+        "bytes": 41694,
+        "sha256": "e7ff76ffafd8a350ed1859e4474e41336bc8c10b8a3548ab784aaa28f3efa8e9"
+      },
+      "00_control/SOURCE_AUTHORITY.json": {
+        "bytes": 29020,
+        "sha256": "091fc7688c67153cd7832238bd9b9d3a5ecbd1042d0a51f17a1a6f191dde8a34"
+      }
+    },
+    "correction_events": {
+      "count": 65,
+      "first": "O015-HAB-ADV-0097",
+      "last": "O015-HAB-ADV-0161"
+    },
+    "coverage": "preface and chapters 1-9",
+    "input_lock": {
+      "bytes": 11256,
+      "filename": "release-input-lock-habring-spine.json",
+      "sha256": "d956b602b4547faa38d7858e5c7d19fca19a0878cf42c565c75a2f7d79785038"
+    },
+    "qa": {
+      "qa/HABRING_CH01_CH02_BACKEND_VALIDATION.json": {
+        "bytes": 10298,
+        "filename": "HABRING_CH01_CH02_BACKEND_VALIDATION.json",
+        "sha256": "929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed"
+      },
+      "qa/HABRING_CH01_CH02_BUILD.json": {
+        "bytes": 2214,
+        "filename": "HABRING_CH01_CH02_BUILD.json",
+        "sha256": "5c98d7f71f7ec68ffb7f2a76c4c3fb455f86d93b3d7741014ea8020180499724"
+      },
+      "qa/HABRING_CH01_CH02_SOLVER_RESULTS.json": {
+        "bytes": 6909,
+        "filename": "HABRING_CH01_CH02_SOLVER_RESULTS.json",
+        "sha256": "3debf7f8875c1dc5ce89f8c163f0cd349edb62849e861719aa80bd6931009587"
+      },
+      "qa/HABRING_CH01_CH02_STRUCTURE_REPORT.json": {
+        "bytes": 46054,
+        "filename": "HABRING_CH01_CH02_STRUCTURE_REPORT.json",
+        "sha256": "cc7d31e36b7f04e9fcb14692b53ce460be58958e3c0bb66b44af85e6282451bc"
+      },
+      "qa/HABRING_FULL_EPUB_BUILD.json": {
+        "bytes": 4247,
+        "filename": "HABRING_FULL_EPUB_BUILD.json",
+        "sha256": "824f0bf53305f68d2ac46ecee04a03151fe224297efbf11ed0c5bef928b484cf"
+      },
+      "qa/HABRING_FULL_HTML_BROWSER_QA.json": {
+        "bytes": 2415,
+        "filename": "HABRING_FULL_HTML_BROWSER_QA.json",
+        "sha256": "cbd89cf154c9b044d3792b6888dcc7635e082b912572b1ecc85ae3a13a308701"
+      },
+      "qa/HABRING_FULL_HTML_BUILD.json": {
+        "bytes": 2182,
+        "filename": "HABRING_FULL_HTML_BUILD.json",
+        "sha256": "dceb65f4d5366699e18f5f825987c2c2172d1626fceb89e22918c875f00bcfa9"
+      },
+      "qa/HABRING_FULL_READER_BUILD.json": {
+        "bytes": 2619,
+        "filename": "HABRING_FULL_READER_BUILD.json",
+        "sha256": "35dc5e27a54db1392c97950c4e9f39f22e655312d37226c80f545c683316112c"
+      },
+      "qa/HABRING_PDF_NAVIGATION_QA.json": {
+        "bytes": 1687,
+        "filename": "HABRING_PDF_NAVIGATION_QA.json",
+        "sha256": "eded727695f3d632920e408b4c7e5e13184ae11ca34631e9b7921c09a6ce97cc"
+      },
+      "qa/HABRING_PDF_VISUAL_QA.json": {
+        "bytes": 2571,
+        "filename": "HABRING_PDF_VISUAL_QA.json",
+        "sha256": "7aed39e74194591d51fcb168cdfff26a9bfb330a35fc56a7d7302fbd2de7ddbe"
+      }
+    },
+    "reader": {
+      "epub": {
+        "bytes": 231700,
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+        "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+      },
+      "html": {
+        "bytes": 1669938,
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+        "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+      },
+      "pdf": {
+        "bytes": 3779312,
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+        "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+      },
+      "pdf_pages": 139
+    },
+    "result": "pass"
+  },
+  "metadata_template": {
+    "bytes": 5523,
+    "filename": "zenodo-record-habring-spine.json",
+    "sha256": "a988f043456f6c1e89fd788c553d2ea737263a2b0ea26d16b20964e47eb312ce"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "next_boundary": "bounded Becker subset freeze/build/dedup; finite original closure follows",
+  "packaged_material_files": [
+    {
+      "bytes": 1669938,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+      "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+    },
+    {
+      "bytes": 231700,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+      "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+    },
+    {
+      "bytes": 1148611,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.25_HABRING_V1.zip",
+      "sha256": "e5709c1a96815968966d2307d8a893c61cafce5a9cbf66220a5037ba4a1c10ea"
+    },
+    {
+      "bytes": 1463,
+      "filename": "LICENSE_HABRING_CC_BY_4.0.md",
+      "sha256": "b6bbe24ae92ba0f2d735b6824f089bc5f0bb7580ebc744330ad0d963bd3b80f9"
+    },
+    {
+      "bytes": 2420,
+      "filename": "README_HABRING_SPINE.md",
+      "sha256": "673bad8bd77a79bb3c76e3c5f8d4d26aa4f92e2b54ae8f266458ecc0675a816d"
+    }
+  ],
+  "parent_record_doi": "10.5281/zenodo.22086656",
+  "parent_record_id": "22086656",
+  "public_additions_in_order": [
+    {
+      "bytes": 3779312,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "role": "primary_reader_and_default_preview",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    {
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+      "identity_recorded_outside_bundle": true,
+      "role": "deterministic_comprehensive_continuation_bundle"
+    }
+  ],
+  "publication_date": "2026-08-25",
+  "reader_pdf_tagged": false,
+  "release_file_count": 100,
+  "rights_notice": "Rights are component-specific; no umbrella license replaces inherited component rights.",
+  "schema": "o015-zenodo-additive-checkpoint-v2",
+  "semantic_html_primary": true,
+  "source_backend_bundle_verification": {
+    "entries": 56,
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_bound_entries": 55,
+    "mutable_global_control_files": 0,
+    "unique_names": true
+  },
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia",
+  "version": "checkpoint-2026.08.25-habring-v1-complete-spine",
+  "zenodo_concept_doi": "10.5281/zenodo.22059741",
+  "zenodo_concept_id": "22059741"
+}

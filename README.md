@@ -524,3 +524,32 @@ pendamping berlisensi terpisah, dan seluruh hasil/ID yang sudah ada tetap
 dipertahankan. Sesudah preservasi L11, produksi beralih ke Habring dan lapisan
 orisinal terbatas; halaman MIT 98 disimpan sebagai kursor pendamping, bukan
 batch otomatis berikutnya.
+
+## Spine Habring v1 lengkap dan publik (25 Agustus 2026)
+
+Terjemahan Bahasa Indonesia atas seluruh spine sumber-terstruktur Habring
+arXiv `2607.11664v1` kini lengkap: prakata serta Bab 1–9 tersedia sebagai PDF
+139 halaman yang memenuhi lebar halaman, HTML responsif, EPUB 3, sumber TeX,
+dan backend 3.096 rekaman. Build deterministik, rumus dan struktur, komputasi
+terbuka, navigasi, reflow desktop/ponsel, inspeksi seluruh halaman, hak,
+atribusi, dan non-endorsement semuanya lulus. Materi turunan Habring tetap
+berlisensi CC BY 4.0. Ini menyelesaikan spine Habring, bukan seluruh buku
+kursus O015.
+
+Checkpoint dapat ditemukan pada commit GitHub
+`46d5753e853397e013d21b01872d789f7ee07a63` dan Zenodo
+[10.5281/zenodo.22088305](https://doi.org/10.5281/zenodo.22088305). Semua 46
+jalur GitHub yang berubah cocok dengan pembacaan balik anonim. Rekaman Zenodo
+mempertahankan 98 berkas sebelumnya tanpa perubahan dan menambahkan PDF lengkap
+serta satu ZIP kelanjutan yang memuat HTML, EPUB, sumber/backend, lisensi,
+manifest, dan checksum; semua 100 berkas cocok byte demi byte, dan PDF Habring
+menjadi pratinjau utama.
+
+Payload Figshare pada artikel yang sama sudah lulus secara lokal, tetapi akun
+Figshare mengembalikan `403 InactiveAccount`; tidak ada mutasi atau artikel
+pengganti. Kegagalan tujuan itu akan dicoba ulang pada garis yang sama ketika
+aktif dan tidak menghentikan produksi. Kursor aktif sekarang adalah pembekuan,
+deduplikasi, perbaikan build, dan penerimaan subset Becker yang benar-benar
+nonduplikatif pada commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e`, kemudian lapisan orisinal KKT,
+stokastik, variasional/monoton, latihan/solusi, laboratorium, dan capstone.

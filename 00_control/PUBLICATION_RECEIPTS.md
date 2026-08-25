@@ -557,3 +557,86 @@ NC/SA duties, and non-endorsement. Inherited component rights remain distinct.
 Metadata contains the short organization contributor exactly once and exact
 model provenance exactly once. No upstream issue, comment, or other contact
 occurred.
+
+## 2026-08-25 — Public GitHub complete Habring v1 spine checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/content commit: `main` /
+  `46d5753e853397e013d21b01872d789f7ee07a63`
+- Content tree: `97581caaced321b85b0131ba3df0e671ff3afa8a`
+- Parent: `3f8e45908e5eb757d158d1bdea2e8b0c839a6210`
+- Scope: the complete Bahasa Indonesia translation of the Habring arXiv
+  `2607.11664v1` structured-source spine, preface and Chapters 1–9;
+  PDF/HTML/EPUB readers; the 3,096-record backend; and deterministic source,
+  build, computation, navigation, accessibility, visual, rights, and
+  provenance evidence. The larger O015 coursebook remains partial.
+- Anonymous gate: the immutable public patch returned HTTP 200 and all 46
+  changed paths matched their local byte counts and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-25-habring-v1-complete-spine/github-public-readback.json`,
+  11,883 bytes; SHA-256
+  `0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352`.
+
+Habring-derived prose and reader material remain CC BY 4.0 with attribution,
+change marking, and non-endorsement. This checkpoint does not claim that the
+bounded Becker supplement or original course closure is complete. No upstream
+issue, comment, or other contact occurred.
+
+## 2026-08-25 — Public Zenodo complete Habring v1 spine checkpoint
+
+- Public record: https://zenodo.org/records/22088305
+- Version DOI: https://doi.org/10.5281/zenodo.22088305
+- Concept DOI: https://doi.org/10.5281/zenodo.22059741
+- Parent record: `22086656`
+- Version: `checkpoint-2026.08.25-habring-v1-complete-spine`
+- Scope/status: the Habring v1 structured-source spine is completely translated
+  through preface and Chapters 1–9; the larger O015 coursebook remains partial.
+- Public closure: exactly 100 files, comprising 98 inherited byte-identical
+  files and two additions. All 100 anonymous downloads matched their expected
+  byte counts and SHA-256 identities.
+- Default preview: the 3,779,312-byte / 139-page complete Habring reader PDF,
+  SHA-256
+  `da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41`.
+- Comprehensive continuation ZIP: 1,856,748 bytes; SHA-256
+  `d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a`;
+  seven nonrecursive members containing the HTML, EPUB, source/backend ZIP,
+  exact license notice, README, manifest, and checksums. CRC, six inner hash
+  bindings, nested 56-entry source-bundle integrity, unique paths, and zero
+  self-reference all pass.
+- Metadata gate: published/latest, Indonesian language, primary CC BY 4.0,
+  truthful partial-course status, the short organization contributor exactly
+  once, and exact model provenance exactly once.
+- Sanitized readback:
+  `release/zenodo/2026-08-25-habring-v1-complete-spine/zenodo-public-readback-habring-spine.json`,
+  27,419 bytes; SHA-256
+  `49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca`.
+
+The initial eight-addition plan exceeded Zenodo's 100-file record limit after
+the 98 inherited files. The same bound draft was therefore deterministically
+repacked to the two additions above; no duplicate version was created and no
+inherited public byte was removed. A same-record metadata edit made the Habring
+reader the default preview without changing the DOI or file bytes. No upstream
+contact occurred. Its sanitized repair receipt is
+`release/zenodo/2026-08-25-habring-v1-complete-spine/zenodo-default-preview-repair.json`,
+1,612 bytes; SHA-256
+`da42d851d880b17f31c3ddfd305f0ac18a980e887b1c95f5e36a0510fa95d889`.
+
+## 2026-08-25 — Figshare Habring v3 operational failure receipt
+
+The prepared seven-file, 6,007,269-byte reader-first Habring v3 payload passes
+its local structure, license, integrity, and hash gates, but no remote mutation
+was possible. Every authenticated article/project/collection preflight returned
+HTTP 403 `InactiveAccount`; the public article/version surface returned 404 and
+the public project/collection inventories did not expose the item. DataCite
+still reports the prior DOI `10.6084/m9.figshare.33314733.v2` as findable under
+CC BY 4.0. This concrete account-state failure blocks only the Figshare
+operation; it does not block GitHub, Zenodo, or continued production.
+
+The sanitized receipt is
+`release/figshare/2026-08-25-habring-v3-prep/figshare-v3-inactive-account-preflight.json`,
+2,924 bytes; SHA-256
+`a8686c9a558954911d61b81762c5d571e0fc656286f25d6b7b506cf8c08ae218`.
+It records zero remote mutations and the exact executable retry: rerun
+`inspect`, `publish`, and anonymous `readback` on the same article, project,
+and collection only when the account is active. No replacement item or concept
+was created.

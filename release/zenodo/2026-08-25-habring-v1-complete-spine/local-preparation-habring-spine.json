@@ -1,0 +1,109 @@
+{
+  "addition_file_count": 2,
+  "additions_in_upload_order": [
+    {
+      "bytes": 3779312,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    {
+      "bytes": 1856748,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+      "sha256": "d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a"
+    }
+  ],
+  "bound_draft": {
+    "draft_id": "22088305",
+    "status": "draft"
+  },
+  "bundle": {
+    "bytes": 1856748,
+    "checksum_bound_entries": 6,
+    "entries": 7,
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+    "integrity": "pass",
+    "recursive_entries": 0,
+    "sha256": "d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a",
+    "source_backend_bundle_verification": {
+      "entries": 56,
+      "forbidden_entries": 0,
+      "integrity": "pass",
+      "manifest_bound_entries": 55,
+      "mutable_global_control_files": 0,
+      "unique_names": true
+    },
+    "uncompressed_bytes": 3064492,
+    "unique_names": true
+  },
+  "checksums": {
+    "bytes": 679,
+    "filename": "SHA256SUMS-habring-spine",
+    "sha256": "0ae2d1ce3bd4240b87eee404bc1034024d530cd6178ef8d7ef754439c4326bb9"
+  },
+  "component_status": "Habring v1 spine complete; larger O015 coursebook partial",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "credential_reads": 0,
+  "deterministic_identity_match": true,
+  "deterministic_local_builds": 2,
+  "draft_state_file_exists": true,
+  "git_operations": 0,
+  "inherited_file_count": 98,
+  "input_freezer": {
+    "bytes": 11464,
+    "filename": "freeze_inputs_habring_spine.py",
+    "sha256": "4bed2037578d63e3990c8081651874f46b5e14f0f6cd87320e0b368fa96703a8"
+  },
+  "input_lock": {
+    "bytes": 11256,
+    "filename": "release-input-lock-habring-spine.json",
+    "sha256": "d956b602b4547faa38d7858e5c7d19fca19a0878cf42c565c75a2f7d79785038"
+  },
+  "manifest": {
+    "bytes": 9681,
+    "filename": "release-manifest-habring-spine.json",
+    "sha256": "88351b670d8e6253f92382ce7cf72db51b2405ecf1430ebc0b3327d778e362d8"
+  },
+  "metadata_template": {
+    "bytes": 5523,
+    "filename": "zenodo-record-habring-spine.json",
+    "sha256": "a988f043456f6c1e89fd788c553d2ea737263a2b0ea26d16b20964e47eb312ce"
+  },
+  "network_operations": 0,
+  "next_executable_action": "Run publish_habring_spine.py release under standing publication authorization; it must prune only the seven explicitly superseded loose additions from the bound draft, upload the PDF plus comprehensive ZIP, and retain an anonymous 100-file readback receipt.",
+  "parent_record_doi": "10.5281/zenodo.22086656",
+  "parent_record_id": "22086656",
+  "public_readback_file_exists": false,
+  "publication_operations": 0,
+  "publisher": {
+    "bytes": 29445,
+    "filename": "publish_habring_spine.py",
+    "sha256": "87899a4b3ac2de71c9923aa1de4db2c7b0a9f6bf4131f4f18bf9ee9d1404f861"
+  },
+  "recorded_at": "2026-08-25",
+  "release_builder": {
+    "bytes": 22861,
+    "filename": "build_habring_spine.py",
+    "sha256": "60454f55e6080375acf61436d8d66f38efc99a8725001bede52b70e0b095bd1a"
+  },
+  "release_config": {
+    "bytes": 2846,
+    "filename": "release-config-habring-spine.json",
+    "sha256": "2cbce277f41915305a256bb385dc3bc53f3a8cb21e2805025a88e5a65337916a"
+  },
+  "release_file_count": 100,
+  "schema": "o015-zenodo-habring-spine-local-preparation-v2",
+  "source_backend_bundle": {
+    "bytes": 1148611,
+    "entries": 56,
+    "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.25_HABRING_V1.zip",
+    "forbidden_entries": 0,
+    "integrity": "pass",
+    "manifest_bound_entries": 55,
+    "mutable_global_control_files": 0,
+    "sha256": "e5709c1a96815968966d2307d8a893c61cafce5a9cbf66220a5037ba4a1c10ea",
+    "unique_names": true
+  },
+  "status": "prepared locally; existing bound draft may be reconciled, but no network, upload, publication, or readback occurred in this preparation",
+  "version": "checkpoint-2026.08.25-habring-v1-complete-spine"
+}

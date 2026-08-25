@@ -1,0 +1,95 @@
+{
+  "schema": "o015-figshare-habring-v3-inactive-account-preflight-v1",
+  "recorded_at_local": "2026-08-25T02:20:20.8538393+02:00",
+  "recorded_at_utc": "2026-08-25T00:20:20.8538393Z",
+  "date": "2026-08-25",
+  "identifiers": {
+    "article_id": 33314733,
+    "project_id": 280296,
+    "collection_id": 8668413
+  },
+  "authenticated_surfaces": {
+    "account_article": {
+      "http_status": 403,
+      "error_code": "InactiveAccount"
+    },
+    "account_articles": {
+      "http_status": 403,
+      "error_code": "InactiveAccount"
+    },
+    "account_project_articles": {
+      "http_status": 403,
+      "error_code": "InactiveAccount"
+    },
+    "account_collection_articles": {
+      "http_status": 403,
+      "error_code": "InactiveAccount"
+    }
+  },
+  "public_surfaces": {
+    "article": {
+      "http_status": 404,
+      "error_code": "EntityNotFound"
+    },
+    "version_2": {
+      "http_status": 404,
+      "error_code": "EntityNotFound"
+    },
+    "versions_count": 0,
+    "project_visible_article_count": 1,
+    "project_target_membership_count": 0,
+    "collection_visible_article_count": 0,
+    "collection_target_membership_count": 0
+  },
+  "datacite_v2": {
+    "doi": "10.6084/m9.figshare.33314733.v2",
+    "state": "findable",
+    "version": "2",
+    "rights_identifier": "cc-by-4.0",
+    "rights_uri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "registered_size": "3271149 Bytes"
+  },
+  "local_payload": {
+    "file_count": 7,
+    "total_bytes": 6007269,
+    "files": [
+      {
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+        "bytes": 3779312,
+        "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+      },
+      {
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+        "bytes": 1669938,
+        "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+      },
+      {
+        "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+        "bytes": 231700,
+        "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+      },
+      {
+        "filename": "D90-HAB-01-09-sumber-id.zip",
+        "bytes": 304872,
+        "sha256": "40178aef57fa6dba5ee3a146b6684523c11b5a4782119c343008efd4cf550039"
+      },
+      {
+        "filename": "LICENSE_CC_BY_4.0.txt",
+        "bytes": 18657,
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "filename": "FIGSHARE_MANIFEST.json",
+        "bytes": 2154,
+        "sha256": "204c365acbe13dad15d67072b98ce0cd8b49a95a93a5b3f662edc3e5fcf61524"
+      },
+      {
+        "filename": "SHA256SUMS",
+        "bytes": 636,
+        "sha256": "3e43c5a4f8fb0aceefb8039eb8f7d56d3784c715671c4f7f75cbb086070d4cad"
+      }
+    ]
+  },
+  "remote_mutations": 0,
+  "next_executable_remedy": "rerun inspect/publish/readback when account is active"
+}

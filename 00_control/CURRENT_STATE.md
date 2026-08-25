@@ -783,3 +783,43 @@ anonymously read back the bytes. The larger O015 coursebook remains partial:
 the next post-preservation cursor is the bounded Becker freeze/build/dedup
 gate, followed by the finite original KKT/stochastic/variational/exercise-and-
 solution closure. MIT page 98 remains dormant.
+
+## 2026-08-25 controlling refresh — Habring preservation closed; Becker active
+
+The pending-publication sentence above is superseded. The complete Habring v1
+spine is public in the existing GitHub repository at commit
+`46d5753e853397e013d21b01872d789f7ee07a63` / tree
+`97581caaced321b85b0131ba3df0e671ff3afa8a`; all 46 changed paths passed
+anonymous exact-byte readback. Its receipt is 11,883 bytes / SHA-256
+`0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352`.
+
+Zenodo record `22088305`, DOI `10.5281/zenodo.22088305`, is published and
+latest in concept `10.5281/zenodo.22059741`. The public inventory is exactly
+100 files: all 98 parent files remain byte-identical, and the two additions are
+the complete 139-page Habring PDF (3,779,312 bytes /
+`da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41`)
+and a 1,856,748-byte comprehensive continuation ZIP /
+`d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a`.
+The PDF is the anonymous default preview. The ZIP's seven nonrecursive members,
+six hash bindings, CRC, nested 56-entry source/backend bundle, and zero
+self-reference pass. Every public file was downloaded anonymously and matched;
+the 27,419-byte receipt has SHA-256
+`49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca`.
+The primary Habring license is CC BY 4.0; inherited components retain their own
+rights, and the record remains a truthful partial-course checkpoint.
+
+Figshare article `33314733` remains the single intended Habring work item, but
+authenticated article/project/collection preflight returns HTTP 403
+`InactiveAccount`; zero mutation occurred. Its locally valid seven-file,
+6,007,269-byte payload and 2,924-byte sanitized receipt are preserved, the
+latter at SHA-256
+`a8686c9a558954911d61b81762c5d571e0fc656286f25d6b7b506cf8c08ae218`.
+Retry only that existing lineage when the account is active; this concrete
+destination failure is not a production hold.
+
+The active production state is therefore the bounded Becker authority,
+deduplication, `../preamble.tex` repair, and deterministic build gate at exact
+commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`. No Becker module is admitted
+until that gate closes. The complete original KKT/Slater/duality, stochastic,
+variational/monotone, exercise/solution, lab, and capstone layer remains open;
+the overall O015 goal is not complete. No upstream contact occurred.

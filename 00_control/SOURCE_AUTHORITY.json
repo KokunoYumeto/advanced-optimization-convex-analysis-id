@@ -26,7 +26,7 @@
       "repository": "https://github.com/stephenbeckr/convex-optimization-class",
       "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
       "license": "MIT",
-      "status": "not_yet_frozen_or_admitted_in_lane",
+      "status": "active_cursor_not_yet_frozen_or_admitted_in_lane",
       "admission_gate": "Freeze exact nonduplicative TeX modules, repair the principal master's ../preamble.tex reference with change marking, and prove a deterministic build. Canvas-only solutions are not public."
     },
     "preserved_companions": [
@@ -132,7 +132,76 @@
     "csv_sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
     },
     "license": "CC BY 4.0",
-    "nonendorsement": true
+    "nonendorsement": true,
+    "public_preservation": {
+      "recorded_on": "2026-08-25",
+      "status": "github_and_zenodo_public_exact_byte_readback_pass_figshare_remote_operation_failed_without_mutation",
+      "github": {
+        "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+        "commit": "46d5753e853397e013d21b01872d789f7ee07a63",
+        "tree": "97581caaced321b85b0131ba3df0e671ff3afa8a",
+        "changed_files": 46,
+        "anonymous_readback": "pass",
+        "receipt_path": "release/github/2026-08-25-habring-v1-complete-spine/github-public-readback.json",
+        "receipt_bytes": 11883,
+        "receipt_sha256": "0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352"
+      },
+      "zenodo": {
+        "record_id": "22088305",
+        "record_doi": "10.5281/zenodo.22088305",
+        "concept_doi": "10.5281/zenodo.22059741",
+        "parent_record_id": "22086656",
+        "status": "published_latest",
+        "file_count": 100,
+        "inherited_file_count": 98,
+        "addition_file_count": 2,
+        "default_preview": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+        "comprehensive_bundle": {
+          "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+          "bytes": 1856748,
+          "sha256": "d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a"
+        },
+        "anonymous_readback": "pass",
+        "receipt_path": "release/zenodo/2026-08-25-habring-v1-complete-spine/zenodo-public-readback-habring-spine.json",
+        "receipt_bytes": 27419,
+        "receipt_sha256": "49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca",
+        "default_preview_repair_receipt": {
+          "path": "release/zenodo/2026-08-25-habring-v1-complete-spine/zenodo-default-preview-repair.json",
+          "bytes": 1612,
+          "sha256": "da42d851d880b17f31c3ddfd305f0ac18a980e887b1c95f5e36a0510fa95d889"
+        }
+      },
+      "figshare": {
+        "article_id": 33314733,
+        "prior_doi": "10.6084/m9.figshare.33314733.v2",
+        "project_id": 280296,
+        "collection_id": 8668413,
+        "status": "operational_failure_inactive_account_no_mutation",
+        "prepared_files": 7,
+        "prepared_bytes": 6007269,
+        "receipt_path": "release/figshare/2026-08-25-habring-v3-prep/figshare-v3-inactive-account-preflight.json",
+        "receipt_bytes": 2924,
+        "receipt_sha256": "a8686c9a558954911d61b81762c5d571e0fc656286f25d6b7b506cf8c08ae218",
+        "production_hold": false
+      }
+    }
+  },
+  "current_production_cursor": {
+    "recorded_on": "2026-08-25",
+    "authority_kind": "bounded_structured_supplement_target",
+    "name": "Stephen Becker, Advanced Convex Optimization class",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "state": "active_pre_admission_freeze_build_dedup_gate",
+    "admitted": false,
+    "required_actions": [
+      "freeze official archive/API identity and MIT license without Git",
+      "inventory TeX roots, dependencies, PDFs, homework, solution-access boundaries, assets, and build paths",
+      "repair ../preamble.tex with explicit change marking",
+      "deduplicate concepts, proofs, algorithms, examples, and assessment against Habring and preserved companions",
+      "prove a deterministic clean build before admitting a bounded nonduplicative subset"
+    ],
+    "next_after_gate": "translate the first coherent nonduplicative admitted Becker module"
   },
   "authorities": [
     {

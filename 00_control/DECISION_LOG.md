@@ -573,3 +573,32 @@ Preserve this boundary once in the existing GitHub, Zenodo, and Habring-only
 Figshare lineages and anonymously read it back. This is not a final-course
 claim: Becker remains unadmitted and the finite original KKT, stochastic,
 variational/monotone, exercise, solution, lab, and capstone layer remains open.
+
+## D90-0050 — Close Habring preservation and activate the Becker gate
+
+Decision: preserve the admitted complete Habring v1 spine without duplicating
+any public lineage. GitHub commit
+`46d5753e853397e013d21b01872d789f7ee07a63` / tree
+`97581caaced321b85b0131ba3df0e671ff3afa8a` passes immutable readback for all
+46 changed paths. Zenodo DOI `10.5281/zenodo.22088305` remains in concept
+`10.5281/zenodo.22059741`, preserves all 98 inherited files byte-identically,
+and adds the complete Habring PDF plus one comprehensive continuation ZIP.
+The 100-file record, reader-first default preview, metadata, every public byte,
+outer ZIP, six inner checksum bindings, and nested source bundle pass anonymous
+verification. The sanitized GitHub and Zenodo receipts have SHA-256
+`0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352`
+and `49c00f1f3d0ca6a2f2949352feff4b5ef4a627f4464acaf81d106def8db75dca`.
+
+The initially intended eight loose Zenodo additions could not coexist with 98
+inherited files under the platform's 100-file ceiling. Deterministic repacking
+to a reader PDF plus a comprehensive ZIP preserves every useful new byte and
+every inherited byte while avoiding a duplicate version. A same-record edit
+corrected the default preview without changing the DOI or file bytes.
+
+Figshare article `33314733` is not replaced: authenticated preflight returns
+HTTP 403 `InactiveAccount`, so zero remote mutation occurred. Preserve the
+verified local payload and retry the same item when operational; this blocks
+only that destination, not production. The active cursor is now Becker commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e`, which remains unadmitted until its
+official archive/license, nonduplicative subset, marked `../preamble.tex`
+repair, and deterministic build pass. No upstream contact occurred.

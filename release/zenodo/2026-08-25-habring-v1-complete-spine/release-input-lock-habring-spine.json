@@ -1,0 +1,284 @@
+{
+  "backend_record_count": 3096,
+  "boundary": {
+    "component": "Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1",
+    "coverage": "preface and chapters 1-9 complete in id-ID",
+    "next_gate": "bounded Becker subset freeze/build/dedup, then finite original closure"
+  },
+  "control_file_count": 10,
+  "files": {
+    "00_control/ADVERSE_LEDGER.jsonl": {
+      "bytes": 171225,
+      "sha256": "40b2e36e843d743f2b40ac9669d290e52204a80d1da1cc648eaee23e8198657a"
+    },
+    "00_control/BUILD_AND_QA.md": {
+      "bytes": 107005,
+      "sha256": "0dbd4282db06e279a73c6212c622ea65ae0b27d8d8103858958dffb8602c0256"
+    },
+    "00_control/COMPONENT_RIGHTS.csv": {
+      "bytes": 40865,
+      "sha256": "02bfad6784cc44b873fc6e468436f23f20ea6b7154ddeb02c103ff30097f10c9"
+    },
+    "00_control/COVERAGE_OVERLAP.md": {
+      "bytes": 22424,
+      "sha256": "23825e0a8a372af3266b25ea47df3ba2a72fb3efc5b52e31d44a003a54b0ecd8"
+    },
+    "00_control/CURRENT_CURSOR.md": {
+      "bytes": 36950,
+      "sha256": "e32e27cd40b835781366963e3f68fb29a3fe05fcd09359b93f0a58e8939a19cc"
+    },
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+      "bytes": 4744,
+      "sha256": "b499bc06630c0c3ab31661559f43430b4d14f9ccd66c042e03e6bd7d6c649d4e"
+    },
+    "00_control/CURRENT_STATE.md": {
+      "bytes": 51558,
+      "sha256": "3fa6607310cf888231d0ef94a413182bab97159b65190df541f482f836fdf819"
+    },
+    "00_control/DECISION_LOG.md": {
+      "bytes": 51062,
+      "sha256": "1e9aa856246f37b7ec8ebd15a5bf8a5463e573753bf83b42adf5ccb392ed9d48"
+    },
+    "00_control/PUBLICATION_RECEIPTS.md": {
+      "bytes": 41694,
+      "sha256": "e7ff76ffafd8a350ed1859e4474e41336bc8c10b8a3548ab784aaa28f3efa8e9"
+    },
+    "00_control/SOURCE_AUTHORITY.json": {
+      "bytes": 29020,
+      "sha256": "091fc7688c67153cd7832238bd9b9d3a5ecbd1042d0a51f17a1a6f191dde8a34"
+    },
+    "authority/habring/2607.11664v1-source.tar": {
+      "bytes": 230116,
+      "sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748"
+    },
+    "authority/habring/CC-BY-4.0-legalcode.txt": {
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    "backend/backend_schema.json": {
+      "bytes": 3092,
+      "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+    },
+    "backend/records.csv": {
+      "bytes": 2875457,
+      "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+    },
+    "backend/records.jsonl": {
+      "bytes": 2408339,
+      "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+    },
+    "output/epub/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub": {
+      "bytes": 231700,
+      "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+    },
+    "output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html": {
+      "bytes": 1669938,
+      "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+    },
+    "output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf": {
+      "bytes": 3779312,
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    "qa/HABRING_CH01_CH02_BACKEND_VALIDATION.json": {
+      "bytes": 10298,
+      "sha256": "929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed"
+    },
+    "qa/HABRING_CH01_CH02_BUILD.json": {
+      "bytes": 2214,
+      "sha256": "5c98d7f71f7ec68ffb7f2a76c4c3fb455f86d93b3d7741014ea8020180499724"
+    },
+    "qa/HABRING_CH01_CH02_PROPOSED_LEDGER.jsonl": {
+      "bytes": 12339,
+      "sha256": "ceb880ccc6d5fadccd622662cb41886fa851c58a20e782fc0245d61092e92aff"
+    },
+    "qa/HABRING_CH01_CH02_SOLVER_RESULTS.json": {
+      "bytes": 6909,
+      "sha256": "3debf7f8875c1dc5ce89f8c163f0cd349edb62849e861719aa80bd6931009587"
+    },
+    "qa/HABRING_CH01_CH02_STRUCTURE_REPORT.json": {
+      "bytes": 46054,
+      "sha256": "cc7d31e36b7f04e9fcb14692b53ce460be58958e3c0bb66b44af85e6282451bc"
+    },
+    "qa/HABRING_CH02_PROPOSED_LEDGER.jsonl": {
+      "bytes": 29034,
+      "sha256": "585e2f40004c3b31cc766c46acdd86f939bcb4bba33dc024448a660ae44fdc78"
+    },
+    "qa/HABRING_FULL_EPUB_BUILD.json": {
+      "bytes": 4247,
+      "sha256": "824f0bf53305f68d2ac46ecee04a03151fe224297efbf11ed0c5bef928b484cf"
+    },
+    "qa/HABRING_FULL_HTML_BROWSER_QA.json": {
+      "bytes": 2415,
+      "sha256": "cbd89cf154c9b044d3792b6888dcc7635e082b912572b1ecc85ae3a13a308701"
+    },
+    "qa/HABRING_FULL_HTML_BUILD.json": {
+      "bytes": 2182,
+      "sha256": "dceb65f4d5366699e18f5f825987c2c2172d1626fceb89e22918c875f00bcfa9"
+    },
+    "qa/HABRING_FULL_READER_BUILD.json": {
+      "bytes": 2619,
+      "sha256": "35dc5e27a54db1392c97950c4e9f39f22e655312d37226c80f545c683316112c"
+    },
+    "qa/HABRING_PDF_NAVIGATION_QA.json": {
+      "bytes": 1687,
+      "sha256": "eded727695f3d632920e408b4c7e5e13184ae11ca34631e9b7921c09a6ce97cc"
+    },
+    "qa/HABRING_PDF_VISUAL_QA.json": {
+      "bytes": 2571,
+      "sha256": "7aed39e74194591d51fcb168cdfff26a9bfb330a35fc56a7d7302fbd2de7ddbe"
+    },
+    "qa/audit_habring_ch01_ch02.py": {
+      "bytes": 45546,
+      "sha256": "43fb244689a12ec0d830e5e1df168e9c8e0df5860e30378f38d854b8a959dc53"
+    },
+    "qa/build_habring_ch01_ch02.py": {
+      "bytes": 6866,
+      "sha256": "6424fc9c376319f8997904c68a9600bc5a1d45307f68f3a95f88f64e3af338b9"
+    },
+    "qa/build_habring_full_epub.py": {
+      "bytes": 40241,
+      "sha256": "16d0303eb4f7ee93a4a306cb4d84dd048e5361303674ee3098f1ec798e003e8c"
+    },
+    "qa/build_habring_full_html.py": {
+      "bytes": 13909,
+      "sha256": "d2e5c0860abcef48c6514be84f2087d7500d4af3a3ea23ab91d1f3de5c1c3de2"
+    },
+    "qa/build_habring_full_reader.py": {
+      "bytes": 8868,
+      "sha256": "b50cf86dbce1d63700497cac7320856c670d814fe4257448eedbf7ceaa69f2f8"
+    },
+    "qa/extend_backend_habring_ch01_ch02.py": {
+      "bytes": 66403,
+      "sha256": "46e86978f2ac87c86200c895517f711105ca2f0ea2df2531ac7370ae7038d24f"
+    },
+    "qa/validate_backend_habring_ch01_ch02.py": {
+      "bytes": 16816,
+      "sha256": "48278a286db3cb74664839507bb96321ad2b62740459f9cf78ecd0ad77ad777b"
+    },
+    "qa/validate_habring_ch01_ch02_math.py": {
+      "bytes": 13227,
+      "sha256": "0dc23bb4dd5ce0bd9e5f09cde16838c4902d76a46610ae3680c3a5e7c90f5ed7"
+    },
+    "qa/validate_habring_pdf_navigation.py": {
+      "bytes": 5812,
+      "sha256": "2fe7a8284baf5a24d310b6e3a5c9d44dbdf6ac2b4791de02677d5b97dafa8721"
+    },
+    "source/id-ID/D90-HAB-01-02-prasyarat-dan-konveksitas-id.tex": {
+      "bytes": 5357,
+      "sha256": "301d45dc305ee86f439ed1056a62b47199f3439d88ba66436f127a5cee0e35b2"
+    },
+    "source/id-ID/D90-HAB-03-subgradien-id.tex": {
+      "bytes": 3940,
+      "sha256": "48fe2efc3fa2b724963e40942906061c5d7dc54c92ae4280641e951d55b4d669"
+    },
+    "source/id-ID/D90-HAB-04-metode-subgradien-terproyeksi-id.tex": {
+      "bytes": 4297,
+      "sha256": "4efde33cf820393e001153370cdf52f96bd8b22d24582ca17063cc87e492d249"
+    },
+    "source/id-ID/D90-HAB-05-metode-gradien-proksimal-id.tex": {
+      "bytes": 4817,
+      "sha256": "8c67641de7ebf2e06afefa2309c09823e78a4d3d5dbba89a28536392d82c359d"
+    },
+    "source/id-ID/D90-HAB-06-akselerasi-id.tex": {
+      "bytes": 5491,
+      "sha256": "46903dd6b6ff8c845624931d37d9b24fd37cd89f0bf77601ba11539c59dfd5b9"
+    },
+    "source/id-ID/D90-HAB-07-dualitas-id.tex": {
+      "bytes": 8615,
+      "sha256": "3b6e710e37c07cc9ec82ca919451c313c52fa762d58c7b01c6792a78a0098797"
+    },
+    "source/id-ID/D90-HAB-08-penurunan-gradien-stokastik-id.tex": {
+      "bytes": 5129,
+      "sha256": "d00ea41830af388c227a1054025f049a9315da6f41675573965042d320eb7428"
+    },
+    "source/id-ID/D90-HAB-09-transportasi-optimal-id.tex": {
+      "bytes": 6822,
+      "sha256": "1e308a2bed0d1a6f5cdcff09cce932674cf32842a135bc88a5a34bc96c483ff6"
+    },
+    "source/id-ID/figures/balls.png": {
+      "bytes": 14419,
+      "sha256": "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31"
+    },
+    "source/id-ID/figures/convex_fct.png": {
+      "bytes": 31570,
+      "sha256": "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b"
+    },
+    "source/id-ID/figures/discontinuous_function.png": {
+      "bytes": 20911,
+      "sha256": "fc5b5b3135eb726c58ef8e299751d310dfc363f7d31d7c28930ad018388397fa"
+    },
+    "source/id-ID/figures/gradient.png": {
+      "bytes": 29813,
+      "sha256": "1c237c8642b1a12197a12c337242815dafe90b310796dc877b699f0467a4ecce"
+    },
+    "source/id-ID/figures/lsc_function.png": {
+      "bytes": 20904,
+      "sha256": "2edde214506a703a0e40d5e32a1df5ae50809c0698cec2a3d7cd248647010547"
+    },
+    "source/id-ID/figures/sets.png": {
+      "bytes": 36071,
+      "sha256": "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e"
+    },
+    "source/id-ID/figures/subgradient.png": {
+      "bytes": 36625,
+      "sha256": "4d41bd11afbd1c6c7b6b360d3edeffcd06ab1cdbc699f8909103f5928c737ba0"
+    },
+    "source/id-ID/habring-01-prasyarat-id.tex": {
+      "bytes": 31009,
+      "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+    },
+    "source/id-ID/habring-02-konveksitas-id.tex": {
+      "bytes": 42828,
+      "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+    },
+    "source/id-ID/habring-03-subgradien-id.tex": {
+      "bytes": 19266,
+      "sha256": "d04ff82898c157f56924c6c08fd204bcd97625f060847fd8a0b6f7a2b90b0a5c"
+    },
+    "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex": {
+      "bytes": 16612,
+      "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+    },
+    "source/id-ID/habring-05-metode-gradien-proksimal-id.tex": {
+      "bytes": 20575,
+      "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+    },
+    "source/id-ID/habring-06-akselerasi-id.tex": {
+      "bytes": 24690,
+      "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+    },
+    "source/id-ID/habring-07-dualitas-id.tex": {
+      "bytes": 35428,
+      "sha256": "11e9ad614f7ac4e3107e78bc3bed03a6d4acfe22f2a65fca26433b0ae3209fd9"
+    },
+    "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex": {
+      "bytes": 6378,
+      "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+    },
+    "source/id-ID/habring-09-transportasi-optimal-id.tex": {
+      "bytes": 21252,
+      "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+    },
+    "source/id-ID/macros-id.tex": {
+      "bytes": 4465,
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    "source/id-ID/shinybook.cls": {
+      "bytes": 10133,
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  },
+  "material_file_count": 55,
+  "new_backend_record_count": 624,
+  "protected_backend_record_count": 2472,
+  "release_packaging": {
+    "addition_file_count": 2,
+    "inherited_file_count": 98,
+    "public_additions_in_order": [
+      "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip"
+    ],
+    "release_file_count": 100
+  },
+  "schema": "o015-habring-spine-release-input-lock-v1"
+}

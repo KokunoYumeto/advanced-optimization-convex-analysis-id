@@ -1,0 +1,29 @@
+{
+  "schema": "o015-habring-spine-release-config-v1",
+  "parent_record_id": "22086656",
+  "parent_record_doi": "10.5281/zenodo.22086656",
+  "concept_id": "22059741",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "boundary": {
+    "component": "Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1",
+    "coverage": "preface and chapters 1-9 complete in id-ID",
+    "next_gate": "bounded Becker subset freeze/build/dedup, then finite original closure"
+  },
+  "backend": {
+    "protected_record_count": 2472,
+    "new_record_count": 624,
+    "record_count": 3096,
+    "jsonl": {"bytes": null, "sha256": null},
+    "csv": {"bytes": null, "sha256": null},
+    "validation": {"bytes": null, "sha256": null}
+  },
+  "controls": {},
+  "expected_inherited_file_count": 98,
+  "expected_addition_file_count": 2,
+  "expected_release_file_count": 100,
+  "public_additions_in_order": [
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip"
+  ],
+  "status": "partial"
+}

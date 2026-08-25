@@ -1,0 +1,75 @@
+{
+  "article_id": 33314733,
+  "checks": {
+    "epub_structure": true,
+    "exact_cc_by_4_0_license": true,
+    "html_provenance": true,
+    "no_credentials": true,
+    "no_non_habring_components": true,
+    "no_ttp_title_or_lead": true,
+    "payload_cap": true,
+    "pdf_structure": true,
+    "reader_first": true,
+    "source_zip_integrity": true
+  },
+  "file_count": 7,
+  "files": [
+    {
+      "bytes": 3779312,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "md5": "c475f2519b562918a47dfd3eafc11826",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    {
+      "bytes": 1669938,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+      "md5": "638b7cef52e0cf0c9e0d8d20197d88b3",
+      "sha256": "717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4"
+    },
+    {
+      "bytes": 231700,
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+      "md5": "fa45f059ef1ffa7a9d8e9c0cdc65bd8f",
+      "sha256": "c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41"
+    },
+    {
+      "bytes": 304872,
+      "filename": "D90-HAB-01-09-sumber-id.zip",
+      "md5": "9935e53895684660546d78e8b17a52e6",
+      "sha256": "40178aef57fa6dba5ee3a146b6684523c11b5a4782119c343008efd4cf550039"
+    },
+    {
+      "bytes": 18657,
+      "filename": "LICENSE_CC_BY_4.0.txt",
+      "md5": "2ab724713fdaf49e4523c4503bfd068d",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "bytes": 2154,
+      "filename": "FIGSHARE_MANIFEST.json",
+      "md5": "12c8246bb30425132ed118483bc70add",
+      "sha256": "204c365acbe13dad15d67072b98ce0cd8b49a95a93a5b3f662edc3e5fcf61524"
+    },
+    {
+      "bytes": 636,
+      "filename": "SHA256SUMS",
+      "md5": "6787b4c97f108bece5a84ff1dcd10138",
+      "sha256": "3e43c5a4f8fb0aceefb8039eb8f7d56d3784c715671c4f7f75cbb086070d4cad"
+    }
+  ],
+  "prior_doi": "10.6084/m9.figshare.33314733.v2",
+  "result": "pass",
+  "schema": "o015-figshare-habring-v3-preparation-v1",
+  "source_zip_entries": 40,
+  "task_cap_bytes": 500000000,
+  "total_upload_bytes": 6007269,
+  "upload_order": [
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html",
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub",
+    "D90-HAB-01-09-sumber-id.zip",
+    "LICENSE_CC_BY_4.0.txt",
+    "FIGSHARE_MANIFEST.json",
+    "SHA256SUMS"
+  ]
+}

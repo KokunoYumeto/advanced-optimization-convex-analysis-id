@@ -1,0 +1,79 @@
+{
+  "backend": {
+    "csv": {
+      "bytes": 2875457,
+      "sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f"
+    },
+    "jsonl": {
+      "bytes": 2408339,
+      "sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667"
+    },
+    "new_record_count": 624,
+    "protected_record_count": 2472,
+    "record_count": 3096,
+    "validation": {
+      "bytes": 10298,
+      "sha256": "929e532404e2c77d5570c4483f303ad57fc8096464248395f92752f32f0105ed"
+    }
+  },
+  "boundary": {
+    "component": "Andreas Habring, Lecture Notes: Convex Optimization, arXiv:2607.11664v1",
+    "coverage": "preface and chapters 1-9 complete in id-ID",
+    "next_gate": "bounded Becker subset freeze/build/dedup, then finite original closure"
+  },
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "controls": {
+    "00_control/ADVERSE_LEDGER.jsonl": {
+      "bytes": 171225,
+      "sha256": "40b2e36e843d743f2b40ac9669d290e52204a80d1da1cc648eaee23e8198657a"
+    },
+    "00_control/BUILD_AND_QA.md": {
+      "bytes": 107005,
+      "sha256": "0dbd4282db06e279a73c6212c622ea65ae0b27d8d8103858958dffb8602c0256"
+    },
+    "00_control/COMPONENT_RIGHTS.csv": {
+      "bytes": 40865,
+      "sha256": "02bfad6784cc44b873fc6e468436f23f20ea6b7154ddeb02c103ff30097f10c9"
+    },
+    "00_control/COVERAGE_OVERLAP.md": {
+      "bytes": 22424,
+      "sha256": "23825e0a8a372af3266b25ea47df3ba2a72fb3efc5b52e31d44a003a54b0ecd8"
+    },
+    "00_control/CURRENT_CURSOR.md": {
+      "bytes": 36950,
+      "sha256": "e32e27cd40b835781366963e3f68fb29a3fe05fcd09359b93f0a58e8939a19cc"
+    },
+    "00_control/CURRENT_GOAL_AND_WORKFLOW.md": {
+      "bytes": 4744,
+      "sha256": "b499bc06630c0c3ab31661559f43430b4d14f9ccd66c042e03e6bd7d6c649d4e"
+    },
+    "00_control/CURRENT_STATE.md": {
+      "bytes": 51558,
+      "sha256": "3fa6607310cf888231d0ef94a413182bab97159b65190df541f482f836fdf819"
+    },
+    "00_control/DECISION_LOG.md": {
+      "bytes": 51062,
+      "sha256": "1e9aa856246f37b7ec8ebd15a5bf8a5463e573753bf83b42adf5ccb392ed9d48"
+    },
+    "00_control/PUBLICATION_RECEIPTS.md": {
+      "bytes": 41694,
+      "sha256": "e7ff76ffafd8a350ed1859e4474e41336bc8c10b8a3548ab784aaa28f3efa8e9"
+    },
+    "00_control/SOURCE_AUTHORITY.json": {
+      "bytes": 29020,
+      "sha256": "091fc7688c67153cd7832238bd9b9d3a5ecbd1042d0a51f17a1a6f191dde8a34"
+    }
+  },
+  "expected_addition_file_count": 2,
+  "expected_inherited_file_count": 98,
+  "expected_release_file_count": 100,
+  "parent_record_doi": "10.5281/zenodo.22086656",
+  "parent_record_id": "22086656",
+  "public_additions_in_order": [
+    "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip"
+  ],
+  "schema": "o015-habring-spine-release-config-v1",
+  "status": "partial"
+}
