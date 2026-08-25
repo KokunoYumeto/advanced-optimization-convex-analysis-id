@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-25  
-State: complete Habring v1 and Becker-01 are admitted with a protected 3,320-record backend; Becker-01 publication/readback is the immediate action; Douglas–Rachford is the next translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
+State: complete Habring v1 and Becker-01 are admitted and publicly verified with a protected 3,320-record backend; Douglas–Rachford is the active translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
 
 ## Completed at this boundary
 
@@ -585,3 +585,21 @@ accessibility/rereview/backend gate. The following cursor is
 `BECKER-VARIANCE-REDUCTION`, lines 2971–2988, 18 lines / 900 bytes, SHA-256
 `b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
 Then execute the finite original closure in `CURRENT_GOAL_AND_WORKFLOW.md`.
+
+## 2026-08-25 controlling cursor — Becker-01 public; Douglas–Rachford active
+
+The preceding publication action is complete. GitHub commit
+`7ff680f4079499c08f3b29780105f58279f519d5` / tree
+`a36c6a880f483681575c4b946d53a4ee0e493bf5` passed anonymous readback for all
+62 changed paths. Zenodo record `22096817`, DOI `10.5281/zenodo.22096817`, is
+published/latest in concept `10.5281/zenodo.22059741`; all 99 files passed
+anonymous exact-byte verification, the Becker-01 PDF is the authoritative
+default preview, and authenticated draft lookup returns 404.
+
+The executable production cursor is `BECKER-DOUGLAS-RACHFORD`, exact frozen
+`TypedNotes/APPM5720Notes.tex` lines 2750–2797. Recompute its live slice hash,
+reconfirm the nonduplicative contribution relative to Habring ADMM, translate
+one coherent module, and run one consolidated deterministic reader/math/rights/
+visual/accessibility/rereview/backend gate. The next cursor is
+`BECKER-VARIANCE-REDUCTION`, lines 2971–2988. The finite original closure in
+`CURRENT_GOAL_AND_WORKFLOW.md` remains mandatory afterward.

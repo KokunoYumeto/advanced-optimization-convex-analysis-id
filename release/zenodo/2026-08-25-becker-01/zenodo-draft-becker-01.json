@@ -1,0 +1,11 @@
+{
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "draft_doi": "10.5281/zenodo.22096817",
+  "draft_id": "22096817",
+  "parent_record_doi": "10.5281/zenodo.22088305",
+  "parent_record_id": "22088305",
+  "schema": "o015-zenodo-becker-01-draft-v1",
+  "status": "published",
+  "version": "checkpoint-2026.08.25-becker-01-lagrange-slater-kkt"
+}

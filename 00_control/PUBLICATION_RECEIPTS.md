@@ -682,3 +682,42 @@ issue, comment, or other contact occurred.
 
 This is the final evidence descendant of the complete Habring checkpoint, not
 a new content release. No upstream issue, comment, or other contact occurred.
+
+## 2026-08-25 — Public Becker-01 GitHub checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/commit: `main` / `7ff680f4079499c08f3b29780105f58279f519d5`
+- Tree/parent: `a36c6a880f483681575c4b946d53a4ee0e493bf5` /
+  `42e9c6a4bd98d0583335382d33355ff70e1bedde`
+- Scope: the fixed Becker-01 source/witness/readers/QA/backend/release boundary;
+  62 changed paths / 8,203,835 aggregate bytes.
+- Anonymous gate: public commit API and immutable patch agree; every raw path
+  matches its local committed byte count and SHA-256 identity.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-01/github-public-readback-becker-01.json`,
+  16,504 bytes; SHA-256
+  `1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`.
+
+## 2026-08-25 — Public Becker-01 Zenodo checkpoint
+
+- Record: https://zenodo.org/records/22096817
+- Version DOI: `10.5281/zenodo.22096817`
+- Concept DOI: `10.5281/zenodo.22059741`
+- Parent: record `22088305`, DOI `10.5281/zenodo.22088305`
+- Inventory: 99 files; 90 inherited byte-identical and nine Becker-01
+  additions. Every anonymous download matches expected bytes and SHA-256.
+- Default preview: `D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf`
+  according to the authoritative public file-state endpoint and rendered
+  landing page. The legacy thumbnail-cache field still names MIT-09 but does
+  not control the actual preview.
+- Bounded pruning: ten obsolete MIT per-lecture delta ZIPs are absent only from
+  this new version; all prior immutable versions remain unchanged and the live
+  repository retains the corresponding source/readers/evidence.
+- Metadata gate: truthful partial status, exact component rights/provenance,
+  the organization contributor exactly once, model provenance exactly once,
+  no credential material, and no upstream contact. Authenticated draft lookup
+  returns 404 after publication.
+- Sanitized receipt:
+  `release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json`,
+  27,333 bytes; SHA-256
+  `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.

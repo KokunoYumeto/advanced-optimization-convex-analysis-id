@@ -1,0 +1,462 @@
+{
+  "aggregate_bytes": 8203835,
+  "branch": "main",
+  "changed_file_count": 62,
+  "commit": "7ff680f4079499c08f3b29780105f58279f519d5",
+  "commit_api": {
+    "bytes": 671648,
+    "http_status": 200,
+    "sha256": "149c35d22ebb152eb809f2640c3c2c92517769ad77b4ae2921f40860c77cd4bf"
+  },
+  "commit_patch": {
+    "bytes": 2862147,
+    "first_line_commit_match": true,
+    "http_status": 200,
+    "sha256": "cc33dbacd64019e44e39fbaa1ad0c6c6efceab99fb3f0e7d65173b090a8e7b68"
+  },
+  "credential_material_recorded": false,
+  "files": [
+    {
+      "bytes": 180939,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "a03a9ac5c4036e98394b70c00450ece87c2958227b79a44822341f5617006d61",
+      "status": "modified"
+    },
+    {
+      "bytes": 11408,
+      "path": "00_control/BECKER_SOURCE_AUTHORITY_AND_SUBSET_AUDIT_20260825.md",
+      "public_byte_identity": "pass",
+      "sha256": "5a26f552c9f56358acc929378bb91c17d0aa7fe7a07d1df6dbf4229f72d5f22a",
+      "status": "added"
+    },
+    {
+      "bytes": 114769,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "b4813d0f7a6db4276bbb0fd005f833146f65984cc50df7b3f3551946bbc73bcc",
+      "status": "modified"
+    },
+    {
+      "bytes": 45627,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "public_byte_identity": "pass",
+      "sha256": "924bbf93afb695c07c00b85b1cf655990c22b49f4a655ac3c05f35f3fbc1dd08",
+      "status": "modified"
+    },
+    {
+      "bytes": 22502,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "public_byte_identity": "pass",
+      "sha256": "8472aa8910597dd3d8699a3df4c5876689212fae8d2072ff08dbdc1c0662132f",
+      "status": "modified"
+    },
+    {
+      "bytes": 40512,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "774372b19713ad1ae3674f5d4bdd19bf0492a69b4aa8e417bd341d0ae8ea3a95",
+      "status": "modified"
+    },
+    {
+      "bytes": 4092,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "c004daa7ee327f471b9c93b7df2749888ec24c28d484bb3f790e3e623688842d",
+      "status": "modified"
+    },
+    {
+      "bytes": 57804,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "08f96e0a7eb57cb0a41037b2d3059b3d51d0901a58f8947ccc221c78394a38ee",
+      "status": "modified"
+    },
+    {
+      "bytes": 55645,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "0ef2f7c941dc06c2457ff4675422da7bb3a115771be515f81c491ba6d93e110a",
+      "status": "modified"
+    },
+    {
+      "bytes": 7358,
+      "path": "00_control/INDONESIAN_TERMINOLOGY_QA_20260822.md",
+      "public_byte_identity": "pass",
+      "sha256": "5da1e2526c9dee0ee2748d83a2c59436ffcb126a4faa3bc0b930971e28a6f5db",
+      "status": "modified"
+    },
+    {
+      "bytes": 48690,
+      "path": "00_control/PUBLICATION_RECEIPTS.md",
+      "public_byte_identity": "pass",
+      "sha256": "401fa1561b9c0b7fa05c21b0746f77354aadfba47ff044bc52b51d4bbd3ade99",
+      "status": "modified"
+    },
+    {
+      "bytes": 41619,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "public_byte_identity": "pass",
+      "sha256": "1dd171ad80abf3fb5cf615d67f71b9837e5ca2ba3bc46399696ab5304da07fd9",
+      "status": "modified"
+    },
+    {
+      "bytes": 3982,
+      "path": "authority/becker/BECKER_ARCHIVE_TREE_VERIFICATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "6c71915ad92bce36cf777317d3734ff64b64a1e57a86160a1c109b45dc095d78",
+      "status": "added"
+    },
+    {
+      "bytes": 8935,
+      "path": "authority/becker/BECKER_AUTHORITY_FREEZE.md",
+      "public_byte_identity": "pass",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7",
+      "status": "added"
+    },
+    {
+      "bytes": 6281,
+      "path": "authority/becker/BECKER_BUILD_PROBE.json",
+      "public_byte_identity": "pass",
+      "sha256": "397dbe19aa334d74f27d5f55e5beb6a00a2af4b5ccdb83ba7c372f4b1cf32c2d",
+      "status": "added"
+    },
+    {
+      "bytes": 39017,
+      "path": "authority/becker/BECKER_FILE_INVENTORY.csv",
+      "public_byte_identity": "pass",
+      "sha256": "4a0671a25dae2958ebf35a35ae00990cc182e011d98099f7cccc2faa4e5bb65d",
+      "status": "added"
+    },
+    {
+      "bytes": 53116,
+      "path": "authority/becker/BECKER_TEX_CLOSURE.json",
+      "public_byte_identity": "pass",
+      "sha256": "ed8daa4ea9747077789a8dd6ab5d336f329ab5e0163990f170a16bee453965e1",
+      "status": "added"
+    },
+    {
+      "bytes": 3054550,
+      "path": "backend/records.csv",
+      "public_byte_identity": "pass",
+      "sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f",
+      "status": "modified"
+    },
+    {
+      "bytes": 2552754,
+      "path": "backend/records.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67",
+      "status": "modified"
+    },
+    {
+      "bytes": 30131,
+      "path": "output/html/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0",
+      "status": "added"
+    },
+    {
+      "bytes": 487534,
+      "path": "output/pdf/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+      "status": "added"
+    },
+    {
+      "bytes": 2991,
+      "path": "qa/BECKER_01_BACKEND_EXTENSION.json",
+      "public_byte_identity": "pass",
+      "sha256": "deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed",
+      "status": "added"
+    },
+    {
+      "bytes": 2187,
+      "path": "qa/BECKER_01_BROWSER_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7",
+      "status": "added"
+    },
+    {
+      "bytes": 699,
+      "path": "qa/BECKER_01_HTML_BUILD.json",
+      "public_byte_identity": "pass",
+      "sha256": "d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d",
+      "status": "added"
+    },
+    {
+      "bytes": 2698,
+      "path": "qa/BECKER_01_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625",
+      "status": "added"
+    },
+    {
+      "bytes": 13799,
+      "path": "qa/BECKER_01_MATH_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b",
+      "status": "added"
+    },
+    {
+      "bytes": 3868,
+      "path": "qa/BECKER_01_PDF_BUILD.json",
+      "public_byte_identity": "pass",
+      "sha256": "e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed",
+      "status": "added"
+    },
+    {
+      "bytes": 1723,
+      "path": "qa/BECKER_01_PDF_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea",
+      "status": "added"
+    },
+    {
+      "bytes": 2383,
+      "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "public_byte_identity": "pass",
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2",
+      "status": "added"
+    },
+    {
+      "bytes": 13016,
+      "path": "qa/build_becker_lagrange_kkt_html.py",
+      "public_byte_identity": "pass",
+      "sha256": "4b90a31aee65bdf39aaeff2de28c1e55b25c9ba42b43ddfffc1a36a38d497b09",
+      "status": "added"
+    },
+    {
+      "bytes": 7091,
+      "path": "qa/build_becker_lagrange_kkt_pdf.py",
+      "public_byte_identity": "pass",
+      "sha256": "9e9717074e0bcba231c47666cfffbc6e8158908fce1523f2ada3cb58800668b0",
+      "status": "added"
+    },
+    {
+      "bytes": 63779,
+      "path": "qa/extend_backend_becker_01.py",
+      "public_byte_identity": "pass",
+      "sha256": "24454bbf836ba7ace080237b3267df17648faafc02d680bc9bc826e342686772",
+      "status": "added"
+    },
+    {
+      "bytes": 4321,
+      "path": "qa/extract_becker_lagrange_kkt_source.py",
+      "public_byte_identity": "pass",
+      "sha256": "22bb37e886fee84fa6ad10e4f1de504a81983a4a6c9c759dd240509f6e75617b",
+      "status": "added"
+    },
+    {
+      "bytes": 22090,
+      "path": "qa/validate_becker_lagrange_kkt_math.py",
+      "public_byte_identity": "pass",
+      "sha256": "7e2c2e370454e7cab486fd02ee722608185d81ebf6b027da992cf4de97bcf7b3",
+      "status": "added"
+    },
+    {
+      "bytes": 511931,
+      "path": "release/becker-01/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_01_2026.08.25.zip",
+      "public_byte_identity": "pass",
+      "sha256": "5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281",
+      "status": "added"
+    },
+    {
+      "bytes": 7124,
+      "path": "release/becker-01/2026-08-25/local-verification-becker-01.json",
+      "public_byte_identity": "pass",
+      "sha256": "7ef77415c7e16508b31a1cb998817f6a515ba83d127e8924a51065a3704e93ff",
+      "status": "added"
+    },
+    {
+      "bytes": 30131,
+      "path": "release/becker-01/2026-08-25/package/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0",
+      "status": "added"
+    },
+    {
+      "bytes": 487534,
+      "path": "release/becker-01/2026-08-25/package/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+      "status": "added"
+    },
+    {
+      "bytes": 1071,
+      "path": "release/becker-01/2026-08-25/package/LICENSE_BECKER_MIT.txt",
+      "public_byte_identity": "pass",
+      "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+      "status": "added"
+    },
+    {
+      "bytes": 1487,
+      "path": "release/becker-01/2026-08-25/package/LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "public_byte_identity": "pass",
+      "sha256": "bd3de022646c5827ddccbd2406c8fd92aa2276191b8fd94364141dbeb5f84f11",
+      "status": "added"
+    },
+    {
+      "bytes": 2919,
+      "path": "release/becker-01/2026-08-25/package/README_BECKER_01.md",
+      "public_byte_identity": "pass",
+      "sha256": "c0fae658ad361e616f0a708a9a70a3b60eb667b3f21b5dc8265c11197c73598c",
+      "status": "added"
+    },
+    {
+      "bytes": 2062,
+      "path": "release/becker-01/2026-08-25/package/SHA256SUMS",
+      "public_byte_identity": "pass",
+      "sha256": "9ec108b1154128212d4faea0ef200cbaa5c120072463faf43890394a958fe9d8",
+      "status": "added"
+    },
+    {
+      "bytes": 8935,
+      "path": "release/becker-01/2026-08-25/package/authority/BECKER_AUTHORITY_FREEZE.md",
+      "public_byte_identity": "pass",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7",
+      "status": "added"
+    },
+    {
+      "bytes": 2991,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_BACKEND_EXTENSION.json",
+      "public_byte_identity": "pass",
+      "sha256": "deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed",
+      "status": "added"
+    },
+    {
+      "bytes": 2187,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_BROWSER_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7",
+      "status": "added"
+    },
+    {
+      "bytes": 699,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_HTML_BUILD.json",
+      "public_byte_identity": "pass",
+      "sha256": "d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d",
+      "status": "added"
+    },
+    {
+      "bytes": 2698,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_INDEPENDENT_REREVIEW.md",
+      "public_byte_identity": "pass",
+      "sha256": "5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625",
+      "status": "added"
+    },
+    {
+      "bytes": 13799,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_MATH_VALIDATION.json",
+      "public_byte_identity": "pass",
+      "sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b",
+      "status": "added"
+    },
+    {
+      "bytes": 3868,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_PDF_BUILD.json",
+      "public_byte_identity": "pass",
+      "sha256": "e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed",
+      "status": "added"
+    },
+    {
+      "bytes": 1723,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_PDF_VISUAL_QA.json",
+      "public_byte_identity": "pass",
+      "sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea",
+      "status": "added"
+    },
+    {
+      "bytes": 2383,
+      "path": "release/becker-01/2026-08-25/package/qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "public_byte_identity": "pass",
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2",
+      "status": "added"
+    },
+    {
+      "bytes": 9446,
+      "path": "release/becker-01/2026-08-25/package/release-manifest-becker-01.json",
+      "public_byte_identity": "pass",
+      "sha256": "4902c55f0c7ed5f41c4613855cd03bd38e681962e61c549b2cb2d4ec287c6ced",
+      "status": "added"
+    },
+    {
+      "bytes": 12294,
+      "path": "release/becker-01/2026-08-25/package/source/en/becker-01-lagrange-slater-kkt-source.tex",
+      "public_byte_identity": "pass",
+      "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565",
+      "status": "added"
+    },
+    {
+      "bytes": 7330,
+      "path": "release/becker-01/2026-08-25/package/source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+      "public_byte_identity": "pass",
+      "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d",
+      "status": "added"
+    },
+    {
+      "bytes": 12924,
+      "path": "release/becker-01/2026-08-25/package/source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "public_byte_identity": "pass",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce",
+      "status": "added"
+    },
+    {
+      "bytes": 4465,
+      "path": "release/becker-01/2026-08-25/package/source/id-ID/macros-id.tex",
+      "public_byte_identity": "pass",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+      "status": "added"
+    },
+    {
+      "bytes": 10133,
+      "path": "release/becker-01/2026-08-25/package/source/id-ID/shinybook.cls",
+      "public_byte_identity": "pass",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0",
+      "status": "added"
+    },
+    {
+      "bytes": 21378,
+      "path": "release/becker-01/2026-08-25/prepare_becker_01_release.py",
+      "public_byte_identity": "pass",
+      "sha256": "78cac422e9a01deee21af6ab758a4403cc3c2517392d3bf3f5a3e2e73bf92a1f",
+      "status": "added"
+    },
+    {
+      "bytes": 1865,
+      "path": "release/github/2026-08-25-habring-preservation-receipts/github-final-evidence-push-readback.json",
+      "public_byte_identity": "pass",
+      "sha256": "c544f0ec524221ef4196caaaa882b015287406ca4b8c24a05d8fe62c6882ab55",
+      "status": "added"
+    },
+    {
+      "bytes": 12294,
+      "path": "source/en/becker-01-lagrange-slater-kkt-source.tex",
+      "public_byte_identity": "pass",
+      "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565",
+      "status": "added"
+    },
+    {
+      "bytes": 7330,
+      "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+      "public_byte_identity": "pass",
+      "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d",
+      "status": "added"
+    },
+    {
+      "bytes": 12924,
+      "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "public_byte_identity": "pass",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce",
+      "status": "added"
+    }
+  ],
+  "main_points_to_commit": true,
+  "parent": "42e9c6a4bd98d0583335382d33355ff70e1bedde",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-becker-01-public-readback-v1",
+  "tree": "a36c6a880f483681575c4b946d53a4ee0e493bf5",
+  "upstream_contact": false,
+  "verified_at_utc": "2026-08-25T02:29:19.087917+00:00"
+}

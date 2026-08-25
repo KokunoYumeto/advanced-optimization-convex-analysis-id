@@ -207,7 +207,7 @@
   },
   "current_becker_supplement_admission": {
     "recorded_on": "2026-08-25",
-    "status": "becker_01_admitted_locally_public_preservation_pending",
+    "status": "becker_01_admitted_and_publicly_preserved",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
     "scope": "Exact non-LP source ranges 1263-1321, 1398-1405, 1414-1499, 1652-1726, and 1731-1743: Lagrangian duality, Slater, saddle points, and KKT. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 are excluded for O018.",
     "corrections": {
@@ -283,6 +283,40 @@
       "source": "MIT; copyright Stephen Becker; TypedNotes/APPM5720Notes.tex credited to Mitchell Krock; inherited Boyd-Vandenberghe and Bertsekas credits retained",
       "translation_and_correction_wording": "CC BY-SA 4.0",
       "nonendorsement": true
+    },
+    "public_preservation": {
+      "status": "github_and_zenodo_public_exact_byte_readback_pass",
+      "github": {
+        "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+        "commit": "7ff680f4079499c08f3b29780105f58279f519d5",
+        "tree": "a36c6a880f483681575c4b946d53a4ee0e493bf5",
+        "parent": "42e9c6a4bd98d0583335382d33355ff70e1bedde",
+        "changed_files": 62,
+        "aggregate_bytes": 8203835,
+        "anonymous_readback": "pass",
+        "receipt_path": "release/github/2026-08-25-becker-01/github-public-readback-becker-01.json",
+        "receipt_bytes": 16504,
+        "receipt_sha256": "1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79"
+      },
+      "zenodo": {
+        "record_id": "22096817",
+        "record_doi": "10.5281/zenodo.22096817",
+        "record_url": "https://zenodo.org/records/22096817",
+        "concept_doi": "10.5281/zenodo.22059741",
+        "parent_record_id": "22088305",
+        "status": "published_latest",
+        "file_count": 99,
+        "inherited_file_count": 90,
+        "addition_file_count": 9,
+        "removed_obsolete_delta_zip_count": 10,
+        "default_preview": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+        "anonymous_readback": "pass",
+        "authenticated_open_draft_status": 404,
+        "receipt_path": "release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json",
+        "receipt_bytes": 27333,
+        "receipt_sha256": "b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e"
+      },
+      "upstream_contact": false
     }
   },
   "current_production_cursor": {
@@ -293,10 +327,9 @@
     "source": "TypedNotes/APPM5720Notes.tex",
     "source_lines": "2750-2797",
     "source_slice_sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2",
-    "state": "next_after_becker_01_public_preservation",
+    "state": "active_after_becker_01_public_preservation",
     "admitted": false,
     "required_actions": [
-      "publish and anonymously read back the admitted Becker-01 checkpoint",
       "reconfirm exact slice and nonduplication against Habring ADMM/operator-splitting coverage",
       "translate one coherent Douglas-Rachford module with retained source rights and credits",
       "run deterministic reader, math, visual, accessibility, rereview, and backend gates"

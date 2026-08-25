@@ -1398,7 +1398,7 @@ total 232,442 bytes and match immutable anonymous readback. Receipt:
 # Becker-01 Lagrangian duality, Slater, and KKT consolidated build and QA
 
 As of: 2026-08-25  
-Admission: PASS locally; public preservation pending; larger O015 course partial
+Admission: PASS locally and publicly preserved; larger O015 course partial
 
 Authority/archive gate: PASS. Official commit
 `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree
@@ -1477,5 +1477,22 @@ and `9ec108b1154128212d4faea0ef200cbaa5c120072463faf43890394a958fe9d8`.
 Local verification is 7,124 bytes / SHA-256
 `7ef77415c7e16508b31a1cb998817f6a515ba83d127e8924a51065a3704e93ff`.
 No raw archive, cache, build tree, full backend, credential, or forbidden
-project-label byte enters the compact package. Public preservation gate:
-PENDING; no GitHub commit or Zenodo version is claimed yet.
+project-label byte enters the compact package.
+
+Public preservation gate: PASS. GitHub commit
+`7ff680f4079499c08f3b29780105f58279f519d5`, tree
+`a36c6a880f483681575c4b946d53a4ee0e493bf5`, exposes 62 changed paths /
+8,203,835 bytes, all matched by anonymous immutable raw readback. Receipt:
+`release/github/2026-08-25-becker-01/github-public-readback-becker-01.json`,
+16,504 bytes / SHA-256
+`1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`.
+
+Zenodo record `22096817`, DOI `10.5281/zenodo.22096817`, is published/latest
+in concept `10.5281/zenodo.22059741`. All 99 public files pass anonymous exact
+byte/hash readback: 90 inherited unchanged and nine additions. The authoritative
+public file state selects the Becker-01 PDF as default preview; authenticated
+draft lookup returns 404. Receipt:
+`release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json`,
+27,333 bytes / SHA-256
+`b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
+No credential material or upstream contact is recorded.

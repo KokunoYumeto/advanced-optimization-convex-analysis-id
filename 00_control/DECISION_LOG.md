@@ -648,3 +648,25 @@ The 21-entry compact release ZIP is 511,931 bytes / SHA-256
 `5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281`.
 Publish and anonymously verify this checkpoint before advancing to the frozen
 Douglas–Rachford slice. The larger O015 coursebook remains partial.
+
+## D90-0053 — Close Becker-01 public preservation and activate Douglas–Rachford
+
+Decision: accept Becker-01 as publicly preserved in the existing, nonduplicate
+lineages. GitHub commit `7ff680f4079499c08f3b29780105f58279f519d5`, tree
+`a36c6a880f483681575c4b946d53a4ee0e493bf5`, exposes 62 changed paths /
+8,203,835 bytes; all immutable raw-byte comparisons pass. Zenodo record
+`22096817`, DOI `10.5281/zenodo.22096817`, remains in concept
+`10.5281/zenodo.22059741`, preserves 90 inherited files byte-identically, and
+adds nine Becker-01 files. All 99 public files pass anonymous size/SHA-256
+readback; the Becker PDF is the authoritative default preview and no edit draft
+remains. The GitHub and Zenodo receipt SHA-256 values are
+`1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`
+and `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
+
+The ten omitted parent files are obsolete MIT per-lecture delta ZIPs; their
+source/readers remain in the public repository and their prior Zenodo versions
+are immutable. This bounded pruning keeps the current record below its file
+limit without changing historical bytes or the course's component rights.
+Activate exact Becker lines 2750–2797 for Douglas–Rachford; variance reduction
+follows. No upstream contact occurred, and no overall-course completion is
+claimed.

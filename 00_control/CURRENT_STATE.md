@@ -3,7 +3,7 @@
 As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: complete Habring v1 spine and Becker-01 are admitted; the protected additive backend has 3,320 records; Habring is public and Becker-01 awaits one GitHub/Zenodo preservation transaction; Douglas–Rachford is the next post-publication source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
+Status: complete Habring v1 spine and Becker-01 are admitted and public; the protected additive backend has 3,320 records; Becker-01 is verified at GitHub commit `7ff680f4079499c08f3b29780105f58279f519d5` and Zenodo DOI `10.5281/zenodo.22096817`; Douglas–Rachford is the active source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -52,11 +52,11 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified Zenodo version: `10.5281/zenodo.22088305`, exactly 100 files with all 98 inherited files byte-identical plus the complete Habring PDF and comprehensive continuation ZIP. Full anonymous readback passed. Becker-01 must advance this same concept; no duplicate concept is permitted.
-- Current verified GitHub content: commit `46d5753e853397e013d21b01872d789f7ee07a63`; final preservation evidence is public through descendant `42e9c6a4bd98d0583335382d33355ff70e1bedde`, tree `9490cf09028b97026318eb0d5d4ec4fbfe85dcf9`. Becker-01 must advance this same repository.
+- Current verified Zenodo version: `10.5281/zenodo.22096817`, exactly 99 files with 90 inherited byte-identical files and nine Becker-01 additions. Full anonymous readback passed and the Becker PDF is the authoritative default preview.
+- Current verified GitHub content: Becker-01 commit `7ff680f4079499c08f3b29780105f58279f519d5`, tree `a36c6a880f483681575c4b946d53a4ee0e493bf5`; all 62 changed paths passed anonymous immutable readback.
 - Figshare article `33314733` remains the intended Habring-only lineage, but authenticated requests return `403 InactiveAccount`; zero mutation occurred. This destination failure does not hold production and does not authorize a replacement item.
 
-Habring and all MIT companion releases have complete public-byte evidence. Becker-01 is locally release-ready but not yet claimed public. MIT page 98 is dormant.
+Habring, all MIT companion releases, and Becker-01 have complete public-byte evidence. MIT page 98 is dormant.
 
 ## Known incomplete surfaces
 
@@ -898,3 +898,33 @@ fixed bytes once to the existing GitHub repository and Zenodo concept, then
 anonymously verify them. After preservation, advance to the frozen Douglas–
 Rachford slice at lines 2750–2797; variance reduction follows. The larger O015
 goal remains incomplete.
+
+## 2026-08-25 controlling refresh — Becker-01 public; Douglas–Rachford active
+
+The pending-publication wording above is superseded. Becker-01 is public in the
+existing GitHub repository at commit
+`7ff680f4079499c08f3b29780105f58279f519d5`, tree
+`a36c6a880f483681575c4b946d53a4ee0e493bf5`, parent
+`42e9c6a4bd98d0583335382d33355ff70e1bedde`. The public commit exposes 62
+changed paths / 8,203,835 aggregate bytes; every immutable raw byte matches.
+The sanitized receipt is 16,504 bytes / SHA-256
+`1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`.
+
+Zenodo record `22096817`, DOI `10.5281/zenodo.22096817`, is published/latest
+in existing concept `10.5281/zenodo.22059741` after parent `22088305`. Its 99
+files comprise 90 inherited byte-identical files and nine Becker-01 additions;
+all passed anonymous size/SHA-256 readback. Ten obsolete MIT per-lecture delta
+ZIPs are omitted from this version only; prior immutable versions remain
+unchanged. The authoritative public file state and landing page select
+`D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf` as default preview. A legacy
+thumbnail-cache field still names MIT-09, but it does not control the actual
+public preview. Authenticated draft lookup returns 404, so no edit draft remains.
+The sanitized receipt is 27,333 bytes / SHA-256
+`b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
+
+The executable cursor is now Becker Douglas–Rachford, exact donor lines
+2750–2797. Reconfirm the source slice and nonduplication against Habring ADMM,
+then translate and run the consolidated reader/math/rights/visual/accessibility/
+rereview/backend gate. Variance reduction follows. The full original
+stochastic, variational/monotone, exercise, solution, lab, capstone, tagged-PDF,
+and accessibility closure remains unfinished; the overall goal is not complete.

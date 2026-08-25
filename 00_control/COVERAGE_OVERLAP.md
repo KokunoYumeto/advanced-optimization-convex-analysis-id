@@ -331,3 +331,10 @@ Rachford; a rigorous variance-reduction bridge; stochastic proximal, mirror,
 and minibatch methods; variational inequalities, maximal monotonicity,
 resolvents/splitting; and the full assessment, solution, lab, capstone, tagged-
 PDF, and accessibility closure.
+
+Public preservation does not change this coverage judgment. Becker-01 is now
+public at GitHub commit `7ff680f4079499c08f3b29780105f58279f519d5` and Zenodo
+DOI `10.5281/zenodo.22096817`, with anonymous exact-byte readback complete.
+Douglas–Rachford remains the active nonduplicative supplement boundary; no LP,
+MIP, simplex, sensitivity, network, or other O018 material is admitted by that
+publication.
