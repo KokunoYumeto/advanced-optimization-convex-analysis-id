@@ -1,0 +1,25 @@
+{
+  "artifact": {
+    "bytes": 30131,
+    "failures": [],
+    "fragment_links": 15,
+    "h1_count": 2,
+    "h2_count": 7,
+    "ids": 27,
+    "math_display_count": 26,
+    "math_inline_count": 92,
+    "path": "output/html/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+    "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0"
+  },
+  "byte_identical_builds": true,
+  "inputs": [
+    {
+      "bytes": 12924,
+      "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+    }
+  ],
+  "result": "pass",
+  "schema": "o015-becker-01-html-build-v1",
+  "upstream_contact": false
+}

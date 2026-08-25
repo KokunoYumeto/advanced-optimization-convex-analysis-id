@@ -1,7 +1,7 @@
 # O015 production cursor
 
-As of: 2026-08-24  
-State: Habring arXiv `2607.11664v1` is the canonical structured-source spine and active production lane; MIT L01--L11/pages 2--97 are admitted as a separately licensed companion with a 2,472-record backend and are publicly preserved on GitHub and Zenodo; page 98 is a dormant MIT-companion cursor
+As of: 2026-08-25  
+State: complete Habring v1 and Becker-01 are admitted with a protected 3,320-record backend; Becker-01 publication/readback is the immediate action; Douglas–Rachford is the next translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
 
 ## Completed at this boundary
 
@@ -11,7 +11,7 @@ State: Habring arXiv `2607.11664v1` is the canonical structured-source spine and
 - The previous public Zenodo version `10.5281/zenodo.22059742` preserves the first nine units through Penn Chapter 4 and passed anonymous exact-byte readback for all 15 files and all 132 manifest-bound ZIP payloads.
 - Zenodo version `10.5281/zenodo.22060447` now preserves all ten optional-companion units through Penn Chapter 5 and passed anonymous exact-byte readback for all 16 files and all 150 manifest-bound ZIP payloads.
 - Figshare item `33314733` / DOI `10.6084/m9.figshare.33314733.v2` is the single public reader-first Habring Chapters 3--9 module under exact CC BY 4.0. Its five public files, 29-entry source ZIP, task/project byte caps, version history, and unique project/collection membership all passed anonymous readback.
-- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions; Becker remains an unfrozen bounded supplement target.
+- The controlling 68,481-byte architecture receipt, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`, makes Habring v1 the canonical structured-source spine. MIT/Royer/Penn remain separately licensed companions. Becker authority is frozen and Becker-01 is admitted; later exact slices remain gated.
 - The Penn Chapter 6 candidate is preserved, clean, and unadmitted. No Penn Chapter 7 work has begun.
 - The MIT/Royer source freeze and closure audit pass. The MIT teaching closure is 13 PDFs / 395 pages / 10,417,664 bytes under CC BY-NC-SA 4.0; the Royer notes and two laboratory archives are separately frozen under CC BY-NC 4.0. Neither mathematical source is misrepresented as TeX.
 - The admitted MIT first-topic block maps every item on complete-notes pages 2--5 into an English semantic witness and id-ID source. Its deterministic HTML is 20,613 bytes, SHA-256 `fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b`; its 3-page A4 PDF is 53,370 bytes, SHA-256 `bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58`.
@@ -45,7 +45,7 @@ Create the page-addressed English semantic witness and id-ID source contiguously
 - Do not overlap O018.
 - GitHub synchronization is closed and verified. Continue to use only narrow task-local Git operations for later admitted boundaries; never run a broad workspace scan.
 - Do not contact upstream during production.
-- Do not publish a final-corpus claim until the full MIT/Royer route, bridges, labs, mastery/solution layer, accessible surfaces, backend, rights, and human-review status are complete.
+- Do not publish a final-corpus claim until the structured spine, bounded supplements, original bridges, labs, mastery/solution layer, accessible surfaces, backend, rights, and deterministic public readbacks are complete. Optional human evidence is never a hold.
 
 ## 2026-08-23 boundary update — MIT L02 admitted; next cursor page 14
 
@@ -556,3 +556,32 @@ any bounded module. Do not translate the entire repository or claim Canvas-only
 solutions. The following cursor is the first coherent nonduplicative admitted
 Becker module; after the bounded subset, execute the finite original closure in
 `CURRENT_GOAL_AND_WORKFLOW.md`.
+
+## 2026-08-25 controlling cursor — preserve Becker-01, then Douglas–Rachford
+
+The preceding Becker freeze/build gate is complete and superseded. Official
+commit/tree/archive/API/license closure passes; `APPM5720Notes.tex` is the sole
+source-closed donor; the broken Jaden master remains excluded. Becker-01's five
+exact non-LP ranges, Indonesian body/wrapper, 12-page PDF, responsive HTML,
+10/10 open-math checks, desktop/tablet/mobile browser QA, all-page PDF visual
+QA, independent rereview, mixed-rights disclosure, 12 correction events, and
+3,320-record backend are admitted. The compact release ZIP is
+`release/becker-01/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_01_2026.08.25.zip`,
+511,931 bytes / SHA-256
+`5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281`.
+
+Immediate executable action: publish this fixed Becker-01 boundary once to the
+existing GitHub repository and Zenodo concept `10.5281/zenodo.22059741`, then
+anonymously verify every new public byte and store sanitized receipts. Claim no
+public Becker identity before the transaction passes; create no duplicate
+concept or replacement repository.
+
+Post-publication translation cursor: `BECKER-DOUGLAS-RACHFORD`, exact donor
+lines 2750–2797, 48 lines / 1,285 bytes, slice SHA-256
+`386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2`.
+Reconfirm nonduplication against Habring's ADMM material, translate one coherent
+module, and run the normal deterministic reader/math/rights/visual/
+accessibility/rereview/backend gate. The following cursor is
+`BECKER-VARIANCE-REDUCTION`, lines 2971–2988, 18 lines / 900 bytes, SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+Then execute the finite original closure in `CURRENT_GOAL_AND_WORKFLOW.md`.

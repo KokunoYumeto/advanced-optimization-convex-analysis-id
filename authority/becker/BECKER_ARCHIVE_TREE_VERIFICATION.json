@@ -1,0 +1,190 @@
+{
+  "schema": "becker-authority-tree-verification-v1",
+  "generated_utc": "2026-08-25T00:44:07.4168615Z",
+  "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+  "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+  "api_tree_truncated": false,
+  "api_tree_entries": 195,
+  "api_blob_entries": 180,
+  "extracted_files": 180,
+  "extracted_bytes": 168574596,
+  "all_blob_ids_and_sizes_match": true,
+  "mismatches": [],
+  "api_blobs_missing_from_extraction": [],
+  "extracted_files_missing_from_api": [],
+  "counts_by_extension": [
+    {
+      "extension": ".pdf",
+      "count": 70,
+      "bytes": 163468975
+    },
+    {
+      "extension": ".tex",
+      "count": 42,
+      "bytes": 326484
+    },
+    {
+      "extension": ".m",
+      "count": 20,
+      "bytes": 22001
+    },
+    {
+      "extension": ".ipynb",
+      "count": 14,
+      "bytes": 2739227
+    },
+    {
+      "extension": ".md",
+      "count": 13,
+      "bytes": 73619
+    },
+    {
+      "extension": ".py",
+      "count": 6,
+      "bytes": 54731
+    },
+    {
+      "extension": ".gitignore",
+      "count": 3,
+      "bytes": 1070
+    },
+    {
+      "extension": ".mat",
+      "count": 2,
+      "bytes": 150937
+    },
+    {
+      "extension": ".mlx",
+      "count": 2,
+      "bytes": 105183
+    },
+    {
+      "extension": ".pkl",
+      "count": 2,
+      "bytes": 1444449
+    },
+    {
+      "extension": "",
+      "count": 1,
+      "bytes": 1071
+    },
+    {
+      "extension": ".c",
+      "count": 1,
+      "bytes": 1118
+    },
+    {
+      "extension": ".ds_store",
+      "count": 1,
+      "bytes": 6148
+    },
+    {
+      "extension": ".html",
+      "count": 1,
+      "bytes": 165195
+    },
+    {
+      "extension": ".mexmaci64",
+      "count": 1,
+      "bytes": 8752
+    },
+    {
+      "extension": ".sty",
+      "count": 1,
+      "bytes": 5636
+    }
+  ],
+  "counts_by_top_level": [
+    {
+      "category": ".gitignore",
+      "count": 1,
+      "bytes": 1045
+    },
+    {
+      "category": "APPM4720_5720_Fall2018_Syllabus.pdf",
+      "count": 1,
+      "bytes": 172789
+    },
+    {
+      "category": "Demos",
+      "count": 38,
+      "bytes": 2449838
+    },
+    {
+      "category": "Fall2018_day-by-day_schedule.pdf",
+      "count": 1,
+      "bytes": 1101690
+    },
+    {
+      "category": "Handouts",
+      "count": 6,
+      "bytes": 1304913
+    },
+    {
+      "category": "Homeworks",
+      "count": 27,
+      "bytes": 5767031
+    },
+    {
+      "category": "LICENSE",
+      "count": 1,
+      "bytes": 1071
+    },
+    {
+      "category": "Notes",
+      "count": 47,
+      "bytes": 146265504
+    },
+    {
+      "category": "policies_CU.pdf",
+      "count": 1,
+      "bytes": 114506
+    },
+    {
+      "category": "policies.md",
+      "count": 1,
+      "bytes": 9140
+    },
+    {
+      "category": "README.md",
+      "count": 1,
+      "bytes": 1808
+    },
+    {
+      "category": "SlideshowAllPresentations_4720Fall18.pdf",
+      "count": 1,
+      "bytes": 1995088
+    },
+    {
+      "category": "SlideshowAllPresentations_4720Spr17.pdf",
+      "count": 1,
+      "bytes": 2705008
+    },
+    {
+      "category": "SlideshowAllPresentations_5630_Spring21.pdf",
+      "count": 1,
+      "bytes": 4259488
+    },
+    {
+      "category": "syllabus.md",
+      "count": 1,
+      "bytes": 35856
+    },
+    {
+      "category": "TypedNotes",
+      "count": 46,
+      "bytes": 2248863
+    },
+    {
+      "category": "utilities",
+      "count": 5,
+      "bytes": 140958
+    }
+  ],
+  "inventory": {
+    "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\BECKER_FILE_INVENTORY.csv",
+    "bytes": 39017,
+    "sha256": "4a0671a25dae2958ebf35a35ae00990cc182e011d98099f7cccc2faa4e5bb65d"
+  }
+}

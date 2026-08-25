@@ -57,3 +57,15 @@ is used as the compact contrastive adjective in the source sentence.
 standard method names already compatible with the lane glossary. `dualitas`
 remains the source label; no alternative `dualisme` term is introduced. No
 L03 term required propagation into earlier units.
+
+## Becker-01 terminology extension (2026-08-25)
+
+The Becker Lagrange-Slater-KKT unit was checked against the same frozen UNY
+terminology witness and the admitted lane glossary. It retains
+`optimisasi konveks`, `dualitas`, `pengali Lagrange`, `kondisi Slater`,
+`titik pelana`, `semidefinit positif`, `gradien`, `proyeksi`, and
+`Karush-Kuhn-Tucker`. The unit uses `kendala pertidaksamaan` for the constraint
+type and `ketaksamaan` for an inequality relation or inequality direction.
+This is a deliberate semantic/register distinction within the previously
+accepted `pertidaksamaan` variant, not an accidental terminology fork. No term
+required propagation into Habring or the preserved companion readers.

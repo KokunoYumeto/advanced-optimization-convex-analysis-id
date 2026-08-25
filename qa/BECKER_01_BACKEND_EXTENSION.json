@@ -1,0 +1,76 @@
+{
+  "absent_surface_closure_count": 4,
+  "collision_count": 0,
+  "csv": {
+    "bytes": 3054550,
+    "sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f"
+  },
+  "final_id_order_sha256": "a9e7b04384b4520279a4ffebe5c51bef2f4d9173fa014bda23b3b9e9a2188b03",
+  "final_id_set_sha256": "037a51692fa7c7e07bd46d2b17d2504bd8d59c674b32baffdb88dd097065fa5e",
+  "final_record_count": 3320,
+  "final_record_set_sha256": "d1e4814426ca899ce40a9158441345893ba857cb73e5bff2af47f77ab528e454",
+  "jsonl": {
+    "bytes": 2552754,
+    "sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67"
+  },
+  "namespace": "d90.becker.98ed693.b01.*",
+  "new_entity_counts": {
+    "artifact": 17,
+    "concept": 9,
+    "edition": 2,
+    "learning_surface": 53,
+    "qa_event": 10,
+    "relation": 123,
+    "resource": 1,
+    "rights": 3,
+    "segment": 5,
+    "unit": 1
+  },
+  "new_id_set_sha256": "266697527c7f68749a53746fa16aaaaf6d2b18c4bde0cb3de660e228a6649a67",
+  "new_record_count": 224,
+  "new_record_set_sha256": "b25baf788f8853a54c17f030ec9edbe009d2cbbbd4fe340c551c659b7decf44b",
+  "output_csv": "backend/records.csv",
+  "output_jsonl": "backend/records.jsonl",
+  "present_surface_counts": {
+    "chapter": 1,
+    "definition": 5,
+    "equation": 26,
+    "example": 4,
+    "proof": 2,
+    "section": 4,
+    "subsection": 2,
+    "theorem": 5
+  },
+  "protected_baseline": {
+    "csv_bytes": 2875457,
+    "csv_sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f",
+    "id_order_sha256": "a3afa1645b1a570d6322ef1bb3d5718f9b802f526b9a61a8632ef8909ada3fbf",
+    "id_set_sha256": "485526ff222b7e84f6e5232775e6186345a4b10b3c44751e7deff4577bcae4f0",
+    "jsonl_bytes": 2408339,
+    "jsonl_sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667",
+    "raw_record_bytes_and_relative_order_preserved": true,
+    "record_count": 3096,
+    "record_set_sha256": "b0757ffa96ccaba79aa3fe770e35310cd46afa2175b48bf1ab7e9e28edf7dd2e"
+  },
+  "reader_and_qa_bindings": {
+    "browser_visual_report_sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7",
+    "html_sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0",
+    "math_report_sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b",
+    "pdf_sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+    "pdf_visual_report_sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea"
+  },
+  "result": "pass",
+  "schema": "o015-becker-01-backend-extension-receipt-v1",
+  "segment_count": 5,
+  "source_commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "target": {
+    "bytes": 12924,
+    "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+    "physical_lines": 348,
+    "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+  },
+  "topic_count": 9,
+  "upstream_contact": false,
+  "workflow": "o015-becker-01-backend-v1",
+  "write_mode": "canonical"
+}

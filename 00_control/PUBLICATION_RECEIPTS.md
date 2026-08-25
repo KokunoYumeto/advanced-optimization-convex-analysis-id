@@ -662,3 +662,23 @@ was created.
 
 This closes the GitHub evidence push for the Habring boundary. No upstream
 issue, comment, or other contact occurred.
+
+## 2026-08-25 — Public GitHub final Habring evidence descendant
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/commit: `main` / `42e9c6a4bd98d0583335382d33355ff70e1bedde`
+- Tree: `9490cf09028b97026318eb0d5d4ec4fbfe85dcf9`
+- Parent: `90062e1d78f41011ba350c88f07ebef44de80365`
+- Scope: five final Habring evidence/control paths, 232,442 aggregate bytes;
+  no reader/source content or immutable Zenodo release byte changed.
+- Anonymous gate: public commit API and immutable patch agree; all five raw
+  paths match exact byte counts and SHA-256 identities. The patch is 26,861
+  bytes / SHA-256
+  `43e46166317d8a4c5fe38bcf64538018537c0409c1533a2f94ff046cc57cd92b`.
+- Sanitized receipt:
+  `release/github/2026-08-25-habring-preservation-receipts/github-final-evidence-push-readback.json`,
+  1,865 bytes; SHA-256
+  `c544f0ec524221ef4196caaaa882b015287406ca4b8c24a05d8fe62c6882ab55`.
+
+This is the final evidence descendant of the complete Habring checkpoint, not
+a new content release. No upstream issue, comment, or other contact occurred.

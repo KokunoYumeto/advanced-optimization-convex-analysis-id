@@ -25,9 +25,17 @@
       "name": "Stephen Becker, Advanced Convex Optimization class",
       "repository": "https://github.com/stephenbeckr/convex-optimization-class",
       "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+      "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
       "license": "MIT",
-      "status": "active_cursor_not_yet_frozen_or_admitted_in_lane",
-      "admission_gate": "Freeze exact nonduplicative TeX modules, repair the principal master's ../preamble.tex reference with change marking, and prove a deterministic build. Canvas-only solutions are not public."
+      "status": "authority_frozen_and_first_nonduplicative_module_admitted",
+      "sole_source_closed_donor": "TypedNotes/APPM5720Notes.tex",
+      "excluded_master": "TypedNotes/lecture_notes_tex/master.tex and 39 modules: 40 broken ../preamble.tex references and 24 archive-absent figures",
+      "admitted_module": "BECKER-01 Lagrangian duality, Slater, and KKT",
+      "remaining_frozen_modules": [
+        "BECKER-DOUGLAS-RACHFORD lines 2750-2797",
+        "BECKER-VARIANCE-REDUCTION lines 2971-2988"
+      ],
+      "admission_gate": "Each remaining exact slice requires a coherent localized wrapper, retained MIT/author credits, two clean deterministic builds, math/rights/visual/accessibility/rereview/backend gates, and explicit deduplication. Canvas-only solutions are not public."
     },
     "preserved_companions": [
       "o015-mit-ocw-6.253-spring-2012",
@@ -35,7 +43,7 @@
       "o015-penn-math555-v1.0-source"
     ],
     "original_completion_required": [
-      "coherent constrained optimality, KKT, Slater, and Lagrangian duality",
+      "exercises, connective proofs, and mastery coverage for the admitted constrained optimality, KKT, Slater, and Lagrangian-duality progression",
       "stochastic subgradient, proximal, and mirror methods with assumptions, rates, minibatching, and variance reduction",
       "variational inequalities, maximal monotone operators, resolvents, and splitting",
       "connective proofs, substantive exercises, progressive hints, answers, complete solutions, cumulative tests, alternate forms, proof rubrics, open-solver labs, and capstone"
@@ -144,7 +152,18 @@
         "anonymous_readback": "pass",
         "receipt_path": "release/github/2026-08-25-habring-v1-complete-spine/github-public-readback.json",
         "receipt_bytes": 11883,
-        "receipt_sha256": "0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352"
+        "receipt_sha256": "0c5d39c29219acaf74832a4b29688babb892a8fcaafcd5377931ee6da5603352",
+        "final_evidence_checkpoint": {
+          "commit": "42e9c6a4bd98d0583335382d33355ff70e1bedde",
+          "tree": "9490cf09028b97026318eb0d5d4ec4fbfe85dcf9",
+          "parent": "90062e1d78f41011ba350c88f07ebef44de80365",
+          "changed_files": 5,
+          "aggregate_bytes": 232442,
+          "anonymous_readback": "pass",
+          "receipt_path": "release/github/2026-08-25-habring-preservation-receipts/github-final-evidence-push-readback.json",
+          "receipt_bytes": 1865,
+          "receipt_sha256": "c544f0ec524221ef4196caaaa882b015287406ca4b8c24a05d8fe62c6882ab55"
+        }
       },
       "zenodo": {
         "record_id": "22088305",
@@ -186,22 +205,103 @@
       }
     }
   },
+  "current_becker_supplement_admission": {
+    "recorded_on": "2026-08-25",
+    "status": "becker_01_admitted_locally_public_preservation_pending",
+    "authority_id": "o015-becker-convex-optimization-class-98ed693",
+    "scope": "Exact non-LP source ranges 1263-1321, 1398-1405, 1414-1499, 1652-1726, and 1731-1743: Lagrangian duality, Slater, saddle points, and KKT. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 are excluded for O018.",
+    "corrections": {
+      "event_range": "O015-BECKER-ADV-0001 through O015-BECKER-ADV-0012",
+      "event_count": 12,
+      "full_ledger_records": 262,
+      "ledger_path": "00_control/ADVERSE_LEDGER.jsonl",
+      "ledger_bytes": 180939,
+      "ledger_sha256": "a03a9ac5c4036e98394b70c00450ece87c2958227b79a44822341f5617006d61"
+    },
+    "source_boundary": {
+      "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "bytes": 2383,
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2"
+    },
+    "english_witness": {
+      "path": "source/en/becker-01-lagrange-slater-kkt-source.tex",
+      "bytes": 12294,
+      "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565"
+    },
+    "localized_sources": [
+      {
+        "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "bytes": 12924,
+        "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+      },
+      {
+        "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+        "bytes": 7330,
+        "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d"
+      }
+    ],
+    "reader_artifacts": [
+      {
+        "path": "output/pdf/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+        "bytes": 487534,
+        "pages": 12,
+        "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615"
+      },
+      {
+        "path": "output/html/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+        "bytes": 30131,
+        "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0"
+      }
+    ],
+    "validation": {
+      "pdf_build_sha256": "e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed",
+      "html_build_sha256": "d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d",
+      "math_sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b",
+      "browser_sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7",
+      "pdf_visual_sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea",
+      "independent_rereview_sha256": "5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625",
+      "result": "pass"
+    },
+    "backend": {
+      "protected_prior_records": 3096,
+      "added_records": 224,
+      "records": 3320,
+      "jsonl_bytes": 2552754,
+      "jsonl_sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67",
+      "csv_bytes": 3054550,
+      "csv_sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f",
+      "receipt_sha256": "deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed"
+    },
+    "release_package": {
+      "path": "release/becker-01/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_01_2026.08.25.zip",
+      "bytes": 511931,
+      "entries": 21,
+      "sha256": "5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281",
+      "local_verification_sha256": "7ef77415c7e16508b31a1cb998817f6a515ba83d127e8924a51065a3704e93ff"
+    },
+    "rights": {
+      "source": "MIT; copyright Stephen Becker; TypedNotes/APPM5720Notes.tex credited to Mitchell Krock; inherited Boyd-Vandenberghe and Bertsekas credits retained",
+      "translation_and_correction_wording": "CC BY-SA 4.0",
+      "nonendorsement": true
+    }
+  },
   "current_production_cursor": {
     "recorded_on": "2026-08-25",
-    "authority_kind": "bounded_structured_supplement_target",
-    "name": "Stephen Becker, Advanced Convex Optimization class",
-    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
-    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
-    "state": "active_pre_admission_freeze_build_dedup_gate",
+    "authority_kind": "becker_bounded_supplement_next_module",
+    "name": "BECKER-DOUGLAS-RACHFORD",
+    "authority_id": "o015-becker-convex-optimization-class-98ed693",
+    "source": "TypedNotes/APPM5720Notes.tex",
+    "source_lines": "2750-2797",
+    "source_slice_sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2",
+    "state": "next_after_becker_01_public_preservation",
     "admitted": false,
     "required_actions": [
-      "freeze official archive/API identity and MIT license without Git",
-      "inventory TeX roots, dependencies, PDFs, homework, solution-access boundaries, assets, and build paths",
-      "repair ../preamble.tex with explicit change marking",
-      "deduplicate concepts, proofs, algorithms, examples, and assessment against Habring and preserved companions",
-      "prove a deterministic clean build before admitting a bounded nonduplicative subset"
+      "publish and anonymously read back the admitted Becker-01 checkpoint",
+      "reconfirm exact slice and nonduplication against Habring ADMM/operator-splitting coverage",
+      "translate one coherent Douglas-Rachford module with retained source rights and credits",
+      "run deterministic reader, math, visual, accessibility, rereview, and backend gates"
     ],
-    "next_after_gate": "translate the first coherent nonduplicative admitted Becker module"
+    "next_after_gate": "BECKER-VARIANCE-REDUCTION lines 2971-2988, then the finite original closure"
   },
   "authorities": [
     {
@@ -704,6 +804,107 @@
       ],
       "admission": "preserved separately licensed PDF-led stochastic-gradient companion; not the canonical structured-source spine",
       "component_caveat": "Notes and virtual boards are PDF-only. Laboratory notebooks are editable but have no pinned environment; lab 2 is not a solution-complete learner surface."
+    },
+    {
+      "authority_id": "o015-becker-convex-optimization-class-98ed693",
+      "title": "Advanced Convex Optimization class",
+      "creator": "Stephen Becker",
+      "official_repository": "https://github.com/stephenbeckr/convex-optimization-class",
+      "version_control": {
+        "branch": "master",
+        "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+        "authored_utc": "2026-06-24T02:37:45Z",
+        "committed_utc": "2026-06-24T02:37:45Z"
+      },
+      "artifacts": [
+        {
+          "path": "authority/becker/archive/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e.zip",
+          "bytes": 164525001,
+          "sha256": "52ec99acf2bfb7f4db308a7b0988ef9cfd28404a822c5cf0ac922d7f43c41821"
+        },
+        {
+          "path": "authority/becker/raw/LICENSE-98ed6930084c435ba0f675f7646ced1f2fd8729e.txt",
+          "bytes": 1071,
+          "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac"
+        },
+        {
+          "path": "authority/becker/extract/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e/TypedNotes/APPM5720Notes.tex",
+          "bytes": 130911,
+          "sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8"
+        }
+      ],
+      "archive_tree_verification": {
+        "files": 180,
+        "uncompressed_bytes": 168574596,
+        "official_api_blob_identity": "pass",
+        "receipt_path": "authority/becker/BECKER_ARCHIVE_TREE_VERIFICATION.json",
+        "receipt_sha256": "6c71915ad92bce36cf777317d3734ff64b64a1e57a86160a1c109b45dc095d78"
+      },
+      "license": {
+        "expression": "MIT",
+        "translation_permitted": true,
+        "requirements": [
+          "retain copyright notice",
+          "retain permission notice",
+          "preserve component credits",
+          "no implied endorsement"
+        ]
+      },
+      "editable_source": {
+        "sole_source_closed_donor": "TypedNotes/APPM5720Notes.tex plus co-located notes.sty",
+        "donor_credit": "Mitchell Krock",
+        "inherited_sources": [
+          "Stephen Boyd and Lieven Vandenberghe, Convex Optimization",
+          "Dimitri Bertsekas, Nonlinear Programming"
+        ],
+        "excluded_master": "TypedNotes/lecture_notes_tex/master.tex and 39 modules",
+        "exclusion_evidence": "40 bad ../preamble.tex references and 24 archive-absent figures"
+      },
+      "bounded_subset": {
+        "becker_01_ranges": [
+          "1263-1321",
+          "1398-1405",
+          "1414-1499",
+          "1652-1726",
+          "1731-1743"
+        ],
+        "becker_01_witness_sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565",
+        "lp_exclusions_for_o018": [
+          "1322-1397",
+          "1406-1413",
+          "1727-1730"
+        ],
+        "remaining_candidates": [
+          {
+            "name": "BECKER-DOUGLAS-RACHFORD",
+            "lines": "2750-2797",
+            "bytes": 1285,
+            "sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2"
+          },
+          {
+            "name": "BECKER-VARIANCE-REDUCTION",
+            "lines": "2971-2988",
+            "bytes": 900,
+            "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+          }
+        ]
+      },
+      "learning_surfaces": {
+        "donor_examples": 51,
+        "donor_theorems": 66,
+        "donor_proofs": 14,
+        "donor_remarks": 95,
+        "exercise_environments": 0,
+        "hint_environments": 0,
+        "solution_environments": 0,
+        "canvas_only_solutions_public": false
+      },
+      "component_exclusions": [
+        "BSD-3-Clause utilities are not automatically admitted",
+        "GPLv3 ADiGator components are not automatically admitted"
+      ],
+      "admission": "bounded MIT supplement; Becker-01 admitted locally; Douglas-Rachford and variance-reduction candidates remain gated"
     }
   ]
 }

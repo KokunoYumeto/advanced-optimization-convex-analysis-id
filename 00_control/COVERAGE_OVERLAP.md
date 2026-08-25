@@ -1,25 +1,15 @@
 # O015 coverage and overlap boundary
 
-Architecture frozen: 2026-08-22  
-Coverage updated through: 2026-08-24 — MIT L09 / complete-notes page 63  
+Architecture controlling record: 2026-08-24  
+Coverage updated through: 2026-08-25 — complete Habring v1 plus Becker-01  
 Role: D90 — Advanced Optimization and Convex Analysis  
-Current architecture: MIT OCW 6.253 + Royer stochastic-gradient core; Penn/Habring preserved companion
+Current architecture: Habring v1 canonical editable spine; bounded Becker supplement; MIT/Royer/Penn companions; finite original closure
 
 ## Selected D90 primary architecture
 
-The primary course spine is the complete MIT OpenCourseWare 6.253 *Convex Analysis and Optimization* teaching package under CC BY-NC-SA 4.0. It supplies convex geometry and functions, separation, conjugacy, convex/Fenchel/conic duality, optimality, subgradient calculus, conic and semidefinite programming, descent, cutting-plane, bundle, proximal, augmented-Lagrangian, interior-point, incremental/randomized, projection, and complexity material. The selected stochastic component is Clément Royer's complete 45-page *Optimization for Machine Learning -- Stochastic Gradient* notes plus both public notebook laboratories under CC BY-NC 4.0.
+The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 now supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression. Douglas–Rachford and the short variance-reduction slice remain frozen candidates, not yet admitted.
 
-Four independently authored bridge units close the documented gaps: nonlinear KKT/constraint qualifications/sensitivity; variational inequalities and monotone inclusions; stochastic approximation beyond basic SGD; and modern open-solver certificates, diagnostics, failure modes, and reproducibility. Four reproducible open-source laboratories, 36 new route-mastery problems with hints and complete solutions, published-solution repairs, and a cumulative capstone provide the required self-study closure. Component rights remain distinct.
-
-The exact controlling architecture and learner route are frozen in `O015_PRIMARY_ARCHITECTURE_PIVOT_20260822.md` and its verified upstream handoff. The complete first-topic pilot for source pages 2--5 now passes the fail-closed PDF-to-semantic-source gate: complete page/item mapping, exact formula/list topology, stable IDs, two byte-identical HTML/PDF builds, measured desktop/mobile reflow and accessibility, terminology QA, independent rereview, and zero admitted Athena figure bytes. MIT translation may therefore continue in source order under the same per-boundary gate; this is not permission for lossy OCR or weaker later reconstruction.
-
-## Preserved Penn/Habring companion
-
-Habring Chapters 3--9 and Penn Chapters 3--5 form an admitted optional numerical/modern-algorithm companion. They retain every existing file, stable ID, correction event, attribution, component license, QA receipt, and public-history identity. They are not deleted, renumbered, silently merged into the selected primary spine, or counted in the selected D90 core-page total.
-
-The companion supplies subgradients, projected subgradient descent, proximal methods, acceleration, Fenchel duality/primal--dual methods/ADMM, stochastic gradient descent, optimal transport, smooth line search, convergence, Newton, globalization, and modified-Cholesky correction. Habring remains CC BY 4.0. Penn-derived text and figures remain CC BY-NC-SA 3.0 United States. Fourteen Penn Maple/legacy listing inputs encountered through Chapter 5 remain excluded because their reusable rights are unclear/external; reader roles are replaced by independently authored pseudocode registered separately inside the combined derivative.
-
-The completed Penn Chapter 6 candidate is preserved but unadmitted. No automatic Penn source-order expansion continues after the Chapter 5 preservation boundary. Further companion admission requires an explicit later decision and is not a prerequisite for D90.
+MIT OCW 6.253, Royer, and Penn remain separately licensed companions. Every accepted translation, stable ID, correction, release, source credit, and component right is preserved, but these companions do not displace the editable spine or automatically drive source-order expansion. The original layer still must close stochastic proximal/mirror/minibatch and rigorous variance-reduction theory, variational inequalities/maximal monotone operators/resolvents/splitting, connective proofs, substantive exercises, hints, answers, complete solutions, tests, open-solver labs, and capstone. The later historical sections remain evidence of how already accepted companion boundaries were produced; they are not the current architecture.
 
 ## O018 exclusion boundary
 
@@ -313,3 +303,31 @@ exercise/hint/answer/complete-solution/lab/capstone layer. Those remain the
 bounded Becker and original-synthesis work. The new foundations do not overlap
 O018's finite LP/MIP modelling, simplex/tableau mechanics, LP sensitivity,
 network optimization, or general discrete-optimization workflow.
+
+## Becker-01 Lagrangian duality, Slater, and KKT admitted (2026-08-25)
+
+The operative source boundary is exactly `APPM5720Notes.tex` lines 1263–1321,
+1398–1405, 1414–1499, 1652–1726, and 1731–1743. It adds the Lagrangian and dual
+functions, weak/strong duality, a complete vectorized Slater separation
+argument, saddle-point characterization, KKT necessity/sufficiency, and
+semidefinite, one-norm projection/Moreau, and convex quadratic examples. The
+unit closes the missing unified exposition at reader level; it does not create
+the still-missing exercise/solution progression for those topics.
+
+The O018 boundary is exact and byte-addressed: Becker lines 1322–1397,
+1406–1413, and 1727–1730 are excluded because they are LP duality and
+complementarity material assigned to O018. No adjacent Becker section is
+silently claimed. The broken Jaden Wang master and its absent figures are also
+excluded; Becker-01 uses only the source-closed APPM donor and no Canvas-only
+solution, demo, utility, ADiGator, or third-party figure byte.
+
+Twelve disclosed corrections `O015-BECKER-ADV-0001`–`0012` repair finite
+summation limits, primal/dual directions, Slater hypotheses and proof signs,
+saddle domains, a penalty coefficient, KKT hypotheses/proof logic, Moreau and
+projection identities, QP matrix conditions, and local notation. Deterministic
+PDF/HTML, mathematical, responsive, visual, independent-rereview, rights, and
+3,320-record backend gates pass. Remaining substantive gaps are Douglas–
+Rachford; a rigorous variance-reduction bridge; stochastic proximal, mirror,
+and minibatch methods; variational inequalities, maximal monotonicity,
+resolvents/splitting; and the full assessment, solution, lab, capstone, tagged-
+PDF, and accessibility closure.

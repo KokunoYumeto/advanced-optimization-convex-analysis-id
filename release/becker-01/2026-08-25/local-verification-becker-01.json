@@ -1,0 +1,188 @@
+{
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "omissions": {
+    "build_trees_and_caches": true,
+    "bulk_provenance_dumps": true,
+    "full_backend_dataset": true,
+    "raw_official_archive": true
+  },
+  "package_directory": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\becker-01\\2026-08-25\\package",
+  "release_directory": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\becker-01\\2026-08-25",
+  "result": "pass",
+  "schema": "o015-becker-01-local-release-verification-v1",
+  "verification": {
+    "absolute_entries": 0,
+    "backslash_entries": 0,
+    "crc_test": "pass",
+    "credentials_included": false,
+    "directory_entries": 0,
+    "entry_bytes_match_package_tree": true,
+    "entry_order_matches_explicit_reader_first_inventory": true,
+    "forbidden_project_label_occurrences_in_text_members": 0,
+    "git_used": false,
+    "network_used": false,
+    "parent_traversal_entries": 0,
+    "sha256sums_verified": true,
+    "unique_entry_names": true
+  },
+  "verified_at_utc": "2026-08-25T01:54:20.092598Z",
+  "zip": {
+    "byte_identical_two_builds": true,
+    "bytes": 511931,
+    "compression": "ZIP_DEFLATED level 9",
+    "contains_itself": false,
+    "entries": [
+      {
+        "bytes": 487534,
+        "compressed_bytes": 460366,
+        "path": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+        "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 30131,
+        "compressed_bytes": 9138,
+        "path": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+        "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2919,
+        "compressed_bytes": 1540,
+        "path": "README_BECKER_01.md",
+        "sha256": "c0fae658ad361e616f0a708a9a70a3b60eb667b3f21b5dc8265c11197c73598c",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 1071,
+        "compressed_bytes": 632,
+        "path": "LICENSE_BECKER_MIT.txt",
+        "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 1487,
+        "compressed_bytes": 819,
+        "path": "LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+        "sha256": "bd3de022646c5827ddccbd2406c8fd92aa2276191b8fd94364141dbeb5f84f11",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 7330,
+        "compressed_bytes": 3520,
+        "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+        "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 12924,
+        "compressed_bytes": 4491,
+        "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 4465,
+        "compressed_bytes": 1501,
+        "path": "source/id-ID/macros-id.tex",
+        "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 10133,
+        "compressed_bytes": 3010,
+        "path": "source/id-ID/shinybook.cls",
+        "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 12294,
+        "compressed_bytes": 4220,
+        "path": "source/en/becker-01-lagrange-slater-kkt-source.tex",
+        "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2383,
+        "compressed_bytes": 1064,
+        "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+        "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 8935,
+        "compressed_bytes": 4135,
+        "path": "authority/BECKER_AUTHORITY_FREEZE.md",
+        "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2698,
+        "compressed_bytes": 1465,
+        "path": "qa/BECKER_01_INDEPENDENT_REREVIEW.md",
+        "sha256": "5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 13799,
+        "compressed_bytes": 3192,
+        "path": "qa/BECKER_01_MATH_VALIDATION.json",
+        "sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 3868,
+        "compressed_bytes": 1418,
+        "path": "qa/BECKER_01_PDF_BUILD.json",
+        "sha256": "e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 1723,
+        "compressed_bytes": 895,
+        "path": "qa/BECKER_01_PDF_VISUAL_QA.json",
+        "sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 699,
+        "compressed_bytes": 397,
+        "path": "qa/BECKER_01_HTML_BUILD.json",
+        "sha256": "d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2187,
+        "compressed_bytes": 887,
+        "path": "qa/BECKER_01_BROWSER_VISUAL_QA.json",
+        "sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2991,
+        "compressed_bytes": 1467,
+        "path": "qa/BECKER_01_BACKEND_EXTENSION.json",
+        "sha256": "deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 9446,
+        "compressed_bytes": 3548,
+        "path": "release-manifest-becker-01.json",
+        "sha256": "4902c55f0c7ed5f41c4613855cd03bd38e681962e61c549b2cb2d4ec287c6ced",
+        "timestamp": "2026-08-25T00:00:00"
+      },
+      {
+        "bytes": 2062,
+        "compressed_bytes": 1144,
+        "path": "SHA256SUMS",
+        "sha256": "9ec108b1154128212d4faea0ef200cbaa5c120072463faf43890394a958fe9d8",
+        "timestamp": "2026-08-25T00:00:00"
+      }
+    ],
+    "entry_count": 21,
+    "fixed_timestamp": "2026-08-25T00:00:00",
+    "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\becker-01\\2026-08-25\\ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_01_2026.08.25.zip",
+    "sha256": "5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281"
+  }
+}

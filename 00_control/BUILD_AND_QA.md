@@ -1385,3 +1385,97 @@ The sanitized 13,489-byte receipt has SHA-256
 `4c06f305356da35a7fc66794425e8d2bb45d020705a6fcfac16a7b3ea84e1e90`.
 This is a preservation-evidence gate only and does not alter the frozen Habring
 reader or Zenodo release bytes.
+
+The final evidence descendant also passes: commit
+`42e9c6a4bd98d0583335382d33355ff70e1bedde`, tree
+`9490cf09028b97026318eb0d5d4ec4fbfe85dcf9`, parent
+`90062e1d78f41011ba350c88f07ebef44de80365`. Its five changed evidence paths
+total 232,442 bytes and match immutable anonymous readback. Receipt:
+`release/github/2026-08-25-habring-preservation-receipts/github-final-evidence-push-readback.json`,
+1,865 bytes / SHA-256
+`c544f0ec524221ef4196caaaa882b015287406ca4b8c24a05d8fe62c6882ab55`.
+
+# Becker-01 Lagrangian duality, Slater, and KKT consolidated build and QA
+
+As of: 2026-08-25  
+Admission: PASS locally; public preservation pending; larger O015 course partial
+
+Authority/archive gate: PASS. Official commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree
+`f04670e3f7be3d4836c380fd8bd31883e0b992c9`, 164,525,001-byte archive /
+SHA-256 `52ec99acf2bfb7f4db308a7b0988ef9cfd28404a822c5cf0ac922d7f43c41821`.
+All 180 files / 168,574,596 bytes match official API blobs. The root MIT
+license is 1,071 bytes / SHA-256
+`c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac`.
+The APPM donor is source-closed; the alternate master fails closed because of
+40 bad preamble paths and 24 absent figures.
+
+Boundary gate: PASS. Five admitted ranges—1263–1321, 1398–1405, 1414–1499,
+1652–1726, 1731–1743—are bound by the 2,383-byte source-boundary receipt,
+SHA-256 `abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2`.
+The 12,294-byte English witness has SHA-256
+`20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565`.
+LP ranges 1322–1397, 1406–1413, and 1727–1730 are excluded for O018.
+
+Reader-build gate: PASS. The 12,924-byte Indonesian body and 7,330-byte wrapper
+have SHA-256 `ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce`
+and `85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d`.
+Two clean PDF builds are byte-identical: 12 A4 pages, 487,534 bytes, SHA-256
+`c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615`;
+zero fatal, undefined-reference, or overfull-box findings. The 3,868-byte PDF
+build receipt has SHA-256
+`e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed`.
+Two HTML builds are byte-identical: 30,131 bytes / SHA-256
+`b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0`;
+its 699-byte receipt has SHA-256
+`d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d`.
+
+Math gate: PASS 10/10 twice. The 13,799-byte receipt, SHA-256
+`ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b`,
+checks SDP primal/dual optima, one-norm projection, Moreau decomposition, QP
+KKT, penalty scaling, source boundary, and provenance with open NumPy/SciPy.
+
+Browser/accessibility gate: PASS within recorded limits. At desktop 1280,
+tablet 768, and phone 390 viewports the centered top-level reader fills the
+usable width without page overflow; wide display mathematics scrolls locally,
+inline formulas do not. All 118 MathJax containers render; zero broken
+references or console findings occur. Receipt: 2,187 bytes / SHA-256
+`6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7`.
+The HTML declares `id-ID`. The searchable PDF declares `/Lang id-ID` but is
+untagged; this known limitation remains in the original accessibility closure.
+
+Visual gate: PASS. All 12 PDF pages were inspected after the final rebuild;
+zero clipping, collision, truncation, broken glyph, hierarchy, formula-layout,
+or orphan-list defects remain. Receipt: 1,723 bytes / SHA-256
+`6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea`.
+
+Independent semantic gate: PASS. The final 2,698-byte rereview, SHA-256
+`5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625`,
+confirms Becker/Krock and inherited Boyd–Vandenberghe/Bertsekas credits, honest
+translation/editing language, `lambda>=0` and `mu>=0` before exclusion of
+`mu=0` in the Slater proof, and saddle quantifiers `x in D`, `lambda>=0`,
+`nu in R^p`. No P1/P2/P3 semantic issue remains.
+
+Backend gate: PASS. Deterministic reprojection removes the superseded Becker
+block, preserves the exact 3,096-record non-Becker prefix, and creates one
+224-record `d90.becker.98ed693.b01.*` block. Final count is 3,320 records /
+3,320 unique IDs. JSONL is 2,552,754 bytes / SHA-256
+`48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67`;
+CSV is 3,054,550 bytes / SHA-256
+`baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f`.
+The 2,991-byte receipt has SHA-256
+`deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed`.
+
+Release-package gate: PASS. The reader-first ZIP has 21 entries / 621,079
+uncompressed bytes and is 511,931 bytes / SHA-256
+`5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281`.
+Two builds are byte-identical; CRC, fixed timestamps, safe unique paths,
+package-tree equality, and all 20 checksum bindings pass. Manifest and
+`SHA256SUMS` are 9,446 / 2,062 bytes with SHA-256
+`4902c55f0c7ed5f41c4613855cd03bd38e681962e61c549b2cb2d4ec287c6ced`
+and `9ec108b1154128212d4faea0ef200cbaa5c120072463faf43890394a958fe9d8`.
+Local verification is 7,124 bytes / SHA-256
+`7ef77415c7e16508b31a1cb998817f6a515ba83d127e8924a51065a3704e93ff`.
+No raw archive, cache, build tree, full backend, credential, or forbidden
+project-label byte enters the compact package. Public preservation gate:
+PENDING; no GitHub commit or Zenodo version is claimed yet.

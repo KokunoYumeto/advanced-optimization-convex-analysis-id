@@ -1,0 +1,43 @@
+{
+  "schema": "o015-becker-01-pdf-visual-qa-v1",
+  "result": "pass",
+  "artifact": {
+    "path": "output/pdf/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+    "bytes": 487534,
+    "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+    "pages": 12,
+    "page_size": "A4",
+    "language": "id-ID",
+    "searchable": true,
+    "tagged": false
+  },
+  "render": {
+    "renderer": "pdftoppm 24.04.0",
+    "resolution_dpi": 120,
+    "rendered_pages": 12,
+    "page_pixels": [993, 1404],
+    "contact_sheets_inspected": 3,
+    "pages_inspected": "1-12"
+  },
+  "visual_checks": {
+    "title_frontmatter_and_toc": "pass",
+    "chapter_body_and_all_displayed_equations": "pass",
+    "headers_footers_and_page_numbers": "pass",
+    "change_ledger": "pass",
+    "attribution_and_full_mit_notice": "pass",
+    "clipped_text": 0,
+    "overlap": 0,
+    "broken_glyphs": 0,
+    "orphan_or_nearly_empty_pages": 0
+  },
+  "revision_note": "The change ledger was tightened after the first render so its twelfth item no longer occupied a nearly empty page. After independent rereview restored inherited Boyd-Vandenberghe and Bertsekas credits and repaired the Slater and saddle-domain statements, the final 12-page artifact was rebuilt twice byte-identically and every final page was rerendered and re-inspected.",
+  "build_consistency": {
+    "report": "qa/BECKER_01_PDF_BUILD.json",
+    "byte_identical_clean_builds": true,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "fatal_errors": 0
+  },
+  "accessibility_caveat": "The PDF is searchable and carries /Lang id-ID but is not yet tagged; the semantic HTML is the accessible reflowable reader for this checkpoint.",
+  "upstream_contact": false
+}

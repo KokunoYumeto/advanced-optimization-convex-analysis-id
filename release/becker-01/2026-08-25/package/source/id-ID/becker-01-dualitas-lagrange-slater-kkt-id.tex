@@ -1,0 +1,348 @@
+% B01-S001 | APPM5720Notes.tex baris 1263-1321
+% segment-id: d90.becker.98ed693.b01.seg0001
+\chapter{Dualitas Lagrange, kondisi Slater, dan kondisi KKT}
+\label{becker:chapter:lagrange-kkt}
+
+Bab ini melengkapi tulang punggung Habring dengan satu jalur terpadu dari
+Lagrangian ke kondisi Slater dan kondisi Karush-Kuhn-Tucker (KKT). Notasi
+dibuat konsisten untuk masalah minimisasi. Bagian sumber yang khusus membahas
+dualitas program linear tidak disertakan karena materi itu berada dalam batas
+kurikulum O018.
+
+\noindent\textbf{Kredit catatan donor.}\par
+Catatan donor menyatakan bahwa bagian
+dualitas mengikuti Bab~5 Boyd dan Vandenberghe (B\&V), merujuk ke
+\S5.3 untuk ilustrasi, dan mengaitkan interpretasi perpotongan maksimum atau
+titik bersama minimum dengan Bertsekas. Kredit turunan ini dipertahankan;
+edisi ini tidak mengimpor isi di luar rentang donor yang dibekukan.
+
+\section{Masalah primal dan Lagrangian}
+
+Pertimbangkan masalah
+\begin{equation}
+  \label{becker:eq:primal}
+  \begin{aligned}
+    p^* = \inf_{x\in D}\quad & f_0(x)\\
+    \text{dengan syarat}\quad & f_i(x)\leq 0, && i=1,\ldots,m,\\
+    & h_j(x)=0, && j=1,\ldots,p,
+  \end{aligned}
+\end{equation}
+dengan $D$ memuat domain bersama fungsi-fungsi tersebut. Kita memakai
+$p^*=+\infty$ jika masalah tidak layak dan $p^*=-\infty$ jika nilainya tidak
+terbatas ke bawah.
+
+\begin{defn}[Lagrangian]
+  Lagrangian masalah~\eqref{becker:eq:primal} adalah
+  \begin{equation}
+    \label{becker:eq:lagrangian}
+    L(x,\lambda,\nu)
+    = f_0(x)+\sum_{i=1}^{m}\lambda_i f_i(x)
+      +\sum_{j=1}^{p}\nu_j h_j(x).
+  \end{equation}
+  Vektor $\lambda\in\R^m$ dan $\nu\in\R^p$ disebut variabel dual atau
+  pengali Lagrange. Untuk kendala pertidaksamaan kita akan mensyaratkan
+  $\lambda\geq0$ komponen demi komponen.
+\end{defn}
+
+Lagrangian bergantung pada cara masalah ditulis. Misalnya, untuk
+$\inf_x f(x)+g(x)$ kita dapat memperkenalkan $z$ dan kendala $x=z$, lalu
+membentuk Lagrangian terhadap kendala kesamaan itu. Pemisahan variabel seperti
+ini sering membuka struktur yang tidak tampak pada rumusan asal.
+
+\begin{defn}[Fungsi dual]
+  Fungsi dual Lagrange didefinisikan oleh
+  \begin{equation}
+    \label{becker:eq:dual-function}
+    g(\lambda,\nu)=\inf_{x\in D} L(x,\lambda,\nu).
+  \end{equation}
+  Fungsi $g$ cekung terhadap $(\lambda,\nu)$, bahkan bila masalah primal
+  tidak konveks, sebab $g$ adalah infimum titik demi titik dari fungsi-fungsi
+  afin dalam variabel dual.
+\end{defn}
+
+Sebagai kaidah umum yang terkait, minimisasi parsial dari fungsi konveks
+bersama menghasilkan fungsi konveks pada variabel yang tersisa, sedangkan
+supremum titik demi titik dari fungsi-fungsi konveks tetap konveks.
+
+\begin{defn}[Masalah dual]
+  Masalah dual Lagrange adalah
+  \begin{equation}
+    \label{becker:eq:dual-problem}
+    d^*=\sup_{\lambda\geq0,\,\nu\in\R^p} g(\lambda,\nu).
+  \end{equation}
+  Ini merupakan masalah maksimisasi cekung, atau secara ekuivalen masalah
+  minimisasi konveks untuk $-g$.
+\end{defn}
+
+\begin{theorem}[Dualitas lemah]
+  Untuk masalah~\eqref{becker:eq:primal} selalu berlaku
+  \begin{equation}
+    \label{becker:eq:weak-duality}
+    d^*\leq p^*.
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Ambil titik layak $\tilde x$. Untuk setiap $\lambda\geq0$ dan setiap
+  $\nu$,
+  \begin{multline}
+    g(\lambda,\nu)\leq L(\tilde x,\lambda,\nu)
+    =f_0(\tilde x)
+      +\underbrace{\sum_{i=1}^{m}\lambda_i f_i(\tilde x)}_{\leq0}
+      +\underbrace{\sum_{j=1}^{p}\nu_j h_j(\tilde x)}_{=0}\\
+    \leq f_0(\tilde x).
+  \end{multline}
+  Mengambil infimum terhadap semua titik primal yang layak memberi
+  $g(\lambda,\nu)\leq p^*$. Mengambil supremum terhadap semua titik dual yang
+  layak membuktikan~\eqref{becker:eq:weak-duality}.
+\end{proof}
+
+Jika $d^*=p^*$, kita mengatakan bahwa \emph{dualitas kuat} berlaku. Selain
+memberi sertifikat batas bawah, masalah dual dapat memindahkan operator linear,
+menyingkap kehalusan, atau menghasilkan rumusan numerik yang lebih sesuai.
+Untuk masalah nonkonveks sekalipun, nilai dual tetap menyediakan batas bawah
+yang sah, walaupun kesenjangan dualitas mungkin positif.
+
+% B01-S002 | APPM5720Notes.tex baris 1398-1405 dan 1414-1470
+% segment-id: d90.becker.98ed693.b01.seg0002
+\section{Kondisi Slater dan dualitas kuat}
+
+Sekarang andaikan $f_0,f_1,\ldots,f_m$ konveks dan kendala kesamaan berbentuk
+$Ax=b$. Tuliskan $I_{\mathrm{na}}$ bagi indeks kendala pertidaksamaan yang tidak
+afin.
+
+\begin{defn}[Kondisi Slater]
+  Kondisi Slater dipenuhi jika terdapat $\bar x$ dalam interior relatif domain
+  bersama sedemikian sehingga
+  \begin{equation}
+    A\bar x=b,\qquad
+    f_i(\bar x)<0\quad(i\in I_{\mathrm{na}}),\qquad
+    f_i(\bar x)\leq0\quad(i\notin I_{\mathrm{na}}).
+  \end{equation}
+  Jadi hanya kendala pertidaksamaan nonafin yang harus dipenuhi secara ketat.
+\end{defn}
+
+\begin{theorem}[Slater]
+  Jika masalah primal konveks, kondisi Slater dipenuhi, dan $p^*$ berhingga,
+  maka $d^*=p^*$ dan suatu titik dual optimum $(\lambda^*,\nu^*)$ tercapai.
+\end{theorem}
+
+Kondisi Slater bersifat cukup, bukan perlu. Contoh semidefinit berikut
+menunjukkan salah satu gejala degenerasi. Pertimbangkan
+\begin{equation}
+  \inf_{X=X^\top\succeq0}
+  \left\langle
+    \begin{pmatrix}1&0\\0&0\end{pmatrix},X
+  \right\rangle
+  \quad\text{dengan syarat}\quad
+  \left\langle
+    \begin{pmatrix}0&1\\1&0\end{pmatrix},X
+  \right\rangle=2.
+\end{equation}
+Setiap titik layak berbentuk
+$X=\begin{psmallmatrix}a&1\\1&b\end{psmallmatrix}\succeq0$, sehingga
+$a,b\geq0$ dan $ab\geq1$. Barisan
+$X_\varepsilon=\begin{psmallmatrix}\varepsilon&1\\1&1/\varepsilon\end{psmallmatrix}$
+memberi nilai objektif yang menuju nol ketika $\varepsilon\downarrow0$.
+Jadi $p^*=0$, tetapi infimum primal tidak tercapai. Dualnya tetap mempunyai
+solusi optimum bernilai nol; contoh ini memperingatkan bahwa ketercapaian
+primal tidak mengikuti hanya dari kesamaan nilai primal dan dual.
+
+Berikut gagasan geometri di balik teorema Slater. Definisikan himpunan nilai
+terganggu
+\begin{equation}
+  \mathcal A=\left\{(u,v,t):\ \exists x\in D,\quad
+  f_i(x)\leq u_i,\ h(x)=v,\ f_0(x)\leq t\right\}
+\end{equation}
+dan sinar terbuka
+\begin{equation}
+  \mathcal B=\{(0,0,s):s<p^*\}.
+\end{equation}
+Kekonveksan fungsi-fungsi kendala membuat $\mathcal A$ konveks, dan
+$\mathcal A\cap\mathcal B=\varnothing$. Teorema pemisahan memberi normal
+$(\lambda^*,\nu^*,\mu^*)$. Monotonisitas $\mathcal A$ terhadap $u$ dan $t$
+memberi $\lambda^*\geq0$ dan $\mu^*\geq0$. Kondisi Slater menyingkirkan
+$\mu^*=0$, yaitu hiperbidang penyangga vertikal, sehingga $\mu^*>0$ dan normal
+dapat dinormalkan menjadi
+$(\lambda^*,\nu^*,1)$. Ketaksamaan pemisahan kemudian menghasilkan
+\begin{equation}
+  \inf_{x\in D}L(x,\lambda^*,\nu^*)\geq p^*.
+\end{equation}
+Dualitas lemah memberi ketaksamaan sebaliknya; karena itu $d^*=p^*$ dan
+pengali dual optimum tercapai. Interpretasi yang sama dapat dinyatakan sebagai
+perpotongan maksimum atau titik bersama minimum dalam geometri perturbasi.
+
+% B01-S003 | APPM5720Notes.tex baris 1472-1499
+% segment-id: d90.becker.98ed693.b01.seg0003
+\section{Interpretasi titik pelana}
+
+Untuk Lagrangian~\eqref{becker:eq:lagrangian}, masalah primal dan dual dapat
+ditulis sebagai
+\begin{equation}
+  \begin{aligned}
+    p^*&=\inf_x\sup_{\lambda\geq0,\nu}L(x,\lambda,\nu),\\
+    d^*&=\sup_{\lambda\geq0,\nu}\inf_xL(x,\lambda,\nu).
+  \end{aligned}
+\end{equation}
+Ketaksamaan minimaks
+\begin{equation}
+  \sup_{\lambda\geq0,\nu}\inf_xL(x,\lambda,\nu)
+  \leq
+  \inf_x\sup_{\lambda\geq0,\nu}L(x,\lambda,\nu)
+\end{equation}
+adalah bentuk titik-pelana dari dualitas lemah.
+
+\begin{defn}[Titik pelana]
+  Tripel $(x^*,\lambda^*,\nu^*)$ adalah titik pelana Lagrangian jika
+  $\lambda^*\geq0$ dan
+  \begin{equation}
+    L(x^*,\lambda,\nu)
+    \leq L(x^*,\lambda^*,\nu^*)
+    \leq L(x,\lambda^*,\nu^*)
+  \end{equation}
+  untuk setiap $x\in D$, $\lambda\geq0$, dan $\nu\in\R^p$.
+\end{defn}
+
+Sebagai contoh, pertimbangkan
+\begin{equation}
+  \min_x\norm{x}_1
+  \quad\text{dengan syarat}\quad
+  \norm{Ax-b}_2^2\leq\varepsilon^2.
+\end{equation}
+Lagrangiannya adalah
+\begin{equation}
+  L(x,\lambda)=\norm{x}_1
+  +\lambda\bigl(\norm{Ax-b}_2^2-\varepsilon^2\bigr),\qquad\lambda\geq0.
+\end{equation}
+Jika pengali optimum memenuhi $\lambda^*>0$, minimisasi Lagrangian terhadap
+$x$ ekuivalen, setelah dibagi dengan $2\lambda^*$, dengan
+\begin{equation}
+  \min_x \frac12\norm{Ax-b}_2^2
+  +\frac{1}{2\lambda^*}\norm{x}_1.
+\end{equation}
+Jadi rumusan berkendala dan rumusan berpenalti berhubungan melalui pengali
+optimum. Hubungan ini tidak boleh diperoleh dengan membagi oleh $\lambda^*$
+jika pengalinya nol.
+
+% B01-S004 | APPM5720Notes.tex baris 1652-1726
+% segment-id: d90.becker.98ed693.b01.seg0004
+\section{Kondisi Karush-Kuhn-Tucker}
+
+Andaikan fungsi-fungsi pada masalah~\eqref{becker:eq:primal} dapat
+didiferensialkan. Tripel $(x^*,\lambda^*,\nu^*)$ memenuhi kondisi KKT jika
+\begin{enumerate}
+  \item \textbf{stasioneritas:}
+  $\nabla_xL(x^*,\lambda^*,\nu^*)=0$;
+  pada kasus konveks tak mulus, bentuk yang sesuai adalah
+  $0\in\partial_xL(x^*,\lambda^*,\nu^*)$;
+  \item \textbf{kelayakan primal:}
+  $f_i(x^*)\leq0$ dan $h_j(x^*)=0$;
+  \item \textbf{kelayakan dual:} $\lambda^*\geq0$;
+  \item \textbf{kekomplementeran:}
+  $\lambda_i^*f_i(x^*)=0$ untuk setiap $i=1,\ldots,m$.
+\end{enumerate}
+
+\begin{theorem}[KKT perlu dari pasangan primal-dual optimum]
+  Andaikan optimum primal dan dual tercapai, dualitas kuat berlaku, dan
+  $x\mapsto L(x,\lambda^*,\nu^*)$ memiliki syarat optimalitas Fermat yang
+  berlaku pada $x^*$. Maka pasangan optimum memenuhi kondisi KKT. Pernyataan
+  ini tetap dapat dipakai pada masalah nonkonveks bila stasioneritas Lagrangian
+  benar-benar mengikuti dari minimisasi globalnya dan seluruh syarat domain
+  dipenuhi.
+\end{theorem}
+
+\begin{theorem}[KKT cukup untuk masalah konveks]
+  Jika $f_0,f_1,\ldots,f_m$ konveks, $h_j$ afin, dan suatu tripel memenuhi
+  kondisi KKT, maka $x^*$ optimum primal, $(\lambda^*,\nu^*)$ optimum dual,
+  dan $p^*=d^*$.
+\end{theorem}
+\begin{proof}
+  Stasioneritas dan kekonveksan
+  $x\mapsto L(x,\lambda^*,\nu^*)$ membuat $x^*$ peminimum global Lagrangian.
+  Karena itu
+  \begin{equation}
+    \begin{aligned}
+      d^*&\geq g(\lambda^*,\nu^*)
+        =\inf_xL(x,\lambda^*,\nu^*)\\
+      &=L(x^*,\lambda^*,\nu^*)
+        =f_0(x^*)
+         +\sum_i\lambda_i^*f_i(x^*)
+         +\sum_j\nu_j^*h_j(x^*)\\
+      &=f_0(x^*)\geq p^*.
+    \end{aligned}
+  \end{equation}
+  Dualitas lemah memberi $d^*\leq p^*$, sehingga semua ketaksamaan adalah
+  kesamaan.
+\end{proof}
+
+\begin{theorem}[KKT perlu di bawah kondisi Slater]
+  Jika masalah primal konveks memenuhi kondisi Slater dan suatu solusi primal
+  $x^*$ ada dengan nilai berhingga, maka terdapat pengali
+  $(\lambda^*,\nu^*)$ sedemikian sehingga tripel tersebut memenuhi kondisi
+  KKT.
+\end{theorem}
+
+\subsection{Contoh: proyeksi pada bola $\ell^1$}
+
+Proyeksi $y\in\R^n$ pada bola
+$B_1(\tau)=\{x:\norm{x}_1\leq\tau\}$, dengan $\tau>0$, menyelesaikan
+\begin{equation}
+  \min_x \frac12\norm{x-y}_2^2
+  \quad\text{dengan syarat}\quad \norm{x}_1\leq\tau.
+\end{equation}
+Kondisi KKT memberi
+\begin{equation}
+  x_i=S_\lambda(y_i)
+  =\operatorname{sign}(y_i)\max\{|y_i|-\lambda,0\},
+  \qquad \lambda\geq0,
+\end{equation}
+bersama $\norm{x}_1\leq\tau$ dan
+$\lambda(\norm{x}_1-\tau)=0$. Jika $\norm{y}_1\leq\tau$, maka
+$\lambda=0$ dan $x=y$. Jika $\norm{y}_1>\tau$, maka $\lambda>0$ adalah akar
+unik dari
+\begin{equation}
+  \sum_{i=1}^{n}\max\{|y_i|-\lambda,0\}=\tau.
+\end{equation}
+Ruas kiri kontinu, menurun, dan linear sepotong-sepotong dengan titik patah
+$|y_i|$; akar dapat dicari dengan biseksi atau, lebih efisien, dengan
+mengurutkan titik patah. Identitas Moreau menjelaskan hubungan yang tepat:
+\begin{equation}
+  \prox_{\tau\norm{\emptyarg}_\infty}(y)
+  =y-\operatorname{proj}_{B_1(\tau)}(y).
+\end{equation}
+
+Kekomplementeran juga mengikuti dari kesamaan primal-dual. Untuk titik pelana
+optimum $(x^*,\lambda^*,\nu^*)$ berlaku
+\begin{equation}
+  f_0(x^*)
+  =L(x^*,\lambda^*,\nu^*)
+  =f_0(x^*)+\sum_i\lambda_i^*f_i(x^*),
+\end{equation}
+karena kendala kesamaan lenyap. Setiap suku
+$\lambda_i^*f_i(x^*)\leq0$, sehingga jumlah nol memaksa
+$\lambda_i^*f_i(x^*)=0$ untuk setiap $i$.
+
+% B01-S005 | APPM5720Notes.tex baris 1731-1743
+% segment-id: d90.becker.98ed693.b01.seg0005
+\subsection{Contoh: masalah kuadratik dengan kendala kesamaan}
+
+Pertimbangkan
+\begin{equation}
+  \min_x \frac12 x^\top P x+q^\top x+r
+  \quad\text{dengan syarat}\quad Ax=b,
+  \qquad P\succeq0.
+\end{equation}
+Kondisi KKT adalah
+\begin{equation}
+  Px^*+q+A^\top\nu^*=0,
+  \qquad Ax^*=b,
+\end{equation}
+atau sistem titik pelana
+\begin{equation}
+  \begin{pmatrix}P&A^\top\\A&0\end{pmatrix}
+  \begin{pmatrix}x^*\\\nu^*\end{pmatrix}
+  =\begin{pmatrix}-q\\b\end{pmatrix}.
+\end{equation}
+Setiap solusi sistem ini adalah solusi optimum masalah konveks tersebut.
+Solusi tunggal hanya dijamin jika matriks KKT nonsingular; satu syarat cukup
+yang umum adalah $A$ berperingkat baris penuh dan $P$ definit positif pada
+$\ker(A)$.

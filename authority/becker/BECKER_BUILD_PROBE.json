@@ -1,0 +1,112 @@
+{
+  "schema": "becker-build-probe-v1",
+  "generated_utc": "2026-08-25T00:52:50.5507403Z",
+  "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "engine": {
+    "pdflatex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "latexmk": "4.88",
+    "pdfinfo": "24.04.0"
+  },
+  "constraints": [
+    "isolated task-local source copies",
+    "separate task-local output directories",
+    "MiKTeX package auto-installer disabled",
+    "no system-package install",
+    "no third-party asset retrieval"
+  ],
+  "probes": [
+    {
+      "id": "master-unmodified",
+      "source": "tmp/becker-baseline-98ed6930084c/unmodified/TypedNotes/lecture_notes_tex/master.tex",
+      "command": "pdflatex --disable-installer -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=<absolute task build dir> master.tex",
+      "exit_code": 1,
+      "pdf_created": false,
+      "first_fatal": "LaTeX Error: File '../preamble.tex' not found",
+      "log": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\unmodified\\lecture-notes-master\\master.log",
+        "bytes": 1657,
+        "sha256": "0c3ed2447639f94450465646aa1feb4bc0d413d9a61bcc3e36ba876a15a69a7f"
+      },
+      "console": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\unmodified\\master-unmodified-console.log",
+        "bytes": 987,
+        "sha256": "163c51b874dfedbc5e95b0bdb3e7892097cf222652463d3cf4fcd4e0713a5f27"
+      }
+    },
+    {
+      "id": "master-path-repaired-copy",
+      "source": "tmp/becker-baseline-98ed6930084c/repaired/TypedNotes/lecture_notes_tex/master.tex",
+      "repair": "40 exact replacements: \\\\input{../preamble.tex} -> \\\\input{preamble.tex}; frozen source untouched",
+      "repair_manifest": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\path-repair-manifest.csv",
+        "bytes": 5804,
+        "sha256": "6a3a263ed9052dfb69cdfc5618bcd0c778841a5043f1ec45371e6cc707f4a19d"
+      },
+      "exit_code": 1,
+      "pdf_created": false,
+      "first_fatal": "LaTeX Error: File 'filemod-expmin.sty' not found",
+      "warning": "Required package 'gincltex' not found",
+      "known_later_fail_closed_gap": "24 includegraphics targets are absent from the exact archive",
+      "log": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\repaired\\lecture-notes-master\\master.log",
+        "bytes": 4069,
+        "sha256": "dad6fbcef9daec28c550fe697efbea522f88db5a9a794d6e7bc67b0ba25763a2"
+      },
+      "console": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\repaired\\master-repaired-console.log",
+        "bytes": 2414,
+        "sha256": "f7004c3622e086ec21c1a04c826790caa371216ea5d2a8497fa316715800a848"
+      }
+    },
+    {
+      "id": "appm5720-unmodified-one-pass",
+      "source": "tmp/becker-baseline-98ed6930084c/unmodified/TypedNotes/APPM5720Notes.tex",
+      "support": "tmp/becker-baseline-98ed6930084c/unmodified/TypedNotes/notes.sty",
+      "exit_code": 0,
+      "pdf_created": true,
+      "pdf": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\unmodified\\appm5720notes\\APPM5720Notes.pdf",
+        "bytes": 759296,
+        "sha256": "a654fe788699d18399dafdadecd2823c2e2d7801a4c6b0bf6cdde20e1802c2a9"
+      },
+      "pages": 48,
+      "upstream_pdf_pages": 49,
+      "note": "One pass succeeds; upstream PDF was built under an older TeX environment and has 49 pages."
+    },
+    {
+      "id": "appm5720-two-clean-fixed-epoch-runs",
+      "source_date_epoch": "1782268665",
+      "force_source_date": "1",
+      "run1": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\determinism\\run1\\APPM5720Notes.pdf",
+        "bytes": 759282,
+        "sha256": "651a46c73288b6d4db89f28cd1ff6d9217f7cc5a50c5333f42c84c6b074af222"
+      },
+      "run2": {
+        "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\determinism\\run2\\APPM5720Notes.pdf",
+        "bytes": 759282,
+        "sha256": "4a1a5702c2b55fcf3b31c1be9c119849412e3ee993912cb31d2761b041c5f369"
+      },
+      "run1_pages": 48,
+      "run2_pages": 48,
+      "byte_identical": false,
+      "semantic_result": "Both runs exit 0 and render the same 48-page structure, but PDF hashes differ; byte-deterministic admission is not established."
+    }
+  ],
+  "visual_check": {
+    "source_pdf": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-baseline-98ed6930084c\\determinism\\run1\\APPM5720Notes.pdf",
+    "rendered_page": 48,
+    "resolution_dpi": 160,
+    "png": {
+      "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\pdfs\\becker-baseline-98ed6930084c\\appm5720-page-48.png",
+      "bytes": 160257,
+      "sha256": "68f4f83952ffd56732ffc510127980be9de5851edec1cb883bfe86f3fb5ca9bd"
+    },
+    "result": "PASS: stochastic/variance-reduction page is legible, unclipped, and formula layout is intact."
+  },
+  "admissibility": {
+    "appm5720_source_root": "admissible as the only proven source-closed Becker TeX root, subject to bounded non-overlap extraction and separate assessment/solution closure",
+    "lecture_notes_master": "not admissible: wrong preamble path plus 24 archive-absent figures; missing figure bytes cannot be invented",
+    "individual_lecture_modules": "not independently admitted because the same preamble path defect affects all 39 and figure-bearing modules have absent assets"
+  }
+}

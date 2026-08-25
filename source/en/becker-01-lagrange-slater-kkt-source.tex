@@ -1,0 +1,252 @@
+% BEGIN lagrangian-weak-duality | frozen lines 1263-1321
+\section{Duality}
+This follows Chapter 5 in B\&V.
+Consider the problem 
+\[
+(P) = \begin{cases} \min \limits_{x \in D} f_0(x)  \\
+f_i(x) \le 0, \quad i \in \{1,2,\dots,m\} \\
+h_i(x) =0 \quad i \in \{1,2,\dots,p\}
+\end{cases}
+\]
+where $D$ is the domain of $f$ and $f$ is not necessarily convex.
+
+\begin{defn}[Lagrangian]
+The {\bf Lagrangian} of (P) is the function
+\[
+L(x,\lambda,\nu) = f_0(x) + \sum_{i=1}^\infty \lambda_i f_i(x) + \sum_{i=1}^\infty \nu_i h_i(x)
+\]
+We refer to $\lambda \in \mathbb{R}^m$ and $\nu \in \mathbb{R}^p$ as dual variables or Lagrange multipliers.
+\end{defn}
+
+
+\begin{rem}
+ There can be many Lagrangians depending upon how you formulate the optimization problem!
+ \end{rem}
+ 
+ \begin{rem}
+ To create the Lagrangian for an unconstrained problem $\min \limits_x f(x) + g(x)$, consider rewriting the problem as $\min \limits_{x,z} f(x) + g(z)$ subject to $x=z$.
+ \end{rem}
+ 
+ \begin{defn}[Dual function]
+ The {\bf dual function} is defined as $g(\lambda,\nu) = \inf \limits_{x \in D} L(x,\lambda,\nu)$. Note that $g$ is concave even if (P) isn't convex.
+ \end{defn}
+ 
+ \begin{rem}
+ Recall that $g(y) = \inf \limits_{x \in C} f(y,x)$ where $C$ is convex and $f$ is jointly convex implies $g$ is convex. On the other hand, $g(y) = \sup \limits_{x \in A} f(y,x)$ where $A$ is convex and $f$ is convex in $y$, then $g$ is convex.
+ \end{rem}
+ 
+ 
+ \begin{defn}[Dual Problem] We define the {\bf dual problem} as 
+ $d^* = \max \limits_{ \lambda \ge 0, \nu \in \mathbb{R}^p} g(\lambda,\nu)$; a convex problem.
+ \end{defn}
+ 
+ \begin{thrm}[Weak Duality]
+ $d^*  \le p^*$ where $d^*$ is defined above and $p^* = \max \limits_{x \text{ feasible}} f_0(x)$
+ \end{thrm}
+ 
+ \begin{proof}
+ Consider $\tilde{x}$ feasible.
+ \[
+ g(\lambda,\nu) = \inf \limits_{x \in D} L(x,\lambda,\nu) \le L(\tilde{x},\lambda,\nu)
+ = f_0(\tilde{x}) + \underbrace{\sum_{i=1}^m \lambda_i f_i(\tilde{x})}_{\le 0} + \underbrace{ \sum_{i=1}^p \nu_i h_i(\tilde{x})}_{=0}
+ \le f_0(\tilde{x})
+ \]
+ So $g(\lambda,\nu) \le p^* = \inf \limits_{x \text{ feasible}} f_0 (x)$. Taking a supremum over $\lambda \ge 0$ and $\nu$ gives the result.
+ \end{proof}
+ 
+ \begin{rem}
+ If we also have strong duality $(d^* = p^*)$, then usually it's equivalent to solve the dual. This is useful for structural reasons (Fourier transform, smoothness, shifting around linear operators). Even if (P) isn't convex, we can use this to help find lower bounds.
+ \end{rem}
+% END lagrangian-weak-duality
+
+% BEGIN slater-statement | frozen lines 1398-1405
+\subsection{Slater's Condition}
+Weak duality always holds ($d^* \le p^*)$. What about $d^* = p^*$ ({\bf strong duality})? Slater's condition, a constraint qualification (CQ) for (P)
+$=\begin{cases} \min f_0(x) \\ f_i(x) \le 0 \\ Ax =b \end{cases}$ can guarantee strong duality if there exists $x \in \text{relint}(\text{dom}(f_0))$, $f_i(x) <0$ and if $f_i$ is affine $f_i(x) \le 0$, and $Ax=b$.
+
+\begin{thrm}
+If (P) is convex and Slater's condition holds, then $d^* = p^*$ ({\bf strong duality}) and if $p^* < \infty$, then there exists a dual optimal point.
+\end{thrm}
+% END slater-statement
+
+% BEGIN slater-geometry-and-saddle | frozen lines 1414-1499
+\begin{rem}
+SDPs aren't nice. Consider 
+\[
+ \min \limits_{X=X^T \succeq 0} \left \langle \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, X \right \rangle \text{ such that }
+\left \langle \begin{pmatrix} 0 & 1 \\ 1 & 0\end{pmatrix}, X \right \rangle =2
+\]
+Write in the form $X = \begin{pmatrix} a & 1 \\ 1 & b \end{pmatrix}$ to satisfy the equality constraint. The problem is $\min a$ such that $ \begin{pmatrix} a & 1 \\ 1 & b \end{pmatrix} \succeq 0$. Looking at $\begin{pmatrix} a & 1 \\ 1 & b \end{pmatrix}$, we have $a + b \ge 0$ and $ab \ge 1$ looking at trace and determinant, respectively. We conclude that $ a,b \ge 0$ and $a \ge 1/b$.
+
+Optimal solution: $\lim \limits_{\epsilon \to 0} \begin{pmatrix} \epsilon & 1 \\ 1 & 1/\epsilon \end{pmatrix}$ gives $p^*=0$.
+Note that $d^*=0$ also and there exists a dual optimal point. The dual is degenerate.
+\end{rem}
+
+
+\begin{rem}
+Consider $\min \limits_{x \in D} f_0(x)$ with $f_1(x) \le 0$ and $h_1(x) =0$. Let $G = \{ (f_1(x),h_1(x), f_0(x) ) \mid x \in D \}$.
+\[
+p^* = \inf \limits_{(u,v,t) \in G, u \le 0, v=0} t
+\]
+Forming the Lagrangian, we see
+\[
+g(\lambda,\nu) =  \min \limits_{x \in D}   f_0(x) + \lambda f_1(x) + \nu h_1(x)
+= \inf \limits_{(u,v,t) \in G} \langle (\lambda,\nu,1) , (u,v,t) \rangle
+\]
+If $g(\lambda,\nu) > -\infty$ (i.e.\ $\lambda,\nu$ are feasible dual points), then we have a supporting hyperplane for $G$:
+\[
+g(\lambda,\nu) \le  \langle (\lambda,\nu,1) , (u,v,t) \rangle, \quad \forall (u,v,t) \in G
+\]
+See Ch.\ 5.3 in B\&V for illustrations. There is also a minimum common points / maximum crossing interpretation explained by Bertsekas.
+\end{rem}
+
+\begin{thrm}[Slater's Theorem]
+If (P) is convex and Slater's condition holds ($\exists$ strictly feasible point), then $d^* = p^*$ and if $d^* = p^* >-\infty$ the dual optimal solution is achieved.
+\end{thrm}
+\begin{proof}
+Consider $\mathcal{A} = G + (\mathbb{R}_+ \times \{0 \} \times \mathbb{R}_+) = \{(u,v,t) \mid \exists x \in D, f_i(x) \le u, h_i(x) = v, f_0(x) \le t \}$. $\mathcal{A}$ is convex since $f_0$ and $f_i$ and $h_i$ are convex. Let $B = \{(0,0,s) \in \mathbb{R}^3 \mid s < p^* \}$, where 
+\[
+p^* = \inf \limits_{(u,v,t) \in G, u \le 0, v=0} t
+= \inf \limits_{(u,v,t) \in \mathcal{A}, u \le 0, v=0} t
+\]
+Since $\mathcal{A}, B$ are convex sets that don't intersect, we can separate them with a hyperplane that has normal vector $(\lambda^* , \nu^*, \mu^*)$ and we scale the third component: $(\lambda^*, \nu^*, 1)$. (See remark below). This means that
+\[
+\langle (\lambda^*, \nu^*, 1), (u,v,t ) \rangle \begin{cases}
+\ge C & (u,v,t) \in \mathcal{A} \\
+\le C & (u,v,t) \in B
+\end{cases}
+\]
+Fix $\lambda^* \ge 0$. Looking at the $B$ inequality, we get $p^* \le C $. If $x \in D$, then $(f_1(x), h_1(x), f_0(x)) \in G \subseteq \mathcal{A}$. So $\lambda^* f_1(x) + \nu^* h_1(x) + f_0(x) \ge C \ge p^*$. On the other hand,
+\[
+g(\lambda,\nu) = \inf \limits_{x \in D} L(x,\lambda^*,\nu^*) = \inf \limits_{x \in D} \lambda^* f_1(x) + \nu^* h_1(x) + f_0(x) \ge p^*
+\]
+The result follows from weak duality.
+\end{proof}
+
+\begin{rem}
+If $\mu=0$, there is a vertical supporting hyperplane and no strictly feasible point.
+\end{rem}
+
+
+\subsection{Saddle Point}
+Here's the saddle point interpretation of strong duality. Consider again (P)
+$p^*=\begin{cases} \min f_0(x) \\ f_i(x) \le 0 \\ Ax =b \end{cases}$. The Lagrangian for this problem is
+\[
+L(x,\lambda,\nu) = f_0(x) + \sum_i \lambda_i f_i(x) + \nu^T (Ax-b)
+\]
+Note that we can write
+\[ p^* = \min \limits_x \sup \limits_{\lambda \ge 0, \nu} L(x,\lambda,\nu)
+\]
+On the other hand,
+\[
+d^* = \max \limits_{\lambda \ge 0, \nu} g(\lambda,\nu) = \max \limits_{\lambda \ge 0, \nu} \left( \min \limits_{x} L(x,\lambda,\nu) \right)
+\]
+and we obtain the weak duality condition by the {\it strong saddle point property}:
+\[
+d^* = \sup \limits_{\lambda \ge 0, \nu} \inf \limits_x L(x,\lambda,\nu) \le \inf \limits_x \sup \limits_{\lambda \ge 0, \nu} L(x,\lambda,\nu)
+\]
+We call this inequality above the weak saddle point property.
+
+
+\begin{exmp}
+Consider $\min \limits_x \|x\|_1$ such that $\|Ax-b\|^2 \le \epsilon^2$. The Lagrangian is
+\[
+L(x,\lambda) = \|x\|_1 + \lambda( \|Ax-b\|^2 - \epsilon^2 )
+\]
+If we know the optimal dual value, then $\min \limits_x L(x,\lambda^*) = \min \limits_x \overline{\lambda} \|x\|_1 + \frac{1}{2} \|Ax-b\|^2$ where $\overline{\lambda} = \frac{2}{\lambda}$. The latter problem is easier to solve because of no constraints and it's easier to tune $\lambda$ than $\epsilon$.
+\end{exmp}
+% END slater-geometry-and-saddle
+
+% BEGIN kkt-core | frozen lines 1652-1726
+  \subsection{KKT conditions}
+  Consider the (P) $=\begin{cases} 
+  \min \limits_x f_0(x) \\
+  f_i(x) \le 0, \quad i=1,2,\dots,m \\
+  h_i(x)=0, \quad i=1,2,\dots,p.
+  \end{cases}$ Then $(x^*,\lambda^*,\nu^*$) satisfies the {\bf KKT conditions} if:
+  \begin{enumerate}
+  \item Stationarity: $\nabla_x L(x^*,\lambda^*,\nu^*)=0$ or $0 \in \partial_x L(x^*,\lambda^*,\nu^*)$
+  \item Primal feasibility: $f_i(x^*) \le 0$ and $h_i(x^*)=0$
+  \item Dual feasiliity: $\lambda^* \ge 0$
+  \item Complementary-slackness: for all $i \in \{1,2,\dots,m\},$ we have $f_i(x^*) \lambda_i^* =0$.
+  \end{enumerate}
+  
+  
+  \begin{thrm}
+  Consider a nonconvex problem (P). If we have strong duality and $x^*$ and $(\lambda^*,\nu^*)$ are primal-dual optimal, then $(x^*,\lambda^*,\nu^*$) necessarily satisfies the KKT conditions. 
+  \end{thrm}
+  
+  \begin{thrm}
+  If (P) is convex and $x^*$ and $(x^*,\lambda^*, \nu^*)$ satisfy the KKT conditions, then $x^*$ is primal optimal and $(\lambda^*,\nu^*)$ are dual optimal and $p^*=d^*$. (In the convex case we also have sufficiency for the theorem directly above this one).
+  \end{thrm}
+  
+  \begin{proof}
+  Observe that
+  \[
+  d^*  \ge g(\lambda^*,\nu^*) = \inf \limits_x L(x,\lambda^*,\nu^*)= L(x^*,\lambda^*,\nu^*) = 
+f_0(x^*) + \sum \lambda_i^* f_i(x^*) + \sum \nu^*_i h_i(x^*)  = f(x^*) \ge p^*
+\]
+and thus $d^* = p^*$ and we have a primal optimal solution.
+  \end{proof}
+  
+  \begin{thrm}
+ If (P) is convex and Slater's condition holds, then the KKT conditions are necessary for all primal optimal solutions.
+  \end{thrm}
+  
+  
+  
+  \begin{exmp}
+  From Moreau's identity, we know $\prox \limits_{\| \cdot \|_\infty}$ and $\prox \limits_{ \|\cdot\|_1 \le 1}$ have the same solution.
+  
+  The first problem $\argmin \limits_{\|x\|_1 \le 1} \frac{1}{2} \|x-y\|^2$ is now not separable due to the norm. Let's form the Lagrangian,
+  \[
+  \argmin \limits_{x} \frac{1}{2} \|x-y\|^2 + \lambda( \|x\|_1-1)
+  \]
+  which has (componentwise) solution $x_\lambda := \text{sign}(y) \lfloor |y|- \lambda \rfloor_+= \begin{cases} y-\lambda& y>\lambda \\ y+\lambda & y<\lambda \\ 0 & y \in [-\lambda,\lambda] \end{cases}$
+  
+  Now, instead of solving $\max \limits_\lambda g(\lambda) $ we will search for the KKT conditions on $g(\lambda)$ for $\lambda$.
+  
+  \begin{enumerate}
+  \item $x = x_\lambda$
+  \item $\|x_\lambda\|=1$
+  \item $\lambda \ge 0$
+  \item $\lambda=0$ or $\|x_\lambda\|_1=1$
+  \end{enumerate}  \end{exmp}
+  We rule out $\lambda =0$ since this means $x=y$ and $y$ might not be feasible. Of course if $y$ is feasible we pick $\lambda=0$. To solve $\|x_\lambda \|=1$ subject to $\lambda \ge 0$, we consider the scalar equation
+  \[
+  \sum_{i=1}^n \lfloor |y_i|-\lambda \rfloor_+ =1
+  \]
+  This is a monotonic decreasing function of $\lambda$ with breakpoints $|y_i|$. Can solve with bisection method, and then it's strictly linear (i.e.\ no floor function) on that subinterval. The fast version of this algorithm finds the median in $O(n)$ time.
+  
+  
+  \begin{rem}
+  Suppose we have optimal saddle points; i.e.\ primal/dual optimal pairs $x^*, (\lambda^*,\nu^*)$ where strong duality holds.
+  \[
+  f_0(x^*) = p^* = d^* = \sup \limits_{\lambda \ge 0} g(\lambda,\nu) = g(\lambda^*,\nu^*) = \inf \limits_x L(x,\lambda,\nu) \le L(x^*,\lambda^*,\nu^*)
+  = f_0(x^*) + \sum_{i=1}^m \lambda_i^* f_i(x^*) + \sum_{i=1}^n \nu_i^* h_i(x^*)
+  \le f_0(x^*)
+  \]
+  This means all the inequalities above are equalities. In particular, we must have $\sum_{i=1}^n \lambda_i^* f_i(x^*) =0$ which is complementary slackness (CS). Note that if $\lambda_i \ge 0$ and $f_i(x) \le 0$, from CS we have 
+  \[
+  \sum_{i=1}^m \lambda_i f_i(x) =0
+  \]
+   or equivalently, $\lambda_i \ge 0$ and $f_i(x) \le 0$ and $\lambda_i f_i(x) =0$ for all $i$.
+  \end{rem}
+  
+% END kkt-core
+
+% BEGIN equality-qp-kkt-system | frozen lines 1731-1743
+  \begin{exmp}
+  Consider $\min \frac{1}{2} \langle x, Px \rangle + \langle q, x \rangle + r$. This has a closed form solution. If we also add the constraint $Ax=b$, there is also a closed form solution.
+  \[
+  L(x,\nu) = \frac{1}{2} \langle x^*,  Px^* \rangle + \langle q,x^* \rangle + \langle \nu, Ax^*-b \rangle
+  \]
+  Now we check for a stationary/critical point:
+  \[
+  0 = Px^* +q + A^* \nu
+  \]
+  and ensure that $Ax^*=b$. This is equivalent to $\begin{pmatrix} P & A^* \\ A & 0 \end{pmatrix} \begin{pmatrix} x^* \\ \nu^* \end{pmatrix} = 
+  \begin{pmatrix} -q \\ b \end{pmatrix}$ and so we need to solve a linear system.
+  \end{exmp}
+  
+% END equality-qp-kkt-system

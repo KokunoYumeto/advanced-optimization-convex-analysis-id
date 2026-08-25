@@ -1,0 +1,1349 @@
+{
+  "schema": "becker-tex-closure-v1",
+  "generated_utc": "2026-08-25T00:49:30.4136733Z",
+  "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+  "source_root": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "file_counts": {
+    "all": 180,
+    "tex": 42,
+    "pdf": 70,
+    "homework_tree": 27,
+    "spring_2025_assignment_pdfs": 5,
+    "ipynb": 14,
+    "python": 6,
+    "matlab_m": 20
+  },
+  "tex_roots": [
+    {
+      "path": "TypedNotes/APPM5720Notes.tex",
+      "support": "TypedNotes/notes.sty",
+      "upstream_pdf": "TypedNotes/APPM5720Notes.pdf"
+    },
+    {
+      "path": "TypedNotes/lecture_notes_tex/master.tex",
+      "support": "TypedNotes/lecture_notes_tex/preamble.tex",
+      "lecture_modules": 39,
+      "master_inputs": 38,
+      "omitted_from_master": [
+        "lec_34"
+      ],
+      "upstream_pdf": "TypedNotes/lecture_notes.pdf"
+    }
+  ],
+  "parent_preamble_reference_count": 40,
+  "parent_preamble_references": [
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_02.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_05.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_06.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_07.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_08.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_09.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_14.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_16.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_17.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_18.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_19.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_20.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_21.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_22.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_23.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_25.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_26.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_27.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_28.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_29.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_30.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_31.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_32.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_34.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_37.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_38.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_39.tex",
+      "line": 2,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/master.tex",
+      "line": 3,
+      "reference": "../preamble.tex",
+      "strict_resolution": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\..\\preamble.tex",
+      "exists": false
+    }
+  ],
+  "graphics_reference_count": 24,
+  "graphics_missing_count": 24,
+  "graphics_references": [
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 136,
+      "reference": "./figures/categorization.jpg",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\categorization.jpg",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 19,
+      "reference": "./figures/cvx_set.jpg",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\cvx_set.jpg",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 29,
+      "reference": "./figures/cvx_fcn.jpg",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\cvx_fcn.jpg",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 49,
+      "reference": "./figures/epi.jpg",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\epi.jpg",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 133,
+      "reference": "./figures/cvx_hull.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\cvx_hull.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 52,
+      "reference": "./figures/unit_simplex.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\unit_simplex.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 56,
+      "reference": "./figures/prob_simplex.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\prob_simplex.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 94,
+      "reference": "./figures/perspective.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\perspective.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_06.tex",
+      "line": 92,
+      "reference": "./figures/lsc.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\lsc.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_06.tex",
+      "line": 100,
+      "reference": "./figures/lsc_epi.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\lsc_epi.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_06.tex",
+      "line": 152,
+      "reference": "./figures/proper_cvx.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\proper_cvx.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_07.tex",
+      "line": 18,
+      "reference": "./figures/cvx_tan.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\cvx_tan.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_07.tex",
+      "line": 120,
+      "reference": "./figures/normal_cone.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\normal_cone.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_08.tex",
+      "line": 20,
+      "reference": "./figures/counter_linear.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\counter_linear.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_09.tex",
+      "line": 31,
+      "reference": "./figures/quad_bounds.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\quad_bounds.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_09.tex",
+      "line": 74,
+      "reference": "./figures/quasi_cvx.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\quasi_cvx.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 86,
+      "reference": "./figures/max_cvx.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\max_cvx.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 104,
+      "reference": "./figures/min_cvx.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\min_cvx.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 29,
+      "reference": "./figures/conj_func_1.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\conj_func_1.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 35,
+      "reference": "./figures/conj_func_2.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\conj_func_2.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 47,
+      "reference": "./figures/abs_conj.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\abs_conj.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 169,
+      "reference": "./figures/hx.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\hx.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 184,
+      "reference": "./figures/h2star.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\h2star.png",
+      "exists": false
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 169,
+      "reference": "./figures/soft_thresholding.png",
+      "resolved": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\authority\\becker\\extract\\convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e\\TypedNotes\\lecture_notes_tex\\figures\\soft_thresholding.png",
+      "exists": false
+    }
+  ],
+  "headings": [
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 5,
+      "level": "chapter",
+      "title": "Theoretical Foundation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 7,
+      "level": "section",
+      "title": "Introduction"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 51,
+      "level": "subsection",
+      "title": "Lipschitz continuity"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_01.tex",
+      "line": 133,
+      "level": "subsection",
+      "title": "Categorization"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_02.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Minimizers"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_02.tex",
+      "line": 44,
+      "level": "subsubsection",
+      "title": "Connections with Calculus 1"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Convexity"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 87,
+      "level": "section",
+      "title": "Convex Sets [BV04 Ch.2] "
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 88,
+      "level": "subsection",
+      "title": "Convex, affine, and cone"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_03.tex",
+      "line": 158,
+      "level": "subsection",
+      "title": "Important examples"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 64,
+      "level": "section",
+      "title": "Operations that preserve convexity"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 82,
+      "level": "subsection",
+      "title": "Linear-fractional and perspective functions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 118,
+      "level": "subsection",
+      "title": "Generalized inequalities"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_04.tex",
+      "line": 147,
+      "level": "subsubsection",
+      "title": "Properties of dual cones"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_05.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "separating and supporting hyperplanes"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_06.tex",
+      "line": 6,
+      "level": "section",
+      "title": "Convex Functions [BV04 Ch.3]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_07.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "First-order conditions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_08.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Calculus"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_08.tex",
+      "line": 58,
+      "level": "subsection",
+      "title": "Lipschitz gradient"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_09.tex",
+      "line": 38,
+      "level": "subsection",
+      "title": "Examples [BV04 Ch.3.1.5]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Preserving convexity"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 7,
+      "level": "subsubsection",
+      "title": "Rule 0: non-negative (weighted) sums"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 21,
+      "level": "subsubsection",
+      "title": "Rule 1: perspective function"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 54,
+      "level": "subsubsection",
+      "title": "Rule 2: special types of compositions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_10.tex",
+      "line": 76,
+      "level": "subsubsection",
+      "title": "Rule 3: min/max"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Gradient descent"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 9,
+      "level": "subsubsection",
+      "title": "Attempt 1"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 15,
+      "level": "subsubsection",
+      "title": "Attempt 2"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 35,
+      "level": "subsubsection",
+      "title": "What to use?"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 43,
+      "level": "subsubsection",
+      "title": "Other types"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 50,
+      "level": "subsubsection",
+      "title": "Attempt 3"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_11.tex",
+      "line": 64,
+      "level": "subsubsection",
+      "title": "Majorization-minimization (MM)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Conjugate functions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 57,
+      "level": "subsubsection",
+      "title": "Rules"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_12.tex",
+      "line": 92,
+      "level": "subsubsection",
+      "title": "Properties"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Existence and uniqueness of minimizers"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 6,
+      "level": "subsubsection",
+      "title": "Existence"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 41,
+      "level": "subsubsection",
+      "title": "Uniqueness"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 73,
+      "level": "subsection",
+      "title": "Proximity operator"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 174,
+      "level": "subsubsection",
+      "title": "Rules"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_13.tex",
+      "line": 177,
+      "level": "subsection",
+      "title": "Moreau envelope"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_14.tex",
+      "line": 6,
+      "level": "section",
+      "title": "Convex optimization problems"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_14.tex",
+      "line": 7,
+      "level": "subsection",
+      "title": "Tricks"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_14.tex",
+      "line": 82,
+      "level": "subsection",
+      "title": "Convex optimization problems [BV04 Ch.4.2]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 10,
+      "level": "subsubsection",
+      "title": "unconstrained problems"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 17,
+      "level": "subsubsection",
+      "title": "convex equality/affine constraints"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 27,
+      "level": "subsection",
+      "title": "Conic optimization problems [BV04 Ch.4.3, 4.4, 4.6]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 29,
+      "level": "subsubsection",
+      "title": "Linear programs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 70,
+      "level": "subsubsection",
+      "title": "Quadratic programs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 86,
+      "level": "subsubsection",
+      "title": "Quadratically constrained quadratic program (QCQP)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 92,
+      "level": "subsubsection",
+      "title": "Second-order cone program (SOCP)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 100,
+      "level": "subsubsection",
+      "title": "Conic programming"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_15.tex",
+      "line": 114,
+      "level": "subsubsection",
+      "title": "Semi-definite programs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_16.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Linear matrix inequalities (LMI): dual problem of SDPs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_16.tex",
+      "line": 37,
+      "level": "section",
+      "title": "Duality [BV04 Ch.5]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_16.tex",
+      "line": 38,
+      "level": "subsection",
+      "title": "Lagrange dual function/problem"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_18.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Dual of linear programs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_18.tex",
+      "line": 57,
+      "level": "subsubsection",
+      "title": "Strong duality results"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_19.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Saddle point interpretation [BV 4.2]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_19.tex",
+      "line": 53,
+      "level": "subsubsection",
+      "title": "Shared Lagrangian"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_19.tex",
+      "line": 81,
+      "level": "subsection",
+      "title": "Game Theory connection"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_20.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Fenchel-Rockafellar Duality [BC17]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_20.tex",
+      "line": 14,
+      "level": "subsubsection",
+      "title": "Connections to Lagrangian duality"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_20.tex",
+      "line": 31,
+      "level": "subsubsection",
+      "title": "Saddle-point interpretation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_20.tex",
+      "line": 52,
+      "level": "subsubsection",
+      "title": "Algorithms"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_21.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Recovering a primal solution from a dual solution"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_21.tex",
+      "line": 46,
+      "level": "subsection",
+      "title": "Optimality conditions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_21.tex",
+      "line": 47,
+      "level": "subsubsection",
+      "title": "Complementary slackness"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_21.tex",
+      "line": 64,
+      "level": "subsubsection",
+      "title": "KKT conditions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_22.tex",
+      "line": 31,
+      "level": "subsection",
+      "title": "Meta-rules"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_23.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Perturbation and Sensitivity Analysis [BV 5.6]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_23.tex",
+      "line": 22,
+      "level": "subsubsection",
+      "title": "global analysis"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_23.tex",
+      "line": 61,
+      "level": "subsubsection",
+      "title": "local sensitivity analysis"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_23.tex",
+      "line": 79,
+      "level": "subsection",
+      "title": "Generalized Inequalities [BV 5.9]"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 6,
+      "level": "chapter",
+      "title": "Algorithms"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 8,
+      "level": "section",
+      "title": "Unconstrained Optimization"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 24,
+      "level": "subsection",
+      "title": "Proximal gradient descent"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 33,
+      "level": "subsubsection",
+      "title": "motivation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 43,
+      "level": "subsubsection",
+      "title": "algorithm"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_24.tex",
+      "line": 88,
+      "level": "subsubsection",
+      "title": "alternative derivation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_25.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Convergence of gradient descent"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_26.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Gradient descent analysis with strong convexity"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_26.tex",
+      "line": 19,
+      "level": "subsubsection",
+      "title": "suboptimality bounds (see PDF handout)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_26.tex",
+      "line": 54,
+      "level": "subsubsection",
+      "title": "Convergence rate"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_27.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Linear conjugate gradient method"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_28.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "non-linear conjugate gradient"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_28.tex",
+      "line": 23,
+      "level": "subsection",
+      "title": "Quasi-Newton Methods"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_29.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "BFGS"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_29.tex",
+      "line": 60,
+      "level": "subsection",
+      "title": "Newton's methods"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_30.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Trust-region for nonconvex"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_30.tex",
+      "line": 38,
+      "level": "subsection",
+      "title": "Nonlinear least squares"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_30.tex",
+      "line": 58,
+      "level": "subsubsection",
+      "title": "Gauss-Newton method"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_30.tex",
+      "line": 73,
+      "level": "subsubsection",
+      "title": "Levenberg-Marquardt"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_31.tex",
+      "line": 5,
+      "level": "section",
+      "title": "Methods for constrained problems"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_31.tex",
+      "line": 6,
+      "level": "subsubsection",
+      "title": "Special nice constraints "
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_31.tex",
+      "line": 16,
+      "level": "subsubsection",
+      "title": "not-so-nice constraints"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_31.tex",
+      "line": 27,
+      "level": "subsection",
+      "title": "penalty methods"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_32.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Augmented Lagrangian"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_32.tex",
+      "line": 58,
+      "level": "subsubsection",
+      "title": "SQP"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 6,
+      "level": "section",
+      "title": "Bonus: find gradients"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 19,
+      "level": "subsection",
+      "title": "DFO"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 45,
+      "level": "subsection",
+      "title": "Finite differences"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 74,
+      "level": "subsection",
+      "title": "analytic solutions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_33.tex",
+      "line": 96,
+      "level": "subsection",
+      "title": "Automatic differentiation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_34.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Automatic Differentiation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_34.tex",
+      "line": 21,
+      "level": "subsubsection",
+      "title": "Modes"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "by hand"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 6,
+      "level": "subsubsection",
+      "title": "implicit differentiation"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 17,
+      "level": "subsubsection",
+      "title": "matrix variables"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 24,
+      "level": "subsubsection",
+      "title": "parametric functions"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_35.tex",
+      "line": 79,
+      "level": "subsection",
+      "title": "Adjoint state method"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 5,
+      "level": "subsection",
+      "title": "Newton's Method revisited, [BV04] Ch.9"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 13,
+      "level": "subsubsection",
+      "title": "old-fashioned analysis"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 15,
+      "level": "subsubsection",
+      "title": "self-concordant analysis"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 50,
+      "level": "subsubsection",
+      "title": "damped/guarded Newton method"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 91,
+      "level": "subsubsection",
+      "title": "Newton's method with equality constraints"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_36.tex",
+      "line": 121,
+      "level": "subsubsection",
+      "title": "Newton with inequality constraints: IPM"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_37.tex",
+      "line": 19,
+      "level": "subsubsection",
+      "title": "(Block) Coordinate Descent, Alternating Minimization, Gauss-Seidel"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_37.tex",
+      "line": 55,
+      "level": "subsubsection",
+      "title": "ADMM (Alternating Direction Method of Multipliers)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_38.tex",
+      "line": 5,
+      "level": "subsubsection",
+      "title": "Douglas-Rachford"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_38.tex",
+      "line": 23,
+      "level": "subsection",
+      "title": "Primal Dual Methods"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_38.tex",
+      "line": 33,
+      "level": "subsubsection",
+      "title": "general primal-dual method (Condat)"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_39.tex",
+      "line": 5,
+      "level": "section",
+      "title": "Linear Programs"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_39.tex",
+      "line": 6,
+      "level": "subsection",
+      "title": "Simplex Method"
+    },
+    {
+      "file": "TypedNotes/lecture_notes_tex/lec_39.tex",
+      "line": 35,
+      "level": "subsubsection",
+      "title": "complexity"
+    }
+  ],
+  "pedagogical_environment_counts": {
+    "exercise": 0,
+    "solution": 0,
+    "hint": 0,
+    "eg": 94,
+    "defn": 47,
+    "thm": 52,
+    "lem": 1,
+    "prop": 19,
+    "proof": 18,
+    "remark": 75
+  },
+  "topic_occurrence_counts": {
+    "kkt": 30,
+    "slater": 26,
+    "lagrangian": 43,
+    "duality": 173,
+    "stochastic": 6,
+    "mirror_descent": 0,
+    "minibatch": 1,
+    "variance_reduction": 4,
+    "variational_inequality": 3,
+    "maximal_monotone": 0,
+    "monotone_operator": 0,
+    "resolvent": 0,
+    "operator_splitting": 27,
+    "proximal": 92,
+    "subgradient": 10,
+    "nesterov": 15,
+    "interior_point": 9
+  },
+  "homework": {
+    "readme": "Homeworks/README.md",
+    "assignment_pdfs": [
+      "APPM5630Spring25Homework01-02.pdf",
+      "APPM5630Spring25Homework03-04.pdf",
+      "APPM5630Spring25Homework05-06.pdf",
+      "APPM5630Spring25Homework07-08.pdf",
+      "APPM5630Spring25Homework09-10.pdf"
+    ],
+    "solution_location_claim": "Homeworks/README.md states that homework solutions are on Canvas, not in this repository",
+    "public_complete_solutions_present": false,
+    "helper_and_project_files": [
+      "Homeworks/HW01_helper_polyhedrality.pdf",
+      "Homeworks/ProjectInformation.md",
+      "Homeworks/ProjectRubric.pdf",
+      "Homeworks/README.md",
+      "Homeworks/HW04/APPM5630_HW4_helperFunctions.ipynb",
+      "Homeworks/HW04/implicit2explicit.m",
+      "Homeworks/HW04/quadraticObjective.m",
+      "Homeworks/HW04/test_adjoint.m",
+      "Homeworks/HW10/.gitignore",
+      "Homeworks/HW10/adjointShortTimeDCT.m",
+      "Homeworks/HW10/forwardShortTimeDCT.m",
+      "Homeworks/HW10/handel.mat",
+      "Homeworks/HW10/handel.pkl",
+      "Homeworks/HW10/handel2.pkl",
+      "Homeworks/HW10/listen_to_Handel.ipynb",
+      "Homeworks/HW10/listen_to_Handel.m",
+      "Homeworks/HW10/listen_to_Handel.py",
+      "Homeworks/HW10/my_upsample.m",
+      "Homeworks/HW10/project_l1.m",
+      "Homeworks/HW10/python_functions.py",
+      "Homeworks/HW10/README.md",
+      "Homeworks/HW10/test_python_functions.py"
+    ]
+  },
+  "upstream_pdf_basics": [
+    {
+      "path": "TypedNotes/APPM5720Notes.pdf",
+      "bytes": 647897,
+      "sha256": "1b909ea2b0c931e5621696b4ae4e62304c650d9d24ecc1a6245d9d268e9c4a41",
+      "pages": "49",
+      "tagged": "no",
+      "encrypted": "no",
+      "page_size": "612 x 792 pts (letter)",
+      "pdf_version": "1.5"
+    },
+    {
+      "path": "TypedNotes/lecture_notes.pdf",
+      "bytes": 1268157,
+      "sha256": "90a4da43396cfb1840ec98d4a13186bbb3af8c4fa7a31a4e47bc986727833d81",
+      "pages": "143",
+      "tagged": "no",
+      "encrypted": "no",
+      "page_size": "595.276 x 841.89 pts (A4)",
+      "pdf_version": "1.7"
+    }
+  ],
+  "explicit_component_rights": [
+    {
+      "paths": [
+        "utilities/firstOrderMethods.py",
+        "utilities/secondOrderMethods.py"
+      ],
+      "license": "Modified BSD / BSD-3-Clause text embedded"
+    },
+    {
+      "paths": [
+        "Demos/AD_demos/ADiGator_demo/polydatafit/Contents.m",
+        "Demos/AD_demos/ADiGator_demo/polydatafit/main.m",
+        "Demos/AD_demos/ADiGator_demo/polydatafit/fit_Jac.m",
+        "Demos/AD_demos/ADiGator_demo/polydatafit/fit_ADiGatorJac.m"
+      ],
+      "license": "GNU GPL version 3 notice embedded",
+      "third_party_authors": "Matthew J. Weinstein and Anil V. Rao"
+    }
+  ]
+}

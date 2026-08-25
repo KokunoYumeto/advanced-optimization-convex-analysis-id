@@ -1,0 +1,76 @@
+{
+  "authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "source_bytes": 130911,
+    "source_lines": 2992,
+    "source_path": "TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "combined_witness": {
+    "bytes": 12294,
+    "path": "source/en/becker-01-lagrange-slater-kkt-source.tex",
+    "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565"
+  },
+  "explicit_exclusions": [
+    {
+      "lines": "1322-1397",
+      "reason": "LP-duality examples and mnemonic material belong to O018; one malformed adjacent example is also excluded rather than silently repaired into O015."
+    },
+    {
+      "lines": "1406-1413",
+      "reason": "The LP-specific strong-duality aside belongs to O018."
+    },
+    {
+      "lines": "1727-1730",
+      "reason": "The LP complementary-slackness example belongs to O018; the general KKT statement remains included."
+    }
+  ],
+  "result": "pass",
+  "schema": "o015-becker-01-source-boundary-v1",
+  "selected_ranges": [
+    {
+      "bytes": 2424,
+      "first_line": 1263,
+      "id": "lagrangian-weak-duality",
+      "last_line": 1321,
+      "line_count": 59,
+      "sha256": "caa06fcbf218428a7ae4d91be208607548273e913b55a441adf5b4538a91c677"
+    },
+    {
+      "bytes": 572,
+      "first_line": 1398,
+      "id": "slater-statement",
+      "last_line": 1405,
+      "line_count": 8,
+      "sha256": "f02825fce27c6d87f73b3f04c5918f21a30d9b44bf34ff3015d94692a8fb7331"
+    },
+    {
+      "bytes": 4493,
+      "first_line": 1414,
+      "id": "slater-geometry-and-saddle",
+      "last_line": 1499,
+      "line_count": 86,
+      "sha256": "aa8fc084cbb6dca65ddb526d3d69ec0e06432e408ac2383e07ca26986abc5452"
+    },
+    {
+      "bytes": 3765,
+      "first_line": 1652,
+      "id": "kkt-core",
+      "last_line": 1726,
+      "line_count": 75,
+      "sha256": "88d7f14452d407c186a99c58dc14d281c916ec8f73b4e29ce7dc42a8fb489ba4"
+    },
+    {
+      "bytes": 644,
+      "first_line": 1731,
+      "id": "equality-qp-kkt-system",
+      "last_line": 1743,
+      "line_count": 13,
+      "sha256": "4626495d63c61fefcbf1295b2a0ed6854350e59ac0d6cfbcc73e93815df7afa6"
+    }
+  ],
+  "upstream_contact": false
+}

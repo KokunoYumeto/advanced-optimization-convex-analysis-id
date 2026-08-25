@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri" />
+  <title>Optimisasi Lanjut dan Analisis Konveks - Modul Becker 1</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  
+<script>
+window.MathJax = {tex: {tags:'ams', macros: {
+  R:'\\mathbb{R}', norm:['\\left\\lVert #1\\right\\rVert',1],
+  prox:'\\operatorname{prox}', emptyarg:'\\,\\cdot\\,'
+}}};
+</script>
+
+<script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="license" content="MIT; CC BY-SA 4.0">
+<style>
+
+:root { color-scheme:light; --ink:#172033; --muted:#506078; --rule:#ccd5e2;
+  --accent:#315f99; --panel:#f4f7fb; --max:76rem; }
+* { box-sizing:border-box; }
+html { font-size:100%; scroll-behavior:smooth; }
+body { margin:0; padding:0; width:100%; max-width:none; overflow-x:clip;
+  color:var(--ink); background:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1rem,.96rem + .18vw,1.12rem); line-height:1.64; }
+body > header, body > nav, body > main, body > section, body > div,
+body > h1, body > h2, body > p, body > blockquote, body > pre {
+  width:min(calc(100% - 2.2rem),var(--max)); margin-inline:auto; }
+header#title-block-header { padding:3rem 0 1.5rem; border-bottom:1px solid var(--rule); }
+h1,h2,h3,h4 { max-width:76ch; margin-inline:auto;
+  font-family:Arial,Helvetica,sans-serif; line-height:1.2; color:#12233d;
+  scroll-margin-top:1rem; }
+h1 { margin-top:2.7rem; font-size:clamp(1.9rem,1.4rem + 1.8vw,3rem); }
+header#title-block-header h1 {
+  font-size:clamp(1.9rem,1.35rem + 1.55vw,2.65rem); }
+h2 { margin-top:2.3rem; font-size:clamp(1.45rem,1.2rem + .8vw,2rem); }
+h3 { margin-top:1.8rem; }
+a { color:#174f91; text-underline-offset:.14em; }
+nav#TOC { margin:1.5rem auto 2.5rem; padding:1rem 1.3rem;
+  background:var(--panel); border:1px solid var(--rule); border-radius:.45rem; }
+nav#TOC ul { padding-left:1.35rem; }
+p, blockquote, pre { max-width:72ch; }
+ol,ul { width:min(100%,76ch); margin-inline:auto; }
+li { max-width:72ch; }
+.definition,.theorem,.example,.proof,div[class*="theorem"],div[class*="definition"] {
+  max-width:76ch; margin:1.25rem auto; padding:.85rem 1rem;
+  border-left:.28rem solid var(--accent); background:var(--panel); }
+.proof { border-left-color:#65758c; background:#fafbfc; }
+blockquote { padding:.8rem 1rem; background:var(--panel); border-left:.28rem solid var(--accent); }
+.math.display, mjx-container[display="true"] { display:block; width:100%; max-width:100%;
+  overflow-x:auto; overflow-y:hidden; padding:.35rem 0; }
+.math.inline { display:inline; max-width:none; overflow:visible;
+  vertical-align:baseline; }
+pre { overflow-x:auto; padding:1rem; background:#f7f8fa; border:1px solid var(--rule); }
+@media (max-width:48rem) { body > header, body > nav, body > main, body > section,
+  body > div, body > h1, body > h2, body > p, body > blockquote, body > pre {
+  width:min(calc(100% - 1.2rem),var(--max)); }
+  .definition,.theorem,.example,.proof,div[class*="theorem"],div[class*="definition"] {
+    padding:.7rem .75rem; }
+}
+
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Optimisasi Lanjut dan Analisis Konveks - Modul Becker
+1</h1>
+<p class="author">Stephen Becker; catatan ketik Mitchell Krock;
+terjemahan mandiri</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#becker:chapter:lagrange-kkt"
+id="toc-becker:chapter:lagrange-kkt">Dualitas Lagrange, kondisi Slater,
+dan kondisi KKT</a>
+<ul>
+<li><a href="#masalah-primal-dan-lagrangian"
+id="toc-masalah-primal-dan-lagrangian">Masalah primal dan
+Lagrangian</a></li>
+<li><a href="#kondisi-slater-dan-dualitas-kuat"
+id="toc-kondisi-slater-dan-dualitas-kuat">Kondisi Slater dan dualitas
+kuat</a></li>
+<li><a href="#interpretasi-titik-pelana"
+id="toc-interpretasi-titik-pelana">Interpretasi titik pelana</a></li>
+<li><a href="#kondisi-karush-kuhn-tucker"
+id="toc-kondisi-karush-kuhn-tucker">Kondisi Karush-Kuhn-Tucker</a>
+<ul>
+<li><a href="#contoh-proyeksi-pada-bola-ell1"
+id="toc-contoh-proyeksi-pada-bola-ell1">Contoh: proyeksi pada bola <span
+class="math inline">\(\ell^1\)</span></a></li>
+<li><a href="#contoh-masalah-kuadratik-dengan-kendala-kesamaan"
+id="toc-contoh-masalah-kuadratik-dengan-kendala-kesamaan">Contoh:
+masalah kuadratik dengan kendala kesamaan</a></li>
+</ul></li>
+<li><a href="#perubahan-dan-batas-sumber"
+id="toc-perubahan-dan-batas-sumber">Perubahan dan batas sumber</a></li>
+<li><a href="#atribusi-lisensi-dan-nondukungan"
+id="toc-atribusi-lisensi-dan-nondukungan">Atribusi, lisensi, dan
+nondukungan</a></li>
+<li><a href="#pemberitahuan-lisensi-mit-sumber"
+id="toc-pemberitahuan-lisensi-mit-sumber">Pemberitahuan Lisensi MIT
+sumber</a></li>
+</ul></li>
+</ul>
+</nav>
+<blockquote>
+<p><strong>Status pembaca.</strong> Modul ini menerjemahkan lima rentang
+terpilih dari Stephen Becker, <em>convex-optimization-class</em>, commit
+<code>98ed6930084c435ba0f675f7646ced1f2fd8729e</code>; catatan ketik
+sumber mengreditkan Mitchell Krock. Bagian program-linear yang
+bersebelahan dikeluarkan agar tidak menduplikasi O018. Materi donor
+mempertahankan Lisensi MIT; terjemahan, koreksi, dan penghubung mandiri
+tersedia berdasarkan CC BY-SA 4.0. Ini bukan edisi resmi atau dukungan
+pihak sumber.</p>
+<p>Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori; seluruh kredit penulis dan kontributor manusia
+tetap dipertahankan.</p>
+</blockquote>
+<section id="becker:chapter:lagrange-kkt" class="level1">
+<h1>Dualitas Lagrange, kondisi Slater, dan kondisi KKT</h1>
+<p>Bab ini melengkapi tulang punggung Habring dengan satu jalur terpadu
+dari Lagrangian ke kondisi Slater dan kondisi Karush-Kuhn-Tucker (KKT).
+Notasi dibuat konsisten untuk masalah minimisasi. Bagian sumber yang
+khusus membahas dualitas program linear tidak disertakan karena materi
+itu berada dalam batas kurikulum O018.</p>
+<p><strong>Kredit catatan donor.</strong></p>
+<p>Catatan donor menyatakan bahwa bagian dualitas mengikuti Bab 5 Boyd
+dan Vandenberghe (B&amp;V), merujuk ke §5.3 untuk ilustrasi, dan
+mengaitkan interpretasi perpotongan maksimum atau titik bersama minimum
+dengan Bertsekas. Kredit turunan ini dipertahankan; edisi ini tidak
+mengimpor isi di luar rentang donor yang dibekukan.</p>
+<section id="masalah-primal-dan-lagrangian" class="level2">
+<h2>Masalah primal dan Lagrangian</h2>
+<p>Pertimbangkan masalah <span class="math display" id="becker:eq:primal">\[\begin{equation}
+  \label{becker:eq:primal}
+  \begin{aligned}
+    p^* = \inf_{x\in D}\quad &amp; f_0(x)\\
+    \text{dengan syarat}\quad &amp; f_i(x)\leq 0, &amp;&amp;
+i=1,\ldots,m,\\
+    &amp; h_j(x)=0, &amp;&amp; j=1,\ldots,p,
+  \end{aligned}
+\end{equation}\]</span> dengan <span class="math inline">\(D\)</span>
+memuat domain bersama fungsi-fungsi tersebut. Kita memakai <span
+class="math inline">\(p^*=+\infty\)</span> jika masalah tidak layak dan
+<span class="math inline">\(p^*=-\infty\)</span> jika nilainya tidak
+terbatas ke bawah.</p>
+<div class="definition">
+<p>Lagrangian masalah <a href="#becker:eq:primal"
+data-reference-type="eqref"
+data-reference="becker:eq:primal">primal</a> adalah <span
+class="math display" id="becker:eq:lagrangian">\[\begin{equation}
+    \label{becker:eq:lagrangian}
+    L(x,\lambda,\nu)
+    = f_0(x)+\sum_{i=1}^{m}\lambda_i f_i(x)
+      +\sum_{j=1}^{p}\nu_j h_j(x).
+\end{equation}\]</span> Vektor <span
+class="math inline">\(\lambda\in\mathbb{R}^m\)</span> dan <span
+class="math inline">\(\nu\in\mathbb{R}^p\)</span> disebut variabel dual
+atau pengali Lagrange. Untuk kendala pertidaksamaan kita akan
+mensyaratkan <span class="math inline">\(\lambda\geq0\)</span> komponen
+demi komponen.</p>
+</div>
+<p>Lagrangian bergantung pada cara masalah ditulis. Misalnya, untuk
+<span class="math inline">\(\inf_x f(x)+g(x)\)</span> kita dapat
+memperkenalkan <span class="math inline">\(z\)</span> dan kendala <span
+class="math inline">\(x=z\)</span>, lalu membentuk Lagrangian terhadap
+kendala kesamaan itu. Pemisahan variabel seperti ini sering membuka
+struktur yang tidak tampak pada rumusan asal.</p>
+<div class="definition">
+<p>Fungsi dual Lagrange didefinisikan oleh <span
+class="math display" id="becker:eq:dual-function">\[\begin{equation}
+    \label{becker:eq:dual-function}
+    g(\lambda,\nu)=\inf_{x\in D} L(x,\lambda,\nu).
+\end{equation}\]</span> Fungsi <span class="math inline">\(g\)</span>
+cekung terhadap <span class="math inline">\((\lambda,\nu)\)</span>,
+bahkan bila masalah primal tidak konveks, sebab <span
+class="math inline">\(g\)</span> adalah infimum titik demi titik dari
+fungsi-fungsi afin dalam variabel dual.</p>
+</div>
+<p>Sebagai kaidah umum yang terkait, minimisasi parsial dari fungsi
+konveks bersama menghasilkan fungsi konveks pada variabel yang tersisa,
+sedangkan supremum titik demi titik dari fungsi-fungsi konveks tetap
+konveks.</p>
+<div class="definition">
+<p>Masalah dual Lagrange adalah <span
+class="math display" id="becker:eq:dual-problem">\[\begin{equation}
+    \label{becker:eq:dual-problem}
+    d^*=\sup_{\lambda\geq0,\,\nu\in\mathbb{R}^p} g(\lambda,\nu).
+\end{equation}\]</span> Ini merupakan masalah maksimisasi cekung, atau
+secara ekuivalen masalah minimisasi konveks untuk <span
+class="math inline">\(-g\)</span>.</p>
+</div>
+<div class="theorem">
+<p>Untuk masalah <a href="#becker:eq:primal" data-reference-type="eqref"
+data-reference="becker:eq:primal">primal</a> selalu berlaku
+<span class="math display" id="becker:eq:weak-duality">\[\begin{equation}
+    \label{becker:eq:weak-duality}
+    d^*\leq p^*.
+\end{equation}\]</span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Ambil titik layak <span class="math inline">\(\tilde
+x\)</span>. Untuk setiap <span
+class="math inline">\(\lambda\geq0\)</span> dan setiap <span
+class="math inline">\(\nu\)</span>, <span
+class="math display">\[\begin{multline}
+    g(\lambda,\nu)\leq L(\tilde x,\lambda,\nu)
+    =f_0(\tilde x)
+      +\underbrace{\sum_{i=1}^{m}\lambda_i f_i(\tilde x)}_{\leq0}
+      +\underbrace{\sum_{j=1}^{p}\nu_j h_j(\tilde x)}_{=0}\\
+    \leq f_0(\tilde x).
+\end{multline}\]</span> Mengambil infimum terhadap semua titik primal
+yang layak memberi <span class="math inline">\(g(\lambda,\nu)\leq
+p^*\)</span>. Mengambil supremum terhadap semua titik dual yang layak
+membuktikan <a href="#becker:eq:weak-duality"
+data-reference-type="eqref"
+data-reference="becker:eq:weak-duality">ketaksamaan dualitas lemah</a>. ◻</p>
+</div>
+<p>Jika <span class="math inline">\(d^*=p^*\)</span>, kita mengatakan
+bahwa <em>dualitas kuat</em> berlaku. Selain memberi sertifikat batas
+bawah, masalah dual dapat memindahkan operator linear, menyingkap
+kehalusan, atau menghasilkan rumusan numerik yang lebih sesuai. Untuk
+masalah nonkonveks sekalipun, nilai dual tetap menyediakan batas bawah
+yang sah, walaupun kesenjangan dualitas mungkin positif.</p>
+</section>
+<section id="kondisi-slater-dan-dualitas-kuat" class="level2">
+<h2>Kondisi Slater dan dualitas kuat</h2>
+<p>Sekarang andaikan <span
+class="math inline">\(f_0,f_1,\ldots,f_m\)</span> konveks dan kendala
+kesamaan berbentuk <span class="math inline">\(Ax=b\)</span>. Tuliskan
+<span class="math inline">\(I_{\mathrm{na}}\)</span> bagi indeks kendala
+pertidaksamaan yang tidak afin.</p>
+<div class="definition">
+<p>Kondisi Slater dipenuhi jika terdapat <span
+class="math inline">\(\bar x\)</span> dalam interior relatif domain
+bersama sedemikian sehingga <span
+class="math display">\[\begin{equation}
+    A\bar x=b,\qquad
+    f_i(\bar x)&lt;0\quad(i\in I_{\mathrm{na}}),\qquad
+    f_i(\bar x)\leq0\quad(i\notin I_{\mathrm{na}}).
+\end{equation}\]</span> Jadi hanya kendala pertidaksamaan nonafin yang
+harus dipenuhi secara ketat.</p>
+</div>
+<div class="theorem">
+<p>Jika masalah primal konveks, kondisi Slater dipenuhi, dan <span
+class="math inline">\(p^*\)</span> berhingga, maka <span
+class="math inline">\(d^*=p^*\)</span> dan suatu titik dual optimum
+<span class="math inline">\((\lambda^*,\nu^*)\)</span> tercapai.</p>
+</div>
+<p>Kondisi Slater bersifat cukup, bukan perlu. Contoh semidefinit
+berikut menunjukkan salah satu gejala degenerasi. Pertimbangkan <span
+class="math display">\[\begin{equation}
+  \inf_{X=X^\top\succeq0}
+  \left\langle
+    \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},X
+  \right\rangle
+  \quad\text{dengan syarat}\quad
+  \left\langle
+    \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},X
+  \right\rangle=2.
+\end{equation}\]</span> Setiap titik layak berbentuk <span
+class="math inline">\(X=\begin{psmallmatrix}a&amp;1\\1&amp;b\end{psmallmatrix}\succeq0\)</span>,
+sehingga <span class="math inline">\(a,b\geq0\)</span> dan <span
+class="math inline">\(ab\geq1\)</span>. Barisan <span
+class="math inline">\(X_\varepsilon=\begin{psmallmatrix}\varepsilon&amp;1\\1&amp;1/\varepsilon\end{psmallmatrix}\)</span>
+memberi nilai objektif yang menuju nol ketika <span
+class="math inline">\(\varepsilon\downarrow0\)</span>. Jadi <span
+class="math inline">\(p^*=0\)</span>, tetapi infimum primal tidak
+tercapai. Dualnya tetap mempunyai solusi optimum bernilai nol; contoh
+ini memperingatkan bahwa ketercapaian primal tidak mengikuti hanya dari
+kesamaan nilai primal dan dual.</p>
+<p>Berikut gagasan geometri di balik teorema Slater. Definisikan
+himpunan nilai terganggu <span class="math display">\[\begin{equation}
+  \mathcal A=\left\{(u,v,t):\ \exists x\in D,\quad
+  f_i(x)\leq u_i,\ h(x)=v,\ f_0(x)\leq t\right\}
+\end{equation}\]</span> dan sinar terbuka <span
+class="math display">\[\begin{equation}
+  \mathcal B=\{(0,0,s):s&lt;p^*\}.
+\end{equation}\]</span> Kekonveksan fungsi-fungsi kendala membuat <span
+class="math inline">\(\mathcal A\)</span> konveks, dan <span
+class="math inline">\(\mathcal A\cap\mathcal B=\varnothing\)</span>.
+Teorema pemisahan memberi normal <span
+class="math inline">\((\lambda^*,\nu^*,\mu^*)\)</span>. Monotonisitas
+<span class="math inline">\(\mathcal A\)</span> terhadap <span
+class="math inline">\(u\)</span> dan <span
+class="math inline">\(t\)</span> memberi <span
+class="math inline">\(\lambda^*\geq0\)</span> dan <span
+class="math inline">\(\mu^*\geq0\)</span>. Kondisi Slater menyingkirkan
+<span class="math inline">\(\mu^*=0\)</span>, yaitu hiperbidang
+penyangga vertikal, sehingga <span
+class="math inline">\(\mu^*&gt;0\)</span> dan normal dapat dinormalkan
+menjadi <span class="math inline">\((\lambda^*,\nu^*,1)\)</span>.
+Ketaksamaan pemisahan kemudian menghasilkan <span
+class="math display">\[\begin{equation}
+  \inf_{x\in D}L(x,\lambda^*,\nu^*)\geq p^*.
+\end{equation}\]</span> Dualitas lemah memberi ketaksamaan sebaliknya;
+karena itu <span class="math inline">\(d^*=p^*\)</span> dan pengali dual
+optimum tercapai. Interpretasi yang sama dapat dinyatakan sebagai
+perpotongan maksimum atau titik bersama minimum dalam geometri
+perturbasi.</p>
+</section>
+<section id="interpretasi-titik-pelana" class="level2">
+<h2>Interpretasi titik pelana</h2>
+<p>Untuk Lagrangian <a href="#becker:eq:lagrangian"
+data-reference-type="eqref"
+data-reference="becker:eq:lagrangian">di atas</a>,
+masalah primal dan dual dapat ditulis sebagai <span
+class="math display">\[\begin{equation}
+  \begin{aligned}
+    p^*&amp;=\inf_x\sup_{\lambda\geq0,\nu}L(x,\lambda,\nu),\\
+    d^*&amp;=\sup_{\lambda\geq0,\nu}\inf_xL(x,\lambda,\nu).
+  \end{aligned}
+\end{equation}\]</span> Ketaksamaan minimaks <span
+class="math display">\[\begin{equation}
+  \sup_{\lambda\geq0,\nu}\inf_xL(x,\lambda,\nu)
+  \leq
+  \inf_x\sup_{\lambda\geq0,\nu}L(x,\lambda,\nu)
+\end{equation}\]</span> adalah bentuk titik-pelana dari dualitas
+lemah.</p>
+<div class="definition">
+<p>Tripel <span class="math inline">\((x^*,\lambda^*,\nu^*)\)</span>
+adalah titik pelana Lagrangian jika <span
+class="math inline">\(\lambda^*\geq0\)</span> dan <span
+class="math display">\[\begin{equation}
+    L(x^*,\lambda,\nu)
+    \leq L(x^*,\lambda^*,\nu^*)
+    \leq L(x,\lambda^*,\nu^*)
+\end{equation}\]</span> untuk setiap <span class="math inline">\(x\in
+D\)</span>, <span class="math inline">\(\lambda\geq0\)</span>, dan <span
+class="math inline">\(\nu\in\mathbb{R}^p\)</span>.</p>
+</div>
+<p>Sebagai contoh, pertimbangkan <span
+class="math display">\[\begin{equation}
+  \min_x\left\lVert x\right\rVert_1
+  \quad\text{dengan syarat}\quad
+  \left\lVert Ax-b\right\rVert_2^2\leq\varepsilon^2.
+\end{equation}\]</span> Lagrangiannya adalah <span
+class="math display">\[\begin{equation}
+  L(x,\lambda)=\left\lVert x\right\rVert_1
+  +\lambda\bigl(\left\lVert
+Ax-b\right\rVert_2^2-\varepsilon^2\bigr),\qquad\lambda\geq0.
+\end{equation}\]</span> Jika pengali optimum memenuhi <span
+class="math inline">\(\lambda^*&gt;0\)</span>, minimisasi Lagrangian
+terhadap <span class="math inline">\(x\)</span> ekuivalen, setelah
+dibagi dengan <span class="math inline">\(2\lambda^*\)</span>, dengan
+<span class="math display">\[\begin{equation}
+  \min_x \frac12\left\lVert Ax-b\right\rVert_2^2
+  +\frac{1}{2\lambda^*}\left\lVert x\right\rVert_1.
+\end{equation}\]</span> Jadi rumusan berkendala dan rumusan berpenalti
+berhubungan melalui pengali optimum. Hubungan ini tidak boleh diperoleh
+dengan membagi oleh <span class="math inline">\(\lambda^*\)</span> jika
+pengalinya nol.</p>
+</section>
+<section id="kondisi-karush-kuhn-tucker" class="level2">
+<h2>Kondisi Karush-Kuhn-Tucker</h2>
+<p>Andaikan fungsi-fungsi pada masalah <a href="#becker:eq:primal"
+data-reference-type="eqref"
+data-reference="becker:eq:primal">primal</a> dapat
+didiferensialkan. Tripel <span
+class="math inline">\((x^*,\lambda^*,\nu^*)\)</span> memenuhi kondisi
+KKT jika</p>
+<ol>
+<li><p><strong>stasioneritas:</strong> <span
+class="math inline">\(\nabla_xL(x^*,\lambda^*,\nu^*)=0\)</span>; pada
+kasus konveks tak mulus, bentuk yang sesuai adalah <span
+class="math inline">\(0\in\partial_xL(x^*,\lambda^*,\nu^*)\)</span>;</p></li>
+<li><p><strong>kelayakan primal:</strong> <span
+class="math inline">\(f_i(x^*)\leq0\)</span> dan <span
+class="math inline">\(h_j(x^*)=0\)</span>;</p></li>
+<li><p><strong>kelayakan dual:</strong> <span
+class="math inline">\(\lambda^*\geq0\)</span>;</p></li>
+<li><p><strong>kekomplementeran:</strong> <span
+class="math inline">\(\lambda_i^*f_i(x^*)=0\)</span> untuk setiap <span
+class="math inline">\(i=1,\ldots,m\)</span>.</p></li>
+</ol>
+<div class="theorem">
+<p>Andaikan optimum primal dan dual tercapai, dualitas kuat berlaku, dan
+<span class="math inline">\(x\mapsto L(x,\lambda^*,\nu^*)\)</span>
+memiliki syarat optimalitas Fermat yang berlaku pada <span
+class="math inline">\(x^*\)</span>. Maka pasangan optimum memenuhi
+kondisi KKT. Pernyataan ini tetap dapat dipakai pada masalah nonkonveks
+bila stasioneritas Lagrangian benar-benar mengikuti dari minimisasi
+globalnya dan seluruh syarat domain dipenuhi.</p>
+</div>
+<div class="theorem">
+<p>Jika <span class="math inline">\(f_0,f_1,\ldots,f_m\)</span> konveks,
+<span class="math inline">\(h_j\)</span> afin, dan suatu tripel memenuhi
+kondisi KKT, maka <span class="math inline">\(x^*\)</span> optimum
+primal, <span class="math inline">\((\lambda^*,\nu^*)\)</span> optimum
+dual, dan <span class="math inline">\(p^*=d^*\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Stasioneritas dan kekonveksan <span
+class="math inline">\(x\mapsto L(x,\lambda^*,\nu^*)\)</span> membuat
+<span class="math inline">\(x^*\)</span> peminimum global Lagrangian.
+Karena itu <span class="math display">\[\begin{equation}
+    \begin{aligned}
+      d^*&amp;\geq g(\lambda^*,\nu^*)
+        =\inf_xL(x,\lambda^*,\nu^*)\\
+      &amp;=L(x^*,\lambda^*,\nu^*)
+        =f_0(x^*)
+         +\sum_i\lambda_i^*f_i(x^*)
+         +\sum_j\nu_j^*h_j(x^*)\\
+      &amp;=f_0(x^*)\geq p^*.
+    \end{aligned}
+\end{equation}\]</span> Dualitas lemah memberi <span
+class="math inline">\(d^*\leq p^*\)</span>, sehingga semua ketaksamaan
+adalah kesamaan. ◻</p>
+</div>
+<div class="theorem">
+<p>Jika masalah primal konveks memenuhi kondisi Slater dan suatu solusi
+primal <span class="math inline">\(x^*\)</span> ada dengan nilai
+berhingga, maka terdapat pengali <span
+class="math inline">\((\lambda^*,\nu^*)\)</span> sedemikian sehingga
+tripel tersebut memenuhi kondisi KKT.</p>
+</div>
+<section id="contoh-proyeksi-pada-bola-ell1" class="level3">
+<h3>Contoh: proyeksi pada bola <span
+class="math inline">\(\ell^1\)</span></h3>
+<p>Proyeksi <span class="math inline">\(y\in\mathbb{R}^n\)</span> pada
+bola <span class="math inline">\(B_1(\tau)=\{x:\left\lVert
+x\right\rVert_1\leq\tau\}\)</span>, dengan <span
+class="math inline">\(\tau&gt;0\)</span>, menyelesaikan <span
+class="math display">\[\begin{equation}
+  \min_x \frac12\left\lVert x-y\right\rVert_2^2
+  \quad\text{dengan syarat}\quad \left\lVert x\right\rVert_1\leq\tau.
+\end{equation}\]</span> Kondisi KKT memberi <span
+class="math display">\[\begin{equation}
+  x_i=S_\lambda(y_i)
+  =\operatorname{sign}(y_i)\max\{|y_i|-\lambda,0\},
+  \qquad \lambda\geq0,
+\end{equation}\]</span> bersama <span class="math inline">\(\left\lVert
+x\right\rVert_1\leq\tau\)</span> dan <span
+class="math inline">\(\lambda(\left\lVert
+x\right\rVert_1-\tau)=0\)</span>. Jika <span
+class="math inline">\(\left\lVert y\right\rVert_1\leq\tau\)</span>, maka
+<span class="math inline">\(\lambda=0\)</span> dan <span
+class="math inline">\(x=y\)</span>. Jika <span
+class="math inline">\(\left\lVert y\right\rVert_1&gt;\tau\)</span>, maka
+<span class="math inline">\(\lambda&gt;0\)</span> adalah akar unik dari
+<span class="math display">\[\begin{equation}
+  \sum_{i=1}^{n}\max\{|y_i|-\lambda,0\}=\tau.
+\end{equation}\]</span> Ruas kiri kontinu, menurun, dan linear
+sepotong-sepotong dengan titik patah <span
+class="math inline">\(|y_i|\)</span>; akar dapat dicari dengan biseksi
+atau, lebih efisien, dengan mengurutkan titik patah. Identitas Moreau
+menjelaskan hubungan yang tepat: <span
+class="math display">\[\begin{equation}
+  \operatorname{prox}_{\tau\left\lVert \,\cdot\,\right\rVert_\infty}(y)
+  =y-\operatorname{proj}_{B_1(\tau)}(y).
+\end{equation}\]</span></p>
+<p>Kekomplementeran juga mengikuti dari kesamaan primal-dual. Untuk
+titik pelana optimum <span
+class="math inline">\((x^*,\lambda^*,\nu^*)\)</span> berlaku <span
+class="math display">\[\begin{equation}
+  f_0(x^*)
+  =L(x^*,\lambda^*,\nu^*)
+  =f_0(x^*)+\sum_i\lambda_i^*f_i(x^*),
+\end{equation}\]</span> karena kendala kesamaan lenyap. Setiap suku
+<span class="math inline">\(\lambda_i^*f_i(x^*)\leq0\)</span>, sehingga
+jumlah nol memaksa <span
+class="math inline">\(\lambda_i^*f_i(x^*)=0\)</span> untuk setiap <span
+class="math inline">\(i\)</span>.</p>
+</section>
+<section id="contoh-masalah-kuadratik-dengan-kendala-kesamaan"
+class="level3">
+<h3>Contoh: masalah kuadratik dengan kendala kesamaan</h3>
+<p>Pertimbangkan <span class="math display">\[\begin{equation}
+  \min_x \frac12 x^\top P x+q^\top x+r
+  \quad\text{dengan syarat}\quad Ax=b,
+  \qquad P\succeq0.
+\end{equation}\]</span> Kondisi KKT adalah <span
+class="math display">\[\begin{equation}
+  Px^*+q+A^\top\nu^*=0,
+  \qquad Ax^*=b,
+\end{equation}\]</span> atau sistem titik pelana <span
+class="math display">\[\begin{equation}
+  \begin{pmatrix}P&amp;A^\top\\A&amp;0\end{pmatrix}
+  \begin{pmatrix}x^*\\\nu^*\end{pmatrix}
+  =\begin{pmatrix}-q\\b\end{pmatrix}.
+\end{equation}\]</span> Setiap solusi sistem ini adalah solusi optimum
+masalah konveks tersebut. Solusi tunggal hanya dijamin jika matriks KKT
+nonsingular; satu syarat cukup yang umum adalah <span
+class="math inline">\(A\)</span> berperingkat baris penuh dan <span
+class="math inline">\(P\)</span> definit positif pada <span
+class="math inline">\(\ker(A)\)</span>.</p>
+</section>
+</section>
+<section id="perubahan-dan-batas-sumber" class="level2 unnumbered">
+<h2 class="unnumbered">Perubahan dan batas sumber</h2>
+<p>Edisi membetulkan batas penjumlahan Lagrangian, orientasi nilai
+primal pada dualitas lemah, hipotesis Slater dan KKT, definisi titik
+pelana, skala penalti norma satu, relasi Moreau untuk proyeksi bola
+norma satu, serta syarat ketunggalan sistem KKT kuadratik. Rentang
+program-linear 1322-1397, 1406-1413, dan 1727-1730 tidak masuk O015.
+Rincian beridentitas sumber ada dalam ledger dan manifest edisi.</p>
+</section>
+<section id="atribusi-lisensi-dan-nondukungan"
+class="level2 unnumbered">
+<h2 class="unnumbered">Atribusi, lisensi, dan nondukungan</h2>
+<p>Sumber: Stephen Becker, repositori
+<em>convex-optimization-class</em>; catatan ketik <em>APPM5720Notes</em>
+oleh Mitchell Krock; commit
+<code>98ed6930084c435ba0f675f7646ced1f2fd8729e</code>; <a
+href="https://github.com/stephenbeckr/convex-optimization-class"
+class="uri">https://github.com/stephenbeckr/convex-optimization-class</a>.
+Materi donor menyatakan bahwa bagian dualitas mengikuti Bab 5 Boyd dan
+Vandenberghe (B&amp;V), merujuk ke §5.3 untuk ilustrasi, dan mengaitkan
+satu interpretasi geometri dengan Bertsekas; kredit turunan tersebut
+dipertahankan. Materi donor berada di bawah Lisensi MIT. Terjemahan,
+koreksi, dan penghubung mandiri tersedia berdasarkan Creative Commons
+Attribution-ShareAlike 4.0 International, <a
+href="https://creativecommons.org/licenses/by-sa/4.0/"
+class="uri">https://creativecommons.org/licenses/by-sa/4.0/</a>. Stephen
+Becker, Mitchell Krock, dan University of Colorado Boulder tidak
+menyusun, memeriksa, menyetujui, atau mendukung edisi ini.</p>
+</section>
+<section id="pemberitahuan-lisensi-mit-sumber"
+class="level2 unnumbered">
+<h2 class="unnumbered">Pemberitahuan Lisensi MIT sumber</h2>
+<pre><code>MIT License
+
+Copyright (c) 2017 Stephen Becker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+</section>
+</section>
+</body>
+</html>

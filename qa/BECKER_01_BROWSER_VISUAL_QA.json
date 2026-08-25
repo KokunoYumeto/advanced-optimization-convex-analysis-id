@@ -1,0 +1,65 @@
+{
+  "schema": "o015-becker-01-browser-visual-qa-v1",
+  "result": "pass",
+  "artifact": {
+    "path": "output/html/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+    "bytes": 30131,
+    "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0"
+  },
+  "browser": "Codex in-app browser",
+  "mathjax_containers": 118,
+  "viewports": [
+    {
+      "requested": [1280, 720],
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "page_level_horizontal_overflow": false,
+      "title_box": {"left": 24, "right": 1240, "width": 1216, "height": 50},
+      "top_level_box": {"left": 24, "right": 1240, "width": 1216},
+      "centered_page_filling_layout": true
+    },
+    {
+      "requested": [768, 1024],
+      "document_client_width": 753,
+      "document_scroll_width": 753,
+      "page_level_horizontal_overflow": false,
+      "top_level_box": {"left": 10, "right": 743, "width": 734},
+      "centered_page_filling_layout": true
+    },
+    {
+      "requested": [390, 844],
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "page_level_horizontal_overflow": false,
+      "display_math_blocks": 26,
+      "horizontally_scrollable_display_math_blocks": 15,
+      "all_scrollable_display_math_blocks_have_overflow_x_auto": true,
+      "inline_math_blocks_with_scrollbars": 0,
+      "license_block_reflows_without_page_overflow": true
+    }
+  ],
+  "fragment_links": {
+    "unresolved": 0,
+    "raw_source_label_text_visible": 0
+  },
+  "inherited_credit_markers": {
+    "boyd_and_vandenberghe_visible_occurrences": 2,
+    "bertsekas_visible_occurrences": 2
+  },
+  "console_warnings_or_errors": 0,
+  "visual_checks": {
+    "desktop_title_and_toc": "pass",
+    "tablet_title_toc_and_status_panel": "pass",
+    "mobile_title_and_toc": "pass",
+    "mobile_primal_and_lagrangian_equations": "pass",
+    "mobile_corrected_saddle_domain": "pass",
+    "corrected_slater_separation_paragraph": "pass",
+    "mobile_license_boundary": "pass",
+    "clipping_overlap_or_broken_glyphs": 0
+  },
+  "build_consistency": {
+    "report": "qa/BECKER_01_HTML_BUILD.json",
+    "byte_identical_builds": true
+  },
+  "upstream_contact": false
+}

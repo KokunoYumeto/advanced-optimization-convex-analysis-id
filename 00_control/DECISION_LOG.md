@@ -602,3 +602,49 @@ only that destination, not production. The active cursor is now Becker commit
 `98ed6930084c435ba0f675f7646ced1f2fd8729e`, which remains unadmitted until its
 official archive/license, nonduplicative subset, marked `../preamble.tex`
 repair, and deterministic build pass. No upstream contact occurred.
+
+## D90-0051 — Freeze Becker authority and admit only the source-closed donor
+
+Decision: bind the official repository at commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree
+`f04670e3f7be3d4836c380fd8bd31883e0b992c9`. The 164,525,001-byte archive,
+SHA-256 `52ec99acf2bfb7f4db308a7b0988ef9cfd28404a822c5cf0ac922d7f43c41821`,
+contains 180 files / 168,574,596 bytes and matches every official API blob. The
+1,071-byte root MIT witness has SHA-256
+`c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac`.
+`TypedNotes/APPM5720Notes.tex`, credited to Mitchell Krock, is the sole
+source-closed donor. Reject the Jaden Wang master/39 modules: 40 preamble
+references fail and 24 referenced figures are absent, so repair would not
+produce the official source closure.
+
+Freeze Becker-01 as five exact ranges: 1263–1321, 1398–1405, 1414–1499,
+1652–1726, and 1731–1743. Exclude LP ranges 1322–1397, 1406–1413, and
+1727–1730 for O018. The 12,294-byte combined English witness has SHA-256
+`20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565`.
+Keep BSD-3 utilities, GPLv3 ADiGator code, demos, and Canvas-only solutions
+outside automatic admission. No upstream contact occurred.
+
+## D90-0052 — Admit Becker-01 after corrected deterministic reader gates
+
+Decision: admit the independent Indonesian Lagrangian-duality, Slater,
+saddle-point, and KKT module. The 12,924-byte body and 7,330-byte wrapper have
+SHA-256 `ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce`
+and `85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d`.
+Two clean builds yield the same 12-page PDF and responsive HTML, respectively
+487,534 / 30,131 bytes with SHA-256
+`c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615`
+and `b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0`.
+Math, desktop/tablet/mobile browser, all-page PDF visual, independent semantic
+rereview, rights, source-boundary, and release-package gates pass. The final
+rereview preserves Becker/Krock plus inherited Boyd–Vandenberghe/Bertsekas
+credits and verifies the repaired Slater multiplier signs and saddle domains.
+
+The additive backend preserves the exact 3,096-record Habring baseline and
+adds one 224-record Becker namespace, yielding 3,320 unique records. JSONL and
+CSV are 2,552,754 / 3,054,550 bytes with SHA-256
+`48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67`
+and `baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f`.
+The 21-entry compact release ZIP is 511,931 bytes / SHA-256
+`5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281`.
+Publish and anonymously verify this checkpoint before advancing to the frozen
+Douglas–Rachford slice. The larger O015 coursebook remains partial.

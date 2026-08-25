@@ -1,0 +1,253 @@
+{
+  "accessibility": {
+    "pdf_language": "id-ID",
+    "pdf_searchable": true,
+    "pdf_tagged": false,
+    "responsive_semantic_html": true
+  },
+  "credits": [
+    "Stephen Becker",
+    "Mitchell Krock"
+  ],
+  "excluded_from_compact_payload": [
+    "164.5 MB official source archive (identity remains in authority evidence)",
+    "full multi-megabyte backend dataset (maintained by the edition repository)",
+    "build trees, caches, rendered QA images, credentials, and bulk provenance dumps"
+  ],
+  "files": [
+    {
+      "bytes": 30131,
+      "media_type": "text/html",
+      "path": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+      "role": "responsive semantic HTML reader",
+      "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0"
+    },
+    {
+      "bytes": 487534,
+      "media_type": "application/pdf",
+      "path": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+      "role": "primary PDF reader",
+      "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615"
+    },
+    {
+      "bytes": 1071,
+      "media_type": "text/plain",
+      "path": "LICENSE_BECKER_MIT.txt",
+      "role": "exact root MIT notice from the frozen official archive",
+      "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac"
+    },
+    {
+      "bytes": 1487,
+      "media_type": "text/markdown",
+      "path": "LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "role": "CC BY-SA 4.0 scope for translation, corrections, and new prose",
+      "sha256": "bd3de022646c5827ddccbd2406c8fd92aa2276191b8fd94364141dbeb5f84f11"
+    },
+    {
+      "bytes": 2919,
+      "media_type": "text/markdown",
+      "path": "README_BECKER_01.md",
+      "role": "reader-first documentation, scope, credits, rights, and caveats",
+      "sha256": "c0fae658ad361e616f0a708a9a70a3b60eb667b3f21b5dc8265c11197c73598c"
+    },
+    {
+      "bytes": 8935,
+      "media_type": "text/markdown",
+      "path": "authority/BECKER_AUTHORITY_FREEZE.md",
+      "role": "final Becker authority and editable-closure report",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7"
+    },
+    {
+      "bytes": 2991,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_BACKEND_EXTENSION.json",
+      "role": "stable-ID backend extension receipt",
+      "sha256": "deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed"
+    },
+    {
+      "bytes": 2187,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_BROWSER_VISUAL_QA.json",
+      "role": "responsive browser and visual QA receipt",
+      "sha256": "6206858c25bcf9dc3f0caaaccaa96d29dd2cdf496e020771663c91f617d09dc7"
+    },
+    {
+      "bytes": 699,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_HTML_BUILD.json",
+      "role": "deterministic HTML build receipt",
+      "sha256": "d6b152f6d7f9da95e274b328623c59f391adb1b12edb122aafede04f1062606d"
+    },
+    {
+      "bytes": 2698,
+      "media_type": "text/markdown",
+      "path": "qa/BECKER_01_INDEPENDENT_REREVIEW.md",
+      "role": "independent final semantic rereview",
+      "sha256": "5dc7624654e142de950a79a863d46f8dd20bd6776fd615dc50b92788d4d21625"
+    },
+    {
+      "bytes": 13799,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_MATH_VALIDATION.json",
+      "role": "open mathematics validation receipt",
+      "sha256": "ed11bcc47d9545b1b8c47ac0ca1aca8b9f27cc23331c4389aeabde7cdaed790b"
+    },
+    {
+      "bytes": 3868,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_PDF_BUILD.json",
+      "role": "deterministic PDF build receipt",
+      "sha256": "e1ae5997f3901e504e000a9f6c35eb439da17a8419594e7d0d678e3a886207ed"
+    },
+    {
+      "bytes": 1723,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_PDF_VISUAL_QA.json",
+      "role": "PDF visual inspection receipt",
+      "sha256": "6c068de1d31d382f016de4f41949a936005ef8fcdd137721fe93ba9901104fea"
+    },
+    {
+      "bytes": 2383,
+      "media_type": "application/json",
+      "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "role": "source-boundary receipt",
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2"
+    },
+    {
+      "bytes": 12294,
+      "media_type": "application/x-tex",
+      "path": "source/en/becker-01-lagrange-slater-kkt-source.tex",
+      "role": "exact extracted English source witness",
+      "sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565"
+    },
+    {
+      "bytes": 7330,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+      "role": "Indonesian standalone reader wrapper",
+      "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d"
+    },
+    {
+      "bytes": 12924,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "role": "Indonesian translated body",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+    },
+    {
+      "bytes": 4465,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/macros-id.tex",
+      "role": "minimum shared Indonesian LaTeX macros",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/shinybook.cls",
+      "role": "minimum shared LaTeX document class",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  ],
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "nonendorsement": "Independent edition; no endorsement by the authors, University of Colorado Boulder, or other source parties.",
+  "primary_reader": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+  "qa": {
+    "backend": "pass",
+    "backend_dataset_packaged": false,
+    "browser": "pass",
+    "html_build": "pass",
+    "new_backend_records": 224,
+    "open_math_gates": 10,
+    "pdf_build": "pass",
+    "pdf_visual": "pass",
+    "source_boundary": "pass",
+    "stable_id_namespace": "d90.becker.98ed693.b01.*"
+  },
+  "reader_order": [
+    "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+    "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html"
+  ],
+  "release_date": "2026-08-25",
+  "rights": {
+    "component_specific": true,
+    "indonesian_translation_corrections_connective_text_and_new_release_documentation": "CC BY-SA 4.0; scope in LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+    "no_blanket_license_claim": true,
+    "source_material_and_english_witness": "MIT; full notice in LICENSE_BECKER_MIT.txt"
+  },
+  "schema": "o015-becker-01-compact-release-v1",
+  "sha256sums_scope": "every ZIP member except SHA256SUMS itself",
+  "source_authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "explicit_exclusions": [
+      {
+        "lines": "1322-1397",
+        "reason": "LP-duality examples and mnemonic material belong to O018; one malformed adjacent example is also excluded rather than silently repaired into O015."
+      },
+      {
+        "lines": "1406-1413",
+        "reason": "The LP-specific strong-duality aside belongs to O018."
+      },
+      {
+        "lines": "1727-1730",
+        "reason": "The LP complementary-slackness example belongs to O018; the general KKT statement remains included."
+      }
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "repository_author": "Stephen Becker",
+    "root_license_sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+    "selected_ranges": [
+      {
+        "bytes": 2424,
+        "first_line": 1263,
+        "id": "lagrangian-weak-duality",
+        "last_line": 1321,
+        "line_count": 59,
+        "sha256": "caa06fcbf218428a7ae4d91be208607548273e913b55a441adf5b4538a91c677"
+      },
+      {
+        "bytes": 572,
+        "first_line": 1398,
+        "id": "slater-statement",
+        "last_line": 1405,
+        "line_count": 8,
+        "sha256": "f02825fce27c6d87f73b3f04c5918f21a30d9b44bf34ff3015d94692a8fb7331"
+      },
+      {
+        "bytes": 4493,
+        "first_line": 1414,
+        "id": "slater-geometry-and-saddle",
+        "last_line": 1499,
+        "line_count": 86,
+        "sha256": "aa8fc084cbb6dca65ddb526d3d69ec0e06432e408ac2383e07ca26986abc5452"
+      },
+      {
+        "bytes": 3765,
+        "first_line": 1652,
+        "id": "kkt-core",
+        "last_line": 1726,
+        "line_count": 75,
+        "sha256": "88d7f14452d407c186a99c58dc14d281c916ec8f73b4e29ce7dc42a8fb489ba4"
+      },
+      {
+        "bytes": 644,
+        "first_line": 1731,
+        "id": "equality-qp-kkt-system",
+        "last_line": 1743,
+        "line_count": 13,
+        "sha256": "4626495d63c61fefcbf1295b2a0ed6854350e59ac0d6cfbcc73e93815df7afa6"
+      }
+    ],
+    "source_path": "TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "status": {
+    "larger_course_edition": "partial",
+    "module": "complete at the admitted source boundary"
+  },
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Modul Becker 1: Dualitas Lagrange, Slater, dan KKT — Edisi Bahasa Indonesia",
+  "zip_identity_location": "local-verification-becker-01.json outside the ZIP"
+}

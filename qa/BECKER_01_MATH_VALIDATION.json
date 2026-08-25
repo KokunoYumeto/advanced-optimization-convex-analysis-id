@@ -1,0 +1,536 @@
+{
+  "determinism": {
+    "json": "UTF-8, LF, sorted keys, two-space indentation",
+    "observed_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9",
+      "scipy": "1.17.1"
+    },
+    "pinned_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9",
+      "scipy": "1.17.1"
+    },
+    "randomness": "none",
+    "thread_environment": {
+      "BLIS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "failures": [],
+  "gate_count": 10,
+  "gates": [
+    {
+      "details": {
+        "observed": {
+          "numpy": "2.4.4",
+          "python": "3.13.9",
+          "scipy": "1.17.1"
+        },
+        "pinned": {
+          "numpy": "2.4.4",
+          "python": "3.13.9",
+          "scipy": "1.17.1"
+        }
+      },
+      "gate": "pinned_open_python_stack",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 8
+      },
+      "gate": "live_target_mathematical_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 4
+      },
+      "gate": "live_wrapper_provenance_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "combined_witness_sha256": "20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565",
+        "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "selected_ranges": [
+          [
+            1263,
+            1321,
+            "caa06fcbf218428a7ae4d91be208607548273e913b55a441adf5b4538a91c677"
+          ],
+          [
+            1398,
+            1405,
+            "f02825fce27c6d87f73b3f04c5918f21a30d9b44bf34ff3015d94692a8fb7331"
+          ],
+          [
+            1414,
+            1499,
+            "aa8fc084cbb6dca65ddb526d3d69ec0e06432e408ac2383e07ca26986abc5452"
+          ],
+          [
+            1652,
+            1726,
+            "88d7f14452d407c186a99c58dc14d281c916ec8f73b4e29ce7dc42a8fb489ba4"
+          ],
+          [
+            1731,
+            1743,
+            "4626495d63c61fefcbf1295b2a0ed6854350e59ac0d6cfbcc73e93815df7afa6"
+          ]
+        ],
+        "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+        "upstream_contact": false
+      },
+      "gate": "admitted_source_boundary",
+      "pass": true
+    },
+    {
+      "details": {
+        "A": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "C": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "analytic_nonattainment": {
+          "conclusion": "objective 0 cannot be attained when X_12=1",
+          "if_objective_a_is_zero_then_determinant": -1,
+          "psd_requires_nonnegative_determinant": true
+        },
+        "constraint": "<A,X>=2",
+        "max_constraint_abs_residual": 0.0,
+        "max_objective_abs_residual": 0.0,
+        "minimum_sequence_eigenvalue": 0.0,
+        "objective_halving": true,
+        "sequence": [
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              2.0
+            ],
+            "epsilon": 1.0,
+            "objective": 1.0
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              2.5
+            ],
+            "epsilon": 0.5,
+            "objective": 0.5
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              4.25
+            ],
+            "epsilon": 0.25,
+            "objective": 0.25
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              8.125
+            ],
+            "epsilon": 0.125,
+            "objective": 0.125
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              16.0625
+            ],
+            "epsilon": 0.0625,
+            "objective": 0.0625
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              32.03125
+            ],
+            "epsilon": 0.03125,
+            "objective": 0.03125
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              64.015625
+            ],
+            "epsilon": 0.015625,
+            "objective": 0.015625
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              128.0078125
+            ],
+            "epsilon": 0.0078125,
+            "objective": 0.0078125
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              256.00390625
+            ],
+            "epsilon": 0.00390625,
+            "objective": 0.00390625
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              512.001953125
+            ],
+            "epsilon": 0.001953125,
+            "objective": 0.001953125
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              1024.0009765625
+            ],
+            "epsilon": 0.0009765625,
+            "objective": 0.0009765625
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              2048.00048828125
+            ],
+            "epsilon": 0.00048828125,
+            "objective": 0.00048828125
+          },
+          {
+            "constraint_inner_product": 2.0,
+            "eigenvalues": [
+              0.0,
+              4096.000244140625
+            ],
+            "epsilon": 0.000244140625,
+            "objective": 0.000244140625
+          }
+        ]
+      },
+      "gate": "sdp_feasible_sequence_and_unattained_infimum",
+      "pass": true
+    },
+    {
+      "details": {
+        "analytic_slack_determinant": "-y^2; PSD therefore forces y=0",
+        "dual": "maximize 2y subject to C-yA positive semidefinite",
+        "dual_optimum": 0.0,
+        "lagrangian_convention": "L(X,y)=<C,X>+y(2-<A,X>)",
+        "max_determinant_identity_abs_residual": 1.7763568394002505e-15,
+        "sample_records": [
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": -6.0,
+            "slack_determinant": -9.000000000000002,
+            "slack_eigenvalues": [
+              -2.54138126514911,
+              3.5413812651491092
+            ],
+            "y": -3.0
+          },
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": -2.0,
+            "slack_determinant": -1.0,
+            "slack_eigenvalues": [
+              -0.6180339887498948,
+              1.618033988749895
+            ],
+            "y": -1.0
+          },
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": -0.25,
+            "slack_determinant": -0.015625000000000007,
+            "slack_eigenvalues": [
+              -0.015388203202207566,
+              1.0153882032022077
+            ],
+            "y": -0.125
+          },
+          {
+            "dual_feasible": true,
+            "dual_objective_2y": 0.0,
+            "slack_determinant": 0.0,
+            "slack_eigenvalues": [
+              0.0,
+              1.0
+            ],
+            "y": 0.0
+          },
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": 0.25,
+            "slack_determinant": -0.015625000000000007,
+            "slack_eigenvalues": [
+              -0.015388203202207566,
+              1.0153882032022077
+            ],
+            "y": 0.125
+          },
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": 2.0,
+            "slack_determinant": -1.0,
+            "slack_eigenvalues": [
+              -0.6180339887498948,
+              1.618033988749895
+            ],
+            "y": 1.0
+          },
+          {
+            "dual_feasible": false,
+            "dual_objective_2y": 6.0,
+            "slack_determinant": -9.000000000000002,
+            "slack_eigenvalues": [
+              -2.54138126514911,
+              3.5413812651491092
+            ],
+            "y": 3.0
+          }
+        ],
+        "smallest_checked_primal_objective": 0.000244140625
+      },
+      "gate": "sdp_dual_optimum_and_weak_duality",
+      "pass": true
+    },
+    {
+      "details": {
+        "active_coordinates": 3,
+        "complementarity_abs_residual": 1.4802973661668755e-15,
+        "lambda": 1.6666666666666667,
+        "projection": [
+          1.3333333333333333,
+          -0.0,
+          0.0,
+          -2.333333333333333,
+          0.33333333333333326
+        ],
+        "projection_l1_norm": 3.999999999999999,
+        "scipy_slsqp": {
+          "feasibility_violation": 1.3322676295501878e-14,
+          "iterations": 12,
+          "max_abs_solution_error": 4.218847493575595e-15,
+          "solution": [
+            1.3333333333333375,
+            -2.035129457317304e-15,
+            1.5558908414189663e-15,
+            -2.333333333333336,
+            0.3333333333333365
+          ],
+          "status": 0,
+          "success": true
+        },
+        "stationarity_max_abs_residual": 2.220446049250313e-16,
+        "subgradient": [
+          1.0,
+          -0.6,
+          0.3,
+          -1.0000000000000002,
+          1.0
+        ],
+        "tau": 4.0,
+        "y": [
+          3.0,
+          -1.0,
+          0.5,
+          -4.0,
+          2.0
+        ]
+      },
+      "gate": "l1_ball_projection_kkt_and_independent_solver",
+      "pass": true
+    },
+    {
+      "details": {
+        "epigraph_feasibility_violation": 1.887379141862766e-14,
+        "epigraph_t": 1.6666666665238097,
+        "identity": "prox_{tau ||.||_infinity}(y) = y - projection_{B_1(tau)}(y)",
+        "independent_prox_solution": [
+          1.6666666665238286,
+          -0.9999999999772554,
+          0.4999999999886277,
+          -1.6666666665238266,
+          1.6666666665238274
+        ],
+        "max_abs_identity_residual": 1.4284040616985294e-10,
+        "scipy_slsqp": {
+          "iterations": 13,
+          "status": 0,
+          "success": true
+        },
+        "y_minus_projection": [
+          1.6666666666666667,
+          -1.0,
+          0.5,
+          -1.666666666666667,
+          1.6666666666666667
+        ]
+      },
+      "gate": "corrected_moreau_identity",
+      "pass": true
+    },
+    {
+      "details": {
+        "A": [
+          [
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "A_row_rank": 2,
+        "KKT_min_singular_value": 0.31561654271320994,
+        "P": [
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            4.0
+          ]
+        ],
+        "P_min_eigenvalue": 2.0,
+        "b": [
+          1.0,
+          0.5
+        ],
+        "dual_value": 1.21875,
+        "duality_gap_abs": 0.0,
+        "feasibility_max_abs_residual": 0.0,
+        "kkt_solution_nu": [
+          -1.0,
+          0.5
+        ],
+        "kkt_solution_x": [
+          0.75,
+          0.25,
+          0.25
+        ],
+        "primal_value": 1.21875,
+        "q": [
+          -0.5,
+          -0.25,
+          -1.5
+        ],
+        "r": 1.25,
+        "scipy_slsqp": {
+          "feasibility_max_abs_residual": 0.0,
+          "iterations": 4,
+          "max_abs_solution_error": 5.551115123125783e-17,
+          "solution": [
+            0.75,
+            0.25,
+            0.25000000000000006
+          ],
+          "status": 0,
+          "success": true
+        },
+        "stationarity_max_abs_residual": 0.0
+      },
+      "gate": "equality_qp_kkt_solution_and_strong_duality",
+      "pass": true
+    },
+    {
+      "details": {
+        "coefficient_1_over_2lambda": "3/14",
+        "identity": "L/(2 lambda) = residual_squared/2 + l1/(2 lambda) - epsilon_squared/2",
+        "lambda": "7/3",
+        "penalty_form_exact": "307/280",
+        "scaled_lagrangian_exact": "307/280"
+      },
+      "gate": "penalty_scaling_coefficient",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "source_boundary": {
+      "bytes": 2383,
+      "lines": 76,
+      "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2"
+    },
+    "target": {
+      "bytes": 12924,
+      "lines": 348,
+      "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+    },
+    "validator": {
+      "bytes": 22090,
+      "lines": 624,
+      "path": "qa/validate_becker_lagrange_kkt_math.py",
+      "sha256": "7e2c2e370454e7cab486fd02ee722608185d81ebf6b027da992cf4de97bcf7b3"
+    },
+    "wrapper": {
+      "bytes": 7330,
+      "lines": 145,
+      "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+      "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d"
+    }
+  },
+  "schema": "o015-becker-01-open-math-validation-v1",
+  "scope": {
+    "numerical_witnesses_are_not_proofs": true,
+    "unit": "Becker module 1: Lagrange duality, Slater, and KKT",
+    "upstream_contact": false
+  },
+  "status": "PASS",
+  "tolerances": {
+    "algebra_abs": 5e-13,
+    "eigenvalue_abs": 5e-12,
+    "solver_abs": 2e-07,
+    "solver_feasibility_abs": 2e-08
+  }
+}

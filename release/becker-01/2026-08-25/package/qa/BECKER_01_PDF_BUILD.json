@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "bytes": 487534,
+    "encrypted": false,
+    "language": "id-ID",
+    "media_boxes": [
+      [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ]
+    ],
+    "missing_markers": [],
+    "pages": 12,
+    "path": "output/pdf/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+    "required_markers": [
+      "dualitas lagrange",
+      "kondisi slater",
+      "dualitas lemah",
+      "interpretasi titik pelana",
+      "karush-kuhn-tucker",
+      "proyeksi pada bola",
+      "pemberitahuan lisensi mit",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "searchable_text_bytes": 22970,
+    "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615",
+    "tagged": false
+  },
+  "byte_identical_clean_builds": true,
+  "inputs": [
+    {
+      "bytes": 7330,
+      "path": "source/id-ID/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex",
+      "sha256": "85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d"
+    },
+    {
+      "bytes": 12924,
+      "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+    },
+    {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 2383,
+      "path": "qa/BECKER_01_SOURCE_BOUNDARY.json",
+      "sha256": "abe1c8c46c5e3c94f489e8e81447587d075d55c643f10e6c2f5065349da32da2"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-01\\determinism\\run1",
+        "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex"
+      ],
+      "console_sha256": [
+        "46669fef274b70d61b16403af5288de3a278e583ed7fa8ceb25f12205905b19d",
+        "236348157456642bbcb5762b3e22717868d37f3f962ea206c44e07e56040724f"
+      ],
+      "directory": "build/becker-01/determinism/run1",
+      "log": {
+        "bytes": 101139,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "sha256": "bdd1d8ac8fd994a7e44f77308a51c390513e34c66c4a89b52729856bbb94cd39",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 487534,
+        "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615"
+      }
+    },
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-01\\determinism\\run2",
+        "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.tex"
+      ],
+      "console_sha256": [
+        "913d4d1dc78225ecdc6912e3747cb749ac2db97031bc69026f90ed65e4953207",
+        "6f34b828bccfeb3cb93fa1f01f49e0bc79c8c0bc8da94cbe51580c0f176f8715"
+      ],
+      "directory": "build/becker-01/determinism/run2",
+      "log": {
+        "bytes": 101139,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "sha256": "1fa853873d7e00de3d54117de049f94526148bffb9a1c1dcc78b9d0bf786605b",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 487534,
+        "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615"
+      }
+    }
+  ],
+  "schema": "o015-becker-01-pdf-build-v1",
+  "source_date_epoch": "1782268665",
+  "upstream_contact": false
+}

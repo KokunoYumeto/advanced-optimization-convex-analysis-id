@@ -1,9 +1,9 @@
 # O015 current state
 
-As of: 2026-08-24  
+As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: Habring v1 is the canonical structured-source spine and active production lane; MIT L01--L11/pages 2--97 are admitted as a separately licensed companion with a 2,472-record backend and are publicly preserved on GitHub and Zenodo with full anonymous readback; MIT page 98 is a dormant companion cursor
+Status: complete Habring v1 spine and Becker-01 are admitted; the protected additive backend has 3,320 records; Habring is public and Becker-01 awaits one GitHub/Zenodo preservation transaction; Douglas–Rachford is the next post-publication source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -14,10 +14,10 @@ The controlling architecture receipt is `C:/Users/Floris/Documents/interlanguage
 ## Selected primary authority
 
 - Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv `2607.11664v1`: exact 230,116-byte source tar, SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`; 836,977-byte / 84-page PDF, SHA-256 `d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d`; CC BY 4.0. Its modular TeX/class/figures/BibLaTeX/README closure is the canonical editable spine.
-- Stephen Becker's MIT-licensed TeX course at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` is only a bounded future supplement. Admit no module until the exact nonduplicative subset, component rights, `../preamble.tex` repair, and deterministic build close.
+- Stephen Becker's MIT-licensed TeX course is frozen at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`. `TypedNotes/APPM5720Notes.tex` is the sole source-closed donor; Becker-01 is admitted. The broken Jaden master remains excluded rather than repaired. Douglas–Rachford and variance reduction remain gated candidates.
 - MIT OCW 6.253, Royer notes/labs, and Penn MATH 555 retain their exact authority and separate licenses as companions. MIT pages 2--97 are accepted and preserved; no Athena Scientific figure byte or layout is admitted.
 
-The finite original layer must close unified KKT/Slater/Lagrangian duality, modern stochastic methods, variational inequalities and maximal-monotone/resolvent/splitting material, connective proofs, substantive exercises, and complete solutions. Imports remain component-distinct.
+The finite original layer must close assessment and connective proofs for the admitted KKT/Slater/Lagrangian progression, modern stochastic methods, variational inequalities and maximal-monotone/resolvent/splitting material, substantive exercises, and complete solutions. Imports remain component-distinct.
 
 ## Admitted MIT first-topic block
 
@@ -52,15 +52,15 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified public version: `10.5281/zenodo.22086656`, explicitly incomplete through MIT L11 / complete-notes pages 86--97. It inherits 90 files, adds eight L11 files, and passed anonymous exact-byte readback for all 98 files. The sanitized readback is `release/zenodo/2026-08-24-mit-l11/zenodo-public-readback-mit-l11.json` (26,639 bytes; SHA-256 `008175e80a2e13dbf4ce3af14a1428177d3b78d3469512fd04d1f365e692c101`).
-- Figshare article `33314733`, DOI `10.6084/m9.figshare.33314733.v2`, is the single public reader-first Habring Chapters 3--9 work item under exact CC BY 4.0. Its first file is the verified 103-page combined reader, followed by a clean-build-tested source ZIP, exact license, manifest, and checksums. Anonymous readback matched all five files and the 28 inner source-manifest payloads. It appears once in project `280296` and once in collection `8668413` / version DOI `10.6084/m9.figshare.c.8668413.v30`. No Penn byte is present.
-- GitHub access was reinstated by the provider on 2026-08-22. The latest verified checkpoint is public in the existing repository at commit `c51e1131c34e6e937197ee118b072269a5a4af23` / tree `464b8bad46b862842f8970df290d8ba4fbc0efba`; all 50 changed L11 paths passed immutable anonymous raw-file readback. No replacement repository was created.
+- Current verified Zenodo version: `10.5281/zenodo.22088305`, exactly 100 files with all 98 inherited files byte-identical plus the complete Habring PDF and comprehensive continuation ZIP. Full anonymous readback passed. Becker-01 must advance this same concept; no duplicate concept is permitted.
+- Current verified GitHub content: commit `46d5753e853397e013d21b01872d789f7ee07a63`; final preservation evidence is public through descendant `42e9c6a4bd98d0583335382d33355ff70e1bedde`, tree `9490cf09028b97026318eb0d5d4ec4fbfe85dcf9`. Becker-01 must advance this same repository.
+- Figshare article `33314733` remains the intended Habring-only lineage, but authenticated requests return `403 InactiveAccount`; zero mutation occurred. This destination failure does not hold production and does not authorize a replacement item.
 
-The GitHub, Zenodo, and Figshare checkpoint-preservation transactions are complete through L11. MIT L01--L11 are preserved additively in the existing GitHub and Zenodo lineages. The Habring-only Figshare item remains untouched because its scalar CC BY 4.0 license cannot host the MIT NC-SA component. Active production now returns to the Habring spine; MIT page 98 is dormant.
+Habring and all MIT companion releases have complete public-byte evidence. Becker-01 is locally release-ready but not yet claimed public. MIT page 98 is dormant.
 
 ## Known incomplete surfaces
 
-Habring Chapters 3--9 and MIT pages 2--97 are admitted, but the canonical structured spine and original closure remain incomplete. Becker's subset is not yet frozen or admitted. Unified KKT/duality, modern stochastic, variational/monotone, exercises and complete solutions, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Human/native-speaker Indonesian review remains unrecorded optional evidence, not a hold. No final-corpus claim is allowed.
+The complete Habring v1 spine, MIT pages 2–97 companion, and Becker-01 are admitted, but the original course closure remains incomplete. Douglas–Rachford, rigorous variance reduction, stochastic proximal/mirror/minibatch methods, variational/maximal-monotone/resolvent theory, exercises and complete solutions, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Optional human evidence is not a hold. No final-corpus claim is allowed.
 
 ## Exact continuation (historical pre-L02 wording)
 
@@ -832,3 +832,69 @@ bytes). The sanitized receipt is 13,489 bytes / SHA-256
 `4c06f305356da35a7fc66794425e8d2bb45d020705a6fcfac16a7b3ea84e1e90`.
 This closes the publication-receipt checkpoint; the active production cursor
 remains the Becker freeze/build/deduplication gate.
+
+## 2026-08-25 controlling refresh — Becker-01 admitted; preservation pending
+
+The final Habring evidence descendant supersedes the last sentence above as a
+public-evidence locator: GitHub commit
+`42e9c6a4bd98d0583335382d33355ff70e1bedde`, tree
+`9490cf09028b97026318eb0d5d4ec4fbfe85dcf9`, parent
+`90062e1d78f41011ba350c88f07ebef44de80365`, exposes five evidence files / 
+232,442 bytes with exact anonymous readback. Its 1,865-byte receipt has
+SHA-256 `c544f0ec524221ef4196caaaa882b015287406ca4b8c24a05d8fe62c6882ab55`.
+It changes no Habring content or Zenodo release byte.
+
+Becker authority is now frozen at commit
+`98ed6930084c435ba0f675f7646ced1f2fd8729e` / tree
+`f04670e3f7be3d4836c380fd8bd31883e0b992c9`. The 164,525,001-byte archive,
+SHA-256 `52ec99acf2bfb7f4db308a7b0988ef9cfd28404a822c5cf0ac922d7f43c41821`,
+contains 180 files / 168,574,596 bytes and matches the official API tree.
+The root MIT witness is 1,071 bytes / SHA-256
+`c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac`.
+Mitchell Krock's 130,911-byte `APPM5720Notes.tex`, SHA-256
+`dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8`,
+is the sole source-closed donor. The Jaden master/39 modules are excluded for
+40 broken preamble references and 24 archive-absent figures; BSD/GPL demo
+components and Canvas-only solutions are also outside Becker-01.
+
+The admitted exact boundary is source lines 1263–1321, 1398–1405, 1414–1499,
+1652–1726, and 1731–1743. The English witness is 12,294 bytes / SHA-256
+`20335c054393ea43d8912046b6dbfa07f6018f9e16b889e4cd0f66abc064d565`.
+LP ranges 1322–1397, 1406–1413, and 1727–1730 remain excluded for O018. The
+Indonesian body and wrapper are 12,924 / 7,330 bytes with SHA-256
+`ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce`
+and `85903fa4ac1975acd38bbadcd543a954257d7f8eba7552e3ee482bd12b8da04d`.
+They retain Becker/Krock and inherited Boyd–Vandenberghe/Bertsekas credits,
+the MIT notice, separately licensed CC BY-SA 4.0 translation/correction
+wording, changes, model provenance, and non-endorsement.
+
+Two clean deterministic builds produce the same 12-page page-filling PDF,
+487,534 bytes / SHA-256
+`c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615`,
+and responsive HTML, 30,131 bytes / SHA-256
+`b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0`.
+Math validation passes 10/10; desktop/tablet/mobile browser QA has no page
+overflow or diagnostics; all 12 PDF pages pass visual inspection; independent
+rereview closes the required credit, Slater-sign, and saddle-domain repairs.
+The PDF is searchable, A4, `/Lang id-ID`, and untagged. Twelve correction
+events `O015-BECKER-ADV-0001`–`0012` are admitted; the 262-record ledger is
+180,939 bytes / SHA-256
+`a03a9ac5c4036e98394b70c00450ece87c2958227b79a44822341f5617006d61`.
+
+Backend reprojection preserves all 3,096 prior records byte-for-byte and adds
+224 Becker records, yielding 3,320 unique IDs. JSONL is 2,552,754 bytes /
+`48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67`;
+CSV is 3,054,550 bytes /
+`baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f`.
+The passing 2,991-byte receipt has SHA-256
+`deaa9b0d797a023814695b2c6648ca74ddc1b171199aa5c949a1d84ca195d7ed`.
+
+The reader-first 21-entry release ZIP is 511,931 bytes / SHA-256
+`5d33d0cb89e1eaa96027a0b645bc54425b6008a45e7f0ae8ffed7938cc429281`.
+Two builds match; CRC, safe paths, manifest, 20 checksum bindings, exact
+package-tree identity, rights, credits, and omissions pass. Becker-01 is
+admitted locally but not yet claimed public. Immediate action: publish these
+fixed bytes once to the existing GitHub repository and Zenodo concept, then
+anonymously verify them. After preservation, advance to the frozen Douglas–
+Rachford slice at lines 2750–2797; variance reduction follows. The larger O015
+goal remains incomplete.

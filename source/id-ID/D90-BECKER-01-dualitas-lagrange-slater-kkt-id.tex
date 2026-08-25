@@ -1,0 +1,145 @@
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\subtitle{Modul Becker 1: Dualitas Lagrange, Slater, dan KKT\\Edisi Bahasa Indonesia}
+\author{Stephen Becker; catatan ketik oleh Mitchell Krock}
+\date{Sumber dibekukan pada commit 98ed693, 24 Juni 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari bagian terpilih \emph{APPM5720Notes}.\\
+Materi sumber dipertahankan berdasarkan Lisensi MIT; terjemahan, koreksi, dan penghubung mandiri dilisensikan CC BY-SA 4.0.\\
+Edisi ini bukan karya resmi atau dukungan Stephen Becker, Mitchell Krock, University of Colorado Boulder, maupun pihak sumber lain.}
+\hypersetup{
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Modul Becker 1: Dualitas Lagrange, Slater, dan KKT - Edisi Bahasa Indonesia},
+  pdfauthor={Stephen Becker; typed notes by Mitchell Krock; independent Indonesian translation},
+  pdfsubject={Mixed-license MIT and CC BY-SA 4.0 educational derivative},
+  pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang modul ini}
+Modul ini menerjemahkan dan menyunting lima rentang terpilih dari berkas TeX
+\begin{center}\small\ttfamily
+TypedNotes/APPM5720Notes.tex
+\end{center}
+dalam repositori Stephen Becker, \emph{convex-optimization-class}, pada commit
+\begin{center}\small\ttfamily
+98ed6930084c435ba0f67\\[-0.2em]
+5f7646ced1f2fd8729e.
+\end{center}
+Catatan ketik sumber mengreditkan Mitchell Krock. Berkas sumber lengkap
+memiliki SHA-256
+\begin{center}\small\ttfamily
+dd2e209a05a6f993ccac3b7c32e46400\\[-0.2em]
+5466b45c93237e96c85da56147466cb8
+\end{center}
+
+Rentang yang dipakai adalah baris 1263-1321, 1398-1405, 1414-1499,
+1652-1726, dan 1731-1743. Hash lengkap masing-masing rentang direkam dalam
+manifest mesin
+\begin{center}\small\ttfamily
+BECKER\_01\_SOURCE\_\\[-0.2em]
+BOUNDARY.json.
+\end{center}
+Saksi gabungannya berada dalam
+\texttt{becker-01-lagrange-slater-kkt-source.tex} dengan SHA-256
+\begin{center}\small\ttfamily
+20335c054393ea43d8912046b6dbfa07\\[-0.2em]
+f6018f9e16b889e4cd0f66abc064d565.
+\end{center}
+
+Bagian program-linear yang bersebelahan sengaja tidak diterjemahkan di sini
+karena dualitas program linear, simpleks, sensitivitas program linear, dan
+optimisasi diskret berada pada jalur O018. Modul O015 ini mempertahankan jalur
+umum Lagrangian, Slater, titik pelana, dan KKT. Rumus dan klaim sumber yang
+dapat ditentukan keliru diperbaiki secara terbuka dan diringkas pada akhir
+modul. Tidak ada solusi Canvas, gambar yang hilang, atau aset pihak ketiga yang
+dianggap tersedia.
+
+Provenans produksi edisi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori; seluruh kredit sumber dan kontributor manusia tetap
+dipertahankan.
+
+\tableofcontents
+\mainmatter
+\input{becker-01-dualitas-lagrange-slater-kkt-id}
+
+\backmatter
+\chapter*{Catatan perubahan terhadap sumber}
+Perubahan berikut dibuat oleh penyusun edisi bahasa Indonesia dan bukan
+perubahan yang disahkan oleh penulis sumber.
+\begingroup\small
+\begin{enumerate}
+  \setlength{\itemsep}{0.15em}
+  \setlength{\parskip}{0pt}
+  \item Batas penjumlahan Lagrangian yang tercetak sampai tak hingga dibetulkan menjadi jumlah hingga terhadap $m$ kendala pertidaksamaan dan $p$ kendala kesamaan.
+  \item Nilai primal pada teorema dualitas lemah dibetulkan dari maksimum menjadi infimum masalah minimisasi; seluruh arah ketaksamaan dibuat konsisten.
+  \item Kondisi Slater diberi domain bersama, interior relatif, pembedaan kendala afin dan nonafin, serta syarat nilai optimum berhingga.
+  \item Bagian dualitas dan kekomplementeran program linear yang bersebelahan dikeluarkan secara eksplisit agar tidak menduplikasi O018.
+  \item Argumen geometri Slater dinaikkan dari notasi satu kendala yang tidak konsisten menjadi bentuk vektor untuk semua kendala, termasuk alasan koefisien vertikal positif.
+  \item Definisi titik pelana ditulis sebagai dua ketaksamaan variasional, bukan sebagai persamaan yang menyamakan titik dengan nilai minimum atau maksimum.
+  \item Koefisien penalti pada contoh norma satu dibetulkan dari $2/\lambda$ menjadi $1/(2\lambda)$ di bawah normalisasi kuadrat yang dipakai sumber.
+  \item Klaim KKT bagi masalah nonkonveks diberi hipotesis ketercapaian primal-dual, dualitas kuat, domain, dan syarat Fermat yang benar-benar diperlukan.
+  \item Bukti kecukupan KKT memakai kekonveksan Lagrangian untuk membenarkan bahwa stasioneritas menghasilkan peminimum global.
+  \item Contoh proyeksi bola $\ell^1$ membetulkan relasi Moreau, membedakan proyeksi dari operator proksimal norma tak hingga, dan mengganti simbol lantai yang keliru dengan bagian positif.
+  \item Contoh kuadratik menambahkan $P\succeq0$ serta membatasi klaim ketunggalan pada kasus matriks KKT nonsingular.
+  \item Salah eja, indeks, simbol adjoin/transpos, dan ketidakkonsistenan notasi dinormalkan tanpa mengubah isi lain.
+\end{enumerate}
+\endgroup
+
+\chapter*{Atribusi, hak, dan nondukungan}
+Sumber: Stephen Becker, repositori \emph{convex-optimization-class}, dengan
+catatan ketik \emph{APPM5720Notes} oleh Mitchell Krock, commit
+\texttt{98ed6930084c435ba0f675f7646ced1f2fd8729e},
+\href{https://github.com/stephenbeckr/convex-optimization-class}{repositori sumber}.
+Materi donor
+menyatakan bahwa bagian dualitas mengikuti Bab~5 Boyd dan Vandenberghe
+(B\&V), merujuk ke \S5.3 untuk ilustrasi, dan mengaitkan satu interpretasi
+geometri dengan Bertsekas; kredit turunan tersebut dipertahankan. Materi donor
+ini berada di bawah Lisensi MIT. Terjemahan bahasa Indonesia, penyusunan,
+penghubung, dan rumusan koreksi mandiri tersedia berdasarkan Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0),
+\url{https://creativecommons.org/licenses/by-sa/4.0/}. Lisensi komponen tetap
+terpisah; tidak ada lisensi yang menghapus kewajiban lisensi lainnya.
+
+Stephen Becker, Mitchell Krock, dan University of Colorado Boulder tidak
+menyusun, memeriksa, menyetujui, atau mendukung edisi ini. Penyebutan mereka
+semata-mata untuk atribusi karya sumber.
+
+\chapter*{Pemberitahuan Lisensi MIT sumber}
+\begin{verbatim}
+MIT License
+
+Copyright (c) 2017 Stephen Becker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+\end{verbatim}
+
+\end{document}
