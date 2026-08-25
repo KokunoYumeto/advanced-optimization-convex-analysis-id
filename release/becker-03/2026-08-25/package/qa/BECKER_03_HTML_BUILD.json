@@ -1,0 +1,129 @@
+{
+  "artifact": {
+    "bytes": 24322,
+    "failures": [],
+    "fragment_links": 14,
+    "h1_count": 2,
+    "h2_count": 7,
+    "h3_count": 0,
+    "ids": 32,
+    "main_count": 1,
+    "math_display_count": 14,
+    "math_inline_count": 69,
+    "nav_count": 1,
+    "path": "output/html/D90-BECKER-03-reduksi-varians-id.html",
+    "required_markers": [
+      "lang=\"id-id\"",
+      "name=\"viewport\"",
+      "<main id=\"reader\">",
+      "<nav id=\"toc\"",
+      "reduksi varians",
+      "aproksimasi rata-rata sampel",
+      "penaksir saga",
+      "peubah kontrol",
+      "takbias bersyarat",
+      "laju linear saga",
+      "iterat rata-rata",
+      "solusi lengkap",
+      "defazio, bach, dan lacoste-julien",
+      "mit license",
+      "cc by-sa 4.0",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "section_count": 8,
+    "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+  },
+  "byte_identical_clean_builds": true,
+  "canonical_copy_exact_match": true,
+  "inputs": [
+    {
+      "bytes": 8298,
+      "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+    },
+    {
+      "bytes": 7776,
+      "path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"
+    },
+    {
+      "bytes": 977,
+      "path": "source/en/becker-03-variance-reduction-source.tex",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"
+    },
+    {
+      "bytes": 5892,
+      "path": "qa/extract_becker_variance_reduction_source.py",
+      "sha256": "b7c06d2f4035e66d5c0df169b022601e9c6c3c582f1a0dc2f6cd5f125b7f8012"
+    },
+    {
+      "bytes": 1815,
+      "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3"
+    },
+    {
+      "bytes": 16244,
+      "path": "qa/build_becker_variance_reduction_html.py",
+      "sha256": "5cba8c7877c5496fa102a8e463da84a25f2de74772bfcd601feea7b922be2494"
+    }
+  ],
+  "intermediate": {
+    "bytes": 11841,
+    "path": "tmp/becker-03-html/becker-03-combined.tex",
+    "sha256": "7ce5b359f69138d655e889823fc6863f6374d5a70d8735bed6f2cb3f93aa547a"
+  },
+  "result": "pass",
+  "runs": [
+    {
+      "artifact": {
+        "bytes": 24322,
+        "path": "tmp/becker-03-html/run1.html",
+        "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-03-html\\becker-03-combined.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks - Modul Becker 3: Reduksi Varians untuk SAA",
+        "--metadata=author:Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-03-html\\run1.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact": {
+        "bytes": 24322,
+        "path": "tmp/becker-03-html/run2.html",
+        "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-03-html\\becker-03-combined.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks - Modul Becker 3: Reduksi Varians untuk SAA",
+        "--metadata=author:Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-03-html\\run2.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "o015-becker-03-html-build-v1",
+  "tool_versions": {
+    "pandoc": "pandoc 3.9.0.2"
+  },
+  "upstream_contact": false
+}

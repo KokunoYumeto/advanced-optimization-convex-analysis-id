@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "bytes": 24322,
+    "path": "output/html/D90-BECKER-03-reduksi-varians-id.html",
+    "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+  },
+  "browser": "Codex in-app Chromium browser",
+  "checked_at_utc": "2026-08-25T20:25:57Z",
+  "console_errors_or_warnings": [],
+  "content_invariants": {
+    "broken_fragment_links": 0,
+    "fragment_links": 14,
+    "h1_count": 2,
+    "lang": "id-ID",
+    "main_count": 1,
+    "nav_count": 1,
+    "section_count": 8,
+    "visible_text_length": 9832,
+    "viewport_meta_count": 1
+  },
+  "portability": {
+    "mathjax_delivery": "pinned MathJax 3 CDN URL; network access is required for rendered mathematics",
+    "self_contained_math_runtime": false
+  },
+  "result": "pass",
+  "schema": "o015-becker-03-html-browser-qa-v1",
+  "visual_inspection": {
+    "phone_header_toc_and_status_panel_legible": true,
+    "reader_fills_available_width": true,
+    "text_or_panel_clipping": 0
+  },
+  "viewports": [
+    {
+      "body_client_width": 1265,
+      "body_scroll_width": 1265,
+      "display_math_count": 28,
+      "display_math_local_scrollable_count": 0,
+      "display_math_overflow_count": 0,
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "height": 900,
+      "main_left": 67.59722137451172,
+      "main_right": 1197.2847213745115,
+      "main_width": 1129.6875,
+      "page_horizontal_overflow_px": 0,
+      "width": 1280
+    },
+    {
+      "body_client_width": 753,
+      "body_scroll_width": 753,
+      "display_math_count": 28,
+      "display_math_local_scrollable_count": 0,
+      "display_math_overflow_count": 0,
+      "document_client_width": 753,
+      "document_scroll_width": 753,
+      "height": 900,
+      "main_left": 59.59722137451172,
+      "main_right": 693.2847213745117,
+      "main_width": 633.6875,
+      "page_horizontal_overflow_px": 0,
+      "width": 768
+    },
+    {
+      "body_client_width": 375,
+      "body_scroll_width": 375,
+      "display_math_count": 28,
+      "display_math_local_scrollable_count": 8,
+      "display_math_overflow_count": 8,
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "height": 844,
+      "main_left": 21.59722328186035,
+      "main_right": 353.5069522857666,
+      "main_width": 331.90972900390625,
+      "note": "All eight wide formula surfaces are contained by their own horizontal-scroll regions; the page itself has no horizontal overflow.",
+      "page_horizontal_overflow_px": 0,
+      "width": 390
+    }
+  ]
+}

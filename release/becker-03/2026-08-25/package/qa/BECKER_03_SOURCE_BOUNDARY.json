@@ -1,0 +1,50 @@
+{
+  "authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "source_bytes": 130911,
+    "source_lines": 2992,
+    "source_local_path": "TypedNotes/APPM5720Notes.tex",
+    "source_path": "authority/becker/extract/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e/TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "combined_witness": {
+    "begin_marker": "% BEGIN variance-reduction | frozen lines 2971-2988",
+    "bytes": 977,
+    "end_marker": "% END variance-reduction",
+    "exact_expected_byte_match": true,
+    "interior_exact_source_slice_match": true,
+    "path": "source/en/becker-03-variance-reduction-source.tex",
+    "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607",
+    "state": "verified_existing"
+  },
+  "document_terminator_imported": false,
+  "explicit_exclusions": [
+    {
+      "lines": "before 2971",
+      "reason": "Earlier stochastic-gradient material is outside this bounded variance-reduction unit."
+    },
+    {
+      "lines": "2989 onward",
+      "reason": "Only the document terminator and trailing blank lines follow; none is imported."
+    }
+  ],
+  "outside_range_material_imported": false,
+  "result": "pass",
+  "schema": "o015-becker-03-source-boundary-v1",
+  "selected_ranges": [
+    {
+      "bytes": 900,
+      "final_newline": true,
+      "first_line": 2971,
+      "id": "variance-reduction",
+      "last_line": 2988,
+      "line_count": 18,
+      "line_endings": "LF",
+      "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+    }
+  ],
+  "upstream_contact": false
+}

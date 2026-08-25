@@ -1599,3 +1599,68 @@ Authenticated closure returns HTTP 404 for the record draft and finds zero open
 lineage drafts; receipt: 394 bytes / SHA-256
 `4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
 No credential material was recorded and no upstream contact occurred.
+The GitHub receipt/control evidence descendant
+`64b60dae61096a265c6deec8e7defb21b1d917d5` also passes anonymous exact-byte
+readback for 18 files / 618,143 bytes; receipt SHA-256
+`74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5`.
+
+# Becker-03 variance-reduction consolidated build and QA
+
+Source-boundary gate: PASS. Frozen donor lines 2971--2988 are 18 LF lines /
+900 bytes / SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`;
+the 977-byte witness has SHA-256
+`66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607`
+and an exact byte-matching interior. Boundary receipt: 1,815 bytes / SHA-256
+`41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3`.
+
+Deterministic reader gate: PASS. Two PDF builds produce the same 476,357-byte,
+11-page, searchable id-ID A4 PDF, SHA-256
+`2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a`;
+zero fatal, undefined-reference, or overfull-box findings. Receipt: 4,920 bytes
+/ `2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727`.
+Two HTML builds produce the same 24,322-byte semantic reader, SHA-256
+`da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb`;
+receipt: 4,636 bytes /
+`2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13`.
+
+Math gate: PASS 11/11 with exact rational computation and no randomness. It
+checks the primary SAGA theorem witness, conditional unbiasedness/variance,
+old-table replacement, exercise arithmetic, a finite exact rate witness, and
+the averaged-iterate identity. Receipt: 6,375 bytes / SHA-256
+`51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f`.
+
+Visual/browser gate: PASS. All 11 PDF pages were inspected at 150 dpi with
+zero clipping, overlap, glyph, formula, hierarchy, header/footer, or page-number
+defect; receipt 2,472 bytes /
+`1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48`.
+Browser QA at 1280x900, 768x900, and 390x844 shows one viewport declaration,
+zero page overflow, zero broken fragments or console findings, and local scroll
+containment for eight wide phone formulas; receipt 2,523 bytes /
+`87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec`.
+The PDF remains untagged; HTML is semantic but loads a pinned MathJax CDN.
+
+Rights/rereview gate: PASS. MIT and CC BY-SA 4.0 component scopes are separate;
+Becker/Krock and Defazio/Bach/Lacoste-Julien credits, complete MIT notice,
+change disclosure, exact model marker, and nonendorsement are present. The
+SAGA PDF is local evidence only. Independent rereview records P1=P2=P3=0;
+receipt 3,799 bytes / SHA-256
+`ec8a9cc7429440abc8b2cb371dbe41318774eecc09fcccbffdc1dc2333a9a338`.
+
+Backend gate: PASS. The protected 3,430-record state gains 155 B03 records,
+including four explicit hint/solution pairing relations, for 3,585. JSONL is
+2,724,813 bytes / `fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb`;
+CSV is 3,267,489 bytes /
+`56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72`.
+Two regenerations match; exact workflow stripping recovers the baseline.
+Extension/validation receipt SHA-256 values are
+`8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9`
+and `e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0`.
+
+Release-package gate: PASS. Two ZIP builds are byte-identical. The 22-entry
+reader-first package is 501,094 bytes / SHA-256
+`49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3`;
+CRC, safe paths, fixed timestamps, package-tree identity, and `SHA256SUMS` pass.
+Local verification: 7,359 bytes /
+`f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b`.
+Public-preservation gate: pending immediate execution in existing lineages.

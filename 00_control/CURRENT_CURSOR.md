@@ -1,7 +1,7 @@
 # O015 production cursor
 
 As of: 2026-08-25  
-State: complete Habring v1 plus Becker-01 and Becker-02 are admitted and publicly verified with a protected 3,430-record backend; variance reduction is the active translation cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
+State: complete Habring v1 plus Becker-01 and Becker-02 are public; Becker-03 variance reduction is locally admitted with a protected 3,585-record backend and publication is the immediate cursor; MIT L01–L11 remain a preserved companion and page 98 is dormant
 
 ## Completed at this boundary
 
@@ -647,6 +647,10 @@ readback for all 59 changed files. Zenodo record `22098168`, DOI
 `10.5281/zenodo.22059741`; all 99 files passed anonymous exact-byte readback,
 the Becker-02 PDF is the configured default preview, and authenticated checks
 prove zero open drafts in the concept.
+The receipt/control evidence descendant is GitHub commit
+`64b60dae61096a265c6deec8e7defb21b1d917d5`; all 18 changed files / 618,143
+bytes pass anonymous readback, receipt SHA-256
+`74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5`.
 
 Execute `BECKER-VARIANCE-REDUCTION` now: exact frozen
 `TypedNotes/APPM5720Notes.tex` lines 2971--2988, 18 lines / 900 bytes, slice
@@ -658,3 +662,32 @@ run one consolidated deterministic PDF/HTML, math, rights, visual,
 accessibility, independent-rereview, compact-package, and additive-backend
 gate. After admission, continue the finite original closure in
 `CURRENT_GOAL_AND_WORKFLOW.md`; do not mark the overall goal complete.
+
+## 2026-08-25 controlling cursor — Becker-03 admitted; preserve, then finite original closure
+
+The variance-reduction translation instruction above is complete and
+superseded. Exact donor lines 2971--2988, the 977-byte English witness, the
+five-segment Indonesian source, the 11-page PDF, responsive HTML, five
+correction records, independent assessment layer, and 155-record additive
+backend extension are locally admitted. All source, math, deterministic-build,
+visual, browser, rights, rereview, and backend gates pass. Final backend:
+3,585 records; JSONL SHA-256
+`fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb`;
+CSV SHA-256
+`56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72`.
+
+Immediate executable action: commit and push the exact Becker-03 boundary to
+the existing GitHub repository, anonymously verify every changed path, publish
+one new version in existing Zenodo concept `10.5281/zenodo.22059741` with the
+Becker-03 PDF as default preview, and anonymously verify the complete public
+inventory. The deterministic 22-entry package is 501,094 bytes / SHA-256
+`49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3`.
+Do not create a duplicate repository or concept, redistribute the local SAGA
+paper witness, contact upstream, or claim the larger course complete.
+
+After public preservation closes, activate `FINITE-ORIGINAL-CLOSURE`: author
+only the remaining stochastic proximal/mirror/minibatch and variance-reduction
+integration, variational-inequality/maximal-monotone/resolvent/splitting
+material, connective proofs, substantive exercises/hints/answers/complete
+solutions, tests, proof rubrics, open-solver labs, capstone, and final
+accessible reader closure. The overall goal remains active.

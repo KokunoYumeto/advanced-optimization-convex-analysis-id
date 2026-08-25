@@ -745,3 +745,35 @@ open drafts in the concept; the 394-byte closure receipt has SHA-256
 Activate exact Becker variance-reduction lines 2971--2988. This preservation
 decision changes no coverage or license judgment, creates no duplicate concept,
 claims no full-course completion, and involved no upstream contact.
+
+## D90-0057 — Admit Becker-03 variance reduction and preserve it before original closure
+
+Decision: admit exact `APPM5720Notes.tex` lines 2971--2988 as the third and
+final bounded Becker supplement. The 977-byte English witness contains the
+exact 900-byte / 18-line donor slice; their SHA-256 values are
+`66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607`
+and `b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+Earlier stochastic material and the document terminator are excluded. Events
+`O015-BECKER-ADV-0020`--`0024` are explicit and independently rereviewed.
+
+Two clean builds reproduce the 476,357-byte / 11-page PDF
+`2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a`
+and 24,322-byte HTML reader
+`da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb`.
+Open-math validation passes 11/11; every PDF page and the 1280/768/390-pixel
+reader pass; rereview records P1=P2=P3=0. The SAGA result witness is locally
+retained but not packaged. MIT donor rights, CC BY-SA 4.0 new Indonesian
+wording, exact credits/model provenance, change disclosure, and
+nonendorsement remain separate and visible.
+
+The backend adds exactly 155 `d90.becker.98ed693.b03.*` records to the
+protected 3,430-record state, for 3,585. JSONL/CSV identities are 2,724,813 /
+3,267,489 bytes with SHA-256
+`fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb`
+and `56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72`;
+two regenerations match and workflow stripping exactly recovers prior bytes
+and relative order. The 22-entry package is 501,094 bytes / SHA-256
+`49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3`.
+Preserve this fixed boundary in the existing GitHub/Zenodo lineages, read it
+back anonymously, then activate finite original closure. The larger course
+remains partial and no upstream contact occurred.

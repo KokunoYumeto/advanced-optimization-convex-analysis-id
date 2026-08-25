@@ -3,7 +3,7 @@
 As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: complete Habring v1 spine plus Becker-01 and Becker-02 are public; the protected additive backend has 3,430 records; variance reduction is the active source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
+Status: complete Habring v1 spine plus Becker-01 and Becker-02 are public; Becker-03 variance reduction is locally admitted and awaiting immediate preservation; the protected additive backend has 3,585 records; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -14,7 +14,7 @@ The controlling architecture receipt is `C:/Users/Floris/Documents/interlanguage
 ## Selected primary authority
 
 - Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv `2607.11664v1`: exact 230,116-byte source tar, SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`; 836,977-byte / 84-page PDF, SHA-256 `d2914c741214312d02dc160c5b294eb65a8ac13e484dd9e33aa7ae151f97331d`; CC BY 4.0. Its modular TeX/class/figures/BibLaTeX/README closure is the canonical editable spine.
-- Stephen Becker's MIT-licensed TeX course is frozen at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`. `TypedNotes/APPM5720Notes.tex` is the sole source-closed donor; Becker-01 and Becker-02 Douglas–Rachford are admitted and public. The broken Jaden master remains excluded rather than repaired. Variance reduction is the active bounded candidate.
+- Stephen Becker's MIT-licensed TeX course is frozen at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`. `TypedNotes/APPM5720Notes.tex` is the sole source-closed donor; Becker-01 and Becker-02 are public and Becker-03 variance reduction is locally admitted. The broken Jaden master remains excluded rather than repaired.
 - MIT OCW 6.253, Royer notes/labs, and Penn MATH 555 retain their exact authority and separate licenses as companions. MIT pages 2--97 are accepted and preserved; no Athena Scientific figure byte or layout is admitted.
 
 The finite original layer must close assessment and connective proofs for the admitted KKT/Slater/Lagrangian progression, modern stochastic methods, variational inequalities and maximal-monotone/resolvent/splitting material, substantive exercises, and complete solutions. Imports remain component-distinct.
@@ -52,15 +52,15 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 ## Public preservation
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
-- Current verified Zenodo version: `10.5281/zenodo.22096817`, exactly 99 files with 90 inherited byte-identical files and nine Becker-01 additions. Full anonymous readback passed and the Becker PDF is the authoritative default preview.
-- Current verified GitHub content: Becker-01 commit `7ff680f4079499c08f3b29780105f58279f519d5`, tree `a36c6a880f483681575c4b946d53a4ee0e493bf5`; all 62 changed paths passed anonymous immutable readback.
+- Current verified Zenodo version: `10.5281/zenodo.22098168`, exactly 99 files with 91 inherited byte-identical files and eight Becker-02 additions. Full anonymous readback passed and the Becker-02 PDF is the configured default preview.
+- Current verified GitHub content: Becker-02 content commit `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`, with receipt/control evidence through descendant `64b60dae61096a265c6deec8e7defb21b1d917d5`; anonymous immutable readback passed.
 - Figshare article `33314733` remains the intended Habring-only lineage, but authenticated requests return `403 InactiveAccount`; zero mutation occurred. This destination failure does not hold production and does not authorize a replacement item.
 
-Habring, all MIT companion releases, and Becker-01 have complete public-byte evidence. MIT page 98 is dormant.
+Habring, all MIT companion releases, Becker-01, and Becker-02 have complete public-byte evidence. Becker-03 is locally release-ready. MIT page 98 is dormant.
 
 ## Known incomplete surfaces
 
-The complete Habring v1 spine, MIT pages 2–97 companion, and Becker-01 are admitted, but the original course closure remains incomplete. Douglas–Rachford, rigorous variance reduction, stochastic proximal/mirror/minibatch methods, variational/maximal-monotone/resolvent theory, exercises and complete solutions, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Optional human evidence is not a hold. No final-corpus claim is allowed.
+The complete Habring v1 spine, MIT pages 2–97 companion, and three bounded Becker modules are admitted, but the original course closure remains incomplete. Broader stochastic proximal/mirror/minibatch and variance-reduction integration, variational/maximal-monotone/resolvent theory, connective assessment and complete solutions, labs, capstone, full-course semantic HTML/EPUB, and tagged PDF remain open. Optional human evidence is not a hold. No final-corpus claim is allowed.
 
 ## Exact continuation (historical pre-L02 wording)
 
@@ -1004,6 +1004,11 @@ preview. The 26,801-byte readback receipt has SHA-256
 Authenticated lookup returns 404 and the concept has zero open drafts; the
 394-byte closure receipt has SHA-256
 `4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
+The publication receipts and corrected controls are themselves public at
+GitHub descendant commit `64b60dae61096a265c6deec8e7defb21b1d917d5`, tree
+`6741bbd5f3085c221fee1be165c8c83c92988780`; all 18 changed files /
+618,143 bytes passed anonymous readback. The 11,792-byte receipt has SHA-256
+`74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5`.
 
 The executable production cursor is now `BECKER-VARIANCE-REDUCTION`, exact
 `TypedNotes/APPM5720Notes.tex` lines 2971--2988, 18 lines / 900 bytes, SHA-256
@@ -1012,3 +1017,47 @@ Reconfirm nonduplication, translate the coherent unit, and run the consolidated
 reader/math/rights/visual/accessibility/rereview/backend gate. The finite
 original stochastic, variational/monotone, assessment/solutions, lab, capstone,
 tagged-PDF, and accessibility closure remains unfinished; the goal is active.
+
+## 2026-08-25 — Becker-03 variance reduction admitted; preservation next
+
+Exact donor lines 2971--2988 are frozen as 18 LF lines / 900 bytes, SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+The marker-wrapped English witness is 977 bytes / SHA-256
+`66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607`;
+the five-segment Indonesian body and standalone wrapper are 8,298 and 7,776
+bytes. Earlier stochastic material and the document terminator are excluded.
+
+The 11-page searchable A4 PDF is 476,357 bytes / SHA-256
+`2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a`.
+The responsive semantic HTML is 24,322 bytes / SHA-256
+`da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb`.
+Two clean builds, 11 open-math gates, every PDF page, desktop/tablet/phone
+browser QA, component-rights checks, and independent rereview pass with
+P1=P2=P3=0. The HTML has one viewport declaration and no page-level overflow;
+eight wide phone formulas scroll locally. The PDF remains truthfully untagged,
+and the HTML uses a pinned remote MathJax runtime.
+
+Events `O015-BECKER-ADV-0020`--`0024` disclose the notation, initialization,
+table-update, and rate-scope corrections. The SAGA result of Aaron Defazio,
+Francis Bach, and Simon Lacoste-Julien is separately attributed; its
+516,033-byte arXiv PDF is local evidence only and is not redistributed. Becker
+donor/witness bytes remain MIT; new Indonesian wording, proofs, exercises,
+hints, solutions, and documentation are CC BY-SA 4.0. Nonendorsement and exact
+model provenance are visible.
+
+The additive backend preserves all 3,430 prior records and adds 155 B03
+records, including explicit hint/solution-to-exercise pairings, for 3,585.
+JSONL is 2,724,813 bytes / SHA-256
+`fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb`;
+CSV is 3,267,489 bytes / SHA-256
+`56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72`.
+Two regenerations match and workflow stripping recovers the protected bytes
+and relative order exactly.
+
+The reader-first 22-entry package is 501,094 bytes / SHA-256
+`49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3`;
+its local verification is 7,359 bytes / SHA-256
+`f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b`.
+Immediate action is publication in the existing GitHub repository and Zenodo
+concept, followed by anonymous byte readback. Then activate the finite original
+closure; the overall course goal remains active.

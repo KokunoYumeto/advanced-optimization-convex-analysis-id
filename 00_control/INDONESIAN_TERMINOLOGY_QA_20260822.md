@@ -84,3 +84,18 @@ contrary evidence and no new external comparator was sought. The two internal
 consistency fixes were propagated through the complete Becker-02 body before
 PDF, HTML, open-math, and browser QA. No earlier admitted unit requires a
 terminology rewrite.
+
+## Becker-03 terminology extension (2026-08-25)
+
+The bounded SAGA unit adds `reduksi varians`, `aproksimasi rata-rata sampel`
+(*sample average approximation*, SAA), `tabel gradien`, `gradien tersimpan`,
+`penaksir`, `peubah kontrol`, `takbias bersyarat`, `iterat rata-rata`,
+`fungsi kerugian`, `gradien L-Lipschitz`, and `laju linear`. These choices are
+consistent with the admitted stochastic-gradient and convex-analysis
+vocabulary. `Peubah kontrol` is preferred over `variat kontrol` because the
+object is explicitly a random-variable correction, while `penaksir` is kept
+distinct from the broader process `estimasi`. The finite-sum objective is
+described as a `masalah jumlah hingga`; SAA is expanded at first use and the
+source acronym is retained for discoverability. The narrow stochastic terms
+do not occur in the frozen UNY comparator, so that witness supplies no
+contrary evidence. No earlier admitted unit requires propagation.

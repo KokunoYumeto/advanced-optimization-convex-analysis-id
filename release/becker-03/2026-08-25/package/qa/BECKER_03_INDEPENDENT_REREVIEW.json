@@ -1,0 +1,60 @@
+{
+  "schema": "o015-becker-03-independent-rereview-v1",
+  "reviewed_at": "2026-08-25T20:28:54Z",
+  "scope": "Final isolated Becker-03 admission rereview after viewport and exercise-pairing corrections",
+  "live_sources": [
+    {"path": "source/en/becker-03-variance-reduction-source.tex", "bytes": 977, "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"},
+    {"path": "source/id-ID/becker-03-reduksi-varians-id.tex", "bytes": 8298, "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"},
+    {"path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex", "bytes": 7776, "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"}
+  ],
+  "readers": [
+    {"path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf", "bytes": 476357, "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"},
+    {"path": "output/html/D90-BECKER-03-reduksi-varians-id.html", "bytes": 24322, "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"}
+  ],
+  "receipts": [
+    {"path": "qa/BECKER_03_SOURCE_BOUNDARY.json", "bytes": 1815, "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3"},
+    {"path": "qa/BECKER_03_PDF_BUILD.json", "bytes": 4920, "sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727"},
+    {"path": "qa/BECKER_03_PDF_VISUAL_QA.json", "bytes": 2472, "sha256": "1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48"},
+    {"path": "qa/BECKER_03_HTML_BUILD.json", "bytes": 4636, "sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13"},
+    {"path": "qa/BECKER_03_HTML_BROWSER_QA.json", "bytes": 2523, "sha256": "87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec"},
+    {"path": "qa/BECKER_03_MATH_VALIDATION.json", "bytes": 6375, "sha256": "51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f"},
+    {"path": "qa/BECKER_03_BACKEND_EXTENSION.json", "bytes": 2931, "sha256": "8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9"},
+    {"path": "qa/BECKER_03_BACKEND_VALIDATION.json", "bytes": 4856, "sha256": "e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0"}
+  ],
+  "backend": {
+    "protected_baseline_records": 3430,
+    "new_records": 155,
+    "final_records": 3585,
+    "new_relation_records": 82,
+    "jsonl": {"path": "backend/records.jsonl", "bytes": 2724813, "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"},
+    "csv": {"path": "backend/records.csv", "bytes": 3267489, "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"},
+    "protected_bytes_and_relative_order_recovered": true,
+    "exercise_pairing_relations": 4
+  },
+  "findings": {"P1": 0, "P2": 0, "P3": 0},
+  "resolved_advisories": {
+    "duplicate_viewport_meta": "resolved; exactly one viewport meta element",
+    "implicit_exercise_hint_solution_pairing": "resolved; four explicit depends-on relations"
+  },
+  "documented_nonblocking_limitations": {
+    "pdf_tagged": false,
+    "semantic_html_available": true,
+    "html_math_runtime": "pinned MathJax 3 CDN; not self-contained"
+  },
+  "checks": {
+    "source_slice_and_witness_exact": true,
+    "primary_saga_rate_constants_confirmed": true,
+    "exercise_arithmetic_confirmed": true,
+    "mathematics_and_correction_disclosure_sound": true,
+    "mit_and_cc_by_sa_components_separate": true,
+    "full_mit_notice_present": true,
+    "model_provenance_and_nonendorsement_present": true,
+    "pdf_all_pages_visually_clean": true,
+    "html_single_viewport_and_page_reflow_pass": true,
+    "backend_pairing_and_relation_closure_pass": true,
+    "live_bytes_reconcile_with_all_receipts": true,
+    "o018_material_imported": false
+  },
+  "result": "pass",
+  "upstream_contact": false
+}

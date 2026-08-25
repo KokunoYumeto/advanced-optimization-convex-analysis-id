@@ -1,0 +1,145 @@
+{
+  "artifact": {
+    "bytes": 476357,
+    "encrypted": false,
+    "language": "id-ID",
+    "media_boxes": [
+      [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ]
+    ],
+    "missing_markers": [],
+    "pages": 11,
+    "path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf",
+    "required_markers": [
+      "reduksi varians",
+      "aproksimasi rata-rata sampel",
+      "penaksir saga",
+      "peubah kontrol",
+      "takbias bersyarat",
+      "laju linear saga",
+      "iterat rata-rata",
+      "solusi lengkap",
+      "defazio, bach, dan lacoste-julien",
+      "pemberitahuan lisensi mit",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "searchable_text_bytes": 17568,
+    "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a",
+    "tagged": false,
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Becker 3: Reduksi Varians untuk SAA - Edisi Bahasa Indonesia"
+  },
+  "byte_identical_clean_builds": true,
+  "canonical_copy_exact_match": true,
+  "inputs": [
+    {
+      "bytes": 7776,
+      "path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"
+    },
+    {
+      "bytes": 8298,
+      "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+    },
+    {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 977,
+      "path": "source/en/becker-03-variance-reduction-source.tex",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"
+    },
+    {
+      "bytes": 5892,
+      "path": "qa/extract_becker_variance_reduction_source.py",
+      "sha256": "b7c06d2f4035e66d5c0df169b022601e9c6c3c582f1a0dc2f6cd5f125b7f8012"
+    },
+    {
+      "bytes": 1815,
+      "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-03\\determinism\\run1",
+        "D90-BECKER-03-reduksi-varians-id.tex"
+      ],
+      "console_sha256": [
+        "a5f68ad2cbcb40d27ec8cee3e94c8c04c8cb41d39c375c1c9688c2c0453cc6f7",
+        "a2831eb000bea619b18fd14d88cc273688364d847827a6b0a62c84f296255894"
+      ],
+      "directory": "build/becker-03/determinism/run1",
+      "log": {
+        "bytes": 100618,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "build/becker-03/determinism/run1/D90-BECKER-03-reduksi-varians-id.log",
+        "sha256": "53608b392a9689655ff8db420a4f427dd01df851ee8209a1ec51b1d94c95c74e",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 476357,
+        "path": "build/becker-03/determinism/run1/D90-BECKER-03-reduksi-varians-id.pdf",
+        "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"
+      }
+    },
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\becker-03\\determinism\\run2",
+        "D90-BECKER-03-reduksi-varians-id.tex"
+      ],
+      "console_sha256": [
+        "afa416c78bf64c86970c994109ea4bb132046aa1cefd3b2ae6ce28faf73118c9",
+        "25844a8e2aa3c56ca14feecedfa5b1aee34d25fe538c9dc7810fa82cc9604010"
+      ],
+      "directory": "build/becker-03/determinism/run2",
+      "log": {
+        "bytes": 100618,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "build/becker-03/determinism/run2/D90-BECKER-03-reduksi-varians-id.log",
+        "sha256": "ab6d2fa47734c76eeb29445e098a2ec243633766113d9abe9109f2d41dcaad97",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 476357,
+        "path": "build/becker-03/determinism/run2/D90-BECKER-03-reduksi-varians-id.pdf",
+        "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"
+      }
+    }
+  ],
+  "schema": "o015-becker-03-pdf-build-v1",
+  "source_date_epoch": "1782268665",
+  "tool_versions": {
+    "pdflatex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "pdftotext": "pdftotext version 24.04.0",
+    "pypdf": "6.12.2"
+  },
+  "upstream_contact": false
+}

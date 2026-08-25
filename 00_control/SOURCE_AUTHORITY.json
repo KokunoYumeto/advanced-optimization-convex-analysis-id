@@ -27,15 +27,14 @@
       "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
       "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
       "license": "MIT",
-      "status": "authority_frozen_and_two_nonduplicative_modules_admitted",
+      "status": "authority_frozen_and_three_nonduplicative_modules_admitted",
       "sole_source_closed_donor": "TypedNotes/APPM5720Notes.tex",
       "excluded_master": "TypedNotes/lecture_notes_tex/master.tex and 39 modules: 40 broken ../preamble.tex references and 24 archive-absent figures",
       "admitted_module": "BECKER-01 Lagrangian duality, Slater, and KKT",
       "additional_admitted_module": "BECKER-02 Douglas--Rachford splitting",
-      "remaining_frozen_modules": [
-        "BECKER-VARIANCE-REDUCTION lines 2971-2988"
-      ],
-      "admission_gate": "Each remaining exact slice requires a coherent localized wrapper, retained MIT/author credits, two clean deterministic builds, math/rights/visual/accessibility/rereview/backend gates, and explicit deduplication. Canvas-only solutions are not public."
+      "third_admitted_module": "BECKER-03 variance reduction for SAA",
+      "remaining_frozen_modules": [],
+      "admission_gate": "All three exact Becker slices passed coherent localization, retained MIT/author credits, two clean deterministic builds, math/rights/visual/accessibility/rereview/backend gates, and explicit deduplication. Canvas-only solutions are not public."
     },
     "preserved_companions": [
       "o015-mit-ocw-6.253-spring-2012",
@@ -207,9 +206,9 @@
   },
   "current_becker_supplement_admission": {
     "recorded_on": "2026-08-25",
-    "status": "becker_01_and_becker_02_public_variance_reduction_active",
+    "status": "becker_01_and_becker_02_public_becker_03_admitted_publication_pending",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
-    "scope": "Exact non-LP source ranges 1263-1321, 1398-1405, 1414-1499, 1652-1726, and 1731-1743: Lagrangian duality, Slater, saddle points, and KKT. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 are excluded for O018.",
+    "scope": "Three exact nonduplicative Becker modules: non-LP Lagrangian duality/Slater/KKT ranges, Douglas--Rachford lines 2750-2797, and variance reduction lines 2971-2988. LP-specific ranges 1322-1397, 1406-1413, and 1727-1730 remain excluded for O018.",
     "corrections": {
       "event_range": "O015-BECKER-ADV-0001 through O015-BECKER-ADV-0012",
       "event_count": 12,
@@ -408,7 +407,18 @@
           "anonymous_readback": "pass",
           "receipt_path": "release/github/2026-08-25-becker-02/github-public-readback-becker-02.json",
           "receipt_bytes": 36917,
-          "receipt_sha256": "01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab"
+          "receipt_sha256": "01f10d998820983f4dc0e068dd5423144165e1f4421fa1dac283608e81642dab",
+          "evidence_descendant": {
+            "commit": "64b60dae61096a265c6deec8e7defb21b1d917d5",
+            "tree": "6741bbd5f3085c221fee1be165c8c83c92988780",
+            "parent": "2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7",
+            "changed_files": 18,
+            "aggregate_bytes": 618143,
+            "anonymous_readback": "pass",
+            "receipt_path": "release/github/2026-08-25-becker-02/github-public-readback-becker-02-evidence.json",
+            "receipt_bytes": 11792,
+            "receipt_sha256": "74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5"
+          }
         },
         "zenodo": {
           "record_id": "22098168",
@@ -434,22 +444,96 @@
         }
       },
       "upstream_contact": false
+    },
+    "becker_03_admission": {
+      "status": "admitted_publication_pending",
+      "scope": "Exact APPM5720Notes.tex lines 2971-2988: finite-sum SAA and a bounded SAGA orientation, with corrected table semantics, independent unbiasedness/variance proof, scoped rate statements, and two original exercises with hints and complete solutions. Earlier stochastic-gradient material and the document terminator are excluded.",
+      "source_boundary": {
+        "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+        "bytes": 1815,
+        "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3",
+        "slice_lines": "2971-2988",
+        "slice_bytes": 900,
+        "slice_sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+      },
+      "english_witness": {
+        "path": "source/en/becker-03-variance-reduction-source.tex",
+        "bytes": 977,
+        "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"
+      },
+      "result_witness": {
+        "path": "authority/becker/related/saga-arxiv-1407.0202v3.pdf",
+        "bytes": 516033,
+        "sha256": "b0177cd77447c7469ca31bdfbe7773f604320a9878a46b777c899d9b6fc37c7e",
+        "citation": "Aaron Defazio, Francis Bach, and Simon Lacoste-Julien, SAGA, arXiv:1407.0202v3",
+        "handling": "local_evidence_only_not_packaged"
+      },
+      "localized_sources": [
+        {"path": "source/id-ID/becker-03-reduksi-varians-id.tex", "bytes": 8298, "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"},
+        {"path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex", "bytes": 7776, "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"}
+      ],
+      "reader_artifacts": [
+        {"path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf", "bytes": 476357, "pages": 11, "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"},
+        {"path": "output/html/D90-BECKER-03-reduksi-varians-id.html", "bytes": 24322, "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"}
+      ],
+      "corrections": {
+        "event_range": "O015-BECKER-ADV-0020 through O015-BECKER-ADV-0024",
+        "event_count": 5,
+        "full_ledger_records": 274,
+        "ledger_path": "00_control/ADVERSE_LEDGER.jsonl",
+        "ledger_bytes": 191353,
+        "ledger_sha256": "5e3208a4deb92f54eac095e8a81256f154ea45b9ea893b04241b0047e35ee73a"
+      },
+      "validation": {
+        "pdf_build_sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727",
+        "pdf_visual_sha256": "1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48",
+        "html_build_sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13",
+        "browser_sha256": "87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec",
+        "math_sha256": "51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f",
+        "independent_rereview_sha256": "ec8a9cc7429440abc8b2cb371dbe41318774eecc09fcccbffdc1dc2333a9a338",
+        "result": "pass"
+      },
+      "backend": {
+        "protected_prior_records": 3430,
+        "added_records": 155,
+        "records": 3585,
+        "jsonl_bytes": 2724813,
+        "jsonl_sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb",
+        "csv_bytes": 3267489,
+        "csv_sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72",
+        "extension_receipt_sha256": "8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9",
+        "validation_receipt_sha256": "e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0"
+      },
+      "release_package": {
+        "path": "release/becker-03/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_03_2026.08.25.zip",
+        "bytes": 501094,
+        "entries": 22,
+        "sha256": "49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3",
+        "local_verification_sha256": "f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b"
+      },
+      "rights": {
+        "source": "MIT; copyright Stephen Becker; APPM5720Notes.tex credited to Mitchell Krock",
+        "translation_corrections_connectors_exercises_hints_solutions": "CC BY-SA 4.0",
+        "saga_result": "mathematical result separately attributed; paper not redistributed",
+        "nonendorsement": true
+      },
+      "upstream_contact": false
     }
   },
   "current_production_cursor": {
     "recorded_on": "2026-08-25",
-    "authority_kind": "becker_bounded_supplement_next_module",
-    "name": "BECKER-VARIANCE-REDUCTION",
+    "authority_kind": "becker_bounded_supplement_publication_gate",
+    "name": "BECKER-03-PUBLIC-PRESERVATION",
     "authority_id": "o015-becker-convex-optimization-class-98ed693",
     "source": "TypedNotes/APPM5720Notes.tex",
     "source_lines": "2971-2988",
     "source_slice_sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-    "state": "active_after_becker_02_public_preservation",
-    "admitted": false,
+    "state": "locally_admitted_publication_pending",
+    "admitted": true,
     "required_actions": [
-      "reconfirm exact variance-reduction slice and nonduplication against Habring and preserved stochastic-gradient companions",
-      "translate one coherent variance-reduction module with retained source rights and credits",
-      "run deterministic reader, math, visual, accessibility, rereview, and backend gates"
+      "commit and push the exact Becker-03 boundary to the existing GitHub repository",
+      "publish one new version in the existing Zenodo concept 10.5281/zenodo.22059741",
+      "anonymously verify every new public byte and persist sanitized receipts"
     ],
     "next_after_gate": "finite original closure"
   },
@@ -1038,7 +1122,7 @@
             "lines": "2971-2988",
             "bytes": 900,
             "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed",
-            "admission": "active_next_candidate"
+            "admission": "admitted_publication_pending"
           }
         ]
       },
@@ -1056,7 +1140,7 @@
         "BSD-3-Clause utilities are not automatically admitted",
         "GPLv3 ADiGator components are not automatically admitted"
       ],
-      "admission": "bounded MIT supplement; Becker-01 and Becker-02 Douglas-Rachford are public with exact-byte readback, and variance reduction is the active bounded candidate"
+      "admission": "bounded MIT supplement; Becker-01 and Becker-02 are public with exact-byte readback, and Becker-03 variance reduction is locally admitted with publication pending"
     }
   ]
 }

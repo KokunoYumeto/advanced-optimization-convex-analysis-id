@@ -1,0 +1,20 @@
+% BEGIN variance-reduction | frozen lines 2971-2988
+\subsection{Variance Reduced Methods for SAA}
+Assume $f(x) = \frac{1}{N} \sum_{i=1}^N f_i(x) < \infty$. For example, in the context of general linearized models, $f_i(x) = L(a_i^T x - b_i)$.
+
+In SAGA, we first pick $x^{(1)}$ and store $\{ \nabla f_i(x^{(i)} ) \}_{i=1}^N$ in a $n \times N$ table. For $k=1,2,\dots$, we draw $j \sim \text{Unif}[1,\dots,N]$ and define $\overline{z} = \frac{1}{N} \sum_{i=1}^N \nabla f_i(x^{(i)})$ via the table.
+\[
+\begin{cases}
+x_{k+1} = x_k - t_k (\nabla f_j(x_k) - \nabla f_j(x^{(j)}) + \overline{z} ) \\
+x^{(j)} = x_k
+\end{cases}
+\]
+Note the addition of the control variates in the $x_{k+1}$ step. In addition to SAG and SAGA, there is SVRG.
+\begin{thrm}
+For appropriate $t$, this converges linearly.
+\end{thrm}
+
+\begin{rem}
+Define $\overline{x_k} = \frac{1}{k} \sum_{j=1}^k x_j$. Sometimes we can get better convergence rate using the average iterates.
+\end{rem}
+% END variance-reduction

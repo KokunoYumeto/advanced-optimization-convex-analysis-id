@@ -806,3 +806,47 @@ recorded in the superseding sections below. No upstream contact occurred.
   `release/zenodo/2026-08-25-becker-02/zenodo-draft-closure-becker-02.json`,
   394 bytes; SHA-256
   `4fbd6d2e456d89ed024c4d390a560a091dec1d364594e240d61a6d84a55c07f5`.
+
+## 2026-08-25 — Public Becker-02 receipt/control evidence descendant
+
+- Commit/tree: `64b60dae61096a265c6deec8e7defb21b1d917d5` /
+  `6741bbd5f3085c221fee1be165c8c83c92988780`
+- Parent: `2923d8b6e06f1ced65a91be4bd63e4766e1fb5b7`
+- Scope: 18 publication-receipt, publisher/verifier, manifest, rights, and
+  durable-control files / 618,143 aggregate bytes; no reader or DOI byte changed.
+- Public gate: `main` points to the commit and all immutable raw files match the
+  committed bytes over anonymous HTTPS. No credential material is recorded.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-02/github-public-readback-becker-02-evidence.json`,
+  11,792 bytes; SHA-256
+  `74180653bbfb02557987efe6eb617c5e6ed1b67d4610e36291fdaad70c536da5`.
+
+## 2026-08-25 — Becker-03 verified local publication candidate
+
+- Scope: exact Becker donor lines 2971--2988, the independent Indonesian SAGA
+  orientation and assessment layer, QA evidence, additive stable-ID receipts,
+  component rights, and compact continuation package.
+- Primary PDF: `output/pdf/D90-BECKER-03-reduksi-varians-id.pdf`, 476,357 bytes
+  / SHA-256
+  `2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a`.
+- Responsive HTML: 24,322 bytes / SHA-256
+  `da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb`.
+- Compact ZIP:
+  `release/becker-03/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_03_2026.08.25.zip`,
+  22 entries / 501,094 bytes / SHA-256
+  `49a05c958630aa1592587bd8083e3da993333fb2853c1e710c34089b8a013ff3`.
+- Local verification:
+  `release/becker-03/2026-08-25/local-verification-becker-03.json`, 7,359 bytes
+  / SHA-256
+  `f3beff89ea6e83456152055e444e604789d048e6bb8f5ccd93574f9620844c8b`.
+- Backend: 3,585 records; JSONL/CSV SHA-256
+  `fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb`
+  and `56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72`.
+- Rights: MIT donor/witness plus CC BY-SA 4.0 new Indonesian wording; the
+  cited SAGA paper is local evidence only and is not redistributed. Credits,
+  change disclosure, model provenance, nonendorsement, and partial-course
+  status are explicit.
+
+This entry proves local readiness only. Publish immediately in the existing
+GitHub repository and Zenodo concept, then supersede it with exact public-byte
+receipts. No upstream contact occurred.

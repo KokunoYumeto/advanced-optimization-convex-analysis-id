@@ -1,0 +1,83 @@
+{
+  "collision_count": 0,
+  "csv": {
+    "bytes": 3267489,
+    "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+  },
+  "final_id_order_sha256": "718098412e56cb591595cc683ed9e6380f67bf441f367b8f6d257d1c2ea76945",
+  "final_id_set_sha256": "24a32c1bc5c62f22e0f8b7f5c596189b2dad1c0733a161970b7e158e7ab70923",
+  "final_record_count": 3585,
+  "final_record_set_sha256": "c92934da552517c0780cdc48a66657f560ead0c38e74428db08a95a765cc72be",
+  "jsonl": {
+    "bytes": 2724813,
+    "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+  },
+  "namespace": "d90.becker.98ed693.b03.*",
+  "new_entity_counts": {
+    "artifact": 16,
+    "concept": 5,
+    "edition": 2,
+    "learning_surface": 32,
+    "qa_event": 8,
+    "relation": 82,
+    "resource": 1,
+    "rights": 3,
+    "segment": 5,
+    "unit": 1
+  },
+  "new_id_set_sha256": "e5fd430397b44515122218e25974c1be56134546b9ff3418f12e889d319f5ce6",
+  "new_record_count": 155,
+  "new_record_set_sha256": "c12010493c35053ff44cce841c3409f0cc3e341f62b9125850f1f710370531da",
+  "output_csv": "backend/records.csv",
+  "output_jsonl": "backend/records.jsonl",
+  "present_surface_counts": {
+    "chapter": 1,
+    "equation": 14,
+    "exercise": 2,
+    "hint": 2,
+    "proof": 1,
+    "proposition": 1,
+    "section": 4,
+    "solution": 2,
+    "theorem": 1
+  },
+  "protected_baseline": {
+    "csv_bytes": 3142537,
+    "csv_sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97",
+    "id_order_sha256": "5fbb8bc4f9ef7d70bb7062a3ade0dbedb8bd0f6ca14c154eb7d4df2572216ff0",
+    "id_set_sha256": "2049edb1e0d183bb6fb96f4fda97b3a9cced7a404f4a32ecd2a52cca50175f8f",
+    "jsonl_bytes": 2623909,
+    "jsonl_sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6",
+    "line_sequence_sha256": "0969a6be2816f4c8c0fb38d43af8925cbb7867dd685786000273b6a0a4a6edc2",
+    "raw_record_bytes_and_relative_order_preserved": true,
+    "record_count": 3430,
+    "record_set_sha256": "2d1b24aeadd13b165463e9e6e987b5ccc418b46b937b6d28d8ccb38246964768"
+  },
+  "result": "pass",
+  "schema": "o015-becker-03-backend-extension-receipt-v1",
+  "schema_identity": {
+    "bytes": 3092,
+    "schema_changed": false,
+    "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "segment_count": 5,
+  "source_absence_closure_count": 4,
+  "source_commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "source_range": {
+    "bytes": 900,
+    "first_line": 2971,
+    "last_line": 2988,
+    "line_count": 18,
+    "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+  },
+  "target": {
+    "bytes": 8298,
+    "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+    "physical_lines": 222,
+    "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+  },
+  "topic_count": 5,
+  "upstream_contact": false,
+  "workflow": "o015-becker-03-backend-v1",
+  "write_mode": "canonical"
+}

@@ -1,0 +1,169 @@
+% unit-id: d90.becker.98ed693.b03.unit
+% source-edition-id: d90.becker.98ed693.b03.edition.source
+% target-edition-id: d90.becker.98ed693.b03.edition.target
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\subtitle{Modul Becker 3: Reduksi Varians untuk SAA\\Edisi Bahasa Indonesia}
+\author{Stephen Becker; catatan ketik oleh Mitchell Krock}
+\date{Sumber dibekukan pada commit 98ed693, 24 Juni 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari bagian terpilih \emph{APPM5720Notes}.\\
+Materi sumber dipertahankan berdasarkan Lisensi MIT; terjemahan, koreksi, penghubung, latihan, dan solusi mandiri dilisensikan CC BY-SA 4.0.\\
+Edisi ini bukan karya resmi atau dukungan Stephen Becker, Mitchell Krock, University of Colorado Boulder, maupun pihak sumber lain.}
+\hypersetup{
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Modul Becker 3: Reduksi Varians untuk SAA - Edisi Bahasa Indonesia},
+  pdfauthor={Stephen Becker; typed notes by Mitchell Krock; independent Indonesian translation},
+  pdfsubject={Mixed-license MIT and CC BY-SA 4.0 educational derivative},
+  pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang modul ini}
+Modul ini menerjemahkan dan menyunting satu rentang terbatas dari berkas TeX
+\begin{center}\small\ttfamily
+TypedNotes/APPM5720Notes.tex
+\end{center}
+dalam repositori Stephen Becker, \emph{convex-optimization-class}, pada commit
+\begin{center}\small\ttfamily
+98ed6930084c435ba0f67\\[-0.2em]
+5f7646ced1f2fd8729e.
+\end{center}
+Catatan ketik sumber mengreditkan Mitchell Krock. Berkas sumber lengkap
+memiliki 130911 byte dan SHA-256
+\begin{center}\small\ttfamily
+dd2e209a05a6f993ccac3b7c32e46400\\[-0.2em]
+5466b45c93237e96c85da56147466cb8.
+\end{center}
+
+Rentang yang dipakai tepat baris 2971--2988. Irisan 18 baris tersebut memiliki
+900 byte dalam pengodean UTF-8 dengan akhir baris LF dan SHA-256
+\begin{center}\small\ttfamily
+b81634bf07565fcf8d2774bea7b96e56\\[-0.2em]
+5e5fdd76cf5e782c5e4eb6fb3268c5ed.
+\end{center}
+Saksi bahasa Inggris yang membungkus irisan itu hanya dengan penanda batas
+berada dalam
+\begin{center}\small\ttfamily
+source/en/becker-03-variance-\\[-0.2em]
+reduction-source.tex
+\end{center}
+dengan 977 byte dan SHA-256
+\begin{center}\small\ttfamily
+66f243b97cd379b73d217c6a3e424db6\\[-0.2em]
+88f8ace246852cb24f78108c53186607.
+\end{center}
+Isi di antara penanda saksi cocok byte demi byte dengan irisan sumber beku.
+
+Donor memperkenalkan SAGA, menyebut SAG dan SVRG, lalu memberi pernyataan laju
+linear dan catatan iterat rata-rata tanpa hipotesis yang diperlukan. Edisi ini
+mempertahankan batas sumber tersebut, memperbaiki klaim yang dapat ditentukan,
+dan menambahkan penghubung mandiri berupa bukti ketakbiasan, identitas varians,
+hasil laju yang bersyarat tepat, serta dua latihan dengan petunjuk dan solusi.
+Tidak ada algoritma, latihan, solusi, kode, atau gambar dari luar rentang beku
+yang diimpor.
+
+Provenans produksi edisi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori; seluruh kredit sumber dan kontributor manusia tetap
+dipertahankan.
+
+\tableofcontents
+\mainmatter
+\input{becker-03-reduksi-varians-id}
+
+\backmatter
+\chapter*{Catatan perubahan terhadap sumber}
+Perubahan berikut dibuat oleh penyusun edisi bahasa Indonesia dan bukan
+perubahan yang disahkan oleh penulis sumber.
+\begingroup\small
+\begin{enumerate}
+  \setlength{\itemsep}{0.15em}
+  \setlength{\parskip}{0pt}
+  \item Frasa donor ``model terlinearisasi umum'' diperjelas menjadi model
+    dengan prediktor linear, sesuai bentuk $a_i^\top x-b_i$ yang ditampilkan.
+    Notasi fungsi kerugian donor $L$ dinormalkan menjadi $\ell$ agar tidak
+    bertabrakan dengan konstanta gradien $L$-Lipschitz; frasa $f(x)<\infty$
+    dijelaskan sebagai asumsi bernilai hingga pada domain model.
+  \item Inisialisasi donor yang hanya menyebut $x^{(1)}$ dilengkapi menjadi
+    $\phi_i^0=x_0$ untuk seluruh $i$, sehingga setiap kolom tabel gradien
+    terdefinisi sebelum iterasi pertama.
+  \item Titik tabel $\phi_i^k$, gradien tersimpan $g_i^k$, rata-rata tabel,
+    serta urutan penyegaran satu kolom ditulis terpisah. Ini menghilangkan
+    ambiguitas indeks dan pembaruan serentak pada donor.
+  \item Klaim laju linear donor dilengkapi dengan asumsi konveks, gradien
+    $L$-Lipschitz, kekonveksan kuat $\mu$, langkah $1/(3L)$, dan laju eksplisit
+    dari Defazio, Bach, dan Lacoste-Julien (2014). Klaim tanpa syarat tidak
+    dipertahankan.
+  \item Notasi $\overline{x_k}$ dinormalkan menjadi $\bar x_k$ dan catatan
+    perataan dilengkapi dengan asumsi serta batas $\mathcal O(1/k)$; perataan
+    tidak dinyatakan sebagai perbaikan universal.
+  \item Bukti ketakbiasan bersyarat, identitas varians, dan perbandingan ringkas
+    antara SAGA, SAG, dan SVRG merupakan teks penghubung mandiri, bukan
+    terjemahan donor.
+  \item Dua latihan, petunjuk, dan solusi lengkap merupakan materi baru edisi
+    ini; rentang donor tidak memiliki permukaan penilaian tersebut.
+\end{enumerate}
+\endgroup
+
+\chapter*{Atribusi, hak, dan nondukungan}
+Sumber: Stephen Becker, repositori \emph{convex-optimization-class}, dengan
+catatan ketik \emph{APPM5720Notes} oleh Mitchell Krock, commit
+\texttt{98ed6930084c435ba0f675f7646ced1f2fd8729e},
+\href{https://github.com/stephenbeckr/convex-optimization-class}{repositori sumber}.
+Materi donor berada di bawah Lisensi MIT. Terjemahan bahasa Indonesia,
+penyusunan, rumusan koreksi, penghubung, latihan, petunjuk, dan solusi mandiri
+tersedia berdasarkan Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0), \url{https://creativecommons.org/licenses/by-sa/4.0/}.
+Lisensi komponen tetap terpisah; tidak ada lisensi yang menghapus kewajiban
+lisensi lainnya.
+
+Hasil laju SAGA yang dipakai untuk memperbaiki hipotesis donor dikreditkan
+kepada Aaron Defazio, Francis Bach, dan Simon Lacoste-Julien,
+\href{https://arxiv.org/abs/1407.0202}{\emph{SAGA: A Fast Incremental Gradient
+Method With Support for Non-Strongly Convex Composite Objectives} (2014)}.
+Hanya fakta dan rumus matematis yang dinyatakan ulang secara mandiri; tidak ada
+prosa atau tata letak makalah tersebut yang disalin.
+
+Stephen Becker, Mitchell Krock, Aaron Defazio, Francis Bach, Simon
+Lacoste-Julien, dan University of Colorado Boulder tidak menyusun, memeriksa,
+menyetujui, atau mendukung edisi ini. Penyebutan mereka semata-mata untuk
+atribusi karya sumber dan hasil matematis terkait.
+
+\chapter*{Pemberitahuan Lisensi MIT sumber}
+\begin{verbatim}
+MIT License
+
+Copyright (c) 2017 Stephen Becker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+\end{verbatim}
+
+\end{document}

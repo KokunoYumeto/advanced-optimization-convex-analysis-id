@@ -1,0 +1,135 @@
+{
+  "admission": {
+    "canonical_backend_written": true,
+    "csv": {
+      "bytes": 3267489,
+      "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+    },
+    "disposition": "validated_canonical_backend",
+    "final_id_order_sha256": "718098412e56cb591595cc683ed9e6380f67bf441f367b8f6d257d1c2ea76945",
+    "final_id_set_sha256": "24a32c1bc5c62f22e0f8b7f5c596189b2dad1c0733a161970b7e158e7ab70923",
+    "final_line_sequence_sha256": "91953bdf4f3f2ec2ce8108cb9a0909fc5f493e664489e26f8c6871ede41113ad",
+    "final_record_set_sha256": "c92934da552517c0780cdc48a66657f560ead0c38e74428db08a95a765cc72be",
+    "final_records": 3585,
+    "jsonl": {
+      "bytes": 2724813,
+      "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+    },
+    "namespace": "d90.becker.98ed693.b03.*",
+    "new_entity_counts": {
+      "artifact": 16,
+      "concept": 5,
+      "edition": 2,
+      "learning_surface": 32,
+      "qa_event": 8,
+      "relation": 82,
+      "resource": 1,
+      "rights": 3,
+      "segment": 5,
+      "unit": 1
+    },
+    "new_id_order_sha256": "4b0b4146ed42b718356cfbd189b81b722823d40799ddc83bd33074bfbfe95cbc",
+    "new_id_set_sha256": "e5fd430397b44515122218e25974c1be56134546b9ff3418f12e889d319f5ce6",
+    "new_record_set_sha256": "c12010493c35053ff44cce841c3409f0cc3e341f62b9125850f1f710370531da",
+    "new_records": 155
+  },
+  "commands": {
+    "regeneration_template": "python qa/extend_backend_becker_03.py --input-jsonl <jsonl> --input-csv <csv> --output-dir <dir>",
+    "staging": "python qa/extend_backend_becker_03.py --output-dir <dir>",
+    "validation_template": "python qa/validate_backend_becker_03.py --input-jsonl <jsonl> --input-csv <csv> --receipt <receipt>"
+  },
+  "deterministic_regeneration": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3267489,
+          "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+        },
+        "jsonl": {
+          "bytes": 2724813,
+          "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+        },
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 3267489,
+          "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+        },
+        "jsonl": {
+          "bytes": 2724813,
+          "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+        },
+        "run": 2
+      }
+    ],
+    "input_dataset_match": true,
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 3142537,
+      "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+    },
+    "id_order_sha256": "5fbb8bc4f9ef7d70bb7062a3ade0dbedb8bd0f6ca14c154eb7d4df2572216ff0",
+    "id_set_sha256": "2049edb1e0d183bb6fb96f4fda97b3a9cced7a404f4a32ecd2a52cca50175f8f",
+    "jsonl": {
+      "bytes": 2623909,
+      "line_sequence_sha256": "0969a6be2816f4c8c0fb38d43af8925cbb7867dd685786000273b6a0a4a6edc2",
+      "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "2d1b24aeadd13b165463e9e6e987b5ccc418b46b937b6d28d8ccb38246964768",
+    "records": 3430,
+    "recovered_csv": {
+      "bytes": 3142537,
+      "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+    },
+    "recovered_jsonl": {
+      "bytes": 2623909,
+      "line_sequence_sha256": "0969a6be2816f4c8c0fb38d43af8925cbb7867dd685786000273b6a0a4a6edc2",
+      "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-becker-03-backend-validation-v1",
+  "schema_constraint": {
+    "additive_records_only": true,
+    "note": "Global sorting means the old file is not a literal prefix; exact workflow stripping proves every prior JSONL line and CSV row remains byte-identical and in the same relative order.",
+    "schema_bytes": 3092,
+    "schema_changed": false,
+    "schema_sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "topology": {
+    "predecessor_relation": "d90.becker.98ed693.b03.relation.b02-precedes-b03",
+    "present_surface_counts": {
+      "chapter": 1,
+      "equation": 14,
+      "exercise": 2,
+      "hint": 2,
+      "proof": 1,
+      "proposition": 1,
+      "section": 4,
+      "solution": 2,
+      "theorem": 1
+    },
+    "present_surfaces": 28,
+    "segments": 5,
+    "source_absence_closures": 4,
+    "source_range": "2971-2988",
+    "target_segment_ranges": [
+      "1-23",
+      "24-70",
+      "71-115",
+      "116-169",
+      "170-222"
+    ],
+    "topics": 5,
+    "unit_id": "d90.becker.98ed693.b03.unit"
+  },
+  "upstream_contact": false,
+  "validated_at": "2026-08-25T16:00:00Z",
+  "workflow": "o015-becker-03-backend-v1"
+}

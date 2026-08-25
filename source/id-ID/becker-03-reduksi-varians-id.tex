@@ -1,0 +1,222 @@
+% B03-S001 | APPM5720Notes.tex baris 2971-2972
+% segment-id: d90.becker.98ed693.b03.seg0001
+\chapter{Reduksi Varians untuk SAA}
+\label{becker03:chapter:variance-reduction}
+
+Pertimbangkan masalah jumlah hingga dari aproksimasi rata-rata sampel
+(\emph{sample average approximation}, SAA)
+\begin{equation}
+  \label{becker03:eq:finite-sum}
+  \min_{x\in\R^n} f(x),
+  \qquad
+  f(x)=\frac{1}{N}\sum_{i=1}^{N}f_i(x),
+\end{equation}
+dengan $f$ bernilai hingga pada domain model. Sebagai contoh, untuk model
+dengan prediktor linear dan fungsi kerugian dapat dipakai
+\begin{equation}
+  \label{becker03:eq:linearized-loss}
+  f_i(x)=\ell(a_i^\top x-b_i),
+\end{equation}
+dengan $\ell$ fungsi kerugian. Huruf $\ell$ menggantikan huruf $L$ pada donor
+agar tidak bertabrakan dengan konstanta kemulusan Lipschitz yang dipakai di
+bawah.
+
+% B03-S002 | APPM5720Notes.tex baris 2974-2981
+% segment-id: d90.becker.98ed693.b03.seg0002
+\section{Tabel gradien dan penaksir SAGA}
+\label{becker03:section:saga-estimator}
+
+Pilih iterat awal $x_0$ dan inisialisasikan satu titik tabel
+$\phi_i^0=x_0$ untuk setiap $i=1,\dots,N$. Simpan, pada iterasi $k\geq0$,
+\begin{equation}
+  g_i^k=\nabla f_i(\phi_i^k),
+  \qquad
+  \bar g_k=\frac{1}{N}\sum_{i=1}^{N}g_i^k.
+\end{equation}
+Dengan $x\in\R^n$, tabel lengkap mempunyai $N$ kolom gradien di $\R^n$.
+Ambil indeks acak
+$J_k\sim\operatorname{Unif}\{1,\dots,N\}$ dan bentuk
+\begin{equation}
+  \label{becker03:eq:saga-estimator}
+  v_k
+  =\nabla f_{J_k}(x_k)-g_{J_k}^k+\bar g_k.
+\end{equation}
+Pembaruan SAGA tanpa suku proksimal adalah
+\begin{equation}
+  \label{becker03:eq:saga-update}
+  x_{k+1}=x_k-t_kv_k.
+\end{equation}
+Sesudah $v_k$ dihitung dari tabel lama, hanya kolom terpilih yang disegarkan:
+\begin{equation}
+  \label{becker03:eq:table-update}
+  g_i^{k+1}=
+  \begin{cases}
+    \nabla f_i(x_k),&i=J_k,\\
+    g_i^k,&i\ne J_k,
+  \end{cases}
+  \qquad
+  \phi_i^{k+1}=
+  \begin{cases}
+    x_k,&i=J_k,\\
+    \phi_i^k,&i\ne J_k.
+  \end{cases}
+\end{equation}
+Ini menuliskan secara eksplisit inisialisasi dan urutan pembaruan yang hanya
+tersirat pada donor. Suku
+$-g_{J_k}^k+\bar g_k$ merupakan peubah kontrol
+(\emph{control variate}). Donor juga menyebut SAG dan SVRG; keduanya adalah
+metode reduksi varians lain, tetapi algoritmanya tidak diimpor dari bagian di
+luar rentang beku.
+
+% B03-S003 | penghubung matematis mandiri untuk baris 2974-2981
+% segment-id: d90.becker.98ed693.b03.seg0003
+\section{Mengapa koreksi tabel mengurangi varians}
+\label{becker03:section:variance-identity}
+
+\noindent\textbf{Penghubung mandiri.}\par
+Ambil $\mathcal F_k$ sebagai informasi sebelum $J_k$ ditarik, sehingga
+$x_k$ dan seluruh tabel tetap ketika ekspektasi bersyarat dihitung.
+
+\begin{prop}[Takbias bersyarat]
+  \label{becker03:prop:conditional-unbiasedness}
+  Penaksir~\eqref{becker03:eq:saga-estimator} memenuhi
+  \begin{equation}
+    \E[v_k\mid\mathcal F_k]=\nabla f(x_k).
+  \end{equation}
+\end{prop}
+\begin{proof}
+  Keseragaman $J_k$ memberi
+  \begin{multline*}
+    \E[v_k\mid\mathcal F_k]
+    =\frac1N\sum_{i=1}^{N}
+      \bigl(\nabla f_i(x_k)-g_i^k+\bar g_k\bigr)\\
+    =\nabla f(x_k)-\bar g_k+\bar g_k
+      =\nabla f(x_k).
+  \end{multline*}
+\end{proof}
+
+Lebih tepat lagi, tuliskan
+$a_i^k=\nabla f_i(x_k)-g_i^k$ dan
+$\bar a_k=N^{-1}\sum_i a_i^k$. Maka
+\begin{equation}
+  \label{becker03:eq:variance-identity}
+  \E\!\left[
+    \norm{v_k-\nabla f(x_k)}_2^2\mid\mathcal F_k
+  \right]
+  =\frac1N\sum_{i=1}^{N}\norm{a_i^k-\bar a_k}_2^2
+  \leq\frac1N\sum_{i=1}^{N}\norm{a_i^k}_2^2.
+\end{equation}
+Identitas ini memperlihatkan mekanismenya: ketika gradien tersimpan mendekati
+gradien komponen pada iterat sekarang, ruas kanan menyusut meskipun langkah
+$t_k$ tidak dipaksa menuju nol. Berbeda dari SAG, koreksi SAGA pada
+\eqref{becker03:eq:saga-estimator} membuat arah langkah takbias. SVRG mencapai
+gagasan serupa dengan gradien penuh pada titik acuan berkala, sehingga tidak
+menyimpan seluruh tabel gradien tetapi memakai evaluasi gradien tambahan.
+
+% B03-S004 | APPM5720Notes.tex baris 2982-2988 dengan hipotesis diperbaiki
+% segment-id: d90.becker.98ed693.b03.seg0004
+\section{Laju konvergensi dan iterat rata-rata}
+\label{becker03:section:rates}
+
+Pernyataan donor ``untuk $t$ yang sesuai, metode ini konvergen secara linear''
+memerlukan hipotesis. Bentuk berikut adalah spesialisasi nonkomposit dari hasil
+SAGA oleh Defazio, Bach, dan Lacoste-Julien (2014).
+
+\begin{theorem}[Laju linear SAGA dengan kekonveksan kuat]
+  \label{becker03:theorem:linear-rate}
+  Andaikan setiap $f_i$ konveks, terdiferensial, dan mempunyai gradien
+  $L$-Lipschitz. Andaikan pula $f$ pada~\eqref{becker03:eq:finite-sum}
+  $\mu$-konveks kuat dan mempunyai peminimum $x^*$. Jika seluruh titik tabel
+  diinisialisasi pada $x_0$ dan $t_k=t=1/(3L)$, maka
+  \begin{equation}
+    \label{becker03:eq:linear-rate}
+    \E\norm{x_k-x^*}_2^2
+    \leq
+    \left(1-\min\left\{\frac{1}{4N},\frac{\mu}{3L}\right\}\right)^k C_0,
+  \end{equation}
+  dengan
+  \begin{equation}
+    C_0=\norm{x_0-x^*}_2^2
+      +\frac{2N}{3L}\bigl(f(x_0)-f(x^*)\bigr).
+  \end{equation}
+\end{theorem}
+
+Konstanta dan laju pada teorema tersebut mengikuti hasil adaptivitas terhadap
+kekonveksan kuat dalam
+\href{https://arxiv.org/abs/1407.0202}{Defazio, Bach, dan Lacoste-Julien,
+\emph{SAGA} (2014)}. Teorema donor tanpa hipotesis tidak dipertahankan sebagai
+klaim universal: tanpa kemulusan dan struktur konveks yang sesuai, laju linear
+tidak mengikuti hanya dari bentuk pembaruan.
+
+Jika $f$ hanya konveks, definisikan iterat rata-rata secara tidak ambigu sebagai
+\begin{equation}
+  \label{becker03:eq:average-iterate}
+  \bar x_k=\frac1k\sum_{r=1}^{k}x_r.
+\end{equation}
+Di bawah asumsi konveks dan $L$-mulus di atas, dengan $t=1/(3L)$, hasil yang
+sama memberi batas
+\begin{equation}
+  \label{becker03:eq:average-rate}
+  \E[f(\bar x_k)]-f(x^*)
+  \leq\frac{4N}{k}
+  \left[
+    \frac{2L}{N}\norm{x_0-x^*}_2^2+f(x_0)-f(x^*)
+  \right].
+\end{equation}
+Jadi perataan bukan jaminan tanpa syarat untuk laju yang lebih baik; dalam
+rezim konveks yang dinyatakan, ia menyediakan jaminan sublinear
+$\mathcal O(1/k)$ untuk nilai fungsi.
+
+% B03-S005 | latihan, petunjuk, dan solusi mandiri
+% segment-id: d90.becker.98ed693.b03.seg0005
+\section{Latihan dengan petunjuk dan solusi}
+\label{becker03:section:exercises}
+
+Latihan berikut merupakan materi baru untuk edisi ini; tidak ada latihan,
+petunjuk, atau solusi pada rentang donor.
+
+\begin{exercise}[Takbias dan identitas varians]
+  \label{becker03:exercise:variance-identity}
+  Dengan $a_i^k=\nabla f_i(x_k)-g_i^k$, buktikan
+  Proposisi~\ref{becker03:prop:conditional-unbiasedness} dan
+  identitas~\eqref{becker03:eq:variance-identity}. Jelaskan kapan varians
+  bersyaratnya sama dengan nol.
+\end{exercise}
+\noindent\textbf{Petunjuk.}
+Gunakan $v_k-\nabla f(x_k)=a_{J_k}^k-\bar a_k$ dan kembangkan kuadratnya.
+
+\noindent\textbf{Solusi lengkap.}
+Keseragaman indeks memberi
+$\E[a_{J_k}^k\mid\mathcal F_k]=\bar a_k$, sehingga selisih tersebut
+bermean nol. Selanjutnya,
+\begin{multline*}
+  \E\norm{a_{J_k}^k-\bar a_k}_2^2
+  =\frac1N\sum_i
+    \left(\norm{a_i^k}_2^2-2\inner{a_i^k}{\bar a_k}
+      +\norm{\bar a_k}_2^2\right)\\
+  =\frac1N\sum_i\norm{a_i^k}_2^2-\norm{\bar a_k}_2^2,
+\end{multline*}
+yang sama dengan ruas tengah~\eqref{becker03:eq:variance-identity} dan tidak
+melebihi ruas kanannya. Variansnya nol tepat ketika semua $a_i^k$ sama;
+khususnya, nol jika $g_i^k=\nabla f_i(x_k)$ untuk semua $i$.
+
+\begin{exercise}[Satu langkah kuadratik]
+  \label{becker03:exercise:quadratic-step}
+  Ambil $N=2$,
+  $f_1(x)=\tfrac12(x-1)^2$, $f_2(x)=\tfrac12(x+1)^2$, $x_k=2$,
+  $\phi_1^k=0$, dan $\phi_2^k=1$. Hitung dua nilai mungkin bagi $v_k$,
+  ekspektasi dan variansnya, lalu bandingkan dengan gradien stokastik biasa
+  $\nabla f_{J_k}(x_k)$. Untuk $t_k=0{,}1$, hitung pula dua iterat berikutnya.
+\end{exercise}
+\noindent\textbf{Petunjuk.}
+$g_1^k=-1$, $g_2^k=2$, dan $\bar g_k=1/2$.
+
+\noindent\textbf{Solusi lengkap.}
+Pada $x_k=2$, gradien komponen adalah $1$ dan $3$. Oleh karena itu
+$v_k=1-(-1)+1/2=5/2$ jika $J_k=1$, sedangkan
+$v_k=3-2+1/2=3/2$ jika $J_k=2$. Maka
+$\E[v_k]=2=\nabla f(2)$ dan
+$\operatorname{Var}(v_k)=\tfrac12[(1/2)^2+(-1/2)^2]=1/4$.
+Penaksir SGD biasa bernilai $1$ atau $3$, sehingga mean-nya juga $2$ tetapi
+variansnya $1$. Dengan $t_k=0{,}1$, SAGA menghasilkan
+$x_{k+1}=1{,}75$ atau $x_{k+1}=1{,}85$.

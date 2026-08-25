@@ -375,3 +375,28 @@ Zenodo DOI `10.5281/zenodo.22098168`, with anonymous exact-byte readback
 complete. The active nonduplicative source boundary is variance reduction at
 Becker lines 2971--2988; the original stochastic, variational/monotone,
 assessment/solution, lab, capstone, tagged-PDF, and accessibility gaps remain.
+
+## Becker-03 variance reduction for SAA admitted (2026-08-25)
+
+The operative donor boundary is exactly `APPM5720Notes.tex` lines 2971--2988:
+18 LF lines / 900 bytes / SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+It supplies a bounded finite-sum SAA and SAGA orientation. The independent
+edition layer makes the old-table update semantics explicit, proves
+conditional unbiasedness and the variance identity, replaces unqualified rate
+claims with primary-sourced assumptions and constants, and adds two exercises
+with paired hints and complete solutions. Earlier stochastic-gradient material
+and the document terminator are excluded.
+
+This unit is additive to Habring and the preserved stochastic-gradient
+companions: it supplies a compact corrected SAGA bridge and assessment surface,
+not a second general stochastic-optimization spine. It contains no O018 LP/MIP
+model, simplex/tableau method, finite LP duality or sensitivity, network
+optimization, or general operations-research workflow. The local SAGA paper is
+used only to verify the mathematical result and is not redistributed.
+
+Admission closes this exact Becker variance-reduction boundary only. It does
+not close broader stochastic proximal/mirror/minibatch integration, SVRG/SAG
+development, variational inequalities, maximal monotonicity, resolvents and
+splitting beyond admitted modules, or the course-wide proof, assessment,
+complete-solution, lab, capstone, tagged-PDF, and accessibility layers.

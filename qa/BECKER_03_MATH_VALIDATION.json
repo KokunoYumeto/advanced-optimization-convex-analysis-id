@@ -1,0 +1,238 @@
+{
+  "determinism": {
+    "arithmetic": "fractions.Fraction for all algorithmic checks",
+    "json": "UTF-8, LF, sorted keys, two-space indentation",
+    "observed_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9"
+    },
+    "pinned_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9"
+    },
+    "randomness": "none; all sampled-index paths are enumerated exactly"
+  },
+  "failures": [],
+  "gate_count": 11,
+  "gates": [
+    {
+      "details": {
+        "observed": {
+          "numpy": "2.4.4",
+          "python": "3.13.9"
+        },
+        "pinned": {
+          "numpy": "2.4.4",
+          "python": "3.13.9"
+        }
+      },
+      "gate": "pinned_open_python_stack",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 13
+      },
+      "gate": "live_target_mathematical_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 6
+      },
+      "gate": "live_wrapper_provenance_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "document_terminator_imported": false,
+        "outside_range_material_imported": false,
+        "selected_ranges": [
+          [
+            2971,
+            2988,
+            900,
+            "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+          ]
+        ]
+      },
+      "gate": "admitted_source_boundary",
+      "pass": true
+    },
+    {
+      "details": {
+        "authority": "arXiv:1407.0202v3, Defazio--Bach--Lacoste-Julien, page 2 and supplement",
+        "bytes": 516033,
+        "formula_scope": "noncomposite specialization; gradient at an unconstrained differentiable minimizer is zero",
+        "lines": 6929,
+        "path": "authority/becker/related/saga-arxiv-1407.0202v3.pdf",
+        "sha256": "b0177cd77447c7469ca31bdfbe7773f604320a9878a46b777c899d9b6fc37c7e",
+        "source_url": "https://arxiv.org/pdf/1407.0202v3"
+      },
+      "gate": "primary_saga_result_witness",
+      "pass": true
+    },
+    {
+      "details": {
+        "html_receipt_current": true,
+        "pdf_receipt_current": true
+      },
+      "gate": "current_deterministic_build_receipts",
+      "pass": true
+    },
+    {
+      "details": {
+        "component_estimators": [
+          "35/6",
+          "31/6",
+          "7/2",
+          "-25/6"
+        ],
+        "direct_variance": "2291/144",
+        "estimator_mean": "31/12",
+        "full_gradient": "31/12",
+        "identity_variance": "2291/144"
+      },
+      "gate": "conditional_unbiasedness_and_variance_identity",
+      "pass": true
+    },
+    {
+      "details": {
+        "chosen_zero_based_index": 2,
+        "full_recomputed_mean": "11/4",
+        "incremental_mean": "11/4",
+        "old_mean": "5/2",
+        "replacement_point": "x_k"
+      },
+      "gate": "stored_gradient_replacement_and_incremental_mean",
+      "pass": true
+    },
+    {
+      "details": {
+        "next_iterates": [
+          "7/4",
+          "37/20"
+        ],
+        "saga_estimators": [
+          "5/2",
+          "3/2"
+        ],
+        "saga_mean": "2",
+        "saga_variance": "1/4",
+        "sgd_variance": "1"
+      },
+      "gate": "quadratic_exercise_exact_values",
+      "pass": true
+    },
+    {
+      "details": {
+        "C0": "20/3",
+        "L": "1",
+        "N": 2,
+        "expected_squared_errors": [
+          "4",
+          "16/9",
+          "64/81",
+          "265/729",
+          "2381/13122",
+          "23809/236196",
+          "32782/531441",
+          "3068977/76527504",
+          "18419119/688747536"
+        ],
+        "label": "finite exact numerical witness, not a proof",
+        "mu": "1",
+        "rate_factor": "7/8",
+        "step": "1/3",
+        "theoretical_bounds": [
+          "20/3",
+          "35/6",
+          "245/48",
+          "1715/384",
+          "12005/3072",
+          "84035/24576",
+          "588245/196608",
+          "4117715/1572864",
+          "28824005/12582912"
+        ]
+      },
+      "gate": "strongly_convex_rate_numerical_witness",
+      "pass": true
+    },
+    {
+      "details": {
+        "direct_average": "71/48",
+        "incremental_average": "71/48",
+        "iterates": [
+          "5/2",
+          "-1/3",
+          "7/4",
+          "2"
+        ]
+      },
+      "gate": "averaged_iterate_identity",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "html_build_receipt": {
+      "bytes": 4636,
+      "lines": 129,
+      "path": "qa/BECKER_03_HTML_BUILD.json",
+      "sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13"
+    },
+    "pdf_build_receipt": {
+      "bytes": 4920,
+      "lines": 145,
+      "path": "qa/BECKER_03_PDF_BUILD.json",
+      "sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727"
+    },
+    "primary_saga_paper": {
+      "bytes": 516033,
+      "lines": 6929,
+      "path": "authority/becker/related/saga-arxiv-1407.0202v3.pdf",
+      "sha256": "b0177cd77447c7469ca31bdfbe7773f604320a9878a46b777c899d9b6fc37c7e"
+    },
+    "source_boundary": {
+      "bytes": 1815,
+      "lines": 50,
+      "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3"
+    },
+    "target": {
+      "bytes": 8298,
+      "lines": 222,
+      "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+    },
+    "validator": {
+      "bytes": 15746,
+      "lines": 414,
+      "path": "qa/validate_becker_variance_reduction_math.py",
+      "sha256": "ffaf35ca147a4f94515f1043b8795451d68144cb3d47625ca81c445256467b97"
+    },
+    "witness": {
+      "bytes": 977,
+      "lines": 20,
+      "path": "source/en/becker-03-variance-reduction-source.tex",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"
+    },
+    "wrapper": {
+      "bytes": 7776,
+      "lines": 169,
+      "path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-becker-03-open-math-validation-v1",
+  "scope": {
+    "numerical_witnesses_are_not_proofs": true,
+    "theorem_source": "Defazio, Bach, Lacoste-Julien, arXiv:1407.0202v3",
+    "unit": "Becker module 3: variance reduction for SAA",
+    "upstream_contact": false
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "bytes": 476357,
+    "path": "output/pdf/D90-BECKER-03-reduksi-varians-id.pdf",
+    "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"
+  },
+  "checked_at_utc": "2026-08-25T15:41:02Z",
+  "inspection": {
+    "all_pages_inspected": true,
+    "clipped_or_overlapping_content": 0,
+    "equation_or_glyph_defects": 0,
+    "header_footer_or_page_number_defects": 0,
+    "notes": [
+      "Title, front matter, table of contents, reader body, change notice, attribution, and complete MIT notice are legible and consistently aligned.",
+      "All displayed SAGA formulas fit the text block; no equation, theorem, exercise, hint, or solution is clipped.",
+      "Continuation pages retain valid top and bottom margins; apparent whitespace variation follows chapter/front-matter page styles."
+    ],
+    "page_count": 11,
+    "result": "pass"
+  },
+  "render": {
+    "command": "pdftoppm -png -r 150 output/pdf/D90-BECKER-03-reduksi-varians-id.pdf tmp/pdfs/becker-03/page",
+    "dpi": 150,
+    "pages": [
+      {"bytes": 111056, "page": 1, "sha256": "340dc44794aad9308e03ddffc110e8cdc0544408ba2d1394065a315fee8f3e2c"},
+      {"bytes": 155738, "page": 2, "sha256": "48161c4f540eedd728bf624349385d525cb0e9d35db7d6d9b261dbb46e6bd568"},
+      {"bytes": 105635, "page": 3, "sha256": "b35a9be97110db863bfddcbd3160af27d3bf6c55ae12a9434143b2b6b47b50d2"},
+      {"bytes": 45721, "page": 4, "sha256": "6e716da683cc827ec69305eb170176dff216c1bad9186112e5bb69a9938c6b37"},
+      {"bytes": 179545, "page": 5, "sha256": "b3fbfa6d7d2e3ab97796ab69771a8d324dcd949a590a872736d807a4d221d3e0"},
+      {"bytes": 204506, "page": 6, "sha256": "44fff72cbf98737565a5d022986f04bd562bab408bb9aaca2abaa98e1d35d030"},
+      {"bytes": 246583, "page": 7, "sha256": "95d1ee66922f8c420969b99a76c555755a69badaf559a34e50a9f5de94ff04cd"},
+      {"bytes": 206185, "page": 8, "sha256": "ef3cc9b411f75564bd2cfd6ff54500863e12b2300d32b4d4318962a522390cd0"},
+      {"bytes": 203176, "page": 9, "sha256": "1d091993d8979f57d90cfd7ba6a01425bb6549623292dab1772fce3a780a55b4"},
+      {"bytes": 207807, "page": 10, "sha256": "92bc9a78e111133a52add60ffaeab4fd98c14e68bc34417af92326f32449197f"},
+      {"bytes": 153952, "page": 11, "sha256": "0467d7c5ad41ee1a1348484a764c9bc015c89b30a99382a64a1461dd0e479e31"}
+    ],
+    "pixel_dimensions": [1241, 1754],
+    "tool": "pdftoppm 24.04.0"
+  },
+  "result": "pass",
+  "schema": "o015-becker-03-pdf-visual-qa-v1",
+  "upstream_contact": false
+}

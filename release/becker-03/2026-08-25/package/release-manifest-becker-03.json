@@ -1,0 +1,239 @@
+{
+  "accessibility": {
+    "pdf_language": "id-ID",
+    "pdf_searchable": true,
+    "pdf_tagged": false,
+    "responsive_semantic_html": true
+  },
+  "corrections": "O015-BECKER-ADV-0020 through O015-BECKER-ADV-0024",
+  "credits": [
+    "Stephen Becker",
+    "Mitchell Krock",
+    "Aaron Defazio",
+    "Francis Bach",
+    "Simon Lacoste-Julien"
+  ],
+  "excluded_from_compact_payload": [
+    "164.5 MB official archive; frozen identity remains in authority evidence",
+    "516,033-byte SAGA paper witness; local evidence only and not redistributed",
+    "full multi-megabyte backend dataset; maintained in the edition repository",
+    "build trees, caches, rendered QA images, credentials, and bulk provenance dumps"
+  ],
+  "files": [
+    {
+      "bytes": 24322,
+      "media_type": "text/html",
+      "path": "D90-BECKER-03-reduksi-varians-id.html",
+      "role": "responsive semantic HTML reader",
+      "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+    },
+    {
+      "bytes": 476357,
+      "media_type": "application/pdf",
+      "path": "D90-BECKER-03-reduksi-varians-id.pdf",
+      "role": "primary PDF reader",
+      "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"
+    },
+    {
+      "bytes": 1071,
+      "media_type": "text/plain",
+      "path": "LICENSE_BECKER_MIT.txt",
+      "role": "exact root MIT notice",
+      "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac"
+    },
+    {
+      "bytes": 1003,
+      "media_type": "text/markdown",
+      "path": "LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "role": "CC BY-SA 4.0 scope for new Indonesian material",
+      "sha256": "3a5c7c99881b44ac9ec1573f2ab21a3e5344c8dd016f390329bc9339a009756d"
+    },
+    {
+      "bytes": 2920,
+      "media_type": "text/markdown",
+      "path": "README_BECKER_03.md",
+      "role": "reader-first scope, credits, rights, and caveats",
+      "sha256": "9c209fbac59fdf8d5926700882ce49959d8cef6039e60d8161dcefca1ce78faf"
+    },
+    {
+      "bytes": 8935,
+      "media_type": "text/markdown",
+      "path": "authority/BECKER_AUTHORITY_FREEZE.md",
+      "role": "authority and editable-closure report",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7"
+    },
+    {
+      "bytes": 2931,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_BACKEND_EXTENSION.json",
+      "role": "stable-ID backend extension receipt",
+      "sha256": "8df8ad1b95748fec54f9149678fa87ea68947567c14ab314afd6a3471036e1c9"
+    },
+    {
+      "bytes": 4856,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_BACKEND_VALIDATION.json",
+      "role": "independent stable-ID validation",
+      "sha256": "e13710679ca55db8bd51d293395721516e722c47f5984a7c333cdd57c3a79cc0"
+    },
+    {
+      "bytes": 2523,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_HTML_BROWSER_QA.json",
+      "role": "desktop/tablet/phone browser QA",
+      "sha256": "87cfb2cd11657fa7051df151d5972c11350bbdaf2264f892dc3893bee50365ec"
+    },
+    {
+      "bytes": 4636,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_HTML_BUILD.json",
+      "role": "deterministic HTML build receipt",
+      "sha256": "2a2174cff80da75d38ee71788edc4346d893b1332e7e834152d7bfe3ac2b1b13"
+    },
+    {
+      "bytes": 3799,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_INDEPENDENT_REREVIEW.json",
+      "role": "independent final rereview",
+      "sha256": "ec8a9cc7429440abc8b2cb371dbe41318774eecc09fcccbffdc1dc2333a9a338"
+    },
+    {
+      "bytes": 6375,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_MATH_VALIDATION.json",
+      "role": "open mathematics validation",
+      "sha256": "51fd654f14763f7aa96ef103e98291a34a477eba6eeb2b16df88dcc94497013f"
+    },
+    {
+      "bytes": 4920,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_PDF_BUILD.json",
+      "role": "deterministic PDF build receipt",
+      "sha256": "2b00568f097123cbfe443580a74d22c1589fc92929bc4ed891adf6fd18851727"
+    },
+    {
+      "bytes": 2472,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_PDF_VISUAL_QA.json",
+      "role": "all-page PDF visual QA",
+      "sha256": "1387dcaa996c32a93aac0492f15f71cac9d60022b5c1b26685d0f16e0fa65f48"
+    },
+    {
+      "bytes": 1815,
+      "media_type": "application/json",
+      "path": "qa/BECKER_03_SOURCE_BOUNDARY.json",
+      "role": "source-boundary receipt",
+      "sha256": "41cb539339f04ffe81ced83d0c28cf13ca8071bc5ac2de5dd21cfe6700da29e3"
+    },
+    {
+      "bytes": 977,
+      "media_type": "application/x-tex",
+      "path": "source/en/becker-03-variance-reduction-source.tex",
+      "role": "exact English source witness",
+      "sha256": "66f243b97cd379b73d217c6a3e424db688f8ace246852cb24f78108c53186607"
+    },
+    {
+      "bytes": 7776,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/D90-BECKER-03-reduksi-varians-id.tex",
+      "role": "standalone Indonesian reader wrapper",
+      "sha256": "78429431c35b9dd17eda6a0f88027ccce5e9467302ab9d7250c19700048c088e"
+    },
+    {
+      "bytes": 8298,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "role": "Indonesian translated body",
+      "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+    },
+    {
+      "bytes": 4465,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/macros-id.tex",
+      "role": "shared Indonesian LaTeX macros",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/shinybook.cls",
+      "role": "shared LaTeX document class",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  ],
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "nonendorsement": "Independent edition; no endorsement by named authors, University of Colorado Boulder, or other source parties.",
+  "primary_reader": "D90-BECKER-03-reduksi-varians-id.pdf",
+  "qa": {
+    "backend": "pass",
+    "backend_dataset_packaged": false,
+    "browser": "pass",
+    "html_build": "pass",
+    "independent_rereview": "P1=0/P2=0/P3=0",
+    "new_backend_records": 155,
+    "open_math_gates": 11,
+    "pdf_build": "pass",
+    "pdf_visual": "pass",
+    "source_boundary": "pass",
+    "stable_id_namespace": "d90.becker.98ed693.b03.*"
+  },
+  "reader_order": [
+    "D90-BECKER-03-reduksi-varians-id.pdf",
+    "D90-BECKER-03-reduksi-varians-id.html"
+  ],
+  "release_date": "2026-08-25",
+  "result_witness": {
+    "citation": "Aaron Defazio, Francis Bach, and Simon Lacoste-Julien, SAGA (2014), arXiv:1407.0202v3",
+    "local_sha256": "b0177cd77447c7469ca31bdfbe7773f604320a9878a46b777c899d9b6fc37c7e",
+    "redistributed_in_package": false,
+    "use": "primary check of mathematical hypotheses and rate constants; no prose or layout copied"
+  },
+  "rights": {
+    "component_specific": true,
+    "indonesian_translation_corrections_connective_text_exercises_solutions_and_new_documentation": "CC BY-SA 4.0",
+    "no_blanket_license_claim": true,
+    "source_material_and_english_witness": "MIT; full notice in LICENSE_BECKER_MIT.txt"
+  },
+  "schema": "o015-becker-03-compact-release-v1",
+  "sha256sums_scope": "every ZIP member except SHA256SUMS itself",
+  "source_authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "explicit_exclusions": [
+      {
+        "lines": "before 2971",
+        "reason": "Earlier stochastic-gradient material is outside this bounded variance-reduction unit."
+      },
+      {
+        "lines": "2989 onward",
+        "reason": "Only the document terminator and trailing blank lines follow; none is imported."
+      }
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "repository_author": "Stephen Becker",
+    "root_license_sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+    "selected_ranges": [
+      {
+        "bytes": 900,
+        "final_newline": true,
+        "first_line": 2971,
+        "id": "variance-reduction",
+        "last_line": 2988,
+        "line_count": 18,
+        "line_endings": "LF",
+        "sha256": "b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed"
+      }
+    ],
+    "source_path": "authority/becker/extract/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e/TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "status": {
+    "larger_course_edition": "partial",
+    "module": "complete at the exact admitted source boundary"
+  },
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Modul Becker 3: Reduksi Varians untuk SAA — Edisi Bahasa Indonesia",
+  "upstream_contact": false,
+  "zip_identity_location": "local-verification-becker-03.json outside the ZIP"
+}
