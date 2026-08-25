@@ -1,0 +1,126 @@
+{
+  "admission": {
+    "canonical_backend_written": true,
+    "csv": {
+      "bytes": 3142537,
+      "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+    },
+    "disposition": "validated_canonical_backend",
+    "final_id_order_sha256": "5fbb8bc4f9ef7d70bb7062a3ade0dbedb8bd0f6ca14c154eb7d4df2572216ff0",
+    "final_id_set_sha256": "2049edb1e0d183bb6fb96f4fda97b3a9cced7a404f4a32ecd2a52cca50175f8f",
+    "final_line_sequence_sha256": "0969a6be2816f4c8c0fb38d43af8925cbb7867dd685786000273b6a0a4a6edc2",
+    "final_record_set_sha256": "2d1b24aeadd13b165463e9e6e987b5ccc418b46b937b6d28d8ccb38246964768",
+    "final_records": 3430,
+    "jsonl": {
+      "bytes": 2623909,
+      "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+    },
+    "namespace": "d90.becker.98ed693.b02.*",
+    "new_entity_counts": {
+      "artifact": 16,
+      "concept": 6,
+      "edition": 2,
+      "learning_surface": 19,
+      "qa_event": 8,
+      "relation": 51,
+      "resource": 1,
+      "rights": 3,
+      "segment": 3,
+      "unit": 1
+    },
+    "new_id_order_sha256": "7ed2019008edafc972a80745eaaa4e46b8dcb6c71df978c3ae95ba57b7c70e31",
+    "new_id_set_sha256": "ddcc98e9945060e77a8084386988e2607e215bb41a028fa9fec841aa75e88d7d",
+    "new_record_set_sha256": "0b30fee0d88b5e96b1397b635ec0bb29ecf0840c83f8d1e2d2d794dae71f5583",
+    "new_records": 110
+  },
+  "commands": {
+    "regeneration_template": "python qa/extend_backend_becker_02.py --input-jsonl <jsonl> --input-csv <csv> --output-dir <dir>",
+    "staging": "python qa/extend_backend_becker_02.py --output-dir <dir>",
+    "validation_template": "python qa/validate_backend_becker_02.py --input-jsonl <jsonl> --input-csv <csv> --receipt <receipt>"
+  },
+  "deterministic_regeneration": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3142537,
+          "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+        },
+        "jsonl": {
+          "bytes": 2623909,
+          "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+        },
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 3142537,
+          "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+        },
+        "jsonl": {
+          "bytes": 2623909,
+          "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+        },
+        "run": 2
+      }
+    ],
+    "input_dataset_match": true,
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "protected_baseline": {
+    "csv": {
+      "bytes": 3054550,
+      "sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f"
+    },
+    "id_order_sha256": "7a9f4695de16c1308e38bf4679215f69729ca3bc4a9c972071fbbdfc45e017bb",
+    "id_set_sha256": "037a51692fa7c7e07bd46d2b17d2504bd8d59c674b32baffdb88dd097065fa5e",
+    "jsonl": {
+      "bytes": 2552754,
+      "line_sequence_sha256": "870d9e772c561784c1ea428b410d8c7bbc1a2ed3a6e60af13a3cac4fb5d076f5",
+      "sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "d1e4814426ca899ce40a9158441345893ba857cb73e5bff2af47f77ab528e454",
+    "records": 3320,
+    "recovered_csv": {
+      "bytes": 3054550,
+      "sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f"
+    },
+    "recovered_jsonl": {
+      "bytes": 2552754,
+      "line_sequence_sha256": "870d9e772c561784c1ea428b410d8c7bbc1a2ed3a6e60af13a3cac4fb5d076f5",
+      "sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-becker-02-backend-validation-v1",
+  "schema_constraint": {
+    "additive_records_only": true,
+    "note": "Global entity/id sorting means the old file is not a literal prefix; exact workflow stripping proves every prior JSONL line and CSV row remains byte-identical and in the same relative order.",
+    "schema_changed": false
+  },
+  "topology": {
+    "absence_closures": 4,
+    "predecessor_relation": "d90.becker.98ed693.b02.relation.b01-precedes-b02",
+    "present_surface_counts": {
+      "chapter": 1,
+      "equation": 10,
+      "proof": 1,
+      "section": 2,
+      "theorem": 1
+    },
+    "present_surfaces": 15,
+    "segments": 3,
+    "source_ranges": [
+      "2750-2769",
+      "2771-2790",
+      "2792-2797"
+    ],
+    "topics": 6,
+    "unit_id": "d90.becker.98ed693.b02.unit"
+  },
+  "upstream_contact": false,
+  "validated_at": "2026-08-25T14:30:00Z",
+  "workflow": "o015-becker-02-backend-v1"
+}

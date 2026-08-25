@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri" />
+  <title>Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  
+<script>
+window.MathJax = {tex: {tags:'ams', macros: {
+  R:'\\mathbb{R}', norm:['\\left\\lVert #1\\right\\rVert',1],
+  prox:'\\operatorname{prox}'
+}}};
+</script>
+
+<script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="license" content="MIT; CC BY-SA 4.0">
+<style>
+
+:root { color-scheme:light; --ink:#172033; --muted:#506078; --rule:#ccd5e2;
+  --accent:#315f99; --panel:#f4f7fb; --max:76rem; }
+* { box-sizing:border-box; }
+html { font-size:100%; scroll-behavior:smooth; }
+body { margin:0; width:100%; max-width:none; overflow-x:clip; color:var(--ink);
+  background:#fff; font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1rem,.96rem + .18vw,1.12rem); line-height:1.64; }
+main#reader { width:min(calc(100% - 2.2rem),var(--max)); margin-inline:auto;
+  padding:0 0 3rem; }
+header#title-block-header { padding:3rem 0 1.5rem; border-bottom:1px solid var(--rule); }
+h1,h2,h3,h4 { max-width:76ch; margin-inline:auto;
+  font-family:Arial,Helvetica,sans-serif; line-height:1.2; color:#12233d;
+  scroll-margin-top:1rem; }
+h1 { margin-top:2.7rem; font-size:clamp(1.9rem,1.4rem + 1.8vw,3rem); }
+header#title-block-header h1 { font-size:clamp(1.9rem,1.35rem + 1.55vw,2.65rem); }
+h2 { margin-top:2.3rem; font-size:clamp(1.45rem,1.2rem + .8vw,2rem); }
+h3 { margin-top:1.8rem; }
+a { color:#174f91; text-underline-offset:.14em; }
+nav#TOC { margin:1.5rem auto 2.5rem; padding:1rem 1.3rem;
+  background:var(--panel); border:1px solid var(--rule); border-radius:.45rem; }
+nav#TOC ul { padding-left:1.35rem; }
+p,blockquote,pre { max-width:72ch; margin-inline:auto; }
+ol,ul { width:min(100%,76ch); margin-inline:auto; }
+li { max-width:72ch; }
+.definition,.theorem,.example,.proof,div[class*="theorem"],div[class*="definition"] {
+  max-width:76ch; margin:1.25rem auto; padding:.85rem 1rem;
+  border-left:.28rem solid var(--accent); background:var(--panel); }
+.proof { border-left-color:#65758c; background:#fafbfc; }
+blockquote { padding:.8rem 1rem; background:var(--panel); border-left:.28rem solid var(--accent); }
+.math.display,mjx-container[display="true"] { display:block; width:100%; max-width:100%;
+  overflow-x:auto; overflow-y:hidden; padding:.35rem 0; }
+.math.inline { display:inline; max-width:none; overflow:visible; vertical-align:baseline; }
+pre { overflow-x:auto; padding:1rem; background:#f7f8fa; border:1px solid var(--rule); }
+@media (max-width:48rem) { main#reader { width:calc(100% - 1.2rem); }
+  .definition,.theorem,.example,.proof,div[class*="theorem"],div[class*="definition"] {
+    padding:.7rem .75rem; }
+}
+
+</style>
+</head>
+<body>
+<main id="reader">
+<header id="title-block-header">
+<h1 class="title">Optimisasi Lanjut dan Analisis Konveks - Modul Becker
+2: Pemisahan Douglas-Rachford</h1>
+<p class="author">Stephen Becker; catatan ketik Mitchell Krock;
+terjemahan mandiri</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#becker:chapter:douglas-rachford"
+id="toc-becker:chapter:douglas-rachford">Pemisahan Douglas–Rachford</a>
+<ul>
+<li><a href="#becker:section:dr-fixed-point"
+id="toc-becker:section:dr-fixed-point">Limit bayangan dan persamaan
+titik tetap</a></li>
+<li><a href="#becker:section:dr-admm"
+id="toc-becker:section:dr-admm">Hubungan dengan ADMM</a></li>
+<li><a href="#perubahan-dan-batas-sumber"
+id="toc-perubahan-dan-batas-sumber">Perubahan dan batas sumber</a></li>
+<li><a href="#atribusi-lisensi-dan-nondukungan"
+id="toc-atribusi-lisensi-dan-nondukungan">Atribusi, lisensi, dan
+nondukungan</a></li>
+<li><a href="#pemberitahuan-lisensi-mit-sumber"
+id="toc-pemberitahuan-lisensi-mit-sumber">Pemberitahuan Lisensi MIT
+sumber</a></li>
+</ul></li>
+</ul>
+</nav>
+<blockquote>
+<p><strong>Status pembaca.</strong> Modul ini menerjemahkan tepat baris
+2750–2797 dari Stephen Becker, <em>convex-optimization-class</em>,
+commit <code>98ed6930084c435ba0f675f7646ced1f2fd8729e</code>; catatan
+ketik sumber mengreditkan Mitchell Krock. Catatan donor mengreditkan
+Bauschke dan Combettes serta Lions dan Mercier. Materi program linear
+dan bagian ADMM yang bersebelahan tidak diimpor. Materi donor
+mempertahankan Lisensi MIT; terjemahan, koreksi, dan penghubung mandiri
+tersedia berdasarkan CC BY-SA 4.0. Ini bukan edisi resmi atau dukungan
+pihak sumber.</p>
+<p>Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori; seluruh kredit penulis dan kontributor manusia
+tetap dipertahankan.</p>
+</blockquote>
+<section id="becker:chapter:douglas-rachford" class="level1">
+<h1>Pemisahan Douglas–Rachford</h1>
+<p>Bab ini menyajikan metode Douglas–Rachford untuk meminimumkan jumlah
+dua fungsi konveks melalui operator proksimal. Notasi subdiferensial dan
+bentuk dual dinormalkan agar persamaan konsisten dengan parameter skala
+yang dipakai dalam algoritma.</p>
+<p><strong>Kredit catatan donor.</strong></p>
+<p>Catatan donor menyatakan bahwa bagian ini mengikuti Bauschke dan
+Combettes (B&amp;C), edisi kedua (2017), §20.3, dan mengatribusi
+analisis Douglas–Rachford kepada Lions dan Mercier (1979). Kredit
+turunan tersebut dipertahankan; edisi ini tidak mengimpor isi dari
+bagian yang bersebelahan.</p>
+<p>Ambil <span
+class="math inline">\(f,g\in\Gamma_0(\mathbb{R}^n)\)</span>, yaitu
+fungsi konveks proper dan semikontinu bawah. Seperti pada donor,
+andaikan terdapat titik pelana primal–dual dan aturan jumlah
+subdiferensial <span class="math display" id="becker:eq:dr-sum-rule">\[\begin{equation}
+  \label{becker:eq:dr-sum-rule}
+  \partial(f+g)=\partial f+\partial g
+\end{equation}\]</span> berlaku. Masalah primal adalah <span
+class="math display" id="becker:eq:dr-primal">\[\begin{equation}
+  \label{becker:eq:dr-primal}
+  (P)\qquad p^*=\min_{x\in\mathbb{R}^n}\bigl\{f(x)+g(x)\bigr\}.
+\end{equation}\]</span> Dengan konjugat Fenchel <span
+class="math inline">\(h^*(u)=\sup_x\{\langle u,x\rangle-h(x)\}\)</span>,
+bentuk maksimisasi dual yang konsisten adalah <span
+class="math display" id="becker:eq:dr-dual">\[\begin{equation}
+  \label{becker:eq:dr-dual}
+  (D)\qquad
+  d^*=\sup_{u\in\mathbb{R}^n}\bigl\{-f^*(-u)-g^*(u)\bigr\}.
+\end{equation}\]</span> Secara ekuivalen, titik dual yang sama
+meminimumkan <span class="math inline">\(f^*(-u)+g^*(u)\)</span>. Tanda
+pada bentuk dual donor diperbaiki secara terbuka dalam edisi ini.</p>
+<p>Untuk <span class="math inline">\(h\in\Gamma_0(\mathbb{R}^n)\)</span>
+dan <span class="math inline">\(\rho&gt;0\)</span>, tuliskan <span
+class="math display" id="becker:eq:dr-prox-definition">\[\begin{equation}
+  \label{becker:eq:dr-prox-definition}
+  \operatorname{prox}_{\rho h}(v)
+  =\operatorname*{arg\,min}_{w\in\mathbb{R}^n}
+    \left\{h(w)+\frac{1}{2\rho}\left\lVert w-v\right\rVert_2^2\right\}
+  =(I+\rho\partial h)^{-1}(v).
+\end{equation}\]</span> Pilih <span
+class="math inline">\(y_0\in\mathbb{R}^n\)</span>, parameter skala <span
+class="math inline">\(\rho&gt;0\)</span>, dan parameter relaksasi tetap
+<span class="math inline">\(\lambda\in(0,2)\)</span>. Iterasi
+Douglas–Rachford adalah <span class="math display" id="becker:eq:dr-iteration">\[\begin{equation}
+  \label{becker:eq:dr-iteration}
+  \begin{aligned}
+    x_k&amp;=\operatorname{prox}_{\rho g}(y_k),\\
+    z_k&amp;=\operatorname{prox}_{\rho f}(2x_k-y_k),\\
+    y_{k+1}&amp;=y_k+\lambda(z_k-x_k).
+  \end{aligned}
+\end{equation}\]</span> Catatan donor memperingatkan bahwa konvensi
+untuk <span class="math inline">\(\rho\)</span> pada bagian lain mungkin
+memakai kebalikannya. Di sini <span class="math inline">\(\rho\)</span>
+selalu memiliki arti yang ditetapkan oleh <a
+href="#becker:eq:dr-prox-definition" data-reference-type="eqref"
+data-reference="becker:eq:dr-prox-definition">definisi operator proksimal</a>.</p>
+<section id="becker:section:dr-fixed-point" class="level2">
+<h2>Limit bayangan dan persamaan titik tetap</h2>
+<div class="theorem">
+<p><span id="becker:theorem:dr-shadow-limit"
+data-label="becker:theorem:dr-shadow-limit"></span> Jika barisan pada <a
+href="#becker:eq:dr-iteration" data-reference-type="eqref"
+data-reference="becker:eq:dr-iteration">iterasi Douglas--Rachford</a>
+memenuhi <span class="math inline">\(y_k\to\bar y\)</span> dan <span
+class="math display">\[\begin{equation}
+    \bar x=\operatorname{prox}_{\rho g}(\bar y),
+\end{equation}\]</span> maka <span class="math inline">\(\bar x\)</span>
+adalah solusi optimal masalah <a href="#becker:eq:dr-primal"
+data-reference-type="eqref"
+data-reference="becker:eq:dr-primal">masalah primal</a>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Karena <span class="math inline">\(y_k\)</span>
+konvergen, <span
+class="math inline">\(y_{k+1}-y_k=\lambda(z_k-x_k)\to0\)</span>,
+sehingga <span class="math inline">\(z_k-x_k\to0\)</span>. Operator
+proksimal kontinu, maka <span class="math display">\[\begin{equation}
+    \bar x=\operatorname{prox}_{\rho g}(\bar y),
+    \qquad
+    \bar x=\operatorname{prox}_{\rho f}(2\bar x-\bar y).
+\end{equation}\]</span> Syarat optimalitas kedua operator proksimal
+memberi <span class="math display">\[\begin{equation}
+    \frac{\bar y-\bar x}{\rho}\in\partial g(\bar x),
+    \qquad
+    \frac{\bar x-\bar y}{\rho}\in\partial f(\bar x).
+\end{equation}\]</span> Menjumlahkan kedua inklusi dan memakai aturan <a
+href="#becker:eq:dr-sum-rule" data-reference-type="eqref"
+data-reference="becker:eq:dr-sum-rule">aturan jumlah</a>
+menghasilkan <span class="math inline">\(0\in\partial(f+g)(\bar
+x)\)</span>, yang setara dengan optimalitas primal. ◻</p>
+</div>
+<p>Persamaan titik tetapnya dapat dilihat langsung dari syarat
+optimalitas. Untuk solusi primal <span class="math inline">\(x\)</span>,
+pilih <span class="math inline">\(u\in\partial g(x)\)</span> dengan
+<span class="math inline">\(-u\in\partial f(x)\)</span>, lalu
+definisikan <span class="math inline">\(y=x+\rho u\)</span>. Dengan
+demikian <span class="math display" id="becker:eq:dr-resolvent-motivation">\[\begin{equation}
+  \label{becker:eq:dr-resolvent-motivation}
+  \begin{aligned}
+    y&amp;\in x+\rho\partial g(x),
+      &amp;x&amp;=(I+\rho\partial g)^{-1}(y)=\operatorname{prox}_{\rho
+g}(y),\\
+    2x-y=x-\rho u&amp;\in x+\rho\partial f(x),
+      &amp;x&amp;=(I+\rho\partial
+f)^{-1}(2x-y)=\operatorname{prox}_{\rho f}(2x-y).
+  \end{aligned}
+\end{equation}\]</span> Jadi, dengan <span
+class="math display">\[\begin{equation}
+  x=\operatorname{prox}_{\rho g}(y),
+  \qquad z=\operatorname{prox}_{\rho f}(2x-y),
+\end{equation}\]</span> syarat solusi menjadi <span
+class="math inline">\(z-x=0\)</span>. Pembaruan <span
+class="math inline">\(y\leftarrow y+\lambda(z-x)\)</span> pada <a
+href="#becker:eq:dr-iteration" data-reference-type="eqref"
+data-reference="becker:eq:dr-iteration">iterasi Douglas--Rachford</a>
+merupakan iterasi relaksasi menuju titik tetap itu. Faktor <span
+class="math inline">\(\rho\)</span> dan pilihan subgradien <span
+class="math inline">\(u\)</span> ditulis eksplisit karena subdiferensial
+pada umumnya bernilai himpunan dan tidak dapat diperlakukan sebagai satu
+vektor <span class="math inline">\(d g(x)\)</span>.</p>
+</section>
+<section id="becker:section:dr-admm" class="level2">
+<h2>Hubungan dengan ADMM</h2>
+<p>Pernyataan singkat donor bahwa ADMM merupakan kasus khusus
+Douglas–Rachford dipahami dalam bentuk yang lazim dan lebih presisi:
+ADMM dapat diperoleh sebagai pemisahan Douglas–Rachford yang diterapkan
+pada masalah dual yang sesuai. Bagian ADMM yang mendahului rentang beku
+tidak diimpor ke modul ini.</p>
+</section>
+<section id="perubahan-dan-batas-sumber" class="level2 unnumbered">
+<h2 class="unnumbered">Perubahan dan batas sumber</h2>
+<p>Edisi menormalkan notasi subdiferensial, membetulkan tanda dual
+Fenchel, memulihkan faktor <span class="math inline">\(\rho\)</span>
+dalam derivasi titik tetap, memperjelas bukti limit bayangan, dan
+menyatakan hubungan ADMM sebagai pemisahan Douglas–Rachford pada masalah
+dual yang sesuai. Salah eja nama Mercier dibetulkan. Tidak ada isi di
+luar baris 2750–2797 yang diterjemahkan ke dalam unit ini.</p>
+</section>
+<section id="atribusi-lisensi-dan-nondukungan"
+class="level2 unnumbered">
+<h2 class="unnumbered">Atribusi, lisensi, dan nondukungan</h2>
+<p>Sumber: Stephen Becker, repositori
+<em>convex-optimization-class</em>; catatan ketik <em>APPM5720Notes</em>
+oleh Mitchell Krock; commit
+<code>98ed6930084c435ba0f675f7646ced1f2fd8729e</code>; <a
+href="https://github.com/stephenbeckr/convex-optimization-class"
+class="uri">https://github.com/stephenbeckr/convex-optimization-class</a>.
+Catatan donor menyatakan bahwa bagian ini mengikuti Bauschke dan
+Combettes, edisi kedua (2017), §20.3, serta mengatribusi analisis
+Douglas–Rachford kepada Lions dan Mercier (1979). Materi donor berada di
+bawah Lisensi MIT. Terjemahan, koreksi, dan penghubung mandiri tersedia
+berdasarkan Creative Commons Attribution-ShareAlike 4.0 International,
+<a href="https://creativecommons.org/licenses/by-sa/4.0/"
+class="uri">https://creativecommons.org/licenses/by-sa/4.0/</a>. Stephen
+Becker, Mitchell Krock, Bauschke, Combettes, Lions, Mercier, dan
+University of Colorado Boulder tidak menyusun, memeriksa, menyetujui,
+atau mendukung edisi ini.</p>
+</section>
+<section id="pemberitahuan-lisensi-mit-sumber"
+class="level2 unnumbered">
+<h2 class="unnumbered">Pemberitahuan Lisensi MIT sumber</h2>
+<pre><code>MIT License
+
+Copyright (c) 2017 Stephen Becker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+</section>
+</section>
+</main>
+</body>
+</html>

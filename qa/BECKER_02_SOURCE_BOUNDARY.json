@@ -1,0 +1,49 @@
+{
+  "authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "source_bytes": 130911,
+    "source_lines": 2992,
+    "source_local_path": "TypedNotes/APPM5720Notes.tex",
+    "source_path": "authority/becker/extract/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e/TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "combined_witness": {
+    "begin_marker": "% BEGIN douglas-rachford | frozen lines 2750-2797",
+    "bytes": 1358,
+    "end_marker": "% END douglas-rachford",
+    "exact_expected_byte_match": true,
+    "interior_exact_source_slice_match": true,
+    "path": "source/en/becker-02-douglas-rachford-source.tex",
+    "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b",
+    "state": "verified_existing"
+  },
+  "explicit_exclusions": [
+    {
+      "lines": "before 2750",
+      "reason": "Adjacent ADMM and other earlier course material are outside this bounded Douglas--Rachford unit."
+    },
+    {
+      "lines": "2798 onward",
+      "reason": "The following primal-dual-methods subsection is a separate unit and is not imported."
+    }
+  ],
+  "lp_material_imported": false,
+  "result": "pass",
+  "schema": "o015-becker-02-source-boundary-v1",
+  "selected_ranges": [
+    {
+      "bytes": 1285,
+      "final_newline": true,
+      "first_line": 2750,
+      "id": "douglas-rachford",
+      "last_line": 2797,
+      "line_count": 48,
+      "line_endings": "LF",
+      "sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2"
+    }
+  ],
+  "upstream_contact": false
+}

@@ -739,3 +739,29 @@ a new content release. No upstream issue, comment, or other contact occurred.
   `release/github/2026-08-25-becker-01/github-public-readback-becker-01-evidence.json`,
   4,985 bytes; SHA-256
   `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
+
+## 2026-08-25 — Becker-02 verified local publication candidate
+
+- Scope: exact Becker donor lines 2750--2797, the independent Indonesian
+  Douglas--Rachford reader/source, QA evidence, additive stable-ID receipts,
+  component rights, and compact continuation package.
+- Primary PDF: `output/pdf/D90-BECKER-02-pemisahan-douglas-rachford-id.pdf`,
+  458,915 bytes; SHA-256
+  `32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794`.
+- Responsive HTML: 18,370 bytes; SHA-256
+  `ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe`.
+- Compact ZIP:
+  `release/becker-02/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_02_2026.08.25.zip`,
+  22 entries / 482,742 bytes; SHA-256
+  `b97f1ea849f1edb5a46422bda94e06e4217405a8642217f3d4a7ed740f0c5f6e`.
+- Local verification:
+  `release/becker-02/2026-08-25/local-verification-becker-02.json`,
+  7,368 bytes; SHA-256
+  `5d8972d9ccdcd378fd4a0fad464918afbd1907a08c6ba603ea51f05acc57c7ea`.
+- Rights: MIT donor/witness plus CC BY-SA 4.0 translation, corrections, and new
+  documentation; exact credits, change disclosure, model provenance, and
+  nonendorsement present. Larger course status remains partial.
+
+This entry proves readiness only. It claims no public Becker-02 commit, DOI, or
+remote byte until the existing GitHub and Zenodo transactions and anonymous
+readbacks pass. No upstream contact occurred.

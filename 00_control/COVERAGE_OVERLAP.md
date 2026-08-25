@@ -338,3 +338,33 @@ DOI `10.5281/zenodo.22096817`, with anonymous exact-byte readback complete.
 Douglas–Rachford remains the active nonduplicative supplement boundary; no LP,
 MIP, simplex, sensitivity, network, or other O018 material is admitted by that
 publication.
+
+## Becker-02 Douglas--Rachford splitting admitted (2026-08-25)
+
+The operative source boundary is exactly `APPM5720Notes.tex` lines 2750--2797.
+It adds a compact self-contained Douglas--Rachford presentation for minimizing
+`f+g`: the Fenchel dual, a fixed proximal scaling convention, the relaxed
+iteration, a proved shadow-limit theorem, a set-valued resolvent/fixed-point
+derivation, and the precise relationship to ADMM on an appropriate dual
+problem. The source has no exercise, hint, answer, solution, code, figure, or
+interactive surface, and the edition claims none.
+
+This is additive relative to Habring: Habring supplies ADMM, proximal and
+primal-dual algorithms, but not this bounded Douglas--Rachford fixed-point
+derivation and shadow-limit proof as a standalone reader unit. The unit also
+does not duplicate O018. No LP/MIP model, simplex/tableau method, finite LP
+duality or sensitivity, network/discrete optimization, or general OR workflow
+is imported. Adjacent Becker ADMM material before line 2750 and the later
+primal-dual subsection after line 2797 remain excluded.
+
+Seven disclosed corrections `O015-BECKER-ADV-0013`--`0019` repair the donor's
+dual signs, subdifferential notation, proximal scale, set-valued fixed-point
+derivation, theorem proof, ADMM qualification, and Mercier typo. Deterministic
+PDF/HTML, open-math, all-page visual, responsive browser, terminology, rights,
+independent-rereview, compact-package, and additive 3,430-record backend gates
+pass. This closes the Douglas--Rachford reader gap only. Remaining substantive
+gaps are the frozen variance-reduction unit; stochastic proximal, mirror, and
+minibatch methods; a rigorous variance-reduction bridge; variational
+inequalities, maximal monotonicity, resolvents/splitting beyond this one method;
+and the full exercise, hint, answer, complete-solution, lab, capstone,
+tagged-PDF, and accessibility closure.

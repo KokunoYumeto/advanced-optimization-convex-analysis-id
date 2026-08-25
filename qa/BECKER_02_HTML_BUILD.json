@@ -1,0 +1,126 @@
+{
+  "artifact": {
+    "bytes": 18370,
+    "failures": [],
+    "fragment_links": 11,
+    "h1_count": 2,
+    "h2_count": 5,
+    "h3_count": 0,
+    "ids": 22,
+    "main_count": 1,
+    "math_display_count": 10,
+    "math_inline_count": 26,
+    "nav_count": 1,
+    "path": "output/html/D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+    "required_markers": [
+      "lang=\"id-id\"",
+      "name=\"viewport\"",
+      "<main id=\"reader\">",
+      "<nav id=\"toc\"",
+      "pemisahan douglas",
+      "bauschke dan combettes",
+      "lions dan mercier",
+      "konjugat fenchel",
+      "limit bayangan",
+      "hubungan dengan admm",
+      "mit license",
+      "cc by-sa 4.0",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "section_count": 6,
+    "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+  },
+  "byte_identical_clean_builds": true,
+  "canonical_copy_exact_match": true,
+  "inputs": [
+    {
+      "bytes": 4915,
+      "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+    },
+    {
+      "bytes": 7134,
+      "path": "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"
+    },
+    {
+      "bytes": 1358,
+      "path": "source/en/becker-02-douglas-rachford-source.tex",
+      "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"
+    },
+    {
+      "bytes": 5843,
+      "path": "qa/extract_becker_douglas_rachford_source.py",
+      "sha256": "d1e509892b4392275c06b8e9ca9e5d1a466ca01afb902e57799631a2d12467ef"
+    },
+    {
+      "bytes": 1773,
+      "path": "qa/BECKER_02_SOURCE_BOUNDARY.json",
+      "sha256": "06cd220dee304ad6e33ec66109d4e7e1a8c0d41e221770634b280850000ca10f"
+    },
+    {
+      "bytes": 15206,
+      "path": "qa/build_becker_douglas_rachford_html.py",
+      "sha256": "2e1876653476da791768bdaf0d46c2b7dd9f6e5291e57e9e7835ebe9d00c3e3b"
+    }
+  ],
+  "intermediate": {
+    "bytes": 8196,
+    "path": "tmp/becker-02-html/becker-02-combined.tex",
+    "sha256": "5c21d34b2569640d2a7fc80df4443626b7de197c467ab23c1b8f2f7761a9bba3"
+  },
+  "result": "pass",
+  "runs": [
+    {
+      "artifact": {
+        "bytes": 18370,
+        "path": "tmp/becker-02-html/run1.html",
+        "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-02-html\\becker-02-combined.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford",
+        "--metadata=author:Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-02-html\\run1.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact": {
+        "bytes": 18370,
+        "path": "tmp/becker-02-html/run2.html",
+        "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-02-html\\becker-02-combined.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford",
+        "--metadata=author:Stephen Becker; catatan ketik Mitchell Krock; terjemahan mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\becker-02-html\\run2.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "o015-becker-02-html-build-v1",
+  "tool_versions": {
+    "pandoc": "pandoc 3.9.0.2"
+  },
+  "upstream_contact": false
+}

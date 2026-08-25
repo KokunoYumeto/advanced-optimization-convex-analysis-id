@@ -1,0 +1,31 @@
+{
+  "schema": "o015-becker-02-independent-rereview-v1",
+  "reviewed_at": "2026-08-25T14:26:57Z",
+  "scope": "Final isolated admission rereview after terminology and model-provenance corrections",
+  "live_sources": [
+    {"path": "source/en/becker-02-douglas-rachford-source.tex", "bytes": 1358, "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"},
+    {"path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex", "bytes": 4915, "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"},
+    {"path": "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex", "bytes": 7134, "sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"}
+  ],
+  "receipts": [
+    {"path": "qa/BECKER_02_SOURCE_BOUNDARY.json", "sha256": "06cd220dee304ad6e33ec66109d4e7e1a8c0d41e221770634b280850000ca10f"},
+    {"path": "qa/BECKER_02_PDF_BUILD.json", "sha256": "a6d8ee690768e343dc0157d7528478ee8dcdadb56af0ce9fab713fccae9b697e"},
+    {"path": "qa/BECKER_02_PDF_VISUAL_QA.json", "sha256": "7a5909ba3cf96aeb601a1fea8c2668851112afbc9d3ed41e65576371dd4ae43f"},
+    {"path": "qa/BECKER_02_HTML_BUILD.json", "sha256": "db3f89b93196197840b7c8ce710a3a9ebe6b354c35092c19ed9167e296f7d380"},
+    {"path": "qa/BECKER_02_HTML_BROWSER_QA.json", "sha256": "afb5ba3c5242e74ff6b1f2522bba6818d29baa70d924dffb968f65ff531622c8"},
+    {"path": "qa/BECKER_02_MATH_VALIDATION.json", "sha256": "bbfc499b2f6046c4db3c1a3327aac5fe6432030077f4de27915cd2c2fdb836ad"}
+  ],
+  "findings": {"P1": 0, "P2": 0, "P3": 0},
+  "checks": {
+    "terminology_proper_and_sum_rule_consistent": true,
+    "exact_model_marker_present": true,
+    "mathematics_and_correction_disclosure_sound": true,
+    "mit_and_cc_by_sa_components_separate": true,
+    "full_mit_notice_present": true,
+    "nonendorsement_present": true,
+    "o018_material_imported": false,
+    "live_bytes_reconcile_with_all_receipts": true
+  },
+  "result": "pass",
+  "upstream_contact": false
+}

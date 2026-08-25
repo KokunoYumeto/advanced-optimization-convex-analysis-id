@@ -1,0 +1,50 @@
+% BEGIN douglas-rachford | frozen lines 2750-2797
+ \subsection{Douglas-Rachford}
+This follows B+C 2nd edition 2017, 20.3. Analysis of Douglas-Rachford from Lions, Mercie 1979. Let $f,g \in \Gamma_0(\mathbb{R}^n)$, and assume that $d(f+g) = df + dg$ and there exist primal and dual saddle points. 
+The primal problem is
+\[
+(P) = \min \limits_x f(x) + g(x)
+\]
+and the dual problem is
+\[
+(D) = \min \limits_u -f^*(-u) + g^*(u) 
+\]
+The algorithm is 
+ \[
+ \begin{cases}
+ x_{k} = \prox \limits_{ \rho g}(y_k) \\
+ z_{k} = \prox \limits_{\rho f}(2x_k - y_k) \\
+ y_{k+1} = y_k + \lambda(z_{k} -x_k )
+ \end{cases}
+ \]
+ Here $\lambda \in (0,2)$ is a relaxation parameter and $\rho>0$.
+($\rho$ might be the inverse of $\rho$ in a previous section.)
+
+ \begin{thrm}
+ If $y_k \to y$ and $x = \prox \limits_{ \rho g}(y)$, then $x$ is a primal optimal point.
+ \end{thrm}
+ 
+ \begin{rem}
+ Let's motivate the updates:
+ \begin{align*}
+ 0 \in df(x) + dg(x) \\
+ x - dg(x) \in x + df(x) \\
+ 2x - (I + dg)(x) \in (I + df)(x) \\
+ x = (I + df)^{-1} (2x - (I+dg) x ) \\
+ \end{align*}
+ Identify $y = (I + dg)(x)$ and $x = (I + dg)^{-1}(y)$ and $z = (I + df)^{-1} (2x - (I+dg) x )$, giving the fixed point equation
+ \[
+ \begin{cases}
+ 0 = z-x \\
+ y \leftarrow y+z -x
+ \end{cases}
+ \]
+ \end{rem}
+
+\begin{rem}
+ADMM is a special case of Douglas Rachford.
+\end{rem}
+
+
+
+% END douglas-rachford

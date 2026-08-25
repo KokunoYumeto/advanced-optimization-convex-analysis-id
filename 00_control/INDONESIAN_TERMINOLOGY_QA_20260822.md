@@ -69,3 +69,18 @@ type and `ketaksamaan` for an inequality relation or inequality direction.
 This is a deliberate semantic/register distinction within the previously
 accepted `pertidaksamaan` variant, not an accidental terminology fork. No term
 required propagation into Habring or the preserved companion readers.
+
+## Becker-02 terminology extension (2026-08-25)
+
+The bounded Douglas--Rachford unit retains `pemisahan Douglas--Rachford`,
+`operator proksimal`, `subdiferensial`, `aturan jumlah`, `titik tetap`,
+`konjugat Fenchel`, `parameter relaksasi`, and `solusi optimal`. These choices
+are mathematically precise and consistent with the admitted Habring vocabulary.
+In particular, the source category `proper` remains `proper`, rather than the
+less stable literal alternative `sejati`, and the subdifferential identity is
+called an `aturan jumlah`, not a parallel `kaidah jumlah`. The frozen UNY
+witness does not cover these narrow monotone-operator terms, so it supplies no
+contrary evidence and no new external comparator was sought. The two internal
+consistency fixes were propagated through the complete Becker-02 body before
+PDF, HTML, open-math, and browser QA. No earlier admitted unit requires a
+terminology rewrite.

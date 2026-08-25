@@ -1,0 +1,130 @@
+% B02-S001 | APPM5720Notes.tex baris 2750-2769
+% segment-id: d90.becker.98ed693.b02.seg0001
+\chapter{Pemisahan Douglas--Rachford}
+\label{becker:chapter:douglas-rachford}
+
+Bab ini menyajikan metode Douglas--Rachford untuk meminimumkan jumlah dua
+fungsi konveks melalui operator proksimal. Notasi subdiferensial dan bentuk
+dual dinormalkan agar persamaan konsisten dengan parameter skala yang dipakai
+dalam algoritma.
+
+\noindent\textbf{Kredit catatan donor.}\par
+Catatan donor menyatakan bahwa bagian ini mengikuti Bauschke dan Combettes
+(B\&C), edisi kedua (2017), \S20.3, dan mengatribusi analisis
+Douglas--Rachford kepada Lions dan Mercier (1979). Kredit turunan tersebut
+dipertahankan; edisi ini tidak mengimpor isi dari bagian yang bersebelahan.
+
+Ambil $f,g\in\Gamma_0(\R^n)$, yaitu fungsi konveks proper dan semikontinu
+bawah. Seperti pada donor, andaikan terdapat titik pelana primal--dual dan
+aturan jumlah subdiferensial
+\begin{equation}
+  \label{becker:eq:dr-sum-rule}
+  \partial(f+g)=\partial f+\partial g
+\end{equation}
+berlaku. Masalah primal adalah
+\begin{equation}
+  \label{becker:eq:dr-primal}
+  (P)\qquad p^*=\min_{x\in\R^n}\bigl\{f(x)+g(x)\bigr\}.
+\end{equation}
+Dengan konjugat Fenchel
+$h^*(u)=\sup_x\{\langle u,x\rangle-h(x)\}$, bentuk maksimisasi dual yang
+konsisten adalah
+\begin{equation}
+  \label{becker:eq:dr-dual}
+  (D)\qquad
+  d^*=\sup_{u\in\R^n}\bigl\{-f^*(-u)-g^*(u)\bigr\}.
+\end{equation}
+Secara ekuivalen, titik dual yang sama meminimumkan
+$f^*(-u)+g^*(u)$. Tanda pada bentuk dual donor diperbaiki secara terbuka
+dalam edisi ini.
+
+Untuk $h\in\Gamma_0(\R^n)$ dan $\rho>0$, tuliskan
+\begin{equation}
+  \label{becker:eq:dr-prox-definition}
+  \prox_{\rho h}(v)
+  =\operatorname*{arg\,min}_{w\in\R^n}
+    \left\{h(w)+\frac{1}{2\rho}\norm{w-v}_2^2\right\}
+  =(I+\rho\partial h)^{-1}(v).
+\end{equation}
+Pilih $y_0\in\R^n$, parameter skala $\rho>0$, dan parameter relaksasi tetap
+$\lambda\in(0,2)$. Iterasi Douglas--Rachford adalah
+\begin{equation}
+  \label{becker:eq:dr-iteration}
+  \begin{aligned}
+    x_k&=\prox_{\rho g}(y_k),\\
+    z_k&=\prox_{\rho f}(2x_k-y_k),\\
+    y_{k+1}&=y_k+\lambda(z_k-x_k).
+  \end{aligned}
+\end{equation}
+Catatan donor memperingatkan bahwa konvensi untuk $\rho$ pada bagian lain
+mungkin memakai kebalikannya. Di sini $\rho$ selalu memiliki arti yang
+ditetapkan oleh~\eqref{becker:eq:dr-prox-definition}.
+
+% B02-S002 | APPM5720Notes.tex baris 2771-2790
+% segment-id: d90.becker.98ed693.b02.seg0002
+\section{Limit bayangan dan persamaan titik tetap}
+\label{becker:section:dr-fixed-point}
+
+\begin{theorem}[Limit bayangan merupakan solusi primal]
+  \label{becker:theorem:dr-shadow-limit}
+  Jika barisan pada~\eqref{becker:eq:dr-iteration} memenuhi
+  $y_k\to\bar y$ dan
+  \begin{equation}
+    \bar x=\prox_{\rho g}(\bar y),
+  \end{equation}
+  maka $\bar x$ adalah solusi optimal
+  masalah~\eqref{becker:eq:dr-primal}.
+\end{theorem}
+\begin{proof}
+  Karena $y_k$ konvergen,
+  $y_{k+1}-y_k=\lambda(z_k-x_k)\to0$, sehingga $z_k-x_k\to0$.
+  Operator proksimal kontinu, maka
+  \begin{equation}
+    \bar x=\prox_{\rho g}(\bar y),
+    \qquad
+    \bar x=\prox_{\rho f}(2\bar x-\bar y).
+  \end{equation}
+  Syarat optimalitas kedua operator proksimal memberi
+  \begin{equation}
+    \frac{\bar y-\bar x}{\rho}\in\partial g(\bar x),
+    \qquad
+    \frac{\bar x-\bar y}{\rho}\in\partial f(\bar x).
+  \end{equation}
+  Menjumlahkan kedua inklusi dan memakai
+  aturan~\eqref{becker:eq:dr-sum-rule} menghasilkan
+  $0\in\partial(f+g)(\bar x)$, yang setara dengan optimalitas primal.
+\end{proof}
+
+Persamaan titik tetapnya dapat dilihat langsung dari syarat optimalitas.
+Untuk solusi primal $x$, pilih $u\in\partial g(x)$ dengan
+$-u\in\partial f(x)$, lalu definisikan $y=x+\rho u$. Dengan demikian
+\begin{equation}
+  \label{becker:eq:dr-resolvent-motivation}
+  \begin{aligned}
+    y&\in x+\rho\partial g(x),
+      &x&=(I+\rho\partial g)^{-1}(y)=\prox_{\rho g}(y),\\
+    2x-y=x-\rho u&\in x+\rho\partial f(x),
+      &x&=(I+\rho\partial f)^{-1}(2x-y)=\prox_{\rho f}(2x-y).
+  \end{aligned}
+\end{equation}
+Jadi, dengan
+\begin{equation}
+  x=\prox_{\rho g}(y),
+  \qquad z=\prox_{\rho f}(2x-y),
+\end{equation}
+syarat solusi menjadi $z-x=0$. Pembaruan
+$y\leftarrow y+\lambda(z-x)$ pada~\eqref{becker:eq:dr-iteration}
+merupakan iterasi relaksasi menuju titik tetap itu. Faktor $\rho$ dan pilihan
+subgradien $u$ ditulis eksplisit karena subdiferensial pada umumnya bernilai
+himpunan dan tidak dapat diperlakukan sebagai satu vektor $d g(x)$.
+
+% B02-S003 | APPM5720Notes.tex baris 2792-2797
+% segment-id: d90.becker.98ed693.b02.seg0003
+\section{Hubungan dengan ADMM}
+\label{becker:section:dr-admm}
+
+Pernyataan singkat donor bahwa ADMM merupakan kasus khusus
+Douglas--Rachford dipahami dalam bentuk yang lazim dan lebih presisi: ADMM
+dapat diperoleh sebagai pemisahan Douglas--Rachford yang diterapkan pada
+masalah dual yang sesuai. Bagian ADMM yang mendahului rentang beku tidak
+diimpor ke modul ini.

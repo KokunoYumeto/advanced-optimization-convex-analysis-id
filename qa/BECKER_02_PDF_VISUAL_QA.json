@@ -1,0 +1,38 @@
+{
+  "schema": "o015-becker-02-pdf-visual-qa-v1",
+  "artifact": {
+    "path": "output/pdf/D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+    "bytes": 458915,
+    "sha256": "32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794",
+    "pages": 9,
+    "page_size": "A4"
+  },
+  "render": {
+    "command": "pdftoppm -png -r 150",
+    "directory": "tmp/pdfs/becker-02-final",
+    "pixel_dimensions": [1241, 1754],
+    "pages": [
+      {"page": 1, "bytes": 110374, "sha256": "d12423b4f5929ab9b9fb43ae92990bc9ac4e297acaff04011e42b825392dcee6"},
+      {"page": 2, "bytes": 157033, "sha256": "bd34de8250529c82e66e493f8e9359db77b554bc923e78c94e2ca3bd81057d64"},
+      {"page": 3, "bytes": 86958, "sha256": "e45375fd922b1e7e4c1913199dd7a37960c1c8df7ceee3bb34c1c7766f3ba1db"},
+      {"page": 4, "bytes": 32022, "sha256": "c9f62b6f4dd7227c594308a340768f99d86b3d2cbd9d843e00edf53ff52eddf1"},
+      {"page": 5, "bytes": 229606, "sha256": "10cc2869894bec92661795d3fd26264cd43957be1bc6bfeeba2593d80a9011f2"},
+      {"page": 6, "bytes": 266203, "sha256": "433284c41212e2fe2c30e3fdbe26046f6b9f0c1a8c3cd7e2fdc1dd0d23a9e59c"},
+      {"page": 7, "bytes": 183040, "sha256": "efc90b9efa0060dec135297016b63d863afc467663e0ae099e771533eb431d35"},
+      {"page": 8, "bytes": 173276, "sha256": "ffd99a26529571ebf2857a603e352069d3d4a1695cc38d5d382df25dd78b7512"},
+      {"page": 9, "bytes": 154001, "sha256": "6a967e5c584934882b9476d275bdd65a75ea307bab1ee814728c036f8903169b"}
+    ]
+  },
+  "inspection": {
+    "all_pages_inspected_at_original_render_resolution": true,
+    "clipped_text": 0,
+    "overlapping_elements": 0,
+    "unreadable_glyphs": 0,
+    "broken_equations": 0,
+    "misaligned_headers_or_footers": 0,
+    "missing_page_numbers": 0,
+    "notes": "Front-matter and contents pages intentionally retain generous whitespace; all mathematical display, attribution, change disclosure, and MIT-license pages are legible and balanced."
+  },
+  "result": "pass",
+  "upstream_contact": false
+}

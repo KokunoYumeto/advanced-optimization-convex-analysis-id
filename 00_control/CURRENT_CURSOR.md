@@ -609,3 +609,30 @@ one coherent module, and run one consolidated deterministic reader/math/rights/
 visual/accessibility/rereview/backend gate. The next cursor is
 `BECKER-VARIANCE-REDUCTION`, lines 2971–2988. The finite original closure in
 `CURRENT_GOAL_AND_WORKFLOW.md` remains mandatory afterward.
+
+## 2026-08-25 controlling cursor — Becker-02 admitted; preserve, then variance reduction
+
+The Douglas--Rachford production instruction above is complete and superseded.
+Exact donor lines 2750--2797 are frozen, translated, correction-disclosed, and
+admitted with passing deterministic PDF/HTML, open-math, all-page visual,
+desktop/tablet/phone browser, rights, terminology, independent-rereview, and
+3,430-record additive-backend gates. The 22-entry compact release ZIP is
+`release/becker-02/2026-08-25/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_02_2026.08.25.zip`,
+482,742 bytes / SHA-256
+`b97f1ea849f1edb5a46422bda94e06e4217405a8642217f3d4a7ed740f0c5f6e`.
+
+Immediate executable action: commit and push this exact Becker-02 boundary to
+the existing GitHub repository, verify every changed public path, publish one
+new version in existing Zenodo concept `10.5281/zenodo.22059741` with the
+Becker-02 PDF as the primary visible file, and anonymously verify all public
+files. Do not create a duplicate concept, alter immutable prior releases,
+contact upstream, or claim the full course complete.
+
+After preservation closes, the next translation cursor is
+`BECKER-VARIANCE-REDUCTION`: exact `TypedNotes/APPM5720Notes.tex` lines
+2971--2988, 18 lines / 900 bytes, slice SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`.
+Reconfirm nonduplication against Habring and the preserved stochastic-gradient
+companions, then translate it as one coherent unit and repeat the consolidated
+reader/math/rights/visual/accessibility/rereview/backend gate. The finite
+original closure remains mandatory afterward.

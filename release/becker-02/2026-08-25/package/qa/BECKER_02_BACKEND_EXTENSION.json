@@ -1,0 +1,72 @@
+{
+  "absent_surface_closure_count": 4,
+  "collision_count": 0,
+  "csv": {
+    "bytes": 3142537,
+    "sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97"
+  },
+  "final_id_order_sha256": "5fbb8bc4f9ef7d70bb7062a3ade0dbedb8bd0f6ca14c154eb7d4df2572216ff0",
+  "final_id_set_sha256": "2049edb1e0d183bb6fb96f4fda97b3a9cced7a404f4a32ecd2a52cca50175f8f",
+  "final_record_count": 3430,
+  "final_record_set_sha256": "2d1b24aeadd13b165463e9e6e987b5ccc418b46b937b6d28d8ccb38246964768",
+  "jsonl": {
+    "bytes": 2623909,
+    "sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6"
+  },
+  "namespace": "d90.becker.98ed693.b02.*",
+  "new_entity_counts": {
+    "artifact": 16,
+    "concept": 6,
+    "edition": 2,
+    "learning_surface": 19,
+    "qa_event": 8,
+    "relation": 51,
+    "resource": 1,
+    "rights": 3,
+    "segment": 3,
+    "unit": 1
+  },
+  "new_id_set_sha256": "ddcc98e9945060e77a8084386988e2607e215bb41a028fa9fec841aa75e88d7d",
+  "new_record_count": 110,
+  "new_record_set_sha256": "0b30fee0d88b5e96b1397b635ec0bb29ecf0840c83f8d1e2d2d794dae71f5583",
+  "output_csv": "backend/records.csv",
+  "output_jsonl": "backend/records.jsonl",
+  "present_surface_counts": {
+    "chapter": 1,
+    "equation": 10,
+    "proof": 1,
+    "section": 2,
+    "theorem": 1
+  },
+  "protected_baseline": {
+    "csv_bytes": 3054550,
+    "csv_sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f",
+    "id_order_sha256": "7a9f4695de16c1308e38bf4679215f69729ca3bc4a9c972071fbbdfc45e017bb",
+    "id_set_sha256": "037a51692fa7c7e07bd46d2b17d2504bd8d59c674b32baffdb88dd097065fa5e",
+    "jsonl_bytes": 2552754,
+    "jsonl_sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67",
+    "line_sequence_sha256": "870d9e772c561784c1ea428b410d8c7bbc1a2ed3a6e60af13a3cac4fb5d076f5",
+    "raw_record_bytes_and_relative_order_preserved": true,
+    "record_count": 3320,
+    "record_set_sha256": "d1e4814426ca899ce40a9158441345893ba857cb73e5bff2af47f77ab528e454"
+  },
+  "reader_and_qa_bindings": {
+    "html_sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe",
+    "math_report_sha256": "bbfc499b2f6046c4db3c1a3327aac5fe6432030077f4de27915cd2c2fdb836ad",
+    "pdf_sha256": "32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794"
+  },
+  "result": "pass",
+  "schema": "o015-becker-02-backend-extension-receipt-v1",
+  "segment_count": 3,
+  "source_commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+  "target": {
+    "bytes": 4915,
+    "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+    "physical_lines": 130,
+    "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+  },
+  "topic_count": 6,
+  "upstream_contact": false,
+  "workflow": "o015-becker-02-backend-v1",
+  "write_mode": "canonical"
+}

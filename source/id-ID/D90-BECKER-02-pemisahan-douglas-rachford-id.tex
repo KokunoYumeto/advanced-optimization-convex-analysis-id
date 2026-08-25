@@ -1,0 +1,159 @@
+% unit-id: d90.becker.98ed693.b02.unit
+% source-edition-id: d90.becker.98ed693.b02.edition.source
+% target-edition-id: d90.becker.98ed693.b02.edition.target
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\subtitle{Modul Becker 2: Pemisahan Douglas--Rachford\\Edisi Bahasa Indonesia}
+\author{Stephen Becker; catatan ketik oleh Mitchell Krock}
+\date{Sumber dibekukan pada commit 98ed693, 24 Juni 2026}
+\publishers{\small
+Terjemahan kerja bahasa Indonesia dari bagian terpilih \emph{APPM5720Notes}.\\
+Materi sumber dipertahankan berdasarkan Lisensi MIT; terjemahan, koreksi, dan penghubung mandiri dilisensikan CC BY-SA 4.0.\\
+Edisi ini bukan karya resmi atau dukungan Stephen Becker, Mitchell Krock, University of Colorado Boulder, maupun pihak sumber lain.}
+\hypersetup{
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford - Edisi Bahasa Indonesia},
+  pdfauthor={Stephen Becker; typed notes by Mitchell Krock; independent Indonesian translation},
+  pdfsubject={Mixed-license MIT and CC BY-SA 4.0 educational derivative},
+  pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang modul ini}
+Modul ini menerjemahkan dan menyunting satu rentang terbatas dari berkas TeX
+\begin{center}\small\ttfamily
+TypedNotes/APPM5720Notes.tex
+\end{center}
+dalam repositori Stephen Becker, \emph{convex-optimization-class}, pada commit
+\begin{center}\small\ttfamily
+98ed6930084c435ba0f67\\[-0.2em]
+5f7646ced1f2fd8729e.
+\end{center}
+Catatan ketik sumber mengreditkan Mitchell Krock. Berkas sumber lengkap
+memiliki 130911 byte dan SHA-256
+\begin{center}\small\ttfamily
+dd2e209a05a6f993ccac3b7c32e46400\\[-0.2em]
+5466b45c93237e96c85da56147466cb8.
+\end{center}
+
+Rentang yang dipakai tepat baris 2750--2797. Irisan 48 baris tersebut memiliki
+1285 byte dalam pengodean UTF-8 dengan akhir baris LF dan SHA-256
+\begin{center}\small\ttfamily
+386f1f0f94f6433eebdd6d07e10f3ff\\[-0.2em]
+e28ffa8650e392cb0158a389e01452cf2.
+\end{center}
+Saksi bahasa Inggris yang membungkus irisan itu hanya dengan penanda batas
+berada dalam
+\begin{center}\small\ttfamily
+source/en/becker-02-douglas-\\[-0.2em]
+rachford-source.tex
+\end{center}
+dengan SHA-256
+\begin{center}\small\ttfamily
+fdc368741a0a88eb9d21c69d655ac6ce\\[-0.2em]
+1b44571c2d49c6a3302e3efc4673594b.
+\end{center}
+Isi di antara penanda saksi cocok byte demi byte dengan irisan sumber beku.
+
+Tidak ada materi program linear yang diimpor. Bagian ADMM yang mendahului
+rentang ini juga tidak diimpor; hanya kalimat hubungan ADMM--Douglas--Rachford
+yang memang terdapat pada baris 2793 dipertahankan. Rumus sumber yang dapat
+ditentukan keliru diperbaiki secara terbuka dan diringkas pada akhir modul.
+
+Provenans produksi edisi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori;
+seluruh kredit sumber dan kontributor manusia tetap dipertahankan.
+
+\tableofcontents
+\mainmatter
+\input{becker-02-pemisahan-douglas-rachford-id}
+
+\backmatter
+\chapter*{Catatan perubahan terhadap sumber}
+Perubahan berikut dibuat oleh penyusun edisi bahasa Indonesia dan bukan
+perubahan yang disahkan oleh penulis sumber.
+\begingroup\small
+\begin{enumerate}
+  \setlength{\itemsep}{0.15em}
+  \setlength{\parskip}{0pt}
+  \item Notasi $d f$ untuk subdiferensial dinormalkan menjadi $\partial f$,
+    dan asumsi aturan jumlah ditulis sebagai
+    $\partial(f+g)=\partial f+\partial g$.
+  \item Bentuk minimisasi dual donor
+    $-f^*(-u)+g^*(u)$ dibetulkan. Bentuk maksimisasi Fenchel yang konsisten
+    adalah $-f^*(-u)-g^*(u)$; bentuk minimisasi ekuivalennya adalah
+    $f^*(-u)+g^*(u)$.
+  \item Definisi operator proksimal ditambahkan agar skala $\rho$ tidak
+    ambigu dan modul dapat dibaca secara mandiri.
+  \item Motivasi titik tetap ditulis ulang dengan pilihan
+    $u\in\partial g(x)$, karena subdiferensial bernilai himpunan dan tidak
+    dapat dikurangkan sebagai satu vektor. Semua faktor $\rho$ yang hilang
+    pada derivasi donor dipulihkan agar sesuai dengan algoritma.
+  \item Pernyataan limit memakai notasi $\bar y,\bar x$ untuk membedakan limit
+    dari anggota barisan, dan bukti singkat ditambahkan dari residu titik
+    tetap serta syarat optimalitas operator proksimal.
+  \item Pernyataan bahwa ADMM merupakan kasus khusus diperjelas sebagai
+    ekuivalensi dengan pemisahan Douglas--Rachford pada masalah dual yang
+    sesuai; materi ADMM di luar rentang beku tidak ditambahkan.
+  \item Salah eja nama Mercier pada donor dibetulkan, sedangkan kredit kepada
+    Bauschke dan Combettes serta Lions dan Mercier dipertahankan.
+\end{enumerate}
+\endgroup
+
+\chapter*{Atribusi, hak, dan nondukungan}
+Sumber: Stephen Becker, repositori \emph{convex-optimization-class}, dengan
+catatan ketik \emph{APPM5720Notes} oleh Mitchell Krock, commit
+\texttt{98ed6930084c435ba0f675f7646ced1f2fd8729e},
+\href{https://github.com/stephenbeckr/convex-optimization-class}{repositori sumber}.
+Catatan donor menyatakan bahwa bagian ini mengikuti Bauschke dan Combettes,
+edisi kedua (2017), \S20.3, dan mengatribusi analisis Douglas--Rachford kepada
+Lions dan Mercier (1979); kredit turunan tersebut dipertahankan. Materi donor
+ini berada di bawah Lisensi MIT. Terjemahan bahasa Indonesia, penyusunan,
+penghubung, dan rumusan koreksi mandiri tersedia berdasarkan Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0),
+\url{https://creativecommons.org/licenses/by-sa/4.0/}. Lisensi komponen tetap
+terpisah; tidak ada lisensi yang menghapus kewajiban lisensi lainnya.
+
+Stephen Becker, Mitchell Krock, Bauschke, Combettes, Lions, Mercier, dan
+University of Colorado Boulder tidak menyusun, memeriksa, menyetujui, atau
+mendukung edisi ini. Penyebutan mereka semata-mata untuk atribusi karya sumber
+dan kredit yang diwariskan dari catatan donor.
+
+\chapter*{Pemberitahuan Lisensi MIT sumber}
+\begin{verbatim}
+MIT License
+
+Copyright (c) 2017 Stephen Becker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+\end{verbatim}
+
+\end{document}

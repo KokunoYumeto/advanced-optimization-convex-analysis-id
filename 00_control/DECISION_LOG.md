@@ -686,3 +686,36 @@ credential. The 4,985-byte sanitized readback has SHA-256
 `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
 This does not alter the reader or DOI bytes and does not delay the active
 Douglas–Rachford translation cursor.
+
+## D90-0055 — Admit Becker-02 Douglas--Rachford and preserve it before variance reduction
+
+Decision: admit exact `APPM5720Notes.tex` lines 2750--2797 as the second bounded
+Becker supplement. The 1,358-byte English witness exactly contains the frozen
+1,285-byte / 48-line donor slice; SHA-256 values are
+`fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b`
+and `386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2`.
+No LP or adjacent ADMM section is admitted. Corrections
+`O015-BECKER-ADV-0013`--`0019` are explicit and independently rereviewed.
+
+Two clean builds reproduce the 458,915-byte, nine-page PDF
+`32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794`
+and the 18,370-byte HTML reader
+`ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe`.
+Open-math validation passes 8/8; every PDF page and desktop/tablet/phone reader
+surface passes visual/reflow QA; the final independent rereview records
+P1=P2=P3=0. MIT donor rights, CC BY-SA 4.0 translation/correction rights,
+source and inherited mathematical credits, exact model provenance, and
+nonendorsement remain distinct and visible.
+
+The backend adds exactly 110 `d90.becker.98ed693.b02.*` records to the protected
+3,320-record state. Final JSONL/CSV identities are 2,623,909 /
+3,142,537 bytes with SHA-256
+`6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6`
+and `4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97`;
+two regenerations match and exact workflow stripping recovers every protected
+record byte and relative order. The deterministic 22-entry compact package is
+482,742 bytes / SHA-256
+`b97f1ea849f1edb5a46422bda94e06e4217405a8642217f3d4a7ed740f0c5f6e`.
+Preserve this fixed boundary once in the existing GitHub and Zenodo lineages,
+perform public-byte readback, then advance to exact variance-reduction lines
+2971--2988. The full O015 course remains partial; no upstream contact occurred.

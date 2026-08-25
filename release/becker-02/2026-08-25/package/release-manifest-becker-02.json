@@ -1,0 +1,231 @@
+{
+  "accessibility": {
+    "pdf_language": "id-ID",
+    "pdf_searchable": true,
+    "pdf_tagged": false,
+    "responsive_semantic_html": true
+  },
+  "corrections": "O015-BECKER-ADV-0013 through O015-BECKER-ADV-0019",
+  "credits": [
+    "Stephen Becker",
+    "Mitchell Krock",
+    "Bauschke and Combettes",
+    "Lions and Mercier"
+  ],
+  "excluded_from_compact_payload": [
+    "164.5 MB official archive; frozen identity remains in authority evidence",
+    "full multi-megabyte backend dataset; maintained in the edition repository",
+    "build trees, caches, rendered QA images, credentials, and bulk provenance dumps"
+  ],
+  "files": [
+    {
+      "bytes": 18370,
+      "media_type": "text/html",
+      "path": "D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+      "role": "responsive semantic HTML reader",
+      "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+    },
+    {
+      "bytes": 458915,
+      "media_type": "application/pdf",
+      "path": "D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+      "role": "primary PDF reader",
+      "sha256": "32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794"
+    },
+    {
+      "bytes": 1071,
+      "media_type": "text/plain",
+      "path": "LICENSE_BECKER_MIT.txt",
+      "role": "exact root MIT notice",
+      "sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac"
+    },
+    {
+      "bytes": 942,
+      "media_type": "text/markdown",
+      "path": "LICENSE_TRANSLATION_CC_BY-SA-4.0.md",
+      "role": "CC BY-SA 4.0 scope for new Indonesian material",
+      "sha256": "3528e677ed4fd9a4df75aa09bf64ab3e95ca4941d10b262586f186faef71c07f"
+    },
+    {
+      "bytes": 2417,
+      "media_type": "text/markdown",
+      "path": "README_BECKER_02.md",
+      "role": "reader-first scope, credits, rights, and caveats",
+      "sha256": "bf973017ca3bf23baac010e067db7e0a20acc4ff8e4ed26b823925cd0005db11"
+    },
+    {
+      "bytes": 8935,
+      "media_type": "text/markdown",
+      "path": "authority/BECKER_AUTHORITY_FREEZE.md",
+      "role": "authority and editable-closure report",
+      "sha256": "c93394fe9e911ea4556d6e7760e5dd175c5eeeba5be2f6f6472b34f1900955f7"
+    },
+    {
+      "bytes": 2818,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_BACKEND_EXTENSION.json",
+      "role": "stable-ID backend extension receipt",
+      "sha256": "e9eb335369ce480ba2f835cf15304ab52e2b74de0bf380ecd4044b2d21a3c844"
+    },
+    {
+      "bytes": 4598,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_BACKEND_VALIDATION.json",
+      "role": "independent stable-ID validation",
+      "sha256": "626e271c81187203b900fa2d8eace3079290e6a9aa9163e30dfa6faf463320f6"
+    },
+    {
+      "bytes": 1974,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_HTML_BROWSER_QA.json",
+      "role": "desktop/tablet/phone browser QA",
+      "sha256": "afb5ba3c5242e74ff6b1f2522bba6818d29baa70d924dffb968f65ff531622c8"
+    },
+    {
+      "bytes": 4575,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_HTML_BUILD.json",
+      "role": "deterministic HTML build receipt",
+      "sha256": "db3f89b93196197840b7c8ce710a3a9ebe6b354c35092c19ed9167e296f7d380"
+    },
+    {
+      "bytes": 1973,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_INDEPENDENT_REREVIEW.json",
+      "role": "independent final rereview",
+      "sha256": "97ad583f637be41672aca786807a1d2b8974406d34b3f9865b2d98a0f9727163"
+    },
+    {
+      "bytes": 9486,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_MATH_VALIDATION.json",
+      "role": "open mathematics validation",
+      "sha256": "bbfc499b2f6046c4db3c1a3327aac5fe6432030077f4de27915cd2c2fdb836ad"
+    },
+    {
+      "bytes": 4942,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_PDF_BUILD.json",
+      "role": "deterministic PDF build receipt",
+      "sha256": "a6d8ee690768e343dc0157d7528478ee8dcdadb56af0ce9fab713fccae9b697e"
+    },
+    {
+      "bytes": 1981,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_PDF_VISUAL_QA.json",
+      "role": "all-page PDF visual QA",
+      "sha256": "7a5909ba3cf96aeb601a1fea8c2668851112afbc9d3ed41e65576371dd4ae43f"
+    },
+    {
+      "bytes": 1773,
+      "media_type": "application/json",
+      "path": "qa/BECKER_02_SOURCE_BOUNDARY.json",
+      "role": "source-boundary receipt",
+      "sha256": "06cd220dee304ad6e33ec66109d4e7e1a8c0d41e221770634b280850000ca10f"
+    },
+    {
+      "bytes": 1358,
+      "media_type": "application/x-tex",
+      "path": "source/en/becker-02-douglas-rachford-source.tex",
+      "role": "exact English source witness",
+      "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"
+    },
+    {
+      "bytes": 7134,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex",
+      "role": "standalone Indonesian reader wrapper",
+      "sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"
+    },
+    {
+      "bytes": 4915,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+      "role": "Indonesian translated body",
+      "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+    },
+    {
+      "bytes": 4465,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/macros-id.tex",
+      "role": "shared Indonesian LaTeX macros",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/shinybook.cls",
+      "role": "shared LaTeX document class",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  ],
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "nonendorsement": "Independent edition; no endorsement by named authors, University of Colorado Boulder, or other source parties.",
+  "primary_reader": "D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+  "qa": {
+    "backend": "pass",
+    "backend_dataset_packaged": false,
+    "browser": "pass",
+    "html_build": "pass",
+    "independent_rereview": "P1=0/P2=0/P3=0",
+    "new_backend_records": 110,
+    "open_math_gates": 8,
+    "pdf_build": "pass",
+    "pdf_visual": "pass",
+    "source_boundary": "pass",
+    "stable_id_namespace": "d90.becker.98ed693.b02.*"
+  },
+  "reader_order": [
+    "D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+    "D90-BECKER-02-pemisahan-douglas-rachford-id.html"
+  ],
+  "release_date": "2026-08-25",
+  "rights": {
+    "component_specific": true,
+    "indonesian_translation_corrections_connective_text_and_new_documentation": "CC BY-SA 4.0",
+    "no_blanket_license_claim": true,
+    "source_material_and_english_witness": "MIT; full notice in LICENSE_BECKER_MIT.txt"
+  },
+  "schema": "o015-becker-02-compact-release-v1",
+  "sha256sums_scope": "every ZIP member except SHA256SUMS itself",
+  "source_authority": {
+    "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+    "explicit_exclusions": [
+      {
+        "lines": "before 2750",
+        "reason": "Adjacent ADMM and other earlier course material are outside this bounded Douglas--Rachford unit."
+      },
+      {
+        "lines": "2798 onward",
+        "reason": "The following primal-dual-methods subsection is a separate unit and is not imported."
+      }
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/stephenbeckr/convex-optimization-class",
+    "repository_author": "Stephen Becker",
+    "root_license_sha256": "c026320fa977e084507f66ce2d4de70f3955b39a590f5cdd6e10e690e7a13cac",
+    "selected_ranges": [
+      {
+        "bytes": 1285,
+        "final_newline": true,
+        "first_line": 2750,
+        "id": "douglas-rachford",
+        "last_line": 2797,
+        "line_count": 48,
+        "line_endings": "LF",
+        "sha256": "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2"
+      }
+    ],
+    "source_path": "authority/becker/extract/convex-optimization-class-98ed6930084c435ba0f675f7646ced1f2fd8729e/TypedNotes/APPM5720Notes.tex",
+    "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8",
+    "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+    "typed_notes_credit": "Mitchell Krock"
+  },
+  "status": {
+    "larger_course_edition": "partial",
+    "module": "complete at the exact admitted source boundary"
+  },
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Modul Becker 2: Pemisahan Douglas–Rachford — Edisi Bahasa Indonesia",
+  "upstream_contact": false,
+  "zip_identity_location": "local-verification-becker-02.json outside the ZIP"
+}

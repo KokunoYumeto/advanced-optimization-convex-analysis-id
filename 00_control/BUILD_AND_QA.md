@@ -1505,3 +1505,80 @@ Publication-evidence descendant gate: PASS. GitHub commit
 560,180 bytes; every API blob matches the exact committed bytes. The sanitized
 4,985-byte receipt has SHA-256
 `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
+
+# Becker-02 Douglas--Rachford consolidated build and QA
+
+As of: 2026-08-25  
+Admission: PASS locally; public preservation pending; larger O015 course partial
+
+Boundary gate: PASS. Frozen donor `APPM5720Notes.tex` is 130,911 bytes /
+SHA-256 `dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8`.
+Exact lines 2750--2797 are 48 LF lines / 1,285 bytes / SHA-256
+`386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2`.
+The 1,358-byte wrapped witness has SHA-256
+`fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b`
+and its interior matches byte-for-byte. The 1,773-byte boundary receipt has
+SHA-256 `06cd220dee304ad6e33ec66109d4e7e1a8c0d41e221770634b280850000ca10f`.
+
+Reader-build gate: PASS. Indonesian body/wrapper identities are 4,915 /
+7,134 bytes with SHA-256
+`2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a`
+and `23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955`.
+Two clean PDF builds are byte-identical: 458,915 bytes, nine A4 pages,
+searchable, `/Lang id-ID`, SHA-256
+`32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794`;
+zero fatal errors, undefined references, or overfull boxes. PDF receipt:
+4,942 bytes / `a6d8ee690768e343dc0157d7528478ee8dcdadb56af0ce9fab713fccae9b697e`.
+Two HTML builds are byte-identical: 18,370 bytes /
+`ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe`;
+HTML receipt: 4,575 bytes /
+`db3f89b93196197840b7c8ce710a3a9ebe6b354c35092c19ed9167e296f7d380`.
+
+Math gate: PASS 8/8 and byte-identical on rerun. The 9,486-byte receipt,
+SHA-256 `bbfc499b2f6046c4db3c1a3327aac5fe6432030077f4de27915cd2c2fdb836ad`,
+binds the live source/readers and validates corrected Fenchel dual signs and
+strong duality, an exact relaxed scalar Douglas--Rachford contraction, and a
+nonsmooth fixed-point/subgradient witness with open Python/NumPy.
+
+Visual/accessibility gate: PASS within recorded limits. All nine 150-dpi page
+renders were inspected at 1,241 by 1,754 pixels with zero clipping, overlap,
+broken glyph, equation, hierarchy, header/footer, or page-number defect.
+Receipt: 1,981 bytes /
+`7a5909ba3cf96aeb601a1fea8c2668851112afbc9d3ed41e65576371dd4ae43f`.
+The centered HTML reader passes browser inspection at 1280x900, 768x900, and
+390x844: useful-width fill ratios are 0.893, 0.842, and 0.885; center delta is
+zero; page overflow, broken fragments, uncontained display math, and console
+findings are zero. One tablet and six phone display formulas scroll locally.
+Receipt: 1,974 bytes /
+`afb5ba3c5242e74ff6b1f2522bba6818d29baa70d924dffb968f65ff531622c8`.
+The PDF remains untagged, so tagged-PDF closure is still open.
+
+Rights/semantic gate: PASS. MIT source and CC BY-SA 4.0 translation/correction
+layers remain separate; full MIT notice, Becker/Krock and inherited
+Bauschke-Combettes/Lions-Mercier credits, change disclosure, exact
+`OpenAI Codex gpt-5.6-sol, Ultra` marker, and nonendorsement are present. No LP,
+adjacent ADMM section, figure, exercise, solution, code, or interactive is
+imported. Final independent rereview records P1=P2=P3=0. Receipt: 1,973 bytes /
+`97ad583f637be41672aca786807a1d2b8974406d34b3f9865b2d98a0f9727163`.
+
+Backend gate: PASS. The extension preserves 3,320 prior records exactly and
+adds 110 under `d90.becker.98ed693.b02.*`, for 3,430. JSONL/CSV are
+2,623,909 / 3,142,537 bytes with SHA-256
+`6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6`
+and `4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97`.
+Two regenerations match; stripping the new workflow recovers exact prior
+JSONL/CSV bytes and JSONL line sequence. Extension/validation receipts are
+2,818 / 4,598 bytes with SHA-256
+`e9eb335369ce480ba2f835cf15304ab52e2b74de0bf380ecd4044b2d21a3c844`
+and `626e271c81187203b900fa2d8eace3079290e6a9aa9163e30dfa6faf463320f6`.
+The generic historical validator remains stale at its old 793-record baseline;
+this known unrelated failure does not contradict the dedicated passing gates.
+
+Release-package gate: PASS. Two ZIP builds are byte-identical. The reader-first
+package has 22 safe unique entries, 482,742 bytes, SHA-256
+`b97f1ea849f1edb5a46422bda94e06e4217405a8642217f3d4a7ed740f0c5f6e`;
+CRC, fixed timestamps, exact package-tree bytes, and `SHA256SUMS` pass. Local
+verification is 7,368 bytes / SHA-256
+`5d8972d9ccdcd378fd4a0fad464918afbd1907a08c6ba603ea51f05acc57c7ea`.
+No raw authority archive, full backend, build/cache tree, credential, bulk
+provenance dump, or forbidden project-label prose is packaged.

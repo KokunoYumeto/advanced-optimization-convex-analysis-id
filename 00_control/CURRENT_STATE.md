@@ -3,7 +3,7 @@
 As of: 2026-08-25  
 Lane: D90 — Advanced Optimization and Convex Analysis  
 Locale: id-ID  
-Status: complete Habring v1 spine and Becker-01 are admitted and public; the protected additive backend has 3,320 records; Becker-01 is verified at GitHub commit `7ff680f4079499c08f3b29780105f58279f519d5` and Zenodo DOI `10.5281/zenodo.22096817`; Douglas–Rachford is the active source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
+Status: complete Habring v1 spine and Becker-01 are public; Becker-02 Douglas–Rachford is locally admitted and awaiting one preservation transaction; the protected additive backend has 3,430 records; variance reduction is the following source cursor; MIT L01–L11 remain a preserved companion and page 98 remains dormant
 
 ## Ownership and scope
 
@@ -931,9 +931,51 @@ That authenticated closure is sanitized at
 The sanitized receipt is 27,333 bytes / SHA-256
 `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
 
-The executable cursor is now Becker Douglas–Rachford, exact donor lines
-2750–2797. Reconfirm the source slice and nonduplication against Habring ADMM,
-then translate and run the consolidated reader/math/rights/visual/accessibility/
-rereview/backend gate. Variance reduction follows. The full original
-stochastic, variational/monotone, exercise, solution, lab, capstone, tagged-PDF,
-and accessibility closure remains unfinished; the overall goal is not complete.
+The historical cursor above is superseded by the admitted Becker-02 boundary
+below.
+
+## 2026-08-25 — Becker-02 Douglas--Rachford admitted; preservation next
+
+Exact donor lines 2750--2797 are admitted as one coherent nonduplicative
+Douglas--Rachford unit. The 1,358-byte English witness, 4,915-byte Indonesian
+body, and 7,134-byte wrapper have SHA-256 values
+`fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b`,
+`2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a`,
+and `23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955`.
+The witness interior matches the frozen 1,285-byte / 48-line donor slice with
+SHA-256 `386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2`.
+No LP or adjacent ADMM section is imported.
+
+Two clean builds reproduce a 458,915-byte, nine-page A4 PDF with SHA-256
+`32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794`
+and an 18,370-byte semantic HTML reader with SHA-256
+`ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe`.
+Open-math validation passes 8/8; all nine PDF pages pass visual inspection;
+browser QA passes centered page-filling reflow at 1280, 768, and 390 pixels,
+with wide equations locally scrollable and no page overflow; independent
+rereview closes P1=P2=P3=0. Corrections
+`O015-BECKER-ADV-0013`--`0019` openly repair dual signs, operator notation and
+scaling, the set-valued fixed-point derivation, the limit proof, the ADMM
+qualification, and the Mercier typo. MIT source and CC BY-SA 4.0 translation/
+correction rights remain component-distinct, with exact model provenance and
+nonendorsement.
+
+The additive backend preserves the exact 3,320-record Becker-01 state and adds
+110 records under `d90.becker.98ed693.b02.*`, for 3,430 records. JSONL is
+2,623,909 bytes / SHA-256
+`6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6`;
+CSV is 3,142,537 bytes / SHA-256
+`4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97`.
+Two regenerations match, and workflow stripping recovers every prior record
+byte and relative order exactly. The compact reader-first release ZIP has 22
+entries, 482,742 bytes, and SHA-256
+`b97f1ea849f1edb5a46422bda94e06e4217405a8642217f3d4a7ed740f0c5f6e`.
+
+Immediate executable action: publish this fixed Becker-02 boundary once in the
+existing GitHub repository and Zenodo concept `10.5281/zenodo.22059741`, then
+anonymously read back every new public byte and bind sanitized receipts. After
+that, translate exact variance-reduction lines 2971--2988 (900 bytes, SHA-256
+`b81634bf07565fcf8d2774bea7b96e565e5fdd76cf5e782c5e4eb6fb3268c5ed`).
+The original stochastic, variational/monotone, assessment, complete-solution,
+lab, capstone, tagged-PDF, and accessibility closure remains unfinished; the
+overall goal is not complete.

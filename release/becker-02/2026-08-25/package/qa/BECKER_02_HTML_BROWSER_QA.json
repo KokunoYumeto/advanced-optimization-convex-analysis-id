@@ -1,0 +1,69 @@
+{
+  "schema": "o015-becker-02-html-browser-qa-v1",
+  "artifact": {
+    "path": "output/html/D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+    "bytes": 18370,
+    "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+  },
+  "browser": "Codex in-app browser",
+  "served_from": "bounded localhost server",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 900,
+      "content_width": 1265,
+      "main_width": 1130,
+      "main_left": 68,
+      "main_right_gap": 68,
+      "center_delta": 0,
+      "fill_ratio": 0.893,
+      "page_horizontal_overflow": false,
+      "scrollable_display_math": 0,
+      "uncontained_display_math": 0
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "content_width": 753,
+      "main_width": 634,
+      "main_left": 60,
+      "main_right_gap": 60,
+      "center_delta": 0,
+      "fill_ratio": 0.842,
+      "page_horizontal_overflow": false,
+      "scrollable_display_math": 1,
+      "uncontained_display_math": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "content_width": 375,
+      "main_width": 332,
+      "main_left": 22,
+      "main_right_gap": 21,
+      "center_delta": 0,
+      "fill_ratio": 0.885,
+      "page_horizontal_overflow": false,
+      "scrollable_display_math": 6,
+      "uncontained_display_math": 0
+    }
+  ],
+  "semantic_checks": {
+    "main_elements": 1,
+    "toc_navigation_elements": 1,
+    "toc_navigation_links": 6,
+    "fragment_links": 11,
+    "broken_fragments": 0,
+    "mathjax_containers": 36,
+    "display_math_blocks": 10,
+    "console_warnings_or_errors": 0
+  },
+  "visual_inspection": {
+    "desktop": "pass",
+    "tablet": "pass",
+    "phone": "pass",
+    "notes": "The reader is centered and fills the useful page width at every tested breakpoint. Text reflows without clipping. Wide mathematics stays inside a local horizontal-scroll container instead of widening or clipping the page."
+  },
+  "result": "pass",
+  "upstream_contact": false
+}

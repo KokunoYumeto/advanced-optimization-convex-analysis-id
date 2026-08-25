@@ -1,0 +1,330 @@
+{
+  "determinism": {
+    "json": "UTF-8, LF, sorted keys, two-space indentation",
+    "observed_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9"
+    },
+    "pinned_stack": {
+      "numpy": "2.4.4",
+      "python": "3.13.9"
+    },
+    "randomness": "none",
+    "thread_environment": {
+      "BLIS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "failures": [],
+  "gate_count": 8,
+  "gates": [
+    {
+      "details": {
+        "observed": {
+          "numpy": "2.4.4",
+          "python": "3.13.9"
+        },
+        "pinned": {
+          "numpy": "2.4.4",
+          "python": "3.13.9"
+        }
+      },
+      "gate": "pinned_open_python_stack",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 12
+      },
+      "gate": "live_target_mathematical_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 7
+      },
+      "gate": "live_wrapper_provenance_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "combined_witness_sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b",
+        "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "lp_material_imported": false,
+        "selected_ranges": [
+          [
+            2750,
+            2797,
+            1285,
+            "386f1f0f94f6433eebdd6d07e10f3ffe28ffa8650e392cb0158a389e01452cf2"
+          ]
+        ],
+        "source_sha256": "dd2e209a05a6f993ccac3b7c32e464005466b45c93237e96c85da56147466cb8"
+      },
+      "gate": "admitted_source_boundary",
+      "pass": true
+    },
+    {
+      "details": {
+        "html_artifact": {
+          "bytes": 18370,
+          "failures": [],
+          "fragment_links": 11,
+          "h1_count": 2,
+          "h2_count": 5,
+          "h3_count": 0,
+          "ids": 22,
+          "main_count": 1,
+          "math_display_count": 10,
+          "math_inline_count": 26,
+          "nav_count": 1,
+          "path": "output/html/D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+          "required_markers": [
+            "lang=\"id-id\"",
+            "name=\"viewport\"",
+            "<main id=\"reader\">",
+            "<nav id=\"toc\"",
+            "pemisahan douglas",
+            "bauschke dan combettes",
+            "lions dan mercier",
+            "konjugat fenchel",
+            "limit bayangan",
+            "hubungan dengan admm",
+            "mit license",
+            "cc by-sa 4.0",
+            "openai codex gpt-5.6-sol, ultra"
+          ],
+          "section_count": 6,
+          "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+        },
+        "html_receipt_current": true,
+        "pdf_artifact": {
+          "bytes": 458915,
+          "encrypted": false,
+          "language": "id-ID",
+          "media_boxes": [
+            [
+              0.0,
+              0.0,
+              595.276,
+              841.89
+            ]
+          ],
+          "missing_markers": [],
+          "pages": 9,
+          "path": "output/pdf/D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+          "required_markers": [
+            "pemisahan douglas",
+            "rachford",
+            "bauschke dan combettes",
+            "lions dan mercier",
+            "masalah primal",
+            "limit bayangan",
+            "hubungan dengan admm",
+            "pemberitahuan lisensi mit",
+            "openai codex gpt-5.6-sol, ultra"
+          ],
+          "searchable_text_bytes": 12221,
+          "sha256": "32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794",
+          "tagged": false,
+          "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford - Edisi Bahasa Indonesia"
+        },
+        "pdf_receipt_current": true,
+        "target_sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a",
+        "wrapper_sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"
+      },
+      "gate": "current_deterministic_build_receipts",
+      "pass": true
+    },
+    {
+      "details": {
+        "a": "2",
+        "b": "3",
+        "c": "5",
+        "correct_dual_max_value": "15",
+        "donor_wrong_min_form_is_unbounded_below": true,
+        "donor_wrong_min_form_quadratic_coefficient": "-1/12",
+        "equivalent_dual_min_value": "-15",
+        "primal_value": "15",
+        "problem": "minimize (a/2)x^2 + (b/2)(x-c)^2",
+        "u_star": "-6",
+        "x_star": "3"
+      },
+      "gate": "fenchel_dual_signs_and_strong_duality",
+      "pass": true
+    },
+    {
+      "details": {
+        "affine_error_contraction": "2/7",
+        "final_fixed_point_residual_abs": 2.722203705424352e-16,
+        "final_shadow_abs_error": 1.9055425937970465e-16,
+        "final_shadow_x": "67618020872076778558557043/22539340290692258087863249",
+        "final_y": "-22539340290692245202961361/22539340290692258087863249",
+        "final_y_abs_error": 5.716627781391139e-16,
+        "fixed_y": "-1",
+        "iterations": 30,
+        "lambda": "3/2",
+        "primal_x_star": "3",
+        "rho": "2/3",
+        "selected_records": [
+          {
+            "iteration": 0,
+            "next_y": "17/7",
+            "x": "7",
+            "y": "11",
+            "z": "9/7",
+            "z_minus_x": "-40/7"
+          },
+          {
+            "iteration": 1,
+            "next_y": "-1/49",
+            "x": "29/7",
+            "y": "17/7",
+            "z": "123/49",
+            "z_minus_x": "-80/49"
+          },
+          {
+            "iteration": 2,
+            "next_y": "-247/343",
+            "x": "163/49",
+            "y": "-1/49",
+            "z": "981/343",
+            "z_minus_x": "-160/343"
+          },
+          {
+            "iteration": 29,
+            "next_y": "-22539340290692245202961361/22539340290692258087863249",
+            "x": "9659717267439541327996469/3219905755813179726837607",
+            "y": "-3219905755813173284386663/3219905755813179726837607",
+            "z": "67618020872076767821138803/22539340290692258087863249",
+            "z_minus_x": "-21474836480/22539340290692258087863249"
+          }
+        ]
+      },
+      "gate": "relaxed_douglas_rachford_scalar_iteration",
+      "pass": true
+    },
+    {
+      "details": {
+        "c": [
+          3.0,
+          -1.0,
+          0.25
+        ],
+        "expected_objective": 3.03125,
+        "expected_primal_solution": [
+          2.0,
+          -0.0,
+          0.0
+        ],
+        "final_shadow_max_abs_error": 0.0,
+        "final_z_minus_x_max_abs": 0.0,
+        "first_residual": 2.0357142857142856,
+        "fixed_point_y": [
+          1.25,
+          0.75,
+          -0.1875
+        ],
+        "iterations": 200,
+        "l1_subgradient": [
+          1.0,
+          -1.0,
+          0.25
+        ],
+        "lambda": 1.5,
+        "last_residual": 0.0,
+        "minus_u_in_partial_f": [
+          1.0,
+          -1.0,
+          0.25
+        ],
+        "objective": 3.03125,
+        "problem": "minimize tau*||x||_1 + ||x-c||^2/2",
+        "reflected_prox_z": [
+          2.0,
+          -0.0,
+          0.0
+        ],
+        "rho": 0.75,
+        "shadow_x": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "subgradient_conditions_pass": true,
+        "tau": 1.0,
+        "u_in_partial_g": [
+          -1.0,
+          1.0,
+          -0.25
+        ]
+      },
+      "gate": "nonsmooth_fixed_point_shadow_and_subgradients",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "html_build_receipt": {
+      "bytes": 4575,
+      "lines": 126,
+      "path": "qa/BECKER_02_HTML_BUILD.json",
+      "sha256": "db3f89b93196197840b7c8ce710a3a9ebe6b354c35092c19ed9167e296f7d380"
+    },
+    "pdf_build_receipt": {
+      "bytes": 4942,
+      "lines": 143,
+      "path": "qa/BECKER_02_PDF_BUILD.json",
+      "sha256": "a6d8ee690768e343dc0157d7528478ee8dcdadb56af0ce9fab713fccae9b697e"
+    },
+    "source_boundary": {
+      "bytes": 1773,
+      "lines": 49,
+      "path": "qa/BECKER_02_SOURCE_BOUNDARY.json",
+      "sha256": "06cd220dee304ad6e33ec66109d4e7e1a8c0d41e221770634b280850000ca10f"
+    },
+    "target": {
+      "bytes": 4915,
+      "lines": 130,
+      "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+    },
+    "validator": {
+      "bytes": 16128,
+      "lines": 454,
+      "path": "qa/validate_becker_douglas_rachford_math.py",
+      "sha256": "ae98a652bbe25a35ead53ca724fc9b1029c9258fcf4961f9dc24d6e0b9bb6bbd"
+    },
+    "witness": {
+      "bytes": 1358,
+      "lines": 50,
+      "path": "source/en/becker-02-douglas-rachford-source.tex",
+      "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"
+    },
+    "wrapper": {
+      "bytes": 7134,
+      "lines": 159,
+      "path": "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-becker-02-open-math-validation-v1",
+  "scope": {
+    "numerical_witnesses_are_not_proofs": true,
+    "unit": "Becker module 2: Douglas--Rachford splitting",
+    "upstream_contact": false
+  },
+  "status": "PASS",
+  "tolerances": {
+    "fixed_point_abs": 2e-13,
+    "iteration_abs": 2e-13,
+    "objective_abs": 2e-13,
+    "subgradient_abs": 2e-13
+  }
+}
