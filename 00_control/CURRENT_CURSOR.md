@@ -595,6 +595,12 @@ The preceding publication action is complete. GitHub commit
 published/latest in concept `10.5281/zenodo.22059741`; all 99 files passed
 anonymous exact-byte verification, the Becker-01 PDF is the authoritative
 default preview, and authenticated draft lookup returns 404.
+The separate sanitized draft-closure receipt is 405 bytes / SHA-256
+`ebe7ccc4031a5a1cfb35c2c5e94b2b5fd9a2eab5d0575aad4cbc649ca7e0bbbc`.
+The GitHub receipt/control evidence descendant is commit
+`18d5799e27d0f70d36001082465d5fa0fd48cb39`; all 17 files pass exact blob
+readback, receipt SHA-256
+`2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
 
 The executable production cursor is `BECKER-DOUGLAS-RACHFORD`, exact frozen
 `TypedNotes/APPM5720Notes.tex` lines 2750–2797. Recompute its live slice hash,

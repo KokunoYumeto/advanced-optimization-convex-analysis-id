@@ -1,0 +1,12 @@
+{
+  "authenticated_http_status": 404,
+  "checked_at_utc": "2026-08-25T14:03:32.656899+00:00",
+  "credential_material_recorded": false,
+  "endpoint": "https://zenodo.org/api/records/22096817/draft",
+  "expected_closed_status": 404,
+  "record_doi": "10.5281/zenodo.22096817",
+  "record_id": "22096817",
+  "result": "pass",
+  "schema": "o015-zenodo-becker-01-draft-closure-v1",
+  "upstream_contact": false
+}

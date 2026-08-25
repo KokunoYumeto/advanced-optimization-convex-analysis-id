@@ -659,7 +659,9 @@ lineages. GitHub commit `7ff680f4079499c08f3b29780105f58279f519d5`, tree
 `10.5281/zenodo.22059741`, preserves 90 inherited files byte-identically, and
 adds nine Becker-01 files. All 99 public files pass anonymous size/SHA-256
 readback; the Becker PDF is the authoritative default preview and no edit draft
-remains. The GitHub and Zenodo receipt SHA-256 values are
+remains. The 405-byte sanitized draft-closure receipt has SHA-256
+`ebe7ccc4031a5a1cfb35c2c5e94b2b5fd9a2eab5d0575aad4cbc649ca7e0bbbc`.
+The GitHub and Zenodo receipt SHA-256 values are
 `1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`
 and `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
 
@@ -670,3 +672,17 @@ limit without changing historical bytes or the course's component rights.
 Activate exact Becker lines 2750–2797 for Douglas–Rachford; variance reduction
 follows. No upstream contact occurred, and no overall-course completion is
 claimed.
+
+## D90-0054 — Preserve the Becker-01 receipts and post-publication controls
+
+Decision: publish one narrow evidence descendant, not a new reader release.
+Commit `18d5799e27d0f70d36001082465d5fa0fd48cb39`, tree
+`37da43821d7d1b354d8c8a28c2cdbc089c9f6236`, parent
+`7ff680f4079499c08f3b29780105f58279f519d5`, contains the Becker-01 GitHub and
+Zenodo receipts, publication scripts/manifests, and the corrected durable
+controls. All 17 changed files / 560,180 bytes match authenticated API blob
+bytes; the transport used the local GitHub CLI keyring and recorded no
+credential. The 4,985-byte sanitized readback has SHA-256
+`2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
+This does not alter the reader or DOI bytes and does not delay the active
+Douglas–Rachford translation cursor.

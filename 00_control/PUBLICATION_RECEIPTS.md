@@ -716,8 +716,26 @@ a new content release. No upstream issue, comment, or other contact occurred.
 - Metadata gate: truthful partial status, exact component rights/provenance,
   the organization contributor exactly once, model provenance exactly once,
   no credential material, and no upstream contact. Authenticated draft lookup
-  returns 404 after publication.
+  returns 404 after publication. Separate sanitized closure receipt:
+  `release/zenodo/2026-08-25-becker-01/zenodo-draft-closure-becker-01.json`,
+  405 bytes; SHA-256
+  `ebe7ccc4031a5a1cfb35c2c5e94b2b5fd9a2eab5d0575aad4cbc649ca7e0bbbc`.
 - Sanitized receipt:
   `release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json`,
   27,333 bytes; SHA-256
   `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
+
+## 2026-08-25 — Public Becker-01 receipt/control evidence descendant
+
+- Commit/tree: `18d5799e27d0f70d36001082465d5fa0fd48cb39` /
+  `37da43821d7d1b354d8c8a28c2cdbc089c9f6236`
+- Parent: `7ff680f4079499c08f3b29780105f58279f519d5`
+- Scope: 17 publication-receipt, publisher/verifier, manifest, rights, and
+  durable-control files / 560,180 aggregate bytes; no reader or DOI byte changed.
+- Public gate: every authenticated GitHub API blob equals the exact committed
+  byte sequence; `main` points to the commit. The keyring credential was used as
+  transport only and no credential material is recorded.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-01/github-public-readback-becker-01-evidence.json`,
+  4,985 bytes; SHA-256
+  `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.

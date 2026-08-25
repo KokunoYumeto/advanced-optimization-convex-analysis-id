@@ -1491,8 +1491,17 @@ Zenodo record `22096817`, DOI `10.5281/zenodo.22096817`, is published/latest
 in concept `10.5281/zenodo.22059741`. All 99 public files pass anonymous exact
 byte/hash readback: 90 inherited unchanged and nine additions. The authoritative
 public file state selects the Becker-01 PDF as default preview; authenticated
-draft lookup returns 404. Receipt:
+draft lookup returns 404. Its 405-byte sanitized closure receipt has SHA-256
+`ebe7ccc4031a5a1cfb35c2c5e94b2b5fd9a2eab5d0575aad4cbc649ca7e0bbbc`.
+Public-byte receipt:
 `release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json`,
 27,333 bytes / SHA-256
 `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
 No credential material or upstream contact is recorded.
+
+Publication-evidence descendant gate: PASS. GitHub commit
+`18d5799e27d0f70d36001082465d5fa0fd48cb39` / tree
+`37da43821d7d1b354d8c8a28c2cdbc089c9f6236` exposes 17 receipt/control files /
+560,180 bytes; every API blob matches the exact committed bytes. The sanitized
+4,985-byte receipt has SHA-256
+`2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.

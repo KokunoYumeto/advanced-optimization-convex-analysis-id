@@ -1,0 +1,141 @@
+{
+  "aggregate_bytes": 560180,
+  "branch": "main",
+  "changed_file_count": 17,
+  "commit": "18d5799e27d0f70d36001082465d5fa0fd48cb39",
+  "commit_api": {
+    "bytes": 171477,
+    "sha256": "02758e54001689287688f4d1289edf2793fa0338d9e0780287b7f093748f2cb6"
+  },
+  "credential_material_recorded": false,
+  "credential_transport": "GitHub CLI keyring session",
+  "files": [
+    {
+      "bytes": 115662,
+      "path": "00_control/BUILD_AND_QA.md",
+      "public_byte_identity": "pass",
+      "sha256": "d8d5b63d54d1fe47aa58af5ebac373f4435ac234774d6023e01cabb891487d53",
+      "status": "modified"
+    },
+    {
+      "bytes": 45720,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "public_byte_identity": "pass",
+      "sha256": "efe423af9c08c791585447eb275f10f1972d500e5a4157d37361946a20498137",
+      "status": "modified"
+    },
+    {
+      "bytes": 22907,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "public_byte_identity": "pass",
+      "sha256": "9f3c937be413fb84814f9d2b6afed083c506da646541813520e8da2b30658716",
+      "status": "modified"
+    },
+    {
+      "bytes": 41556,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "public_byte_identity": "pass",
+      "sha256": "9b824a56989e48fe3d76b9b3170abf79c467cce02ad4e2249d0738a2d5664498",
+      "status": "modified"
+    },
+    {
+      "bytes": 3966,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "public_byte_identity": "pass",
+      "sha256": "0b52f8a1775d58cd3f07ac8ca71a35e4b6ccef1881841c8f74bf1d67aff9e8f5",
+      "status": "modified"
+    },
+    {
+      "bytes": 59498,
+      "path": "00_control/CURRENT_STATE.md",
+      "public_byte_identity": "pass",
+      "sha256": "620c5ff24d2dda99eb6e75bfbbbb6296bd9487f442ce0f10b17cf9f326ea812f",
+      "status": "modified"
+    },
+    {
+      "bytes": 56991,
+      "path": "00_control/DECISION_LOG.md",
+      "public_byte_identity": "pass",
+      "sha256": "15950bc270f6e9e2c002e25dc8b2eaca90323999c99fe821dabb8ce01a8d7f00",
+      "status": "modified"
+    },
+    {
+      "bytes": 50792,
+      "path": "00_control/PUBLICATION_RECEIPTS.md",
+      "public_byte_identity": "pass",
+      "sha256": "8cb40fc0471e55d730c5604a4b70b2ebea7e35a71568c5433e4f4c68bb9df47c",
+      "status": "modified"
+    },
+    {
+      "bytes": 43140,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "public_byte_identity": "pass",
+      "sha256": "f1ceb96d78bd07c8dbe7f49cfbd6186a1eb833a306e145e869512441e71229b4",
+      "status": "modified"
+    },
+    {
+      "bytes": 16504,
+      "path": "release/github/2026-08-25-becker-01/github-public-readback-becker-01.json",
+      "public_byte_identity": "pass",
+      "sha256": "1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79",
+      "status": "added"
+    },
+    {
+      "bytes": 5261,
+      "path": "release/github/2026-08-25-becker-01/verify_github_becker_01_public.py",
+      "public_byte_identity": "pass",
+      "sha256": "56262a257dd3958205a43633563497493e0467b8d85f9b5968c18ebd7c3d066a",
+      "status": "added"
+    },
+    {
+      "bytes": 2395,
+      "path": "release/zenodo/2026-08-25-becker-01/RIGHTS_AND_PROVENANCE_BECKER_01.md",
+      "public_byte_identity": "pass",
+      "sha256": "542480f91a150d6c0a0dcc6fa0b11f9b8a82d245035d0d0f6c54f12e82f295ed",
+      "status": "added"
+    },
+    {
+      "bytes": 873,
+      "path": "release/zenodo/2026-08-25-becker-01/SHA256SUMS-becker-01",
+      "public_byte_identity": "pass",
+      "sha256": "6467df7e4532d02a96c9528f068acdd41f08c669421a644cc277a8217fe14273",
+      "status": "added"
+    },
+    {
+      "bytes": 49680,
+      "path": "release/zenodo/2026-08-25-becker-01/publish_becker_01.py",
+      "public_byte_identity": "pass",
+      "sha256": "75d42f351a6fc19874b9c937c65e897d3d609dad9dc0bc5008527adf4ee671ee",
+      "status": "added"
+    },
+    {
+      "bytes": 17536,
+      "path": "release/zenodo/2026-08-25-becker-01/release-manifest-becker-01-zenodo.json",
+      "public_byte_identity": "pass",
+      "sha256": "ca97baa2b99d737d5981fc0927093ef164b034ce60d6932de0bdde6b47baffb4",
+      "status": "added"
+    },
+    {
+      "bytes": 366,
+      "path": "release/zenodo/2026-08-25-becker-01/zenodo-draft-becker-01.json",
+      "public_byte_identity": "pass",
+      "sha256": "97bccc4e7ee8a5430affaa9f36c88cce2b28c452ca7517d0537d8c954b63da3a",
+      "status": "added"
+    },
+    {
+      "bytes": 27333,
+      "path": "release/zenodo/2026-08-25-becker-01/zenodo-public-readback-becker-01.json",
+      "public_byte_identity": "pass",
+      "sha256": "b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e",
+      "status": "added"
+    }
+  ],
+  "main_points_to_commit": true,
+  "parent": "7ff680f4079499c08f3b29780105f58279f519d5",
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-becker-01-evidence-readback-v1",
+  "tree": "37da43821d7d1b354d8c8a28c2cdbc089c9f6236",
+  "upstream_contact": false,
+  "verified_at_utc": "2026-08-25T14:05:43.351102+00:00"
+}

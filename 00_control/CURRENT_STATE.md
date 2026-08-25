@@ -909,6 +909,11 @@ existing GitHub repository at commit
 changed paths / 8,203,835 aggregate bytes; every immutable raw byte matches.
 The sanitized receipt is 16,504 bytes / SHA-256
 `1521d1267be860fc9dfb2a1aef8708761bcc6c319108f08ff09d13d926afdd79`.
+The receipt/control evidence is itself public at descendant commit
+`18d5799e27d0f70d36001082465d5fa0fd48cb39`, tree
+`37da43821d7d1b354d8c8a28c2cdbc089c9f6236`; all 17 changed files /
+560,180 bytes passed API-blob readback. Its 4,985-byte sanitized receipt has
+SHA-256 `2e23d36a42a8524567a7d2b02c48931d1446b3e14c5afe080c4741d0a9519e82`.
 
 Zenodo record `22096817`, DOI `10.5281/zenodo.22096817`, is published/latest
 in existing concept `10.5281/zenodo.22059741` after parent `22088305`. Its 99
@@ -919,6 +924,10 @@ unchanged. The authoritative public file state and landing page select
 `D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf` as default preview. A legacy
 thumbnail-cache field still names MIT-09, but it does not control the actual
 public preview. Authenticated draft lookup returns 404, so no edit draft remains.
+That authenticated closure is sanitized at
+`release/zenodo/2026-08-25-becker-01/zenodo-draft-closure-becker-01.json`,
+405 bytes / SHA-256
+`ebe7ccc4031a5a1cfb35c2c5e94b2b5fd9a2eab5d0575aad4cbc649ca7e0bbbc`.
 The sanitized receipt is 27,333 bytes / SHA-256
 `b36739a507f1f6aeae2a2a88ac4b12bfd8c1b6f6f341fd05be33b97a38e7851e`.
 
