@@ -823,3 +823,12 @@ commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`. No Becker module is admitted
 until that gate closes. The complete original KKT/Slater/duality, stochastic,
 variational/monotone, exercise/solution, lab, and capstone layer remains open;
 the overall O015 goal is not complete. No upstream contact occurred.
+
+The Habring preservation evidence is itself public at GitHub commit
+`90062e1d78f41011ba350c88f07ebef44de80365` / tree
+`24865fc6929518c29a419305e96aba955d60aa44`. Anonymous API, immutable-patch,
+and raw-byte readback pass for all 39 changed paths (9,603,708 aggregate
+bytes). The sanitized receipt is 13,489 bytes / SHA-256
+`4c06f305356da35a7fc66794425e8d2bb45d020705a6fcfac16a7b3ea84e1e90`.
+This closes the publication-receipt checkpoint; the active production cursor
+remains the Becker freeze/build/deduplication gate.

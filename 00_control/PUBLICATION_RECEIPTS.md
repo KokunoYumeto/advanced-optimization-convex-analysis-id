@@ -640,3 +640,25 @@ It records zero remote mutations and the exact executable retry: rerun
 `inspect`, `publish`, and anonymous `readback` on the same article, project,
 and collection only when the account is active. No replacement item or concept
 was created.
+
+## 2026-08-25 — Public GitHub preservation-evidence checkpoint
+
+- Repository: https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id
+- Branch/commit: `main` / `90062e1d78f41011ba350c88f07ebef44de80365`
+- Tree: `24865fc6929518c29a419305e96aba955d60aa44`
+- Parent: `46d5753e853397e013d21b01872d789f7ee07a63`
+- Scope: the complete Habring public-preservation receipts, durable control
+  refresh, and exact GitHub/Zenodo/Figshare release packages; no reader/source
+  content or prior immutable release was altered.
+- Anonymous gate: the public commit API and immutable patch expose the same 39
+  unique changed paths, and all 39 raw files (9,603,708 aggregate bytes) match
+  their local commit byte counts and SHA-256 identities.
+- Sanitized receipt:
+  `release/github/2026-08-25-habring-preservation-receipts/github-preservation-receipts-public-readback.json`,
+  13,489 bytes; SHA-256
+  `4c06f305356da35a7fc66794425e8d2bb45d020705a6fcfac16a7b3ea84e1e90`.
+- Verifier: 7,493 bytes; SHA-256
+  `f91018458881d5af40bdf21c030bb82825e2644ceb565a92c27268ed2f47381b`.
+
+This closes the GitHub evidence push for the Habring boundary. No upstream
+issue, comment, or other contact occurred.

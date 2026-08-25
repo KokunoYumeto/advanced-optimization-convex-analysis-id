@@ -1375,3 +1375,13 @@ receipt has SHA-256
 `a8686c9a558954911d61b81762c5d571e0fc656286f25d6b7b506cf8c08ae218`.
 Retrying the same article when the account is active is additive and does not
 block the Becker build lane.
+
+The subsequent narrow GitHub preservation-evidence commit
+`90062e1d78f41011ba350c88f07ebef44de80365` / tree
+`24865fc6929518c29a419305e96aba955d60aa44` also passes anonymous verification.
+Its public API and immutable patch agree on 39 unique changed paths; all 39 raw
+files, totaling 9,603,708 bytes, match the committed bytes and SHA-256 values.
+The sanitized 13,489-byte receipt has SHA-256
+`4c06f305356da35a7fc66794425e8d2bb45d020705a6fcfac16a7b3ea84e1e90`.
+This is a preservation-evidence gate only and does not alter the frozen Habring
+reader or Zenodo release bytes.
