@@ -1155,3 +1155,26 @@ advance the cursor to the next coherent original module: variational
 inequalities, maximal monotone operators, resolvents, and splitting. The O015
 course remains partial; later assessment/solution, lab, capstone, and final
 accessible-reader closure are still required.
+
+## 2026-08-26 controlling refresh — Original-01 GitHub preservation closed
+
+The existing repository
+`https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id` now
+contains the Original-01 boundary at `main` commit
+`ec90fc78b5f974f845d04f2e1c59069e5eacefe3`, tree
+`8b02653ebaac49f558c7707d05f93a6ed4b0c71f`, parent
+`c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`. The commit contains exactly 83
+explicit tranche/control paths totaling 10,792,966 public bytes. Anonymous
+raw-byte readback passed for every changed path; the sanitized receipt is
+`release/github/2026-08-26-original-01/github-public-readback-original-01.json`,
+53,588 bytes / SHA-256
+`eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2`.
+The verifier is retained at
+`release/github/2026-08-26-original-01/verify_github_original_01_public.py` /
+SHA-256 `197a12d17efaddbb642d1f2a4d8baf234cf032cb7c27cfff5d0e5a6758d6f376`.
+
+Both public preservation routes are therefore closed for Original-01:
+GitHub commit above and Zenodo record `22103674` / DOI
+`10.5281/zenodo.22103674`. The next executable cursor is a coherent original
+module on variational inequalities, maximal monotone operators, resolvents,
+and splitting. The course remains partial.

@@ -956,3 +956,26 @@ boundary; it does not start another evidence-only commit loop.
   Direct draft lookup returned 404 and the concept open-draft count was zero.
 - No upstream contact occurred. GitHub preservation/readback is the next
   narrow gate; the larger course remains partial.
+
+## 2026-08-26 — Original-01 GitHub publication and anonymous readback
+
+- Repository: `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`.
+- Branch/commit/tree/parent: `main` /
+  `ec90fc78b5f974f845d04f2e1c59069e5eacefe3` /
+  `8b02653ebaac49f558c7707d05f93a6ed4b0c71f` /
+  `c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`.
+- Scope: 83 explicit Original-01 source, reader, lab, backend, QA, release,
+  Zenodo-receipt, and durable-control paths; aggregate public bytes
+  10,792,966. No unrelated task path was staged.
+- Anonymous gate: every changed raw path matched the local filename, byte count,
+  and SHA-256 over `raw.githubusercontent.com`; result `pass`.
+- Sanitized receipt:
+  `release/github/2026-08-26-original-01/github-public-readback-original-01.json`,
+  53,588 bytes; SHA-256
+  `eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2`.
+- Verifier:
+  `release/github/2026-08-26-original-01/verify_github_original_01_public.py`,
+  SHA-256 `197a12d17efaddbb642d1f2a4d8baf234cf032cb7c27cfff5d0e5a6758d6f376`.
+- No credentials were read for the public check and no upstream contact occurred.
+  The next cursor is the variational-inequality/maximal-monotone/resolvent/
+  splitting module; the course remains partial.

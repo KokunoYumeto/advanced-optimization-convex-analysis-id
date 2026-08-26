@@ -1749,3 +1749,26 @@ is pass with 404 draft lookup and zero open drafts (391-byte receipt
 
 The remaining release gate is narrow GitHub commit, push, and anonymous raw
 readback. No upstream contact occurred and no credential material is recorded.
+
+## 2026-08-26 — GitHub public-preservation gate closed
+
+GitHub gate: PASS. Existing repository
+`https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`,
+branch `main`, commit
+`ec90fc78b5f974f845d04f2e1c59069e5eacefe3`, tree
+`8b02653ebaac49f558c7707d05f93a6ed4b0c71f`, parent
+`c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`. The exact commit contains 83
+explicit Original-01/control paths totaling 10,792,966 bytes. Anonymous
+raw.githubusercontent.com readback matched local bytes, sizes, and SHA-256
+for all 83 paths. Receipt:
+`release/github/2026-08-26-original-01/github-public-readback-original-01.json`,
+53,588 bytes / SHA-256
+`eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2`.
+The bounded verifier is
+`release/github/2026-08-26-original-01/verify_github_original_01_public.py`,
+SHA-256 `197a12d17efaddbb642d1f2a4d8baf234cf032cb7c27cfff5d0e5a6758d6f376`.
+
+Both GitHub and Zenodo preservation gates now pass. No upstream contact or
+credential material was involved. The next gate is a larger coherent original
+module on variational inequalities, maximal monotone operators, resolvents,
+and splitting; this is not a publication or evidence-only loop.

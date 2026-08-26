@@ -847,3 +847,22 @@ and the Original-01 PDF as default preview. The complete anonymous readback
 and zero-open-draft closure pass. GitHub commit/push and raw-byte readback are
 the next operational step; after that the cursor advances to variational
 inequalities, maximal monotone operators, resolvents, and splitting.
+
+## D90-0060 — Close Original-01 GitHub preservation and advance cursor (2026-08-26)
+
+Decision: close public preservation for Original-01 after the exact narrow
+GitHub commit and anonymous raw-byte gate. Existing repository `main` is at
+commit `ec90fc78b5f974f845d04f2e1c59069e5eacefe3`, tree
+`8b02653ebaac49f558c7707d05f93a6ed4b0c71f`, parent
+`c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`. The 83 changed tranche/control
+paths total 10,792,966 public bytes and all match their local identities. The
+53,588-byte sanitized receipt is
+`release/github/2026-08-26-original-01/github-public-readback-original-01.json`
+with SHA-256
+`eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2`.
+
+GitHub and Zenodo now both preserve the same finite checkpoint in their
+existing lineages. No duplicate concept, upstream contact, or credential
+material was introduced. Advance directly to one coherent original module on
+variational inequalities, maximal monotone operators, resolvents, and
+splitting; do not reopen publication or claim the course complete.

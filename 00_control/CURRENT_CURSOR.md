@@ -759,3 +759,23 @@ and splitting. Preserve all stable IDs and component rights; keep later
 connective proofs, substantive exercises/hints/answers/solutions, open-solver
 labs, capstone, tagged/accessibility closure, and final course assessment in
 the remaining-work ledger. The overall O015 goal remains active.
+
+## 2026-08-26 controlling cursor — Original-01 public; advance to monotone module
+
+The GitHub publication/readback gate is complete. `main` commit
+`ec90fc78b5f974f845d04f2e1c59069e5eacefe3` (tree
+`8b02653ebaac49f558c7707d05f93a6ed4b0c71f`, parent
+`c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`) contains 83 explicit paths and
+10,792,966 bytes. Anonymous exact-byte verification passed for all 83 paths;
+receipt `release/github/2026-08-26-original-01/github-public-readback-original-01.json`
+is 53,588 bytes / SHA-256
+`eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2`.
+
+The immediate next production action is no longer publication: author one
+coherent, nonduplicative original module on variational inequalities, maximal
+monotone operators, resolvents, and splitting. Preserve stable IDs and exact
+component rights, then run one consolidated deterministic build/math/rights/
+visual/browser/backend/rereview gate. Subsequent gaps remain connective proofs,
+substantive exercises with hints/answers/complete solutions, open-solver labs,
+capstone, tagged/accessibility closure, and cumulative course assessment. Do
+not reopen this publication or claim full-course completion.

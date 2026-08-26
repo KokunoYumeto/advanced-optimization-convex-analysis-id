@@ -635,7 +635,19 @@
       "excluded":"LP/MIP, simplex-tableau algorithms, finite-LP duality/sensitivity, network/discrete optimization, and OR solver workflow"
     },
     "public_preservation": {
-      "status":"zenodo_published_github_pending",
+      "status":"github_and_zenodo_publicly_preserved",
+      "github_repository":"https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+      "github_branch":"main",
+      "github_commit":"ec90fc78b5f974f845d04f2e1c59069e5eacefe3",
+      "github_tree":"8b02653ebaac49f558c7707d05f93a6ed4b0c71f",
+      "github_parent":"c6d6fac17b5e3cd735adca98a55e9d2596ad65aa",
+      "github_changed_path_count":83,
+      "github_aggregate_bytes":10792966,
+      "github_readback_receipt":"release/github/2026-08-26-original-01/github-public-readback-original-01.json",
+      "github_readback_receipt_bytes":53588,
+      "github_readback_receipt_sha256":"eb5f9041a3edb59692122402adaa1acccb77453186881e98552fbf15cabc91d2",
+      "github_verifier":"release/github/2026-08-26-original-01/verify_github_original_01_public.py",
+      "github_verifier_sha256":"197a12d17efaddbb642d1f2a4d8baf234cf032cb7c27cfff5d0e5a6758d6f376",
       "zenodo_record_id":"22103674",
       "zenodo_record_doi":"10.5281/zenodo.22103674",
       "zenodo_concept_doi":"10.5281/zenodo.22059741",
@@ -658,10 +670,9 @@
     "recorded_on": "2026-08-26",
     "authority_kind": "finite_original_coursebook_closure",
     "name": "FINITE-ORIGINAL-CLOSURE",
-    "state": "original_tranche_1_admitted_zenodo_public_github_is_next",
+    "state": "original_tranche_1_publicly_preserved_next_variational_monotone_module",
     "scope_reference": "selection_architecture.original_completion_required",
     "required_actions": [
-      "preserve Original-01 in the existing GitHub repository and complete anonymous exact-byte readback",
       "then author the next coherent original tranche on variational inequalities, maximal monotone operators, resolvents, and splitting"
     ]
   },
