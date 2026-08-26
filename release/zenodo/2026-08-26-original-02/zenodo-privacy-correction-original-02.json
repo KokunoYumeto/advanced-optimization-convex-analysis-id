@@ -1,0 +1,43 @@
+{
+  "action": "records_api_same_record_file_modification",
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "concept_unchanged": true,
+  "corrected_at_utc": "2026-08-26T04:28:37.660814Z",
+  "credential_material_recorded": false,
+  "default_preview_unchanged": true,
+  "doi_unchanged": true,
+  "file_count": 99,
+  "file_modification_endpoint": "/api/records/22104724/file-modification",
+  "metadata_sha256_after": "19bf7a7d29882319e06a654a78d76f7f3b535040bb2a4f7cbf61d6baa5286ace",
+  "metadata_sha256_before": "19bf7a7d29882319e06a654a78d76f7f3b535040bb2a4f7cbf61d6baa5286ace",
+  "metadata_unchanged": true,
+  "new_version_created": false,
+  "publish_endpoint": "/api/records/22104724/draft/actions/publish",
+  "record_doi": "10.5281/zenodo.22104724",
+  "record_id": "22104724",
+  "replaced_file_count": 3,
+  "replaced_files": [
+    {
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+      "new_bytes": 680451,
+      "new_sha256": "5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d",
+      "old_sha256": "40768542571ba269b2b175e080a611a4626f92068510d5e26b95cb53da66a1eb"
+    },
+    {
+      "filename": "release-manifest-original-02-zenodo.json",
+      "new_bytes": 6559,
+      "new_sha256": "92e05870cc496deb1c9509a1299fdc90d73e9b04f920a3c8347171d900a9771f",
+      "old_sha256": "bcfaf700c0e7be6c1b31065bf4349c08ef094109bddcd9f1baef43f8af8f3728"
+    },
+    {
+      "filename": "SHA256SUMS-original-02",
+      "new_bytes": 1001,
+      "new_sha256": "1e1b5734be66d452fdf025100e1d4ec22184de02798f8f765eddccf74ef81576",
+      "old_sha256": "68cf540f041cb54cd254c5b5a0337202dc2475feb1960e281d1e0d1b9d700c4d"
+    }
+  ],
+  "result": "pass",
+  "schema": "o015-zenodo-original-02-privacy-correction-v1",
+  "unchanged_file_count": 96
+}

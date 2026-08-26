@@ -779,3 +779,25 @@ visual/browser/backend/rereview gate. Subsequent gaps remain connective proofs,
 substantive exercises with hints/answers/complete solutions, open-solver labs,
 capstone, tagged/accessibility closure, and cumulative course assessment. Do
 not reopen this publication or claim full-course completion.
+
+## 2026-08-26 controlling cursor — Original-02 Zenodo public; GitHub gate next
+
+The variational/maximal-monotone/resolvent/splitting production instruction is
+complete and superseded. Original-02 passes every local gate, has a 4,338-record
+protected backend, and is publicly preserved at Zenodo DOI
+`10.5281/zenodo.22104724` with 99-file anonymous exact-byte readback and zero
+open drafts. A same-record privacy correction replaced only three files and
+preserved the DOI, concept, metadata, default preview, and the other 96 files.
+The current privacy-clean compact package is 680,451 bytes / SHA-256
+`5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d`;
+anonymous readback matched all 99 files and found zero profile-locator hits in
+the public additions, and authenticated closure again found no open draft.
+
+Immediate executable action: commit and push exactly the 103 manifest-bound
+Original-02 source, readers, lab, backend, QA, release, Zenodo receipts, README,
+and durable controls to the existing GitHub repository; verify the public
+commit identity and every raw path anonymously. Then advance directly to a
+coherent course-wide closure boundary: cumulative assessment/proof rubrics,
+two additional open-computation labs, capstone, tagged-PDF work, and integrated
+accessibility/final readers. Do not reopen Original-02, contact upstream, or
+claim the overall course complete.

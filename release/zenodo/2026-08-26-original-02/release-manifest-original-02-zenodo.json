@@ -1,0 +1,165 @@
+{
+  "additions_before_manifest_and_sums": {
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip": {
+      "bytes": 680451,
+      "sha256": "5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d"
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": {
+      "bytes": 48701,
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": {
+      "bytes": 190403,
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": {
+      "bytes": 453811,
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    "RIGHTS_AND_PROVENANCE_ORIGINAL_02.md": {
+      "bytes": 3584,
+      "sha256": "28512dcc27ef38163e8874e5e582689fbc24783226d0dce29fe3ca0700cc4fb0"
+    },
+    "backend-records-2026.08.26-original-02.csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "backend-records-2026.08.26-original-02.jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    }
+  },
+  "backend": {
+    "added_records": 395,
+    "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c",
+    "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+    "protected_records": 3943,
+    "records": 4338
+  },
+  "boundary": {
+    "complete_solutions": 6,
+    "course_status": "partial",
+    "exercises": 6,
+    "hints": 6,
+    "segments": 8,
+    "topic": "ketaksamaan variasional, operator monoton maksimal, resolven, dan pemisahan operator",
+    "unit_id": "d90.orig.v1.tr02.unit"
+  },
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "credential_material_recorded": false,
+  "expected_public_file_count": 99,
+  "metadata_template": {
+    "bytes": 5721,
+    "path": "release/zenodo/2026-08-26-original-02/metadata-original-02.template.json",
+    "sha256": "c5f6c495a0b71c73f6d08346c8fe3c38547730963d93fa2ff7c5c8b695455274"
+  },
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "parent_public_readback": {
+    "bytes": 26975,
+    "path": "release/zenodo/2026-08-26-original-01/zenodo-public-readback-original-01.json",
+    "sha256": "8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2"
+  },
+  "parent_record_doi": "10.5281/zenodo.22103674",
+  "parent_record_id": "22103674",
+  "publication_date": "2026-08-26",
+  "qa_receipts": {
+    "backend_build": {
+      "bytes": 4959,
+      "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370"
+    },
+    "backend_validation": {
+      "bytes": 11064,
+      "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2"
+    },
+    "epub_build": {
+      "bytes": 7697,
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    "epub_conformance": {
+      "bytes": 4066,
+      "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e"
+    },
+    "html_browser_qa": {
+      "bytes": 4247,
+      "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891"
+    },
+    "html_build": {
+      "bytes": 6289,
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    "independent_rereview": {
+      "bytes": 16438,
+      "path": "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "sha256": "a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082"
+    },
+    "mathematics": {
+      "bytes": 26577,
+      "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4"
+    },
+    "package_local_verification": {
+      "bytes": 13063,
+      "path": "release/original-02/2026-08-26/local-verification-original-02.json",
+      "sha256": "eff289b05d4af2062dbf3a652132b4ecd717fdc6dcb55d2c7071e312b31c03d7"
+    },
+    "pdf_build": {
+      "bytes": 6073,
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    "pdf_visual_qa": {
+      "bytes": 5685,
+      "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04"
+    },
+    "rights_and_nonoverlap": {
+      "bytes": 8135,
+      "path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e"
+    }
+  },
+  "release_input_freeze": {
+    "bytes": 4516,
+    "path": "release/zenodo/2026-08-26-original-02/release-inputs-original-02.json",
+    "sha256": "8d5a99891eee470f4430a6cdf907bd4ba9cb96d7d8f55ec7eccbbedf4880238d"
+  },
+  "replaced_parent_files": [
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_03_2026.08.25.zip",
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_01_2026.08.26.zip",
+    "RIGHTS_AND_PROVENANCE_ORIGINAL_01.md",
+    "SHA256SUMS-becker-03",
+    "SHA256SUMS-original-01",
+    "backend-records-2026.08.26-original-01.csv",
+    "backend-records-2026.08.26-original-01.jsonl",
+    "release-manifest-becker-03-zenodo.json",
+    "release-manifest-original-01-zenodo.json"
+  ],
+  "retained_parent_file_count": 90,
+  "rights": {
+    "Habring_scaffold": "CC BY 4.0 submission-level evidence",
+    "blanket_license_claim": false,
+    "component_specific": true,
+    "new_substantive_layer": "CC BY-SA 4.0"
+  },
+  "rights_template": {
+    "bytes": 1789,
+    "path": "release/zenodo/2026-08-26-original-02/RIGHTS_AND_PROVENANCE_ORIGINAL_02.template.md",
+    "sha256": "ebb1feb22669f198fcfe12cbe0be52d31f7cbfc0664fdc2b44da7736be6a03f6"
+  },
+  "schema": "o015-zenodo-original-02-release-manifest-v1",
+  "source": {
+    "canonical_spine": "Andreas Habring arXiv:2607.11664v1",
+    "license": "CC BY 4.0",
+    "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748"
+  },
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Tranche Asli 2; Kursus Parsial",
+  "upstream_contact": false
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Residu inklusi operator monoton</title>
+<desc id="desc">Perbandingan residu maju--mundur dengan langkah diterima, langkah di luar jaminan, dan Douglas--Rachford.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="450.0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#182235">Residu inklusi terhadap iterasi</text>
+<line x1="88" x2="865" y1="446.00" y2="446.00" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="450.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-16</text>
+<line x1="88" x2="865" y1="427.21" y2="427.21" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="431.21" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-14</text>
+<line x1="88" x2="865" y1="408.42" y2="408.42" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="412.42" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-12</text>
+<line x1="88" x2="865" y1="389.63" y2="389.63" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="393.63" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-10</text>
+<line x1="88" x2="865" y1="370.84" y2="370.84" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="374.84" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-8</text>
+<line x1="88" x2="865" y1="352.05" y2="352.05" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="356.05" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-6</text>
+<line x1="88" x2="865" y1="333.26" y2="333.26" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="337.26" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-4</text>
+<line x1="88" x2="865" y1="314.47" y2="314.47" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="318.47" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^-2</text>
+<line x1="88" x2="865" y1="295.67" y2="295.67" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="299.67" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^0</text>
+<line x1="88" x2="865" y1="276.88" y2="276.88" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="280.88" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^2</text>
+<line x1="88" x2="865" y1="258.09" y2="258.09" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="262.09" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^4</text>
+<line x1="88" x2="865" y1="239.30" y2="239.30" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="243.30" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^6</text>
+<line x1="88" x2="865" y1="220.51" y2="220.51" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="224.51" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^8</text>
+<line x1="88" x2="865" y1="201.72" y2="201.72" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="205.72" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^10</text>
+<line x1="88" x2="865" y1="182.93" y2="182.93" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="186.93" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^12</text>
+<line x1="88" x2="865" y1="164.14" y2="164.14" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="168.14" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^14</text>
+<line x1="88" x2="865" y1="145.35" y2="145.35" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="149.35" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^16</text>
+<line x1="88" x2="865" y1="126.56" y2="126.56" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="130.56" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^18</text>
+<line x1="88" x2="865" y1="107.77" y2="107.77" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="111.77" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^20</text>
+<line x1="88" x2="865" y1="88.98" y2="88.98" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="92.98" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^22</text>
+<line x1="88" x2="865" y1="70.19" y2="70.19" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="74.19" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^24</text>
+<line x1="88" x2="865" y1="51.40" y2="51.40" stroke="#d8dee8" stroke-width="1"/>
+<text x="78" y="55.40" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#536176">10^26</text>
+<line x1="88.00" x2="88.00" y1="42" y2="446" stroke="#eef1f5" stroke-width="1"/>
+<text x="88.00" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#536176">0</text>
+<line x1="282.25" x2="282.25" y1="42" y2="446" stroke="#eef1f5" stroke-width="1"/>
+<text x="282.25" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#536176">50</text>
+<line x1="476.50" x2="476.50" y1="42" y2="446" stroke="#eef1f5" stroke-width="1"/>
+<text x="476.50" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#536176">100</text>
+<line x1="670.75" x2="670.75" y1="42" y2="446" stroke="#eef1f5" stroke-width="1"/>
+<text x="670.75" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#536176">150</text>
+<line x1="865.00" x2="865.00" y1="42" y2="446" stroke="#eef1f5" stroke-width="1"/>
+<text x="865.00" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#536176">200</text>
+<line x1="88" x2="88" y1="42" y2="446" stroke="#182235" stroke-width="1.5"/>
+<line x1="88" x2="865" y1="446" y2="446" stroke="#182235" stroke-width="1.5"/>
+<text x="476.5" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#182235">Iterasi</text>
+<text x="22" y="244.0" transform="rotate(-90 22 244.0)" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#182235">Residu inklusi (skala log)</text>
+<polyline points="88.00,289.06 91.89,289.73 95.77,290.88 107.42,294.13 126.85,299.92 165.70,308.71 243.40,322.11 398.80,348.92 554.20,375.73 865.00,429.42" fill="none" stroke="#1f77b4" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="88.00" cy="289.06" r="3.2" fill="#1f77b4"/>
+<circle cx="91.89" cy="289.73" r="3.2" fill="#1f77b4"/>
+<circle cx="95.77" cy="290.88" r="3.2" fill="#1f77b4"/>
+<circle cx="107.42" cy="294.13" r="3.2" fill="#1f77b4"/>
+<circle cx="126.85" cy="299.92" r="3.2" fill="#1f77b4"/>
+<circle cx="165.70" cy="308.71" r="3.2" fill="#1f77b4"/>
+<circle cx="243.40" cy="322.11" r="3.2" fill="#1f77b4"/>
+<circle cx="398.80" cy="348.92" r="3.2" fill="#1f77b4"/>
+<circle cx="554.20" cy="375.73" r="3.2" fill="#1f77b4"/>
+<circle cx="865.00" cy="429.42" r="3.2" fill="#1f77b4"/>
+<polyline points="88.00,289.06 91.89,288.20 95.77,287.25 107.42,283.88 126.85,278.01 165.70,265.75 243.40,241.04 398.80,191.61 554.20,142.18 865.00,43.33" fill="none" stroke="#c03d3e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="88.00" cy="289.06" r="3.2" fill="#c03d3e"/>
+<circle cx="91.89" cy="288.20" r="3.2" fill="#c03d3e"/>
+<circle cx="95.77" cy="287.25" r="3.2" fill="#c03d3e"/>
+<circle cx="107.42" cy="283.88" r="3.2" fill="#c03d3e"/>
+<circle cx="126.85" cy="278.01" r="3.2" fill="#c03d3e"/>
+<circle cx="165.70" cy="265.75" r="3.2" fill="#c03d3e"/>
+<circle cx="243.40" cy="241.04" r="3.2" fill="#c03d3e"/>
+<circle cx="398.80" cy="191.61" r="3.2" fill="#c03d3e"/>
+<circle cx="554.20" cy="142.18" r="3.2" fill="#c03d3e"/>
+<circle cx="865.00" cy="43.33" r="3.2" fill="#c03d3e"/>
+<polyline points="88.00,289.43 91.89,292.25 95.77,295.08 107.42,302.79 126.85,315.81 165.70,344.06 243.40,400.55 398.80,440.34 554.20,440.34 865.00,440.34" fill="none" stroke="#2b8a3e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="88.00" cy="289.43" r="3.2" fill="#2b8a3e"/>
+<circle cx="91.89" cy="292.25" r="3.2" fill="#2b8a3e"/>
+<circle cx="95.77" cy="295.08" r="3.2" fill="#2b8a3e"/>
+<circle cx="107.42" cy="302.79" r="3.2" fill="#2b8a3e"/>
+<circle cx="126.85" cy="315.81" r="3.2" fill="#2b8a3e"/>
+<circle cx="165.70" cy="344.06" r="3.2" fill="#2b8a3e"/>
+<circle cx="243.40" cy="400.55" r="3.2" fill="#2b8a3e"/>
+<circle cx="398.80" cy="440.34" r="3.2" fill="#2b8a3e"/>
+<circle cx="554.20" cy="440.34" r="3.2" fill="#2b8a3e"/>
+<circle cx="865.00" cy="440.34" r="3.2" fill="#2b8a3e"/>
+<rect x="96" y="45" width="345" height="82" rx="5" fill="#ffffff" fill-opacity="0.92" stroke="#cbd5e1"/>
+<line x1="106" x2="132" y1="60" y2="60" stroke="#1f77b4" stroke-width="3"/>
+<text x="142" y="64" font-family="Arial, sans-serif" font-size="12" fill="#182235">Maju--mundur: langkah diterima</text>
+<line x1="106" x2="132" y1="84" y2="84" stroke="#c03d3e" stroke-width="3"/>
+<text x="142" y="88" font-family="Arial, sans-serif" font-size="12" fill="#182235">Maju--mundur: di luar jaminan</text>
+<line x1="106" x2="132" y1="108" y2="108" stroke="#2b8a3e" stroke-width="3"/>
+<text x="142" y="112" font-family="Arial, sans-serif" font-size="12" fill="#182235">Douglas--Rachford</text>
+</svg>

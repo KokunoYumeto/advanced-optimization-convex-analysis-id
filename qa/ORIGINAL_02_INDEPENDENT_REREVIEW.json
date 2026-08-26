@@ -1,0 +1,257 @@
+{
+  "schema": "o015-original-02-independent-rereview-v1",
+  "date": "2026-08-26",
+  "result": "pass",
+  "status": "PASS",
+  "severity_counts": {
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+  },
+  "scope": {
+    "unit": "O015/D90 Original-02: variational inequalities, maximal monotone operators, resolvents, and splitting",
+    "reviewed": [
+      "mathematical statements, hypotheses, proofs, and claim boundaries",
+      "six exercises, six staged hints, and six complete solutions",
+      "independent reconstruction of the frozen numerical laboratory",
+      "source/witness separation and mixed component rights",
+      "Indonesian mathematical terminology",
+      "O018 non-overlap",
+      "PDF, HTML, and EPUB reader identity, structure, reflow, and disclosed accessibility limits",
+      "stable segment identifiers, source labels, internal references, and reader links",
+      "current deterministic build, mathematical, visual, browser, EPUB, rights, and non-overlap receipts"
+    ],
+    "backend": "The final 4,338-record backend and its two PASS receipts are identity-bound as a separate gate. This rereview did not repeat record-by-record backend semantic validation and does not claim that it did.",
+    "limitations": [
+      "The rights review is a component/provenance consistency check, not legal advice or an authorship classifier.",
+      "The PDF is searchable and declares id-ID but is not tagged; HTML and EPUB are the preferred reflow/accessibility surfaces.",
+      "EPUBCheck and DOM/browser inspection cannot prove identical behavior in every reading system or assistive technology.",
+      "The HTML browser receipt discloses that no screenshot was retained and that synthetic skip-link activation was not recorded; target existence, native anchor structure, rendered geometry, overflow policy, and console state were verified."
+    ]
+  },
+  "resolved_during_rereview": [
+    {
+      "classification_before_repair": "P2 metadata/coverage accuracy",
+      "issue": "Controls overclaimed a Minty variational-inequality formulation and Tseng forward-backward-forward although the chapter contains the standard Stampacchia-form VI, Minty's maximal-monotone range criterion, and Korpelevich extragradient.",
+      "resolution": "COVERAGE_OVERLAP.md, COMPONENT_RIGHTS.csv, and INDONESIAN_TERMINOLOGY_QA_20260822.md were narrowed without changing source mathematics, readers, stable IDs, or licenses.",
+      "adverse_event": "O015-ORIG-ADV-0019",
+      "post_repair_status": "closed and rechecked"
+    }
+  ],
+  "independent_checks": {
+    "mathematics": {
+      "result": "pass",
+      "checks": [
+        "VI-normal-cone and projection equivalence has the correct sign convention.",
+        "Strong-monotone VI contraction states 0 < mu <= L and 0 < gamma < 2 mu/L^2; its Banach argument and factor q are valid.",
+        "Minty's range criterion explicitly assumes monotonicity before characterizing maximal monotonicity.",
+        "Resolvent firm nonexpansiveness, reflected-resolvent nonexpansiveness, proximal-point Fejer descent, and finite-dimensional convergence proofs have the required hypotheses.",
+        "Forward-backward uses maximal monotonicity, beta-cocoercivity, a nonempty zero set, and 0 < gamma < 2 beta; the stated averagedness parameter is correct.",
+        "Korpelevich extragradient is not mislabeled as Tseng forward-backward-forward after the control repair; its projected update, Fejer estimate, and finite-dimensional limit argument are valid.",
+        "Douglas-Rachford fixed-point/shadow equivalence and finite-dimensional convergence follow from maximal monotonicity, a nonempty zero set, and firm nonexpansiveness of the averaged reflected-resolvent map.",
+        "The pure-skew counterexample correctly separates monotonicity, Lipschitz continuity, and cocoercivity."
+      ]
+    },
+    "source_topology": {
+      "result": "pass",
+      "segment_ids": [
+        "d90.orig.v1.tr02.seg0001",
+        "d90.orig.v1.tr02.seg0002",
+        "d90.orig.v1.tr02.seg0003",
+        "d90.orig.v1.tr02.seg0004",
+        "d90.orig.v1.tr02.seg0005",
+        "d90.orig.v1.tr02.seg0006",
+        "d90.orig.v1.tr02.seg0007",
+        "d90.orig.v1.tr02.seg0008"
+      ],
+      "labels": 53,
+      "unique_labels": 53,
+      "missing_internal_source_references": 0,
+      "environment_counts": {
+        "definitions": 3,
+        "theorems": 6,
+        "lemmas": 0,
+        "corollaries": 1,
+        "propositions": 3,
+        "proofs": 10,
+        "exercises": 6,
+        "numbered_displays": 45
+      },
+      "staged_hints": 6,
+      "complete_solutions": 6,
+      "unicode_dash_glyphs_in_pdf_tex": 0
+    },
+    "laboratory": {
+      "result": "pass",
+      "method": "Independent reconstruction from the published parameters and equations, without executing the accepted script in place.",
+      "rows_reconstructed": 30,
+      "reference_solution": [
+        0.08461538461538469,
+        -0.576923076923077
+      ],
+      "beta": 0.3076923076923077,
+      "forward_backward_upper_bound": 0.6153846153846154,
+      "final_inclusion_residuals": {
+        "forward_backward_stable": 5.821000005975887e-15,
+        "forward_backward_outside_range": 7.219920938440611e+26,
+        "douglas_rachford": 4.002966042486721e-16
+      },
+      "pure_skew_one_step_factors": {
+        "forward": 1.16619037896906,
+        "extragradient": 0.8772684879784524,
+        "resolvent": 0.8574929257125443
+      },
+      "json_csv_row_equivalence": true,
+      "claim_boundary": "The outside-range trace is a frozen counterdiagnostic, not a universal claim about every step outside the sufficient interval."
+    },
+    "terminology_and_coverage": {
+      "result": "pass",
+      "accepted_terms": [
+        "ketaksamaan variasional",
+        "operator monoton",
+        "operator monoton maksimal",
+        "operator bernilai himpunan",
+        "kerucut normal",
+        "resolven",
+        "tak ekspansif kukuh",
+        "pemisahan maju--mundur",
+        "ekstragradien Korpelevich",
+        "pemisahan Douglas--Rachford"
+      ],
+      "coverage_truth": "Standard Stampacchia-form VI, Minty maximal-monotone range criterion, and Korpelevich extragradient; no Minty VI or Tseng forward-backward-forward claim remains.",
+      "o018_imported": false,
+      "o018_exclusions": [
+        "LP/MIP",
+        "simplex/tableau algorithms",
+        "finite-LP duality, complementary slackness, and sensitivity",
+        "network/discrete optimization",
+        "general operations-research solver workflow"
+      ]
+    },
+    "rights_and_provenance": {
+      "result": "pass",
+      "new_substantive_chapter_and_lab": "CC BY-SA 4.0",
+      "exact_habring_class_and_adapted_macro_scaffold": "CC BY 4.0",
+      "becker_02": "separately licensed mathematical witness/companion; no donor byte claimed imported into the independent layer",
+      "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+      "model_marker_count_per_reader": 1,
+      "nonendorsement_visible": true,
+      "ttp_text_present": false,
+      "upstream_contact": false
+    },
+    "privacy_sanitization": {
+      "result": "pass",
+      "scope": "All 43 unique live files identity-bound by this rereview, including the source, laboratory, readers, current PASS receipts, builders and validators, backend gate, reviewed controls, and bounded witnesses. Compact-package and publication artifacts are downstream and were neither reviewed nor mutated here.",
+      "archive_members_scanned": 18,
+      "username_token_occurrences": 0,
+      "absolute_windows_user_profile_occurrences": 0,
+      "pdf_metadata_username_or_profile_occurrences": 0,
+      "pdf_extracted_text_username_or_profile_occurrences": 0,
+      "receipt_locator_policy": {
+        "project_paths": "repository-relative or <project-root>",
+        "external_runtime_paths": "<external-runtime>",
+        "external_tool_paths": "<external-tool>"
+      },
+      "reader_bytes_changed_by_sanitization": false,
+      "backend_bytes_changed_by_sanitization": false
+    },
+    "readers": {
+      "result": "pass",
+      "pdf": {
+        "pages": 16,
+        "media": "A4",
+        "searchable": true,
+        "language": "id-ID",
+        "tagged": false,
+        "independent_visual_review": "All 16 pages were rerendered at 120 dpi and inspected in two contact sheets; no clipping, overlap, broken glyph, unreadable table, margin/alignment defect, or unexpected blank page was found."
+      },
+      "html": {
+        "language": "id-ID",
+        "unique_ids": 104,
+        "duplicate_ids": 0,
+        "unresolved_internal_fragments": 0,
+        "segment_ids": 8,
+        "math_surfaces": 295,
+        "skip_target_exists": true,
+        "page_level_horizontal_overflow_at_tested_viewports": false
+      },
+      "epub": {
+        "epubcheck_version": "5.3.0",
+        "fatal": 0,
+        "error": 0,
+        "warning": 0,
+        "usage": 0,
+        "mathml_surfaces": 295,
+        "nav_mathml_surfaces": 1,
+        "nav_properties": [
+          "nav",
+          "mathml"
+        ],
+        "packaged_lab_resources": 4,
+        "language": "id-ID"
+      }
+    }
+  },
+  "identity_bindings": {
+    "source_and_scaffold": [
+      {"path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex", "bytes": 5476, "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"},
+      {"path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex", "bytes": 28028, "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"},
+      {"path": "source/id-ID/macros-id.tex", "bytes": 4465, "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"},
+      {"path": "source/id-ID/shinybook.cls", "bytes": 10133, "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"}
+    ],
+    "laboratory": [
+      {"path": "labs/original-02/monotone-splitting-lab.py", "bytes": 17904, "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"},
+      {"path": "labs/original-02/results.json", "bytes": 13503, "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"},
+      {"path": "labs/original-02/results.csv", "bytes": 4228, "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"},
+      {"path": "labs/original-02/residual.svg", "bytes": 9538, "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"}
+    ],
+    "readers": [
+      {"path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf", "bytes": 453811, "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"},
+      {"path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html", "bytes": 190403, "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"},
+      {"path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub", "bytes": 48701, "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"}
+    ],
+    "pass_receipts": [
+      {"path": "qa/ORIGINAL_02_PDF_BUILD.json", "bytes": 6073, "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"},
+      {"path": "qa/ORIGINAL_02_HTML_BUILD.json", "bytes": 6289, "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"},
+      {"path": "qa/ORIGINAL_02_EPUB_BUILD.json", "bytes": 7697, "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"},
+      {"path": "qa/ORIGINAL_02_MATH_VALIDATION.json", "bytes": 26577, "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4"},
+      {"path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json", "bytes": 5685, "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04"},
+      {"path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json", "bytes": 4247, "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891"},
+      {"path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json", "bytes": 4066, "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e"},
+      {"path": "qa/ORIGINAL_02_BACKEND_BUILD.json", "bytes": 4959, "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370"},
+      {"path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json", "bytes": 11064, "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2"},
+      {"path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json", "bytes": 8135, "sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e"}
+    ],
+    "builders_and_validators": [
+      {"path": "qa/build_original_02_pdf_engine.py", "bytes": 9055, "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0"},
+      {"path": "qa/build_original_02_pdf.py", "bytes": 2562, "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088"},
+      {"path": "qa/build_original_02_reflow_engine.py", "bytes": 76168, "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"},
+      {"path": "qa/build_original_02_reflow.py", "bytes": 7294, "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"},
+      {"path": "qa/validate_original_02_math.py", "bytes": 49667, "sha256": "5b9cc66b6560b210715a0b6c6bd8b31943dd91d3764b3cb1ffb86e908d2662a1"},
+      {"path": "qa/verify_original_02_pdf_visual.py", "bytes": 5963, "sha256": "4d1231e0b8ab29ae5fa296389eae9b6226f8f9bbff1ca7d3d59227dc9b368c9b"},
+      {"path": "qa/verify_original_02_epub.py", "bytes": 25107, "sha256": "57aa0ee9d1a81edf0ee12113e4a2b8c25eeba40e06ba411849f11bc492d91245"},
+      {"path": "qa/extend_backend_original_02.py", "bytes": 56615, "sha256": "33aa697bb393082a7c04aa60d999f94057cac5503407f8c135eb507555d8e393"},
+      {"path": "qa/validate_backend_original_02.py", "bytes": 63201, "sha256": "f49b8a8498fe1bc322cab9d6e8378f76d0530e4601205b245f6eea6f7939565d"},
+      {"path": "qa/validate_original_02_rights_nonoverlap.py", "bytes": 28088, "sha256": "d4716b8cce1da2f624d4ea826948d4b14e9326eec79ab4d6630f1946cfcf4c12"}
+    ],
+    "separate_backend_gate": [
+      {"path": "backend/backend_schema.json", "bytes": 3092, "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"},
+      {"path": "backend/records.jsonl", "bytes": 3183459, "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"},
+      {"path": "backend/records.csv", "bytes": 3839894, "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"}
+    ],
+    "reviewed_controls": [
+      {"path": "00_control/COMPONENT_RIGHTS.csv", "bytes": 60283, "sha256": "39fd63a5aa0737cd63beecb3f622b3662347087bc51722c11c537b8f7c46c439"},
+      {"path": "00_control/COVERAGE_OVERLAP.md", "bytes": 32583, "sha256": "878c538f9acb3ae80975266e2d42f9683bb9d086c8d0188889a1ddfb009c5d8e"},
+      {"path": "00_control/INDONESIAN_TERMINOLOGY_QA_20260822.md", "bytes": 12027, "sha256": "dd864d63cab0c0d7b366e9ce1c6dd8c244ac23f91841910f7f2d55446fa6d63a"},
+      {"path": "00_control/ADVERSE_LEDGER.jsonl", "bytes": 208378, "sha256": "331975852d723bb09af68f1eb1ad962567ff54adfbc03751270616831c8fefd1"}
+    ],
+    "bounded_witnesses": [
+      {"path": "authority/habring/source-v1/shinybook.cls", "bytes": 10133, "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"},
+      {"path": "authority/habring/source-v1/macros.tex", "bytes": 4017, "sha256": "690ef578d545947425a851187ac0b5f45a1a326892a682bcd9d286abb72f924a"},
+      {"path": "authority/habring/CC-BY-4.0-legalcode.txt", "bytes": 18657, "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"},
+      {"path": "source/en/becker-02-douglas-rachford-source.tex", "bytes": 1358, "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"},
+      {"path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex", "bytes": 4915, "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"}
+    ]
+  },
+  "conclusion": "After the bounded pre-pass metadata correction and the machine-local locator sanitization, no P1, P2, or P3 defect remains in the reviewed Original-02 source, lab, readers, rights/non-overlap boundary, terminology, identifiers, privacy surface, or current QA evidence. The reader and backend bytes remain unchanged, and the unit is fit to enter its downstream compact packaging and preservation gates."
+}

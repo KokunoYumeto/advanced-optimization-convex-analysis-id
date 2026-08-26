@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Lapisan penyelesaian kursus mandiri" />
+  <meta name="dcterms.date" content="2026-08-26" />
+  <title>Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',
+    macros: {
+      R: '\mathbb{R}', E: '\mathbb{E}',
+      norm: ['\left\lVert #1\right\rVert', 1],
+      inner: ['\left\langle #1,#2\right\rangle', 2],
+      prox: '\operatorname{prox}', dom: '\operatorname{dom}', Oc: '\mathcal{O}'
+    }
+  },
+  options: {enableMenu: true}
+};
+</script>
+<script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+<meta name="license" content="Mixed rights: new Original-02 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0" />
+<meta name="unit-id" content="d90.orig.v1.tr02.unit" />
+<meta name="edition-id" content="d90.orig.v1.tr02.edition.id-ID" />
+<style>
+:root {
+  color-scheme: light;
+  --ink: #182235;
+  --muted: #536176;
+  --rule: #cbd5e1;
+  --accent: #285b91;
+  --panel: #f4f7fb;
+  --proof: #fafbfc;
+  --max: 76rem;
+}
+* { box-sizing: border-box; }
+html { font-size: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  overflow-x: clip;
+  color: var(--ink);
+  background: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, .96rem + .18vw, 1.12rem);
+  line-height: 1.64;
+  overflow-wrap: break-word;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: .35rem;
+  left: .35rem;
+  padding: .6rem .8rem;
+  color: #fff;
+  background: #123d69;
+  transform: translateY(-180%);
+}
+.skip-link:focus { transform: translateY(0); }
+main#reader {
+  width: min(calc(100% - 2.2rem), var(--max));
+  min-width: 0;
+  margin-inline: auto;
+  padding: 0 0 3rem;
+}
+header#title-block-header {
+  padding: 3rem 0 1.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+h1, h2, h3, h4 {
+  max-width: 72ch;
+  margin-inline: auto;
+  color: #10243e;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  scroll-margin-top: 1rem;
+}
+h1 { margin-top: 2.6rem; font-size: clamp(1.9rem, 1.35rem + 1.65vw, 2.9rem); }
+header#title-block-header h1 { margin-top: 0; }
+h2 { margin-top: 2.25rem; font-size: clamp(1.42rem, 1.18rem + .8vw, 2rem); }
+h3 { margin-top: 1.75rem; font-size: clamp(1.18rem, 1.08rem + .35vw, 1.45rem); }
+p, blockquote, pre, figure, .table-scroll { max-width: 72ch; margin-inline: auto; }
+ol, ul { width: min(100%, 72ch); margin-inline: auto; padding-left: 1.6rem; }
+li { max-width: 68ch; }
+a { color: #174f91; text-underline-offset: .14em; }
+nav#TOC {
+  max-width: 72ch;
+  margin: 1.5rem auto 2.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: .45rem;
+  background: var(--panel);
+}
+nav#TOC ul { width: auto; }
+.defn, .theorem, .lemma, .cor, .prop, .exercise, .proof {
+  max-width: 72ch;
+  margin: 1.25rem auto;
+  padding: .85rem 1rem;
+  border-left: .3rem solid var(--accent);
+  background: var(--panel);
+}
+.exercise { border-left-color: #76509a; }
+.proof { border-left-color: #65758c; background: var(--proof); }
+blockquote {
+  padding: .8rem 1rem;
+  border-left: .3rem solid var(--accent);
+  background: var(--panel);
+}
+.math-scroll, .math.display {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .35rem 0;
+  overscroll-behavior-inline: contain;
+}
+.math-scroll > mjx-container[display="true"] {
+  overflow: visible;
+}
+.math.inline { display: inline; max-width: none; overflow: visible; padding: 0; }
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 1.25rem;
+  border: 1px solid var(--rule);
+  overscroll-behavior-inline: contain;
+}
+table { width: 100%; min-width: 38rem; border-collapse: collapse; background: #fff; }
+caption { padding: .75rem; font-weight: 700; text-align: left; }
+th, td { padding: .45rem .6rem; border: 1px solid var(--rule); text-align: left; vertical-align: top; }
+thead th { background: #eaf0f7; }
+pre {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  background: #f7f8fa;
+  font-size: .88rem;
+  line-height: 1.45;
+  white-space: pre;
+}
+figure { margin-block: 1.5rem; }
+img, svg { display: block; max-width: 100%; height: auto; margin-inline: auto; }
+figcaption { color: var(--muted); font-size: .95rem; }
+.lab-downloads code { overflow-wrap: anywhere; }
+#reader-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); }
+@media (max-width: 48rem) {
+  main#reader { width: calc(100% - 1.1rem); }
+  .defn, .theorem, .lemma, .cor, .prop, .exercise, .proof { padding: .7rem .72rem; }
+  table { min-width: 34rem; }
+}
+@media print {
+  .skip-link { display: none; }
+  .math-scroll, .math.display, .table-scroll, pre { overflow: visible; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#reader-content">Langsung ke isi utama</a>
+<main id="reader" role="main" aria-labelledby="reader-title">
+<span id="reader-content"></span>
+<header id="title-block-header">
+<h1 class="title" id="reader-title">Optimisasi Lanjut dan Analisis Konveks — Tranche Asli
+2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan
+Pemisahan</h1>
+<p class="author">Lapisan penyelesaian kursus mandiri</p>
+<p class="date">2026-08-26</p>
+</header>
+<nav id="TOC" role="doc-toc" aria-label="Daftar isi">
+<ul>
+<li><a href="#tentang-tranche-ini" id="toc-tentang-tranche-ini">Tentang
+tranche ini</a></li>
+<li><a href="#orig02:chapter:monotone-inclusions"
+id="toc-orig02:chapter:monotone-inclusions">Ketaksamaan Variasional,
+Operator Monoton, Resolven, dan Pemisahan</a>
+<ul>
+<li><a href="#orig02:section:monotonicity"
+id="toc-orig02:section:monotonicity">Kemonotonan dan
+kemaksimalan</a></li>
+<li><a href="#orig02:section:vi" id="toc-orig02:section:vi">Ketaksamaan
+variasional sebagai inklusi monoton</a></li>
+<li><a href="#orig02:section:resolvent"
+id="toc-orig02:section:resolvent">Resolven operator monoton
+maksimal</a></li>
+<li><a href="#orig02:section:ppa" id="toc-orig02:section:ppa">Metode
+titik proksimal</a></li>
+<li><a href="#orig02:section:forward-backward"
+id="toc-orig02:section:forward-backward">Pemisahan maju–mundur</a>
+<ul>
+<li><a href="#orig02:section:extragradient"
+id="toc-orig02:section:extragradient">Perbaikan ekstragradien untuk
+operator monoton Lipschitz</a></li>
+</ul></li>
+<li><a href="#orig02:section:dr" id="toc-orig02:section:dr">Pemisahan
+Douglas–Rachford dan limit bayangan</a></li>
+<li><a href="#orig02:section:skew" id="toc-orig02:section:skew">Mengapa
+kemonotonan saja tidak cukup untuk langkah maju</a>
+<ul>
+<li><a href="#orig02:lab:monotone-splitting"
+id="toc-orig02:lab:monotone-splitting">Laboratorium 2: inklusi
+linear-skew dengan regularisasi <span
+class="math inline">\(\ell_1\)</span></a></li>
+</ul></li>
+<li><a href="#orig02:section:exercises"
+id="toc-orig02:section:exercises">Latihan, petunjuk, dan solusi
+lengkap</a></li>
+<li><a href="#orig02:section:assumption-map"
+id="toc-orig02:section:assumption-map">Peta asumsi dan batas
+klaim</a></li>
+<li><a href="#rujukan-matematis-dan-saksi-verifikasi"
+id="toc-rujukan-matematis-dan-saksi-verifikasi">Rujukan matematis dan
+saksi verifikasi</a></li>
+</ul></li>
+<li><a href="#orig02:appendix:lab-complete"
+id="toc-orig02:appendix:lab-complete">Lampiran laboratorium lengkap</a>
+<ul>
+<li><a href="#grafik-residu-inklusi"
+id="toc-grafik-residu-inklusi">Grafik residu inklusi</a></li>
+<li><a href="#tabel-data-lengkap" id="toc-tabel-data-lengkap">Tabel data
+lengkap</a></li>
+<li><a href="#berkas-laboratorium-byte-identik"
+id="toc-berkas-laboratorium-byte-identik">Berkas laboratorium
+byte-identik</a></li>
+<li><a href="#kode-program-python-lengkap"
+id="toc-kode-program-python-lengkap">Kode program Python
+lengkap</a></li>
+<li><a href="#hasil-json-lengkap" id="toc-hasil-json-lengkap">Hasil JSON
+lengkap</a></li>
+<li><a href="#hasil-csv-lengkap" id="toc-hasil-csv-lengkap">Hasil CSV
+lengkap</a></li>
+</ul></li>
+<li><a href="#hak-atribusi-dan-nondukungan"
+id="toc-hak-atribusi-dan-nondukungan">Hak, atribusi, dan nondukungan</a>
+<ul>
+<li><a href="#catatan-aksesibilitas"
+id="toc-catatan-aksesibilitas">Catatan aksesibilitas</a></li>
+</ul></li>
+</ul>
+</nav>
+<blockquote>
+<p><strong>Pernyataan edisi.</strong> Materi asli untuk menutup
+kesenjangan kurikulum O015/D90.<br />
+Teks dan laboratorium baru: CC BY-SA 4.0; kelas dan makro: CC BY
+4.0.<br />
+Rujukan matematis tidak menyiratkan penyusunan, pemeriksaan,
+persetujuan, sponsor, atau dukungan oleh penulis maupun institusi yang
+dirujuk.</p>
+</blockquote>
+<section id="tentang-tranche-ini" class="level1 unnumbered">
+<h1 class="unnumbered">Tentang tranche ini</h1>
+<p>Tranche ini adalah lapisan penghubung mandiri setelah tulang punggung
+Habring, modul Douglas–Rachford Becker yang telah diterima, dan Tranche
+Asli 1. Ia bukan terjemahan terselubung dari satu sumber lain. Definisi,
+teorema, bukti, algoritma, latihan, petunjuk, solusi, dan laboratorium
+ditulis secara mandiri, lalu diperiksa terhadap sumber matematis yang
+disebutkan di akhir bab.</p>
+<p>Perannya terbatas dan dapat diuji: mengubah ketaksamaan variasional
+menjadi inklusi kerucut-normal; membedakan operator monoton dari
+operator monoton maksimal; membangun resolven melalui teorema Minty;
+membuktikan sifat tak ekspansif kukuh dan konvergensi titik proksimal;
+memberi syarat tepat untuk pemisahan maju–mundur; serta menempatkan
+Douglas–Rachford dalam bahasa operator tanpa mengulang modul proksimal
+konkret yang telah diterima.</p>
+<p>Tidak ada prosa matematis, gambar, latihan, solusi, atau kode
+laboratorium pihak ketiga yang disalin. Infrastruktur pembaca memakai
+salinan persis <code>shinybook.cls</code> yang dibundel dengan sumber
+Habring dan adaptasi Indonesia <code>macros-id.tex</code> dari
+<code>macros.tex</code> milik Habring; keduanya dipertahankan
+berdasarkan bukti lisensi CC BY 4.0 pada tingkat kiriman arXiv dan tidak
+dilisensikan ulang sebagai CC BY-SA; <code>shinybook.cls</code> sendiri
+tidak memuat pemberitahuan lisensi terpisah. Prakata sumber Habring
+mengakui templat Christian Clason, dan kredit tersebut dipertahankan di
+sini. Modul Becker mempertahankan hak MIT pada byte sumbernya, tetapi
+tidak ada byte donor yang masuk ke lapisan asli ini. Artikel yang
+dirujuk mempertahankan hak masing-masing dan dipakai hanya sebagai saksi
+verifikasi. Seluruh teks substantif dan kode laboratorium baru tersedia
+berdasarkan CC BY-SA 4.0. Ini adalah edisi mandiri dan tidak menyiratkan
+dukungan pihak yang dirujuk.</p>
+<p>Provenans produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas
+instruksi pengguna repositori. Seluruh kredit penulis dan kontributor
+manusia pada sumber pendamping tetap dipertahankan. <span
+id="d90.orig.v1.tr02.seg0001"></span></p>
+</section>
+<section id="orig02:chapter:monotone-inclusions" class="level1">
+<h1>Ketaksamaan Variasional, Operator Monoton, Resolven, dan
+Pemisahan</h1>
+<p>Bab sebelumnya menghubungkan metode proksimal dengan oracle
+stokastik, minibatch, geometri Bregman, dan reduksi varians. Bab ini
+mengambil langkah abstraksi berikutnya: kondisi optimalitas diperlakukan
+sebagai pencarian nol operator bernilai himpunan. Kerangka ini
+menyatukan ketaksamaan variasional, subdiferensial, kerucut normal,
+langkah proksimal implisit, pemisahan maju–mundur, dan pemisahan
+Douglas–Rachford.</p>
+<p>Seluruh uraian, bukti penghubung, latihan, solusi, dan laboratorium
+dalam bab ini ditulis secara mandiri. Bab Habring tentang subgradien dan
+metode gradien proksimal serta modul Becker tentang Douglas–Rachford
+dipakai sebagai prasyarat dan saksi konsistensi. Tidak ada prosa, tata
+letak, gambar, latihan, solusi, atau kode dari sumber tersebut yang
+disalin.</p>
+<p>Untuk operator bernilai himpunan <span
+class="math inline">\(A:\mathbb{R}^d\rightrightarrows\mathbb{R}^d\)</span>,
+definisikan <span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \operatorname{gra}A=\{(x,u):u\in Ax\},
+  \qquad
+  \operatorname{dom}A=\{x:Ax\neq\emptyset\},
+  \qquad
+  \operatorname{zer}A=\{x:0\in Ax\}.
+\end{equation}\]</span> Notasi <span class="math inline">\(Ax\)</span>
+menekankan bahwa nilai operator dapat berupa himpunan, bukan satu
+vektor. Masalah dasar bab ini ialah <span
+class="math display math-scroll" id="orig02:eq:zero-problem" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:zero-problem}
+  \text{cari }x^*\in\mathbb{R}^d\text{ sehingga }0\in(A+B)x^*.
+\end{equation}\]</span></p>
+<section id="orig02:section:monotonicity" class="level2">
+<h2>Kemonotonan dan kemaksimalan</h2>
+<div class="defn">
+<p><strong>Definisi (Operator monoton dan monoton kuat).</strong></p>
+<p><span id="orig02:def:monotone"
+data-label="orig02:def:monotone"></span> Operator <span
+class="math inline">\(A:\mathbb{R}^d\rightrightarrows\mathbb{R}^d\)</span>
+disebut <em>monoton</em> jika <span
+class="math display math-scroll" id="orig02:eq:monotone" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:monotone}
+    \left\langle u-v,x-y\right\rangle\geq0
+    \qquad
+    \text{untuk semua }(x,u),(y,v)\in\operatorname{gra}A.
+\end{equation}\]</span> Ia disebut <span
+class="math inline">\(\mu\)</span>-monoton kuat, dengan <span
+class="math inline">\(\mu&gt;0\)</span>, jika ruas kanan dapat diganti
+oleh <span class="math inline">\(\mu\left\lVert
+x-y\right\rVert^2\)</span>.</p>
+</div>
+<div class="defn">
+<p><strong>Definisi (Operator monoton maksimal).</strong></p>
+<p><span id="orig02:def:maximal-monotone"
+data-label="orig02:def:maximal-monotone"></span> Operator monoton <span
+class="math inline">\(A\)</span> disebut <em>monoton maksimal</em> jika
+tidak ada operator monoton lain yang grafiknya memuat <span
+class="math inline">\(\operatorname{gra}A\)</span> secara ketat. Kata
+<em>maksimal</em> merujuk pada inklusi grafik, bukan pada nilai fungsi
+atau ukuran norma.</p>
+</div>
+<p>Kemonotonan saja belum menjamin bahwa operator mempunyai cukup banyak
+nilai untuk mendefinisikan langkah implisit pada setiap titik. Sebagai
+contoh, operator dengan grafik tunggal <span
+class="math inline">\(\{(0,0)\}\)</span> monoton, tetapi tidak maksimal,
+karena grafik itu dapat diperluas menjadi grafik operator nol pada
+seluruh <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
+<div class="prop">
+<p><strong>Proposisi (Subdiferensial bersifat monoton).</strong></p>
+<p><span id="orig02:prop:subdiff-monotone"
+data-label="orig02:prop:subdiff-monotone"></span> Jika <span
+class="math inline">\(f:\mathbb{R}^d\to(-\infty,+\infty]\)</span> proper
+dan konveks, maka <span class="math inline">\(\partial f\)</span>
+monoton.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Ambil <span class="math inline">\(u\in\partial
+f(x)\)</span> dan <span class="math inline">\(v\in\partial
+f(y)\)</span>. Ketaksamaan subgradien memberi <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    f(y)\geq f(x)+\left\langle u,y-x\right\rangle,
+    \qquad
+    f(x)\geq f(y)+\left\langle v,x-y\right\rangle.
+\end{equation}\]</span> Menjumlahkan keduanya menghasilkan <span
+class="math inline">\(\left\langle
+u-v,x-y\right\rangle\geq0\)</span>. ◻</p>
+</div>
+<p>Teorema Rockafellar memperkuat hasil tersebut: jika <span
+class="math inline">\(f\)</span> juga semikontinu bawah, maka <span
+class="math inline">\(\partial f\)</span> monoton maksimal. Bab ini
+memakai teorema itu sebagai hasil dasar, bukan membuktikan kembali
+argumen pemisahan lengkapnya. Akibat pentingnya ialah kerucut normal dan
+operator proksimal masuk ke dalam kerangka yang sama.</p>
+<div id="d90.orig.v1.tr02.seg0002">
+
+</div>
+</section>
+<section id="orig02:section:vi" class="level2">
+<h2>Ketaksamaan variasional sebagai inklusi monoton</h2>
+<p>Untuk himpunan konveks tertutup tak kosong <span
+class="math inline">\(C\subseteq\mathbb{R}^d\)</span>, kerucut normal
+pada <span class="math inline">\(x\)</span> didefinisikan oleh <span
+class="math display math-scroll" id="orig02:eq:normal-cone" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:normal-cone}
+  N_C(x)=
+  \begin{cases}
+    \{u:\left\langle u,y-x\right\rangle\leq0\text{ untuk semua }y\in
+C\},&amp;x\in C,\\
+    \emptyset,&amp;x\notin C.
+  \end{cases}
+\end{equation}\]</span> Karena <span
+class="math inline">\(N_C=\partial\delta_C\)</span>, operator ini
+monoton maksimal.</p>
+<div class="defn">
+<p><strong>Definisi (Ketaksamaan variasional).</strong></p>
+<p><span id="orig02:def:vi" data-label="orig02:def:vi"></span> Untuk
+pemetaan <span
+class="math inline">\(F:\mathbb{R}^d\to\mathbb{R}^d\)</span>, masalah
+<span class="math inline">\(\operatorname{VI}(F,C)\)</span> ialah
+mencari <span class="math inline">\(x^*\in C\)</span> sedemikian
+sehingga <span class="math display math-scroll" id="orig02:eq:vi" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:vi}
+    \left\langle F(x^*),y-x^*\right\rangle\geq0
+    \qquad\text{untuk semua }y\in C.
+\end{equation}\]</span></p>
+</div>
+<div class="prop">
+<p><strong>Proposisi (Ekuivalensi VI–inklusi).</strong></p>
+<p><span id="orig02:prop:vi-inclusion"
+data-label="orig02:prop:vi-inclusion"></span> Suatu titik <span
+class="math inline">\(x^*\)</span> menyelesaikan <span
+class="math inline">\(\operatorname{VI}(F,C)\)</span> jika dan hanya
+jika <span class="math display math-scroll" id="orig02:eq:vi-inclusion" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:vi-inclusion}
+    0\in F(x^*)+N_C(x^*).
+\end{equation}\]</span> Secara ekuivalen, untuk setiap <span
+class="math inline">\(\gamma&gt;0\)</span>, <span
+class="math display math-scroll" id="orig02:eq:vi-projection" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:vi-projection}
+    x^*=P_C\bigl(x^*-\gamma F(x^*)\bigr).
+\end{equation}\]</span></p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Menurut <a href="#orig02:eq:normal-cone"
+data-reference-type="eqref"
+data-reference="orig02:eq:normal-cone">(5)</a>,
+inklusi <span class="math inline">\(-F(x^*)\in N_C(x^*)\)</span> tepat
+berarti <span class="math inline">\(x^*\in C\)</span> dan <span
+class="math inline">\(\left\langle
+-F(x^*),y-x^*\right\rangle\leq0\)</span> untuk setiap <span
+class="math inline">\(y\in C\)</span>. Membalik tanda menghasilkan <a
+href="#orig02:eq:vi" data-reference-type="eqref"
+data-reference="orig02:eq:vi">(6)</a>. Karakterisasi proyeksi
+<span class="math inline">\(p=P_Cz\Longleftrightarrow z-p\in
+N_C(p)\)</span> dengan <span class="math inline">\(z=x^*-\gamma
+F(x^*)\)</span> memberi ekuivalensi proyeksi. ◻</p>
+</div>
+<p>Jika <span class="math inline">\(F=\nabla f\)</span> untuk fungsi
+konveks terdiferensialkan <span class="math inline">\(f\)</span>,
+kondisi ini adalah kondisi optimalitas bagi <span
+class="math inline">\(\min_{x\in C}f(x)\)</span>. Namun, ketaksamaan
+variasional lebih luas: pemetaan monoton tidak harus merupakan
+gradien.</p>
+<div class="prop">
+<p><strong>Proposisi (Keunikan di bawah kemonotonan kuat).</strong></p>
+<p><span id="orig02:prop:vi-unique"
+data-label="orig02:prop:vi-unique"></span> Jika <span
+class="math inline">\(F\)</span> <span
+class="math inline">\(\mu\)</span>-monoton kuat pada <span
+class="math inline">\(C\)</span>, maka <span
+class="math inline">\(\operatorname{VI}(F,C)\)</span> mempunyai paling
+banyak satu solusi.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Andaikan <span class="math inline">\(x\)</span> dan
+<span class="math inline">\(y\)</span> keduanya solusi. Masukkan <span
+class="math inline">\(y\)</span> ke ketaksamaan untuk <span
+class="math inline">\(x\)</span> dan <span
+class="math inline">\(x\)</span> ke ketaksamaan untuk <span
+class="math inline">\(y\)</span>. Setelah dijumlahkan, <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\langle F(x)-F(y),x-y\right\rangle\leq0.
+\end{equation}\]</span> Kemonotonan kuat memberi ruas kiri
+sekurang-kurangnya <span class="math inline">\(\mu\left\lVert
+x-y\right\rVert^2\)</span>. Jadi <span
+class="math inline">\(x=y\)</span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Teorema (Eksistensi konstruktif bagi VI monoton
+kuat).</strong></p>
+<p><span id="orig02:theorem:vi-contraction"
+data-label="orig02:theorem:vi-contraction"></span> Andaikan <span
+class="math inline">\(F\)</span> <span
+class="math inline">\(\mu\)</span>-monoton kuat dan <span
+class="math inline">\(L\)</span>-Lipschitz pada <span
+class="math inline">\(C\)</span>, dengan <span
+class="math inline">\(0&lt;\mu\leq L\)</span>. Untuk <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    0&lt;\gamma&lt;\frac{2\mu}{L^2},
+    \qquad
+    T_\gamma=P_C(I-\gamma F),
+\end{equation}\]</span> pemetaan <span
+class="math inline">\(T_\gamma:C\to C\)</span> merupakan kontraksi
+dengan faktor <span class="math display math-scroll" id="orig02:eq:vi-contraction-factor" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:vi-contraction-factor}
+    q=\sqrt{1-2\gamma\mu+\gamma^2L^2}&lt;1.
+\end{equation}\]</span> Karena itu, <span
+class="math inline">\(\operatorname{VI}(F,C)\)</span> mempunyai tepat
+satu solusi <span class="math inline">\(x^*\)</span>, dan iterasi <span
+class="math inline">\(x_{k+1}=T_\gamma x_k\)</span> memenuhi <span
+class="math inline">\(\left\lVert x_k-x^*\right\rVert\leq q^k\left\lVert
+x_0-x^*\right\rVert\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Sifat tak ekspansif proyeksi, kemonotonan kuat, dan
+sifat Lipschitz memberi <span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \begin{aligned}
+    \left\lVert T_\gamma x-T_\gamma y\right\rVert^2
+    &amp;\leq\left\lVert (x-y)-\gamma(Fx-Fy)\right\rVert^2\\
+    &amp;\leq(1-2\gamma\mu+\gamma^2L^2)\left\lVert x-y\right\rVert^2.
+  \end{aligned}
+\end{equation}\]</span> Rentang <span
+class="math inline">\(\gamma\)</span> membuat faktor kuadrat lebih kecil
+dari satu. Himpunan tertutup <span class="math inline">\(C\)</span>
+lengkap, maka teorema titik tetap Banach memberi satu-satunya titik
+tetap dan konvergensi geometrik. Menurut  <a
+href="#orig02:eq:vi-projection" data-reference-type="eqref"
+data-reference="orig02:eq:vi-projection">(8)</a>,
+titik tetap itu tepat solusi VI. ◻</p>
+</div>
+<p>Bab ini tidak memakai <em>simpleks</em> sebagai algoritma pemrograman
+linear. Proyeksi, kerucut normal, dan ketaksamaan variasional di sini
+berada dalam analisis konveks kontinu dan tidak mengimpor LP/MIP,
+dualitas atau sensitivitas LP, jaringan, maupun optimisasi diskret dari
+O018.</p>
+<div id="d90.orig.v1.tr02.seg0003">
+
+</div>
+</section>
+<section id="orig02:section:resolvent" class="level2">
+<h2>Resolven operator monoton maksimal</h2>
+<p>Untuk <span class="math inline">\(\gamma&gt;0\)</span>, definisikan
+resolven dan resolven terefleksi <span
+class="math display math-scroll" id="orig02:eq:resolvent-definition" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:resolvent-definition}
+  J_{\gamma A}=(I+\gamma A)^{-1},
+  \qquad
+  R_{\gamma A}=2J_{\gamma A}-I.
+\end{equation}\]</span> Secara apriori, invers tersebut dapat bernilai
+himpunan atau tidak terdefinisi pada sebagian titik. Untuk operator
+monoton <span class="math inline">\(A\)</span>, teorema Minty menutup
+kedua celah itu: di ruang Euclid, <span class="math inline">\(A\)</span>
+monoton maksimal jika dan hanya jika <span
+class="math inline">\(\operatorname{ran}(I+\gamma
+A)=\mathbb{R}^d\)</span> untuk setiap <span
+class="math inline">\(\gamma&gt;0\)</span>.</p>
+<div class="theorem">
+<p><strong>Teorema (Resolven terdefinisi dan tak ekspansif
+kukuh).</strong></p>
+<p><span id="orig02:theorem:resolvent-firm"
+data-label="orig02:theorem:resolvent-firm"></span> Jika <span
+class="math inline">\(A\)</span> monoton maksimal dan <span
+class="math inline">\(\gamma&gt;0\)</span>, maka <span
+class="math inline">\(J_{\gamma A}\)</span> bernilai tunggal pada
+seluruh <span class="math inline">\(\mathbb{R}^d\)</span> dan <span
+class="math display math-scroll" id="orig02:eq:firm-nonexpansive" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:firm-nonexpansive}
+    \left\lVert J_{\gamma A}x-J_{\gamma A}y\right\rVert^2
+    \leq
+    \left\langle J_{\gamma A}x-J_{\gamma A}y,x-y\right\rangle.
+\end{equation}\]</span> Akibatnya, <span class="math inline">\(J_{\gamma
+A}\)</span> tak ekspansif dan <span class="math inline">\(R_{\gamma
+A}\)</span> tak ekspansif.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Teorema Minty memberi keberadaan pada setiap <span
+class="math inline">\(x\)</span>. Ambil <span
+class="math inline">\(p=J_{\gamma A}x\)</span> dan <span
+class="math inline">\(q=J_{\gamma A}y\)</span>. Maka <span
+class="math inline">\((x-p)/\gamma\in Ap\)</span> dan <span
+class="math inline">\((y-q)/\gamma\in Aq\)</span>. Kemonotonan memberi
+<span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\langle p-q,(x-p)-(y-q)\right\rangle\geq0,
+\end{equation}\]</span> yang sama dengan <a
+href="#orig02:eq:firm-nonexpansive" data-reference-type="eqref"
+data-reference="orig02:eq:firm-nonexpansive">(14)</a>.
+Jika dua nilai resolven berkorespondensi dengan <span
+class="math inline">\(x\)</span> yang sama, ketaksamaan itu memaksa
+keduanya sama, sehingga resolven bernilai tunggal. Ketaksamaan
+Cauchy–Schwarz memberi sifat tak ekspansif. Terakhir, <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \begin{aligned}
+    \left\lVert R_{\gamma A}x-R_{\gamma A}y\right\rVert^2
+    &amp; =\left\lVert 2(p-q)-(x-y)\right\rVert^2\\
+    &amp; =\left\lVert x-y\right\rVert^2
+      -4\bigl(\left\langle p-q,x-y\right\rangle-\left\lVert
+p-q\right\rVert^2\bigr)\\
+    &amp; \leq\left\lVert x-y\right\rVert^2.
+  \end{aligned}
+\end{equation}\]</span> ◻</p>
+</div>
+<div class="cor">
+<p><strong>Korolari (Nol sebagai titik tetap).</strong></p>
+<p><span id="orig02:cor:zero-fixed"
+data-label="orig02:cor:zero-fixed"></span> Untuk setiap <span
+class="math inline">\(\gamma&gt;0\)</span>, <span
+class="math display math-scroll" id="orig02:eq:zero-fixed" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:zero-fixed}
+    x\in\operatorname{zer}A
+    \quad\Longleftrightarrow\quad
+    x=J_{\gamma A}x.
+\end{equation}\]</span> Jika <span class="math inline">\(A=\partial
+f\)</span>, maka <span class="math inline">\(J_{\gamma
+A}=\operatorname{prox}_{\gamma f}\)</span>; jika <span
+class="math inline">\(A=N_C\)</span>, maka <span
+class="math inline">\(J_{\gamma A}=P_C\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Ekuivalensi pertama langsung dari <span
+class="math inline">\(x=J_{\gamma A}x\Longleftrightarrow x\in x+\gamma
+Ax\)</span>. Dua identitas terakhir adalah kondisi optimalitas proksimal
+dan proyeksi. ◻</p>
+</div>
+<div id="d90.orig.v1.tr02.seg0004">
+
+</div>
+</section>
+<section id="orig02:section:ppa" class="level2">
+<h2>Metode titik proksimal</h2>
+<p>Metode titik proksimal menerapkan resolven secara berulang: <span
+class="math display math-scroll" id="orig02:eq:ppa" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:ppa}
+  x_{k+1}=J_{\gamma A}x_k,
+  \qquad \gamma&gt;0.
+\end{equation}\]</span> Ini adalah langkah implisit karena <span
+class="math inline">\((x_k-x_{k+1})/\gamma\in Ax_{k+1}\)</span>.</p>
+<div class="theorem">
+<p><strong>Teorema (Penurunan Fejér dan konvergensi titik
+proksimal).</strong></p>
+<p><span id="orig02:theorem:ppa" data-label="orig02:theorem:ppa"></span>
+Andaikan <span class="math inline">\(A\)</span> monoton maksimal dan
+<span class="math inline">\(Z=\operatorname{zer}A\neq\emptyset\)</span>.
+Maka untuk setiap <span class="math inline">\(z\in Z\)</span>,
+iterasi <a href="#orig02:eq:ppa" data-reference-type="eqref"
+data-reference="orig02:eq:ppa">(18)</a> memenuhi <span
+class="math display math-scroll" id="orig02:eq:ppa-fejer" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:ppa-fejer}
+    \left\lVert x_{k+1}-z\right\rVert^2+\left\lVert
+x_{k+1}-x_k\right\rVert^2
+    \leq\left\lVert x_k-z\right\rVert^2.
+\end{equation}\]</span> Dalam dimensi hingga, <span
+class="math inline">\(x_k\)</span> konvergen ke suatu titik dalam <span
+class="math inline">\(Z\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Karena <span class="math inline">\(z=J_{\gamma
+A}z\)</span>, terapkan ketaksamaan <a
+href="#orig02:eq:firm-nonexpansive" data-reference-type="eqref"
+data-reference="orig02:eq:firm-nonexpansive">(14)</a>
+pada <span class="math inline">\(x_k\)</span> dan <span
+class="math inline">\(z\)</span>, lalu gunakan identitas <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\lVert x_k-z\right\rVert^2
+    =\left\lVert x_k-x_{k+1}\right\rVert^2+\left\lVert
+x_{k+1}-z\right\rVert^2
+     +2\left\langle x_k-x_{k+1},x_{k+1}-z\right\rangle.
+\end{equation}\]</span> Hasilnya adalah <a href="#orig02:eq:ppa-fejer"
+data-reference-type="eqref"
+data-reference="orig02:eq:ppa-fejer">(19)</a>. Jadi
+jarak ke setiap titik <span class="math inline">\(Z\)</span> tidak
+membesar dan <span class="math inline">\(\sum_k\left\lVert
+x_{k+1}-x_k\right\rVert^2&lt;\infty\)</span>.</p>
+<p>Barisan terbatas, sehingga mempunyai titik gugus <span
+class="math inline">\(\bar x\)</span>. Sepanjang subbarisan yang menuju
+<span class="math inline">\(\bar x\)</span>, berlaku <span
+class="math inline">\(x_{k+1}\to\bar x\)</span> dan <span
+class="math inline">\((x_k-x_{k+1})/\gamma\to0\)</span>. Grafik operator
+monoton maksimal tertutup; karena <span
+class="math inline">\((x_{k+1},(x_k-x_{k+1})/\gamma)\in\operatorname{gra}A\)</span>,
+diperoleh <span class="math inline">\(0\in A\bar x\)</span>. Sifat Fejér
+terhadap <span class="math inline">\(\bar x\)</span> kemudian memaksa
+seluruh barisan konvergen ke <span class="math inline">\(\bar
+x\)</span>. ◻</p>
+</div>
+<p>Hasil ini menjelaskan kestabilan langkah implisit tanpa mengklaim
+bahwa <span class="math inline">\(J_{\gamma A}\)</span> selalu mudah
+dihitung. Pemisahan operator berguna ketika resolven bagian-bagian
+operator jauh lebih sederhana daripada resolven jumlahnya.</p>
+<div id="d90.orig.v1.tr02.seg0005">
+
+</div>
+</section>
+<section id="orig02:section:forward-backward" class="level2">
+<h2>Pemisahan maju–mundur</h2>
+<p>Pemetaan tunggal <span
+class="math inline">\(B:\mathbb{R}^d\to\mathbb{R}^d\)</span> disebut
+<span class="math inline">\(\beta\)</span>-kokorsif jika <span
+class="math display math-scroll" id="orig02:eq:cocoercive" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:cocoercive}
+  \left\langle Bx-By,x-y\right\rangle\geq\beta\left\lVert
+Bx-By\right\rVert^2
+  \qquad\text{untuk semua }x,y.
+\end{equation}\]</span> Kokorsivitas lebih kuat daripada gabungan
+kemonotonan dan kontinuitas Lipschitz. Gradien fungsi konveks dengan
+gradien <span class="math inline">\(L\)</span>-Lipschitz bersifat <span
+class="math inline">\(1/L\)</span>-kokorsif.</p>
+<p>Untuk <span class="math inline">\(A\)</span> monoton maksimal dan
+<span class="math inline">\(B\)</span> <span
+class="math inline">\(\beta\)</span>-kokorsif, definisikan <span
+class="math display math-scroll" id="orig02:eq:fb-operator" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:fb-operator}
+  T_{\mathrm{FB}}=J_{\gamma A}(I-\gamma B),
+  \qquad 0&lt;\gamma&lt;2\beta.
+\end{equation}\]</span></p>
+<div class="theorem">
+<p><strong>Teorema (Titik tetap dan konvergensi
+maju–mundur).</strong></p>
+<p><span id="orig02:theorem:fb" data-label="orig02:theorem:fb"></span>
+Andaikan <span
+class="math inline">\(\operatorname{zer}(A+B)\neq\emptyset\)</span>.
+Maka <span class="math display math-scroll" id="orig02:eq:fb-fixed" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:fb-fixed}
+    x\in\operatorname{zer}(A+B)
+    \quad\Longleftrightarrow\quad x=T_{\mathrm{FB}}x.
+\end{equation}\]</span> Untuk <span
+class="math inline">\(0&lt;\gamma&lt;2\beta\)</span>, iterasi <span
+class="math inline">\(x_{k+1}=T_{\mathrm{FB}}x_k\)</span> konvergen di
+ruang berdimensi hingga ke suatu nol <span
+class="math inline">\(A+B\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Dari definisi resolven, <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \begin{aligned}
+    x=J_{\gamma A}(x-\gamma Bx)
+    &amp;\Longleftrightarrow x-\gamma Bx\in x+\gamma Ax\\
+    &amp;\Longleftrightarrow 0\in Ax+Bx.
+  \end{aligned}
+\end{equation}\]</span> Selanjutnya, <a href="#orig02:eq:cocoercive"
+data-reference-type="eqref"
+data-reference="orig02:eq:cocoercive">(21)</a> memberi
+<span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\lVert (I-\gamma B)x-(I-\gamma B)y\right\rVert^2
+    \leq\left\lVert x-y\right\rVert^2
+      -\gamma(2\beta-\gamma)\left\lVert Bx-By\right\rVert^2.
+\end{equation}\]</span> Jadi langkah maju tererata untuk rentang langkah
+yang dinyatakan. Resolven tak ekspansif kukuh (<em>firmly
+nonexpansive</em>), dan komposisinya tererata dengan parameter <span
+class="math inline">\(2\beta/(4\beta-\gamma)\in(0,1)\)</span>. Iterasi
+Picard pemetaan tererata dengan himpunan titik tetap tak kosong bersifat
+Fejér, residunya menuju nol, dan dalam dimensi hingga konvergen ke suatu
+titik tetap. Gunakan ekuivalensi <a href="#orig02:eq:fb-fixed"
+data-reference-type="eqref"
+data-reference="orig02:eq:fb-fixed">(23)</a>. ◻</p>
+</div>
+<p>Dengan <span class="math inline">\(A=\partial g\)</span> dan <span
+class="math inline">\(B=\nabla f\)</span>, pemetaan ini tepat menjadi
+langkah gradien proksimal yang telah diterjemahkan dari Habring. Nilai
+tambah bab ini ialah batas operatornya: langkah eksplisit memerlukan
+struktur seperti kokorsivitas, bukan hanya kemonotonan.</p>
+<section id="orig02:section:extragradient" class="level3">
+<h3>Perbaikan ekstragradien untuk operator monoton Lipschitz</h3>
+<p>Untuk VI dengan <span class="math inline">\(F\)</span> monoton dan
+<span class="math inline">\(L\)</span>-Lipschitz, kokorsivitas belum
+tentu berlaku. Langkah proyeksi tunggal dapat diganti oleh dua evaluasi
+berurutan: <span class="math display math-scroll" id="orig02:eq:extragradient" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:extragradient}
+  y_k=P_C\bigl(x_k-\gamma F(x_k)\bigr),
+  \qquad
+  x_{k+1}=P_C\bigl(x_k-\gamma F(y_k)\bigr),
+  \qquad 0&lt;\gamma&lt;\frac1L.
+\end{equation}\]</span></p>
+<div class="theorem">
+<p><strong>Teorema (Penurunan Fejér ekstragradien).</strong></p>
+<p><span id="orig02:theorem:extragradient"
+data-label="orig02:theorem:extragradient"></span> Jika himpunan solusi
+<span class="math inline">\(\operatorname{VI}(F,C)\)</span> tidak
+kosong, maka untuk setiap solusi <span
+class="math inline">\(x^*\)</span>, <span
+class="math display math-scroll" id="orig02:eq:extragradient-fejer" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:extragradient-fejer}
+    \left\lVert x_{k+1}-x^*\right\rVert^2
+    \leq\left\lVert x_k-x^*\right\rVert^2
+    -(1-\gamma L)
+      \bigl(\left\lVert x_k-y_k\right\rVert^2+\left\lVert
+y_k-x_{k+1}\right\rVert^2\bigr).
+\end{equation}\]</span> Dalam dimensi hingga, <span
+class="math inline">\(x_k\)</span> konvergen ke suatu solusi VI.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Karakterisasi proyeksi untuk pembaruan kedua dan
+sifat solusi VI, bersama kemonotonan <span
+class="math inline">\(F\)</span>, memberi <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\lVert x_{k+1}-x^*\right\rVert^2
+    \leq\left\lVert x_k-x^*\right\rVert^2-\left\lVert
+x_k-x_{k+1}\right\rVert^2
+       -2\gamma\left\langle F(y_k),x_{k+1}-y_k\right\rangle.
+\end{equation}\]</span> Karakterisasi proyeksi untuk <span
+class="math inline">\(y_k\)</span>, diuji pada <span
+class="math inline">\(x_{k+1}\in C\)</span>, memberi <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\langle x_k-y_k,x_{k+1}-y_k\right\rangle
+    \leq\gamma\left\langle F(x_k),x_{k+1}-y_k\right\rangle.
+\end{equation}\]</span> Substitusi, sifat Lipschitz, dan <span
+class="math inline">\(2ab\leq a^2+b^2\)</span> menghasilkan <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \begin{aligned}
+    \left\lVert x_{k+1}-x^*\right\rVert^2
+    &amp;\leq\left\lVert x_k-x^*\right\rVert^2
+      -\left\lVert x_k-y_k\right\rVert^2-\left\lVert
+y_k-x_{k+1}\right\rVert^2\\
+    &amp;\quad+2\gamma L\left\lVert x_k-y_k\right\rVert\left\lVert
+y_k-x_{k+1}\right\rVert,
+  \end{aligned}
+\end{equation}\]</span> lalu <a href="#orig02:eq:extragradient-fejer"
+data-reference-type="eqref"
+data-reference="orig02:eq:extragradient-fejer">(27)</a>.
+Kedua selisih berurutan menuju nol. Ambil titik gugus <span
+class="math inline">\(\bar x\)</span> dan lewatkan ketaksamaan proyeksi
+pertama ke limit; diperoleh <span class="math inline">\(\left\langle
+F(\bar x),z-\bar x\right\rangle\geq0\)</span> untuk setiap <span
+class="math inline">\(z\in C\)</span>. Jadi setiap titik gugus adalah
+solusi, dan sifat Fejér memaksa konvergensi seluruh barisan. ◻</p>
+</div>
+<div id="d90.orig.v1.tr02.seg0006">
+
+</div>
+</section>
+</section>
+<section id="orig02:section:dr" class="level2">
+<h2>Pemisahan Douglas–Rachford dan limit bayangan</h2>
+<p>Andaikan <span class="math inline">\(A\)</span> dan <span
+class="math inline">\(B\)</span> monoton maksimal. Definisikan <span
+class="math display math-scroll" id="orig02:eq:dr-operator" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:dr-operator}
+  T_{\mathrm{DR}}
+  =\frac12\bigl(I+R_{\gamma A}R_{\gamma B}\bigr)
+  =I-J_{\gamma B}+J_{\gamma A}(2J_{\gamma B}-I).
+\end{equation}\]</span> Karena kedua resolven terefleksi tak ekspansif,
+komposisinya tak ekspansif dan <span
+class="math inline">\(T_{\mathrm{DR}}\)</span> tak ekspansif kukuh.</p>
+<div class="theorem">
+<p><strong>Teorema (Titik tetap dan solusi bayangan
+Douglas–Rachford).</strong></p>
+<p><span id="orig02:theorem:dr-shadow"
+data-label="orig02:theorem:dr-shadow"></span> Andaikan <span
+class="math inline">\(\operatorname{zer}(A+B)\neq\emptyset\)</span>.
+Barisan <span class="math display math-scroll" id="orig02:eq:dr-iteration" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \label{orig02:eq:dr-iteration}
+    y_{k+1}=T_{\mathrm{DR}}y_k,
+    \qquad x_k=J_{\gamma B}y_k,
+\end{equation}\]</span> konvergen dalam dimensi hingga menuju <span
+class="math inline">\(\bar
+y\in\operatorname{Fix}T_{\mathrm{DR}}\)</span>, dan bayangannya memenuhi
+<span class="math inline">\(J_{\gamma B}\bar
+y\in\operatorname{zer}(A+B)\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Bukti.</em> Jika <span class="math inline">\(y\)</span> titik
+tetap, tetapkan <span class="math inline">\(x=J_{\gamma B}y\)</span> dan
+<span class="math inline">\(z=J_{\gamma A}(2x-y)\)</span>. Persamaan
+titik tetap dalam bentuk kedua <a href="#orig02:eq:dr-operator"
+data-reference-type="eqref"
+data-reference="orig02:eq:dr-operator">(31)</a>
+memberi <span class="math inline">\(z=x\)</span>. Kondisi resolven lalu
+memberi <span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \frac{y-x}{\gamma}\in Bx,
+    \qquad
+    \frac{x-y}{\gamma}\in Ax,
+\end{equation}\]</span> sehingga <span
+class="math inline">\(0\in(A+B)x\)</span>.</p>
+<p>Sebaliknya, jika <span class="math inline">\(0\in(A+B)x\)</span>,
+pilih <span class="math inline">\(b\in Bx\)</span> dengan <span
+class="math inline">\(-b\in Ax\)</span> dan tetapkan <span
+class="math inline">\(y=x+\gamma b\)</span>. Maka <span
+class="math inline">\(x=J_{\gamma B}y\)</span> dan <span
+class="math inline">\(x=J_{\gamma A}(2x-y)\)</span>, jadi <span
+class="math inline">\(y\)</span> titik tetap. Himpunan titik tetap
+karena itu tidak kosong. Kekukuhan tak ekspansif <span
+class="math inline">\(T_{\mathrm{DR}}\)</span> dan argumen Fejér yang
+sama dengan metode titik proksimal memberi <span
+class="math inline">\(y_k\to\bar y\)</span>. Kontinuitas resolven
+memberi <span class="math inline">\(x_k\to J_{\gamma B}\bar y\)</span>,
+yang merupakan nol jumlah. ◻</p>
+</div>
+<p>Modul Becker 2 sudah menyediakan bentuk proksimal konkret untuk <span
+class="math inline">\(A=\partial f\)</span> dan <span
+class="math inline">\(B=\partial g\)</span>, berikut penormalan skala
+serta hubungan primal–dualnya. Bagian ini tidak mengulang materi
+tersebut; ia menjelaskan mengapa rumus yang sama bekerja untuk operator
+monoton maksimal yang tidak harus merupakan subdiferensial.</p>
+<div id="d90.orig.v1.tr02.seg0007">
+
+</div>
+</section>
+<section id="orig02:section:skew" class="level2">
+<h2>Mengapa kemonotonan saja tidak cukup untuk langkah maju</h2>
+<p>Ambil <span class="math inline">\(\omega\neq0\)</span> dan operator
+linear <span class="math display math-scroll" id="orig02:eq:skew" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:skew}
+  S=\omega
+  \begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix}.
+\end{equation}\]</span> Karena <span class="math inline">\(\left\langle
+Sh,h\right\rangle=0\)</span> untuk semua <span
+class="math inline">\(h\)</span>, operator <span
+class="math inline">\(S\)</span> monoton. Ia juga monoton maksimal
+karena <span class="math inline">\(I+\gamma S\)</span> invertibel untuk
+setiap <span class="math inline">\(\gamma&gt;0\)</span>. Namun, <span
+class="math inline">\(S\)</span> tidak <span
+class="math inline">\(\beta\)</span>-kokorsif untuk satu pun <span
+class="math inline">\(\beta&gt;0\)</span>: ruas kiri ketaksamaan
+kokorsif selalu nol, sedangkan ruas kanan positif bila <span
+class="math inline">\(h\neq0\)</span>.</p>
+<p>Langkah maju <span class="math inline">\(x_{k+1}=(I-\gamma
+S)x_k\)</span> memenuhi <span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \left\lVert x_{k+1}\right\rVert^2=(1+\gamma^2\omega^2)\left\lVert
+x_k\right\rVert^2,
+\end{equation}\]</span> sehingga menjauh dari nol untuk <span
+class="math inline">\(x_0\neq0\)</span>. Sebaliknya, langkah resolven
+<span class="math inline">\(x_{k+1}=J_{\gamma S}x_k\)</span> memenuhi
+<span class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \left\lVert x_{k+1}\right\rVert
+  =\frac{1}{\sqrt{1+\gamma^2\omega^2}}\left\lVert x_k\right\rVert.
+\end{equation}\]</span> Contoh ini memisahkan dengan jelas tiga gagasan:
+monoton, Lipschitz, dan kokorsif tidak saling dapat dipertukarkan.</p>
+<section id="orig02:lab:monotone-splitting" class="level3 unnumbered">
+<h3 class="unnumbered">Laboratorium 2: inklusi linear-skew dengan
+regularisasi <span class="math inline">\(\ell_1\)</span></h3>
+<p>Laboratorium pendamping mempelajari <span
+class="math display math-scroll" id="orig02:eq:lab-inclusion" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:lab-inclusion}
+  0\in Mx-b+\lambda\partial\left\lVert x\right\rVert_1,
+  \qquad
+  M=\mu I+\omega
+  \begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix},
+  \quad \mu&gt;0.
+\end{equation}\]</span> Bagian simetris <span class="math inline">\(\mu
+I\)</span> membuat operator <span class="math inline">\(x\mapsto
+Mx-b\)</span> monoton kuat, sedangkan bagian skew menjaganya di luar
+kelas gradien fungsi konveks biasa. Operator itu <span
+class="math inline">\(\beta\)</span>-kokorsif dengan <span
+class="math display math-scroll" id="orig02:eq:lab-beta" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \label{orig02:eq:lab-beta}
+  \beta=\frac{\mu}{\mu^2+\omega^2}.
+\end{equation}\]</span></p>
+<p>Kode membandingkan tiga jejak: maju–mundur dengan langkah di dalam
+rentang <span class="math inline">\(0&lt;\gamma&lt;2\beta\)</span>,
+maju–mundur dengan langkah beku di luar jaminan teorema, dan
+Douglas–Rachford dengan resolven linear eksak serta ambang lunak. Solusi
+acuan unik diperoleh dengan enumerasi sembilan pola aktif tanda <span
+class="math inline">\(\{-1,0,1\}^2\)</span>, bukan dengan menyembunyikan
+jawaban di dalam algoritma. NumPy memeriksa sistem linear, residu
+inklusi, dan identitas resolven. Diagnostik kedua memakai operator skew
+murni untuk mencocokkan faktor norma eksak langkah maju, ekstragradien,
+dan resolven hingga galat pembulatan.</p>
+<p>Tugas laboratorium:</p>
+<ol>
+<li><p>Jalankan konfigurasi beku dan cocokkan ringkasan JSON serta
+CSV.</p></li>
+<li><p>Verifikasi secara numerik bahwa langkah stabil memenuhi <span
+class="math inline">\(\gamma&lt;2\beta\)</span>, sedangkan langkah
+diagnostik berada di luar rentang itu.</p></li>
+<li><p>Periksa bahwa residu titik tetap <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+      r_\gamma(x)=
+      \left\lVert
+x-\operatorname{soft}(x-\gamma(Mx-b),\gamma\lambda)\right\rVert
+\end{equation}\]</span> menuju nol bagi jejak yang diterima.</p></li>
+<li><p>Ubah <span class="math inline">\(\omega\)</span> tanpa mengubah
+<span class="math inline">\(\mu\)</span> dan jelaskan pengaruhnya pada
+<span class="math inline">\(\beta\)</span> serta rentang langkah
+maju–mundur.</p></li>
+<li><p>Gunakan CSV, bukan gambar saja, untuk membandingkan residu akhir
+dan galat terhadap solusi acuan.</p></li>
+<li><p>Pada diagnostik skew murni, cocokkan faktor kontraksi
+ekstragradien <span
+class="math inline">\(\sqrt{1-\gamma^2+\gamma^4}\)</span> dengan hasil
+numerik.</p></li>
+</ol>
+<div id="d90.orig.v1.tr02.seg0008">
+
+</div>
+</section>
+</section>
+<section id="orig02:section:exercises" class="level2">
+<h2>Latihan, petunjuk, dan solusi lengkap</h2>
+<div class="exercise">
+<p><strong>Latihan (Dari VI ke kerucut normal).</strong></p>
+<p><span id="orig02:exercise:vi-normal"
+data-label="orig02:exercise:vi-normal"></span> Untuk <span
+class="math inline">\(C=[0,+\infty)\)</span> dan <span
+class="math inline">\(F(x)=ax-b\)</span> dengan <span
+class="math inline">\(a&gt;0\)</span>, tentukan solusi <span
+class="math inline">\(\operatorname{VI}(F,C)\)</span> melalui inklusi
+kerucut normal.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Pisahkan kasus <span
+class="math inline">\(x&gt;0\)</span> dan <span
+class="math inline">\(x=0\)</span>. (ii) Untuk <span
+class="math inline">\(x&gt;0\)</span>, <span
+class="math inline">\(N_C(x)=\{0\}\)</span>. (iii) Pada <span
+class="math inline">\(x=0\)</span>, <span
+class="math inline">\(N_C(0)=(-\infty,0]\)</span>.</p>
+<p><strong>Solusi lengkap.</strong> Jika <span
+class="math inline">\(x&gt;0\)</span>, inklusi <span
+class="math inline">\(0\in ax-b+N_C(x)\)</span> memberi <span
+class="math inline">\(x=b/a\)</span>, yang sah hanya bila <span
+class="math inline">\(b&gt;0\)</span>. Pada <span
+class="math inline">\(x=0\)</span>, inklusi menjadi <span
+class="math inline">\(0\in-b+(-\infty,0]\)</span>, atau <span
+class="math inline">\(b\leq0\)</span>. Jadi solusi tunggal adalah <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    x^*=\max\{b/a,0\}.
+\end{equation}\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Latihan (Monoton tetapi belum maksimal).</strong></p>
+<p><span id="orig02:exercise:nonmaximal"
+data-label="orig02:exercise:nonmaximal"></span> Definisikan operator
+<span class="math inline">\(A\)</span> melalui <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \operatorname{gra}A=\{(0,0)\}.
+\end{equation}\]</span> Buktikan bahwa <span
+class="math inline">\(A\)</span> monoton tetapi tidak monoton
+maksimal.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Uji definisi kemonotonan pada
+satu pasangan yang tersedia. (ii) Cari operator monoton dengan grafik
+lebih besar.</p>
+<p><strong>Solusi lengkap.</strong> Satu-satunya pasangan grafik yang
+dapat dibandingkan adalah <span class="math inline">\((0,0)\)</span>
+dengan dirinya sendiri, sehingga hasil kali dalam pada definisi bernilai
+nol. Jadi <span class="math inline">\(A\)</span> monoton. Operator nol
+<span class="math inline">\(\widetilde A x=\{0\}\)</span> untuk semua
+<span class="math inline">\(x\in\mathbb{R}^d\)</span> juga monoton dan
+<span
+class="math inline">\(\operatorname{gra}A\subsetneq\operatorname{gra}\widetilde
+A\)</span>. Karena ada perluasan monoton ketat, <span
+class="math inline">\(A\)</span> tidak maksimal.</p>
+</div>
+<div class="exercise">
+<p><strong>Latihan (Resolven dan refleksi).</strong></p>
+<p><span id="orig02:exercise:resolvent-reflection"
+data-label="orig02:exercise:resolvent-reflection"></span> Mulai dari <a
+href="#orig02:eq:firm-nonexpansive" data-reference-type="eqref"
+data-reference="orig02:eq:firm-nonexpansive">(14)</a>.
+Buktikan bahwa <span class="math inline">\(R_{\gamma A}=2J_{\gamma
+A}-I\)</span> tak ekspansif.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Tetapkan <span
+class="math inline">\(p=J_{\gamma A}x\)</span> dan <span
+class="math inline">\(q=J_{\gamma A}y\)</span>. (ii) Kembangkan kuadrat
+norma <span class="math inline">\(2(p-q)-(x-y)\)</span>.</p>
+<p><strong>Solusi lengkap.</strong> Perluasan langsung memberi <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+  \begin{aligned}
+    \left\lVert R_{\gamma A}x-R_{\gamma A}y\right\rVert^2
+    &amp;=\left\lVert x-y\right\rVert^2+4\left\lVert
+p-q\right\rVert^2-4\left\langle p-q,x-y\right\rangle\\
+    &amp;\leq\left\lVert x-y\right\rVert^2,
+  \end{aligned}
+\end{equation}\]</span> karena kekukuhan tak ekspansif menyatakan <span
+class="math inline">\(\left\lVert p-q\right\rVert^2\leq\left\langle
+p-q,x-y\right\rangle\)</span>.</p>
+</div>
+<div class="exercise">
+<p><strong>Latihan (Operator skew: eksplisit versus
+implisit).</strong></p>
+<p><span id="orig02:exercise:skew"
+data-label="orig02:exercise:skew"></span> Untuk <span
+class="math inline">\(\omega=1\)</span> pada <a href="#orig02:eq:skew"
+data-reference-type="eqref"
+data-reference="orig02:eq:skew">(34)</a>, hitung norma
+operator langkah maju <span class="math inline">\(I-\gamma S\)</span>,
+langkah ekstragradien <span class="math inline">\((1-\gamma^2)I-\gamma
+S\)</span>, dan resolven <span class="math inline">\((I+\gamma
+S)^{-1}\)</span>.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Gunakan <span
+class="math inline">\(S^\top=-S\)</span> dan <span
+class="math inline">\(S^\top S=\omega^2I\)</span>. (ii) Hitung kuadrat
+norma pada vektor sembarang.</p>
+<p><strong>Solusi lengkap.</strong> <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    (I-\gamma S)^\top(I-\gamma S)
+    =(1+\gamma^2\omega^2)I,
+\end{equation}\]</span> dan dengan <span
+class="math inline">\(\omega=1\)</span> normanya <span
+class="math inline">\(\sqrt{1+\gamma^2}&gt;1\)</span>. Untuk
+ekstragradien, suku silang kembali hilang dan normanya <span
+class="math inline">\(\sqrt{(1-\gamma^2)^2+\gamma^2}
+   =\sqrt{1-\gamma^2+\gamma^4}&lt;1\)</span> bila <span
+class="math inline">\(0&lt;\gamma&lt;1\)</span>. Selain itu, <span
+class="math inline">\((I+\gamma S)^\top(I+\gamma
+S)=(1+\gamma^2)I\)</span>, sehingga norma inversnya <span
+class="math inline">\(1/\sqrt{1+\gamma^2}&lt;1\)</span>.</p>
+</div>
+<div class="exercise">
+<p><strong>Latihan (Rentang langkah untuk bagian
+linear-skew).</strong></p>
+<p><span id="orig02:exercise:cocoercivity"
+data-label="orig02:exercise:cocoercivity"></span> Untuk <span
+class="math inline">\(M=\mu I+S\)</span> dengan <span
+class="math inline">\(\mu&gt;0\)</span>, buktikan bahwa pemetaan <span
+class="math inline">\(x\mapsto Mx-b\)</span> bersifat <span
+class="math inline">\(\beta\)</span>-kokorsif dengan <span
+class="math inline">\(\beta=\mu/(\mu^2+\omega^2)\)</span>.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Konstanta <span
+class="math inline">\(b\)</span> hilang ketika dua nilai dikurangkan.
+(ii) Gunakan <span class="math inline">\(\left\langle
+Sh,h\right\rangle=0\)</span> dan <span class="math inline">\(\left\lVert
+Mh\right\rVert^2=(\mu^2+\omega^2)\left\lVert
+h\right\rVert^2\)</span>.</p>
+<p><strong>Solusi lengkap.</strong> Untuk <span
+class="math inline">\(h=x-y\)</span>, <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \left\langle Mx-My,x-y\right\rangle=\mu\left\lVert h\right\rVert^2,
+    \qquad
+    \left\lVert Mx-My\right\rVert^2=(\mu^2+\omega^2)\left\lVert
+h\right\rVert^2.
+\end{equation}\]</span> Bila <span class="math inline">\(h=0\)</span>,
+kesamaan kokorsif berlaku langsung. Bila <span
+class="math inline">\(h\neq0\)</span>, membagi kedua identitas memberi
+tepat <span class="math inline">\(\left\langle
+Mx-My,x-y\right\rangle=\beta\left\lVert
+Mx-My\right\rVert^2\)</span>.</p>
+</div>
+<div class="exercise">
+<p><strong>Latihan (Bayangan titik tetap Douglas–Rachford).</strong></p>
+<p><span id="orig02:exercise:dr-shadow"
+data-label="orig02:exercise:dr-shadow"></span> Andaikan <span
+class="math inline">\(y=T_{\mathrm{DR}}y\)</span> dan tetapkan <span
+class="math inline">\(x=J_{\gamma B}y\)</span>. Tunjukkan secara
+langsung bahwa <span class="math inline">\(0\in(A+B)x\)</span>.</p>
+<p><strong>Petunjuk bertahap.</strong> (i) Tulis <span
+class="math inline">\(z=J_{\gamma A}(2x-y)\)</span>. (ii) Gunakan bentuk
+kedua <a href="#orig02:eq:dr-operator" data-reference-type="eqref"
+data-reference="orig02:eq:dr-operator">(31)</a> untuk
+memperoleh <span class="math inline">\(z=x\)</span>. (iii) Jumlahkan dua
+inklusi resolven.</p>
+<p><strong>Solusi lengkap.</strong> Persamaan titik tetap memberi <span
+class="math inline">\(0=-x+z\)</span>, sehingga <span
+class="math inline">\(z=x\)</span>. Dari definisi resolven, <span
+class="math display math-scroll" tabindex="0" aria-label="Rumus matematika; dapat digulir horizontal">\[\begin{equation}
+    \frac{y-x}{\gamma}\in Bx,
+    \qquad
+    \frac{2x-y-z}{\gamma}
+    =\frac{x-y}{\gamma}\in Ax.
+\end{equation}\]</span> Kedua unsur menjumlah menjadi nol, maka <span
+class="math inline">\(0\in(A+B)x\)</span>.</p>
+</div>
+</section>
+<section id="orig02:section:assumption-map" class="level2">
+<h2>Peta asumsi dan batas klaim</h2>
+<div class="center">
+<div class="table-scroll" role="region" tabindex="0" aria-label="Tabel dapat digulir horizontal"><table>
+<thead>
+<tr>
+<th scope="col" style="text-align: left;">Hasil</th>
+<th scope="col" style="text-align: left;">Asumsi penentu</th>
+<th scope="col" style="text-align: left;">Yang tidak diklaim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ekuivalensi VI</td>
+<td style="text-align: left;"><span class="math inline">\(C\)</span>
+konveks tertutup tak kosong; definisi kerucut normal</td>
+<td style="text-align: left;">keberadaan solusi tanpa asumsi
+tambahan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resolven</td>
+<td style="text-align: left;"><span class="math inline">\(A\)</span>
+monoton maksimal; <span class="math inline">\(\gamma&gt;0\)</span></td>
+<td style="text-align: left;">resolven jumlah mudah dihitung</td>
+</tr>
+<tr>
+<td style="text-align: left;">Titik proksimal</td>
+<td style="text-align: left;">himpunan nol tak kosong; dimensi hingga;
+langkah tetap positif</td>
+<td style="text-align: left;">laju linear tanpa kemonotonan kuat</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maju–mundur</td>
+<td style="text-align: left;"><span class="math inline">\(A\)</span>
+monoton maksimal; <span class="math inline">\(B\)</span> <span
+class="math inline">\(\beta\)</span>-kokorsif; <span
+class="math inline">\(0&lt;\gamma&lt;2\beta\)</span></td>
+<td style="text-align: left;">konvergensi untuk operator monoton
+Lipschitz umum</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ekstragradien</td>
+<td style="text-align: left;"><span class="math inline">\(F\)</span>
+monoton dan <span class="math inline">\(L\)</span>-Lipschitz; <span
+class="math inline">\(C\)</span> konveks tertutup; <span
+class="math inline">\(0&lt;\gamma&lt;1/L\)</span></td>
+<td style="text-align: left;">satu evaluasi operator per iterasi</td>
+</tr>
+<tr>
+<td style="text-align: left;">Douglas–Rachford</td>
+<td style="text-align: left;"><span class="math inline">\(A,B\)</span>
+monoton maksimal; nol jumlah tak kosong</td>
+<td style="text-align: left;">setiap iterat bayangan sudah merupakan
+solusi</td>
+</tr>
+<tr>
+<td style="text-align: left;">Laboratorium</td>
+<td style="text-align: left;">konfigurasi linear-skew dua dimensi yang
+dibekukan</td>
+<td style="text-align: left;">kinerja universal atau peringkat
+algoritma</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section id="rujukan-matematis-dan-saksi-verifikasi"
+class="level2 unnumbered">
+<h2 class="unnumbered">Rujukan matematis dan saksi verifikasi</h2>
+<ul>
+<li><p>Andreas Habring, <em>Lecture Notes: Convex Optimization</em>,
+arXiv:2607.11664v1, khususnya subdiferensial, operator proksimal, dan
+gradien proksimal; dipakai sebagai tulang punggung prasyarat.</p></li>
+<li><p>Stephen Becker dan Mitchell Krock, catatan kelas optimisasi
+konveks pada commit beku <code>98ed693</code>, khususnya modul
+Douglas–Rachford yang telah diterima; dipakai untuk menjaga notasi dan
+batas nonduplikasi.</p></li>
+<li><p>George J. Minty, <em>Monotone (Nonlinear) Operators in Hilbert
+Space</em>, <em>Duke Mathematical Journal</em> 29 (1962), 341–346,
+DOI:10.1215/S0012-7094-62-02933-2.</p></li>
+<li><p>R. Tyrrell Rockafellar, <em>On the Maximal Monotonicity of
+Subdifferential Mappings</em>, <em>Pacific Journal of Mathematics</em>
+33 (1970), 209–216, DOI:10.2140/PJM.1970.33.209.</p></li>
+<li><p>Pierre-Louis Lions dan Bertrand Mercier, <em>Splitting Algorithms
+for the Sum of Two Nonlinear Operators</em>, <em>SIAM Journal on
+Numerical Analysis</em> 16 (1979), 964–979,
+DOI:10.1137/0716071.</p></li>
+</ul>
+</section>
+</section>
+<section id="orig02:appendix:lab-complete" class="level1">
+<h1>Lampiran laboratorium lengkap</h1>
+<p>Lampiran ini membawa kode dan keluaran beku laboratorium ke permukaan
+baca reflow. Empat berkas asli disertakan sebagai unduhan byte-identik
+pada HTML dan sebagai sumber daya termanifestasi pada EPUB; tautan EPUB
+menuju representasi lengkap di dalam pembaca. Tabel dan grafik bersifat
+redundan: data lengkap tetap tersedia dalam CSV dan JSON.</p>
+<section id="grafik-residu-inklusi" class="level2">
+<h2>Grafik residu inklusi</h2>
+<figure id="lab-inclusion-residual">
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTIwIiB2aWV3Qm94PSIwIDAgOTAwIDUyMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgo8dGl0bGUgaWQ9InRpdGxlIj5SZXNpZHUgaW5rbHVzaSBvcGVyYXRvciBtb25vdG9uPC90aXRsZT4KPGRlc2MgaWQ9ImRlc2MiPlBlcmJhbmRpbmdhbiByZXNpZHUgbWFqdS0tbXVuZHVyIGRlbmdhbiBsYW5na2FoIGRpdGVyaW1hLCBsYW5na2FoIGRpIGx1YXIgamFtaW5hbiwgZGFuIERvdWdsYXMtLVJhY2hmb3JkLjwvZGVzYz4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZmZmZiIvPgo8dGV4dCB4PSI0NTAuMCIgeT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzE4MjIzNSI+UmVzaWR1IGlua2x1c2kgdGVyaGFkYXAgaXRlcmFzaTwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDQ2LjAwIiB5Mj0iNDQ2LjAwIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDUwLjAwIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDI3LjIxIiB5Mj0iNDI3LjIxIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDMxLjIxIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xNDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDA4LjQyIiB5Mj0iNDA4LjQyIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDEyLjQyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xMjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzg5LjYzIiB5Mj0iMzg5LjYzIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzkzLjYzIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzcwLjg0IiB5Mj0iMzcwLjg0IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzc0Ljg0IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi04PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIzNTIuMDUiIHkyPSIzNTIuMDUiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIzNTYuMDUiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeLTY8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjMzMy4yNiIgeTI9IjMzMy4yNiIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjMzNy4yNiIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4tNDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzE0LjQ3IiB5Mj0iMzE0LjQ3IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzE4LjQ3IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0yPC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIyOTUuNjciIHkyPSIyOTUuNjciIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIyOTkuNjciIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMjc2Ljg4IiB5Mj0iMjc2Ljg4IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMjgwLjg4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjI8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjI1OC4wOSIgeTI9IjI1OC4wOSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjI2Mi4wOSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF40PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIyMzkuMzAiIHkyPSIyMzkuMzAiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIyNDMuMzAiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMjIwLjUxIiB5Mj0iMjIwLjUxIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMjI0LjUxIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjg8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjIwMS43MiIgeTI9IjIwMS43MiIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjIwNS43MiIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4xMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMTgyLjkzIiB5Mj0iMTgyLjkzIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMTg2LjkzIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjEyPC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIxNjQuMTQiIHkyPSIxNjQuMTQiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIxNjguMTQiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMTQ8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjE0NS4zNSIgeTI9IjE0NS4zNSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjE0OS4zNSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4xNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMTI2LjU2IiB5Mj0iMTI2LjU2IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMTMwLjU2IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjE4PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIxMDcuNzciIHkyPSIxMDcuNzciIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIxMTEuNzciIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMjA8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9Ijg4Ljk4IiB5Mj0iODguOTgiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSI5Mi45OCIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4yMjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNzAuMTkiIHkyPSI3MC4xOSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9Ijc0LjE5IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjI0PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSI1MS40MCIgeTI9IjUxLjQwIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNTUuNDAiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMjY8L3RleHQ+CjxsaW5lIHgxPSI4OC4wMCIgeDI9Ijg4LjAwIiB5MT0iNDIiIHkyPSI0NDYiIHN0cm9rZT0iI2VlZjFmNSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijg4LjAwIiB5PSI0NzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MDwvdGV4dD4KPGxpbmUgeDE9IjI4Mi4yNSIgeDI9IjI4Mi4yNSIgeTE9IjQyIiB5Mj0iNDQ2IiBzdHJva2U9IiNlZWYxZjUiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSIyODIuMjUiIHk9IjQ3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij41MDwvdGV4dD4KPGxpbmUgeDE9IjQ3Ni41MCIgeDI9IjQ3Ni41MCIgeTE9IjQyIiB5Mj0iNDQ2IiBzdHJva2U9IiNlZWYxZjUiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI0NzYuNTAiIHk9IjQ3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMDA8L3RleHQ+CjxsaW5lIHgxPSI2NzAuNzUiIHgyPSI2NzAuNzUiIHkxPSI0MiIgeTI9IjQ0NiIgc3Ryb2tlPSIjZWVmMWY1IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNjcwLjc1IiB5PSI0NzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTUwPC90ZXh0Pgo8bGluZSB4MT0iODY1LjAwIiB4Mj0iODY1LjAwIiB5MT0iNDIiIHkyPSI0NDYiIHN0cm9rZT0iI2VlZjFmNSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijg2NS4wMCIgeT0iNDcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjIwMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODgiIHkxPSI0MiIgeTI9IjQ0NiIgc3Ryb2tlPSIjMTgyMjM1IiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSI0NDYiIHkyPSI0NDYiIHN0cm9rZT0iIzE4MjIzNSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHRleHQgeD0iNDc2LjUiIHk9IjQ5NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMTgyMjM1Ij5JdGVyYXNpPC90ZXh0Pgo8dGV4dCB4PSIyMiIgeT0iMjQ0LjAiIHRyYW5zZm9ybT0icm90YXRlKC05MCAyMiAyNDQuMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzE4MjIzNSI+UmVzaWR1IGlua2x1c2kgKHNrYWxhIGxvZyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9Ijg4LjAwLDI4OS4wNiA5MS44OSwyODkuNzMgOTUuNzcsMjkwLjg4IDEwNy40MiwyOTQuMTMgMTI2Ljg1LDI5OS45MiAxNjUuNzAsMzA4LjcxIDI0My40MCwzMjIuMTEgMzk4LjgwLDM0OC45MiA1NTQuMjAsMzc1LjczIDg2NS4wMCw0MjkuNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNzdiNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iODguMDAiIGN5PSIyODkuMDYiIHI9IjMuMiIgZmlsbD0iIzFmNzdiNCIvPgo8Y2lyY2xlIGN4PSI5MS44OSIgY3k9IjI4OS43MyIgcj0iMy4yIiBmaWxsPSIjMWY3N2I0Ii8+CjxjaXJjbGUgY3g9Ijk1Ljc3IiBjeT0iMjkwLjg4IiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTA3LjQyIiBjeT0iMjk0LjEzIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTI2Ljg1IiBjeT0iMjk5LjkyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTY1LjcwIiBjeT0iMzA4LjcxIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMjQzLjQwIiBjeT0iMzIyLjExIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMzk4LjgwIiBjeT0iMzQ4LjkyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iNTU0LjIwIiBjeT0iMzc1LjczIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iODY1LjAwIiBjeT0iNDI5LjQyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPHBvbHlsaW5lIHBvaW50cz0iODguMDAsMjg5LjA2IDkxLjg5LDI4OC4yMCA5NS43NywyODcuMjUgMTA3LjQyLDI4My44OCAxMjYuODUsMjc4LjAxIDE2NS43MCwyNjUuNzUgMjQzLjQwLDI0MS4wNCAzOTguODAsMTkxLjYxIDU1NC4yMCwxNDIuMTggODY1LjAwLDQzLjMzIiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDNkM2UiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9Ijg4LjAwIiBjeT0iMjg5LjA2IiByPSIzLjIiIGZpbGw9IiNjMDNkM2UiLz4KPGNpcmNsZSBjeD0iOTEuODkiIGN5PSIyODguMjAiIHI9IjMuMiIgZmlsbD0iI2MwM2QzZSIvPgo8Y2lyY2xlIGN4PSI5NS43NyIgY3k9IjI4Ny4yNSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjEwNy40MiIgY3k9IjI4My44OCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjEyNi44NSIgY3k9IjI3OC4wMSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjE2NS43MCIgY3k9IjI2NS43NSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjI0My40MCIgY3k9IjI0MS4wNCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjM5OC44MCIgY3k9IjE5MS42MSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjU1NC4yMCIgY3k9IjE0Mi4xOCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9Ijg2NS4wMCIgY3k9IjQzLjMzIiByPSIzLjIiIGZpbGw9IiNjMDNkM2UiLz4KPHBvbHlsaW5lIHBvaW50cz0iODguMDAsMjg5LjQzIDkxLjg5LDI5Mi4yNSA5NS43NywyOTUuMDggMTA3LjQyLDMwMi43OSAxMjYuODUsMzE1LjgxIDE2NS43MCwzNDQuMDYgMjQzLjQwLDQwMC41NSAzOTguODAsNDQwLjM0IDU1NC4yMCw0NDAuMzQgODY1LjAwLDQ0MC4zNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmI4YTNlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9IjI4OS40MyIgcj0iMy4yIiBmaWxsPSIjMmI4YTNlIi8+CjxjaXJjbGUgY3g9IjkxLjg5IiBjeT0iMjkyLjI1IiByPSIzLjIiIGZpbGw9IiMyYjhhM2UiLz4KPGNpcmNsZSBjeD0iOTUuNzciIGN5PSIyOTUuMDgiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxMDcuNDIiIGN5PSIzMDIuNzkiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxMjYuODUiIGN5PSIzMTUuODEiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxNjUuNzAiIGN5PSIzNDQuMDYiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIyNDMuNDAiIGN5PSI0MDAuNTUiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIzOTguODAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSI1NTQuMjAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSI4NjUuMDAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8cmVjdCB4PSI5NiIgeT0iNDUiIHdpZHRoPSIzNDUiIGhlaWdodD0iODIiIHJ4PSI1IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuOTIiIHN0cm9rZT0iI2NiZDVlMSIvPgo8bGluZSB4MT0iMTA2IiB4Mj0iMTMyIiB5MT0iNjAiIHkyPSI2MCIgc3Ryb2tlPSIjMWY3N2I0IiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iMTQyIiB5PSI2NCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMTgyMjM1Ij5NYWp1LS1tdW5kdXI6IGxhbmdrYWggZGl0ZXJpbWE8L3RleHQ+CjxsaW5lIHgxPSIxMDYiIHgyPSIxMzIiIHkxPSI4NCIgeTI9Ijg0IiBzdHJva2U9IiNjMDNkM2UiIHN0cm9rZS13aWR0aD0iMyIvPgo8dGV4dCB4PSIxNDIiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMxODIyMzUiPk1hanUtLW11bmR1cjogZGkgbHVhciBqYW1pbmFuPC90ZXh0Pgo8bGluZSB4MT0iMTA2IiB4Mj0iMTMyIiB5MT0iMTA4IiB5Mj0iMTA4IiBzdHJva2U9IiMyYjhhM2UiIHN0cm9rZS13aWR0aD0iMyIvPgo8dGV4dCB4PSIxNDIiIHk9IjExMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMTgyMjM1Ij5Eb3VnbGFzLS1SYWNoZm9yZDwvdGV4dD4KPC9zdmc+Cg=="  alt="Grafik skala logaritmik residu inklusi terhadap iterasi untuk maju-mundur stabil, maju-mundur diagnostik di luar rentang teorema, dan Douglas-Rachford; seluruh nilai tersedia dalam tabel, CSV, dan JSON." />
+<figcaption>Kesenjangan objektif terhadap evaluasi gradien komponen.
+Seluruh nilai tersedia dalam tabel data lengkap, CSV, dan
+JSON.</figcaption>
+</figure>
+</section>
+<section id="tabel-data-lengkap" class="level2">
+<h2>Tabel data lengkap</h2>
+<div id="lab-csv-table">
+
+</div>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Tabel dapat digulir horizontal"><table class="lab-results-table"><caption>Seluruh 30 baris hasil laboratorium monotone-splitting</caption><thead><tr><th scope="col">method</th><th scope="col">iteration</th><th scope="col">x1</th><th scope="col">x2</th><th scope="col">norm</th><th scope="col">error_to_reference</th><th scope="col">fixed_point_residual</th><th scope="col">inclusion_residual</th></tr></thead><tbody><tr><td>forward_backward_stable</td><td>0</td><td>2.5</td><td>-2.0</td><td>3.2015621187164243</td><td>2.8034319626541264</td><td>2.0215835377248204</td><td>5.05395884431205</td></tr><tr><td>forward_backward_stable</td><td>1</td><td>0.68</td><td>-2.88</td><td>2.959189078109069</td><td>2.378790901665414</td><td>1.5279057562559282</td><td>4.288426284780933</td></tr><tr><td>forward_backward_stable</td><td>2</td><td>-0.74</td><td>-2.316</td><td>2.4313485969724704</td><td>1.9246763564098446</td><td>1.2964710255150327</td><td>3.2411775637875815</td></tr><tr><td>forward_backward_stable</td><td>5</td><td>-0.0</td><td>0.0665920000000002</td><td>0.0665920000000002</td><td>0.6490542485346841</td><td>0.46803967472991015</td><td>1.4614116829312678</td></tr><tr><td>forward_backward_stable</td><td>10</td><td>0.0</td><td>-0.8034007756800001</td><td>0.8034007756800001</td><td>0.2417683009574272</td><td>0.14136031027200002</td><td>0.35340077568000017</td></tr><tr><td>forward_backward_stable</td><td>20</td><td>0.061875967999999976</td><td>-0.5770040216012856</td><td>0.5803122231695571</td><td>0.02273956068284884</td><td>0.016397730404707232</td><td>0.04099432601176812</td></tr><tr><td>forward_backward_stable</td><td>40</td><td>0.0854667270535843</td><td>-0.5769200464302164</td><td>0.5832163418546286</td><td>0.0008513478319503896</td><td>0.0006139156522705296</td><td>0.0015347891306762313</td></tr><tr><td>forward_backward_stable</td><td>80</td><td>0.08461657792794391</td><td>-0.5769230726752853</td><td>0.5830953584494807</td><td>1.1933201195565088e-06</td><td>8.605153759058425e-07</td><td>2.151288439710652e-06</td></tr><tr><td>forward_backward_stable</td><td>120</td><td>0.08461538628803106</td><td>-0.5769230769171229</td><td>0.5830951897213638</td><td>1.6726569660632432e-09</td><td>1.2061701768457911e-09</td><td>3.0154253724902848e-09</td></tr><tr><td>forward_backward_stable</td><td>200</td><td>0.08461538461538787</td><td>-0.576923076923077</td><td>0.5830951894845305</td><td>3.1780134079895106e-15</td><td>2.401779625492033e-15</td><td>5.821000005975887e-15</td></tr><tr><td>forward_backward_outside_range</td><td>0</td><td>2.5</td><td>-2.0</td><td>3.2015621187164243</td><td>2.8034319626541264</td><td>4.148062800874644</td><td>5.05395884431205</td></tr><tr><td>forward_backward_outside_range</td><td>1</td><td>-1.145</td><td>-3.98</td><td>4.141427893854968</td><td>3.6184093934298724</td><td>5.242403915428493</td><td>6.239141066685381</td></tr><tr><td>forward_backward_outside_range</td><td>2</td><td>-4.182499999999999</td><td>0.29274999999999995</td><td>4.192732857278173</td><td>4.354836962085509</td><td>6.7562350887092615</td><td>7.885150039195511</td></tr><tr><td>forward_backward_outside_range</td><td>5</td><td>0.18739346875000037</td><td>-10.561808</td><td>10.563470288735333</td><td>9.98541387533172</td><td>15.826250825263434</td><td>18.001460867119047</td></tr><tr><td>forward_backward_outside_range</td><td>10</td><td>-39.451837669007126</td><td>-14.822525965047928</td><td>42.14445125335256</td><td>42.02461566400635</td><td>67.8580890355725</td><td>75.88240964986971</td></tr><tr><td>forward_backward_outside_range</td><td>20</td><td>402.4422505581068</td><td>747.0885925288309</td><td>848.5877268267457</td><td>849.0555869955879</td><td>1377.5910545842958</td><td>1531.098125152578</td></tr><tr><td>forward_backward_outside_range</td><td>40</td><td>-301992.0606033278</td><td>200161.4563083331</td><td>362303.48226164863</td><td>362303.871523797</td><td>587837.1595466494</td><td>653152.8605182628</td></tr><tr><td>forward_backward_outside_range</td><td>80</td><td>47456243914.1256</td><td>-45957520179.19019</td><td>66062006837.9523</td><td>66062006837.49017</td><td>107185478855.24078</td><td>119094976506.31174</td></tr><tr><td>forward_backward_outside_range</td><td>120</td><td>-6973546010449878.0</td><td>9821819296157182.0</td><td>1.2045682971348158e+16</td><td>1.2045682971348158e+16</td><td>1.954409742053064e+16</td><td>2.17156638005896e+16</td></tr><tr><td>forward_backward_outside_range</td><td>200</td><td>-9.882929849502497e+25</td><td>3.8810350930568894e+26</td><td>4.004891561283648e+26</td><td>4.004891561283648e+26</td><td>6.49792884459655e+26</td><td>7.219920938440611e+26</td></tr><tr><td>douglas_rachford</td><td>0</td><td>2.325</td><td>-1.825</td><td>2.9557148035627523</td><td>2.564569989446424</td><td>2.9293818673911396</td><td>4.623344298232611</td></tr><tr><td>douglas_rachford</td><td>1</td><td>0.7103318722604886</td><td>-1.6975579211020664</td><td>1.8401832148580914</td><td>1.2834888300639757</td><td>1.271073151629751</td><td>2.3138423941404755</td></tr><tr><td>douglas_rachford</td><td>2</td><td>0.05632520117361578</td><td>-1.2186466954908017</td><td>1.21994766146663</td><td>0.6423468977949716</td><td>0.5672530458990993</td><td>1.1580073383174985</td></tr><tr><td>douglas_rachford</td><td>5</td><td>0.0</td><td>-0.6242923525599455</td><td>0.6242923525599455</td><td>0.09697222070248318</td><td>0.12237340991344488</td><td>0.17481915701920683</td></tr><tr><td>douglas_rachford</td><td>10</td><td>0.08675954580797979</td><td>-0.5735613436904881</td><td>0.5800860572060366</td><td>0.003987314578375228</td><td>0.005031763507307906</td><td>0.007188233581868407</td></tr><tr><td>douglas_rachford</td><td>20</td><td>0.08461467133432576</td><td>-0.5769192116113238</td><td>0.5830912615802498</td><td>3.930573090358453e-06</td><td>4.960158986575774e-06</td><td>7.085941409434631e-06</td></tr><tr><td>douglas_rachford</td><td>40</td><td>0.08461538461158907</td><td>-0.5769230769235045</td><td>0.5830951894844023</td><td>3.81962062324116e-12</td><td>4.820196128874869e-12</td><td>6.885867582289481e-12</td></tr><tr><td>douglas_rachford</td><td>80</td><td>0.08461538461538454</td><td>-0.5769230769230771</td><td>0.5830951894845302</td><td>1.8875832159447664e-16</td><td>2.7755575615628914e-16</td><td>4.002966042486721e-16</td></tr><tr><td>douglas_rachford</td><td>120</td><td>0.08461538461538454</td><td>-0.5769230769230771</td><td>0.5830951894845302</td><td>1.8875832159447664e-16</td><td>2.7755575615628914e-16</td><td>4.002966042486721e-16</td></tr><tr><td>douglas_rachford</td><td>200</td><td>0.08461538461538454</td><td>-0.5769230769230771</td><td>0.5830951894845302</td><td>1.8875832159447664e-16</td><td>2.7755575615628914e-16</td><td>4.002966042486721e-16</td></tr></tbody></table></div>
+<p>Tabel berikut memuat semua baris hasil eksperimen dengan tajuk kolom
+yang dapat ditelusuri oleh teknologi bantu.</p>
+</section>
+<section id="berkas-laboratorium-byte-identik" class="level2">
+<h2>Berkas laboratorium byte-identik</h2>
+<div id="lab-assets">
+
+</div>
+<ul class="lab-downloads"><li><a data-lab-path="labs/original-02/monotone-splitting-lab.py" href="data:text/x-python;base64,IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJEZXRlcm1pbmlzdGljIG9wZW4tY29tcHV0YXRpb24gbGFiIGZvciBPMDE1IE9yaWdpbmFsLTAyLgoKVGhlIGZyb3plbiB0d28tZGltZW5zaW9uYWwgaW5jbHVzaW9uIGNvbWJpbmVzIGEgc3Ryb25nbHkgbW9ub3RvbmUgbGluZWFyIG1hcAp3aXRoIGEgbm9uemVybyBza2V3IHBhcnQgYW5kIHRoZSBzdWJkaWZmZXJlbnRpYWwgb2YgdGhlIGwxIG5vcm0uICBJdCBjb21wYXJlcwpmb3J3YXJkLWJhY2t3YXJkIGluc2lkZSBhbmQgb3V0c2lkZSBpdHMgcHJvdmVkIHN0ZXAgcmFuZ2Ugd2l0aApEb3VnbGFzLVJhY2hmb3JkIHNwbGl0dGluZy4gIE51bVB5IHN1cHBsaWVzIHRoZSBvcGVuIGxpbmVhciBzb2x2ZXI7IGFuIGV4cGxpY2l0Cm5pbmUtcGF0dGVybiBhY3RpdmUtc2V0IGVudW1lcmF0aW9uIHN1cHBsaWVzIGFuIGluZGVwZW5kZW50IHJlZmVyZW5jZSBwb2ludC4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgY3N2CmltcG9ydCBqc29uCmltcG9ydCBtYXRoCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKaW1wb3J0IG51bXB5IGFzIG5wCgoKUk9PVCA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnRzWzJdCk9VVF9ESVIgPSBQYXRoKF9fZmlsZV9fKS5yZXNvbHZlKCkucGFyZW50CkpTT05fUEFUSCA9IE9VVF9ESVIgLyAicmVzdWx0cy5qc29uIgpDU1ZfUEFUSCA9IE9VVF9ESVIgLyAicmVzdWx0cy5jc3YiClNWR19QQVRIID0gT1VUX0RJUiAvICJyZXNpZHVhbC5zdmciCgpNVSA9IDEuMDAKT01FR0EgPSAxLjUwCkxBTUJEQSA9IDAuMjUKQl9WRUNUT1IgPSBucC5hcnJheShbMS4yMCwgLTAuNzBdLCBkdHlwZT1ucC5mbG9hdDY0KQpYMCA9IG5wLmFycmF5KFsyLjUwLCAtMi4wMF0sIGR0eXBlPW5wLmZsb2F0NjQpClkwID0gbnAuYXJyYXkoWzIuNTAsIC0yLjAwXSwgZHR5cGU9bnAuZmxvYXQ2NCkKRkJfU1RBQkxFX0dBTU1BID0gMC40MApGQl9ESUFHTk9TVElDX0dBTU1BID0gMC45MApEUl9HQU1NQSA9IDAuNzAKSVRFUkFUSU9OUyA9IDIwMApDSEVDS1BPSU5UUyA9ICgwLCAxLCAyLCA1LCAxMCwgMjAsIDQwLCA4MCwgMTIwLCAyMDApClNLRVdfR0FNTUEgPSAwLjYwClNLRVdfU1RFUFMgPSAzMApTS0VXX1gwID0gbnAuYXJyYXkoWzEuMjUsIC0wLjc1XSwgZHR5cGU9bnAuZmxvYXQ2NCkKCk1BVFJJWCA9IG5wLmFycmF5KFtbTVUsIC1PTUVHQV0sIFtPTUVHQSwgTVVdXSwgZHR5cGU9bnAuZmxvYXQ2NCkKQkVUQSA9IE1VIC8gKE1VICogTVUgKyBPTUVHQSAqIE9NRUdBKQpGQl9VUFBFUl9CT1VORCA9IDIuMCAqIEJFVEEKCgpkZWYgc29mdF90aHJlc2hvbGQoeDogbnAubmRhcnJheSwgdGhyZXNob2xkOiBmbG9hdCkgLT4gbnAubmRhcnJheToKICAgIHJldHVybiBucC5zaWduKHgpICogbnAubWF4aW11bShucC5hYnMoeCkgLSB0aHJlc2hvbGQsIDAuMCkKCgpkZWYgYWN0aXZlX3NldF9yZWZlcmVuY2UoKSAtPiB0dXBsZVtucC5uZGFycmF5LCB0dXBsZVtpbnQsIGludF0sIG5wLm5kYXJyYXldOgogICAgIiIiRW51bWVyYXRlIHNpZ24vemVybyBwYXR0ZXJucyBhbmQgcmV0dXJuIHRoZSB1bmlxdWUgaW5jbHVzaW9uIHNvbHV0aW9uLiIiIgogICAgY2FuZGlkYXRlczogbGlzdFt0dXBsZVtucC5uZGFycmF5LCB0dXBsZVtpbnQsIGludF0sIG5wLm5kYXJyYXldXSA9IFtdCiAgICBmb3IgczAgaW4gKC0xLCAwLCAxKToKICAgICAgICBmb3IgczEgaW4gKC0xLCAwLCAxKToKICAgICAgICAgICAgcGF0dGVybiA9IChzMCwgczEpCiAgICAgICAgICAgIGFjdGl2ZSA9IFtpbmRleCBmb3IgaW5kZXgsIHNpZ24gaW4gZW51bWVyYXRlKHBhdHRlcm4pIGlmIHNpZ25dCiAgICAgICAgICAgIHplcm8gPSBbaW5kZXggZm9yIGluZGV4LCBzaWduIGluIGVudW1lcmF0ZShwYXR0ZXJuKSBpZiBub3Qgc2lnbl0KICAgICAgICAgICAgeCA9IG5wLnplcm9zKDIsIGR0eXBlPW5wLmZsb2F0NjQpCiAgICAgICAgICAgIGlmIGFjdGl2ZToKICAgICAgICAgICAgICAgIGJsb2NrID0gTUFUUklYW25wLml4XyhhY3RpdmUsIGFjdGl2ZSldCiAgICAgICAgICAgICAgICByaHMgPSBCX1ZFQ1RPUlthY3RpdmVdIC0gTEFNQkRBICogbnAuYXJyYXkoCiAgICAgICAgICAgICAgICAgICAgW3BhdHRlcm5baW5kZXhdIGZvciBpbmRleCBpbiBhY3RpdmVdLCBkdHlwZT1ucC5mbG9hdDY0CiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICB4W2FjdGl2ZV0gPSBucC5saW5hbGcuc29sdmUoYmxvY2ssIHJocykKICAgICAgICAgICAgaWYgYW55KHhbaW5kZXhdICogcGF0dGVybltpbmRleF0gPD0gMWUtMTIgZm9yIGluZGV4IGluIGFjdGl2ZSk6CiAgICAgICAgICAgICAgICBjb250aW51ZQogICAgICAgICAgICByZXNpZHVhbCA9IE1BVFJJWCBAIHggLSBCX1ZFQ1RPUgogICAgICAgICAgICBpZiBhbnkoYWJzKHJlc2lkdWFsW2luZGV4XSkgPiBMQU1CREEgKyAxZS0xMSBmb3IgaW5kZXggaW4gemVybyk6CiAgICAgICAgICAgICAgICBjb250aW51ZQogICAgICAgICAgICBpZiBhbnkoCiAgICAgICAgICAgICAgICBhYnMocmVzaWR1YWxbaW5kZXhdICsgTEFNQkRBICogcGF0dGVybltpbmRleF0pID4gMWUtMTAKICAgICAgICAgICAgICAgIGZvciBpbmRleCBpbiBhY3RpdmUKICAgICAgICAgICAgKToKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIHN1YmdyYWRpZW50ID0gbnAuZW1wdHkoMiwgZHR5cGU9bnAuZmxvYXQ2NCkKICAgICAgICAgICAgZm9yIGluZGV4IGluIHJhbmdlKDIpOgogICAgICAgICAgICAgICAgaWYgcGF0dGVybltpbmRleF06CiAgICAgICAgICAgICAgICAgICAgc3ViZ3JhZGllbnRbaW5kZXhdID0gZmxvYXQocGF0dGVybltpbmRleF0pCiAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgIHN1YmdyYWRpZW50W2luZGV4XSA9IC1yZXNpZHVhbFtpbmRleF0gLyBMQU1CREEKICAgICAgICAgICAgY2FuZGlkYXRlcy5hcHBlbmQoKHgsIHBhdHRlcm4sIHN1YmdyYWRpZW50KSkKICAgIGlmIGxlbihjYW5kaWRhdGVzKSAhPSAxOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcihmIkV4cGVjdGVkIG9uZSBhY3RpdmUtc2V0IHNvbHV0aW9uLCBmb3VuZCB7bGVuKGNhbmRpZGF0ZXMpfSIpCiAgICByZXR1cm4gY2FuZGlkYXRlc1swXQoKClJFRkVSRU5DRSwgUkVGRVJFTkNFX1BBVFRFUk4sIFJFRkVSRU5DRV9TVUJHUkFESUVOVCA9IGFjdGl2ZV9zZXRfcmVmZXJlbmNlKCkKCgpkZWYgZml4ZWRfcG9pbnRfcmVzaWR1YWwoeDogbnAubmRhcnJheSwgZ2FtbWE6IGZsb2F0KSAtPiBmbG9hdDoKICAgIG1hcHBlZCA9IHNvZnRfdGhyZXNob2xkKAogICAgICAgIHggLSBnYW1tYSAqIChNQVRSSVggQCB4IC0gQl9WRUNUT1IpLCBnYW1tYSAqIExBTUJEQQogICAgKQogICAgcmV0dXJuIGZsb2F0KG5wLmxpbmFsZy5ub3JtKHggLSBtYXBwZWQpKQoKCmRlZiBpbmNsdXNpb25fcmVzaWR1YWwoeDogbnAubmRhcnJheSkgLT4gZmxvYXQ6CiAgICAiIiJUb2xlcmFuY2UtYWRqdXN0ZWQgZGlzdGFuY2UgZnJvbSB6ZXJvIHRvIE14LWIgKyBsYW1iZGEqcGFydGlhbCB8fHh8fF8xLiIiIgogICAgYWZmaW5lID0gTUFUUklYIEAgeCAtIEJfVkVDVE9SCiAgICBjZXJ0aWZpY2F0ZSA9IG5wLmVtcHR5KDIsIGR0eXBlPW5wLmZsb2F0NjQpCiAgICBmb3IgaW5kZXgsIHZhbHVlIGluIGVudW1lcmF0ZSh4KToKICAgICAgICBpZiB2YWx1ZSA+IDFlLTEyOgogICAgICAgICAgICBjZXJ0aWZpY2F0ZVtpbmRleF0gPSBhZmZpbmVbaW5kZXhdICsgTEFNQkRBCiAgICAgICAgZWxpZiB2YWx1ZSA8IC0xZS0xMjoKICAgICAgICAgICAgY2VydGlmaWNhdGVbaW5kZXhdID0gYWZmaW5lW2luZGV4XSAtIExBTUJEQQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGNlcnRpZmljYXRlW2luZGV4XSA9IG1hdGguY29weXNpZ24oCiAgICAgICAgICAgICAgICBtYXgoYWJzKGFmZmluZVtpbmRleF0pIC0gTEFNQkRBLCAwLjApLCBhZmZpbmVbaW5kZXhdCiAgICAgICAgICAgICkKICAgIHJldHVybiBmbG9hdChucC5saW5hbGcubm9ybShjZXJ0aWZpY2F0ZSkpCgoKZGVmIG9ic2VydmF0aW9uKG1ldGhvZDogc3RyLCBpdGVyYXRpb246IGludCwgeDogbnAubmRhcnJheSwgZ2FtbWE6IGZsb2F0KSAtPiBkaWN0OgogICAgcmV0dXJuIHsKICAgICAgICAibWV0aG9kIjogbWV0aG9kLAogICAgICAgICJpdGVyYXRpb24iOiBpdGVyYXRpb24sCiAgICAgICAgIngxIjogZmxvYXQoeFswXSksCiAgICAgICAgIngyIjogZmxvYXQoeFsxXSksCiAgICAgICAgIm5vcm0iOiBmbG9hdChucC5saW5hbGcubm9ybSh4KSksCiAgICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IGZsb2F0KG5wLmxpbmFsZy5ub3JtKHggLSBSRUZFUkVOQ0UpKSwKICAgICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiBmaXhlZF9wb2ludF9yZXNpZHVhbCh4LCBnYW1tYSksCiAgICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IGluY2x1c2lvbl9yZXNpZHVhbCh4KSwKICAgIH0KCgpkZWYgcnVuX2ZvcndhcmRfYmFja3dhcmQobmFtZTogc3RyLCBnYW1tYTogZmxvYXQpIC0+IGxpc3RbZGljdF06CiAgICB4ID0gWDAuY29weSgpCiAgICByb3dzID0gW10KICAgIGZvciBpdGVyYXRpb24gaW4gcmFuZ2UoSVRFUkFUSU9OUyArIDEpOgogICAgICAgIGlmIGl0ZXJhdGlvbiBpbiBDSEVDS1BPSU5UUzoKICAgICAgICAgICAgcm93cy5hcHBlbmQob2JzZXJ2YXRpb24obmFtZSwgaXRlcmF0aW9uLCB4LCBnYW1tYSkpCiAgICAgICAgaWYgaXRlcmF0aW9uIDwgSVRFUkFUSU9OUzoKICAgICAgICAgICAgeCA9IHNvZnRfdGhyZXNob2xkKAogICAgICAgICAgICAgICAgeCAtIGdhbW1hICogKE1BVFJJWCBAIHggLSBCX1ZFQ1RPUiksIGdhbW1hICogTEFNQkRBCiAgICAgICAgICAgICkKICAgIHJldHVybiByb3dzCgoKZGVmIHJlc29sdmVudF9saW5lYXIodjogbnAubmRhcnJheSwgZ2FtbWE6IGZsb2F0KSAtPiBucC5uZGFycmF5OgogICAgcmV0dXJuIG5wLmxpbmFsZy5zb2x2ZSgKICAgICAgICBucC5leWUoMiwgZHR5cGU9bnAuZmxvYXQ2NCkgKyBnYW1tYSAqIE1BVFJJWCwKICAgICAgICB2ICsgZ2FtbWEgKiBCX1ZFQ1RPUiwKICAgICkKCgpkZWYgcnVuX2RvdWdsYXNfcmFjaGZvcmQoKSAtPiBsaXN0W2RpY3RdOgogICAgeSA9IFkwLmNvcHkoKQogICAgcm93cyA9IFtdCiAgICBmb3IgaXRlcmF0aW9uIGluIHJhbmdlKElURVJBVElPTlMgKyAxKToKICAgICAgICBzaGFkb3cgPSBzb2Z0X3RocmVzaG9sZCh5LCBEUl9HQU1NQSAqIExBTUJEQSkKICAgICAgICBpZiBpdGVyYXRpb24gaW4gQ0hFQ0tQT0lOVFM6CiAgICAgICAgICAgIHJvd3MuYXBwZW5kKAogICAgICAgICAgICAgICAgb2JzZXJ2YXRpb24oImRvdWdsYXNfcmFjaGZvcmQiLCBpdGVyYXRpb24sIHNoYWRvdywgRFJfR0FNTUEpCiAgICAgICAgICAgICkKICAgICAgICBpZiBpdGVyYXRpb24gPCBJVEVSQVRJT05TOgogICAgICAgICAgICByZWZsZWN0ZWQgPSAyLjAgKiBzaGFkb3cgLSB5CiAgICAgICAgICAgIG90aGVyID0gcmVzb2x2ZW50X2xpbmVhcihyZWZsZWN0ZWQsIERSX0dBTU1BKQogICAgICAgICAgICB5ID0geSArIG90aGVyIC0gc2hhZG93CiAgICByZXR1cm4gcm93cwoKCmRlZiBza2V3X2RpYWdub3N0aWMoKSAtPiBkaWN0OgogICAgIiIiQ29tcGFyZSBleGFjdCBhbmQgbnVtZXJpY2FsIGNvbnRyYWN0aW9uIGZhY3RvcnMgZm9yIHRoZSB1bml0IHJvdGF0aW9uLiIiIgogICAgcm90YXRpb24gPSBucC5hcnJheShbWzAuMCwgLTEuMF0sIFsxLjAsIDAuMF1dLCBkdHlwZT1ucC5mbG9hdDY0KQogICAgaWRlbnRpdHkgPSBucC5leWUoMiwgZHR5cGU9bnAuZmxvYXQ2NCkKICAgIGZvcndhcmRfbWFwID0gaWRlbnRpdHkgLSBTS0VXX0dBTU1BICogcm90YXRpb24KICAgIGV4dHJhZ3JhZGllbnRfbWFwID0gKAogICAgICAgICgxLjAgLSBTS0VXX0dBTU1BICogU0tFV19HQU1NQSkgKiBpZGVudGl0eQogICAgICAgIC0gU0tFV19HQU1NQSAqIHJvdGF0aW9uCiAgICApCiAgICByZXNvbHZlbnRfbWFwID0gbnAubGluYWxnLmludihpZGVudGl0eSArIFNLRVdfR0FNTUEgKiByb3RhdGlvbikKICAgIGV4YWN0ID0gewogICAgICAgICJmb3J3YXJkIjogbWF0aC5zcXJ0KDEuMCArIFNLRVdfR0FNTUEgKiBTS0VXX0dBTU1BKSwKICAgICAgICAiZXh0cmFncmFkaWVudCI6IG1hdGguc3FydCgKICAgICAgICAgICAgMS4wIC0gU0tFV19HQU1NQSAqIFNLRVdfR0FNTUEgKyBTS0VXX0dBTU1BKio0CiAgICAgICAgKSwKICAgICAgICAicmVzb2x2ZW50IjogMS4wIC8gbWF0aC5zcXJ0KDEuMCArIFNLRVdfR0FNTUEgKiBTS0VXX0dBTU1BKSwKICAgIH0KICAgIG1hcHMgPSB7CiAgICAgICAgImZvcndhcmQiOiBmb3J3YXJkX21hcCwKICAgICAgICAiZXh0cmFncmFkaWVudCI6IGV4dHJhZ3JhZGllbnRfbWFwLAogICAgICAgICJyZXNvbHZlbnQiOiByZXNvbHZlbnRfbWFwLAogICAgfQogICAgbWV0aG9kcyA9IHt9CiAgICBpbml0aWFsX25vcm0gPSBmbG9hdChucC5saW5hbGcubm9ybShTS0VXX1gwKSkKICAgIGZvciBuYW1lLCBvcGVyYXRvciBpbiBtYXBzLml0ZW1zKCk6CiAgICAgICAgeCA9IFNLRVdfWDAuY29weSgpCiAgICAgICAgZmlyc3QgPSBvcGVyYXRvciBAIHgKICAgICAgICBudW1lcmljYWxfZmFjdG9yID0gZmxvYXQobnAubGluYWxnLm5vcm0oZmlyc3QpIC8gaW5pdGlhbF9ub3JtKQogICAgICAgIGZvciBfIGluIHJhbmdlKFNLRVdfU1RFUFMpOgogICAgICAgICAgICB4ID0gb3BlcmF0b3IgQCB4CiAgICAgICAgbWV0aG9kc1tuYW1lXSA9IHsKICAgICAgICAgICAgImV4YWN0X29uZV9zdGVwX2ZhY3RvciI6IGV4YWN0W25hbWVdLAogICAgICAgICAgICAibnVtZXJpY2FsX29uZV9zdGVwX2ZhY3RvciI6IG51bWVyaWNhbF9mYWN0b3IsCiAgICAgICAgICAgICJmYWN0b3JfYWJzb2x1dGVfZXJyb3IiOiBhYnMobnVtZXJpY2FsX2ZhY3RvciAtIGV4YWN0W25hbWVdKSwKICAgICAgICAgICAgImZpbmFsX25vcm0iOiBmbG9hdChucC5saW5hbGcubm9ybSh4KSksCiAgICAgICAgICAgICJleGFjdF9maW5hbF9ub3JtIjogaW5pdGlhbF9ub3JtICogZXhhY3RbbmFtZV0gKiogU0tFV19TVEVQUywKICAgICAgICB9CiAgICAgICAgaWYgbWV0aG9kc1tuYW1lXVsiZmFjdG9yX2Fic29sdXRlX2Vycm9yIl0gPiAxZS0xNDoKICAgICAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKGYiU2tldyBvbmUtc3RlcCBpZGVudGl0eSBmYWlsZWQgZm9yIHtuYW1lfSIpCiAgICAgICAgaWYgYWJzKG1ldGhvZHNbbmFtZV1bImZpbmFsX25vcm0iXSAtIG1ldGhvZHNbbmFtZV1bImV4YWN0X2ZpbmFsX25vcm0iXSkgPiAoCiAgICAgICAgICAgIDFlLTEyICogbWF4KDEuMCwgbWV0aG9kc1tuYW1lXVsiZXhhY3RfZmluYWxfbm9ybSJdKQogICAgICAgICk6CiAgICAgICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcihmIlNrZXcgbXVsdGktc3RlcCBpZGVudGl0eSBmYWlsZWQgZm9yIHtuYW1lfSIpCiAgICBpZiBub3QgbWV0aG9kc1siZm9yd2FyZCJdWyJleGFjdF9vbmVfc3RlcF9mYWN0b3IiXSA+IDEuMDoKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoIkZyb3plbiBza2V3IGZvcndhcmQgbWFwIGlzIG5vdCBleHBhbnNpdmUiKQogICAgaWYgbm90IG1ldGhvZHNbImV4dHJhZ3JhZGllbnQiXVsiZXhhY3Rfb25lX3N0ZXBfZmFjdG9yIl0gPCAxLjA6CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKCJGcm96ZW4gc2tldyBleHRyYWdyYWRpZW50IG1hcCBpcyBub3QgY29udHJhY3RpdmUiKQogICAgaWYgbm90IG1ldGhvZHNbInJlc29sdmVudCJdWyJleGFjdF9vbmVfc3RlcF9mYWN0b3IiXSA8IDEuMDoKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoIkZyb3plbiBza2V3IHJlc29sdmVudCBtYXAgaXMgbm90IGNvbnRyYWN0aXZlIikKICAgIHJldHVybiB7CiAgICAgICAgImdhbW1hIjogU0tFV19HQU1NQSwKICAgICAgICAic3RlcHMiOiBTS0VXX1NURVBTLAogICAgICAgICJpbml0aWFsIjogU0tFV19YMC50b2xpc3QoKSwKICAgICAgICAiaW5pdGlhbF9ub3JtIjogaW5pdGlhbF9ub3JtLAogICAgICAgICJtZXRob2RzIjogbWV0aG9kcywKICAgICAgICAiaW50ZXJwcmV0YXRpb24iOiAoCiAgICAgICAgICAgICJGb3IgdGhlIG1vbm90b25lIDEtTGlwc2NoaXR6IHNrZXcgbWFwLCB0aGUgcGxhaW4gZm9yd2FyZCBzdGVwICIKICAgICAgICAgICAgImV4cGFuZHMgd2hpbGUgZXh0cmFncmFkaWVudCBhbmQgdGhlIHJlc29sdmVudCBjb250cmFjdC4iCiAgICAgICAgKSwKICAgIH0KCgpkZWYgbWFrZV9zdmcocm93czogbGlzdFtkaWN0XSkgLT4gc3RyOgogICAgd2lkdGgsIGhlaWdodCA9IDkwMCwgNTIwCiAgICBsZWZ0LCByaWdodCwgdG9wLCBib3R0b20gPSA4OCwgMzUsIDQyLCA3NAogICAgcGxvdF93ID0gd2lkdGggLSBsZWZ0IC0gcmlnaHQKICAgIHBsb3RfaCA9IGhlaWdodCAtIHRvcCAtIGJvdHRvbQogICAgY29sb3JzID0gewogICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSI6ICIjMWY3N2I0IiwKICAgICAgICAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIjogIiNjMDNkM2UiLAogICAgICAgICJkb3VnbGFzX3JhY2hmb3JkIjogIiMyYjhhM2UiLAogICAgfQogICAgbGFiZWxzID0gewogICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSI6ICJNYWp1LS1tdW5kdXI6IGxhbmdrYWggZGl0ZXJpbWEiLAogICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiOiAiTWFqdS0tbXVuZHVyOiBkaSBsdWFyIGphbWluYW4iLAogICAgICAgICJkb3VnbGFzX3JhY2hmb3JkIjogIkRvdWdsYXMtLVJhY2hmb3JkIiwKICAgIH0KICAgIGdyb3VwZWQgPSB7CiAgICAgICAgbWV0aG9kOiBbcm93IGZvciByb3cgaW4gcm93cyBpZiByb3dbIm1ldGhvZCJdID09IG1ldGhvZF0KICAgICAgICBmb3IgbWV0aG9kIGluIGNvbG9ycwogICAgfQogICAgcG9zaXRpdmUgPSBbCiAgICAgICAgbWF4KGZsb2F0KHJvd1siaW5jbHVzaW9uX3Jlc2lkdWFsIl0pLCAxZS0xNikKICAgICAgICBmb3Igcm93IGluIHJvd3MKICAgICAgICBpZiBtYXRoLmlzZmluaXRlKGZsb2F0KHJvd1siaW5jbHVzaW9uX3Jlc2lkdWFsIl0pKQogICAgXQogICAgbG9nX21pbiA9IG1pbigtMTQuMCwgbWF0aC5mbG9vcihtYXRoLmxvZzEwKG1pbihwb3NpdGl2ZSkpKSkKICAgIGxvZ19tYXggPSBtYXgoMS4wLCBtYXRoLmNlaWwobWF0aC5sb2cxMChtYXgocG9zaXRpdmUpKSkpCgogICAgZGVmIHBvaW50KGl0ZXJhdGlvbjogaW50LCByZXNpZHVhbDogZmxvYXQpIC0+IHR1cGxlW2Zsb2F0LCBmbG9hdF06CiAgICAgICAgeCA9IGxlZnQgKyBwbG90X3cgKiBpdGVyYXRpb24gLyBJVEVSQVRJT05TCiAgICAgICAgdmFsdWUgPSBtaW4obWF4KG1hdGgubG9nMTAobWF4KHJlc2lkdWFsLCAxZS0xNikpLCBsb2dfbWluKSwgbG9nX21heCkKICAgICAgICB5ID0gdG9wICsgcGxvdF9oICogKGxvZ19tYXggLSB2YWx1ZSkgLyAobG9nX21heCAtIGxvZ19taW4pCiAgICAgICAgcmV0dXJuIHgsIHkKCiAgICBwYXJ0cyA9IFsKICAgICAgICAnPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4nLAogICAgICAgIGYnPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSJ7d2lkdGh9IiBoZWlnaHQ9IntoZWlnaHR9IiB2aWV3Qm94PSIwIDAge3dpZHRofSB7aGVpZ2h0fSIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPicsCiAgICAgICAgJzx0aXRsZSBpZD0idGl0bGUiPlJlc2lkdSBpbmtsdXNpIG9wZXJhdG9yIG1vbm90b248L3RpdGxlPicsCiAgICAgICAgJzxkZXNjIGlkPSJkZXNjIj5QZXJiYW5kaW5nYW4gcmVzaWR1IG1hanUtLW11bmR1ciBkZW5nYW4gbGFuZ2thaCBkaXRlcmltYSwgbGFuZ2thaCBkaSBsdWFyIGphbWluYW4sIGRhbiBEb3VnbGFzLS1SYWNoZm9yZC48L2Rlc2M+JywKICAgICAgICAnPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZmZmZiIvPicsCiAgICAgICAgZic8dGV4dCB4PSJ7d2lkdGgvMn0iIHk9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMxODIyMzUiPlJlc2lkdSBpbmtsdXNpIHRlcmhhZGFwIGl0ZXJhc2k8L3RleHQ+JywKICAgIF0KICAgIGZvciBleHBvbmVudCBpbiByYW5nZShpbnQobG9nX21pbiksIGludChsb2dfbWF4KSArIDEsIDIpOgogICAgICAgIHkgPSBwb2ludCgwLCAxMC4wKipleHBvbmVudClbMV0KICAgICAgICBwYXJ0cy5hcHBlbmQoCiAgICAgICAgICAgIGYnPGxpbmUgeDE9IntsZWZ0fSIgeDI9IntsZWZ0K3Bsb3Rfd30iIHkxPSJ7eTouMmZ9IiB5Mj0ie3k6LjJmfSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4nCiAgICAgICAgKQogICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgZic8dGV4dCB4PSJ7bGVmdC0xMH0iIHk9Int5KzQ6LjJmfSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF57ZXhwb25lbnR9PC90ZXh0PicKICAgICAgICApCiAgICBmb3IgaXRlcmF0aW9uIGluICgwLCA1MCwgMTAwLCAxNTAsIDIwMCk6CiAgICAgICAgeCA9IHBvaW50KGl0ZXJhdGlvbiwgMS4wKVswXQogICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgZic8bGluZSB4MT0ie3g6LjJmfSIgeDI9Int4Oi4yZn0iIHkxPSJ7dG9wfSIgeTI9Int0b3ArcGxvdF9ofSIgc3Ryb2tlPSIjZWVmMWY1IiBzdHJva2Utd2lkdGg9IjEiLz4nCiAgICAgICAgKQogICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgZic8dGV4dCB4PSJ7eDouMmZ9IiB5PSJ7dG9wK3Bsb3RfaCsyNH0iIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+e2l0ZXJhdGlvbn08L3RleHQ+JwogICAgICAgICkKICAgIHBhcnRzLmV4dGVuZCgKICAgICAgICBbCiAgICAgICAgICAgIGYnPGxpbmUgeDE9IntsZWZ0fSIgeDI9IntsZWZ0fSIgeTE9Int0b3B9IiB5Mj0ie3RvcCtwbG90X2h9IiBzdHJva2U9IiMxODIyMzUiIHN0cm9rZS13aWR0aD0iMS41Ii8+JywKICAgICAgICAgICAgZic8bGluZSB4MT0ie2xlZnR9IiB4Mj0ie2xlZnQrcGxvdF93fSIgeTE9Int0b3ArcGxvdF9ofSIgeTI9Int0b3ArcGxvdF9ofSIgc3Ryb2tlPSIjMTgyMjM1IiBzdHJva2Utd2lkdGg9IjEuNSIvPicsCiAgICAgICAgICAgIGYnPHRleHQgeD0ie2xlZnQrcGxvdF93LzJ9IiB5PSJ7aGVpZ2h0LTI0fSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMTgyMjM1Ij5JdGVyYXNpPC90ZXh0PicsCiAgICAgICAgICAgIGYnPHRleHQgeD0iMjIiIHk9Int0b3ArcGxvdF9oLzJ9IiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMjIge3RvcCtwbG90X2gvMn0pIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMxODIyMzUiPlJlc2lkdSBpbmtsdXNpIChza2FsYSBsb2cpPC90ZXh0PicsCiAgICAgICAgXQogICAgKQogICAgZm9yIG1ldGhvZCwgbWV0aG9kX3Jvd3MgaW4gZ3JvdXBlZC5pdGVtcygpOgogICAgICAgIHBvaW50cyA9ICIgIi5qb2luKAogICAgICAgICAgICBmJ3twb2ludChpbnQocm93WyJpdGVyYXRpb24iXSksIGZsb2F0KHJvd1siaW5jbHVzaW9uX3Jlc2lkdWFsIl0pKVswXTouMmZ9LHtwb2ludChpbnQocm93WyJpdGVyYXRpb24iXSksIGZsb2F0KHJvd1siaW5jbHVzaW9uX3Jlc2lkdWFsIl0pKVsxXTouMmZ9JwogICAgICAgICAgICBmb3Igcm93IGluIG1ldGhvZF9yb3dzCiAgICAgICAgKQogICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgZic8cG9seWxpbmUgcG9pbnRzPSJ7cG9pbnRzfSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ7Y29sb3JzW21ldGhvZF19IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPicKICAgICAgICApCiAgICAgICAgZm9yIHJvdyBpbiBtZXRob2Rfcm93czoKICAgICAgICAgICAgeCwgeSA9IHBvaW50KGludChyb3dbIml0ZXJhdGlvbiJdKSwgZmxvYXQocm93WyJpbmNsdXNpb25fcmVzaWR1YWwiXSkpCiAgICAgICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgICAgIGYnPGNpcmNsZSBjeD0ie3g6LjJmfSIgY3k9Int5Oi4yZn0iIHI9IjMuMiIgZmlsbD0ie2NvbG9yc1ttZXRob2RdfSIvPicKICAgICAgICAgICAgKQogICAgbGVnZW5kX3gsIGxlZ2VuZF95ID0gbGVmdCArIDE4LCB0b3AgKyAxOAogICAgcGFydHMuYXBwZW5kKAogICAgICAgIGYnPHJlY3QgeD0ie2xlZ2VuZF94LTEwfSIgeT0ie2xlZ2VuZF95LTE1fSIgd2lkdGg9IjM0NSIgaGVpZ2h0PSI4MiIgcng9IjUiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC45MiIgc3Ryb2tlPSIjY2JkNWUxIi8+JwogICAgKQogICAgZm9yIGluZGV4LCBtZXRob2QgaW4gZW51bWVyYXRlKGNvbG9ycyk6CiAgICAgICAgeSA9IGxlZ2VuZF95ICsgMjQgKiBpbmRleAogICAgICAgIHBhcnRzLmFwcGVuZCgKICAgICAgICAgICAgZic8bGluZSB4MT0ie2xlZ2VuZF94fSIgeDI9IntsZWdlbmRfeCsyNn0iIHkxPSJ7eX0iIHkyPSJ7eX0iIHN0cm9rZT0ie2NvbG9yc1ttZXRob2RdfSIgc3Ryb2tlLXdpZHRoPSIzIi8+JwogICAgICAgICkKICAgICAgICBwYXJ0cy5hcHBlbmQoCiAgICAgICAgICAgIGYnPHRleHQgeD0ie2xlZ2VuZF94KzM2fSIgeT0ie3krNH0iIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzE4MjIzNSI+e2xhYmVsc1ttZXRob2RdfTwvdGV4dD4nCiAgICAgICAgKQogICAgcGFydHMuYXBwZW5kKCI8L3N2Zz4iKQogICAgcmV0dXJuICJcbiIuam9pbihwYXJ0cykgKyAiXG4iCgoKZGVmIG1haW4oKSAtPiBOb25lOgogICAgaWYgbm90IEZCX1NUQUJMRV9HQU1NQSA8IEZCX1VQUEVSX0JPVU5EOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiRnJvemVuIHN0YWJsZSBzdGVwIGlzIG91dHNpZGUgdGhlIHByb3ZlZCByYW5nZSIpCiAgICBpZiBub3QgRkJfRElBR05PU1RJQ19HQU1NQSA+IEZCX1VQUEVSX0JPVU5EOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiRnJvemVuIGRpYWdub3N0aWMgc3RlcCBpcyBub3Qgb3V0c2lkZSB0aGUgcHJvdmVkIHJhbmdlIikKICAgIHJlZmVyZW5jZV9yZXNpZHVhbCA9IGluY2x1c2lvbl9yZXNpZHVhbChSRUZFUkVOQ0UpCiAgICBpZiByZWZlcmVuY2VfcmVzaWR1YWwgPiAxZS0xMToKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoZiJBY3RpdmUtc2V0IHJlZmVyZW5jZSByZXNpZHVhbCB0b28gbGFyZ2U6IHtyZWZlcmVuY2VfcmVzaWR1YWx9IikKCiAgICByb3dzID0gKAogICAgICAgIHJ1bl9mb3J3YXJkX2JhY2t3YXJkKCJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsIEZCX1NUQUJMRV9HQU1NQSkKICAgICAgICArIHJ1bl9mb3J3YXJkX2JhY2t3YXJkKAogICAgICAgICAgICAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwgRkJfRElBR05PU1RJQ19HQU1NQQogICAgICAgICkKICAgICAgICArIHJ1bl9kb3VnbGFzX3JhY2hmb3JkKCkKICAgICkKICAgIGZpbmFsID0ge3Jvd1sibWV0aG9kIl06IHJvdyBmb3Igcm93IGluIHJvd3MgaWYgcm93WyJpdGVyYXRpb24iXSA9PSBJVEVSQVRJT05TfQogICAgaWYgZmluYWxbImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIl1bImluY2x1c2lvbl9yZXNpZHVhbCJdID4gMWUtMTA6CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKCJTdGFibGUgZm9yd2FyZC1iYWNrd2FyZCBkaWQgbm90IHJlYWNoIHRoZSBmcm96ZW4gdG9sZXJhbmNlIikKICAgIGlmIGZpbmFsWyJkb3VnbGFzX3JhY2hmb3JkIl1bImluY2x1c2lvbl9yZXNpZHVhbCJdID4gMWUtMTA6CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKCJEb3VnbGFzLVJhY2hmb3JkIGRpZCBub3QgcmVhY2ggdGhlIGZyb3plbiB0b2xlcmFuY2UiKQogICAgb3V0c2lkZV9pbml0aWFsID0gbmV4dCgKICAgICAgICByb3cKICAgICAgICBmb3Igcm93IGluIHJvd3MKICAgICAgICBpZiByb3dbIm1ldGhvZCJdID09ICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiCiAgICAgICAgYW5kIHJvd1siaXRlcmF0aW9uIl0gPT0gMAogICAgKQogICAgaWYgbm90ICgKICAgICAgICBmaW5hbFsiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIl1bImluY2x1c2lvbl9yZXNpZHVhbCJdCiAgICAgICAgPiBvdXRzaWRlX2luaXRpYWxbImluY2x1c2lvbl9yZXNpZHVhbCJdCiAgICApOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiT3V0c2lkZS1yYW5nZSBkaWFnbm9zdGljIGRpZCBub3QgZXhoaWJpdCByZXNpZHVhbCBncm93dGgiKQoKICAgIHJlc29sdmVudF9wcm9iZSA9IG5wLmFycmF5KFswLjcsIC0xLjFdLCBkdHlwZT1ucC5mbG9hdDY0KQogICAgcmVzb2x2ZWQgPSByZXNvbHZlbnRfbGluZWFyKHJlc29sdmVudF9wcm9iZSwgRFJfR0FNTUEpCiAgICByZXNvbHZlbnRfaWRlbnRpdHlfZXJyb3IgPSBmbG9hdCgKICAgICAgICBucC5saW5hbGcubm9ybSgKICAgICAgICAgICAgcmVzb2x2ZWQKICAgICAgICAgICAgKyBEUl9HQU1NQSAqIChNQVRSSVggQCByZXNvbHZlZCAtIEJfVkVDVE9SKQogICAgICAgICAgICAtIHJlc29sdmVudF9wcm9iZQogICAgICAgICkKICAgICkKICAgIGlmIHJlc29sdmVudF9pZGVudGl0eV9lcnJvciA+IDFlLTEyOgogICAgICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiTGluZWFyIHJlc29sdmVudCBpZGVudGl0eSBmYWlsZWQiKQogICAgc2tldyA9IHNrZXdfZGlhZ25vc3RpYygpCgogICAgcGF5bG9hZCA9IHsKICAgICAgICAic2NoZW1hIjogIm8wMTUtb3JpZ2luYWwtMDItbW9ub3RvbmUtc3BsaXR0aW5nLWxhYi12MSIsCiAgICAgICAgInJlc3VsdCI6ICJwYXNzIiwKICAgICAgICAicGFyYW1ldGVycyI6IHsKICAgICAgICAgICAgIm11IjogTVUsCiAgICAgICAgICAgICJvbWVnYSI6IE9NRUdBLAogICAgICAgICAgICAibGFtYmRhIjogTEFNQkRBLAogICAgICAgICAgICAiYiI6IEJfVkVDVE9SLnRvbGlzdCgpLAogICAgICAgICAgICAieDAiOiBYMC50b2xpc3QoKSwKICAgICAgICAgICAgInkwIjogWTAudG9saXN0KCksCiAgICAgICAgICAgICJpdGVyYXRpb25zIjogSVRFUkFUSU9OUywKICAgICAgICAgICAgImNoZWNrcG9pbnRzIjogbGlzdChDSEVDS1BPSU5UUyksCiAgICAgICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZV9nYW1tYSI6IEZCX1NUQUJMRV9HQU1NQSwKICAgICAgICAgICAgImZvcndhcmRfYmFja3dhcmRfZGlhZ25vc3RpY19nYW1tYSI6IEZCX0RJQUdOT1NUSUNfR0FNTUEsCiAgICAgICAgICAgICJkb3VnbGFzX3JhY2hmb3JkX2dhbW1hIjogRFJfR0FNTUEsCiAgICAgICAgfSwKICAgICAgICAidGhlb3J5IjogewogICAgICAgICAgICAiYmV0YSI6IEJFVEEsCiAgICAgICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3VwcGVyX2JvdW5kIjogRkJfVVBQRVJfQk9VTkQsCiAgICAgICAgICAgICJzdGFibGVfc3RlcF9pbnNpZGVfb3Blbl9pbnRlcnZhbCI6IFRydWUsCiAgICAgICAgICAgICJkaWFnbm9zdGljX3N0ZXBfb3V0c2lkZV9wcm92ZWRfaW50ZXJ2YWwiOiBUcnVlLAogICAgICAgIH0sCiAgICAgICAgInJlZmVyZW5jZSI6IHsKICAgICAgICAgICAgIm1ldGhvZCI6ICJjb21wbGV0ZV9hY3RpdmVfc2V0X2VudW1lcmF0aW9uIiwKICAgICAgICAgICAgInBhdHRlcm4iOiBsaXN0KFJFRkVSRU5DRV9QQVRURVJOKSwKICAgICAgICAgICAgIngiOiBSRUZFUkVOQ0UudG9saXN0KCksCiAgICAgICAgICAgICJzdWJncmFkaWVudCI6IFJFRkVSRU5DRV9TVUJHUkFESUVOVC50b2xpc3QoKSwKICAgICAgICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IHJlZmVyZW5jZV9yZXNpZHVhbCwKICAgICAgICB9LAogICAgICAgICJyZXNvbHZlbnRfcHJvYmUiOiB7CiAgICAgICAgICAgICJpbnB1dCI6IHJlc29sdmVudF9wcm9iZS50b2xpc3QoKSwKICAgICAgICAgICAgIm91dHB1dCI6IHJlc29sdmVkLnRvbGlzdCgpLAogICAgICAgICAgICAiaWRlbnRpdHlfZXJyb3IiOiByZXNvbHZlbnRfaWRlbnRpdHlfZXJyb3IsCiAgICAgICAgfSwKICAgICAgICAicHVyZV9za2V3X2RpYWdub3N0aWMiOiBza2V3LAogICAgICAgICJmaW5hbCI6IGZpbmFsLAogICAgICAgICJyb3dzIjogcm93cywKICAgICAgICAiaW50ZXJwcmV0YXRpb24iOiB7CiAgICAgICAgICAgICJhY2NlcHRlZF9tZXRob2RzIjogWwogICAgICAgICAgICAgICAgImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIiwKICAgICAgICAgICAgICAgICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImRpYWdub3N0aWNfb25seSI6ICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiLAogICAgICAgICAgICAiY2xhaW1fYm91bmRhcnkiOiAoCiAgICAgICAgICAgICAgICAiVGhlIG91dHNpZGUtcmFuZ2UgdHJhY2UgaXMgYSBmcm96ZW4gY291bnRlcmRpYWdub3N0aWMsIG5vdCBhICIKICAgICAgICAgICAgICAgICJjbGFpbSB0aGF0IGV2ZXJ5IHN0ZXAgb3V0c2lkZSB0aGUgc3VmZmljaWVudCBpbnRlcnZhbCBkaXZlcmdlcy4iCiAgICAgICAgICAgICksCiAgICAgICAgfSwKICAgICAgICAiZGVwZW5kZW5jaWVzIjogewogICAgICAgICAgICAicHl0aG9uIjogInN0YW5kYXJkIGxpYnJhcnkiLAogICAgICAgICAgICAibnVtcHkiOiBucC5fX3ZlcnNpb25fXywKICAgICAgICB9LAogICAgICAgICJ1cHN0cmVhbV9jb250YWN0IjogRmFsc2UsCiAgICB9CiAgICBPVVRfRElSLm1rZGlyKHBhcmVudHM9VHJ1ZSwgZXhpc3Rfb2s9VHJ1ZSkKICAgIEpTT05fUEFUSC53cml0ZV90ZXh0KAogICAgICAgIGpzb24uZHVtcHMocGF5bG9hZCwgZW5zdXJlX2FzY2lpPUZhbHNlLCBpbmRlbnQ9Miwgc29ydF9rZXlzPVRydWUpICsgIlxuIiwKICAgICAgICBlbmNvZGluZz0idXRmLTgiLAogICAgICAgIG5ld2xpbmU9IlxuIiwKICAgICkKICAgIGZpZWxkbmFtZXMgPSBsaXN0KHJvd3NbMF0ua2V5cygpKQogICAgd2l0aCBDU1ZfUEFUSC5vcGVuKCJ3IiwgZW5jb2Rpbmc9InV0Zi04IiwgbmV3bGluZT0iIikgYXMgc3RyZWFtOgogICAgICAgIHdyaXRlciA9IGNzdi5EaWN0V3JpdGVyKHN0cmVhbSwgZmllbGRuYW1lcz1maWVsZG5hbWVzLCBsaW5ldGVybWluYXRvcj0iXG4iKQogICAgICAgIHdyaXRlci53cml0ZWhlYWRlcigpCiAgICAgICAgd3JpdGVyLndyaXRlcm93cyhyb3dzKQogICAgU1ZHX1BBVEgud3JpdGVfdGV4dChtYWtlX3N2Zyhyb3dzKSwgZW5jb2Rpbmc9InV0Zi04IiwgbmV3bGluZT0iXG4iKQogICAgcHJpbnQoCiAgICAgICAganNvbi5kdW1wcygKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInJlc3VsdCI6ICJwYXNzIiwKICAgICAgICAgICAgICAgICJiZXRhIjogQkVUQSwKICAgICAgICAgICAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3VwcGVyX2JvdW5kIjogRkJfVVBQRVJfQk9VTkQsCiAgICAgICAgICAgICAgICAicmVmZXJlbmNlIjogUkVGRVJFTkNFLnRvbGlzdCgpLAogICAgICAgICAgICAgICAgImZpbmFsX3Jlc2lkdWFscyI6IHsKICAgICAgICAgICAgICAgICAgICBtZXRob2Q6IHZhbHVlc1siaW5jbHVzaW9uX3Jlc2lkdWFsIl0KICAgICAgICAgICAgICAgICAgICBmb3IgbWV0aG9kLCB2YWx1ZXMgaW4gZmluYWwuaXRlbXMoKQogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgc29ydF9rZXlzPVRydWUsCiAgICAgICAgKQogICAgKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBtYWluKCkK" download="monotone-splitting-lab.py"><code>monotone-splitting-lab.py</code></a> — 17904 byte; SHA-256 <code>1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119</code></li><li><a data-lab-path="labs/original-02/results.json" href="data:application/json;base64,ewogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAibnVtcHkiOiAiMi40LjQiLAogICAgInB5dGhvbiI6ICJzdGFuZGFyZCBsaWJyYXJ5IgogIH0sCiAgImZpbmFsIjogewogICAgImRvdWdsYXNfcmFjaGZvcmQiOiB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjg4NzU4MzIxNTk0NDc2NjRlLTE2LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAyLjc3NTU1NzU2MTU2Mjg5MTRlLTE2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNC4wMDI5NjYwNDI0ODY3MjFlLTE2LAogICAgICAiaXRlcmF0aW9uIjogMjAwLAogICAgICAibWV0aG9kIjogImRvdWdsYXNfcmFjaGZvcmQiLAogICAgICAibm9ybSI6IDAuNTgzMDk1MTg5NDg0NTMwMiwKICAgICAgIngxIjogMC4wODQ2MTUzODQ2MTUzODQ1NCwKICAgICAgIngyIjogLTAuNTc2OTIzMDc2OTIzMDc3MQogICAgfSwKICAgICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiOiB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiA0LjAwNDg5MTU2MTI4MzY0OGUrMjYsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDYuNDk3OTI4ODQ0NTk2NTVlKzI2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNy4yMTk5MjA5Mzg0NDA2MTFlKzI2LAogICAgICAiaXRlcmF0aW9uIjogMjAwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSIsCiAgICAgICJub3JtIjogNC4wMDQ4OTE1NjEyODM2NDhlKzI2LAogICAgICAieDEiOiAtOS44ODI5Mjk4NDk1MDI0OTdlKzI1LAogICAgICAieDIiOiAzLjg4MTAzNTA5MzA1Njg4OTRlKzI2CiAgICB9LAogICAgImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIjogewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMy4xNzgwMTM0MDc5ODk1MTA2ZS0xNSwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMi40MDE3Nzk2MjU0OTIwMzNlLTE1LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNS44MjEwMDAwMDU5NzU4ODdlLTE1LAogICAgICAiaXRlcmF0aW9uIjogMjAwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIiwKICAgICAgIm5vcm0iOiAwLjU4MzA5NTE4OTQ4NDUzMDUsCiAgICAgICJ4MSI6IDAuMDg0NjE1Mzg0NjE1Mzg3ODcsCiAgICAgICJ4MiI6IC0wLjU3NjkyMzA3NjkyMzA3NwogICAgfQogIH0sCiAgImludGVycHJldGF0aW9uIjogewogICAgImFjY2VwdGVkX21ldGhvZHMiOiBbCiAgICAgICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsCiAgICAgICJkb3VnbGFzX3JhY2hmb3JkIgogICAgXSwKICAgICJjbGFpbV9ib3VuZGFyeSI6ICJUaGUgb3V0c2lkZS1yYW5nZSB0cmFjZSBpcyBhIGZyb3plbiBjb3VudGVyZGlhZ25vc3RpYywgbm90IGEgY2xhaW0gdGhhdCBldmVyeSBzdGVwIG91dHNpZGUgdGhlIHN1ZmZpY2llbnQgaW50ZXJ2YWwgZGl2ZXJnZXMuIiwKICAgICJkaWFnbm9zdGljX29ubHkiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIgogIH0sCiAgInBhcmFtZXRlcnMiOiB7CiAgICAiYiI6IFsKICAgICAgMS4yLAogICAgICAtMC43CiAgICBdLAogICAgImNoZWNrcG9pbnRzIjogWwogICAgICAwLAogICAgICAxLAogICAgICAyLAogICAgICA1LAogICAgICAxMCwKICAgICAgMjAsCiAgICAgIDQwLAogICAgICA4MCwKICAgICAgMTIwLAogICAgICAyMDAKICAgIF0sCiAgICAiZG91Z2xhc19yYWNoZm9yZF9nYW1tYSI6IDAuNywKICAgICJmb3J3YXJkX2JhY2t3YXJkX2RpYWdub3N0aWNfZ2FtbWEiOiAwLjksCiAgICAiZm9yd2FyZF9iYWNrd2FyZF9zdGFibGVfZ2FtbWEiOiAwLjQsCiAgICAiaXRlcmF0aW9ucyI6IDIwMCwKICAgICJsYW1iZGEiOiAwLjI1LAogICAgIm11IjogMS4wLAogICAgIm9tZWdhIjogMS41LAogICAgIngwIjogWwogICAgICAyLjUsCiAgICAgIC0yLjAKICAgIF0sCiAgICAieTAiOiBbCiAgICAgIDIuNSwKICAgICAgLTIuMAogICAgXQogIH0sCiAgInB1cmVfc2tld19kaWFnbm9zdGljIjogewogICAgImdhbW1hIjogMC42LAogICAgImluaXRpYWwiOiBbCiAgICAgIDEuMjUsCiAgICAgIC0wLjc1CiAgICBdLAogICAgImluaXRpYWxfbm9ybSI6IDEuNDU3NzM3OTczNzExMzI1MiwKICAgICJpbnRlcnByZXRhdGlvbiI6ICJGb3IgdGhlIG1vbm90b25lIDEtTGlwc2NoaXR6IHNrZXcgbWFwLCB0aGUgcGxhaW4gZm9yd2FyZCBzdGVwIGV4cGFuZHMgd2hpbGUgZXh0cmFncmFkaWVudCBhbmQgdGhlIHJlc29sdmVudCBjb250cmFjdC4iLAogICAgIm1ldGhvZHMiOiB7CiAgICAgICJleHRyYWdyYWRpZW50IjogewogICAgICAgICJleGFjdF9maW5hbF9ub3JtIjogMC4wMjg2ODUwMzI5MjA1NTY3MywKICAgICAgICAiZXhhY3Rfb25lX3N0ZXBfZmFjdG9yIjogMC44NzcyNjg0ODc5Nzg0NTI0LAogICAgICAgICJmYWN0b3JfYWJzb2x1dGVfZXJyb3IiOiAwLjAsCiAgICAgICAgImZpbmFsX25vcm0iOiAwLjAyODY4NTAzMjkyMDU1NjcxMywKICAgICAgICAibnVtZXJpY2FsX29uZV9zdGVwX2ZhY3RvciI6IDAuODc3MjY4NDg3OTc4NDUyNAogICAgICB9LAogICAgICAiZm9yd2FyZCI6IHsKICAgICAgICAiZXhhY3RfZmluYWxfbm9ybSI6IDE0Ni44MTI1MTk4MTc5OTUzNCwKICAgICAgICAiZXhhY3Rfb25lX3N0ZXBfZmFjdG9yIjogMS4xNjYxOTAzNzg5NjkwNiwKICAgICAgICAiZmFjdG9yX2Fic29sdXRlX2Vycm9yIjogMC4wLAogICAgICAgICJmaW5hbF9ub3JtIjogMTQ2LjgxMjUxOTgxNzk5NTgyLAogICAgICAgICJudW1lcmljYWxfb25lX3N0ZXBfZmFjdG9yIjogMS4xNjYxOTAzNzg5NjkwNgogICAgICB9LAogICAgICAicmVzb2x2ZW50IjogewogICAgICAgICJleGFjdF9maW5hbF9ub3JtIjogMC4wMTQ0NzQyNDI0MDU0NDU5NTUsCiAgICAgICAgImV4YWN0X29uZV9zdGVwX2ZhY3RvciI6IDAuODU3NDkyOTI1NzEyNTQ0MywKICAgICAgICAiZmFjdG9yX2Fic29sdXRlX2Vycm9yIjogMi4yMjA0NDYwNDkyNTAzMTNlLTE2LAogICAgICAgICJmaW5hbF9ub3JtIjogMC4wMTQ0NzQyNDI0MDU0NDU5MTUsCiAgICAgICAgIm51bWVyaWNhbF9vbmVfc3RlcF9mYWN0b3IiOiAwLjg1NzQ5MjkyNTcxMjU0NDEKICAgICAgfQogICAgfSwKICAgICJzdGVwcyI6IDMwCiAgfSwKICAicmVmZXJlbmNlIjogewogICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDEuMTEwMjIzMDI0NjI1MTU2NWUtMTYsCiAgICAibWV0aG9kIjogImNvbXBsZXRlX2FjdGl2ZV9zZXRfZW51bWVyYXRpb24iLAogICAgInBhdHRlcm4iOiBbCiAgICAgIDEsCiAgICAgIC0xCiAgICBdLAogICAgInN1YmdyYWRpZW50IjogWwogICAgICAxLjAsCiAgICAgIC0xLjAKICAgIF0sCiAgICAieCI6IFsKICAgICAgMC4wODQ2MTUzODQ2MTUzODQ2OSwKICAgICAgLTAuNTc2OTIzMDc2OTIzMDc3CiAgICBdCiAgfSwKICAicmVzb2x2ZW50X3Byb2JlIjogewogICAgImlkZW50aXR5X2Vycm9yIjogNC4wMDI5NjYwNDI0ODY3MjFlLTE2LAogICAgImlucHV0IjogWwogICAgICAwLjcsCiAgICAgIC0xLjEKICAgIF0sCiAgICAib3V0cHV0IjogWwogICAgICAwLjIzNzU3MDQ0NDU4MzU5NDQxLAogICAgICAtMS4wODIwMjg4MDQwMDc1MTQxCiAgICBdCiAgfSwKICAicmVzdWx0IjogInBhc3MiLAogICJyb3dzIjogWwogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMi44MDM0MzE5NjI2NTQxMjY0LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAyLjAyMTU4MzUzNzcyNDgyMDQsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiA1LjA1Mzk1ODg0NDMxMjA1LAogICAgICAiaXRlcmF0aW9uIjogMCwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsCiAgICAgICJub3JtIjogMy4yMDE1NjIxMTg3MTY0MjQzLAogICAgICAieDEiOiAyLjUsCiAgICAgICJ4MiI6IC0yLjAKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAyLjM3ODc5MDkwMTY2NTQxNCwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMS41Mjc5MDU3NTYyNTU5MjgyLAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNC4yODg0MjYyODQ3ODA5MzMsCiAgICAgICJpdGVyYXRpb24iOiAxLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIiwKICAgICAgIm5vcm0iOiAyLjk1OTE4OTA3ODEwOTA2OSwKICAgICAgIngxIjogMC42OCwKICAgICAgIngyIjogLTIuODgKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjkyNDY3NjM1NjQwOTg0NDYsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDEuMjk2NDcxMDI1NTE1MDMyNywKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDMuMjQxMTc3NTYzNzg3NTgxNSwKICAgICAgIml0ZXJhdGlvbiI6IDIsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUiLAogICAgICAibm9ybSI6IDIuNDMxMzQ4NTk2OTcyNDcwNCwKICAgICAgIngxIjogLTAuNzQsCiAgICAgICJ4MiI6IC0yLjMxNgogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDAuNjQ5MDU0MjQ4NTM0Njg0MSwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMC40NjgwMzk2NzQ3Mjk5MTAxNSwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDEuNDYxNDExNjgyOTMxMjY3OCwKICAgICAgIml0ZXJhdGlvbiI6IDUsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUiLAogICAgICAibm9ybSI6IDAuMDY2NTkyMDAwMDAwMDAwMiwKICAgICAgIngxIjogLTAuMCwKICAgICAgIngyIjogMC4wNjY1OTIwMDAwMDAwMDAyCiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMC4yNDE3NjgzMDA5NTc0MjcyLAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAwLjE0MTM2MDMxMDI3MjAwMDAyLAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMC4zNTM0MDA3NzU2ODAwMDAxNywKICAgICAgIml0ZXJhdGlvbiI6IDEwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIiwKICAgICAgIm5vcm0iOiAwLjgwMzQwMDc3NTY4MDAwMDEsCiAgICAgICJ4MSI6IDAuMCwKICAgICAgIngyIjogLTAuODAzNDAwNzc1NjgwMDAwMQogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDAuMDIyNzM5NTYwNjgyODQ4ODQsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDAuMDE2Mzk3NzMwNDA0NzA3MjMyLAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMC4wNDA5OTQzMjYwMTE3NjgxMiwKICAgICAgIml0ZXJhdGlvbiI6IDIwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfc3RhYmxlIiwKICAgICAgIm5vcm0iOiAwLjU4MDMxMjIyMzE2OTU1NzEsCiAgICAgICJ4MSI6IDAuMDYxODc1OTY3OTk5OTk5OTc2LAogICAgICAieDIiOiAtMC41NzcwMDQwMjE2MDEyODU2CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMC4wMDA4NTEzNDc4MzE5NTAzODk2LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAwLjAwMDYxMzkxNTY1MjI3MDUyOTYsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiAwLjAwMTUzNDc4OTEzMDY3NjIzMTMsCiAgICAgICJpdGVyYXRpb24iOiA0MCwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsCiAgICAgICJub3JtIjogMC41ODMyMTYzNDE4NTQ2Mjg2LAogICAgICAieDEiOiAwLjA4NTQ2NjcyNzA1MzU4NDMsCiAgICAgICJ4MiI6IC0wLjU3NjkyMDA0NjQzMDIxNjQKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjE5MzMyMDExOTU1NjUwODhlLTA2LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiA4LjYwNTE1Mzc1OTA1ODQyNWUtMDcsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiAyLjE1MTI4ODQzOTcxMDY1MmUtMDYsCiAgICAgICJpdGVyYXRpb24iOiA4MCwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsCiAgICAgICJub3JtIjogMC41ODMwOTUzNTg0NDk0ODA3LAogICAgICAieDEiOiAwLjA4NDYxNjU3NzkyNzk0MzkxLAogICAgICAieDIiOiAtMC41NzY5MjMwNzI2NzUyODUzCiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMS42NzI2NTY5NjYwNjMyNDMyZS0wOSwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMS4yMDYxNzAxNzY4NDU3OTExZS0wOSwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDMuMDE1NDI1MzcyNDkwMjg0OGUtMDksCiAgICAgICJpdGVyYXRpb24iOiAxMjAsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUiLAogICAgICAibm9ybSI6IDAuNTgzMDk1MTg5NzIxMzYzOCwKICAgICAgIngxIjogMC4wODQ2MTUzODYyODgwMzEwNiwKICAgICAgIngyIjogLTAuNTc2OTIzMDc2OTE3MTIyOQogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDMuMTc4MDEzNDA3OTg5NTEwNmUtMTUsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDIuNDAxNzc5NjI1NDkyMDMzZS0xNSwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDUuODIxMDAwMDA1OTc1ODg3ZS0xNSwKICAgICAgIml0ZXJhdGlvbiI6IDIwMCwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSIsCiAgICAgICJub3JtIjogMC41ODMwOTUxODk0ODQ1MzA1LAogICAgICAieDEiOiAwLjA4NDYxNTM4NDYxNTM4Nzg3LAogICAgICAieDIiOiAtMC41NzY5MjMwNzY5MjMwNzcKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAyLjgwMzQzMTk2MjY1NDEyNjQsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDQuMTQ4MDYyODAwODc0NjQ0LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNS4wNTM5NTg4NDQzMTIwNSwKICAgICAgIml0ZXJhdGlvbiI6IDAsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwKICAgICAgIm5vcm0iOiAzLjIwMTU2MjExODcxNjQyNDMsCiAgICAgICJ4MSI6IDIuNSwKICAgICAgIngyIjogLTIuMAogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDMuNjE4NDA5MzkzNDI5ODcyNCwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogNS4yNDI0MDM5MTU0Mjg0OTMsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiA2LjIzOTE0MTA2NjY4NTM4MSwKICAgICAgIml0ZXJhdGlvbiI6IDEsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwKICAgICAgIm5vcm0iOiA0LjE0MTQyNzg5Mzg1NDk2OCwKICAgICAgIngxIjogLTEuMTQ1LAogICAgICAieDIiOiAtMy45OAogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDQuMzU0ODM2OTYyMDg1NTA5LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiA2Ljc1NjIzNTA4ODcwOTI2MTUsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiA3Ljg4NTE1MDAzOTE5NTUxMSwKICAgICAgIml0ZXJhdGlvbiI6IDIsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwKICAgICAgIm5vcm0iOiA0LjE5MjczMjg1NzI3ODE3MywKICAgICAgIngxIjogLTQuMTgyNDk5OTk5OTk5OTk5LAogICAgICAieDIiOiAwLjI5Mjc0OTk5OTk5OTk5OTk1CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogOS45ODU0MTM4NzUzMzE3MiwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMTUuODI2MjUwODI1MjYzNDM0LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMTguMDAxNDYwODY3MTE5MDQ3LAogICAgICAiaXRlcmF0aW9uIjogNSwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiLAogICAgICAibm9ybSI6IDEwLjU2MzQ3MDI4ODczNTMzMywKICAgICAgIngxIjogMC4xODczOTM0Njg3NTAwMDAzNywKICAgICAgIngyIjogLTEwLjU2MTgwOAogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDQyLjAyNDYxNTY2NDAwNjM1LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiA2Ny44NTgwODkwMzU1NzI1LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNzUuODgyNDA5NjQ5ODY5NzEsCiAgICAgICJpdGVyYXRpb24iOiAxMCwKICAgICAgIm1ldGhvZCI6ICJmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UiLAogICAgICAibm9ybSI6IDQyLjE0NDQ1MTI1MzM1MjU2LAogICAgICAieDEiOiAtMzkuNDUxODM3NjY5MDA3MTI2LAogICAgICAieDIiOiAtMTQuODIyNTI1OTY1MDQ3OTI4CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogODQ5LjA1NTU4Njk5NTU4NzksCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDEzNzcuNTkxMDU0NTg0Mjk1OCwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDE1MzEuMDk4MTI1MTUyNTc4LAogICAgICAiaXRlcmF0aW9uIjogMjAsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwKICAgICAgIm5vcm0iOiA4NDguNTg3NzI2ODI2NzQ1NywKICAgICAgIngxIjogNDAyLjQ0MjI1MDU1ODEwNjgsCiAgICAgICJ4MiI6IDc0Ny4wODg1OTI1Mjg4MzA5CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMzYyMzAzLjg3MTUyMzc5NywKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogNTg3ODM3LjE1OTU0NjY0OTQsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiA2NTMxNTIuODYwNTE4MjYyOCwKICAgICAgIml0ZXJhdGlvbiI6IDQwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSIsCiAgICAgICJub3JtIjogMzYyMzAzLjQ4MjI2MTY0ODYzLAogICAgICAieDEiOiAtMzAxOTkyLjA2MDYwMzMyNzgsCiAgICAgICJ4MiI6IDIwMDE2MS40NTYzMDgzMzMxCiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogNjYwNjIwMDY4MzcuNDkwMTcsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDEwNzE4NTQ3ODg1NS4yNDA3OCwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDExOTA5NDk3NjUwNi4zMTE3NCwKICAgICAgIml0ZXJhdGlvbiI6IDgwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSIsCiAgICAgICJub3JtIjogNjYwNjIwMDY4MzcuOTUyMywKICAgICAgIngxIjogNDc0NTYyNDM5MTQuMTI1NiwKICAgICAgIngyIjogLTQ1OTU3NTIwMTc5LjE5MDE5CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMS4yMDQ1NjgyOTcxMzQ4MTU4ZSsxNiwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMS45NTQ0MDk3NDIwNTMwNjRlKzE2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMi4xNzE1NjYzODAwNTg5NmUrMTYsCiAgICAgICJpdGVyYXRpb24iOiAxMjAsCiAgICAgICJtZXRob2QiOiAiZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlIiwKICAgICAgIm5vcm0iOiAxLjIwNDU2ODI5NzEzNDgxNThlKzE2LAogICAgICAieDEiOiAtNjk3MzU0NjAxMDQ0OTg3OC4wLAogICAgICAieDIiOiA5ODIxODE5Mjk2MTU3MTgyLjAKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiA0LjAwNDg5MTU2MTI4MzY0OGUrMjYsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDYuNDk3OTI4ODQ0NTk2NTVlKzI2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNy4yMTk5MjA5Mzg0NDA2MTFlKzI2LAogICAgICAiaXRlcmF0aW9uIjogMjAwLAogICAgICAibWV0aG9kIjogImZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSIsCiAgICAgICJub3JtIjogNC4wMDQ4OTE1NjEyODM2NDhlKzI2LAogICAgICAieDEiOiAtOS44ODI5Mjk4NDk1MDI0OTdlKzI1LAogICAgICAieDIiOiAzLjg4MTAzNTA5MzA1Njg4OTRlKzI2CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMi41NjQ1Njk5ODk0NDY0MjQsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDIuOTI5MzgxODY3MzkxMTM5NiwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDQuNjIzMzQ0Mjk4MjMyNjExLAogICAgICAiaXRlcmF0aW9uIjogMCwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAyLjk1NTcxNDgwMzU2Mjc1MjMsCiAgICAgICJ4MSI6IDIuMzI1LAogICAgICAieDIiOiAtMS44MjUKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjI4MzQ4ODgzMDA2Mzk3NTcsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDEuMjcxMDczMTUxNjI5NzUxLAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMi4zMTM4NDIzOTQxNDA0NzU1LAogICAgICAiaXRlcmF0aW9uIjogMSwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAxLjg0MDE4MzIxNDg1ODA5MTQsCiAgICAgICJ4MSI6IDAuNzEwMzMxODcyMjYwNDg4NiwKICAgICAgIngyIjogLTEuNjk3NTU3OTIxMTAyMDY2NAogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDAuNjQyMzQ2ODk3Nzk0OTcxNiwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMC41NjcyNTMwNDU4OTkwOTkzLAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMS4xNTgwMDczMzgzMTc0OTg1LAogICAgICAiaXRlcmF0aW9uIjogMiwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAxLjIxOTk0NzY2MTQ2NjYzLAogICAgICAieDEiOiAwLjA1NjMyNTIwMTE3MzYxNTc4LAogICAgICAieDIiOiAtMS4yMTg2NDY2OTU0OTA4MDE3CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMC4wOTY5NzIyMjA3MDI0ODMxOCwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMC4xMjIzNzM0MDk5MTM0NDQ4OCwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDAuMTc0ODE5MTU3MDE5MjA2ODMsCiAgICAgICJpdGVyYXRpb24iOiA1LAogICAgICAibWV0aG9kIjogImRvdWdsYXNfcmFjaGZvcmQiLAogICAgICAibm9ybSI6IDAuNjI0MjkyMzUyNTU5OTQ1NSwKICAgICAgIngxIjogMC4wLAogICAgICAieDIiOiAtMC42MjQyOTIzNTI1NTk5NDU1CiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMC4wMDM5ODczMTQ1NzgzNzUyMjgsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDAuMDA1MDMxNzYzNTA3MzA3OTA2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogMC4wMDcxODgyMzM1ODE4Njg0MDcsCiAgICAgICJpdGVyYXRpb24iOiAxMCwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAwLjU4MDA4NjA1NzIwNjAzNjYsCiAgICAgICJ4MSI6IDAuMDg2NzU5NTQ1ODA3OTc5NzksCiAgICAgICJ4MiI6IC0wLjU3MzU2MTM0MzY5MDQ4ODEKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAzLjkzMDU3MzA5MDM1ODQ1M2UtMDYsCiAgICAgICJmaXhlZF9wb2ludF9yZXNpZHVhbCI6IDQuOTYwMTU4OTg2NTc1Nzc0ZS0wNiwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDcuMDg1OTQxNDA5NDM0NjMxZS0wNiwKICAgICAgIml0ZXJhdGlvbiI6IDIwLAogICAgICAibWV0aG9kIjogImRvdWdsYXNfcmFjaGZvcmQiLAogICAgICAibm9ybSI6IDAuNTgzMDkxMjYxNTgwMjQ5OCwKICAgICAgIngxIjogMC4wODQ2MTQ2NzEzMzQzMjU3NiwKICAgICAgIngyIjogLTAuNTc2OTE5MjExNjExMzIzOAogICAgfSwKICAgIHsKICAgICAgImVycm9yX3RvX3JlZmVyZW5jZSI6IDMuODE5NjIwNjIzMjQxMTZlLTEyLAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiA0LjgyMDE5NjEyODg3NDg2OWUtMTIsCiAgICAgICJpbmNsdXNpb25fcmVzaWR1YWwiOiA2Ljg4NTg2NzU4MjI4OTQ4MWUtMTIsCiAgICAgICJpdGVyYXRpb24iOiA0MCwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAwLjU4MzA5NTE4OTQ4NDQwMjMsCiAgICAgICJ4MSI6IDAuMDg0NjE1Mzg0NjExNTg5MDcsCiAgICAgICJ4MiI6IC0wLjU3NjkyMzA3NjkyMzUwNDUKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjg4NzU4MzIxNTk0NDc2NjRlLTE2LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAyLjc3NTU1NzU2MTU2Mjg5MTRlLTE2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNC4wMDI5NjYwNDI0ODY3MjFlLTE2LAogICAgICAiaXRlcmF0aW9uIjogODAsCiAgICAgICJtZXRob2QiOiAiZG91Z2xhc19yYWNoZm9yZCIsCiAgICAgICJub3JtIjogMC41ODMwOTUxODk0ODQ1MzAyLAogICAgICAieDEiOiAwLjA4NDYxNTM4NDYxNTM4NDU0LAogICAgICAieDIiOiAtMC41NzY5MjMwNzY5MjMwNzcxCiAgICB9LAogICAgewogICAgICAiZXJyb3JfdG9fcmVmZXJlbmNlIjogMS44ODc1ODMyMTU5NDQ3NjY0ZS0xNiwKICAgICAgImZpeGVkX3BvaW50X3Jlc2lkdWFsIjogMi43NzU1NTc1NjE1NjI4OTE0ZS0xNiwKICAgICAgImluY2x1c2lvbl9yZXNpZHVhbCI6IDQuMDAyOTY2MDQyNDg2NzIxZS0xNiwKICAgICAgIml0ZXJhdGlvbiI6IDEyMCwKICAgICAgIm1ldGhvZCI6ICJkb3VnbGFzX3JhY2hmb3JkIiwKICAgICAgIm5vcm0iOiAwLjU4MzA5NTE4OTQ4NDUzMDIsCiAgICAgICJ4MSI6IDAuMDg0NjE1Mzg0NjE1Mzg0NTQsCiAgICAgICJ4MiI6IC0wLjU3NjkyMzA3NjkyMzA3NzEKICAgIH0sCiAgICB7CiAgICAgICJlcnJvcl90b19yZWZlcmVuY2UiOiAxLjg4NzU4MzIxNTk0NDc2NjRlLTE2LAogICAgICAiZml4ZWRfcG9pbnRfcmVzaWR1YWwiOiAyLjc3NTU1NzU2MTU2Mjg5MTRlLTE2LAogICAgICAiaW5jbHVzaW9uX3Jlc2lkdWFsIjogNC4wMDI5NjYwNDI0ODY3MjFlLTE2LAogICAgICAiaXRlcmF0aW9uIjogMjAwLAogICAgICAibWV0aG9kIjogImRvdWdsYXNfcmFjaGZvcmQiLAogICAgICAibm9ybSI6IDAuNTgzMDk1MTg5NDg0NTMwMiwKICAgICAgIngxIjogMC4wODQ2MTUzODQ2MTUzODQ1NCwKICAgICAgIngyIjogLTAuNTc2OTIzMDc2OTIzMDc3MQogICAgfQogIF0sCiAgInNjaGVtYSI6ICJvMDE1LW9yaWdpbmFsLTAyLW1vbm90b25lLXNwbGl0dGluZy1sYWItdjEiLAogICJ0aGVvcnkiOiB7CiAgICAiYmV0YSI6IDAuMzA3NjkyMzA3NjkyMzA3NywKICAgICJkaWFnbm9zdGljX3N0ZXBfb3V0c2lkZV9wcm92ZWRfaW50ZXJ2YWwiOiB0cnVlLAogICAgImZvcndhcmRfYmFja3dhcmRfdXBwZXJfYm91bmQiOiAwLjYxNTM4NDYxNTM4NDYxNTQsCiAgICAic3RhYmxlX3N0ZXBfaW5zaWRlX29wZW5faW50ZXJ2YWwiOiB0cnVlCiAgfSwKICAidXBzdHJlYW1fY29udGFjdCI6IGZhbHNlCn0K" download="results.json"><code>results.json</code></a> — 13503 byte; SHA-256 <code>bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81</code></li><li><a data-lab-path="labs/original-02/results.csv" href="data:text/csv;base64,bWV0aG9kLGl0ZXJhdGlvbix4MSx4Mixub3JtLGVycm9yX3RvX3JlZmVyZW5jZSxmaXhlZF9wb2ludF9yZXNpZHVhbCxpbmNsdXNpb25fcmVzaWR1YWwKZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUsMCwyLjUsLTIuMCwzLjIwMTU2MjExODcxNjQyNDMsMi44MDM0MzE5NjI2NTQxMjY0LDIuMDIxNTgzNTM3NzI0ODIwNCw1LjA1Mzk1ODg0NDMxMjA1CmZvcndhcmRfYmFja3dhcmRfc3RhYmxlLDEsMC42OCwtMi44OCwyLjk1OTE4OTA3ODEwOTA2OSwyLjM3ODc5MDkwMTY2NTQxNCwxLjUyNzkwNTc1NjI1NTkyODIsNC4yODg0MjYyODQ3ODA5MzMKZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUsMiwtMC43NCwtMi4zMTYsMi40MzEzNDg1OTY5NzI0NzA0LDEuOTI0Njc2MzU2NDA5ODQ0NiwxLjI5NjQ3MTAyNTUxNTAzMjcsMy4yNDExNzc1NjM3ODc1ODE1CmZvcndhcmRfYmFja3dhcmRfc3RhYmxlLDUsLTAuMCwwLjA2NjU5MjAwMDAwMDAwMDIsMC4wNjY1OTIwMDAwMDAwMDAyLDAuNjQ5MDU0MjQ4NTM0Njg0MSwwLjQ2ODAzOTY3NDcyOTkxMDE1LDEuNDYxNDExNjgyOTMxMjY3OApmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSwxMCwwLjAsLTAuODAzNDAwNzc1NjgwMDAwMSwwLjgwMzQwMDc3NTY4MDAwMDEsMC4yNDE3NjgzMDA5NTc0MjcyLDAuMTQxMzYwMzEwMjcyMDAwMDIsMC4zNTM0MDA3NzU2ODAwMDAxNwpmb3J3YXJkX2JhY2t3YXJkX3N0YWJsZSwyMCwwLjA2MTg3NTk2Nzk5OTk5OTk3NiwtMC41NzcwMDQwMjE2MDEyODU2LDAuNTgwMzEyMjIzMTY5NTU3MSwwLjAyMjczOTU2MDY4Mjg0ODg0LDAuMDE2Mzk3NzMwNDA0NzA3MjMyLDAuMDQwOTk0MzI2MDExNzY4MTIKZm9yd2FyZF9iYWNrd2FyZF9zdGFibGUsNDAsMC4wODU0NjY3MjcwNTM1ODQzLC0wLjU3NjkyMDA0NjQzMDIxNjQsMC41ODMyMTYzNDE4NTQ2Mjg2LDAuMDAwODUxMzQ3ODMxOTUwMzg5NiwwLjAwMDYxMzkxNTY1MjI3MDUyOTYsMC4wMDE1MzQ3ODkxMzA2NzYyMzEzCmZvcndhcmRfYmFja3dhcmRfc3RhYmxlLDgwLDAuMDg0NjE2NTc3OTI3OTQzOTEsLTAuNTc2OTIzMDcyNjc1Mjg1MywwLjU4MzA5NTM1ODQ0OTQ4MDcsMS4xOTMzMjAxMTk1NTY1MDg4ZS0wNiw4LjYwNTE1Mzc1OTA1ODQyNWUtMDcsMi4xNTEyODg0Mzk3MTA2NTJlLTA2CmZvcndhcmRfYmFja3dhcmRfc3RhYmxlLDEyMCwwLjA4NDYxNTM4NjI4ODAzMTA2LC0wLjU3NjkyMzA3NjkxNzEyMjksMC41ODMwOTUxODk3MjEzNjM4LDEuNjcyNjU2OTY2MDYzMjQzMmUtMDksMS4yMDYxNzAxNzY4NDU3OTExZS0wOSwzLjAxNTQyNTM3MjQ5MDI4NDhlLTA5CmZvcndhcmRfYmFja3dhcmRfc3RhYmxlLDIwMCwwLjA4NDYxNTM4NDYxNTM4Nzg3LC0wLjU3NjkyMzA3NjkyMzA3NywwLjU4MzA5NTE4OTQ4NDUzMDUsMy4xNzgwMTM0MDc5ODk1MTA2ZS0xNSwyLjQwMTc3OTYyNTQ5MjAzM2UtMTUsNS44MjEwMDAwMDU5NzU4ODdlLTE1CmZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSwwLDIuNSwtMi4wLDMuMjAxNTYyMTE4NzE2NDI0MywyLjgwMzQzMTk2MjY1NDEyNjQsNC4xNDgwNjI4MDA4NzQ2NDQsNS4wNTM5NTg4NDQzMTIwNQpmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UsMSwtMS4xNDUsLTMuOTgsNC4xNDE0Mjc4OTM4NTQ5NjgsMy42MTg0MDkzOTM0Mjk4NzI0LDUuMjQyNDAzOTE1NDI4NDkzLDYuMjM5MTQxMDY2Njg1MzgxCmZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSwyLC00LjE4MjQ5OTk5OTk5OTk5OSwwLjI5Mjc0OTk5OTk5OTk5OTk1LDQuMTkyNzMyODU3Mjc4MTczLDQuMzU0ODM2OTYyMDg1NTA5LDYuNzU2MjM1MDg4NzA5MjYxNSw3Ljg4NTE1MDAzOTE5NTUxMQpmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UsNSwwLjE4NzM5MzQ2ODc1MDAwMDM3LC0xMC41NjE4MDgsMTAuNTYzNDcwMjg4NzM1MzMzLDkuOTg1NDEzODc1MzMxNzIsMTUuODI2MjUwODI1MjYzNDM0LDE4LjAwMTQ2MDg2NzExOTA0Nwpmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UsMTAsLTM5LjQ1MTgzNzY2OTAwNzEyNiwtMTQuODIyNTI1OTY1MDQ3OTI4LDQyLjE0NDQ1MTI1MzM1MjU2LDQyLjAyNDYxNTY2NDAwNjM1LDY3Ljg1ODA4OTAzNTU3MjUsNzUuODgyNDA5NjQ5ODY5NzEKZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlLDIwLDQwMi40NDIyNTA1NTgxMDY4LDc0Ny4wODg1OTI1Mjg4MzA5LDg0OC41ODc3MjY4MjY3NDU3LDg0OS4wNTU1ODY5OTU1ODc5LDEzNzcuNTkxMDU0NTg0Mjk1OCwxNTMxLjA5ODEyNTE1MjU3OApmb3J3YXJkX2JhY2t3YXJkX291dHNpZGVfcmFuZ2UsNDAsLTMwMTk5Mi4wNjA2MDMzMjc4LDIwMDE2MS40NTYzMDgzMzMxLDM2MjMwMy40ODIyNjE2NDg2MywzNjIzMDMuODcxNTIzNzk3LDU4NzgzNy4xNTk1NDY2NDk0LDY1MzE1Mi44NjA1MTgyNjI4CmZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSw4MCw0NzQ1NjI0MzkxNC4xMjU2LC00NTk1NzUyMDE3OS4xOTAxOSw2NjA2MjAwNjgzNy45NTIzLDY2MDYyMDA2ODM3LjQ5MDE3LDEwNzE4NTQ3ODg1NS4yNDA3OCwxMTkwOTQ5NzY1MDYuMzExNzQKZm9yd2FyZF9iYWNrd2FyZF9vdXRzaWRlX3JhbmdlLDEyMCwtNjk3MzU0NjAxMDQ0OTg3OC4wLDk4MjE4MTkyOTYxNTcxODIuMCwxLjIwNDU2ODI5NzEzNDgxNThlKzE2LDEuMjA0NTY4Mjk3MTM0ODE1OGUrMTYsMS45NTQ0MDk3NDIwNTMwNjRlKzE2LDIuMTcxNTY2MzgwMDU4OTZlKzE2CmZvcndhcmRfYmFja3dhcmRfb3V0c2lkZV9yYW5nZSwyMDAsLTkuODgyOTI5ODQ5NTAyNDk3ZSsyNSwzLjg4MTAzNTA5MzA1Njg4OTRlKzI2LDQuMDA0ODkxNTYxMjgzNjQ4ZSsyNiw0LjAwNDg5MTU2MTI4MzY0OGUrMjYsNi40OTc5Mjg4NDQ1OTY1NWUrMjYsNy4yMTk5MjA5Mzg0NDA2MTFlKzI2CmRvdWdsYXNfcmFjaGZvcmQsMCwyLjMyNSwtMS44MjUsMi45NTU3MTQ4MDM1NjI3NTIzLDIuNTY0NTY5OTg5NDQ2NDI0LDIuOTI5MzgxODY3MzkxMTM5Niw0LjYyMzM0NDI5ODIzMjYxMQpkb3VnbGFzX3JhY2hmb3JkLDEsMC43MTAzMzE4NzIyNjA0ODg2LC0xLjY5NzU1NzkyMTEwMjA2NjQsMS44NDAxODMyMTQ4NTgwOTE0LDEuMjgzNDg4ODMwMDYzOTc1NywxLjI3MTA3MzE1MTYyOTc1MSwyLjMxMzg0MjM5NDE0MDQ3NTUKZG91Z2xhc19yYWNoZm9yZCwyLDAuMDU2MzI1MjAxMTczNjE1NzgsLTEuMjE4NjQ2Njk1NDkwODAxNywxLjIxOTk0NzY2MTQ2NjYzLDAuNjQyMzQ2ODk3Nzk0OTcxNiwwLjU2NzI1MzA0NTg5OTA5OTMsMS4xNTgwMDczMzgzMTc0OTg1CmRvdWdsYXNfcmFjaGZvcmQsNSwwLjAsLTAuNjI0MjkyMzUyNTU5OTQ1NSwwLjYyNDI5MjM1MjU1OTk0NTUsMC4wOTY5NzIyMjA3MDI0ODMxOCwwLjEyMjM3MzQwOTkxMzQ0NDg4LDAuMTc0ODE5MTU3MDE5MjA2ODMKZG91Z2xhc19yYWNoZm9yZCwxMCwwLjA4Njc1OTU0NTgwNzk3OTc5LC0wLjU3MzU2MTM0MzY5MDQ4ODEsMC41ODAwODYwNTcyMDYwMzY2LDAuMDAzOTg3MzE0NTc4Mzc1MjI4LDAuMDA1MDMxNzYzNTA3MzA3OTA2LDAuMDA3MTg4MjMzNTgxODY4NDA3CmRvdWdsYXNfcmFjaGZvcmQsMjAsMC4wODQ2MTQ2NzEzMzQzMjU3NiwtMC41NzY5MTkyMTE2MTEzMjM4LDAuNTgzMDkxMjYxNTgwMjQ5OCwzLjkzMDU3MzA5MDM1ODQ1M2UtMDYsNC45NjAxNTg5ODY1NzU3NzRlLTA2LDcuMDg1OTQxNDA5NDM0NjMxZS0wNgpkb3VnbGFzX3JhY2hmb3JkLDQwLDAuMDg0NjE1Mzg0NjExNTg5MDcsLTAuNTc2OTIzMDc2OTIzNTA0NSwwLjU4MzA5NTE4OTQ4NDQwMjMsMy44MTk2MjA2MjMyNDExNmUtMTIsNC44MjAxOTYxMjg4NzQ4NjllLTEyLDYuODg1ODY3NTgyMjg5NDgxZS0xMgpkb3VnbGFzX3JhY2hmb3JkLDgwLDAuMDg0NjE1Mzg0NjE1Mzg0NTQsLTAuNTc2OTIzMDc2OTIzMDc3MSwwLjU4MzA5NTE4OTQ4NDUzMDIsMS44ODc1ODMyMTU5NDQ3NjY0ZS0xNiwyLjc3NTU1NzU2MTU2Mjg5MTRlLTE2LDQuMDAyOTY2MDQyNDg2NzIxZS0xNgpkb3VnbGFzX3JhY2hmb3JkLDEyMCwwLjA4NDYxNTM4NDYxNTM4NDU0LC0wLjU3NjkyMzA3NjkyMzA3NzEsMC41ODMwOTUxODk0ODQ1MzAyLDEuODg3NTgzMjE1OTQ0NzY2NGUtMTYsMi43NzU1NTc1NjE1NjI4OTE0ZS0xNiw0LjAwMjk2NjA0MjQ4NjcyMWUtMTYKZG91Z2xhc19yYWNoZm9yZCwyMDAsMC4wODQ2MTUzODQ2MTUzODQ1NCwtMC41NzY5MjMwNzY5MjMwNzcxLDAuNTgzMDk1MTg5NDg0NTMwMiwxLjg4NzU4MzIxNTk0NDc2NjRlLTE2LDIuNzc1NTU3NTYxNTYyODkxNGUtMTYsNC4wMDI5NjYwNDI0ODY3MjFlLTE2Cg==" download="results.csv"><code>results.csv</code></a> — 4228 byte; SHA-256 <code>da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243</code></li><li><a data-lab-path="labs/original-02/residual.svg" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTIwIiB2aWV3Qm94PSIwIDAgOTAwIDUyMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgo8dGl0bGUgaWQ9InRpdGxlIj5SZXNpZHUgaW5rbHVzaSBvcGVyYXRvciBtb25vdG9uPC90aXRsZT4KPGRlc2MgaWQ9ImRlc2MiPlBlcmJhbmRpbmdhbiByZXNpZHUgbWFqdS0tbXVuZHVyIGRlbmdhbiBsYW5na2FoIGRpdGVyaW1hLCBsYW5na2FoIGRpIGx1YXIgamFtaW5hbiwgZGFuIERvdWdsYXMtLVJhY2hmb3JkLjwvZGVzYz4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZmZmZiIvPgo8dGV4dCB4PSI0NTAuMCIgeT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzE4MjIzNSI+UmVzaWR1IGlua2x1c2kgdGVyaGFkYXAgaXRlcmFzaTwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDQ2LjAwIiB5Mj0iNDQ2LjAwIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDUwLjAwIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDI3LjIxIiB5Mj0iNDI3LjIxIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDMxLjIxIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xNDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNDA4LjQyIiB5Mj0iNDA4LjQyIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNDEyLjQyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xMjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzg5LjYzIiB5Mj0iMzg5LjYzIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzkzLjYzIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0xMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzcwLjg0IiB5Mj0iMzcwLjg0IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzc0Ljg0IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi04PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIzNTIuMDUiIHkyPSIzNTIuMDUiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIzNTYuMDUiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeLTY8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjMzMy4yNiIgeTI9IjMzMy4yNiIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjMzNy4yNiIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4tNDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMzE0LjQ3IiB5Mj0iMzE0LjQ3IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMzE4LjQ3IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXi0yPC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIyOTUuNjciIHkyPSIyOTUuNjciIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIyOTkuNjciIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMjc2Ljg4IiB5Mj0iMjc2Ljg4IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMjgwLjg4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjI8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjI1OC4wOSIgeTI9IjI1OC4wOSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjI2Mi4wOSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF40PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIyMzkuMzAiIHkyPSIyMzkuMzAiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIyNDMuMzAiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMjIwLjUxIiB5Mj0iMjIwLjUxIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMjI0LjUxIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjg8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjIwMS43MiIgeTI9IjIwMS43MiIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjIwNS43MiIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4xMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMTgyLjkzIiB5Mj0iMTgyLjkzIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMTg2LjkzIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjEyPC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIxNjQuMTQiIHkyPSIxNjQuMTQiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIxNjguMTQiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMTQ8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9IjE0NS4zNSIgeTI9IjE0NS4zNSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9IjE0OS4zNSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4xNjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iMTI2LjU2IiB5Mj0iMTI2LjU2IiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iMTMwLjU2IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjE4PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSIxMDcuNzciIHkyPSIxMDcuNzciIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSIxMTEuNzciIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMjA8L3RleHQ+CjxsaW5lIHgxPSI4OCIgeDI9Ijg2NSIgeTE9Ijg4Ljk4IiB5Mj0iODguOTgiIHN0cm9rZT0iI2Q4ZGVlOCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijc4IiB5PSI5Mi45OCIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMF4yMjwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODY1IiB5MT0iNzAuMTkiIHkyPSI3MC4xOSIgc3Ryb2tlPSIjZDhkZWU4IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzgiIHk9Ijc0LjE5IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjEwXjI0PC90ZXh0Pgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSI1MS40MCIgeTI9IjUxLjQwIiBzdHJva2U9IiNkOGRlZTgiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI3OCIgeT0iNTUuNDAiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTBeMjY8L3RleHQ+CjxsaW5lIHgxPSI4OC4wMCIgeDI9Ijg4LjAwIiB5MT0iNDIiIHkyPSI0NDYiIHN0cm9rZT0iI2VlZjFmNSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijg4LjAwIiB5PSI0NzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MDwvdGV4dD4KPGxpbmUgeDE9IjI4Mi4yNSIgeDI9IjI4Mi4yNSIgeTE9IjQyIiB5Mj0iNDQ2IiBzdHJva2U9IiNlZWYxZjUiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSIyODIuMjUiIHk9IjQ3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij41MDwvdGV4dD4KPGxpbmUgeDE9IjQ3Ni41MCIgeDI9IjQ3Ni41MCIgeTE9IjQyIiB5Mj0iNDQ2IiBzdHJva2U9IiNlZWYxZjUiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI0NzYuNTAiIHk9IjQ3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTM2MTc2Ij4xMDA8L3RleHQ+CjxsaW5lIHgxPSI2NzAuNzUiIHgyPSI2NzAuNzUiIHkxPSI0MiIgeTI9IjQ0NiIgc3Ryb2tlPSIjZWVmMWY1IiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNjcwLjc1IiB5PSI0NzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzUzNjE3NiI+MTUwPC90ZXh0Pgo8bGluZSB4MT0iODY1LjAwIiB4Mj0iODY1LjAwIiB5MT0iNDIiIHkyPSI0NDYiIHN0cm9rZT0iI2VlZjFmNSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9Ijg2NS4wMCIgeT0iNDcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1MzYxNzYiPjIwMDwvdGV4dD4KPGxpbmUgeDE9Ijg4IiB4Mj0iODgiIHkxPSI0MiIgeTI9IjQ0NiIgc3Ryb2tlPSIjMTgyMjM1IiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8bGluZSB4MT0iODgiIHgyPSI4NjUiIHkxPSI0NDYiIHkyPSI0NDYiIHN0cm9rZT0iIzE4MjIzNSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHRleHQgeD0iNDc2LjUiIHk9IjQ5NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMTgyMjM1Ij5JdGVyYXNpPC90ZXh0Pgo8dGV4dCB4PSIyMiIgeT0iMjQ0LjAiIHRyYW5zZm9ybT0icm90YXRlKC05MCAyMiAyNDQuMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzE4MjIzNSI+UmVzaWR1IGlua2x1c2kgKHNrYWxhIGxvZyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9Ijg4LjAwLDI4OS4wNiA5MS44OSwyODkuNzMgOTUuNzcsMjkwLjg4IDEwNy40MiwyOTQuMTMgMTI2Ljg1LDI5OS45MiAxNjUuNzAsMzA4LjcxIDI0My40MCwzMjIuMTEgMzk4LjgwLDM0OC45MiA1NTQuMjAsMzc1LjczIDg2NS4wMCw0MjkuNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNzdiNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iODguMDAiIGN5PSIyODkuMDYiIHI9IjMuMiIgZmlsbD0iIzFmNzdiNCIvPgo8Y2lyY2xlIGN4PSI5MS44OSIgY3k9IjI4OS43MyIgcj0iMy4yIiBmaWxsPSIjMWY3N2I0Ii8+CjxjaXJjbGUgY3g9Ijk1Ljc3IiBjeT0iMjkwLjg4IiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTA3LjQyIiBjeT0iMjk0LjEzIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTI2Ljg1IiBjeT0iMjk5LjkyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMTY1LjcwIiBjeT0iMzA4LjcxIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMjQzLjQwIiBjeT0iMzIyLjExIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iMzk4LjgwIiBjeT0iMzQ4LjkyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iNTU0LjIwIiBjeT0iMzc1LjczIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPGNpcmNsZSBjeD0iODY1LjAwIiBjeT0iNDI5LjQyIiByPSIzLjIiIGZpbGw9IiMxZjc3YjQiLz4KPHBvbHlsaW5lIHBvaW50cz0iODguMDAsMjg5LjA2IDkxLjg5LDI4OC4yMCA5NS43NywyODcuMjUgMTA3LjQyLDI4My44OCAxMjYuODUsMjc4LjAxIDE2NS43MCwyNjUuNzUgMjQzLjQwLDI0MS4wNCAzOTguODAsMTkxLjYxIDU1NC4yMCwxNDIuMTggODY1LjAwLDQzLjMzIiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDNkM2UiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9Ijg4LjAwIiBjeT0iMjg5LjA2IiByPSIzLjIiIGZpbGw9IiNjMDNkM2UiLz4KPGNpcmNsZSBjeD0iOTEuODkiIGN5PSIyODguMjAiIHI9IjMuMiIgZmlsbD0iI2MwM2QzZSIvPgo8Y2lyY2xlIGN4PSI5NS43NyIgY3k9IjI4Ny4yNSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjEwNy40MiIgY3k9IjI4My44OCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjEyNi44NSIgY3k9IjI3OC4wMSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjE2NS43MCIgY3k9IjI2NS43NSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjI0My40MCIgY3k9IjI0MS4wNCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjM5OC44MCIgY3k9IjE5MS42MSIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9IjU1NC4yMCIgY3k9IjE0Mi4xOCIgcj0iMy4yIiBmaWxsPSIjYzAzZDNlIi8+CjxjaXJjbGUgY3g9Ijg2NS4wMCIgY3k9IjQzLjMzIiByPSIzLjIiIGZpbGw9IiNjMDNkM2UiLz4KPHBvbHlsaW5lIHBvaW50cz0iODguMDAsMjg5LjQzIDkxLjg5LDI5Mi4yNSA5NS43NywyOTUuMDggMTA3LjQyLDMwMi43OSAxMjYuODUsMzE1LjgxIDE2NS43MCwzNDQuMDYgMjQzLjQwLDQwMC41NSAzOTguODAsNDQwLjM0IDU1NC4yMCw0NDAuMzQgODY1LjAwLDQ0MC4zNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmI4YTNlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9IjI4OS40MyIgcj0iMy4yIiBmaWxsPSIjMmI4YTNlIi8+CjxjaXJjbGUgY3g9IjkxLjg5IiBjeT0iMjkyLjI1IiByPSIzLjIiIGZpbGw9IiMyYjhhM2UiLz4KPGNpcmNsZSBjeD0iOTUuNzciIGN5PSIyOTUuMDgiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxMDcuNDIiIGN5PSIzMDIuNzkiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxMjYuODUiIGN5PSIzMTUuODEiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIxNjUuNzAiIGN5PSIzNDQuMDYiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIyNDMuNDAiIGN5PSI0MDAuNTUiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSIzOTguODAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSI1NTQuMjAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8Y2lyY2xlIGN4PSI4NjUuMDAiIGN5PSI0NDAuMzQiIHI9IjMuMiIgZmlsbD0iIzJiOGEzZSIvPgo8cmVjdCB4PSI5NiIgeT0iNDUiIHdpZHRoPSIzNDUiIGhlaWdodD0iODIiIHJ4PSI1IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuOTIiIHN0cm9rZT0iI2NiZDVlMSIvPgo8bGluZSB4MT0iMTA2IiB4Mj0iMTMyIiB5MT0iNjAiIHkyPSI2MCIgc3Ryb2tlPSIjMWY3N2I0IiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iMTQyIiB5PSI2NCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMTgyMjM1Ij5NYWp1LS1tdW5kdXI6IGxhbmdrYWggZGl0ZXJpbWE8L3RleHQ+CjxsaW5lIHgxPSIxMDYiIHgyPSIxMzIiIHkxPSI4NCIgeTI9Ijg0IiBzdHJva2U9IiNjMDNkM2UiIHN0cm9rZS13aWR0aD0iMyIvPgo8dGV4dCB4PSIxNDIiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMxODIyMzUiPk1hanUtLW11bmR1cjogZGkgbHVhciBqYW1pbmFuPC90ZXh0Pgo8bGluZSB4MT0iMTA2IiB4Mj0iMTMyIiB5MT0iMTA4IiB5Mj0iMTA4IiBzdHJva2U9IiMyYjhhM2UiIHN0cm9rZS13aWR0aD0iMyIvPgo8dGV4dCB4PSIxNDIiIHk9IjExMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMTgyMjM1Ij5Eb3VnbGFzLS1SYWNoZm9yZDwvdGV4dD4KPC9zdmc+Cg==" download="residual.svg"><code>residual.svg</code></a> — 9538 byte; SHA-256 <code>c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5</code></li></ul>
+<p>Daftar berikut diikat oleh ukuran byte dan SHA-256. Pada HTML
+tautannya mengunduh berkas byte-identik; pada EPUB tautannya menuju
+representasi lengkap di dalam pembaca, sementara salinan byte-identik
+tetap termanifestasi.</p>
+</section>
+<section id="kode-program-python-lengkap" class="level2">
+<h2>Kode program Python lengkap</h2>
+<pre><code>#!/usr/bin/env python3
+&quot;&quot;&quot;Deterministic open-computation lab for O015 Original-02.
+
+The frozen two-dimensional inclusion combines a strongly monotone linear map
+with a nonzero skew part and the subdifferential of the l1 norm.  It compares
+forward-backward inside and outside its proved step range with
+Douglas-Rachford splitting.  NumPy supplies the open linear solver; an explicit
+nine-pattern active-set enumeration supplies an independent reference point.
+&quot;&quot;&quot;
+
+from __future__ import annotations
+
+import csv
+import json
+import math
+from pathlib import Path
+
+import numpy as np
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT_DIR = Path(__file__).resolve().parent
+JSON_PATH = OUT_DIR / &quot;results.json&quot;
+CSV_PATH = OUT_DIR / &quot;results.csv&quot;
+SVG_PATH = OUT_DIR / &quot;residual.svg&quot;
+
+MU = 1.00
+OMEGA = 1.50
+LAMBDA = 0.25
+B_VECTOR = np.array([1.20, -0.70], dtype=np.float64)
+X0 = np.array([2.50, -2.00], dtype=np.float64)
+Y0 = np.array([2.50, -2.00], dtype=np.float64)
+FB_STABLE_GAMMA = 0.40
+FB_DIAGNOSTIC_GAMMA = 0.90
+DR_GAMMA = 0.70
+ITERATIONS = 200
+CHECKPOINTS = (0, 1, 2, 5, 10, 20, 40, 80, 120, 200)
+SKEW_GAMMA = 0.60
+SKEW_STEPS = 30
+SKEW_X0 = np.array([1.25, -0.75], dtype=np.float64)
+
+MATRIX = np.array([[MU, -OMEGA], [OMEGA, MU]], dtype=np.float64)
+BETA = MU / (MU * MU + OMEGA * OMEGA)
+FB_UPPER_BOUND = 2.0 * BETA
+
+
+def soft_threshold(x: np.ndarray, threshold: float) -&gt; np.ndarray:
+    return np.sign(x) * np.maximum(np.abs(x) - threshold, 0.0)
+
+
+def active_set_reference() -&gt; tuple[np.ndarray, tuple[int, int], np.ndarray]:
+    &quot;&quot;&quot;Enumerate sign/zero patterns and return the unique inclusion solution.&quot;&quot;&quot;
+    candidates: list[tuple[np.ndarray, tuple[int, int], np.ndarray]] = []
+    for s0 in (-1, 0, 1):
+        for s1 in (-1, 0, 1):
+            pattern = (s0, s1)
+            active = [index for index, sign in enumerate(pattern) if sign]
+            zero = [index for index, sign in enumerate(pattern) if not sign]
+            x = np.zeros(2, dtype=np.float64)
+            if active:
+                block = MATRIX[np.ix_(active, active)]
+                rhs = B_VECTOR[active] - LAMBDA * np.array(
+                    [pattern[index] for index in active], dtype=np.float64
+                )
+                x[active] = np.linalg.solve(block, rhs)
+            if any(x[index] * pattern[index] &lt;= 1e-12 for index in active):
+                continue
+            residual = MATRIX @ x - B_VECTOR
+            if any(abs(residual[index]) &gt; LAMBDA + 1e-11 for index in zero):
+                continue
+            if any(
+                abs(residual[index] + LAMBDA * pattern[index]) &gt; 1e-10
+                for index in active
+            ):
+                continue
+            subgradient = np.empty(2, dtype=np.float64)
+            for index in range(2):
+                if pattern[index]:
+                    subgradient[index] = float(pattern[index])
+                else:
+                    subgradient[index] = -residual[index] / LAMBDA
+            candidates.append((x, pattern, subgradient))
+    if len(candidates) != 1:
+        raise RuntimeError(f&quot;Expected one active-set solution, found {len(candidates)}&quot;)
+    return candidates[0]
+
+
+REFERENCE, REFERENCE_PATTERN, REFERENCE_SUBGRADIENT = active_set_reference()
+
+
+def fixed_point_residual(x: np.ndarray, gamma: float) -&gt; float:
+    mapped = soft_threshold(
+        x - gamma * (MATRIX @ x - B_VECTOR), gamma * LAMBDA
+    )
+    return float(np.linalg.norm(x - mapped))
+
+
+def inclusion_residual(x: np.ndarray) -&gt; float:
+    &quot;&quot;&quot;Tolerance-adjusted distance from zero to Mx-b + lambda*partial ||x||_1.&quot;&quot;&quot;
+    affine = MATRIX @ x - B_VECTOR
+    certificate = np.empty(2, dtype=np.float64)
+    for index, value in enumerate(x):
+        if value &gt; 1e-12:
+            certificate[index] = affine[index] + LAMBDA
+        elif value &lt; -1e-12:
+            certificate[index] = affine[index] - LAMBDA
+        else:
+            certificate[index] = math.copysign(
+                max(abs(affine[index]) - LAMBDA, 0.0), affine[index]
+            )
+    return float(np.linalg.norm(certificate))
+
+
+def observation(method: str, iteration: int, x: np.ndarray, gamma: float) -&gt; dict:
+    return {
+        &quot;method&quot;: method,
+        &quot;iteration&quot;: iteration,
+        &quot;x1&quot;: float(x[0]),
+        &quot;x2&quot;: float(x[1]),
+        &quot;norm&quot;: float(np.linalg.norm(x)),
+        &quot;error_to_reference&quot;: float(np.linalg.norm(x - REFERENCE)),
+        &quot;fixed_point_residual&quot;: fixed_point_residual(x, gamma),
+        &quot;inclusion_residual&quot;: inclusion_residual(x),
+    }
+
+
+def run_forward_backward(name: str, gamma: float) -&gt; list[dict]:
+    x = X0.copy()
+    rows = []
+    for iteration in range(ITERATIONS + 1):
+        if iteration in CHECKPOINTS:
+            rows.append(observation(name, iteration, x, gamma))
+        if iteration &lt; ITERATIONS:
+            x = soft_threshold(
+                x - gamma * (MATRIX @ x - B_VECTOR), gamma * LAMBDA
+            )
+    return rows
+
+
+def resolvent_linear(v: np.ndarray, gamma: float) -&gt; np.ndarray:
+    return np.linalg.solve(
+        np.eye(2, dtype=np.float64) + gamma * MATRIX,
+        v + gamma * B_VECTOR,
+    )
+
+
+def run_douglas_rachford() -&gt; list[dict]:
+    y = Y0.copy()
+    rows = []
+    for iteration in range(ITERATIONS + 1):
+        shadow = soft_threshold(y, DR_GAMMA * LAMBDA)
+        if iteration in CHECKPOINTS:
+            rows.append(
+                observation(&quot;douglas_rachford&quot;, iteration, shadow, DR_GAMMA)
+            )
+        if iteration &lt; ITERATIONS:
+            reflected = 2.0 * shadow - y
+            other = resolvent_linear(reflected, DR_GAMMA)
+            y = y + other - shadow
+    return rows
+
+
+def skew_diagnostic() -&gt; dict:
+    &quot;&quot;&quot;Compare exact and numerical contraction factors for the unit rotation.&quot;&quot;&quot;
+    rotation = np.array([[0.0, -1.0], [1.0, 0.0]], dtype=np.float64)
+    identity = np.eye(2, dtype=np.float64)
+    forward_map = identity - SKEW_GAMMA * rotation
+    extragradient_map = (
+        (1.0 - SKEW_GAMMA * SKEW_GAMMA) * identity
+        - SKEW_GAMMA * rotation
+    )
+    resolvent_map = np.linalg.inv(identity + SKEW_GAMMA * rotation)
+    exact = {
+        &quot;forward&quot;: math.sqrt(1.0 + SKEW_GAMMA * SKEW_GAMMA),
+        &quot;extragradient&quot;: math.sqrt(
+            1.0 - SKEW_GAMMA * SKEW_GAMMA + SKEW_GAMMA**4
+        ),
+        &quot;resolvent&quot;: 1.0 / math.sqrt(1.0 + SKEW_GAMMA * SKEW_GAMMA),
+    }
+    maps = {
+        &quot;forward&quot;: forward_map,
+        &quot;extragradient&quot;: extragradient_map,
+        &quot;resolvent&quot;: resolvent_map,
+    }
+    methods = {}
+    initial_norm = float(np.linalg.norm(SKEW_X0))
+    for name, operator in maps.items():
+        x = SKEW_X0.copy()
+        first = operator @ x
+        numerical_factor = float(np.linalg.norm(first) / initial_norm)
+        for _ in range(SKEW_STEPS):
+            x = operator @ x
+        methods[name] = {
+            &quot;exact_one_step_factor&quot;: exact[name],
+            &quot;numerical_one_step_factor&quot;: numerical_factor,
+            &quot;factor_absolute_error&quot;: abs(numerical_factor - exact[name]),
+            &quot;final_norm&quot;: float(np.linalg.norm(x)),
+            &quot;exact_final_norm&quot;: initial_norm * exact[name] ** SKEW_STEPS,
+        }
+        if methods[name][&quot;factor_absolute_error&quot;] &gt; 1e-14:
+            raise RuntimeError(f&quot;Skew one-step identity failed for {name}&quot;)
+        if abs(methods[name][&quot;final_norm&quot;] - methods[name][&quot;exact_final_norm&quot;]) &gt; (
+            1e-12 * max(1.0, methods[name][&quot;exact_final_norm&quot;])
+        ):
+            raise RuntimeError(f&quot;Skew multi-step identity failed for {name}&quot;)
+    if not methods[&quot;forward&quot;][&quot;exact_one_step_factor&quot;] &gt; 1.0:
+        raise RuntimeError(&quot;Frozen skew forward map is not expansive&quot;)
+    if not methods[&quot;extragradient&quot;][&quot;exact_one_step_factor&quot;] &lt; 1.0:
+        raise RuntimeError(&quot;Frozen skew extragradient map is not contractive&quot;)
+    if not methods[&quot;resolvent&quot;][&quot;exact_one_step_factor&quot;] &lt; 1.0:
+        raise RuntimeError(&quot;Frozen skew resolvent map is not contractive&quot;)
+    return {
+        &quot;gamma&quot;: SKEW_GAMMA,
+        &quot;steps&quot;: SKEW_STEPS,
+        &quot;initial&quot;: SKEW_X0.tolist(),
+        &quot;initial_norm&quot;: initial_norm,
+        &quot;methods&quot;: methods,
+        &quot;interpretation&quot;: (
+            &quot;For the monotone 1-Lipschitz skew map, the plain forward step &quot;
+            &quot;expands while extragradient and the resolvent contract.&quot;
+        ),
+    }
+
+
+def make_svg(rows: list[dict]) -&gt; str:
+    width, height = 900, 520
+    left, right, top, bottom = 88, 35, 42, 74
+    plot_w = width - left - right
+    plot_h = height - top - bottom
+    colors = {
+        &quot;forward_backward_stable&quot;: &quot;#1f77b4&quot;,
+        &quot;forward_backward_outside_range&quot;: &quot;#c03d3e&quot;,
+        &quot;douglas_rachford&quot;: &quot;#2b8a3e&quot;,
+    }
+    labels = {
+        &quot;forward_backward_stable&quot;: &quot;Maju--mundur: langkah diterima&quot;,
+        &quot;forward_backward_outside_range&quot;: &quot;Maju--mundur: di luar jaminan&quot;,
+        &quot;douglas_rachford&quot;: &quot;Douglas--Rachford&quot;,
+    }
+    grouped = {
+        method: [row for row in rows if row[&quot;method&quot;] == method]
+        for method in colors
+    }
+    positive = [
+        max(float(row[&quot;inclusion_residual&quot;]), 1e-16)
+        for row in rows
+        if math.isfinite(float(row[&quot;inclusion_residual&quot;]))
+    ]
+    log_min = min(-14.0, math.floor(math.log10(min(positive))))
+    log_max = max(1.0, math.ceil(math.log10(max(positive))))
+
+    def point(iteration: int, residual: float) -&gt; tuple[float, float]:
+        x = left + plot_w * iteration / ITERATIONS
+        value = min(max(math.log10(max(residual, 1e-16)), log_min), log_max)
+        y = top + plot_h * (log_max - value) / (log_max - log_min)
+        return x, y
+
+    parts = [
+        &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;,
+        f&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;{width}&quot; height=&quot;{height}&quot; viewBox=&quot;0 0 {width} {height}&quot; role=&quot;img&quot; aria-labelledby=&quot;title desc&quot;&gt;&#39;,
+        &#39;&lt;title id=&quot;title&quot;&gt;Residu inklusi operator monoton&lt;/title&gt;&#39;,
+        &#39;&lt;desc id=&quot;desc&quot;&gt;Perbandingan residu maju--mundur dengan langkah diterima, langkah di luar jaminan, dan Douglas--Rachford.&lt;/desc&gt;&#39;,
+        &#39;&lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;#ffffff&quot;/&gt;&#39;,
+        f&#39;&lt;text x=&quot;{width/2}&quot; y=&quot;24&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;18&quot; fill=&quot;#182235&quot;&gt;Residu inklusi terhadap iterasi&lt;/text&gt;&#39;,
+    ]
+    for exponent in range(int(log_min), int(log_max) + 1, 2):
+        y = point(0, 10.0**exponent)[1]
+        parts.append(
+            f&#39;&lt;line x1=&quot;{left}&quot; x2=&quot;{left+plot_w}&quot; y1=&quot;{y:.2f}&quot; y2=&quot;{y:.2f}&quot; stroke=&quot;#d8dee8&quot; stroke-width=&quot;1&quot;/&gt;&#39;
+        )
+        parts.append(
+            f&#39;&lt;text x=&quot;{left-10}&quot; y=&quot;{y+4:.2f}&quot; text-anchor=&quot;end&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;12&quot; fill=&quot;#536176&quot;&gt;10^{exponent}&lt;/text&gt;&#39;
+        )
+    for iteration in (0, 50, 100, 150, 200):
+        x = point(iteration, 1.0)[0]
+        parts.append(
+            f&#39;&lt;line x1=&quot;{x:.2f}&quot; x2=&quot;{x:.2f}&quot; y1=&quot;{top}&quot; y2=&quot;{top+plot_h}&quot; stroke=&quot;#eef1f5&quot; stroke-width=&quot;1&quot;/&gt;&#39;
+        )
+        parts.append(
+            f&#39;&lt;text x=&quot;{x:.2f}&quot; y=&quot;{top+plot_h+24}&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;12&quot; fill=&quot;#536176&quot;&gt;{iteration}&lt;/text&gt;&#39;
+        )
+    parts.extend(
+        [
+            f&#39;&lt;line x1=&quot;{left}&quot; x2=&quot;{left}&quot; y1=&quot;{top}&quot; y2=&quot;{top+plot_h}&quot; stroke=&quot;#182235&quot; stroke-width=&quot;1.5&quot;/&gt;&#39;,
+            f&#39;&lt;line x1=&quot;{left}&quot; x2=&quot;{left+plot_w}&quot; y1=&quot;{top+plot_h}&quot; y2=&quot;{top+plot_h}&quot; stroke=&quot;#182235&quot; stroke-width=&quot;1.5&quot;/&gt;&#39;,
+            f&#39;&lt;text x=&quot;{left+plot_w/2}&quot; y=&quot;{height-24}&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;14&quot; fill=&quot;#182235&quot;&gt;Iterasi&lt;/text&gt;&#39;,
+            f&#39;&lt;text x=&quot;22&quot; y=&quot;{top+plot_h/2}&quot; transform=&quot;rotate(-90 22 {top+plot_h/2})&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;14&quot; fill=&quot;#182235&quot;&gt;Residu inklusi (skala log)&lt;/text&gt;&#39;,
+        ]
+    )
+    for method, method_rows in grouped.items():
+        points = &quot; &quot;.join(
+            f&#39;{point(int(row[&quot;iteration&quot;]), float(row[&quot;inclusion_residual&quot;]))[0]:.2f},{point(int(row[&quot;iteration&quot;]), float(row[&quot;inclusion_residual&quot;]))[1]:.2f}&#39;
+            for row in method_rows
+        )
+        parts.append(
+            f&#39;&lt;polyline points=&quot;{points}&quot; fill=&quot;none&quot; stroke=&quot;{colors[method]}&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot; stroke-linecap=&quot;round&quot;/&gt;&#39;
+        )
+        for row in method_rows:
+            x, y = point(int(row[&quot;iteration&quot;]), float(row[&quot;inclusion_residual&quot;]))
+            parts.append(
+                f&#39;&lt;circle cx=&quot;{x:.2f}&quot; cy=&quot;{y:.2f}&quot; r=&quot;3.2&quot; fill=&quot;{colors[method]}&quot;/&gt;&#39;
+            )
+    legend_x, legend_y = left + 18, top + 18
+    parts.append(
+        f&#39;&lt;rect x=&quot;{legend_x-10}&quot; y=&quot;{legend_y-15}&quot; width=&quot;345&quot; height=&quot;82&quot; rx=&quot;5&quot; fill=&quot;#ffffff&quot; fill-opacity=&quot;0.92&quot; stroke=&quot;#cbd5e1&quot;/&gt;&#39;
+    )
+    for index, method in enumerate(colors):
+        y = legend_y + 24 * index
+        parts.append(
+            f&#39;&lt;line x1=&quot;{legend_x}&quot; x2=&quot;{legend_x+26}&quot; y1=&quot;{y}&quot; y2=&quot;{y}&quot; stroke=&quot;{colors[method]}&quot; stroke-width=&quot;3&quot;/&gt;&#39;
+        )
+        parts.append(
+            f&#39;&lt;text x=&quot;{legend_x+36}&quot; y=&quot;{y+4}&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;12&quot; fill=&quot;#182235&quot;&gt;{labels[method]}&lt;/text&gt;&#39;
+        )
+    parts.append(&quot;&lt;/svg&gt;&quot;)
+    return &quot;\n&quot;.join(parts) + &quot;\n&quot;
+
+
+def main() -&gt; None:
+    if not FB_STABLE_GAMMA &lt; FB_UPPER_BOUND:
+        raise RuntimeError(&quot;Frozen stable step is outside the proved range&quot;)
+    if not FB_DIAGNOSTIC_GAMMA &gt; FB_UPPER_BOUND:
+        raise RuntimeError(&quot;Frozen diagnostic step is not outside the proved range&quot;)
+    reference_residual = inclusion_residual(REFERENCE)
+    if reference_residual &gt; 1e-11:
+        raise RuntimeError(f&quot;Active-set reference residual too large: {reference_residual}&quot;)
+
+    rows = (
+        run_forward_backward(&quot;forward_backward_stable&quot;, FB_STABLE_GAMMA)
+        + run_forward_backward(
+            &quot;forward_backward_outside_range&quot;, FB_DIAGNOSTIC_GAMMA
+        )
+        + run_douglas_rachford()
+    )
+    final = {row[&quot;method&quot;]: row for row in rows if row[&quot;iteration&quot;] == ITERATIONS}
+    if final[&quot;forward_backward_stable&quot;][&quot;inclusion_residual&quot;] &gt; 1e-10:
+        raise RuntimeError(&quot;Stable forward-backward did not reach the frozen tolerance&quot;)
+    if final[&quot;douglas_rachford&quot;][&quot;inclusion_residual&quot;] &gt; 1e-10:
+        raise RuntimeError(&quot;Douglas-Rachford did not reach the frozen tolerance&quot;)
+    outside_initial = next(
+        row
+        for row in rows
+        if row[&quot;method&quot;] == &quot;forward_backward_outside_range&quot;
+        and row[&quot;iteration&quot;] == 0
+    )
+    if not (
+        final[&quot;forward_backward_outside_range&quot;][&quot;inclusion_residual&quot;]
+        &gt; outside_initial[&quot;inclusion_residual&quot;]
+    ):
+        raise RuntimeError(&quot;Outside-range diagnostic did not exhibit residual growth&quot;)
+
+    resolvent_probe = np.array([0.7, -1.1], dtype=np.float64)
+    resolved = resolvent_linear(resolvent_probe, DR_GAMMA)
+    resolvent_identity_error = float(
+        np.linalg.norm(
+            resolved
+            + DR_GAMMA * (MATRIX @ resolved - B_VECTOR)
+            - resolvent_probe
+        )
+    )
+    if resolvent_identity_error &gt; 1e-12:
+        raise RuntimeError(&quot;Linear resolvent identity failed&quot;)
+    skew = skew_diagnostic()
+
+    payload = {
+        &quot;schema&quot;: &quot;o015-original-02-monotone-splitting-lab-v1&quot;,
+        &quot;result&quot;: &quot;pass&quot;,
+        &quot;parameters&quot;: {
+            &quot;mu&quot;: MU,
+            &quot;omega&quot;: OMEGA,
+            &quot;lambda&quot;: LAMBDA,
+            &quot;b&quot;: B_VECTOR.tolist(),
+            &quot;x0&quot;: X0.tolist(),
+            &quot;y0&quot;: Y0.tolist(),
+            &quot;iterations&quot;: ITERATIONS,
+            &quot;checkpoints&quot;: list(CHECKPOINTS),
+            &quot;forward_backward_stable_gamma&quot;: FB_STABLE_GAMMA,
+            &quot;forward_backward_diagnostic_gamma&quot;: FB_DIAGNOSTIC_GAMMA,
+            &quot;douglas_rachford_gamma&quot;: DR_GAMMA,
+        },
+        &quot;theory&quot;: {
+            &quot;beta&quot;: BETA,
+            &quot;forward_backward_upper_bound&quot;: FB_UPPER_BOUND,
+            &quot;stable_step_inside_open_interval&quot;: True,
+            &quot;diagnostic_step_outside_proved_interval&quot;: True,
+        },
+        &quot;reference&quot;: {
+            &quot;method&quot;: &quot;complete_active_set_enumeration&quot;,
+            &quot;pattern&quot;: list(REFERENCE_PATTERN),
+            &quot;x&quot;: REFERENCE.tolist(),
+            &quot;subgradient&quot;: REFERENCE_SUBGRADIENT.tolist(),
+            &quot;inclusion_residual&quot;: reference_residual,
+        },
+        &quot;resolvent_probe&quot;: {
+            &quot;input&quot;: resolvent_probe.tolist(),
+            &quot;output&quot;: resolved.tolist(),
+            &quot;identity_error&quot;: resolvent_identity_error,
+        },
+        &quot;pure_skew_diagnostic&quot;: skew,
+        &quot;final&quot;: final,
+        &quot;rows&quot;: rows,
+        &quot;interpretation&quot;: {
+            &quot;accepted_methods&quot;: [
+                &quot;forward_backward_stable&quot;,
+                &quot;douglas_rachford&quot;,
+            ],
+            &quot;diagnostic_only&quot;: &quot;forward_backward_outside_range&quot;,
+            &quot;claim_boundary&quot;: (
+                &quot;The outside-range trace is a frozen counterdiagnostic, not a &quot;
+                &quot;claim that every step outside the sufficient interval diverges.&quot;
+            ),
+        },
+        &quot;dependencies&quot;: {
+            &quot;python&quot;: &quot;standard library&quot;,
+            &quot;numpy&quot;: np.__version__,
+        },
+        &quot;upstream_contact&quot;: False,
+    }
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    JSON_PATH.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + &quot;\n&quot;,
+        encoding=&quot;utf-8&quot;,
+        newline=&quot;\n&quot;,
+    )
+    fieldnames = list(rows[0].keys())
+    with CSV_PATH.open(&quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;&quot;) as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames, lineterminator=&quot;\n&quot;)
+        writer.writeheader()
+        writer.writerows(rows)
+    SVG_PATH.write_text(make_svg(rows), encoding=&quot;utf-8&quot;, newline=&quot;\n&quot;)
+    print(
+        json.dumps(
+            {
+                &quot;result&quot;: &quot;pass&quot;,
+                &quot;beta&quot;: BETA,
+                &quot;forward_backward_upper_bound&quot;: FB_UPPER_BOUND,
+                &quot;reference&quot;: REFERENCE.tolist(),
+                &quot;final_residuals&quot;: {
+                    method: values[&quot;inclusion_residual&quot;]
+                    for method, values in final.items()
+                },
+            },
+            sort_keys=True,
+        )
+    )
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre>
+</section>
+<section id="hasil-json-lengkap" class="level2">
+<h2>Hasil JSON lengkap</h2>
+<pre><code>{
+  &quot;dependencies&quot;: {
+    &quot;numpy&quot;: &quot;2.4.4&quot;,
+    &quot;python&quot;: &quot;standard library&quot;
+  },
+  &quot;final&quot;: {
+    &quot;douglas_rachford&quot;: {
+      &quot;error_to_reference&quot;: 1.8875832159447664e-16,
+      &quot;fixed_point_residual&quot;: 2.7755575615628914e-16,
+      &quot;inclusion_residual&quot;: 4.002966042486721e-16,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830951894845302,
+      &quot;x1&quot;: 0.08461538461538454,
+      &quot;x2&quot;: -0.5769230769230771
+    },
+    &quot;forward_backward_outside_range&quot;: {
+      &quot;error_to_reference&quot;: 4.004891561283648e+26,
+      &quot;fixed_point_residual&quot;: 6.49792884459655e+26,
+      &quot;inclusion_residual&quot;: 7.219920938440611e+26,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 4.004891561283648e+26,
+      &quot;x1&quot;: -9.882929849502497e+25,
+      &quot;x2&quot;: 3.8810350930568894e+26
+    },
+    &quot;forward_backward_stable&quot;: {
+      &quot;error_to_reference&quot;: 3.1780134079895106e-15,
+      &quot;fixed_point_residual&quot;: 2.401779625492033e-15,
+      &quot;inclusion_residual&quot;: 5.821000005975887e-15,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5830951894845305,
+      &quot;x1&quot;: 0.08461538461538787,
+      &quot;x2&quot;: -0.576923076923077
+    }
+  },
+  &quot;interpretation&quot;: {
+    &quot;accepted_methods&quot;: [
+      &quot;forward_backward_stable&quot;,
+      &quot;douglas_rachford&quot;
+    ],
+    &quot;claim_boundary&quot;: &quot;The outside-range trace is a frozen counterdiagnostic, not a claim that every step outside the sufficient interval diverges.&quot;,
+    &quot;diagnostic_only&quot;: &quot;forward_backward_outside_range&quot;
+  },
+  &quot;parameters&quot;: {
+    &quot;b&quot;: [
+      1.2,
+      -0.7
+    ],
+    &quot;checkpoints&quot;: [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20,
+      40,
+      80,
+      120,
+      200
+    ],
+    &quot;douglas_rachford_gamma&quot;: 0.7,
+    &quot;forward_backward_diagnostic_gamma&quot;: 0.9,
+    &quot;forward_backward_stable_gamma&quot;: 0.4,
+    &quot;iterations&quot;: 200,
+    &quot;lambda&quot;: 0.25,
+    &quot;mu&quot;: 1.0,
+    &quot;omega&quot;: 1.5,
+    &quot;x0&quot;: [
+      2.5,
+      -2.0
+    ],
+    &quot;y0&quot;: [
+      2.5,
+      -2.0
+    ]
+  },
+  &quot;pure_skew_diagnostic&quot;: {
+    &quot;gamma&quot;: 0.6,
+    &quot;initial&quot;: [
+      1.25,
+      -0.75
+    ],
+    &quot;initial_norm&quot;: 1.4577379737113252,
+    &quot;interpretation&quot;: &quot;For the monotone 1-Lipschitz skew map, the plain forward step expands while extragradient and the resolvent contract.&quot;,
+    &quot;methods&quot;: {
+      &quot;extragradient&quot;: {
+        &quot;exact_final_norm&quot;: 0.02868503292055673,
+        &quot;exact_one_step_factor&quot;: 0.8772684879784524,
+        &quot;factor_absolute_error&quot;: 0.0,
+        &quot;final_norm&quot;: 0.028685032920556713,
+        &quot;numerical_one_step_factor&quot;: 0.8772684879784524
+      },
+      &quot;forward&quot;: {
+        &quot;exact_final_norm&quot;: 146.81251981799534,
+        &quot;exact_one_step_factor&quot;: 1.16619037896906,
+        &quot;factor_absolute_error&quot;: 0.0,
+        &quot;final_norm&quot;: 146.81251981799582,
+        &quot;numerical_one_step_factor&quot;: 1.16619037896906
+      },
+      &quot;resolvent&quot;: {
+        &quot;exact_final_norm&quot;: 0.014474242405445955,
+        &quot;exact_one_step_factor&quot;: 0.8574929257125443,
+        &quot;factor_absolute_error&quot;: 2.220446049250313e-16,
+        &quot;final_norm&quot;: 0.014474242405445915,
+        &quot;numerical_one_step_factor&quot;: 0.8574929257125441
+      }
+    },
+    &quot;steps&quot;: 30
+  },
+  &quot;reference&quot;: {
+    &quot;inclusion_residual&quot;: 1.1102230246251565e-16,
+    &quot;method&quot;: &quot;complete_active_set_enumeration&quot;,
+    &quot;pattern&quot;: [
+      1,
+      -1
+    ],
+    &quot;subgradient&quot;: [
+      1.0,
+      -1.0
+    ],
+    &quot;x&quot;: [
+      0.08461538461538469,
+      -0.576923076923077
+    ]
+  },
+  &quot;resolvent_probe&quot;: {
+    &quot;identity_error&quot;: 4.002966042486721e-16,
+    &quot;input&quot;: [
+      0.7,
+      -1.1
+    ],
+    &quot;output&quot;: [
+      0.23757044458359441,
+      -1.0820288040075141
+    ]
+  },
+  &quot;result&quot;: &quot;pass&quot;,
+  &quot;rows&quot;: [
+    {
+      &quot;error_to_reference&quot;: 2.8034319626541264,
+      &quot;fixed_point_residual&quot;: 2.0215835377248204,
+      &quot;inclusion_residual&quot;: 5.05395884431205,
+      &quot;iteration&quot;: 0,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 3.2015621187164243,
+      &quot;x1&quot;: 2.5,
+      &quot;x2&quot;: -2.0
+    },
+    {
+      &quot;error_to_reference&quot;: 2.378790901665414,
+      &quot;fixed_point_residual&quot;: 1.5279057562559282,
+      &quot;inclusion_residual&quot;: 4.288426284780933,
+      &quot;iteration&quot;: 1,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 2.959189078109069,
+      &quot;x1&quot;: 0.68,
+      &quot;x2&quot;: -2.88
+    },
+    {
+      &quot;error_to_reference&quot;: 1.9246763564098446,
+      &quot;fixed_point_residual&quot;: 1.2964710255150327,
+      &quot;inclusion_residual&quot;: 3.2411775637875815,
+      &quot;iteration&quot;: 2,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 2.4313485969724704,
+      &quot;x1&quot;: -0.74,
+      &quot;x2&quot;: -2.316
+    },
+    {
+      &quot;error_to_reference&quot;: 0.6490542485346841,
+      &quot;fixed_point_residual&quot;: 0.46803967472991015,
+      &quot;inclusion_residual&quot;: 1.4614116829312678,
+      &quot;iteration&quot;: 5,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.0665920000000002,
+      &quot;x1&quot;: -0.0,
+      &quot;x2&quot;: 0.0665920000000002
+    },
+    {
+      &quot;error_to_reference&quot;: 0.2417683009574272,
+      &quot;fixed_point_residual&quot;: 0.14136031027200002,
+      &quot;inclusion_residual&quot;: 0.35340077568000017,
+      &quot;iteration&quot;: 10,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.8034007756800001,
+      &quot;x1&quot;: 0.0,
+      &quot;x2&quot;: -0.8034007756800001
+    },
+    {
+      &quot;error_to_reference&quot;: 0.02273956068284884,
+      &quot;fixed_point_residual&quot;: 0.016397730404707232,
+      &quot;inclusion_residual&quot;: 0.04099432601176812,
+      &quot;iteration&quot;: 20,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5803122231695571,
+      &quot;x1&quot;: 0.061875967999999976,
+      &quot;x2&quot;: -0.5770040216012856
+    },
+    {
+      &quot;error_to_reference&quot;: 0.0008513478319503896,
+      &quot;fixed_point_residual&quot;: 0.0006139156522705296,
+      &quot;inclusion_residual&quot;: 0.0015347891306762313,
+      &quot;iteration&quot;: 40,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5832163418546286,
+      &quot;x1&quot;: 0.0854667270535843,
+      &quot;x2&quot;: -0.5769200464302164
+    },
+    {
+      &quot;error_to_reference&quot;: 1.1933201195565088e-06,
+      &quot;fixed_point_residual&quot;: 8.605153759058425e-07,
+      &quot;inclusion_residual&quot;: 2.151288439710652e-06,
+      &quot;iteration&quot;: 80,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5830953584494807,
+      &quot;x1&quot;: 0.08461657792794391,
+      &quot;x2&quot;: -0.5769230726752853
+    },
+    {
+      &quot;error_to_reference&quot;: 1.6726569660632432e-09,
+      &quot;fixed_point_residual&quot;: 1.2061701768457911e-09,
+      &quot;inclusion_residual&quot;: 3.0154253724902848e-09,
+      &quot;iteration&quot;: 120,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5830951897213638,
+      &quot;x1&quot;: 0.08461538628803106,
+      &quot;x2&quot;: -0.5769230769171229
+    },
+    {
+      &quot;error_to_reference&quot;: 3.1780134079895106e-15,
+      &quot;fixed_point_residual&quot;: 2.401779625492033e-15,
+      &quot;inclusion_residual&quot;: 5.821000005975887e-15,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;forward_backward_stable&quot;,
+      &quot;norm&quot;: 0.5830951894845305,
+      &quot;x1&quot;: 0.08461538461538787,
+      &quot;x2&quot;: -0.576923076923077
+    },
+    {
+      &quot;error_to_reference&quot;: 2.8034319626541264,
+      &quot;fixed_point_residual&quot;: 4.148062800874644,
+      &quot;inclusion_residual&quot;: 5.05395884431205,
+      &quot;iteration&quot;: 0,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 3.2015621187164243,
+      &quot;x1&quot;: 2.5,
+      &quot;x2&quot;: -2.0
+    },
+    {
+      &quot;error_to_reference&quot;: 3.6184093934298724,
+      &quot;fixed_point_residual&quot;: 5.242403915428493,
+      &quot;inclusion_residual&quot;: 6.239141066685381,
+      &quot;iteration&quot;: 1,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 4.141427893854968,
+      &quot;x1&quot;: -1.145,
+      &quot;x2&quot;: -3.98
+    },
+    {
+      &quot;error_to_reference&quot;: 4.354836962085509,
+      &quot;fixed_point_residual&quot;: 6.7562350887092615,
+      &quot;inclusion_residual&quot;: 7.885150039195511,
+      &quot;iteration&quot;: 2,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 4.192732857278173,
+      &quot;x1&quot;: -4.182499999999999,
+      &quot;x2&quot;: 0.29274999999999995
+    },
+    {
+      &quot;error_to_reference&quot;: 9.98541387533172,
+      &quot;fixed_point_residual&quot;: 15.826250825263434,
+      &quot;inclusion_residual&quot;: 18.001460867119047,
+      &quot;iteration&quot;: 5,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 10.563470288735333,
+      &quot;x1&quot;: 0.18739346875000037,
+      &quot;x2&quot;: -10.561808
+    },
+    {
+      &quot;error_to_reference&quot;: 42.02461566400635,
+      &quot;fixed_point_residual&quot;: 67.8580890355725,
+      &quot;inclusion_residual&quot;: 75.88240964986971,
+      &quot;iteration&quot;: 10,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 42.14445125335256,
+      &quot;x1&quot;: -39.451837669007126,
+      &quot;x2&quot;: -14.822525965047928
+    },
+    {
+      &quot;error_to_reference&quot;: 849.0555869955879,
+      &quot;fixed_point_residual&quot;: 1377.5910545842958,
+      &quot;inclusion_residual&quot;: 1531.098125152578,
+      &quot;iteration&quot;: 20,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 848.5877268267457,
+      &quot;x1&quot;: 402.4422505581068,
+      &quot;x2&quot;: 747.0885925288309
+    },
+    {
+      &quot;error_to_reference&quot;: 362303.871523797,
+      &quot;fixed_point_residual&quot;: 587837.1595466494,
+      &quot;inclusion_residual&quot;: 653152.8605182628,
+      &quot;iteration&quot;: 40,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 362303.48226164863,
+      &quot;x1&quot;: -301992.0606033278,
+      &quot;x2&quot;: 200161.4563083331
+    },
+    {
+      &quot;error_to_reference&quot;: 66062006837.49017,
+      &quot;fixed_point_residual&quot;: 107185478855.24078,
+      &quot;inclusion_residual&quot;: 119094976506.31174,
+      &quot;iteration&quot;: 80,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 66062006837.9523,
+      &quot;x1&quot;: 47456243914.1256,
+      &quot;x2&quot;: -45957520179.19019
+    },
+    {
+      &quot;error_to_reference&quot;: 1.2045682971348158e+16,
+      &quot;fixed_point_residual&quot;: 1.954409742053064e+16,
+      &quot;inclusion_residual&quot;: 2.17156638005896e+16,
+      &quot;iteration&quot;: 120,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 1.2045682971348158e+16,
+      &quot;x1&quot;: -6973546010449878.0,
+      &quot;x2&quot;: 9821819296157182.0
+    },
+    {
+      &quot;error_to_reference&quot;: 4.004891561283648e+26,
+      &quot;fixed_point_residual&quot;: 6.49792884459655e+26,
+      &quot;inclusion_residual&quot;: 7.219920938440611e+26,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;forward_backward_outside_range&quot;,
+      &quot;norm&quot;: 4.004891561283648e+26,
+      &quot;x1&quot;: -9.882929849502497e+25,
+      &quot;x2&quot;: 3.8810350930568894e+26
+    },
+    {
+      &quot;error_to_reference&quot;: 2.564569989446424,
+      &quot;fixed_point_residual&quot;: 2.9293818673911396,
+      &quot;inclusion_residual&quot;: 4.623344298232611,
+      &quot;iteration&quot;: 0,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 2.9557148035627523,
+      &quot;x1&quot;: 2.325,
+      &quot;x2&quot;: -1.825
+    },
+    {
+      &quot;error_to_reference&quot;: 1.2834888300639757,
+      &quot;fixed_point_residual&quot;: 1.271073151629751,
+      &quot;inclusion_residual&quot;: 2.3138423941404755,
+      &quot;iteration&quot;: 1,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 1.8401832148580914,
+      &quot;x1&quot;: 0.7103318722604886,
+      &quot;x2&quot;: -1.6975579211020664
+    },
+    {
+      &quot;error_to_reference&quot;: 0.6423468977949716,
+      &quot;fixed_point_residual&quot;: 0.5672530458990993,
+      &quot;inclusion_residual&quot;: 1.1580073383174985,
+      &quot;iteration&quot;: 2,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 1.21994766146663,
+      &quot;x1&quot;: 0.05632520117361578,
+      &quot;x2&quot;: -1.2186466954908017
+    },
+    {
+      &quot;error_to_reference&quot;: 0.09697222070248318,
+      &quot;fixed_point_residual&quot;: 0.12237340991344488,
+      &quot;inclusion_residual&quot;: 0.17481915701920683,
+      &quot;iteration&quot;: 5,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.6242923525599455,
+      &quot;x1&quot;: 0.0,
+      &quot;x2&quot;: -0.6242923525599455
+    },
+    {
+      &quot;error_to_reference&quot;: 0.003987314578375228,
+      &quot;fixed_point_residual&quot;: 0.005031763507307906,
+      &quot;inclusion_residual&quot;: 0.007188233581868407,
+      &quot;iteration&quot;: 10,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5800860572060366,
+      &quot;x1&quot;: 0.08675954580797979,
+      &quot;x2&quot;: -0.5735613436904881
+    },
+    {
+      &quot;error_to_reference&quot;: 3.930573090358453e-06,
+      &quot;fixed_point_residual&quot;: 4.960158986575774e-06,
+      &quot;inclusion_residual&quot;: 7.085941409434631e-06,
+      &quot;iteration&quot;: 20,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830912615802498,
+      &quot;x1&quot;: 0.08461467133432576,
+      &quot;x2&quot;: -0.5769192116113238
+    },
+    {
+      &quot;error_to_reference&quot;: 3.81962062324116e-12,
+      &quot;fixed_point_residual&quot;: 4.820196128874869e-12,
+      &quot;inclusion_residual&quot;: 6.885867582289481e-12,
+      &quot;iteration&quot;: 40,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830951894844023,
+      &quot;x1&quot;: 0.08461538461158907,
+      &quot;x2&quot;: -0.5769230769235045
+    },
+    {
+      &quot;error_to_reference&quot;: 1.8875832159447664e-16,
+      &quot;fixed_point_residual&quot;: 2.7755575615628914e-16,
+      &quot;inclusion_residual&quot;: 4.002966042486721e-16,
+      &quot;iteration&quot;: 80,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830951894845302,
+      &quot;x1&quot;: 0.08461538461538454,
+      &quot;x2&quot;: -0.5769230769230771
+    },
+    {
+      &quot;error_to_reference&quot;: 1.8875832159447664e-16,
+      &quot;fixed_point_residual&quot;: 2.7755575615628914e-16,
+      &quot;inclusion_residual&quot;: 4.002966042486721e-16,
+      &quot;iteration&quot;: 120,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830951894845302,
+      &quot;x1&quot;: 0.08461538461538454,
+      &quot;x2&quot;: -0.5769230769230771
+    },
+    {
+      &quot;error_to_reference&quot;: 1.8875832159447664e-16,
+      &quot;fixed_point_residual&quot;: 2.7755575615628914e-16,
+      &quot;inclusion_residual&quot;: 4.002966042486721e-16,
+      &quot;iteration&quot;: 200,
+      &quot;method&quot;: &quot;douglas_rachford&quot;,
+      &quot;norm&quot;: 0.5830951894845302,
+      &quot;x1&quot;: 0.08461538461538454,
+      &quot;x2&quot;: -0.5769230769230771
+    }
+  ],
+  &quot;schema&quot;: &quot;o015-original-02-monotone-splitting-lab-v1&quot;,
+  &quot;theory&quot;: {
+    &quot;beta&quot;: 0.3076923076923077,
+    &quot;diagnostic_step_outside_proved_interval&quot;: true,
+    &quot;forward_backward_upper_bound&quot;: 0.6153846153846154,
+    &quot;stable_step_inside_open_interval&quot;: true
+  },
+  &quot;upstream_contact&quot;: false
+}</code></pre>
+</section>
+<section id="hasil-csv-lengkap" class="level2">
+<h2>Hasil CSV lengkap</h2>
+<pre><code>method,iteration,x1,x2,norm,error_to_reference,fixed_point_residual,inclusion_residual
+forward_backward_stable,0,2.5,-2.0,3.2015621187164243,2.8034319626541264,2.0215835377248204,5.05395884431205
+forward_backward_stable,1,0.68,-2.88,2.959189078109069,2.378790901665414,1.5279057562559282,4.288426284780933
+forward_backward_stable,2,-0.74,-2.316,2.4313485969724704,1.9246763564098446,1.2964710255150327,3.2411775637875815
+forward_backward_stable,5,-0.0,0.0665920000000002,0.0665920000000002,0.6490542485346841,0.46803967472991015,1.4614116829312678
+forward_backward_stable,10,0.0,-0.8034007756800001,0.8034007756800001,0.2417683009574272,0.14136031027200002,0.35340077568000017
+forward_backward_stable,20,0.061875967999999976,-0.5770040216012856,0.5803122231695571,0.02273956068284884,0.016397730404707232,0.04099432601176812
+forward_backward_stable,40,0.0854667270535843,-0.5769200464302164,0.5832163418546286,0.0008513478319503896,0.0006139156522705296,0.0015347891306762313
+forward_backward_stable,80,0.08461657792794391,-0.5769230726752853,0.5830953584494807,1.1933201195565088e-06,8.605153759058425e-07,2.151288439710652e-06
+forward_backward_stable,120,0.08461538628803106,-0.5769230769171229,0.5830951897213638,1.6726569660632432e-09,1.2061701768457911e-09,3.0154253724902848e-09
+forward_backward_stable,200,0.08461538461538787,-0.576923076923077,0.5830951894845305,3.1780134079895106e-15,2.401779625492033e-15,5.821000005975887e-15
+forward_backward_outside_range,0,2.5,-2.0,3.2015621187164243,2.8034319626541264,4.148062800874644,5.05395884431205
+forward_backward_outside_range,1,-1.145,-3.98,4.141427893854968,3.6184093934298724,5.242403915428493,6.239141066685381
+forward_backward_outside_range,2,-4.182499999999999,0.29274999999999995,4.192732857278173,4.354836962085509,6.7562350887092615,7.885150039195511
+forward_backward_outside_range,5,0.18739346875000037,-10.561808,10.563470288735333,9.98541387533172,15.826250825263434,18.001460867119047
+forward_backward_outside_range,10,-39.451837669007126,-14.822525965047928,42.14445125335256,42.02461566400635,67.8580890355725,75.88240964986971
+forward_backward_outside_range,20,402.4422505581068,747.0885925288309,848.5877268267457,849.0555869955879,1377.5910545842958,1531.098125152578
+forward_backward_outside_range,40,-301992.0606033278,200161.4563083331,362303.48226164863,362303.871523797,587837.1595466494,653152.8605182628
+forward_backward_outside_range,80,47456243914.1256,-45957520179.19019,66062006837.9523,66062006837.49017,107185478855.24078,119094976506.31174
+forward_backward_outside_range,120,-6973546010449878.0,9821819296157182.0,1.2045682971348158e+16,1.2045682971348158e+16,1.954409742053064e+16,2.17156638005896e+16
+forward_backward_outside_range,200,-9.882929849502497e+25,3.8810350930568894e+26,4.004891561283648e+26,4.004891561283648e+26,6.49792884459655e+26,7.219920938440611e+26
+douglas_rachford,0,2.325,-1.825,2.9557148035627523,2.564569989446424,2.9293818673911396,4.623344298232611
+douglas_rachford,1,0.7103318722604886,-1.6975579211020664,1.8401832148580914,1.2834888300639757,1.271073151629751,2.3138423941404755
+douglas_rachford,2,0.05632520117361578,-1.2186466954908017,1.21994766146663,0.6423468977949716,0.5672530458990993,1.1580073383174985
+douglas_rachford,5,0.0,-0.6242923525599455,0.6242923525599455,0.09697222070248318,0.12237340991344488,0.17481915701920683
+douglas_rachford,10,0.08675954580797979,-0.5735613436904881,0.5800860572060366,0.003987314578375228,0.005031763507307906,0.007188233581868407
+douglas_rachford,20,0.08461467133432576,-0.5769192116113238,0.5830912615802498,3.930573090358453e-06,4.960158986575774e-06,7.085941409434631e-06
+douglas_rachford,40,0.08461538461158907,-0.5769230769235045,0.5830951894844023,3.81962062324116e-12,4.820196128874869e-12,6.885867582289481e-12
+douglas_rachford,80,0.08461538461538454,-0.5769230769230771,0.5830951894845302,1.8875832159447664e-16,2.7755575615628914e-16,4.002966042486721e-16
+douglas_rachford,120,0.08461538461538454,-0.5769230769230771,0.5830951894845302,1.8875832159447664e-16,2.7755575615628914e-16,4.002966042486721e-16
+douglas_rachford,200,0.08461538461538454,-0.5769230769230771,0.5830951894845302,1.8875832159447664e-16,2.7755575615628914e-16,4.002966042486721e-16</code></pre>
+</section>
+</section>
+<section id="hak-atribusi-dan-nondukungan" class="level1 unnumbered">
+<h1 class="unnumbered">Hak, atribusi, dan nondukungan</h1>
+<p>Materi asli dalam tranche ini–termasuk uraian, formulasi penghubung,
+bukti, algoritma, latihan, petunjuk, solusi, laboratorium, dan
+dokumentasi–tersedia berdasarkan Creative Commons Attribution-ShareAlike
+4.0 International (CC BY-SA 4.0), melalui <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">laman lisensi
+resmi</a>.</p>
+<p>Kelas dokumen <code>shinybook.cls</code> adalah salinan persis kelas
+yang dibundel bersama Andreas Habring, <em>Lecture Notes: Convex
+Optimization</em>, arXiv:2607.11664v1; <code>macros-id.tex</code> adalah
+adaptasi Indonesia dari <code>macros.tex</code> dalam paket yang sama.
+Kedua komponen itu tersedia berdasarkan bukti lisensi Creative Commons
+Attribution 4.0 International (CC BY 4.0) pada tingkat kiriman arXiv,
+melalui <a href="https://creativecommons.org/licenses/by/4.0/">laman
+lisensi resmi</a>, dan bukan bagian dari lisensi CC BY-SA untuk materi
+baru. Berkas kelas itu tidak memuat pemberitahuan lisensi terpisah.
+Prakata Habring menyatakan bahwa templat catatan kuliah tersebut berasal
+dari Christian Clason; kredit templat itu dipertahankan tanpa
+menyiratkan dukungan.</p>
+<p>Saksi verifikasi yang dirujuk meliputi karya Andreas Habring,
+Christian Clason, Stephen Becker, Mitchell Krock, George J. Minty, R.
+Tyrrell Rockafellar, Pierre-Louis Lions, dan Bertrand Mercier.
+Penyebutan mereka hanya untuk atribusi matematika dan provenans. Tidak
+seorang pun dari mereka maupun institusinya menyusun, memeriksa,
+menyetujui, mensponsori, atau mendukung edisi ini.</p>
+<section id="catatan-aksesibilitas" class="level2 unnumbered">
+<h2 class="unnumbered">Catatan aksesibilitas</h2>
+<p>PDF ini dapat dicari, memakai bahasa dokumen <code>id-ID</code>, dan
+merupakan permukaan tata letak tetap. HTML semantik dan EPUB reflow
+menyediakan permukaan baca yang lebih sesuai untuk pembesaran, layar
+sempit, dan teknologi bantu. Hasil laboratorium tersedia dalam CSV dan
+JSON sehingga informasi angka tidak bergantung pada grafik.</p>
+</section>
+</section>
+<footer id="reader-footer"><p><code>d90.orig.v1.tr02.unit</code> · Mixed rights: new Original-02 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0</p></footer>
+</main>
+</body>
+</html>

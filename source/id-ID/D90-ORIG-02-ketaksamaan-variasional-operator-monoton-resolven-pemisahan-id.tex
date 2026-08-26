@@ -1,0 +1,107 @@
+% unit-id: d90.orig.v1.tr02.unit
+% target-edition-id: d90.orig.v1.tr02.edition.id-ID
+% authorship: independent coursebook completion layer
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+\crefname{exercise}{latihan}{latihan}
+\Crefname{exercise}{Latihan}{Latihan}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\subtitle{Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan\\Edisi Bahasa Indonesia}
+\author{Lapisan penyelesaian kursus mandiri}
+\date{Versi kerja 26 Agustus 2026}
+\publishers{\small
+Materi asli untuk menutup kesenjangan kurikulum O015/D90.\\
+Teks dan laboratorium baru: CC BY-SA 4.0; kelas dan makro: CC BY 4.0.\\
+Rujukan matematis tidak menyiratkan penyusunan, pemeriksaan, persetujuan, sponsor, atau dukungan oleh penulis maupun institusi yang dirujuk.}
+\hypersetup{
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan - Edisi Bahasa Indonesia},
+  pdfauthor={Independent Indonesian coursebook completion layer},
+  pdfsubject={Original CC BY-SA 4.0 educational material for variational inequalities and monotone operator splitting},
+  pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang tranche ini}
+Tranche ini adalah lapisan penghubung mandiri setelah tulang punggung Habring,
+modul Douglas--Rachford Becker yang telah diterima, dan Tranche Asli 1. Ia
+bukan terjemahan terselubung dari satu sumber lain. Definisi, teorema, bukti,
+algoritma, latihan, petunjuk, solusi, dan laboratorium ditulis secara mandiri,
+lalu diperiksa terhadap sumber matematis yang disebutkan di akhir bab.
+
+Perannya terbatas dan dapat diuji: mengubah ketaksamaan variasional menjadi
+inklusi kerucut-normal; membedakan operator monoton dari operator monoton
+maksimal; membangun resolven melalui teorema Minty; membuktikan sifat tak
+ekspansif kukuh dan konvergensi titik proksimal; memberi syarat tepat untuk
+pemisahan maju--mundur; serta menempatkan Douglas--Rachford dalam bahasa
+operator tanpa mengulang modul proksimal konkret yang telah diterima.
+
+Tidak ada prosa matematis, gambar, latihan, solusi, atau kode laboratorium
+pihak ketiga yang disalin. Infrastruktur pembaca memakai salinan persis
+\texttt{shinybook.cls} yang dibundel dengan sumber Habring dan adaptasi
+Indonesia \texttt{macros-id.tex} dari \texttt{macros.tex} milik Habring;
+keduanya dipertahankan berdasarkan bukti lisensi CC BY 4.0 pada tingkat
+kiriman arXiv dan tidak dilisensikan ulang sebagai CC BY-SA;
+\texttt{shinybook.cls} sendiri tidak memuat pemberitahuan lisensi terpisah.
+Prakata sumber Habring mengakui templat Christian Clason, dan kredit tersebut
+dipertahankan di sini. Modul Becker mempertahankan hak MIT pada byte sumbernya,
+tetapi tidak ada byte donor yang masuk ke lapisan asli ini. Artikel yang
+dirujuk mempertahankan hak masing-masing dan dipakai hanya sebagai saksi
+verifikasi. Seluruh teks substantif dan kode laboratorium baru tersedia
+berdasarkan CC BY-SA 4.0. Ini adalah edisi mandiri dan tidak menyiratkan
+dukungan pihak yang dirujuk.
+
+Provenans produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori. Seluruh kredit penulis dan kontributor manusia pada
+sumber pendamping tetap dipertahankan.
+
+\tableofcontents
+\mainmatter
+\input{original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id}
+
+\backmatter
+\chapter*{Hak, atribusi, dan nondukungan}
+Materi asli dalam tranche ini--termasuk uraian, formulasi penghubung, bukti,
+algoritma, latihan, petunjuk, solusi, laboratorium, dan dokumentasi--tersedia
+berdasarkan Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0), melalui
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{laman lisensi resmi}.
+
+Kelas dokumen \texttt{shinybook.cls} adalah salinan persis kelas yang
+dibundel bersama Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+arXiv:2607.11664v1; \texttt{macros-id.tex} adalah adaptasi Indonesia dari
+\texttt{macros.tex} dalam paket yang sama. Kedua komponen itu tersedia
+berdasarkan bukti lisensi Creative Commons Attribution 4.0 International
+(CC BY 4.0) pada tingkat kiriman arXiv, melalui
+\href{https://creativecommons.org/licenses/by/4.0/}{laman lisensi resmi}, dan
+bukan bagian dari lisensi CC BY-SA untuk materi baru. Berkas kelas itu tidak
+memuat pemberitahuan lisensi terpisah. Prakata Habring menyatakan bahwa templat
+catatan kuliah tersebut berasal dari Christian Clason; kredit templat itu
+dipertahankan tanpa menyiratkan dukungan.
+
+Saksi verifikasi yang dirujuk meliputi karya Andreas Habring, Christian
+Clason, Stephen Becker, Mitchell Krock, George J. Minty, R. Tyrrell
+Rockafellar, Pierre-Louis Lions, dan Bertrand Mercier. Penyebutan mereka hanya
+untuk atribusi matematika dan provenans. Tidak seorang pun dari mereka maupun
+institusinya menyusun, memeriksa, menyetujui, mensponsori, atau mendukung edisi
+ini.
+
+\section*{Catatan aksesibilitas}
+PDF ini dapat dicari, memakai bahasa dokumen \texttt{id-ID}, dan merupakan
+permukaan tata letak tetap. HTML semantik dan EPUB reflow menyediakan
+permukaan baca yang lebih sesuai untuk pembesaran, layar sempit, dan teknologi
+bantu. Hasil laboratorium tersedia dalam CSV dan JSON sehingga informasi
+angka tidak bergantung pada grafik.
+
+\end{document}

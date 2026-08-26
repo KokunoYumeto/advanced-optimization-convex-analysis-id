@@ -5,7 +5,7 @@
   "frozen_on": "2026-08-22",
   "selection_architecture": {
     "authority_record": {
-      "path": "C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json",
+      "path": "PROJECT_ROOT/../../../outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json",
       "bytes": 68481,
       "sha256": "af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c"
     },
@@ -666,14 +666,120 @@
       "upstream_contact":false
     }
   },
+  "current_original_02_completion_admission": {
+    "recorded_on": "2026-08-26",
+    "status": "original_tranche_2_admitted_and_zenodo_publicly_preserved",
+    "scope": "Independent sixteen-page tranche on the standard variational inequality, maximal monotone operators, Minty range criterion, resolvents, proximal point, forward-backward splitting, Korpelevich extragradient, and Douglas-Rachford convergence, with six exercises, progressive hints, complete solutions, and one deterministic open-computation lab. The larger O015 course remains partial.",
+    "localized_sources": [
+      {
+        "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "bytes": 28028,
+        "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+      },
+      {
+        "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "bytes": 5476,
+        "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+      }
+    ],
+    "reader_artifacts": [
+      {
+        "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+        "bytes": 453811,
+        "pages": 16,
+        "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+      },
+      {
+        "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+        "bytes": 190403,
+        "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+      },
+      {
+        "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+        "bytes": 48701,
+        "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+      }
+    ],
+    "lab": {
+      "script_path": "labs/original-02/monotone-splitting-lab.py",
+      "script_bytes": 17904,
+      "script_sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119",
+      "results_json_sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81",
+      "results_csv_sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243",
+      "residual_svg_sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5",
+      "deterministic": true
+    },
+    "validation": {
+      "math_sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4",
+      "pdf_build_sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a",
+      "pdf_visual_sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04",
+      "html_build_sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5",
+      "browser_sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891",
+      "epub_build_sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6",
+      "epub_conformance_sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e",
+      "backend_build_sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370",
+      "backend_validation_sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2",
+      "rights_nonoverlap_sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e",
+      "independent_rereview_sha256": "a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082",
+      "result": "pass"
+    },
+    "backend": {
+      "protected_prior_records": 3943,
+      "added_records": 395,
+      "records": 4338,
+      "jsonl_bytes": 3183459,
+      "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+      "csv_bytes": 3839894,
+      "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "rights": {
+      "new_substantive_content_and_lab": "CC BY-SA 4.0",
+      "habring_shinybook_and_macro_scaffold": "CC BY 4.0",
+      "mathematical_references": "verification witnesses only; no prose, layout, exercise, figure, solution, or code copied",
+      "nonendorsement": true
+    },
+    "overlap": {
+      "o018_imported": false,
+      "excluded": "LP/MIP, simplex-tableau algorithms, finite-LP duality/sensitivity, network/discrete optimization, and general OR solver workflow"
+    },
+    "public_preservation": {
+      "status": "zenodo_public_github_pending",
+      "zenodo_record_id": "22104724",
+      "zenodo_record_doi": "10.5281/zenodo.22104724",
+      "zenodo_concept_doi": "10.5281/zenodo.22059741",
+      "zenodo_public_url": "https://zenodo.org/records/22104724",
+      "zenodo_file_count": 99,
+      "zenodo_inherited_file_count": 90,
+      "zenodo_addition_file_count": 9,
+      "zenodo_default_preview": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "zenodo_privacy_correction_receipt": "release/zenodo/2026-08-26-original-02/zenodo-privacy-correction-original-02.json",
+      "zenodo_privacy_correction_receipt_sha256": "2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114",
+      "zenodo_privacy_state_receipt": "release/zenodo/2026-08-26-original-02/zenodo-privacy-repair-state-original-02.json",
+      "zenodo_privacy_state_receipt_sha256": "11f913f1449310202aad6ee518180207ac485906bc9b9cbd0365a7bcf2f65182",
+      "zenodo_readback_receipt": "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+      "zenodo_readback_receipt_sha256": "2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f",
+      "zenodo_closure_receipt": "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json",
+      "zenodo_closure_receipt_sha256": "65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab",
+      "local_package": "release/original-02/2026-08-26/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+      "local_package_bytes": 680451,
+      "local_package_sha256": "5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d",
+      "privacy_correction": "same-record in-place minor-file correction; exactly three files replaced, 96 protected files unchanged, metadata/default preview/DOI/concept unchanged, zero profile-locator hits in current public additions",
+      "privacy_replaced_file_count": 3,
+      "unchanged_file_count": 96,
+      "new_version_created": false,
+      "profile_locator_hits_in_public_additions": 0,
+      "upstream_contact": false
+    }
+  },
   "current_production_cursor": {
     "recorded_on": "2026-08-26",
     "authority_kind": "finite_original_coursebook_closure",
     "name": "FINITE-ORIGINAL-CLOSURE",
-    "state": "original_tranche_1_publicly_preserved_next_variational_monotone_module",
+    "state": "original_tranche_2_zenodo_public_github_gate_next",
     "scope_reference": "selection_architecture.original_completion_required",
     "required_actions": [
-      "then author the next coherent original tranche on variational inequalities, maximal monotone operators, resolvents, and splitting"
+      "publish and anonymously verify the manifest-bound Original-02 GitHub boundary",
+      "then build cumulative assessment and proof rubrics, two additional labs, capstone, and integrated accessibility/final-reader closure"
     ]
   },
   "authorities": [

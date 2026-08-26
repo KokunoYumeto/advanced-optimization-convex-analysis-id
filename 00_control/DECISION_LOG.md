@@ -866,3 +866,50 @@ existing lineages. No duplicate concept, upstream contact, or credential
 material was introduced. Advance directly to one coherent original module on
 variational inequalities, maximal monotone operators, resolvents, and
 splitting; do not reopen publication or claim the course complete.
+
+## D90-0061 — Admit Original-02 and preserve it in the existing Zenodo lineage (2026-08-26)
+
+Decision: admit the independent Original-02 variational/maximal-monotone/
+resolvent/splitting tranche after correcting the pre-release Minty-VI and
+forward--backward--forward labeling overclaims. The mathematics itself remains
+the standard Stampacchia-form VI, Minty's maximal-monotone range criterion, and
+Korpelevich extragradient. All reader, mathematics, computation, rights,
+non-overlap, backend, EPUB, browser, visual, and independent-rereview gates pass.
+
+The protected backend adds exactly 395 records to 3,943 for 4,338. The compact
+39-entry release is 679,973 bytes /
+`40768542571ba269b2b175e080a611a4626f92068510d5e26b95cb53da66a1eb`.
+Zenodo record `22104724`, DOI `10.5281/zenodo.22104724`, is the single new
+version in the existing concept, with 90 inherited files, nine additions,
+Original-02 PDF preview, full anonymous byte readback, and zero open drafts.
+No duplicate concept, upstream contact, credential recording, license
+flattening, or full-course claim occurred. One exact GitHub publication gate
+remains before advancing to the finite course-wide assessment/lab/capstone/
+accessibility closure.
+
+## D90-0062 — Supersede three Original-02 release-support files in place (2026-08-26)
+
+Decision: the package, manifest, and checksum identities recorded in D90-0061
+are historical and superseded for current use because those first variants
+contained a local Windows user-profile locator. The mathematical readers,
+rights, stable IDs, DOI, concept, metadata, default preview, and the other 96
+public files were unaffected. The privacy-clean replacements are: compact ZIP
+680,451 bytes / `5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d`;
+Zenodo manifest 6,559 bytes /
+`92e05870cc496deb1c9509a1299fdc90d73e9b04f920a3c8347171d900a9771f`;
+and checksum file 1,001 bytes /
+`1e1b5734be66d452fdf025100e1d4ec22184de02798f8f765eddccf74ef81576`.
+
+Zenodo's bounded same-record minor-file action replaced exactly those three
+files on record `22104724`; it created no new record or version and preserved
+the DOI/concept, exact 99-name inventory, metadata, and default preview.
+Anonymous readback matched all 99 current public files and found zero
+profile-locator hits across additions, nested archive entries, and decoded PDF
+streams. Authenticated closure returned draft 404 and zero open drafts. The
+current correction/readback/closure receipt SHA-256 values are
+`2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114`,
+`2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f`,
+and `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
+The next bounded action remains one exact GitHub publication/readback gate;
+then production advances to course-wide assessment, labs, capstone, tagged
+PDF/accessibility, and integrated final readers.

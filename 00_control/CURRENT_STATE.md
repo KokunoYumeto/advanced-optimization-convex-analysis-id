@@ -9,7 +9,7 @@ Status: complete Habring v1 spine plus Becker-01, Becker-02, and Becker-03 are p
 
 This task is the sole O015 production owner. It owns the Indonesian reader corpus, locale-neutral stable-ID backend, exact component rights/provenance, QA, and existing public lineages. O018 is adjacent but disjoint and owns LP/MIP modelling, simplex/tableaux, finite LP duality and sensitivity, network/discrete optimization, and general OR workflows. Habring arXiv `2607.11664v1` is the canonical structured-source spine. MIT OCW 6.253, Royer, and Penn remain useful separately licensed companions; every accepted artifact and stable ID is preserved.
 
-The controlling architecture receipt is `C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`, 68,481 bytes, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
+The controlling architecture receipt is `PROJECT_ROOT/../../../outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`, 68,481 bytes, SHA-256 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
 
 ## Selected primary authority
 
@@ -701,7 +701,7 @@ cursor only after that transaction closes.
 ## 2026-08-24 — O015 source architecture reconciled
 
 The stable coordinator authority is
-`C:/Users/Floris/Documents/interlanguage/outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`,
+`PROJECT_ROOT/../../../outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`,
 68,481 bytes / SHA-256
 `af18f08683fcd33c947571884c54c5f62e7499489db82ec6ae55a35d4d61fd1c`.
 It classifies O015 as an original coursebook with lawful structured-source
@@ -1178,3 +1178,52 @@ GitHub commit above and Zenodo record `22103674` / DOI
 `10.5281/zenodo.22103674`. The next executable cursor is a coherent original
 module on variational inequalities, maximal monotone operators, resolvents,
 and splitting. The course remains partial.
+
+## 2026-08-26 controlling refresh — Original-02 admitted and Zenodo public
+
+Original-02 is locally admitted after consolidated PASS gates and independent
+rereview P1=P2=P3=0. Source/wrapper identities are 28,028 / 5,476 bytes with
+SHA-256 `0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367`
+and `cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3`.
+The 16-page PDF, responsive HTML, and EPUB are 453,811 / 190,403 / 48,701
+bytes with SHA-256 `0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284`,
+`ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a`,
+and `dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86`.
+The PDF is searchable and truthfully untagged; HTML/EPUB are the reflow and
+native-MathML surfaces.
+
+The backend now contains 4,338 records, adding 395 collision-free
+`d90.orig.v1.tr02.*` records while recovering all 3,943 prior records byte- and
+order-exactly. JSONL is 3,183,459 bytes /
+`52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439`;
+CSV is 3,839,894 bytes /
+`2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c`.
+The rights and independent-rereview receipts are respectively
+`5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e`
+and `a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082`.
+
+Zenodo record `22104724` / DOI `10.5281/zenodo.22104724` is published in
+concept `10.5281/zenodo.22059741` with 99 files: 90 inherited unchanged and
+nine Original-02 additions. The Original-02 PDF is default preview; every
+public file passed anonymous exact-byte readback. The current privacy-clean
+39-entry ZIP is 680,451 bytes / SHA-256
+`5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d`.
+Zenodo's same-record minor-file correction replaced exactly that ZIP, the
+release manifest, and the checksum file; all 96 other files, the DOI, concept,
+metadata, and default preview remained unchanged and no new version was
+created. The correction/state receipts are 1,805 / 1,775 bytes with SHA-256
+`2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114` /
+`11f913f1449310202aad6ee518180207ac485906bc9b9cbd0365a7bcf2f65182`.
+Current anonymous readback scanned all public additions, archive entries, and
+decoded PDF streams, matched all 99 files, and found zero profile-locator hits:
+`release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json`,
+26,403 bytes / SHA-256
+`2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f`.
+Draft closure is PASS: authenticated lookup 404 and zero concept drafts;
+473-byte receipt SHA-256
+`65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
+
+The immediate remaining boundary action is one exact narrow GitHub commit and
+anonymous raw-byte readback. The course remains partial: cumulative assessment
+and proof rubrics, two more labs, capstone, tagged PDF, and final integrated
+accessibility/reader closure remain.

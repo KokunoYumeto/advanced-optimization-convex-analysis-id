@@ -1,0 +1,187 @@
+{
+  "artifact": {
+    "bytes": 190403,
+    "complete_solution_count": 6,
+    "embedded_lab_bytes_exact": true,
+    "embedded_lab_download_count": 4,
+    "embedded_svg_bytes_exact": true,
+    "environment_class_counts": {
+      "cor": 1,
+      "defn": 3,
+      "exercise": 6,
+      "lemma": 0,
+      "proof": 10,
+      "prop": 3,
+      "theorem": 6
+    },
+    "external_rendering_dependencies": [
+      "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    ],
+    "failures": [],
+    "formula_overflow_local": true,
+    "h1_count": 5,
+    "h2_count": 17,
+    "h3_count": 2,
+    "local_table_overflow_region_count": 2,
+    "main_landmark_count": 1,
+    "math_surface_count": 295,
+    "mathjax_url": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+    "navigation_math_duplication_count": 1,
+    "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+    "preserved_segment_id_count": 8,
+    "preserved_source_label_count": 53,
+    "responsive_single_column": true,
+    "segment_id_count": 8,
+    "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a",
+    "source_label_count": 53,
+    "source_math_surface_count": 294,
+    "staged_hint_count": 6,
+    "table_count": 2,
+    "toc_navigation_count": 1,
+    "unresolved_internal_fragments": [],
+    "visible_text_characters": 66759
+  },
+  "combined_source": {
+    "bytes": 70286,
+    "sha256": "c368447e819c571986a1652744809edfe96840ee9711b6d31347d37b36d59445"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true,
+    "canonical_copy_exact_match": true,
+    "run_sha256": [
+      "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a",
+      "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    ]
+  },
+  "inputs": [
+    {
+      "bytes": 5476,
+      "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    {
+      "bytes": 28028,
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    {
+      "bytes": 17904,
+      "path": "labs/original-02/monotone-splitting-lab.py",
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    {
+      "bytes": 13503,
+      "path": "labs/original-02/results.json",
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    {
+      "bytes": 4228,
+      "path": "labs/original-02/results.csv",
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    {
+      "bytes": 9538,
+      "path": "labs/original-02/residual.svg",
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    {
+      "bytes": 76168,
+      "path": "qa/build_original_02_reflow_engine.py",
+      "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"
+    },
+    {
+      "bytes": 7294,
+      "path": "qa/build_original_02_reflow.py",
+      "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "artifact": {
+        "bytes": 190403,
+        "path": "tmp/original-02-reflow/html-run-1.html",
+        "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+      },
+      "command": [
+        "pandoc",
+        "<project-root>/tmp/original-02-reflow/original-02-reflow.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        "--resource-path=<project-root>",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-26",
+        "--output=<project-root>/tmp/original-02-reflow/html-run-1.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warnings": []
+    },
+    {
+      "artifact": {
+        "bytes": 190403,
+        "path": "tmp/original-02-reflow/html-run-2.html",
+        "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+      },
+      "command": [
+        "pandoc",
+        "<project-root>/tmp/original-02-reflow/original-02-reflow.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        "--resource-path=<project-root>",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-26",
+        "--output=<project-root>/tmp/original-02-reflow/html-run-2.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warnings": []
+    }
+  ],
+  "schema": "o015-original-02-html-build-v1",
+  "source_date_epoch": "1787702400",
+  "source_inventory": {
+    "complete_solution_count": 6,
+    "environment_counts": {
+      "cor": 1,
+      "defn": 3,
+      "exercise": 6,
+      "lemma": 0,
+      "proof": 10,
+      "prop": 3,
+      "theorem": 6
+    },
+    "equation_label_count": 22,
+    "math_surface_count": 294,
+    "segment_ids": [
+      "d90.orig.v1.tr02.seg0001",
+      "d90.orig.v1.tr02.seg0002",
+      "d90.orig.v1.tr02.seg0003",
+      "d90.orig.v1.tr02.seg0004",
+      "d90.orig.v1.tr02.seg0005",
+      "d90.orig.v1.tr02.seg0006",
+      "d90.orig.v1.tr02.seg0007",
+      "d90.orig.v1.tr02.seg0008"
+    ],
+    "source_label_count": 53,
+    "staged_hint_count": 6
+  },
+  "tool_versions": {
+    "pandoc": "pandoc 3.9.0.2",
+    "python": "3.13.9"
+  },
+  "upstream_contact": false
+}

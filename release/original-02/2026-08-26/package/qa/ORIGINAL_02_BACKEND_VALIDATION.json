@@ -1,0 +1,282 @@
+{
+  "admission": {
+    "canonical_backend_written": true,
+    "csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "disposition": "validated_canonical_backend",
+    "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+    "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+    "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+    "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+    "final_records": 4338,
+    "jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    },
+    "namespace": "d90.orig.v1.tr02.*",
+    "new_entity_counts": {
+      "artifact": 8,
+      "concept": 8,
+      "edition": 1,
+      "learning_surface": 100,
+      "qa_event": 6,
+      "relation": 259,
+      "resource": 1,
+      "rights": 3,
+      "segment": 8,
+      "unit": 1
+    },
+    "new_id_order_sha256": "211e6772d6497397800f3201afbeb1e07d048b62b1afb9ee5f577c216255a52b",
+    "new_id_set_sha256": "ec28cb1d0f0dd6ce72a0742fc147dac2ab8610ca8b44bf3025b283104226bec6",
+    "new_record_set_sha256": "4e48431af438e23192f16b43912fc3c15c531718beb4dcd6a41024429d4e46a1",
+    "new_records": 395
+  },
+  "commands": {
+    "canonical_generation": "python qa/extend_backend_original_02.py --write-canonical",
+    "staging": "python qa/extend_backend_original_02.py --output-dir <dir>",
+    "validation": "python qa/validate_backend_original_02.py"
+  },
+  "deterministic_regeneration": {
+    "generator_stdout_receipt_consistent": true,
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3839894,
+          "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+        },
+        "jsonl": {
+          "bytes": 3183459,
+          "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+        },
+        "run": 1,
+        "validated_identity": {
+          "csv": {
+            "bytes": 3839894,
+            "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+          },
+          "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+          "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+          "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+          "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+          "jsonl": {
+            "bytes": 3183459,
+            "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+          },
+          "new_id_order_sha256": "211e6772d6497397800f3201afbeb1e07d048b62b1afb9ee5f577c216255a52b",
+          "new_id_set_sha256": "ec28cb1d0f0dd6ce72a0742fc147dac2ab8610ca8b44bf3025b283104226bec6",
+          "new_record_set_sha256": "4e48431af438e23192f16b43912fc3c15c531718beb4dcd6a41024429d4e46a1",
+          "new_records": 395,
+          "records": 4338
+        }
+      },
+      {
+        "csv": {
+          "bytes": 3839894,
+          "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+        },
+        "jsonl": {
+          "bytes": 3183459,
+          "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+        },
+        "run": 2,
+        "validated_identity": {
+          "csv": {
+            "bytes": 3839894,
+            "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+          },
+          "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+          "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+          "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+          "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+          "jsonl": {
+            "bytes": 3183459,
+            "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+          },
+          "new_id_order_sha256": "211e6772d6497397800f3201afbeb1e07d048b62b1afb9ee5f577c216255a52b",
+          "new_id_set_sha256": "ec28cb1d0f0dd6ce72a0742fc147dac2ab8610ca8b44bf3025b283104226bec6",
+          "new_record_set_sha256": "4e48431af438e23192f16b43912fc3c15c531718beb4dcd6a41024429d4e46a1",
+          "new_records": 395,
+          "records": 4338
+        }
+      }
+    ],
+    "input_dataset_match": true,
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "extension_receipt": {
+    "bytes": 4959,
+    "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+    "schema": "o015-original-02-backend-extension-v1",
+    "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370"
+  },
+  "independent_validation": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3839894,
+          "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+        },
+        "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+        "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+        "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+        "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+        "jsonl": {
+          "bytes": 3183459,
+          "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+        },
+        "new_id_order_sha256": "211e6772d6497397800f3201afbeb1e07d048b62b1afb9ee5f577c216255a52b",
+        "new_id_set_sha256": "ec28cb1d0f0dd6ce72a0742fc147dac2ab8610ca8b44bf3025b283104226bec6",
+        "new_record_set_sha256": "4e48431af438e23192f16b43912fc3c15c531718beb4dcd6a41024429d4e46a1",
+        "new_records": 395,
+        "records": 4338,
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 3839894,
+          "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+        },
+        "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+        "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+        "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+        "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+        "jsonl": {
+          "bytes": 3183459,
+          "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+        },
+        "new_id_order_sha256": "211e6772d6497397800f3201afbeb1e07d048b62b1afb9ee5f577c216255a52b",
+        "new_id_set_sha256": "ec28cb1d0f0dd6ce72a0742fc147dac2ab8610ca8b44bf3025b283104226bec6",
+        "new_record_set_sha256": "4e48431af438e23192f16b43912fc3c15c531718beb4dcd6a41024429d4e46a1",
+        "new_records": 395,
+        "records": 4338,
+        "run": 2
+      }
+    ],
+    "passes_completed": 2,
+    "passes_required": 2
+  },
+  "lab": {
+    "artifacts": {
+      "labs/original-02/monotone-splitting-lab.py": {
+        "bytes": 17904,
+        "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+      },
+      "labs/original-02/residual.svg": {
+        "bytes": 9538,
+        "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+      },
+      "labs/original-02/results.csv": {
+        "bytes": 4228,
+        "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+      },
+      "labs/original-02/results.json": {
+        "bytes": 13503,
+        "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+      }
+    },
+    "checkpoints": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20,
+      40,
+      80,
+      120,
+      200
+    ],
+    "iterations": 200,
+    "methods": [
+      "douglas_rachford",
+      "forward_backward_outside_range",
+      "forward_backward_stable"
+    ],
+    "result": "pass",
+    "row_count": 30,
+    "schema": "o015-original-02-monotone-splitting-lab-v1",
+    "upstream_contact": false
+  },
+  "protected_baseline": {
+    "csv": {
+      "bytes": 3537781,
+      "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+    },
+    "id_order_sha256": "c388136ac08c27377246a28faba7d305c05b3c5f6eb8a8fbf2a859d7f64ea7a7",
+    "id_set_sha256": "a71d22270106e2fe9a48fe9cd6d13083dcb67608b98f93836ce5282fcd3c2877",
+    "jsonl": {
+      "bytes": 2941125,
+      "line_sequence_sha256": "8c591d614f95ecdd1bdb05a6dcc22b8c0685ce1e8b44be32694d49cf6cef6ba8",
+      "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "cb024eb91a7c2c996a3fbcc8da3425183e70ed81debd6f4e87d2d19eac7028b6",
+    "records": 3943,
+    "recovered_csv": {
+      "bytes": 3537781,
+      "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+    },
+    "recovered_jsonl": {
+      "bytes": 2941125,
+      "line_sequence_sha256": "8c591d614f95ecdd1bdb05a6dcc22b8c0685ce1e8b44be32694d49cf6cef6ba8",
+      "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-original-02-backend-validation-v1",
+  "schema_constraint": {
+    "additive_records_only": true,
+    "note": "Global sorting means the old file is not a literal prefix; workflow stripping proves every protected JSONL line and CSV row remains byte-identical and in the same relative order.",
+    "schema_bytes": 3092,
+    "schema_changed": false,
+    "schema_sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "source_and_topology": {
+    "definition_discovery": "three live defn environments",
+    "exercise_hint_solution_sets": 6,
+    "lab_surface_range": "516-562",
+    "present_surface_counts": {
+      "chapter": 1,
+      "corollary": 1,
+      "definition": 3,
+      "equation": 45,
+      "exercise": 6,
+      "hint": 6,
+      "lab": 1,
+      "proof": 10,
+      "proposition": 3,
+      "section": 10,
+      "solution": 6,
+      "subsection": 2,
+      "theorem": 6
+    },
+    "present_surfaces": 100,
+    "proof_statement_pairs": 10,
+    "relation_count": 259,
+    "segment_ranges": [
+      "1-86",
+      "87-193",
+      "194-262",
+      "263-315",
+      "316-432",
+      "433-486",
+      "487-563",
+      "564-744"
+    ],
+    "segments": 8,
+    "source": {
+      "bytes": 28028,
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "physical_lines": 744,
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    "topics": 8,
+    "unit_id": "d90.orig.v1.tr02.unit"
+  },
+  "validated_at": "2026-08-26T04:30:00Z",
+  "workflow": "o015-original-02-backend-v1"
+}

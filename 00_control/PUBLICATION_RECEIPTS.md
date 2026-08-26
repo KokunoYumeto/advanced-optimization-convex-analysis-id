@@ -979,3 +979,72 @@ boundary; it does not start another evidence-only commit loop.
 - No credentials were read for the public check and no upstream contact occurred.
   The next cursor is the variational-inequality/maximal-monotone/resolvent/
   splitting module; the course remains partial.
+
+## 2026-08-26 — Original-02 Zenodo publication and anonymous readback
+
+- Existing concept: `10.5281/zenodo.22059741`.
+- Published record: `https://zenodo.org/records/22104724`; DOI
+  `10.5281/zenodo.22104724`; parent record `22103674` / DOI
+  `10.5281/zenodo.22103674`.
+- Inventory: exactly 99 files, with 90 inherited byte-identical files and nine
+  Original-02 additions. The default preview is
+  `D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf`.
+- Reader additions: PDF 453,811 bytes /
+  `0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284`;
+  HTML 190,403 /
+  `ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a`;
+  EPUB 48,701 /
+  `dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86`;
+  compact ZIP 679,973 /
+  `40768542571ba269b2b175e080a611a4626f92068510d5e26b95cb53da66a1eb`.
+- Backend additions are the exact 4,338-record JSONL/CSV files plus the rights
+  note, manifest, and checksums. Nine superseded parent release aids remain in
+  earlier immutable versions and are omitted only from this version.
+- Anonymous readback:
+  `release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json`,
+  27,161 bytes; SHA-256
+  `a1304827b61c97119f9b6a8c525744018e4631a3cf45a46677b260b6e2984287`.
+  Result is PASS; every public file matched expected size and SHA-256.
+- Authenticated closure:
+  `release/zenodo/2026-08-26-original-02/zenodo-draft-closure-original-02.json`,
+  391 bytes; SHA-256
+  `93016affd55d8d19f8c9f9f9f366727f465e826a82ce885070287136621f107b`.
+  Direct draft lookup returned 404 and the concept has zero open drafts.
+- Metadata contains the exact model marker once and the permitted organization
+  contributor entry once, with neither in the work title nor description lead.
+  No credential material was recorded and no upstream contact occurred.
+
+## 2026-08-26 — Original-02 same-record privacy correction and readback
+
+- Scope: Zenodo record `22104724`, DOI `10.5281/zenodo.22104724`, concept DOI
+  `10.5281/zenodo.22059741`. This was an in-place minor-file correction, not a
+  new version or competing concept.
+- Exactly three files were replaced: the compact ZIP is now 680,451 bytes /
+  `5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d`;
+  `release-manifest-original-02-zenodo.json` is 6,559 /
+  `92e05870cc496deb1c9509a1299fdc90d73e9b04f920a3c8347171d900a9771f`;
+  and `SHA256SUMS-original-02` is 1,001 /
+  `1e1b5734be66d452fdf025100e1d4ec22184de02798f8f765eddccf74ef81576`.
+  The prior three identities above remain historical adverse evidence and are
+  superseded for current use.
+- The other 96 files, exact 99-name namespace, DOI, concept, metadata SHA-256
+  `19bf7a7d29882319e06a654a78d76f7f3b535040bb2a4f7cbf61d6baa5286ace`,
+  and Original-02 default preview remained unchanged.
+- Sanitized transaction evidence: terminal state 1,775 bytes /
+  `11f913f1449310202aad6ee518180207ac485906bc9b9cbd0365a7bcf2f65182`;
+  correction receipt 1,805 /
+  `2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114`.
+- Anonymous current-byte readback:
+  `release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json`,
+  26,403 bytes / SHA-256
+  `2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f`.
+  All 99 files matched; additions, archive entries, and decoded PDF streams
+  contained zero Windows profile-locator hits.
+- Authenticated closure:
+  `release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json`,
+  473 bytes / SHA-256
+  `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
+  Direct draft lookup returned 404 and the concept has zero open drafts.
+- No credential material was recorded, no upstream contact occurred, and no
+  mathematical content, component rights, contributor metadata, or release
+  status changed.

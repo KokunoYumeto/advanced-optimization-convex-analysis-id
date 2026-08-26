@@ -1,0 +1,169 @@
+{
+  "artifact": {
+    "bytes": 453811,
+    "encrypted": false,
+    "language": "id-ID",
+    "media_boxes": [
+      [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ]
+    ],
+    "missing_markers": [],
+    "pages": 16,
+    "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+    "required_markers": [
+      "ketaksamaan variasional sebagai inklusi monoton",
+      "eksistensi konstruktif bagi vi monoton kuat",
+      "resolven operator monoton maksimal",
+      "metode titik proksimal",
+      "pemisahan maju",
+      "perbaikan ekstragradien",
+      "pemisahan douglas",
+      "mengapa kemonotonan saja tidak cukup",
+      "laboratorium 2",
+      "petunjuk bertahap",
+      "solusi lengkap",
+      "peta asumsi dan batas klaim",
+      "creative commons attribution-sharealike 4.0",
+      "creative commons attribution 4.0 international",
+      "shinybook.cls",
+      "macros-id.tex",
+      "christian clason",
+      "tingkat kiriman arxiv",
+      "tidak memuat pemberitahuan lisensi terpisah",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "searchable_text_bytes": 35074,
+    "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284",
+    "tagged": false,
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan - Edisi Bahasa Indonesia"
+  },
+  "byte_identical_clean_builds": true,
+  "canonical_copy_exact_match": true,
+  "inputs": [
+    {
+      "bytes": 5476,
+      "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    {
+      "bytes": 28028,
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 17904,
+      "path": "labs/original-02/monotone-splitting-lab.py",
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    {
+      "bytes": 13503,
+      "path": "labs/original-02/results.json",
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    {
+      "bytes": 4228,
+      "path": "labs/original-02/results.csv",
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    {
+      "bytes": 9538,
+      "path": "labs/original-02/residual.svg",
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    {
+      "bytes": 9055,
+      "path": "qa/build_original_02_pdf_engine.py",
+      "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0"
+    },
+    {
+      "bytes": 2562,
+      "path": "qa/build_original_02_pdf.py",
+      "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=<project-root>/tmp/pdfs/original-02-determinism/run1",
+        "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex"
+      ],
+      "console_sha256": [
+        "36ca706e4020b30048c0180504d12d76e617bcb3f3ec686395a02c7a18612aea",
+        "8f7074f3fbd54edbf7c3c7e3276b16daff55ab403d1c80c233a2214438ba5d10"
+      ],
+      "directory": "tmp/pdfs/original-02-determinism/run1",
+      "log": {
+        "bytes": 99457,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "tmp/pdfs/original-02-determinism/run1/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.log",
+        "sha256": "2b383bdc3e88111f819e5161126fa8a3880f04cbeebf9fecf782ce053e1a15ec",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 453811,
+        "path": "tmp/pdfs/original-02-determinism/run1/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+        "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+      }
+    },
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=<project-root>/tmp/pdfs/original-02-determinism/run2",
+        "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex"
+      ],
+      "console_sha256": [
+        "6166d4e27e2fa621ea92511278950893beb759d5e725bf3433dd0d26eac4e7c2",
+        "70f64003eae35b492e6c9bd99a5fbba1ddfbfdeb9630900646de7dffccabfbe0"
+      ],
+      "directory": "tmp/pdfs/original-02-determinism/run2",
+      "log": {
+        "bytes": 99457,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "tmp/pdfs/original-02-determinism/run2/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.log",
+        "sha256": "a566bf55e6ce4281e4d47f0df35843371b1987b59c3377d350155edb71661014",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 453811,
+        "path": "tmp/pdfs/original-02-determinism/run2/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+        "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+      }
+    }
+  ],
+  "schema": "o015-original-02-pdf-build-v1",
+  "source_date_epoch": "1787702400",
+  "tool_versions": {
+    "pdflatex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "pdftotext": "pdftotext version 24.04.0",
+    "pypdf": "6.12.2"
+  },
+  "upstream_contact": false
+}

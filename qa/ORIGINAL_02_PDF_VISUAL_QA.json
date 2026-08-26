@@ -1,0 +1,218 @@
+{
+  "artifact": {
+    "bytes": 453811,
+    "language": "id-ID",
+    "media": "A4",
+    "pages": 16,
+    "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+    "searchable": true,
+    "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284",
+    "tagged": false
+  },
+  "build_receipt": {
+    "byte_identical_clean_builds": true,
+    "bytes": 6073,
+    "overfull_boxes": 0,
+    "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+    "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a",
+    "undefined_references": 0
+  },
+  "date": "2026-08-26",
+  "inspection": {
+    "all_pages_reviewed": true,
+    "broken_glyphs": 0,
+    "chart_information_dependencies": 0,
+    "clipped_text_or_math": 0,
+    "finding": "All 16 pages were inspected from full-page renders. The centered, page-filling layout, typography, equations, proofs, exercises, solutions, assumption table, rights notice, and accessibility note are legible and consistently aligned. Numeric laboratory results remain available as CSV and JSON.",
+    "full_size_spot_checks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "header_footer_page_number_defects": 0,
+    "margin_or_alignment_defects": 0,
+    "orphaned_headings": 0,
+    "overlaps": 0,
+    "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "unexpected_blank_pages": 0,
+    "unreadable_tables": 0
+  },
+  "limitations": [
+    "The PDF is searchable and declares id-ID but is not structurally tagged; semantic HTML and EPUB are the reflow/accessibility surfaces.",
+    "Visual inspection is deterministic evidence for this release boundary and is not a human-dependent gate."
+  ],
+  "render": {
+    "dpi": 160,
+    "pages": [
+      {
+        "bytes": 108403,
+        "page": 1,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "05d9d34140f185619f626c78ace4cf4ffd456a8d165c1a983a1d62c2bb0348f7"
+      },
+      {
+        "bytes": 302822,
+        "page": 2,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "02337a2333e413d74e20bb82f04582b55ce53f8103f656f33350fdc9e6e28781"
+      },
+      {
+        "bytes": 89286,
+        "page": 3,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "32c8f0b439465f2a37ac83fdb4cbb17e5d322dc4667d9f991aa545be17516e1e"
+      },
+      {
+        "bytes": 288712,
+        "page": 4,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "20a3787e888f8643bbb65cf7f082442ba08cb039c2cee3bb851779182d24d66e"
+      },
+      {
+        "bytes": 280666,
+        "page": 5,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "3173e9b94f068d82d14ef26b06094295912cf362f31fdb2fe05dabd50e387917"
+      },
+      {
+        "bytes": 320401,
+        "page": 6,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "741a96625fae08598ee681c24d4e5acfa6bfaf7fa1dd993b47ee8bf55a0f3255"
+      },
+      {
+        "bytes": 259971,
+        "page": 7,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "9b5a9cda1b59e306f95b6d236e091c29a01d4e700b77331b8825a22cbe52c8ec"
+      },
+      {
+        "bytes": 277931,
+        "page": 8,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "f2e540a43bab4d7e5dcb465fdf2d07d6713304a9db64ef535d87ad4f9b223cc2"
+      },
+      {
+        "bytes": 275941,
+        "page": 9,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "d02201d6cdba447632bcac0c9887c777bb6bc9698184af551dd7304063a7e935"
+      },
+      {
+        "bytes": 306104,
+        "page": 10,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "8c31ff1345c76100e12fabebb54767d68e8aaa114d67e6d825473d2138947004"
+      },
+      {
+        "bytes": 266570,
+        "page": 11,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "2e9b7bf3fa9b58a4206581ea77d98b4fd8c9162691fe4a2ef095d67f86334bcc"
+      },
+      {
+        "bytes": 306725,
+        "page": 12,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "696f143bbba0405a2662b1b7bdcd1bba9fad899113d86b52d6b7c27355427ff4"
+      },
+      {
+        "bytes": 341672,
+        "page": 13,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "ed28d48d8569e4eac0dff0916b8eebf8f83d65133fefa733920843633230bf06"
+      },
+      {
+        "bytes": 318866,
+        "page": 14,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "49d22723c046c66359129ca71f2387bfeb2bbebb84561e5daceb577d4441f504"
+      },
+      {
+        "bytes": 110021,
+        "page": 15,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "552ad9e93cdd1f575ae746d910147bb1dabbf634e2e1374238436682dfee9e0e"
+      },
+      {
+        "bytes": 281222,
+        "page": 16,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "fa31cd3daeb75863bfa77e190f6627f00e19e690bc46522ca4290c638dccff2f"
+      }
+    ],
+    "tool": "pdftoppm 24.04.0"
+  },
+  "repairs_bound": [
+    "The class-compatible equation layout eliminates alignment failures and overfull boxes.",
+    "The mixed CC BY-SA 4.0/CC BY 4.0 rights boundary and Christian Clason template credit are visible."
+  ],
+  "result": "pass",
+  "schema": "o015-original-02-pdf-visual-qa-v1",
+  "verifier": {
+    "bytes": 5963,
+    "path": "qa/verify_original_02_pdf_visual.py",
+    "sha256": "4d1231e0b8ab29ae5fa296389eae9b6226f8f9bbff1ca7d3d59227dc9b368c9b"
+  }
+}

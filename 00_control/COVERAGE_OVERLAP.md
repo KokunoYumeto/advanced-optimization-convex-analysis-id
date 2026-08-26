@@ -456,3 +456,37 @@ solver workflow. The remaining finite closure begins with variational
 inequalities, maximal monotone operators, resolvents, and splitting, followed
 by the course-wide cumulative assessment, labs, capstone, and final tagged-PDF
 and accessibility closure. The overall O015 course therefore remains partial.
+
+## Original-02 variational, monotone, resolvent, and splitting closure admitted (2026-08-26)
+
+Original-02 closes the next finite original tranche without creating a second
+spine. It adds the standard (Stampacchia-form) variational inequality and its
+normal-cone inclusion form, strong-monotonicity existence/uniqueness, set-valued and maximal
+monotone operators, the Minty range criterion, resolvents and reflected
+resolvents, proximal-point convergence, abstract forward--backward splitting,
+the projected-gradient VI special case, an explicit skew counterdiagnostic,
+Korpelevich extragradient, and the operator-theoretic convergence
+mechanism for Douglas--Rachford shadow iterates. Six exercises have progressive
+hints and complete solutions. The open lab publishes 30 rows in JSON/CSV plus
+an accessible SVG and exact active-set, step-range, residual, and contraction
+checks.
+
+The unit is additive relative to the canonical Habring spine: Habring already
+supplies subdifferentials, normal cones, projection, proximal mappings,
+proximal gradient, PDHG, and ADMM. Becker-02 already supplies the concrete
+proximal Douglas--Rachford algorithm, scaling, primal--dual relationship, and
+conditional shadow-limit proof. Original-02 does not restate those donor
+derivations; it supplies the missing general maximal-monotone/resolvent theory,
+the VI bridge, unconditional averaged-map convergence mechanism, aligned
+assessment, and reproducible computation. Habring, Becker, Minty, Rockafellar,
+Lions, and Mercier are mathematical witnesses only; no cited prose, layout,
+exercise, solution, figure, or code byte enters the independent layer.
+
+No O018 content is admitted. The unit contains no LP/MIP model,
+simplex/tableau mechanics, finite-LP duality or complementary slackness,
+sensitivity analysis, network/discrete optimization, or general OR solver
+workflow. Variational inequalities, normal cones, and monotone inclusions are
+used only in continuous convex analysis. The remaining finite course closure
+is cumulative assessment and proof rubrics, the remaining two open labs, a
+capstone, course-level connective solutions, tagged-PDF/accessibility closure,
+and integrated full-course readers. The overall O015 course remains partial.

@@ -1,0 +1,15 @@
+{
+  "authenticated_draft_lookup_status": 404,
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "concept_open_draft_count": 0,
+  "credential_material_recorded": false,
+  "file_count": 99,
+  "new_version_created": false,
+  "record_doi": "10.5281/zenodo.22104724",
+  "record_id": "22104724",
+  "replaced_file_count": 3,
+  "result": "pass",
+  "schema": "o015-zenodo-original-02-privacy-closure-v1",
+  "verified_at_utc": "2026-08-26T04:29:36.820739Z"
+}

@@ -1,0 +1,358 @@
+{
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "omissions": {
+    "becker_and_mathematical_witness_bytes": true,
+    "build_trees_caches_rendered_images_credentials_raw_provenance": true,
+    "full_backend_dataset": true,
+    "official_habring_source_tar_and_legalcode": true
+  },
+  "package_directory": "release/original-02/2026-08-26/package",
+  "release_directory": "release/original-02/2026-08-26",
+  "result": "pass",
+  "schema": "o015-original-02-local-release-verification-v1",
+  "verification": {
+    "absolute_entries": 0,
+    "all_final_receipts_pass": true,
+    "backslash_entries": 0,
+    "crc_test": "pass",
+    "credentials_included": false,
+    "directory_entries": 0,
+    "entry_bytes_match_package_tree": true,
+    "entry_order_matches_explicit_39_member_reader_first_inventory": true,
+    "final_receipt_identity_bindings_match": true,
+    "forbidden_umbrella_label_occurrences_in_text_members": 0,
+    "frozen_core_identities_match": true,
+    "git_used": false,
+    "independent_rereview_has_no_open_findings": true,
+    "network_used": false,
+    "parent_traversal_entries": 0,
+    "payload_cap_bytes": 500000000,
+    "sha256sums_verified": true,
+    "unique_entry_names": true
+  },
+  "verified_at_utc": "2026-08-26T03:00:39.047197Z",
+  "zip": {
+    "byte_identical_two_builds": true,
+    "bytes": 680451,
+    "compression": "ZIP_DEFLATED level 9",
+    "contains_itself": false,
+    "entries": [
+      {
+        "bytes": 453811,
+        "compressed_bytes": 419917,
+        "crc32": "2989eb1a",
+        "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+        "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 190403,
+        "compressed_bytes": 48601,
+        "crc32": "ef51ee4c",
+        "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+        "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 48701,
+        "compressed_bytes": 46044,
+        "crc32": "5f3a35f2",
+        "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+        "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3512,
+        "compressed_bytes": 1862,
+        "crc32": "3c5e148b",
+        "path": "README_ORIGINAL_02.md",
+        "sha256": "fdba2a211178d9efbe281b1049e11ea71a431ee7e34c263cb2b04e0280b11a8b",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3584,
+        "compressed_bytes": 1723,
+        "crc32": "8a63de9e",
+        "path": "RIGHTS_AND_PROVENANCE_ORIGINAL_02.md",
+        "sha256": "28512dcc27ef38163e8874e5e582689fbc24783226d0dce29fe3ca0700cc4fb0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 1026,
+        "compressed_bytes": 591,
+        "crc32": "a68fe428",
+        "path": "LICENSE_ORIGINAL_CC_BY-SA-4.0.md",
+        "sha256": "b5de93b5ce251fd6fc61efeef3ee2fb64bc20979af359c04571901020cc1a79e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 1294,
+        "compressed_bytes": 708,
+        "crc32": "aaab58de",
+        "path": "LICENSE_HABRING_SCAFFOLD_CC_BY-4.0.md",
+        "sha256": "407bb3f3d79a38e47a7c098ac8902c4e4b0c8cd8941faa1ad160c20e462ebea5",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5476,
+        "compressed_bytes": 2437,
+        "crc32": "e8f42249",
+        "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 28028,
+        "compressed_bytes": 8933,
+        "crc32": "bbbe7f9e",
+        "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4465,
+        "compressed_bytes": 1501,
+        "crc32": "f1a6417d",
+        "path": "source/id-ID/macros-id.tex",
+        "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 10133,
+        "compressed_bytes": 3010,
+        "crc32": "4e0c1ec9",
+        "path": "source/id-ID/shinybook.cls",
+        "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 17904,
+        "compressed_bytes": 5230,
+        "crc32": "1e4bdeb1",
+        "path": "labs/original-02/monotone-splitting-lab.py",
+        "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 13503,
+        "compressed_bytes": 3090,
+        "crc32": "cb094f87",
+        "path": "labs/original-02/results.json",
+        "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4228,
+        "compressed_bytes": 1715,
+        "crc32": "36ed52a6",
+        "path": "labs/original-02/results.csv",
+        "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 9538,
+        "compressed_bytes": 1616,
+        "crc32": "6848a61b",
+        "path": "labs/original-02/residual.svg",
+        "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3092,
+        "compressed_bytes": 1037,
+        "crc32": "88c38008",
+        "path": "backend/backend_schema.json",
+        "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 26577,
+        "compressed_bytes": 5370,
+        "crc32": "499285a5",
+        "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+        "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 6073,
+        "compressed_bytes": 2067,
+        "crc32": "7cadbd45",
+        "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+        "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5685,
+        "compressed_bytes": 2136,
+        "crc32": "1aaa5290",
+        "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+        "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 6289,
+        "compressed_bytes": 1847,
+        "crc32": "719b4f9a",
+        "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+        "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4247,
+        "compressed_bytes": 1650,
+        "crc32": "eb3012e2",
+        "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+        "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 7697,
+        "compressed_bytes": 2166,
+        "crc32": "5021b12d",
+        "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+        "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4066,
+        "compressed_bytes": 1788,
+        "crc32": "3380454a",
+        "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+        "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4959,
+        "compressed_bytes": 2042,
+        "crc32": "70e9ae23",
+        "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+        "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 11064,
+        "compressed_bytes": 2676,
+        "crc32": "f01e3d4e",
+        "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+        "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 8135,
+        "compressed_bytes": 2774,
+        "crc32": "7ea6bff5",
+        "path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+        "sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 16438,
+        "compressed_bytes": 6507,
+        "crc32": "e8ea9172",
+        "path": "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+        "sha256": "a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 9055,
+        "compressed_bytes": 3328,
+        "crc32": "b2579283",
+        "path": "qa/build_original_02_pdf_engine.py",
+        "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 2562,
+        "compressed_bytes": 1133,
+        "crc32": "30fda1c5",
+        "path": "qa/build_original_02_pdf.py",
+        "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 76168,
+        "compressed_bytes": 19790,
+        "crc32": "68d0031c",
+        "path": "qa/build_original_02_reflow_engine.py",
+        "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 7294,
+        "compressed_bytes": 2619,
+        "crc32": "5bd55675",
+        "path": "qa/build_original_02_reflow.py",
+        "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 49667,
+        "compressed_bytes": 13605,
+        "crc32": "f229f913",
+        "path": "qa/validate_original_02_math.py",
+        "sha256": "5b9cc66b6560b210715a0b6c6bd8b31943dd91d3764b3cb1ffb86e908d2662a1",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5963,
+        "compressed_bytes": 2191,
+        "crc32": "1284d72c",
+        "path": "qa/verify_original_02_pdf_visual.py",
+        "sha256": "4d1231e0b8ab29ae5fa296389eae9b6226f8f9bbff1ca7d3d59227dc9b368c9b",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 25107,
+        "compressed_bytes": 7036,
+        "crc32": "4015b9c2",
+        "path": "qa/verify_original_02_epub.py",
+        "sha256": "57aa0ee9d1a81edf0ee12113e4a2b8c25eeba40e06ba411849f11bc492d91245",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 56615,
+        "compressed_bytes": 14602,
+        "crc32": "b5924ea9",
+        "path": "qa/extend_backend_original_02.py",
+        "sha256": "33aa697bb393082a7c04aa60d999f94057cac5503407f8c135eb507555d8e393",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 63201,
+        "compressed_bytes": 15380,
+        "crc32": "e14f75cb",
+        "path": "qa/validate_backend_original_02.py",
+        "sha256": "f49b8a8498fe1bc322cab9d6e8378f76d0530e4601205b245f6eea6f7939565d",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 28088,
+        "compressed_bytes": 8651,
+        "crc32": "f6cb0bbd",
+        "path": "qa/validate_original_02_rights_nonoverlap.py",
+        "sha256": "d4716b8cce1da2f624d4ea826948d4b14e9326eec79ab4d6630f1946cfcf4c12",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 15975,
+        "compressed_bytes": 5003,
+        "crc32": "4daf9b16",
+        "path": "release-manifest-original-02.json",
+        "sha256": "690f2ed629b7e9d735939d62666a906141f6508d79c0c2614f6360285977dc7f",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4039,
+        "compressed_bytes": 2083,
+        "crc32": "7c68490e",
+        "path": "SHA256SUMS",
+        "sha256": "ec1857f0d52871aceee0d43919b2a1392a88ce479291a73be4e077a3e96bebf3",
+        "timestamp": "2026-08-26T00:00:00"
+      }
+    ],
+    "entry_count": 39,
+    "fixed_timestamp": "2026-08-26T00:00:00",
+    "path": "release/original-02/2026-08-26/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+    "sha256": "5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d"
+  }
+}

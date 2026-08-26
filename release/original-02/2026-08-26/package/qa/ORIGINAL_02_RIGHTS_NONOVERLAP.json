@@ -1,0 +1,196 @@
+{
+  "backend": {
+    "added_records": 395,
+    "csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "final_records": 4338,
+    "jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    },
+    "protected_records": 3943,
+    "receipt": {
+      "bytes": 11064,
+      "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2"
+    }
+  },
+  "component_rights": {
+    "becker_02": "separately licensed referenced companion; no donor byte claimed imported",
+    "class_exact_authority_match": true,
+    "controls": {
+      "component_rights_path": "00_control/COMPONENT_RIGHTS.csv",
+      "coverage_path": "00_control/COVERAGE_OVERLAP.md",
+      "coverage_section_present": true,
+      "present_o2_rows": [
+        "o015-original-02-chapter",
+        "o015-original-02-lab",
+        "o015-original-02-readers",
+        "o015-original-02-tooling",
+        "o015-original-02-wrapper"
+      ],
+      "required_o2_rows": [
+        "o015-original-02-chapter",
+        "o015-original-02-lab",
+        "o015-original-02-readers",
+        "o015-original-02-tooling",
+        "o015-original-02-wrapper"
+      ]
+    },
+    "habring_exact_class_and_adapted_macro_scaffold": "CC BY 4.0",
+    "macro_is_localized_adaptation": true,
+    "new_substantive_chapter_and_lab": "CC BY-SA 4.0"
+  },
+  "date": "2026-08-26",
+  "failures": [],
+  "live_files": {
+    "authority/habring/CC-BY-4.0-legalcode.txt": {
+      "bytes": 18657,
+      "path": "authority/habring/CC-BY-4.0-legalcode.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    "authority/habring/source-v1/macros.tex": {
+      "bytes": 4017,
+      "path": "authority/habring/source-v1/macros.tex",
+      "sha256": "690ef578d545947425a851187ac0b5f45a1a326892a682bcd9d286abb72f924a"
+    },
+    "authority/habring/source-v1/shinybook.cls": {
+      "bytes": 10133,
+      "path": "authority/habring/source-v1/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    "labs/original-02/monotone-splitting-lab.py": {
+      "bytes": 17904,
+      "path": "labs/original-02/monotone-splitting-lab.py",
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    "labs/original-02/residual.svg": {
+      "bytes": 9538,
+      "path": "labs/original-02/residual.svg",
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    "labs/original-02/results.csv": {
+      "bytes": 4228,
+      "path": "labs/original-02/results.csv",
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    "labs/original-02/results.json": {
+      "bytes": 13503,
+      "path": "labs/original-02/results.json",
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": {
+      "bytes": 48701,
+      "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": {
+      "bytes": 190403,
+      "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": {
+      "bytes": 453811,
+      "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    "source/en/becker-02-douglas-rachford-source.tex": {
+      "bytes": 1358,
+      "path": "source/en/becker-02-douglas-rachford-source.tex",
+      "sha256": "fdc368741a0a88eb9d21c69d655ac6ce1b44571c2d49c6a3302e3efc4673594b"
+    },
+    "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex": {
+      "bytes": 7134,
+      "path": "source/id-ID/D90-BECKER-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "23fd130a5e644801ccb2374450ec07744c9e68dff003c295f3b127d9a9b90955"
+    },
+    "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 5476,
+      "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex": {
+      "bytes": 4915,
+      "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+      "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+    },
+    "source/id-ID/macros-id.tex": {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 28028,
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    "source/id-ID/shinybook.cls": {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  },
+  "o018_nonoverlap": {
+    "excluded": [
+      "LP/MIP",
+      "simplex/tableau algorithms",
+      "finite-LP duality/sensitivity",
+      "network/discrete optimization",
+      "general OR solver workflow"
+    ],
+    "imported": false
+  },
+  "passing_qa_receipts": {
+    "qa/ORIGINAL_02_EPUB_BUILD.json": {
+      "bytes": 7697,
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    "qa/ORIGINAL_02_EPUB_CONFORMANCE.json": {
+      "bytes": 4066,
+      "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e"
+    },
+    "qa/ORIGINAL_02_HTML_BROWSER_QA.json": {
+      "bytes": 4247,
+      "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891"
+    },
+    "qa/ORIGINAL_02_HTML_BUILD.json": {
+      "bytes": 6289,
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    "qa/ORIGINAL_02_MATH_VALIDATION.json": {
+      "bytes": 26577,
+      "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4"
+    },
+    "qa/ORIGINAL_02_PDF_BUILD.json": {
+      "bytes": 6073,
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    "qa/ORIGINAL_02_PDF_VISUAL_QA.json": {
+      "bytes": 5685,
+      "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04"
+    }
+  },
+  "pdf_text_extractor": "<external-tool>/pdftotext.exe",
+  "prerequisites_missing": [],
+  "reference_boundary": {
+    "copied_reference_prose_layout_exercises_figures_solutions_or_code_claimed": false,
+    "mathematical_witnesses_only": true,
+    "model_marker_exactly_once_per_reader": true,
+    "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "nonendorsement_visible": true,
+    "ttp_text_present": false
+  },
+  "result": "pass",
+  "schema": "o015-original-02-rights-nonoverlap-v1",
+  "scope": "Exact Original-02 rights/provenance and O015/O018 boundary; bounded deterministic evidence, not a legal opinion or an authorship classifier.",
+  "upstream_contact": false
+}

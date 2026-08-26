@@ -99,3 +99,49 @@ described as a `masalah jumlah hingga`; SAA is expanded at first use and the
 source acronym is retained for discoverability. The narrow stochastic terms
 do not occur in the frozen UNY comparator, so that witness supplies no
 contrary evidence. No earlier admitted unit requires propagation.
+
+## Original closure tranche 1 terminology extension (2026-08-25)
+
+The independent stochastic-composite unit retains the lane's established
+forms `gradien proksimal stokastik`, `oracle stokastik`, `minibatch`,
+`dengan penggantian`, `tanpa penggantian`, `varians`, `penaksir`, and
+`fungsi kerugian`. It adds `penurunan cermin`, `divergensi Bregman`,
+`pembaruan eksponensial`, `koreksi populasi hingga`, and `norma dual`.
+These terms are mathematically unambiguous and consistent with the admitted
+Habring stochastic/proximal vocabulary and the preserved Royer comparison
+witness. The frozen UNY comparator covers generic convex-optimization terms
+but none of these narrow stochastic or mirror-descent expressions, so it
+supplies no contrary usage and no new inventory search is warranted.
+
+`Simpleks` in this unit denotes only the probability simplex
+$\Delta_d$, never the linear-programming simplex algorithm owned by O018;
+that distinction is stated explicitly in the reader. `Prox-SAGA` is retained
+as the discoverable algorithm name while surrounding Indonesian prose uses
+`proksimal`. One factual laboratory instruction was normalized from a request
+to verify a nonexistent configuration hash to a request to verify the frozen
+configuration recorded in the result file. No earlier admitted text requires
+terminology propagation.
+
+## Original closure tranche 2 terminology extension (2026-08-26)
+
+The variational-inequality and monotone-operator unit freezes the forms
+`ketaksamaan variasional`, `operator monoton`, `operator monoton maksimal`,
+`kemonotonan`, `operator bernilai himpunan`, `kerucut normal`, `resolven`,
+`titik tetap`, `tak ekspansif`, `tak ekspansif kukuh`, `pemisahan
+maju--mundur`, `ekstragradien Korpelevich`, and `pemisahan Douglas--Rachford`.
+`Resolven` is identified at first use with the already established
+operator/pemetaan proksimal in the subdifferential case. The form `kerucut
+normal` replaces the English-order draft phrase `normal cone` throughout the
+source, exercises, and reader surfaces. The label `tak ekspansif kukuh` is
+paired once with the English term *firmly nonexpansive* because the prior
+Indonesian corpus has no narrower witness for the adjective.
+
+The frozen UNY comparator does not discuss variational inequalities, maximal
+monotonicity, resolvents, or splitting, so it supplies no contrary field
+usage. The chosen forms follow mathematical meaning, Indonesian morphology,
+and consistency with Habring's admitted `subdiferensial`, `operator
+proksimal`, `proyeksi`, and `titik tetap` vocabulary. `Simpleks` is absent from
+the new mathematics; the scope note still excludes LP/MIP, simplex/tableau
+methods, finite-LP duality/sensitivity, networks, discrete optimization, and
+the O018 solver workflow. No earlier admitted unit requires a semantic
+terminology rewrite.

@@ -1,0 +1,144 @@
+{
+  "schema": "o015-github-original-02-explicit-paths-v1",
+  "repository": {
+    "owner": "KokunoYumeto",
+    "name": "advanced-optimization-convex-analysis-id",
+    "branch": "main"
+  },
+  "tranche": "original-02-variational-inequalities-maximal-monotone-resolvents-splitting",
+  "public_commit": null,
+  "required_path_count": 103,
+  "path_groups": {
+    "durable_controls": [
+      "00_control/ADVERSE_LEDGER.jsonl",
+      "00_control/BUILD_AND_QA.md",
+      "00_control/COMPONENT_RIGHTS.csv",
+      "00_control/COVERAGE_OVERLAP.md",
+      "00_control/CURRENT_CURSOR.md",
+      "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "00_control/CURRENT_STATE.md",
+      "00_control/DECISION_LOG.md",
+      "00_control/INDONESIAN_TERMINOLOGY_QA_20260822.md",
+      "00_control/PUBLICATION_RECEIPTS.md",
+      "00_control/SOURCE_AUTHORITY.json"
+    ],
+    "reader_discovery": [
+      "README.md"
+    ],
+    "canonical_backend": [
+      "backend/records.csv",
+      "backend/records.jsonl"
+    ],
+    "original_02_source": [
+      "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex"
+    ],
+    "original_02_lab": [
+      "labs/original-02/monotone-splitting-lab.py",
+      "labs/original-02/residual.svg",
+      "labs/original-02/results.csv",
+      "labs/original-02/results.json"
+    ],
+    "original_02_readers": [
+      "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf"
+    ],
+    "original_02_qa": [
+      "qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "qa/ORIGINAL_02_HTML_BUILD.json",
+      "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "qa/ORIGINAL_02_PDF_BUILD.json",
+      "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "qa/build_original_02_pdf.py",
+      "qa/build_original_02_pdf_engine.py",
+      "qa/build_original_02_reflow.py",
+      "qa/build_original_02_reflow_engine.py",
+      "qa/extend_backend_original_02.py",
+      "qa/validate_backend_original_02.py",
+      "qa/validate_original_02_math.py",
+      "qa/validate_original_02_rights_nonoverlap.py",
+      "qa/verify_original_02_epub.py",
+      "qa/verify_original_02_pdf_visual.py"
+    ],
+    "compact_release": [
+      "release/original-02/2026-08-26/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+      "release/original-02/2026-08-26/local-verification-original-02.json",
+      "release/original-02/2026-08-26/package/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "release/original-02/2026-08-26/package/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "release/original-02/2026-08-26/package/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "release/original-02/2026-08-26/package/LICENSE_HABRING_SCAFFOLD_CC_BY-4.0.md",
+      "release/original-02/2026-08-26/package/LICENSE_ORIGINAL_CC_BY-SA-4.0.md",
+      "release/original-02/2026-08-26/package/README_ORIGINAL_02.md",
+      "release/original-02/2026-08-26/package/RIGHTS_AND_PROVENANCE_ORIGINAL_02.md",
+      "release/original-02/2026-08-26/package/SHA256SUMS",
+      "release/original-02/2026-08-26/package/backend/backend_schema.json",
+      "release/original-02/2026-08-26/package/labs/original-02/monotone-splitting-lab.py",
+      "release/original-02/2026-08-26/package/labs/original-02/residual.svg",
+      "release/original-02/2026-08-26/package/labs/original-02/results.csv",
+      "release/original-02/2026-08-26/package/labs/original-02/results.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_EPUB_BUILD.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_HTML_BUILD.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_PDF_BUILD.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "release/original-02/2026-08-26/package/qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "release/original-02/2026-08-26/package/qa/build_original_02_pdf.py",
+      "release/original-02/2026-08-26/package/qa/build_original_02_pdf_engine.py",
+      "release/original-02/2026-08-26/package/qa/build_original_02_reflow.py",
+      "release/original-02/2026-08-26/package/qa/build_original_02_reflow_engine.py",
+      "release/original-02/2026-08-26/package/qa/extend_backend_original_02.py",
+      "release/original-02/2026-08-26/package/qa/validate_backend_original_02.py",
+      "release/original-02/2026-08-26/package/qa/validate_original_02_math.py",
+      "release/original-02/2026-08-26/package/qa/validate_original_02_rights_nonoverlap.py",
+      "release/original-02/2026-08-26/package/qa/verify_original_02_epub.py",
+      "release/original-02/2026-08-26/package/qa/verify_original_02_pdf_visual.py",
+      "release/original-02/2026-08-26/package/release-manifest-original-02.json",
+      "release/original-02/2026-08-26/package/source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "release/original-02/2026-08-26/package/source/id-ID/macros-id.tex",
+      "release/original-02/2026-08-26/package/source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "release/original-02/2026-08-26/package/source/id-ID/shinybook.cls",
+      "release/original-02/2026-08-26/prepare_original_02_release.py"
+    ],
+    "zenodo_release": [
+      "release/zenodo/2026-08-26-original-02/RIGHTS_AND_PROVENANCE_ORIGINAL_02.template.md",
+      "release/zenodo/2026-08-26-original-02/SHA256SUMS-original-02",
+      "release/zenodo/2026-08-26-original-02/metadata-original-02.template.json",
+      "release/zenodo/2026-08-26-original-02/publish_original_02.py",
+      "release/zenodo/2026-08-26-original-02/release-inputs-original-02.json",
+      "release/zenodo/2026-08-26-original-02/release-inputs-original-02.template.json",
+      "release/zenodo/2026-08-26-original-02/release-manifest-original-02-zenodo.json",
+      "release/zenodo/2026-08-26-original-02/repair_original_02_privacy.py",
+      "release/zenodo/2026-08-26-original-02/zenodo-draft-closure-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-draft-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-privacy-correction-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-privacy-repair-state-original-02.json",
+      "release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json"
+    ],
+    "github_publication_tooling": [
+      "release/github/2026-08-26-original-02/github-explicit-paths-original-02.json",
+      "release/github/2026-08-26-original-02/verify_github_original_02_public.py"
+    ]
+  },
+  "post_commit_receipt": "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+  "intentional_exclusions": [
+    "credentials and authenticated request material",
+    "tmp, cache, render-scratch, and __pycache__ paths",
+    "bulk upstream authority archives and unrelated source witnesses",
+    "intermediate Zenodo privacy-repair phase snapshots; the final sanitized state and receipts are included",
+    "the post-commit readback receipt, which is generated only after the manifest-bound commit exists"
+  ]
+}

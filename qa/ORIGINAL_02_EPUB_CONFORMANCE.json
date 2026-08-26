@@ -1,0 +1,122 @@
+{
+  "artifact": {
+    "bytes": 48701,
+    "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+    "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+  },
+  "build_receipt": {
+    "bytes": 7697,
+    "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+    "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+  },
+  "date": "2026-08-26",
+  "epubcheck": {
+    "counts": {
+      "error": 0,
+      "fatal": 0,
+      "usage": 0,
+      "warning": 0
+    },
+    "exit_code": 0,
+    "fail_on_warnings": true,
+    "jar_bytes": 1223671,
+    "jar_path": "tmp/tools/epubcheck-5.3.0/epubcheck.jar",
+    "jar_sha256": "f7f96617c929371821609b88c8484d6dc9f24fe916499863c46094c5fb778a65",
+    "official_distribution": {
+      "bytes": 33071108,
+      "sha256": "6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5",
+      "url": "https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip"
+    },
+    "official_release": "https://github.com/w3c/epubcheck/releases/tag/v5.3.0",
+    "version": "5.3.0"
+  },
+  "limitations": [
+    "EPUBCheck proves EPUB conformance, not identical behavior in every reading system.",
+    "The PDF companion is untagged; EPUB and HTML are the preferred reflow surfaces."
+  ],
+  "package": {
+    "accessibility": {
+      "access_mode_sufficient": [
+        "textual"
+      ],
+      "access_modes": [
+        "textual"
+      ],
+      "features": [
+        "MathML",
+        "alternativeText",
+        "readingOrder",
+        "structuralNavigation",
+        "tableOfContents"
+      ],
+      "hazards": [
+        "none"
+      ],
+      "summary": "Pembaca reflow berbahasa Indonesia dengan MathML, navigasi struktural, teks alternatif, serta tabel CSV/JSON yang menggandakan informasi grafik; PDF pendamping tidak bertag."
+    },
+    "all_xhtml_language": "id-ID",
+    "direct_non_spine_lab_links": 0,
+    "duplicate_ids": 0,
+    "images_with_alt": 1,
+    "manifest_item_count": 14,
+    "manifested_member_count": 14,
+    "mathml_manifest_members": [
+      "EPUB/nav.xhtml",
+      "EPUB/text/ch003.xhtml"
+    ],
+    "mathml_property_content_congruence": true,
+    "mathml_surfaces": 295,
+    "member_count": 18,
+    "mimetype_first_and_uncompressed": true,
+    "missing_local_targets": 0,
+    "nav_mathml_surfaces": 1,
+    "nav_member": "EPUB/nav.xhtml",
+    "nav_properties": [
+      "mathml",
+      "nav"
+    ],
+    "packaged_lab_resources": [
+      {
+        "bytes": 17904,
+        "media_type": "text/x-python",
+        "member": "EPUB/lab/monotone-splitting-lab.py",
+        "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119",
+        "source": "labs/original-02/monotone-splitting-lab.py"
+      },
+      {
+        "bytes": 13503,
+        "media_type": "application/json",
+        "member": "EPUB/lab/results.json",
+        "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81",
+        "source": "labs/original-02/results.json"
+      },
+      {
+        "bytes": 4228,
+        "media_type": "text/csv",
+        "member": "EPUB/lab/results.csv",
+        "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243",
+        "source": "labs/original-02/results.csv"
+      },
+      {
+        "bytes": 9538,
+        "media_type": "image/svg+xml",
+        "member": "EPUB/lab/residual.svg",
+        "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5",
+        "source": "labs/original-02/residual.svg"
+      }
+    ],
+    "rights_metadata": "Mixed rights: new Original-02 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0",
+    "rootfile": "EPUB/content.opf",
+    "spine_item_count": 7,
+    "unmanifested_package_resources": 0,
+    "unresolved_internal_fragments": 0,
+    "xhtml_count": 7
+  },
+  "result": "pass",
+  "schema": "o015-original-02-epub-conformance-v1",
+  "verifier": {
+    "bytes": 25107,
+    "path": "qa/verify_original_02_epub.py",
+    "sha256": "57aa0ee9d1a81edf0ee12113e4a2b8c25eeba40e06ba411849f11bc492d91245"
+  }
+}

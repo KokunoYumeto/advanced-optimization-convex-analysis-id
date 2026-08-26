@@ -1,0 +1,450 @@
+{
+  "dependencies": {
+    "numpy": "2.4.4",
+    "python": "standard library"
+  },
+  "final": {
+    "douglas_rachford": {
+      "error_to_reference": 1.8875832159447664e-16,
+      "fixed_point_residual": 2.7755575615628914e-16,
+      "inclusion_residual": 4.002966042486721e-16,
+      "iteration": 200,
+      "method": "douglas_rachford",
+      "norm": 0.5830951894845302,
+      "x1": 0.08461538461538454,
+      "x2": -0.5769230769230771
+    },
+    "forward_backward_outside_range": {
+      "error_to_reference": 4.004891561283648e+26,
+      "fixed_point_residual": 6.49792884459655e+26,
+      "inclusion_residual": 7.219920938440611e+26,
+      "iteration": 200,
+      "method": "forward_backward_outside_range",
+      "norm": 4.004891561283648e+26,
+      "x1": -9.882929849502497e+25,
+      "x2": 3.8810350930568894e+26
+    },
+    "forward_backward_stable": {
+      "error_to_reference": 3.1780134079895106e-15,
+      "fixed_point_residual": 2.401779625492033e-15,
+      "inclusion_residual": 5.821000005975887e-15,
+      "iteration": 200,
+      "method": "forward_backward_stable",
+      "norm": 0.5830951894845305,
+      "x1": 0.08461538461538787,
+      "x2": -0.576923076923077
+    }
+  },
+  "interpretation": {
+    "accepted_methods": [
+      "forward_backward_stable",
+      "douglas_rachford"
+    ],
+    "claim_boundary": "The outside-range trace is a frozen counterdiagnostic, not a claim that every step outside the sufficient interval diverges.",
+    "diagnostic_only": "forward_backward_outside_range"
+  },
+  "parameters": {
+    "b": [
+      1.2,
+      -0.7
+    ],
+    "checkpoints": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20,
+      40,
+      80,
+      120,
+      200
+    ],
+    "douglas_rachford_gamma": 0.7,
+    "forward_backward_diagnostic_gamma": 0.9,
+    "forward_backward_stable_gamma": 0.4,
+    "iterations": 200,
+    "lambda": 0.25,
+    "mu": 1.0,
+    "omega": 1.5,
+    "x0": [
+      2.5,
+      -2.0
+    ],
+    "y0": [
+      2.5,
+      -2.0
+    ]
+  },
+  "pure_skew_diagnostic": {
+    "gamma": 0.6,
+    "initial": [
+      1.25,
+      -0.75
+    ],
+    "initial_norm": 1.4577379737113252,
+    "interpretation": "For the monotone 1-Lipschitz skew map, the plain forward step expands while extragradient and the resolvent contract.",
+    "methods": {
+      "extragradient": {
+        "exact_final_norm": 0.02868503292055673,
+        "exact_one_step_factor": 0.8772684879784524,
+        "factor_absolute_error": 0.0,
+        "final_norm": 0.028685032920556713,
+        "numerical_one_step_factor": 0.8772684879784524
+      },
+      "forward": {
+        "exact_final_norm": 146.81251981799534,
+        "exact_one_step_factor": 1.16619037896906,
+        "factor_absolute_error": 0.0,
+        "final_norm": 146.81251981799582,
+        "numerical_one_step_factor": 1.16619037896906
+      },
+      "resolvent": {
+        "exact_final_norm": 0.014474242405445955,
+        "exact_one_step_factor": 0.8574929257125443,
+        "factor_absolute_error": 2.220446049250313e-16,
+        "final_norm": 0.014474242405445915,
+        "numerical_one_step_factor": 0.8574929257125441
+      }
+    },
+    "steps": 30
+  },
+  "reference": {
+    "inclusion_residual": 1.1102230246251565e-16,
+    "method": "complete_active_set_enumeration",
+    "pattern": [
+      1,
+      -1
+    ],
+    "subgradient": [
+      1.0,
+      -1.0
+    ],
+    "x": [
+      0.08461538461538469,
+      -0.576923076923077
+    ]
+  },
+  "resolvent_probe": {
+    "identity_error": 4.002966042486721e-16,
+    "input": [
+      0.7,
+      -1.1
+    ],
+    "output": [
+      0.23757044458359441,
+      -1.0820288040075141
+    ]
+  },
+  "result": "pass",
+  "rows": [
+    {
+      "error_to_reference": 2.8034319626541264,
+      "fixed_point_residual": 2.0215835377248204,
+      "inclusion_residual": 5.05395884431205,
+      "iteration": 0,
+      "method": "forward_backward_stable",
+      "norm": 3.2015621187164243,
+      "x1": 2.5,
+      "x2": -2.0
+    },
+    {
+      "error_to_reference": 2.378790901665414,
+      "fixed_point_residual": 1.5279057562559282,
+      "inclusion_residual": 4.288426284780933,
+      "iteration": 1,
+      "method": "forward_backward_stable",
+      "norm": 2.959189078109069,
+      "x1": 0.68,
+      "x2": -2.88
+    },
+    {
+      "error_to_reference": 1.9246763564098446,
+      "fixed_point_residual": 1.2964710255150327,
+      "inclusion_residual": 3.2411775637875815,
+      "iteration": 2,
+      "method": "forward_backward_stable",
+      "norm": 2.4313485969724704,
+      "x1": -0.74,
+      "x2": -2.316
+    },
+    {
+      "error_to_reference": 0.6490542485346841,
+      "fixed_point_residual": 0.46803967472991015,
+      "inclusion_residual": 1.4614116829312678,
+      "iteration": 5,
+      "method": "forward_backward_stable",
+      "norm": 0.0665920000000002,
+      "x1": -0.0,
+      "x2": 0.0665920000000002
+    },
+    {
+      "error_to_reference": 0.2417683009574272,
+      "fixed_point_residual": 0.14136031027200002,
+      "inclusion_residual": 0.35340077568000017,
+      "iteration": 10,
+      "method": "forward_backward_stable",
+      "norm": 0.8034007756800001,
+      "x1": 0.0,
+      "x2": -0.8034007756800001
+    },
+    {
+      "error_to_reference": 0.02273956068284884,
+      "fixed_point_residual": 0.016397730404707232,
+      "inclusion_residual": 0.04099432601176812,
+      "iteration": 20,
+      "method": "forward_backward_stable",
+      "norm": 0.5803122231695571,
+      "x1": 0.061875967999999976,
+      "x2": -0.5770040216012856
+    },
+    {
+      "error_to_reference": 0.0008513478319503896,
+      "fixed_point_residual": 0.0006139156522705296,
+      "inclusion_residual": 0.0015347891306762313,
+      "iteration": 40,
+      "method": "forward_backward_stable",
+      "norm": 0.5832163418546286,
+      "x1": 0.0854667270535843,
+      "x2": -0.5769200464302164
+    },
+    {
+      "error_to_reference": 1.1933201195565088e-06,
+      "fixed_point_residual": 8.605153759058425e-07,
+      "inclusion_residual": 2.151288439710652e-06,
+      "iteration": 80,
+      "method": "forward_backward_stable",
+      "norm": 0.5830953584494807,
+      "x1": 0.08461657792794391,
+      "x2": -0.5769230726752853
+    },
+    {
+      "error_to_reference": 1.6726569660632432e-09,
+      "fixed_point_residual": 1.2061701768457911e-09,
+      "inclusion_residual": 3.0154253724902848e-09,
+      "iteration": 120,
+      "method": "forward_backward_stable",
+      "norm": 0.5830951897213638,
+      "x1": 0.08461538628803106,
+      "x2": -0.5769230769171229
+    },
+    {
+      "error_to_reference": 3.1780134079895106e-15,
+      "fixed_point_residual": 2.401779625492033e-15,
+      "inclusion_residual": 5.821000005975887e-15,
+      "iteration": 200,
+      "method": "forward_backward_stable",
+      "norm": 0.5830951894845305,
+      "x1": 0.08461538461538787,
+      "x2": -0.576923076923077
+    },
+    {
+      "error_to_reference": 2.8034319626541264,
+      "fixed_point_residual": 4.148062800874644,
+      "inclusion_residual": 5.05395884431205,
+      "iteration": 0,
+      "method": "forward_backward_outside_range",
+      "norm": 3.2015621187164243,
+      "x1": 2.5,
+      "x2": -2.0
+    },
+    {
+      "error_to_reference": 3.6184093934298724,
+      "fixed_point_residual": 5.242403915428493,
+      "inclusion_residual": 6.239141066685381,
+      "iteration": 1,
+      "method": "forward_backward_outside_range",
+      "norm": 4.141427893854968,
+      "x1": -1.145,
+      "x2": -3.98
+    },
+    {
+      "error_to_reference": 4.354836962085509,
+      "fixed_point_residual": 6.7562350887092615,
+      "inclusion_residual": 7.885150039195511,
+      "iteration": 2,
+      "method": "forward_backward_outside_range",
+      "norm": 4.192732857278173,
+      "x1": -4.182499999999999,
+      "x2": 0.29274999999999995
+    },
+    {
+      "error_to_reference": 9.98541387533172,
+      "fixed_point_residual": 15.826250825263434,
+      "inclusion_residual": 18.001460867119047,
+      "iteration": 5,
+      "method": "forward_backward_outside_range",
+      "norm": 10.563470288735333,
+      "x1": 0.18739346875000037,
+      "x2": -10.561808
+    },
+    {
+      "error_to_reference": 42.02461566400635,
+      "fixed_point_residual": 67.8580890355725,
+      "inclusion_residual": 75.88240964986971,
+      "iteration": 10,
+      "method": "forward_backward_outside_range",
+      "norm": 42.14445125335256,
+      "x1": -39.451837669007126,
+      "x2": -14.822525965047928
+    },
+    {
+      "error_to_reference": 849.0555869955879,
+      "fixed_point_residual": 1377.5910545842958,
+      "inclusion_residual": 1531.098125152578,
+      "iteration": 20,
+      "method": "forward_backward_outside_range",
+      "norm": 848.5877268267457,
+      "x1": 402.4422505581068,
+      "x2": 747.0885925288309
+    },
+    {
+      "error_to_reference": 362303.871523797,
+      "fixed_point_residual": 587837.1595466494,
+      "inclusion_residual": 653152.8605182628,
+      "iteration": 40,
+      "method": "forward_backward_outside_range",
+      "norm": 362303.48226164863,
+      "x1": -301992.0606033278,
+      "x2": 200161.4563083331
+    },
+    {
+      "error_to_reference": 66062006837.49017,
+      "fixed_point_residual": 107185478855.24078,
+      "inclusion_residual": 119094976506.31174,
+      "iteration": 80,
+      "method": "forward_backward_outside_range",
+      "norm": 66062006837.9523,
+      "x1": 47456243914.1256,
+      "x2": -45957520179.19019
+    },
+    {
+      "error_to_reference": 1.2045682971348158e+16,
+      "fixed_point_residual": 1.954409742053064e+16,
+      "inclusion_residual": 2.17156638005896e+16,
+      "iteration": 120,
+      "method": "forward_backward_outside_range",
+      "norm": 1.2045682971348158e+16,
+      "x1": -6973546010449878.0,
+      "x2": 9821819296157182.0
+    },
+    {
+      "error_to_reference": 4.004891561283648e+26,
+      "fixed_point_residual": 6.49792884459655e+26,
+      "inclusion_residual": 7.219920938440611e+26,
+      "iteration": 200,
+      "method": "forward_backward_outside_range",
+      "norm": 4.004891561283648e+26,
+      "x1": -9.882929849502497e+25,
+      "x2": 3.8810350930568894e+26
+    },
+    {
+      "error_to_reference": 2.564569989446424,
+      "fixed_point_residual": 2.9293818673911396,
+      "inclusion_residual": 4.623344298232611,
+      "iteration": 0,
+      "method": "douglas_rachford",
+      "norm": 2.9557148035627523,
+      "x1": 2.325,
+      "x2": -1.825
+    },
+    {
+      "error_to_reference": 1.2834888300639757,
+      "fixed_point_residual": 1.271073151629751,
+      "inclusion_residual": 2.3138423941404755,
+      "iteration": 1,
+      "method": "douglas_rachford",
+      "norm": 1.8401832148580914,
+      "x1": 0.7103318722604886,
+      "x2": -1.6975579211020664
+    },
+    {
+      "error_to_reference": 0.6423468977949716,
+      "fixed_point_residual": 0.5672530458990993,
+      "inclusion_residual": 1.1580073383174985,
+      "iteration": 2,
+      "method": "douglas_rachford",
+      "norm": 1.21994766146663,
+      "x1": 0.05632520117361578,
+      "x2": -1.2186466954908017
+    },
+    {
+      "error_to_reference": 0.09697222070248318,
+      "fixed_point_residual": 0.12237340991344488,
+      "inclusion_residual": 0.17481915701920683,
+      "iteration": 5,
+      "method": "douglas_rachford",
+      "norm": 0.6242923525599455,
+      "x1": 0.0,
+      "x2": -0.6242923525599455
+    },
+    {
+      "error_to_reference": 0.003987314578375228,
+      "fixed_point_residual": 0.005031763507307906,
+      "inclusion_residual": 0.007188233581868407,
+      "iteration": 10,
+      "method": "douglas_rachford",
+      "norm": 0.5800860572060366,
+      "x1": 0.08675954580797979,
+      "x2": -0.5735613436904881
+    },
+    {
+      "error_to_reference": 3.930573090358453e-06,
+      "fixed_point_residual": 4.960158986575774e-06,
+      "inclusion_residual": 7.085941409434631e-06,
+      "iteration": 20,
+      "method": "douglas_rachford",
+      "norm": 0.5830912615802498,
+      "x1": 0.08461467133432576,
+      "x2": -0.5769192116113238
+    },
+    {
+      "error_to_reference": 3.81962062324116e-12,
+      "fixed_point_residual": 4.820196128874869e-12,
+      "inclusion_residual": 6.885867582289481e-12,
+      "iteration": 40,
+      "method": "douglas_rachford",
+      "norm": 0.5830951894844023,
+      "x1": 0.08461538461158907,
+      "x2": -0.5769230769235045
+    },
+    {
+      "error_to_reference": 1.8875832159447664e-16,
+      "fixed_point_residual": 2.7755575615628914e-16,
+      "inclusion_residual": 4.002966042486721e-16,
+      "iteration": 80,
+      "method": "douglas_rachford",
+      "norm": 0.5830951894845302,
+      "x1": 0.08461538461538454,
+      "x2": -0.5769230769230771
+    },
+    {
+      "error_to_reference": 1.8875832159447664e-16,
+      "fixed_point_residual": 2.7755575615628914e-16,
+      "inclusion_residual": 4.002966042486721e-16,
+      "iteration": 120,
+      "method": "douglas_rachford",
+      "norm": 0.5830951894845302,
+      "x1": 0.08461538461538454,
+      "x2": -0.5769230769230771
+    },
+    {
+      "error_to_reference": 1.8875832159447664e-16,
+      "fixed_point_residual": 2.7755575615628914e-16,
+      "inclusion_residual": 4.002966042486721e-16,
+      "iteration": 200,
+      "method": "douglas_rachford",
+      "norm": 0.5830951894845302,
+      "x1": 0.08461538461538454,
+      "x2": -0.5769230769230771
+    }
+  ],
+  "schema": "o015-original-02-monotone-splitting-lab-v1",
+  "theory": {
+    "beta": 0.3076923076923077,
+    "diagnostic_step_outside_proved_interval": true,
+    "forward_backward_upper_bound": 0.6153846153846154,
+    "stable_step_inside_open_interval": true
+  },
+  "upstream_contact": false
+}

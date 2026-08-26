@@ -1,0 +1,744 @@
+% OR02-S001 | lapisan asli: masalah inklusi dan ketaksamaan variasional
+% segment-id: d90.orig.v1.tr02.seg0001
+\chapter{Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan}
+\label{orig02:chapter:monotone-inclusions}
+
+Bab sebelumnya menghubungkan metode proksimal dengan oracle stokastik,
+minibatch, geometri Bregman, dan reduksi varians. Bab ini mengambil langkah
+abstraksi berikutnya: kondisi optimalitas diperlakukan sebagai pencarian nol
+operator bernilai himpunan. Kerangka ini menyatukan ketaksamaan variasional,
+subdiferensial, kerucut normal, langkah proksimal implisit, pemisahan
+maju--mundur, dan pemisahan Douglas--Rachford.
+
+Seluruh uraian, bukti penghubung, latihan, solusi, dan laboratorium dalam bab
+ini ditulis secara mandiri. Bab Habring tentang subgradien dan metode gradien
+proksimal serta modul Becker tentang Douglas--Rachford dipakai sebagai
+prasyarat dan saksi konsistensi. Tidak ada prosa, tata letak, gambar, latihan,
+solusi, atau kode dari sumber tersebut yang disalin.
+
+Untuk operator bernilai himpunan $A:\R^d\rightrightarrows\R^d$, definisikan
+\begin{equation}
+  \graph A=\{(x,u):u\in Ax\},
+  \qquad
+  \dom A=\{x:Ax\neq\emptyset\},
+  \qquad
+  \operatorname{zer}A=\{x:0\in Ax\}.
+\end{equation}
+Notasi $Ax$ menekankan bahwa nilai operator dapat berupa himpunan, bukan satu
+vektor. Masalah dasar bab ini ialah
+\begin{equation}
+  \label{orig02:eq:zero-problem}
+  \text{cari }x^*\in\R^d\text{ sehingga }0\in(A+B)x^*.
+\end{equation}
+
+\section{Kemonotonan dan kemaksimalan}
+\label{orig02:section:monotonicity}
+
+\begin{defn}[Operator monoton dan monoton kuat]
+  \label{orig02:def:monotone}
+  Operator $A:\R^d\rightrightarrows\R^d$ disebut \emph{monoton} jika
+  \begin{equation}
+    \label{orig02:eq:monotone}
+    \inner{u-v}{x-y}\geq0
+    \qquad
+    \text{untuk semua }(x,u),(y,v)\in\graph A.
+  \end{equation}
+  Ia disebut $\mu$-monoton kuat, dengan $\mu>0$, jika ruas kanan dapat
+  diganti oleh $\mu\norm{x-y}^2$.
+\end{defn}
+
+\begin{defn}[Operator monoton maksimal]
+  \label{orig02:def:maximal-monotone}
+  Operator monoton $A$ disebut \emph{monoton maksimal} jika tidak ada operator
+  monoton lain yang grafiknya memuat $\graph A$ secara ketat. Kata
+  \emph{maksimal} merujuk pada inklusi grafik, bukan pada nilai fungsi atau
+  ukuran norma.
+\end{defn}
+
+Kemonotonan saja belum menjamin bahwa operator mempunyai cukup banyak nilai
+untuk mendefinisikan langkah implisit pada setiap titik. Sebagai contoh,
+operator dengan grafik tunggal $\{(0,0)\}$ monoton, tetapi tidak maksimal,
+karena grafik itu dapat diperluas menjadi grafik operator nol pada seluruh
+$\R^d$.
+
+\begin{prop}[Subdiferensial bersifat monoton]
+  \label{orig02:prop:subdiff-monotone}
+  Jika $f:\R^d\to(-\infty,+\infty]$ proper dan konveks, maka $\partial f$
+  monoton.
+\end{prop}
+\begin{proof}
+  Ambil $u\in\partial f(x)$ dan $v\in\partial f(y)$. Ketaksamaan subgradien
+  memberi
+  \begin{equation}
+    f(y)\geq f(x)+\inner{u}{y-x},
+    \qquad
+    f(x)\geq f(y)+\inner{v}{x-y}.
+  \end{equation}
+  Menjumlahkan keduanya menghasilkan
+  $\inner{u-v}{x-y}\geq0$.
+\end{proof}
+
+Teorema Rockafellar memperkuat hasil tersebut: jika $f$ juga semikontinu
+bawah, maka $\partial f$ monoton maksimal. Bab ini memakai teorema itu sebagai
+hasil dasar, bukan membuktikan kembali argumen pemisahan lengkapnya. Akibat
+pentingnya ialah kerucut normal dan operator proksimal masuk ke dalam kerangka
+yang sama.
+
+% OR02-S002 | lapisan asli: ketaksamaan variasional dan kerucut normal
+% segment-id: d90.orig.v1.tr02.seg0002
+\section{Ketaksamaan variasional sebagai inklusi monoton}
+\label{orig02:section:vi}
+
+Untuk himpunan konveks tertutup tak kosong $C\subseteq\R^d$, kerucut normal
+pada $x$ didefinisikan oleh
+\begin{equation}
+  \label{orig02:eq:normal-cone}
+  N_C(x)=
+  \begin{cases}
+    \{u:\inner{u}{y-x}\leq0\text{ untuk semua }y\in C\},&x\in C,\\
+    \emptyset,&x\notin C.
+  \end{cases}
+\end{equation}
+Karena $N_C=\partial\delta_C$, operator ini monoton maksimal.
+
+\begin{defn}[Ketaksamaan variasional]
+  \label{orig02:def:vi}
+  Untuk pemetaan $F:\R^d\to\R^d$, masalah $\operatorname{VI}(F,C)$ ialah
+  mencari $x^*\in C$ sedemikian sehingga
+  \begin{equation}
+    \label{orig02:eq:vi}
+    \inner{F(x^*)}{y-x^*}\geq0
+    \qquad\text{untuk semua }y\in C.
+  \end{equation}
+\end{defn}
+
+\begin{prop}[Ekuivalensi VI--inklusi]
+  \label{orig02:prop:vi-inclusion}
+  Suatu titik $x^*$ menyelesaikan $\operatorname{VI}(F,C)$ jika dan hanya jika
+  \begin{equation}
+    \label{orig02:eq:vi-inclusion}
+    0\in F(x^*)+N_C(x^*).
+  \end{equation}
+  Secara ekuivalen, untuk setiap $\gamma>0$,
+  \begin{equation}
+    \label{orig02:eq:vi-projection}
+    x^*=P_C\bigl(x^*-\gamma F(x^*)\bigr).
+  \end{equation}
+\end{prop}
+\begin{proof}
+  Menurut~\eqref{orig02:eq:normal-cone}, inklusi
+  $-F(x^*)\in N_C(x^*)$ tepat berarti $x^*\in C$ dan
+  $\inner{-F(x^*)}{y-x^*}\leq0$ untuk setiap $y\in C$. Membalik tanda
+  menghasilkan~\eqref{orig02:eq:vi}. Karakterisasi proyeksi
+  $p=P_Cz\Longleftrightarrow z-p\in N_C(p)$ dengan
+  $z=x^*-\gamma F(x^*)$ memberi ekuivalensi proyeksi.
+\end{proof}
+
+Jika $F=\nabla f$ untuk fungsi konveks terdiferensialkan $f$, kondisi ini
+adalah kondisi optimalitas bagi $\min_{x\in C}f(x)$. Namun, ketaksamaan
+variasional lebih luas: pemetaan monoton tidak harus merupakan gradien.
+
+\begin{prop}[Keunikan di bawah kemonotonan kuat]
+  \label{orig02:prop:vi-unique}
+  Jika $F$ $\mu$-monoton kuat pada $C$, maka
+  $\operatorname{VI}(F,C)$ mempunyai paling banyak satu solusi.
+\end{prop}
+\begin{proof}
+  Andaikan $x$ dan $y$ keduanya solusi. Masukkan $y$ ke ketaksamaan untuk
+  $x$ dan $x$ ke ketaksamaan untuk $y$. Setelah dijumlahkan,
+  \begin{equation}
+    \inner{F(x)-F(y)}{x-y}\leq0.
+  \end{equation}
+  Kemonotonan kuat memberi ruas kiri sekurang-kurangnya
+  $\mu\norm{x-y}^2$. Jadi $x=y$.
+\end{proof}
+
+\begin{theorem}[Eksistensi konstruktif bagi VI monoton kuat]
+  \label{orig02:theorem:vi-contraction}
+  Andaikan $F$ $\mu$-monoton kuat dan $L$-Lipschitz pada $C$, dengan
+  $0<\mu\leq L$. Untuk
+  \begin{equation}
+    0<\gamma<\frac{2\mu}{L^2},
+    \qquad
+    T_\gamma=P_C(I-\gamma F),
+  \end{equation}
+  pemetaan $T_\gamma:C\to C$ merupakan kontraksi dengan faktor
+  \begin{equation}
+    \label{orig02:eq:vi-contraction-factor}
+    q=\sqrt{1-2\gamma\mu+\gamma^2L^2}<1.
+  \end{equation}
+  Karena itu, $\operatorname{VI}(F,C)$ mempunyai tepat satu solusi $x^*$,
+  dan iterasi $x_{k+1}=T_\gamma x_k$ memenuhi
+  $\norm{x_k-x^*}\leq q^k\norm{x_0-x^*}$.
+\end{theorem}
+\begin{proof}
+  Sifat tak ekspansif proyeksi, kemonotonan kuat, dan sifat Lipschitz memberi
+  \begin{equation}
+  \begin{aligned}
+    \norm{T_\gamma x-T_\gamma y}^2
+    &\leq\norm{(x-y)-\gamma(Fx-Fy)}^2\\
+    &\leq(1-2\gamma\mu+\gamma^2L^2)\norm{x-y}^2.
+  \end{aligned}
+  \end{equation}
+  Rentang $\gamma$ membuat faktor kuadrat lebih kecil dari satu. Himpunan
+  tertutup $C$ lengkap, maka teorema titik tetap Banach memberi satu-satunya
+  titik tetap dan konvergensi geometrik. Menurut
+  ~\eqref{orig02:eq:vi-projection}, titik tetap itu tepat solusi VI.
+\end{proof}
+
+Bab ini tidak memakai \emph{simpleks} sebagai algoritma pemrograman linear.
+Proyeksi, kerucut normal, dan ketaksamaan variasional di sini berada dalam
+analisis konveks kontinu dan tidak mengimpor LP/MIP, dualitas atau sensitivitas
+LP, jaringan, maupun optimisasi diskret dari O018.
+
+% OR02-S003 | lapisan asli: teorema Minty dan resolven
+% segment-id: d90.orig.v1.tr02.seg0003
+\section{Resolven operator monoton maksimal}
+\label{orig02:section:resolvent}
+
+Untuk $\gamma>0$, definisikan resolven dan resolven terefleksi
+\begin{equation}
+  \label{orig02:eq:resolvent-definition}
+  J_{\gamma A}=(I+\gamma A)^{-1},
+  \qquad
+  R_{\gamma A}=2J_{\gamma A}-I.
+\end{equation}
+Secara apriori, invers tersebut dapat bernilai himpunan atau tidak terdefinisi
+pada sebagian titik. Untuk operator monoton $A$, teorema Minty menutup kedua
+celah itu: di ruang Euclid, $A$ monoton maksimal jika dan hanya jika
+$\operatorname{ran}(I+\gamma A)=\R^d$ untuk setiap $\gamma>0$.
+
+\begin{theorem}[Resolven terdefinisi dan tak ekspansif kukuh]
+  \label{orig02:theorem:resolvent-firm}
+  Jika $A$ monoton maksimal dan $\gamma>0$, maka $J_{\gamma A}$ bernilai
+  tunggal pada seluruh $\R^d$ dan
+  \begin{equation}
+    \label{orig02:eq:firm-nonexpansive}
+    \norm{J_{\gamma A}x-J_{\gamma A}y}^2
+    \leq
+    \inner{J_{\gamma A}x-J_{\gamma A}y}{x-y}.
+  \end{equation}
+  Akibatnya, $J_{\gamma A}$ tak ekspansif dan $R_{\gamma A}$ tak ekspansif.
+\end{theorem}
+\begin{proof}
+  Teorema Minty memberi keberadaan pada setiap $x$. Ambil
+  $p=J_{\gamma A}x$ dan $q=J_{\gamma A}y$. Maka
+  $(x-p)/\gamma\in Ap$ dan $(y-q)/\gamma\in Aq$. Kemonotonan memberi
+  \begin{equation}
+    \inner{p-q}{(x-p)-(y-q)}\geq0,
+  \end{equation}
+  yang sama dengan~\eqref{orig02:eq:firm-nonexpansive}. Jika dua nilai
+  resolven berkorespondensi dengan $x$ yang sama, ketaksamaan itu memaksa
+  keduanya sama, sehingga resolven bernilai tunggal. Ketaksamaan
+  Cauchy--Schwarz memberi sifat tak ekspansif. Terakhir,
+  \begin{equation}
+  \begin{aligned}
+    \norm{R_{\gamma A}x-R_{\gamma A}y}^2
+    & =\norm{2(p-q)-(x-y)}^2\\
+    & =\norm{x-y}^2
+      -4\bigl(\inner{p-q}{x-y}-\norm{p-q}^2\bigr)\\
+    & \leq\norm{x-y}^2.
+  \end{aligned}
+  \end{equation}
+\end{proof}
+
+\begin{cor}[Nol sebagai titik tetap]
+  \label{orig02:cor:zero-fixed}
+  Untuk setiap $\gamma>0$,
+  \begin{equation}
+    \label{orig02:eq:zero-fixed}
+    x\in\operatorname{zer}A
+    \quad\Longleftrightarrow\quad
+    x=J_{\gamma A}x.
+  \end{equation}
+  Jika $A=\partial f$, maka $J_{\gamma A}=\prox_{\gamma f}$; jika
+  $A=N_C$, maka $J_{\gamma A}=P_C$.
+\end{cor}
+\begin{proof}
+  Ekuivalensi pertama langsung dari
+  $x=J_{\gamma A}x\Longleftrightarrow x\in x+\gamma Ax$. Dua identitas
+  terakhir adalah kondisi optimalitas proksimal dan proyeksi.
+\end{proof}
+
+% OR02-S004 | lapisan asli: metode titik proksimal
+% segment-id: d90.orig.v1.tr02.seg0004
+\section{Metode titik proksimal}
+\label{orig02:section:ppa}
+
+Metode titik proksimal menerapkan resolven secara berulang:
+\begin{equation}
+  \label{orig02:eq:ppa}
+  x_{k+1}=J_{\gamma A}x_k,
+  \qquad \gamma>0.
+\end{equation}
+Ini adalah langkah implisit karena
+$(x_k-x_{k+1})/\gamma\in Ax_{k+1}$.
+
+\begin{theorem}[Penurunan Fej\'er dan konvergensi titik proksimal]
+  \label{orig02:theorem:ppa}
+  Andaikan $A$ monoton maksimal dan
+  $Z=\operatorname{zer}A\neq\emptyset$. Maka untuk setiap $z\in Z$,
+  iterasi~\eqref{orig02:eq:ppa} memenuhi
+  \begin{equation}
+    \label{orig02:eq:ppa-fejer}
+    \norm{x_{k+1}-z}^2+\norm{x_{k+1}-x_k}^2
+    \leq\norm{x_k-z}^2.
+  \end{equation}
+  Dalam dimensi hingga, $x_k$ konvergen ke suatu titik dalam $Z$.
+\end{theorem}
+\begin{proof}
+  Karena $z=J_{\gamma A}z$, terapkan
+  ketaksamaan~\eqref{orig02:eq:firm-nonexpansive} pada $x_k$ dan $z$, lalu
+  gunakan identitas
+  \begin{equation}
+    \norm{x_k-z}^2
+    =\norm{x_k-x_{k+1}}^2+\norm{x_{k+1}-z}^2
+     +2\inner{x_k-x_{k+1}}{x_{k+1}-z}.
+  \end{equation}
+  Hasilnya adalah~\eqref{orig02:eq:ppa-fejer}. Jadi jarak ke setiap titik
+  $Z$ tidak membesar dan
+  $\sum_k\norm{x_{k+1}-x_k}^2<\infty$.
+
+  Barisan terbatas, sehingga mempunyai titik gugus $\bar x$. Sepanjang
+  subbarisan yang menuju $\bar x$, berlaku
+  $x_{k+1}\to\bar x$ dan
+  $(x_k-x_{k+1})/\gamma\to0$. Grafik operator monoton maksimal tertutup;
+  karena $(x_{k+1},(x_k-x_{k+1})/\gamma)\in\graph A$, diperoleh
+  $0\in A\bar x$. Sifat Fej\'er terhadap $\bar x$ kemudian memaksa seluruh
+  barisan konvergen ke $\bar x$.
+\end{proof}
+
+Hasil ini menjelaskan kestabilan langkah implisit tanpa mengklaim bahwa
+$J_{\gamma A}$ selalu mudah dihitung. Pemisahan operator berguna ketika
+resolven bagian-bagian operator jauh lebih sederhana daripada resolven
+jumlahnya.
+
+% OR02-S005 | lapisan asli: pemisahan maju--mundur
+% segment-id: d90.orig.v1.tr02.seg0005
+\section{Pemisahan maju--mundur}
+\label{orig02:section:forward-backward}
+
+Pemetaan tunggal $B:\R^d\to\R^d$ disebut $\beta$-kokorsif jika
+\begin{equation}
+  \label{orig02:eq:cocoercive}
+  \inner{Bx-By}{x-y}\geq\beta\norm{Bx-By}^2
+  \qquad\text{untuk semua }x,y.
+\end{equation}
+Kokorsivitas lebih kuat daripada gabungan kemonotonan dan kontinuitas
+Lipschitz. Gradien fungsi konveks dengan gradien $L$-Lipschitz bersifat
+$1/L$-kokorsif.
+
+Untuk $A$ monoton maksimal dan $B$ $\beta$-kokorsif, definisikan
+\begin{equation}
+  \label{orig02:eq:fb-operator}
+  T_{\mathrm{FB}}=J_{\gamma A}(I-\gamma B),
+  \qquad 0<\gamma<2\beta.
+\end{equation}
+
+\begin{theorem}[Titik tetap dan konvergensi maju--mundur]
+  \label{orig02:theorem:fb}
+  Andaikan $\operatorname{zer}(A+B)\neq\emptyset$. Maka
+  \begin{equation}
+    \label{orig02:eq:fb-fixed}
+    x\in\operatorname{zer}(A+B)
+    \quad\Longleftrightarrow\quad x=T_{\mathrm{FB}}x.
+  \end{equation}
+  Untuk $0<\gamma<2\beta$, iterasi $x_{k+1}=T_{\mathrm{FB}}x_k$ konvergen di
+  ruang berdimensi hingga ke suatu nol $A+B$.
+\end{theorem}
+\begin{proof}
+  Dari definisi resolven,
+  \begin{equation}
+  \begin{aligned}
+    x=J_{\gamma A}(x-\gamma Bx)
+    &\Longleftrightarrow x-\gamma Bx\in x+\gamma Ax\\
+    &\Longleftrightarrow 0\in Ax+Bx.
+  \end{aligned}
+  \end{equation}
+  Selanjutnya,~\eqref{orig02:eq:cocoercive} memberi
+  \begin{equation}
+    \norm{(I-\gamma B)x-(I-\gamma B)y}^2
+    \leq\norm{x-y}^2
+      -\gamma(2\beta-\gamma)\norm{Bx-By}^2.
+  \end{equation}
+  Jadi langkah maju tererata untuk rentang langkah yang dinyatakan. Resolven
+  tak ekspansif kukuh (\emph{firmly nonexpansive}), dan komposisinya tererata dengan parameter
+  $2\beta/(4\beta-\gamma)\in(0,1)$. Iterasi Picard pemetaan tererata dengan
+  himpunan titik tetap tak kosong bersifat Fej\'er, residunya menuju nol, dan
+  dalam dimensi hingga konvergen ke suatu titik tetap. Gunakan
+  ekuivalensi~\eqref{orig02:eq:fb-fixed}.
+\end{proof}
+
+Dengan $A=\partial g$ dan $B=\nabla f$, pemetaan ini tepat menjadi langkah
+gradien proksimal yang telah diterjemahkan dari Habring. Nilai tambah bab ini
+ialah batas operatornya: langkah eksplisit memerlukan struktur seperti
+kokorsivitas, bukan hanya kemonotonan.
+
+\subsection{Perbaikan ekstragradien untuk operator monoton Lipschitz}
+\label{orig02:section:extragradient}
+
+Untuk VI dengan $F$ monoton dan $L$-Lipschitz, kokorsivitas belum tentu
+berlaku. Langkah proyeksi tunggal dapat diganti oleh dua evaluasi berurutan:
+\begin{equation}
+  \label{orig02:eq:extragradient}
+  y_k=P_C\bigl(x_k-\gamma F(x_k)\bigr),
+  \qquad
+  x_{k+1}=P_C\bigl(x_k-\gamma F(y_k)\bigr),
+  \qquad 0<\gamma<\frac1L.
+\end{equation}
+
+\begin{theorem}[Penurunan Fej\'er ekstragradien]
+  \label{orig02:theorem:extragradient}
+  Jika himpunan solusi $\operatorname{VI}(F,C)$ tidak kosong, maka untuk
+  setiap solusi $x^*$,
+  \begin{equation}
+    \label{orig02:eq:extragradient-fejer}
+    \norm{x_{k+1}-x^*}^2
+    \leq\norm{x_k-x^*}^2
+    -(1-\gamma L)
+      \bigl(\norm{x_k-y_k}^2+\norm{y_k-x_{k+1}}^2\bigr).
+  \end{equation}
+  Dalam dimensi hingga, $x_k$ konvergen ke suatu solusi VI.
+\end{theorem}
+\begin{proof}
+  Karakterisasi proyeksi untuk pembaruan kedua dan sifat solusi VI, bersama
+  kemonotonan $F$, memberi
+  \begin{equation}
+    \norm{x_{k+1}-x^*}^2
+    \leq\norm{x_k-x^*}^2-\norm{x_k-x_{k+1}}^2
+       -2\gamma\inner{F(y_k)}{x_{k+1}-y_k}.
+  \end{equation}
+  Karakterisasi proyeksi untuk $y_k$, diuji pada $x_{k+1}\in C$, memberi
+  \begin{equation}
+    \inner{x_k-y_k}{x_{k+1}-y_k}
+    \leq\gamma\inner{F(x_k)}{x_{k+1}-y_k}.
+  \end{equation}
+  Substitusi, sifat Lipschitz, dan
+  $2ab\leq a^2+b^2$ menghasilkan
+  \begin{equation}
+  \begin{aligned}
+    \norm{x_{k+1}-x^*}^2
+    &\leq\norm{x_k-x^*}^2
+      -\norm{x_k-y_k}^2-\norm{y_k-x_{k+1}}^2\\
+    &\quad+2\gamma L\norm{x_k-y_k}\norm{y_k-x_{k+1}},
+  \end{aligned}
+  \end{equation}
+  lalu~\eqref{orig02:eq:extragradient-fejer}. Kedua selisih berurutan menuju
+  nol. Ambil titik gugus $\bar x$ dan lewatkan ketaksamaan proyeksi pertama ke
+  limit; diperoleh
+  $\inner{F(\bar x)}{z-\bar x}\geq0$ untuk setiap $z\in C$. Jadi setiap titik
+  gugus adalah solusi, dan sifat Fej\'er memaksa konvergensi seluruh barisan.
+\end{proof}
+
+% OR02-S006 | lapisan asli: Douglas--Rachford dalam bahasa operator
+% segment-id: d90.orig.v1.tr02.seg0006
+\section{Pemisahan Douglas--Rachford dan limit bayangan}
+\label{orig02:section:dr}
+
+Andaikan $A$ dan $B$ monoton maksimal. Definisikan
+\begin{equation}
+  \label{orig02:eq:dr-operator}
+  T_{\mathrm{DR}}
+  =\frac12\bigl(I+R_{\gamma A}R_{\gamma B}\bigr)
+  =I-J_{\gamma B}+J_{\gamma A}(2J_{\gamma B}-I).
+\end{equation}
+Karena kedua resolven terefleksi tak ekspansif, komposisinya tak ekspansif
+dan $T_{\mathrm{DR}}$ tak ekspansif kukuh.
+
+\begin{theorem}[Titik tetap dan solusi bayangan Douglas--Rachford]
+  \label{orig02:theorem:dr-shadow}
+  Andaikan $\operatorname{zer}(A+B)\neq\emptyset$. Barisan
+  \begin{equation}
+    \label{orig02:eq:dr-iteration}
+    y_{k+1}=T_{\mathrm{DR}}y_k,
+    \qquad x_k=J_{\gamma B}y_k,
+  \end{equation}
+  konvergen dalam dimensi hingga menuju $\bar y\in\operatorname{Fix}T_{\mathrm{DR}}$,
+  dan bayangannya memenuhi
+  $J_{\gamma B}\bar y\in\operatorname{zer}(A+B)$.
+\end{theorem}
+\begin{proof}
+  Jika $y$ titik tetap, tetapkan
+  $x=J_{\gamma B}y$ dan
+  $z=J_{\gamma A}(2x-y)$. Persamaan titik tetap dalam
+  bentuk kedua~\eqref{orig02:eq:dr-operator} memberi $z=x$. Kondisi resolven
+  lalu memberi
+  \begin{equation}
+    \frac{y-x}{\gamma}\in Bx,
+    \qquad
+    \frac{x-y}{\gamma}\in Ax,
+  \end{equation}
+  sehingga $0\in(A+B)x$.
+
+  Sebaliknya, jika $0\in(A+B)x$, pilih $b\in Bx$ dengan $-b\in Ax$ dan
+  tetapkan $y=x+\gamma b$. Maka $x=J_{\gamma B}y$ dan
+  $x=J_{\gamma A}(2x-y)$, jadi $y$ titik tetap. Himpunan titik tetap karena
+  itu tidak kosong. Kekukuhan tak ekspansif $T_{\mathrm{DR}}$ dan argumen Fej\'er
+  yang sama dengan metode titik proksimal memberi $y_k\to\bar y$. Kontinuitas
+  resolven memberi $x_k\to J_{\gamma B}\bar y$, yang merupakan nol jumlah.
+\end{proof}
+
+Modul Becker~2 sudah menyediakan bentuk proksimal konkret untuk
+$A=\partial f$ dan $B=\partial g$, berikut penormalan skala serta hubungan
+primal--dualnya. Bagian ini tidak mengulang materi tersebut; ia menjelaskan
+mengapa rumus yang sama bekerja untuk operator monoton maksimal yang tidak
+harus merupakan subdiferensial.
+
+% OR02-S007 | lapisan asli: diagnostik skew dan laboratorium
+% segment-id: d90.orig.v1.tr02.seg0007
+\section{Mengapa kemonotonan saja tidak cukup untuk langkah maju}
+\label{orig02:section:skew}
+
+Ambil $\omega\neq0$ dan operator linear
+\begin{equation}
+  \label{orig02:eq:skew}
+  S=\omega
+  \begin{pmatrix}0&-1\\1&0\end{pmatrix}.
+\end{equation}
+Karena $\inner{Sh}{h}=0$ untuk semua $h$, operator $S$ monoton. Ia juga
+monoton maksimal karena $I+\gamma S$ invertibel untuk setiap $\gamma>0$.
+Namun, $S$ tidak $\beta$-kokorsif untuk satu pun $\beta>0$: ruas kiri
+ketaksamaan kokorsif selalu nol, sedangkan ruas kanan positif bila $h\neq0$.
+
+Langkah maju $x_{k+1}=(I-\gamma S)x_k$ memenuhi
+\begin{equation}
+  \norm{x_{k+1}}^2=(1+\gamma^2\omega^2)\norm{x_k}^2,
+\end{equation}
+sehingga menjauh dari nol untuk $x_0\neq0$. Sebaliknya, langkah resolven
+$x_{k+1}=J_{\gamma S}x_k$ memenuhi
+\begin{equation}
+  \norm{x_{k+1}}
+  =\frac{1}{\sqrt{1+\gamma^2\omega^2}}\norm{x_k}.
+\end{equation}
+Contoh ini memisahkan dengan jelas tiga gagasan: monoton, Lipschitz, dan
+kokorsif tidak saling dapat dipertukarkan.
+
+\subsection*{Laboratorium 2: inklusi linear-skew dengan regularisasi $\ell_1$}
+\label{orig02:lab:monotone-splitting}
+
+Laboratorium pendamping mempelajari
+\begin{equation}
+  \label{orig02:eq:lab-inclusion}
+  0\in Mx-b+\lambda\partial\norm{x}_1,
+  \qquad
+  M=\mu I+\omega
+  \begin{pmatrix}0&-1\\1&0\end{pmatrix},
+  \quad \mu>0.
+\end{equation}
+Bagian simetris $\mu I$ membuat operator $x\mapsto Mx-b$ monoton kuat,
+sedangkan bagian skew menjaganya di luar kelas gradien fungsi konveks biasa.
+Operator itu $\beta$-kokorsif dengan
+\begin{equation}
+  \label{orig02:eq:lab-beta}
+  \beta=\frac{\mu}{\mu^2+\omega^2}.
+\end{equation}
+
+Kode membandingkan tiga jejak: maju--mundur dengan langkah di dalam rentang
+$0<\gamma<2\beta$, maju--mundur dengan langkah beku di luar jaminan teorema,
+dan Douglas--Rachford dengan resolven linear eksak serta ambang lunak. Solusi
+acuan unik diperoleh dengan enumerasi sembilan pola aktif tanda
+$\{-1,0,1\}^2$, bukan dengan menyembunyikan jawaban di dalam algoritma.
+NumPy memeriksa sistem linear, residu inklusi, dan identitas resolven.
+Diagnostik kedua memakai operator skew murni untuk mencocokkan faktor norma
+eksak langkah maju, ekstragradien, dan resolven hingga galat pembulatan.
+
+Tugas laboratorium:
+\begin{enumerate}
+  \item Jalankan konfigurasi beku dan cocokkan ringkasan JSON serta CSV.
+  \item Verifikasi secara numerik bahwa langkah stabil memenuhi
+    $\gamma<2\beta$, sedangkan langkah diagnostik berada di luar rentang itu.
+  \item Periksa bahwa residu titik tetap
+    \begin{equation}
+      r_\gamma(x)=
+      \norm{x-\operatorname{soft}(x-\gamma(Mx-b),\gamma\lambda)}
+    \end{equation}
+    menuju nol bagi jejak yang diterima.
+  \item Ubah $\omega$ tanpa mengubah $\mu$ dan jelaskan pengaruhnya pada
+    $\beta$ serta rentang langkah maju--mundur.
+  \item Gunakan CSV, bukan gambar saja, untuk membandingkan residu akhir dan
+    galat terhadap solusi acuan.
+  \item Pada diagnostik skew murni, cocokkan faktor kontraksi ekstragradien
+    $\sqrt{1-\gamma^2+\gamma^4}$ dengan hasil numerik.
+\end{enumerate}
+
+% OR02-S008 | lapisan asli: latihan, solusi, dan peta batas
+% segment-id: d90.orig.v1.tr02.seg0008
+\section{Latihan, petunjuk, dan solusi lengkap}
+\label{orig02:section:exercises}
+
+\begin{exercise}[Dari VI ke kerucut normal]
+  \label{orig02:exercise:vi-normal}
+  Untuk $C=[0,+\infty)$ dan $F(x)=ax-b$ dengan $a>0$, tentukan solusi
+  $\operatorname{VI}(F,C)$ melalui inklusi kerucut normal.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Pisahkan kasus $x>0$ dan $x=0$.
+  (ii) Untuk $x>0$, $N_C(x)=\{0\}$.
+  (iii) Pada $x=0$, $N_C(0)=(-\infty,0]$.
+
+  \textbf{Solusi lengkap.}
+  Jika $x>0$, inklusi $0\in ax-b+N_C(x)$ memberi $x=b/a$, yang sah hanya
+  bila $b>0$. Pada $x=0$, inklusi menjadi
+  $0\in-b+(-\infty,0]$, atau $b\leq0$. Jadi solusi tunggal adalah
+  \begin{equation}
+    x^*=\max\{b/a,0\}.
+  \end{equation}
+\end{exercise}
+
+\begin{exercise}[Monoton tetapi belum maksimal]
+  \label{orig02:exercise:nonmaximal}
+  Definisikan operator $A$ melalui
+  \begin{equation}
+    \graph A=\{(0,0)\}.
+  \end{equation}
+  Buktikan bahwa $A$ monoton tetapi tidak monoton maksimal.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Uji definisi kemonotonan pada satu pasangan yang tersedia.
+  (ii) Cari operator monoton dengan grafik lebih besar.
+
+  \textbf{Solusi lengkap.}
+  Satu-satunya pasangan grafik yang dapat dibandingkan adalah $(0,0)$ dengan
+  dirinya sendiri, sehingga hasil kali dalam pada definisi bernilai nol.
+  Jadi $A$ monoton. Operator nol $\widetilde A x=\{0\}$ untuk semua
+  $x\in\R^d$ juga monoton dan
+  $\graph A\subsetneq\graph\widetilde A$. Karena ada perluasan monoton ketat,
+  $A$ tidak maksimal.
+\end{exercise}
+
+\begin{exercise}[Resolven dan refleksi]
+  \label{orig02:exercise:resolvent-reflection}
+  Mulai dari~\eqref{orig02:eq:firm-nonexpansive}. Buktikan bahwa
+  $R_{\gamma A}=2J_{\gamma A}-I$ tak ekspansif.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Tetapkan $p=J_{\gamma A}x$ dan $q=J_{\gamma A}y$.
+  (ii) Kembangkan kuadrat norma $2(p-q)-(x-y)$.
+
+  \textbf{Solusi lengkap.}
+  Perluasan langsung memberi
+  \begin{equation}
+  \begin{aligned}
+    \norm{R_{\gamma A}x-R_{\gamma A}y}^2
+    &=\norm{x-y}^2+4\norm{p-q}^2-4\inner{p-q}{x-y}\\
+    &\leq\norm{x-y}^2,
+  \end{aligned}
+  \end{equation}
+  karena kekukuhan tak ekspansif menyatakan
+  $\norm{p-q}^2\leq\inner{p-q}{x-y}$.
+\end{exercise}
+
+\begin{exercise}[Operator skew: eksplisit versus implisit]
+  \label{orig02:exercise:skew}
+  Untuk $\omega=1$ pada~\eqref{orig02:eq:skew}, hitung norma operator
+  langkah maju $I-\gamma S$, langkah ekstragradien
+  $(1-\gamma^2)I-\gamma S$, dan resolven $(I+\gamma S)^{-1}$.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Gunakan $S^\top=-S$ dan $S^\top S=\omega^2I$.
+  (ii) Hitung kuadrat norma pada vektor sembarang.
+
+  \textbf{Solusi lengkap.}
+  \begin{equation}
+    (I-\gamma S)^\top(I-\gamma S)
+    =(1+\gamma^2\omega^2)I,
+  \end{equation}
+  dan dengan $\omega=1$ normanya $\sqrt{1+\gamma^2}>1$. Untuk
+  ekstragradien, suku silang kembali hilang dan normanya
+  $\sqrt{(1-\gamma^2)^2+\gamma^2}
+   =\sqrt{1-\gamma^2+\gamma^4}<1$ bila $0<\gamma<1$. Selain itu,
+  $(I+\gamma S)^\top(I+\gamma S)=(1+\gamma^2)I$, sehingga
+  norma inversnya $1/\sqrt{1+\gamma^2}<1$.
+\end{exercise}
+
+\begin{exercise}[Rentang langkah untuk bagian linear-skew]
+  \label{orig02:exercise:cocoercivity}
+  Untuk $M=\mu I+S$ dengan $\mu>0$, buktikan bahwa pemetaan $x\mapsto Mx-b$
+  bersifat $\beta$-kokorsif dengan
+  $\beta=\mu/(\mu^2+\omega^2)$.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Konstanta $b$ hilang ketika dua nilai dikurangkan.
+  (ii) Gunakan $\inner{Sh}{h}=0$ dan
+  $\norm{Mh}^2=(\mu^2+\omega^2)\norm{h}^2$.
+
+  \textbf{Solusi lengkap.}
+  Untuk $h=x-y$,
+  \begin{equation}
+    \inner{Mx-My}{x-y}=\mu\norm{h}^2,
+    \qquad
+    \norm{Mx-My}^2=(\mu^2+\omega^2)\norm{h}^2.
+  \end{equation}
+  Bila $h=0$, kesamaan kokorsif berlaku langsung. Bila $h\neq0$, membagi kedua
+  identitas memberi tepat
+  $\inner{Mx-My}{x-y}=\beta\norm{Mx-My}^2$.
+\end{exercise}
+
+\begin{exercise}[Bayangan titik tetap Douglas--Rachford]
+  \label{orig02:exercise:dr-shadow}
+  Andaikan $y=T_{\mathrm{DR}}y$ dan tetapkan $x=J_{\gamma B}y$. Tunjukkan secara
+  langsung bahwa $0\in(A+B)x$.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Tulis $z=J_{\gamma A}(2x-y)$.
+  (ii) Gunakan bentuk kedua~\eqref{orig02:eq:dr-operator} untuk memperoleh
+  $z=x$.
+  (iii) Jumlahkan dua inklusi resolven.
+
+  \textbf{Solusi lengkap.}
+  Persamaan titik tetap memberi $0=-x+z$, sehingga $z=x$. Dari definisi
+  resolven,
+  \begin{equation}
+    \frac{y-x}{\gamma}\in Bx,
+    \qquad
+    \frac{2x-y-z}{\gamma}
+    =\frac{x-y}{\gamma}\in Ax.
+  \end{equation}
+  Kedua unsur menjumlah menjadi nol, maka $0\in(A+B)x$.
+\end{exercise}
+
+\section{Peta asumsi dan batas klaim}
+\label{orig02:section:assumption-map}
+
+\begin{center}
+\begin{tabular}{p{0.22\textwidth}p{0.33\textwidth}p{0.34\textwidth}}
+\hline
+Hasil & Asumsi penentu & Yang tidak diklaim\\
+\hline
+Ekuivalensi VI & $C$ konveks tertutup tak kosong; definisi kerucut normal &
+keberadaan solusi tanpa asumsi tambahan\\
+Resolven & $A$ monoton maksimal; $\gamma>0$ & resolven jumlah mudah dihitung\\
+Titik proksimal & himpunan nol tak kosong; dimensi hingga; langkah tetap positif &
+laju linear tanpa kemonotonan kuat\\
+Maju--mundur & $A$ monoton maksimal; $B$ $\beta$-kokorsif;
+$0<\gamma<2\beta$ & konvergensi untuk operator monoton Lipschitz umum\\
+Ekstragradien & $F$ monoton dan $L$-Lipschitz; $C$ konveks tertutup;
+$0<\gamma<1/L$ & satu evaluasi operator per iterasi\\
+Douglas--Rachford & $A,B$ monoton maksimal; nol jumlah tak kosong &
+setiap iterat bayangan sudah merupakan solusi\\
+Laboratorium & konfigurasi linear-skew dua dimensi yang dibekukan &
+kinerja universal atau peringkat algoritma\\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Rujukan matematis dan saksi verifikasi}
+\begingroup\sloppy
+\begin{itemize}
+  \item Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+    arXiv:2607.11664v1, khususnya subdiferensial, operator proksimal, dan
+    gradien proksimal; dipakai sebagai tulang punggung prasyarat.
+  \item Stephen Becker dan Mitchell Krock, catatan kelas optimisasi konveks
+    pada commit beku \texttt{98ed693}, khususnya modul Douglas--Rachford yang
+    telah diterima; dipakai untuk menjaga notasi dan batas nonduplikasi.
+  \item George J. Minty, \emph{Monotone (Nonlinear) Operators in Hilbert
+    Space}, \emph{Duke Mathematical Journal} 29 (1962), 341--346,
+    DOI:10.1215/S0012-7094-62-02933-2.
+  \item R. Tyrrell Rockafellar, \emph{On the Maximal Monotonicity of
+    Subdifferential Mappings}, \emph{Pacific Journal of Mathematics} 33
+    (1970), 209--216, DOI:10.2140/PJM.1970.33.209.
+  \item Pierre-Louis Lions dan Bertrand Mercier, \emph{Splitting Algorithms
+    for the Sum of Two Nonlinear Operators}, \emph{SIAM Journal on Numerical
+    Analysis} 16 (1979), 964--979, DOI:10.1137/0716071.
+\end{itemize}
+\endgroup

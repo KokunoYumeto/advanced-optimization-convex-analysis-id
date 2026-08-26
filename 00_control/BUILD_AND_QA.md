@@ -1772,3 +1772,76 @@ Both GitHub and Zenodo preservation gates now pass. No upstream contact or
 credential material was involved. The next gate is a larger coherent original
 module on variational inequalities, maximal monotone operators, resolvents,
 and splitting; this is not a publication or evidence-only loop.
+
+## 2026-08-26 — Original-02 consolidated admission and Zenodo gate
+
+Original-02 reader identities are PDF 453,811 bytes / 16 A4 pages /
+`0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284`, HTML
+190,403 / `ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a`,
+and EPUB 48,701 / `dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86`.
+Two clean reader builds match. Every one of 16 PDF pages passes visual review;
+desktop/tablet/phone HTML reflow passes; EPUBCheck 5.3.0 reports zero fatal,
+error, warning, or usage findings and the EPUB contains 295 native MathML
+surfaces. Exact math validation passes 20/20, including two byte-identical lab
+replays. Rights/non-overlap and rereview pass, P1=P2=P3=0.
+
+Backend extension/validation receipts are
+`938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370` /
+`bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2`.
+The canonical 4,338-record JSONL/CSV files are 3,183,459 / 3,839,894 bytes with
+SHA-256 `52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439` /
+`2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c`;
+two independent regenerations match and recover the protected baseline.
+
+Package gate: PASS. Two builds reproduce the same 39-entry, 679,973-byte ZIP,
+SHA-256 `40768542571ba269b2b175e080a611a4626f92068510d5e26b95cb53da66a1eb`.
+Zenodo gate: PASS at record `22104724` / DOI `10.5281/zenodo.22104724`, 99
+files (90 inherited, nine additions), correct default preview, anonymous
+exact-byte readback, draft 404, and zero open drafts. GitHub is the sole
+remaining preservation gate for this boundary.
+
+## 2026-08-26 — Original-02 privacy-correction and current-byte gate
+
+The preceding 679,973-byte package identity is superseded for current use.
+Two deterministic sanitized builds reproduce the same safe 39-entry ZIP:
+680,451 bytes / SHA-256
+`5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d`.
+The current Zenodo manifest and checksum file are 6,559 / 1,001 bytes with
+SHA-256 `92e05870cc496deb1c9509a1299fdc90d73e9b04f920a3c8347171d900a9771f` /
+`1e1b5734be66d452fdf025100e1d4ec22184de02798f8f765eddccf74ef81576`.
+
+All regenerated current QA receipts pass. PDF build/visual, HTML build/browser,
+EPUB build/conformance, math, rights/non-overlap, and independent rereview
+SHA-256 values are respectively
+`d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a`,
+`e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04`,
+`c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5`,
+`24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891`,
+`f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6`,
+`4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e`,
+`c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4`,
+`5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e`,
+and `a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082`.
+Backend build/validation remain
+`938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370` /
+`bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2`.
+
+Zenodo in-place correction gate: PASS. Same record/DOI/concept, 99-name
+inventory, metadata, and default preview; exactly three replacements; 96
+protected files unchanged; no new version. Anonymous exact-byte and privacy
+readback passed with zero profile-locator hits in public additions, nested
+archives, or decoded PDF streams. Authenticated closure passed with draft 404
+and zero open drafts. Correction/readback/closure receipt SHA-256 values are
+`2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114`,
+`2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f`,
+and `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
+GitHub remains the sole outstanding preservation gate for this boundary.
+
+The pre-commit exact-path gate covers 103/103 manifest paths and 11,225,771
+bytes, with zero configured-credential hits and zero profile-locator hits even
+after nested archive and PDF-stream decoding. Structured JSON/JSONL/CSV and
+Python AST checks pass. Narrow `git diff --check` reports only five known
+blank-line-at-EOF findings in the already frozen PDF visual verifier and four
+byte-bound package copies; changing them would invalidate accepted package and
+public identities, so they are preserved. There are no other whitespace or
+patch-integrity findings.

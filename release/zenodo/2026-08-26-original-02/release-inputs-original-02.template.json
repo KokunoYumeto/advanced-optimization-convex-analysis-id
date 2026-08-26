@@ -1,0 +1,115 @@
+{
+  "schema": "o015-zenodo-original-02-release-inputs-v1",
+  "frozen": false,
+  "publication_status": "partial",
+  "facts": {
+    "added_backend_records": null,
+    "backend_records": null,
+    "complete_solutions": 6,
+    "exercises": 6,
+    "hints": 6,
+    "math_checks": null,
+    "pdf_pages": 16,
+    "protected_backend_records": 3943,
+    "segments": 8
+  },
+  "artifacts": {
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip": {
+      "bytes": null,
+      "path": "release/original-02/2026-08-26/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+      "sha256": null
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": {
+      "bytes": 48701,
+      "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": {
+      "bytes": 190403,
+      "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": {
+      "bytes": 453811,
+      "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    "RIGHTS_AND_PROVENANCE_ORIGINAL_02.md": {
+      "bytes": null,
+      "path": "release/original-02/2026-08-26/package/RIGHTS_AND_PROVENANCE_ORIGINAL_02.md",
+      "sha256": null
+    },
+    "backend-records-2026.08.26-original-02.csv": {
+      "bytes": null,
+      "path": "backend/records.csv",
+      "sha256": null
+    },
+    "backend-records-2026.08.26-original-02.jsonl": {
+      "bytes": null,
+      "path": "backend/records.jsonl",
+      "sha256": null
+    }
+  },
+  "receipts": [
+    {
+      "label": "pdf_build",
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "sha256": null
+    },
+    {
+      "label": "pdf_visual_qa",
+      "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "sha256": null
+    },
+    {
+      "label": "html_build",
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "sha256": null
+    },
+    {
+      "label": "html_browser_qa",
+      "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "sha256": null
+    },
+    {
+      "label": "epub_build",
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "sha256": null
+    },
+    {
+      "label": "epub_conformance",
+      "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "sha256": null
+    },
+    {
+      "label": "mathematics",
+      "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "sha256": null
+    },
+    {
+      "label": "rights_and_nonoverlap",
+      "path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "sha256": null
+    },
+    {
+      "label": "backend_build",
+      "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "sha256": null
+    },
+    {
+      "label": "backend_validation",
+      "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "sha256": null
+    },
+    {
+      "label": "independent_rereview",
+      "path": "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "sha256": null
+    },
+    {
+      "label": "package_local_verification",
+      "path": "release/original-02/2026-08-26/local-verification-original-02.json",
+      "sha256": null
+    }
+  ]
+}

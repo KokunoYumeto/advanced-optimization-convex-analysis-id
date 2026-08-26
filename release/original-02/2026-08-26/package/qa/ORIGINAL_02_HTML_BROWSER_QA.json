@@ -1,0 +1,118 @@
+{
+  "schema": "o015-original-02-html-browser-qa-v1",
+  "date": "2026-08-26",
+  "result": "pass",
+  "artifact": {
+    "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+    "bytes": 190403,
+    "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+  },
+  "build_receipt": {
+    "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+    "bytes": 6289,
+    "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+  },
+  "builder": {
+    "wrapper": {
+      "path": "qa/build_original_02_reflow.py",
+      "bytes": 7294,
+      "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"
+    },
+    "engine": {
+      "path": "qa/build_original_02_reflow_engine.py",
+      "bytes": 76168,
+      "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"
+    }
+  },
+  "surface": "Codex in-app Browser",
+  "served_from": "bounded loopback HTTP server; server stopped after QA",
+  "viewports": [
+    {
+      "requested": [1280, 800],
+      "rendered": [1280, 800],
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "body_scroll_width": 1265,
+      "page_horizontal_overflow": false,
+      "main_left_px": 67.59722137451172,
+      "main_width_px": 1129.6875,
+      "math_scroll_regions": 45,
+      "internally_overflowing_math_regions": 0,
+      "table_scroll_regions": 2,
+      "internally_overflowing_table_regions": 0,
+      "bad_local_overflow_policy_count": 0
+    },
+    {
+      "requested": [768, 1024],
+      "rendered": [768, 1024],
+      "document_client_width": 753,
+      "document_scroll_width": 753,
+      "body_scroll_width": 753,
+      "page_horizontal_overflow": false,
+      "main_left_px": 58.79861068725586,
+      "main_width_px": 635.2847290039062,
+      "math_scroll_regions": 45,
+      "internally_overflowing_math_regions": 5,
+      "table_scroll_regions": 2,
+      "internally_overflowing_table_regions": 0,
+      "bad_local_overflow_policy_count": 0
+    },
+    {
+      "requested": [390, 844],
+      "rendered": [390, 844],
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "body_scroll_width": 375,
+      "page_horizontal_overflow": false,
+      "main_left_px": 20.79861068725586,
+      "main_width_px": 333.5069580078125,
+      "body_font_size": "16.0624px",
+      "h1_font_size": "30.4px",
+      "image_width_px": 333.4930725097656,
+      "math_scroll_regions": 45,
+      "internally_overflowing_math_regions": 34,
+      "table_scroll_regions": 2,
+      "internally_overflowing_table_regions": 2,
+      "bad_local_overflow_policy_count": 0
+    }
+  ],
+  "rendered_structure": {
+    "language": "id-ID",
+    "headings": 24,
+    "toc_links": 23,
+    "main_landmarks": 1,
+    "skip_links": 1,
+    "skip_link_href": "#reader-content",
+    "skip_link_target_exists": true,
+    "theorem_definition_exercise_boxes": 19,
+    "proof_boxes": 10,
+    "math_source_surfaces": 295,
+    "mathjax_rendered_surfaces": 295,
+    "tables": 2,
+    "scoped_table_headers": 11,
+    "images": 1,
+    "images_with_nonempty_alt": 1,
+    "embedded_lab_downloads": [
+      "monotone-splitting-lab.py",
+      "results.json",
+      "results.csv",
+      "residual.svg"
+    ],
+    "duplicate_ids": 0,
+    "unresolved_internal_fragments": 0
+  },
+  "runtime_console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "conclusions": [
+    "The reader fills and centers its available page region at desktop, tablet, and mobile widths.",
+    "No viewport produces page-level horizontal overflow; long formulas and wide tables remain inside keyboard-focusable local scroll regions.",
+    "All 295 source mathematics surfaces render through MathJax, and the chart is paired with complete table, CSV, and JSON data.",
+    "The temporary viewport override was reset, the QA tab was closed, and the loopback server was stopped."
+  ],
+  "limitations": [
+    "No browser screenshot was retained because the screenshot surface was unavailable; rendered geometry, computed overflow policy, DOM structure, console output, and all-page PDF images were checked instead.",
+    "The skip-link target and native anchor structure were verified; a separate synthetic keyboard activation was not recorded."
+  ]
+}

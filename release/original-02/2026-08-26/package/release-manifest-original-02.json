@@ -1,0 +1,418 @@
+{
+  "backend_policy": {
+    "final_id_order_sha256": "df3afe3e3766b99d5ff66e85f938dbfd0d5b59c864fdd86fae4bfec40638ea57",
+    "final_id_set_sha256": "cca95066d09621ca4c9ca1a775f150c69d63309f14aefae6c40cbb9ff83c7386",
+    "final_line_sequence_sha256": "1e40054e07a2d1be64f34b4d3a86faedc26f620189fc11b3f8b8b8af37245030",
+    "final_record_set_sha256": "c0c0c1d4a06e1cb14b3324c31defd45b588ae85281ccd29626b237fb9d1ec0e7",
+    "final_records": 4338,
+    "full_dataset_packaged": false,
+    "new_records": 395,
+    "reason": "The full backend remains in the repository; this compact package carries its schema, generator, validator, and passing receipts with protected-baseline and exact reconstruction evidence.",
+    "records_csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "records_jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    }
+  },
+  "excluded": [
+    "full backend records.jsonl and records.csv",
+    "official Habring source tar and legal-code witness",
+    "Becker source and translated companion bytes",
+    "mathematical witness PDFs and articles",
+    "build trees, caches, rendered QA images, credentials, and raw provenance dumps"
+  ],
+  "files": [
+    {
+      "bytes": 453811,
+      "media_type": "application/pdf",
+      "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "role": "primary PDF reader",
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    {
+      "bytes": 190403,
+      "media_type": "text/html",
+      "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "role": "responsive semantic HTML reader",
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    {
+      "bytes": 48701,
+      "media_type": "application/epub+zip",
+      "path": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "role": "reflow EPUB reader",
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    {
+      "bytes": 3512,
+      "media_type": "text/markdown",
+      "path": "README_ORIGINAL_02.md",
+      "role": "reader-first scope and continuation guide",
+      "sha256": "fdba2a211178d9efbe281b1049e11ea71a431ee7e34c263cb2b04e0280b11a8b"
+    },
+    {
+      "bytes": 3584,
+      "media_type": "text/markdown",
+      "path": "RIGHTS_AND_PROVENANCE_ORIGINAL_02.md",
+      "role": "component rights and provenance",
+      "sha256": "28512dcc27ef38163e8874e5e582689fbc24783226d0dce29fe3ca0700cc4fb0"
+    },
+    {
+      "bytes": 1026,
+      "media_type": "text/markdown",
+      "path": "LICENSE_ORIGINAL_CC_BY-SA-4.0.md",
+      "role": "license note for new Original-02 material",
+      "sha256": "b5de93b5ce251fd6fc61efeef3ee2fb64bc20979af359c04571901020cc1a79e"
+    },
+    {
+      "bytes": 1294,
+      "media_type": "text/markdown",
+      "path": "LICENSE_HABRING_SCAFFOLD_CC_BY-4.0.md",
+      "role": "license note for Habring scaffold",
+      "sha256": "407bb3f3d79a38e47a7c098ac8902c4e4b0c8cd8941faa1ad160c20e462ebea5"
+    },
+    {
+      "bytes": 5476,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "role": "standalone Indonesian reader wrapper",
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    {
+      "bytes": 28028,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "role": "independent Indonesian substantive chapter",
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    {
+      "bytes": 4465,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/macros-id.tex",
+      "role": "localized macro scaffold",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/shinybook.cls",
+      "role": "Habring document-class scaffold",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 17904,
+      "media_type": "text/x-python",
+      "path": "labs/original-02/monotone-splitting-lab.py",
+      "role": "open computation lab",
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    {
+      "bytes": 13503,
+      "media_type": "application/json",
+      "path": "labs/original-02/results.json",
+      "role": "machine-readable lab results",
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    {
+      "bytes": 4228,
+      "media_type": "text/csv",
+      "path": "labs/original-02/results.csv",
+      "role": "tabular lab results",
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    {
+      "bytes": 9538,
+      "media_type": "image/svg+xml",
+      "path": "labs/original-02/residual.svg",
+      "role": "lab chart with text alternative in readers",
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    {
+      "bytes": 3092,
+      "media_type": "application/json",
+      "path": "backend/backend_schema.json",
+      "role": "stable-ID backend schema",
+      "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+    },
+    {
+      "bytes": 26577,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "role": "open mathematics validation",
+      "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4"
+    },
+    {
+      "bytes": 6073,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "role": "deterministic PDF build receipt",
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    {
+      "bytes": 5685,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "role": "all-page PDF visual QA",
+      "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04"
+    },
+    {
+      "bytes": 6289,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "role": "deterministic HTML build receipt",
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    {
+      "bytes": 4247,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "role": "desktop and phone browser QA",
+      "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891"
+    },
+    {
+      "bytes": 7697,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "role": "deterministic EPUB build receipt",
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    {
+      "bytes": 4066,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "role": "EPUB and EPUBCheck conformance",
+      "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e"
+    },
+    {
+      "bytes": 4959,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "role": "stable-ID backend extension receipt",
+      "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370"
+    },
+    {
+      "bytes": 11064,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "role": "independent stable-ID backend validation",
+      "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2"
+    },
+    {
+      "bytes": 8135,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "role": "rights and O018 non-overlap gate",
+      "sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e"
+    },
+    {
+      "bytes": 16438,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "role": "independent final rereview",
+      "sha256": "a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082"
+    },
+    {
+      "bytes": 9055,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_02_pdf_engine.py",
+      "role": "isolated PDF build engine",
+      "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0"
+    },
+    {
+      "bytes": 2562,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_02_pdf.py",
+      "role": "Original-02 PDF build wrapper",
+      "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088"
+    },
+    {
+      "bytes": 76168,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_02_reflow_engine.py",
+      "role": "isolated HTML/EPUB reflow engine",
+      "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"
+    },
+    {
+      "bytes": 7294,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_02_reflow.py",
+      "role": "Original-02 HTML/EPUB build wrapper",
+      "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"
+    },
+    {
+      "bytes": 49667,
+      "media_type": "text/x-python",
+      "path": "qa/validate_original_02_math.py",
+      "role": "mathematics validator",
+      "sha256": "5b9cc66b6560b210715a0b6c6bd8b31943dd91d3764b3cb1ffb86e908d2662a1"
+    },
+    {
+      "bytes": 5963,
+      "media_type": "text/x-python",
+      "path": "qa/verify_original_02_pdf_visual.py",
+      "role": "PDF visual validator",
+      "sha256": "4d1231e0b8ab29ae5fa296389eae9b6226f8f9bbff1ca7d3d59227dc9b368c9b"
+    },
+    {
+      "bytes": 25107,
+      "media_type": "text/x-python",
+      "path": "qa/verify_original_02_epub.py",
+      "role": "EPUB validator",
+      "sha256": "57aa0ee9d1a81edf0ee12113e4a2b8c25eeba40e06ba411849f11bc492d91245"
+    },
+    {
+      "bytes": 56615,
+      "media_type": "text/x-python",
+      "path": "qa/extend_backend_original_02.py",
+      "role": "backend extension generator",
+      "sha256": "33aa697bb393082a7c04aa60d999f94057cac5503407f8c135eb507555d8e393"
+    },
+    {
+      "bytes": 63201,
+      "media_type": "text/x-python",
+      "path": "qa/validate_backend_original_02.py",
+      "role": "backend validator",
+      "sha256": "f49b8a8498fe1bc322cab9d6e8378f76d0530e4601205b245f6eea6f7939565d"
+    },
+    {
+      "bytes": 28088,
+      "media_type": "text/x-python",
+      "path": "qa/validate_original_02_rights_nonoverlap.py",
+      "role": "rights/non-overlap validator",
+      "sha256": "d4716b8cce1da2f624d4ea826948d4b14e9326eec79ab4d6630f1946cfcf4c12"
+    }
+  ],
+  "primary_reader": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+  "provenance": {
+    "human_credits_retained": true,
+    "model": "OpenAI Codex gpt-5.6-sol, Ultra"
+  },
+  "qa": {
+    "backend": {
+      "bytes": 11064,
+      "path": "qa/ORIGINAL_02_BACKEND_VALIDATION.json",
+      "result": "pass",
+      "sha256": "bc12cc183c2e972497ac230eeb56dd9dee80930de9fb5ae449f4086d21d479a2"
+    },
+    "backend_build": {
+      "bytes": 4959,
+      "path": "qa/ORIGINAL_02_BACKEND_BUILD.json",
+      "result": "pass",
+      "sha256": "938232e46d790d89813d85fe86609bfdb868759cac0f22104b72959af38b8370"
+    },
+    "browser": {
+      "bytes": 4247,
+      "path": "qa/ORIGINAL_02_HTML_BROWSER_QA.json",
+      "result": "pass",
+      "sha256": "24f7dd83724fc860b775715f72cd967a24f097cb8041686f8918154d08cd3891"
+    },
+    "epub_build": {
+      "bytes": 7697,
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "result": "pass",
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    "epub_conformance": {
+      "bytes": 4066,
+      "path": "qa/ORIGINAL_02_EPUB_CONFORMANCE.json",
+      "result": "pass",
+      "sha256": "4ba00a859ae31066373581d19df7e01432e0b515e6e7687746637755693ba85e"
+    },
+    "html_build": {
+      "bytes": 6289,
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "result": "pass",
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    "math": {
+      "bytes": 26577,
+      "path": "qa/ORIGINAL_02_MATH_VALIDATION.json",
+      "result": "pass",
+      "sha256": "c20d9a3b32bf5dc61e4c1e6c147dc2ea0004c0f06c767481352f739e4b8aa7e4"
+    },
+    "pdf_build": {
+      "bytes": 6073,
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "result": "pass",
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    "pdf_visual": {
+      "bytes": 5685,
+      "path": "qa/ORIGINAL_02_PDF_VISUAL_QA.json",
+      "result": "pass",
+      "sha256": "e41dcb44f270ecc483b2e2ab1c231ff88c99aaf1ff6fd926805d0764fb530c04"
+    },
+    "rereview": {
+      "bytes": 16438,
+      "path": "qa/ORIGINAL_02_INDEPENDENT_REREVIEW.json",
+      "result": "pass",
+      "sha256": "a13acdb1165da017628314ab0b966e6cd1a8cd9f7091cbfa09b88f8a68c23082"
+    },
+    "rights": {
+      "bytes": 8135,
+      "path": "qa/ORIGINAL_02_RIGHTS_NONOVERLAP.json",
+      "result": "pass",
+      "sha256": "5d692573ed02910b131365567f8fdf7b1065f557923727779bd3bc13afa7dd2e"
+    }
+  },
+  "reader_order": [
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+    "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub"
+  ],
+  "reference_boundary": {
+    "mathematical_witnesses": [
+      "Andreas Habring",
+      "Christian Clason",
+      "Stephen Becker",
+      "Mitchell Krock",
+      "George J. Minty",
+      "R. Tyrrell Rockafellar",
+      "Pierre-Louis Lions",
+      "Bertrand Mercier"
+    ],
+    "non_endorsement": "Independent edition; no named author, institution, repository, publisher, or source party is represented as endorsing it.",
+    "third_party_prose_layout_figures_exercises_solutions_or_code_packaged_as_new_material": false,
+    "witness_bytes_packaged": false
+  },
+  "release_date": "2026-08-26",
+  "schema": "o015-original-02-compact-release-v1",
+  "scope": {
+    "complete_solutions": 6,
+    "exercises": 6,
+    "hints": 6,
+    "lab": "one deterministic open-computation monotone-splitting lab",
+    "numbered_display_environments": 45,
+    "segments": 8,
+    "source_labels": 53,
+    "source_math_surfaces": 294,
+    "stable_id_namespace": "d90.orig.v1.tr02.*",
+    "unit_id": "d90.orig.v1.tr02.unit"
+  },
+  "sha256sums_scope": "every ZIP member except SHA256SUMS itself",
+  "source_and_component_rights": {
+    "habring_scaffold": "shinybook.cls exact copy and macros-id.tex localized adaptation; submission-level CC BY 4.0 evidence; class has no separate embedded notice",
+    "habring_source": {
+      "arxiv_version": "2607.11664v1",
+      "author": "Andreas Habring",
+      "license": "CC BY 4.0",
+      "source_tar_bytes": 230116,
+      "source_tar_path": "authority/habring/2607.11664v1-source.tar",
+      "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748",
+      "title": "Lecture Notes: Convex Optimization"
+    },
+    "new_layer_and_scaffold_licenses_are_separate": true,
+    "new_substantive_layer": "CC BY-SA 4.0",
+    "no_blanket_license_claim": true
+  },
+  "status": {
+    "larger_course_edition": "partial",
+    "next_cursor": "course-wide cumulative assessment, remaining laboratories, capstone, and full-edition accessibility closure",
+    "tranche": "complete at the exact admitted Original-02 scope"
+  },
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan — Edisi Bahasa Indonesia",
+  "upstream_contact": false
+}

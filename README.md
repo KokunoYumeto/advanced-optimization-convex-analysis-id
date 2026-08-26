@@ -2,18 +2,21 @@
 
 Edisi pembaca bahasa Indonesia yang sedang dikembangkan untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX dan Markdown semantik yang dapat disunting, HTML yang dapat mengalir ulang, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** karya dalam proses. Habring arXiv `2607.11664v1` adalah spine sumber-terstruktur kanonis dan seluruh prakata serta Bab 1–9 kini telah diterjemahkan, dibangun, dan diterima dalam PDF, HTML reflow, serta EPUB 3. MIT OpenCourseWare 6.253 tetap pendamping berlisensi terpisah: L01–L11 menerima halaman 2–97 dengan pembaca HTML/PDF dan koreksi terbuka. Backend stabil kini berisi 3.096 rekaman: seluruh 2.472 rekaman sebelumnya dipertahankan dan 624 rekaman Habring ditambahkan. Checkpoint publik L11 pada DOI `10.5281/zenodo.22086656` tetap baseline sebelum preservasi pembaca Habring lengkap. Buku kuliah O015 secara keseluruhan belum selesai: subset Becker dan lapisan asli KKT, stokastik modern, variasional/monoton, latihan, solusi, laboratorium, dan capstone masih terbuka. Halaman MIT 98 adalah kursor pendamping dorman.
+**Status:** karya dalam proses. Habring arXiv `2607.11664v1` adalah spine sumber-terstruktur kanonis; prakata dan Bab 1–9 lengkap dalam PDF, HTML reflow, dan EPUB 3. Tiga suplemen Becker serta dua tranche asli kini menutup dualitas/KKT, reduksi varians, metode stokastik komposit/cermin/minibatch, ketaksamaan variasional, operator monoton maksimal, resolven, dan pemisahan operator. MIT OpenCourseWare 6.253 tetap pendamping berlisensi terpisah pada halaman 2–97. Backend stabil berisi 4.338 rekaman: 3.943 rekaman sebelumnya dipertahankan byte demi byte dan 395 rekaman Original-02 ditambahkan. Buku kuliah O015 secara keseluruhan belum selesai: asesmen kumulatif, dua laboratorium tambahan, capstone, PDF bertag, dan penutupan aksesibilitas akhir masih terbuka; halaman MIT 98 tetap kursor pendamping dorman.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint publik terbaru yang terverifikasi berada pada [MIT L11,
-10.5281/zenodo.22086656](https://doi.org/10.5281/zenodo.22086656) dalam [DOI
+Checkpoint publik terbaru yang terverifikasi adalah [Original-02,
+10.5281/zenodo.22104724](https://doi.org/10.5281/zenodo.22104724) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Semua 98 berkas—90 warisan dan delapan tambahan L11—telah dibaca kembali
-secara anonim dan cocok byte demi byte; PDF L11 adalah pratinjau utama. Status
-tetap parsial; produksi aktif adalah spine Habring v1 dan halaman MIT 98 dorman.
+Semua 99 berkas—90 warisan dan sembilan tambahan Original-02—telah dibaca
+kembali secara anonim dan cocok byte demi byte; PDF Original-02 adalah
+pratinjau utama. Koreksi privasi minor pada rekaman yang sama mengganti hanya
+tiga berkas rilis, mempertahankan 96 berkas lain beserta DOI, konsep, metadata,
+dan pratinjau, serta menghasilkan nol temuan pencari lokasi profil pada seluruh
+tambahan publik. Status tetap parsial dan setiap hak berlaku per komponen.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -21,14 +24,20 @@ dengan PDF gabungan 103 halaman sebagai berkas pertama, paket sumber yang dapat
 dibangun ulang, lisensi, manifest, dan checksum. Komponen Penn berlisensi campuran
 tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
-Akses GitHub telah dipulihkan oleh penyedia pada 22 Agustus 2026. Checkpoint
-terverifikasi terbaru berada di [repositori yang sama](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id)
-pada [commit `c51e113`](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/commit/c51e1131c34e6e937197ee118b072269a5a4af23);
-seluruh 50 jalur yang berubah pada L11 cocok dengan unduhan raw anonim. Tidak
-dibuat repositori pengganti.
+Seluruh edisi id-ID tetap berada di [repositori GitHub yang bernama jelas untuk
+bidang dan bahasa ini](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id).
+Tranche Original-02 menggunakan repositori dan cabang `main` yang sama; identitas
+commit serta pembacaan raw anonim akan dicatat di
+`00_control/PUBLICATION_RECEIPTS.md` setelah gate GitHub sempit selesai.
+Tidak dibuat repositori pengganti.
 
 ## Pembaca yang tersedia
 
+- `output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf` — tranche asli kedua, 16 halaman A4 yang dapat dicari; 453.811 byte; SHA-256 `0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284`.
+- `output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html` — pembaca semantik reflow Original-02; 190.403 byte; SHA-256 `ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a`.
+- `output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub` — EPUB 3 Original-02 dengan 295 permukaan MathML asli; 48.701 byte; SHA-256 `dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86`.
+- `output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf` — tranche asli pertama, 16 halaman A4; 486.032 byte; SHA-256 `7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca`.
+- `output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html` dan EPUB padanannya — permukaan reflow untuk metode stokastik komposit, cermin, minibatch, dan Prox-SAGA.
 - `output/pdf/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf` — pembaca Habring lengkap Bab 1–9, 139 halaman A4; 3.779.312 byte; SHA-256 `da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41`.
 - `output/html/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.html` — pembaca Habring lengkap yang dapat mengalir ulang; 1.669.938 byte; SHA-256 `717ee81912a8b903acc87e5c59d830aa1d8c78abdda6e0c869d66b9a7bcde3a4`.
 - `output/epub/D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.epub` — EPUB 3 Habring lengkap dengan 2.206 permukaan MathML; 231.700 byte; SHA-256 `c630e25db3cbbfa6f6afa7213e526c47586b6e7b44f709095ea5a3881756fd41`.
@@ -67,7 +76,7 @@ dibuat repositori pengganti.
 - `output/pdf/D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf` — 17 halaman; current working-tree SHA-256 `18e7162f8d1e55a050ee96a6ba05a2ffaa0d5cb578f96e264152666a79dc83a8` (the previously published Zenodo bytes remain `c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a`).
 - `output/pdf/D90-PENN-05-metode-newton-dan-koreksi-id.pdf` — 15 halaman; current working-tree SHA-256 `dad34c7cb363197da1ae87117b22b2dde21d6d183997745cd3ffff62245c0b96` (the previously published Zenodo bytes remain `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`).
 
-Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca terkini berisi 3.096 rekaman di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
+Sumber Indonesia berada di `source/id-ID`; rekaman audit dan pemeriksaan ada di `qa`; backend mesin-baca terkini berisi 4.338 rekaman di `backend`; keputusan, otoritas sumber, hak komponen, dan kursor ada di `00_control`.
 
 ## Provenans produksi
 
@@ -75,7 +84,7 @@ Terjemahan, rekonstruksi sumber semantik, pembuatan backend, serta QA matematika
 
 ## Otoritas dan perubahan
 
-Korpus utama MIT merupakan rekonstruksi semantik dan terjemahan independen dari Dimitri P. Bertsekas, *Convex Analysis and Optimization*, MIT OpenCourseWare 6.253, di bawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Gambar yang dinyatakan digunakan atas izin Athena Scientific tidak disalin; gambar yang diperlukan harus digambar ulang secara independen dengan rekaman hak terpisah atau dihilangkan dengan lokator sumber. Komponen stokastik Clément Royer berada di bawah [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Unit Habring merupakan terjemahan independen dari Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv:2607.11664v1, di bawah [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Unit Penn merupakan terjemahan independen dari Christopher Griffin, *Nonlinear Programming* / Penn State MATH 555, di bawah [CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/). Setiap komponen mempertahankan lisensi, atribusi, penandaan perubahan, dan nondukungan sendiri; tidak ada lisensi menyeluruh untuk seluruh repositori. Daftar koreksi yang transparan ada di `00_control/ADVERSE_LEDGER.jsonl`.
+Spine kanonis merupakan terjemahan independen dari Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv:2607.11664v1, di bawah [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Materi MIT adalah pendamping berlisensi terpisah: rekonstruksi semantik dan terjemahan independen dari Dimitri P. Bertsekas, *Convex Analysis and Optimization*, MIT OpenCourseWare 6.253, di bawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); gambar Athena Scientific yang terikat izin tidak disalin. Komponen stokastik Clément Royer berada di bawah [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), dan unit Penn di bawah [CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/). Lapisan Original-01/02 yang baru berlisensi CC BY-SA 4.0, sedangkan scaffold Habring tetap CC BY 4.0. Setiap komponen mempertahankan lisensi, atribusi, penandaan perubahan, dan nondukungan sendiri; tidak ada lisensi menyeluruh untuk seluruh repositori. Daftar koreksi transparan ada di `00_control/ADVERSE_LEDGER.jsonl`.
 
 Empat belas masukan listing Maple yang ditemui pada Penn Bab 3–5 tidak disalin atau diterjemahkan sebagai kode. Permukaan itu diganti dengan pseudokode mandiri yang tidak bergantung pada Maple atau bahasa pemrograman tertentu dan diungkapkan sebagai perubahan. Lihat `RIGHTS.md`, `00_control/COMPONENT_RIGHTS.csv`, dan audit sumber Penn Bab 3–5 di `00_control`.
 
@@ -153,15 +162,23 @@ python qa/extend_backend_mit_l08.py
 python qa/validate_backend_mit_l08.py
 python qa/extend_backend_mit_l09.py
 python qa/validate_backend_mit_l09.py
+python qa/build_original_02_pdf.py
+python qa/build_original_02_reflow.py
+python qa/validate_original_02_math.py
+python qa/verify_original_02_pdf_visual.py
+python qa/verify_original_02_epub.py
+python qa/extend_backend_original_02.py --write-canonical
+python qa/validate_backend_original_02.py
+python qa/validate_original_02_rights_nonoverlap.py
 ```
 
-Generator Penn/Habring/MIT terdahulu tetap disimpan sebagai bukti transaksi historis. Backend hidup berakhir pada pasangan `extend_backend_habring_ch01_ch02.py` / `validate_backend_habring_ch01_ch02.py`; setiap baseline terdahulu dipertahankan byte demi byte dan tidak ada pengenal yang dinomori ulang.
+Generator Penn/Habring/MIT terdahulu tetap disimpan sebagai bukti transaksi historis. Backend hidup berakhir pada pasangan `extend_backend_original_02.py` / `validate_backend_original_02.py`; setiap baseline terdahulu dipertahankan byte demi byte dan tidak ada pengenal yang dinomori ulang.
 
 Rekaman pembangunan lengkap ada di `00_control/BUILD_AND_QA.md`.
 
 ## Aksesibilitas dan batas saat ini
 
-Semua PDF bersifat dapat dicari dan mendeklarasikan bahasa `id-ID`, tetapi belum bertanda semantik. Sebagian font internal pada gambar vektor Penn Bab 3–4 tidak memiliki peta Unicode lengkap; Penn Bab 5 dan pembaca MIT memetakan teksnya. HTML Habring lengkap bersifat reflow, mempertahankan 414 rumus display dan lima gambar berteks alternatif, dan lulus pada lebar desktop serta ponsel tanpa luapan halaman. EPUB 3 Habring lengkap mempertahankan 71 label sumber dan 2.206 permukaan MathML. EPUB gabungan untuk seluruh korpus berlisensi campuran, PDF bertag, permukaan komputasi interaktif, dan lapisan latihan/petunjuk/solusi lengkap masih harus diselesaikan. Tinjauan bahasa independen manusia belum tercatat dan bukan penahan kerja atau publikasi. Penn Bab 6 yang sudah diterjemahkan disimpan sebagai kandidat pendamping yang belum diterima; produksi utama tidak berlanjut otomatis ke bab tersebut.
+Semua PDF bersifat dapat dicari dan mendeklarasikan bahasa `id-ID`, tetapi belum bertanda semantik. Sebagian font internal pada gambar vektor Penn Bab 3–4 tidak memiliki peta Unicode lengkap; Penn Bab 5 dan pembaca MIT memetakan teksnya. HTML Habring lengkap dan kedua tranche asli bersifat reflow; EPUB Original-02 mempertahankan 295 permukaan MathML dan lulus EPUBCheck tanpa temuan. EPUB gabungan untuk seluruh korpus berlisensi campuran, PDF bertag, dua laboratorium tambahan, capstone, dan lapisan asesmen kumulatif masih harus diselesaikan. Tinjauan bahasa independen manusia belum tercatat dan bukan penahan kerja atau publikasi. Penn Bab 6 yang sudah diterjemahkan disimpan sebagai kandidat pendamping yang belum diterima; produksi utama tidak berlanjut otomatis ke bab tersebut.
 
 ## Batas MIT L02 yang diterima (23 Agustus 2026)
 

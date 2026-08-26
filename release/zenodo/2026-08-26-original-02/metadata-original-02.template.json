@@ -1,0 +1,162 @@
+{
+  "access": {
+    "files": "public",
+    "record": "public"
+  },
+  "files": {
+    "default_preview": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+    "enabled": true
+  },
+  "metadata": {
+    "contributors": [
+      {
+        "person_or_org": {
+          "family_name": "Royer",
+          "given_name": "Clément W.",
+          "name": "Royer, Clément W.",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Krock",
+          "given_name": "Mitchell",
+          "name": "Krock, Mitchell",
+          "type": "personal"
+        },
+        "role": {
+          "id": "other"
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "TTP",
+          "type": "organizational"
+        },
+        "role": {
+          "id": "other"
+        }
+      }
+    ],
+    "creators": [
+      {
+        "person_or_org": {
+          "family_name": "Habring",
+          "given_name": "Andreas",
+          "name": "Habring, Andreas",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Becker",
+          "given_name": "Stephen",
+          "name": "Becker, Stephen",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Griffin",
+          "given_name": "Christopher",
+          "name": "Griffin, Christopher",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>Checkpoint pembaca-first Bahasa Indonesia untuk <em>Optimisasi Lanjut dan Analisis Konveks</em>. Tranche Asli 2 membangun ketaksamaan variasional, operator monoton dan monoton maksimal, resolven, operator tegas takmengembang, serta pemisahan maju–mundur dan Douglas–Rachford sebagai satu unit koheren dalam {{SEGMENTS}} segmen. Edisi kursus yang lebih besar tetap parsial.</p><p>Versi ini membawa PDF {{PDF_PAGES}} halaman, HTML, dan EPUB reflow; {{EXERCISES}} latihan dengan {{HINTS}} petunjuk bertahap dan {{COMPLETE_SOLUTIONS}} solusi lengkap; laboratorium deterministik; dan paket sumber ringkas. {{MATH_CHECKS}} pemeriksaan matematika, QA visual dan browser, EPUBCheck, pemeriksaan hak/non-overlap, rereview independen P1=P2=P3=0, dan backend {{BACKEND_RECORDS}} rekaman harus lulus sebelum transaksi dapat berjalan. Backend mempertahankan {{PROTECTED_BACKEND_RECORDS}} rekaman sebelumnya dan menambahkan {{ADDED_BACKEND_RECORDS}} rekaman Original-02.</p><p>Hak berlaku per komponen. Materi substantif dan laboratorium baru berlisensi CC BY-SA 4.0. Kelas <em>shinybook.cls</em> yang disalin persis dan adaptasi <em>macros-id.tex</em> berasal dari Andreas Habring, arXiv:2607.11664v1, dengan bukti lisensi tingkat kiriman CC BY 4.0; keduanya tidak dilisensikan ulang sebagai CC BY-SA. Saksi matematis pihak ketiga dipakai hanya untuk verifikasi dan tidak didistribusikan sebagai isi turunan. Tidak ada lisensi menyeluruh untuk campuran berkas ini, dan edisi mandiri ini tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan pihak sumber.</p><p>Asesmen kumulatif, laboratorium tambahan, capstone, dan penutupan aksesibilitas PDF bertag masih terbuka. HTML dan EPUB adalah permukaan reflow pilihan; PDF dapat dicari tetapi belum bertag. Provenans produksi: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi pengguna repositori.</p>",
+    "languages": [
+      {
+        "id": "ind"
+      }
+    ],
+    "publication_date": "2026-08-26",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {
+        "identifier": "10.48550/arXiv.2607.11664",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "publication-book"
+        },
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+        "relation_type": {
+          "id": "isdocumentedby"
+        },
+        "resource_type": {
+          "id": "software"
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://github.com/stephenbeckr/convex-optimization-class/tree/98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "software"
+        },
+        "scheme": "url"
+      }
+    ],
+    "resource_type": {
+      "id": "publication-other"
+    },
+    "rights": [
+      {
+        "description": {
+          "en": "No blanket license is asserted; consult the bundled rights note and component ledger."
+        },
+        "link": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/blob/main/00_control/COMPONENT_RIGHTS.csv",
+        "title": {
+          "en": "Mixed-license record — rights apply per file and source relation"
+        }
+      },
+      {
+        "id": "cc-by-sa-4.0"
+      },
+      {
+        "id": "cc-by-4.0"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Bahasa Indonesia"
+      },
+      {
+        "subject": "id-ID"
+      },
+      {
+        "subject": "convex analysis"
+      },
+      {
+        "subject": "convex optimization"
+      },
+      {
+        "subject": "variational inequalities"
+      },
+      {
+        "subject": "maximal monotone operators"
+      },
+      {
+        "subject": "resolvents"
+      },
+      {
+        "subject": "operator splitting"
+      },
+      {
+        "subject": "open educational resources"
+      }
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Tranche Asli 2; Kursus Parsial",
+    "version": "checkpoint-2026.08.26-original-02-variational-inequalities-maximal-monotone-resolvents-splitting"
+  }
+}

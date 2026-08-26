@@ -1,0 +1,812 @@
+{
+  "determinism": {
+    "exact_arithmetic": "fractions.Fraction",
+    "json": "UTF-8, LF, sorted keys, two-space indentation",
+    "lab_outputs_required_byte_identical": [
+      "results.json",
+      "results.csv",
+      "residual.svg"
+    ],
+    "lab_runs": 2,
+    "thread_limits": {
+      "BLIS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "expected_identity_binding": {
+    "labs/original-02/monotone-splitting-lab.py": {
+      "bytes": 17904,
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    "labs/original-02/residual.svg": {
+      "bytes": 9538,
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    "labs/original-02/results.csv": {
+      "bytes": 4228,
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    "labs/original-02/results.json": {
+      "bytes": 13503,
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": {
+      "bytes": 48701,
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": {
+      "bytes": 190403,
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": {
+      "bytes": 453811,
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    "qa/ORIGINAL_02_EPUB_BUILD.json": {
+      "bytes": 7697,
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    "qa/ORIGINAL_02_HTML_BUILD.json": {
+      "bytes": 6289,
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    "qa/ORIGINAL_02_PDF_BUILD.json": {
+      "bytes": 6073,
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    "qa/build_original_02_pdf.py": {
+      "bytes": 2562,
+      "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088"
+    },
+    "qa/build_original_02_pdf_engine.py": {
+      "bytes": 9055,
+      "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0"
+    },
+    "qa/build_original_02_reflow.py": {
+      "bytes": 7294,
+      "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"
+    },
+    "qa/build_original_02_reflow_engine.py": {
+      "bytes": 76168,
+      "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"
+    },
+    "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 5476,
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    "source/id-ID/macros-id.tex": {
+      "bytes": 4465,
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 28028,
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    "source/id-ID/shinybook.cls": {
+      "bytes": 10133,
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  },
+  "failures": [],
+  "gate_count": 20,
+  "gates": [
+    {
+      "details": {
+        "missing": [],
+        "required_count": 18
+      },
+      "gate": "required_live_inputs_tools_and_readers_present",
+      "pass": true
+    },
+    {
+      "details": {
+        "bound_file_count": 18,
+        "mismatches": {}
+      },
+      "gate": "exact_input_tool_and_reader_identity_binding",
+      "pass": true
+    },
+    {
+      "details": {
+        "complete_solution_count": 6,
+        "environment_counts": {
+          "cor": 1,
+          "defn": 3,
+          "exercise": 6,
+          "proof": 10,
+          "prop": 3,
+          "theorem": 6
+        },
+        "hint_count": 6,
+        "label_count": 53,
+        "segment_id_count": 8,
+        "segment_ids": [
+          "d90.orig.v1.tr02.seg0001",
+          "d90.orig.v1.tr02.seg0002",
+          "d90.orig.v1.tr02.seg0003",
+          "d90.orig.v1.tr02.seg0004",
+          "d90.orig.v1.tr02.seg0005",
+          "d90.orig.v1.tr02.seg0006",
+          "d90.orig.v1.tr02.seg0007",
+          "d90.orig.v1.tr02.seg0008"
+        ],
+        "unique_label_count": 53
+      },
+      "gate": "source_inventory_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 23
+      },
+      "gate": "chapter_math_claim_surfaces_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "kerucut_normal_word_order": true,
+        "minty_monotonicity_premise": true,
+        "mu_le_L_hypothesis": true
+      },
+      "gate": "corrected_minty_contraction_and_terminology_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 11,
+        "stale_positional_baseline_present": false
+      },
+      "gate": "live_lab_formula_and_correction_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "O018_occurrence_count": 1,
+        "boundary_paragraph_count": 1,
+        "lab_O018_occurrence_count": 0,
+        "unexpected_terms_outside_boundary": []
+      },
+      "gate": "o018_nonoverlap_boundary",
+      "pass": true
+    },
+    {
+      "details": {
+        "arithmetic": "fractions.Fraction",
+        "cases": [
+          {
+            "F_at_solution": "3",
+            "a": "2",
+            "b": "-3",
+            "normal_cone_witness": "-3",
+            "pass": true,
+            "projection": "0",
+            "solution": "0"
+          },
+          {
+            "F_at_solution": "0",
+            "a": "3",
+            "b": "0",
+            "normal_cone_witness": "0",
+            "pass": true,
+            "projection": "0",
+            "solution": "0"
+          },
+          {
+            "F_at_solution": "0",
+            "a": "2",
+            "b": "5",
+            "normal_cone_witness": "0",
+            "pass": true,
+            "projection": "5/2",
+            "solution": "5/2"
+          }
+        ]
+      },
+      "gate": "vi_normal_cone_projection_signs_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "counterexample_matrix": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "determinant_polynomial": "1 - 2*gamma + 2*gamma^2",
+        "discriminant": "-4",
+        "inner_Ah_h_for_h_1_0": "-1"
+      },
+      "gate": "minty_monotonicity_premise_logically_necessary",
+      "pass": true
+    },
+    {
+      "details": {
+        "L_squared": "5",
+        "checks": [
+          {
+            "h": [
+              "1",
+              "0"
+            ],
+            "observed_squared_norm": "1/4",
+            "q_squared_times_norm": "1/4"
+          },
+          {
+            "h": [
+              "2",
+              "-3"
+            ],
+            "observed_squared_norm": "13/4",
+            "q_squared_times_norm": "13/4"
+          },
+          {
+            "h": [
+              "-4",
+              "5"
+            ],
+            "observed_squared_norm": "41/4",
+            "q_squared_times_norm": "41/4"
+          }
+        ],
+        "gamma": "1/2",
+        "mu": "2",
+        "q_squared": "1/4",
+        "upper_bound": "4/5"
+      },
+      "gate": "strong_monotonicity_contraction_identity_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "gamma": "1/3",
+        "pair_checks": [
+          {
+            "firm_slack": "12",
+            "pass": true,
+            "reflected_nonexpansive_slack": "48"
+          },
+          {
+            "firm_slack": "3/13",
+            "pass": true,
+            "reflected_nonexpansive_slack": "12/13"
+          },
+          {
+            "firm_slack": "222/13",
+            "pass": true,
+            "reflected_nonexpansive_slack": "888/13"
+          }
+        ],
+        "ppa_eighth_squared_norm": "43046721/16063620352",
+        "ppa_fejer_slacks": [
+          "6",
+          "27/13",
+          "243/338",
+          "2187/8788",
+          "19683/228488",
+          "177147/5940688",
+          "1594323/154457888",
+          "14348907/4015905088"
+        ],
+        "ppa_initial_squared_norm": "13"
+      },
+      "gate": "resolvent_firmness_reflection_and_ppa_fejer_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "beta": "4/13",
+        "cocoercivity_checks": [
+          {
+            "h": [
+              "1",
+              "0"
+            ],
+            "left": "1",
+            "right": "1"
+          },
+          {
+            "h": [
+              "2",
+              "-3"
+            ],
+            "left": "13",
+            "right": "13"
+          },
+          {
+            "h": [
+              "-4",
+              "5"
+            ],
+            "left": "41",
+            "right": "41"
+          }
+        ],
+        "diagnostic_forward_factor_squared": "733/400",
+        "diagnostic_gamma": "9/10",
+        "mapped_reference": {
+          "outside": [
+            "11/130",
+            "-15/26"
+          ],
+          "stable": [
+            "11/130",
+            "-15/26"
+          ]
+        },
+        "stable_forward_factor_squared": "18/25",
+        "stable_gamma": "2/5",
+        "upper_bound": "8/13"
+      },
+      "gate": "cocoercivity_forward_backward_ranges_and_fixed_point_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "extragradient_factor_squared": "481/625",
+        "extragradient_squared_norm": "8177/5000",
+        "fejer_right_hand_side": "42721/25000",
+        "fejer_slack": "459/6250",
+        "forward_factor_squared": "34/25",
+        "gamma": "3/5",
+        "resolvent_factor_squared": "25/34"
+      },
+      "gate": "extragradient_and_skew_factors_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "J_gamma_A_reflection": [
+          "11/130",
+          "-15/26"
+        ],
+        "J_gamma_B_y": [
+          "11/130",
+          "-15/26"
+        ],
+        "T_DR_y": [
+          "27/104",
+          "-391/520"
+        ],
+        "active_set_candidate_count": 1,
+        "fixed_y": [
+          "27/104",
+          "-391/520"
+        ],
+        "gamma": "7/10",
+        "pattern": [
+          1,
+          -1
+        ],
+        "reference": [
+          "11/130",
+          "-15/26"
+        ],
+        "subgradient": [
+          "1",
+          "-1"
+        ]
+      },
+      "gate": "active_set_reference_and_douglas_rachford_order_scaling_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "epub": {
+          "artifact": {
+            "bytes": 48701,
+            "lines": 355,
+            "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+            "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+          },
+          "declared_input_count": 8,
+          "input_failures": [],
+          "pass": true,
+          "source_inventory_verified": true
+        },
+        "html": {
+          "artifact": {
+            "bytes": 190403,
+            "lines": 2409,
+            "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+            "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+          },
+          "declared_input_count": 8,
+          "input_failures": [],
+          "pass": true,
+          "source_inventory_verified": true
+        },
+        "pdf": {
+          "artifact": {
+            "bytes": 453811,
+            "lines": 5758,
+            "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+            "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+          },
+          "declared_input_count": 10,
+          "input_failures": [],
+          "pass": true,
+          "source_inventory_verified": true
+        }
+      },
+      "gate": "accepted_reader_receipts_and_input_closure",
+      "pass": true
+    },
+    {
+      "details": {
+        "checks": {
+          "epub_lab_bytes": true,
+          "epub_minty": true,
+          "epub_mu_le_L": true,
+          "epub_terminology": true,
+          "html_minty": true,
+          "html_mu_le_L": true,
+          "html_terminology": true,
+          "pdf_minty": true,
+          "pdf_mu_le_L": true,
+          "pdf_terminology": true
+        },
+        "epub_embedded_lab": {
+          "monotone-splitting-lab.py": true,
+          "residual.svg": true,
+          "results.csv": true,
+          "results.json": true
+        },
+        "pdf_pages": 16,
+        "segment_ids_present_in_epub": true,
+        "segment_ids_present_in_html": true
+      },
+      "gate": "corrected_claims_present_in_all_accepted_readers",
+      "pass": true
+    },
+    {
+      "details": {
+        "byte_identical_between_runs": true,
+        "byte_identical_to_live_outputs": true,
+        "outputs": {
+          "residual.svg": {
+            "bytes": 9538,
+            "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+          },
+          "results.csv": {
+            "bytes": 4228,
+            "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+          },
+          "results.json": {
+            "bytes": 13503,
+            "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+          }
+        },
+        "returncodes": [
+          0,
+          0
+        ],
+        "runs": 2,
+        "script_copy_exact": true,
+        "stderr": [
+          "",
+          ""
+        ],
+        "stdout_sha256": [
+          "b352d7df67b1881c4557912c039ca6f7e53decbe221dc7d1bbd660f99c0b0f76",
+          "b352d7df67b1881c4557912c039ca6f7e53decbe221dc7d1bbd660f99c0b0f76"
+        ]
+      },
+      "gate": "lab_two_clean_replays_byte_identical_and_match_live",
+      "pass": true
+    },
+    {
+      "details": {
+        "json_csv_rows_exact": true,
+        "row_count_csv": 30,
+        "row_count_json": 30,
+        "svg_circle_count": 30,
+        "svg_polyline_count": 3
+      },
+      "gate": "lab_json_csv_svg_structural_consistency",
+      "pass": true
+    },
+    {
+      "details": {
+        "final_residuals": {
+          "douglas_rachford": {
+            "error_to_reference": 1.8875832159447664e-16,
+            "fixed_point_residual": 2.7755575615628914e-16,
+            "inclusion_residual": 4.002966042486721e-16
+          },
+          "forward_backward_outside_range": {
+            "error_to_reference": 4.004891561283648e+26,
+            "fixed_point_residual": 6.49792884459655e+26,
+            "inclusion_residual": 7.219920938440611e+26
+          },
+          "forward_backward_stable": {
+            "error_to_reference": 3.1780134079895106e-15,
+            "fixed_point_residual": 2.401779625492033e-15,
+            "inclusion_residual": 5.821000005975887e-15
+          }
+        },
+        "outside_initial_inclusion_residual": 5.05395884431205,
+        "parameters": {
+          "b": [
+            1.2,
+            -0.7
+          ],
+          "checkpoints": [
+            0,
+            1,
+            2,
+            5,
+            10,
+            20,
+            40,
+            80,
+            120,
+            200
+          ],
+          "douglas_rachford_gamma": 0.7,
+          "forward_backward_diagnostic_gamma": 0.9,
+          "forward_backward_stable_gamma": 0.4,
+          "iterations": 200,
+          "lambda": 0.25,
+          "mu": 1.0,
+          "omega": 1.5,
+          "x0": [
+            2.5,
+            -2.0
+          ],
+          "y0": [
+            2.5,
+            -2.0
+          ]
+        },
+        "reference": {
+          "inclusion_residual": 1.1102230246251565e-16,
+          "method": "complete_active_set_enumeration",
+          "pattern": [
+            1,
+            -1
+          ],
+          "subgradient": [
+            1.0,
+            -1.0
+          ],
+          "x": [
+            0.08461538461538469,
+            -0.576923076923077
+          ]
+        },
+        "resolvent_probe": {
+          "identity_error": 4.002966042486721e-16,
+          "input": [
+            0.7,
+            -1.1
+          ],
+          "output": [
+            0.23757044458359441,
+            -1.0820288040075141
+          ]
+        },
+        "skew_factors": {
+          "extragradient": 0.8772684879784524,
+          "forward": 1.16619037896906,
+          "resolvent": 0.8574929257125443
+        },
+        "theory": {
+          "beta": 0.3076923076923077,
+          "diagnostic_step_outside_proved_interval": true,
+          "forward_backward_upper_bound": 0.6153846153846154,
+          "stable_step_inside_open_interval": true
+        }
+      },
+      "gate": "lab_exact_ranges_residuals_reference_and_factors",
+      "pass": true
+    },
+    {
+      "details": {
+        "input_sha256": {
+          "labs/original-02/monotone-splitting-lab.py": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119",
+          "labs/original-02/residual.svg": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5",
+          "labs/original-02/results.csv": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243",
+          "labs/original-02/results.json": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81",
+          "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86",
+          "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a",
+          "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284",
+          "qa/ORIGINAL_02_EPUB_BUILD.json": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6",
+          "qa/ORIGINAL_02_HTML_BUILD.json": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5",
+          "qa/ORIGINAL_02_PDF_BUILD.json": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a",
+          "qa/build_original_02_pdf.py": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088",
+          "qa/build_original_02_pdf_engine.py": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0",
+          "qa/build_original_02_reflow.py": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e",
+          "qa/build_original_02_reflow_engine.py": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad",
+          "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3",
+          "source/id-ID/macros-id.tex": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+          "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367",
+          "source/id-ID/shinybook.cls": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+        },
+        "inputs_stable": true,
+        "tool_sha256": {
+          "numpy_core_extension": "4341f3ad7cfd58450ea46ea874dfe0842aa085ba363ed3aa699db7ac1bc57eac",
+          "numpy_package": "b16a4f347c6583c878e1973a208564e01686b79cc70911ad0157e05d8eecda37",
+          "pypdf_package": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c",
+          "python_executable": "7679e53fa969789309e81fdad0d52b8cda5f83c9abf7cb31a3c58bf24b31e264",
+          "validator": "5b9cc66b6560b210715a0b6c6bd8b31943dd91d3764b3cb1ffb86e908d2662a1"
+        },
+        "tools_stable": true
+      },
+      "gate": "inputs_and_execution_tools_stable_during_validation",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "labs/original-02/monotone-splitting-lab.py": {
+      "bytes": 17904,
+      "lines": 449,
+      "path": "labs/original-02/monotone-splitting-lab.py",
+      "sha256": "1d13f436644216104036be248ebb3ff0b1a9e45c856aef9229f17a5f26f3e119"
+    },
+    "labs/original-02/residual.svg": {
+      "bytes": 9538,
+      "lines": 105,
+      "path": "labs/original-02/residual.svg",
+      "sha256": "c7bdeeed813cf36999ae2748362e547fc23de2d5ae15c6131e3fc73edeba6fd5"
+    },
+    "labs/original-02/results.csv": {
+      "bytes": 4228,
+      "lines": 31,
+      "path": "labs/original-02/results.csv",
+      "sha256": "da8d09cce727c98b408fe719735574977266de1b58f95a742dcb60c5d163e243"
+    },
+    "labs/original-02/results.json": {
+      "bytes": 13503,
+      "lines": 450,
+      "path": "labs/original-02/results.json",
+      "sha256": "bc39d3363f02b904a27245bfe090cbf2153238a5a18ba8bf7cccbe1352672e81"
+    },
+    "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub": {
+      "bytes": 48701,
+      "lines": 355,
+      "path": "output/epub/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html": {
+      "bytes": 190403,
+      "lines": 2409,
+      "path": "output/html/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf": {
+      "bytes": 453811,
+      "lines": 5758,
+      "path": "output/pdf/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    "qa/ORIGINAL_02_EPUB_BUILD.json": {
+      "bytes": 7697,
+      "lines": 217,
+      "path": "qa/ORIGINAL_02_EPUB_BUILD.json",
+      "sha256": "f2f0a2782f194ffadb96e5f09a0c7a8eac68809d786f9cd68f34eb1498fe12c6"
+    },
+    "qa/ORIGINAL_02_HTML_BUILD.json": {
+      "bytes": 6289,
+      "lines": 187,
+      "path": "qa/ORIGINAL_02_HTML_BUILD.json",
+      "sha256": "c3564fa0ee594207bae55ecd06f6ff0b4137350a685aeadac51dc14775ebaee5"
+    },
+    "qa/ORIGINAL_02_PDF_BUILD.json": {
+      "bytes": 6073,
+      "lines": 169,
+      "path": "qa/ORIGINAL_02_PDF_BUILD.json",
+      "sha256": "d734ea6ecb0effdbcf710a682e9acab5996de7b502af774499d0410b2867d51a"
+    },
+    "qa/build_original_02_pdf.py": {
+      "bytes": 2562,
+      "lines": 74,
+      "path": "qa/build_original_02_pdf.py",
+      "sha256": "c255b0aedf864fbadf6d58817080b4c484a263ca71741774980852f4ef057088"
+    },
+    "qa/build_original_02_pdf_engine.py": {
+      "bytes": 9055,
+      "lines": 277,
+      "path": "qa/build_original_02_pdf_engine.py",
+      "sha256": "d9310945db995c99c4ec352fa5c2d1a4c4d2cc72fdc437e20ab82131dd93b2e0"
+    },
+    "qa/build_original_02_reflow.py": {
+      "bytes": 7294,
+      "lines": 200,
+      "path": "qa/build_original_02_reflow.py",
+      "sha256": "0cfde97b2ed274813ab8a014867187ff9d3c38a3f928353d9c9bac327d953f1e"
+    },
+    "qa/build_original_02_reflow_engine.py": {
+      "bytes": 76168,
+      "lines": 1841,
+      "path": "qa/build_original_02_reflow_engine.py",
+      "sha256": "bcc5cdbd7957e0e3829fe397057f4d78a4fb9f8a4df3b6a27e54ec7252e2c8ad"
+    },
+    "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 5476,
+      "lines": 107,
+      "path": "source/id-ID/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "cf8dd0e4cc31d8409bb2d8f27e1a6373adf728ba93702aa01e1a398d73a65db3"
+    },
+    "source/id-ID/macros-id.tex": {
+      "bytes": 4465,
+      "lines": 140,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex": {
+      "bytes": 28028,
+      "lines": 744,
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+    },
+    "source/id-ID/shinybook.cls": {
+      "bytes": 10133,
+      "lines": 323,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-original-02-open-math-validation-v1",
+  "scope": {
+    "accepted_lab_outputs_mutated_by_validator": false,
+    "accepted_readers_mutated_by_validator": false,
+    "lab_replay": "two full executions in disposable temporary directories",
+    "network_access": false,
+    "numerical_witnesses_are_not_proofs": true,
+    "source_mutated_by_validator": false,
+    "unit": "Original 02: variational inequalities, monotone operators, resolvents, and splitting",
+    "upstream_contact": false
+  },
+  "status": "PASS",
+  "tools": {
+    "identities": {
+      "numpy_core_extension": {
+        "bytes": 3712512,
+        "lines": 28415,
+        "path": "<external-runtime>/_multiarray_umath.cp313-win_amd64.pyd",
+        "sha256": "4341f3ad7cfd58450ea46ea874dfe0842aa085ba363ed3aa699db7ac1bc57eac"
+      },
+      "numpy_package": {
+        "bytes": 27212,
+        "lines": 955,
+        "path": "<external-runtime>/__init__.py",
+        "sha256": "b16a4f347c6583c878e1973a208564e01686b79cc70911ad0157e05d8eecda37"
+      },
+      "pypdf_package": {
+        "bytes": 1283,
+        "lines": 48,
+        "path": "<external-runtime>/__init__.py",
+        "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c"
+      },
+      "python_executable": {
+        "bytes": 104264,
+        "lines": 769,
+        "path": "<external-runtime>/python.exe",
+        "sha256": "7679e53fa969789309e81fdad0d52b8cda5f83c9abf7cb31a3c58bf24b31e264"
+      },
+      "validator": {
+        "bytes": 49667,
+        "lines": 1309,
+        "path": "qa/validate_original_02_math.py",
+        "sha256": "5b9cc66b6560b210715a0b6c6bd8b31943dd91d3764b3cb1ffb86e908d2662a1"
+      }
+    },
+    "versions": {
+      "numpy": "2.4.4",
+      "pypdf": "6.12.2",
+      "python": "3.13.9"
+    }
+  }
+}
