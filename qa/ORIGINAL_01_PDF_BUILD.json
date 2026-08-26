@@ -1,0 +1,157 @@
+{
+  "artifact": {
+    "bytes": 486032,
+    "encrypted": false,
+    "language": "id-ID",
+    "media_boxes": [
+      [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ]
+    ],
+    "missing_markers": [],
+    "pages": 16,
+    "path": "output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+    "required_markers": [
+      "gradien proksimal stokastik",
+      "koreksi populasi hingga",
+      "penurunan cermin stokastik",
+      "divergensi bregman",
+      "pembaruan eksponensial",
+      "penghubung varians untuk prox-saga",
+      "laboratorium 1",
+      "petunjuk bertahap",
+      "solusi lengkap",
+      "peta asumsi dan batas klaim",
+      "creative commons attribution-sharealike 4.0",
+      "creative commons attribution 4.0 international",
+      "shinybook.cls",
+      "macros-id.tex",
+      "christian clason",
+      "tingkat kiriman arxiv",
+      "tidak memuat pemberitahuan lisensi terpisah",
+      "openai codex gpt-5.6-sol, ultra"
+    ],
+    "searchable_text_bytes": 37802,
+    "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca",
+    "tagged": false,
+    "title": "Optimisasi Lanjut dan Analisis Konveks - Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch - Edisi Bahasa Indonesia"
+  },
+  "byte_identical_clean_builds": true,
+  "canonical_copy_exact_match": true,
+  "inputs": [
+    {
+      "bytes": 5311,
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    {
+      "bytes": 27431,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 13655,
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    {
+      "bytes": 2432,
+      "path": "labs/original-01/results.json",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    {
+      "bytes": 4189,
+      "path": "labs/original-01/results.csv",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    {
+      "bytes": 86616,
+      "path": "labs/original-01/objective-gap.svg",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\original-01\\pdf-determinism\\run1",
+        "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex"
+      ],
+      "console_sha256": [
+        "63e15fc10a5f8830c32b6725bd8218d3542122ce58ec324a61e89bffe273efe4",
+        "48b2e05d6f2ae616f1392fbb237d2cc90b2b9935f2849c32d020578757c15f26"
+      ],
+      "directory": "build/original-01/pdf-determinism/run1",
+      "log": {
+        "bytes": 101158,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "build/original-01/pdf-determinism/run1/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.log",
+        "sha256": "d52fbc3ac3c528e895e844f52c8d78558048a7b89f0b6e4ec65479bb917deb6b",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 486032,
+        "path": "build/original-01/pdf-determinism/run1/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+        "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+      }
+    },
+    {
+      "command": [
+        "pdflatex",
+        "--disable-installer",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-output-directory=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\build\\original-01\\pdf-determinism\\run2",
+        "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex"
+      ],
+      "console_sha256": [
+        "3d5f6e658f8812ee0b943ed301fdd67acfe4f055ca26a42c73ff2f7984a8e9a6",
+        "f40f4cf4575bf443949e06056947741d7f22afa5d70b4b554d6da321a7e3f9aa"
+      ],
+      "directory": "build/original-01/pdf-determinism/run2",
+      "log": {
+        "bytes": 101158,
+        "fatal_errors": 0,
+        "overfull_boxes": 0,
+        "path": "build/original-01/pdf-determinism/run2/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.log",
+        "sha256": "47010f10aac56a4fb5e99df1add6ab88f3f872d6e3187597947123ae30bdb615",
+        "undefined_references": 0
+      },
+      "passes": 2,
+      "pdf": {
+        "bytes": 486032,
+        "path": "build/original-01/pdf-determinism/run2/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+        "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+      }
+    }
+  ],
+  "schema": "o015-original-01-pdf-build-v1",
+  "source_date_epoch": "1787616000",
+  "tool_versions": {
+    "pdflatex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "pdftotext": "pdftotext version 24.04.0",
+    "pypdf": "6.12.2"
+  },
+  "upstream_contact": false
+}

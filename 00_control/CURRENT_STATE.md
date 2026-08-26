@@ -53,7 +53,7 @@ The completed Penn Chapter 6 candidate remains preserved but unadmitted at `sour
 
 - Existing Zenodo concept: `10.5281/zenodo.22059741`.
 - Current verified Zenodo version: `10.5281/zenodo.22102236`, exactly 100 files with 92 inherited byte-identical files and eight Becker-03 additions. Full anonymous readback passed, the Becker-03 PDF is the configured default preview, and the concept has zero open drafts.
-- Current verified GitHub content: Becker-03 content commit `09cc7e554b87c735428fb8cf3320a3d499956894`; anonymous immutable readback passed. Its publication-receipt/control evidence descendant is the next narrow preservation step.
+- Current verified GitHub content: Becker-03 content commit `09cc7e554b87c735428fb8cf3320a3d499956894`; publication receipts and corrected controls continue through evidence descendant `c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`. Anonymous immutable readback passed for both commits.
 - Figshare article `33314733` remains the intended Habring-only lineage, but authenticated requests return `403 InactiveAccount`; zero mutation occurred. This destination failure does not hold production and does not authorize a replacement item.
 
 Habring, all MIT companion releases, Becker-01, Becker-02, and Becker-03 have complete public-byte evidence. MIT page 98 is dormant.
@@ -1101,3 +1101,57 @@ variance-reduction integration, including precise assumptions and rates.
 Habring remains canonical; MIT, Royer, and Penn remain companions. The later
 variational/monotone, assessment/complete-solution, lab, capstone, tagged-PDF,
 and accessibility work remains unfinished, so the overall goal is active.
+
+## 2026-08-26 controlling refresh — Original-01 admitted and Zenodo-preserved
+
+Original-01 is now the admitted first finite-original tranche. The independent
+source is 27,431 bytes / SHA-256
+`db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26`; its
+5,311-byte wrapper is `d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322`.
+The searchable, page-filling PDF is 16 pages / 486,032 bytes /
+`7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca`; the
+semantic HTML is 353,245 bytes / `052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4`;
+the EPUB is 64,322 bytes / `d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08`.
+The PDF is truthfully untagged; HTML and EPUB provide the reflow and native
+MathML/accessibility surfaces.
+
+The finite module covers stochastic proximal, mirror/Bregman, minibatch,
+bounded Prox-SAGA integration, six exercises with progressive hints and full
+solutions, and one deterministic open-computation lab. The lab script and
+machine-readable outputs are respectively 13,655 / 2,432 / 4,189 / 86,616
+bytes with SHA-256 `21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd`,
+`86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447`,
+`61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c`, and
+`87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830`.
+
+All current gates pass: math `17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e`,
+PDF build/visual `3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0` /
+`49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5`, HTML
+build/browser `989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753` /
+`22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd`, EPUB
+build/conformance `e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e` /
+`e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c`, backend
+`c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561`, rights/
+nonoverlap `3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe`,
+and independent rereview `c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0`.
+The additive backend now has 3,943 records; JSONL is 2,941,125 bytes /
+`d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f`, CSV is
+3,537,781 bytes / `4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4`.
+
+The compact reader-first package is 721,697 bytes / SHA-256
+`8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a`; its
+local verification is `release/original-01/2026-08-26/local-verification-original-01.json`.
+Zenodo record `22103674` / DOI `10.5281/zenodo.22103674` is published in
+concept `10.5281/zenodo.22059741`, with 99 files (90 inherited, 9 additions)
+and the Original-01 PDF as default preview. Anonymous readback passed for all
+files; receipt `release/zenodo/2026-08-26-original-01/zenodo-public-readback-original-01.json`
+is 26,975 bytes / `8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2`.
+Draft closure passed (404 direct lookup, zero open concept drafts); the
+391-byte closure receipt has SHA-256
+`7790f5c71f0093e97c99b3d3f70db4a203fa85492801b618f55778ad34dd4b10`.
+
+GitHub preservation remains the next operational step. After that readback,
+advance the cursor to the next coherent original module: variational
+inequalities, maximal monotone operators, resolvents, and splitting. The O015
+course remains partial; later assessment/solution, lab, capstone, and final
+accessible-reader closure are still required.

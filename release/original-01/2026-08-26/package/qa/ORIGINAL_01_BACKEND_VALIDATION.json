@@ -1,0 +1,225 @@
+{
+  "admission": {
+    "canonical_backend_written": true,
+    "csv": {
+      "bytes": 3537781,
+      "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+    },
+    "disposition": "validated_canonical_backend",
+    "final_id_order_sha256": "c388136ac08c27377246a28faba7d305c05b3c5f6eb8a8fbf2a859d7f64ea7a7",
+    "final_id_set_sha256": "a71d22270106e2fe9a48fe9cd6d13083dcb67608b98f93836ce5282fcd3c2877",
+    "final_line_sequence_sha256": "8c591d614f95ecdd1bdb05a6dcc22b8c0685ce1e8b44be32694d49cf6cef6ba8",
+    "final_record_set_sha256": "cb024eb91a7c2c996a3fbcc8da3425183e70ed81debd6f4e87d2d19eac7028b6",
+    "final_records": 3943,
+    "jsonl": {
+      "bytes": 2941125,
+      "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+    },
+    "namespace": "d90.orig.v1.tr01.*",
+    "new_entity_counts": {
+      "artifact": 8,
+      "concept": 8,
+      "edition": 1,
+      "learning_surface": 89,
+      "qa_event": 6,
+      "relation": 233,
+      "resource": 1,
+      "rights": 3,
+      "segment": 8,
+      "unit": 1
+    },
+    "new_id_order_sha256": "2496d32746f9acddee7c8b48ed06dfc744533d0fe5eb0c951b0dee2014344e02",
+    "new_id_set_sha256": "4cc526b4a2cc7282f8996fccf753699b3673000f14492ea7bc431455b6af2b11",
+    "new_record_set_sha256": "9dd280df4f00851269e97513b891f3d66b94e2de152070aeb4c656399b10238d",
+    "new_records": 358
+  },
+  "commands": {
+    "canonical_generation": "python qa/extend_backend_original_01.py --write-canonical",
+    "staging": "python qa/extend_backend_original_01.py --output-dir <dir>",
+    "validation": "python qa/validate_backend_original_01.py"
+  },
+  "deterministic_regeneration": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3537781,
+          "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+        },
+        "jsonl": {
+          "bytes": 2941125,
+          "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+        },
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 3537781,
+          "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+        },
+        "jsonl": {
+          "bytes": 2941125,
+          "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+        },
+        "run": 2
+      }
+    ],
+    "input_dataset_match": true,
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "independent_validation": {
+    "identities": [
+      {
+        "csv": {
+          "bytes": 3537781,
+          "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+        },
+        "final_id_set_sha256": "a71d22270106e2fe9a48fe9cd6d13083dcb67608b98f93836ce5282fcd3c2877",
+        "final_record_set_sha256": "cb024eb91a7c2c996a3fbcc8da3425183e70ed81debd6f4e87d2d19eac7028b6",
+        "jsonl": {
+          "bytes": 2941125,
+          "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+        },
+        "new_id_set_sha256": "4cc526b4a2cc7282f8996fccf753699b3673000f14492ea7bc431455b6af2b11",
+        "new_record_set_sha256": "9dd280df4f00851269e97513b891f3d66b94e2de152070aeb4c656399b10238d",
+        "new_records": 358,
+        "records": 3943,
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 3537781,
+          "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+        },
+        "final_id_set_sha256": "a71d22270106e2fe9a48fe9cd6d13083dcb67608b98f93836ce5282fcd3c2877",
+        "final_record_set_sha256": "cb024eb91a7c2c996a3fbcc8da3425183e70ed81debd6f4e87d2d19eac7028b6",
+        "jsonl": {
+          "bytes": 2941125,
+          "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+        },
+        "new_id_set_sha256": "4cc526b4a2cc7282f8996fccf753699b3673000f14492ea7bc431455b6af2b11",
+        "new_record_set_sha256": "9dd280df4f00851269e97513b891f3d66b94e2de152070aeb4c656399b10238d",
+        "new_records": 358,
+        "records": 3943,
+        "run": 2
+      }
+    ],
+    "passes_completed": 2,
+    "passes_required": 2
+  },
+  "lab": {
+    "artifacts": {
+      "labs/original-01/objective-gap.svg": {
+        "bytes": 86616,
+        "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+      },
+      "labs/original-01/results.csv": {
+        "bytes": 4189,
+        "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+      },
+      "labs/original-01/results.json": {
+        "bytes": 2432,
+        "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+      },
+      "labs/original-01/stochastic-composite-lab.py": {
+        "bytes": 13655,
+        "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+      }
+    },
+    "component_gradient_budget": 3840,
+    "methods": [
+      "prox_minibatch_b16",
+      "prox_saga",
+      "prox_sgd_b1"
+    ],
+    "network_access": false,
+    "result": "pass",
+    "row_count": 38,
+    "schema": "o015-original-01-stochastic-composite-lab-v1",
+    "upstream_contact": false
+  },
+  "protected_baseline": {
+    "csv": {
+      "bytes": 3267489,
+      "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+    },
+    "id_order_sha256": "718098412e56cb591595cc683ed9e6380f67bf441f367b8f6d257d1c2ea76945",
+    "id_set_sha256": "24a32c1bc5c62f22e0f8b7f5c596189b2dad1c0733a161970b7e158e7ab70923",
+    "jsonl": {
+      "bytes": 2724813,
+      "line_sequence_sha256": "91953bdf4f3f2ec2ce8108cb9a0909fc5f493e664489e26f8c6871ede41113ad",
+      "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+    },
+    "record_bytes_and_relative_order_stable": true,
+    "record_set_sha256": "c92934da552517c0780cdc48a66657f560ead0c38e74428db08a95a765cc72be",
+    "records": 3585,
+    "recovered_csv": {
+      "bytes": 3267489,
+      "sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72"
+    },
+    "recovered_jsonl": {
+      "bytes": 2724813,
+      "line_sequence_sha256": "91953bdf4f3f2ec2ce8108cb9a0909fc5f493e664489e26f8c6871ede41113ad",
+      "sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-original-01-backend-validation-v1",
+  "schema_constraint": {
+    "additive_records_only": true,
+    "note": "Global sorting means the old file is not a literal prefix; workflow stripping proves every protected JSONL line and CSV row remains byte-identical and in the same relative order.",
+    "schema_bytes": 3092,
+    "schema_changed": false,
+    "schema_sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "source_and_topology": {
+    "exercise_hint_solution_sets": 6,
+    "live_wording_repairs_bound": [
+      "configuration verification",
+      "Lema",
+      "Proposisi"
+    ],
+    "present_surface_counts": {
+      "algorithm": 2,
+      "chapter": 1,
+      "corollary": 1,
+      "definition": 3,
+      "equation": 40,
+      "exercise": 6,
+      "hint": 6,
+      "lab": 1,
+      "lemma": 2,
+      "proof": 7,
+      "proposition": 2,
+      "section": 9,
+      "solution": 6,
+      "subsection": 1,
+      "theorem": 2
+    },
+    "present_surfaces": 89,
+    "relation_count": 233,
+    "segment_ranges": [
+      "1-53",
+      "54-162",
+      "163-227",
+      "228-366",
+      "367-421",
+      "422-481",
+      "482-646",
+      "647-700"
+    ],
+    "segments": 8,
+    "source": {
+      "bytes": 27431,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "physical_lines": 700,
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    "topics": 8,
+    "unit_id": "d90.orig.v1.tr01.unit"
+  },
+  "upstream_contact": false,
+  "validated_at": "2026-08-25T23:55:00Z",
+  "workflow": "o015-original-01-backend-v1"
+}

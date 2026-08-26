@@ -1,0 +1,700 @@
+% OR01-S001 | lapisan asli: tujuan, batas, dan notasi
+% segment-id: d90.orig.v1.tr01.seg0001
+\chapter{Metode Stokastik Komposit, Cermin, dan Minibatch}
+\label{orig01:chapter:stochastic-composite}
+
+Bab ini mengisi penghubung yang belum tersedia di tulang punggung Habring
+dan tiga modul Becker yang telah diterima. Habring telah mengembangkan
+operator proksimal, gradien proksimal deterministik, dan subgradien stokastik
+terproyeksi. Modul Becker~3 telah membuktikan ketakbiasan penaksir SAGA dan
+identitas varians tabelnya. Yang masih diperlukan ialah satu kerangka yang
+menjelaskan bagaimana operator proksimal, geometri non-Euklides, pengambilan
+sampel minibatch, dan reduksi varians saling terhubung.
+
+Seluruh rumusan, bukti penghubung, latihan, petunjuk, solusi, dan laboratorium
+dalam bab ini ditulis secara mandiri. Catatan Habring, catatan gradien
+stokastik Cl\'ement W. Royer, modul Becker~3, serta rujukan penelitian pada
+akhir bab dipakai untuk memeriksa istilah, batas teori, dan konteks; tidak ada
+prosa, tata letak, gambar, atau kode mereka yang disalin.
+
+Kita memakai norma $\norm{\cdot}$ pada ruang berdimensi hingga dan norma
+dual
+\begin{equation}
+  \norm{y}_*=\sup_{\norm{x}\leq1}\inner{y}{x}.
+\end{equation}
+Untuk bagian proksimal dan minibatch, norma tersebut adalah norma Euklides.
+Filtrasi $\mathcal F_k$ memuat seluruh informasi sebelum oracle pada iterasi
+$k$ dipanggil. Dengan demikian, $x_k$ terukur terhadap $\mathcal F_k$.
+
+\section{Masalah komposit dan oracle stokastik}
+\label{orig01:section:model}
+
+Pertimbangkan masalah komposit
+\begin{equation}
+  \label{orig01:eq:composite-problem}
+  \min_{x\in\R^d} F(x),
+  \qquad F(x)=f(x)+g(x),
+\end{equation}
+dengan $f:\R^d\to\R$ konveks, terdiferensialkan, dan mempunyai gradien
+$L$-Lipschitz, sedangkan $g:\R^d\to(-\infty,+\infty]$ proper, konveks, dan
+semikontinu bawah. Andaikan himpunan peminim $X^*=\arg\min F$ tidak kosong.
+
+Oracle pada $x_k$ mengembalikan $G_k$ dan memenuhi, hampir pasti,
+\begin{equation}
+  \label{orig01:eq:oracle}
+  \E[G_k\mid\mathcal F_k]=\nabla f(x_k),
+  \qquad
+  \E\!\left[\norm{G_k-\nabla f(x_k)}^2\mid\mathcal F_k\right]
+  \leq \nu_k^2.
+\end{equation}
+Besaran $\nu_k^2$ boleh berubah sepanjang iterasi. Notasi ini sengaja
+memisahkan varians oracle dari konstanta kemulusan $L$ dan dari fungsi
+kerugian $\ell$ pada model statistik.
+
+% OR01-S002 | lapisan asli: gradien proksimal stokastik
+% segment-id: d90.orig.v1.tr01.seg0002
+\section{Gradien proksimal stokastik}
+\label{orig01:section:spg}
+
+Dengan ukuran langkah $\tau_k>0$, pembaruan gradien proksimal stokastik ialah
+\begin{equation}
+  \label{orig01:eq:spg-update}
+  x_{k+1}
+  =\prox_{\tau_k g}\bigl(x_k-\tau_kG_k\bigr).
+\end{equation}
+Jika $g=\delta_C$ adalah fungsi indikator himpunan konveks tertutup $C$,
+pembaruan ini menjadi proyeksi stokastik. Jika $g(x)=\lambda\norm{x}_1$,
+pembaruan ini menjadi ambang lunak setelah langkah gradien stokastik.
+
+\begin{quote}
+\textbf{Algoritma 1: gradien proksimal stokastik.}
+Pilih $x_0\in\dom g$. Untuk $k=0,1,\dots$, panggil oracle pada $x_k$ untuk
+memperoleh $G_k$, pilih $\tau_k$, lalu hitung~\eqref{orig01:eq:spg-update}.
+Untuk pelaporan ergodik, simpan rerata iterat yang disebutkan dalam teorema
+berikut.
+\end{quote}
+
+\begin{lemma}[Ketaksamaan satu langkah]
+  \label{orig01:lemma:spg-one-step}
+  Ambil $x\in\dom g$ dan tetapkan $\tau_k=\tau$ dengan
+  $0<\tau\leq(2L)^{-1}$. Di bawah~\eqref{orig01:eq:oracle}, iterasi
+  \eqref{orig01:eq:spg-update} memenuhi
+  \begin{multline}
+    \label{orig01:eq:spg-one-step}
+    \E[F(x_{k+1})-F(x)\mid\mathcal F_k]\
+    \leq
+    \frac{\norm{x_k-x}^2-
+                \E[\norm{x_{k+1}-x}^2\mid\mathcal F_k]}{2\tau}
+    +\tau\nu_k^2.
+  \end{multline}
+\end{lemma}
+
+\begin{proof}
+  Tuliskan $x^+=x_{k+1}$,
+  $s=x^+-x_k$, dan $\delta_k=G_k-\nabla f(x_k)$. Kondisi optimalitas
+  proks memberikan
+  \begin{equation}
+    \frac{x_k-x^+}{\tau}-G_k\in\partial g(x^+).
+  \end{equation}
+  Ketaksamaan subgradien untuk $g$, kekonveksan $f$, dan lemma penurunan untuk
+  $f$ yang $L$-mulus menghasilkan
+  \begin{multline}
+    F(x^+)-F(x)
+    \leq
+    \frac{\norm{x_k-x}^2-\norm{x^+-x}^2}{2\tau}
+    -\frac{1-L\tau}{2\tau}\norm{s}^2
+    -\inner{\delta_k}{x^+-x}.
+    \label{orig01:eq:spg-pathwise}
+  \end{multline}
+  Pecah suku terakhir sebagai
+  $-\inner{\delta_k}{s}-\inner{\delta_k}{x_k-x}$. Karena
+  $x_k-x$ terukur terhadap $\mathcal F_k$ dan
+  $\E[\delta_k\mid\mathcal F_k]=0$, suku kedua hilang dalam ekspektasi
+  bersyarat. Untuk suku pertama, maksimisasi kuadrat atau ketaksamaan Young
+  memberi
+  \begin{equation}
+    -\inner{\delta_k}{s}
+    -\frac{1-L\tau}{2\tau}\norm{s}^2
+    \leq\frac{\tau}{2(1-L\tau)}\norm{\delta_k}^2
+    \leq\tau\norm{\delta_k}^2,
+  \end{equation}
+  dengan ketaksamaan terakhir menggunakan $\tau L\leq1/2$. Mengambil
+  ekspektasi bersyarat membuktikan klaim.
+\end{proof}
+
+\begin{theorem}[Batas ergodik proksimal stokastik]
+  \label{orig01:theorem:spg-ergodic}
+  Andaikan $\nu_k^2\leq\sigma^2/b$ untuk semua $k$, dengan $b\geq1$.
+  Ambil $x^*\in X^*$, $0<\tau\leq(2L)^{-1}$, dan definisikan
+  \begin{equation}
+    \bar x_K=\frac1K\sum_{k=0}^{K-1}x_{k+1}.
+  \end{equation}
+  Maka, untuk $K\geq1$,
+  \begin{equation}
+    \label{orig01:eq:spg-ergodic-rate}
+    \E[F(\bar x_K)-F(x^*)]
+    \leq
+    \frac{\norm{x_0-x^*}^2}{2\tau K}
+    +\frac{\tau\sigma^2}{b}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Terapkan Lema~\ref{orig01:lemma:spg-one-step} dengan $x=x^*$, ambil
+  ekspektasi penuh, lalu jumlahkan untuk $k=0,\dots,K-1$. Suku jarak
+  meneleskop dan suku terakhir yang tidak negatif dapat dibuang. Kekonveksan
+  $F$ memberi
+  $F(\bar x_K)\leq K^{-1}\sum_{k=0}^{K-1}F(x_{k+1})$, yang menyelesaikan
+  bukti.
+\end{proof}
+
+Jika $R=\norm{x_0-x^*}>0$, $\sigma>0$, dan batas kemulusan tidak aktif,
+pilihan yang
+menyeimbangkan kedua suku pada~\eqref{orig01:eq:spg-ergodic-rate} ialah
+\begin{equation}
+  \tau=R\sqrt{\frac{b}{2\sigma^2K}},
+  \qquad
+  \E[F(\bar x_K)-F(x^*)]
+  \leq\frac{\sqrt2R\sigma}{\sqrt{bK}}.
+\end{equation}
+Dalam praktik, $R$ dan $\sigma$ biasanya tidak diketahui. Rumus ini adalah
+penjelas skala, bukan resep penalaan tanpa diagnosis.
+
+% OR01-S003 | lapisan asli: minibatch
+% segment-id: d90.orig.v1.tr01.seg0003
+\section{Minibatch: identitas varians dan biaya oracle}
+\label{orig01:section:minibatch}
+
+Ambil $b$ sampel bersyarat iid $G_{k,1},\dots,G_{k,b}$ dengan rerata
+$\nabla f(x_k)$ dan varians kuadrat paling besar $\sigma^2$. Penaksir
+minibatch dengan penggantian adalah
+\begin{equation}
+  \label{orig01:eq:minibatch}
+  \widehat G_k^{(b)}=\frac1b\sum_{j=1}^{b}G_{k,j}.
+\end{equation}
+
+\begin{prop}[Penyusutan varians dengan penggantian]
+  \label{orig01:prop:minibatch-with-replacement}
+  Penaksir~\eqref{orig01:eq:minibatch} tak bias dan memenuhi
+  \begin{equation}
+    \E\!\left[
+      \norm{\widehat G_k^{(b)}-\nabla f(x_k)}^2
+      \mid\mathcal F_k
+    \right]\leq\frac{\sigma^2}{b}.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  Setelah dikondisikan pada $\mathcal F_k$, simpangan setiap sampel mempunyai
+  rerata nol dan pasangan simpangan yang berbeda saling bebas. Semua suku
+  silang dalam kuadrat norma mempunyai ekspektasi nol. Tersisa $b$ suku
+  diagonal yang masing-masing dikalikan $b^{-2}$.
+\end{proof}
+
+Untuk jumlah hingga $f=N^{-1}\sum_{i=1}^{N}f_i$, pengambilan sampel tanpa
+penggantian mempunyai koreksi populasi hingga yang tidak boleh disamakan
+dengan rumus iid.
+
+\begin{prop}[Koreksi populasi hingga]
+  \label{orig01:prop:finite-population}
+  Andaikan $N\geq2$ dan $1\leq b\leq N$. Pada suatu $x$, tuliskan
+  $h_i=\nabla f_i(x)-\nabla f(x)$ dan
+  $V_N=N^{-1}\sum_{i=1}^{N}\norm{h_i}^2$. Jika $S$ dipilih seragam dari semua
+  subhimpunan berukuran $b$ tanpa penggantian, maka
+  \begin{equation}
+    \label{orig01:eq:finite-population}
+    \E\norm{\frac1b\sum_{i\in S}\nabla f_i(x)-\nabla f(x)}^2
+    =\frac{N-b}{b(N-1)}V_N.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  Peluang inklusi satu indeks adalah $b/N$ dan peluang inklusi dua indeks
+  berbeda adalah $b(b-1)/(N(N-1))$. Kembangkan kuadrat norma. Karena
+  $\sum_i h_i=0$, berlaku
+  $\sum_{i\ne j}\inner{h_i}{h_j}=-\sum_i\norm{h_i}^2$. Substitusi kedua
+  peluang inklusi lalu penyederhanaan memberikan faktor pada
+  \eqref{orig01:eq:finite-population}. Khusus $b=N$, varians tepat nol.
+\end{proof}
+
+Minibatch menurunkan varians per iterasi, tetapi memakai $b$ evaluasi gradien
+komponen. Jika biaya serial yang tersedia adalah $T=bK$, batas tertala ideal
+$\sqrt2R\sigma/\sqrt{bK}$ menjadi $\sqrt2R\sigma/\sqrt T$: tidak ada
+percepatan kompleksitas oracle hanya dari pengelompokan. Keuntungan nyata
+dapat datang dari paralelisme, arsitektur perangkat, pengurangan komunikasi,
+atau batas langkah yang lebih baik. Pernyataan ini juga menjelaskan mengapa
+perbandingan hanya berdasarkan banyak iterasi dapat menyesatkan.
+
+% OR01-S004 | lapisan asli: geometri cermin
+% segment-id: d90.orig.v1.tr01.seg0004
+\section{Penurunan cermin stokastik}
+\label{orig01:section:mirror}
+
+Proyeksi Euklides memperlakukan semua arah dengan geometri yang sama. Pada
+simpleks, matriks semidefinit positif, atau ruang dengan struktur sparsitas,
+pilihan geometri lain dapat lebih alami.
+
+Misalkan $X\subset\R^d$ tak kosong, tertutup, dan konveks. Ambil fungsi
+pembangkit $h:X\to\R$ yang bernilai hingga dan kontinu pada $X$,
+terdiferensialkan di setiap iterat, dan $\alpha$-konveks kuat terhadap
+$\norm{\cdot}$. Untuk setiap $x\in X$ dan setiap titik keterdiferensialan $y$,
+\begin{equation}
+    h(x)\geq h(y)+\inner{\nabla h(y)}{x-y}
+  +\frac\alpha2\norm{x-y}^2.
+\end{equation}
+Divergensi Bregman yang dibangkitkan oleh $h$ ialah
+\begin{equation}
+  \label{orig01:eq:bregman}
+  D_h(x,y)=h(x)-h(y)-\inner{\nabla h(y)}{x-y}.
+\end{equation}
+Divergensi ini tidak harus simetris dan bukan metrik, tetapi
+$D_h(x,y)\geq(\alpha/2)\norm{x-y}^2$.
+
+Untuk fungsi konveks $\Phi:X\to\R$, andaikan oracle menghasilkan $G_k$
+dengan
+\begin{equation}
+  \label{orig01:eq:mirror-oracle}
+  \bar G_k\coloneqq\E[G_k\mid\mathcal F_k]\in\partial\Phi(x_k),
+  \qquad
+  \E[\norm{G_k}_*^2\mid\mathcal F_k]\leq M^2.
+\end{equation}
+Ambil $\tau_k>0$ dan andaikan masalah berikut hampir pasti mencapai peminim
+unik $x_{k+1}$ pada titik keterdiferensialan $h$:
+\begin{equation}
+  \label{orig01:eq:mirror-update}
+  x_{k+1}=\arg\min_{x\in X}
+  \left\{\tau_k\inner{G_k}{x}+D_h(x,x_k)\right\}.
+\end{equation}
+Untuk pembanding optimum $x^*$ yang dipakai di bawah, andaikan pula
+$D_h(x^*,x_0)<\infty$. Asumsi eksplisit ini dapat diganti dengan syarat
+Legendre/interior standar yang menjamin sifat-sifat yang sama.
+
+\begin{quote}
+\textbf{Algoritma 2: penurunan cermin stokastik.}
+Pilih $x_0$ dalam daerah terdiferensialkan $h$. Pada iterasi $k$, ambil
+subgradien stokastik $G_k$, selesaikan masalah Bregman
+\eqref{orig01:eq:mirror-update}, dan perbarui rerata berbobot
+$\sum_j\tau_jx_j/\sum_j\tau_j$.
+\end{quote}
+
+\begin{lemma}[Ketaksamaan tiga titik stokastik]
+  \label{orig01:lemma:mirror-one-step}
+  Untuk setiap $x\in X$, pembaruan~\eqref{orig01:eq:mirror-update} memenuhi
+  \begin{equation}
+    \label{orig01:eq:mirror-one-step}
+    \tau_k\inner{G_k}{x_k-x}
+    \leq D_h(x,x_k)-D_h(x,x_{k+1})
+    +\frac{\tau_k^2}{2\alpha}\norm{G_k}_*^2.
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Kondisi optimalitas pada himpunan $X$ memberi
+  \begin{equation}
+    \inner{\tau_kG_k+\nabla h(x_{k+1})-\nabla h(x_k)}
+           {x-x_{k+1}}\geq0.
+  \end{equation}
+  Identitas tiga titik Bregman mengubah bagian yang memuat $h$ menjadi
+  \begin{equation}
+    \tau_k\inner{G_k}{x_{k+1}-x}
+    \leq D_h(x,x_k)-D_h(x,x_{k+1})-D_h(x_{k+1},x_k).
+  \end{equation}
+  Tambahkan $\tau_k\inner{G_k}{x_k-x_{k+1}}$ pada kedua sisi. Gunakan
+  $D_h(x_{k+1},x_k)\geq(\alpha/2)\norm{x_{k+1}-x_k}^2$, dualitas norma, dan
+  ketaksamaan Young. Hasilnya tepat~\eqref{orig01:eq:mirror-one-step}.
+\end{proof}
+
+\begin{theorem}[Batas ergodik cermin stokastik]
+  \label{orig01:theorem:mirror-ergodic}
+  Di bawah~\eqref{orig01:eq:mirror-oracle}, untuk $K\geq1$ definisikan
+  $S_K=\sum_{k=0}^{K-1}\tau_k$ dan
+  \begin{equation}
+    \widetilde x_K=\frac1{S_K}\sum_{k=0}^{K-1}\tau_kx_k.
+  \end{equation}
+  Untuk setiap $x^*\in\arg\min_{x\in X}\Phi(x)$,
+  \begin{equation}
+    \label{orig01:eq:mirror-rate}
+    \E[\Phi(\widetilde x_K)-\Phi(x^*)]
+    \leq
+    \frac{D_h(x^*,x_0)}{S_K}
+    +\frac{M^2}{2\alpha}
+      \frac{\sum_{k=0}^{K-1}\tau_k^2}{S_K}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Ambil ekspektasi bersyarat pada
+  Lema~\ref{orig01:lemma:mirror-one-step}. Karena $x_k-x^*$ terukur terhadap
+  $\mathcal F_k$ dan $\bar G_k\in\partial\Phi(x_k)$,
+  \begin{equation}
+    \E[\inner{G_k}{x_k-x^*}\mid\mathcal F_k]
+    \geq\Phi(x_k)-\Phi(x^*).
+  \end{equation}
+  Jumlahkan sehingga divergensi Bregman meneleskop, lalu gunakan kekonveksan
+  $\Phi$ pada rerata berbobot.
+\end{proof}
+
+Untuk $M>0$ dan $D_h(x^*,x_0)>0$, gunakan
+$\tau=\sqrt{2\alpha D_h(x^*,x_0)/(M^2K)}$. Ruas kanan kemudian menjadi
+\begin{equation}
+  M\sqrt{\frac{2D_h(x^*,x_0)}{\alpha K}}.
+\end{equation}
+Pada geometri Euklides, $h(x)=\norm{x}_2^2/2$ dan pembaruan cermin menjadi
+subgradien stokastik terproyeksi. Jadi metode cermin memperluas, bukan
+menduplikasi, teorema stokastik Habring.
+
+\subsection{Simpleks dan pembaruan eksponensial}
+\label{orig01:subsection:entropy}
+
+Pada simpleks
+$\Delta_d=\{x\in\R_+^d:\sum_{j=1}^{d}x_j=1\}$, ambil
+$h(x)=\sum_jx_j\log x_j$, dengan konvensi perluasan kontinu
+$0\log0=0$. Fungsi ini kontinu pada $\Delta_d$ dan terdiferensialkan pada
+interior relatifnya. Mulai dari $x_{0,j}>0$. Divergensi Bregman ialah
+divergensi Kullback--Leibler. Terhadap norma $\ell_1$, fungsi ini
+$1$-konveks kuat. Kondisi optimalitas memberi pembaruan tertutup
+\begin{equation}
+  \label{orig01:eq:exponentiated-update}
+  x_{k+1,j}
+  =\frac{x_{k,j}\exp(-\tau_kG_{k,j})}
+         {\sum_{r=1}^{d}x_{k,r}\exp(-\tau_kG_{k,r})}.
+\end{equation}
+Jika $x_0$ seragam, maka $D_h(x^*,x_0)\leq\log d$. Dengan batas
+$\norm{G_k}_\infty\leq M$, Teorema~\ref{orig01:theorem:mirror-ergodic}
+memberi skala $M\sqrt{2\log(d)/K}$ setelah penalaan ideal. Ketergantungan
+logaritmik pada dimensi menjelaskan kegunaan geometri entropi di simpleks.
+
+% OR01-S005 | lapisan asli: penghubung reduksi varians
+% segment-id: d90.orig.v1.tr01.seg0005
+\section{Dari SAGA ke pembaruan proksimal}
+\label{orig01:section:prox-saga}
+
+Untuk masalah jumlah hingga
+$f=N^{-1}\sum_i f_i$, modul Becker~3 mendefinisikan penaksir SAGA
+\begin{equation}
+  v_k=\nabla f_{J_k}(x_k)-g_{J_k}^k+\bar g_k
+\end{equation}
+dan membuktikan
+$\E[v_k\mid\mathcal F_k]=\nabla f(x_k)$. Untuk masalah komposit, perubahan
+algoritmik yang benar bukan mengurangkan subgradien $g$, melainkan memakai
+langkah proksimal
+\begin{equation}
+  \label{orig01:eq:prox-saga}
+  x_{k+1}=\prox_{\tau g}(x_k-\tau v_k).
+\end{equation}
+
+\begin{cor}[Penghubung varians untuk Prox-SAGA]
+  \label{orig01:cor:prox-saga-bridge}
+  Andaikan asumsi masalah komposit berlaku, $0<\tau\leq(2L)^{-1}$, dan
+  definisikan
+  \begin{equation}
+    \omega_k^2
+    =\E[\norm{v_k-\nabla f(x_k)}^2\mid\mathcal F_k].
+  \end{equation}
+  Untuk $\bar x_K=K^{-1}\sum_{k=0}^{K-1}x_{k+1}$ dan $x^*\in X^*$,
+  \begin{equation}
+    \label{orig01:eq:prox-saga-bridge}
+    \E[F(\bar x_K)-F(x^*)]
+    \leq\frac{\norm{x_0-x^*}^2}{2\tau K}
+    +\frac{\tau}{K}\sum_{k=0}^{K-1}\E[\omega_k^2].
+  \end{equation}
+  Jika $\E[\omega_k^2]\leq C\rho^k$ dengan $C\geq0$ dan $0<\rho<1$, maka
+  \begin{equation}
+    \E[F(\bar x_K)-F(x^*)]
+    \leq\frac{\norm{x_0-x^*}^2}{2\tau K}
+    +\frac{\tau C}{K(1-\rho)}.
+  \end{equation}
+\end{cor}
+
+\begin{proof}
+  Terapkan bukti Teorema~\ref{orig01:theorem:spg-ergodic} dengan
+  $G_k=v_k$ dan varians bersyarat $\omega_k^2$. Untuk klaim terakhir, gunakan
+  jumlah deret geometri hingga yang dibatasi oleh $(1-\rho)^{-1}$.
+\end{proof}
+
+Korolari ini menjelaskan hubungan yang hilang, tetapi sengaja tidak mengklaim
+bahwa varians SAGA selalu turun geometrik. Pembuktian klaim semacam itu
+memerlukan fungsi Lyapunov gabungan untuk galat iterat dan galat tabel.
+Teorema laju linear bersyarat pada modul Becker~3 menyediakan hasil khusus
+untuk kasus mulus dan konveks kuat; korolari di sini menunjukkan bagaimana
+penaksir yang sama masuk ke masalah komposit.
+
+% OR01-S006 | lapisan asli: laboratorium
+% segment-id: d90.orig.v1.tr01.seg0006
+\section{Laboratorium 1: regresi renggang dengan biaya oracle tetap}
+\label{orig01:section:lab}
+
+Laboratorium terbuka pada
+\texttt{labs/original-01/stochastic-composite-lab.py} membangun masalah
+regresi kuadrat dengan regularisasi $\ell_1$,
+\begin{equation}
+  \label{orig01:eq:lab-objective}
+  F(x)=\frac{1}{2N}\norm{Ax-y}_2^2+\lambda\norm{x}_1.
+\end{equation}
+Skrip membandingkan gradien proksimal stokastik, minibatch dengan penggantian,
+dan Prox-SAGA pada anggaran evaluasi gradien komponen yang sama. Referensi
+numerik dihitung oleh FISTA deterministik sampai norma pemetaan gradien
+proksimal memenuhi toleransi yang dilaporkan.
+
+Tugas laboratorium:
+\begin{enumerate}
+  \item jalankan skrip tanpa mengubah benih acak dan verifikasikan konfigurasi
+    beku yang dicatat pada berkas hasil;
+  \item bandingkan kesenjangan objektif terhadap evaluasi gradien komponen,
+    bukan hanya terhadap iterasi;
+  \item periksa apakah minibatch menurunkan varians arah pada checkpoint yang
+    sama;
+  \item ubah ukuran minibatch tetapi pertahankan anggaran oracle, lalu
+    jelaskan perbedaan antara keuntungan statistik dan keuntungan paralel;
+  \item ganti $\lambda$ dan ukur perubahan sparsitas serta norma pemetaan
+    gradien proksimal;
+  \item laporkan setiap hasil yang bertentangan dengan batas teori beserta
+    asumsi yang mungkin tidak terpenuhi.
+\end{enumerate}
+CSV dan JSON yang dihasilkan adalah permukaan aksesibel utama. Grafik SVG
+hanya merupakan bantuan visual dan tidak menjadi satu-satunya pembawa
+informasi.
+
+Dengan konfigurasi beku ($N=320$, $d=40$, $\lambda=0{,}03$, 12 epoch, dan
+3.840 evaluasi gradien komponen per metode), nilai referensi FISTA adalah
+$0{,}31517396778742246$ dengan norma pemetaan gradien proksimal
+$1{,}49\times10^{-15}$. Hasil terminal deterministik adalah:
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+Metode & Kesenjangan objektif & Norma pemetaan & Tak nol\\
+\hline
+Proks-SGD, $b=1$ & $4{,}9169\times10^{-2}$ & $2{,}1155\times10^{-2}$ & 33\\
+Proks-minibatch, $b=16$ & $2{,}5707\times10^{-3}$ & $9{,}8630\times10^{-3}$ & 10\\
+Prox-SAGA & $2{,}0444\times10^{-9}$ & $9{,}8666\times10^{-6}$ & 5\\
+\hline
+\end{tabular}
+\end{center}
+Angka tersebut adalah satu eksperimen terkontrol, bukan urutan kinerja
+universal. Berkas hasil JSON, CSV, dan SVG mempunyai SHA-256 berikut:
+\begin{center}\small\ttfamily
+86ff701a\ldots c447\\
+61a6591a\ldots 5d37\\
+87c772d9\ldots 2830.
+\end{center}
+Identitas lengkap dicatat dalam receipt QA.
+
+% OR01-S007 | lapisan asli: latihan, petunjuk, solusi
+% segment-id: d90.orig.v1.tr01.seg0007
+\section{Latihan, petunjuk, dan solusi lengkap}
+\label{orig01:section:exercises}
+
+\begin{exercise}[Pembaruan proksimal untuk Lasso]
+  \label{orig01:exercise:lasso-prox}
+  Untuk $f(x)=(2N)^{-1}\norm{Ax-y}_2^2$ dan
+  $g(x)=\lambda\norm{x}_1$, tuliskan pembaruan
+  \eqref{orig01:eq:spg-update} ketika minibatch $S_k$ dipakai. Tunjukkan
+  bahwa setiap koordinat diperoleh dengan ambang lunak.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Hitung gradien setiap suku kuadrat.
+  (ii) Gunakan keterpisahan norma $\ell_1$.
+  (iii) Selesaikan masalah proksimal skalar pada tiga kasus tanda.
+
+  \textbf{Solusi lengkap.}
+  Jika $f_i(x)=\tfrac12(a_i^\top x-y_i)^2$, maka
+  \begin{equation}
+    G_k=\frac1{|S_k|}\sum_{i\in S_k}a_i(a_i^\top x_k-y_i).
+  \end{equation}
+  Tuliskan $z_k=x_k-\tau_kG_k$. Karena
+  $\prox_{\tau_k\lambda\norm{\cdot}_1}$ terpisah per koordinat,
+  \begin{equation}
+    (x_{k+1})_j
+    =\operatorname{sign}((z_k)_j)
+      \max\{|(z_k)_j|-\tau_k\lambda,0\}.
+  \end{equation}
+  Rumus ini mengikuti dengan memeriksa kondisi
+  $0\in u-z+\tau_k\lambda\partial|u|$ pada $u>0$, $u<0$, dan $u=0$.
+\end{exercise}
+
+\begin{exercise}[Konstanta pada ketaksamaan satu langkah]
+  \label{orig01:exercise:young-constant}
+  Mulai dari~\eqref{orig01:eq:spg-pathwise}. Buktikan batas yang lebih tajam
+  \begin{equation}
+    \E[F(x_{k+1})-F(x)\mid\mathcal F_k]
+    \leq\frac{\norm{x_k-x}^2-
+      \E\norm{x_{k+1}-x}^2}{2\tau}
+    +\frac{\tau\nu_k^2}{2(1-L\tau)}
+  \end{equation}
+  untuk $0<\tau<L^{-1}$.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Maksimalkan $-\inner{\delta}{s}-c\norm{s}^2$ terhadap $s$.
+  (ii) Ambil $c=(1-L\tau)/(2\tau)$.
+  (iii) Gunakan ketakbiasan hanya setelah memisahkan $x_k-x$.
+
+  \textbf{Solusi lengkap.}
+  Dualitas norma Euklides dan pelengkapan kuadrat memberikan
+  \begin{equation}
+    \sup_s\{-\inner{\delta}{s}-c\norm{s}^2\}
+    =\frac{\norm{\delta}^2}{4c}
+    =\frac{\tau\norm{\delta}^2}{2(1-L\tau)}.
+  \end{equation}
+  Suku $-\inner{\delta_k}{x_k-x}$ mempunyai ekspektasi bersyarat nol.
+  Substitusi batas varians menyelesaikan klaim. Lema utama memakai
+  $\tau L\leq1/2$ hanya untuk mengganti faktor ini dengan batas sederhana
+  $\tau\nu_k^2$.
+\end{exercise}
+
+\begin{exercise}[Sampel tanpa penggantian]
+  \label{orig01:exercise:finite-population}
+  Untuk $N\geq2$, buktikan Proposisi~\ref{orig01:prop:finite-population} dengan peubah
+  indikator $I_i=\mathbf1\{i\in S\}$. Periksa kasus $b=1$ dan $b=N$.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Gunakan $\E I_i=b/N$.
+  (ii) Untuk $i\ne j$, gunakan
+  $\E[I_iI_j]=b(b-1)/(N(N-1))$.
+  (iii) Pakai $\sum_i h_i=0$.
+
+  \textbf{Solusi lengkap.}
+  Karena $b^{-1}\sum_{i\in S}h_i=b^{-1}\sum_iI_ih_i$,
+  ekspektasi kuadrat normanya adalah
+  \begin{multline}
+    \frac1{b^2}\left[
+      \frac bN\sum_i\norm{h_i}^2
+      +\frac{b(b-1)}{N(N-1)}
+        \sum_{i\ne j}\inner{h_i}{h_j}
+    \right].
+  \end{multline}
+  Suku silang sama dengan $-\sum_i\norm{h_i}^2$. Koefisien akhirnya
+  $(N-b)/(bN(N-1))$, dan penggantian
+  $\sum_i\norm{h_i}^2=NV_N$ memberi rumus yang diminta. Untuk $b=1$ faktor
+  menjadi satu; untuk $b=N$ menjadi nol.
+\end{exercise}
+
+\begin{exercise}[Cermin entropi pada simpleks]
+  \label{orig01:exercise:entropy-update}
+  Turunkan~\eqref{orig01:eq:exponentiated-update} dari
+  \eqref{orig01:eq:mirror-update}. Jelaskan mengapa iterat yang mulai positif
+  tetap positif dan berjumlah satu.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Tambahkan pengali Lagrange untuk $\sum_jx_j=1$.
+  (ii) Diferensialkan terhadap setiap $x_j$.
+  (iii) Gunakan kendala jumlah untuk menentukan faktor normalisasi.
+
+  \textbf{Solusi lengkap.}
+  Dengan konvensi $0\log0=0$ dan
+  $D_h(x,x_k)=\sum_jx_j\log(x_j/x_{k,j})$ pada simpleks, kondisi
+  stasioner adalah
+  \begin{equation}
+    \tau_kG_{k,j}+\log(x_j/x_{k,j})+1+\eta=0.
+  \end{equation}
+  Jadi $x_j=x_{k,j}\exp(-\tau_kG_{k,j})\exp(-1-\eta)$. Menjumlahkan seluruh
+  koordinat menunjukkan bahwa faktor terakhir adalah kebalikan jumlah pada
+  penyebut~\eqref{orig01:eq:exponentiated-update}. Eksponensial dan penyebut
+  positif mempertahankan kepositifan, sedangkan normalisasi mempertahankan
+  jumlah satu.
+\end{exercise}
+
+\begin{exercise}[Anggaran oracle dan ukuran minibatch]
+  \label{orig01:exercise:oracle-budget}
+  Andaikan batas tertala ideal adalah
+  $\sqrt2R\sigma/\sqrt{bK}$ dan satu iterasi minibatch memakai $b$ evaluasi
+  gradien komponen. Untuk anggaran serial $T=bK$, tentukan ketergantungannya
+  pada $b$. Sebutkan dua keadaan ketika minibatch tetap berguna.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Ganti $K$ dengan $T/b$.
+  (ii) Bedakan waktu dinding dari jumlah panggilan oracle.
+  (iii) Perhatikan pengambilan sampel tanpa penggantian.
+
+  \textbf{Solusi lengkap.}
+  Substitusi memberi
+  \begin{equation}
+    \frac{\sqrt2R\sigma}{\sqrt{b(T/b)}}
+    =\frac{\sqrt2R\sigma}{\sqrt T},
+  \end{equation}
+  yang bebas dari $b$. Jadi model ideal tidak memprediksi penghematan
+  evaluasi gradien serial. Minibatch tetap berguna jika evaluasi dapat
+  diparalelkan atau komunikasi dapat diamortisasi; ia juga dapat membantu
+  melalui koreksi populasi hingga tanpa penggantian, vektorisasi perangkat,
+  atau batas langkah yang tidak tercakup dalam model sederhana.
+\end{exercise}
+
+\begin{exercise}[Varians yang menyusut pada Prox-SAGA]
+  \label{orig01:exercise:prox-saga-decay}
+  Mulai dari~\eqref{orig01:eq:prox-saga-bridge}. Jika
+  $\E\omega_k^2\leq C/(k+1)$, turunkan batas eksplisit menggunakan bilangan
+  harmonik $H_K=\sum_{j=1}^{K}j^{-1}$. Bandingkan dengan kasus geometrik.
+
+  \textbf{Petunjuk bertahap.}
+  (i) Jumlahkan batas varians.
+  (ii) Gunakan $H_K\leq1+\log K$.
+  (iii) Jangan menyimpulkan laju iterat terakhir dari batas ergodik.
+
+  \textbf{Solusi lengkap.}
+  Substitusi langsung memberi
+  \begin{equation}
+    \E[F(\bar x_K)-F(x^*)]
+    \leq\frac{\norm{x_0-x^*}^2}{2\tau K}
+    +\frac{\tau C H_K}{K}
+    \leq\frac{\norm{x_0-x^*}^2}{2\tau K}
+    +\frac{\tau C(1+\log K)}{K}.
+  \end{equation}
+  Peluruhan geometrik menjadikan jumlah varians terbatas secara seragam dan
+  menghasilkan $\Oc(1/K)$ tanpa faktor logaritmik. Kedua kesimpulan hanya
+  berlaku untuk rerata $\bar x_K$ dalam korolari ini; laju iterat terakhir
+  memerlukan analisis tambahan.
+\end{exercise}
+
+% OR01-S008 | lapisan asli: peta asumsi dan rujukan
+% segment-id: d90.orig.v1.tr01.seg0008
+\section{Peta asumsi dan batas klaim}
+\label{orig01:section:assumption-map}
+
+\begin{center}
+\begin{tabular}{p{0.22\textwidth}p{0.32\textwidth}p{0.35\textwidth}}
+\hline
+Hasil & Asumsi penentu & Yang tidak diklaim\\
+\hline
+Proksimal stokastik & $f$ konveks dan $L$-mulus; $g$ proper, tertutup,
+konveks; oracle tak bias; varians terbatas & laju iterat terakhir atau
+konvergensi nonkonveks\\
+Minibatch iid & sampel bersyarat bebas dengan penggantian & koreksi populasi
+hingga\\
+Minibatch tanpa penggantian & subhimpunan seragam berukuran
+$1\leq b\leq N$ dari populasi dengan $N\geq2$ &
+independensi antaranggota batch\\
+Cermin stokastik & pembangkit $\alpha$-konveks kuat; pembaruan terdefinisi;
+$D_h(x^*,x_0)<\infty$; momen dual kedua terbatas & simetri divergensi
+Bregman\\
+Prox-SAGA penghubung & ketakbiasan SAGA dan kontrol varians yang dinyatakan &
+peluruhan geometrik varians tanpa Lyapunov\\
+\hline
+\end{tabular}
+\end{center}
+
+Bab ini tidak membahas ketaksamaan variasional atau operator monoton maksimal;
+materi tersebut adalah tranche asli berikutnya. Bab ini juga tidak mengulang
+LP/MIP, simpleks sebagai algoritma pemrograman linear, dualitas LP, sensitivitas
+LP, jaringan, atau optimisasi diskret yang merupakan cakupan O018. Kata
+\emph{simpleks} di sini hanya menunjuk himpunan probabilitas $\Delta_d$.
+
+\section*{Rujukan matematis dan saksi verifikasi}
+\begingroup\sloppy
+\begin{itemize}
+  \item Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+    arXiv:2607.11664v1, khususnya operator proksimal dan subgradien stokastik.
+  \item Cl\'ement W. Royer, \emph{Lecture Notes on Stochastic Gradient
+    Methods}, edisi 2023/2024, khususnya pembahasan minibatch dan biaya epoch;
+    dipakai sebagai saksi perbandingan, bukan sumber prosa bab ini.
+  \item Lorenzo Rosasco, Silvia Villa, dan Bang C\^ong V\~u,
+    \emph{Convergence of Stochastic Proximal Gradient Algorithm},
+    arXiv:1403.5074, sebagai rujukan primer bagi keluarga metode proksimal
+    stokastik.
+  \item Amir Beck dan Marc Teboulle, \emph{Mirror Descent and Nonlinear
+    Projected Subgradient Methods for Convex Optimization},
+    \emph{Operations Research Letters} 31 (2003), 167--175,
+    DOI:10.1016/S0167-6377(02)00231-6.
+  \item Aaron Defazio, Francis Bach, dan Simon Lacoste-Julien,
+    \emph{SAGA: A Fast Incremental Gradient Method With Support for
+    Non-Strongly Convex Composite Objectives}, arXiv:1407.0202v3.
+\end{itemize}
+\endgroup

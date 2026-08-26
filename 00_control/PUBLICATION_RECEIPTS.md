@@ -907,3 +907,52 @@ No credential material was recorded and no upstream contact occurred.
 This closes public preservation for all three bounded Becker modules and
 advances production to `FINITE-ORIGINAL-CLOSURE`. No credential material was
 recorded and no upstream contact occurred.
+
+## 2026-08-25 — Public Becker-03 receipt/control evidence descendant
+
+- Commit/tree: `c6d6fac17b5e3cd735adca98a55e9d2596ad65aa` /
+  `ec595d7700cca172f7c749cbd09cffda50db7f7e`
+- Parent: `09cc7e554b87c735428fb8cf3320a3d499956894`
+- Scope: 19 publication-receipt, publisher/verifier, and corrected durable-
+  control paths / 851,480 aggregate bytes; no reader or DOI byte changed.
+- Public gate: `main` points to the commit; the public commit API identity and
+  every immutable raw path match the committed bytes over anonymous HTTPS.
+- Sanitized receipt:
+  `release/github/2026-08-25-becker-03/github-public-readback-becker-03-evidence.json`,
+  12,945 bytes; SHA-256
+`191713508a9ed3c1e4dd6c99e1860c107c6df32428dcad7aa4c911a8abc25fc3`.
+
+No credential material was recorded and no upstream contact occurred. This
+receipt is retained locally for inclusion at the next substantive production
+boundary; it does not start another evidence-only commit loop.
+
+## 2026-08-26 — Original-01 Zenodo publication and anonymous readback
+
+- Existing concept: `10.5281/zenodo.22059741`.
+- Published record: `https://zenodo.org/records/22103674`; DOI
+  `10.5281/zenodo.22103674`; parent record `22102236` /
+  `10.5281/zenodo.22102236`.
+- Status: published/latest; exactly 99 public files, 90 inherited unchanged and
+  nine Original-01 additions. The default preview is
+  `D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf`.
+- Reader additions: PDF 486,032 bytes /
+  `7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca`; HTML
+  353,245 / `052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4`;
+  EPUB 64,322 / `d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08`;
+  compact ZIP 721,697 /
+  `8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a`.
+- Additions also include the exact backend JSONL/CSV, rights/provenance note,
+  release manifest, and checksum list. No credentials or local-only SAGA
+  paper witness was uploaded.
+- Anonymous receipt:
+  `release/zenodo/2026-08-26-original-01/zenodo-public-readback-original-01.json`,
+  26,975 bytes; SHA-256
+  `8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2`.
+  Result is `pass`; every public file matched expected size and SHA-256.
+- Authenticated closure receipt:
+  `release/zenodo/2026-08-26-original-01/zenodo-draft-closure-original-01.json`,
+  391 bytes; SHA-256
+  `7790f5c71f0093e97c99b3d3f70db4a203fa85492801b618f55778ad34dd4b10`.
+  Direct draft lookup returned 404 and the concept open-draft count was zero.
+- No upstream contact occurred. GitHub preservation/readback is the next
+  narrow gate; the larger course remains partial.

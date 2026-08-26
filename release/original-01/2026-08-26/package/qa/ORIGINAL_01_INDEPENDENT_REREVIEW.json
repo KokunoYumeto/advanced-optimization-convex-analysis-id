@@ -1,0 +1,234 @@
+{
+  "schema": "o015-original-01-independent-rereview-v1",
+  "date": "2026-08-26",
+  "result": "pass",
+  "reviewer": {
+    "model": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "method": "Independent bounded final semantic and static rereview of the live source, wrapper, lab, reader identities, and QA/rights evidence",
+    "source_mutation": false,
+    "upstream_contact": false,
+    "git_operations": false,
+    "build_or_publication": false
+  },
+  "scope": {
+    "unit": "Original-01: stochastic composite optimization, minibatch variance, stochastic mirror descent, and the Prox-SAGA bridge",
+    "files_read": [
+      "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "labs/original-01/stochastic-composite-lab.py",
+      "labs/original-01/results.json",
+      "labs/original-01/results.csv",
+      "qa/ORIGINAL_01_MATH_VALIDATION.json",
+      "qa/ORIGINAL_01_BACKEND_VALIDATION.json",
+      "qa/ORIGINAL_01_PDF_BUILD.json",
+      "qa/ORIGINAL_01_PDF_VISUAL_QA.json",
+      "qa/ORIGINAL_01_HTML_BUILD.json",
+      "qa/ORIGINAL_01_HTML_BROWSER_QA.json",
+      "qa/ORIGINAL_01_EPUB_BUILD.json",
+      "qa/ORIGINAL_01_EPUB_CONFORMANCE.json",
+      "qa/ORIGINAL_01_RIGHTS_NONOVERLAP.json"
+    ],
+    "review_boundary": "The rereview checks mathematical meaning, hypotheses, quantifier domains, algorithm state, source/reader topology, rights/non-endorsement markers, and consistency of the final recorded identities. It does not substitute for a proof assistant, EPUB-reader survey, or human-language review."
+  },
+  "finding_counts": {
+    "raised_during_final_rereview": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0
+    },
+    "remaining_after_corrections": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0
+    },
+    "disposition": "PASS; no unresolved semantic, mathematical, topology, rights-boundary, or deterministic-evidence finding remains in this bounded unit."
+  },
+  "rechecked_corrections": [
+    {
+      "surface": "Finite-population minibatch identity",
+      "evidence": "source lines 198-208 and exercise lines 544-568",
+      "check": "The proposition explicitly requires N>=2 and 1<=b<=N, and the proof handles b=1 and b=N without dividing by N-1 at an invalid domain point.",
+      "status": "pass"
+    },
+    {
+      "surface": "Stochastic mirror-descent well-posedness",
+      "evidence": "source lines 237-270 and theorem lines 307-323",
+      "check": "The generator is finite/continuous on X and strongly convex; tau_k>0; the update is assumed to attain a unique minimizer at a differentiability point; the comparator has D_h(x*,x_0)<infty; and the theorem states K>=1.",
+      "status": "pass"
+    },
+    {
+      "surface": "Entropy mirror map",
+      "evidence": "source lines 349-365 and exercise lines 571-594",
+      "check": "The simplex extension uses 0 log 0=0, states continuity on the closed simplex and differentiability on the relative interior, starts from positive coordinates, and derives a positive normalized exponentiated update.",
+      "status": "pass"
+    },
+    {
+      "surface": "Initial Prox-SAGA direction-variance diagnostic",
+      "evidence": "labs/original-01/stochastic-composite-lab.py lines 243-262; qa/ORIGINAL_01_MATH_VALIDATION.json gate saga_initialized_table_direction_variance",
+      "check": "The table is initialized with the component gradients at x_0, so each fresh gradient equals its stored entry and the initial estimator direction variance is exactly zero; the reported 0.0 agrees with the independently recomputed 3.06e-31 roundoff witness.",
+      "status": "pass"
+    },
+    {
+      "surface": "Prox-SAGA bridge scope",
+      "evidence": "source lines 372-420 and assumption map lines 665-669",
+      "check": "The bridge uses conditional unbiasedness and the explicitly defined conditional variance, and it does not claim geometric variance decay without a separate Lyapunov/control assumption.",
+      "status": "pass"
+    }
+  ],
+  "static_closure": {
+    "source_bytes": 27431,
+    "source_lines": 700,
+    "wrapper_bytes": 5311,
+    "wrapper_lines": 106,
+    "lab_lines": 446,
+    "segment_ids": 8,
+    "labels": 40,
+    "reference_calls": 21,
+    "unresolved_reference_targets": 0,
+    "duplicate_labels": 0,
+    "equation_environment_begin_end_pairs": 37,
+    "multline_environment_pairs": 3,
+    "display_math_environments": 40,
+    "exercises": 6,
+    "progressive_hint_blocks": 6,
+    "complete_solution_blocks": 6,
+    "proofs": 7,
+    "math_surface_count_in_final_readers": 249,
+    "stable_lab_rows": 38,
+    "o018_imported": false,
+    "o018_exclusions_explicit": true,
+    "non_endorsement_explicit": true,
+    "model_provenance_explicit": true
+  },
+  "identities": {
+    "source": {
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "bytes": 27431,
+      "lines": 700,
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    "wrapper": {
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "bytes": 5311,
+      "lines": 106,
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    "lab": {
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "bytes": 13655,
+      "lines": 446,
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    "lab_outputs": {
+      "results.json": {
+        "path": "labs/original-01/results.json",
+        "bytes": 2432,
+        "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+      },
+      "results.csv": {
+        "path": "labs/original-01/results.csv",
+        "bytes": 4189,
+        "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+      },
+      "objective-gap.svg": {
+        "path": "labs/original-01/objective-gap.svg",
+        "bytes": 86616,
+        "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+      }
+    },
+    "readers": {
+      "pdf": {
+        "path": "output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+        "bytes": 486032,
+        "pages": 16,
+        "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+      },
+      "html": {
+        "path": "output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+        "bytes": 353245,
+        "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+      },
+      "epub": {
+        "path": "output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+        "bytes": 64322,
+        "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+      }
+    }
+  },
+  "qa_evidence": {
+    "qa/ORIGINAL_01_MATH_VALIDATION.json": {
+      "bytes": 13864,
+      "sha256": "17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e",
+      "result": "pass",
+      "gate_count": 17
+    },
+    "qa/ORIGINAL_01_PDF_BUILD.json": {
+      "bytes": 5664,
+      "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0",
+      "result": "pass",
+      "two_clean_builds_byte_identical": true
+    },
+    "qa/ORIGINAL_01_PDF_VISUAL_QA.json": {
+      "bytes": 5492,
+      "sha256": "49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5",
+      "result": "pass",
+      "pages_inspected": 16
+    },
+    "qa/ORIGINAL_01_HTML_BUILD.json": {
+      "bytes": 6453,
+      "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753",
+      "result": "pass",
+      "two_clean_builds_byte_identical": true
+    },
+    "qa/ORIGINAL_01_HTML_BROWSER_QA.json": {
+      "bytes": 5733,
+      "sha256": "22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd",
+      "result": "pass",
+      "viewports": ["desktop", "tablet", "mobile"],
+      "reader_scoped_console_errors_or_warnings": 0,
+      "external_mathjax_metadata_warnings_recorded": 2
+    },
+    "qa/ORIGINAL_01_EPUB_BUILD.json": {
+      "bytes": 7991,
+      "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e",
+      "result": "pass",
+      "two_clean_builds_byte_identical": true,
+      "native_mathml_surfaces": 249
+    },
+    "qa/ORIGINAL_01_EPUB_CONFORMANCE.json": {
+      "bytes": 3059,
+      "sha256": "e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c",
+      "result": "pass",
+      "epubcheck_fatal_error_warning_usage": [0, 0, 0, 0]
+    },
+    "qa/ORIGINAL_01_BACKEND_VALIDATION.json": {
+      "bytes": 7851,
+      "sha256": "c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561",
+      "result": "pass",
+      "final_records": 3943,
+      "new_records": 358
+    },
+    "qa/ORIGINAL_01_RIGHTS_NONOVERLAP.json": {
+      "bytes": 6703,
+      "sha256": "cdf9c9bda62b526b872594ddf04fc2517158c230d106848a44454e7a3945ae13",
+      "result": "pass",
+      "failures": [],
+      "component_rights_boundary": "new substantive chapter/lab CC BY-SA 4.0; Habring class and macro scaffold CC BY 4.0",
+      "o018_nonoverlap": true
+    }
+  },
+  "rights_and_accessibility": {
+    "new_substantive_material": "CC BY-SA 4.0",
+    "Habring_scaffold": "CC BY 4.0 at the cited submission-level evidence; not blanket-relicensed as CC BY-SA",
+    "non_endorsement": true,
+    "pdf_searchable_and_id-ID": true,
+    "pdf_tagged": false,
+    "preferred_reflow_surfaces": ["HTML", "EPUB"]
+  },
+  "stability": {
+    "all_listed_live_hashes_recomputed_before_receipt": true,
+    "source_and_lab_hashes_match_math_receipt": true,
+    "reader_hashes_match_build_and_rights_receipts": true,
+    "lab_output_hashes_match_source_abbreviations_and_math_receipt": true
+  }
+}

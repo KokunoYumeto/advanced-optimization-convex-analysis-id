@@ -1,0 +1,95 @@
+{
+  "accessibility_metadata": {
+    "access_mode_sufficient": [
+      "textual"
+    ],
+    "access_modes": [
+      "textual"
+    ],
+    "features": [
+      "MathML",
+      "alternativeText",
+      "readingOrder",
+      "structuralNavigation",
+      "tableOfContents"
+    ],
+    "hazards": [
+      "none"
+    ],
+    "summary": "Pembaca reflow berbahasa Indonesia dengan MathML, navigasi struktural, teks alternatif, serta tabel CSV/JSON yang menggandakan informasi grafik; PDF pendamping tidak bertag."
+  },
+  "artifact": {
+    "bytes": 64322,
+    "path": "output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+    "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+  },
+  "build_receipt": {
+    "bytes": 7991,
+    "path": "qa/ORIGINAL_01_EPUB_BUILD.json",
+    "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e"
+  },
+  "date": "2026-08-26",
+  "epubcheck": {
+    "counts": {
+      "error": 0,
+      "fatal": 0,
+      "usage": 0,
+      "warning": 0
+    },
+    "exit_code": 0,
+    "fail_on_warnings": true,
+    "official_distribution": {
+      "bytes": 33071108,
+      "sha256": "6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5",
+      "url": "https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip"
+    },
+    "official_release": "https://github.com/w3c/epubcheck/releases/tag/v5.3.0",
+    "version": "5.3.0"
+  },
+  "limitations": [
+    "EPUBCheck proves EPUB conformance, not behavioral equivalence across every reading system.",
+    "The PDF companion is untagged; EPUB and HTML are the preferred reflow surfaces."
+  ],
+  "package": {
+    "all_xhtml_language": "id-ID",
+    "direct_non_spine_lab_links": 0,
+    "duplicate_ids": 0,
+    "images_with_alt": 1,
+    "mathml_surfaces": 249,
+    "member_count": 18,
+    "mimetype_first_and_uncompressed": true,
+    "packaged_lab_resources": [
+      {
+        "bytes": 13655,
+        "member": "EPUB/lab/stochastic-composite-lab.py",
+        "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+      },
+      {
+        "bytes": 2432,
+        "member": "EPUB/lab/results.json",
+        "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+      },
+      {
+        "bytes": 4189,
+        "member": "EPUB/lab/results.csv",
+        "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+      },
+      {
+        "bytes": 86616,
+        "member": "EPUB/lab/objective-gap.svg",
+        "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+      }
+    ],
+    "rootfile": "EPUB/content.opf",
+    "unresolved_internal_fragments": 0,
+    "xhtml_count": 7
+  },
+  "result": "pass",
+  "rights_metadata": "Mixed rights: new Original-01 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0",
+  "schema": "o015-original-01-epub-conformance-v1",
+  "verifier": {
+    "bytes": 11523,
+    "path": "qa/verify_original_01_epub.py",
+    "sha256": "f2ec1cea1b75465020786828ec267d895ed68ff3ad9a8ca71184801aca4401e3"
+  }
+}

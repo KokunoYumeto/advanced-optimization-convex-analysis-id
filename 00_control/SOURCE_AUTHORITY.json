@@ -529,7 +529,18 @@
           "anonymous_readback": "pass",
           "receipt_path": "release/github/2026-08-25-becker-03/github-public-readback-becker-03.json",
           "receipt_bytes": 36273,
-          "receipt_sha256": "78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2"
+          "receipt_sha256": "78c4f0ab66d160b9e4939527e37252f6c8164d2ab7947c1e578bf834df01e3e2",
+          "evidence_descendant": {
+            "commit": "c6d6fac17b5e3cd735adca98a55e9d2596ad65aa",
+            "tree": "ec595d7700cca172f7c749cbd09cffda50db7f7e",
+            "parent": "09cc7e554b87c735428fb8cf3320a3d499956894",
+            "changed_files": 19,
+            "aggregate_bytes": 851480,
+            "anonymous_readback": "pass",
+            "receipt_path": "release/github/2026-08-25-becker-03/github-public-readback-becker-03-evidence.json",
+            "receipt_bytes": 12945,
+            "receipt_sha256": "191713508a9ed3c1e4dd6c99e1860c107c6df32428dcad7aa4c911a8abc25fc3"
+          }
         },
         "zenodo": {
           "record_id": "22102236",
@@ -569,14 +580,89 @@
       "upstream_contact": false
     }
   },
+  "current_original_completion_admission": {
+    "recorded_on": "2026-08-26",
+    "status": "original_tranche_1_admitted_and_zenodo_publicly_preserved",
+    "scope": "Independent sixteen-page stochastic composite, minibatch, mirror/Bregman, and bounded Prox-SAGA bridge with six exercises, progressive hints, complete solutions, and one deterministic open-computation lab. The larger O015 course remains partial.",
+    "localized_sources": [
+      {"path":"source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex","bytes":27431,"sha256":"db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"},
+      {"path":"source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex","bytes":5311,"sha256":"d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"}
+    ],
+    "reader_artifacts": [
+      {"path":"output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf","bytes":486032,"pages":16,"sha256":"7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"},
+      {"path":"output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html","bytes":353245,"sha256":"052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"},
+      {"path":"output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub","bytes":64322,"sha256":"d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"}
+    ],
+    "lab": {
+      "script":{"path":"labs/original-01/stochastic-composite-lab.py","bytes":13655,"sha256":"21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"},
+      "json":{"path":"labs/original-01/results.json","bytes":2432,"sha256":"86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"},
+      "csv":{"path":"labs/original-01/results.csv","bytes":4189,"sha256":"61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"},
+      "svg":{"path":"labs/original-01/objective-gap.svg","bytes":86616,"sha256":"87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"},
+      "deterministic": true
+    },
+    "validation": {
+      "math_sha256":"17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e",
+      "pdf_build_sha256":"3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0",
+      "pdf_visual_sha256":"49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5",
+      "html_build_sha256":"989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753",
+      "browser_sha256":"22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd",
+      "epub_build_sha256":"e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e",
+      "epub_conformance_sha256":"e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c",
+      "backend_sha256":"c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561",
+      "rights_nonoverlap_sha256":"3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe",
+      "independent_rereview_sha256":"c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0",
+      "result":"pass"
+    },
+    "backend": {
+      "protected_prior_records":3585,
+      "added_records":358,
+      "records":3943,
+      "jsonl_bytes":2941125,
+      "jsonl_sha256":"d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f",
+      "csv_bytes":3537781,
+      "csv_sha256":"4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4",
+      "validation_receipt_sha256":"c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561"
+    },
+    "rights": {
+      "new_substantive_content_and_lab":"CC BY-SA 4.0",
+      "habring_shinybook_and_macro_scaffold":"CC BY 4.0",
+      "mathematical_references":"verification witnesses only; no prose, layout, exercise, figure, solution, or code copied",
+      "nonendorsement":true
+    },
+    "overlap": {
+      "o018_imported":false,
+      "probability_simplex_only":true,
+      "excluded":"LP/MIP, simplex-tableau algorithms, finite-LP duality/sensitivity, network/discrete optimization, and OR solver workflow"
+    },
+    "public_preservation": {
+      "status":"zenodo_published_github_pending",
+      "zenodo_record_id":"22103674",
+      "zenodo_record_doi":"10.5281/zenodo.22103674",
+      "zenodo_concept_doi":"10.5281/zenodo.22059741",
+      "zenodo_public_url":"https://zenodo.org/records/22103674",
+      "zenodo_file_count":99,
+      "zenodo_inherited_file_count":90,
+      "zenodo_addition_file_count":9,
+      "zenodo_default_preview":"D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+      "zenodo_readback_receipt":"release/zenodo/2026-08-26-original-01/zenodo-public-readback-original-01.json",
+      "zenodo_readback_receipt_sha256":"8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2",
+      "zenodo_closure_receipt":"release/zenodo/2026-08-26-original-01/zenodo-draft-closure-original-01.json",
+      "zenodo_closure_receipt_sha256":"7790f5c71f0093e97c99b3d3f70db4a203fa85492801b618f55778ad34dd4b10",
+      "local_package":"release/original-01/2026-08-26/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_01_2026.08.26.zip",
+      "local_package_bytes":721697,
+      "local_package_sha256":"8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a",
+      "upstream_contact":false
+    }
+  },
   "current_production_cursor": {
-    "recorded_on": "2026-08-25",
+    "recorded_on": "2026-08-26",
     "authority_kind": "finite_original_coursebook_closure",
     "name": "FINITE-ORIGINAL-CLOSURE",
-    "state": "next_production_boundary_after_all_three_becker_modules_publicly_preserved",
+    "state": "original_tranche_1_admitted_zenodo_public_github_is_next",
     "scope_reference": "selection_architecture.original_completion_required",
     "required_actions": [
-      "construct and validate the finite original closure defined by selection_architecture.original_completion_required"
+      "preserve Original-01 in the existing GitHub repository and complete anonymous exact-byte readback",
+      "then author the next coherent original tranche on variational inequalities, maximal monotone operators, resolvents, and splitting"
     ]
   },
   "authorities": [

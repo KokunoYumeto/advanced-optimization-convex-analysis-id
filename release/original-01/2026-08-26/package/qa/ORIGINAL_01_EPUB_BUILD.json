@@ -1,0 +1,206 @@
+{
+  "artifact": {
+    "bytes": 64322,
+    "complete_solution_count": 6,
+    "content_main_landmark_count": 6,
+    "environment_class_counts": {
+      "cor": 1,
+      "exercise": 6,
+      "lemma": 2,
+      "proof": 7,
+      "prop": 2,
+      "theorem": 2
+    },
+    "failures": [],
+    "fixed_zip_timestamps": true,
+    "formula_overflow_local": true,
+    "h1_count": 7,
+    "h2_count": 16,
+    "h3_count": 1,
+    "manifest_item_count": 14,
+    "manifest_resource_closure": true,
+    "math_surface_count": 249,
+    "mathml_count": 249,
+    "mimetype_first_uncompressed": true,
+    "navigation_document_count": 1,
+    "navigation_link_count": 22,
+    "nonempty_image_alt_count": 1,
+    "packaged_lab_bytes_exact": true,
+    "packaged_lab_resource_count": 4,
+    "path": "output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+    "preserved_segment_id_count": 8,
+    "preserved_source_label_count": 40,
+    "raster_or_vector_image_use_count": 1,
+    "raw_tex_annotation_count": 0,
+    "segment_id_count": 8,
+    "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08",
+    "source_label_count": 40,
+    "spine_item_count": 7,
+    "spine_reading_order_verified": true,
+    "staged_hint_count": 6,
+    "unresolved_internal_references": [],
+    "visible_text_characters": 48477,
+    "xhtml_member_count": 7,
+    "xml_member_count": 13,
+    "xml_parse_failures": [],
+    "zip_entry_count": 18
+  },
+  "combined_source": {
+    "bytes": 54118,
+    "sha256": "5e535468ef28e8087ae3bc58103967aacdb98b7eabc2f98c1b3961f07a226a8e"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true,
+    "canonical_copy_exact_match": true,
+    "opf_modified": "2026-08-25T00:00:00Z",
+    "run_sha256": [
+      "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08",
+      "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+    ],
+    "zip_entry_order": "mimetype first; remaining files sorted lexicographically",
+    "zip_timestamps": "1980-01-01T00:00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 5311,
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    {
+      "bytes": 27431,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    {
+      "bytes": 13655,
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    {
+      "bytes": 2432,
+      "path": "labs/original-01/results.json",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    {
+      "bytes": 4189,
+      "path": "labs/original-01/results.csv",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    {
+      "bytes": 86616,
+      "path": "labs/original-01/objective-gap.svg",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    },
+    {
+      "bytes": 70186,
+      "path": "qa/build_original_01_reflow.py",
+      "sha256": "e9f5d8592e04eba545b4878aeaf6a2d7011568e134da7bdf8b5609a7984ac3e0"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "artifact": {
+        "bytes": 64322,
+        "path": "tmp/original-01-reflow/epub-run-1.epub",
+        "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.tex",
+        "--from=latex",
+        "--to=epub3",
+        "--toc",
+        "--toc-depth=3",
+        "--split-level=1",
+        "--mathml",
+        "--css=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.css",
+        "--resource-path=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-25",
+        "--metadata=identifier:urn:uuid:ddc408f0-c3df-58f4-a759-0a1c0bb2ea8a",
+        "--metadata=rights:Mixed rights: new Original-01 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0",
+        "--metadata=publisher:Edisi mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\epub-raw-1.epub"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packaged_lab_members": {
+        "objective-gap.svg": "EPUB/lab/objective-gap.svg",
+        "results.csv": "EPUB/lab/results.csv",
+        "results.json": "EPUB/lab/results.json",
+        "stochastic-composite-lab.py": "EPUB/lab/stochastic-composite-lab.py"
+      },
+      "warnings": []
+    },
+    {
+      "artifact": {
+        "bytes": 64322,
+        "path": "tmp/original-01-reflow/epub-run-2.epub",
+        "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.tex",
+        "--from=latex",
+        "--to=epub3",
+        "--toc",
+        "--toc-depth=3",
+        "--split-level=1",
+        "--mathml",
+        "--css=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.css",
+        "--resource-path=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-25",
+        "--metadata=identifier:urn:uuid:ddc408f0-c3df-58f4-a759-0a1c0bb2ea8a",
+        "--metadata=rights:Mixed rights: new Original-01 content CC BY-SA 4.0; shinybook.cls and macros-id.tex CC BY 4.0",
+        "--metadata=publisher:Edisi mandiri",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\epub-raw-2.epub"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packaged_lab_members": {
+        "objective-gap.svg": "EPUB/lab/objective-gap.svg",
+        "results.csv": "EPUB/lab/results.csv",
+        "results.json": "EPUB/lab/results.json",
+        "stochastic-composite-lab.py": "EPUB/lab/stochastic-composite-lab.py"
+      },
+      "warnings": []
+    }
+  ],
+  "schema": "o015-original-01-epub-build-v1",
+  "source_date_epoch": "1787616000",
+  "source_inventory": {
+    "complete_solution_count": 6,
+    "environment_counts": {
+      "cor": 1,
+      "exercise": 6,
+      "lemma": 2,
+      "proof": 7,
+      "prop": 2,
+      "theorem": 2
+    },
+    "equation_label_count": 17,
+    "math_surface_count": 249,
+    "segment_ids": [
+      "d90.orig.v1.tr01.seg0001",
+      "d90.orig.v1.tr01.seg0002",
+      "d90.orig.v1.tr01.seg0003",
+      "d90.orig.v1.tr01.seg0004",
+      "d90.orig.v1.tr01.seg0005",
+      "d90.orig.v1.tr01.seg0006",
+      "d90.orig.v1.tr01.seg0007",
+      "d90.orig.v1.tr01.seg0008"
+    ],
+    "source_label_count": 40,
+    "staged_hint_count": 6
+  },
+  "tool_versions": {
+    "pandoc": "pandoc 3.9.0.2",
+    "python": "3.13.9"
+  },
+  "upstream_contact": false
+}

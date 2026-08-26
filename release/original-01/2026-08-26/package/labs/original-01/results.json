@@ -1,0 +1,79 @@
+{
+  "configuration": {
+    "component_gradient_budget": 3840,
+    "dimension": 40,
+    "epochs": 12,
+    "l1_regularization": 0.03,
+    "minibatch_size": 16,
+    "noise_standard_deviation": 0.08,
+    "samples": 320,
+    "sampling": "with replacement for SGD/minibatch/SAGA index draws",
+    "seed": 20260825,
+    "true_nonzero_coordinates": 8
+  },
+  "csv": {
+    "bytes": 4189,
+    "path": "results.csv",
+    "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+  },
+  "dependencies": {
+    "matplotlib": "3.10.9",
+    "numpy": "2.4.4",
+    "python": "3.13.9"
+  },
+  "final_rows": {
+    "prox_minibatch_b16": {
+      "component_gradient_evaluations": 3840,
+      "direction_variance_trace": 0.01638661162760481,
+      "epochs": 12.0,
+      "method": "prox_minibatch_b16",
+      "nonzero_coordinates": 10,
+      "objective": 0.3177447126633351,
+      "objective_gap": 0.002570744875912634,
+      "prox_gradient_mapping_norm": 0.009863014116815592
+    },
+    "prox_saga": {
+      "component_gradient_evaluations": 3840,
+      "direction_variance_trace": 4.5430827278459796e-07,
+      "epochs": 12.0,
+      "method": "prox_saga",
+      "nonzero_coordinates": 5,
+      "objective": 0.3151739698318594,
+      "objective_gap": 2.0444369530636664e-09,
+      "prox_gradient_mapping_norm": 9.866567454031472e-06
+    },
+    "prox_sgd_b1": {
+      "component_gradient_evaluations": 3840,
+      "direction_variance_trace": 0.26136164865160183,
+      "epochs": 12.0,
+      "method": "prox_sgd_b1",
+      "nonzero_coordinates": 33,
+      "objective": 0.3643430437640875,
+      "objective_gap": 0.04916907597666503,
+      "prox_gradient_mapping_norm": 0.021155328208993934
+    }
+  },
+  "network_access": false,
+  "problem": {
+    "max_component_lipschitz": 1.7390392069736775,
+    "objective": "0.5/N * ||A x - y||_2^2 + lambda * ||x||_1",
+    "reference": {
+      "iterations": 75,
+      "mapping_norm": 1.4911593730067174e-15,
+      "objective": 0.31517396778742246,
+      "step": 22.65203499676275
+    },
+    "reference_nonzero_coordinates": 5,
+    "smooth_lipschitz": 0.044146144050320954
+  },
+  "result": "pass",
+  "row_count": 38,
+  "schema": "o015-original-01-stochastic-composite-lab-v1",
+  "svg": {
+    "bytes": 86616,
+    "path": "objective-gap.svg",
+    "redundant_with_accessible_tables": true,
+    "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+  },
+  "upstream_contact": false
+}

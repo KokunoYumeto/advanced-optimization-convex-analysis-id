@@ -1,0 +1,178 @@
+{
+  "artifact": {
+    "bytes": 353245,
+    "complete_solution_count": 6,
+    "embedded_lab_bytes_exact": true,
+    "embedded_lab_download_count": 4,
+    "embedded_svg_bytes_exact": true,
+    "environment_class_counts": {
+      "cor": 1,
+      "exercise": 6,
+      "lemma": 2,
+      "proof": 7,
+      "prop": 2,
+      "theorem": 2
+    },
+    "external_rendering_dependencies": [
+      "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+    ],
+    "failures": [],
+    "formula_overflow_local": true,
+    "h1_count": 5,
+    "h2_count": 16,
+    "h3_count": 1,
+    "local_table_overflow_region_count": 3,
+    "main_landmark_count": 1,
+    "math_surface_count": 249,
+    "mathjax_url": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+    "path": "output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+    "preserved_segment_id_count": 8,
+    "preserved_source_label_count": 40,
+    "responsive_single_column": true,
+    "segment_id_count": 8,
+    "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4",
+    "source_label_count": 40,
+    "staged_hint_count": 6,
+    "table_count": 3,
+    "toc_navigation_count": 1,
+    "unresolved_internal_fragments": [],
+    "visible_text_characters": 53037
+  },
+  "combined_source": {
+    "bytes": 54118,
+    "sha256": "5e535468ef28e8087ae3bc58103967aacdb98b7eabc2f98c1b3961f07a226a8e"
+  },
+  "determinism": {
+    "builds": 2,
+    "byte_identical": true,
+    "canonical_copy_exact_match": true,
+    "run_sha256": [
+      "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4",
+      "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+    ]
+  },
+  "inputs": [
+    {
+      "bytes": 5311,
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    {
+      "bytes": 27431,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    {
+      "bytes": 13655,
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    {
+      "bytes": 2432,
+      "path": "labs/original-01/results.json",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    {
+      "bytes": 4189,
+      "path": "labs/original-01/results.csv",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    {
+      "bytes": 86616,
+      "path": "labs/original-01/objective-gap.svg",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    },
+    {
+      "bytes": 70186,
+      "path": "qa/build_original_01_reflow.py",
+      "sha256": "e9f5d8592e04eba545b4878aeaf6a2d7011568e134da7bdf8b5609a7984ac3e0"
+    }
+  ],
+  "result": "pass",
+  "runs": [
+    {
+      "artifact": {
+        "bytes": 353245,
+        "path": "tmp/original-01-reflow/html-run-1.html",
+        "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        "--resource-path=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-25",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\html-run-1.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warnings": []
+    },
+    {
+      "artifact": {
+        "bytes": 353245,
+        "path": "tmp/original-01-reflow/html-run-2.html",
+        "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+      },
+      "command": [
+        "pandoc",
+        "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\original-01-reflow.tex",
+        "--from=latex",
+        "--to=html5",
+        "--standalone",
+        "--toc",
+        "--toc-depth=3",
+        "--section-divs",
+        "--mathjax=https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        "--resource-path=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id",
+        "--metadata=lang:id-ID",
+        "--metadata=title:Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch",
+        "--metadata=author:Lapisan penyelesaian kursus mandiri",
+        "--metadata=date:2026-08-25",
+        "--output=C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\tmp\\original-01-reflow\\html-run-2.html"
+      ],
+      "console_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warnings": []
+    }
+  ],
+  "schema": "o015-original-01-html-build-v1",
+  "source_date_epoch": "1787616000",
+  "source_inventory": {
+    "complete_solution_count": 6,
+    "environment_counts": {
+      "cor": 1,
+      "exercise": 6,
+      "lemma": 2,
+      "proof": 7,
+      "prop": 2,
+      "theorem": 2
+    },
+    "equation_label_count": 17,
+    "math_surface_count": 249,
+    "segment_ids": [
+      "d90.orig.v1.tr01.seg0001",
+      "d90.orig.v1.tr01.seg0002",
+      "d90.orig.v1.tr01.seg0003",
+      "d90.orig.v1.tr01.seg0004",
+      "d90.orig.v1.tr01.seg0005",
+      "d90.orig.v1.tr01.seg0006",
+      "d90.orig.v1.tr01.seg0007",
+      "d90.orig.v1.tr01.seg0008"
+    ],
+    "source_label_count": 40,
+    "staged_hint_count": 6
+  },
+  "tool_versions": {
+    "pandoc": "pandoc 3.9.0.2",
+    "python": "3.13.9"
+  },
+  "upstream_contact": false
+}

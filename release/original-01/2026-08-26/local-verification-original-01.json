@@ -1,0 +1,294 @@
+{
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "omissions": {
+    "build_trees_caches_rendered_images_credentials": true,
+    "full_backend_dataset": true,
+    "mathematical_witness_pdfs": true,
+    "official_habring_source_tar_and_legalcode": true
+  },
+  "package_directory": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\original-01\\2026-08-26\\package",
+  "release_directory": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\original-01\\2026-08-26",
+  "result": "pass",
+  "schema": "o015-original-01-local-release-verification-v1",
+  "verification": {
+    "absolute_entries": 0,
+    "backslash_entries": 0,
+    "crc_test": "pass",
+    "credentials_included": false,
+    "directory_entries": 0,
+    "entry_bytes_match_package_tree": true,
+    "entry_order_matches_explicit_36_member_reader_first_inventory": true,
+    "forbidden_project_label_occurrences_in_text_members": 0,
+    "git_used": false,
+    "network_used": false,
+    "parent_traversal_entries": 0,
+    "payload_cap_bytes": 500000000,
+    "sha256sums_verified": true,
+    "unique_entry_names": true
+  },
+  "verified_at_utc": "2026-08-26T00:05:45.413653Z",
+  "zip": {
+    "byte_identical_two_builds": true,
+    "bytes": 721697,
+    "compression": "ZIP_DEFLATED level 9",
+    "contains_itself": false,
+    "entries": [
+      {
+        "bytes": 486032,
+        "compressed_bytes": 450973,
+        "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+        "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 353245,
+        "compressed_bytes": 75370,
+        "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+        "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 64322,
+        "compressed_bytes": 50957,
+        "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+        "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3005,
+        "compressed_bytes": 1649,
+        "path": "README_ORIGINAL_01.md",
+        "sha256": "2f005a6ae37d160e4eac959d0b51b9da7720201cab7aa31ceb50021a4af118a6",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 2918,
+        "compressed_bytes": 1493,
+        "path": "RIGHTS_AND_PROVENANCE_ORIGINAL_01.md",
+        "sha256": "c35e9d2dd73f30bab1bef3035dfbfb7378da0a5f012743df7670693c6834de09",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 1059,
+        "compressed_bytes": 609,
+        "path": "LICENSE_ORIGINAL_CC_BY-SA-4.0.md",
+        "sha256": "66368f3010eff9b091982e2f993e154018d7731b812ea9edd7a16294cce05d1f",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 1276,
+        "compressed_bytes": 720,
+        "path": "LICENSE_HABRING_SCAFFOLD_CC_BY-4.0.md",
+        "sha256": "1b4ea6cce0f751b7a49a125a68f8181d8bbdae7b2e2e9a5d60b5256436642937",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5311,
+        "compressed_bytes": 2406,
+        "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 27431,
+        "compressed_bytes": 9454,
+        "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4465,
+        "compressed_bytes": 1501,
+        "path": "source/id-ID/macros-id.tex",
+        "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 10133,
+        "compressed_bytes": 3010,
+        "path": "source/id-ID/shinybook.cls",
+        "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 13655,
+        "compressed_bytes": 3927,
+        "path": "labs/original-01/stochastic-composite-lab.py",
+        "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 2432,
+        "compressed_bytes": 988,
+        "path": "labs/original-01/results.json",
+        "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 4189,
+        "compressed_bytes": 1853,
+        "path": "labs/original-01/results.csv",
+        "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 86616,
+        "compressed_bytes": 12226,
+        "path": "labs/original-01/objective-gap.svg",
+        "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3092,
+        "compressed_bytes": 1037,
+        "path": "backend/backend_schema.json",
+        "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 13864,
+        "compressed_bytes": 3305,
+        "path": "qa/ORIGINAL_01_MATH_VALIDATION.json",
+        "sha256": "17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5664,
+        "compressed_bytes": 1988,
+        "path": "qa/ORIGINAL_01_PDF_BUILD.json",
+        "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5492,
+        "compressed_bytes": 2059,
+        "path": "qa/ORIGINAL_01_PDF_VISUAL_QA.json",
+        "sha256": "49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 6453,
+        "compressed_bytes": 1815,
+        "path": "qa/ORIGINAL_01_HTML_BUILD.json",
+        "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5733,
+        "compressed_bytes": 2272,
+        "path": "qa/ORIGINAL_01_HTML_BROWSER_QA.json",
+        "sha256": "22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 7991,
+        "compressed_bytes": 2133,
+        "path": "qa/ORIGINAL_01_EPUB_BUILD.json",
+        "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3059,
+        "compressed_bytes": 1503,
+        "path": "qa/ORIGINAL_01_EPUB_CONFORMANCE.json",
+        "sha256": "e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 7851,
+        "compressed_bytes": 2408,
+        "path": "qa/ORIGINAL_01_BACKEND_VALIDATION.json",
+        "sha256": "c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 6922,
+        "compressed_bytes": 2374,
+        "path": "qa/ORIGINAL_01_RIGHTS_NONOVERLAP.json",
+        "sha256": "3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 9718,
+        "compressed_bytes": 3621,
+        "path": "qa/ORIGINAL_01_INDEPENDENT_REREVIEW.json",
+        "sha256": "c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 8407,
+        "compressed_bytes": 3088,
+        "path": "qa/build_original_01_pdf.py",
+        "sha256": "a84f117329086ac26508f5681ce8895abef281cba822e2ed74297c386462dbc8",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 70186,
+        "compressed_bytes": 18478,
+        "path": "qa/build_original_01_reflow.py",
+        "sha256": "e9f5d8592e04eba545b4878aeaf6a2d7011568e134da7bdf8b5609a7984ac3e0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 38740,
+        "compressed_bytes": 10628,
+        "path": "qa/validate_original_01_math.py",
+        "sha256": "b56ae2ffeda413cc31828d227e1d5506ad7e5c10cd5b632094ae3e8f9f784f35",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 5868,
+        "compressed_bytes": 2152,
+        "path": "qa/verify_original_01_pdf_visual.py",
+        "sha256": "7fc628b8f6af3a6569359b08ce28e5dc6e9592e70d983901a92385b1b306e0a9",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 11523,
+        "compressed_bytes": 3785,
+        "path": "qa/verify_original_01_epub.py",
+        "sha256": "f2ec1cea1b75465020786828ec267d895ed68ff3ad9a8ca71184801aca4401e3",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 52924,
+        "compressed_bytes": 14022,
+        "path": "qa/extend_backend_original_01.py",
+        "sha256": "ed74016096e8b897a78cd1ba398a43f39bf1313403ace1ab4a7f20c37f2956a6",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 43334,
+        "compressed_bytes": 11811,
+        "path": "qa/validate_backend_original_01.py",
+        "sha256": "62f43356c343ee56c6f2964a6ebc7b7103185164009336f4aa0ba531955672e0",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 11917,
+        "compressed_bytes": 4553,
+        "path": "qa/validate_original_01_rights_nonoverlap.py",
+        "sha256": "04d735b5789a0e1bb204181bea1efdf6216a097dd07924f8fb2d1d2e32bb3a6d",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 13187,
+        "compressed_bytes": 4192,
+        "path": "release-manifest-original-01.json",
+        "sha256": "2d4d65d80a846c29da5e6b1ef364519c07dbbf336b8c3cd6bb3768ae07042f3b",
+        "timestamp": "2026-08-26T00:00:00"
+      },
+      {
+        "bytes": 3656,
+        "compressed_bytes": 1937,
+        "path": "SHA256SUMS",
+        "sha256": "b0450fe36dc226eae9b5d1abf75afc0d9160d5de5f1f1b1ca4a712e482361958",
+        "timestamp": "2026-08-26T00:00:00"
+      }
+    ],
+    "entry_count": 36,
+    "fixed_timestamp": "2026-08-26T00:00:00",
+    "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\original-01\\2026-08-26\\ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_01_2026.08.26.zip",
+    "sha256": "8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a"
+  }
+}

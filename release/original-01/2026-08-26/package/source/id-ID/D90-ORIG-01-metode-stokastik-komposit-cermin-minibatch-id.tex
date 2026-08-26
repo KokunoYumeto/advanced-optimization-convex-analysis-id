@@ -1,0 +1,106 @@
+% unit-id: d90.orig.v1.tr01.unit
+% target-edition-id: d90.orig.v1.tr01.edition.id-ID
+% authorship: independent coursebook completion layer
+\pdfoutput=1
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[indonesian]{shinybook}
+\input{macros-id}
+\microtypesetup{expansion=false}
+
+\crefname{equation}{persamaan}{persamaan}
+\Crefname{equation}{Persamaan}{Persamaan}
+\crefname{exercise}{latihan}{latihan}
+\Crefname{exercise}{Latihan}{Latihan}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\subtitle{Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch\\Edisi Bahasa Indonesia}
+\author{Lapisan penyelesaian kursus mandiri}
+\date{Versi kerja 25 Agustus 2026}
+\publishers{\small
+Materi asli untuk menutup kesenjangan kurikulum O015/D90.\\
+Teks dan laboratorium baru: CC BY-SA 4.0; kelas dan makro: CC BY 4.0.\\
+Rujukan matematis tidak menyiratkan penyusunan, pemeriksaan, persetujuan, sponsor, atau dukungan oleh penulis maupun institusi yang dirujuk.}
+\hypersetup{
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch - Edisi Bahasa Indonesia},
+  pdfauthor={Independent Indonesian coursebook completion layer},
+  pdfsubject={Original CC BY-SA 4.0 educational material for stochastic composite optimization},
+  pdflang={id-ID},
+}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\chapter*{Tentang tranche ini}
+Tranche ini adalah lapisan penghubung mandiri setelah tulang punggung Habring
+dan tiga modul Becker yang diterima. Ia bukan terjemahan terselubung dari satu
+sumber lain. Definisi, teorema, bukti, algoritma, latihan, petunjuk, solusi,
+dan laboratorium ditulis secara mandiri, lalu diperiksa terhadap sumber
+matematis yang disebutkan di akhir bab.
+
+Peran tranche ini terbatas dan dapat diuji: menghubungkan operator proksimal
+dengan oracle stokastik; membuktikan pengurangan varians minibatch dengan dan
+tanpa penggantian; mengembangkan penurunan cermin stokastik dalam geometri
+Bregman; serta menempatkan penaksir SAGA yang telah diterima ke dalam langkah
+proksimal komposit tanpa mengklaim teorema yang belum dibuktikan.
+
+Tidak ada prosa matematis, gambar, latihan, solusi, atau kode laboratorium
+pihak ketiga yang disalin. Infrastruktur pembaca memakai salinan persis
+\texttt{shinybook.cls} yang dibundel dengan sumber Habring dan adaptasi
+Indonesia \texttt{macros-id.tex} dari \texttt{macros.tex} milik Habring;
+keduanya dipertahankan berdasarkan bukti lisensi CC BY 4.0 pada tingkat
+kiriman arXiv dan tidak dilisensikan ulang sebagai CC BY-SA;
+\texttt{shinybook.cls} sendiri tidak memuat pemberitahuan lisensi terpisah.
+Prakata sumber Habring mengakui templat Christian Clason, dan kredit tersebut
+dipertahankan di sini. Catatan Royer berlisensi
+CC BY-NC 4.0 dan material sumber lain mempertahankan hak masing-masing;
+semuanya dipakai hanya sebagai saksi verifikasi dan rujukan matematis.
+Seluruh teks substantif dan kode laboratorium baru tranche ini tersedia
+berdasarkan CC BY-SA 4.0. Ini adalah edisi mandiri dan tidak menyiratkan
+dukungan pihak yang dirujuk.
+
+Provenans produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi
+pengguna repositori. Seluruh kredit penulis dan kontributor manusia pada
+sumber pendamping tetap dipertahankan.
+
+\tableofcontents
+\mainmatter
+\input{original-01-metode-stokastik-komposit-cermin-minibatch-id}
+
+\backmatter
+\chapter*{Hak, atribusi, dan nondukungan}
+Materi asli dalam tranche ini—termasuk uraian, formulasi penghubung, bukti,
+algoritma, latihan, petunjuk, solusi, laboratorium, dan dokumentasi—tersedia
+berdasarkan Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0), melalui
+\href{https://creativecommons.org/licenses/by-sa/4.0/}{laman lisensi resmi}.
+
+Kelas dokumen \texttt{shinybook.cls} adalah salinan persis kelas yang
+dibundel bersama Andreas Habring, \emph{Lecture Notes: Convex Optimization},
+arXiv:2607.11664v1; \texttt{macros-id.tex} adalah adaptasi Indonesia dari
+\texttt{macros.tex} dalam paket yang sama. Kedua komponen itu tersedia
+berdasarkan bukti lisensi Creative Commons Attribution 4.0 International
+(CC BY 4.0) pada tingkat kiriman arXiv, melalui
+\href{https://creativecommons.org/licenses/by/4.0/}{laman lisensi resmi}, dan
+bukan bagian dari lisensi CC BY-SA untuk materi baru. Berkas kelas itu tidak
+memuat pemberitahuan lisensi terpisah. Prakata Habring menyatakan bahwa templat
+catatan kuliah tersebut berasal dari Christian Clason; kredit templat itu
+dipertahankan tanpa menyiratkan dukungan.
+
+Saksi verifikasi yang dirujuk meliputi karya Andreas Habring, Cl\'ement W.
+Royer, Lorenzo Rosasco, Silvia Villa, Bang C\^ong V\~u, Amir Beck, Marc
+Teboulle, Stephen Becker, Mitchell Krock, Aaron Defazio, Francis Bach, dan
+Simon Lacoste-Julien. Penyebutan mereka hanya untuk atribusi matematika dan
+provenans. Tidak seorang pun dari mereka maupun institusinya menyusun,
+memeriksa, menyetujui, mensponsori, atau mendukung edisi ini.
+
+\section*{Catatan aksesibilitas}
+PDF ini dapat dicari, memakai bahasa dokumen \texttt{id-ID}, dan merupakan
+permukaan tata letak tetap. HTML semantik dan EPUB reflow menyediakan
+permukaan baca yang lebih sesuai untuk pembesaran, layar sempit, dan teknologi
+bantu. Hasil laboratorium tersedia dalam CSV dan JSON sehingga informasi
+angka tidak bergantung pada grafik.
+
+\end{document}

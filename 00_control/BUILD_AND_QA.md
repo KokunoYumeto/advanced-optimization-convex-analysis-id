@@ -1693,7 +1693,59 @@ and `4c9daa3229e7e71266feb1cbcd44fa37c541437cf8c310bbd162201ac340f6a0`.
 Authenticated draft lookup returns 404 and the concept contains zero open
 drafts; the 394-byte closure receipt has SHA-256
 `94cd4529f15e1f905f0afe08a15f2141821cafbfe84f1e37293af385e175ca8b`.
-No preview repair, credential recording, or upstream contact occurred. No
-receipt/control evidence-descendant commit is claimed. All three bounded Becker
-modules are now publicly preserved, and the production cursor advances to
-`FINITE-ORIGINAL-CLOSURE`.
+No preview repair, credential recording, or upstream contact occurred. All
+three bounded Becker modules are now publicly preserved, and the production
+cursor advances to `FINITE-ORIGINAL-CLOSURE`; the following evidence-descendant
+gate changes no reader or DOI byte.
+
+Evidence-descendant gate: PASS. Commit
+`c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`, tree
+`ec595d7700cca172f7c749cbd09cffda50db7f7e`, parent
+`09cc7e554b87c735428fb8cf3320a3d499956894`, contains 19 receipt/control and
+publisher/verifier paths / 851,480 bytes. Public `main` points to it and every
+immutable raw path matches. Receipt: 12,945 bytes / SHA-256
+`191713508a9ed3c1e4dd6c99e1860c107c6df32428dcad7aa4c911a8abc25fc3`.
+
+## 2026-08-26 — Original-01 consolidated admission and Zenodo gate
+
+Original-01 passed the finite tranche gate. The independent source, wrapper,
+PDF, HTML, and EPUB identities are respectively 27,431 / 5,311 / 486,032 /
+353,245 / 64,322 bytes, with SHA-256
+`db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26`,
+`d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322`,
+`7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca`,
+`052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4`, and
+`d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08`.
+The PDF has 16 pages, is searchable and page-filling, and is truthfully
+untagged; HTML browser QA and EPUB native MathML are the accessible reflow
+surfaces.
+
+Consolidated receipts pass: math
+`17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e`, PDF
+build/visual `3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0` /
+`49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5`, HTML
+build/browser `989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753` /
+`22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd`, EPUB
+build/conformance `e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e` /
+`e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c`, backend
+`c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561`, rights
+`3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe`, and
+rereview `c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0`.
+Backend admission has 3,943 records; the JSONL and CSV identities are
+2,941,125 / 3,537,781 bytes with SHA-256
+`d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f` /
+`4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4`.
+
+The compact package gate passes with two byte-identical builds, safe paths,
+CRC, fixed timestamps, and checksums: 721,697 bytes /
+`8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a`.
+Zenodo publication/readback gate passes in existing concept
+`10.5281/zenodo.22059741`: record `22103674` / DOI
+`10.5281/zenodo.22103674`, 99 files (90 inherited, 9 additions), Original-01
+PDF default preview. The 26,975-byte public receipt has SHA-256
+`8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2`; closure
+is pass with 404 draft lookup and zero open drafts (391-byte receipt
+`7790f5c71f0093e97c99b3d3f70db4a203fa85492801b618f55778ad34dd4b10`).
+
+The remaining release gate is narrow GitHub commit, push, and anonymous raw
+readback. No upstream contact occurred and no credential material is recorded.

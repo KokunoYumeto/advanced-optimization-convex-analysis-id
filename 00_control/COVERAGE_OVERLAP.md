@@ -426,3 +426,33 @@ minibatch progression plus rigorous variance-reduction integration without
 duplicating Habring, Becker-03, the companions, or O018. The later
 variational/monotone, course-wide assessment/complete-solution, lab, capstone,
 tagged-PDF, and accessibility gaps remain open.
+
+## Original-01 stochastic composite, mirror, and minibatch closure admitted (2026-08-26)
+
+Original-01 closes the first finite original tranche in one notation. It adds
+the composite proximal update with an explicit conditional moment model and
+ergodic bound, exact with- and without-replacement minibatch variance formulas,
+stochastic mirror descent in Bregman geometry, and a deliberately bounded
+Prox-SAGA estimator/variance bridge. Six exercises have progressive hints and
+complete solutions. The open lab compares proximal SGD, proximal minibatch
+SGD, and Prox-SAGA under the same component-gradient evaluation budget and
+publishes redundant JSON, CSV, and SVG evidence.
+
+The contribution is additive rather than a second spine. Habring remains the
+canonical structured source and supplies the established convex/proximal and
+stochastic foundations. Becker-03 remains the admitted SAGA orientation.
+Royer, Rosasco--Villa--V\u0169, Beck--Teboulle, and Defazio--Bach--Lacoste-Julien
+are mathematical witnesses only: no prose, layout, exercise, figure, or code
+byte from those references is copied or relicensed. Original-01 contributes
+the missing connective proof progression, finite-population correction,
+mirror/Bregman development, composite SAGA bridge, aligned assessment, and
+reproducible lab.
+
+No O018 content is admitted. `simpleks` denotes only the probability simplex
+`Delta_d`; the L1-regularized numerical example is a stochastic composite
+diagnostic. There is no LP/MIP model, simplex/tableau algorithm, finite-LP
+duality or sensitivity, network/discrete optimization, or operations-research
+solver workflow. The remaining finite closure begins with variational
+inequalities, maximal monotone operators, resolvents, and splitting, followed
+by the course-wide cumulative assessment, labs, capstone, and final tagged-PDF
+and accessibility closure. The overall O015 course therefore remains partial.

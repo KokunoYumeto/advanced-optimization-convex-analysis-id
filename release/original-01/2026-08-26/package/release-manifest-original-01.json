@@ -1,0 +1,341 @@
+{
+  "backend_policy": {
+    "full_dataset_packaged": false,
+    "reason": "The full backend remains in the repository; this compact package carries its schema and a passing validation receipt with protected baseline and exact ID-set/order hashes."
+  },
+  "excluded": [
+    "full backend records.jsonl and records.csv",
+    "official Habring source tar and legal-code witness",
+    "mathematical witness PDFs",
+    "build trees, caches, rendered QA images, credentials, and bulk provenance dumps"
+  ],
+  "files": [
+    {
+      "bytes": 486032,
+      "media_type": "application/pdf",
+      "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+      "role": "primary PDF reader",
+      "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+    },
+    {
+      "bytes": 353245,
+      "media_type": "text/html",
+      "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+      "role": "responsive semantic HTML reader",
+      "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+    },
+    {
+      "bytes": 64322,
+      "media_type": "application/epub+zip",
+      "path": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+      "role": "reflow EPUB reader",
+      "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+    },
+    {
+      "bytes": 3005,
+      "media_type": "text/markdown",
+      "path": "README_ORIGINAL_01.md",
+      "role": "reader-first scope and continuation guide",
+      "sha256": "2f005a6ae37d160e4eac959d0b51b9da7720201cab7aa31ceb50021a4af118a6"
+    },
+    {
+      "bytes": 2918,
+      "media_type": "text/markdown",
+      "path": "RIGHTS_AND_PROVENANCE_ORIGINAL_01.md",
+      "role": "component rights and provenance",
+      "sha256": "c35e9d2dd73f30bab1bef3035dfbfb7378da0a5f012743df7670693c6834de09"
+    },
+    {
+      "bytes": 1059,
+      "media_type": "text/markdown",
+      "path": "LICENSE_ORIGINAL_CC_BY-SA-4.0.md",
+      "role": "license note for new material",
+      "sha256": "66368f3010eff9b091982e2f993e154018d7731b812ea9edd7a16294cce05d1f"
+    },
+    {
+      "bytes": 1276,
+      "media_type": "text/markdown",
+      "path": "LICENSE_HABRING_SCAFFOLD_CC_BY-4.0.md",
+      "role": "license note for Habring scaffold",
+      "sha256": "1b4ea6cce0f751b7a49a125a68f8181d8bbdae7b2e2e9a5d60b5256436642937"
+    },
+    {
+      "bytes": 5311,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "role": "standalone Indonesian reader wrapper",
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    {
+      "bytes": 27431,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "role": "independent Indonesian substantive chapter",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    {
+      "bytes": 4465,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/macros-id.tex",
+      "role": "localized macro scaffold",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    {
+      "bytes": 10133,
+      "media_type": "application/x-tex",
+      "path": "source/id-ID/shinybook.cls",
+      "role": "Habring document-class scaffold",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    {
+      "bytes": 13655,
+      "media_type": "text/x-python",
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "role": "open computation lab",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    {
+      "bytes": 2432,
+      "media_type": "application/json",
+      "path": "labs/original-01/results.json",
+      "role": "machine-readable lab results",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    {
+      "bytes": 4189,
+      "media_type": "text/csv",
+      "path": "labs/original-01/results.csv",
+      "role": "tabular lab results",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    {
+      "bytes": 86616,
+      "media_type": "image/svg+xml",
+      "path": "labs/original-01/objective-gap.svg",
+      "role": "lab chart with text alternative in readers",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    },
+    {
+      "bytes": 3092,
+      "media_type": "application/json",
+      "path": "backend/backend_schema.json",
+      "role": "stable-ID backend schema",
+      "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+    },
+    {
+      "bytes": 13864,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_MATH_VALIDATION.json",
+      "role": "open mathematics validation",
+      "sha256": "17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e"
+    },
+    {
+      "bytes": 5664,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_PDF_BUILD.json",
+      "role": "deterministic PDF build receipt",
+      "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0"
+    },
+    {
+      "bytes": 5492,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_PDF_VISUAL_QA.json",
+      "role": "all-page PDF visual QA",
+      "sha256": "49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5"
+    },
+    {
+      "bytes": 6453,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_HTML_BUILD.json",
+      "role": "deterministic HTML build receipt",
+      "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753"
+    },
+    {
+      "bytes": 5733,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_HTML_BROWSER_QA.json",
+      "role": "desktop/tablet/phone browser QA",
+      "sha256": "22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd"
+    },
+    {
+      "bytes": 7991,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_EPUB_BUILD.json",
+      "role": "deterministic EPUB build receipt",
+      "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e"
+    },
+    {
+      "bytes": 3059,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_EPUB_CONFORMANCE.json",
+      "role": "EPUB and EPUBCheck conformance",
+      "sha256": "e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c"
+    },
+    {
+      "bytes": 7851,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_BACKEND_VALIDATION.json",
+      "role": "stable-ID backend validation",
+      "sha256": "c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561"
+    },
+    {
+      "bytes": 6922,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_RIGHTS_NONOVERLAP.json",
+      "role": "rights and O018 non-overlap gate",
+      "sha256": "3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe"
+    },
+    {
+      "bytes": 9718,
+      "media_type": "application/json",
+      "path": "qa/ORIGINAL_01_INDEPENDENT_REREVIEW.json",
+      "role": "independent final rereview",
+      "sha256": "c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0"
+    },
+    {
+      "bytes": 8407,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_01_pdf.py",
+      "role": "PDF builder",
+      "sha256": "a84f117329086ac26508f5681ce8895abef281cba822e2ed74297c386462dbc8"
+    },
+    {
+      "bytes": 70186,
+      "media_type": "text/x-python",
+      "path": "qa/build_original_01_reflow.py",
+      "role": "HTML/EPUB builder",
+      "sha256": "e9f5d8592e04eba545b4878aeaf6a2d7011568e134da7bdf8b5609a7984ac3e0"
+    },
+    {
+      "bytes": 38740,
+      "media_type": "text/x-python",
+      "path": "qa/validate_original_01_math.py",
+      "role": "mathematics validator",
+      "sha256": "b56ae2ffeda413cc31828d227e1d5506ad7e5c10cd5b632094ae3e8f9f784f35"
+    },
+    {
+      "bytes": 5868,
+      "media_type": "text/x-python",
+      "path": "qa/verify_original_01_pdf_visual.py",
+      "role": "PDF visual validator",
+      "sha256": "7fc628b8f6af3a6569359b08ce28e5dc6e9592e70d983901a92385b1b306e0a9"
+    },
+    {
+      "bytes": 11523,
+      "media_type": "text/x-python",
+      "path": "qa/verify_original_01_epub.py",
+      "role": "EPUB validator",
+      "sha256": "f2ec1cea1b75465020786828ec267d895ed68ff3ad9a8ca71184801aca4401e3"
+    },
+    {
+      "bytes": 52924,
+      "media_type": "text/x-python",
+      "path": "qa/extend_backend_original_01.py",
+      "role": "backend extension generator",
+      "sha256": "ed74016096e8b897a78cd1ba398a43f39bf1313403ace1ab4a7f20c37f2956a6"
+    },
+    {
+      "bytes": 43334,
+      "media_type": "text/x-python",
+      "path": "qa/validate_backend_original_01.py",
+      "role": "backend validator",
+      "sha256": "62f43356c343ee56c6f2964a6ebc7b7103185164009336f4aa0ba531955672e0"
+    },
+    {
+      "bytes": 11917,
+      "media_type": "text/x-python",
+      "path": "qa/validate_original_01_rights_nonoverlap.py",
+      "role": "rights/non-overlap validator",
+      "sha256": "04d735b5789a0e1bb204181bea1efdf6216a097dd07924f8fb2d1d2e32bb3a6d"
+    }
+  ],
+  "primary_reader": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+  "provenance": {
+    "human_credits_retained": true,
+    "mathematical_sources": "Habring, Royer, Becker, and published stochastic-optimization references are verification witnesses only; no third-party prose, layout, figure, exercise, solution, or code is redistributed",
+    "model": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "non_endorsement": "Independent edition; no named author, institution, or source party is represented as endorsing it."
+  },
+  "qa": {
+    "backend": {
+      "path": "qa/ORIGINAL_01_BACKEND_VALIDATION.json",
+      "sha256": "c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561"
+    },
+    "browser": {
+      "path": "qa/ORIGINAL_01_HTML_BROWSER_QA.json",
+      "sha256": "22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd"
+    },
+    "epub_build": {
+      "path": "qa/ORIGINAL_01_EPUB_BUILD.json",
+      "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e"
+    },
+    "epub_conformance": {
+      "path": "qa/ORIGINAL_01_EPUB_CONFORMANCE.json",
+      "sha256": "e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c"
+    },
+    "html_build": {
+      "path": "qa/ORIGINAL_01_HTML_BUILD.json",
+      "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753"
+    },
+    "math": {
+      "path": "qa/ORIGINAL_01_MATH_VALIDATION.json",
+      "sha256": "17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e"
+    },
+    "pdf_build": {
+      "path": "qa/ORIGINAL_01_PDF_BUILD.json",
+      "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0"
+    },
+    "pdf_visual": {
+      "path": "qa/ORIGINAL_01_PDF_VISUAL_QA.json",
+      "sha256": "49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5"
+    },
+    "rereview": {
+      "path": "qa/ORIGINAL_01_INDEPENDENT_REREVIEW.json",
+      "sha256": "c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0"
+    },
+    "rights": {
+      "path": "qa/ORIGINAL_01_RIGHTS_NONOVERLAP.json",
+      "sha256": "3f2dc12b538b1468cdfd810382a63a42d27801f25f93067dd36b816f098196fe"
+    }
+  },
+  "reader_order": [
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub"
+  ],
+  "release_date": "2026-08-26",
+  "schema": "o015-original-01-compact-release-v1",
+  "scope": {
+    "complete_solutions": 6,
+    "equations": 40,
+    "exercises": 6,
+    "hints": 6,
+    "lab": "one deterministic open-computation stochastic-composite lab",
+    "segments": 8,
+    "stable_id_namespace": "d90.orig.v1.tr01.*",
+    "unit_id": "d90.orig.v1.tr01.unit"
+  },
+  "sha256sums_scope": "every ZIP member except SHA256SUMS itself",
+  "source_and_component_rights": {
+    "habring_scaffold": "shinybook.cls exact copy and macros-id.tex localized adaptation; submission-level CC BY 4.0 evidence; class has no separate embedded notice",
+    "habring_source": {
+      "arxiv_version": "2607.11664v1",
+      "author": "Andreas Habring",
+      "license": "CC BY 4.0",
+      "source_tar_bytes": 230116,
+      "source_tar_path": "authority/habring/2607.11664v1-source.tar",
+      "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748",
+      "title": "Lecture Notes: Convex Optimization"
+    },
+    "new_substantive_layer": "CC BY-SA 4.0",
+    "no_blanket_license_claim": true,
+    "separate_component_licenses": true
+  },
+  "status": {
+    "larger_course_edition": "partial",
+    "next_cursor": "variational inequalities, maximal monotone operators, resolvents, and splitting",
+    "tranche": "complete at the exact admitted Original-01 scope"
+  },
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch — Edisi Bahasa Indonesia",
+  "upstream_contact": false
+}

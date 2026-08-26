@@ -1,0 +1,481 @@
+{
+  "determinism": {
+    "exact_arithmetic": "fractions.Fraction for finite mathematical witnesses",
+    "json": "UTF-8, LF, sorted keys, two-space indentation",
+    "observed_stack": {
+      "matplotlib": "3.10.9",
+      "numpy": "2.4.4",
+      "python": "3.13.9"
+    },
+    "randomness": "all mathematical samples enumerated; lab uses frozen seeds"
+  },
+  "failures": [],
+  "gate_count": 17,
+  "gates": [
+    {
+      "details": {
+        "missing": [],
+        "required_count": 18
+      },
+      "gate": "live_chapter_claim_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "missing": [],
+        "required_count": 14
+      },
+      "gate": "live_lab_algorithm_surfaces",
+      "pass": true
+    },
+    {
+      "details": {
+        "arithmetic": "fractions.Fraction",
+        "case_count": 3,
+        "cases": [
+          {
+            "L": "2",
+            "case": "asymmetric_noise_and_l1",
+            "inequality_slacks": [
+              "4477/1200",
+              "3077/1200",
+              "3631/3600"
+            ],
+            "outcomes": [
+              "53/60",
+              "17/60"
+            ],
+            "tau": "1/5",
+            "variance": "2"
+          },
+          {
+            "L": "1/2",
+            "case": "threshold_crossing",
+            "inequality_slacks": [
+              "18781/6144",
+              "13661/6144",
+              "10527/2048"
+            ],
+            "outcomes": [
+              "11/16",
+              "0"
+            ],
+            "tau": "3/4",
+            "variance": "9/4"
+          },
+          {
+            "L": "3/2",
+            "case": "smooth_quadratic",
+            "inequality_slacks": [
+              "247/64",
+              "4909/4800",
+              "421/192"
+            ],
+            "outcomes": [
+              "1/6",
+              "-7/12"
+            ],
+            "tau": "1/4",
+            "variance": "2"
+          }
+        ]
+      },
+      "gate": "stochastic_proximal_one_step_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "checks": [
+          {
+            "batch_size": 1,
+            "enumerated_variance": "9/2",
+            "ordered_batches": 4,
+            "sigma_squared_over_b": "9/2"
+          },
+          {
+            "batch_size": 2,
+            "enumerated_variance": "9/4",
+            "ordered_batches": 16,
+            "sigma_squared_over_b": "9/4"
+          },
+          {
+            "batch_size": 3,
+            "enumerated_variance": "3/2",
+            "ordered_batches": 64,
+            "sigma_squared_over_b": "3/2"
+          },
+          {
+            "batch_size": 4,
+            "enumerated_variance": "9/8",
+            "ordered_batches": 256,
+            "sigma_squared_over_b": "9/8"
+          }
+        ],
+        "single_sample_variance": "9/2"
+      },
+      "gate": "iid_minibatch_variance_one_over_b_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "N": 5,
+        "V_N": "62/5",
+        "checks": [
+          {
+            "batch_size": 1,
+            "enumerated_variance": "62/5",
+            "finite_population_formula": "62/5",
+            "subsets": 5
+          },
+          {
+            "batch_size": 2,
+            "enumerated_variance": "93/20",
+            "finite_population_formula": "93/20",
+            "subsets": 10
+          },
+          {
+            "batch_size": 3,
+            "enumerated_variance": "31/15",
+            "finite_population_formula": "31/15",
+            "subsets": 10
+          },
+          {
+            "batch_size": 4,
+            "enumerated_variance": "31/40",
+            "finite_population_formula": "31/40",
+            "subsets": 5
+          },
+          {
+            "batch_size": 5,
+            "enumerated_variance": "0",
+            "finite_population_formula": "0",
+            "subsets": 1
+          }
+        ]
+      },
+      "gate": "finite_population_correction_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "euclidean_mirror_left": "34/5",
+        "euclidean_mirror_right": "34/5",
+        "three_point_left": "-54",
+        "three_point_right": "-54"
+      },
+      "gate": "bregman_three_point_and_mirror_step_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "input_sum": 1.0,
+        "kkt_constant_spread": 4.996003610813204e-16,
+        "minimum_coordinate": 0.021675401536404112,
+        "output": [
+          0.031183330921222475,
+          0.722726501150811,
+          0.2244147663915624,
+          0.021675401536404112
+        ],
+        "output_sum": 1.0
+      },
+      "gate": "entropy_simplex_update_normalization_and_positivity",
+      "pass": true
+    },
+    {
+      "details": {
+        "finite_geometric_sum": "3325/243",
+        "fixed_oracle_budget_values": [
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75
+        ],
+        "infinite_geometric_upper_bound": "15",
+        "mirror": {
+          "claimed_tuned_bound": 2.0,
+          "evaluated_bound": 2.0,
+          "tau": 1.0
+        },
+        "proximal": {
+          "claimed_tuned_bound": 0.75,
+          "distance_term": 0.375,
+          "sum": 0.75,
+          "tau": 0.75,
+          "variance_term": 0.375
+        }
+      },
+      "gate": "theorem_bound_arithmetic",
+      "pass": true
+    },
+    {
+      "details": {
+        "centered_difference_variance": "10979/2304",
+        "component_estimators": [
+          "103/24",
+          "-37/24",
+          "49/24",
+          "25/8"
+        ],
+        "direct_variance": "10979/2304",
+        "estimator_mean": "95/48",
+        "full_gradient": "95/48"
+      },
+      "gate": "prox_saga_estimator_unbiasedness_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "K": 4,
+        "L": "2",
+        "N": 3,
+        "expected_conditional_variances": [
+          "0",
+          "128/3675",
+          "96256/826875",
+          "11734144/62015625"
+        ],
+        "expected_ergodic_objective_gap": "56341408/1550390625",
+        "label": "finite exact witness, not a replacement for the chapter proof",
+        "reached_state_counts": [
+          1,
+          1,
+          3,
+          9,
+          27
+        ],
+        "slack": "286456522/1550390625",
+        "stated_bridge_right_hand_side": "68559586/310078125",
+        "tau": "1/5",
+        "variance_sum": "3016192/8859375",
+        "x_star": "13/14"
+      },
+      "gate": "prox_saga_variance_sum_bridge_exact",
+      "pass": true
+    },
+    {
+      "details": {
+        "configuration_sha256": "4cb3225ade7f1ac4c22c0ff747f68e9f30512a77661223bcdbd00cc6b7d68e74",
+        "csv_rows_exact_match": true,
+        "json_final_rows_exact_match": true,
+        "observed_stack": {
+          "matplotlib": "3.10.9",
+          "numpy": "2.4.4",
+          "python": "3.13.9"
+        },
+        "reference_recomputed": {
+          "iterations": 75,
+          "mapping_norm": 1.4911593730067174e-15,
+          "objective": 0.31517396778742246,
+          "step": 22.65203499676275
+        },
+        "rows_in_csv": 38,
+        "rows_recomputed": 38
+      },
+      "gate": "lab_in_memory_replay_and_output_consistency",
+      "pass": true
+    },
+    {
+      "details": {
+        "fista_reported_objective": 0.31517396778742246,
+        "iterations": 33,
+        "largest_objective_increase": 5.551115123125783e-17,
+        "mapping_norm": 8.04770026076542e-12,
+        "objective": 0.31517396778742246,
+        "tolerance": 1e-11
+      },
+      "gate": "monotone_proximal_gradient_reference_recomputation",
+      "pass": true
+    },
+    {
+      "details": {
+        "checkpoint_component_gradient_evaluations": 320,
+        "independently_recomputed_direction_variance_trace": 3.0648364457930043e-31,
+        "reason": "At x_0 every stored component gradient equals the fresh component gradient, so every SAGA estimator equals the table mean.",
+        "reported_direction_variance_trace": 0.0
+      },
+      "gate": "saga_initialized_table_direction_variance",
+      "pass": true
+    },
+    {
+      "details": {
+        "budget_per_method": 3840,
+        "minibatch_cost_per_update": 16,
+        "observed_checkpoint_evaluations": {
+          "prox_minibatch_b16": [
+            0,
+            320,
+            640,
+            960,
+            1280,
+            1600,
+            1920,
+            2240,
+            2560,
+            2880,
+            3200,
+            3520,
+            3840
+          ],
+          "prox_saga": [
+            320,
+            640,
+            960,
+            1280,
+            1600,
+            1920,
+            2240,
+            2560,
+            2880,
+            3200,
+            3520,
+            3840
+          ],
+          "prox_sgd_b1": [
+            0,
+            320,
+            640,
+            960,
+            1280,
+            1600,
+            1920,
+            2240,
+            2560,
+            2880,
+            3200,
+            3520,
+            3840
+          ]
+        },
+        "saga_initial_table_cost": 320
+      },
+      "gate": "component_gradient_budget_accounting",
+      "pass": true
+    },
+    {
+      "details": {
+        "chapter_abbreviations_match": true,
+        "identities": {
+          "objective-gap.svg": {
+            "bytes": 86616,
+            "lines": 2498,
+            "path": "labs/original-01/objective-gap.svg",
+            "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+          },
+          "results.csv": {
+            "bytes": 4189,
+            "lines": 39,
+            "path": "labs/original-01/results.csv",
+            "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+          },
+          "results.json": {
+            "bytes": 2432,
+            "lines": 79,
+            "path": "labs/original-01/results.json",
+            "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+          }
+        },
+        "json_binds_csv": true,
+        "json_binds_svg": true
+      },
+      "gate": "frozen_lab_output_hash_identities",
+      "pass": true
+    },
+    {
+      "details": {
+        "reference_mapping_norm": 1.4911593730067174e-15,
+        "reference_objective": 0.31517396778742246,
+        "terminal_values": {
+          "prox_minibatch_b16": {
+            "nonzero_coordinates": 10,
+            "objective_gap": 0.002570744875912634,
+            "prox_gradient_mapping_norm": 0.009863014116815592
+          },
+          "prox_saga": {
+            "nonzero_coordinates": 5,
+            "objective_gap": 2.0444369530636664e-09,
+            "prox_gradient_mapping_norm": 9.866567454031472e-06
+          },
+          "prox_sgd_b1": {
+            "nonzero_coordinates": 33,
+            "objective_gap": 0.04916907597666503,
+            "prox_gradient_mapping_norm": 0.021155328208993934
+          }
+        }
+      },
+      "gate": "chapter_terminal_values_match_live_computation",
+      "pass": true
+    },
+    {
+      "details": {
+        "final_sha256": {
+          "objective-gap.svg": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830",
+          "original-01-metode-stokastik-komposit-cermin-minibatch-id.tex": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26",
+          "results.csv": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c",
+          "results.json": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447",
+          "stochastic-composite-lab.py": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+        },
+        "initial_sha256": {
+          "objective-gap.svg": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830",
+          "original-01-metode-stokastik-komposit-cermin-minibatch-id.tex": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26",
+          "results.csv": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c",
+          "results.json": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447",
+          "stochastic-composite-lab.py": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+        }
+      },
+      "gate": "inputs_stable_during_validation",
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "chapter": {
+      "bytes": 27431,
+      "lines": 700,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    "lab": {
+      "bytes": 13655,
+      "lines": 446,
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    "lab_results_csv": {
+      "bytes": 4189,
+      "lines": 39,
+      "path": "labs/original-01/results.csv",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    "lab_results_json": {
+      "bytes": 2432,
+      "lines": 79,
+      "path": "labs/original-01/results.json",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    "lab_results_svg": {
+      "bytes": 86616,
+      "lines": 2498,
+      "path": "labs/original-01/objective-gap.svg",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    },
+    "validator": {
+      "bytes": 38740,
+      "lines": 1143,
+      "path": "qa/validate_original_01_math.py",
+      "sha256": "b56ae2ffeda413cc31828d227e1d5506ad7e5c10cd5b632094ae3e8f9f784f35"
+    }
+  },
+  "result": "pass",
+  "schema": "o015-original-01-open-math-validation-v1",
+  "scope": {
+    "lab_outputs_mutated_by_validator": false,
+    "lab_replay": "in memory; lab main() was not invoked",
+    "network_access": false,
+    "numerical_witnesses_are_not_proofs": true,
+    "source_mutated_by_validator": false,
+    "unit": "Original 01: stochastic composite, mirror, minibatch, and Prox-SAGA",
+    "upstream_contact": false
+  },
+  "status": "PASS"
+}

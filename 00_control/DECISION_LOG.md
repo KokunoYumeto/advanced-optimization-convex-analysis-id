@@ -819,3 +819,31 @@ integration. Habring remains the canonical structured-source spine; MIT,
 Royer, and Penn remain companions. This closes publication only, changes no
 component-rights or overlap judgment, creates no duplicate lineage, and does
 not claim full-course completion.
+
+The publication receipts and corrected controls are themselves public at
+evidence descendant `c6d6fac17b5e3cd735adca98a55e9d2596ad65aa`, tree
+`ec595d7700cca172f7c749cbd09cffda50db7f7e`, parent
+`09cc7e554b87c735428fb8cf3320a3d499956894`. All 19 changed paths / 851,480
+bytes passed anonymous immutable readback; the 12,945-byte receipt has SHA-256
+`191713508a9ed3c1e4dd6c99e1860c107c6df32428dcad7aa4c911a8abc25fc3`.
+
+## D90-0059 — Admit and preserve Original-01 checkpoint (2026-08-26)
+
+Decision: admit the independent Original-01 stochastic composite/mirror/
+minibatch tranche as a finite, nonduplicative original layer. It is not a
+replacement for the canonical Habring structured spine and does not claim the
+O015 course complete. The source, readers, lab, backend, and all consolidated
+QA identities are recorded in `SOURCE_AUTHORITY.json`; rights remain split
+between lane-authored CC BY-SA 4.0 material and the CC BY 4.0 Habring
+scaffold. The O018 LP/MIP, simplex-tableau, finite-LP-duality, network, and
+discrete-optimization scope remains excluded.
+
+The compact 36-entry reader-first package is 721,697 bytes /
+`8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a` and passed
+two deterministic builds. Zenodo record `22103674` / DOI
+`10.5281/zenodo.22103674` is published in the existing concept
+`10.5281/zenodo.22059741`, with 99 files, 90 inherited files, nine additions,
+and the Original-01 PDF as default preview. The complete anonymous readback
+and zero-open-draft closure pass. GitHub commit/push and raw-byte readback are
+the next operational step; after that the cursor advances to variational
+inequalities, maximal monotone operators, resolvents, and splitting.

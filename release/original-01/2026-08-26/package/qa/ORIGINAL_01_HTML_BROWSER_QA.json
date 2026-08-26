@@ -1,0 +1,138 @@
+{
+  "schema": "o015-original-01-html-browser-qa-v2",
+  "date": "2026-08-26",
+  "result": "pass",
+  "artifact": {
+    "path": "output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+    "bytes": 353245,
+    "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+  },
+  "build_receipt": {
+    "path": "qa/ORIGINAL_01_HTML_BUILD.json",
+    "bytes": 6453,
+    "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753",
+    "two_clean_builds_byte_identical": true
+  },
+  "builder": {
+    "path": "qa/build_original_01_reflow.py",
+    "bytes": 70186,
+    "sha256": "e9f5d8592e04eba545b4878aeaf6a2d7011568e134da7bdf8b5609a7984ac3e0"
+  },
+  "surface": {
+    "browser": "Codex in-app browser",
+    "served_from": "bounded task-local HTTP server on 127.0.0.1",
+    "html_language": "id-ID",
+    "main_landmarks": 1,
+    "navigation_landmarks": 1,
+    "headings": 22,
+    "tables": 3,
+    "exercises": 6,
+    "proofs": 7,
+    "links": 49,
+    "native_mathml_surfaces_after_pinned_mathjax_render": 249,
+    "mathjax_containers_after_pinned_mathjax_render": 249,
+    "duplicate_ids": 0,
+    "unresolved_internal_fragments": 0,
+    "reader_scoped_console_warnings_or_errors": 0,
+    "runtime_console_messages": [
+      {
+        "level": "warning",
+        "count": 1,
+        "message": "No version information available for component [tex]/newcommand",
+        "source": "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+      },
+      {
+        "level": "warning",
+        "count": 1,
+        "message": "No version information available for component [pretext]/mathjaxknowl3.js",
+        "source": "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+      }
+    ],
+    "runtime_console_policy": "These two external MathJax component metadata warnings are recorded transparently; no page-level reader warning or error occurred, and neither affected rendered math or layout."
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "viewport": [1280, 800],
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "main_width": 1129.6875,
+      "main_left": 67.59722137451172,
+      "main_right": 1197.2847213745115,
+      "wide_formula_surfaces": 0,
+      "focusable_wide_formula_surfaces": 0,
+      "nested_formula_scroll_surfaces": 0,
+      "maximum_formula_scroll_width": 0,
+      "wide_table_wrappers": 0,
+      "wide_code_blocks": 0,
+      "visual_result": "Centered, page-filling reader; title and contents hierarchy are legible with balanced margins."
+    },
+    {
+      "name": "tablet",
+      "viewport": [768, 1024],
+      "document_client_width": 753,
+      "document_scroll_width": 753,
+      "main_width": 635.2847290039062,
+      "main_left": 58.79861068725586,
+      "main_right": 694.0833396911621,
+      "wide_formula_surfaces": 3,
+      "focusable_wide_formula_surfaces": 3,
+      "nested_formula_scroll_surfaces": 0,
+      "maximum_formula_scroll_width": 92,
+      "wide_table_wrappers": 0,
+      "wide_code_blocks": 1,
+      "visual_result": "Centered responsive reader; all overflow remains inside explicit local formula/code surfaces, while wide tables remain contained by their wrappers."
+    },
+    {
+      "name": "mobile",
+      "viewport": [390, 844],
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "body_client_width": 375,
+      "body_scroll_width": 375,
+      "main_width": 333.5069580078125,
+      "main_left": 20.79861068725586,
+      "main_right": 354.30556869506836,
+      "display_formula_surfaces": 40,
+      "native_mathml_surfaces": 249,
+      "wide_formula_surfaces": 30,
+      "focusable_wide_formula_surfaces": 30,
+      "nested_formula_scroll_surfaces": 0,
+      "maximum_formula_scroll_width": 365,
+      "wide_table_wrappers": 3,
+      "wide_code_blocks": 2,
+      "visual_result": "Readable narrow-column reflow with no page-level overflow; every wide equation has one focusable outer horizontal scroll surface and no nested scrollbar."
+    }
+  ],
+  "chart": {
+    "present": true,
+    "fits_mobile_viewport": true,
+    "alt": "Grafik logaritmik kesenjangan objektif terhadap jumlah evaluasi gradien komponen untuk Proks-SGD, Proks-minibatch, dan Prox-SAGA; seluruh nilai tersedia dalam tabel data lengkap, CSV, dan JSON.",
+    "redundant_data_surfaces": [
+      "complete HTML table",
+      "embedded downloadable CSV",
+      "embedded downloadable JSON"
+    ]
+  },
+  "rights_and_provenance_markers": {
+    "cc_by_sa_4_0_new_material": true,
+    "cc_by_4_0_habring_components": true,
+    "christian_clason_template_credit": true,
+    "model": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "non_endorsement": true
+  },
+  "repair": {
+    "problem": "MathJax display containers inherited a second horizontal overflow rule inside the intended outer math-scroll wrapper.",
+    "change": "The generated CSS now assigns horizontal overflow only to the focusable outer math-scroll surface and forces the nested MathJax display container to overflow visibly.",
+    "evidence": "At 390 pixels, 30 formulas overflow locally, all 30 outer surfaces are keyboard-focusable, nested auto-scroll surfaces equal zero, and document scroll width equals client width."
+  },
+  "limitations": [
+    "The standalone HTML stores TeX and uses pinned external MathJax 3.2.2 at runtime; rendered browser state exposes 249 assistive MathML surfaces, while offline pre-render semantics are supplied by the EPUB instead.",
+    "The PDF remains an untagged fixed-layout companion; HTML and EPUB are the preferred reflow surfaces."
+  ],
+  "inspection": {
+    "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "desktop_tablet_mobile_screenshots_inspected": true,
+    "human_review_required": false
+  }
+}

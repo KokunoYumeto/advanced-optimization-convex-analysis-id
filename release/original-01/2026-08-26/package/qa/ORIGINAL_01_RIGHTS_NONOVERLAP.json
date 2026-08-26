@@ -1,0 +1,174 @@
+{
+  "backend": {
+    "added_records": 358,
+    "final_records": 3943,
+    "protected_records": 3585
+  },
+  "component_rights": {
+    "class_exact_authority_match": true,
+    "habring_exact_class_and_adapted_macro_scaffold": "CC BY 4.0",
+    "macro_is_localized_adaptation": true,
+    "new_substantive_chapter_and_lab": "CC BY-SA 4.0",
+    "required_control_rows": [
+      "o015-original-01-chapter",
+      "o015-original-01-lab",
+      "o015-original-01-readers",
+      "o015-original-01-tooling",
+      "o015-original-01-wrapper"
+    ]
+  },
+  "date": "2026-08-26",
+  "failures": [],
+  "live_files": {
+    "authority/habring/CC-BY-4.0-legalcode.txt": {
+      "bytes": 18657,
+      "path": "authority/habring/CC-BY-4.0-legalcode.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    "authority/habring/source-v1/macros.tex": {
+      "bytes": 4017,
+      "path": "authority/habring/source-v1/macros.tex",
+      "sha256": "690ef578d545947425a851187ac0b5f45a1a326892a682bcd9d286abb72f924a"
+    },
+    "authority/habring/source-v1/shinybook.cls": {
+      "bytes": 10133,
+      "path": "authority/habring/source-v1/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    },
+    "labs/original-01/objective-gap.svg": {
+      "bytes": 86616,
+      "path": "labs/original-01/objective-gap.svg",
+      "sha256": "87c772d901ee734356981ee35f19fc3c3ae47fea6f11528edbee6d015a3f2830"
+    },
+    "labs/original-01/results.csv": {
+      "bytes": 4189,
+      "path": "labs/original-01/results.csv",
+      "sha256": "61a6591ad7d1b41230a086482314448871f3697954d4c84133a7a5f4f775d37c"
+    },
+    "labs/original-01/results.json": {
+      "bytes": 2432,
+      "path": "labs/original-01/results.json",
+      "sha256": "86ff701a51d091ee74c110917cb1888c6e7448489207e6ee1372753bd1e4c447"
+    },
+    "labs/original-01/stochastic-composite-lab.py": {
+      "bytes": 13655,
+      "path": "labs/original-01/stochastic-composite-lab.py",
+      "sha256": "21a0df89524b34916d1f659636bf8f92a5730efb7e263e0fbd7393e6f2c936fd"
+    },
+    "output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub": {
+      "bytes": 64322,
+      "path": "output/epub/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+      "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+    },
+    "output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html": {
+      "bytes": 353245,
+      "path": "output/html/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+      "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+    },
+    "output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf": {
+      "bytes": 486032,
+      "path": "output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+      "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+    },
+    "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex": {
+      "bytes": 5311,
+      "path": "source/id-ID/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "d632765baf270a7a7c1b39f051d83c1d76dd3ccc04457fb1b4b92088ffdd9322"
+    },
+    "source/id-ID/macros-id.tex": {
+      "bytes": 4465,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "135642edfaffb7ec15e02e330dde76e694abe957da5f1a401c8563f9d885c1c2"
+    },
+    "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex": {
+      "bytes": 27431,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+    },
+    "source/id-ID/shinybook.cls": {
+      "bytes": 10133,
+      "path": "source/id-ID/shinybook.cls",
+      "sha256": "83514a06b2884dcaa02575bb3409d2f8cc9cf2fc6e6aef344b442d424850f2c0"
+    }
+  },
+  "o018_nonoverlap": {
+    "excluded": [
+      "LP/MIP",
+      "simplex/tableau algorithms",
+      "finite-LP duality/sensitivity",
+      "network/discrete optimization",
+      "OR solver workflow"
+    ],
+    "imported": false,
+    "l1_use": "stochastic composite numerical diagnostic only",
+    "simplex_use": "probability simplex only"
+  },
+  "passing_qa_receipts": {
+    "qa/ORIGINAL_01_BACKEND_VALIDATION.json": {
+      "bytes": 7851,
+      "path": "qa/ORIGINAL_01_BACKEND_VALIDATION.json",
+      "sha256": "c3d1961503dd77c3b9fea4b35556cc4916cef04ce663c58fca518622218bb561"
+    },
+    "qa/ORIGINAL_01_EPUB_BUILD.json": {
+      "bytes": 7991,
+      "path": "qa/ORIGINAL_01_EPUB_BUILD.json",
+      "sha256": "e95c686006d920774a2d0a080410d4348e58d4e2d197cbf8593b326a3285334e"
+    },
+    "qa/ORIGINAL_01_EPUB_CONFORMANCE.json": {
+      "bytes": 3059,
+      "path": "qa/ORIGINAL_01_EPUB_CONFORMANCE.json",
+      "sha256": "e1c9b411c9990df28b37a4dcb2d9111058a842768a3af13010397a700033d40c"
+    },
+    "qa/ORIGINAL_01_HTML_BROWSER_QA.json": {
+      "bytes": 5733,
+      "path": "qa/ORIGINAL_01_HTML_BROWSER_QA.json",
+      "sha256": "22a4c01477c1b6cfcb59885bf0018eee9cb3656fc3dc3635f7c54afa77c4e0cd"
+    },
+    "qa/ORIGINAL_01_HTML_BUILD.json": {
+      "bytes": 6453,
+      "path": "qa/ORIGINAL_01_HTML_BUILD.json",
+      "sha256": "989ebdfe80076fe0b9405815f98f2dfe4cda19405f03c515fb6fc52e9c4f2753"
+    },
+    "qa/ORIGINAL_01_INDEPENDENT_REREVIEW.json": {
+      "bytes": 9718,
+      "path": "qa/ORIGINAL_01_INDEPENDENT_REREVIEW.json",
+      "sha256": "c3ae6f9298ef9e2ecc26a6dd23534d2d197ddc1f8ad2f8c676412e2ec0c258e0"
+    },
+    "qa/ORIGINAL_01_MATH_VALIDATION.json": {
+      "bytes": 13864,
+      "path": "qa/ORIGINAL_01_MATH_VALIDATION.json",
+      "sha256": "17e9510f9cb1562bbaee822c4b9381e8ff828aced798ca91723b2b6bc732751e"
+    },
+    "qa/ORIGINAL_01_PDF_BUILD.json": {
+      "bytes": 5664,
+      "path": "qa/ORIGINAL_01_PDF_BUILD.json",
+      "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0"
+    },
+    "qa/ORIGINAL_01_PDF_VISUAL_QA.json": {
+      "bytes": 5492,
+      "path": "qa/ORIGINAL_01_PDF_VISUAL_QA.json",
+      "sha256": "49fa45dce663b5719f72295865497dd93e5e9f80fc78ef7ead89c0d29c6f1ae5"
+    }
+  },
+  "reference_boundary": {
+    "copied_reference_prose_layout_exercises_figures_solutions_or_code_claimed": false,
+    "mathematical_witnesses_only": true,
+    "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "nonendorsement_visible": true
+  },
+  "repairs_bound": [
+    "O015-ORIG-ADV-0001",
+    "O015-ORIG-ADV-0002",
+    "O015-ORIG-ADV-0003",
+    "O015-ORIG-ADV-0004",
+    "O015-ORIG-ADV-0005",
+    "O015-ORIG-ADV-0006",
+    "O015-ORIG-ADV-0007",
+    "O015-ORIG-ADV-0008",
+    "O015-ORIG-ADV-0009"
+  ],
+  "result": "pass",
+  "schema": "o015-original-01-rights-nonoverlap-v1",
+  "scope": "Exact Original-01 rights/provenance and O015/O018 boundary; bounded deterministic evidence, not a legal opinion or an authorship classifier.",
+  "upstream_contact": false
+}

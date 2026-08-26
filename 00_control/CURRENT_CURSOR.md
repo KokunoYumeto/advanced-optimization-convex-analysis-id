@@ -727,3 +727,35 @@ rights. Run the existing deterministic source/reader, math, nonoverlap, rights,
 visual, accessibility, rereview, assessment/solution, and additive-backend
 gates before the next boundary. Do not reopen Becker publication or claim the
 overall course complete.
+
+## 2026-08-26 controlling cursor — Original-01 admitted; GitHub readback next
+
+Original-01 has passed the consolidated math, rights/nonoverlap, deterministic
+PDF/HTML/EPUB, visual, browser, backend, and independent-rereview gates. The
+source cursor is the complete sixteen-page independent module at
+`source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex`,
+with wrapper `D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.tex`.
+Its compact reader-first package is 721,697 bytes / SHA-256
+`8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a`.
+
+Zenodo publication is complete in the existing concept: record `22103674`,
+DOI `10.5281/zenodo.22103674`, 99 public files (90 inherited, 9 additions),
+Original-01 PDF default preview. The anonymous readback receipt is
+`release/zenodo/2026-08-26-original-01/zenodo-public-readback-original-01.json`,
+26,975 bytes / SHA-256
+`8a88a48955a40e21a10f92889a29a17f41879f774140a147793b2dd794cd84e2`; authenticated
+closure is pass with 404 draft lookup and zero open drafts.
+
+Immediate executable action: narrow-commit and push the explicit Original-01
+source, reader, lab, backend, QA, package, Zenodo-receipt, and durable-control
+paths to the existing GitHub repository, then anonymously verify every changed
+raw path and record the commit/tree and receipt. Do not stage unrelated task
+paths, create another repository/concept, contact upstream, or claim full
+course completion.
+
+After that public readback, advance in source order to one coherent original
+module on variational inequalities, maximal monotone operators, resolvents,
+and splitting. Preserve all stable IDs and component rights; keep later
+connective proofs, substantive exercises/hints/answers/solutions, open-solver
+labs, capstone, tagged/accessibility closure, and final course assessment in
+the remaining-work ledger. The overall O015 goal remains active.

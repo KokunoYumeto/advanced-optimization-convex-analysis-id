@@ -1,0 +1,88 @@
+{
+  "additions_before_manifest_and_sums": {
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_01_2026.08.26.zip": {
+      "bytes": 721697,
+      "sha256": "8f175c21f404e20fccef2b42c2eaa1ccdf1599cfc89c189d1b912d3a0d3c454a"
+    },
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub": {
+      "bytes": 64322,
+      "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+    },
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html": {
+      "bytes": 353245,
+      "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+    },
+    "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf": {
+      "bytes": 486032,
+      "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+    },
+    "RIGHTS_AND_PROVENANCE_ORIGINAL_01.md": {
+      "bytes": 2918,
+      "sha256": "c35e9d2dd73f30bab1bef3035dfbfb7378da0a5f012743df7670693c6834de09"
+    },
+    "backend-records-2026.08.26-original-01.csv": {
+      "bytes": 3537781,
+      "sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4"
+    },
+    "backend-records-2026.08.26-original-01.jsonl": {
+      "bytes": 2941125,
+      "sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f"
+    }
+  },
+  "backend": {
+    "added_records": 358,
+    "csv_sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4",
+    "jsonl_sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f",
+    "protected_records": 3585,
+    "records": 3943
+  },
+  "boundary": {
+    "complete_solutions": 6,
+    "equations": 40,
+    "exercises": 6,
+    "hints": 6,
+    "next_cursor": "variational inequalities, maximal monotone operators, resolvents, and splitting",
+    "segments": 8,
+    "unit_id": "d90.orig.v1.tr01.unit"
+  },
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "expected_public_file_count": 99,
+  "model_provenance": "OpenAI Codex gpt-5.6-sol, Ultra",
+  "parent_public_readback": {
+    "bytes": 27084,
+    "path": "C:\\Users\\Floris\\Documents\\interlanguage\\04_mirrors\\id\\advanced-optimization-convex-analysis-id\\release\\zenodo\\2026-08-25-becker-03\\zenodo-public-readback-becker-03.json",
+    "sha256": "a50feeff83c7fbb6d45a49ac2b1156f12600e93e94a14b78b1ffff49ab4c5c1d"
+  },
+  "parent_record_doi": "10.5281/zenodo.22102236",
+  "parent_record_id": "22102236",
+  "publication_date": "2026-08-26",
+  "replaced_parent_files": [
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_BECKER_02_2026.08.25.zip",
+    "README_RELEASE_MIT_L03.md",
+    "README_RELEASE_MIT_L04_L05.md",
+    "README_RELEASE_MIT_L06.md",
+    "README_RELEASE_MIT_L07.md",
+    "README_RELEASE_MIT_L08.md",
+    "README_RELEASE_MIT_L09.md",
+    "backend-records-2026.08.25-becker-03.csv",
+    "backend-records-2026.08.25-becker-03.jsonl",
+    "release-manifest-becker-02-zenodo.json"
+  ],
+  "retained_parent_file_count": 90,
+  "rights": {
+    "Habring_scaffold": "CC BY 4.0 submission-level evidence",
+    "blanket_license_claim": false,
+    "component_specific": true,
+    "new_substantive_layer": "CC BY-SA 4.0"
+  },
+  "schema": "o015-zenodo-original-01-release-manifest-v1",
+  "source": {
+    "canonical_spine": "Andreas Habring arXiv:2607.11664v1",
+    "license": "CC BY 4.0",
+    "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748"
+  },
+  "status": "partial",
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Tranche Asli 1; Kursus Parsial",
+  "upstream_contact": false
+}

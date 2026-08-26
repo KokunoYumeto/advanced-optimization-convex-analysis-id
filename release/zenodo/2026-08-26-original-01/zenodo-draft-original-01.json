@@ -1,0 +1,11 @@
+{
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "draft_doi": "10.5281/zenodo.22103674",
+  "draft_id": "22103674",
+  "parent_record_doi": "10.5281/zenodo.22102236",
+  "parent_record_id": "22102236",
+  "schema": "o015-zenodo-original-01-draft-v1",
+  "status": "published",
+  "version": "checkpoint-2026.08.26-original-01-stochastic-composite-mirror-minibatch"
+}

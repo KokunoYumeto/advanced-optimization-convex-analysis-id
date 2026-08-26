@@ -1,0 +1,204 @@
+{
+  "artifact": {
+    "bytes": 486032,
+    "language": "id-ID",
+    "media": "A4",
+    "pages": 16,
+    "path": "output/pdf/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+    "searchable": true,
+    "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca",
+    "tagged": false
+  },
+  "build_receipt": {
+    "byte_identical_clean_builds": true,
+    "bytes": 5664,
+    "overfull_boxes": 0,
+    "path": "qa/ORIGINAL_01_PDF_BUILD.json",
+    "sha256": "3a40f7be6da3ba76bd8ab7354da50af8f68c02b436882e61617fb077328c6fe0",
+    "undefined_references": 0
+  },
+  "date": "2026-08-26",
+  "inspection": {
+    "all_pages_reviewed": true,
+    "broken_glyphs": 0,
+    "chart_information_dependencies": 0,
+    "clipped_text_or_math": 0,
+    "finding": "All 16 pages were inspected from 160-dpi renders. Typography, equations, proofs, exercises, solutions, laboratory table, mixed-rights notice, and accessibility note are legible and consistently aligned. Numeric results remain available as text and CSV/JSON.",
+    "full_size_spot_checks": [
+      2,
+      16
+    ],
+    "header_footer_page_number_defects": 0,
+    "margin_or_alignment_defects": 0,
+    "orphaned_headings": 0,
+    "overlaps": 0,
+    "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "unexpected_blank_pages": 0,
+    "unreadable_tables": 0
+  },
+  "limitations": [
+    "The PDF is searchable and declares id-ID but is not structurally tagged; semantic HTML and EPUB are the reflow/accessibility surfaces.",
+    "Visual inspection is deterministic evidence for this release boundary and is not a human-dependent gate."
+  ],
+  "render": {
+    "dpi": 160,
+    "pages": [
+      {
+        "bytes": 102648,
+        "page": 1,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "cc2cb132cf07274e3473f28ee4db6c0b2d3990c7b532b13539432b3111e48b0e"
+      },
+      {
+        "bytes": 288135,
+        "page": 2,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "5dae15c803131f7d1c3f3a33dc1288aca5f04461e953b64d474ce880a91318aa"
+      },
+      {
+        "bytes": 82196,
+        "page": 3,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "f95c89989d761cfc7703e27b22219216ac1ce470db7e6835d5b1727060b0c4c1"
+      },
+      {
+        "bytes": 260141,
+        "page": 4,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "fe90949e4674c87fc1e6e931f17311e15394e9e13e993f7f3449a8952f46692b"
+      },
+      {
+        "bytes": 302829,
+        "page": 5,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "591ace19efd37ff945da206a7c007c45a0fdb67ead19c7ebb47453935789b470"
+      },
+      {
+        "bytes": 261935,
+        "page": 6,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "fcb4f821d01b548fcee4ef14096dc518d019683a1a27a1ff3e94eb93e7fcdd6f"
+      },
+      {
+        "bytes": 347363,
+        "page": 7,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "32eda329eec197c6d0b3d807ec732f48c3f39bb3ac989952641e97c2bcd174bd"
+      },
+      {
+        "bytes": 291567,
+        "page": 8,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "3987dffb8f1cddbf55e5828dd3454c155b3969afffe421e52ad668defbc61670"
+      },
+      {
+        "bytes": 279356,
+        "page": 9,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "bbf02ea03d21e29ddefa4dbdcbc81449267609cb3513a6be221584e50d03bba7"
+      },
+      {
+        "bytes": 303406,
+        "page": 10,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "0918f6a4c4a53069a12886d8883ff63ad197cd5741e3dd17ec0480898a695721"
+      },
+      {
+        "bytes": 315165,
+        "page": 11,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "16ba88192889a8477e5dae6fdb41c3c12f733962c96776d762c3b02c951c5df6"
+      },
+      {
+        "bytes": 356752,
+        "page": 12,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "38dfbe41cd1654e87edfe5983e2fbc0234307c0ed048449dc3eeff40388d1594"
+      },
+      {
+        "bytes": 273457,
+        "page": 13,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "fd2a8cc0d4c39db6ea4e85da71035544b198f68f094d3058caeb9efb283a7bc8"
+      },
+      {
+        "bytes": 336642,
+        "page": 14,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "cb72d4f8346b441cad6fe810f6b147f401664d31a351a5dea7e1d59a8cace9e9"
+      },
+      {
+        "bytes": 53395,
+        "page": 15,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "e5bd32f4125ec3eacafae8b45ceb73e8be9cded462ede632a990e624277c2ad0"
+      },
+      {
+        "bytes": 291416,
+        "page": 16,
+        "pixels": [
+          1323,
+          1871
+        ],
+        "sha256": "5546501778681d317414c39879ad61982aa6a93685c6bc003a7a35fe097950ea"
+      }
+    ],
+    "tool": "pdftoppm 24.04.0"
+  },
+  "repairs_bound": [
+    "The accessibility note shares the rights page, eliminating the hollow tail page.",
+    "The mixed CC BY-SA 4.0/CC BY 4.0 rights boundary and Christian Clason template credit are visible."
+  ],
+  "result": "pass",
+  "schema": "o015-original-01-pdf-visual-qa-v2",
+  "verifier": {
+    "bytes": 5868,
+    "path": "qa/verify_original_01_pdf_visual.py",
+    "sha256": "7fc628b8f6af3a6569359b08ce28e5dc6e9592e70d983901a92385b1b306e0a9"
+  }
+}
