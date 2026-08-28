@@ -780,7 +780,7 @@ substantive exercises with hints/answers/complete solutions, open-solver labs,
 capstone, tagged/accessibility closure, and cumulative course assessment. Do
 not reopen this publication or claim full-course completion.
 
-## 2026-08-26 controlling cursor — Original-02 Zenodo public; GitHub gate next
+## 2026-08-26 controlling cursor — Original-02 public; course-wide closure next
 
 The variational/maximal-monotone/resolvent/splitting production instruction is
 complete and superseded. Original-02 passes every local gate, has a 4,338-record
@@ -793,11 +793,48 @@ The current privacy-clean compact package is 680,451 bytes / SHA-256
 anonymous readback matched all 99 files and found zero profile-locator hits in
 the public additions, and authenticated closure again found no open draft.
 
-Immediate executable action: commit and push exactly the 103 manifest-bound
-Original-02 source, readers, lab, backend, QA, release, Zenodo receipts, README,
-and durable controls to the existing GitHub repository; verify the public
-commit identity and every raw path anonymously. Then advance directly to a
-coherent course-wide closure boundary: cumulative assessment/proof rubrics,
-two additional open-computation labs, capstone, tagged-PDF work, and integrated
-accessibility/final readers. Do not reopen Original-02, contact upstream, or
-claim the overall course complete.
+The GitHub instruction is complete and superseded. Existing repository `main`
+is public at commit `74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, tree
+`e6c004afc1efeff73a62860039491fd92525ba35`, parent
+`15fb78bcf7c769b524401c24779469d6ecfc5ffd`. Its exact 103 manifest paths total
+11,226,335 bytes. Anonymous smart-HTTP branch resolution and immutable raw-byte
+readback matched every file; receipt
+`release/github/2026-08-26-original-02/github-public-readback-original-02.json`
+is 44,964 bytes / SHA-256
+`c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+
+Immediate executable action: build one coherent course-wide closure boundary
+containing cumulative assessment and proof rubrics, two additional
+nonduplicative open-computation labs, capstone, tagged-PDF work, and integrated
+accessible final readers. Preserve all accepted sources, stable IDs, backend
+records, public releases, and component rights. Do not reopen Original-02,
+contact upstream, or claim the overall course complete before those gates pass.
+
+## 2026-08-28 live cursor — INTEGRATED-COURSE-FINAL-RELEASE
+
+The preceding production cursor is historical and superseded. Source and course
+production are complete. Original-03, the integrated PDF/HTML/EPUB, the 4,877-
+record backend, deterministic computations, every-page PDF visual inspection,
+live browser reflow, and accessibility evidence all pass. Preserve every
+accepted source, stable ID, companion, and immutable public identity.
+
+Execute next, in order:
+
+1. Rerun `qa/verify_integrated_rights_release.py` against reconciled root and
+   control metadata; proceed only on a zero-contradiction `pass`.
+2. Build the compact reader-first final package and generate its exact manifest,
+   checksum file, and privacy-clean local verification twice deterministically.
+3. Commit and push only the literal final explicit-path manifest to the existing
+   GitHub repository/canonical `main`; verify the immutable commit and every
+   manifest path anonymously.
+4. Create one new version from Zenodo parent record `22104724` in concept
+   `22059741`; keep access/files public, make the integrated PDF the default
+   preview, preserve per-component rights, and anonymously verify the complete
+   inventory and every required file identity.
+5. Persist sanitized GitHub/Zenodo receipts in a narrow evidence descendant,
+   verify zero open drafts and no access restriction, update all live controls,
+   then mark the finite goal complete.
+
+Do not reopen translation, renumber IDs, merge companions, contact upstream,
+create a competing repository/concept, expose credentials, or claim completion
+before the public-byte gates pass.

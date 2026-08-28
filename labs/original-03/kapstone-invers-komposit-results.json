@@ -1,0 +1,159 @@
+{
+  "artifacts": [
+    "kapstone-invers-komposit-results.csv",
+    "kapstone-invers-komposit.svg"
+  ],
+  "certificates": {
+    "fista_certified_gap_small": true,
+    "fista_dual_certificate_feasible": true,
+    "fista_gradient_mapping_small": true,
+    "fista_step_below_inverse_lipschitz": true,
+    "fixed_data_dimensions": true,
+    "fixed_outlier_count": true,
+    "huber_gradient_lipschitz_bound_positive": true,
+    "matched_budget_objectives_agree": true,
+    "matched_matrix_vector_budget": true,
+    "pdhg_certified_gap_small": true,
+    "pdhg_dual_certificate_feasible": true,
+    "pdhg_step_product_strictly_below_one": true,
+    "robust_solution_improves_on_least_squares": true
+  },
+  "configuration": {
+    "huber_delta": 0.08,
+    "l1_weight": 0.055,
+    "matched_iterations": 1800,
+    "matched_matrix_vector_products_per_solver": 3600,
+    "observations": 72,
+    "operator_norm": 0.9999999999999999,
+    "outlier_count": 8,
+    "pdhg_tau_sigma_norm_squared": 0.9801,
+    "smooth_gradient_lipschitz_bound": 0.9999999999999998,
+    "unknown_dimension": 48
+  },
+  "fixed_instance": {
+    "data_sha256": "a7cfd09350231e0afc9786bbdd4200a170fa4161e05abbd86a835d25bb4b2233",
+    "matrix_sha256": "6c286bed37f4a328d40082da0fcc384523efc7f4e835122a43b16b326c4f85d5",
+    "outlier_indices": [
+      4,
+      8,
+      9,
+      14,
+      28,
+      31,
+      36,
+      47
+    ],
+    "support": [
+      3,
+      8,
+      14,
+      19,
+      27,
+      33,
+      39,
+      44
+    ],
+    "truth": [
+      0.0,
+      0.0,
+      0.0,
+      1.4,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.75,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.15,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.9,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.8,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.05,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "matched_budget_summary": {
+    "absolute_objective_difference": 1.1102230246251565e-16,
+    "best_feasible_dual_lower_bound": 0.9004238161377554,
+    "fista_certified_gap": 2.55351295663786e-15,
+    "fista_gradient_mapping_norm": 0.0,
+    "fista_objective": 0.9004238161377579,
+    "fista_relative_recovery_error": 0.2983237397586082,
+    "least_squares_relative_recovery_error": 2.030722886434993,
+    "pdhg_certified_gap": 2.6645352591003757e-15,
+    "pdhg_objective": 0.900423816137758,
+    "pdhg_relative_recovery_error": 0.29832373975860865
+  },
+  "result": "pass",
+  "schema": "o015-original-03-kapstone-invers-komposit-v1",
+  "seed": 20260826,
+  "seven_milestones": [
+    {
+      "id": 1,
+      "name": "instans sintetik dan audit pencilan",
+      "passed": true
+    },
+    {
+      "id": 2,
+      "name": "model Huber-l1 konveks",
+      "passed": true
+    },
+    {
+      "id": 3,
+      "name": "batas Lipschitz dan langkah FISTA",
+      "passed": true
+    },
+    {
+      "id": 4,
+      "name": "proksimal soft-threshold dan gradien terpotong",
+      "passed": true
+    },
+    {
+      "id": 5,
+      "name": "dual Huber dan syarat stabilitas PDHG",
+      "passed": true
+    },
+    {
+      "id": 6,
+      "name": "perbandingan anggaran perkalian matriks yang sama",
+      "passed": true
+    },
+    {
+      "id": 7,
+      "name": "celah primal-dual dan mutu rekonstruksi",
+      "passed": true
+    }
+  ]
+}

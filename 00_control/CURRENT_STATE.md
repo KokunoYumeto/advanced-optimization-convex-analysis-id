@@ -1223,7 +1223,59 @@ Draft closure is PASS: authenticated lookup 404 and zero concept drafts;
 473-byte receipt SHA-256
 `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
 
-The immediate remaining boundary action is one exact narrow GitHub commit and
-anonymous raw-byte readback. The course remains partial: cumulative assessment
+At this checkpoint the next action was one exact narrow GitHub commit and
+anonymous raw-byte readback; the controlling refresh below supersedes it. The course remains partial: cumulative assessment
 and proof rubrics, two more labs, capstone, tagged PDF, and final integrated
 accessibility/reader closure remain.
+
+## 2026-08-26 controlling refresh — Original-02 GitHub preservation closed
+
+The pending GitHub action above is complete. Existing repository `main` now
+points publicly to commit `74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, tree
+`e6c004afc1efeff73a62860039491fd92525ba35`, parent
+`15fb78bcf7c769b524401c24779469d6ecfc5ffd`. The commit contains exactly the
+103 manifest-bound Original-02/control paths, totaling 11,226,335 bytes.
+Because GitHub's anonymous REST quota returned 403 before data, verification
+used an API-independent anonymous route: direct Git smart-HTTP ref
+advertisement for public `main`, then immutable `raw.githubusercontent.com`
+downloads. Every public path matched its cryptographically bound commit blob.
+The sanitized 44,964-byte receipt is
+`release/github/2026-08-26-original-02/github-public-readback-original-02.json`,
+SHA-256 `c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+
+Original-02 is now preserved and verified in both existing GitHub and Zenodo
+lineages. No upstream contact or new repository/concept occurred. The course
+remains partial; the next executable boundary is cumulative assessment and
+proof rubrics, two additional nonduplicative labs, capstone, tagged PDF, and
+integrated accessible final readers.
+
+## 2026-08-28 current state — complete integrated course, release reconciliation
+
+The preceding partial-course paragraph is historical and superseded. Original-03
+is complete and admitted: fourteen ordered modules provide a ten-question
+diagnostic, six five-question problem sets, a solved six-question midterm, a
+solved eight-question final, 83 response units with staged hints and complete
+solutions, seven proof rubrics, two additional laboratories, and a seven-stage
+capstone. `qa/ORIGINAL_03_COURSE_CLOSURE.json` passes with P1=P2=P3=0; it is
+53,446 bytes / SHA-256
+`0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907`.
+
+The integrated reader artifacts are frozen locally: PDF 1,671,254 bytes / 141
+pages / `9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5`;
+HTML 2,485,595 / `028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89`;
+EPUB 379,901 / `1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321`.
+The tagged/searchable PDF has an actual structure tree and passed every-page
+visual review; no PDF/UA claim is made. Live HTML browser QA passes at 1,440,
+768, and 390 pixels with no page overflow, escaped content, broken image, or
+missing internal target. The final backend has 4,877 records: 4,338 protected
+records plus 539 additions, with exact JSONL/CSV identities recorded in
+`SOURCE_AUTHORITY.json` and passing deterministic validation.
+
+Current operational state is `integrated_course_complete_release_reconciliation`.
+No more source production is required. The only remaining finite actions are:
+pass the reconciled rights/release verifier, construct and verify the compact
+reader-first payload, narrow-push the explicit manifest to the existing public
+GitHub `main`, publish one new version in Zenodo concept
+`10.5281/zenodo.22059741`, anonymously read back the exact public bytes, and
+persist sanitized receipts. The goal remains active until those publication
+actions pass.

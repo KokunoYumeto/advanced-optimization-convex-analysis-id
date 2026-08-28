@@ -1,0 +1,148 @@
+% OR03-S014 | lapisan asli: proyek kapstone masalah invers komposit
+% segment-id: d90.orig.v1.tr03.seg0014
+% capstone-id: d90.orig.v1.tr03.capstone.0001
+% capstone-unit-id: d90.orig.v1.tr03.capstone.unit
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0001
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0002
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0003
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0004
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0005
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0006
+% capstone-milestone-id: d90.orig.v1.tr03.capstone.milestone.0007
+% capstone-hint-id: d90.orig.v1.tr03.capstone.hint.0001
+% capstone-answer-id: d90.orig.v1.tr03.capstone.answer.0001
+% capstone-solution-id: d90.orig.v1.tr03.capstone.solution.0001
+
+\section{Proyek kapstone: masalah invers komposit yang tahan pencilan}
+\label{orig03:capstone:invers-komposit}
+\label{orig03:capstone:unit}
+
+Proyek ini menyatukan pemodelan konveks, gradien Lipschitz, operator
+proksimal, formulasi dual, pemisahan primal-dual, anggaran oracle, dan
+sertifikat a posteriori. Instans tetap dibentuk oleh
+\texttt{labs/original-03/kapstone-invers-komposit.py}: matriks
+$A\in\mathbb{R}^{72\times48}$, sinyal renggang $x^\natural$, derau kecil,
+dan delapan pencilan besar. Modelnya
+\begin{equation}
+ \min_x\; \Phi(x):=
+ \sum_{i=1}^{72}h_\delta((Ax-b)_i)+\lambda\|x\|_1,
+ \qquad
+ h_\delta(r)=
+ \begin{cases}
+   \frac12r^2,&|r|\leq\delta,\\
+   \delta(|r|-\frac12\delta),&|r|>\delta.
+ \end{cases}
+ \label{orig03:eq:capstone-model}
+\end{equation}
+FISTA dengan restart gradien dan PDHG dijalankan untuk jumlah iterasi yang sama.
+Setiap iterasi inti masing-masing memakai satu aplikasi $A$ dan satu aplikasi
+$A^\top$, sehingga perbandingan memakai anggaran operator yang sama. Jejak
+CSV mencatat objektif, batas bawah dual layak, celah tersertifikasi, dan galat
+rekonstruksi. SVG hanya merupakan visualisasi jejak tersebut.
+
+\subsection*{Prompt}
+\begin{exercise}[Tugas proyek dan tujuh tonggak]
+Selesaikan tujuh tonggak berikut dan serahkan uraian matematis bersama JSON,
+CSV, serta SVG yang dihasilkan tanpa perubahan konfigurasi.
+\begin{enumerate}
+  \item \label{orig03:capstone:milestone:0001}\textbf{Instans dan pencilan.} Rekonstruksi instans dari seed,
+    verifikasi ukuran, support sinyal, dan delapan indeks pencilan.
+  \item \label{orig03:capstone:milestone:0002}\textbf{Model konveks.} Buktikan kekonveksan \eqref{orig03:eq:capstone-model}
+    dan jelaskan mengapa Huber lebih tahan pencilan daripada kuadrat murni.
+  \item \label{orig03:capstone:milestone:0003}\textbf{Bagian mulus.} Turunkan gradien
+    $A^\top\operatorname{clip}(Ax-b,-\delta,\delta)$ dan batas Lipschitz
+    $L=\|A\|_2^2$.
+  \item \label{orig03:capstone:milestone:0004}\textbf{Langkah proksimal.} Turunkan soft-threshold bagi
+    $\lambda\|x\|_1$ dan tulis iterasi FISTA yang dipakai.
+  \item \label{orig03:capstone:milestone:0005}\textbf{Dual dan PDHG.} Turunkan konjugat Huber, kendala dual, serta
+    pembaruan PDHG; buktikan $\tau\sigma\|A\|_2^2<1$.
+  \item \label{orig03:capstone:milestone:0006}\textbf{Anggaran sepadan.} Bandingkan kedua metode pada jumlah
+    perkalian matriks-vektor yang sama, bukan pada waktu dinding.
+  \item \label{orig03:capstone:milestone:0007}\textbf{Sertifikat dan interpretasi.} Verifikasi kelayakan dual,
+    celah primal-dual, pemetaan gradien proksimal, dan perbaikan terhadap
+    least squares; nyatakan juga apa yang tidak dibuktikan eksperimen ini.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Petunjuk bertahap}
+\label{orig03:capstone:hint:0001}
+\begin{enumerate}
+  \item Hash matriks dan data dalam JSON adalah identitas instans, bukan
+    pengganti pemeriksaan ukuran dan seed.
+  \item Turunan Huber adalah proyeksi skalar ke $[-\delta,\delta]$ dan
+    bersifat satu-Lipschitz.
+  \item Komposisi dengan $A$ mengalikan konstanta Lipschitz oleh
+    $\|A\|_2^2$.
+  \item Gunakan
+    $\operatorname{prox}_{t\lambda\|\cdot\|_1}(v)
+     =\operatorname{sign}(v)(|v|-t\lambda)_+$.
+  \item Konjugat Huber adalah $\frac12u^2+\iota_{[-\delta,\delta]}(u)$;
+    konjugat norma satu menghasilkan kendala
+    $\|A^\top u\|_\infty\leq\lambda$.
+  \item Kolom \texttt{matrix\_vector\_products} adalah sumbu perbandingan
+    yang benar.
+  \item Skala kandidat dual bila perlu untuk memperoleh batas bawah yang
+    benar-benar layak sebelum menghitung celah.
+\end{enumerate}
+
+\subsection*{Jawaban singkat}
+\label{orig03:capstone:answer:0001}
+Model adalah jumlah fungsi konveks. Bagian Huber mulus memiliki gradien
+$L$-Lipschitz dengan $L=\|A\|_2^2$, dan bagian norma satu memiliki proksimal
+soft-threshold. Dualnya memaksimalkan
+\[
+ -b^\top u-\frac12\|u\|^2
+ \quad\text{dengan}\quad
+ \|u\|_\infty\leq\delta,
+ \quad \|A^\top u\|_\infty\leq\lambda.
+\]
+FISTA dan PDHG mencapai objektif yang cocok pada anggaran operator sama;
+batas dual layak memberi celah terukur, dan kedua rekonstruksi mengungguli
+least squares pada instans berpencilan yang dibekukan.
+
+\subsection*{Solusi acuan lengkap}
+\label{orig03:capstone:solution:0001}
+Karena $h_\delta$ dan norma satu konveks, komposisi afin dan penjumlahan
+mempertahankan kekonveksan. Turunan Huber adalah
+$h_\delta'(r)=\operatorname{clip}(r,-\delta,\delta)$. Proyeksi ini
+satu-Lipschitz, sehingga
+\[
+ \|\nabla f(x)-\nabla f(y)\|
+ \leq\|A\|_2^2\|x-y\|.
+\]
+Langkah $t<1/L$ yang dibekukan karena itu sah. Optimalisasi proksimal skalar
+memberi soft-threshold, lalu ekstrapolasi Nesterov menghasilkan FISTA; restart
+gradien memakai vektor yang sudah tersedia tanpa mengubah dua aplikasi operator inti per
+iterasi.
+
+Dari
+$h_\delta^*(u)=\frac12u^2+\iota_{[-\delta,\delta]}(u)$ dan
+$(\lambda\|\cdot\|_1)^*(v)=\iota_{\{\|v\|_\infty\leq\lambda\}}(v)$,
+dual yang tertulis pada jawaban singkat mengikuti melalui Fenchel--Rockafellar.
+Proksimal $h_\delta^*$ adalah pembagian oleh $1+\sigma$ diikuti kliping ke
+$[-\delta,\delta]$; proksimal primal tetap soft-threshold. Pilihan
+$\tau=\sigma=0.99/\|A\|_2$ memberi
+$\tau\sigma\|A\|_2^2=0.99^2<1$.
+
+Pada iterasi berhingga, kandidat dual dapat melanggar kendala kedua sedikit.
+Penskalaan
+\[
+ \widehat u=\rho u,
+ \qquad
+ \rho=\min\left\{1,
+ \frac{\lambda}{\|A^\top u\|_\infty}\right\}
+\]
+mempertahankan kendala kotak dan memastikan kelayakan. Nilai dual
+$-b^\top\widehat u-\|\widehat u\|^2/2$ menjadi batas bawah rigor bagi
+objektif primal. Program menguji kelayakan, celah terhadap batas terbaik,
+norma pemetaan gradien proksimal FISTA, kesamaan anggaran, kedekatan kedua
+objektif, dan galat rekonstruksi terhadap baseline least squares. Bukti ini
+berlaku untuk instans dan toleransi yang dinyatakan; ia tidak mengklaim bahwa
+parameter yang sama optimal bagi semua masalah invers atau semua pola
+pencilan.
+
+\paragraph{Hak dan firewall O018.}
+Proyek, bukti, soal, solusi, kode, dan instans sintetik ini ditulis mandiri dan
+tersedia berdasarkan CC BY-SA 4.0. Tidak ada materi O018 yang disalin,
+diadaptasi, atau dijadikan templat tersembunyi; O018 tetap terpisah dari
+lapisan penutupan Original-03.

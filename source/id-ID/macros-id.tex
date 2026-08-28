@@ -39,12 +39,13 @@
 \newcommand{\graph}{\operatorname{\mathrm{graph}}}
 \newcommand{\tr}{\operatorname{\mathrm{tr}}}
 \newcommand{\epi}{\operatorname{\mathrm{epi}}}
-\renewcommand{\span}{\operatorname{\mathrm{span}}}
+% Never redefine TeX's primitive \span: amsmath alignment environments use it.
+% Use \spann for the linear-span operator in reader prose and formulae.
 \newcommand{\sign}{\operatorname{\mathrm{sign}}}
 \DeclareMathOperator{\Id}{\mathrm{Id}}
 \newcommand{\prox}{\mathrm{prox}}
 \newcommand{\proj}{\mathrm{proj}}
-\newcommand{\spann}{\mathrm{span}}
+\newcommand{\spann}{\operatorname{\mathrm{span}}}
 \newcommand{\Lloc}{L^1_{\mathrm{loc}}}
 \newcommand{\Cinf}{C^\infty_0}
 
@@ -98,27 +99,32 @@
 \newcommand{\weaki}{\protect{\u{\i}}}
 \AtBeginEnvironment{remark}{\small}
 
-\usepackage{mdframed}
-\mdfdefinestyle{examplebg}{
-    backgroundcolor=structure!7,%
-    hidealllines=true,%
-    splittopskip=\topskip,
-    frametitleaboveskip=0,
-    frametitlebelowskip=0,
-    innertopmargin=-.3em,%
-    innerbottommargin=.7em,%
-    innerleftmargin=.7em,%
-    innerrightmargin=.7em,%
-}
-\surroundwithmdframed[style=examplebg]{example}
-
-\usepackage{tablefootnote}
-\makeatletter
-\AfterEndEnvironment{mdframed}{%
- \tfn@tablefootnoteprintout%
- \gdef\tfn@fnt{0}%
-}
-\makeatother
+\ifdefined\OIntegratedReader
+  % Keep examples as ordinary theorem blocks in the tagged master. The legacy
+  % mdframed/tablefootnote patches interfere with the synchronized latex-lab
+  % hooks, while no canonical body calls \tablefootnote.
+\else
+  \usepackage{mdframed}
+  \mdfdefinestyle{examplebg}{
+      backgroundcolor=structure!7,%
+      hidealllines=true,%
+      splittopskip=\topskip,
+      frametitleaboveskip=0,
+      frametitlebelowskip=0,
+      innertopmargin=-.3em,%
+      innerbottommargin=.7em,%
+      innerleftmargin=.7em,%
+      innerrightmargin=.7em,%
+  }
+  \surroundwithmdframed[style=examplebg]{example}
+  \usepackage{tablefootnote}
+  \makeatletter
+  \AfterEndEnvironment{mdframed}{%
+   \tfn@tablefootnoteprintout%
+   \gdef\tfn@fnt{0}%
+  }
+  \makeatother
+\fi
 
 \usepackage{enumitem}
 \setlist[enumerate]{label=(\roman*)}

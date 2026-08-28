@@ -1,0 +1,195 @@
+% ORIG03-SEGMENT-CODE: OR03-S001
+% ORIG03-SEGMENT-ID: d90.orig.v1.tr03.seg0001
+% ORIG03-MODULE-ID: map.assessment.0001
+% SPDX-License-Identifier: CC-BY-SA-4.0
+% Karya asli berbahasa Indonesia; tidak menyalin butir dari sumber donor.
+
+\section{Peta asesmen dan kontrak topologi}
+\label{orig03:section:peta-asesmen}
+
+Bagian ini memetakan asesmen Original-03 tanpa mengulang bunyi soal. Seluruh
+teks baru pada tranche ini ditulis secara independen dan dilisensikan di bawah
+CC BY-SA 4.0. Notasi mengikuti spine Habring serta suplemen dan tranche yang
+sudah diterima, tetapi tidak ada butir donor yang disalin. Materi program linear,
+integer, simpleks, pemodelan riset operasi, dan wilayah O018 lainnya sengaja
+tidak dimasukkan.
+
+Kontrak yang dapat diurai mesin adalah sebagai berikut. Setiap butir induk
+memiliki ID \texttt{*.problem.NNNN}. Setiap subbutir memiliki ID
+\texttt{*.prompt.NNNN} dan tepat satu pasangan
+\texttt{*.hint1.NNNN}/\texttt{*.hint2.NNNN}, satu
+\texttt{*.answer.NNNN}, serta satu \texttt{*.solution.NNNN}. Komentar
+\texttt{ORIG03-ASSESSMENT-MAP-ID} pada peta ini hanya merupakan rujukan
+nondeklaratif. Deklarasi otoritatif \texttt{ORIG03-STABLE-ID} dan label LaTeX
+yang berpadanan berada tepat pada butir soal di modul 01--10. Tujuh label
+\texttt{orig03:rubric:proof:0001} sampai
+\texttt{orig03:rubric:proof:0007} disediakan sebagai rujukan logis bagi rubrik
+bukti yang dihimpun oleh agregator.
+
+\subsection{Lima puluh empat prompt baru}
+
+\paragraph{Diagnostik prasyarat: 20 prompt.}
+\begin{itemize}
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0001
+\item \texttt{diag.prompt.0001}: norma dasar dan aritmetika vektor.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0002
+\item \texttt{diag.prompt.0002}: rantai ketaksamaan norma.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0003
+\item \texttt{diag.prompt.0003}: proyeksi pada hiperbidang.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0004
+\item \texttt{diag.prompt.0004}: karakterisasi proyeksi konveks.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0005
+\item \texttt{diag.prompt.0005}: koordinat kombinasi konveks.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0006
+\item \texttt{diag.prompt.0006}: kestabilan kekonveksan terhadap irisan.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0007
+\item \texttt{diag.prompt.0007}: gradien dan Hessian kuadratik.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0008
+\item \texttt{diag.prompt.0008}: konstanta kuat-konveks dan mulus.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0009
+\item \texttt{diag.prompt.0009}: penyangga afin orde pertama.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0010
+\item \texttt{diag.prompt.0010}: stasioneritas dan optimalitas global.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0011
+\item \texttt{diag.prompt.0011}: subdiferensial nilai mutlak.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0012
+\item \texttt{diag.prompt.0012}: ambang lunak skalar.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0013
+\item \texttt{diag.prompt.0013}: ekspektasi dan varians diskret.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0014
+\item \texttt{diag.prompt.0014}: rata-rata sampel independen.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0015
+\item \texttt{diag.prompt.0015}: penyelesaian rekurensi kontraktif.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0016
+\item \texttt{diag.prompt.0016}: kompleksitas iterasi geometrik.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0017
+\item \texttt{diag.prompt.0017}: kerucut normal dan optimalitas terkendala.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0018
+\item \texttt{diag.prompt.0018}: bentuk titik tetap proyeksi.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0019
+\item \texttt{diag.prompt.0019}: ortogonalitas dalam Cauchy--Schwarz.
+% ORIG03-ASSESSMENT-MAP-ID: diag.prompt.0020
+\item \texttt{diag.prompt.0020}: ketaksamaan Young berbobot.
+\end{itemize}
+
+\paragraph{Set soal dasar konveks: 12 prompt.}
+\begin{itemize}
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0001
+\item \texttt{ps01.prompt.0001}: maksimum fungsi afin.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0002
+\item \texttt{ps01.prompt.0002}: subdiferensial fungsi nilai mutlak.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0003
+\item \texttt{ps01.prompt.0003}: minimisasi komposit satu dimensi.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0004
+\item \texttt{ps01.prompt.0004}: spektrum kuadratik konveks.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0005
+\item \texttt{ps01.prompt.0005}: kontraksi eksak langkah gradien.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0006
+\item \texttt{ps01.prompt.0006}: evaluasi numerik Jensen.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0007
+\item \texttt{ps01.prompt.0007}: pembuktian Jensen dua titik.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0008
+\item \texttt{ps01.prompt.0008}: konjugat kuadratik.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0009
+\item \texttt{ps01.prompt.0009}: bikonjugat kuadratik.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0010
+\item \texttt{ps01.prompt.0010}: celah Fenchel--Young.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0011
+\item \texttt{ps01.prompt.0011}: proyeksi pada kotak.
+% ORIG03-ASSESSMENT-MAP-ID: ps01.prompt.0012
+\item \texttt{ps01.prompt.0012}: bukti pemotongan koordinat.
+\end{itemize}
+
+\paragraph{Set soal metode proksimal: 11 prompt.}
+\begin{itemize}
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0001
+\item \texttt{ps02.prompt.0001}: penurunan rumus ambang lunak.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0002
+\item \texttt{ps02.prompt.0002}: proks nilai mutlak berdimensi tiga.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0003
+\item \texttt{ps02.prompt.0003}: operator iterasi gradien proksimal.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0004
+\item \texttt{ps02.prompt.0004}: dua iterasi dan solusi eksak.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0005
+\item \texttt{ps02.prompt.0005}: lema penurunan untuk gradien Lipschitz.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0006
+\item \texttt{ps02.prompt.0006}: langkah kuadratik tajam.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0007
+\item \texttt{ps02.prompt.0007}: bentuk operator maju--mundur.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0008
+\item \texttt{ps02.prompt.0008}: titik tetap dan minimizer.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0009
+\item \texttt{ps02.prompt.0009}: kontraksi operator maju--mundur.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0010
+\item \texttt{ps02.prompt.0010}: resolven operator linear monoton kuat.
+% ORIG03-ASSESSMENT-MAP-ID: ps02.prompt.0011
+\item \texttt{ps02.prompt.0011}: laju titik proksimal.
+\end{itemize}
+
+\paragraph{Set soal dualitas dan KKT: 11 prompt.}
+\begin{itemize}
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0001
+\item \texttt{ps03.prompt.0001}: fungsi dual masalah kuadratik berekualitas.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0002
+\item \texttt{ps03.prompt.0002}: sistem KKT dan celah nol.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0003
+\item \texttt{ps03.prompt.0003}: pengali KKT kendala pertidaksamaan.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0004
+\item \texttt{ps03.prompt.0004}: Slater dan dual skalar.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0005
+\item \texttt{ps03.prompt.0005}: KKT proyeksi pada hiperbidang afin.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0006
+\item \texttt{ps03.prompt.0006}: nilai primal dan dual hiperbidang.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0007
+\item \texttt{ps03.prompt.0007}: keunikan dan kecukupan KKT.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0008
+\item \texttt{ps03.prompt.0008}: pengali sebagai sensitivitas nilai.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0009
+\item \texttt{ps03.prompt.0009}: ekspansi eksak fungsi nilai.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0010
+\item \texttt{ps03.prompt.0010}: KKT proyeksi pada bola.
+% ORIG03-ASSESSMENT-MAP-ID: ps03.prompt.0011
+\item \texttt{ps03.prompt.0011}: Slater dan kecukupan pada bola.
+\end{itemize}
+
+\subsection{Empat belas latihan terselesaikan yang sudah diterima}
+
+Daftar berikut hanya memetakan ID dan peran kurikuler; bunyi latihan, petunjuk,
+dan solusi tetap berada pada modul asalnya.
+\begin{itemize}
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.becker.98ed693.b03.exercise.0001
+\item \texttt{d90.becker.98ed693.b03.exercise.0001}: ketakbiasan dalam
+  reduksi varians.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.becker.98ed693.b03.exercise.0002
+\item \texttt{d90.becker.98ed693.b03.exercise.0002}: identitas varians dan
+  langkah kuadratik.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0001
+\item \texttt{d90.orig.v1.tr01.exercise.0001}: operator proksimal Lasso.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0002
+\item \texttt{d90.orig.v1.tr01.exercise.0002}: ketaksamaan satu langkah.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0003
+\item \texttt{d90.orig.v1.tr01.exercise.0003}: sampling tanpa penggantian.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0004
+\item \texttt{d90.orig.v1.tr01.exercise.0004}: cermin entropi.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0005
+\item \texttt{d90.orig.v1.tr01.exercise.0005}: anggaran oracle minibatch.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr01.exercise.0006
+\item \texttt{d90.orig.v1.tr01.exercise.0006}: varians Prox-SAGA.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0001
+\item \texttt{d90.orig.v1.tr02.exercise.0001}: VI dan kerucut normal.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0002
+\item \texttt{d90.orig.v1.tr02.exercise.0002}: maksimalitas.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0003
+\item \texttt{d90.orig.v1.tr02.exercise.0003}: resolven.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0004
+\item \texttt{d90.orig.v1.tr02.exercise.0004}: operator skew.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0005
+\item \texttt{d90.orig.v1.tr02.exercise.0005}: rentang langkah.
+% ORIG03-EXISTING-ASSESSMENT-ID: d90.orig.v1.tr02.exercise.0006
+\item \texttt{d90.orig.v1.tr02.exercise.0006}: bayangan Douglas--Rachford.
+\end{itemize}
+
+Dengan demikian, peta awal ini merujuk 54 prompt pada modul 01--04 dan 14
+latihan terselesaikan yang sudah diterima tanpa mendeklarasikan ulang ID-nya.
+Asesmen kumulatif lanjutan, rubrik bukti, dua laboratorium komputasi, dan
+proyek kapstone kini lengkap pada modul 05--13 yang mengikuti peta ini.

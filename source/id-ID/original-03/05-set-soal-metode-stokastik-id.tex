@@ -1,0 +1,289 @@
+% segment-local-id: OR03-S006
+% segment-id: d90.orig.v1.tr03.seg0006
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Set soal IV: metode stokastik}
+\label{orig03:ps04}
+
+% stable-id: d90.orig.v1.tr03.ps04.exercise.0001
+\begin{exercise}[Pencuplikan tak seragam dan koreksi kepentingan]
+\label{orig03:ps04:exercise:0001}
+Misalkan
+\[
+  F(x)=\frac1N\sum_{i=1}^N f_i(x),
+  \qquad g_i=\nabla f_i(x),
+\]
+dan, bersyarat pada informasi masa lalu $\mathcal F$, indeks $I$ dipilih dengan
+peluang $p_i>0$, $\sum_i p_i=1$. Peluang dan titik $x$ boleh
+$\mathcal F$-terukur.
+
+\begin{enumerate}
+  \item Hitung bias penduga naif $H=g_I$ terhadap $\nabla F(x)$.
+  \item Tunjukkan bahwa $G=g_I/(Np_I)$ tidak bias secara bersyarat.
+  \item Turunkan rumus eksak untuk
+  $\mathbb E[\lVert G-\nabla F(x)\rVert^2\mid\mathcal F]$.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps04.hint.0001
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps04:hint:0001}
+\textbf{Tahap 1.} Tulis ekspektasi bersyarat sebagai jumlah atas semua nilai
+yang mungkin bagi $I$.
+\textbf{Tahap 2.} Setelah memperoleh ketakbiasan, gunakan identitas
+$\mathbb E\lVert G-m\rVert^2=\mathbb E\lVert G\rVert^2-\lVert m\rVert^2$
+dengan $m=\mathbb E[G\mid\mathcal F]$.
+
+% stable-id: d90.orig.v1.tr03.ps04.answer.0001
+\paragraph{Jawaban singkat.}
+\label{orig03:ps04:answer:0001}
+Penduga naif mempunyai bias
+$\sum_i p_i g_i-N^{-1}\sum_i g_i$. Sementara itu,
+\[
+ \mathbb E[G\mid\mathcal F]=\nabla F(x),\qquad
+ \mathbb E[\lVert G-\nabla F(x)\rVert^2\mid\mathcal F]
+ =\frac1{N^2}\sum_{i=1}^N\frac{\lVert g_i\rVert^2}{p_i}
+  -\lVert\nabla F(x)\rVert^2.
+\]
+
+% stable-id: d90.orig.v1.tr03.ps04.solution.0001
+\paragraph{Solusi lengkap.}
+\label{orig03:ps04:solution:0001}
+Karena $p_i$ dan $g_i$ diketahui setelah mengondisikan pada $\mathcal F$,
+\[
+ \mathbb E[H\mid\mathcal F]=\sum_i p_i g_i.
+\]
+Jadi selisihnya dari gradien penuh adalah
+$\sum_i(p_i-1/N)g_i$, yang umumnya tidak nol. Untuk penduga terkoreksi,
+\[
+ \mathbb E[G\mid\mathcal F]
+ =\sum_i p_i\frac{g_i}{Np_i}
+ =\frac1N\sum_i g_i=\nabla F(x).
+\]
+Selanjutnya,
+\[
+ \mathbb E[\lVert G\rVert^2\mid\mathcal F]
+ =\sum_i p_i\frac{\lVert g_i\rVert^2}{N^2p_i^2}
+ =\frac1{N^2}\sum_i\frac{\lVert g_i\rVert^2}{p_i}.
+\]
+Mengurangkan kuadrat norma mean bersyarat memberi rumus varians yang
+dinyatakan pada jawaban singkat. Positivitas setiap $p_i$ penting agar koreksi
+terdefinisi dan tidak menghilangkan komponen mana pun.
+
+% stable-id: d90.orig.v1.tr03.ps04.exercise.0002
+\begin{exercise}[Ketaksamaan tiga titik untuk langkah Bregman komposit]
+\label{orig03:ps04:exercise:0002}
+Pada himpunan konveks tertutup $C$, misalkan $h$ terdiferensialkan dan konveks,
+$r$ konveks proper semikontinu-bawah, dan
+\[
+ x^+\in\arg\min_{x\in C}
+ \left\{\eta\langle g,x\rangle+\eta r(x)+D_h(x,x_k)\right\},
+ \qquad \eta>0.
+\]
+Buktikan bahwa untuk setiap $u\in C$,
+\[
+ \eta\bigl(\langle g,x^+-u\rangle+r(x^+)-r(u)\bigr)
+ \le D_h(u,x_k)-D_h(u,x^+)-D_h(x^+,x_k).
+\]
+Nyatakan dengan jelas kondisi optimalitas yang Anda gunakan.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps04.hint.0002
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps04:hint:0002}
+\textbf{Tahap 1.} Pilih $s^+\in\partial r(x^+)$ dan
+$n^+\in N_C(x^+)$ dari inklusi optimalitas.
+\textbf{Tahap 2.} Gunakan ketaksamaan subgradien dan identitas tiga titik
+untuk divergensi Bregman.
+
+% stable-id: d90.orig.v1.tr03.ps04.answer.0002
+\paragraph{Jawaban singkat.}
+\label{orig03:ps04:answer:0002}
+Inklusi
+\[
+ 0\in\eta g+\eta\partial r(x^+)+\nabla h(x^+)-\nabla h(x_k)+N_C(x^+)
+\]
+bersama dengan
+\[
+ \langle\nabla h(x^+)-\nabla h(x_k),u-x^+\rangle
+ =D_h(u,x_k)-D_h(u,x^+)-D_h(x^+,x_k)
+\]
+memberikan hasilnya.
+
+% stable-id: d90.orig.v1.tr03.ps04.solution.0002
+\paragraph{Solusi lengkap.}
+\label{orig03:ps04:solution:0002}
+Ambil $s^+\in\partial r(x^+)$ dan $n^+\in N_C(x^+)$ sehingga
+\[
+ 0=\eta g+\eta s^++\nabla h(x^+)-\nabla h(x_k)+n^+.
+\]
+Karena $u\in C$, definisi kerucut normal memberi
+$\langle n^+,u-x^+\rangle\le0$. Mengalikan persamaan optimalitas dengan
+$x^+-u$ menghasilkan
+\[
+ \eta\langle g,x^+-u\rangle+\eta\langle s^+,x^+-u\rangle
+ \le \langle\nabla h(x^+)-\nabla h(x_k),u-x^+\rangle.
+\]
+Ketaksamaan subgradien menyatakan
+$\langle s^+,x^+-u\rangle\ge r(x^+)-r(u)$. Ruas kanan sama dengan selisih
+tiga divergensi Bregman pada jawaban singkat. Substitusi kedua fakta itu
+menyelesaikan bukti.
+
+% stable-id: d90.orig.v1.tr03.ps04.exercise.0003
+\begin{exercise}[Varians terbatas bukan momen kedua seragam]
+\label{orig03:ps04:exercise:0003}
+Pertimbangkan $f(x)=x^2/2$ dan orakel stokastik
+$G(x,\xi)=x+\xi$, dengan $\mathbb E\xi=0$ dan
+$\mathbb E\xi^2=\sigma^2<\infty$.
+
+\begin{enumerate}
+  \item Verifikasi ketakbiasan dan varians bersyarat yang seragam.
+  \item Tunjukkan bahwa tidak ada batas seragam untuk
+  $\mathbb E|G(x,\xi)|^2$ ketika $x$ menjelajahi $\mathbb R$.
+  \item Buktikan arah sebaliknya: jika
+  $\mathbb E\lVert G(x,\xi)\rVert^2\le M^2$ dan $G$ tidak bias, maka
+  $\lVert\nabla f(x)\rVert\le M$.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps04.hint.0003
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps04:hint:0003}
+\textbf{Tahap 1.} Pisahkan $G-\nabla f$ dari $G$ sendiri.
+\textbf{Tahap 2.} Untuk arah sebaliknya, terapkan ketaksamaan Jensen pada
+fungsi kuadrat norma.
+
+% stable-id: d90.orig.v1.tr03.ps04.answer.0003
+\paragraph{Jawaban singkat.}
+\label{orig03:ps04:answer:0003}
+$G$ tidak bias dan
+$\mathbb E|G-\nabla f(x)|^2=\sigma^2$, tetapi
+$\mathbb E|G|^2=x^2+\sigma^2$, sehingga tak terbatas seragam. Sebaliknya,
+$\lVert\nabla f(x)\rVert^2=\lVert\mathbb E G\rVert^2
+\le\mathbb E\lVert G\rVert^2\le M^2$.
+
+% stable-id: d90.orig.v1.tr03.ps04.solution.0003
+\paragraph{Solusi lengkap.}
+\label{orig03:ps04:solution:0003}
+Gradien eksak ialah $\nabla f(x)=x$. Karena mean $\xi$ nol,
+$\mathbb E[G(x,\xi)]=x$, sedangkan
+$G(x,\xi)-\nabla f(x)=\xi$. Jadi varians galat orakel selalu
+$\sigma^2$, tidak bergantung pada $x$. Namun,
+\[
+ \mathbb E|x+\xi|^2=x^2+2x\mathbb E\xi+\mathbb E\xi^2
+ =x^2+\sigma^2,
+\]
+yang menuju tak hingga saat $|x|\to\infty$. Dengan demikian, asumsi varians
+terbatas tidak boleh diam-diam diganti dengan asumsi momen kedua seragam.
+Untuk arah terakhir, ketakbiasan dan konveksitas kuadrat norma memberi
+\[
+ \lVert\nabla f(x)\rVert^2
+ =\lVert\mathbb E G(x,\xi)\rVert^2
+ \le\mathbb E\lVert G(x,\xi)\rVert^2\le M^2.
+\]
+
+% stable-id: d90.orig.v1.tr03.ps04.exercise.0004
+\begin{exercise}[Bias bersyarat pada pengacakan ulang]
+\label{orig03:ps04:exercise:0004}
+Dalam satu epok, ambil permutasi seragam $\pi$ dari
+$\{1,\ldots,N\}$. Setelah indeks
+$\pi_1,\ldots,\pi_t$ terungkap, misalkan $R_t$ adalah himpunan indeks yang
+tersisa dan $\mathcal F_t$ memuat riwayat tersebut.
+
+\begin{enumerate}
+  \item Untuk titik beku $x$, hitung
+  $\mathbb E[\nabla f_{\pi_{t+1}}(x)\mid\mathcal F_t]$.
+  \item Tunjukkan bahwa jumlah gradien selama satu epok pada titik beku tepat
+  sama dengan $N\nabla F(x)$.
+  \item Jelaskan mengapa bukti SGD yang mengandalkan selisih martingal tidak
+  dapat langsung dipakai ketika titik iterasi berubah di dalam epok.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps04.hint.0004
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps04:hint:0004}
+\textbf{Tahap 1.} Bersyarat pada riwayat, indeks berikutnya seragam hanya pada
+$R_t$, bukan pada seluruh himpunan indeks.
+\textbf{Tahap 2.} Bedakan identitas kombinatorial pada satu titik $x$ dari
+jumlah $\nabla f_{\pi_t}(x_t)$ pada titik-titik yang berlainan.
+
+% stable-id: d90.orig.v1.tr03.ps04.answer.0004
+\paragraph{Jawaban singkat.}
+\label{orig03:ps04:answer:0004}
+\[
+ \mathbb E[\nabla f_{\pi_{t+1}}(x)\mid\mathcal F_t]
+ =\frac1{|R_t|}\sum_{i\in R_t}\nabla f_i(x),
+ \qquad
+ \sum_{t=1}^N\nabla f_{\pi_t}(x)=N\nabla F(x).
+\]
+Mean bersyarat pertama umumnya bukan gradien penuh; bila $x_t$ berubah,
+identitas jumlah pada titik beku juga tidak berlaku.
+
+% stable-id: d90.orig.v1.tr03.ps04.solution.0004
+\paragraph{Solusi lengkap.}
+\label{orig03:ps04:solution:0004}
+Setelah $t$ indeks terungkap, setiap elemen $R_t$ mempunyai peluang
+$1/|R_t|$ untuk muncul berikutnya. Karena itu mean bersyarat adalah rata-rata
+gradien komponen yang tersisa. Rata-rata ini hanya sama dengan gradien penuh
+dalam keadaan khusus. Di sisi lain, sebuah permutasi memuat setiap indeks
+tepat sekali, sehingga untuk satu titik yang sama,
+\[
+ \sum_{t=1}^N\nabla f_{\pi_t}(x)=\sum_{i=1}^N\nabla f_i(x)=N\nabla F(x).
+\]
+Pada algoritme sebenarnya, suku ke-$t$ dinilai di $x_t$, sehingga jumlahnya
+adalah $\sum_t\nabla f_{\pi_t}(x_t)$ dan tidak lagi dapat diganti oleh jumlah
+gradien pada satu titik. Selain itu, galat gradien terhadap gradien penuh
+umumnya mempunyai mean bersyarat tak nol. Maka argumen selisih martingal SGD
+dengan pengambilan sampel independen memerlukan analisis baru, bukan sekadar
+penggantian notasi.
+
+% stable-id: d90.orig.v1.tr03.ps04.exercise.0005
+\begin{exercise}[Lantai galat akibat derau persisten]
+\label{orig03:ps04:exercise:0005}
+Misalkan barisan tak negatif memenuhi
+\[
+ a_{k+1}\le(1-\mu\eta)a_k+\eta^2\sigma^2,
+ \qquad 0<\mu\eta<1.
+\]
+Turunkan batas tertutup untuk $a_k$, hitung limit superiornya, dan jelaskan
+apa yang harus diubah agar jaminan konvergensi eksak tetap masuk akal ketika
+$\sigma>0$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps04.hint.0005
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps04:hint:0005}
+\textbf{Tahap 1.} Tetapkan $q=1-\mu\eta$ dan buka rekursi sebagai deret
+geometrik.
+\textbf{Tahap 2.} Bandingkan faktor kontraksi $q^k$ dengan suku paksa yang
+tidak lenyap.
+
+% stable-id: d90.orig.v1.tr03.ps04.answer.0005
+\paragraph{Jawaban singkat.}
+\label{orig03:ps04:answer:0005}
+Dengan $q=1-\mu\eta$,
+\[
+ a_k\le q^k a_0+\frac{\eta\sigma^2}{\mu}(1-q^k),
+ \qquad
+ \limsup_{k\to\infty}a_k\le\frac{\eta\sigma^2}{\mu}.
+\]
+Langkah tetap dengan derau persisten hanya menjamin lingkungan solusi;
+langkah menurun atau reduksi varians diperlukan untuk meniadakan lantai ini.
+
+% stable-id: d90.orig.v1.tr03.ps04.solution.0005
+\paragraph{Solusi lengkap.}
+\label{orig03:ps04:solution:0005}
+Iterasi rekursi memberikan
+\[
+ a_k\le q^k a_0+\eta^2\sigma^2\sum_{j=0}^{k-1}q^j
+ =q^k a_0+\eta^2\sigma^2\frac{1-q^k}{1-q}.
+\]
+Karena $1-q=\mu\eta$, suku kedua sama dengan
+$\eta\sigma^2(1-q^k)/\mu$. Hipotesis memastikan $0<q<1$, sehingga
+$q^k\to0$ dan batas limit superior mengikuti. Bila $\eta$ tetap dan
+$\sigma>0$, suku paksa tidak hilang; rekursi itu sendiri tidak dapat
+membuktikan $a_k\to0$. Jadwal langkah yang menuju nol dengan syarat penjumlahan
+yang sesuai, atau penduga dengan varians yang ikut menuju nol, mengubah
+rekursi sehingga lantai galat dapat lenyap.

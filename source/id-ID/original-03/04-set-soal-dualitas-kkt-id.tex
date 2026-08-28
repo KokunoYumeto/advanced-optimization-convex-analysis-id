@@ -1,0 +1,415 @@
+% ORIG03-SEGMENT-CODE: OR03-S005
+% ORIG03-SEGMENT-ID: d90.orig.v1.tr03.seg0005
+% ORIG03-MODULE-ID: ps03.module.0001
+% SPDX-License-Identifier: CC-BY-SA-4.0
+% Karya asli berbahasa Indonesia; semua butir disusun independen.
+
+\section{Set soal III: dualitas dan kondisi KKT}
+\label{orig03:section:set-soal-dualitas-kkt}
+
+Lima masalah berikut melatih pembentukan fungsi dual, kondisi
+Karush--Kuhn--Tucker (KKT), kondisi Slater, dan sensitivitas nilai optimal.
+
+% ORIG03-STABLE-ID: ps03.problem.0001
+\begin{exercise}[Kendala persamaan skalar]
+\label{orig03:ps03:problem:0001}
+Pertimbangkan masalah
+\[
+ \min_{x\in\mathbb{R}}\ \frac12x^2
+ \qquad\text{dengan kendala}\qquad x=1.
+\]
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps03.prompt.0001
+\item\label{orig03:ps03:prompt:0001}
+Turunkan fungsi dual, lalu tentukan pengali dan nilai dual optimal.
+% ORIG03-STABLE-ID: ps03.prompt.0002
+\item\label{orig03:ps03:prompt:0002}
+Verifikasi semua kondisi KKT dan kesenjangan dualitas nol.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps03.hint1.0001
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0001).}
+Gunakan Lagrangian $L(x,\lambda)=\tfrac12x^2+\lambda(x-1)$.
+\label{orig03:ps03:hint1:0001}
+% ORIG03-STABLE-ID: ps03.hint2.0001
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0001).}
+Infimum terhadap $x$ tercapai di $x=-\lambda$.
+\label{orig03:ps03:hint2:0001}
+% ORIG03-STABLE-ID: ps03.answer.0001
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0001).}
+$g(\lambda)=-\tfrac12\lambda^2-\lambda$,
+$\lambda^\star=-1$, dan $d^\star=1/2$.
+\label{orig03:ps03:answer:0001}
+% ORIG03-STABLE-ID: ps03.solution.0001
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0001).}
+Meminimumkan Lagrangian terhadap $x$ memberi syarat $x+\lambda=0$, jadi
+$x=-\lambda$. Karena Lagrangian konveks kuat terhadap $x$, titik ini memberi
+infimum dan
+\[
+ g(\lambda)=L(-\lambda,\lambda)
+ =-\frac12\lambda^2-\lambda.
+\]
+Masalah dual memaksimalkan kuadratik cekung ini pada
+$\lambda\in\mathbb{R}$. Persamaan $g'(\lambda)=-\lambda-1=0$ memberi
+$\lambda^\star=-1$ dan $g(-1)=1/2$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0001}
+
+% ORIG03-STABLE-ID: ps03.hint1.0002
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0002).}
+KKT untuk kendala persamaan terdiri atas kelayakan primal dan stasioneritas.
+\label{orig03:ps03:hint1:0002}
+% ORIG03-STABLE-ID: ps03.hint2.0002
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0002).}
+Substitusikan $x^\star=1$ dan $\lambda^\star=-1$.
+\label{orig03:ps03:hint2:0002}
+% ORIG03-STABLE-ID: ps03.answer.0002
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0002).}
+$x^\star=1$ layak dan
+$x^\star+\lambda^\star=0$; nilai primal dan dual sama-sama $1/2$.
+\label{orig03:ps03:answer:0002}
+% ORIG03-STABLE-ID: ps03.solution.0002
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0002).}
+Kelayakan primal memberi $x^\star-1=0$. Stasioneritas memberi
+$\nabla_xL(x^\star,\lambda^\star)=x^\star+\lambda^\star=1-1=0$.
+Tidak ada syarat tanda atau kelengkapan komplementer untuk pengali persamaan.
+Nilai primal adalah $p^\star=\tfrac12(1)^2=1/2$, sedangkan hasil dual pada
+subbutir sebelumnya memberi $d^\star=1/2$. Jadi
+$p^\star-d^\star=0$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0002}
+
+% ORIG03-STABLE-ID: ps03.problem.0002
+\begin{exercise}[Kendala ketaksamaan aktif]
+\label{orig03:ps03:problem:0002}
+Pertimbangkan
+\[
+ \min_{x\in\mathbb{R}}\ (x-2)^2
+ \qquad\text{dengan kendala}\qquad x\leq1.
+\]
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps03.prompt.0003
+\item\label{orig03:ps03:prompt:0003}
+Gunakan kondisi KKT untuk menentukan solusi primal dan pengali optimal.
+% ORIG03-STABLE-ID: ps03.prompt.0004
+\item\label{orig03:ps03:prompt:0004}
+Verifikasi kondisi Slater, turunkan fungsi dual, dan periksa nilainya di
+pengali optimal.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps03.hint1.0003
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0003).}
+Tuliskan kendala sebagai $x-1\leq0$ dengan pengali $\lambda\geq0$.
+\label{orig03:ps03:hint1:0003}
+% ORIG03-STABLE-ID: ps03.hint2.0003
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0003).}
+Gunakan stasioneritas $2(x-2)+\lambda=0$ dan
+kelengkapan komplementer $\lambda(x-1)=0$.
+\label{orig03:ps03:hint2:0003}
+% ORIG03-STABLE-ID: ps03.answer.0003
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0003).}
+$x^\star=1$ dan $\lambda^\star=2$.
+\label{orig03:ps03:answer:0003}
+% ORIG03-STABLE-ID: ps03.solution.0003
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0003).}
+Jika kendala tidak aktif, kelengkapan komplementer memberi $\lambda=0$ dan
+stasioneritas memberi $x=2$, yang tidak layak. Maka kendala aktif:
+$x^\star=1$. Stasioneritas kemudian memberi
+$2(1-2)+\lambda^\star=0$, sehingga $\lambda^\star=2\geq0$.
+Kelayakan primal, kelayakan dual, stasioneritas, dan kelengkapan komplementer
+semuanya terpenuhi. Karena masalah konveks, titik KKT ini optimal.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0003}
+
+% ORIG03-STABLE-ID: ps03.hint1.0004
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0004).}
+$x=0$ adalah kandidat titik Slater.
+\label{orig03:ps03:hint1:0004}
+% ORIG03-STABLE-ID: ps03.hint2.0004
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0004).}
+Dalam $L(x,\lambda)=(x-2)^2+\lambda(x-1)$, infimum terhadap $x$ tercapai
+di $x=2-\lambda/2$.
+\label{orig03:ps03:hint2:0004}
+% ORIG03-STABLE-ID: ps03.answer.0004
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0004).}
+Slater berlaku; $g(\lambda)=\lambda-\lambda^2/4$ untuk $\lambda\geq0$, dan
+$g(2)=1=p^\star$.
+\label{orig03:ps03:answer:0004}
+% ORIG03-STABLE-ID: ps03.solution.0004
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0004).}
+Titik $x=0$ memenuhi $x-1=-1<0$, jadi kondisi Slater berlaku. Untuk
+$\lambda\geq0$, peminimum Lagrangian terhadap $x$ adalah
+$x(\lambda)=2-\lambda/2$. Substitusi memberi
+\[
+ g(\lambda)=\left(-\frac\lambda2\right)^2
+ +\lambda\left(1-\frac\lambda2\right)
+ =\lambda-\frac{\lambda^2}{4}.
+\]
+Kuadratik cekung ini maksimum di $\lambda=2$ dengan nilai $1$. Nilai primal
+di $x^\star=1$ juga $(1-2)^2=1$, sesuai dualitas kuat yang dijamin Slater.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0004}
+
+% ORIG03-STABLE-ID: ps03.problem.0003
+\begin{exercise}[Proyeksi norma minimum pada hiperbidang]
+\label{orig03:ps03:problem:0003}
+Ambil $a\in\mathbb{R}^n\setminus\{0\}$ dan $b\in\mathbb{R}$, lalu
+pertimbangkan
+\[
+ \min_x\ \frac12\lVert x\rVert_2^2
+ \qquad\text{dengan kendala}\qquad a^\top x=b.
+\]
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps03.prompt.0005
+\item\label{orig03:ps03:prompt:0005}
+Selesaikan sistem KKT untuk memperoleh $x^\star$ dan $\lambda^\star$.
+% ORIG03-STABLE-ID: ps03.prompt.0006
+\item\label{orig03:ps03:prompt:0006}
+Turunkan fungsi dual dan verifikasi bahwa nilai primal dan dual optimal sama.
+% ORIG03-STABLE-ID: ps03.prompt.0007
+\item\label{orig03:ps03:prompt:0007}
+Buktikan bahwa solusi primal itu unik dan bahwa kondisi KKT cukup untuk
+optimalitas pada masalah ini.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps03.hint1.0005
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0005).}
+Gunakan $L(x,\lambda)=\tfrac12\lVert x\rVert_2^2+
+\lambda(a^\top x-b)$.
+\label{orig03:ps03:hint1:0005}
+% ORIG03-STABLE-ID: ps03.hint2.0005
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0005).}
+Stasioneritas memberi $x=-\lambda a$; substitusikan ke kendala.
+\label{orig03:ps03:hint2:0005}
+% ORIG03-STABLE-ID: ps03.answer.0005
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0005).}
+\[
+ x^\star=\frac{b}{\lVert a\rVert_2^2}a,
+ \qquad
+ \lambda^\star=-\frac{b}{\lVert a\rVert_2^2}.
+\]
+\label{orig03:ps03:answer:0005}
+% ORIG03-STABLE-ID: ps03.solution.0005
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0005).}
+Stasioneritas adalah $x+\lambda a=0$, sehingga $x=-\lambda a$.
+Kelayakan persamaan lalu memberi
+$-\lambda\lVert a\rVert_2^2=b$. Karena $a\neq0$, penyebutnya positif dan
+\[
+ \lambda^\star=-\frac{b}{\lVert a\rVert_2^2},
+ \qquad
+ x^\star=-\lambda^\star a=
+ \frac{b}{\lVert a\rVert_2^2}a.
+\]
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0005}
+
+% ORIG03-STABLE-ID: ps03.hint1.0006
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0006).}
+Ambil infimum Lagrangian di $x=-\lambda a$.
+\label{orig03:ps03:hint1:0006}
+% ORIG03-STABLE-ID: ps03.hint2.0006
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0006).}
+Maksimalkan kuadratik cekung yang diperoleh terhadap $\lambda\in\mathbb{R}$.
+\label{orig03:ps03:hint2:0006}
+% ORIG03-STABLE-ID: ps03.answer.0006
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0006).}
+$g(\lambda)=-\tfrac12\lambda^2\lVert a\rVert_2^2-\lambda b$ dan
+$p^\star=d^\star=b^2/(2\lVert a\rVert_2^2)$.
+\label{orig03:ps03:answer:0006}
+% ORIG03-STABLE-ID: ps03.solution.0006
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0006).}
+Substitusi $x=-\lambda a$ ke Lagrangian memberi
+\[
+ g(\lambda)=-\frac12\lambda^2\lVert a\rVert_2^2-\lambda b.
+\]
+Turunannya nol pada
+$\lambda^\star=-b/\lVert a\rVert_2^2$, dan substitusi memberi
+$d^\star=b^2/(2\lVert a\rVert_2^2)$. Di sisi primal,
+\[
+ \frac12\lVert x^\star\rVert_2^2
+ =\frac12\frac{b^2\lVert a\rVert_2^2}{\lVert a\rVert_2^4}
+ =\frac{b^2}{2\lVert a\rVert_2^2}=d^\star.
+\]
+\label{orig03:ps03:solution:0006}
+
+% ORIG03-STABLE-ID: ps03.hint1.0007
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0007).}
+Gunakan konveksitas kuat objektif untuk keunikan.
+\label{orig03:ps03:hint1:0007}
+% ORIG03-STABLE-ID: ps03.hint2.0007
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0007).}
+Gunakan ketaksamaan konveksitas orde pertama pada titik KKT dan hilangkan
+suku linear dengan kelayakan persamaan.
+\label{orig03:ps03:hint2:0007}
+% ORIG03-STABLE-ID: ps03.answer.0007
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0007).}
+Objektif konveks kuat pada himpunan layak konveks, sehingga peminimum tunggal;
+stasioneritas dan kelayakan KKT menjamin optimalitas global.
+\label{orig03:ps03:answer:0007}
+% ORIG03-STABLE-ID: ps03.solution.0007
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0007).}
+Fungsi $f(x)=\tfrac12\lVert x\rVert_2^2$ bersifat konveks kuat dengan
+parameter satu. Pembatasannya pada hiperbidang afin tetap konveks kuat, jadi
+tidak mungkin mempunyai dua peminimum berbeda. Untuk kecukupan, ambil
+pasangan KKT $(x^\star,\lambda^\star)$. Stasioneritas memberi
+$\nabla f(x^\star)=-\lambda^\star a$. Untuk setiap $x$ layak, konveksitas
+memberi
+\[
+ f(x)\geq f(x^\star)+\nabla f(x^\star)^\top(x-x^\star)
+ =f(x^\star)-\lambda^\star a^\top(x-x^\star)=f(x^\star),
+\]
+karena $a^\top x=a^\top x^\star=b$. Maka titik KKT optimal global, dan
+konveksitas kuat membuatnya unik.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0007}
+
+% ORIG03-STABLE-ID: ps03.problem.0004
+\begin{exercise}[Sensitivitas ruas kanan]
+\label{orig03:ps03:problem:0004}
+Definisikan fungsi nilai
+\[
+ p(u)=\min_x\left\{\frac12x^2:x=u\right\}.
+\]
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps03.prompt.0008
+\item\label{orig03:ps03:prompt:0008}
+Hitung $p(u)$, pengali optimal $\lambda^\star(u)$ untuk kendala $x-u=0$,
+dan hubungan antara $p'(u)$ dan pengali itu.
+% ORIG03-STABLE-ID: ps03.prompt.0009
+\item\label{orig03:ps03:prompt:0009}
+Untuk perturbasi $\delta$, turunkan ekspansi eksak $p(u+\delta)$ dan
+identifikasi suku sensitivitas orde pertama serta galat orde keduanya.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps03.hint1.0008
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0008).}
+Kendala langsung memaksa $x=u$.
+\label{orig03:ps03:hint1:0008}
+% ORIG03-STABLE-ID: ps03.hint2.0008
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0008).}
+Stasioneritas Lagrangian
+$\tfrac12x^2+\lambda(x-u)$ adalah $x+\lambda=0$.
+\label{orig03:ps03:hint2:0008}
+% ORIG03-STABLE-ID: ps03.answer.0008
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0008).}
+$p(u)=u^2/2$, $\lambda^\star(u)=-u$, dan
+$p'(u)=u=-\lambda^\star(u)$.
+\label{orig03:ps03:answer:0008}
+% ORIG03-STABLE-ID: ps03.solution.0008
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0008).}
+Satu-satunya titik layak adalah $x^\star(u)=u$, sehingga
+$p(u)=u^2/2$. Stasioneritas memberi
+$x^\star(u)+\lambda^\star(u)=0$, jadi $\lambda^\star(u)=-u$.
+Mendiferensialkan fungsi nilai menghasilkan
+$p'(u)=u=-\lambda^\star(u)$. Tanda minus muncul karena kendala ditulis
+sebagai $x-u=0$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0007}.}
+\label{orig03:ps03:solution:0008}
+
+% ORIG03-STABLE-ID: ps03.hint1.0009
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0009).}
+Kembangkan $(u+\delta)^2/2$.
+\label{orig03:ps03:hint1:0009}
+% ORIG03-STABLE-ID: ps03.hint2.0009
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0009).}
+Ganti $u$ pada suku linear dengan $-\lambda^\star(u)$.
+\label{orig03:ps03:hint2:0009}
+% ORIG03-STABLE-ID: ps03.answer.0009
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0009).}
+$p(u+\delta)=p(u)-\lambda^\star(u)\delta+\delta^2/2$.
+\label{orig03:ps03:answer:0009}
+% ORIG03-STABLE-ID: ps03.solution.0009
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0009).}
+Perhitungan eksak memberi
+\[
+ p(u+\delta)=\frac12(u+\delta)^2
+ =\frac12u^2+u\delta+\frac12\delta^2
+ =p(u)-\lambda^\star(u)\delta+\frac12\delta^2.
+\]
+Jadi $-\lambda^\star(u)\delta$ adalah perubahan linear yang diprediksi
+pengali, sedangkan $\delta^2/2$ adalah galat orde kedua yang eksak.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0007}.}
+\label{orig03:ps03:solution:0009}
+
+% ORIG03-STABLE-ID: ps03.problem.0005
+\begin{exercise}[Proyeksi pada bola Euclid melalui KKT]
+\label{orig03:ps03:problem:0005}
+Ambil $c\in\mathbb{R}^n$ dan $r$ dengan $0<r<\lVert c\rVert_2$.
+Pertimbangkan
+\[
+ \min_x\ \frac12\lVert x-c\rVert_2^2
+ \qquad\text{dengan kendala}\qquad \lVert x\rVert_2\leq r.
+\]
+Gunakan representasi mulus
+$g(x)=\tfrac12(\lVert x\rVert_2^2-r^2)\leq0$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps03.prompt.0010
+\item\label{orig03:ps03:prompt:0010}
+Selesaikan kondisi KKT untuk menentukan $x^\star$ dan pengali
+$\mu^\star$.
+% ORIG03-STABLE-ID: ps03.prompt.0011
+\item\label{orig03:ps03:prompt:0011}
+Verifikasi kondisi Slater dan buktikan bahwa pasangan KKT tersebut merupakan
+solusi primal-dual global yang unik pada sisi primal.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps03.hint1.0010
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0010).}
+Stasioneritas adalah $x-c+\mu x=0$.
+\label{orig03:ps03:hint1:0010}
+% ORIG03-STABLE-ID: ps03.hint2.0010
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0010).}
+Karena $c$ berada di luar bola, kendala optimal aktif; gunakan
+$x=c/(1+\mu)$ dan $\lVert x\rVert_2=r$.
+\label{orig03:ps03:hint2:0010}
+% ORIG03-STABLE-ID: ps03.answer.0010
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0010).}
+\[
+ x^\star=r\frac{c}{\lVert c\rVert_2},
+ \qquad
+ \mu^\star=\frac{\lVert c\rVert_2}{r}-1>0.
+\]
+\label{orig03:ps03:answer:0010}
+% ORIG03-STABLE-ID: ps03.solution.0010
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0010).}
+Lagrangiannya
+$L(x,\mu)=\tfrac12\lVert x-c\rVert_2^2+
+\tfrac\mu2(\lVert x\rVert_2^2-r^2)$ dengan $\mu\geq0$.
+Stasioneritas memberi $(1+\mu)x=c$. Jika $\mu=0$, maka $x=c$, yang tidak
+layak karena $\lVert c\rVert_2>r$. Jadi $\mu^\star>0$, dan kelengkapan
+komplementer memaksa $\lVert x^\star\rVert_2=r$. Dari
+$x^\star=c/(1+\mu^\star)$ diperoleh
+$1+\mu^\star=\lVert c\rVert_2/r$, sehingga rumus yang dinyatakan berlaku.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0010}
+
+% ORIG03-STABLE-ID: ps03.hint1.0011
+\par\noindent\textbf{Petunjuk tahap 1 (ps03.prompt.0011).}
+$x=0$ memenuhi kendala secara ketat.
+\label{orig03:ps03:hint1:0011}
+% ORIG03-STABLE-ID: ps03.hint2.0011
+\par\noindent\textbf{Petunjuk tahap 2 (ps03.prompt.0011).}
+Gabungkan Slater, konveksitas masalah, dan konveksitas kuat objektif.
+\label{orig03:ps03:hint2:0011}
+% ORIG03-STABLE-ID: ps03.answer.0011
+\par\noindent\textbf{Jawaban ringkas (ps03.prompt.0011).}
+Slater berlaku di $x=0$; KKT perlu dan cukup, dualitas kuat berlaku, dan
+$x^\star$ unik karena objektif konveks kuat.
+\label{orig03:ps03:answer:0011}
+% ORIG03-STABLE-ID: ps03.solution.0011
+\par\noindent\textbf{Solusi lengkap (ps03.prompt.0011).}
+Karena $r>0$, titik $x=0$ memenuhi
+$g(0)=-r^2/2<0$, jadi kondisi Slater berlaku. Objektif dan fungsi kendala
+konveks serta terdiferensialkan; karena itu, di bawah Slater, kondisi KKT
+bersifat perlu dan cukup dan tidak ada kesenjangan dualitas. Pasangan pada
+subbutir sebelumnya memenuhi kelayakan primal, $\mu^\star\geq0$,
+stasioneritas, dan kelengkapan komplementer, sehingga optimal global.
+Objektif $\tfrac12\lVert x-c\rVert_2^2$ bersifat konveks kuat, maka
+peminimum primal pada himpunan bola yang konveks adalah unik.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0006}.}
+\label{orig03:ps03:solution:0011}

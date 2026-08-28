@@ -743,7 +743,7 @@
       "excluded": "LP/MIP, simplex-tableau algorithms, finite-LP duality/sensitivity, network/discrete optimization, and general OR solver workflow"
     },
     "public_preservation": {
-      "status": "zenodo_public_github_pending",
+      "status": "github_and_zenodo_public_verified",
       "zenodo_record_id": "22104724",
       "zenodo_record_doi": "10.5281/zenodo.22104724",
       "zenodo_concept_doi": "10.5281/zenodo.22059741",
@@ -768,18 +768,259 @@
       "unchanged_file_count": 96,
       "new_version_created": false,
       "profile_locator_hits_in_public_additions": 0,
+      "github_repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+      "github_branch": "main",
+      "github_commit": "74780b65dcf9954bdf915aecbf57cd17fd6b43ea",
+      "github_tree": "e6c004afc1efeff73a62860039491fd92525ba35",
+      "github_parent": "15fb78bcf7c769b524401c24779469d6ecfc5ffd",
+      "github_commit_path_count": 103,
+      "github_aggregate_public_bytes": 11226335,
+      "github_readback_receipt": "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+      "github_readback_receipt_sha256": "c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0",
+      "github_anonymous_transport": "public Git smart-HTTP ref advertisement plus immutable raw downloads; REST API not used because anonymous quota returned 403",
       "upstream_contact": false
     }
   },
+  "current_integrated_course_admission": {
+    "recorded_on": "2026-08-28",
+    "status": "complete_local_release_ready",
+    "scope": "Complete integrated Bahasa Indonesia O015/D90 coursebook: Habring preface and Chapters 1-9 as the canonical editable spine; three exact Becker/Krock supplements; independent Original-01, Original-02, and Original-03 completion layers; cumulative assessment, complete solutions, proof rubrics, four laboratories in total, and capstone. MIT OCW, Royer, and Penn remain separate companions. O018 content remains excluded.",
+    "canonical_spine": {
+      "authority_id": "o015-habring-arxiv-2607.11664v1",
+      "scope": "complete preface and Chapters 1-9",
+      "source_tar_bytes": 230116,
+      "source_tar_sha256": "d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748",
+      "license": "CC BY 4.0"
+    },
+    "bounded_becker_supplements": {
+      "authority_id": "o015-becker-convex-optimization-class-98ed693",
+      "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+      "tree": "f04670e3f7be3d4836c380fd8bd31883e0b992c9",
+      "typed_notes_credit": "Mitchell Krock",
+      "source_author": "Stephen Becker",
+      "admitted_ranges": [
+        "1263-1321",
+        "1398-1405",
+        "1414-1499",
+        "1652-1726",
+        "1731-1743",
+        "2750-2797",
+        "2971-2988"
+      ],
+      "donor_license": "MIT",
+      "independent_translation_corrections_connectors_exercises_hints_solutions": "CC BY-SA 4.0"
+    },
+    "original_01_versioned_identity": {
+      "historical_public_release": {
+        "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "bytes": 27431,
+        "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+      },
+      "current_integrated_descendant": {
+        "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "bytes": 27425,
+        "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0",
+        "change_scope": "bounded typography/accessibility correction; mathematical content and stable IDs unchanged"
+      }
+    },
+    "original_02": {
+      "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "bytes": 28028,
+      "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367",
+      "license": "CC BY-SA 4.0"
+    },
+    "original_03": {
+      "status": "admitted_complete",
+      "aggregator": {
+        "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+        "bytes": 1785,
+        "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9"
+      },
+      "module_count": 14,
+      "complete_module_and_lab_identity_ledger": {
+        "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+        "bytes": 53446,
+        "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907"
+      },
+      "assessment_summary": {
+        "assessments": 54,
+        "response_units": 83,
+        "proof_rubrics": 7,
+        "capstone_milestones": 7,
+        "stable_definitions": 465,
+        "labels": 453,
+        "unresolved_references": 0
+      },
+      "labs": [
+        {
+          "path": "labs/original-03/globalisasi-newton.py",
+          "bytes": 15806,
+          "sha256": "f57348e409b768376c424feef382c468d07be5f8c9504197e5e6533315814541"
+        },
+        {
+          "path": "labs/original-03/transportasi-entropik.py",
+          "bytes": 11387,
+          "sha256": "9fca6188778608b94008476e257f7a0f1e578782168a7970c8b4a28f8960c5d9"
+        },
+        {
+          "path": "labs/original-03/kapstone-invers-komposit.py",
+          "bytes": 16187,
+          "sha256": "45092afab7b0b3751b43d24ace62b8ea2973a21ec24745c3c8213bc252940370"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "mathematical_witness_boundary": "verification witnesses only; no witness prose, layout, exercises, figures, solutions, or code copied",
+      "o018_imported": false
+    },
+    "integrated_master": {
+      "path": "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+      "bytes": 5110,
+      "sha256": "3a7ca97267acc71557be9e7c441eed2aca11960bae8491e94525fe64aba2d5b4",
+      "content_input_count": 15
+    },
+    "reader_artifacts": {
+      "pdf": {
+        "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+        "bytes": 1671254,
+        "pages": 141,
+        "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5",
+        "tagged_structure": true,
+        "pdf_ua_claimed": false
+      },
+      "html": {
+        "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "bytes": 2485595,
+        "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89",
+        "native_mathml_surfaces": 4535
+      },
+      "epub": {
+        "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+        "bytes": 379901,
+        "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+      }
+    },
+    "backend": {
+      "records": 4877,
+      "protected_prior_records": 4338,
+      "added_records": 539,
+      "jsonl_path": "backend/records.jsonl",
+      "jsonl_bytes": 3534351,
+      "jsonl_sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30",
+      "csv_path": "backend/records.csv",
+      "csv_bytes": 4272596,
+      "csv_sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915",
+      "protected_bytes_and_order_preserved": true,
+      "course_record_corrected_fields": 2,
+      "protected_ancestor": {
+        "records": 4338,
+        "jsonl_bytes": 3183459,
+        "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+        "csv_bytes": 3839894,
+        "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c",
+        "byte_identical_records": 4337,
+        "relative_order_preserved": true
+      },
+      "course_record_correction": {
+        "record_id": "course.d90.advanced-optimization-convex-analysis",
+        "old_record_sha256": "131d625ee73256d3e4afcd0d240e5df42bf479a1b3bfbf53c37c34de965c1173",
+        "new_record_sha256": "12c05fd66d7925fe0db1c0dcc326a54d2662428400343ec9ece29693dc6dd169",
+        "changed_fields": [
+          "source_spine_note",
+          "source_spine_unit_ids"
+        ]
+      }
+    },
+    "validation": {
+      "course_closure": {
+        "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+        "bytes": 53446,
+        "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907",
+        "result": "pass",
+        "P1": 0,
+        "P2": 0,
+        "P3": 0
+      },
+      "pdf_build": {
+        "path": "qa/2026-08-27-integrated-pdf-build.json",
+        "bytes": 10782,
+        "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d"
+      },
+      "pdf_validation_ancestor_before_visual_binding": {
+        "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+        "bytes": 80066,
+        "sha256": "f39b33734ca4ecad977758d45c2a26895d3b9d75ee72c17f42b296f7db9f36f0"
+      },
+      "pdf_validation_current_descendant": {
+        "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+        "bytes": 80194,
+        "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07"
+      },
+      "pdf_visual": {
+        "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+        "bytes": 3100,
+        "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d",
+        "all_pages_inspected": true
+      },
+      "browser": {
+        "path": "qa/INTEGRATED_BROWSER_QA.json",
+        "bytes": 4436,
+        "sha256": "c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a",
+        "viewports": [1440, 768, 390]
+      },
+      "readers_build": {
+        "path": "qa/INTEGRATED_READERS_BUILD.json",
+        "bytes": 8875,
+        "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8"
+      },
+      "readers_validation": {
+        "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+        "bytes": 8963,
+        "sha256": "2069af40785e573bfc81ff7742675f196f84e2bf875b6311ff484900fbf7b2f4"
+      },
+      "backend_build": {
+        "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+        "bytes": 13329,
+        "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb"
+      },
+      "backend_validation": {
+        "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+        "bytes": 3777,
+        "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4"
+      }
+    },
+    "rights": {
+      "no_blanket_license": true,
+      "habring": "CC BY 4.0",
+      "becker_donor": "MIT",
+      "independent_layer": "CC BY-SA 4.0",
+      "companions_separate": true,
+      "nonendorsement": true
+    },
+    "production_model": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "model_role": "Assistance only; not a source author, licensor, or institutional representative.",
+    "o018_boundary": "Exclude LP/MIP, simplex/tableau mechanics, finite-LP duality/complementary slackness/sensitivity, network/discrete optimization, and general OR workflow/tooling; probability-simplex constraints, general KKT conditions, and value sensitivity remain admissible continuous-convex topics.",
+    "publication": {
+      "github_repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+      "github_branch": "main",
+      "zenodo_parent_record_id": "22104724",
+      "zenodo_parent_record_doi": "10.5281/zenodo.22104724",
+      "zenodo_concept_id": "22059741",
+      "zenodo_concept_doi": "10.5281/zenodo.22059741",
+      "state": "next_action_is_build_compact_reader_first_release_then_publish_and_anonymously_read_back"
+    }
+  },
   "current_production_cursor": {
-    "recorded_on": "2026-08-26",
-    "authority_kind": "finite_original_coursebook_closure",
-    "name": "FINITE-ORIGINAL-CLOSURE",
-    "state": "original_tranche_2_zenodo_public_github_gate_next",
-    "scope_reference": "selection_architecture.original_completion_required",
+    "recorded_on": "2026-08-28",
+    "authority_kind": "integrated_course_release_reconciliation",
+    "name": "INTEGRATED-COURSE-FINAL-RELEASE",
+    "state": "integrated_course_complete_release_reconciliation",
+    "scope_reference": "current_integrated_course_admission",
     "required_actions": [
-      "publish and anonymously verify the manifest-bound Original-02 GitHub boundary",
-      "then build cumulative assessment and proof rubrics, two additional labs, capstone, and integrated accessibility/final-reader closure"
+      "pass the final rights and release audit against current controls",
+      "build and verify the compact reader-first final release payload",
+      "narrow-push the exact release manifest to the existing public GitHub main branch",
+      "publish one new version in the existing Zenodo concept and anonymously read back every required public byte",
+      "persist sanitized receipts and close the finite goal only after all publication gates pass"
     ]
   },
   "authorities": [

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446" height="402" viewBox="0 0 446 402" role="img" aria-labelledby="title desc">
+<title id="title">Matriks kopling Sinkhorn log-domain</title>
+<desc id="desc">Peta panas massa transportasi optimal terentropi; nilai numerik lengkap tersedia dalam CSV dan JSON.</desc>
+<rect width="100%" height="100%" fill="white" />
+<text x="18" y="24" font-family="sans-serif" font-size="16">Massa kopling</text>
+<text x="66" y="82" text-anchor="end" font-family="sans-serif" font-size="12">a0</text>
+<rect x="78" y="52" width="48" height="48" fill="rgb(154,174,255)" stroke="#667" />
+<text x="102.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.046</text>
+<rect x="126" y="52" width="48" height="48" fill="rgb(155,175,255)" stroke="#667" />
+<text x="150.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.046</text>
+<rect x="174" y="52" width="48" height="48" fill="rgb(192,212,255)" stroke="#667" />
+<text x="198.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.016</text>
+<rect x="222" y="52" width="48" height="48" fill="rgb(199,219,255)" stroke="#667" />
+<text x="246.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.013</text>
+<rect x="270" y="52" width="48" height="48" fill="rgb(216,236,255)" stroke="#667" />
+<text x="294.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0053</text>
+<rect x="318" y="52" width="48" height="48" fill="rgb(228,248,255)" stroke="#667" />
+<text x="342.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0022</text>
+<rect x="366" y="52" width="48" height="48" fill="rgb(248,252,255)" stroke="#667" />
+<text x="390.0" y="80.0" text-anchor="middle" font-family="sans-serif" font-size="9">3.4e-07</text>
+<text x="66" y="130" text-anchor="end" font-family="sans-serif" font-size="12">a1</text>
+<rect x="78" y="100" width="48" height="48" fill="rgb(166,186,255)" stroke="#667" />
+<text x="102.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.035</text>
+<rect x="126" y="100" width="48" height="48" fill="rgb(161,181,255)" stroke="#667" />
+<text x="150.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.04</text>
+<rect x="174" y="100" width="48" height="48" fill="rgb(162,182,255)" stroke="#667" />
+<text x="198.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.039</text>
+<rect x="222" y="100" width="48" height="48" fill="rgb(170,190,255)" stroke="#667" />
+<text x="246.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.033</text>
+<rect x="270" y="100" width="48" height="48" fill="rgb(192,212,255)" stroke="#667" />
+<text x="294.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.017</text>
+<rect x="318" y="100" width="48" height="48" fill="rgb(210,230,255)" stroke="#667" />
+<text x="342.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0076</text>
+<rect x="366" y="100" width="48" height="48" fill="rgb(247,252,255)" stroke="#667" />
+<text x="390.0" y="128.0" text-anchor="middle" font-family="sans-serif" font-size="9">2.1e-06</text>
+<text x="66" y="178" text-anchor="end" font-family="sans-serif" font-size="12">a2</text>
+<rect x="78" y="148" width="48" height="48" fill="rgb(176,196,255)" stroke="#667" />
+<text x="102.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.028</text>
+<rect x="126" y="148" width="48" height="48" fill="rgb(168,188,255)" stroke="#667" />
+<text x="150.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.034</text>
+<rect x="174" y="148" width="48" height="48" fill="rgb(144,164,255)" stroke="#667" />
+<text x="198.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.057</text>
+<rect x="222" y="148" width="48" height="48" fill="rgb(152,172,255)" stroke="#667" />
+<text x="246.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.049</text>
+<rect x="270" y="148" width="48" height="48" fill="rgb(174,194,255)" stroke="#667" />
+<text x="294.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.029</text>
+<rect x="318" y="148" width="48" height="48" fill="rgb(197,217,255)" stroke="#667" />
+<text x="342.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.014</text>
+<rect x="366" y="148" width="48" height="48" fill="rgb(247,252,255)" stroke="#667" />
+<text x="390.0" y="176.0" text-anchor="middle" font-family="sans-serif" font-size="9">5.2e-06</text>
+<text x="66" y="226" text-anchor="end" font-family="sans-serif" font-size="12">a3</text>
+<rect x="78" y="196" width="48" height="48" fill="rgb(246,252,255)" stroke="#667" />
+<text x="102.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">2.3e-05</text>
+<rect x="126" y="196" width="48" height="48" fill="rgb(245,252,255)" stroke="#667" />
+<text x="150.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">6.2e-05</text>
+<rect x="174" y="196" width="48" height="48" fill="rgb(184,204,255)" stroke="#667" />
+<text x="198.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.022</text>
+<rect x="222" y="196" width="48" height="48" fill="rgb(180,200,255)" stroke="#667" />
+<text x="246.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.024</text>
+<rect x="270" y="196" width="48" height="48" fill="rgb(150,170,255)" stroke="#667" />
+<text x="294.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.051</text>
+<rect x="318" y="196" width="48" height="48" fill="rgb(160,180,255)" stroke="#667" />
+<text x="342.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.041</text>
+<rect x="366" y="196" width="48" height="48" fill="rgb(240,252,255)" stroke="#667" />
+<text x="390.0" y="224.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.00033</text>
+<text x="66" y="274" text-anchor="end" font-family="sans-serif" font-size="12">a4</text>
+<rect x="78" y="244" width="48" height="48" fill="rgb(248,252,255)" stroke="#667" />
+<text x="102.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">3.3e-08</text>
+<rect x="126" y="244" width="48" height="48" fill="rgb(248,252,255)" stroke="#667" />
+<text x="150.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">1.7e-07</text>
+<rect x="174" y="244" width="48" height="48" fill="rgb(213,233,255)" stroke="#667" />
+<text x="198.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0064</text>
+<rect x="222" y="244" width="48" height="48" fill="rgb(206,226,255)" stroke="#667" />
+<text x="246.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0092</text>
+<rect x="270" y="244" width="48" height="48" fill="rgb(143,163,255)" stroke="#667" />
+<text x="294.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.059</text>
+<rect x="318" y="244" width="48" height="48" fill="rgb(130,150,255)" stroke="#667" />
+<text x="342.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.074</text>
+<rect x="366" y="244" width="48" height="48" fill="rgb(208,228,255)" stroke="#667" />
+<text x="390.0" y="272.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.0087</text>
+<text x="66" y="322" text-anchor="end" font-family="sans-serif" font-size="12">a5</text>
+<rect x="78" y="292" width="48" height="48" fill="rgb(248,252,255)" stroke="#667" />
+<text x="102.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">3.8e-13</text>
+<rect x="126" y="292" width="48" height="48" fill="rgb(248,252,255)" stroke="#667" />
+<text x="150.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">5.3e-12</text>
+<rect x="174" y="292" width="48" height="48" fill="rgb(242,252,255)" stroke="#667" />
+<text x="198.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.00017</text>
+<rect x="222" y="292" width="48" height="48" fill="rgb(240,252,255)" stroke="#667" />
+<text x="246.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.00035</text>
+<rect x="270" y="292" width="48" height="48" fill="rgb(202,222,255)" stroke="#667" />
+<text x="294.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.011</text>
+<rect x="318" y="292" width="48" height="48" fill="rgb(177,197,255)" stroke="#667" />
+<text x="342.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.027</text>
+<rect x="366" y="292" width="48" height="48" fill="rgb(78,98,255)" stroke="#667" />
+<text x="390.0" y="320.0" text-anchor="middle" font-family="sans-serif" font-size="9">0.15</text>
+<text x="102.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b0</text>
+<text x="150.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b1</text>
+<text x="198.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b2</text>
+<text x="246.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b3</text>
+<text x="294.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b4</text>
+<text x="342.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b5</text>
+<text x="390.0" y="362" text-anchor="middle" font-family="sans-serif" font-size="12">b6</text>
+</svg>

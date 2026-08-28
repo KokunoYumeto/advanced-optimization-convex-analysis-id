@@ -1,0 +1,319 @@
+% segment-local-id: OR03-S007
+% segment-id: d90.orig.v1.tr03.seg0007
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Set soal V: operator monoton dan metode pemisahan}
+\label{orig03:ps05}
+
+% stable-id: d90.orig.v1.tr03.ps05.exercise.0001
+\begin{exercise}[Keberadaan, ketunggalan, dan titik tetap maju--mundur]
+\label{orig03:ps05:exercise:0001}
+Pada ruang Euklides berdimensi hingga, misalkan $f$ proper, semikontinu-bawah,
+dan $\mu$-konveks kuat dengan $\mu>0$. Misalkan $g$ konveks dan
+terdiferensialkan pada seluruh ruang, dengan $\nabla g$ bersifat
+$\beta$-kokersif. Buktikan bahwa $f+g$ mempunyai tepat satu peminimum $x^\star$
+dan bahwa, untuk setiap $\gamma>0$,
+\[
+ x^\star=J_{\gamma\partial f}
+ \bigl(x^\star-\gamma\nabla g(x^\star)\bigr).
+\]
+Jelaskan peran aturan penjumlahan subdiferensial dalam argumen Anda.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps05.hint.0001
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps05:hint:0001}
+\textbf{Tahap 1.} Gunakan batas bawah kuadratik dari konveksitas kuat untuk
+mendapatkan kekompakan himpunan sublevel.
+\textbf{Tahap 2.} Ubah inklusi
+$0\in\partial f(x^\star)+\nabla g(x^\star)$ menjadi definisi resolven.
+
+% stable-id: d90.orig.v1.tr03.ps05.answer.0001
+\paragraph{Jawaban singkat.}
+\label{orig03:ps05:answer:0001}
+$f+g$ proper, semikontinu-bawah, koersif, dan $\mu$-konveks kuat; jadi ia
+mempunyai peminimum tunggal. Kontinuitas $g$ memberi
+$\partial(f+g)=\partial f+\nabla g$, dan syarat Fermat ekuivalen dengan
+\[
+ x^\star-\gamma\nabla g(x^\star)
+ \in x^\star+\gamma\partial f(x^\star),
+\]
+yakni persamaan titik tetap yang diminta.
+
+% stable-id: d90.orig.v1.tr03.ps05.solution.0001
+\paragraph{Solusi lengkap.}
+\label{orig03:ps05:solution:0001}
+Konveksitas kuat memberikan batas bawah kuadratik bagi $f$ di sekitar suatu
+titik dalam domainnya. Fungsi konveks terdiferensialkan $g$ mempunyai batas
+bawah afin dari bidang singgungnya. Karena itu suku kuadratik mendominasi
+batas afin ketika norma membesar, sehingga $f+g$ koersif. Fungsi tersebut
+proper dan semikontinu-bawah, maka dalam dimensi hingga ia mencapai minimum.
+Jumlahnya tetap $\mu$-konveks kuat, sehingga dua peminimum yang berbeda tidak
+mungkin ada.
+
+Karena $g$ bernilai hingga dan kontinu di seluruh ruang, aturan penjumlahan
+berlaku tanpa syarat kualifikasi tambahan:
+\[
+ \partial(f+g)(x)=\partial f(x)+\nabla g(x).
+\]
+Syarat Fermat untuk peminimum tunggal adalah
+$-\nabla g(x^\star)\in\partial f(x^\star)$. Mengalikan dengan $\gamma$ dan
+menata ulang memberi
+$x^\star-\gamma\nabla g(x^\star)\in(I+\gamma\partial f)(x^\star)$.
+Menerapkan invers $J_{\gamma\partial f}=(I+\gamma\partial f)^{-1}$ memberi
+persamaan titik tetap.
+
+% stable-id: d90.orig.v1.tr03.ps05.exercise.0002
+\begin{exercise}[Keaveragan operator maju--mundur dan laju residu]
+\label{orig03:ps05:exercise:0002}
+Misalkan $A$ maksimal monoton dan $B$ bersifat $\beta$-kokersif. Untuk
+$0<\gamma<2\beta$, definisikan
+\[
+ T=J_{\gamma A}(I-\gamma B),
+ \qquad x_{k+1}=Tx_k,
+\]
+dan anggap $\operatorname{Fix}T\ne\varnothing$.
+
+\begin{enumerate}
+  \item Tunjukkan bahwa $I-\gamma B$ bersifat
+  $\gamma/(2\beta)$-averaged dan $J_{\gamma A}$ bersifat $1/2$-averaged.
+  \item Gunakan aturan komposisi untuk memperoleh
+  $\alpha=2\beta/(4\beta-\gamma)$ sebagai parameter averaged bagi $T$.
+  \item Untuk $z\in\operatorname{Fix}T$, turunkan ketaksamaan penurunan dan
+  batas untuk residu terkecil di antara $k$ iterasi pertama.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps05.hint.0002
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps05:hint:0002}
+\textbf{Tahap 1.} Tulis $I-\gamma B=(1-a)I+a(I-2\beta B)$ dengan
+$a=\gamma/(2\beta)$.
+\textbf{Tahap 2.} Terapkan karakterisasi kuadrat operator averaged, lalu
+jumlahkan ketaksamaan itu dari $0$ sampai $k-1$.
+
+% stable-id: d90.orig.v1.tr03.ps05.answer.0002
+\paragraph{Jawaban singkat.}
+\label{orig03:ps05:answer:0002}
+Komposisi kedua operator tersebut bersifat
+$\alpha$-averaged dengan
+$\alpha=2\beta/(4\beta-\gamma)$. Untuk setiap titik tetap $z$,
+\[
+ \lVert Tx_k-z\rVert^2
+ \le\lVert x_k-z\rVert^2
+ -\frac{1-\alpha}{\alpha}\lVert(I-T)x_k\rVert^2,
+\]
+dan karenanya
+\[
+ \min_{0\le j<k}\lVert(I-T)x_j\rVert
+ \le\sqrt{\frac{\alpha}{(1-\alpha)k}}\,\lVert x_0-z\rVert.
+\]
+
+% stable-id: d90.orig.v1.tr03.ps05.solution.0002
+\paragraph{Solusi lengkap.}
+\label{orig03:ps05:solution:0002}
+Kokersivitas $B$ menyiratkan bahwa $I-2\beta B$ non-ekspansif. Dengan
+$a=\gamma/(2\beta)\in(0,1)$,
+\[
+ I-\gamma B=(1-a)I+a(I-2\beta B),
+\]
+sehingga operator maju bersifat $a$-averaged. Resolven operator maksimal
+monoton firmly non-ekspansif, yang sama dengan $1/2$-averaged. Jika dua
+operator masing-masing $a_1$- dan $a_2$-averaged, komposisinya dapat diambil
+averaged dengan parameter
+\[
+ \frac{a_1+a_2-2a_1a_2}{1-a_1a_2}.
+\]
+Memasukkan $a_1=1/2$ dan $a_2=\gamma/(2\beta)$ menghasilkan
+$\alpha=2\beta/(4\beta-\gamma)\in(0,1)$.
+
+Karakterisasi kuadrat operator $\alpha$-averaged memberi, karena $Tz=z$,
+\[
+ \lVert Tx_k-z\rVert^2
+ \le\lVert x_k-z\rVert^2
+ -\frac{1-\alpha}{\alpha}\lVert(I-T)x_k\rVert^2.
+\]
+Penjumlahan meneleskopkan ruas norma dan menunjukkan
+\[
+ \sum_{j=0}^{k-1}\lVert(I-T)x_j\rVert^2
+ \le\frac{\alpha}{1-\alpha}\lVert x_0-z\rVert^2.
+\]
+Nilai minimum tidak melebihi rata-rata; mengambil akar memberikan batas pada
+jawaban singkat dan menunjukkan residu terbaik berorde $O(k^{-1/2})$.
+
+% stable-id: d90.orig.v1.tr03.ps05.exercise.0003
+\begin{exercise}[Jendela langkah untuk operator monoton tak simetris]
+\label{orig03:ps05:exercise:0003}
+Untuk $a>0$, pertimbangkan operator linear
+\[
+ B_a=\begin{pmatrix}1&-a\\a&1\end{pmatrix}
+ \quad\text{pada }\mathbb R^2.
+\]
+Buktikan bahwa $B_a$ bersifat $1$-monoton kuat, mempunyai konstanta Lipschitz
+$\sqrt{1+a^2}$, dan bersifat $1/(1+a^2)$-kokersif. Tentukan secara eksak
+kapan iterasi maju $x_{k+1}=(I-\gamma B_a)x_k$ merupakan kontraksi. Gunakan
+hasil itu untuk mendiagnosis klaim bahwa monotoni kuat saja selalu membolehkan
+semua $0<\gamma<2$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps05.hint.0003
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps05:hint:0003}
+\textbf{Tahap 1.} Untuk $d\in\mathbb R^2$, hitung
+$\langle B_ad,d\rangle$ dan $\lVert B_ad\rVert^2$.
+\textbf{Tahap 2.} Hitung norma faktor
+$(1-\gamma)I-\gamma aJ$, dengan $J$ rotasi seperempat putaran.
+
+% stable-id: d90.orig.v1.tr03.ps05.answer.0003
+\paragraph{Jawaban singkat.}
+\label{orig03:ps05:answer:0003}
+Untuk setiap $d$,
+$\langle B_ad,d\rangle=\lVert d\rVert^2$ dan
+$\lVert B_ad\rVert^2=(1+a^2)\lVert d\rVert^2$. Faktor kontraksinya adalah
+\[
+ \rho(\gamma)=\sqrt{(1-\gamma)^2+a^2\gamma^2},
+\]
+sehingga kontraksi terjadi tepat ketika
+$0<\gamma<2/(1+a^2)$.
+
+% stable-id: d90.orig.v1.tr03.ps05.solution.0003
+\paragraph{Solusi lengkap.}
+\label{orig03:ps05:solution:0003}
+Bagian simetris $B_a$ adalah identitas. Karena itu
+$\langle B_ad,d\rangle=\lVert d\rVert^2$, yang membuktikan monotoni kuat
+dengan modulus satu. Perkalian langsung memberi
+$B_a^\top B_a=(1+a^2)I$; jadi norma operatornya
+$\sqrt{1+a^2}$ dan
+\[
+ \langle B_ad,d\rangle
+ =\frac1{1+a^2}\lVert B_ad\rVert^2,
+\]
+yakni kokersivitas yang dinyatakan.
+
+Matriks iterasi mempunyai bagian skalar $1-\gamma$ dan bagian rotasi
+$-\gamma aJ$, sehingga norma setiap vektor dikalikan dengan
+$\rho(\gamma)$. Syarat $\rho(\gamma)<1$ ekuivalen dengan
+\[
+ (1-\gamma)^2+a^2\gamma^2<1
+ \quad\Longleftrightarrow\quad
+ 0<\gamma<\frac{2}{1+a^2}.
+\]
+Jadi interval $(0,2)$ tidak seragam terhadap bagian antisimetri. Monotoni kuat
+tanpa kontrol Lipschitz atau kokersivitas tidak cukup untuk membenarkan klaim
+langkah tersebut.
+
+% stable-id: d90.orig.v1.tr03.ps05.exercise.0004
+\begin{exercise}[Sertifikat titik tetap Douglas--Rachford]
+\label{orig03:ps05:exercise:0004}
+Pada $\mathbb R$, minimalkan $f(x)+g(x)$ dengan
+$f(x)=|x|$ dan $g=\delta_{[1,\infty)}$. Ambil $\gamma=1$ dan konvensi
+\[
+ T=\tfrac12(I+R_gR_f),
+ \qquad R_q=2\operatorname{prox}_q-I.
+\]
+Tentukan peminimum, lalu verifikasi secara langsung bahwa $z^\star=2$ adalah
+titik tetap $T$ dan bahwa bayangannya
+$\operatorname{prox}_f(z^\star)$ sama dengan peminimum.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps05.hint.0004
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps05:hint:0004}
+\textbf{Tahap 1.} Gunakan penyusutan lunak untuk $\operatorname{prox}_{|\cdot|}$
+dan proyeksi untuk $\operatorname{prox}_{\delta_{[1,\infty)}}$.
+\textbf{Tahap 2.} Ikuti urutan $2\mapsto R_f(2)\mapsto R_gR_f(2)$ tanpa
+menukar konvensi komposisi.
+
+% stable-id: d90.orig.v1.tr03.ps05.answer.0004
+\paragraph{Jawaban singkat.}
+\label{orig03:ps05:answer:0004}
+Peminimumnya $x^\star=1$. Selain itu,
+$\operatorname{prox}_f(2)=1$, $R_f(2)=0$,
+$\operatorname{prox}_g(0)=1$, dan $R_g(0)=2$. Maka $T(2)=2$ dan bayangan
+$\operatorname{prox}_f(2)=x^\star$.
+
+% stable-id: d90.orig.v1.tr03.ps05.solution.0004
+\paragraph{Solusi lengkap.}
+\label{orig03:ps05:solution:0004}
+Kendala efektif $g$ memaksa $x\ge1$. Pada himpunan itu $|x|=x$, sehingga
+nilai terkecil dicapai secara tunggal di $x^\star=1$. Proksimal $f$ dengan
+parameter satu adalah penyusutan lunak; akibatnya
+$\operatorname{prox}_f(2)=2-1=1$ dan $R_f(2)=2(1)-2=0$. Proksimal indikator
+adalah proyeksi ke $[1,\infty)$, sehingga
+$\operatorname{prox}_g(0)=1$ dan $R_g(0)=2(1)-0=2$. Oleh sebab itu
+\[
+ T(2)=\tfrac12(2+2)=2.
+\]
+Variabel titik tetap $z^\star$ tidak harus sama dengan solusi primal; pada
+konvensi ini solusi diperoleh dari bayangan proksimalnya, yang memang bernilai
+satu.
+
+% stable-id: d90.orig.v1.tr03.ps05.exercise.0005
+\begin{exercise}[Metode titik proksimal dengan galat yang dapat dijumlahkan]
+\label{orig03:ps05:exercise:0005}
+Misalkan $A$ maksimal monoton pada ruang Euklides berdimensi hingga,
+$\operatorname{zer}A\ne\varnothing$, dan $\gamma>0$. Pertimbangkan
+\[
+ x_{k+1}=J_{\gamma A}x_k+e_k,
+ \qquad \sum_{k=0}^{\infty}\lVert e_k\rVert<\infty.
+\]
+Buktikan bahwa $(x_k)$ konvergen ke suatu titik di $\operatorname{zer}A$.
+Dalam bukti Anda, tunjukkan juga bahwa
+$x_k-J_{\gamma A}x_k\to0$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps05.hint.0005
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps05:hint:0005}
+\textbf{Tahap 1.} Tetapkan $y_k=J_{\gamma A}x_k$ dan gunakan
+firm non-ekspansivitas terhadap $z\in\operatorname{zer}A$.
+\textbf{Tahap 2.} Jumlahkan galat kuadrat yang dihasilkan; lalu gunakan
+ketertutupan graf operator maksimal monoton pada subsekuens konvergen.
+
+% stable-id: d90.orig.v1.tr03.ps05.answer.0005
+\paragraph{Jawaban singkat.}
+\label{orig03:ps05:answer:0005}
+Firm non-ekspansivitas memberi
+\[
+ \lVert y_k-z\rVert^2+\lVert x_k-y_k\rVert^2
+ \le\lVert x_k-z\rVert^2.
+\]
+Perturbasi yang normanya dapat dijumlahkan membuat barisan kuasi-Fej\'{e}r,
+dan penjumlahan ketaksamaan memperlihatkan
+$\sum_k\lVert x_k-y_k\rVert^2<\infty$. Semua titik klaster adalah nol $A$;
+dalam dimensi hingga sifat kuasi-Fej\'{e}r lalu memberi konvergensi seluruh
+barisan.
+
+% stable-id: d90.orig.v1.tr03.ps05.solution.0005
+\paragraph{Solusi lengkap.}
+\label{orig03:ps05:solution:0005}
+Ambil $z\in\operatorname{zer}A$. Maka $J_{\gamma A}z=z$. Dengan
+$y_k=J_{\gamma A}x_k$, firm non-ekspansivitas menghasilkan
+\[
+ \lVert y_k-z\rVert^2+\lVert x_k-y_k\rVert^2
+ \le\lVert x_k-z\rVert^2.                                      \tag{1}
+\]
+Karena $x_{k+1}=y_k+e_k$,
+$\lVert x_{k+1}-z\rVert\le\lVert x_k-z\rVert+\lVert e_k\rVert$.
+Jumlah norma galat hingga, sehingga $(x_k)$ dan $(y_k)$ terbatas dan jarak
+terhadap setiap nol mempunyai limit.
+
+Mengembangkan kuadrat $\lVert y_k+e_k-z\rVert^2$ lalu memakai (1) memberi
+\[
+ \lVert x_{k+1}-z\rVert^2
+ \le\lVert x_k-z\rVert^2-\lVert x_k-y_k\rVert^2
+   +2\langle y_k-z,e_k\rangle+\lVert e_k\rVert^2.
+\]
+Karena $(y_k)$ terbatas dan galat dapat dijumlahkan, kedua suku galat di ruas
+kanan dapat dijumlahkan. Penjumlahan ketaksamaan menunjukkan
+$\sum_k\lVert x_k-y_k\rVert^2<\infty$, jadi residu itu menuju nol.
+
+Setiap subsekuens konvergen $x_{k_j}\to\bar x$ juga memenuhi
+$y_{k_j}\to\bar x$. Dari definisi resolven,
+$(x_{k_j}-y_{k_j})/\gamma\in Ay_{k_j}$, dan ruas kiri menuju nol. Graf
+operator maksimal monoton tertutup, sehingga $0\in A\bar x$. Jadi semua titik
+klaster berada di $\operatorname{zer}A$. Barisan terbatas dalam dimensi hingga
+mempunyai titik klaster, dan sifat kuasi-Fej\'{e}r beserta fakta bahwa semua
+titik klasternya adalah nol memaksa seluruh barisan konvergen ke satu nol
+$A$.

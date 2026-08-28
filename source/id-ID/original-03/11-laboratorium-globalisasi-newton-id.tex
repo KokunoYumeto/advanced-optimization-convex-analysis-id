@@ -1,0 +1,124 @@
+% OR03-S012 | lapisan asli: laboratorium 3 globalisasi Newton
+% segment-id: d90.orig.v1.tr03.seg0012
+% lab-id: d90.orig.v1.tr03.lab.0003
+% lab-hint-id: d90.orig.v1.tr03.lab.hint.0003
+% lab-answer-id: d90.orig.v1.tr03.lab.answer.0003
+% lab-solution-id: d90.orig.v1.tr03.lab.solution.0003
+
+\section{Laboratorium 3: kegagalan lokal dan globalisasi Newton}
+\label{orig03:lab:globalisasi-newton}
+
+Laboratorium ini memperlihatkan bahwa arah yang tampak ``orde dua'' belum
+tentu aman secara global. Kita memakai fungsi konveks mulus
+\begin{equation}
+  F(x,y)=\log(\cosh x)+\frac12y^2,
+  \qquad
+  \nabla F(x,y)=\begin{pmatrix}\tanh x\\y\end{pmatrix},
+  \qquad
+  \nabla^2F(x,y)=
+  \begin{pmatrix}\operatorname{sech}^2x&0\\0&1\end{pmatrix}.
+  \label{orig03:eq:lab3-model}
+\end{equation}
+Minimum uniknya adalah $(0,0)$ dengan nilai nol. Walaupun Hessian selalu
+positif, kelengkungan pada arah $x$ sangat kecil ketika $|x|$ besar. Karena
+itu, langkah Newton penuh dari titik awal yang disediakan dapat melompat ke
+daerah dengan nilai objektif jauh lebih tinggi. Contoh ini memisahkan dua
+persoalan: pemilihan arah dan pemilihan panjang langkah.
+
+Kode tetap berada di
+\texttt{labs/original-03/globalisasi-newton.py}. Dengan seed dan konfigurasi
+yang dibekukan, kode membandingkan empat metode:
+\begin{enumerate}
+  \item gradien dengan langkah tetap yang sengaja terlalu besar;
+  \item gradien dengan pencarian balik Armijo;
+  \item Newton murni dengan langkah penuh;
+  \item Newton teredam dengan Hessian terkoreksi
+    $B_k=\nabla^2F(z_k)+\tau_kI$, dengan
+    $\lambda_{\min}(B_k)\geq \underline\mu$.
+\end{enumerate}
+Jejak lengkap ditulis ke CSV, ringkasan dan sertifikat ditulis ke JSON, dan
+SVG hanya memvisualkan data yang sama. Tidak ada kesimpulan numerik yang
+bergantung pada grafik.
+
+\subsection*{Prompt}
+\begin{exercise}[Tugas laboratorium]
+Jalankan skrip sekali dan kerjakan hal-hal berikut.
+\begin{enumerate}
+  \item Turunkan langkah Newton murni pada koordinat $x$ dan jelaskan mengapa
+    $x_0\approx3$ menghasilkan lompatan besar walaupun fungsi konveks.
+  \item Dari jejak CSV, temukan kenaikan objektif pertama bagi Newton murni
+    dan kegagalan metode gradien berlangkah tetap.
+  \item Buktikan bahwa syarat Armijo
+    \[
+      F(z_k+\alpha_kd_k)\leq F(z_k)+c_1\alpha_k
+      \nabla F(z_k)^\top d_k
+    \]
+    menghasilkan penurunan ketat bila $d_k$ adalah arah turun.
+  \item Buktikan bahwa koreksi
+    $\tau_k=\max\{0,\underline\mu-\lambda_{\min}(\nabla^2F(z_k))\}$
+    membuat $d_k=-B_k^{-1}\nabla F(z_k)$ menjadi arah turun selama
+    gradien tidak nol.
+  \item Cocokkan bukti Anda dengan seluruh boolean sertifikat dalam JSON dan
+    jelaskan mengapa ``gagal'' di sini merupakan bukti terkontrol, bukan
+    galat program.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Petunjuk bertahap}
+\label{orig03:lab:hint:0003}
+\begin{enumerate}
+  \item Gunakan $\operatorname{sech}^2x=1-\tanh^2x$ dan tulis
+    $x^+=x-\tanh(x)/\operatorname{sech}^2(x)$.
+  \item Bandingkan kolom \texttt{objective} pada dua baris berturutan; jangan
+    menyimpulkan kegagalan hanya dari gambar.
+  \item Pada ruas kanan Armijo, tanda
+    $\nabla F(z_k)^\top d_k<0$ adalah fakta penentu.
+  \item Gunakan $B_k\succeq\underline\mu I$ untuk menunjukkan
+    $\nabla F(z_k)^\top d_k=-g_k^\top B_k^{-1}g_k<0$.
+  \item Periksa juga bahwa semua langkah metode teredam diterima oleh Armijo
+    dan nilai objektifnya monoton menurun.
+\end{enumerate}
+
+\subsection*{Jawaban singkat}
+\label{orig03:lab:answer:0003}
+Newton murni gagal karena invers kelengkungan
+$1/\operatorname{sech}^2(x_0)$ sangat besar. Langkah gradien tetap gagal
+karena faktor koordinat kuadratiknya adalah $1-\alpha=-1.5$. Pencarian balik
+memendekkan langkah sampai memenuhi penurunan cukup. Koreksi Hessian menjamin
+arah turun, sedangkan Armijo mengglobalisasi panjang langkah; kombinasi
+keduanya mencapai toleransi gradien yang dibekukan.
+
+\subsection*{Solusi acuan lengkap}
+\label{orig03:lab:solution:0003}
+Pada koordinat pertama, Newton murni memberi
+\[
+ x^+=x-\frac{\tanh x}{\operatorname{sech}^2x}
+     =x-\sinh x\cosh x.
+\]
+Untuk $x\approx3$, suku $\sinh x\cosh x$ berorde $10^2$, sehingga iterasi
+melompat melintasi minimizer dan menaikkan $\log(\cosh x)$. Pada iterasi
+berikutnya $\operatorname{sech}^2x$ mendekati nol pada presisi mesin; skrip
+berhenti sebelum pembagian hampir singular merusak jejak. Untuk gradien tetap
+pada koordinat kedua berlaku $y^+=(1-2.5)y=-1.5y$, jadi magnitudonya tumbuh
+geometrik.
+
+Untuk arah gradien $d=-g$, kita memiliki $g^\top d=-\|g\|^2<0$. Karena $F$
+diferensiabel, terdapat $\bar\alpha>0$ sehingga setiap
+$0<\alpha\leq\bar\alpha$ memenuhi Armijo; pencarian balik dengan faktor dalam
+$(0,1)$ karena itu berhenti dalam banyak langkah berhingga. Untuk arah Newton
+terkoreksi, konstruksi $B_k\succeq\underline\mu I$ memberi
+\[
+ g_k^\top d_k=-g_k^\top B_k^{-1}g_k
+ \leq-\frac{\|g_k\|^2}{\lambda_{\max}(B_k)}<0.
+\]
+Maka argumen pencarian balik yang sama berlaku. Sertifikat program memeriksa
+langsung batas eigenvalue, tanda turunan arah, semua penerimaan Armijo,
+monotonisitas objektif, dan norma gradien akhir. Sebaliknya, metode yang tidak
+diglobalisasi diwajibkan memperlihatkan kenaikan atau ledakan yang telah
+ditentukan; dengan demikian jalur gagal merupakan bagian dari eksperimen.
+
+\paragraph{Hak dan firewall O018.}
+Teks, soal, solusi, dan kode laboratorium ini ditulis mandiri untuk lapisan
+Original-03 dan tersedia berdasarkan CC BY-SA 4.0. Tidak ada prosa, soal,
+solusi, kode, atau susunan pedagogis O018 yang disalin atau diadaptasi; O018
+tetap merupakan korpus terpisah.

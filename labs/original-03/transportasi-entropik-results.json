@@ -1,0 +1,175 @@
+{
+  "artifacts": [
+    "transportasi-entropik-results.csv",
+    "transportasi-entropik.svg"
+  ],
+  "configuration": {
+    "epsilon": 0.12,
+    "maximum_iterations": 20000,
+    "scaling_factor": 7.0,
+    "source_size": 6,
+    "target_size": 7,
+    "tolerance": 5e-13,
+    "underflow_cost_offset": 1000.0
+  },
+  "data": {
+    "source_mass": [
+      0.12942598580743753,
+      0.17172657134873473,
+      0.21095894000105414,
+      0.13867182562065467,
+      0.1569879853221326,
+      0.19222869189998634
+    ],
+    "source_points": [
+      -0.7588842706134975,
+      -0.6807112070512324,
+      -0.6379538935427915,
+      -0.21943051639212396,
+      0.14604858124906084,
+      0.6764420758584646
+    ],
+    "target_mass": [
+      0.10956647733302341,
+      0.12095728656171302,
+      0.14059767741716592,
+      0.12854480415602754,
+      0.17250684825216772,
+      0.16526835186704134,
+      0.1625585544128609
+    ],
+    "target_points": [
+      -0.8602538728935321,
+      -0.7495805569712133,
+      0.016382863932999925,
+      0.05554914270596489,
+      0.23851174910919615,
+      0.31249900652205675,
+      0.7514921393711791
+    ]
+  },
+  "result": "pass",
+  "runs": {
+    "additively_shifted_cost": {
+      "dual": 999.7167252398962,
+      "history": [
+        [
+          1,
+          0.11167747832791533
+        ],
+        [
+          25,
+          0.0003443095755459036
+        ],
+        [
+          50,
+          5.642506080150156e-07
+        ],
+        [
+          75,
+          9.262547673305477e-10
+        ],
+        [
+          100,
+          1.4654943925052066e-12
+        ],
+        [
+          104,
+          4.663214259181814e-13
+        ]
+      ],
+      "iterations": 104,
+      "marginal_residual": 4.663214259181814e-13,
+      "primal": 999.7167252400919,
+      "primal_dual_gap": 1.957687345566228e-10
+    },
+    "baseline": {
+      "dual": -0.28327476010387154,
+      "history": [
+        [
+          1,
+          0.11167747832797362
+        ],
+        [
+          25,
+          0.00034430957569542286
+        ],
+        [
+          50,
+          5.642506482050891e-07
+        ],
+        [
+          75,
+          9.262949574040391e-10
+        ],
+        [
+          100,
+          1.5205336989509988e-12
+        ],
+        [
+          105,
+          4.216349491770188e-13
+        ]
+      ],
+      "iterations": 105,
+      "marginal_residual": 4.216349491770188e-13,
+      "primal": -0.2832747601041755,
+      "primal_dual_gap": -3.0397906414236786e-13
+    },
+    "simultaneously_scaled_cost_and_epsilon": {
+      "dual": -1.9829233207271004,
+      "history": [
+        [
+          1,
+          0.11167747832797356
+        ],
+        [
+          25,
+          0.0003443095756953951
+        ],
+        [
+          50,
+          5.642506483161114e-07
+        ],
+        [
+          75,
+          9.262949851596147e-10
+        ],
+        [
+          100,
+          1.5206447212534613e-12
+        ],
+        [
+          105,
+          4.2182923820632823e-13
+        ]
+      ],
+      "iterations": 105,
+      "marginal_residual": 4.2182923820632823e-13,
+      "primal": -1.9829233207292287,
+      "primal_dual_gap": -2.128297538206425e-12
+    }
+  },
+  "schema": "o015-original-03-transportasi-entropik-v1",
+  "seed": 20260826,
+  "validation": {
+    "certificates": {
+      "additive_cost_shift_invariance": true,
+      "log_domain_shifted_problem_still_converges": true,
+      "naive_shifted_kernel_underflows_completely": true,
+      "primal_dual_agreement": true,
+      "simultaneous_cost_epsilon_scaling_invariance": true,
+      "source_marginal": true,
+      "strict_numeric_positivity": true,
+      "target_marginal": true
+    },
+    "column_marginal_residual": 1.6653345369377348e-16,
+    "minimum_plan_entry": 3.7818193821614976e-13,
+    "naive_shifted_kernel_entry_count": 42,
+    "naive_shifted_kernel_zero_count": 42,
+    "primal_dual_gap": -3.0397906414236786e-13,
+    "row_marginal_residual": 4.216349491770188e-13,
+    "scaled_plan_max_abs_difference": 1.942890293094024e-16,
+    "shifted_plan_max_abs_difference": 1.0112050086164004e-13
+  }
+}

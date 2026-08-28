@@ -1,0 +1,379 @@
+% ORIG03-SEGMENT-CODE: OR03-S004
+% ORIG03-SEGMENT-ID: d90.orig.v1.tr03.seg0004
+% ORIG03-MODULE-ID: ps02.module.0001
+% SPDX-License-Identifier: CC-BY-SA-4.0
+% Karya asli berbahasa Indonesia; semua butir disusun independen.
+
+\section{Set soal II: metode proksimal}
+\label{orig03:section:set-soal-metode-proksimal}
+
+Lima masalah berikut menghubungkan operator proksimal, pemisahan
+maju--mundur, lemma penurunan, resolven monoton, dan laju titik proksimal.
+
+% ORIG03-STABLE-ID: ps02.problem.0001
+\begin{exercise}[Ambang lunak sebagai operator proksimal]
+\label{orig03:ps02:problem:0001}
+Untuk $\lambda>0$, definisikan
+$S_\lambda(v)=\operatorname{sign}(v)\max\{|v|-\lambda,0\}$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps02.prompt.0001
+\item\label{orig03:ps02:prompt:0001}
+Buktikan bahwa $\operatorname{prox}_{\lambda|\cdot|}(v)=S_\lambda(v)$ untuk
+setiap $v\in\mathbb{R}$.
+% ORIG03-STABLE-ID: ps02.prompt.0002
+\item\label{orig03:ps02:prompt:0002}
+Dengan penerapan per koordinat, hitung
+$\operatorname{prox}_{(3/4)\lVert\cdot\rVert_1}(3,-1/2,-2)$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps02.hint1.0001
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0001).}
+Tuliskan syarat optimalitas untuk
+$\min_x\{\lambda|x|+\tfrac12(x-v)^2\}$.
+\label{orig03:ps02:hint1:0001}
+% ORIG03-STABLE-ID: ps02.hint2.0001
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0001).}
+Pisahkan kasus $x>0$, $x<0$, dan $x=0$ dalam
+$0\in x-v+\lambda\partial|x|$.
+\label{orig03:ps02:hint2:0001}
+% ORIG03-STABLE-ID: ps02.answer.0001
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0001).}
+\[
+ \operatorname{prox}_{\lambda|\cdot|}(v)=
+ \begin{cases}
+ v-\lambda,&v>\lambda,\\
+ 0,&|v|\leq\lambda,\\
+ v+\lambda,&v<-\lambda,
+ \end{cases}
+ =S_\lambda(v).
+\]
+\label{orig03:ps02:answer:0001}
+% ORIG03-STABLE-ID: ps02.solution.0001
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0001).}
+Objektif bersifat konveks kuat, sehingga syarat
+\[
+ 0\in x-v+\lambda\partial|x|
+\]
+menentukan peminimum unik. Jika $x>0$, syaratnya $x=v-\lambda$, konsisten
+tepat ketika $v>\lambda$. Jika $x<0$, diperoleh $x=v+\lambda$, konsisten
+tepat ketika $v<-\lambda$. Jika $x=0$, syarat menjadi
+$v\in\lambda[-1,1]$, ekuivalen dengan $|v|\leq\lambda$. Ketiga kasus itu
+persis rumus $S_\lambda(v)$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0005}.}
+\label{orig03:ps02:solution:0001}
+
+% ORIG03-STABLE-ID: ps02.hint1.0002
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0002).}
+Norma satu dan kuadrat jarak keduanya terpisah menurut koordinat.
+\label{orig03:ps02:hint1:0002}
+% ORIG03-STABLE-ID: ps02.hint2.0002
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0002).}
+Terapkan $S_{3/4}$ pada ketiga koordinat.
+\label{orig03:ps02:hint2:0002}
+% ORIG03-STABLE-ID: ps02.answer.0002
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0002).}
+$\operatorname{prox}_{(3/4)\lVert\cdot\rVert_1}(3,-1/2,-2)
+=(9/4,0,-5/4)$.
+\label{orig03:ps02:answer:0002}
+% ORIG03-STABLE-ID: ps02.solution.0002
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0002).}
+Pemisahan koordinat memberi
+\[
+ S_{3/4}(3)=3-\frac34=\frac94,
+ \qquad S_{3/4}(-1/2)=0,
+ \qquad S_{3/4}(-2)=-2+\frac34=-\frac54.
+\]
+Menggabungkan ketiga peminimum skalar menghasilkan vektor yang dinyatakan.
+\label{orig03:ps02:solution:0002}
+
+% ORIG03-STABLE-ID: ps02.problem.0002
+\begin{exercise}[Iterasi maju--mundur skalar]
+\label{orig03:ps02:problem:0002}
+Pertimbangkan
+$F(x)=\tfrac12(x-3)^2+|x|$ dan langkah $\gamma=1/2$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps02.prompt.0003
+\item\label{orig03:ps02:prompt:0003}
+Turunkan pemetaan iterasi maju--mundur $x^+=T(x)$.
+% ORIG03-STABLE-ID: ps02.prompt.0004
+\item\label{orig03:ps02:prompt:0004}
+Dari $x_0=0$, hitung $x_1$ dan $x_2$, lalu tentukan peminimum eksak $F$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps02.hint1.0003
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0003).}
+Pisahkan bagian mulus $g(x)=\tfrac12(x-3)^2$ dan $h(x)=|x|$.
+\label{orig03:ps02:hint1:0003}
+% ORIG03-STABLE-ID: ps02.hint2.0003
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0003).}
+Gunakan $T(x)=\operatorname{prox}_{\gamma h}(x-\gamma g'(x))$.
+\label{orig03:ps02:hint2:0003}
+% ORIG03-STABLE-ID: ps02.answer.0003
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0003).}
+$T(x)=S_{1/2}((x+3)/2)$.
+\label{orig03:ps02:answer:0003}
+% ORIG03-STABLE-ID: ps02.solution.0003
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0003).}
+Karena $g'(x)=x-3$ dan $\gamma=1/2$,
+\[
+ x-\gamma g'(x)=x-\frac12(x-3)=\frac{x+3}{2}.
+\]
+Langkah mundur adalah operator proksimal $\operatorname{prox}_{(1/2)|\cdot|}
+=S_{1/2}$, sehingga $T(x)=S_{1/2}((x+3)/2)$.
+\label{orig03:ps02:solution:0003}
+
+% ORIG03-STABLE-ID: ps02.hint1.0004
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0004).}
+Substitusikan berturut-turut $x_0$ dan $x_1$ ke $T$.
+\label{orig03:ps02:hint1:0004}
+% ORIG03-STABLE-ID: ps02.hint2.0004
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0004).}
+Untuk peminimum, selesaikan $0\in x-3+\partial|x|$.
+\label{orig03:ps02:hint2:0004}
+% ORIG03-STABLE-ID: ps02.answer.0004
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0004).}
+$x_1=1$, $x_2=3/2$, dan peminimum uniknya $x^\star=2$.
+\label{orig03:ps02:answer:0004}
+% ORIG03-STABLE-ID: ps02.solution.0004
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0004).}
+Kita memperoleh
+\[
+ x_1=S_{1/2}(3/2)=1,
+ \qquad
+ x_2=S_{1/2}(2)=\frac32.
+\]
+Syarat optimalitas adalah $0\in x-3+\partial|x|$. Pada cabang $x>0$,
+syarat itu menjadi $0=x-2$, sehingga $x=2$, yang konsisten dengan cabang.
+Cabang $x<0$ tidak menghasilkan titik yang konsisten, dan di nol interval
+$-3+[-1,1]$ tidak memuat nol. Konveksitas kuat suku kuadratik menjamin
+keunikan, jadi $x^\star=2$.
+\label{orig03:ps02:solution:0004}
+
+% ORIG03-STABLE-ID: ps02.problem.0003
+\begin{exercise}[Lemma penurunan]
+\label{orig03:ps02:problem:0003}
+Misalkan $f:\mathbb{R}^n\to\mathbb{R}$ terdiferensialkan dan gradiennya
+$L$-Lipschitz.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps02.prompt.0005
+\item\label{orig03:ps02:prompt:0005}
+Buktikan
+\[
+ f(y)\leq f(x)+\nabla f(x)^\top(y-x)+\frac L2\lVert y-x\rVert_2^2.
+\]
+% ORIG03-STABLE-ID: ps02.prompt.0006
+\item\label{orig03:ps02:prompt:0006}
+Untuk $f(x)=\tfrac L2x^2$ pada $\mathbb{R}$, terapkan langkah gradien
+$x^+=x-L^{-1}f'(x)$ dan periksa ketajaman batas penurunan yang dihasilkan.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps02.hint1.0005
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0005).}
+Integralkan gradien sepanjang ruas dari $x$ ke $y$.
+\label{orig03:ps02:hint1:0005}
+% ORIG03-STABLE-ID: ps02.hint2.0005
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0005).}
+Dengan $d=y-x$, batasi
+$[\nabla f(x+td)-\nabla f(x)]^\top d$ oleh $Lt\lVert d\rVert_2^2$.
+\label{orig03:ps02:hint2:0005}
+% ORIG03-STABLE-ID: ps02.answer.0005
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0005).}
+Batas mengikuti teorema dasar kalkulus pada $t\mapsto f(x+t(y-x))$ dan
+integral $\int_0^1Lt\,dt=L/2$.
+\label{orig03:ps02:answer:0005}
+% ORIG03-STABLE-ID: ps02.solution.0005
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0005).}
+Tetapkan $d=y-x$. Teorema dasar kalkulus memberi
+\[
+ f(y)-f(x)=\int_0^1\nabla f(x+td)^\top d\,dt
+ =\nabla f(x)^\top d+
+ \int_0^1[\nabla f(x+td)-\nabla f(x)]^\top d\,dt.
+\]
+Cauchy--Schwarz dan sifat Lipschitz menghasilkan
+\[
+ [\nabla f(x+td)-\nabla f(x)]^\top d
+ \leq \lVert\nabla f(x+td)-\nabla f(x)\rVert_2\lVert d\rVert_2
+ \leq Lt\lVert d\rVert_2^2.
+\]
+Mengintegralkan batas terakhir dari nol sampai satu membuktikan klaim.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0002}.}
+\label{orig03:ps02:solution:0005}
+
+% ORIG03-STABLE-ID: ps02.hint1.0006
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0006).}
+Hitung $f'(x)=Lx$.
+\label{orig03:ps02:hint1:0006}
+% ORIG03-STABLE-ID: ps02.hint2.0006
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0006).}
+Bandingkan hasil dengan
+$f(x^+)\leq f(x)-(2L)^{-1}|f'(x)|^2$.
+\label{orig03:ps02:hint2:0006}
+% ORIG03-STABLE-ID: ps02.answer.0006
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0006).}
+$x^+=0$ dan
+$f(x^+)=f(x)-(2L)^{-1}|f'(x)|^2=0$; batasnya mencapai kesamaan.
+\label{orig03:ps02:answer:0006}
+% ORIG03-STABLE-ID: ps02.solution.0006
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0006).}
+Karena $f'(x)=Lx$, langkah berukuran $1/L$ memberi $x^+=x-x=0$.
+Lemma penurunan dengan $y=x-L^{-1}f'(x)$ memberi
+\[
+ f(x^+)\leq f(x)-\frac1{2L}|f'(x)|^2.
+\]
+Untuk kuadratik ini, ruas kanan sama dengan
+$\tfrac L2x^2-\tfrac1{2L}L^2x^2=0=f(0)=f(x^+)$, sehingga batas tersebut
+tajam untuk setiap $x$.
+\label{orig03:ps02:solution:0006}
+
+% ORIG03-STABLE-ID: ps02.problem.0004
+\begin{exercise}[Pemisahan maju--mundur sebagai kontraksi]
+\label{orig03:ps02:problem:0004}
+Pada $\mathbb{R}$, ambil $A=\partial|\cdot|$, $B(x)=x-2$, dan $\gamma=1/2$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps02.prompt.0007
+\item\label{orig03:ps02:prompt:0007}
+Hitung $T=J_{\gamma A}(I-\gamma B)$ secara eksplisit.
+% ORIG03-STABLE-ID: ps02.prompt.0008
+\item\label{orig03:ps02:prompt:0008}
+Tentukan titik tetap $T$ dan hubungkan dengan peminimum
+$|x|+\tfrac12(x-2)^2$.
+% ORIG03-STABLE-ID: ps02.prompt.0009
+\item\label{orig03:ps02:prompt:0009}
+Buktikan bahwa $T$ adalah kontraksi dengan faktor paling besar $1/2$ dan
+simpulkan keunikan titik tetapnya.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps02.hint1.0007
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0007).}
+$J_{\gamma\partial|\cdot|}=\operatorname{prox}_{\gamma|\cdot|}$.
+\label{orig03:ps02:hint1:0007}
+% ORIG03-STABLE-ID: ps02.hint2.0007
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0007).}
+Hitung $x-\tfrac12(x-2)=x/2+1$.
+\label{orig03:ps02:hint2:0007}
+% ORIG03-STABLE-ID: ps02.answer.0007
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0007).}
+$T(x)=S_{1/2}(x/2+1)$.
+\label{orig03:ps02:answer:0007}
+% ORIG03-STABLE-ID: ps02.solution.0007
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0007).}
+Definisi resolven dan identitas resolven subdiferensial memberi
+\[
+ T(x)=\operatorname{prox}_{(1/2)|\cdot|}
+ \left(x-\frac12(x-2)\right)
+ =S_{1/2}\left(\frac x2+1\right).
+\]
+\label{orig03:ps02:solution:0007}
+
+% ORIG03-STABLE-ID: ps02.hint1.0008
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0008).}
+Coba $x=1$ dalam rumus eksplisit $T$.
+\label{orig03:ps02:hint1:0008}
+% ORIG03-STABLE-ID: ps02.hint2.0008
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0008).}
+Bandingkan persamaan titik tetap dengan
+$0\in x-2+\partial|x|$.
+\label{orig03:ps02:hint2:0008}
+% ORIG03-STABLE-ID: ps02.answer.0008
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0008).}
+Titik tetapnya $x^\star=1$, yang juga merupakan peminimum unik objektif.
+\label{orig03:ps02:answer:0008}
+% ORIG03-STABLE-ID: ps02.solution.0008
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0008).}
+Rumus eksplisit memberi $T(1)=S_{1/2}(3/2)=1$. Selain itu,
+$x=T(x)$ ekuivalen dengan
+$x=J_{\gamma A}(x-\gamma Bx)$, lalu dengan
+$0\in Ax+Bx=\partial|x|+x-2$. Ini persis syarat optimalitas untuk
+$|x|+\tfrac12(x-2)^2$. Pada $x=1>0$, syaratnya $0=1+1-2$.
+Suku kuadratik konveks kuat, jadi peminimum tersebut unik.
+\label{orig03:ps02:solution:0008}
+
+% ORIG03-STABLE-ID: ps02.hint1.0009
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0009).}
+Operator proksimal bersifat non-ekspansif.
+\label{orig03:ps02:hint1:0009}
+% ORIG03-STABLE-ID: ps02.hint2.0009
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0009).}
+Bandingkan argumen ambang lunak untuk $x$ dan $y$.
+\label{orig03:ps02:hint2:0009}
+% ORIG03-STABLE-ID: ps02.answer.0009
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0009).}
+$|T(x)-T(y)|\leq\tfrac12|x-y|$; karena itu titik tetapnya tunggal.
+\label{orig03:ps02:answer:0009}
+% ORIG03-STABLE-ID: ps02.solution.0009
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0009).}
+Non-ekspansivitas $S_{1/2}$ menghasilkan
+\[
+ |T(x)-T(y)|
+ \leq\left|\left(\frac x2+1\right)-
+              \left(\frac y2+1\right)\right|
+ =\frac12|x-y|.
+\]
+Jadi $T$ adalah kontraksi. Jika $x$ dan $y$ keduanya titik tetap, maka
+$|x-y|=|T(x)-T(y)|\leq|x-y|/2$, yang memaksa $x=y$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0005}.}
+\label{orig03:ps02:solution:0009}
+
+% ORIG03-STABLE-ID: ps02.problem.0005
+\begin{exercise}[Laju titik proksimal untuk operator linear]
+\label{orig03:ps02:problem:0005}
+Ambil $A(x)=mx$ dengan $m>0$ dan parameter $\gamma>0$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps02.prompt.0010
+\item\label{orig03:ps02:prompt:0010}
+Hitung resolven $J_{\gamma A}=(I+\gamma A)^{-1}$.
+% ORIG03-STABLE-ID: ps02.prompt.0011
+\item\label{orig03:ps02:prompt:0011}
+Untuk iterasi titik proksimal $x_{k+1}=J_{\gamma A}(x_k)$, turunkan rumus
+eksak $x_k$ dan lajunya menuju nol.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps02.hint1.0010
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0010).}
+Tetapkan $z=J_{\gamma A}(x)$.
+\label{orig03:ps02:hint1:0010}
+% ORIG03-STABLE-ID: ps02.hint2.0010
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0010).}
+Selesaikan $x=z+\gamma mz$ terhadap $z$.
+\label{orig03:ps02:hint2:0010}
+% ORIG03-STABLE-ID: ps02.answer.0010
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0010).}
+$J_{\gamma A}(x)=x/(1+\gamma m)$.
+\label{orig03:ps02:answer:0010}
+% ORIG03-STABLE-ID: ps02.solution.0010
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0010).}
+Definisi resolven menyatakan
+$z=J_{\gamma A}(x)$ jika dan hanya jika
+$x\in z+\gamma A(z)$. Karena $A(z)=mz$, ini menjadi
+$x=(1+\gamma m)z$. Faktor $1+\gamma m$ positif, sehingga
+$z=x/(1+\gamma m)$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0005}.}
+\label{orig03:ps02:solution:0010}
+
+% ORIG03-STABLE-ID: ps02.hint1.0011
+\par\noindent\textbf{Petunjuk tahap 1 (ps02.prompt.0011).}
+Substitusikan rumus resolven ke relasi iterasi.
+\label{orig03:ps02:hint1:0011}
+% ORIG03-STABLE-ID: ps02.hint2.0011
+\par\noindent\textbf{Petunjuk tahap 2 (ps02.prompt.0011).}
+Ulangi perkalian oleh konstanta $(1+\gamma m)^{-1}$.
+\label{orig03:ps02:hint2:0011}
+% ORIG03-STABLE-ID: ps02.answer.0011
+\par\noindent\textbf{Jawaban ringkas (ps02.prompt.0011).}
+$x_k=(1+\gamma m)^{-k}x_0$ dan
+$|x_k|=(1+\gamma m)^{-k}|x_0|\to0$ secara linear.
+\label{orig03:ps02:answer:0011}
+% ORIG03-STABLE-ID: ps02.solution.0011
+\par\noindent\textbf{Solusi lengkap (ps02.prompt.0011).}
+Rumus resolven memberi
+$x_{k+1}=(1+\gamma m)^{-1}x_k$. Induksi terhadap $k$ menghasilkan
+$x_k=(1+\gamma m)^{-k}x_0$. Karena $m,\gamma>0$, faktor
+$q=(1+\gamma m)^{-1}$ berada dalam $(0,1)$. Maka
+$|x_k|=q^k|x_0|$ dan konvergensinya menuju nol bersifat linear dengan faktor
+eksak $q$.
+\label{orig03:ps02:solution:0011}

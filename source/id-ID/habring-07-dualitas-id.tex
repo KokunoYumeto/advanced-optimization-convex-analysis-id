@@ -458,7 +458,16 @@ Dengan mengalikan pembaruan $\lambda$ oleh $B^*$ dan memasukkannya ke~\eqref{dua
 \begin{equation}
     B^*\lambda_{k+1} \in -\partial g(y_{k+1}).
 \end{equation}
-Dengan demikian, tripel ADMM yang benar-benar diperbarui melalui~\eqref{duality:eq:admm_algo} memenuhi $0\in\partial_y L_0(x_{k+1},y_{k+1},\lambda_{k+1})$. Pembaruan bergantian tersebut pada umumnya tidak memberikan stasioneritas terhadap $x$, karena submasalah $x$ masih memakai $y_k$. Hanya dalam skema hipotetis yang meminimumkan $x$ dan $y$ secara bersama kondisi serupa diperoleh terhadap $x$, sehingga tripel hasil pembaruan bersama itu memenuhi stasioneritas primal penuh untuk $L_0$.
+Dengan demikian, tripel ADMM yang benar-benar diperbarui
+melalui~\eqref{duality:eq:admm_algo} memenuhi
+\[
+    0\in\partial_y L_0(x_{k+1},y_{k+1},\lambda_{k+1}).
+\]
+Pembaruan bergantian tersebut pada umumnya tidak memberikan stasioneritas
+terhadap $x$, karena submasalah $x$ masih memakai $y_k$. Hanya dalam skema
+hipotetis yang meminimumkan $x$ dan $y$ secara bersama kondisi serupa diperoleh
+terhadap $x$, sehingga tripel hasil pembaruan bersama itu memenuhi
+stasioneritas primal penuh untuk $L_0$.
 % H07-S010 | sumber authority/habring/source-v1/duality.tex baris 433--502
 % segment-id: d90.hab.v1.ch07.seg0010
 Kita dapat menunjukkan hasil konvergensi dasar berikut untuk ADMM.

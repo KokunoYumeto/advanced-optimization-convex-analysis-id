@@ -1,0 +1,526 @@
+% segment-local-id: OR03-S011
+% segment-id: d90.orig.v1.tr03.seg0011
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Ujian akhir kumulatif}
+\label{orig03:final}
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0001
+\begin{exercise}[Eksistensi komposit dengan regularisasi kuadratik]
+\label{orig03:final:exercise:0001}
+Misalkan $h:\mathbb R^m\to\mathbb R$ konveks, kontinu, dan tak negatif;
+$r:\mathbb R^n\to(-\infty,+\infty]$ proper, semikontinu-bawah, konveks, dan
+tak negatif; $A:\mathbb R^n\to\mathbb R^m$ linear; serta $\lambda>0$.
+Buktikan bahwa
+\[
+ F(x)=h(Ax)+r(x)+\frac\lambda2\lVert x\rVert^2
+\]
+mempunyai tepat satu peminimum. Nyatakan bagian argumen yang membuktikan
+keberadaan dan bagian yang membuktikan ketunggalan.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0001
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0001}
+\textbf{Tahap 1.} Gunakan ketaknegatifan dua suku pertama untuk membatasi
+himpunan sublevel.
+\textbf{Tahap 2.} Periksa apa yang terjadi pada modulus konveksitas kuat ketika
+fungsi konveks ditambahkan pada kuadrat $\lambda\lVert x\rVert^2/2$.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0001
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0001}
+$F$ proper, semikontinu-bawah, dan
+$F(x)\ge\lambda\lVert x\rVert^2/2$, sehingga ia koersif dan mencapai minimum.
+Selain itu, $F$ bersifat $\lambda$-konveks kuat, sehingga peminimumnya tunggal.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0001
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0001}
+Karena $r$ proper, terdapat $x_0$ dengan $r(x_0)<\infty$; fungsi $h$ bernilai
+hingga, jadi $F(x_0)<\infty$ dan $F$ proper. Komposisi $h\circ A$ kontinu dan
+konveks, sementara $r$ semikontinu-bawah. Maka $F$ semikontinu-bawah. Dari
+ketaknegatifan,
+\[
+ F(x)\ge\frac\lambda2\lVert x\rVert^2\longrightarrow+\infty
+ \quad\text{ketika }\lVert x\rVert\to\infty.
+\]
+Jadi sebuah barisan peminimum berada dalam himpunan terbatas; dalam dimensi
+hingga kita dapat mengambil subsekuens konvergen, dan semikontinuitas-bawah
+menunjukkan bahwa limitnya mencapai infimum. Ini membuktikan keberadaan.
+
+Fungsi kuadrat adalah $\lambda$-konveks kuat. Penambahan dua fungsi konveks
+mempertahankan modulus itu, jadi $F$ juga $\lambda$-konveks kuat. Jika ada dua
+peminimum berbeda, ketaksamaan konveksitas kuat pada titik tengah akan memberi
+nilai yang lebih kecil secara ketat daripada nilai minimum, kontradiksi. Maka
+peminimum tunggal.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0002
+\begin{exercise}[Pencarian balik untuk model proksimal]
+\label{orig03:final:exercise:0002}
+Misalkan $f$ konveks dengan gradien $L$-Lipschitz, $r$ proper
+semikontinu-bawah dan konveks, serta $x\in\operatorname{dom}r$. Untuk $M>0$,
+definisikan
+\[
+ x_M=\arg\min_y\left\{
+ r(y)+f(x)+\langle\nabla f(x),y-x\rangle
+ +\frac M2\lVert y-x\rVert^2\right\}.
+\]
+Algoritme menggandakan $M$ sampai uji majorisasi
+\[
+ f(x_M)\le f(x)+\langle\nabla f(x),x_M-x\rangle
+ +\frac M2\lVert x_M-x\rVert^2                         \tag{A}
+\]
+terpenuhi. Buktikan bahwa pencarian berhenti secara hingga, lalu buktikan
+sertifikat penurunan
+\[
+ (f+r)(x_M)\le(f+r)(x)-\frac M2\lVert x_M-x\rVert^2.
+\]
+Nyatakan residu gradien proksimal yang dapat dihitung dari langkah ini.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0002
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0002}
+\textbf{Tahap 1.} Lemma penurunan menjamin (A) untuk semua $M\ge L$.
+\textbf{Tahap 2.} Model yang diminimalkan bersifat $M$-konveks kuat dan
+nilainya di $y=x$ sama dengan $(f+r)(x)$.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0002
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0002}
+Penggandaan akhirnya menghasilkan $M\ge L$, sehingga (A) berlaku. Konveksitas
+kuat model memberi nilai model di $x_M$ paling besar
+$(f+r)(x)-M\lVert x_M-x\rVert^2/2$; (A) memindahkan batas itu ke objektif
+sebenarnya. Residu yang lazim adalah
+$G_M(x)=M(x-x_M)$.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0002
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0002}
+Lemma penurunan menyatakan untuk semua $y$,
+\[
+ f(y)\le f(x)+\langle\nabla f(x),y-x\rangle
+ +\frac L2\lVert y-x\rVert^2.
+\]
+Jadi begitu urutan penggandaan mencapai $M\ge L$, uji (A) pasti diterima;
+jumlah penggandaan hingga.
+
+Tuliskan model di dalam kurung sebagai $Q_M(y)$. Ia $M$-konveks kuat dan
+$x_M$ adalah peminimumnya. Dengan memakai $0\in\partial Q_M(x_M)$ dalam
+ketaksamaan konveksitas kuat,
+\[
+ Q_M(x)\ge Q_M(x_M)+\frac M2\lVert x-x_M\rVert^2.
+\]
+Karena $Q_M(x)=(f+r)(x)$ dan uji (A) memberi
+$(f+r)(x_M)\le Q_M(x_M)$, kedua ketaksamaan menghasilkan sertifikat yang
+diminta. Vektor $G_M(x)=M(x-x_M)$ dapat dihitung dari langkah. Ia nol tepat
+bila $x=x_M$, yang melalui kondisi optimalitas ekuivalen dengan
+$0\in\nabla f(x)+\partial r(x)$.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0003
+\begin{exercise}[KKT untuk regularisasi analisis dan kendala norma]
+\label{orig03:final:exercise:0003}
+Untuk $\tau>0$ dan $R>0$, pertimbangkan
+\[
+ \min_x\ \frac12\lVert Ax-b\rVert^2+\tau\lVert x\rVert_1
+ \quad\text{dengan syarat}\quad \lVert Bx-d\rVert_2\le R.
+\]
+Anggap terdapat $\bar x$ dengan $\lVert B\bar x-d\rVert_2<R$. Turunkan sistem
+KKT lengkap. Tuliskan subgradien norma Euclidean baik ketika
+$Bx-d\ne0$ maupun ketika $Bx-d=0$, dan jelaskan mengapa sistem KKT cukup untuk
+optimalitas global.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0003
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0003}
+\textbf{Tahap 1.} Gunakan pengali $\nu\ge0$ untuk fungsi kendala
+$q(x)=\lVert Bx-d\rVert_2-R$.
+\textbf{Tahap 2.} Terapkan aturan rantai subdiferensial pada norma dan pisahkan
+kasus argumen nol.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0003
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0003}
+Terdapat $s\in\partial\lVert x\rVert_1$, $q\in\partial\lVert Bx-d\rVert_2$,
+dan $\nu\ge0$ sehingga
+\[
+ 0=A^\top(Ax-b)+\tau s+\nu B^\top q,
+\]
+\[
+ \lVert Bx-d\rVert_2\le R,qquad
+ \nu(\lVert Bx-d\rVert_2-R)=0.
+\]
+Jika $z\ne0$, $\partial\lVert z\rVert_2=\{z/\lVert z\rVert_2\}$; jika
+$z=0$, subdiferensialnya adalah bola satuan. Slater membuat KKT perlu dan,
+karena masalah konveks, juga cukup.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0003
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0003}
+Lagrangian adalah
+\[
+ \mathcal L(x,\nu)=\tfrac12\lVert Ax-b\rVert^2
+ +\tau\lVert x\rVert_1+\nu(\lVert Bx-d\rVert_2-R).
+\]
+Kondisi Slater yang diberikan menjamin keberadaan pengali optimal dan aturan
+KKT tanpa celah dual. Stasioneritas adalah inklusi
+\[
+ 0\in A^\top(Ax-b)+\tau\partial\lVert x\rVert_1
+ +\nu B^\top\partial\lVert Bx-d\rVert_2.
+\]
+Memilih $s$ dan $q$ dari kedua subdiferensial mengubahnya menjadi persamaan
+pada jawaban singkat. Secara koordinat,
+$s_i=\operatorname{sign}(x_i)$ jika $x_i\ne0$ dan $s_i\in[-1,1]$ jika
+$x_i=0$. Untuk norma Euclidean, $q=z/\lVert z\rVert$ saat $z=Bx-d\ne0$,
+sedangkan sembarang $q$ dengan $\lVert q\rVert\le1$ sah saat $z=0$.
+
+Sistem dilengkapi oleh kelayakan primal, kelayakan dual $\nu\ge0$, dan
+kelonggaran komplementer. Objektif dan fungsi kendala konveks; maka setiap
+pasangan yang memenuhi sistem membentuk sertifikat titik pelana Lagrangian
+dan memberi peminimum global.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0004
+\begin{exercise}[Distribusi kepentingan dengan momen kedua minimum]
+\label{orig03:final:exercise:0004}
+Misalkan $g_1,\ldots,g_N$ adalah vektor tak nol yang diketahui. Untuk peluang
+$p_i>0$, $\sum_i p_i=1$, ambil $I\sim p$ dan
+$G=g_I/(Np_I)$. Di antara semua distribusi $p$, tentukan distribusi yang
+meminimalkan $\mathbb E\lVert G\rVert^2$, hitung nilai minimumnya, dan tulis
+varians minimum terhadap mean $\bar g=N^{-1}\sum_i g_i$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0004
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0004}
+\textbf{Tahap 1.} Masalah skalar yang harus diminimalkan adalah
+$\sum_i\lVert g_i\rVert^2/p_i$ pada simpleks.
+\textbf{Tahap 2.} Gunakan pengali Lagrange atau Cauchy--Schwarz, lalu kurangi
+$\lVert\bar g\rVert^2$ dari momen kedua.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0004
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0004}
+\[
+ p_i^\star=\frac{\lVert g_i\rVert}{\sum_j\lVert g_j\rVert},
+ \qquad
+ \min_p\mathbb E\lVert G\rVert^2
+ =\frac1{N^2}\left(\sum_i\lVert g_i\rVert\right)^2.
+\]
+Varians minimumnya adalah nilai terakhir dikurangi $\lVert\bar g\rVert^2$.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0004
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0004}
+Ketakbiasan mengikuti dari
+$\mathbb E G=\sum_i p_i g_i/(Np_i)=\bar g$. Momen keduanya ialah
+\[
+ \mathbb E\lVert G\rVert^2
+ =\frac1{N^2}\sum_i\frac{\lVert g_i\rVert^2}{p_i}.
+\]
+Cauchy--Schwarz memberi
+\[
+ \left(\sum_i\lVert g_i\rVert\right)^2
+ =\left(\sum_i\frac{\lVert g_i\rVert}{\sqrt{p_i}}\sqrt{p_i}\right)^2
+ \le\left(\sum_i\frac{\lVert g_i\rVert^2}{p_i}\right)
+      \left(\sum_i p_i\right).
+\]
+Kesetaraan terjadi tepat ketika
+$\lVert g_i\rVert/\sqrt{p_i}$ sebanding dengan $\sqrt{p_i}$, yakni
+$p_i\propto\lVert g_i\rVert$. Karena semua vektor tak nol, distribusi itu
+strictly positif dan layak. Substitusi memberi nilai minimum. Identitas
+$\mathbb E\lVert G-\bar g\rVert^2=
+\mathbb E\lVert G\rVert^2-\lVert\bar g\rVert^2$ memberi varians yang diminta.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0005
+\begin{exercise}[Laju rata-rata descent cermin stokastik]
+\label{orig03:final:exercise:0005}
+Misalkan $C$ konveks, $h$ terdiferensialkan dan $1$-konveks kuat terhadap
+norma $\lVert\cdot\rVert$, serta $f$ konveks pada $C$. Dengan filtrasi
+$\mathcal F_k$, anggap
+\[
+ \mathbb E[G_k\mid\mathcal F_k]=g_k\in\partial f(x_k),
+ \qquad
+ \mathbb E[\lVert G_k\rVert_*^2\mid\mathcal F_k]\le G^2.
+\]
+Iterasi diberikan oleh
+\[
+ x_{k+1}\in\arg\min_{x\in C}
+ \{\eta\langle G_k,x\rangle+D_h(x,x_k)\}.
+\]
+Jika $x^\star$ meminimalkan $f$ dan
+$D_h(x^\star,x_0)\le D^2/2$, buktikan untuk
+$\bar x_K=K^{-1}\sum_{k=0}^{K-1}x_k$ dan
+$\eta=D/(G\sqrt K)$ bahwa
+\[
+ \mathbb E[f(\bar x_K)-f(x^\star)]\le\frac{DG}{\sqrt K}.
+\]
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0005
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0005}
+\textbf{Tahap 1.} Dari ketaksamaan tiga titik dan konveksitas kuat $h$,
+turunkan batas satu langkah dengan suku $\eta^2\lVert G_k\rVert_*^2/2$.
+\textbf{Tahap 2.} Ambil ekspektasi bersyarat, jumlahkan, gunakan Jensen pada
+$f(\bar x_K)$, lalu optimalkan langkah konstan.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0005
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0005}
+Ketaksamaan dasar memberi
+\[
+ \eta\,\mathbb E[f(x_k)-f(x^\star)]
+ \le\mathbb E[D_h(x^\star,x_k)-D_h(x^\star,x_{k+1})]
+ +\frac{\eta^2G^2}{2}.
+\]
+Setelah dijumlahkan dan dibagi $\eta K$, batasnya
+$D^2/(2\eta K)+\eta G^2/2$; pilihan langkah yang diberikan membuatnya
+$DG/\sqrt K$.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0005
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0005}
+Optimalitas langkah cermin dan identitas tiga titik menghasilkan, untuk
+$u\in C$,
+\[
+ \eta\langle G_k,x_{k+1}-u\rangle
+ \le D_h(u,x_k)-D_h(u,x_{k+1})-D_h(x_{k+1},x_k).
+\]
+Tambahkan $\eta\langle G_k,x_k-x_{k+1}\rangle$ pada kedua ruas. Karena
+$D_h(x_{k+1},x_k)\ge\lVert x_{k+1}-x_k\rVert^2/2$, Young memberi
+\[
+ \eta\langle G_k,x_k-u\rangle
+ \le D_h(u,x_k)-D_h(u,x_{k+1})
+ +\frac{\eta^2}{2}\lVert G_k\rVert_*^2.
+\]
+Ambil $u=x^\star$ dan ekspektasi bersyarat. Karena $x_k$ terukur terhadap
+$\mathcal F_k$, ketakbiasan memberi
+$\mathbb E[\langle G_k,x_k-x^\star\rangle\mid\mathcal F_k]
+=\langle g_k,x_k-x^\star\rangle\ge f(x_k)-f(x^\star)$.
+Maka ketaksamaan pada jawaban singkat berlaku.
+
+Menjumlahkan untuk $k=0,\ldots,K-1$ meneleskopkan divergensi dan memberi
+\[
+ \frac1K\sum_{k=0}^{K-1}\mathbb E[f(x_k)-f(x^\star)]
+ \le\frac{D^2}{2\eta K}+\frac{\eta G^2}{2}.
+\]
+Konveksitas dan Jensen membatasi ruas kiri dari bawah oleh
+$\mathbb E[f(\bar x_K)-f(x^\star)]$. Substitusi
+$\eta=D/(G\sqrt K)$ membuat kedua suku kanan sama dengan
+$DG/(2\sqrt K)$, sehingga hasil mengikuti.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0006
+\begin{exercise}[Kontraksi resolven operator monoton kuat]
+\label{orig03:final:exercise:0006}
+Misalkan $A$ maksimal monoton dan $\mu$-monoton kuat dengan $\mu>0$.
+Buktikan bahwa untuk setiap $\gamma>0$,
+\[
+ \lVert J_{\gamma A}x-J_{\gamma A}y\rVert
+ \le\frac1{1+\gamma\mu}\lVert x-y\rVert.
+\]
+Simpulkan bahwa $A$ mempunyai paling banyak satu nol dan, jika nol
+$x^\star$ ada, iterasi $x_{k+1}=J_{\gamma A}x_k$ konvergen linear kepadanya.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0006
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0006}
+\textbf{Tahap 1.} Tetapkan $p=J_{\gamma A}x$, $q=J_{\gamma A}y$, lalu tulis
+anggota $Ap$ dan $Aq$ dari definisi resolven.
+\textbf{Tahap 2.} Terapkan monotoni kuat dan Cauchy--Schwarz; kemudian ambil
+$y=x^\star$.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0006
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0006}
+Monotoni kuat memberi
+\[
+ \langle p-q,x-y\rangle\ge(1+\gamma\mu)\lVert p-q\rVert^2,
+\]
+yang bersama Cauchy--Schwarz menghasilkan kontraksi. Karena
+$J_{\gamma A}x^\star=x^\star$,
+\[
+ \lVert x_k-x^\star\rVert
+ \le(1+\gamma\mu)^{-k}\lVert x_0-x^\star\rVert.
+\]
+
+% stable-id: d90.orig.v1.tr03.final.solution.0006
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0006}
+Dari definisi resolven,
+\[
+ \frac{x-p}{\gamma}\in Ap,
+ \qquad
+ \frac{y-q}{\gamma}\in Aq.
+\]
+Monotoni kuat memberikan
+\[
+ \left\langle p-q,\frac{x-p}{\gamma}-\frac{y-q}{\gamma}\right\rangle
+ \ge\mu\lVert p-q\rVert^2.
+\]
+Setelah dikalikan $\gamma$ dan ditata ulang, ini menjadi ketaksamaan pada
+jawaban singkat. Jika $p\ne q$, Cauchy--Schwarz dan pembagian oleh
+$\lVert p-q\rVert$ memberi batas Lipschitz; bila $p=q$ batasnya trivial.
+
+Jika $u$ dan $v$ keduanya nol $A$, monotoni kuat memberi
+$0\ge\mu\lVert u-v\rVert^2$, sehingga $u=v$. Untuk nol yang ada,
+$J_{\gamma A}x^\star=x^\star$. Penerapan berulang faktor kontraksi
+$q=(1+\gamma\mu)^{-1}<1$ memberi batas linear yang dinyatakan.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0007
+\begin{exercise}[Sinkhorn sebagai maksimisasi blok dual]
+\label{orig03:final:exercise:0007}
+Misalkan $a_i,b_j>0$ dan total massanya sama. Untuk $\varepsilon>0$, tinjau
+\[
+ D(f,g)=a^\top f+b^\top g
+ -\varepsilon\sum_{i,j}
+ \exp\!\left(\frac{f_i+g_j-C_{ij}}{\varepsilon}\right).
+\]
+Buktikan bahwa, dengan $g$ tetap, pemaksimal unik terhadap setiap $f_i$ adalah
+\[
+ f_i=\varepsilon\log a_i-\varepsilon
+ \log\sum_j\exp\!\left(\frac{g_j-C_{ij}}{\varepsilon}\right),
+\]
+dan turunkan pembaruan analog untuk $g_j$. Simpulkan bahwa penskalaan Sinkhorn
+adalah maksimisasi koordinat blok eksak dan nilai dual tidak menurun pada
+setiap setengah langkah. Jelaskan ketidaktunggalan bersama akibat gauge.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0007
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0007}
+\textbf{Tahap 1.} Nolkan turunan parsial terhadap satu $f_i$ dan periksa tanda
+turunan keduanya.
+\textbf{Tahap 2.} Ulangi untuk $g_j$ dan amati transformasi
+$(f,g)\mapsto(f+c\1,g-c\1)$.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0007
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0007}
+Persamaan stasioner blok $f$ ialah
+\[
+ a_i=\sum_j\exp((f_i+g_j-C_{ij})/\varepsilon),
+\]
+yang memberi rumus pada soal; rumus blok $g$ diperoleh dengan menukar baris
+dan kolom. Setiap turunan kedua blok negatif, jadi pembaruan adalah maksimum
+unik dan tidak menurunkan $D$. Pasangan bersama hanya unik hingga penambahan
+konstanta pada $f$ dan pengurangan konstanta yang sama pada $g$.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0007
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0007}
+Untuk $g$ tetap,
+\[
+ \frac{\partial D}{\partial f_i}
+ =a_i-\sum_j\exp((f_i+g_j-C_{ij})/\varepsilon).
+\]
+Menetapkannya nol dan mengeluarkan faktor $\exp(f_i/\varepsilon)$ memberi
+rumus eksplisit pada soal. Turunan kedua adalah
+\[
+ -\frac1\varepsilon\sum_j
+ \exp((f_i+g_j-C_{ij})/\varepsilon)<0,
+\]
+dan tidak ada suku silang antara $f_i$ yang berlainan ketika $g$ tetap. Jadi
+rumus itu adalah pemaksimal blok unik. Secara simetris,
+\[
+ g_j=\varepsilon\log b_j-\varepsilon
+ \log\sum_i\exp\!\left(\frac{f_i-C_{ij}}{\varepsilon}\right).
+\]
+Mengganti satu blok dengan pemaksimal eksaknya tidak dapat menurunkan nilai
+fungsi dual. Dalam variabel skala eksponensial, kedua rumus adalah pembaruan
+baris dan kolom Sinkhorn.
+
+Jika $f$ ditambah $c\1$ dan $g$ dikurangi $c\1$, semua jumlah
+$f_i+g_j$ tetap. Suku linear juga tetap karena total massa $a$ dan $b$ sama.
+Jadi nilai dual dan kopling tidak berubah; inilah kebebasan gauge yang membuat
+pemaksimal pasangan tidak tunggal sebelum normalisasi.
+
+% stable-id: d90.orig.v1.tr03.final.exercise.0008
+\begin{exercise}[Pemilihan pemisahan untuk model stokastik terstruktur]
+\label{orig03:final:exercise:0008}
+Pertimbangkan
+\[
+ \min_{x\in C}\quad
+ s(x)+\tau\lVert Wx\rVert_1,
+ \qquad
+ s(x)=\mathbb E_\xi[\ell_\xi(A_\xi x-b_\xi)],
+\]
+dengan $C=\{x:\lVert x\rVert_2\le R\}$, $\tau>0$, dan $s$ konveks
+terdiferensialkan. Tuliskan inklusi optimalitas primal dan sistem primal--dual
+dengan variabel $y$ untuk suku $\ell^1$. Bandingkan kapan gradien proksimal
+stokastik langsung layak dipakai dan kapan pemisahan primal--dual lebih
+sesuai. Berikan sepasang residu KKT dan asumsi orakel minimum yang diperlukan
+untuk klaim konvergensi stokastik.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.final.hint.0008
+\paragraph{Petunjuk bertahap.}
+\label{orig03:final:hint:0008}
+\textbf{Tahap 1.} Gabungkan $\partial(\tau\lVert W\cdot\rVert_1)$ dengan
+kerucut normal $N_C$, lalu gunakan aturan rantai melalui $W^\top$.
+\textbf{Tahap 2.} Bandingkan proksimal gabungan dengan proyeksi ke $C$ dan
+proksimal konjugat norma $\ell^1$ yang dapat dihitung secara terpisah.
+
+% stable-id: d90.orig.v1.tr03.final.answer.0008
+\paragraph{Jawaban singkat.}
+\label{orig03:final:answer:0008}
+Optimalitas ekuivalen dengan keberadaan $y$ sehingga
+\[
+ 0\in\nabla s(x)+W^\top y+N_C(x),
+ \qquad y\in\tau\partial\lVert Wx\rVert_1.
+\]
+Gradien proksimal langsung sesuai bila
+$\operatorname{prox}_{\eta(\tau\lVert W\cdot\rVert_1+\delta_C)}$ mudah;
+pemisahan primal--dual sesuai bila hanya proyeksi ke $C$ dan proyeksi dual ke
+bola $\ell^\infty$ yang mudah. Residu dapat berupa jarak kedua inklusi ke nol.
+Orakel harus tidak bias secara bersyarat, bermomen kedua terkendali, dan
+langkah harus memenuhi syarat penjumlahan yang sesuai.
+
+% stable-id: d90.orig.v1.tr03.final.solution.0008
+\paragraph{Solusi lengkap.}
+\label{orig03:final:solution:0008}
+Dengan aturan rantai konveks,
+\[
+ \partial\bigl(\tau\lVert W\cdot\rVert_1\bigr)(x)
+ =W^\top\bigl(\tau\partial\lVert Wx\rVert_1\bigr).
+\]
+Karena kendala ditulis sebagai indikator $\delta_C$, syarat Fermat adalah
+\[
+ 0\in\nabla s(x)+W^\top
+       \bigl(\tau\partial\lVert Wx\rVert_1\bigr)+N_C(x).
+\]
+Memperkenalkan $y\in\tau\partial\lVert Wx\rVert_1$ menghasilkan sistem pada
+jawaban singkat. Secara ekuivalen,
+$Wx\in\partial(\tau\lVert\cdot\rVert_1)^*(y)$, dan fungsi konjugat itu adalah
+indikator bola $\{y:\lVert y\rVert_\infty\le\tau\}$.
+
+Jika proksimal gabungan
+$\tau\lVert W\cdot\rVert_1+\delta_C$ tersedia dalam bentuk tertutup atau dapat
+dihitung murah, langkah gradien proksimal stokastik memisahkan bagian halus
+$s$ secara langsung. Untuk $W$ umum, proksimal gabungan biasanya tidak
+terurai menjadi penyusutan lunak lalu proyeksi. Metode primal--dual menjaga
+$Wx$ sebagai operator linear dan hanya membutuhkan proyeksi ke bola $C$ serta
+proyeksi $y$ ke bola $\ell^\infty$ berjari-jari $\tau$; karena itu ia lebih
+sesuai pada keadaan tersebut.
+
+Satu pasangan residu matematis adalah
+\[
+ r_{\mathrm p}(x,y)=
+ \operatorname{dist}\bigl(0,\nabla s(x)+W^\top y+N_C(x)\bigr),
+\]
+\[
+ r_{\mathrm d}(x,y)=
+ \operatorname{dist}\bigl(Wx,\partial(\tau\lVert\cdot\rVert_1)^*(y)\bigr),
+\]
+dengan nilai tak hingga bila $y$ berada di luar domain konjugat. Keduanya nol
+tepat pada pasangan KKT\@. Untuk analisis stokastik, penduga gradien
+$G_k$ sekurang-kurangnya harus memenuhi
+$\mathbb E[G_k\mid\mathcal F_k]=\nabla s(x_k)$ dan batas momen kedua atau
+varians yang sesuai. Pada skema Robbins--Monro dasar, langkah positif lazimnya
+memenuhi $\sum_k\eta_k=\infty$ dan $\sum_k\eta_k^2<\infty$; klaim laju dengan
+langkah tetap memerlukan asumsi tambahan seperti reduksi varians atau menerima
+lantai galat. Norma operator $W$ juga harus masuk ke batas langkah
+primal--dual, bukan diabaikan.

@@ -1,0 +1,1710 @@
+{
+  "audit_date": "2026-08-28",
+  "checks": [
+    {
+      "check_id": "integrated_master_component_order",
+      "details": {
+        "content_inputs": [
+          "habring-01-prasyarat-id",
+          "habring-02-konveksitas-id",
+          "habring-03-subgradien-id",
+          "habring-04-metode-subgradien-terproyeksi-id",
+          "habring-05-metode-gradien-proksimal-id",
+          "habring-06-akselerasi-id",
+          "habring-07-dualitas-id",
+          "habring-08-penurunan-gradien-stokastik-id",
+          "habring-09-transportasi-optimal-id",
+          "becker-01-dualitas-lagrange-slater-kkt-id",
+          "becker-03-reduksi-varians-id",
+          "original-01-metode-stokastik-komposit-cermin-minibatch-id",
+          "becker-02-pemisahan-douglas-rachford-id",
+          "original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id",
+          "original-03-penutupan-kursus-id"
+        ],
+        "expected": [
+          "habring-01-prasyarat-id",
+          "habring-02-konveksitas-id",
+          "habring-03-subgradien-id",
+          "habring-04-metode-subgradien-terproyeksi-id",
+          "habring-05-metode-gradien-proksimal-id",
+          "habring-06-akselerasi-id",
+          "habring-07-dualitas-id",
+          "habring-08-penurunan-gradien-stokastik-id",
+          "habring-09-transportasi-optimal-id",
+          "becker-01-dualitas-lagrange-slater-kkt-id",
+          "becker-03-reduksi-varians-id",
+          "original-01-metode-stokastik-komposit-cermin-minibatch-id",
+          "becker-02-pemisahan-douglas-rachford-id",
+          "original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id",
+          "original-03-penutupan-kursus-id"
+        ],
+        "preamble_inputs": [
+          "o015-accessibility-id"
+        ]
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex"
+      ],
+      "result": "pass",
+      "summary": "The integrated master has the exact Habring/Becker/Original reader order."
+    },
+    {
+      "check_id": "companions_remain_separate",
+      "details": {
+        "master_companion_inputs": [],
+        "preserved_companions": [
+          "o015-mit-ocw-6.253-spring-2012",
+          "o015-royer-stochastic-gradient-2023-2024",
+          "o015-penn-math555-v1.0-source"
+        ]
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COVERAGE_OVERLAP.md"
+      ],
+      "result": "pass",
+      "summary": "MIT OCW, Royer, and Penn are preserved companion authorities and are not inputs to the integrated master."
+    },
+    {
+      "check_id": "habring_cc_by_4_exact_scope",
+      "details": {
+        "authority_id": "o015-habring-arxiv-2607.11664v1",
+        "authority_license": "CC BY 4.0",
+        "integrated_chapter_rights_bindings": {
+          "source/id-ID/habring-01-prasyarat-id.tex": true,
+          "source/id-ID/habring-02-konveksitas-id.tex": true,
+          "source/id-ID/habring-03-subgradien-id.tex": true,
+          "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex": true,
+          "source/id-ID/habring-05-metode-gradien-proksimal-id.tex": true,
+          "source/id-ID/habring-06-akselerasi-id.tex": true,
+          "source/id-ID/habring-07-dualitas-id.tex": true,
+          "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex": true,
+          "source/id-ID/habring-09-transportasi-optimal-id.tex": true
+        }
+      },
+      "evidence": [
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COMPONENT_RIGHTS.csv",
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "RIGHTS.md",
+        "PROVENANCE.md"
+      ],
+      "result": "pass",
+      "summary": "The complete Habring v1 spine is exactly scoped to CC BY 4.0."
+    },
+    {
+      "check_id": "becker_krock_mit_exact_scope",
+      "details": {
+        "admitted_ranges": [
+          "1263-1321",
+          "1398-1405",
+          "1414-1499",
+          "1652-1726",
+          "1731-1743",
+          "2750-2797",
+          "2971-2988"
+        ],
+        "bounded_donor_and_dual_rights_in_master_html": true,
+        "commit": "98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "component_rights_bindings": {
+          "o015-becker-01-id-source": true,
+          "o015-becker-02-id-source": true,
+          "o015-becker-03-id-source": true
+        },
+        "exact_commit_and_ranges_in_controls": true,
+        "independent_wording_rights": "CC BY-SA 4.0",
+        "source_witness_rights": {
+          "o015-becker-01-english-witness": true,
+          "o015-becker-02-english-witness": true,
+          "o015-becker-03-english-witness": true
+        },
+        "upstream_rights": "MIT"
+      },
+      "evidence": [
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COMPONENT_RIGHTS.csv",
+        "00_control/COVERAGE_OVERLAP.md",
+        "RIGHTS.md",
+        "PROVENANCE.md",
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html"
+      ],
+      "result": "pass",
+      "summary": "The donor commit and three nonduplicative ranges are frozen under MIT, but the current metadata is internally inconsistent or incomplete about Becker/Krock and the independent translation/correction layer."
+    },
+    {
+      "check_id": "original_01_02_03_cc_by_sa_scope",
+      "details": {
+        "component_rights_bindings": {
+          "Original-01": true,
+          "Original-02": true,
+          "Original-03": true
+        },
+        "master_original_inputs": [
+          "original-01-metode-stokastik-komposit-cermin-minibatch-id",
+          "original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id",
+          "original-03-penutupan-kursus-id"
+        ],
+        "original_03_authority_record": true,
+        "original_03_component_rows": 5,
+        "original_03_ledger_mentions": true,
+        "source_independence": {
+          "Original-01": true,
+          "Original-02": true,
+          "Original-03": true
+        },
+        "source_independence_and_component_cc_by_sa": {
+          "Original-01": true,
+          "Original-02": true,
+          "Original-03": true
+        }
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COMPONENT_RIGHTS.csv",
+        "00_control/ADVERSE_LEDGER.jsonl",
+        "README.md",
+        "RIGHTS.md",
+        "PROVENANCE.md"
+      ],
+      "result": "pass",
+      "summary": "The master declares the three-part independent layer CC BY-SA 4.0, but Original-03 has no controlling authority/component-rights admission and root metadata still names only Original-01/02."
+    },
+    {
+      "check_id": "original_03_course_closure_and_backend",
+      "details": {
+        "backend_build_receipt_passes": true,
+        "backend_identity_matches_current_4877_records": true,
+        "backend_validation_receipt_passes": true,
+        "build_input_mismatches": [],
+        "closure_counts_match": true,
+        "closure_receipt_passes": true,
+        "closure_summary": {
+          "P1": 0,
+          "P2": 0,
+          "P3": 0,
+          "assessment_count": 54,
+          "assessment_distribution": {
+            "diagnostic": 10,
+            "final": 8,
+            "midterm": 6,
+            "problem_sets": {
+              "ps01": 5,
+              "ps02": 5,
+              "ps03": 5,
+              "ps04": 5,
+              "ps05": 5,
+              "ps06": 5
+            }
+          },
+          "capstone_milestone_count": 7,
+          "computation_components_replayed_twice": 3,
+          "proof_rubric_count": 7,
+          "response_unit_count": 83,
+          "stable_definition_count": 465,
+          "static_reference_count": 27,
+          "unique_label_count": 453,
+          "unique_stable_id_count": 465
+        },
+        "current_backend": {
+          "csv": {
+            "bytes": 4272596,
+            "exists": true,
+            "path": "backend/records.csv",
+            "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+          },
+          "jsonl": {
+            "bytes": 3534351,
+            "exists": true,
+            "path": "backend/records.jsonl",
+            "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+          }
+        }
+      },
+      "evidence": [
+        "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+        "qa/ORIGINAL_03_BACKEND_BUILD.json",
+        "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+        "backend/records.jsonl",
+        "backend/records.csv"
+      ],
+      "result": "pass",
+      "summary": "Original-03 has a passing zero-defect course-closure audit, byte-current source/lab inputs, and a lossless 4,877-record backend."
+    },
+    {
+      "check_id": "final_integrated_state_reconciled",
+      "details": {
+        "coverage_current_status_is_partial": false,
+        "readme_current_status_is_partial": false,
+        "source_authority_current_cursor_is_partial": false,
+        "source_authority_cursor": "integrated_course_complete_release_reconciliation"
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COVERAGE_OVERLAP.md",
+        "README.md"
+      ],
+      "result": "pass",
+      "summary": "The integrated source contains assessment, labs, capstone, and final readers, while controlling/root metadata still says those exact layers are unfinished."
+    },
+    {
+      "check_id": "original_01_authority_identity_current",
+      "details": {
+        "authority_identities": [
+          {
+            "bytes": 27431,
+            "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+          },
+          {
+            "bytes": 27431,
+            "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+          },
+          {
+            "bytes": 27425,
+            "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0"
+          }
+        ],
+        "current_actual": {
+          "bytes": 27425,
+          "exists": true,
+          "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+          "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0"
+        },
+        "current_identity_recorded": true,
+        "expected_historical_public_release": {
+          "bytes": 27431,
+          "sha256": "db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26"
+        },
+        "historical_identity_preserved": true
+      },
+      "evidence": [
+        "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "00_control/SOURCE_AUTHORITY.json"
+      ],
+      "result": "pass",
+      "summary": "The immutable Original-01 public-release identity and the current integrated descendant are both preserved as distinct controlling identities."
+    },
+    {
+      "check_id": "integrated_reader_inputs_current",
+      "details": {
+        "mismatches": [],
+        "missing": [],
+        "receipts_checked": [
+          "qa/INTEGRATED_READERS_BUILD.json",
+          "qa/2026-08-27-integrated-pdf-build.json"
+        ]
+      },
+      "evidence": [
+        "qa/INTEGRATED_READERS_BUILD.json",
+        "qa/2026-08-27-integrated-pdf-build.json"
+      ],
+      "result": "pass",
+      "summary": "All integrated-reader input identities still match the build receipt."
+    },
+    {
+      "check_id": "integrated_html_epub_artifact_identity",
+      "details": {
+        "build_receipt_passes": true,
+        "mismatches": [],
+        "validation_receipt_passes": true
+      },
+      "evidence": [
+        "qa/INTEGRATED_READERS_BUILD.json",
+        "qa/INTEGRATED_READERS_VALIDATION.json"
+      ],
+      "result": "pass",
+      "summary": "Current integrated HTML/EPUB bytes match passing build and validation receipts."
+    },
+    {
+      "check_id": "integrated_browser_release_surface",
+      "details": {
+        "binds_current_html": true,
+        "html": {
+          "bytes": 2485595,
+          "exists": true,
+          "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+          "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+        },
+        "receipt_passes": true,
+        "viewport_contract_passes": true,
+        "viewports": {
+          "desktop": {
+            "document_scroll_width": 1425,
+            "escaped_visible_elements": 0,
+            "height": 900,
+            "local_horizontal_scrollers": 0,
+            "main": {
+              "left": 16.0,
+              "margin_balance_delta": 15.111083984375,
+              "right": 1408.888916015625,
+              "viewport_ratio": 0.9672839694552952,
+              "width": 1392.888916015625
+            },
+            "name": "desktop",
+            "root_horizontal_overflow_pixels": 0,
+            "width": 1440
+          },
+          "phone": {
+            "document_scroll_width": 375,
+            "escaped_visible_elements": 0,
+            "height": 844,
+            "local_horizontal_scrollers": 277,
+            "local_scroller_breakdown": {
+              "math": 274,
+              "table": 3
+            },
+            "main": {
+              "left": 6.0,
+              "margin_balance_delta": 14.888885498046877,
+              "right": 369.1111145019531,
+              "viewport_ratio": 0.9310541397485976,
+              "width": 363.1111145019531
+            },
+            "name": "phone",
+            "root_horizontal_overflow_pixels": 0,
+            "width": 390
+          },
+          "tablet": {
+            "document_scroll_width": 753,
+            "escaped_visible_elements": 0,
+            "height": 1024,
+            "local_horizontal_scrollers": 5,
+            "main": {
+              "left": 6.0,
+              "margin_balance_delta": 15.111083984375,
+              "right": 746.888916015625,
+              "viewport_ratio": 0.9646991093953452,
+              "width": 740.888916015625
+            },
+            "name": "tablet",
+            "root_horizontal_overflow_pixels": 0,
+            "width": 768
+          }
+        },
+        "visual_findings_pass": true
+      },
+      "evidence": [
+        "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "qa/INTEGRATED_BROWSER_QA.json"
+      ],
+      "result": "pass",
+      "summary": "The current integrated HTML is byte-bound to a passing live desktop/tablet/phone browser review with page-filling layout and locally contained wide content."
+    },
+    {
+      "check_id": "integrated_pdf_release_surface",
+      "details": {
+        "all_page_visual_content_passes": true,
+        "build_bound": true,
+        "deterministic_build_content_passes": true,
+        "pdf": {
+          "bytes": 1671254,
+          "exists": true,
+          "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+          "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5"
+        },
+        "receipts": [
+          {
+            "binds_current_pdf": true,
+            "bytes": 10782,
+            "exists": true,
+            "passes": true,
+            "path": "qa/2026-08-27-integrated-pdf-build.json",
+            "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d",
+            "visual_judgment_pending": false
+          },
+          {
+            "binds_current_pdf": true,
+            "bytes": 80194,
+            "exists": true,
+            "passes": true,
+            "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+            "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07",
+            "visual_judgment_pending": false
+          },
+          {
+            "binds_current_pdf": true,
+            "bytes": 3100,
+            "exists": true,
+            "passes": true,
+            "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+            "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d",
+            "visual_judgment_pending": false
+          }
+        ],
+        "validation_accessibility_content_passes": true,
+        "validation_bound": true,
+        "visual_receipt_bound": true
+      },
+      "evidence": [
+        "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+        "qa/2026-08-27-integrated-pdf-build.json",
+        "qa/INTEGRATED_PDF_VALIDATION.json",
+        "qa/INTEGRATED_PDF_VISUAL_QA.json"
+      ],
+      "result": "pass",
+      "summary": "The integrated PDF exists and is bound by passing build, validation, and completed visual receipts."
+    },
+    {
+      "check_id": "integrated_backend_control_identity",
+      "details": {
+        "authority_backend_identities": [
+          {
+            "csv_bytes": 2875457,
+            "csv_sha256": "f3561b09cf15ae2bdd5fc84ee7d464abc720be04d92715200002518e63f4ee2f",
+            "jsonl_bytes": 2408339,
+            "jsonl_sha256": "21f19a4c56276b0abb677c58d9deb23d512e033b7a0f26c241ed9feb72891667",
+            "records": 3096
+          },
+          {
+            "csv_bytes": 3054550,
+            "csv_sha256": "baf7e3c11cd10e636cdf61f3f469954f6f0e072a49f2e6528186e3ba4231810f",
+            "jsonl_bytes": 2552754,
+            "jsonl_sha256": "48292d9ab6f8917e914f8ad9d07e0be99b8c1eeb1f3a3f38be36600728ab6f67",
+            "records": 3320
+          },
+          {
+            "csv_bytes": 3142537,
+            "csv_sha256": "4e3249844a4948f02522c300ff69d313cabda2768d23f7f6f674b9c25ae08f97",
+            "jsonl_bytes": 2623909,
+            "jsonl_sha256": "6943678e867b5f72a509e1dbc57dcdbc61c79cc7ced3828fc3b8da999dff3ae6",
+            "records": 3430
+          },
+          {
+            "csv_bytes": 3267489,
+            "csv_sha256": "56004e9095adc61950b89c9e6f6959e6dc0f33d5211d4b67f4f1277216245c72",
+            "jsonl_bytes": 2724813,
+            "jsonl_sha256": "fd8e7f3a13cbc17784b7f9b6a39f83344124ec381b98a34bf8095935c5c054fb",
+            "records": 3585
+          },
+          {
+            "csv_bytes": 3537781,
+            "csv_sha256": "4fd14cad8d08b0e551bf8ce8d306fc8ee11751a9b66e1717b7f1a3c16a822ab4",
+            "jsonl_bytes": 2941125,
+            "jsonl_sha256": "d829eb7641e04aff41529be436818514d88dc3b2961d2d23fbc12d1d6b9fc35f",
+            "records": 3943
+          },
+          {
+            "csv_bytes": 3839894,
+            "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c",
+            "jsonl_bytes": 3183459,
+            "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+            "records": 4338
+          },
+          {
+            "csv_bytes": 4272596,
+            "csv_sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915",
+            "jsonl_bytes": 3534351,
+            "jsonl_sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30",
+            "records": 4877
+          },
+          {
+            "csv_bytes": 3839894,
+            "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c",
+            "jsonl_bytes": 3183459,
+            "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+            "records": 4338
+          },
+          {
+            "csv_bytes": 2313694,
+            "csv_sha256": "8bbcb8d978d90073462fb966ab368b59cf226c794cf338060706dfccbee9ea66",
+            "jsonl_bytes": 1942530,
+            "jsonl_sha256": "b6a49365c69c6ce3d524fe658e16763a036661daf46d0dc8e8182bfff5e58a78",
+            "records": 2472
+          }
+        ],
+        "current": {
+          "csv": {
+            "bytes": 4272596,
+            "exists": true,
+            "path": "backend/records.csv",
+            "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+          },
+          "jsonl": {
+            "bytes": 3534351,
+            "exists": true,
+            "path": "backend/records.jsonl",
+            "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+          }
+        },
+        "current_record_count": 4877,
+        "passing_validation_binds_current_4877_records": true,
+        "readme_states_current_record_count": true
+      },
+      "evidence": [
+        "backend/records.jsonl",
+        "backend/records.csv",
+        "00_control/SOURCE_AUTHORITY.json",
+        "README.md"
+      ],
+      "result": "pass",
+      "summary": "The current backend identity is recorded in controlling authority metadata."
+    },
+    {
+      "check_id": "integrated_frontmatter_source_model_change_nonendorsement",
+      "details": {
+        "becker_commit_ranges_and_dual_rights": true,
+        "becker_krock_source": true,
+        "changes": true,
+        "companions": true,
+        "habring_license": true,
+        "habring_source": true,
+        "model": true,
+        "no_blanket_license": true,
+        "nonendorsement": true,
+        "o018": true,
+        "original_cc_by_sa_and_independence": true
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "PROVENANCE.md"
+      ],
+      "result": "pass",
+      "summary": "The integrated source and current readers carry source, model, change, non-endorsement, companion, and O018 disclosures."
+    },
+    {
+      "check_id": "o018_nonoverlap",
+      "details": {
+        "becker_lp_ranges_excluded": true,
+        "companions_not_integrated": true,
+        "coverage_boundary": true,
+        "master_exclusion": true,
+        "original_01_probability_simplex_only": true
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "00_control/COVERAGE_OVERLAP.md",
+        "00_control/COMPONENT_RIGHTS.csv"
+      ],
+      "result": "pass",
+      "summary": "The integrated boundary excludes O018 LP/MIP/simplex-tableau/sensitivity/network curriculum; probability-simplex and general KKT uses remain in continuous convex analysis."
+    },
+    {
+      "check_id": "no_ttp_title_or_lead_creator",
+      "details": {
+        "integrated_html_title": true,
+        "integrated_master_author": true,
+        "integrated_master_title": true,
+        "prior_zenodo_contributor_only": true,
+        "prior_zenodo_creators": true,
+        "prior_zenodo_title": true
+      },
+      "evidence": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "release/zenodo/2026-08-26-original-02/metadata-original-02.template.json"
+      ],
+      "result": "pass",
+      "summary": "TTP is absent from title and lead creator surfaces; the established Zenodo role is contributor/other only."
+    },
+    {
+      "check_id": "existing_github_and_zenodo_route",
+      "details": {
+        "github": {
+          "anonymous_verifier_route_matches": true,
+          "branch": "main",
+          "create_replacement_repository": false,
+          "latest_receipt_result": "pass",
+          "latest_verified_commit": "74780b65dcf9954bdf915aecbf57cd17fd6b43ea",
+          "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id"
+        },
+        "network_accessed": false,
+        "offline_evidence_only": true,
+        "result": "pass",
+        "zenodo": {
+          "concept_doi": "10.5281/zenodo.22059741",
+          "concept_id": "22059741",
+          "create_new_concept": false,
+          "current_record_repair_script_proves_latest_record_and_concept_anchor": true,
+          "fresh_remote_state_must_be_rechecked_by_publication_preflight": true,
+          "last_verified_open_draft_count": 0,
+          "latest_receipt_file_count": 99,
+          "latest_receipt_result": "pass",
+          "latest_record_privacy_result": "pass",
+          "latest_record_profile_locator_hits": 0,
+          "prior_version_script_is_not_current_execution_authority": true,
+          "prior_version_script_proves_existing_record_version_pattern": true,
+          "use_existing_record_version_action": true,
+          "version_source_record_doi": "10.5281/zenodo.22104724",
+          "version_source_record_id": "22104724"
+        }
+      },
+      "evidence": [
+        "release/github/2026-08-26-original-02/github-explicit-paths-original-02.json",
+        "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+        "release/github/2026-08-26-original-02/verify_github_original_02_public.py",
+        "release/zenodo/2026-08-26-original-02/publish_original_02.py",
+        "release/zenodo/2026-08-26-original-02/repair_original_02_privacy.py",
+        "release/zenodo/2026-08-26-original-02/metadata-original-02.template.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-draft-closure-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json"
+      ],
+      "result": "pass",
+      "summary": "Checked-in exact-byte receipts bind the existing GitHub repository/main branch and Zenodo concept; the next release must be a new version of record 22104724, never a duplicate concept."
+    },
+    {
+      "check_id": "candidate_privacy_and_credential_scan",
+      "details": {
+        "aggregate_file_bytes": 13720366,
+        "archive_entries_scanned": 20,
+        "archive_uncompressed_bytes_scanned": 2460671,
+        "credential_material_recorded": false,
+        "file_count": 70,
+        "hit_files": [],
+        "hits": [],
+        "patterns": [
+          "generic Windows user-profile locator",
+          "authorization bearer value",
+          "labeled access-token/API-key assignment",
+          "credential-bearing URL query",
+          "known provider secret prefix",
+          "credential-file locator"
+        ],
+        "pdf_decoded_file_count": 1,
+        "profile_or_credential_hit_count": 0,
+        "result": "pass",
+        "scan_failures": []
+      },
+      "evidence": [
+        "README.md",
+        "RIGHTS.md",
+        "PROVENANCE.md",
+        "00_control/SOURCE_AUTHORITY.json",
+        "00_control/COMPONENT_RIGHTS.csv",
+        "00_control/COVERAGE_OVERLAP.md",
+        "00_control/ADVERSE_LEDGER.jsonl",
+        "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+        "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "source/id-ID/habring-01-prasyarat-id.tex",
+        "source/id-ID/habring-02-konveksitas-id.tex",
+        "source/id-ID/habring-03-subgradien-id.tex",
+        "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+        "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+        "source/id-ID/habring-06-akselerasi-id.tex",
+        "source/id-ID/habring-07-dualitas-id.tex",
+        "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+        "source/id-ID/habring-09-transportasi-optimal-id.tex",
+        "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "source/id-ID/becker-03-reduksi-varians-id.tex",
+        "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+        "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "source/id-ID/original-03-penutupan-kursus-id.tex",
+        "source/id-ID/original-03/00-peta-asesmen-id.tex",
+        "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+        "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+        "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+        "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+        "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+        "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+        "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+        "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+        "source/id-ID/original-03/09-ujian-tengah-id.tex",
+        "source/id-ID/original-03/10-ujian-akhir-id.tex",
+        "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+        "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+        "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+        "source/id-ID/references-integrated-id.bib",
+        "labs/original-03/globalisasi-newton.py",
+        "labs/original-03/globalisasi-newton-results.json",
+        "labs/original-03/globalisasi-newton-results.csv",
+        "labs/original-03/globalisasi-newton.svg",
+        "labs/original-03/transportasi-entropik.py",
+        "labs/original-03/transportasi-entropik-results.json",
+        "labs/original-03/transportasi-entropik-results.csv",
+        "labs/original-03/transportasi-entropik.svg",
+        "labs/original-03/kapstone-invers-komposit.py",
+        "labs/original-03/kapstone-invers-komposit-results.json",
+        "labs/original-03/kapstone-invers-komposit-results.csv",
+        "labs/original-03/kapstone-invers-komposit.svg",
+        "backend/backend_schema.json",
+        "backend/records.jsonl",
+        "backend/records.csv",
+        "qa/2026-08-27-integrated-pdf-build.json",
+        "qa/INTEGRATED_BROWSER_QA.json",
+        "qa/INTEGRATED_PDF_VALIDATION.json",
+        "qa/INTEGRATED_PDF_VISUAL_QA.json",
+        "qa/INTEGRATED_READERS_BUILD.json",
+        "qa/INTEGRATED_READERS_VALIDATION.json",
+        "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+        "qa/ORIGINAL_03_BACKEND_BUILD.json",
+        "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+        "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+        "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+        "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json"
+      ],
+      "result": "pass",
+      "summary": "No user-profile locator, credential value, token value, credential-bearing query, or credential-file locator was found in the bounded candidate deliverables/source/labs/backend/QA/public receipts."
+    },
+    {
+      "check_id": "zenodo_inherited_file_policy",
+      "details": {
+        "addition_name_collisions": [],
+        "all_omissions_exist_in_parent": true,
+        "expected_new_version_file_count": 100,
+        "parent_file_count": 99
+      },
+      "evidence": [
+        "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json"
+      ],
+      "result": "pass",
+      "summary": "The 99-file parent inventory can preserve every reader/license/rights file, omit only eight redundant historical manifests from the new version, and add nine integrated files for an exact 100-file version."
+    }
+  ],
+  "contradictions": [],
+  "credential_accessed": false,
+  "evidence_identities": [
+    {
+      "bytes": 81438,
+      "exists": true,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "sha256": "b8ce43eaec2213d7889f5be81ba74b586eae1fa452af5454057c3a8abf881ed7"
+    },
+    {
+      "bytes": 66527,
+      "exists": true,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "sha256": "63daf8708c53d760d525654608996e38e324c53d890efe7e82cff21b494526e9"
+    },
+    {
+      "bytes": 32780,
+      "exists": true,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "sha256": "c62ad5789f5193d059cc98549d3a9b8f4c1f4e209b19d4a9962f3d39d128f3ba"
+    },
+    {
+      "bytes": 214286,
+      "exists": true,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "sha256": "e3085710efd8ea18c567271728decab3e3ac50bde21240ac88d65d50873dcc51"
+    },
+    {
+      "bytes": 42825,
+      "exists": true,
+      "path": "README.md",
+      "sha256": "acefb1eb83d2ab32eb429e029499764dfcc590a3462937d44a170d4b79d0922f"
+    },
+    {
+      "bytes": 4750,
+      "exists": true,
+      "path": "RIGHTS.md",
+      "sha256": "98b6c3e4c9199eef97cc8eecaf34061dc11c8dfe18acef8463481fcdc6f641cf"
+    },
+    {
+      "bytes": 4333,
+      "exists": true,
+      "path": "PROVENANCE.md",
+      "sha256": "0a44f5480f098b918fe21d35530a0d27abbbddad3c83e0f50f8a0a6851ceb5b8"
+    },
+    {
+      "bytes": 5110,
+      "exists": true,
+      "path": "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+      "sha256": "3a7ca97267acc71557be9e7c441eed2aca11960bae8491e94525fe64aba2d5b4"
+    },
+    {
+      "bytes": 8875,
+      "exists": true,
+      "path": "qa/INTEGRATED_READERS_BUILD.json",
+      "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8"
+    },
+    {
+      "bytes": 8963,
+      "exists": true,
+      "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+      "sha256": "2069af40785e573bfc81ff7742675f196f84e2bf875b6311ff484900fbf7b2f4"
+    },
+    {
+      "bytes": 10782,
+      "exists": true,
+      "path": "qa/2026-08-27-integrated-pdf-build.json",
+      "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d"
+    },
+    {
+      "bytes": 80194,
+      "exists": true,
+      "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+      "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07"
+    },
+    {
+      "bytes": 3100,
+      "exists": true,
+      "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+      "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d"
+    },
+    {
+      "bytes": 4436,
+      "exists": true,
+      "path": "qa/INTEGRATED_BROWSER_QA.json",
+      "sha256": "c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a"
+    },
+    {
+      "bytes": 53446,
+      "exists": true,
+      "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+      "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907"
+    },
+    {
+      "bytes": 13329,
+      "exists": true,
+      "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+      "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb"
+    },
+    {
+      "bytes": 3777,
+      "exists": true,
+      "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+      "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4"
+    },
+    {
+      "bytes": 8447,
+      "exists": true,
+      "path": "release/github/2026-08-26-original-02/github-explicit-paths-original-02.json",
+      "sha256": "3fdc02e6725cc2632c8fe77045cd15e74f1a5e5874d60a72fa2c8bedca0489f6"
+    },
+    {
+      "bytes": 44964,
+      "exists": true,
+      "path": "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+      "sha256": "c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0"
+    },
+    {
+      "bytes": 13711,
+      "exists": true,
+      "path": "release/github/2026-08-26-original-02/verify_github_original_02_public.py",
+      "sha256": "dfb4c19a8a31d98273841b23c04225ad8b512629426d52436b4dd06513d8e7d3"
+    },
+    {
+      "bytes": 43624,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/publish_original_02.py",
+      "sha256": "1b801d7cc9a789420a82f3272b3d24cc96f4ee20d0fe0896d25791eba9dac36d"
+    },
+    {
+      "bytes": 49607,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/repair_original_02_privacy.py",
+      "sha256": "5615e66b4e57b590bdd282444963f468c547078cdc82a0beef6c78bf81ed7888"
+    },
+    {
+      "bytes": 5721,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/metadata-original-02.template.json",
+      "sha256": "c5f6c495a0b71c73f6d08346c8fe3c38547730963d93fa2ff7c5c8b695455274"
+    },
+    {
+      "bytes": 27161,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json",
+      "sha256": "a1304827b61c97119f9b6a8c525744018e4631a3cf45a46677b260b6e2984287"
+    },
+    {
+      "bytes": 26403,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+      "sha256": "2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f"
+    },
+    {
+      "bytes": 391,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/zenodo-draft-closure-original-02.json",
+      "sha256": "93016affd55d8d19f8c9f9f9f366727f465e826a82ce885070287136621f107b"
+    },
+    {
+      "bytes": 473,
+      "exists": true,
+      "path": "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json",
+      "sha256": "65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab"
+    },
+    {
+      "bytes": 89201,
+      "exists": true,
+      "path": "qa/verify_integrated_rights_release.py",
+      "sha256": "53bbde57200d9f10751715d2849a8f489ea01cbe0cbd52b6a5b9405ad5161763"
+    }
+  ],
+  "failed_checks": [],
+  "git_accessed": false,
+  "metadata_payload_use_gate": "Use only after every release-blocking contradiction is deterministically reconciled and this verifier returns pass.",
+  "network_accessed": false,
+  "privacy": {
+    "aggregate_file_bytes": 13720366,
+    "archive_entries_scanned": 20,
+    "archive_uncompressed_bytes_scanned": 2460671,
+    "credential_material_recorded": false,
+    "file_count": 70,
+    "files": [
+      {
+        "bytes": 42825,
+        "path": "README.md",
+        "sha256": "acefb1eb83d2ab32eb429e029499764dfcc590a3462937d44a170d4b79d0922f"
+      },
+      {
+        "bytes": 4750,
+        "path": "RIGHTS.md",
+        "sha256": "98b6c3e4c9199eef97cc8eecaf34061dc11c8dfe18acef8463481fcdc6f641cf"
+      },
+      {
+        "bytes": 4333,
+        "path": "PROVENANCE.md",
+        "sha256": "0a44f5480f098b918fe21d35530a0d27abbbddad3c83e0f50f8a0a6851ceb5b8"
+      },
+      {
+        "bytes": 81438,
+        "path": "00_control/SOURCE_AUTHORITY.json",
+        "sha256": "b8ce43eaec2213d7889f5be81ba74b586eae1fa452af5454057c3a8abf881ed7"
+      },
+      {
+        "bytes": 66527,
+        "path": "00_control/COMPONENT_RIGHTS.csv",
+        "sha256": "63daf8708c53d760d525654608996e38e324c53d890efe7e82cff21b494526e9"
+      },
+      {
+        "bytes": 32780,
+        "path": "00_control/COVERAGE_OVERLAP.md",
+        "sha256": "c62ad5789f5193d059cc98549d3a9b8f4c1f4e209b19d4a9962f3d39d128f3ba"
+      },
+      {
+        "bytes": 214286,
+        "path": "00_control/ADVERSE_LEDGER.jsonl",
+        "sha256": "e3085710efd8ea18c567271728decab3e3ac50bde21240ac88d65d50873dcc51"
+      },
+      {
+        "bytes": 1671254,
+        "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+        "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5"
+      },
+      {
+        "bytes": 2485595,
+        "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+      },
+      {
+        "bytes": 379901,
+        "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+        "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+      },
+      {
+        "bytes": 5110,
+        "path": "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "sha256": "3a7ca97267acc71557be9e7c441eed2aca11960bae8491e94525fe64aba2d5b4"
+      },
+      {
+        "bytes": 31009,
+        "path": "source/id-ID/habring-01-prasyarat-id.tex",
+        "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+      },
+      {
+        "bytes": 42828,
+        "path": "source/id-ID/habring-02-konveksitas-id.tex",
+        "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+      },
+      {
+        "bytes": 19267,
+        "path": "source/id-ID/habring-03-subgradien-id.tex",
+        "sha256": "5cbefc17a3d1409305a9fdadf865b45cb399ff1edc41d837bc4f4c138d9b97df"
+      },
+      {
+        "bytes": 16612,
+        "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+        "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+      },
+      {
+        "bytes": 20575,
+        "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+        "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+      },
+      {
+        "bytes": 24690,
+        "path": "source/id-ID/habring-06-akselerasi-id.tex",
+        "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+      },
+      {
+        "bytes": 35436,
+        "path": "source/id-ID/habring-07-dualitas-id.tex",
+        "sha256": "360d0a4afc6058e3c8c90b4c2a7d2dc7cbd5f42b3544b3174a1b838348560979"
+      },
+      {
+        "bytes": 6378,
+        "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+        "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+      },
+      {
+        "bytes": 21252,
+        "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+        "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+      },
+      {
+        "bytes": 12924,
+        "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+      },
+      {
+        "bytes": 8298,
+        "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+        "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+      },
+      {
+        "bytes": 27425,
+        "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0"
+      },
+      {
+        "bytes": 4915,
+        "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+        "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+      },
+      {
+        "bytes": 28028,
+        "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+      },
+      {
+        "bytes": 1785,
+        "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+        "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9"
+      },
+      {
+        "bytes": 10067,
+        "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+        "sha256": "3d5f906f205cfabf7f3a464d18111209a22bc6edd193702ea584093b3d9938f8"
+      },
+      {
+        "bytes": 24183,
+        "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+        "sha256": "162f56e14f6d7fb1b879ed3403617ca7ca4d1fa32b4548812869bec1728a5b2f"
+      },
+      {
+        "bytes": 15501,
+        "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+        "sha256": "bd09ebd90d1fef7b35147e84c449d14ba50078fde491babbb32d49f1c6695c83"
+      },
+      {
+        "bytes": 14393,
+        "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+        "sha256": "243912d9de0f5d73de8fb8f3a5d041797f951331a6ad6cce955e6a8538172eff"
+      },
+      {
+        "bytes": 16647,
+        "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+        "sha256": "fa7d45448b63cc07572cad4afb8fef65e10922e3be094d6aa8227119cc9a7de2"
+      },
+      {
+        "bytes": 10598,
+        "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+        "sha256": "1c062ad559e675dde14c26e86450d7c500232490d0112a0f34ca1d0f5886ad94"
+      },
+      {
+        "bytes": 12295,
+        "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+        "sha256": "3560f1cc9380c0a92e4e66f7e87dfc2a34c588670df220b1b0e6f0ea568c6919"
+      },
+      {
+        "bytes": 10677,
+        "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+        "sha256": "ec1420f9c1e7233861dbf189bad49ce749dfeff29d5f0386e7ca11fb81c55791"
+      },
+      {
+        "bytes": 7947,
+        "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+        "sha256": "2779632ba1098cb5a842c195336945beece42bd7e1596e535b40ab6efaf3dd62"
+      },
+      {
+        "bytes": 11934,
+        "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+        "sha256": "8dda06c13022d1a6f953f1930c0ccdeeaa534e098e0dc68edd4a6d761900a003"
+      },
+      {
+        "bytes": 20374,
+        "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+        "sha256": "338a573281c6e22a6699b22d852705fdff0db464ad1bc10d9cdd924bb9430d76"
+      },
+      {
+        "bytes": 5563,
+        "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+        "sha256": "bb988eeab3bb1ce7d3848cd09d6760c5ac99bc2ca3b4153d8684ca138e8f3647"
+      },
+      {
+        "bytes": 4713,
+        "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+        "sha256": "7fafdef5e27bbb51354158b89a05b01ee68521d2a892fa27a9eb2d2e5e4a43c0"
+      },
+      {
+        "bytes": 7045,
+        "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+        "sha256": "ac8a1415e49b8f2b2c5fca46f33928e36239c90ef30b2872e64fcda4ea11e190"
+      },
+      {
+        "bytes": 957,
+        "path": "source/id-ID/references-integrated-id.bib",
+        "sha256": "1935cc1e40c1f0c2a1a2836358a0b8f5304573330ebfa3deba4c4b11dfdd5abc"
+      },
+      {
+        "bytes": 15806,
+        "path": "labs/original-03/globalisasi-newton.py",
+        "sha256": "f57348e409b768376c424feef382c468d07be5f8c9504197e5e6533315814541"
+      },
+      {
+        "bytes": 1967,
+        "path": "labs/original-03/globalisasi-newton-results.json",
+        "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+      },
+      {
+        "bytes": 9982,
+        "path": "labs/original-03/globalisasi-newton-results.csv",
+        "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+      },
+      {
+        "bytes": 2521,
+        "path": "labs/original-03/globalisasi-newton.svg",
+        "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+      },
+      {
+        "bytes": 11387,
+        "path": "labs/original-03/transportasi-entropik.py",
+        "sha256": "9fca6188778608b94008476e257f7a0f1e578782168a7970c8b4a28f8960c5d9"
+      },
+      {
+        "bytes": 4071,
+        "path": "labs/original-03/transportasi-entropik-results.json",
+        "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+      },
+      {
+        "bytes": 7920,
+        "path": "labs/original-03/transportasi-entropik-results.csv",
+        "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+      },
+      {
+        "bytes": 9425,
+        "path": "labs/original-03/transportasi-entropik.svg",
+        "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+      },
+      {
+        "bytes": 16187,
+        "path": "labs/original-03/kapstone-invers-komposit.py",
+        "sha256": "45092afab7b0b3751b43d24ace62b8ea2973a21ec24745c3c8213bc252940370"
+      },
+      {
+        "bytes": 3457,
+        "path": "labs/original-03/kapstone-invers-komposit-results.json",
+        "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+      },
+      {
+        "bytes": 46008,
+        "path": "labs/original-03/kapstone-invers-komposit-results.csv",
+        "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+      },
+      {
+        "bytes": 6280,
+        "path": "labs/original-03/kapstone-invers-komposit.svg",
+        "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+      },
+      {
+        "bytes": 3092,
+        "path": "backend/backend_schema.json",
+        "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+      },
+      {
+        "bytes": 3534351,
+        "path": "backend/records.jsonl",
+        "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+      },
+      {
+        "bytes": 4272596,
+        "path": "backend/records.csv",
+        "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+      },
+      {
+        "bytes": 10782,
+        "path": "qa/2026-08-27-integrated-pdf-build.json",
+        "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d"
+      },
+      {
+        "bytes": 4436,
+        "path": "qa/INTEGRATED_BROWSER_QA.json",
+        "sha256": "c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a"
+      },
+      {
+        "bytes": 80194,
+        "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+        "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07"
+      },
+      {
+        "bytes": 3100,
+        "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+        "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d"
+      },
+      {
+        "bytes": 8875,
+        "path": "qa/INTEGRATED_READERS_BUILD.json",
+        "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8"
+      },
+      {
+        "bytes": 8963,
+        "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+        "sha256": "2069af40785e573bfc81ff7742675f196f84e2bf875b6311ff484900fbf7b2f4"
+      },
+      {
+        "bytes": 26298,
+        "path": "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+        "sha256": "7f0113674b513d6f3db5d694c5a351468495842b9a92363cc6a17f5e26cc1020"
+      },
+      {
+        "bytes": 13329,
+        "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+        "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb"
+      },
+      {
+        "bytes": 3777,
+        "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+        "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4"
+      },
+      {
+        "bytes": 53446,
+        "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+        "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907"
+      },
+      {
+        "bytes": 44964,
+        "path": "release/github/2026-08-26-original-02/github-public-readback-original-02.json",
+        "sha256": "c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0"
+      },
+      {
+        "bytes": 27161,
+        "path": "release/zenodo/2026-08-26-original-02/zenodo-public-readback-original-02.json",
+        "sha256": "a1304827b61c97119f9b6a8c525744018e4631a3cf45a46677b260b6e2984287"
+      },
+      {
+        "bytes": 26403,
+        "path": "release/zenodo/2026-08-26-original-02/zenodo-privacy-readback-original-02.json",
+        "sha256": "2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f"
+      },
+      {
+        "bytes": 473,
+        "path": "release/zenodo/2026-08-26-original-02/zenodo-privacy-closure-original-02.json",
+        "sha256": "65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab"
+      }
+    ],
+    "hit_files": [],
+    "hits": [],
+    "patterns": [
+      "generic Windows user-profile locator",
+      "authorization bearer value",
+      "labeled access-token/API-key assignment",
+      "credential-bearing URL query",
+      "known provider secret prefix",
+      "credential-file locator"
+    ],
+    "pdf_decoded_file_count": 1,
+    "profile_or_credential_hit_count": 0,
+    "result": "pass",
+    "scan_failures": []
+  },
+  "publication_recommended_now": true,
+  "recommended_release_file_plan": {
+    "github_reader_first_commit_paths": [
+      "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+      "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+      "source/id-ID/habring-01-prasyarat-id.tex",
+      "source/id-ID/habring-02-konveksitas-id.tex",
+      "source/id-ID/habring-03-subgradien-id.tex",
+      "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+      "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+      "source/id-ID/habring-06-akselerasi-id.tex",
+      "source/id-ID/habring-07-dualitas-id.tex",
+      "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+      "source/id-ID/habring-09-transportasi-optimal-id.tex",
+      "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+      "source/id-ID/becker-03-reduksi-varians-id.tex",
+      "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+      "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+      "source/id-ID/original-03-penutupan-kursus-id.tex",
+      "source/id-ID/original-03/00-peta-asesmen-id.tex",
+      "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+      "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+      "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+      "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+      "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+      "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+      "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+      "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+      "source/id-ID/original-03/09-ujian-tengah-id.tex",
+      "source/id-ID/original-03/10-ujian-akhir-id.tex",
+      "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+      "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+      "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+      "source/id-ID/references-integrated-id.bib",
+      "labs/original-03/globalisasi-newton.py",
+      "labs/original-03/globalisasi-newton-results.json",
+      "labs/original-03/globalisasi-newton-results.csv",
+      "labs/original-03/globalisasi-newton.svg",
+      "labs/original-03/transportasi-entropik.py",
+      "labs/original-03/transportasi-entropik-results.json",
+      "labs/original-03/transportasi-entropik-results.csv",
+      "labs/original-03/transportasi-entropik.svg",
+      "labs/original-03/kapstone-invers-komposit.py",
+      "labs/original-03/kapstone-invers-komposit-results.json",
+      "labs/original-03/kapstone-invers-komposit-results.csv",
+      "labs/original-03/kapstone-invers-komposit.svg",
+      "README.md",
+      "RIGHTS.md",
+      "PROVENANCE.md",
+      "00_control/SOURCE_AUTHORITY.json",
+      "00_control/COMPONENT_RIGHTS.csv",
+      "00_control/COVERAGE_OVERLAP.md",
+      "00_control/ADVERSE_LEDGER.jsonl",
+      "backend/backend_schema.json",
+      "backend/records.jsonl",
+      "backend/records.csv",
+      "qa/2026-08-27-integrated-pdf-build.json",
+      "qa/INTEGRATED_BROWSER_QA.json",
+      "qa/INTEGRATED_PDF_VALIDATION.json",
+      "qa/INTEGRATED_PDF_VISUAL_QA.json",
+      "qa/INTEGRATED_READERS_BUILD.json",
+      "qa/INTEGRATED_READERS_VALIDATION.json",
+      "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+      "qa/ORIGINAL_03_BACKEND_BUILD.json",
+      "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+      "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+      "qa/verify_integrated_rights_release.py"
+    ],
+    "inherited_policy": {
+      "addition_count": 9,
+      "expected_new_version_file_count": 100,
+      "historical_public_bytes_remain_available": true,
+      "inherited_unchanged_count": 91,
+      "omission_reason": "Eight redundant historical MIT per-version manifests remain immutable and downloadable in earlier concept versions; omitting only these eight allows nine integrated additions within the 100-file cap.",
+      "omit_from_new_version_only": [
+        "release-manifest-mit-l03.json",
+        "release-manifest-mit-l04-l05.json",
+        "release-manifest-mit-l06.json",
+        "release-manifest-mit-l07.json",
+        "release-manifest-mit-l08.json",
+        "release-manifest-mit-l09.json",
+        "release-manifest-mit-l10.json",
+        "release-manifest-mit-l11.json"
+      ],
+      "preserve_all_reader_license_and_rights_files": true
+    },
+    "parent_file_count": 99,
+    "reader_first": true,
+    "required_generated_files_not_created_by_this_audit": [
+      "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+      "RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+      "release-manifest-integrated-zenodo.json",
+      "SHA256SUMS-integrated"
+    ],
+    "status": "conditional_after_release_blockers_resolved",
+    "zenodo_additions_in_order": [
+      {
+        "current": {
+          "bytes": 1671254,
+          "exists": true,
+          "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+          "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5"
+        },
+        "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+        "order": 1,
+        "role": "default_preview_and_fixed_layout_reader",
+        "source_path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf"
+      },
+      {
+        "current": {
+          "bytes": 2485595,
+          "exists": true,
+          "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+          "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+        },
+        "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+        "order": 2,
+        "role": "primary_reflow_reader",
+        "source_path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html"
+      },
+      {
+        "current": {
+          "bytes": 379901,
+          "exists": true,
+          "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+          "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+        },
+        "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+        "order": 3,
+        "role": "portable_reflow_reader",
+        "source_path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub"
+      },
+      {
+        "current": {
+          "exists": false
+        },
+        "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+        "order": 4,
+        "role": "compact_source_labs_backend_qa_bundle",
+        "source_path": null
+      },
+      {
+        "current": {
+          "bytes": 3534351,
+          "exists": true,
+          "path": "backend/records.jsonl",
+          "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+        },
+        "filename": "backend-records-2026.08.28-integrated.jsonl",
+        "order": 5,
+        "role": "current_machine_readable_backend",
+        "source_path": "backend/records.jsonl"
+      },
+      {
+        "current": {
+          "bytes": 4272596,
+          "exists": true,
+          "path": "backend/records.csv",
+          "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+        },
+        "filename": "backend-records-2026.08.28-integrated.csv",
+        "order": 6,
+        "role": "current_tabular_backend",
+        "source_path": "backend/records.csv"
+      },
+      {
+        "current": {
+          "exists": false
+        },
+        "filename": "RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+        "order": 7,
+        "role": "exact_component_rights_source_change_model_nonendorsement_note",
+        "source_path": null
+      },
+      {
+        "current": {
+          "exists": false
+        },
+        "filename": "release-manifest-integrated-zenodo.json",
+        "order": 8,
+        "role": "exact_release_inventory_and_inherited_dispositions",
+        "source_path": null
+      },
+      {
+        "current": {
+          "exists": false
+        },
+        "filename": "SHA256SUMS-integrated",
+        "order": 9,
+        "role": "release_checksums",
+        "source_path": null
+      }
+    ]
+  },
+  "recommended_zenodo_metadata_payload": {
+    "access": {
+      "files": "public",
+      "record": "public"
+    },
+    "files": {
+      "default_preview": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "enabled": true
+    },
+    "metadata": {
+      "contributors": [
+        {
+          "person_or_org": {
+            "family_name": "Krock",
+            "given_name": "Mitchell",
+            "name": "Krock, Mitchell",
+            "type": "personal"
+          },
+          "role": {
+            "id": "other"
+          }
+        },
+        {
+          "person_or_org": {
+            "name": "TTP",
+            "type": "organizational"
+          },
+          "role": {
+            "id": "other"
+          }
+        }
+      ],
+      "creators": [
+        {
+          "person_or_org": {
+            "family_name": "Habring",
+            "given_name": "Andreas",
+            "name": "Habring, Andreas",
+            "type": "personal"
+          }
+        },
+        {
+          "person_or_org": {
+            "family_name": "Becker",
+            "given_name": "Stephen",
+            "name": "Becker, Stephen",
+            "type": "personal"
+          }
+        }
+      ],
+      "description": "<p>Edisi terintegrasi Bahasa Indonesia untuk D90, <em>Optimisasi Lanjut dan Analisis Konveks</em>. Tulang punggung adalah terjemahan lengkap prakata dan Bab 1–9 Andreas Habring, arXiv:2607.11664v1, berdasarkan CC BY 4.0.</p><p>Suplemen Becker memakai hanya commit 98ed6930084c435ba0f675f7646ced1f2fd8729e dari catatan Stephen Becker yang diketik Mitchell Krock, berdasarkan Lisensi MIT: Becker-01 baris 1263–1321, 1398–1405, 1414–1499, 1652–1726, dan 1731–1743; Becker-02 baris 2750–2797; Becker-03 baris 2971–2988. Rentang LP pada 1322–1397, 1406–1413, dan 1727–1730 serta materi bersebelahan tetap dikecualikan. Lisensi MIT berlaku pada donor Becker; terjemahan, koreksi, penghubung, latihan, petunjuk, dan solusi yang ditulis mandiri berlisensi CC BY-SA 4.0.</p><p>Original-01, Original-02, dan Original-03—termasuk asesmen kumulatif, rubrik pembuktian, solusi, laboratorium, dan capstone—merupakan lapisan mandiri CC BY-SA 4.0. MIT OpenCourseWare 6.253, Clément Royer, dan Penn State tetap pembaca pendamping terpisah dengan hak masing-masing dan tidak dimasukkan ke buku terintegrasi. Materi O018 tentang LP/MIP, algoritma simpleks/tableau, sensitivitas LP, dan optimisasi jaringan tetap di luar cakupan.</p><p>Perubahan dan koreksi diungkapkan dalam ledger edisi. Bantuan produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi pengguna repositori. Sistem bukan penulis sumber, pemberi lisensi, atau wakil institusi. Edisi ini tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan oleh penulis maupun institusi sumber. Tidak ada lisensi menyeluruh untuk rekaman campuran; hak berlaku per berkas dan hubungan sumber.</p><p>PDF adalah permukaan pratinjau tetap; HTML dan EPUB adalah permukaan reflow pilihan. Berkas warisan pada konsep Zenodo mempertahankan hak masing-masing dan delapan manifest historis yang tidak diulang pada versi ini tetap tersedia pada versi konsep terdahulu.</p>",
+      "languages": [
+        {
+          "id": "ind"
+        }
+      ],
+      "publication_date": "2026-08-28",
+      "publisher": "Zenodo",
+      "related_identifiers": [
+        {
+          "identifier": "10.48550/arXiv.2607.11664",
+          "relation_type": {
+            "id": "isderivedfrom"
+          },
+          "resource_type": {
+            "id": "publication-book"
+          },
+          "scheme": "doi"
+        },
+        {
+          "identifier": "https://github.com/stephenbeckr/convex-optimization-class/tree/98ed6930084c435ba0f675f7646ced1f2fd8729e",
+          "relation_type": {
+            "id": "isderivedfrom"
+          },
+          "resource_type": {
+            "id": "software"
+          },
+          "scheme": "url"
+        },
+        {
+          "identifier": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+          "relation_type": {
+            "id": "isdocumentedby"
+          },
+          "resource_type": {
+            "id": "software"
+          },
+          "scheme": "url"
+        }
+      ],
+      "resource_type": {
+        "id": "publication-book"
+      },
+      "rights": [
+        {
+          "description": {
+            "en": "No blanket license is asserted; consult the integrated rights/provenance note and component ledger."
+          },
+          "link": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/blob/main/00_control/COMPONENT_RIGHTS.csv",
+          "title": {
+            "en": "Mixed-license record — rights apply per file and source relation"
+          }
+        },
+        {
+          "id": "cc-by-4.0"
+        },
+        {
+          "id": "cc-by-sa-4.0"
+        },
+        {
+          "description": {
+            "en": "Applies only to the exact admitted Becker donor ranges; independent translation and correction wording are separate."
+          },
+          "link": "https://opensource.org/license/mit",
+          "title": {
+            "en": "MIT License — bounded Becker source components only"
+          }
+        },
+        {
+          "description": {
+            "en": "Inherited MIT OCW, Penn, and Royer files remain separately licensed and are not part of the integrated book."
+          },
+          "link": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/blob/main/RIGHTS.md",
+          "title": {
+            "en": "Inherited companion rights remain per component"
+          }
+        }
+      ],
+      "subjects": [
+        {
+          "subject": "Bahasa Indonesia"
+        },
+        {
+          "subject": "id-ID"
+        },
+        {
+          "subject": "convex analysis"
+        },
+        {
+          "subject": "convex optimization"
+        },
+        {
+          "subject": "nonsmooth optimization"
+        },
+        {
+          "subject": "stochastic optimization"
+        },
+        {
+          "subject": "variational inequalities"
+        },
+        {
+          "subject": "monotone operators"
+        },
+        {
+          "subject": "operator splitting"
+        },
+        {
+          "subject": "optimal transport"
+        },
+        {
+          "subject": "open educational resources"
+        }
+      ],
+      "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Edisi Terintegrasi D90",
+      "version": "d90-integrated-2026.08.28"
+    }
+  },
+  "release_ready": true,
+  "result": "pass",
+  "route": {
+    "github": {
+      "anonymous_verifier_route_matches": true,
+      "branch": "main",
+      "create_replacement_repository": false,
+      "latest_receipt_result": "pass",
+      "latest_verified_commit": "74780b65dcf9954bdf915aecbf57cd17fd6b43ea",
+      "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id"
+    },
+    "network_accessed": false,
+    "offline_evidence_only": true,
+    "result": "pass",
+    "zenodo": {
+      "concept_doi": "10.5281/zenodo.22059741",
+      "concept_id": "22059741",
+      "create_new_concept": false,
+      "current_record_repair_script_proves_latest_record_and_concept_anchor": true,
+      "fresh_remote_state_must_be_rechecked_by_publication_preflight": true,
+      "last_verified_open_draft_count": 0,
+      "latest_receipt_file_count": 99,
+      "latest_receipt_result": "pass",
+      "latest_record_privacy_result": "pass",
+      "latest_record_profile_locator_hits": 0,
+      "prior_version_script_is_not_current_execution_authority": true,
+      "prior_version_script_proves_existing_record_version_pattern": true,
+      "use_existing_record_version_action": true,
+      "version_source_record_doi": "10.5281/zenodo.22104724",
+      "version_source_record_id": "22104724"
+    }
+  },
+  "schema": "o015-integrated-rights-release-qa-v1",
+  "scope": "D90 integrated rights/provenance/nonoverlap/privacy/release-route audit"
+}

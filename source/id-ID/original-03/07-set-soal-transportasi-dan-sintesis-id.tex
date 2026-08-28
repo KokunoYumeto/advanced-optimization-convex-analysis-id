@@ -1,0 +1,294 @@
+% segment-local-id: OR03-S008
+% segment-id: d90.orig.v1.tr03.seg0008
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Set soal VI: transportasi optimal dan sintesis}
+\label{orig03:ps06}
+
+% stable-id: d90.orig.v1.tr03.ps06.exercise.0001
+\begin{exercise}[Stabilitas terhadap perturbasi biaya seragam]
+\label{orig03:ps06:exercise:0001}
+Misalkan $\Pi(\alpha,\beta)$ adalah himpunan kopling probabilitas dan dua
+fungsi biaya memenuhi
+$\lVert c-\widetilde c\rVert_\infty\le\varepsilon$. Tuliskan $v$ dan
+$\widetilde v$ untuk nilai optimal dengan biaya $c$ dan $\widetilde c$.
+
+\begin{enumerate}
+  \item Buktikan $|v-\widetilde v|\le\varepsilon$.
+  \item Jika $P_c$ optimal untuk biaya $c$, buktikan bahwa ia paling jauh
+  $2\varepsilon$-suboptimal untuk biaya $\widetilde c$.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps06.hint.0001
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps06:hint:0001}
+\textbf{Tahap 1.} Integralkan batas titik demi titik terhadap sembarang kopling
+probabilitas.
+\textbf{Tahap 2.} Sisipkan nilai $v$ di antara biaya
+$\widetilde c$ pada $P_c$ dan nilai $\widetilde v$.
+
+% stable-id: d90.orig.v1.tr03.ps06.answer.0001
+\paragraph{Jawaban singkat.}
+\label{orig03:ps06:answer:0001}
+Untuk setiap $P\in\Pi(\alpha,\beta)$,
+$|\langle c,P\rangle-\langle\widetilde c,P\rangle|\le\varepsilon$.
+Mengambil infimum memberi $|v-\widetilde v|\le\varepsilon$, dan
+\[
+ \langle\widetilde c,P_c\rangle-\widetilde v\le2\varepsilon.
+\]
+
+% stable-id: d90.orig.v1.tr03.ps06.solution.0001
+\paragraph{Solusi lengkap.}
+\label{orig03:ps06:solution:0001}
+Karena massa total setiap kopling adalah satu,
+\[
+ \left|\int(c-\widetilde c)\,dP\right|
+ \le\int|c-\widetilde c|\,dP\le\varepsilon.
+\]
+Jadi $\langle\widetilde c,P\rangle\le\langle c,P\rangle+\varepsilon$
+untuk setiap $P$. Mengambil infimum memberi
+$\widetilde v\le v+\varepsilon$. Menukar peran kedua biaya memberi
+$v\le\widetilde v+\varepsilon$, sehingga batas nilai optimal terbukti.
+Selanjutnya,
+\[
+ \langle\widetilde c,P_c\rangle-\widetilde v
+ \le\langle c,P_c\rangle+\varepsilon-(v-\varepsilon)
+ =2\varepsilon,
+\]
+karena $\langle c,P_c\rangle=v$. Batas kedua memuat dua sumber galat: evaluasi
+rencana dan pergeseran nilai optimal.
+
+% stable-id: d90.orig.v1.tr03.ps06.exercise.0002
+\begin{exercise}[Sertifikat dual untuk translasi]
+\label{orig03:ps06:exercise:0002}
+Pada $\mathbb R$, ambil biaya
+$c(x,y)=\tfrac12(y-x)^2$. Misalkan $\alpha$ mempunyai momen pertama hingga dan
+$\beta=(x\mapsto x+a)_\#\alpha$ untuk suatu $a\in\mathbb R$.
+
+\begin{enumerate}
+  \item Hitung biaya kopling deterministik $y=x+a$.
+  \item Buktikan bahwa
+  $\phi(x)=-ax$ dan $\psi(y)=ay-a^2/2$ layak untuk masalah dual Kantorovich.
+  \item Gunakan kesetaraan primal--dual untuk menyimpulkan optimalitas kopling
+  translasi tersebut.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps06.hint.0002
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps06:hint:0002}
+\textbf{Tahap 1.} Kurangi $\phi(x)+\psi(y)$ dari $c(x,y)$ dan lengkapi
+kuadrat dalam $y-x$.
+\textbf{Tahap 2.} Gunakan identitas
+$\int y\,d\beta(y)=\int(x+a)\,d\alpha(x)$.
+
+% stable-id: d90.orig.v1.tr03.ps06.answer.0002
+\paragraph{Jawaban singkat.}
+\label{orig03:ps06:answer:0002}
+Biaya kopling translasi adalah $a^2/2$, dan
+\[
+ c(x,y)-\phi(x)-\psi(y)=\tfrac12(y-x-a)^2\ge0.
+\]
+Nilai dual kedua potensial juga $a^2/2$, sehingga kopling dan potensial itu
+optimal.
+
+% stable-id: d90.orig.v1.tr03.ps06.solution.0002
+\paragraph{Solusi lengkap.}
+\label{orig03:ps06:solution:0002}
+Pada kopling $y=x+a$, biaya bernilai konstan
+$\tfrac12a^2$, sehingga integralnya $a^2/2$. Untuk semua $x,y$,
+\[
+ \tfrac12(y-x)^2-\bigl(-ax+ay-a^2/2\bigr)
+ =\tfrac12(y-x-a)^2\ge0.
+\]
+Maka $\phi(x)+\psi(y)\le c(x,y)$, dengan kesetaraan tepat pada graf translasi.
+Momen pertama menjamin integral potensial terdefinisi, dan
+\[
+ \int\phi\,d\alpha+\int\psi\,d\beta
+ =-a\int x\,d\alpha
+  +a\int(x+a)\,d\alpha-a^2/2
+ =a^2/2.
+\]
+Dual lemah menyatakan bahwa nilai ini tidak dapat melebihi biaya kopling mana
+pun. Karena kopling translasi mencapai nilai yang sama, celah dualnya nol dan
+kopling itu optimal.
+
+% stable-id: d90.orig.v1.tr03.ps06.exercise.0003
+\begin{exercise}[Penskalaan Sinkhorn dalam domain log dan kebebasan gauge]
+\label{orig03:ps06:exercise:0003}
+Untuk marginal positif $a\in\mathbb R^n$ dan $b\in\mathbb R^m$, definisikan
+\[
+ K_{ij}=\exp(-C_{ij}/\varepsilon),
+ \qquad P=\operatorname{diag}(u)K\operatorname{diag}(v),
+ \]
+dengan $u_i,v_j>0$. Tuliskan $\rho_i=\log u_i$ dan $\tau_j=\log v_j$.
+
+\begin{enumerate}
+  \item Turunkan pembaruan baris dan kolom dalam bentuk log-sum-exp.
+  \item Buktikan bahwa $u\mapsto tu$, $v\mapsto v/t$ tidak mengubah $P$.
+  \item Jelaskan secara matematis mengapa pemusatan $\rho$ dan $\tau$ dengan
+  pergeseran yang berlawanan dapat mencegah luapan numerik tanpa mengubah
+  kopling.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps06.hint.0003
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps06:hint:0003}
+\textbf{Tahap 1.} Selesaikan persamaan $P\1=a$ terhadap setiap $u_i$,
+lalu ambil logaritma; lakukan hal yang sama untuk kolom.
+\textbf{Tahap 2.} Tambahkan konstanta $s$ pada semua $\rho_i$ dan kurangkan
+$s$ dari semua $\tau_j$.
+
+% stable-id: d90.orig.v1.tr03.ps06.answer.0003
+\paragraph{Jawaban singkat.}
+\label{orig03:ps06:answer:0003}
+\[
+ \rho_i=\log a_i-\operatorname{LSE}_j(-C_{ij}/\varepsilon+\tau_j),
+ \quad
+ \tau_j=\log b_j-\operatorname{LSE}_i(-C_{ij}/\varepsilon+\rho_i).
+\]
+Transformasi $(\rho,\tau)\mapsto(\rho+s\1,\tau-s\1)$ membiarkan
+setiap jumlah $\rho_i+\tau_j$ tetap, sehingga $P$ tidak berubah.
+
+% stable-id: d90.orig.v1.tr03.ps06.solution.0003
+\paragraph{Solusi lengkap.}
+\label{orig03:ps06:solution:0003}
+Kendala baris adalah
+$u_i\sum_jK_{ij}v_j=a_i$, jadi
+\[
+ \rho_i=\log a_i-
+ \log\sum_j\exp(-C_{ij}/\varepsilon+\tau_j).
+\]
+Logaritma jumlah eksponensial adalah fungsi $\operatorname{LSE}$. Dengan cara
+yang sama, kendala kolom menghasilkan rumus untuk $\tau_j$ pada jawaban
+singkat. Jika $t>0$, maka
+\[
+ \operatorname{diag}(tu)K\operatorname{diag}(v/t)
+ =\operatorname{diag}(u)K\operatorname{diag}(v).
+\]
+Dalam koordinat log, ini tepat sama dengan menambahkan $s=\log t$ pada
+$\rho$ dan mengurangkannya dari $\tau$. Karena entri $P$ bergantung pada
+$\rho_i+\tau_j-C_{ij}/\varepsilon$, semua entri tetap sama. Kita boleh memilih
+$s$, misalnya untuk memusatkan rentang nilai log, agar eksponensial perantara
+tidak terlalu besar atau kecil. Operasi itu mengubah representasi, bukan
+kopling atau marginalnya.
+
+% stable-id: d90.orig.v1.tr03.ps06.exercise.0004
+\begin{exercise}[Batas bias regularisasi entropi]
+\label{orig03:ps06:exercise:0004}
+Pada tabel kopling probabilitas berukuran $n\times m$, definisikan
+$H(P)=-\sum_{ij}P_{ij}\log P_{ij}$ dengan konvensi $0\log0=0$.
+Misalkan $P^\star$ meminimalkan $\langle C,P\rangle$ dan $P_\varepsilon$
+meminimalkan
+\[
+ \langle C,P\rangle-\varepsilon H(P)
+\]
+pada himpunan kopling yang sama. Buktikan
+\[
+ 0\le\langle C,P_\varepsilon\rangle-
+       \langle C,P^\star\rangle
+ \le\varepsilon\log(nm).
+\]
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps06.hint.0004
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps06:hint:0004}
+\textbf{Tahap 1.} Bandingkan nilai objektif teratur pada $P_\varepsilon$ dan
+$P^\star$.
+\textbf{Tahap 2.} Gunakan $0\le H(P)\le\log(nm)$ untuk setiap distribusi pada
+$nm$ sel.
+
+% stable-id: d90.orig.v1.tr03.ps06.answer.0004
+\paragraph{Jawaban singkat.}
+\label{orig03:ps06:answer:0004}
+Optimalitas kedua rencana memberi batas bawah nol dan
+\[
+ \langle C,P_\varepsilon\rangle-langle C,P^\star\rangle
+ \le\varepsilon\bigl(H(P_\varepsilon)-H(P^\star)\bigr)
+ \le\varepsilon\log(nm).
+\]
+
+% stable-id: d90.orig.v1.tr03.ps06.solution.0004
+\paragraph{Solusi lengkap.}
+\label{orig03:ps06:solution:0004}
+Karena $P^\star$ optimal untuk biaya tanpa regularisasi,
+$\langle C,P_\varepsilon\rangle\ge\langle C,P^\star\rangle$. Di sisi lain,
+optimalitas $P_\varepsilon$ untuk objektif teratur menyatakan
+\[
+ \langle C,P_\varepsilon\rangle-\varepsilon H(P_\varepsilon)
+ \le\langle C,P^\star\rangle-\varepsilon H(P^\star).
+\]
+Menata ulang memberi ketaksamaan pertama pada jawaban singkat. Entropi
+distribusi dengan paling banyak $nm$ atom berada di antara nol dan
+$\log(nm)$. Maka
+$H(P_\varepsilon)-H(P^\star)\le\log(nm)$, yang menyelesaikan batas atas.
+Batas ini mengukur bias biaya tak teratur, bukan jarak antara kedua rencana.
+
+% stable-id: d90.orig.v1.tr03.ps06.exercise.0005
+\begin{exercise}[Kelengkungan dual entropik dan arah gauge]
+\label{orig03:ps06:exercise:0005}
+Pertimbangkan fungsi dual
+\[
+ D(f,g)=a^\top f+b^\top g
+ -\varepsilon\sum_{i,j}
+ \exp\!\left(\frac{f_i+g_j-C_{ij}}{\varepsilon}\right),
+\]
+dan tuliskan
+$P_{ij}=\exp((f_i+g_j-C_{ij})/\varepsilon)$.
+
+\begin{enumerate}
+  \item Hitung gradien terhadap $f$ dan $g$.
+  \item Hitung bentuk kuadratik Hessian pada arah $(s,t)$ dan buktikan
+  kekonkafan.
+  \item Identifikasi arah gauge. Jika graf bipartit dukungan positif $P$
+  terhubung, buktikan bahwa hanya arah gauge yang mempunyai kelengkungan nol.
+\end{enumerate}
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.ps06.hint.0005
+\paragraph{Petunjuk bertahap.}
+\label{orig03:ps06:hint:0005}
+\textbf{Tahap 1.} Diferensiasikan satu eksponensial dan kelompokkan jumlah
+baris serta kolom.
+\textbf{Tahap 2.} Bentuk kuadratik dapat ditulis sebagai jumlah berbobot dari
+$(s_i+t_j)^2$.
+
+% stable-id: d90.orig.v1.tr03.ps06.answer.0005
+\paragraph{Jawaban singkat.}
+\label{orig03:ps06:answer:0005}
+\[
+ \nabla_fD=a-P\1,
+ \qquad \nabla_gD=b-P^\top\1,
+\]
+dan
+\[
+ \begin{pmatrix}s\\t\end{pmatrix}^{\!\top}
+ \nabla^2D
+ \begin{pmatrix}s\\t\end{pmatrix}
+ =-\frac1\varepsilon\sum_{i,j}P_{ij}(s_i+t_j)^2\le0.
+\]
+Arah $(s,t)=(c\1,-c\1)$ adalah arah gauge; bila dukungan
+terhubung, semua arah nol berbentuk demikian.
+
+% stable-id: d90.orig.v1.tr03.ps06.solution.0005
+\paragraph{Solusi lengkap.}
+\label{orig03:ps06:solution:0005}
+Diferensiasi terhadap $f_i$ menghasilkan
+$a_i-\sum_jP_{ij}$, sedangkan diferensiasi terhadap $g_j$ menghasilkan
+$b_j-\sum_iP_{ij}$. Diferensiasi kedua pada lintasan
+$(f+\theta s,g+\theta t)$ memberi
+\[
+ \left.\frac{d^2}{d\theta^2}D(f+\theta s,g+\theta t)\right|_{\theta=0}
+ =-\frac1\varepsilon\sum_{i,j}P_{ij}(s_i+t_j)^2.
+\]
+Bobotnya nonnegatif, sehingga $D$ konkaf. Bentuk kuadratik nol tepat bila
+$s_i+t_j=0$ pada setiap sisi dukungan positif. Pada graf bipartit yang
+terhubung, kondisi ini memaksa semua $s_i$ sama dengan satu konstanta $c$ dan
+semua $t_j=-c$. Itulah transformasi
+$(f,g)\mapsto(f+c\1,g-c\1)$ yang tidak mengubah $P$. Jadi dual
+bersifat konkaf ketat setelah satu gauge dipatok, meskipun tidak konkaf ketat
+pada representasi yang belum dinormalisasi.

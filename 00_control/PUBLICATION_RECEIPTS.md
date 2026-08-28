@@ -84,7 +84,7 @@ The checkpoint adds the admitted Chapter 6 reader, complete editable source and 
 - Status/title: published; explicitly `Belum Lengkap`
 - Scope: Habring Chapters 3--9 and Penn Chapters 3--4 only
 - Rights: component-specific CC BY 4.0 for Habring-derived material and CC BY-NC-SA 3.0 United States for Griffin/Penn-derived material; no blanket record-level override
-- Organization metadata: exactly one `TTP` occurrence, only as an organizational contributor
+- Organization metadata: exactly one permitted organization-contributor entry and no occurrence in the work title or descriptive lead
 
 Historical architecture note (2026-08-25): D90-0047 supersedes this receipt's
 then-current MIT/Royer-primary wording. The release facts remain unchanged;
@@ -120,7 +120,7 @@ The public ZIP reopened successfully with 134 entries; all 132 manifest-bound pa
 - Status/title: published; explicitly `Belum Lengkap`
 - Scope: optional companion Habring Chapters 3--9 and Penn Chapters 3--5 only; the selected MIT/Royer primary course is explicitly absent
 - Rights: component-specific CC BY 4.0 for Habring-derived material and CC BY-NC-SA 3.0 United States for Griffin/Penn-derived material; no blanket license override
-- Organization metadata: exactly one `TTP` occurrence, only as an organizational contributor
+- Organization metadata: exactly one permitted organization-contributor entry and no occurrence in the work title or descriptive lead
 
 Anonymous credential-free downloads matched exact local byte counts and SHA-256 identities for all 16 public files. The added Penn Chapter 5 PDF is 2,691,780 bytes, SHA-256 `427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6`. The new source/backend bundle is `ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22_10U.zip`, 2,497,901 bytes, SHA-256 `0e2e5ac6452a50a5167e77da3ca5cc145406b61dfc11fe8d647a78052dab5274`. The nine earlier PDFs remained byte-identical to the preceding version.
 
@@ -139,7 +139,7 @@ The public ZIP reopened successfully with 152 unique entries; all 150 manifest-b
 
 The first/primary file is `D90-HAB-03-09-modul-pendamping-id.pdf`, 3,090,098 bytes, SHA-256 `6cd291cc447999b7cd72622e8c2003b837cf4f21ea5de0fcb7094913e20acd87`. It is followed by the 29-entry resumable source ZIP, exact CC BY 4.0 legal code, release manifest, and checksums. Anonymous downloads matched every local byte count, MD5, and SHA-256. The public source ZIP reopened and all 28 manifest-bound entries matched. The PDF retained 103 pages, `/Lang id-ID`, eight outline destinations, no encryption, and the disclosed untagged limitation.
 
-The item contains no Penn or other mixed-license work byte, no TTP prose, and no false complete-course claim. It appears exactly once in the 24-item public project and exactly once in the 14-item Indonesian collection. Post-publication project usage was 207,268,626 bytes / 69 files, below the 20,000,000,000-byte cap; this task's five files total 3,271,149 bytes, below the 500,000,000-byte cap. Version history preserves immutable metadata-only version 1 and reader-first version 2. The sanitized receipt is `release/figshare/2026-08-22-reader/figshare-public-readback.json`: 3,988 bytes; SHA-256 `8c4a55aa504cd058be6b67cc8ae0d460ce6fd08c9532915aa3c74e468a4cd1ca`.
+The item contains no Penn or other mixed-license work byte, no organization-project prose, and no false complete-course claim. It appears exactly once in the 24-item public project and exactly once in the 14-item Indonesian collection. Post-publication project usage was 207,268,626 bytes / 69 files, below the 20,000,000,000-byte cap; this task's five files total 3,271,149 bytes, below the 500,000,000-byte cap. Version history preserves immutable metadata-only version 1 and reader-first version 2. The sanitized receipt is `release/figshare/2026-08-22-reader/figshare-public-readback.json`: 3,988 bytes; SHA-256 `8c4a55aa504cd058be6b67cc8ae0d460ce6fd08c9532915aa3c74e468a4cd1ca`.
 
 ## 2026-08-22 — Public GitHub ten-unit companion checkpoint
 
@@ -1048,3 +1048,44 @@ boundary; it does not start another evidence-only commit loop.
 - No credential material was recorded, no upstream contact occurred, and no
   mathematical content, component rights, contributor metadata, or release
   status changed.
+
+## 2026-08-26 — Original-02 GitHub publication and anonymous readback
+
+- Repository/branch: `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`,
+  `main`.
+- Commit/tree/parent:
+  `74780b65dcf9954bdf915aecbf57cd17fd6b43ea` /
+  `e6c004afc1efeff73a62860039491fd92525ba35` /
+  `15fb78bcf7c769b524401c24779469d6ecfc5ffd`.
+- Scope: exactly 103 manifest-bound Original-02 source, readers, lab, backend,
+  QA, package, Zenodo privacy evidence, README, and durable-control paths;
+  aggregate public bytes 11,226,335. Only added/modified statuses occur.
+- Anonymous identity/content gate: GitHub's REST quota returned HTTP 403 before
+  data, so no REST claim is made. A direct unauthenticated Git smart-HTTP ref
+  advertisement proved public `main` equals the target commit. Every one of the
+  103 immutable raw-file downloads then matched its commit blob byte-for-byte.
+- Sanitized receipt:
+  `release/github/2026-08-26-original-02/github-public-readback-original-02.json`,
+  44,964 bytes / SHA-256
+  `c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+  Result `pass`; failure count zero; no credential material recorded.
+- No new repository, duplicate release, upstream contact, component-rights
+  change, or full-course claim occurred. The next production cursor is the
+  course-wide assessment/lab/capstone/tagged-accessible-reader closure.
+
+## 2026-08-28 — Integrated local release candidate — not a public receipt
+
+- Local course closure and all substantive reader/backend gates pass; exact
+  artifact and QA identities are recorded in `SOURCE_AUTHORITY.json` and
+  `BUILD_AND_QA.md`.
+- Existing public routes are unchanged at this boundary: GitHub public `main`
+  remains commit `74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, and Zenodo's latest
+  public parent remains record `22104724` / DOI `10.5281/zenodo.22104724` in
+  concept `10.5281/zenodo.22059741`.
+- The privacy-repaired 99-file parent inventory, not the pre-repair receipt, is
+  the required Zenodo parent authority. No final publication claim is made in
+  this pre-publication entry.
+- No final-version record ID, version DOI, or new Git commit is claimed here.
+- Next action is one reader-first final GitHub/Zenodo transaction followed by
+  anonymous exact-byte readback, public-access verification, draft closure, and
+  sanitized receipts. No duplicate repository or Zenodo concept is permitted.

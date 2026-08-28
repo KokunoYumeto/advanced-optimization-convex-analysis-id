@@ -1,0 +1,108 @@
+% OR03-S013 | lapisan asli: laboratorium 4 transportasi entropik
+% segment-id: d90.orig.v1.tr03.seg0013
+% lab-id: d90.orig.v1.tr03.lab.0004
+% lab-hint-id: d90.orig.v1.tr03.lab.hint.0004
+% lab-answer-id: d90.orig.v1.tr03.lab.answer.0004
+% lab-solution-id: d90.orig.v1.tr03.lab.solution.0004
+
+\section{Laboratorium 4: Sinkhorn log-domain dan sertifikat transportasi}
+\label{orig03:lab:transportasi-entropik}
+
+Diberikan histogram positif $a\in\mathbb{R}^m$, $b\in\mathbb{R}^n$ dengan
+$\1^\top a=\1^\top b=1$ dan matriks biaya $C$, masalah
+transportasi teratur-entropi yang dipakai di sini adalah
+\begin{equation}
+ \min_{P\1=a,\;P^\top\1=b,\;P\geq0}
+ \langle C,P\rangle+\varepsilon\sum_{ij}P_{ij}(\log P_{ij}-1).
+ \label{orig03:eq:sinkhorn-primal}
+\end{equation}
+Representasi langsung $K_{ij}=\exp(-C_{ij}/\varepsilon)$ rentan underflow.
+Skrip \texttt{labs/original-03/transportasi-entropik.py} menyimpan potensial
+dual $f,g$ dan melakukan pembaruan dengan \texttt{logsumexp}. Kopling dibentuk
+hanya dari
+\[
+ \log P_{ij}=\frac{f_i+g_j-C_{ij}}{\varepsilon}.
+\]
+
+Eksperimen utama memakai titik dan massa yang dihasilkan oleh seed tetap.
+Dua eksperimen ekuivalen kemudian dijalankan: (i) $C$ dan $\varepsilon$
+dikalikan faktor positif yang sama; (ii) konstanta besar ditambahkan ke semua
+entri $C$. Transformasi pertama mempertahankan rasio biaya-entropi, sedangkan
+transformasi kedua menambah konstanta pada nilai objektif tanpa mengubah
+minimizer. Kasus kedua memaksa seluruh kernel naif menjadi nol, tetapi
+pembaruan log-domain tetap menghasilkan kopling yang sama.
+
+\subsection*{Prompt}
+\begin{exercise}[Tugas laboratorium]
+\begin{enumerate}
+  \item Turunkan pembaruan bergantian bagi $f$ dan $g$ dari kendala marginal.
+  \item Buktikan bentuk dual dan identitas celah primal-dual yang diperiksa
+    skrip.
+  \item Verifikasi dari CSV bahwa setiap entri kopling utama positif dan
+    bahwa jumlah baris serta kolom cocok dengan $a$ dan $b$ dalam toleransi.
+  \item Buktikan invariansi kopling ketika $(C,\varepsilon)$ diganti dengan
+    $(sC,s\varepsilon)$, $s>0$.
+  \item Jelaskan mengapa $C\mapsto C+\gamma\1\1^\top$ tidak
+    mengubah kopling, lalu cocokkan dengan uji underflow terkontrol.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Petunjuk bertahap}
+\label{orig03:lab:hint:0004}
+\begin{enumerate}
+  \item Ambil log dari persamaan $P_{ij}=\exp((f_i+g_j-C_{ij})/\varepsilon)$
+    dan selesaikan satu potensial ketika potensial lain dibekukan.
+  \item Gunakan konjugat dari $p\mapsto\varepsilon p(\log p-1)$, yaitu
+    $q\mapsto\varepsilon\exp(q/\varepsilon)$.
+  \item Jangan menjumlahkan kernel naif pada uji stres; periksa penghitung nol
+    dan residual hasil log-domain secara terpisah.
+  \item Untuk penskalaan, pilih potensial baru $(sf,sg)$.
+  \item Untuk penambahan konstanta, serap $\gamma$ ke salah satu potensial.
+\end{enumerate}
+
+\subsection*{Jawaban singkat}
+\label{orig03:lab:answer:0004}
+Pembaruan log-domain menormalkan satu marginal pada satu waktu tanpa pernah
+membentuk kernel kecil. Dualnya adalah
+\[
+ \max_{f,g}\ a^\top f+b^\top g-
+ \varepsilon\sum_{ij}\exp((f_i+g_j-C_{ij})/\varepsilon).
+\]
+CSV dan JSON membuktikan residual marginal, positivitas numerik, kesepakatan
+primal-dual, invariansi penskalaan, invariansi pergeseran biaya, dan pemulihan
+dari kasus ketika kernel naif seluruhnya underflow.
+
+\subsection*{Solusi acuan lengkap}
+\label{orig03:lab:solution:0004}
+Untuk $g$ tetap, kendala baris memberi
+\[
+ a_i=\sum_j\exp((f_i+g_j-C_{ij})/\varepsilon),
+ \quad
+ f_i=\varepsilon\left[\log a_i-
+ \operatorname{LSE}_j((g_j-C_{ij})/\varepsilon)\right].
+\]
+Rumus bagi $g_j$ analog dari kendala kolom. Konjugasi entropi menghasilkan
+dual pada jawaban singkat. Jika $P$ dibentuk dari potensial, nilai primal
+\[
+ p=\langle C,P\rangle+\varepsilon\sum_{ij}P_{ij}(\log P_{ij}-1)
+\]
+dan nilai dual
+\[
+ d=a^\top f+b^\top g-\varepsilon\sum_{ij}P_{ij}
+\]
+berimpit pada optimum; program memeriksa $|p-d|$.
+
+Jika $C'=sC$ dan $\varepsilon'=s\varepsilon$, potensial
+$f'=sf$, $g'=sg$ memberi log-kopling yang persis sama. Jika
+$C'=C+\gamma\1\1^\top$, pilih $f'=f+\gamma\1$ dan $g'=g$;
+sekali lagi log-kopling tidak berubah. Namun kernel naif memuat faktor
+$\exp(-\gamma/\varepsilon)$ dan dapat menjadi nol pada aritmetika floating
+point. Potensial log-domain menyerap konstanta sebelum eksponensiasi akhir,
+sehingga residual marginal, positivitas kopling utama, dan kesepakatan dengan
+dua masalah ekuivalen tetap dapat diperiksa.
+
+\paragraph{Hak dan firewall O018.}
+Teks, soal, solusi, dan kode ini merupakan material baru CC BY-SA 4.0. Tidak
+ada byte, prosa, latihan, solusi, kode, atau struktur instruksional O018 yang
+digunakan; peran laboratorium ini terbatas pada penutupan komputasional
+Original-03.

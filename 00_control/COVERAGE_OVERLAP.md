@@ -1,15 +1,15 @@
 # O015 coverage and overlap boundary
 
 Architecture controlling record: 2026-08-24  
-Coverage updated through: 2026-08-25 — complete Habring v1 plus public Becker-01, Becker-02, and Becker-03
+Coverage updated through: 2026-08-28 — complete integrated course and final local release candidate
 Role: D90 — Advanced Optimization and Convex Analysis  
-Current architecture: Habring v1 canonical editable spine; bounded Becker supplement; MIT/Royer/Penn companions; finite original closure
+Current architecture: complete Habring v1 canonical editable spine; three bounded Becker supplements; complete Original-01/02/03 closure; MIT/Royer/Penn companions
 
 ## Selected D90 primary architecture
 
-The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression; Becker-02 supplies Douglas–Rachford; Becker-03 supplies the bounded corrected SAGA/variance-reduction bridge. All three Becker modules are public, and the finite original closure is active.
+The controlling architecture is the complete Habring arXiv `2607.11664v1` TeX spine under CC BY 4.0, supplemented only by exact nonduplicative slices from Becker's MIT-licensed commit `98ed6930084c435ba0f675f7646ced1f2fd8729e` and a finite original layer. Habring supplies structured convex-analysis foundations, subgradients, projected and proximal methods, acceleration, Fenchel/primal-dual methods, ADMM, basic stochastic gradient descent, and optimal transport. Becker-01 supplies the unified Lagrangian-duality, Slater, saddle-point, and KKT progression; Becker-02 supplies Douglas–Rachford; Becker-03 supplies the bounded corrected SAGA/variance-reduction bridge. All three Becker modules are admitted and publicly preserved.
 
-MIT OCW 6.253, Royer, and Penn remain separately licensed companions. Every accepted translation, stable ID, correction, release, source credit, and component right is preserved, but these companions do not displace the editable spine or automatically drive source-order expansion. The original layer still must close stochastic proximal/mirror/minibatch and rigorous variance-reduction theory, variational inequalities/maximal monotone operators/resolvents/splitting, connective proofs, substantive exercises, hints, answers, complete solutions, tests, open-solver labs, and capstone. The later historical sections remain evidence of how already accepted companion boundaries were produced; they are not the current architecture.
+MIT OCW 6.253, Royer, and Penn remain separately licensed companions. Every accepted translation, stable ID, correction, release, source credit, and component right is preserved, but these companions do not displace the editable spine or automatically drive source-order expansion. Original-01/02/03 now close stochastic proximal/mirror/minibatch and rigorous variance-reduction theory, variational inequalities/maximal monotone operators/resolvents/splitting, connective proofs, substantive exercises, staged hints, answers, complete solutions, cumulative tests, proof rubrics, four laboratories overall, and the capstone. The integrated PDF/HTML/EPUB and 4,877-record backend pass their deterministic, visual, browser, accessibility, computation, rights, and non-overlap gates. The later historical sections remain evidence of how earlier companion boundaries were produced; they are not the current architecture or cursor.
 
 ## O018 exclusion boundary
 

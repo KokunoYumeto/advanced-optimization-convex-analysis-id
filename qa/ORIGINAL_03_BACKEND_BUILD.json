@@ -1,0 +1,355 @@
+{
+  "admission": {
+    "added_entity_counts": {
+      "artifact": 43,
+      "correction": 1,
+      "edition": 1,
+      "learning_surface": 445,
+      "qa_event": 9,
+      "relation": 20,
+      "resource": 1,
+      "rights": 2,
+      "segment": 15,
+      "unit": 2
+    },
+    "added_id_set_sha256": "492e9660f710019fd4759f751e734115f73e47a8dc4f6cd1d3e3a534a045abfd",
+    "added_record_set_sha256": "fc380a6599e811aeabc762c5d1895e4bc5d26186c57b3863dff98d9bfd57557f",
+    "added_records": 539,
+    "corrected_records": 1,
+    "csv": {
+      "bytes": 4272596,
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+    },
+    "final_id_order_sha256": "509dd75fdac85af49e2048f06dec62174c309da6208124f8c26c35381affd0b0",
+    "final_id_set_sha256": "ca6733973d117761df8a825b31424f5830ec1e7cdae3f2e24b65445a4198678e",
+    "final_record_set_sha256": "50c1e132e2e500c153320d9493383aea03cffbaad5eb2c220dbf1283ef84de8c",
+    "final_records": 4877,
+    "jsonl": {
+      "bytes": 3534351,
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+    },
+    "jsonl_csv_lossless_equality": true,
+    "prior_records": 4338,
+    "protected_records": 4337
+  },
+  "course_correction": {
+    "changed_field_count": 2,
+    "changed_fields": {
+      "source_spine_note": {
+        "new": "Habring arXiv 2607.11664v1 is the canonical public-editable structured spine. The bounded Becker TeX modules and finite Original layers close nonduplicative gaps. MIT OCW 6.253, Penn Math 555, and Royer remain separately licensed companions and are not the canonical editable spine.",
+        "new_value_sha256": "218482cef18c563b21bf1468a6589700d894c7e2bb8b736428bb216a1657df29",
+        "old": "MIT is the selected primary theory spine; Habring supplies the modern convex/nonsmooth module; Penn supplies smooth numerical optimization; Royer supplies the stochastic-gradient component.",
+        "old_value_sha256": "14d0ebeade89e602718bcf8b0299fb56762995124a5e1a2e29592866f882330c"
+      },
+      "source_spine_unit_ids": {
+        "new": [
+          "unit.habring.v1"
+        ],
+        "new_value_sha256": "18f68ef5e74f20bcf59ea80d816da484294f7cfb95ba3b5c4fdbedf3f69feec2",
+        "old": [
+          "unit.mit.ocw-6.253.spring-2012",
+          "unit.habring.v1",
+          "unit.penn.v1",
+          "unit.royer.stochastic-gradient.2023-2024"
+        ],
+        "old_value_sha256": "04804ad31c5acc38ebc061d8370f059fb715db324366e21fc14317a1b78a7457"
+      }
+    },
+    "new_record_sha256": "12c05fd66d7925fe0db1c0dcc326a54d2662428400343ec9ece29693dc6dd169",
+    "old_record_sha256": "131d625ee73256d3e4afcd0d240e5df42bf479a1b3bfbf53c37c34de965c1173",
+    "record_id": "course.d90.advanced-optimization-convex-analysis"
+  },
+  "input_recovery": {
+    "input_csv_sha256": "4d5990caaef426caf4efb3891bad73a8b2ddde300e04c3d8604472f4f02faaa3",
+    "input_jsonl_sha256": "658df72e6dec40120810cdacc5007e6c2f2c06723f3a4098756dcbce6d420c16",
+    "input_records": 4877,
+    "recovered": {
+      "csv_bytes": 3839894,
+      "csv_sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c",
+      "jsonl_bytes": 3183459,
+      "jsonl_sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439",
+      "records": 4338
+    }
+  },
+  "inputs": [
+    {
+      "bytes": 1785,
+      "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+      "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9"
+    },
+    {
+      "bytes": 10067,
+      "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+      "sha256": "3d5f906f205cfabf7f3a464d18111209a22bc6edd193702ea584093b3d9938f8"
+    },
+    {
+      "bytes": 24183,
+      "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+      "sha256": "162f56e14f6d7fb1b879ed3403617ca7ca4d1fa32b4548812869bec1728a5b2f"
+    },
+    {
+      "bytes": 15501,
+      "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+      "sha256": "bd09ebd90d1fef7b35147e84c449d14ba50078fde491babbb32d49f1c6695c83"
+    },
+    {
+      "bytes": 14393,
+      "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+      "sha256": "243912d9de0f5d73de8fb8f3a5d041797f951331a6ad6cce955e6a8538172eff"
+    },
+    {
+      "bytes": 16647,
+      "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+      "sha256": "fa7d45448b63cc07572cad4afb8fef65e10922e3be094d6aa8227119cc9a7de2"
+    },
+    {
+      "bytes": 10598,
+      "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+      "sha256": "1c062ad559e675dde14c26e86450d7c500232490d0112a0f34ca1d0f5886ad94"
+    },
+    {
+      "bytes": 12295,
+      "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+      "sha256": "3560f1cc9380c0a92e4e66f7e87dfc2a34c588670df220b1b0e6f0ea568c6919"
+    },
+    {
+      "bytes": 10677,
+      "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+      "sha256": "ec1420f9c1e7233861dbf189bad49ce749dfeff29d5f0386e7ca11fb81c55791"
+    },
+    {
+      "bytes": 7947,
+      "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+      "sha256": "2779632ba1098cb5a842c195336945beece42bd7e1596e535b40ab6efaf3dd62"
+    },
+    {
+      "bytes": 11934,
+      "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+      "sha256": "8dda06c13022d1a6f953f1930c0ccdeeaa534e098e0dc68edd4a6d761900a003"
+    },
+    {
+      "bytes": 20374,
+      "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+      "sha256": "338a573281c6e22a6699b22d852705fdff0db464ad1bc10d9cdd924bb9430d76"
+    },
+    {
+      "bytes": 5563,
+      "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+      "sha256": "bb988eeab3bb1ce7d3848cd09d6760c5ac99bc2ca3b4153d8684ca138e8f3647"
+    },
+    {
+      "bytes": 4713,
+      "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+      "sha256": "7fafdef5e27bbb51354158b89a05b01ee68521d2a892fa27a9eb2d2e5e4a43c0"
+    },
+    {
+      "bytes": 7045,
+      "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+      "sha256": "ac8a1415e49b8f2b2c5fca46f33928e36239c90ef30b2872e64fcda4ea11e190"
+    },
+    {
+      "bytes": 15806,
+      "path": "labs/original-03/globalisasi-newton.py",
+      "sha256": "f57348e409b768376c424feef382c468d07be5f8c9504197e5e6533315814541"
+    },
+    {
+      "bytes": 1967,
+      "path": "labs/original-03/globalisasi-newton-results.json",
+      "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+    },
+    {
+      "bytes": 9982,
+      "path": "labs/original-03/globalisasi-newton-results.csv",
+      "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+    },
+    {
+      "bytes": 2521,
+      "path": "labs/original-03/globalisasi-newton.svg",
+      "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+    },
+    {
+      "bytes": 11387,
+      "path": "labs/original-03/transportasi-entropik.py",
+      "sha256": "9fca6188778608b94008476e257f7a0f1e578782168a7970c8b4a28f8960c5d9"
+    },
+    {
+      "bytes": 4071,
+      "path": "labs/original-03/transportasi-entropik-results.json",
+      "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+    },
+    {
+      "bytes": 7920,
+      "path": "labs/original-03/transportasi-entropik-results.csv",
+      "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+    },
+    {
+      "bytes": 9425,
+      "path": "labs/original-03/transportasi-entropik.svg",
+      "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+    },
+    {
+      "bytes": 16187,
+      "path": "labs/original-03/kapstone-invers-komposit.py",
+      "sha256": "45092afab7b0b3751b43d24ace62b8ea2973a21ec24745c3c8213bc252940370"
+    },
+    {
+      "bytes": 3457,
+      "path": "labs/original-03/kapstone-invers-komposit-results.json",
+      "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+    },
+    {
+      "bytes": 46008,
+      "path": "labs/original-03/kapstone-invers-komposit-results.csv",
+      "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+    },
+    {
+      "bytes": 6280,
+      "path": "labs/original-03/kapstone-invers-komposit.svg",
+      "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+    },
+    {
+      "bytes": 56769,
+      "path": "qa/extend_backend_original_03.py",
+      "sha256": "50fef6ed0f59283b2887b40c285e3f4ba2940915e179735443d9710302cb76b2"
+    },
+    {
+      "bytes": 29433,
+      "path": "qa/validate_backend_original_03.py",
+      "sha256": "a9b73759e92cbbbde0abffecabab7f9ff0fd65f777276e6c74d8caa8957c2029"
+    }
+  ],
+  "mit_l03_overlay": {
+    "anchor_bindings": 6,
+    "files": [
+      {
+        "bytes": 3961,
+        "path": "source/en/mit-03-modern-view-semantic-witness.md",
+        "sha256": "ba74c799dfd1dfe87fc7be0695fd12d1780dadbff44d86f8ad6b7fc015171605"
+      },
+      {
+        "bytes": 4758,
+        "path": "source/id-ID/mit-03-pandangan-modern-optimisasi-konveks-id.md",
+        "sha256": "24599f175ae5a40246d9677042a5c3d191802900562467d94eede8ef72837060"
+      },
+      {
+        "bytes": 9762,
+        "path": "output/html/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+        "sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90"
+      },
+      {
+        "bytes": 34550,
+        "path": "output/pdf/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf",
+        "sha256": "3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136"
+      },
+      {
+        "bytes": 3641,
+        "path": "qa/build_mit_l03.py",
+        "sha256": "834a9f4c2b5344c2c6dd8c8c7e6c444e7be580a5564321fac19dcc527535bd94"
+      },
+      {
+        "bytes": 14620,
+        "path": "qa/validate_mit_l03.py",
+        "sha256": "4e2387a815b9127c05ce69e185e80b7e80b6346af16081488a265021e6ada836"
+      },
+      {
+        "bytes": 2836,
+        "path": "qa/MIT_L03_VALIDATION.json",
+        "sha256": "fd92d811343e22192573293745c2f11175ba493f44bc5eb39801dfa6c47daff6"
+      },
+      {
+        "bytes": 1396,
+        "path": "qa/MIT_L03_BROWSER_QA.json",
+        "sha256": "3455de5d1e4edfbc236d0684c252e254bb7a29a54f5519306e0c24c27ac6cb5e"
+      },
+      {
+        "bytes": 2163,
+        "path": "qa/MIT_L03_INDEPENDENT_REREVIEW.md",
+        "sha256": "daba4cbafe99d3fa47c8a9a9b9959ed8860b7bde442e5dc94a126171ca8227b1"
+      },
+      {
+        "bytes": 2577,
+        "path": "source/id-ID/mit-l02.css",
+        "sha256": "80062b9daea244d491ed7d1ff8f7c5974d224b163496c0b58058f6831de6fe88"
+      },
+      {
+        "bytes": 1210,
+        "path": "source/id-ID/mit-l03-preamble.tex",
+        "sha256": "951329ac72a750d3b23e3eb249863570c4b2e0966cbca5cbe30ca8babde72da7"
+      },
+      {
+        "bytes": 111,
+        "path": "source/id-ID/mit-l03-before-body.html",
+        "sha256": "2ea5c7245617afd08f76b6d84e3e72b7ee260a4c5f2563bd5de9fecc9c33d871"
+      },
+      {
+        "bytes": 8,
+        "path": "source/id-ID/mit-l03-after-body.html",
+        "sha256": "c529a821ba488b08d7968807e395f22f820af99d41f82ffe77de18200d2007b0"
+      },
+      {
+        "bytes": 296,
+        "path": "source/id-ID/mit-l03-pdf-filter.lua",
+        "sha256": "bd9b7bfe76b22af847b19271782c9c26e6afd23017067fc3d871f8bf29c7994d"
+      }
+    ],
+    "segment_id": "d90.mit.ocw-6.253.l03.p014",
+    "source_and_reader_bytes_unchanged": true,
+    "source_page": 14,
+    "unit_id": "unit.mit.ocw-6.253.l03"
+  },
+  "original_03": {
+    "assessment_index_bindings": 54,
+    "lab_components": {
+      "globalisasi-newton": {
+        "certificate_count": 10,
+        "csv_rows": 60,
+        "result": "pass",
+        "schema": "o015-original-03-globalisasi-newton-v1"
+      },
+      "kapstone-invers-komposit": {
+        "certificate_count": 13,
+        "csv_rows": 362,
+        "result": "pass",
+        "schema": "o015-original-03-kapstone-invers-komposit-v1"
+      },
+      "transportasi-entropik": {
+        "certificate_count": 8,
+        "csv_rows": 42,
+        "result": "pass",
+        "schema": "o015-original-03-transportasi-entropik-v1"
+      }
+    },
+    "latex_label_count": 453,
+    "module_count": 14,
+    "o018_firewall": "pass",
+    "repaired_comment_only_bindings": 20,
+    "segment_count": 14,
+    "stable_id_bindings": 438,
+    "unit_id": "d90.orig.v1.tr03.unit"
+  },
+  "protected_baseline": {
+    "corrected_records": 1,
+    "csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    },
+    "protected_id_order_sha256": "a29209ba8b1d0599052f34f62ec62dc638847253a78000320d3e9996fc84a3a3",
+    "protected_record_set_sha256": "623c3d30ec14af45e50e28d8e5ed1b41265d63ad6b3cdee9429c872f5a0ebafa",
+    "protected_records_byte_identical": 4337,
+    "raw_record_bytes_and_relative_order_preserved_except_course": true,
+    "records": 4338
+  },
+  "result": "pass",
+  "schema": "o015-original-03-backend-extension-v1",
+  "schema_identity": {
+    "bytes": 3092,
+    "schema_changed": false,
+    "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "workflow": "o015-original-03-backend-v1",
+  "write_mode": "canonical"
+}

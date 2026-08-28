@@ -1,0 +1,1318 @@
+{
+  "findings": {
+    "P1": [],
+    "P2": [],
+    "P3": []
+  },
+  "result": "pass",
+  "schema": "original-03-course-closure-qa-v1",
+  "scope": {
+    "aggregator": "source/id-ID/original-03-penutupan-kursus-id.tex",
+    "computation_component_count": 3,
+    "credentials_used": false,
+    "git_used": false,
+    "module_count": 14,
+    "network_used": false,
+    "publication_performed": false,
+    "root": "."
+  },
+  "sections": {
+    "aggregator": {
+      "canonical_order": true,
+      "module_input_count": 14,
+      "module_inputs": [
+        "original-03/00-peta-asesmen-id",
+        "original-03/01-diagnostik-prasyarat-id",
+        "original-03/02-set-soal-dasar-konveks-id",
+        "original-03/03-set-soal-metode-proksimal-id",
+        "original-03/04-set-soal-dualitas-kkt-id",
+        "original-03/05-set-soal-metode-stokastik-id",
+        "original-03/06-set-soal-operator-monoton-id",
+        "original-03/07-set-soal-transportasi-dan-sintesis-id",
+        "original-03/08-rubrik-pembuktian-id",
+        "original-03/09-ujian-tengah-id",
+        "original-03/10-ujian-akhir-id",
+        "original-03/11-laboratorium-globalisasi-newton-id",
+        "original-03/12-laboratorium-transportasi-entropik-id",
+        "original-03/13-proyek-kapstone-masalah-invers-komposit-id"
+      ],
+      "stale_claims": []
+    },
+    "assessments": {
+      "assessment_count": 54,
+      "distribution": {
+        "diagnostic": 10,
+        "final": 8,
+        "midterm": 6,
+        "problem_sets": {
+          "ps01": 5,
+          "ps02": 5,
+          "ps03": 5,
+          "ps04": 5,
+          "ps05": 5,
+          "ps06": 5
+        }
+      },
+      "module_topology": {
+        "diag": {
+          "assessment_container_kind": "problem",
+          "assessment_count": 10,
+          "assessment_ids": [
+            "diag.problem.0001",
+            "diag.problem.0002",
+            "diag.problem.0003",
+            "diag.problem.0004",
+            "diag.problem.0005",
+            "diag.problem.0006",
+            "diag.problem.0007",
+            "diag.problem.0008",
+            "diag.problem.0009",
+            "diag.problem.0010"
+          ],
+          "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+          "prompt_count": 20,
+          "prompt_ids": [
+            "diag.prompt.0001",
+            "diag.prompt.0002",
+            "diag.prompt.0003",
+            "diag.prompt.0004",
+            "diag.prompt.0005",
+            "diag.prompt.0006",
+            "diag.prompt.0007",
+            "diag.prompt.0008",
+            "diag.prompt.0009",
+            "diag.prompt.0010",
+            "diag.prompt.0011",
+            "diag.prompt.0012",
+            "diag.prompt.0013",
+            "diag.prompt.0014",
+            "diag.prompt.0015",
+            "diag.prompt.0016",
+            "diag.prompt.0017",
+            "diag.prompt.0018",
+            "diag.prompt.0019",
+            "diag.prompt.0020"
+          ],
+          "response_unit_count": 20,
+          "stable_id_count": 110,
+          "two_stage_hint_count": 20
+        },
+        "final": {
+          "assessment_container_kind": "exercise",
+          "assessment_count": 8,
+          "assessment_ids": [
+            "d90.orig.v1.tr03.final.exercise.0001",
+            "d90.orig.v1.tr03.final.exercise.0002",
+            "d90.orig.v1.tr03.final.exercise.0003",
+            "d90.orig.v1.tr03.final.exercise.0004",
+            "d90.orig.v1.tr03.final.exercise.0005",
+            "d90.orig.v1.tr03.final.exercise.0006",
+            "d90.orig.v1.tr03.final.exercise.0007",
+            "d90.orig.v1.tr03.final.exercise.0008"
+          ],
+          "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+          "prompt_count": 8,
+          "response_unit_count": 8,
+          "stable_id_count": 32,
+          "two_stage_hint_count": 8
+        },
+        "midterm": {
+          "assessment_container_kind": "exercise",
+          "assessment_count": 6,
+          "assessment_ids": [
+            "d90.orig.v1.tr03.midterm.exercise.0001",
+            "d90.orig.v1.tr03.midterm.exercise.0002",
+            "d90.orig.v1.tr03.midterm.exercise.0003",
+            "d90.orig.v1.tr03.midterm.exercise.0004",
+            "d90.orig.v1.tr03.midterm.exercise.0005",
+            "d90.orig.v1.tr03.midterm.exercise.0006"
+          ],
+          "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+          "prompt_count": 6,
+          "response_unit_count": 6,
+          "stable_id_count": 24,
+          "two_stage_hint_count": 6
+        },
+        "ps01": {
+          "assessment_container_kind": "problem",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "ps01.problem.0001",
+            "ps01.problem.0002",
+            "ps01.problem.0003",
+            "ps01.problem.0004",
+            "ps01.problem.0005"
+          ],
+          "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+          "prompt_count": 12,
+          "prompt_ids": [
+            "ps01.prompt.0001",
+            "ps01.prompt.0002",
+            "ps01.prompt.0003",
+            "ps01.prompt.0004",
+            "ps01.prompt.0005",
+            "ps01.prompt.0006",
+            "ps01.prompt.0007",
+            "ps01.prompt.0008",
+            "ps01.prompt.0009",
+            "ps01.prompt.0010",
+            "ps01.prompt.0011",
+            "ps01.prompt.0012"
+          ],
+          "response_unit_count": 12,
+          "stable_id_count": 65,
+          "two_stage_hint_count": 12
+        },
+        "ps02": {
+          "assessment_container_kind": "problem",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "ps02.problem.0001",
+            "ps02.problem.0002",
+            "ps02.problem.0003",
+            "ps02.problem.0004",
+            "ps02.problem.0005"
+          ],
+          "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+          "prompt_count": 11,
+          "prompt_ids": [
+            "ps02.prompt.0001",
+            "ps02.prompt.0002",
+            "ps02.prompt.0003",
+            "ps02.prompt.0004",
+            "ps02.prompt.0005",
+            "ps02.prompt.0006",
+            "ps02.prompt.0007",
+            "ps02.prompt.0008",
+            "ps02.prompt.0009",
+            "ps02.prompt.0010",
+            "ps02.prompt.0011"
+          ],
+          "response_unit_count": 11,
+          "stable_id_count": 60,
+          "two_stage_hint_count": 11
+        },
+        "ps03": {
+          "assessment_container_kind": "problem",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "ps03.problem.0001",
+            "ps03.problem.0002",
+            "ps03.problem.0003",
+            "ps03.problem.0004",
+            "ps03.problem.0005"
+          ],
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+          "prompt_count": 11,
+          "prompt_ids": [
+            "ps03.prompt.0001",
+            "ps03.prompt.0002",
+            "ps03.prompt.0003",
+            "ps03.prompt.0004",
+            "ps03.prompt.0005",
+            "ps03.prompt.0006",
+            "ps03.prompt.0007",
+            "ps03.prompt.0008",
+            "ps03.prompt.0009",
+            "ps03.prompt.0010",
+            "ps03.prompt.0011"
+          ],
+          "response_unit_count": 11,
+          "stable_id_count": 60,
+          "two_stage_hint_count": 11
+        },
+        "ps04": {
+          "assessment_container_kind": "exercise",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "d90.orig.v1.tr03.ps04.exercise.0001",
+            "d90.orig.v1.tr03.ps04.exercise.0002",
+            "d90.orig.v1.tr03.ps04.exercise.0003",
+            "d90.orig.v1.tr03.ps04.exercise.0004",
+            "d90.orig.v1.tr03.ps04.exercise.0005"
+          ],
+          "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+          "prompt_count": 5,
+          "response_unit_count": 5,
+          "stable_id_count": 20,
+          "two_stage_hint_count": 5
+        },
+        "ps05": {
+          "assessment_container_kind": "exercise",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "d90.orig.v1.tr03.ps05.exercise.0001",
+            "d90.orig.v1.tr03.ps05.exercise.0002",
+            "d90.orig.v1.tr03.ps05.exercise.0003",
+            "d90.orig.v1.tr03.ps05.exercise.0004",
+            "d90.orig.v1.tr03.ps05.exercise.0005"
+          ],
+          "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+          "prompt_count": 5,
+          "response_unit_count": 5,
+          "stable_id_count": 20,
+          "two_stage_hint_count": 5
+        },
+        "ps06": {
+          "assessment_container_kind": "exercise",
+          "assessment_count": 5,
+          "assessment_ids": [
+            "d90.orig.v1.tr03.ps06.exercise.0001",
+            "d90.orig.v1.tr03.ps06.exercise.0002",
+            "d90.orig.v1.tr03.ps06.exercise.0003",
+            "d90.orig.v1.tr03.ps06.exercise.0004",
+            "d90.orig.v1.tr03.ps06.exercise.0005"
+          ],
+          "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+          "prompt_count": 5,
+          "response_unit_count": 5,
+          "stable_id_count": 20,
+          "two_stage_hint_count": 5
+        }
+      },
+      "prompt_response_unit_count": 83
+    },
+    "capstone_numerics": {
+      "certificates": {
+        "fista_certified_gap_small": true,
+        "fista_dual_certificate_feasible": true,
+        "fista_gradient_mapping_small": true,
+        "fista_step_below_inverse_lipschitz": true,
+        "fixed_data_dimensions": true,
+        "fixed_outlier_count": true,
+        "huber_gradient_lipschitz_bound_positive": true,
+        "matched_budget_objectives_agree": true,
+        "matched_matrix_vector_budget": true,
+        "pdhg_certified_gap_small": true,
+        "pdhg_dual_certificate_feasible": true,
+        "pdhg_step_product_strictly_below_one": true,
+        "robust_solution_improves_on_least_squares": true
+      },
+      "csv": {
+        "bytes": 46008,
+        "lines": 363,
+        "path": "labs/original-03/kapstone-invers-komposit-results.csv",
+        "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+      },
+      "csv_data_rows": 362,
+      "data_sha256": "a7cfd09350231e0afc9786bbdd4200a170fa4161e05abbd86a835d25bb4b2233",
+      "json": {
+        "bytes": 3457,
+        "lines": 159,
+        "path": "labs/original-03/kapstone-invers-komposit-results.json",
+        "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+      },
+      "matched_matrix_vector_products_per_solver": 3600,
+      "matrix_sha256": "6c286bed37f4a328d40082da0fcc384523efc7f4e835122a43b16b326c4f85d5",
+      "milestone_count": 7,
+      "numeric_error_count": 0,
+      "objective_difference": 1.1102230246251565e-16,
+      "outlier_indices": [
+        4,
+        8,
+        9,
+        14,
+        28,
+        31,
+        36,
+        47
+      ],
+      "solver_row_counts": {
+        "FISTA-restart": 181,
+        "PDHG-referensi": 181
+      }
+    },
+    "deterministic_computation_replays": {
+      "globalisasi-newton": {
+        "byte_identical_between_runs": true,
+        "byte_identical_to_checked_in": true,
+        "checked_in_outputs": {
+          "globalisasi-newton-results.csv": {
+            "bytes": 9982,
+            "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+          },
+          "globalisasi-newton-results.json": {
+            "bytes": 1967,
+            "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+          },
+          "globalisasi-newton.svg": {
+            "bytes": 2521,
+            "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+          }
+        },
+        "isolated_temporary_execution": true,
+        "run_outputs": [
+          {
+            "globalisasi-newton-results.csv": {
+              "bytes": 9982,
+              "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+            },
+            "globalisasi-newton-results.json": {
+              "bytes": 1967,
+              "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+            },
+            "globalisasi-newton.svg": {
+              "bytes": 2521,
+              "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+            }
+          },
+          {
+            "globalisasi-newton-results.csv": {
+              "bytes": 9982,
+              "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+            },
+            "globalisasi-newton-results.json": {
+              "bytes": 1967,
+              "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+            },
+            "globalisasi-newton.svg": {
+              "bytes": 2521,
+              "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+            }
+          }
+        ],
+        "runs": 2,
+        "script": "labs/original-03/globalisasi-newton.py",
+        "stdout_receipts": [
+          {
+            "outputs": [
+              {
+                "bytes": 1967,
+                "path": "globalisasi-newton-results.json",
+                "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+              },
+              {
+                "bytes": 9982,
+                "path": "globalisasi-newton-results.csv",
+                "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+              },
+              {
+                "bytes": 2521,
+                "path": "globalisasi-newton.svg",
+                "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+              }
+            ],
+            "result": "pass"
+          },
+          {
+            "outputs": [
+              {
+                "bytes": 1967,
+                "path": "globalisasi-newton-results.json",
+                "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+              },
+              {
+                "bytes": 9982,
+                "path": "globalisasi-newton-results.csv",
+                "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+              },
+              {
+                "bytes": 2521,
+                "path": "globalisasi-newton.svg",
+                "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+              }
+            ],
+            "result": "pass"
+          }
+        ],
+        "unexpected_files": [
+          [],
+          []
+        ]
+      },
+      "kapstone-invers-komposit": {
+        "byte_identical_between_runs": true,
+        "byte_identical_to_checked_in": true,
+        "checked_in_outputs": {
+          "kapstone-invers-komposit-results.csv": {
+            "bytes": 46008,
+            "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+          },
+          "kapstone-invers-komposit-results.json": {
+            "bytes": 3457,
+            "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+          },
+          "kapstone-invers-komposit.svg": {
+            "bytes": 6280,
+            "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+          }
+        },
+        "isolated_temporary_execution": true,
+        "run_outputs": [
+          {
+            "kapstone-invers-komposit-results.csv": {
+              "bytes": 46008,
+              "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+            },
+            "kapstone-invers-komposit-results.json": {
+              "bytes": 3457,
+              "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+            },
+            "kapstone-invers-komposit.svg": {
+              "bytes": 6280,
+              "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+            }
+          },
+          {
+            "kapstone-invers-komposit-results.csv": {
+              "bytes": 46008,
+              "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+            },
+            "kapstone-invers-komposit-results.json": {
+              "bytes": 3457,
+              "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+            },
+            "kapstone-invers-komposit.svg": {
+              "bytes": 6280,
+              "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+            }
+          }
+        ],
+        "runs": 2,
+        "script": "labs/original-03/kapstone-invers-komposit.py",
+        "stdout_receipts": [
+          {
+            "outputs": [
+              {
+                "bytes": 3457,
+                "path": "kapstone-invers-komposit-results.json",
+                "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+              },
+              {
+                "bytes": 46008,
+                "path": "kapstone-invers-komposit-results.csv",
+                "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+              },
+              {
+                "bytes": 6280,
+                "path": "kapstone-invers-komposit.svg",
+                "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+              }
+            ],
+            "result": "pass"
+          },
+          {
+            "outputs": [
+              {
+                "bytes": 3457,
+                "path": "kapstone-invers-komposit-results.json",
+                "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+              },
+              {
+                "bytes": 46008,
+                "path": "kapstone-invers-komposit-results.csv",
+                "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+              },
+              {
+                "bytes": 6280,
+                "path": "kapstone-invers-komposit.svg",
+                "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+              }
+            ],
+            "result": "pass"
+          }
+        ],
+        "unexpected_files": [
+          [],
+          []
+        ]
+      },
+      "transportasi-entropik": {
+        "byte_identical_between_runs": true,
+        "byte_identical_to_checked_in": true,
+        "checked_in_outputs": {
+          "transportasi-entropik-results.csv": {
+            "bytes": 7920,
+            "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+          },
+          "transportasi-entropik-results.json": {
+            "bytes": 4071,
+            "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+          },
+          "transportasi-entropik.svg": {
+            "bytes": 9425,
+            "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+          }
+        },
+        "isolated_temporary_execution": true,
+        "run_outputs": [
+          {
+            "transportasi-entropik-results.csv": {
+              "bytes": 7920,
+              "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+            },
+            "transportasi-entropik-results.json": {
+              "bytes": 4071,
+              "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+            },
+            "transportasi-entropik.svg": {
+              "bytes": 9425,
+              "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+            }
+          },
+          {
+            "transportasi-entropik-results.csv": {
+              "bytes": 7920,
+              "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+            },
+            "transportasi-entropik-results.json": {
+              "bytes": 4071,
+              "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+            },
+            "transportasi-entropik.svg": {
+              "bytes": 9425,
+              "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+            }
+          }
+        ],
+        "runs": 2,
+        "script": "labs/original-03/transportasi-entropik.py",
+        "stdout_receipts": [
+          {
+            "outputs": [
+              {
+                "bytes": 4071,
+                "path": "transportasi-entropik-results.json",
+                "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+              },
+              {
+                "bytes": 7920,
+                "path": "transportasi-entropik-results.csv",
+                "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+              },
+              {
+                "bytes": 9425,
+                "path": "transportasi-entropik.svg",
+                "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+              }
+            ],
+            "result": "pass"
+          },
+          {
+            "outputs": [
+              {
+                "bytes": 4071,
+                "path": "transportasi-entropik-results.json",
+                "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+              },
+              {
+                "bytes": 7920,
+                "path": "transportasi-entropik-results.csv",
+                "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+              },
+              {
+                "bytes": 9425,
+                "path": "transportasi-entropik.svg",
+                "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+              }
+            ],
+            "result": "pass"
+          }
+        ],
+        "unexpected_files": [
+          [],
+          []
+        ]
+      }
+    },
+    "globalisasi_newton_numerics": {
+      "certificates": {
+        "backtracking_armijo_every_step": true,
+        "backtracking_converged": true,
+        "backtracking_objective_monotone": true,
+        "corrected_directions_are_descent": true,
+        "corrected_hessian_floor_respected": true,
+        "corrected_newton_armijo_every_step": true,
+        "corrected_newton_converged": true,
+        "corrected_newton_objective_monotone": true,
+        "fixed_gradient_failure_observed": true,
+        "pure_newton_failure_observed": true
+      },
+      "csv": {
+        "bytes": 9982,
+        "lines": 61,
+        "path": "labs/original-03/globalisasi-newton-results.csv",
+        "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+      },
+      "csv_data_rows": 60,
+      "json": {
+        "bytes": 1967,
+        "lines": 71,
+        "path": "labs/original-03/globalisasi-newton-results.json",
+        "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+      },
+      "method_row_counts": {
+        "gradien-backtracking": 17,
+        "gradien-langkah-tetap": 34,
+        "newton-murni": 2,
+        "newton-teredam-terkoreksi": 7
+      },
+      "numeric_error_count": 0,
+      "pure_newton_objective_increase_count": 1
+    },
+    "ids_labels_references": {
+      "duplicate_labels": {},
+      "duplicate_stable_ids": {},
+      "integrated_closure_file_count": 32,
+      "integrated_closure_files": [
+        "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+        "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+        "source/id-ID/becker-03-reduksi-varians-id.tex",
+        "source/id-ID/habring-01-prasyarat-id.tex",
+        "source/id-ID/habring-02-konveksitas-id.tex",
+        "source/id-ID/habring-03-subgradien-id.tex",
+        "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+        "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+        "source/id-ID/habring-06-akselerasi-id.tex",
+        "source/id-ID/habring-07-dualitas-id.tex",
+        "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+        "source/id-ID/habring-09-transportasi-optimal-id.tex",
+        "source/id-ID/macros-id.tex",
+        "source/id-ID/o015-accessibility-id.tex",
+        "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "source/id-ID/original-03-penutupan-kursus-id.tex",
+        "source/id-ID/original-03/00-peta-asesmen-id.tex",
+        "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+        "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+        "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+        "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+        "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+        "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+        "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+        "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+        "source/id-ID/original-03/09-ujian-tengah-id.tex",
+        "source/id-ID/original-03/10-ujian-akhir-id.tex",
+        "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+        "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+        "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex"
+      ],
+      "label_definition_count": 453,
+      "stable_definition_count": 465,
+      "static_reference_count": 27,
+      "unique_label_count": 453,
+      "unique_stable_id_count": 465,
+      "unresolved_static_references": []
+    },
+    "inventory": {
+      "control_byte_occurrences": 0,
+      "csv_file_count": 3,
+      "file_count": 27,
+      "files": [
+        {
+          "bytes": 1785,
+          "lines": 34,
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+          "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9"
+        },
+        {
+          "bytes": 10067,
+          "lines": 195,
+          "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+          "sha256": "3d5f906f205cfabf7f3a464d18111209a22bc6edd193702ea584093b3d9938f8"
+        },
+        {
+          "bytes": 24183,
+          "lines": 603,
+          "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+          "sha256": "162f56e14f6d7fb1b879ed3403617ca7ca4d1fa32b4548812869bec1728a5b2f"
+        },
+        {
+          "bytes": 15501,
+          "lines": 403,
+          "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+          "sha256": "bd09ebd90d1fef7b35147e84c449d14ba50078fde491babbb32d49f1c6695c83"
+        },
+        {
+          "bytes": 14393,
+          "lines": 379,
+          "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+          "sha256": "243912d9de0f5d73de8fb8f3a5d041797f951331a6ad6cce955e6a8538172eff"
+        },
+        {
+          "bytes": 16647,
+          "lines": 415,
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+          "sha256": "fa7d45448b63cc07572cad4afb8fef65e10922e3be094d6aa8227119cc9a7de2"
+        },
+        {
+          "bytes": 10598,
+          "lines": 289,
+          "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+          "sha256": "1c062ad559e675dde14c26e86450d7c500232490d0112a0f34ca1d0f5886ad94"
+        },
+        {
+          "bytes": 12295,
+          "lines": 319,
+          "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+          "sha256": "3560f1cc9380c0a92e4e66f7e87dfc2a34c588670df220b1b0e6f0ea568c6919"
+        },
+        {
+          "bytes": 10677,
+          "lines": 294,
+          "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+          "sha256": "ec1420f9c1e7233861dbf189bad49ce749dfeff29d5f0386e7ca11fb81c55791"
+        },
+        {
+          "bytes": 7947,
+          "lines": 171,
+          "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+          "sha256": "2779632ba1098cb5a842c195336945beece42bd7e1596e535b40ab6efaf3dd62"
+        },
+        {
+          "bytes": 11934,
+          "lines": 320,
+          "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+          "sha256": "8dda06c13022d1a6f953f1930c0ccdeeaa534e098e0dc68edd4a6d761900a003"
+        },
+        {
+          "bytes": 20374,
+          "lines": 526,
+          "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+          "sha256": "338a573281c6e22a6699b22d852705fdff0db464ad1bc10d9cdd924bb9430d76"
+        },
+        {
+          "bytes": 5563,
+          "lines": 124,
+          "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+          "sha256": "bb988eeab3bb1ce7d3848cd09d6760c5ac99bc2ca3b4153d8684ca138e8f3647"
+        },
+        {
+          "bytes": 4713,
+          "lines": 108,
+          "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+          "sha256": "7fafdef5e27bbb51354158b89a05b01ee68521d2a892fa27a9eb2d2e5e4a43c0"
+        },
+        {
+          "bytes": 7045,
+          "lines": 148,
+          "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+          "sha256": "ac8a1415e49b8f2b2c5fca46f33928e36239c90ef30b2872e64fcda4ea11e190"
+        },
+        {
+          "bytes": 15806,
+          "lines": 431,
+          "path": "labs/original-03/globalisasi-newton.py",
+          "sha256": "f57348e409b768376c424feef382c468d07be5f8c9504197e5e6533315814541"
+        },
+        {
+          "bytes": 11387,
+          "lines": 301,
+          "path": "labs/original-03/transportasi-entropik.py",
+          "sha256": "9fca6188778608b94008476e257f7a0f1e578782168a7970c8b4a28f8960c5d9"
+        },
+        {
+          "bytes": 16187,
+          "lines": 372,
+          "path": "labs/original-03/kapstone-invers-komposit.py",
+          "sha256": "45092afab7b0b3751b43d24ace62b8ea2973a21ec24745c3c8213bc252940370"
+        },
+        {
+          "bytes": 1967,
+          "lines": 71,
+          "path": "labs/original-03/globalisasi-newton-results.json",
+          "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589"
+        },
+        {
+          "bytes": 9982,
+          "lines": 61,
+          "path": "labs/original-03/globalisasi-newton-results.csv",
+          "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca"
+        },
+        {
+          "bytes": 2521,
+          "lines": 21,
+          "path": "labs/original-03/globalisasi-newton.svg",
+          "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0"
+        },
+        {
+          "bytes": 4071,
+          "lines": 175,
+          "path": "labs/original-03/transportasi-entropik-results.json",
+          "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+        },
+        {
+          "bytes": 7920,
+          "lines": 43,
+          "path": "labs/original-03/transportasi-entropik-results.csv",
+          "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+        },
+        {
+          "bytes": 9425,
+          "lines": 103,
+          "path": "labs/original-03/transportasi-entropik.svg",
+          "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2"
+        },
+        {
+          "bytes": 3457,
+          "lines": 159,
+          "path": "labs/original-03/kapstone-invers-komposit-results.json",
+          "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b"
+        },
+        {
+          "bytes": 46008,
+          "lines": 363,
+          "path": "labs/original-03/kapstone-invers-komposit-results.csv",
+          "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81"
+        },
+        {
+          "bytes": 6280,
+          "lines": 15,
+          "path": "labs/original-03/kapstone-invers-komposit.svg",
+          "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8"
+        }
+      ],
+      "json_file_count": 3,
+      "python_file_count": 3,
+      "svg_file_count": 3,
+      "tex_file_count": 15
+    },
+    "labs_and_capstone_topology": {
+      "capstone": {
+        "answer": {
+          "label": "orig03:capstone:answer:0001",
+          "stable_id": "d90.orig.v1.tr03.capstone.answer.0001"
+        },
+        "hint": {
+          "label": "orig03:capstone:hint:0001",
+          "stable_id": "d90.orig.v1.tr03.capstone.hint.0001"
+        },
+        "hint_item_count": 7,
+        "milestone_count": 7,
+        "milestones": [
+          {
+            "label": "orig03:capstone:milestone:0001",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0001"
+          },
+          {
+            "label": "orig03:capstone:milestone:0002",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0002"
+          },
+          {
+            "label": "orig03:capstone:milestone:0003",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0003"
+          },
+          {
+            "label": "orig03:capstone:milestone:0004",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0004"
+          },
+          {
+            "label": "orig03:capstone:milestone:0005",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0005"
+          },
+          {
+            "label": "orig03:capstone:milestone:0006",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0006"
+          },
+          {
+            "label": "orig03:capstone:milestone:0007",
+            "stable_id": "d90.orig.v1.tr03.capstone.milestone.0007"
+          }
+        ],
+        "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+        "prompt_identity": {
+          "label": "orig03:capstone:invers-komposit",
+          "stable_id": "d90.orig.v1.tr03.capstone.0001"
+        },
+        "prompt_item_count": 7,
+        "solution": {
+          "label": "orig03:capstone:solution:0001",
+          "stable_id": "d90.orig.v1.tr03.capstone.solution.0001"
+        }
+      },
+      "lab_3": {
+        "answer": {
+          "label": "orig03:lab:answer:0003",
+          "stable_id": "d90.orig.v1.tr03.lab.answer.0003"
+        },
+        "hint": {
+          "label": "orig03:lab:hint:0003",
+          "stable_id": "d90.orig.v1.tr03.lab.hint.0003"
+        },
+        "hint_item_count": 5,
+        "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+        "prompt_identity": {
+          "label": "orig03:lab:globalisasi-newton",
+          "stable_id": "d90.orig.v1.tr03.lab.0003"
+        },
+        "prompt_item_count": 5,
+        "solution": {
+          "label": "orig03:lab:solution:0003",
+          "stable_id": "d90.orig.v1.tr03.lab.solution.0003"
+        }
+      },
+      "lab_4": {
+        "answer": {
+          "label": "orig03:lab:answer:0004",
+          "stable_id": "d90.orig.v1.tr03.lab.answer.0004"
+        },
+        "hint": {
+          "label": "orig03:lab:hint:0004",
+          "stable_id": "d90.orig.v1.tr03.lab.hint.0004"
+        },
+        "hint_item_count": 5,
+        "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+        "prompt_identity": {
+          "label": "orig03:lab:transportasi-entropik",
+          "stable_id": "d90.orig.v1.tr03.lab.0004"
+        },
+        "prompt_item_count": 5,
+        "solution": {
+          "label": "orig03:lab:solution:0004",
+          "stable_id": "d90.orig.v1.tr03.lab.solution.0004"
+        }
+      }
+    },
+    "o018_firewall": {
+      "explicit_exclusion_occurrences": [
+        {
+          "context": "n proyek menghasilkan sertifikat deterministik yang dapat diperiksa tanpa perangkat lunak berpemilik. Seluruh uraian, soal, solusi, rubrik, kode, dan instans sintetik dalam bab ini ditulis mandiri dan tersedia berdasarkan CC BY-SA 4.0. Bab ini tidak menyalin materi O018 tentang program linear atau bilangan bulat, simpleks, sensitivitas LP, ataupun optimisasi jaringan. Pendamping MIT OCW, Royer, dan Penn tetap merupakan karya terpisah dengan hak dan atribusinya sendiri. \\input{original-03/00-peta-asesmen-id} \\input{original-03/01-diagnostik-prasyarat-id} \\input{origi",
+          "line": 17,
+          "match": "program linear",
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+          "topic": "linear_or_integer_programming"
+        },
+        {
+          "context": "pa perangkat lunak berpemilik. Seluruh uraian, soal, solusi, rubrik, kode, dan instans sintetik dalam bab ini ditulis mandiri dan tersedia berdasarkan CC BY-SA 4.0. Bab ini tidak menyalin materi O018 tentang program linear atau bilangan bulat, simpleks, sensitivitas LP, ataupun optimisasi jaringan. Pendamping MIT OCW, Royer, dan Penn tetap merupakan karya terpisah dengan hak dan atribusinya sendiri. \\input{original-03/00-peta-asesmen-id} \\input{original-03/01-diagnostik-prasyarat-id} \\input{original-03/02-set-soal-dasar-konveks-id} \\input{original-03/03-set-soal-metode-p",
+          "line": 18,
+          "match": "optimisasi jaringan",
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+          "topic": "network_optimization"
+        },
+        {
+          "context": "n proyek menghasilkan sertifikat deterministik yang dapat diperiksa tanpa perangkat lunak berpemilik. Seluruh uraian, soal, solusi, rubrik, kode, dan instans sintetik dalam bab ini ditulis mandiri dan tersedia berdasarkan CC BY-SA 4.0. Bab ini tidak menyalin materi O018 tentang program linear atau bilangan bulat, simpleks, sensitivitas LP, ataupun optimisasi jaringan. Pendamping MIT OCW, Royer, dan Penn tetap merupakan karya terpisah dengan hak dan atribusinya sendiri. \\input{original-03/00-peta-asesmen-id} \\input{original-03/01-diagnostik-prasyarat-id} \\input{original-03/02-set-soal-dasar-konveks-id} \\input{",
+          "line": 17,
+          "match": "program linear atau bilangan bulat, simpleks, sensitivitas",
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+          "topic": "lp_sensitivity"
+        },
+        {
+          "context": "iperiksa tanpa perangkat lunak berpemilik. Seluruh uraian, soal, solusi, rubrik, kode, dan instans sintetik dalam bab ini ditulis mandiri dan tersedia berdasarkan CC BY-SA 4.0. Bab ini tidak menyalin materi O018 tentang program linear atau bilangan bulat, simpleks, sensitivitas LP, ataupun optimisasi jaringan. Pendamping MIT OCW, Royer, dan Penn tetap merupakan karya terpisah dengan hak dan atribusinya sendiri. \\input{original-03/00-peta-asesmen-id} \\input{original-03/01-diagnostik-prasyarat-id} \\input{original-03/02-set-soal-dasar-konveks-id} \\input{ori",
+          "line": 18,
+          "match": "LP",
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+          "topic": "lp_token"
+        },
+        {
+          "context": "n asesmen Original-03 tanpa mengulang bunyi soal. Seluruh teks baru pada tranche ini ditulis secara independen dan dilisensikan di bawah CC BY-SA 4.0. Notasi mengikuti spine Habring serta suplemen dan tranche yang sudah diterima, tetapi tidak ada butir donor yang disalin. Materi program linear, integer, simpleks, pemodelan riset operasi, dan wilayah O018 lainnya sengaja tidak dimasukkan. Kontrak yang dapat diurai mesin adalah sebagai berikut. Setiap butir induk memiliki ID \\texttt{*.problem.NNNN}. Setiap subbutir memiliki ID \\texttt{*.prompt.NNNN} dan tepat satu pasa",
+          "line": 13,
+          "match": "program linear",
+          "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+          "topic": "linear_or_integer_programming"
+        }
+      ],
+      "generic_non_o018_term_occurrences": [
+        {
+          "allowed_non_o018_use": true,
+          "context": "\\section{Set soal III: dualitas dan kondisi KKT} \\label{orig03:section:set-soal-dualitas-kkt} Lima masalah berikut melatih pembentukan fungsi dual, kondisi Karush--Kuhn--Tucker (KKT), kondisi Slater, dan sensitivitas nilai optimal. \\begin{exercise}[Kendala persamaan skalar] \\label{orig03:ps03:problem:0001} Pertimbangkan masalah \\[ \\min_{x\\in\\mathbb{R}}\\ \\frac12x^2 \\qquad\\text{dengan kendala}\\qquad x=1. \\] \\begin{enumerate} \\item\\label{orig03:ps03:prompt:0001} Turunkan fungsi dual, lalu tentukan pengali dan nilai dual optimal. \\item\\label{orig03:ps03:prompt:0002} Verifikasi semua kondisi KKT dan kesenjangan dualitas nol. \\e",
+          "line": 11,
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+          "topic": "generic_value_sensitivity"
+        },
+        {
+          "allowed_non_o018_use": true,
+          "context": "memberi $\\nabla f(x^\\star)=-\\lambda^\\star a$. Untuk setiap $x$ layak, konveksitas memberi \\[ f(x)\\geq f(x^\\star)+\\nabla f(x^\\star)^\\top(x-x^\\star) =f(x^\\star)-\\lambda^\\star a^\\top(x-x^\\star)=f(x^\\star), \\] karena $a^\\top x=a^\\top x^\\star=b$. Maka titik KKT optimal global, dan konveksitas kuat membuatnya unik. \\emph{Rubrik bukti: \\ref{orig03:rubric:proof:0006}.} \\label{orig03:ps03:solution:0007} \\begin{exercise}[Sensitivitas ruas kanan] \\label{orig03:ps03:problem:0004} Definisikan fungsi nilai \\[ p(u)=\\min_x\\left\\{\\frac12x^2:x=u\\right\\}. \\] \\begin{enumerate} \\item\\label{orig03:ps03:prompt:0008} Hitung $p(u)$, pengali optimal $\\lambda^\\star(u)$ untuk kendala $x-u=0$, dan hubungan antara $p'(u)$ dan pengali itu. \\item\\label{orig03:ps03:prompt:0009} Untuk perturbasi $\\delta$, turunkan ekspansi eksak $p(u+\\delta)$ dan identifikasi suku s",
+          "line": 270,
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+          "topic": "generic_value_sensitivity"
+        },
+        {
+          "allowed_non_o018_use": true,
+          "context": "s ruas kanan] \\label{orig03:ps03:problem:0004} Definisikan fungsi nilai \\[ p(u)=\\min_x\\left\\{\\frac12x^2:x=u\\right\\}. \\] \\begin{enumerate} \\item\\label{orig03:ps03:prompt:0008} Hitung $p(u)$, pengali optimal $\\lambda^\\star(u)$ untuk kendala $x-u=0$, dan hubungan antara $p'(u)$ dan pengali itu. \\item\\label{orig03:ps03:prompt:0009} Untuk perturbasi $\\delta$, turunkan ekspansi eksak $p(u+\\delta)$ dan identifikasi suku sensitivitas orde pertama serta galat orde keduanya. \\end{enumerate} \\end{exercise} \\par\\noindent\\textbf{Petunjuk tahap 1 (ps03.prompt.0008).} Kendala langsung memaksa $x=u$. \\label{orig03:ps03:hint1:0008} \\par\\noindent\\textbf{Petunjuk tahap 2 (ps03.prompt.0008).} Stasioneritas Lagrangian $\\tfrac12x^2+\\lambda(x-u)$ adalah $x+\\lambda=0$. \\label{orig03:ps03:hint2:0008} \\par\\noindent\\textbf{Jawaban ringkas (ps03.prompt.0008).}",
+          "line": 284,
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+          "topic": "generic_value_sensitivity"
+        },
+        {
+          "allowed_non_o018_use": true,
+          "context": "sum_i p_i=1$, ambil $I\\sim p$ dan $G=g_I/(Np_I)$. Di antara semua distribusi $p$, tentukan distribusi yang meminimalkan $\\mathbb E\\lVert G\\rVert^2$, hitung nilai minimumnya, dan tulis varians minimum terhadap mean $\\bar g=N^{-1}\\sum_i g_i$. \\end{exercise} \\paragraph{Petunjuk bertahap.} \\label{orig03:final:hint:0004} \\textbf{Tahap 1.} Masalah skalar yang harus diminimalkan adalah $\\sum_i\\lVert g_i\\rVert^2/p_i$ pada simpleks. \\textbf{Tahap 2.} Gunakan pengali Lagrange atau Cauchy--Schwarz, lalu kurangi $\\lVert\\bar g\\rVert^2$ dari momen kedua. \\paragraph{Jawaban singkat.} \\label{orig03:final:answer:0004} \\[ p_i^\\star=\\frac{\\lVert g_i\\rVert}{\\sum_j\\lVert g_j\\rVert}, \\qquad \\min_p\\mathbb E\\lVert G\\rVert^2 =\\frac1{N^2}\\left(\\sum_i\\lVert g_i\\rVert\\right)^2. \\] Varians minimumnya adalah nilai terakhir dikurangi $\\lVert\\bar g\\rVert^2$.",
+          "line": 199,
+          "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+          "topic": "simplex_geometry"
+        }
+      ],
+      "prohibited_occurrences": [],
+      "result": "pass"
+    },
+    "proof_rubrics": {
+      "criteria_per_rubric": {
+        "0001": 4,
+        "0002": 4,
+        "0003": 4,
+        "0004": 4,
+        "0005": 4,
+        "0006": 4,
+        "0007": 4
+      },
+      "inbound_reference_counts": {
+        "orig03:rubric:proof:0001": 6,
+        "orig03:rubric:proof:0002": 3,
+        "orig03:rubric:proof:0003": 1,
+        "orig03:rubric:proof:0004": 3,
+        "orig03:rubric:proof:0005": 3,
+        "orig03:rubric:proof:0006": 8,
+        "orig03:rubric:proof:0007": 2
+      },
+      "maximum_score": 16,
+      "rubric_count": 7,
+      "score_range": [
+        0,
+        4
+      ]
+    },
+    "provenance": {
+      "computation_components": [
+        {
+          "component": "globalisasi-newton",
+          "embedded_cc_by_sa_4_0": true,
+          "module": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+          "named_module_cc_by_sa_4_0_chain": true,
+          "outputs": [
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/globalisasi-newton.py",
+              "path": "labs/original-03/globalisasi-newton-results.json"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/globalisasi-newton.py",
+              "path": "labs/original-03/globalisasi-newton-results.csv"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/globalisasi-newton.py",
+              "path": "labs/original-03/globalisasi-newton.svg"
+            }
+          ],
+          "script": "labs/original-03/globalisasi-newton.py"
+        },
+        {
+          "component": "transportasi-entropik",
+          "embedded_cc_by_sa_4_0": true,
+          "module": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+          "named_module_cc_by_sa_4_0_chain": true,
+          "outputs": [
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/transportasi-entropik.py",
+              "path": "labs/original-03/transportasi-entropik-results.json"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/transportasi-entropik.py",
+              "path": "labs/original-03/transportasi-entropik-results.csv"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/transportasi-entropik.py",
+              "path": "labs/original-03/transportasi-entropik.svg"
+            }
+          ],
+          "script": "labs/original-03/transportasi-entropik.py"
+        },
+        {
+          "component": "kapstone-invers-komposit",
+          "embedded_cc_by_sa_4_0": true,
+          "module": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+          "named_module_cc_by_sa_4_0_chain": true,
+          "outputs": [
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/kapstone-invers-komposit.py",
+              "path": "labs/original-03/kapstone-invers-komposit-results.json"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/kapstone-invers-komposit.py",
+              "path": "labs/original-03/kapstone-invers-komposit-results.csv"
+            },
+            {
+              "cc_by_sa_4_0_chain": true,
+              "derived_from": "labs/original-03/kapstone-invers-komposit.py",
+              "path": "labs/original-03/kapstone-invers-komposit.svg"
+            }
+          ],
+          "script": "labs/original-03/kapstone-invers-komposit.py"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "tex_components": [
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03-penutupan-kursus-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/00-peta-asesmen-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/09-ujian-tengah-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/10-ujian-akhir-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex"
+        },
+        {
+          "embedded_cc_by_sa_4_0": true,
+          "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex"
+        }
+      ]
+    },
+    "read_only_boundary": {
+      "changes": {},
+      "persistent_files_written": [
+        "qa/ORIGINAL_03_COURSE_CLOSURE.json"
+      ],
+      "scoped_input_count": 27,
+      "unchanged": true
+    },
+    "svg_artifacts": {
+      "globalisasi-newton": {
+        "bytes": 2521,
+        "description_count": 1,
+        "parsed_xml": true,
+        "path": "labs/original-03/globalisasi-newton.svg",
+        "root": "svg",
+        "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0",
+        "title_count": 1
+      },
+      "kapstone-invers-komposit": {
+        "bytes": 6280,
+        "description_count": 1,
+        "parsed_xml": true,
+        "path": "labs/original-03/kapstone-invers-komposit.svg",
+        "root": "svg",
+        "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8",
+        "title_count": 1
+      },
+      "transportasi-entropik": {
+        "bytes": 9425,
+        "description_count": 1,
+        "parsed_xml": true,
+        "path": "labs/original-03/transportasi-entropik.svg",
+        "root": "svg",
+        "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2",
+        "title_count": 1
+      }
+    },
+    "tex_wellformedness": {
+      "errors": [],
+      "files_checked": 15,
+      "integrated_numeric_macro_1_defined": true
+    },
+    "transportasi_entropik_numerics": {
+      "certificates": {
+        "additive_cost_shift_invariance": true,
+        "log_domain_shifted_problem_still_converges": true,
+        "naive_shifted_kernel_underflows_completely": true,
+        "primal_dual_agreement": true,
+        "simultaneous_cost_epsilon_scaling_invariance": true,
+        "source_marginal": true,
+        "strict_numeric_positivity": true,
+        "target_marginal": true
+      },
+      "column_marginal_residual": 1.6653345369377348e-16,
+      "csv": {
+        "bytes": 7920,
+        "lines": 43,
+        "path": "labs/original-03/transportasi-entropik-results.csv",
+        "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728"
+      },
+      "csv_data_rows": 42,
+      "json": {
+        "bytes": 4071,
+        "lines": 175,
+        "path": "labs/original-03/transportasi-entropik-results.json",
+        "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5"
+      },
+      "minimum_plan_entry": 3.7818193821614976e-13,
+      "naive_shifted_kernel_zero_count": 42,
+      "numeric_error_count": 0,
+      "plan_entry_count": 42,
+      "plan_shape": [
+        6,
+        7
+      ],
+      "row_marginal_residual": 4.216349491770188e-13,
+      "scaled_plan_max_abs_difference": 1.942890293094024e-16,
+      "shifted_plan_max_abs_difference": 1.0112050086164004e-13
+    }
+  },
+  "summary": {
+    "P1": 0,
+    "P2": 0,
+    "P3": 0,
+    "assessment_count": 54,
+    "assessment_distribution": {
+      "diagnostic": 10,
+      "final": 8,
+      "midterm": 6,
+      "problem_sets": {
+        "ps01": 5,
+        "ps02": 5,
+        "ps03": 5,
+        "ps04": 5,
+        "ps05": 5,
+        "ps06": 5
+      }
+    },
+    "capstone_milestone_count": 7,
+    "computation_components_replayed_twice": 3,
+    "proof_rubric_count": 7,
+    "response_unit_count": 83,
+    "stable_definition_count": 465,
+    "static_reference_count": 27,
+    "unique_label_count": 453,
+    "unique_stable_id_count": 465
+  },
+  "verifier": {
+    "bytes": 96627,
+    "lines": 2333,
+    "numpy": "2.4.4",
+    "path": "qa/verify_original_03_course_closure.py",
+    "python": "3.13.9",
+    "sha256": "250823523ca83e0a5d058fa58d1b44eeb887370b4bc209af1b2c32f14d58f6d5"
+  }
+}

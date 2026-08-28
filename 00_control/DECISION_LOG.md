@@ -131,7 +131,7 @@ The decision rests on complete course and self-study coverage, not sunk work: Pe
 
 ## D90-0027 — Figshare is metadata-only and lineage-stable
 
-Figshare cannot truthfully mirror this mixed-license checkpoint because its article schema exposes one scalar license and does not offer Penn's exact CC BY-NC-SA 3.0 US license. Article `33314733`, DOI `10.6084/m9.figshare.33314733.v1`, is therefore a CC0 metadata/link record only, with zero work files and links to the Zenodo version and stable concept DOI. It is present once in project `280296` and collection `8668413`; no TTP prose appears. Future checkpoints update this same article by its stable Zenodo concept DOI/article ID and never create a competing item or label mixed-license bytes as CC0.
+Figshare cannot truthfully mirror this mixed-license checkpoint because its article schema exposes one scalar license and does not offer Penn's exact CC BY-NC-SA 3.0 US license. Article `33314733`, DOI `10.6084/m9.figshare.33314733.v1`, is therefore a CC0 metadata/link record only, with zero work files and links to the Zenodo version and stable concept DOI. It is present once in project `280296` and collection `8668413`; no organization-project prose appears. Future checkpoints update this same article by its stable Zenodo concept DOI/article ID and never create a competing item or label mixed-license bytes as CC0.
 
 ## D90-0028 — Figshare becomes reader-first through a component-pure module
 
@@ -913,3 +913,78 @@ and `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
 The next bounded action remains one exact GitHub publication/readback gate;
 then production advances to course-wide assessment, labs, capstone, tagged
 PDF/accessibility, and integrated final readers.
+
+## D90-0063 — Close Original-02 GitHub preservation and advance (2026-08-26)
+
+Decision: close the Original-02 public-preservation boundary after one exact
+commit to the existing repository. Public `main` is commit
+`74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, tree
+`e6c004afc1efeff73a62860039491fd92525ba35`, parent
+`15fb78bcf7c769b524401c24779469d6ecfc5ffd`. The commit has exactly 103
+manifest-bound A/M paths and 11,226,335 bytes; nothing outside that finite set
+was included.
+
+GitHub's anonymous REST quota returned HTTP 403 before any identity data, so a
+different anonymous primary transport was used instead of looping: direct Git
+smart-HTTP ref advertisement proved the public branch head, and immutable raw
+downloads of all 103 paths matched the locally decoded commit blobs byte for
+byte. The 44,964-byte sanitized receipt has SHA-256
+`c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+No credential was supplied to the public checks. Original-02 is now closed in
+both GitHub and Zenodo; advance to cumulative assessment/proof rubrics, two
+additional labs, capstone, tagged PDF/accessibility, and integrated final
+readers without reopening this tranche.
+
+## 2026-08-28 — D90 integrated course closure accepted locally
+
+Decision: admit Original-03 and the integrated reader/backend boundary. This is
+not a source-selection change. Habring v1 remains the canonical editable spine;
+Becker-01/02/03 remain exact bounded supplements; MIT OCW, Royer, and Penn remain
+separate companions. Original-03 is independently authored under CC BY-SA 4.0
+and imports no O018 LP/MIP, simplex/tableau, LP sensitivity, network, or general
+OR-solver curriculum.
+
+Evidence: the Original-03 closure audit reports 54 assessments, 83 response
+units, seven rubrics, seven capstone milestones, 465 stable definitions, 453
+labels, zero unresolved references, byte-identical laboratory replays, and
+P1=P2=P3=0. The final readers and 4,877-record backend pass deterministic and
+identity gates. Original-01's immutable public 27,431-byte identity is preserved
+alongside its bounded 27,425-byte integrated accessibility descendant. The PDF
+validation ancestor and post-visual-binding descendant are both retained to
+avoid a false self-referential hash requirement.
+
+Decision: stop source expansion. The only remaining action is the fail-closed
+rights/package/publication transaction through the existing GitHub and Zenodo
+lineages, followed by anonymous exact-byte readback and sanitized receipts.
+
+### D90-0064 — Admit Original-03 and close the integrated course boundary
+
+Original-03 is admitted as the finite independent CC BY-SA 4.0 closure. Its
+fourteen modules, three replayed computation components, 54 assessments, 83
+response units, seven proof rubrics, and seven capstone milestones pass with no
+P1/P2/P3 finding. This closes content production without importing O018.
+
+### D90-0065 — Preserve historical identities and designate descendants
+
+The immutable Original-01 public source remains 27,431 bytes /
+`db677ca6bab274a5db3e356fc996cef3bb00fb67770a90984460aa265fabcf26`;
+the integrated typography/accessibility descendant is 27,425 /
+`540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0`.
+Original-02's 4,338-record backend is the protected ancestor of the final 4,877-
+record backend. Exactly 4,337 predecessor records remain byte/order-identical;
+the course record changes from `131d625ee73256d3e4afcd0d240e5df42bf479a1b3bfbf53c37c34de965c1173`
+to `12c05fd66d7925fe0db1c0dcc326a54d2662428400343ec9ece29693dc6dd169`
+in only `source_spine_note` and `source_spine_unit_ids`. The PDF visual receipt
+correctly binds the 80,066-byte validator ancestor
+`f39b33734ca4ecad977758d45c2a26895d3b9d75ee72c17f42b296f7db9f36f0`;
+the current post-binding descendant is 80,194 /
+`8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07`.
+
+### D90-0066 — Fix final mixed rights and publication disposition
+
+There is no blanket license: Habring remains CC BY 4.0, exact Becker donor
+ranges remain MIT, independent Indonesian wording and Original-01/02/03 remain
+CC BY-SA 4.0, and companions retain their own licenses. The reconciled
+integrated release verifier passes with zero contradictions. Publish only to
+the existing GitHub repository and Zenodo concept, keep all access public, use
+the integrated PDF as default preview, and require anonymous byte/hash readback.

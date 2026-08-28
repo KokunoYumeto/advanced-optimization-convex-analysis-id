@@ -1,0 +1,107 @@
+{
+  "access": {
+    "files": "public",
+    "record": "public"
+  },
+  "files": {
+    "default_preview": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+    "enabled": true
+  },
+  "metadata": {
+    "contributors": [
+      {
+        "person_or_org": {
+          "family_name": "Krock",
+          "given_name": "Mitchell",
+          "name": "Krock, Mitchell",
+          "type": "personal"
+        },
+        "role": {"id": "other"}
+      },
+      {
+        "person_or_org": {
+          "name": "TTP",
+          "type": "organizational"
+        },
+        "role": {"id": "other"}
+      }
+    ],
+    "creators": [
+      {
+        "person_or_org": {
+          "family_name": "Habring",
+          "given_name": "Andreas",
+          "name": "Habring, Andreas",
+          "type": "personal"
+        }
+      },
+      {
+        "person_or_org": {
+          "family_name": "Becker",
+          "given_name": "Stephen",
+          "name": "Becker, Stephen",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>Edisi terintegrasi Bahasa Indonesia untuk D90, <em>Optimisasi Lanjut dan Analisis Konveks</em>. Tulang punggung adalah terjemahan lengkap prakata dan Bab 1–9 Andreas Habring, arXiv:2607.11664v1, berdasarkan CC BY 4.0.</p><p>Suplemen Becker memakai hanya commit 98ed6930084c435ba0f675f7646ced1f2fd8729e dari catatan Stephen Becker yang diketik Mitchell Krock, berdasarkan Lisensi MIT: Becker-01 baris 1263–1321, 1398–1405, 1414–1499, 1652–1726, dan 1731–1743; Becker-02 baris 2750–2797; Becker-03 baris 2971–2988. Rentang LP pada 1322–1397, 1406–1413, dan 1727–1730 serta materi bersebelahan tetap dikecualikan. Lisensi MIT berlaku pada donor Becker; terjemahan, koreksi, penghubung, latihan, petunjuk, dan solusi yang ditulis mandiri berlisensi CC BY-SA 4.0.</p><p>Original-01, Original-02, dan Original-03—termasuk asesmen kumulatif, rubrik pembuktian, solusi, laboratorium, dan capstone—merupakan lapisan mandiri CC BY-SA 4.0. MIT OpenCourseWare 6.253, Clément Royer, dan Penn State tetap pembaca pendamping terpisah dengan hak masing-masing dan tidak dimasukkan ke buku terintegrasi. Materi O018 tentang LP/MIP, algoritma simpleks/tableau, sensitivitas LP, dan optimisasi jaringan tetap di luar cakupan.</p><p>Perubahan dan koreksi diungkapkan dalam ledger edisi. Bantuan produksi dan QA: OpenAI Codex gpt-5.6-sol, Ultra, atas instruksi pengguna repositori. Sistem bukan penulis sumber, pemberi lisensi, atau wakil institusi. Edisi ini tidak menyiratkan tinjauan, persetujuan, sponsor, atau dukungan oleh penulis maupun institusi sumber. Tidak ada lisensi menyeluruh untuk rekaman campuran; hak berlaku per berkas dan hubungan sumber.</p><p>PDF adalah permukaan pratinjau tetap; HTML dan EPUB adalah permukaan reflow pilihan. Berkas warisan pada konsep Zenodo mempertahankan hak masing-masing dan delapan manifest historis yang tidak diulang pada versi ini tetap tersedia pada versi konsep terdahulu.</p>",
+    "languages": [{"id": "ind"}],
+    "publication_date": "2026-08-28",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {
+        "identifier": "10.48550/arXiv.2607.11664",
+        "relation_type": {"id": "isderivedfrom"},
+        "resource_type": {"id": "publication-book"},
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/stephenbeckr/convex-optimization-class/tree/98ed6930084c435ba0f675f7646ced1f2fd8729e",
+        "relation_type": {"id": "isderivedfrom"},
+        "resource_type": {"id": "software"},
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+        "relation_type": {"id": "isdocumentedby"},
+        "resource_type": {"id": "software"},
+        "scheme": "url"
+      }
+    ],
+    "resource_type": {"id": "publication-book"},
+    "rights": [
+      {
+        "description": {"en": "No blanket license is asserted; consult the integrated rights/provenance note and component ledger."},
+        "link": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/blob/main/00_control/COMPONENT_RIGHTS.csv",
+        "title": {"en": "Mixed-license record — rights apply per file and source relation"}
+      },
+      {"id": "cc-by-4.0"},
+      {"id": "cc-by-sa-4.0"},
+      {
+        "description": {"en": "Applies only to the exact admitted Becker donor ranges; independent translation and correction wording are separate."},
+        "link": "https://opensource.org/license/mit",
+        "title": {"en": "MIT License — bounded Becker source components only"}
+      },
+      {
+        "description": {"en": "Inherited MIT OCW, Penn, and Royer files remain separately licensed and are not part of the integrated book."},
+        "link": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id/blob/main/RIGHTS.md",
+        "title": {"en": "Inherited companion rights remain per component"}
+      }
+    ],
+    "subjects": [
+      {"subject": "Bahasa Indonesia"},
+      {"subject": "id-ID"},
+      {"subject": "convex analysis"},
+      {"subject": "convex optimization"},
+      {"subject": "nonsmooth optimization"},
+      {"subject": "stochastic optimization"},
+      {"subject": "variational inequalities"},
+      {"subject": "monotone operators"},
+      {"subject": "operator splitting"},
+      {"subject": "optimal transport"},
+      {"subject": "open educational resources"}
+    ],
+    "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Edisi Terintegrasi D90",
+    "version": "d90-integrated-2026.08.28"
+  }
+}

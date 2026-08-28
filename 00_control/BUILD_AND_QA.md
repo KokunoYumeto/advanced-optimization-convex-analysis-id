@@ -1845,3 +1845,81 @@ blank-line-at-EOF findings in the already frozen PDF visual verifier and four
 byte-bound package copies; changing them would invalidate accepted package and
 public identities, so they are preserved. There are no other whitespace or
 patch-integrity findings.
+
+## 2026-08-26 — Original-02 GitHub public-preservation gate closed
+
+Local commit gate: PASS. Commit
+`74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, tree
+`e6c004afc1efeff73a62860039491fd92525ba35`, parent
+`15fb78bcf7c769b524401c24779469d6ecfc5ffd`, contains exactly 103/103
+manifest paths with only added/modified statuses. Remote push to the existing
+`main` branch passed.
+
+Anonymous public-byte gate: PASS. The REST route was unavailable because the
+anonymous GitHub quota returned 403 before data. Direct unauthenticated Git
+smart-HTTP ref advertisement proved public `main` equals the target commit;
+all 103 immutable raw URLs then matched the corresponding commit blobs. Total
+verified public content is 11,226,335 bytes. Receipt:
+`release/github/2026-08-26-original-02/github-public-readback-original-02.json`,
+44,964 bytes / SHA-256
+`c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+No credential material was supplied or recorded. Original-02 preservation is
+closed; the next QA boundary belongs to course-wide assessment, two remaining
+labs, capstone, tagged PDF/accessibility, and integrated final readers.
+
+## 2026-08-28 — Original-03 and integrated reader/backend gate
+
+Original-03 closure: PASS. The 53,446-byte receipt SHA-256 is
+`0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907`;
+P1/P2/P3 are all zero. Three bounded scripts (smooth globalization,
+log-domain entropic transport, and composite inverse-problem capstone) replay
+twice byte-identically and all numerical certificates pass.
+
+Integrated PDF: PASS. Artifact: 1,671,254 bytes, 141 pages, SHA-256
+`9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5`.
+Build receipt: 10,782 bytes /
+`a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d`.
+The structural validator ancestor before binding visual evidence is 80,066
+bytes / `f39b33734ca4ecad977758d45c2a26895d3b9d75ee72c17f42b296f7db9f36f0`;
+the current post-binding descendant is 80,194 /
+`8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07`.
+This two-identity chain is intentional. Every one of 141 pages was rendered and
+inspected; the visual receipt is 3,100 /
+`41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d`.
+Searchability, `id-ID`, marked content, structure tree, reading order,
+bookmarks, links, font maps, and `/Tabs /S` all pass. No PDF/UA claim is made.
+
+Integrated HTML/EPUB: PASS. HTML is 2,485,595 /
+`028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89`;
+EPUB is 379,901 /
+`1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321`.
+Live Chromium checks at 1,440, 768, and 390 pixels find zero page overflow,
+escaped elements, broken images, or missing internal targets; 4,535 MathML
+surfaces remain native, and wide formulas/tables scroll only locally. Browser
+receipt: 4,436 / `c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a`.
+
+Backend: PASS at 4,877 records. JSONL is 3,534,351 /
+`a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30`;
+CSV is 4,272,596 /
+`8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915`.
+All 4,337 non-course predecessor records remain byte/order-identical, the one
+course record changes exactly two stale fields, and 539 records are appended.
+Publication/package validation follows after control reconciliation.
+
+Final consolidated detail: the PDF validator records 78 outlines, 328,294
+searchable characters, all 25 fonts embedded, six fonts with Unicode maps and
+19 mathematical fonts without Unicode maps; marked/structured content and
+`/Tabs /S` pass on every page. The reflow validator records 4,535 MathML
+surfaces, 729 display surfaces, 651 labels, and 29 order markers; EPUBCheck has
+zero errors and warnings. The live browser receipt already obtained at the
+accepted reader boundary supersedes the earlier static receipt's geometry
+limitation; no new visible-browser run is needed or permitted.
+
+Final integrated rights/release audit: PASS. Script
+`qa/verify_integrated_rights_release.py` is 89,201 bytes / SHA-256
+`53bbde57200d9f10751715d2849a8f489ea01cbe0cbd52b6a5b9405ad5161763`;
+receipt `qa/INTEGRATED_RIGHTS_RELEASE_QA.json` is 68,004 /
+`35ce414e9a347db004562df18b77ea3ddcf9a89095dd9156672de8912a778003`.
+Result `pass`, `release_ready=true`, failed checks empty, contradiction count
+zero, privacy pass, and publication-route pass. This audit used no network,
+Git, credential, or browser operation.

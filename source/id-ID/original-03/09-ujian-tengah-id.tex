@@ -1,0 +1,320 @@
+% segment-local-id: OR03-S010
+% segment-id: d90.orig.v1.tr03.seg0010
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Ujian tengah kumulatif}
+\label{orig03:midterm}
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0001
+\begin{exercise}[Keberadaan dan ketunggalan model kuadrat--$\ell^1$]
+\label{orig03:midterm:exercise:0001}
+Untuk $A\in\mathbb R^{m\times n}$, $b\in\mathbb R^m$, dan $\lambda>0$,
+pertimbangkan
+\[
+ F(x)=\lVert Ax-b\rVert_2^2+\lambda\lVert x\rVert_1.
+\]
+Buktikan bahwa $F$ selalu mempunyai peminimum. Apakah peminimum itu selalu
+tunggal? Berikan satu kondisi sederhana pada $A$ yang menjamin ketunggalan.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0001
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0001}
+\textbf{Tahap 1.} Bandingkan $F(x)$ dengan $\lambda\lVert x\rVert_1$ ketika
+$\lVert x\rVert_2\to\infty$.
+\textbf{Tahap 2.} Untuk ketunggalan, cari kondisi yang membuat suku kuadrat
+konveks ketat; untuk menyangkal ketunggalan umum, izinkan $A$ memiliki
+kernel.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0001
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0001}
+$F$ kontinu dan koersif karena
+$F(x)\ge\lambda\lVert x\rVert_1$, sehingga minimum dicapai. Ketunggalan tidak
+selalu berlaku; misalnya $A=0$ dan $b=0$ sebenarnya memberi minimum tunggal,
+tetapi matriks dengan kolom identik dapat menghasilkan banyak representasi
+$\ell^1$ dengan nilai sama. Kondisi sederhana yang cukup adalah $A$ berperingkat
+kolom penuh.
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0001
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0001}
+Kedua suku $F$ kontinu dan tak negatif. Karena
+$\lVert x\rVert_1\ge\lVert x\rVert_2$,
+\[
+ F(x)\ge\lambda\lVert x\rVert_2\longrightarrow\infty
+ \quad\text{ketika }\lVert x\rVert_2\to\infty.
+\]
+Jadi semua himpunan sublevel tak kosong yang relevan kompak, dan teorema
+Weierstrass memberi keberadaan peminimum.
+
+Ketunggalan dapat gagal. Sebagai contoh, ambil
+$A=(1\;1)$, $b=1$, dan $0<\lambda<2$. Untuk $x_1,x_2\ge0$ dengan
+$x_1+x_2=s$, objektif hanya bergantung pada $s$:
+$(s-1)^2+\lambda s$. Nilai minimumnya dicapai pada
+$s=1-\lambda/2>0$, dan setiap pembagian nonnegatif dari $s$ memberi
+peminimum berbeda. Jika $A$ berperingkat kolom penuh, maka
+$x\mapsto\lVert Ax-b\rVert^2$ konveks ketat. Jumlah fungsi konveks ketat
+dengan fungsi konveks tetap konveks ketat, sehingga peminimum yang sudah
+terbukti ada harus tunggal.
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0002
+\begin{exercise}[Konjugat kuadrat bergeser]
+\label{orig03:midterm:exercise:0002}
+Untuk $\mu>0$ dan $c\in\mathbb R^n$, definisikan
+\[
+ f(x)=\frac\mu2\lVert x\rVert^2+\langle c,x\rangle.
+\]
+Hitung $f^*$ secara langsung dari definisi, verifikasi $f^{**}=f$, dan
+tentukan konstanta Lipschitz terkecil dari $\nabla f^*$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0002
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0002}
+\textbf{Tahap 1.} Maksimalkan kuadrat konkaf dalam definisi
+$f^*(y)=\sup_x\{\langle y,x\rangle-f(x)\}$.
+\textbf{Tahap 2.} Terapkan perhitungan yang sama pada $f^*$ atau substitusikan
+gradien inversnya.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0002
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0002}
+\[
+ f^*(y)=\frac1{2\mu}\lVert y-c\rVert^2,
+ \qquad
+ \nabla f^*(y)=\frac{y-c}{\mu}.
+\]
+Karena itu $f^{**}=f$, dan konstanta Lipschitz terkecil gradien $f^*$ adalah
+$1/\mu$.
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0002
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0002}
+Definisi konjugat memberi
+\[
+ f^*(y)=\sup_x\left\{\langle y-c,x\rangle-\frac\mu2\lVert x\rVert^2\right\}.
+\]
+Titik stasionernya $x=(y-c)/\mu$, dan substitusi menghasilkan
+$\lVert y-c\rVert^2/(2\mu)$. Selanjutnya,
+\[
+ f^{**}(x)=\sup_y\left\{\langle x,y\rangle
+ -\frac1{2\mu}\lVert y-c\rVert^2\right\}.
+\]
+Peminimum negatif kuadrat, atau kondisi stasioner, memberi
+$y=c+\mu x$. Nilainya
+$\langle c,x\rangle+\mu\lVert x\rVert^2/2=f(x)$. Akhirnya,
+\[
+ \lVert\nabla f^*(y)-\nabla f^*(z)\rVert
+ =\frac1\mu\lVert y-z\rVert.
+\]
+Kesetaraan berlaku untuk setiap pasangan berbeda, jadi $1/\mu$ bukan hanya
+batas yang cukup, melainkan konstanta terkecil.
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0003
+\begin{exercise}[Ketaksamaan satu langkah gradien proksimal]
+\label{orig03:midterm:exercise:0003}
+Misalkan $f$ konveks dengan gradien $L$-Lipschitz dan $r$ konveks proper
+semikontinu-bawah. Untuk $0<\eta\le1/L$, definisikan
+\[
+ x^+=\operatorname{prox}_{\eta r}(x-\eta\nabla f(x)),
+ \qquad F=f+r.
+\]
+Buktikan bahwa untuk setiap $u\in\operatorname{dom}r$,
+\[
+ F(x^+)-F(u)
+ \le\frac{\lVert x-u\rVert^2-\lVert x^+-u\rVert^2}{2\eta}.
+\]
+Kemudian turunkan batas $O(1/k)$ untuk nilai fungsi iterasi gradien proksimal
+bila peminimum $x^\star$ ada.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0003
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0003}
+\textbf{Tahap 1.} Gabungkan lemma penurunan untuk $f$ dengan inklusi
+optimalitas proksimal dan ketaksamaan subgradien untuk $r$.
+\textbf{Tahap 2.} Gunakan identitas tiga norma, tetapkan $u=x^\star$, lalu
+jumlahkan dan manfaatkan monotoni nilai objektif.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0003
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0003}
+Suku tambahan yang muncul adalah
+$-(1/(2\eta)-L/2)\lVert x^+-x\rVert^2\le0$, sehingga ketaksamaan yang diminta
+berlaku. Untuk iterasi $x_{j+1}$ yang sama,
+\[
+ F(x_k)-F(x^\star)
+ \le\frac{\lVert x_0-x^\star\rVert^2}{2\eta k}.
+\]
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0003
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0003}
+Inklusi proksimal menyediakan $s^+\in\partial r(x^+)$ dengan
+\[
+ s^+=-\nabla f(x)-\frac1\eta(x^+-x).
+\]
+Lemma penurunan, konveksitas $f$, dan ketaksamaan subgradien memberi
+\begin{align*}
+ F(x^+)-F(u)
+ &\le \langle\nabla f(x),x^+-u\rangle
+      +\frac L2\lVert x^+-x\rVert^2
+      +\langle s^+,x^+-u\rangle\\
+ &=-\frac1\eta\langle x^+-x,x^+-u\rangle
+      +\frac L2\lVert x^+-x\rVert^2\\
+ &=\frac{\lVert x-u\rVert^2-\lVert x^+-u\rVert^2}{2\eta}
+   -\left(\frac1{2\eta}-\frac L2\right)\lVert x^+-x\rVert^2.
+\end{align*}
+Koefisien terakhir nonnegatif karena $\eta\le1/L$, sehingga suku negatif itu
+dapat dibuang. Dengan $u=x^\star$, penjumlahan untuk $j=0,\ldots,k-1$
+meneleskopkan jarak dan memberi
+\[
+ \sum_{j=0}^{k-1}\bigl(F(x_{j+1})-F(x^\star)\bigr)
+ \le\frac{\lVert x_0-x^\star\rVert^2}{2\eta}.
+\]
+Ketaksamaan yang sama dengan $u=x_j$ menunjukkan nilai $F(x_j)$ tidak naik.
+Karena itu suku terakhir tidak melebihi rata-rata $k$ suku, yang menghasilkan
+batas pada jawaban singkat.
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0004
+\begin{exercise}[Newton dan penerimaan langkah penuh Armijo]
+\label{orig03:midterm:exercise:0004}
+Misalkan
+\[
+ f(x)=\tfrac12x^\top Qx-b^\top x,
+ \qquad Q\succ0.
+\]
+Dari titik sembarang $x$, tentukan arah Newton $p$, buktikan bahwa $x+p$
+adalah peminimum eksak, dan tunjukkan bahwa uji Armijo
+\[
+ f(x+p)\le f(x)+c\nabla f(x)^\top p
+\]
+menerima langkah penuh untuk setiap $0<c\le1/2$.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0004
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0004}
+\textbf{Tahap 1.} Selesaikan $Qp=-\nabla f(x)$ dan hitung gradien di $x+p$.
+\textbf{Tahap 2.} Gunakan ekspansi kuadrat eksak sepanjang $p$ serta
+$\nabla f(x)^\top p=-p^\top Qp$.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0004
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0004}
+$p=Q^{-1}(b-Qx)$ dan $x+p=Q^{-1}b=x^\star$. Selain itu,
+\[
+ f(x+p)=f(x)-\tfrac12p^\top Qp,
+ \qquad \nabla f(x)^\top p=-p^\top Qp,
+\]
+sehingga Armijo berlaku tepat bila $c\le1/2$ (atau trivial bila $p=0$).
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0004
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0004}
+Gradiennya $Qx-b$ dan Hessiannya $Q$. Persamaan Newton
+$Qp=-(Qx-b)$ memberi $p=Q^{-1}b-x$, sehingga titik baru adalah
+$Q^{-1}b$. Karena $Q$ definit positif, titik stasioner ini peminimum tunggal.
+Ekspansi eksak memberi
+\[
+ f(x+p)=f(x)+\nabla f(x)^\top p+\tfrac12p^\top Qp
+ =f(x)-\tfrac12p^\top Qp.
+\]
+Ruas kanan uji Armijo adalah
+$f(x)-c\,p^\top Qp$. Untuk $p\ne0$, definit positifnya $Q$ membuat uji
+ekuivalen dengan $1/2\ge c$. Jika $p=0$, titik sudah optimal dan kedua ruas
+sama untuk semua $c$.
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0005
+\begin{exercise}[KKT untuk proyeksi pada bola]
+\label{orig03:midterm:exercise:0005}
+Ambil $R>0$ dan $c\in\mathbb R^n$ dengan $\lVert c\rVert>R$. Selesaikan
+\[
+ \min_x\ \tfrac12\lVert x-c\rVert^2
+ \quad\text{dengan syarat}\quad
+ h(x)=\tfrac12(\lVert x\rVert^2-R^2)\le0.
+\]
+Verifikasi kondisi Slater, tulis seluruh kondisi KKT, dan hitung pasangan
+primal--dual optimal secara eksplisit.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0005
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0005}
+\textbf{Tahap 1.} Titik nol adalah titik Slater; karena $c$ di luar bola,
+kendala pada solusi harus aktif.
+\textbf{Tahap 2.} Stasioneritas memberi $(1+\lambda)x=c$.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0005
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0005}
+KKT terdiri dari
+\[
+ x-c+\lambda x=0,quad h(x)\le0,quad\lambda\ge0,quad\lambda h(x)=0.
+\]
+Solusinya
+\[
+ x^\star=R\frac{c}{\lVert c\rVert},
+ \qquad \lambda^\star=\frac{\lVert c\rVert}{R}-1.
+\]
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0005
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0005}
+Karena $h(0)=-R^2/2<0$, Slater berlaku. Masalah konveks dan objektifnya
+konveks ketat, sehingga KKT perlu dan cukup serta solusi primal tunggal.
+Lagrangiannya
+\[
+ L(x,\lambda)=\tfrac12\lVert x-c\rVert^2
+ +\frac\lambda2(\lVert x\rVert^2-R^2).
+\]
+Stasioneritas dan tiga kondisi lainnya tercantum pada jawaban singkat. Solusi
+tanpa kendala $x=c$ tidak layak, maka kendala aktif dan
+$\lVert x\rVert=R$. Dari $(1+\lambda)x=c$ diperoleh bahwa $x$ searah dengan
+$c$. Menormakan persamaan itu menghasilkan
+$1+\lambda=\lVert c\rVert/R$, sehingga pasangan yang dinyatakan mengikuti.
+Pengalinya positif, maka semua kondisi KKT terpenuhi.
+
+% stable-id: d90.orig.v1.tr03.midterm.exercise.0006
+\begin{exercise}[Ketika kualifikasi gagal dan pengali tidak ada]
+\label{orig03:midterm:exercise:0006}
+Pertimbangkan masalah konveks skalar
+\[
+ \min_{x\in\mathbb R} x
+ \quad\text{dengan syarat}\quad x^2\le0.
+\]
+Tentukan solusi, tunjukkan bahwa Slater gagal, dan buktikan bahwa tidak ada
+pengali $\lambda\ge0$ yang memenuhi kondisi KKT pada solusi. Jelaskan mengapa
+contoh ini tidak menyangkal teorema KKT dengan kualifikasi.
+\end{exercise}
+
+% stable-id: d90.orig.v1.tr03.midterm.hint.0006
+\paragraph{Petunjuk bertahap.}
+\label{orig03:midterm:hint:0006}
+\textbf{Tahap 1.} Tentukan seluruh himpunan layak dari ketaksamaan kuadrat.
+\textbf{Tahap 2.} Diferensiasikan $L(x,\lambda)=x+\lambda x^2$ di titik layak.
+
+% stable-id: d90.orig.v1.tr03.midterm.answer.0006
+\paragraph{Jawaban singkat.}
+\label{orig03:midterm:answer:0006}
+Satu-satunya titik layak dan optimal ialah $x^\star=0$. Tidak ada titik dengan
+$x^2<0$, jadi Slater gagal. Stasioneritas KKT menuntut
+$1+2\lambda x^\star=0$, yakni $1=0$, mustahil untuk setiap $\lambda$.
+
+% stable-id: d90.orig.v1.tr03.midterm.solution.0006
+\paragraph{Solusi lengkap.}
+\label{orig03:midterm:solution:0006}
+Karena kuadrat selalu nonnegatif, syarat $x^2\le0$ ekuivalen dengan $x=0$.
+Maka $x^\star=0$ adalah satu-satunya titik layak dan otomatis peminimum.
+Slater memerlukan titik dengan $x^2<0$, yang tidak ada. Untuk pengali
+$\lambda\ge0$, Lagrangian adalah $L(x,\lambda)=x+\lambda x^2$ dan kondisi
+stasioneritas pada $x^\star$ ialah
+\[
+ 0=\frac{\partial L}{\partial x}(0,\lambda)=1+2\lambda\cdot0=1,
+\]
+sebuah kontradiksi. Teorema KKT yang menjamin keberadaan pengali memakai
+kondisi kualifikasi seperti Slater. Hipotesis itu gagal di sini, sehingga
+ketiadaan pengali justru menunjukkan mengapa kualifikasi tidak boleh
+dihilangkan.

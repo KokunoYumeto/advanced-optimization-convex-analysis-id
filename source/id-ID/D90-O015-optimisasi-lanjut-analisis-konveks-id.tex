@@ -1,0 +1,122 @@
+% course-id: d90.o015.course.id-ID
+% canonical-spine: Andreas Habring, arXiv:2607.11664v1, CC BY 4.0
+% bounded-supplement: Stephen Becker / Mitchell Krock, MIT License
+% independent-completion-layer: CC BY-SA 4.0
+\NewTaggingSocket{minipage/before}{0}
+\NewTaggingSocket{minipage/after}{0}
+\NewTaggingSocket{parbox/before}{0}
+\NewTaggingSocket{parbox/after}{0}
+\DocumentMetadata{lang=id-ID,tagging=on}
+\documentclass[11pt,a4paper,oneside,openany]{book}
+\input{o015-accessibility-id}
+\addbibresource{references-integrated-id.bib}
+
+\title{Optimisasi Lanjut dan Analisis Konveks}
+\author{Andreas Habring; Stephen Becker; Mitchell Krock\\
+  dengan lapisan penghubung dan asesmen mandiri}
+\date{Edisi Bahasa Indonesia (id-ID), 26 Agustus 2026}
+\hypersetup{
+  pdflang={id-ID},
+  pdftitle={Optimisasi Lanjut dan Analisis Konveks - Edisi Bahasa Indonesia},
+  pdfauthor={Andreas Habring; Stephen Becker; Mitchell Krock},
+  pdfsubject={Buku kursus optimisasi lanjut dan analisis konveks},
+  pdfkeywords={optimisasi konveks, metode proksimal, dualitas, metode stokastik, operator monoton, transportasi optimal},
+  pdfcreator={OpenAI Codex gpt-5.6-sol, Ultra}
+}
+
+\begin{document}
+\tagpdfsetup{para/tagging=false}
+
+\OBeginStructure{Bagian awal}
+\hypersetup{pageanchor=false}
+\frontmatter
+\maketitle
+\hypersetup{pageanchor=true}
+\chapter*{Tentang edisi ini}
+\addcontentsline{toc}{chapter}{Tentang edisi ini}
+Buku ini adalah edisi Bahasa Indonesia mandiri untuk belajar optimisasi lanjut
+dan analisis konveks. Tulang punggung terstruktur menerjemahkan lengkap catatan
+Andreas Habring, arXiv:2607.11664v1, berdasarkan CC BY 4.0. Tiga suplemen
+terbatas dari catatan Stephen Becker yang diketik Mitchell Krock digunakan
+berdasarkan Lisensi MIT. Bab penghubung, asesmen, solusi, laboratorium, dan
+proyek yang ditulis khusus untuk edisi ini tersedia berdasarkan CC BY-SA 4.0.
+Hak setiap komponen tetap terpisah; tidak ada klaim lisensi payung.
+
+Edisi ini bukan karya resmi atau dukungan Habring, Becker, Krock, institusi
+mereka, maupun penyedia sumber pendamping. Materi MIT OpenCourseWare, Clément
+Royer, dan Penn State dipertahankan sebagai pembaca pendamping terpisah dan
+tidak disisipkan diam-diam ke dalam buku kanonis ini. Materi O018 tentang
+program linear atau bilangan bulat, simpleks, sensitivitas LP, dan optimisasi
+jaringan berada di luar cakupan.
+
+Produksi edisi dan pemeriksaan deterministik menggunakan OpenAI Codex
+gpt-5.6-sol, Ultra. Kredit pengarang sumber dan kontribusi manusia tetap
+dipertahankan. Perubahan substantif dan koreksi didokumentasikan dalam berkas
+provenans edisi.
+
+PDF ini menyediakan teks yang dapat dicari, bahasa dokumen id-ID, markah,
+bookmark, tautan, dan pohon struktur berurutan. Karena validator PDF/UA yang
+dipatok tidak tersedia pada toolchain produksi, edisi ini tidak mengklaim
+kesesuaian PDF/UA. HTML dan EPUB 3 menyediakan permukaan reflow utama.
+
+\chapter*{Deskripsi gambar raster}
+\addcontentsline{toc}{chapter}{Deskripsi gambar raster}
+Enam gambar raster dari tulang punggung mempunyai keterangan dan uraian
+sekitar. Secara ringkas: \emph{sets.png} membandingkan contoh himpunan konveks
+dan tak konveks; \emph{balls.png} membandingkan bola satuan beberapa norma;
+\emph{convex\_fct.png} menunjukkan grafik fungsi konveks dan garis tali
+busurnya; \emph{gradient.png} menunjukkan gradien sebagai penyangga lokal;
+\emph{subgradient.png} menunjukkan keluarga subgradien pada titik tak mulus;
+\emph{discontinuous\_function.png} dan \emph{lsc\_function.png} membandingkan
+fungsi diskontinu dengan fungsi semikontinu bawah. Gambar TikZ dan grafik
+komputasi dijelaskan oleh keterangan serta teks yang langsung mendahului atau
+mengikutinya.
+
+\tableofcontents
+\OEndStructure
+
+\mainmatter
+\OBeginStructure{Tulang punggung Habring}
+\part{Tulang Punggung: Optimisasi Konveks}
+\input{habring-01-prasyarat-id}
+\input{habring-02-konveksitas-id}
+\input{habring-03-subgradien-id}
+\input{habring-04-metode-subgradien-terproyeksi-id}
+\input{habring-05-metode-gradien-proksimal-id}
+\input{habring-06-akselerasi-id}
+\input{habring-07-dualitas-id}
+\input{habring-08-penurunan-gradien-stokastik-id}
+\input{habring-09-transportasi-optimal-id}
+\OEndStructure
+
+\OBeginStructure{Suplemen Becker pertama}
+\part{Suplemen Terbatas: Dualitas dan Reduksi Varians}
+\input{becker-01-dualitas-lagrange-slater-kkt-id}
+\input{becker-03-reduksi-varians-id}
+\OEndStructure
+
+\OBeginStructure{Lapisan mandiri pertama}
+\part{Metode Stokastik Komposit}
+\input{original-01-metode-stokastik-komposit-cermin-minibatch-id}
+\OEndStructure
+
+\OBeginStructure{Suplemen Becker kedua}
+\part{Suplemen Terbatas: Douglas--Rachford}
+\input{becker-02-pemisahan-douglas-rachford-id}
+\OEndStructure
+
+\OBeginStructure{Lapisan mandiri kedua}
+\part{Operator Monoton dan Pemisahan}
+\input{original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id}
+\OEndStructure
+
+\OBeginStructure{Asesmen dan penutupan kursus}
+\part{Asesmen dan Penutupan Kursus}
+\input{original-03-penutupan-kursus-id}
+\OEndStructure
+
+\backmatter
+\OBeginStructure{Referensi}
+\printbibliography[heading=bibintoc,title={Referensi}]
+\OEndStructure
+\end{document}

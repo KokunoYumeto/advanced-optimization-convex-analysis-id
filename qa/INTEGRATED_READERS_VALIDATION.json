@@ -1,0 +1,300 @@
+{
+  "browser": {
+    "artifact": {
+      "bytes": 2485595,
+      "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+    },
+    "common": {
+      "broken_images": 0,
+      "document_title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia",
+      "first_focusable_text": "Langsung ke isi utama",
+      "headings": 224,
+      "images": 5,
+      "internal_links": 261,
+      "language": "id-ID",
+      "missing_internal_targets": 0,
+      "native_mathml_surfaces": 4535
+    },
+    "date": "2026-08-28",
+    "desktop": {
+      "horizontal_overflow": false,
+      "layout_viewport_width": 1425,
+      "left_gutter": 16.0,
+      "main_landmarks": 1,
+      "main_width_ratio": 0.977466,
+      "mathml_count": 4535,
+      "requested_viewport": [
+        1440,
+        900
+      ],
+      "right_gutter": 16.111083984375,
+      "skip_target_valid": true,
+      "toc_landmarks": 1
+    },
+    "keyboard": {
+      "first_focus_is_skip_link": true,
+      "focused_href": "#main-content",
+      "focused_rect": {
+        "bottom": 57.04861068725586,
+        "left": 8.0,
+        "right": 198.7777862548828,
+        "top": 8.0
+      },
+      "focused_text": "Langsung ke isi utama",
+      "focused_transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "skip_link_visible": true
+    },
+    "method": {
+      "local_server_stopped_after_review": true,
+      "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+      "surface": "Codex in-app Chromium browser over a task-local 127.0.0.1 HTTP server",
+      "viewport_override_reset_after_review": true,
+      "visual_spot_checks": [
+        "phone title and contents",
+        "phone Original-03 course-closure opening",
+        "phone locally scrollable wide formula",
+        "phone locally scrollable numeric table",
+        "1024-pixel compact desktop title and contents",
+        "1440-pixel desktop title and contents"
+      ]
+    },
+    "mobile": {
+      "horizontal_overflow": false,
+      "layout_viewport_width": 375.1111145019531,
+      "left_gutter": 6.0,
+      "main_landmarks": 1,
+      "main_width_ratio": 0.967997,
+      "mathml_count": 4535,
+      "requested_viewport": [
+        390,
+        844
+      ],
+      "right_gutter": 6.0,
+      "skip_target_valid": true,
+      "toc_landmarks": 1
+    },
+    "schema": "o015-integrated-browser-qa-v1",
+    "status": "pass",
+    "supersedes_limitation_in": "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+    "supersession_note": "The earlier independent static audit could not obtain rendered viewport geometry because it attempted local-file access. This live localhost browser audit supplies that missing evidence without changing reader bytes.",
+    "viewports": [
+      {
+        "document_scroll_width": 1425,
+        "escaped_visible_elements": 0,
+        "height": 900,
+        "local_horizontal_scrollers": 0,
+        "main": {
+          "left": 16.0,
+          "margin_balance_delta": 15.111083984375,
+          "right": 1408.888916015625,
+          "viewport_ratio": 0.9672839694552952,
+          "width": 1392.888916015625
+        },
+        "name": "desktop",
+        "root_horizontal_overflow_pixels": 0,
+        "width": 1440
+      },
+      {
+        "document_scroll_width": 753,
+        "escaped_visible_elements": 0,
+        "height": 1024,
+        "local_horizontal_scrollers": 5,
+        "main": {
+          "left": 6.0,
+          "margin_balance_delta": 15.111083984375,
+          "right": 746.888916015625,
+          "viewport_ratio": 0.9646991093953452,
+          "width": 740.888916015625
+        },
+        "name": "tablet",
+        "root_horizontal_overflow_pixels": 0,
+        "width": 768
+      },
+      {
+        "document_scroll_width": 375,
+        "escaped_visible_elements": 0,
+        "height": 844,
+        "local_horizontal_scrollers": 277,
+        "local_scroller_breakdown": {
+          "math": 274,
+          "table": 3
+        },
+        "main": {
+          "left": 6.0,
+          "margin_balance_delta": 14.888885498046877,
+          "right": 369.1111145019531,
+          "viewport_ratio": 0.9310541397485976,
+          "width": 363.1111145019531
+        },
+        "name": "phone",
+        "root_horizontal_overflow_pixels": 0,
+        "width": 390
+      }
+    ],
+    "visual_findings": {
+      "broken_images": 0,
+      "clipped_text_or_math": 0,
+      "escaped_content": 0,
+      "page_level_horizontal_overflow": 0,
+      "result": "The reader fills and remains centered within each tested viewport. Wide mathematics and three tables scroll only inside their own visible containers; they never widen the page.",
+      "title_or_author_overflow": 0,
+      "uncontained_wide_formulas": 0,
+      "uncontained_wide_tables": 0,
+      "unreadable_body_text": 0
+    }
+  },
+  "epub": {
+    "bytes": 379901,
+    "canonical_order_marker_count": 29,
+    "display_mathml_count": 729,
+    "environment_counts": {
+      "cor": 6,
+      "defn": 41,
+      "example": 15,
+      "exercise": 74,
+      "lemma": 36,
+      "proof": 92,
+      "prop": 8,
+      "rem": 8,
+      "theorem": 54
+    },
+    "epubcheck": {
+      "exit_code": 0,
+      "jar_sha256": "f7f96617c929371821609b88c8484d6dc9f24fe916499863c46094c5fb778a65",
+      "message_count": 4,
+      "output": "Validating using EPUB version 3.3 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed",
+      "performed": true
+    },
+    "image_count": 5,
+    "image_long_description_count": 5,
+    "internal_link_count": 255,
+    "landmarks_nav_count": 1,
+    "manifest_item_count": 16,
+    "mathml_count": 4535,
+    "metadata": {
+      "creators": [
+        "Andreas Habring; Stephen Becker; Mitchell Krock; edisi mandiri"
+      ],
+      "identifiers": [
+        "urn:uuid:81057e39-68c8-5b34-8d59-f53deae44ec2"
+      ],
+      "language": [
+        "id-ID"
+      ],
+      "properties": [
+        [
+          "role",
+          "aut"
+        ],
+        [
+          "dcterms:modified",
+          "2026-08-27T00:00:00Z"
+        ],
+        [
+          "schema:accessMode",
+          "textual"
+        ],
+        [
+          "schema:accessModeSufficient",
+          "textual"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "alternativeText"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "readingOrder"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "structuralNavigation"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "tableOfContents"
+        ],
+        [
+          "schema:accessibilityHazard",
+          "none"
+        ],
+        [
+          "schema:accessMode",
+          "visual"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "MathML"
+        ],
+        [
+          "schema:accessibilitySummary",
+          "Pembaca reflow dengan struktur tajuk, navigasi, MathML beranotasi TeX, teks alternatif, dan deskripsi gambar rinci."
+        ]
+      ],
+      "rights": "Hak komponen terpisah: Habring—CC BY 4.0; Becker/Krock—Lisensi MIT; lapisan asli edisi—CC BY-SA 4.0. Tidak ada lisensi payung.",
+      "title": [
+        "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia"
+      ]
+    },
+    "navigation_link_count": 80,
+    "nonempty_image_alt_count": 5,
+    "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+    "preserved_source_label_count": 651,
+    "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321",
+    "source_label_count": 651,
+    "source_order_sentinel_count": 29,
+    "spine_item_count": 9,
+    "tex_annotation_count": 4535,
+    "unresolved_internal_references": [],
+    "xhtml_member_count": 9,
+    "xml_member_count": 13,
+    "zip_entry_count": 20
+  },
+  "failures": [],
+  "html": {
+    "bytes": 2485595,
+    "canonical_order_marker_count": 29,
+    "display_mathml_count": 729,
+    "environment_counts": {
+      "cor": 6,
+      "defn": 41,
+      "example": 15,
+      "exercise": 74,
+      "lemma": 36,
+      "proof": 92,
+      "prop": 8,
+      "rem": 8,
+      "theorem": 54
+    },
+    "id_count": 852,
+    "image_count": 5,
+    "internal_link_count": 261,
+    "long_description_count": 5,
+    "mathml_count": 4535,
+    "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+    "preserved_source_label_count": 651,
+    "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89",
+    "source_label_count": 651,
+    "source_order_sentinel_count": 29,
+    "tex_annotation_count": 4535,
+    "unresolved_internal_fragments": []
+  },
+  "result": "pass",
+  "schema": "o015-integrated-readers-validation-v1",
+  "source_contract": {
+    "environment_counts": {
+      "cor": 6,
+      "defn": 41,
+      "example": 15,
+      "exercise": 74,
+      "lemma": 36,
+      "proof": 92,
+      "prop": 8,
+      "rem": 8,
+      "theorem": 54
+    },
+    "file_count": 29,
+    "label_count": 651
+  }
+}

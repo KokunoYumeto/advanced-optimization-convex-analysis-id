@@ -1,0 +1,403 @@
+% ORIG03-SEGMENT-CODE: OR03-S003
+% ORIG03-SEGMENT-ID: d90.orig.v1.tr03.seg0003
+% ORIG03-MODULE-ID: ps01.module.0001
+% SPDX-License-Identifier: CC-BY-SA-4.0
+% Karya asli berbahasa Indonesia; semua butir disusun independen.
+
+\section{Set soal I: dasar konveks}
+\label{orig03:section:set-soal-dasar-konveks}
+
+Lima masalah berikut melatih definisi konveksitas, kelengkungan kuadratik,
+ketaksamaan Jensen, konjugasi Fenchel, dan proyeksi. Setiap subbutir adalah
+prompt tersendiri dengan dua petunjuk, jawaban ringkas, dan solusi lengkap.
+
+% ORIG03-STABLE-ID: ps01.problem.0001
+\begin{exercise}[Maksimum afin, subdiferensial, dan optimalitas]
+\label{orig03:ps01:problem:0001}
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps01.prompt.0001
+\item\label{orig03:ps01:prompt:0001}
+Untuk $a_1,a_2\in\mathbb{R}^n$ dan $b_1,b_2\in\mathbb{R}$, buktikan bahwa
+\[
+  f(x)=\max\{a_1^\top x+b_1,\,a_2^\top x+b_2\}
+\]
+adalah fungsi konveks.
+% ORIG03-STABLE-ID: ps01.prompt.0002
+\item\label{orig03:ps01:prompt:0002}
+Tentukan $\partial |x|$ untuk setiap $x\in\mathbb{R}$.
+% ORIG03-STABLE-ID: ps01.prompt.0003
+\item\label{orig03:ps01:prompt:0003}
+Tentukan peminimum dan nilai minimum
+\[
+  \phi(x)=|x|+\frac12(x-1)^2,
+\]
+serta verifikasi syarat optimalitas subgradien di titik tersebut.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps01.hint1.0001
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0001).}
+Tuliskan kedua fungsi afin sebagai $\ell_i(x)=a_i^\top x+b_i$.
+\label{orig03:ps01:hint1:0001}
+% ORIG03-STABLE-ID: ps01.hint2.0001
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0001).}
+Untuk $t\in[0,1]$, batasi setiap
+$t\ell_i(x)+(1-t)\ell_i(y)$ dengan kombinasi maksimum di $x$ dan $y$.
+\label{orig03:ps01:hint2:0001}
+% ORIG03-STABLE-ID: ps01.answer.0001
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0001).}
+$f$ konveks karena maksimum berhingga fungsi-fungsi afin adalah konveks.
+\label{orig03:ps01:answer:0001}
+% ORIG03-STABLE-ID: ps01.solution.0001
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0001).}
+Ambil $x,y\in\mathbb{R}^n$ dan $t\in[0,1]$. Untuk setiap $i\in\{1,2\}$,
+\[
+ \ell_i(tx+(1-t)y)
+ =t\ell_i(x)+(1-t)\ell_i(y)
+ \leq t f(x)+(1-t)f(y).
+\]
+Mengambil maksimum terhadap $i$ pada ruas kiri memberi
+$f(tx+(1-t)y)\leq t f(x)+(1-t)f(y)$, yakni definisi konveksitas.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:ps01:solution:0001}
+
+% ORIG03-STABLE-ID: ps01.hint1.0002
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0002).}
+Di luar nol, $|x|$ terdiferensialkan.
+\label{orig03:ps01:hint1:0002}
+% ORIG03-STABLE-ID: ps01.hint2.0002
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0002).}
+Di $x=0$, gunakan definisi $g\in\partial |\cdot|(0)$, yaitu
+$|y|\geq gy$ untuk semua $y$.
+\label{orig03:ps01:hint2:0002}
+% ORIG03-STABLE-ID: ps01.answer.0002
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0002).}
+\[
+ \partial |x|=
+ \begin{cases}
+   \{-1\},&x<0,\\
+   [-1,1],&x=0,\\
+   \{1\},&x>0.
+ \end{cases}
+\]
+\label{orig03:ps01:answer:0002}
+% ORIG03-STABLE-ID: ps01.solution.0002
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0002).}
+Untuk $x>0$ dan $x<0$, turunan $|x|$ masing-masing adalah $1$ dan $-1$;
+subdiferensial fungsi konveks yang terdiferensialkan adalah singleton yang
+berisi turunannya. Di nol, syarat subgradien adalah $|y|\geq gy$ untuk semua
+$y$. Memilih $y>0$ memberi $g\leq1$, sedangkan $y<0$ memberi $g\geq-1$.
+Sebaliknya, setiap $g\in[-1,1]$ memenuhi $gy\leq|y|$, sehingga interval
+tersebut tepat merupakan subdiferensial di nol.
+\label{orig03:ps01:solution:0002}
+
+% ORIG03-STABLE-ID: ps01.hint1.0003
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0003).}
+Gunakan $0\in\partial\phi(x)$.
+\label{orig03:ps01:hint1:0003}
+% ORIG03-STABLE-ID: ps01.hint2.0003
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0003).}
+Uji titik $x=0$ dengan
+$\partial\phi(0)=[-1,1]+(0-1)$.
+\label{orig03:ps01:hint2:0003}
+% ORIG03-STABLE-ID: ps01.answer.0003
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0003).}
+Peminimum uniknya adalah $x^\star=0$ dan nilai minimumnya $\phi(x^\star)=1/2$.
+\label{orig03:ps01:answer:0003}
+% ORIG03-STABLE-ID: ps01.solution.0003
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0003).}
+Karena suku kuadratik bersifat konveks kuat, $\phi$ mempunyai paling banyak
+satu peminimum. Di nol,
+\[
+ \partial\phi(0)=\partial|\cdot|(0)+(0-1)=[-1,1]-1=[-2,0],
+\]
+yang memuat nol. Maka syarat optimalitas perlu dan cukup untuk fungsi konveks
+terpenuhi, sehingga $x^\star=0$. Substitusi memberi
+$\phi(0)=0+\tfrac12=\tfrac12$.
+\label{orig03:ps01:solution:0003}
+
+% ORIG03-STABLE-ID: ps01.problem.0002
+\begin{exercise}[Parameter kelengkungan dan langkah gradien]
+\label{orig03:ps01:problem:0002}
+Untuk
+\[
+ Q=\begin{pmatrix}1&0\\0&4\end{pmatrix},
+ \qquad f(x)=\frac12x^\top Qx,
+\]
+jawab pertanyaan berikut.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps01.prompt.0004
+\item\label{orig03:ps01:prompt:0004}
+Tentukan konstanta konveksitas kuat terbesar $\mu$ dan konstanta Lipschitz
+terkecil $L$ untuk gradien $f$ dalam norma Euclid.
+% ORIG03-STABLE-ID: ps01.prompt.0005
+\item\label{orig03:ps01:prompt:0005}
+Untuk langkah gradien $x^+=x-\tfrac14\nabla f(x)$, hitung $x^+$ dan buktikan
+$f(x^+)\leq\tfrac9{16}f(x)$. Tentukan kapan batas itu tajam.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps01.hint1.0004
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0004).}
+Gunakan nilai eigen ekstrem Hessian.
+\label{orig03:ps01:hint1:0004}
+% ORIG03-STABLE-ID: ps01.hint2.0004
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0004).}
+Hessian $\nabla^2f=Q$ mempunyai nilai eigen $1$ dan $4$.
+\label{orig03:ps01:hint2:0004}
+% ORIG03-STABLE-ID: ps01.answer.0004
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0004).}
+$\mu=1$ dan $L=4$.
+\label{orig03:ps01:answer:0004}
+% ORIG03-STABLE-ID: ps01.solution.0004
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0004).}
+Untuk kuadratik simetris, konstanta konveksitas kuat terbesar adalah
+$\lambda_{\min}(Q)$ dan konstanta Lipschitz gradien terkecil adalah
+$\lVert Q\rVert_2=\lambda_{\max}(Q)$. Karena spektrum $Q$ adalah $\{1,4\}$,
+diperoleh $\mu=1$ dan $L=4$. Keduanya tajam pada masing-masing arah eigen.
+\label{orig03:ps01:solution:0004}
+
+% ORIG03-STABLE-ID: ps01.hint1.0005
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0005).}
+Hitung $(I-\tfrac14Q)x$.
+\label{orig03:ps01:hint1:0005}
+% ORIG03-STABLE-ID: ps01.hint2.0005
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0005).}
+Bandingkan $\tfrac12(\tfrac34x_1)^2$ dengan
+$\tfrac9{16}\,\tfrac12(x_1^2+4x_2^2)$.
+\label{orig03:ps01:hint2:0005}
+% ORIG03-STABLE-ID: ps01.answer.0005
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0005).}
+$x^+=(\tfrac34x_1,0)$; faktor $9/16$ tajam tepat pada arah sumbu pertama
+(selain kasus nol, $x_2=0$).
+\label{orig03:ps01:answer:0005}
+% ORIG03-STABLE-ID: ps01.solution.0005
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0005).}
+Karena $\nabla f(x)=(x_1,4x_2)$,
+\[
+ x^+=x-\frac14\nabla f(x)=\left(\frac34x_1,0\right).
+\]
+Jadi
+\[
+ f(x^+)=\frac12\frac9{16}x_1^2
+ \leq \frac9{16}\frac12(x_1^2+4x_2^2)=\frac9{16}f(x).
+\]
+Selisih ruas kanan dan kiri adalah $\tfrac98x_2^2$, sehingga kesamaan
+terjadi jika dan hanya jika $x_2=0$.
+\label{orig03:ps01:solution:0005}
+
+% ORIG03-STABLE-ID: ps01.problem.0003
+\begin{exercise}[Ketaksamaan Jensen]
+\label{orig03:ps01:problem:0003}
+Ambil $f(x)=x^2$, titik $x_1=-1$, $x_2=3$, dan bobot
+$\theta_1=1/4$, $\theta_2=3/4$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps01.prompt.0006
+\item\label{orig03:ps01:prompt:0006}
+Hitung kedua ruas ketaksamaan Jensen untuk data tersebut.
+% ORIG03-STABLE-ID: ps01.prompt.0007
+\item\label{orig03:ps01:prompt:0007}
+Buktikan ketaksamaan Jensen dua titik langsung dari definisi fungsi konveks.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps01.hint1.0006
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0006).}
+Hitung dahulu rata-rata berbobot kedua titik.
+\label{orig03:ps01:hint1:0006}
+% ORIG03-STABLE-ID: ps01.hint2.0006
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0006).}
+$\tfrac14(-1)+\tfrac34(3)=2$.
+\label{orig03:ps01:hint2:0006}
+% ORIG03-STABLE-ID: ps01.answer.0006
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0006).}
+Ruas kiri adalah $4$ dan ruas kanan adalah $7$, jadi $4\leq7$.
+\label{orig03:ps01:answer:0006}
+% ORIG03-STABLE-ID: ps01.solution.0006
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0006).}
+Rata-rata berbobotnya $\bar x=2$, sehingga $f(\bar x)=2^2=4$.
+Sementara itu,
+\[
+ \frac14f(-1)+\frac34f(3)=\frac14(1)+\frac34(9)=7.
+\]
+Karena $4\leq7$, data tersebut memenuhi ketaksamaan Jensen.
+\label{orig03:ps01:solution:0006}
+
+% ORIG03-STABLE-ID: ps01.hint1.0007
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0007).}
+Tuliskan definisi konveksitas dengan parameter $t\in[0,1]$.
+\label{orig03:ps01:hint1:0007}
+% ORIG03-STABLE-ID: ps01.hint2.0007
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0007).}
+Ganti $t$ dengan $\theta_1$ dan $1-t$ dengan $\theta_2$.
+\label{orig03:ps01:hint2:0007}
+% ORIG03-STABLE-ID: ps01.answer.0007
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0007).}
+Untuk $\theta_1,\theta_2\geq0$ dan $\theta_1+\theta_2=1$,
+$f(\theta_1x_1+\theta_2x_2)\leq\theta_1f(x_1)+\theta_2f(x_2)$.
+\label{orig03:ps01:answer:0007}
+% ORIG03-STABLE-ID: ps01.solution.0007
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0007).}
+Definisi konveksitas menyatakan bahwa, untuk semua $x_1,x_2$ dan
+$t\in[0,1]$,
+\[
+ f(tx_1+(1-t)x_2)\leq t f(x_1)+(1-t)f(x_2).
+\]
+Setiap pasangan bobot nonnegatif dengan jumlah satu dapat ditulis sebagai
+$t=\theta_1$ dan $1-t=\theta_2$. Substitusi memberi persis ketaksamaan Jensen
+dua titik.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:ps01:solution:0007}
+
+% ORIG03-STABLE-ID: ps01.problem.0004
+\begin{exercise}[Konjugat kuadratik dan celah Fenchel--Young]
+\label{orig03:ps01:problem:0004}
+Untuk $a>0$, definisikan $f(x)=\tfrac a2x^2$ pada $\mathbb{R}$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps01.prompt.0008
+\item\label{orig03:ps01:prompt:0008}
+Hitung konjugat Fenchel $f^*(y)$.
+% ORIG03-STABLE-ID: ps01.prompt.0009
+\item\label{orig03:ps01:prompt:0009}
+Hitung $f^{**}(x)$ secara langsung dan bandingkan dengan $f(x)$.
+% ORIG03-STABLE-ID: ps01.prompt.0010
+\item\label{orig03:ps01:prompt:0010}
+Nyatakan celah Fenchel--Young $f(x)+f^*(y)-xy$ sebagai kuadrat dan tentukan
+syarat kesamaan.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps01.hint1.0008
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0008).}
+Maksimalkan $xy-\tfrac a2x^2$ terhadap $x$.
+\label{orig03:ps01:hint1:0008}
+% ORIG03-STABLE-ID: ps01.hint2.0008
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0008).}
+Titik stasionernya memenuhi $y-ax=0$.
+\label{orig03:ps01:hint2:0008}
+% ORIG03-STABLE-ID: ps01.answer.0008
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0008).}
+$f^*(y)=y^2/(2a)$.
+\label{orig03:ps01:answer:0008}
+% ORIG03-STABLE-ID: ps01.solution.0008
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0008).}
+Menurut definisi,
+\[
+ f^*(y)=\sup_x\left\{xy-\frac a2x^2\right\}.
+\]
+Fungsi di dalam supremum cekung kuat terhadap $x$; turunannya nol di
+$x=y/a$. Substitusi menghasilkan
+$y(y/a)-\tfrac a2(y/a)^2=y^2/(2a)$.
+\label{orig03:ps01:solution:0008}
+
+% ORIG03-STABLE-ID: ps01.hint1.0009
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0009).}
+Terapkan kembali definisi konjugat pada $f^*(y)=y^2/(2a)$.
+\label{orig03:ps01:hint1:0009}
+% ORIG03-STABLE-ID: ps01.hint2.0009
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0009).}
+Maksimum $xy-y^2/(2a)$ tercapai di $y=ax$.
+\label{orig03:ps01:hint2:0009}
+% ORIG03-STABLE-ID: ps01.answer.0009
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0009).}
+$f^{**}(x)=ax^2/2=f(x)$.
+\label{orig03:ps01:answer:0009}
+% ORIG03-STABLE-ID: ps01.solution.0009
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0009).}
+Kita memperoleh
+\[
+ f^{**}(x)=\sup_y\left\{xy-\frac{y^2}{2a}\right\}.
+\]
+Turunan terhadap $y$ adalah $x-y/a$, jadi pemaksimum uniknya $y=ax$.
+Nilai supremumnya $a x^2-a x^2/2=a x^2/2=f(x)$.
+\label{orig03:ps01:solution:0009}
+
+% ORIG03-STABLE-ID: ps01.hint1.0010
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0010).}
+Samakan penyebut pada $\tfrac a2x^2+\tfrac1{2a}y^2-xy$.
+\label{orig03:ps01:hint1:0010}
+% ORIG03-STABLE-ID: ps01.hint2.0010
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0010).}
+Kenali kuadrat dari $ax-y$.
+\label{orig03:ps01:hint2:0010}
+% ORIG03-STABLE-ID: ps01.answer.0010
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0010).}
+Celahnya $(ax-y)^2/(2a)\geq0$, dan kesamaan berlaku tepat ketika $y=ax$.
+\label{orig03:ps01:answer:0010}
+% ORIG03-STABLE-ID: ps01.solution.0010
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0010).}
+Perhitungan langsung memberi
+\[
+ f(x)+f^*(y)-xy
+ =\frac a2x^2+\frac{y^2}{2a}-xy
+ =\frac{(ax-y)^2}{2a}.
+\]
+Karena $a>0$, nilai ini nonnegatif. Nilainya nol jika dan hanya jika
+$ax-y=0$, yakni $y=ax=\nabla f(x)$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0002}.}
+\label{orig03:ps01:solution:0010}
+
+% ORIG03-STABLE-ID: ps01.problem.0005
+\begin{exercise}[Proyeksi pada kotak]
+\label{orig03:ps01:problem:0005}
+Misalkan $C=[0,3]^3$ dan $v=(-1,2,4)$.
+\begin{enumerate}
+% ORIG03-STABLE-ID: ps01.prompt.0011
+\item\label{orig03:ps01:prompt:0011}
+Hitung proyeksi Euclid $P_C(v)$.
+% ORIG03-STABLE-ID: ps01.prompt.0012
+\item\label{orig03:ps01:prompt:0012}
+Buktikan bahwa proyeksi pada kotak $[\ell,u]^n$ diperoleh dengan memotong
+setiap koordinat ke interval $[\ell,u]$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: ps01.hint1.0011
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0011).}
+Potong setiap koordinat ke interval $[0,3]$.
+\label{orig03:ps01:hint1:0011}
+% ORIG03-STABLE-ID: ps01.hint2.0011
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0011).}
+$-1$ dipetakan ke $0$, $2$ tetap, dan $4$ dipetakan ke $3$.
+\label{orig03:ps01:hint2:0011}
+% ORIG03-STABLE-ID: ps01.answer.0011
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0011).}
+$P_C(v)=(0,2,3)$.
+\label{orig03:ps01:answer:0011}
+% ORIG03-STABLE-ID: ps01.solution.0011
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0011).}
+Meminimumkan $\tfrac12\lVert x-v\rVert_2^2$ pada $C$ terpisah menjadi tiga
+masalah skalar. Peminimum $\tfrac12(x_i-v_i)^2$ pada $[0,3]$ masing-masing
+adalah $0$, $2$, dan $3$. Karena jumlah mencapai minimum tepat ketika setiap
+sukunya minimum, $P_C(v)=(0,2,3)$.
+\label{orig03:ps01:solution:0011}
+
+% ORIG03-STABLE-ID: ps01.hint1.0012
+\par\noindent\textbf{Petunjuk tahap 1 (ps01.prompt.0012).}
+Tuliskan kuadrat jarak sebagai jumlah fungsi satu koordinat.
+\label{orig03:ps01:hint1:0012}
+% ORIG03-STABLE-ID: ps01.hint2.0012
+\par\noindent\textbf{Petunjuk tahap 2 (ps01.prompt.0012).}
+Peminimum skalar adalah $\ell$ jika $v_i<\ell$, $v_i$ jika
+$\ell\leq v_i\leq u$, dan $u$ jika $v_i>u$.
+\label{orig03:ps01:hint2:0012}
+% ORIG03-STABLE-ID: ps01.answer.0012
+\par\noindent\textbf{Jawaban ringkas (ps01.prompt.0012).}
+\[
+ [P_{[\ell,u]^n}(v)]_i=\min\{u,\max\{\ell,v_i\}\}.
+\]
+\label{orig03:ps01:answer:0012}
+% ORIG03-STABLE-ID: ps01.solution.0012
+\par\noindent\textbf{Solusi lengkap (ps01.prompt.0012).}
+Masalah proyeksi adalah
+\[
+ \min_{\ell\leq x_i\leq u}\frac12\sum_{i=1}^n(x_i-v_i)^2.
+\]
+Daerah layak merupakan hasil kali interval dan objektif merupakan jumlah
+suku yang masing-masing hanya bergantung pada satu koordinat. Karena itu,
+setiap koordinat dapat diminimumkan secara independen. Fungsi skalar
+$(s-v_i)^2/2$ berkurang hingga $s=v_i$ lalu meningkat; pembatasan pada
+$[\ell,u]$ menghasilkan $s=\min\{u,\max\{\ell,v_i\}\}$. Menggabungkan semua
+koordinat membuktikan rumus tersebut.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0004}.}
+\label{orig03:ps01:solution:0012}

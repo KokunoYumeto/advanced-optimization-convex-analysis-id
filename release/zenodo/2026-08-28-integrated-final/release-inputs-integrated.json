@@ -1,0 +1,120 @@
+{
+  "artifacts": {
+    "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip": {
+      "bytes": 1397822,
+      "path": "release/final/2026-08-28/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+      "sha256": "cdd9454f1d9ffc2dc13dccd6c9b82ac78d108d90feaa6baa609aae5f21335d32"
+    },
+    "D90-O015-optimisasi-lanjut-analisis-konveks-id.epub": {
+      "bytes": 379901,
+      "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+      "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+    },
+    "D90-O015-optimisasi-lanjut-analisis-konveks-id.html": {
+      "bytes": 2485595,
+      "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+    },
+    "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf": {
+      "bytes": 1671254,
+      "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5"
+    },
+    "RIGHTS_AND_PROVENANCE_INTEGRATED.md": {
+      "bytes": 9274,
+      "path": "release/final/2026-08-28/RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+      "sha256": "acf83221211b25f67688d87932f333f9ed0309c11a5d6c3bea37b182ce72b360"
+    },
+    "backend-records-2026.08.28-integrated.csv": {
+      "bytes": 4272596,
+      "path": "backend/records.csv",
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+    },
+    "backend-records-2026.08.28-integrated.jsonl": {
+      "bytes": 3534351,
+      "path": "backend/records.jsonl",
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+    }
+  },
+  "concept_id": "22059741",
+  "credential_material_recorded": false,
+  "frozen": true,
+  "frozen_on": "2026-08-28",
+  "parent_record_id": "22104724",
+  "publication_status": "complete",
+  "receipts": [
+    {
+      "bytes": 10782,
+      "label": "pdf_build",
+      "path": "qa/2026-08-27-integrated-pdf-build.json",
+      "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d"
+    },
+    {
+      "bytes": 80194,
+      "label": "pdf_validation",
+      "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+      "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07"
+    },
+    {
+      "bytes": 3100,
+      "label": "pdf_visual_qa",
+      "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+      "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d"
+    },
+    {
+      "bytes": 8875,
+      "label": "readers_build",
+      "path": "qa/INTEGRATED_READERS_BUILD.json",
+      "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8"
+    },
+    {
+      "bytes": 8963,
+      "label": "readers_validation",
+      "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+      "sha256": "2069af40785e573bfc81ff7742675f196f84e2bf875b6311ff484900fbf7b2f4"
+    },
+    {
+      "bytes": 26298,
+      "label": "reflow_independent",
+      "path": "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+      "sha256": "7f0113674b513d6f3db5d694c5a351468495842b9a92363cc6a17f5e26cc1020"
+    },
+    {
+      "bytes": 4436,
+      "label": "browser_qa",
+      "path": "qa/INTEGRATED_BROWSER_QA.json",
+      "sha256": "c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a"
+    },
+    {
+      "bytes": 53446,
+      "label": "course_closure",
+      "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+      "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907"
+    },
+    {
+      "bytes": 13329,
+      "label": "backend_build",
+      "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+      "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb"
+    },
+    {
+      "bytes": 3777,
+      "label": "backend_validation",
+      "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+      "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4"
+    },
+    {
+      "bytes": 68004,
+      "label": "rights_release",
+      "path": "qa/INTEGRATED_RIGHTS_RELEASE_QA.json",
+      "sha256": "35ce414e9a347db004562df18b77ea3ddcf9a89095dd9156672de8912a778003"
+    },
+    {
+      "bytes": 3141,
+      "label": "package_local_verification",
+      "path": "release/final/2026-08-28/local-verification-integrated.json",
+      "sha256": "a6f5498ca24b804026c511b2e2a2aaa1edea435bb352a771871be21fb4d0d4cb"
+    }
+  ],
+  "schema": "o015-zenodo-integrated-release-inputs-v1"
+}

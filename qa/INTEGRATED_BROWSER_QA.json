@@ -1,0 +1,134 @@
+{
+  "schema": "o015-integrated-browser-qa-v1",
+  "date": "2026-08-28",
+  "status": "pass",
+  "artifact": {
+    "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+    "bytes": 2485595,
+    "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+  },
+  "method": {
+    "surface": "Codex in-app Chromium browser over a task-local 127.0.0.1 HTTP server",
+    "reviewer": "OpenAI Codex gpt-5.6-sol, Ultra",
+    "local_server_stopped_after_review": true,
+    "viewport_override_reset_after_review": true,
+    "visual_spot_checks": [
+      "phone title and contents",
+      "phone Original-03 course-closure opening",
+      "phone locally scrollable wide formula",
+      "phone locally scrollable numeric table",
+      "1024-pixel compact desktop title and contents",
+      "1440-pixel desktop title and contents"
+    ]
+  },
+  "common": {
+    "document_title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia",
+    "language": "id-ID",
+    "headings": 224,
+    "internal_links": 261,
+    "missing_internal_targets": 0,
+    "native_mathml_surfaces": 4535,
+    "images": 5,
+    "broken_images": 0,
+    "first_focusable_text": "Langsung ke isi utama"
+  },
+  "desktop": {
+    "requested_viewport": [1440, 900],
+    "layout_viewport_width": 1425,
+    "horizontal_overflow": false,
+    "main_width_ratio": 0.977466,
+    "left_gutter": 16.0,
+    "right_gutter": 16.111083984375,
+    "main_landmarks": 1,
+    "toc_landmarks": 1,
+    "skip_target_valid": true,
+    "mathml_count": 4535
+  },
+  "mobile": {
+    "requested_viewport": [390, 844],
+    "layout_viewport_width": 375.1111145019531,
+    "horizontal_overflow": false,
+    "main_width_ratio": 0.967997,
+    "left_gutter": 6.0,
+    "right_gutter": 6.0,
+    "main_landmarks": 1,
+    "toc_landmarks": 1,
+    "skip_target_valid": true,
+    "mathml_count": 4535
+  },
+  "keyboard": {
+    "first_focus_is_skip_link": true,
+    "skip_link_visible": true,
+    "focused_text": "Langsung ke isi utama",
+    "focused_href": "#main-content",
+    "focused_rect": {"left": 8.0, "top": 8.0, "right": 198.7777862548828, "bottom": 57.04861068725586},
+    "focused_transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "document_scroll_width": 1425,
+      "root_horizontal_overflow_pixels": 0,
+      "escaped_visible_elements": 0,
+      "local_horizontal_scrollers": 0,
+      "main": {
+        "left": 16.0,
+        "right": 1408.888916015625,
+        "width": 1392.888916015625,
+        "viewport_ratio": 0.9672839694552952,
+        "margin_balance_delta": 15.111083984375
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "document_scroll_width": 753,
+      "root_horizontal_overflow_pixels": 0,
+      "escaped_visible_elements": 0,
+      "local_horizontal_scrollers": 5,
+      "main": {
+        "left": 6.0,
+        "right": 746.888916015625,
+        "width": 740.888916015625,
+        "viewport_ratio": 0.9646991093953452,
+        "margin_balance_delta": 15.111083984375
+      }
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "document_scroll_width": 375,
+      "root_horizontal_overflow_pixels": 0,
+      "escaped_visible_elements": 0,
+      "local_horizontal_scrollers": 277,
+      "local_scroller_breakdown": {
+        "math": 274,
+        "table": 3
+      },
+      "main": {
+        "left": 6.0,
+        "right": 369.1111145019531,
+        "width": 363.1111145019531,
+        "viewport_ratio": 0.9310541397485976,
+        "margin_balance_delta": 14.888885498046877
+      }
+    }
+  ],
+  "visual_findings": {
+    "clipped_text_or_math": 0,
+    "page_level_horizontal_overflow": 0,
+    "escaped_content": 0,
+    "broken_images": 0,
+    "uncontained_wide_formulas": 0,
+    "uncontained_wide_tables": 0,
+    "title_or_author_overflow": 0,
+    "unreadable_body_text": 0,
+    "result": "The reader fills and remains centered within each tested viewport. Wide mathematics and three tables scroll only inside their own visible containers; they never widen the page."
+  },
+  "supersedes_limitation_in": "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+  "supersession_note": "The earlier independent static audit could not obtain rendered viewport geometry because it attempted local-file access. This live localhost browser audit supplies that missing evidence without changing reader bytes."
+}

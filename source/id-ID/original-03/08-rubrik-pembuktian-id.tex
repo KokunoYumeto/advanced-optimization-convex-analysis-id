@@ -1,0 +1,171 @@
+% segment-local-id: OR03-S009
+% segment-id: d90.orig.v1.tr03.seg0009
+% license: CC BY-SA 4.0
+% provenance: Materi asesmen asli berbahasa Indonesia, disusun secara independen.
+
+\section{Rubrik analitik untuk pembuktian}
+\label{orig03:rubric}
+
+Setiap kriteria di bawah dinilai dengan skala yang sama:
+\textbf{0} tidak ada atau tidak sah;
+\textbf{1} fragmen relevan dengan galat mayor;
+\textbf{2} arah sebagian benar tetapi masih ada celah substantif;
+\textbf{3} benar dengan satu kekurangan minor yang tidak mengubah kesimpulan;
+dan \textbf{4} lengkap, tepat, dan seluruh dependensi logis dinyatakan.
+Setiap rubrik mempunyai empat kriteria, jadi skor maksimumnya adalah 16.
+Keanggunan gaya tidak boleh menutupi galat matematika, dan notasi alternatif
+yang ekuivalen harus dinilai berdasarkan isinya.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0001
+\subsection{Rubrik proof.0001: hipotesis, tipe, dan kuantor}
+\label{orig03:rubric:proof:0001}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Menyatakan objek, ruang, domain, dan kodomain secara konsisten.
+  \item Menempatkan semua kuantor dan dependensi parameter pada lingkup yang
+  benar, termasuk perbedaan antara pernyataan titik demi titik dan seragam.
+  \item Menggunakan tepat hipotesis ketertutupan, konveksitas, keterbatasan,
+  atau keterukuran pada langkah yang memerlukannya.
+  \item Menutup semua kasus tepi dan memastikan bahwa kesimpulan mempunyai
+  tipe logis yang sama dengan klaim semula.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Menganggap domain sama dengan seluruh ruang; menukar ``untuk setiap'' dengan
+``terdapat''; memakai konstanta yang diam-diam bergantung pada iterasi; membagi
+dengan besaran yang belum dibuktikan positif; atau menyatakan limit tanpa
+menentukan topologi.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0002
+\subsection{Rubrik proof.0002: keberadaan dan argumen topologis}
+\label{orig03:rubric:proof:0002}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Mengidentifikasi himpunan sublevel atau barisan peminimum yang tepat
+  dan membuktikan keterbatasan atau kekompakannya.
+  \item Menggunakan semikontinuitas-bawah, ketertutupan, atau kekompakan dengan
+  arah ketaksamaan dan topologi yang benar.
+  \item Membedakan dengan tegas keberadaan, ketunggalan, dan kestabilan, serta
+  memberi hipotesis tersendiri bagi masing-masing klaim.
+  \item Menangani fungsi bernilai-diperluas, domain efektif, dan nilai tak
+  hingga tanpa operasi aljabar yang tidak sah.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Mengatakan ``kontinu maka minimum ada'' pada himpunan tak kompak; menganggap
+konveksitas memberi ketunggalan; menyimpulkan koersivitas hanya dari
+keterbatasan-bawah; mengabaikan domain kosong; atau mengambil limit dalam
+domain yang belum dibuktikan tertutup.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0003
+\subsection{Rubrik proof.0003: penurunan, teleskop, dan laju}
+\label{orig03:rubric:proof:0003}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Menurunkan ketaksamaan satu-langkah dari asumsi yang dinyatakan, dengan
+  tanda, faktor, dan norma yang benar.
+  \item Menentukan besaran potensial nonnegatif dan meneleskopkan indeks tanpa
+  kehilangan suku batas.
+  \item Memilih langkah atau parameter dalam rentang yang benar dan melacak
+  semua konstanta hingga batas akhir.
+  \item Membedakan laju nilai fungsi, jarak iterasi, dan residu, termasuk apakah
+  klaim berlaku untuk iterasi terakhir, terbaik, atau rata-rata.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Menghapus suku bertanda tak diketahui; kesalahan indeks awal/akhir; memilih
+langkah setelah melihat kuantitas acak masa depan; mengubah batas
+$O(k^{-1/2})$ menjadi $O(k^{-1})$ dengan menguadratkan sepihak; atau
+menyembunyikan konstanta yang bergantung pada dimensi.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0004
+\subsection{Rubrik proof.0004: dualitas, kualifikasi, dan KKT}
+\label{orig03:rubric:proof:0004}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Membentuk Lagrangian dengan tanda, ruang dual, dan domain yang benar.
+  \item Menyatakan kondisi kualifikasi yang benar-benar cukup sebelum
+  menggunakan dualitas kuat atau keberadaan pengali.
+  \item Menurunkan kelayakan primal, kelayakan dual, stasioneritas, dan
+  kelonggaran komplementer tanpa melewatkan inklusi subdiferensial.
+  \item Membuktikan kebutuhan atau kecukupan kondisi KKT sesuai kelas masalah,
+  serta menghubungkannya dengan titik pelana atau nilai dual.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Menyatakan KKT tanpa kualifikasi; memberi pengali bertanda salah; mengganti
+inklusi dengan persamaan gradien saat fungsi tak mulus; menyamakan dualitas
+lemah dengan kuat; atau memakai kelonggaran komplementer untuk menyimpulkan
+kelayakan yang belum dibuktikan.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0005
+\subsection{Rubrik proof.0005: filtrasi dan argumen stokastik}
+\label{orig03:rubric:proof:0005}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Mendefinisikan filtrasi dan menyatakan dengan benar besaran yang
+  terukur sebelum pengambilan sampel berikutnya.
+  \item Menghitung ekspektasi bersyarat, ketakbiasan, dan bias tanpa
+  mengasumsikan independensi yang tidak tersedia.
+  \item Membedakan batas varians dari batas momen kedua dan menggunakan hukum
+  varians total atau Jensen secara sah.
+  \item Menukar ekspektasi, penjumlahan, limit, atau subdiferensial hanya jika
+  syarat integrabilitas dan teorema yang dibutuhkan telah dipenuhi.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Mengondisikan pada informasi yang sudah memuat sampel baru; menyebut galat
+sebagai selisih martingal padahal mean bersyaratnya tidak nol; mengganti
+$\mathbb E\lVert G\rVert^2$ dengan varians; memakai sampel tanpa pengembalian
+seolah-olah independen; atau mengambil ekspektasi dari kuantitas tak
+terintegralkan.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0006
+\subsection{Rubrik proof.0006: operator monoton dan resolven}
+\label{orig03:rubric:proof:0006}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Menyatakan domain operator bernilai-himpunan dan membedakan monotoni,
+  monotoni maksimal, monotoni kuat, serta kokersivitas.
+  \item Mengubah inklusi menjadi persamaan resolven atau titik tetap dengan
+  urutan komposisi dan parameter yang benar.
+  \item Menggunakan firm non-ekspansivitas, keaveragan, atau kontraksi dengan
+  konstanta yang dibuktikan, bukan diasumsikan.
+  \item Menghubungkan residu atau titik klaster dengan nol operator melalui
+  ketertutupan graf dan argumen konvergensi yang lengkap.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Menganggap semua operator monoton maksimal; memperlakukan resolven sebagai
+invers biasa; menukar $R_AR_B$ dengan $R_BR_A$; mengabaikan domain pada aturan
+jumlah; atau menyimpulkan konvergensi iterasi hanya dari residu yang menuju nol
+tanpa kontrol titik klaster.
+
+% stable-id: d90.orig.v1.tr03.rubric.proof.0007
+\subsection{Rubrik proof.0007: contoh penyangkal dan sertifikat komputasional}
+\label{orig03:rubric:proof:0007}
+
+\paragraph{Kriteria (masing-masing 0--4).}
+\begin{enumerate}
+  \item Menargetkan tepat satu hipotesis atau kesimpulan dan memastikan contoh
+  memenuhi semua asumsi lain yang dipertahankan.
+  \item Menghitung objek kunci secara eksak atau dengan batas galat yang
+  tersertifikasi, termasuk kasus tepi yang relevan.
+  \item Memisahkan bukti matematis dari ilustrasi numerik serta menyatakan
+  presisi, toleransi, dan residu bila komputasi dipakai.
+  \item Menjelaskan secara eksplisit bagaimana hasil contoh membatalkan klaim
+  universal atau bagaimana sertifikat memverifikasi klaim yang terbatas.
+\end{enumerate}
+
+\paragraph{Kegagalan umum.}
+Contoh melanggar asumsi lain; satu plot diperlakukan sebagai bukti universal;
+residu kecil disamakan dengan galat solusi tanpa batas kondisi; pembulatan
+mengubah tanda; atau program menguji hanya satu parameter sementara klaimnya
+untuk semua parameter.
+

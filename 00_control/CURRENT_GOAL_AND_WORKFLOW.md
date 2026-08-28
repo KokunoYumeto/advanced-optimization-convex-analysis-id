@@ -1,6 +1,6 @@
 # Current goal and corrected workflow
 
-Complete and publish the independent Bahasa Indonesia O015/D90 *Advanced Optimization and Convex Analysis* coursebook at `PROJECT_ROOT`, defined exactly as the parent directory of this file's `00_control` directory. Translation/readers dominate; the backend is additive. Do not overlap O018, contact upstream, expose credentials, use TTP in titles/prose, or renumber accepted IDs.
+Complete and publish the independent Bahasa Indonesia O015/D90 *Advanced Optimization and Convex Analysis* coursebook at `PROJECT_ROOT`, defined exactly as the parent directory of this file's `00_control` directory. Translation/readers dominate; the backend is additive. Do not overlap O018, contact upstream, expose credentials, use the prohibited organization-contributor label in titles or prose, or renumber accepted IDs.
 
 Authority order: O015 in `PROJECT_ROOT/../../../outputs/01a01ec1-e685-70d0-b022-211396334723/curriculum_logbook/76_SOURCE_SELECTION_REOPENED_AUDIT_20260824.json`; exact local bytes; `SOURCE_AUTHORITY.json`; rights; build evidence. Canonical spine: Habring arXiv `2607.11664v1`, source-tar SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`, CC BY 4.0. Becker: MIT commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`; admit only audited slices from Mitchell Krock’s `APPM5720Notes.tex`. Exclude the broken Jaden Wang tree with 24 absent figures. MIT OCW, Royer, and Penn remain separate companions; preserve their accepted bytes, credits, and rights.
 
@@ -39,8 +39,66 @@ readback, and closure receipt SHA-256 values are
 `2cf795cc52647254c20fcf76e6b3b6b6b216bf55b2a62868a06fff638ba40114`,
 `2c6c7b0bf91f7fe5fd1d0dc7093f80c1442cbfdab0aa6a0365a3044f39db8d0f`,
 and `65c7cc9348012928e1eb32c42ca167facde86bf19a94cd2c402b0af98cce68ab`.
-Immediate action: narrow-publish the exact manifest-bound Original-02
-boundary to the existing GitHub repository and verify every changed raw byte.
-Then advance—not loop—to cumulative assessment and proof rubrics, two further
-nonduplicative labs, capstone, tagged-PDF/accessibility, and integrated
-final-reader closure. The overall goal remains active.
+GitHub preservation is also closed at commit
+`74780b65dcf9954bdf915aecbf57cd17fd6b43ea`, tree
+`e6c004afc1efeff73a62860039491fd92525ba35`: anonymous public branch
+resolution and immutable raw-byte readback matched all 103 manifest paths and
+11,226,335 bytes. The 44,964-byte receipt SHA-256 is
+`c992e2563577d6edf16a5424db12edd5cbf9e4f75b832eadb51499574d32eab0`.
+Immediate action: advance—not loop—to cumulative assessment and proof rubrics,
+two further nonduplicative labs, capstone, tagged-PDF/accessibility, and
+integrated final-reader closure. The overall goal remains active.
+
+## 2026-08-26 finite course-closure architecture
+
+The independent course audit fixes the canonical master at 14 collision-free
+accepted TeX bodies (203 existing reader pages): Habring Chapters 1--9;
+Becker-01; Becker-03; Original-01; Becker-02; Original-02. Original-03 is the
+single remaining substantive unit and follows those bodies. Penn Chapters
+3--5, MIT OCW pages 2--97, and Royer remain separately licensed companion
+readers or witnesses and are not silently folded into the canonical master.
+
+Original-03 is one coherent boundary, not a series of microprojects. It owns
+the prerequisite diagnostic, six cumulative problem sets, solved midterm and
+final, staged hints, short answers, complete solutions, seven proof rubrics,
+Lab 3 on smooth globalization, Lab 4 on log-domain entropic Sinkhorn scaling,
+and a seven-milestone composite inverse-problem capstone with deterministic
+reference code and certificates. Its namespace is `d90.orig.v1.tr03.*`; all
+4,338 existing backend records remain protected byte-for-byte. The same
+backend transaction corrects the stale MIT-primary course description and
+adds the absent MIT-L03 overlay without altering admitted source or reader
+bytes.
+
+The integrated deliverable is built once from the manifest-ordered sources:
+a monolithic LuaLaTeX/tagpdf PDF with `id-ID`, native-MathML semantic HTML,
+and EPUB 3. PDF concatenation is not an accessibility solution. The build must
+prove an actual structure tree, marked content, reading order, language,
+bookmarks, searchability, font maps, alternatives, links, and page geometry;
+render and inspect every page; and refrain from claiming PDF/UA conformance
+until a pinned conformance validator passes. One consolidated deterministic
+build/accessibility/backend/release gate closes the course boundary.
+
+## 2026-08-28 integrated closure and corrected terminal workflow
+
+The course-production portion of this goal is complete. Original-03 closes the
+finite missing layer in one coherent unit: cumulative diagnostic/problem-set/
+midterm/final assessment, staged hints and complete solutions, seven proof
+rubrics, Labs 3 and 4, and the capstone. The canonical master contains exactly
+the complete Habring spine, three bounded Becker supplements, and Original-01/
+02/03 in the controlled order. MIT OCW, Royer, and Penn remain separate
+companions. The integrated PDF/HTML/EPUB and 4,877-record backend are frozen at
+the identities in `SOURCE_AUTHORITY.json`; all substantive deterministic,
+mathematical, visual, browser, computation, accessibility, and backend gates
+pass.
+
+The goal is not yet terminal because preservation is part of completion. The
+remaining workflow is finite and publication-only: reconcile root rights and
+provenance with the live architecture; require the fail-closed integrated rights
+verifier to pass; assemble a compact reader-first package with exact component
+licenses, manifest, checksums, and no credentials/profile locators; reproduce
+and verify it; narrow-push the explicit path set to the existing GitHub `main`;
+publish one new public version in the existing Zenodo concept; anonymously read
+back all required bytes and hashes; prove the integrated PDF is the default
+preview, the record/files are public, and no open draft remains; then persist
+sanitized receipts and close the goal. No new source expansion, human-dependent
+hold, duplicate concept, blanket-license claim, or PDF/UA claim is permitted.

@@ -1,0 +1,133 @@
+{
+  "backend": {
+    "added_entity_counts": {
+      "artifact": 43,
+      "correction": 1,
+      "edition": 1,
+      "learning_surface": 445,
+      "qa_event": 9,
+      "relation": 20,
+      "resource": 1,
+      "rights": 2,
+      "segment": 15,
+      "unit": 2
+    },
+    "added_records": 539,
+    "csv": {
+      "bytes": 4272596,
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+    },
+    "final_entity_counts": {
+      "artifact": 489,
+      "asset": 24,
+      "concept": 176,
+      "correction": 248,
+      "course": 1,
+      "edition": 17,
+      "learning_surface": 1247,
+      "program": 1,
+      "qa_event": 323,
+      "relation": 1837,
+      "resource": 10,
+      "rights": 93,
+      "segment": 248,
+      "term": 127,
+      "unit": 36
+    },
+    "jsonl": {
+      "bytes": 3534351,
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+    },
+    "jsonl_csv_lossless_equality": true,
+    "records": 4877
+  },
+  "build_receipt": {
+    "bytes": 13329,
+    "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+    "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb"
+  },
+  "course_correction": {
+    "changed_fields": [
+      "source_spine_note",
+      "source_spine_unit_ids"
+    ],
+    "correction_record_id": "correction.o015.course-canonical-editable-spine",
+    "new_record_sha256": "12c05fd66d7925fe0db1c0dcc326a54d2662428400343ec9ece29693dc6dd169",
+    "old_record_sha256": "131d625ee73256d3e4afcd0d240e5df42bf479a1b3bfbf53c37c34de965c1173",
+    "record_id": "course.d90.advanced-optimization-convex-analysis"
+  },
+  "deterministic_regeneration": {
+    "canonical_match": true,
+    "runs": [
+      {
+        "csv": {
+          "bytes": 4272596,
+          "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+        },
+        "jsonl": {
+          "bytes": 3534351,
+          "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+        },
+        "result": "pass",
+        "run": 1
+      },
+      {
+        "csv": {
+          "bytes": 4272596,
+          "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+        },
+        "jsonl": {
+          "bytes": 3534351,
+          "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+        },
+        "result": "pass",
+        "run": 2
+      }
+    ],
+    "runs_completed": 2,
+    "runs_required": 2
+  },
+  "errors": [],
+  "mit_l03_overlay": {
+    "records": 31,
+    "segment": "d90.mit.ocw-6.253.l03.p014",
+    "source_and_reader_byte_identity": "pass",
+    "source_page": 14,
+    "unit": "unit.mit.ocw-6.253.l03"
+  },
+  "original_03": {
+    "assessment_index_bindings": 54,
+    "computation_components": 3,
+    "latex_labels": 453,
+    "module_count": 14,
+    "o018_firewall": "pass",
+    "repaired_comment_only_bindings": 20,
+    "segment_count": 14,
+    "stable_id_bindings": 438
+  },
+  "protected_baseline": {
+    "corrected_records": 1,
+    "csv": {
+      "bytes": 3839894,
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    "jsonl": {
+      "bytes": 3183459,
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    },
+    "jsonl_line_and_csv_row_bytes_preserved_except_course": true,
+    "prior_records": 4338,
+    "protected_records_byte_identical": 4337,
+    "relative_order_preserved": true
+  },
+  "result": "pass",
+  "schema": "o015-original-03-backend-validation-v1",
+  "schema_identity": {
+    "bytes": 3092,
+    "path": "backend/backend_schema.json",
+    "schema_changed": false,
+    "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+  },
+  "validated_at": "2026-08-27T23:15:00Z",
+  "workflow": "o015-original-03-backend-v1"
+}

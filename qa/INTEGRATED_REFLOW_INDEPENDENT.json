@@ -1,0 +1,892 @@
+{
+  "authority": {
+    "build_report_result": "pass",
+    "build_report_schema": "o015-integrated-readers-build-v1",
+    "primary_validation_result": "pass",
+    "primary_validation_schema": "o015-integrated-readers-validation-v1",
+    "production_reports": {
+      "INTEGRATED_READERS_BUILD.json": {
+        "bytes": 8875,
+        "path": "qa/INTEGRATED_READERS_BUILD.json",
+        "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8"
+      },
+      "INTEGRATED_READERS_VALIDATION.json": {
+        "bytes": 4202,
+        "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+        "sha256": "b6f11d02b328aad035214499b22a4158471c985523c8614ac61a8378e1236841"
+      }
+    },
+    "production_scripts": {
+      "build_integrated_readers.py": {
+        "bytes": 47141,
+        "path": "qa/build_integrated_readers.py",
+        "sha256": "d9be2a7764054ab6ca699e1ec9dd9bab5fc04e8ba97b8221b0a62e58f5ddc877"
+      },
+      "verify_integrated_readers.py": {
+        "bytes": 30756,
+        "path": "qa/verify_integrated_readers.py",
+        "sha256": "54e0e97e09c26ff10a5c55107fe8d1a75aa96cd4b8ea365cc2b4f54703c32464"
+      }
+    }
+  },
+  "deterministic_build": {
+    "epub_builds": 2,
+    "epub_byte_identical": true,
+    "epub_final_matches_second": true,
+    "evidence": {
+      "epub_first": {
+        "bytes": 379901,
+        "path": "tmp/integrated-readers/integrated-reader.first.epub",
+        "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+      },
+      "epub_second": {
+        "bytes": 379901,
+        "path": "tmp/integrated-readers/integrated-reader.second.epub",
+        "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+      },
+      "html_first": {
+        "bytes": 2485595,
+        "path": "tmp/integrated-readers/integrated-reader.first.html",
+        "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+      },
+      "html_second": {
+        "bytes": 2485595,
+        "path": "tmp/integrated-readers/integrated-reader.second.html",
+        "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+      }
+    },
+    "html_builds": 2,
+    "html_byte_identical": true,
+    "html_final_matches_second": true
+  },
+  "epub": {
+    "bytes": 379901,
+    "canonical_order_marker_count": 29,
+    "epubcheck": {
+      "exit_code": 0,
+      "jar_sha256": "f7f96617c929371821609b88c8484d6dc9f24fe916499863c46094c5fb778a65",
+      "output": "Validating using EPUB version 3.3 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed",
+      "performed": true
+    },
+    "external_runtime_dependencies": [],
+    "headings_by_member": {
+      "EPUB/nav.xhtml": {
+        "count": 1,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 0,
+          "h3": 0,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      },
+      "EPUB/text/ch001.xhtml": {
+        "count": 2,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 0,
+          "h3": 1,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 1,
+        "upward_level_jumps": [
+          {
+            "from_index": 1,
+            "from_level": 1,
+            "to_level": 3
+          }
+        ]
+      },
+      "EPUB/text/ch002.xhtml": {
+        "count": 34,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 10,
+          "h3": 13,
+          "h4": 1,
+          "h5": 0,
+          "h6": 9
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 4,
+        "upward_level_jumps": [
+          {
+            "from_index": 7,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 19,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 25,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 30,
+            "from_level": 2,
+            "to_level": 6
+          }
+        ]
+      },
+      "EPUB/text/ch003.xhtml": {
+        "count": 13,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 2,
+          "h3": 8,
+          "h4": 2,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      },
+      "EPUB/text/ch004.xhtml": {
+        "count": 12,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 1,
+          "h3": 9,
+          "h4": 1,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      },
+      "EPUB/text/ch005.xhtml": {
+        "count": 4,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 1,
+          "h3": 2,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      },
+      "EPUB/text/ch006.xhtml": {
+        "count": 14,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 1,
+          "h3": 10,
+          "h4": 2,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      },
+      "EPUB/text/ch007.xhtml": {
+        "count": 145,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 1,
+          "h3": 14,
+          "h4": 21,
+          "h5": 0,
+          "h6": 108
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 16,
+        "upward_level_jumps": [
+          {
+            "from_index": 4,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 14,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 30,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 46,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 63,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 66,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 69,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 72,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 75,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 78,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 81,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 84,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 103,
+            "from_level": 3,
+            "to_level": 6
+          },
+          {
+            "from_index": 132,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 138,
+            "from_level": 4,
+            "to_level": 6
+          },
+          {
+            "from_index": 144,
+            "from_level": 4,
+            "to_level": 6
+          }
+        ]
+      },
+      "EPUB/text/title_page.xhtml": {
+        "count": 1,
+        "counts_by_level": {
+          "h1": 1,
+          "h2": 0,
+          "h3": 0,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "empty_count": 0,
+        "empty_indices": [],
+        "upward_level_jump_count": 0,
+        "upward_level_jumps": []
+      }
+    },
+    "image_count": 5,
+    "internal_link_count": 255,
+    "landmarks_nav_count": 1,
+    "long_description_count": 5,
+    "manifest_item_count": 16,
+    "math": {
+      "display_mathml_count": 729,
+      "mathml_count": 4535,
+      "mathml_namespace_count": 4535,
+      "tex_annotation_count": 4535
+    },
+    "media_source_image_hashes": [
+      "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e",
+      "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31",
+      "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b",
+      "1c237c8642b1a12197a12c337242815dafe90b310796dc877b699f0467a4ecce",
+      "4d41bd11afbd1c6c7b6b360d3edeffcd06ab1cdbc699f8909103f5928c737ba0"
+    ],
+    "metadata": {
+      "creators": [
+        "Andreas Habring; Stephen Becker; Mitchell Krock; edisi mandiri"
+      ],
+      "identifier": [
+        "urn:uuid:81057e39-68c8-5b34-8d59-f53deae44ec2"
+      ],
+      "language": [
+        "id-ID"
+      ],
+      "properties": [
+        [
+          "role",
+          "aut"
+        ],
+        [
+          "dcterms:modified",
+          "2026-08-27T00:00:00Z"
+        ],
+        [
+          "schema:accessMode",
+          "textual"
+        ],
+        [
+          "schema:accessModeSufficient",
+          "textual"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "alternativeText"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "readingOrder"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "structuralNavigation"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "tableOfContents"
+        ],
+        [
+          "schema:accessibilityHazard",
+          "none"
+        ],
+        [
+          "schema:accessMode",
+          "visual"
+        ],
+        [
+          "schema:accessibilityFeature",
+          "MathML"
+        ],
+        [
+          "schema:accessibilitySummary",
+          "Pembaca reflow dengan struktur tajuk, navigasi, MathML beranotasi TeX, teks alternatif, dan deskripsi gambar rinci."
+        ]
+      ],
+      "rights": [
+        "Hak komponen terpisah: Habring—CC BY 4.0; Becker/Krock—Lisensi MIT; lapisan asli edisi—CC BY-SA 4.0. Tidak ada lisensi payung."
+      ],
+      "title": [
+        "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia"
+      ]
+    },
+    "navigation_document_count": 1,
+    "navigation_link_count": 80,
+    "nonempty_alt_count": 5,
+    "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+    "rootfile": "EPUB/content.opf",
+    "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321",
+    "source_label_count": 651,
+    "source_labels_preserved_exactly_once": 651,
+    "source_order_sentinel_count": 29,
+    "spine_item_count": 9,
+    "spine_members": [
+      "EPUB/text/title_page.xhtml",
+      "EPUB/nav.xhtml",
+      "EPUB/text/ch001.xhtml",
+      "EPUB/text/ch002.xhtml",
+      "EPUB/text/ch003.xhtml",
+      "EPUB/text/ch004.xhtml",
+      "EPUB/text/ch005.xhtml",
+      "EPUB/text/ch006.xhtml",
+      "EPUB/text/ch007.xhtml"
+    ],
+    "stabilized_module_05_correction_present": true,
+    "static_reflow": {
+      "display_math_local_scroll": true,
+      "images_fluid": true,
+      "narrow_breakpoint_36em": true,
+      "table_and_pre_local_scroll": true
+    },
+    "unresolved_internal_references": [],
+    "unresolved_navigation_targets": [],
+    "xhtml_member_count": 9,
+    "xml_member_count": 13,
+    "zip": {
+      "crc_clean": true,
+      "duplicate_member_count": 0,
+      "entry_count": 20,
+      "fixed_timestamps": true,
+      "mimetype_extra_field_empty": true,
+      "mimetype_first": true,
+      "mimetype_stored": true,
+      "unsafe_members": []
+    }
+  },
+  "failures": [],
+  "generated_at_utc": "2026-08-27T23:37:18.920315Z",
+  "html": {
+    "bytes": 2485595,
+    "canonical_order_marker_count": 29,
+    "doctype_html5": true,
+    "duplicate_ids": [],
+    "embedded_source_image_hashes": [
+      "08bc716590267148f90b4dc45dc62e3959713b573b809c81c08967ab8cecda2e",
+      "637e5a503469918640b6a8eb3971e74ae4d3778b5ef73808493ce2ceef2f0a31",
+      "c0844bf6b3732883d2faff403179ec3eb74ebe867f3ae68cc98ac192c70d373b",
+      "1c237c8642b1a12197a12c337242815dafe90b310796dc877b699f0467a4ecce",
+      "4d41bd11afbd1c6c7b6b360d3edeffcd06ab1cdbc699f8909103f5928c737ba0"
+    ],
+    "external_runtime_dependencies": [],
+    "headings": {
+      "count": 224,
+      "counts_by_level": {
+        "h1": 7,
+        "h2": 16,
+        "h3": 57,
+        "h4": 27,
+        "h5": 0,
+        "h6": 117
+      },
+      "empty_count": 0,
+      "empty_indices": [],
+      "upward_level_jump_count": 21,
+      "upward_level_jumps": [
+        {
+          "from_index": 1,
+          "from_level": 1,
+          "to_level": 3
+        },
+        {
+          "from_index": 9,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 21,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 27,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 32,
+          "from_level": 2,
+          "to_level": 6
+        },
+        {
+          "from_index": 83,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 93,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 109,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 125,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 142,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 145,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 148,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 151,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 154,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 157,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 160,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 163,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 182,
+          "from_level": 3,
+          "to_level": 6
+        },
+        {
+          "from_index": 211,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 217,
+          "from_level": 4,
+          "to_level": 6
+        },
+        {
+          "from_index": 223,
+          "from_level": 4,
+          "to_level": 6
+        }
+      ]
+    },
+    "id_count": 852,
+    "image_count": 5,
+    "internal_link_count": 261,
+    "landmarks": {
+      "banner": 1,
+      "contentinfo": 1,
+      "main": 1,
+      "toc": 1
+    },
+    "language": "id-ID",
+    "long_description_target_count": 5,
+    "math": {
+      "display_mathml_count": 729,
+      "mathml_count": 4535,
+      "mathml_namespace_count": 4535,
+      "tex_annotation_count": 4535
+    },
+    "nonempty_alt_count": 5,
+    "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+    "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89",
+    "source_label_count": 651,
+    "source_labels_preserved_exactly_once": 651,
+    "source_order_sentinel_count": 29,
+    "stabilized_module_05_correction_present": true,
+    "static_reflow": {
+      "content_max_96rem": true,
+      "display_math_local_scroll": true,
+      "images_fluid": true,
+      "inline_math_local_scroll": true,
+      "narrow_breakpoint_48rem": true,
+      "page_overflow_clipped": true,
+      "pre_local_scroll": true,
+      "table_local_scroll": true,
+      "viewport_meta": true
+    },
+    "unresolved_internal_fragments": []
+  },
+  "limitations": [
+    "Rendered desktop/tablet/phone geometry was not measured: the in-app browser URL safety policy rejected the local file URL and prohibited workaround or alternate browser surfaces. Static responsive/overflow contracts passed."
+  ],
+  "rendered_viewports": {
+    "page_overflow_measurement": "not_performed",
+    "performed": false,
+    "profiles": [
+      {
+        "height": 900,
+        "name": "desktop",
+        "width": 1440
+      },
+      {
+        "height": 1112,
+        "name": "tablet",
+        "width": 834
+      },
+      {
+        "height": 844,
+        "name": "phone",
+        "width": 390
+      }
+    ],
+    "reason": "Rendered desktop/tablet/phone geometry was not measured: the in-app browser URL safety policy rejected the local file URL and prohibited workaround or alternate browser surfaces. Static responsive/overflow contracts passed.",
+    "static_epub_contract_passed": true,
+    "static_html_contract_passed": true,
+    "wide_math_scroll_measurement": "not_performed"
+  },
+  "result": "pass_with_limitations",
+  "schema": "o015-integrated-reflow-independent-v1",
+  "scope": "Independent offline binding and structural/reflow audit of the integrated HTML and EPUB readers",
+  "source_contract": {
+    "aggregator_module_order": [
+      "original-03/00-peta-asesmen-id",
+      "original-03/01-diagnostik-prasyarat-id",
+      "original-03/02-set-soal-dasar-konveks-id",
+      "original-03/03-set-soal-metode-proksimal-id",
+      "original-03/04-set-soal-dualitas-kkt-id",
+      "original-03/05-set-soal-metode-stokastik-id",
+      "original-03/06-set-soal-operator-monoton-id",
+      "original-03/07-set-soal-transportasi-dan-sintesis-id",
+      "original-03/08-rubrik-pembuktian-id",
+      "original-03/09-ujian-tengah-id",
+      "original-03/10-ujian-akhir-id",
+      "original-03/11-laboratorium-globalisasi-newton-id",
+      "original-03/12-laboratorium-transportasi-entropik-id",
+      "original-03/13-proyek-kapstone-masalah-invers-komposit-id"
+    ],
+    "bibliography_count": 1,
+    "combined_source": {
+      "body_marker_count": 15,
+      "bytes": 472725,
+      "module_marker_count": 14,
+      "path": "tmp/integrated-readers/D90-O015-integrated-reader-id.tex",
+      "present": true,
+      "sha256": "14f60c4da15c77f8aaee768b394bd613e21e5b719787941ff2bba47826ab227e"
+    },
+    "environment_counts": {
+      "cor": 6,
+      "defn": 41,
+      "example": 15,
+      "exercise": 74,
+      "lemma": 36,
+      "proof": 92,
+      "prop": 8,
+      "rem": 8,
+      "theorem": 54
+    },
+    "first_label_count": 29,
+    "first_labels": [
+      "preliminaries:defn:vectorspace",
+      "eq:convex_sets:defin_conv_hull",
+      "d90-hab:ch:subgradien",
+      "subgradient:eq:projectedSG",
+      "proximal:eq:problem",
+      "acceleration:eq:friction_ode",
+      "chapter:duality",
+      "stochastic:eq:gradient",
+      "ot:fig:ot",
+      "becker:chapter:lagrange-kkt",
+      "becker03:chapter:variance-reduction",
+      "orig01:chapter:stochastic-composite",
+      "becker:chapter:douglas-rachford",
+      "orig02:chapter:monotone-inclusions",
+      "orig03:chapter:course-closure",
+      "orig03:section:peta-asesmen",
+      "orig03:section:diagnostik",
+      "orig03:section:set-soal-dasar-konveks",
+      "orig03:section:set-soal-metode-proksimal",
+      "orig03:section:set-soal-dualitas-kkt",
+      "orig03:ps04",
+      "orig03:ps05",
+      "orig03:ps06",
+      "orig03:rubric",
+      "orig03:midterm",
+      "orig03:final",
+      "orig03:lab:globalisasi-newton",
+      "orig03:lab:transportasi-entropik",
+      "orig03:capstone:invers-komposit"
+    ],
+    "inputs": [
+      {
+        "bytes": 31009,
+        "path": "source/id-ID/habring-01-prasyarat-id.tex",
+        "sha256": "6ed957c8bf654608e8d572b2f0368478a4dc185ba51c150ea9dee36bb62868e7"
+      },
+      {
+        "bytes": 42828,
+        "path": "source/id-ID/habring-02-konveksitas-id.tex",
+        "sha256": "99a992f36756cb64f82d21cfcaf68fdaee8b8dd61ef2b007322d9d2623989f22"
+      },
+      {
+        "bytes": 19267,
+        "path": "source/id-ID/habring-03-subgradien-id.tex",
+        "sha256": "5cbefc17a3d1409305a9fdadf865b45cb399ff1edc41d837bc4f4c138d9b97df"
+      },
+      {
+        "bytes": 16612,
+        "path": "source/id-ID/habring-04-metode-subgradien-terproyeksi-id.tex",
+        "sha256": "29fdc330007009bd765a17ca1dcd0cf130ff802312ebb402bf03413da5f96a7d"
+      },
+      {
+        "bytes": 20575,
+        "path": "source/id-ID/habring-05-metode-gradien-proksimal-id.tex",
+        "sha256": "1292f09d375ff0e0ff12e7c87e673596400bb94f228db70d49f9a517b1678691"
+      },
+      {
+        "bytes": 24690,
+        "path": "source/id-ID/habring-06-akselerasi-id.tex",
+        "sha256": "b1e27d912bc94722ec1c33257598c074eec8a6f5bf81f43b8946f85b48f4c35a"
+      },
+      {
+        "bytes": 35436,
+        "path": "source/id-ID/habring-07-dualitas-id.tex",
+        "sha256": "360d0a4afc6058e3c8c90b4c2a7d2dc7cbd5f42b3544b3174a1b838348560979"
+      },
+      {
+        "bytes": 6378,
+        "path": "source/id-ID/habring-08-penurunan-gradien-stokastik-id.tex",
+        "sha256": "f610aaec91aa9b76582f251458da65d25cc37a933a51da478cad13ee16e5a344"
+      },
+      {
+        "bytes": 21252,
+        "path": "source/id-ID/habring-09-transportasi-optimal-id.tex",
+        "sha256": "45c0eef50b535ffb8722ad74caf4df0bf014f5eebb43d13b24f00639018ca3bd"
+      },
+      {
+        "bytes": 12924,
+        "path": "source/id-ID/becker-01-dualitas-lagrange-slater-kkt-id.tex",
+        "sha256": "ad656aa517ff418cc1529d2c2c62c602ea95aa2a4dbff9cf1f3f336f26e574ce"
+      },
+      {
+        "bytes": 8298,
+        "path": "source/id-ID/becker-03-reduksi-varians-id.tex",
+        "sha256": "a135999fc1ec7a5c8a1e4022a778a8983411d4050c0f6aa8326de2864601c40b"
+      },
+      {
+        "bytes": 27425,
+        "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+        "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0"
+      },
+      {
+        "bytes": 4915,
+        "path": "source/id-ID/becker-02-pemisahan-douglas-rachford-id.tex",
+        "sha256": "2d0e7d64d8226954640013caecd1cacfb3c60d2ae75a27f130f97e900a20464a"
+      },
+      {
+        "bytes": 28028,
+        "path": "source/id-ID/original-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.tex",
+        "sha256": "0f58d7785f281dd4e10ab3630d2f22a62b388ca98fd50b0e972e1cc89d847367"
+      },
+      {
+        "bytes": 1785,
+        "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+        "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9"
+      },
+      {
+        "bytes": 10067,
+        "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+        "sha256": "3d5f906f205cfabf7f3a464d18111209a22bc6edd193702ea584093b3d9938f8"
+      },
+      {
+        "bytes": 24183,
+        "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+        "sha256": "162f56e14f6d7fb1b879ed3403617ca7ca4d1fa32b4548812869bec1728a5b2f"
+      },
+      {
+        "bytes": 15501,
+        "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+        "sha256": "bd09ebd90d1fef7b35147e84c449d14ba50078fde491babbb32d49f1c6695c83"
+      },
+      {
+        "bytes": 14393,
+        "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+        "sha256": "243912d9de0f5d73de8fb8f3a5d041797f951331a6ad6cce955e6a8538172eff"
+      },
+      {
+        "bytes": 16647,
+        "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+        "sha256": "fa7d45448b63cc07572cad4afb8fef65e10922e3be094d6aa8227119cc9a7de2"
+      },
+      {
+        "bytes": 10598,
+        "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+        "sha256": "1c062ad559e675dde14c26e86450d7c500232490d0112a0f34ca1d0f5886ad94"
+      },
+      {
+        "bytes": 12295,
+        "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+        "sha256": "3560f1cc9380c0a92e4e66f7e87dfc2a34c588670df220b1b0e6f0ea568c6919"
+      },
+      {
+        "bytes": 10677,
+        "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+        "sha256": "ec1420f9c1e7233861dbf189bad49ce749dfeff29d5f0386e7ca11fb81c55791"
+      },
+      {
+        "bytes": 7947,
+        "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+        "sha256": "2779632ba1098cb5a842c195336945beece42bd7e1596e535b40ab6efaf3dd62"
+      },
+      {
+        "bytes": 11934,
+        "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+        "sha256": "8dda06c13022d1a6f953f1930c0ccdeeaa534e098e0dc68edd4a6d761900a003"
+      },
+      {
+        "bytes": 20374,
+        "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+        "sha256": "338a573281c6e22a6699b22d852705fdff0db464ad1bc10d9cdd924bb9430d76"
+      },
+      {
+        "bytes": 5563,
+        "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+        "sha256": "bb988eeab3bb1ce7d3848cd09d6760c5ac99bc2ca3b4153d8684ca138e8f3647"
+      },
+      {
+        "bytes": 4713,
+        "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+        "sha256": "7fafdef5e27bbb51354158b89a05b01ee68521d2a892fa27a9eb2d2e5e4a43c0"
+      },
+      {
+        "bytes": 7045,
+        "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+        "sha256": "ac8a1415e49b8f2b2c5fca46f33928e36239c90ef30b2872e64fcda4ea11e190"
+      },
+      {
+        "bytes": 957,
+        "path": "source/id-ID/references-integrated-id.bib",
+        "sha256": "1935cc1e40c1f0c2a1a2836358a0b8f5304573330ebfa3deba4c4b11dfdd5abc"
+      }
+    ],
+    "label_count": 651,
+    "live_inputs_bound": true,
+    "main_body_count": 15,
+    "manifest_input_count": 30,
+    "original_03_module_count": 14,
+    "stabilized_module_05_correction_present": true,
+    "stale_inputs": [],
+    "tex_file_count": 29
+  },
+  "toolchain": {
+    "java": {
+      "available": true,
+      "exit_code": 0,
+      "first_line": "openjdk version \"21.0.11\" 2026-04-21 LTS"
+    },
+    "pandoc": {
+      "available": true,
+      "exit_code": 0,
+      "first_line": "pandoc 3.9.0.2"
+    },
+    "python": "3.13.9"
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+<title id="title">Perbandingan globalisasi metode gradien dan Newton</title>
+<desc id="desc">Kurva logaritma objektif memperlihatkan kegagalan langkah tetap dan Newton murni serta pemulihan oleh backtracking dan koreksi Hessian.</desc>
+<rect width="100%" height="100%" fill="white" />
+<line x1="72" y1="362" x2="736" y2="362" stroke="#222" />
+<line x1="72" y1="28" x2="72" y2="362" stroke="#222" />
+<text x="380.0" y="406" text-anchor="middle" font-family="sans-serif" font-size="14">Iterasi</text>
+<text x="18" y="210.0" transform="rotate(-90 18 210.0)" text-anchor="middle" font-family="sans-serif" font-size="14">log10 objektif</text>
+<polyline points="72.00,163.03 92.12,162.66 112.24,158.49 132.36,154.31 152.48,150.13 172.61,145.94 192.73,141.73 212.85,137.52 232.97,133.31 253.09,129.10 273.21,124.89 293.33,120.68 313.45,116.46 333.58,112.25 353.70,108.04 373.82,103.83 393.94,99.61 414.06,95.40 434.18,91.19 454.30,86.98 474.42,82.76 494.55,78.55 514.67,74.34 534.79,70.13 554.91,65.91 575.03,61.70 595.15,57.49 615.27,53.28 635.39,49.06 655.52,44.85 675.64,40.64 695.76,36.43 715.88,32.21 736.00,28.00" fill="none" stroke="#b33a3a" stroke-width="2" />
+<line x1="430" y1="28" x2="455" y2="28" stroke="#b33a3a" stroke-width="3" />
+<text x="462" y="33" font-family="sans-serif" font-size="12">gradien-langkah-tetap</text>
+<polyline points="72.00,163.03 92.12,169.59 112.24,174.76 132.36,190.91 152.48,205.32 172.61,219.72 192.73,234.13 212.85,248.53 232.97,262.93 253.09,277.34 273.21,291.74 293.33,306.14 313.45,320.54 333.58,334.96 353.70,349.50 373.82,362.00 393.94,362.00" fill="none" stroke="#2b6cb0" stroke-width="2" />
+<line x1="430" y1="48" x2="455" y2="48" stroke="#2b6cb0" stroke-width="3" />
+<text x="462" y="53" font-family="sans-serif" font-size="12">gradien-backtracking</text>
+<polyline points="72.00,163.03 92.12,146.84" fill="none" stroke="#9c6b18" stroke-width="2" />
+<line x1="430" y1="68" x2="455" y2="68" stroke="#9c6b18" stroke-width="3" />
+<text x="462" y="73" font-family="sans-serif" font-size="12">newton-murni</text>
+<polyline points="72.00,163.03 92.12,174.29 112.24,177.54 132.36,185.93 152.48,213.06 172.61,294.97 192.73,362.00" fill="none" stroke="#23835b" stroke-width="2" />
+<line x1="430" y1="88" x2="455" y2="88" stroke="#23835b" stroke-width="3" />
+<text x="462" y="93" font-family="sans-serif" font-size="12">newton-teredam-terkoreksi</text>
+</svg>

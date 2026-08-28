@@ -1,0 +1,80 @@
+{
+  "browser_used": false,
+  "credential_accessed": false,
+  "date": "2026-08-28",
+  "deterministic_zip_builds": 2,
+  "deterministic_zip_byte_identical": true,
+  "frozen_artifact_bytes": 13750793,
+  "frozen_artifact_count_before_final_generated_manifest_and_checksums": 7,
+  "frozen_artifacts": [
+    {
+      "bytes": 1671254,
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "order": 1,
+      "role": "default_preview_and_fixed_layout_reader",
+      "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5",
+      "source_path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf"
+    },
+    {
+      "bytes": 2485595,
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "order": 2,
+      "role": "primary_reflow_reader",
+      "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89",
+      "source_path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html"
+    },
+    {
+      "bytes": 379901,
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+      "order": 3,
+      "role": "portable_reflow_reader",
+      "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321",
+      "source_path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub"
+    },
+    {
+      "bytes": 1397822,
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+      "order": 4,
+      "role": "compact_source_labs_backend_qa_bundle",
+      "sha256": "cdd9454f1d9ffc2dc13dccd6c9b82ac78d108d90feaa6baa609aae5f21335d32",
+      "source_path": "release/final/2026-08-28/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip"
+    },
+    {
+      "bytes": 3534351,
+      "filename": "backend-records-2026.08.28-integrated.jsonl",
+      "order": 5,
+      "role": "current_machine_readable_backend",
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30",
+      "source_path": "backend/records.jsonl"
+    },
+    {
+      "bytes": 4272596,
+      "filename": "backend-records-2026.08.28-integrated.csv",
+      "order": 6,
+      "role": "current_tabular_backend",
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915",
+      "source_path": "backend/records.csv"
+    },
+    {
+      "bytes": 9274,
+      "filename": "RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+      "order": 7,
+      "role": "exact_component_rights_source_change_model_nonendorsement_note",
+      "sha256": "acf83221211b25f67688d87932f333f9ed0309c11a5d6c3bea37b182ce72b360",
+      "source_path": "release/final/2026-08-28/RIGHTS_AND_PROVENANCE_INTEGRATED.md"
+    }
+  ],
+  "git_used": false,
+  "network_used": false,
+  "planned_zenodo_addition_count": 9,
+  "privacy_or_credential_findings": [],
+  "publisher_generated_additions": [
+    "release-manifest-integrated-zenodo.json",
+    "SHA256SUMS-integrated"
+  ],
+  "publisher_rebuilds_generated_manifest_and_checksums_after_release_input_freeze": true,
+  "result": "pass",
+  "schema": "o015-integrated-local-release-verification-v1",
+  "zip_entries": 86,
+  "zip_test": "pass"
+}

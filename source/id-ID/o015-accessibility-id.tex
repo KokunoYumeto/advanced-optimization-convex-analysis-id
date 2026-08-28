@@ -1,0 +1,92 @@
+% Lapisan pembaca terpadu dan penandaan aksesibilitas O015/D90.
+% Toolchain MiKTeX pada mesin produksi tidak sinkron dengan modul latex-lab
+% terbaru. Loader kompatibilitas lokal menyediakan struktur tingkat rendah;
+% karena itu dokumen ini bertanda dan dapat dicari, tetapi tidak mengklaim
+% kesesuaian PDF/UA tanpa validator kesesuaian yang dipatok.
+\usepackage[indonesian]{babel}
+\usepackage{amsmath,amsthm,mathtools}
+\numberwithin{equation}{chapter}
+\usepackage[T1]{fontenc}
+\usepackage[proportional]{libertine}
+\usepackage[libertine,smallerops,liby,vvarbb]{newtxmath}
+% The legacy Inconsolata package exposes only T1 families on this LuaLaTeX
+% toolchain and therefore falls back for TU texttt.  Use a bundled OpenType
+% monospaced face explicitly for a stable searchable code surface.
+\setmonofont[Scale=0.95]{Latin Modern Mono}
+\usepackage{microtype}
+\usepackage[a4paper,top=18mm,bottom=19mm,left=20mm,right=20mm,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\definecolor{structure}{RGB}{30,55,125}
+\definecolor{linkcolor}{RGB}{0,76,147}
+\usepackage{csquotes}
+\usepackage{algorithm}
+\usepackage[labelfont={color=structure,sf}]{caption}
+\usepackage[labelfont={color=structure,sf}]{subcaption}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage[
+  colorlinks=true,
+  linkcolor=linkcolor,
+  citecolor=linkcolor,
+  urlcolor=linkcolor,
+  filecolor=linkcolor,
+  unicode=true,
+  pdfencoding=auto,
+  linktocpage=true
+]{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[backend=biber,style=authoryear,maxbibnames=99,giveninits=true,isbn=false]{biblatex}
+\newcommand{\OIntegratedReader}{}
+\input{macros-id}
+
+\microtypesetup{expansion=false}
+\frenchspacing
+\raggedbottom
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{3}
+\glsdisablehyper
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{structure}\nouppercase{\leftmark}}
+\fancyhead[R]{\small\sffamily\color{structure}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\enspace #1}{}}
+\renewcommand{\chaptername}{Bab}
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\proofname}{Bukti}
+
+% Restore the standard book footnote template after package hooks so the
+% synchronized latex-lab compatibility layer can recognize and tag it.
+\makeatletter
+\renewcommand\@makefntext[1]{%
+  \parindent 1em\noindent
+  \hb@xt@1.8em{\hss\@makefnmark}#1}
+\makeatother
+
+\ifdefined\ONoManualMC
+  \newcommand{\OBeginStructure}[1]{%
+    \tagstructbegin{tag=Part,title={#1}}%
+    \tagstructbegin{tag=Sect,title={#1}}%
+  }
+  \newcommand{\OEndStructure}{%
+    \tagstructend%
+    \tagstructend%
+  }
+\else
+  \newcommand{\OBeginStructure}[1]{%
+    \tagstructbegin{tag=Part,title={#1}}%
+    \tagstructbegin{tag=Sect,title={#1}}%
+    \tagstructbegin{tag=P}%
+    \tagmcbegin{tag=P}%
+  }
+  \newcommand{\OEndStructure}{%
+    \tagmcend%
+    \tagstructend%
+    \tagstructend%
+    \tagstructend%
+  }
+\fi

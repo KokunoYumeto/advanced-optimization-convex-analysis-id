@@ -1,0 +1,603 @@
+% ORIG03-SEGMENT-CODE: OR03-S002
+% ORIG03-SEGMENT-ID: d90.orig.v1.tr03.seg0002
+% ORIG03-MODULE-ID: diag.module.0001
+% SPDX-License-Identifier: CC-BY-SA-4.0
+% Karya asli berbahasa Indonesia; semua butir disusun independen.
+
+\section{Diagnostik prasyarat}
+\label{orig03:section:diagnostik}
+
+Sepuluh butir berikut menguji prasyarat yang dipakai di seluruh buku. Setiap
+subbutir merupakan prompt tersendiri dengan dua tingkat petunjuk, jawaban
+ringkas, dan solusi lengkap. Materi ini tidak memuat pemodelan atau algoritma
+yang menjadi wilayah O018.
+
+% ORIG03-STABLE-ID: diag.problem.0001
+\begin{exercise}[Norma dan ketaksamaan dasar]
+\label{orig03:diag:problem:0001}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0001
+\item\label{orig03:diag:prompt:0001}
+Untuk $x=(3,-4)\in\mathbb{R}^2$, hitung $\lVert x\rVert_1$,
+$\lVert x\rVert_2$, dan $\lVert x\rVert_\infty$.
+% ORIG03-STABLE-ID: diag.prompt.0002
+\item\label{orig03:diag:prompt:0002}
+Buktikan bahwa untuk setiap $z\in\mathbb{R}^n$,
+\[
+  \lVert z\rVert_\infty\leq\lVert z\rVert_2
+  \leq\lVert z\rVert_1\leq\sqrt n\,\lVert z\rVert_2.
+\]
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0001
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0001).}
+Gunakan langsung tiga definisi norma.
+\label{orig03:diag:hint1:0001}
+% ORIG03-STABLE-ID: diag.hint2.0001
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0001).}
+Nilai mutlak koordinatnya adalah $3$ dan $4$.
+\label{orig03:diag:hint2:0001}
+% ORIG03-STABLE-ID: diag.answer.0001
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0001).}
+$\lVert x\rVert_1=7$, $\lVert x\rVert_2=5$, dan
+$\lVert x\rVert_\infty=4$.
+\label{orig03:diag:answer:0001}
+% ORIG03-STABLE-ID: diag.solution.0001
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0001).}
+Definisi memberi
+$\lVert x\rVert_1=|3|+|-4|=7$,
+$\lVert x\rVert_2=\sqrt{3^2+(-4)^2}=5$, dan
+$\lVert x\rVert_\infty=\max\{3,4\}=4$.
+\label{orig03:diag:solution:0001}
+
+% ORIG03-STABLE-ID: diag.hint1.0002
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0002).}
+Bandingkan setiap koordinat dengan jumlah kuadrat, lalu gunakan
+Cauchy--Schwarz untuk ketaksamaan terakhir.
+\label{orig03:diag:hint1:0002}
+% ORIG03-STABLE-ID: diag.hint2.0002
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0002).}
+Kembangkan $(\sum_i|z_i|)^2$ dan gunakan
+$\sum_i|z_i|\leq\sqrt{\sum_i1^2}\sqrt{\sum_i z_i^2}$.
+\label{orig03:diag:hint2:0002}
+% ORIG03-STABLE-ID: diag.answer.0002
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0002).}
+Rantai tersebut berlaku untuk semua $z$; konstanta $\sqrt n$ tajam pada
+vektor yang semua koordinat mutlaknya sama.
+\label{orig03:diag:answer:0002}
+% ORIG03-STABLE-ID: diag.solution.0002
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0002).}
+Untuk setiap $i$, $|z_i|^2\leq\sum_j|z_j|^2$, sehingga
+$\lVert z\rVert_\infty\leq\lVert z\rVert_2$. Selanjutnya,
+$\sum_i|z_i|^2\leq(\sum_i|z_i|)^2$, sehingga
+$\lVert z\rVert_2\leq\lVert z\rVert_1$. Akhirnya Cauchy--Schwarz memberi
+$\sum_i|z_i|\leq(\sum_i1)^{1/2}(\sum_i|z_i|^2)^{1/2}$.
+Ini menghasilkan ketaksamaan terakhir. Jika $|z_1|=\cdots=|z_n|>0$,
+ketaksamaan terakhir menjadi kesamaan.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:diag:solution:0002}
+
+% ORIG03-STABLE-ID: diag.problem.0002
+\begin{exercise}[Proyeksi dan ortogonalitas]
+\label{orig03:diag:problem:0002}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0003
+\item\label{orig03:diag:prompt:0003}
+Proyeksikan $y=(2,-1)$ pada hiperbidang
+$H=\{x\in\mathbb{R}^2:x_1+x_2=0\}$.
+% ORIG03-STABLE-ID: diag.prompt.0004
+\item\label{orig03:diag:prompt:0004}
+Untuk himpunan konveks tertutup takkosong $C$, buktikan bahwa
+$p=P_C(y)$ jika dan hanya jika
+$\langle y-p,z-p\rangle\leq0$ untuk setiap $z\in C$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0003
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0003).}
+Gunakan normal $a=(1,1)$ dan rumus proyeksi pada $a^Tx=0$.
+\label{orig03:diag:hint1:0003}
+% ORIG03-STABLE-ID: diag.hint2.0003
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0003).}
+Kurangkan $((a^Ty)/(a^Ta))a$ dari $y$.
+\label{orig03:diag:hint2:0003}
+% ORIG03-STABLE-ID: diag.answer.0003
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0003).}
+$P_H(y)=(3/2,-3/2)$.
+\label{orig03:diag:answer:0003}
+% ORIG03-STABLE-ID: diag.solution.0003
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0003).}
+Karena $a^Ty=1$ dan $a^Ta=2$,
+\[
+P_H(y)=y-\frac{a^Ty}{a^Ta}a=(2,-1)-\frac12(1,1)
+=\left(\frac32,-\frac32\right).
+\]
+Jumlah koordinat hasilnya nol, sedangkan selisih $y-P_H(y)$ sejajar normal
+$a$, jadi hasil tersebut memang proyeksi ortogonal.
+\label{orig03:diag:solution:0003}
+
+% ORIG03-STABLE-ID: diag.hint1.0004
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0004).}
+Untuk arah maju gunakan titik $p+t(z-p)$; untuk arah balik kembangkan
+$\lVert y-z\rVert^2$.
+\label{orig03:diag:hint1:0004}
+% ORIG03-STABLE-ID: diag.hint2.0004
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0004).}
+Minimalitas fungsi kuadrat dalam $t\in[0,1]$ memberi turunan kanan taknegatif
+di $t=0$.
+\label{orig03:diag:hint2:0004}
+% ORIG03-STABLE-ID: diag.answer.0004
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0004).}
+Kondisi hasil kali dalam tersebut tepat merupakan kondisi optimalitas orde
+pertama bagi minimisasi jarak kuadrat pada $C$.
+\label{orig03:diag:answer:0004}
+% ORIG03-STABLE-ID: diag.solution.0004
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0004).}
+Jika $p=P_C(y)$, maka untuk $z\in C$ dan $t\in[0,1]$, kekonveksan memberi
+$p+t(z-p)\in C$. Fungsi
+$q(t)=\lVert y-p-t(z-p)\rVert^2$ minimum di $t=0$, sehingga
+$q'(0)=-2\langle y-p,z-p\rangle\geq0$. Sebaliknya, bila kondisi hasil kali
+dalam berlaku, maka untuk setiap $z\in C$,
+\[
+\lVert y-z\rVert^2
+=\lVert y-p\rVert^2+\lVert z-p\rVert^2
+-2\langle y-p,z-p\rangle\geq\lVert y-p\rVert^2.
+\]
+Jadi $p$ meminimalkan jarak. Keunikan mengikuti kekonveksan ketat jarak
+kuadrat.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0004}.}
+\label{orig03:diag:solution:0004}
+
+% ORIG03-STABLE-ID: diag.problem.0003
+\begin{exercise}[Kombinasi dan irisan konveks]
+\label{orig03:diag:problem:0003}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0005
+\item\label{orig03:diag:prompt:0005}
+Tentukan $t\in[0,1]$ sehingga
+$(1,2)=t(0,1)+(1-t)(2,3)$.
+% ORIG03-STABLE-ID: diag.prompt.0006
+\item\label{orig03:diag:prompt:0006}
+Buktikan bahwa irisan sebarang keluarga himpunan konveks adalah konveks.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0005
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0005).}
+Samakan koordinat pertama.
+\label{orig03:diag:hint1:0005}
+% ORIG03-STABLE-ID: diag.hint2.0005
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0005).}
+Persamaan $2(1-t)=1$ memberi kandidat tunggal; periksa koordinat kedua.
+\label{orig03:diag:hint2:0005}
+% ORIG03-STABLE-ID: diag.answer.0005
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0005).}
+$t=1/2$.
+\label{orig03:diag:answer:0005}
+% ORIG03-STABLE-ID: diag.solution.0005
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0005).}
+Koordinat pertama memberi $2(1-t)=1$, jadi $t=1/2$. Koordinat kedua lalu
+bernilai $t+3(1-t)=1/2+3/2=2$. Karena $1/2\in[0,1]$, ini kombinasi konveks
+yang sah.
+\label{orig03:diag:solution:0005}
+
+% ORIG03-STABLE-ID: diag.hint1.0006
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0006).}
+Ambil dua titik dalam irisan dan uji kombinasi konveksnya pada setiap anggota
+keluarga.
+\label{orig03:diag:hint1:0006}
+% ORIG03-STABLE-ID: diag.hint2.0006
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0006).}
+Keanggotaan pada irisan berarti keanggotaan serentak pada semua himpunan.
+\label{orig03:diag:hint2:0006}
+% ORIG03-STABLE-ID: diag.answer.0006
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0006).}
+Irisan tetap konveks; irisan kosong juga konveks secara vakum.
+\label{orig03:diag:answer:0006}
+% ORIG03-STABLE-ID: diag.solution.0006
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0006).}
+Tuliskan $C=\bigcap_{i\in I}C_i$ dengan setiap $C_i$ konveks. Jika
+$x,y\in C$ dan $t\in[0,1]$, maka $x,y\in C_i$ untuk setiap $i$. Karena
+$C_i$ konveks, $tx+(1-t)y\in C_i$ untuk setiap $i$, sehingga titik itu berada
+di $C$. Bila $C$ kosong, implikasi dalam definisi konveks benar secara vakum.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:diag:solution:0006}
+
+% ORIG03-STABLE-ID: diag.problem.0004
+\begin{exercise}[Kuadratik, gradien, dan spektrum]
+\label{orig03:diag:problem:0004}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0007
+\item\label{orig03:diag:prompt:0007}
+Untuk $f(x)=\tfrac12x^TQx+b^Tx$ dengan
+$Q=\begin{psmallmatrix}4&1\\1&2\end{psmallmatrix}$ dan $b=(-1,3)$,
+hitung $\nabla f(1,-1)$ dan $\nabla^2f$.
+% ORIG03-STABLE-ID: diag.prompt.0008
+\item\label{orig03:diag:prompt:0008}
+Tentukan konstanta kuat-konveks terbesar $\mu$ dan konstanta Lipschitz gradien
+terkecil $L$ bagi $f$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0007
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0007).}
+Karena $Q$ simetris, $\nabla f(x)=Qx+b$.
+\label{orig03:diag:hint1:0007}
+% ORIG03-STABLE-ID: diag.hint2.0007
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0007).}
+Hitung $Q(1,-1)^T=(3,-1)^T$.
+\label{orig03:diag:hint2:0007}
+% ORIG03-STABLE-ID: diag.answer.0007
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0007).}
+$\nabla f(1,-1)=(2,2)$ dan $\nabla^2f=Q$.
+\label{orig03:diag:answer:0007}
+% ORIG03-STABLE-ID: diag.solution.0007
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0007).}
+Diferensiasi bentuk kuadratik simetris memberi $\nabla f(x)=Qx+b$ dan
+$\nabla^2f=Q$. Pada $x=(1,-1)$,
+$Qx=(4-1,1-2)=(3,-1)$, sehingga $Qx+b=(2,2)$.
+\label{orig03:diag:solution:0007}
+
+% ORIG03-STABLE-ID: diag.hint1.0008
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0008).}
+Cari kedua nilai eigen matriks simetris $Q$.
+\label{orig03:diag:hint1:0008}
+% ORIG03-STABLE-ID: diag.hint2.0008
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0008).}
+Persamaan karakteristiknya $\lambda^2-6\lambda+7=0$.
+\label{orig03:diag:hint2:0008}
+% ORIG03-STABLE-ID: diag.answer.0008
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0008).}
+$\mu=3-\sqrt2$ dan $L=3+\sqrt2$.
+\label{orig03:diag:answer:0008}
+% ORIG03-STABLE-ID: diag.solution.0008
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0008).}
+Nilai eigen $Q$ adalah akar
+$\lambda^2-6\lambda+7=0$, yaitu $3\pm\sqrt2$. Untuk kuadratik dengan Hessian
+konstan simetris positif definit, konstanta kuat-konveks terbesar adalah nilai
+eigen minimum dan konstanta Lipschitz gradien terkecil adalah nilai eigen
+maksimum. Jadi hasilnya $\mu=3-\sqrt2$ dan $L=3+\sqrt2$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0002}.}
+\label{orig03:diag:solution:0008}
+
+% ORIG03-STABLE-ID: diag.problem.0005
+\begin{exercise}[Kondisi orde pertama]
+\label{orig03:diag:problem:0005}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0009
+\item\label{orig03:diag:prompt:0009}
+Untuk $f(x)=(x-2)^2+1$, tuliskan penyangga afin orde pertama di $x_0=0$
+dan verifikasi bahwa penyangga itu menyentuh $f$ di $x_0$.
+% ORIG03-STABLE-ID: diag.prompt.0010
+\item\label{orig03:diag:prompt:0010}
+Buktikan bahwa jika $f$ konveks dan terdiferensialkan serta
+$\nabla f(x^*)=0$, maka $x^*$ adalah minimizer global.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0009
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0009).}
+Gunakan $f(x_0)+f'(x_0)(x-x_0)$.
+\label{orig03:diag:hint1:0009}
+% ORIG03-STABLE-ID: diag.hint2.0009
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0009).}
+$f(0)=5$ dan $f'(0)=-4$.
+\label{orig03:diag:hint2:0009}
+% ORIG03-STABLE-ID: diag.answer.0009
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0009).}
+Penyangga afinnya $\ell(x)=5-4x$, dan $\ell(0)=f(0)=5$.
+\label{orig03:diag:answer:0009}
+% ORIG03-STABLE-ID: diag.solution.0009
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0009).}
+Turunan $f'(x)=2(x-2)$, jadi $f'(0)=-4$. Karena itu
+$\ell(x)=f(0)+f'(0)x=5-4x$. Selisihnya
+$f(x)-\ell(x)=x^2\geq0$, dan selisih nol di $x=0$.
+\label{orig03:diag:solution:0009}
+
+% ORIG03-STABLE-ID: diag.hint1.0010
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0010).}
+Gunakan ketaksamaan orde pertama bagi fungsi konveks.
+\label{orig03:diag:hint1:0010}
+% ORIG03-STABLE-ID: diag.hint2.0010
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0010).}
+Substitusikan gradien nol dalam
+$f(y)\geq f(x^*)+\langle\nabla f(x^*),y-x^*\rangle$.
+\label{orig03:diag:hint2:0010}
+% ORIG03-STABLE-ID: diag.answer.0010
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0010).}
+$f(y)\geq f(x^*)$ untuk setiap $y$.
+\label{orig03:diag:answer:0010}
+% ORIG03-STABLE-ID: diag.solution.0010
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0010).}
+Kekonveksan dan keterdiferensialan memberi, untuk setiap $y$,
+\[
+f(y)\geq f(x^*)+\langle\nabla f(x^*),y-x^*\rangle=f(x^*).
+\]
+Jadi tidak ada titik dengan nilai lebih kecil daripada $x^*$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:diag:solution:0010}
+
+% ORIG03-STABLE-ID: diag.problem.0006
+\begin{exercise}[Subgradien dan operator proksimal]
+\label{orig03:diag:problem:0006}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0011
+\item\label{orig03:diag:prompt:0011}
+Tentukan $\partial|x|$ pada $x=-2$, $x=0$, dan $x=3$.
+% ORIG03-STABLE-ID: diag.prompt.0012
+\item\label{orig03:diag:prompt:0012}
+Hitung $\operatorname{prox}_{|\cdot|}(-3)$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0011
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0011).}
+Di luar nol gunakan turunan; di nol gunakan definisi subgradien.
+\label{orig03:diag:hint1:0011}
+% ORIG03-STABLE-ID: diag.hint2.0011
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0011).}
+Pada nol, $g$ harus memenuhi $|y|\geq gy$ untuk semua $y$.
+\label{orig03:diag:hint2:0011}
+% ORIG03-STABLE-ID: diag.answer.0011
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0011).}
+$\partial|-2|=\{-1\}$, $\partial|0|=[-1,1]$, dan
+$\partial|3|=\{1\}$.
+\label{orig03:diag:answer:0011}
+% ORIG03-STABLE-ID: diag.solution.0011
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0011).}
+Fungsi $|x|$ terdiferensialkan dengan turunan $-1$ untuk $x<0$ dan $1$
+untuk $x>0$. Pada nol, syarat subgradien adalah $|y|\geq gy$ untuk setiap
+$y$. Pemilihan $y>0$ memberi $g\leq1$, sedangkan $y<0$ memberi $g\geq-1$.
+Jadi subdiferensial di nol adalah $[-1,1]$.
+\label{orig03:diag:solution:0011}
+
+% ORIG03-STABLE-ID: diag.hint1.0012
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0012).}
+Gunakan rumus ambang lunak dengan ambang satu.
+\label{orig03:diag:hint1:0012}
+% ORIG03-STABLE-ID: diag.hint2.0012
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0012).}
+$S_1(v)=\operatorname{sign}(v)\max\{|v|-1,0\}$.
+\label{orig03:diag:hint2:0012}
+% ORIG03-STABLE-ID: diag.answer.0012
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0012).}
+$\operatorname{prox}_{|\cdot|}(-3)=-2$.
+\label{orig03:diag:answer:0012}
+% ORIG03-STABLE-ID: diag.solution.0012
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0012).}
+Operator proksimal meminimalkan $|x|+\tfrac12(x+3)^2$. Karena minimizer
+negatif, turunan pada cabang $x<0$ adalah $-1+x+3=x+2$, yang nol pada
+$x=-2$. Titik itu konsisten dengan cabangnya dan memberi hasil yang sama
+dengan $S_1(-3)=-2$.
+\label{orig03:diag:solution:0012}
+
+% ORIG03-STABLE-ID: diag.problem.0007
+\begin{exercise}[Ekspektasi dan rata-rata sampel]
+\label{orig03:diag:problem:0007}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0013
+\item\label{orig03:diag:prompt:0013}
+Peubah acak $X$ bernilai $-1$ dengan peluang $2/3$ dan $2$ dengan peluang
+$1/3$. Hitung $\mathbb{E}X$ dan $\operatorname{Var}(X)$.
+% ORIG03-STABLE-ID: diag.prompt.0014
+\item\label{orig03:diag:prompt:0014}
+Jika $X_1,\dots,X_m$ saling independen dan berdistribusi seperti $X$, tentukan
+ekspektasi dan varians $\bar X_m=m^{-1}\sum_{i=1}^mX_i$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0013
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0013).}
+Hitung momen pertama dan kedua.
+\label{orig03:diag:hint1:0013}
+% ORIG03-STABLE-ID: diag.hint2.0013
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0013).}
+$\mathbb{E}X^2=(2/3)1+(1/3)4$.
+\label{orig03:diag:hint2:0013}
+% ORIG03-STABLE-ID: diag.answer.0013
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0013).}
+$\mathbb{E}X=0$ dan $\operatorname{Var}(X)=2$.
+\label{orig03:diag:answer:0013}
+% ORIG03-STABLE-ID: diag.solution.0013
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0013).}
+Kita memperoleh
+$\mathbb{E}X=(2/3)(-1)+(1/3)2=0$ dan
+$\mathbb{E}X^2=(2/3)1+(1/3)4=2$. Maka
+$\operatorname{Var}(X)=\mathbb{E}X^2-(\mathbb{E}X)^2=2$.
+\label{orig03:diag:solution:0013}
+
+% ORIG03-STABLE-ID: diag.hint1.0014
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0014).}
+Gunakan linearitas ekspektasi dan aditivitas varians bagi peubah independen.
+\label{orig03:diag:hint1:0014}
+% ORIG03-STABLE-ID: diag.hint2.0014
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0014).}
+Faktor $1/m$ dikuadratkan ketika menghitung varians.
+\label{orig03:diag:hint2:0014}
+% ORIG03-STABLE-ID: diag.answer.0014
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0014).}
+$\mathbb{E}\bar X_m=0$ dan $\operatorname{Var}(\bar X_m)=2/m$.
+\label{orig03:diag:answer:0014}
+% ORIG03-STABLE-ID: diag.solution.0014
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0014).}
+Linearitas memberi
+$\mathbb{E}\bar X_m=m^{-1}\sum_i\mathbb{E}X_i=0$. Independensi memberi
+\[
+\operatorname{Var}(\bar X_m)=\frac1{m^2}\sum_{i=1}^m
+\operatorname{Var}(X_i)=\frac1{m^2}(2m)=\frac2m.
+\]
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0003}.}
+\label{orig03:diag:solution:0014}
+
+% ORIG03-STABLE-ID: diag.problem.0008
+\begin{exercise}[Rekurensi kontraktif]
+\label{orig03:diag:problem:0008}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0015
+\item\label{orig03:diag:prompt:0015}
+Selesaikan $x_{k+1}=\tfrac34x_k+1$ dengan $x_0=0$ dan tentukan titik
+tetapnya.
+% ORIG03-STABLE-ID: diag.prompt.0016
+\item\label{orig03:diag:prompt:0016}
+Tentukan bilangan bulat terkecil $k$ yang menjamin $|x_k-4|\leq10^{-2}$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0015
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0015).}
+Kurangkan titik tetap dari kedua ruas.
+\label{orig03:diag:hint1:0015}
+% ORIG03-STABLE-ID: diag.hint2.0015
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0015).}
+Titik tetap memenuhi $x=\tfrac34x+1$.
+\label{orig03:diag:hint2:0015}
+% ORIG03-STABLE-ID: diag.answer.0015
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0015).}
+Titik tetapnya $4$ dan $x_k=4(1-(3/4)^k)$.
+\label{orig03:diag:answer:0015}
+% ORIG03-STABLE-ID: diag.solution.0015
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0015).}
+Persamaan titik tetap memberi $x^*=4$. Dengan $e_k=x_k-4$ diperoleh
+$e_{k+1}=\tfrac34e_k$ dan $e_0=-4$. Jadi
+$e_k=-4(3/4)^k$ dan $x_k=4(1-(3/4)^k)$.
+\label{orig03:diag:solution:0015}
+
+% ORIG03-STABLE-ID: diag.hint1.0016
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0016).}
+Gunakan bentuk tertutup galat dari subbutir sebelumnya.
+\label{orig03:diag:hint1:0016}
+% ORIG03-STABLE-ID: diag.hint2.0016
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0016).}
+Selesaikan $(3/4)^k\leq1/400$ dengan logaritma.
+\label{orig03:diag:hint2:0016}
+% ORIG03-STABLE-ID: diag.answer.0016
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0016).}
+$k=21$.
+\label{orig03:diag:answer:0016}
+% ORIG03-STABLE-ID: diag.solution.0016
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0016).}
+Karena $|x_k-4|=4(3/4)^k$, syaratnya adalah
+$(3/4)^k\leq1/400$. Karena $\log(3/4)<0$,
+\[
+k\geq\frac{\log(1/400)}{\log(3/4)}\approx20.827.
+\]
+Bilangan bulat terkecil yang memenuhi adalah $21$.
+\label{orig03:diag:solution:0016}
+
+% ORIG03-STABLE-ID: diag.problem.0009
+\begin{exercise}[Kerucut normal dan titik tetap proyeksi]
+\label{orig03:diag:problem:0009}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0017
+\item\label{orig03:diag:prompt:0017}
+Minimalkan $f(x)=(x-2)^2$ pada $C=[0,1]$ dan verifikasi
+$0\in f'(x^*)+N_C(x^*)$ dengan konvensi
+$N_C(x)=\{v:v(y-x)\leq0\ \forall y\in C\}$.
+% ORIG03-STABLE-ID: diag.prompt.0018
+\item\label{orig03:diag:prompt:0018}
+Verifikasi bahwa untuk setiap $\gamma>0$, solusi tersebut memenuhi
+$x^*=P_C(x^*-\gamma f'(x^*))$.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0017
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0017).}
+Minimizer tak terkendala berada di luar interval.
+\label{orig03:diag:hint1:0017}
+% ORIG03-STABLE-ID: diag.hint2.0017
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0017).}
+Pada ujung kanan, $N_{[0,1]}(1)=[0,\infty)$.
+\label{orig03:diag:hint2:0017}
+% ORIG03-STABLE-ID: diag.answer.0017
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0017).}
+$x^*=1$, $f'(1)=-2$, dan $2\in N_C(1)$.
+\label{orig03:diag:answer:0017}
+% ORIG03-STABLE-ID: diag.solution.0017
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0017).}
+Fungsi menurun pada $[0,1]$, jadi minimumnya tercapai di $x^*=1$. Turunannya
+$f'(x)=2(x-2)$ memberi $f'(1)=-2$. Dari definisi, setiap $v\geq0$ memenuhi
+$v(y-1)\leq0$ untuk $y\in[0,1]$, sehingga $N_C(1)=[0,\infty)$. Memilih
+$v=2$ menghasilkan $0=-2+2\in f'(1)+N_C(1)$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0004}.}
+\label{orig03:diag:solution:0017}
+
+% ORIG03-STABLE-ID: diag.hint1.0018
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0018).}
+Substitusikan $x^*=1$ dan $f'(1)=-2$.
+\label{orig03:diag:hint1:0018}
+% ORIG03-STABLE-ID: diag.hint2.0018
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0018).}
+Argumen proyeksinya menjadi $1+2\gamma>1$.
+\label{orig03:diag:hint2:0018}
+% ORIG03-STABLE-ID: diag.answer.0018
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0018).}
+$P_{[0,1]}(1+2\gamma)=1=x^*$.
+\label{orig03:diag:answer:0018}
+% ORIG03-STABLE-ID: diag.solution.0018
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0018).}
+Untuk $\gamma>0$,
+$x^*-\gamma f'(x^*)=1-\gamma(-2)=1+2\gamma$. Proyeksi setiap bilangan lebih
+besar daripada satu pada $[0,1]$ adalah satu. Karena itu
+$P_C(x^*-\gamma f'(x^*))=1=x^*$.
+\label{orig03:diag:solution:0018}
+
+% ORIG03-STABLE-ID: diag.problem.0010
+\begin{exercise}[Cauchy--Schwarz dan Young]
+\label{orig03:diag:problem:0010}
+\begin{enumerate}
+% ORIG03-STABLE-ID: diag.prompt.0019
+\item\label{orig03:diag:prompt:0019}
+Untuk $u=(1,2)$ dan $v=(2,-1)$, hitung hasil kali dalam dan kedua normanya,
+lalu periksa ketaksamaan Cauchy--Schwarz.
+% ORIG03-STABLE-ID: diag.prompt.0020
+\item\label{orig03:diag:prompt:0020}
+Buktikan bahwa untuk $a,b\in\mathbb{R}$ dan $\eta>0$,
+$2ab\leq\eta a^2+\eta^{-1}b^2$, serta tentukan syarat kesamaan.
+\end{enumerate}
+\end{exercise}
+
+% ORIG03-STABLE-ID: diag.hint1.0019
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0019).}
+Hitung $u^Tv$ sebelum normanya.
+\label{orig03:diag:hint1:0019}
+% ORIG03-STABLE-ID: diag.hint2.0019
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0019).}
+Kedua norma sama dengan $\sqrt5$.
+\label{orig03:diag:hint2:0019}
+% ORIG03-STABLE-ID: diag.answer.0019
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0019).}
+$\langle u,v\rangle=0$ dan $0\leq5$.
+\label{orig03:diag:answer:0019}
+% ORIG03-STABLE-ID: diag.solution.0019
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0019).}
+$\langle u,v\rangle=1\cdot2+2\cdot(-1)=0$, sedangkan
+$\lVert u\rVert_2=\lVert v\rVert_2=\sqrt5$. Jadi
+$|\langle u,v\rangle|=0\leq\lVert u\rVert_2\lVert v\rVert_2=5$.
+Vektor-vektor tersebut ortogonal, bukan sejajar, sehingga ketaksamaan tidak
+menjadi kesamaan pada batas atas yang positif.
+\label{orig03:diag:solution:0019}
+
+% ORIG03-STABLE-ID: diag.hint1.0020
+\par\noindent\textbf{Petunjuk tahap 1 (diag.prompt.0020).}
+Mulai dari kuadrat yang taknegatif.
+\label{orig03:diag:hint1:0020}
+% ORIG03-STABLE-ID: diag.hint2.0020
+\par\noindent\textbf{Petunjuk tahap 2 (diag.prompt.0020).}
+Kembangkan $(\sqrt\eta\,a-b/\sqrt\eta)^2$.
+\label{orig03:diag:hint2:0020}
+% ORIG03-STABLE-ID: diag.answer.0020
+\par\noindent\textbf{Jawaban ringkas (diag.prompt.0020).}
+Ketaksamaan selalu berlaku dan kesamaan terjadi tepat ketika $b=\eta a$.
+\label{orig03:diag:answer:0020}
+% ORIG03-STABLE-ID: diag.solution.0020
+\par\noindent\textbf{Solusi lengkap (diag.prompt.0020).}
+Karena
+\[
+0\leq\left(\sqrt\eta\,a-\frac{b}{\sqrt\eta}\right)^2
+=\eta a^2-2ab+\eta^{-1}b^2,
+\]
+pemindahan suku memberi ketaksamaan yang diminta. Kuadrat itu nol tepat jika
+$\sqrt\eta\,a=b/\sqrt\eta$, yaitu $b=\eta a$.
+\emph{Rubrik bukti: \ref{orig03:rubric:proof:0001}.}
+\label{orig03:diag:solution:0020}

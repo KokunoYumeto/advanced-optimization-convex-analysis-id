@@ -1,37 +1,41 @@
 # Component rights and attribution
 
-This repository deliberately has no blanket license statement. Rights are tracked per component in `00_control/COMPONENT_RIGHTS.csv`.
+This mixed-source repository has **no blanket license**. Rights attach to each source relationship and file as recorded in `00_control/COMPONENT_RIGHTS.csv`; inclusion in one reader or release does not relicense another component.
 
-## MIT OpenCourseWare primary spine
+## Canonical Habring spine
 
-Dimitri P. Bertsekas's MIT OpenCourseWare 6.253 material, *Convex Analysis and Optimization* (Spring 2012), is handled under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). The English semantic transcription witnesses, Indonesian semantic sources, HTML readers, and PDF readers derived from that material retain MIT OCW/source attribution, identify transcription, translation, reflow, and corrections, remain noncommercial and ShareAlike, link the license, impose no additional restrictions, respect MIT name/logo restrictions, and disclaim endorsement.
-
-The official repository is OCW/Hugo metadata rather than mathematical TeX. Project-made English semantic witnesses are line-addressable transcriptions bound to exact PDF pages; they are not represented as official editable MIT source. The complete-notes title page says figures are courtesy of Athena Scientific and used with permission. That statement is not treated as a sublicensable adaptation grant. No Athena figure byte or copied layout is admitted; required diagrams must be independently redrawn from mathematical primitives with separate rights/provenance or omitted with an exact source locator. The admitted first-topic pilot contains zero figures. Its three disclosed corrections are `O015-MIT-SEM-0001` through `O015-MIT-SEM-0003`.
-
-License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-## Royer stochastic-gradient primary component
-
-Clément W. Royer's *Optimization for Machine Learning -- Stochastic Gradient* notes and the official course-page laboratory packages are handled under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), as declared on the official course page. The notes, two notebook laboratories, and supplementary virtual-board PDFs remain component-distinct from the MIT ShareAlike material. Adaptations must retain attribution, identify changes, remain noncommercial, link the license, impose no additional restrictions, and disclaim endorsement.
-
-The notes are PDF-only; no mathematical TeX source is claimed. The notebooks retain their embedded credits to A. Gramfort and Robert Gower. The official packages do not pin a reproducible environment, and laboratory 2 contains unanswered discussion cells plus an unimplemented optional Momentum/Adam surface. Any completion is separately authored and attributed rather than silently imputed to Royer.
-
-License: https://creativecommons.org/licenses/by-nc/4.0/
-
-## Habring-derived units in the edition
-
-Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv:2607.11664v1, is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). The Indonesian Chapter 3--9 sources and reader PDFs are independent translations/adaptations distributed under CC BY 4.0. They identify the source, the license, the fact of translation and correction, and non-endorsement. Exact mathematical and bibliographic corrections are listed in `00_control/ADVERSE_LEDGER.jsonl`.
+The canonical structured-source spine is the complete preface and Chapters 1--9 of Andreas Habring, *Lecture Notes: Convex Optimization*, arXiv:2607.11664v1. The frozen source tar is 230,116 bytes, SHA-256 `d9a22d09d0245bd7bfe4d162dab6ea4bb77552c6cec9e41820db7861b45b6748`. The source and the Indonesian translation/adaptation are handled under Creative Commons Attribution 4.0 International (CC BY 4.0). Attribution, source and license links, translation/change notices, and non-endorsement are retained. The Habring source's ShinyBook/template and macro scaffolding remains under that same source license.
 
 License: https://creativecommons.org/licenses/by/4.0/
 
-## Penn State material
+## Bounded Becker/Krock supplements
 
-Christopher Griffin's *Nonlinear Programming* / Penn State MATH 555 is licensed under CC BY-NC-SA 3.0 US. The Indonesian Chapter 3--5 sources and standalone readers are separately identified translation/adaptation components under that license. They retain attribution, a change notice, noncommercial use, ShareAlike, the license link, and non-endorsement. Exact Chapter 3 changes are recorded as `O015-PENN-ADV-0004` through `O015-PENN-ADV-0024`; Chapter 4 changes are `O015-PENN-ADV-0025` through `O015-PENN-ADV-0037`; Chapter 5 changes are `O015-PENN-ADV-0038` through `O015-PENN-ADV-0049` in `00_control/ADVERSE_LEDGER.jsonl`.
+The only admitted Becker donor is Stephen Becker's `convex-optimization-class` repository at commit `98ed6930084c435ba0f675f7646ced1f2fd8729e`, tree `f04670e3f7be3d4836c380fd8bd31883e0b992c9`, specifically Mitchell Krock's typed `TypedNotes/APPM5720Notes.tex`. The exact admitted donor ranges are Becker-01 lines 1263--1321, 1398--1405, 1414--1499, 1652--1726, and 1731--1743; Becker-02 lines 2750--2797; and Becker-03 lines 2971--2988. Donor text and its source witnesses retain the MIT License and the Becker/Krock attribution plus inherited source credits.
 
-The fourteen Maple listing inputs encountered across Chapters 3--5, and the separate legacy-code tree, are excluded because their reusable component rights are unclear. Chapter 3 contains six independently authored locale-neutral pseudocode bridges and bounded numerical witnesses. Chapter 4 replaces its three excluded inputs with independently authored backtracking and two-part gradient-ascent pseudocode. Chapter 5 replaces five excluded inputs with independently authored variable-step Newton, modified-Cholesky, and corrected-Newton algorithm surfaces. No Maple or legacy-code text is copied or attributed to Penn. The thirteen bundled vector figures and the bounded exact excerpts from the essential bundled `Math555.bbl` remain Penn-derived components under the same NC-SA handling, with their provenance and caveats recorded in `00_control/COMPONENT_RIGHTS.csv`.
+LP-specific ranges 1322--1397, 1406--1413, and 1727--1730, adjacent material, the broken alternate master, unavailable Canvas-only solutions, and archive-absent figures are excluded. The Indonesian translation, disclosed corrections, connective prose, independently written exercises, hints, and solutions are a separate CC BY-SA 4.0 layer. The MIT donor license is not represented as licensing that independent wording, and CC BY-SA 4.0 is not represented as relicensing the donor.
 
-License: https://creativecommons.org/licenses/by-nc-sa/3.0/us/
+MIT License: https://opensource.org/license/mit/
 
-## Other files
+Independent layer: https://creativecommons.org/licenses/by-sa/4.0/
 
-Comparator materials are evidence only and are not edition sources. Some bundled templates and figures carry submission-level rather than separately embedded notices; their caveats are recorded in the component ledger. Project-authored validation code is shipped for reproducibility, but no general reuse license is asserted for it here.
+## Independently authored Original-01, Original-02, and Original-03
+
+Original-01, Original-02, and Original-03 are independently authored course-completion layers under CC BY-SA 4.0. They cover the stochastic-composite/mirror/minibatch bridge; variational inequalities, maximal monotonicity, resolvents, and splitting; and the cumulative assessment, proof rubrics, complete solutions, two further laboratories, and capstone. The corresponding deterministic code and generated result surfaces are identified separately in the component ledger. Mathematical references used as verification witnesses do not contribute copied prose, layout, exercises, figures, solutions, or code.
+
+The Habring-derived scaffold embedded around an original unit remains CC BY 4.0. The original substantive wording does not change the rights of Habring or Becker source material. Exact changes and mathematical corrections are disclosed in `00_control/ADVERSE_LEDGER.jsonl`.
+
+License: https://creativecommons.org/licenses/by-sa/4.0/
+
+## Separately licensed companions
+
+MIT OpenCourseWare 6.253, Clément W. Royer's stochastic-gradient notes/labs, and Christopher Griffin's Penn State MATH 555 material remain separate companion readers or witnesses and are not inputs to the integrated book.
+
+- MIT OCW 6.253 / Dimitri P. Bertsekas: CC BY-NC-SA 4.0. The source title page's Athena Scientific figure-permission statement is not treated as a sublicensable adaptation grant; no Athena figure byte or copied layout is admitted.
+- Royer: CC BY-NC 4.0. The notebooks retain their embedded A. Gramfort and Robert Gower credits; independently authored completions are not imputed to the source.
+- Penn State MATH 555 / Christopher Griffin: CC BY-NC-SA 3.0 United States. Excluded Maple and legacy-code text is not redistributed; independent pseudocode replacements retain their own provenance.
+
+Companion rights never flow into the Habring/Becker/Original integrated reader, and the integrated reader's licenses never overwrite companion rights.
+
+## Scope and non-endorsement
+
+O018 material on LP/MIP, simplex/tableau mechanics, finite-LP duality/complementary slackness/sensitivity, network/discrete optimization, and general operations-research workflow/tooling is excluded from O015. Probability-simplex constraints, general KKT conditions, and value sensitivity remain admissible continuous-convex topics. Comparator sources are evidence only. No endorsement, review, approval, sponsorship, or institutional representation by any source author, publisher, university, arXiv, or other source organization is implied.
