@@ -988,3 +988,15 @@ CC BY-SA 4.0, and companions retain their own licenses. The reconciled
 integrated release verifier passes with zero contradictions. Publish only to
 the existing GitHub repository and Zenodo concept, keep all access public, use
 the integrated PDF as default preview, and require anonymous byte/hash readback.
+
+### D90-0067 — Close the finite course and preservation goal
+
+Decision: accept terminal completion only after both existing public lineages
+passed exact readback. GitHub `main` commit
+`b57225d46631680b3755edcd23975916e84a8b6c` is the bounded integrated content
+release. Zenodo record `22142120`, DOI `10.5281/zenodo.22142120`, is the latest
+version in the pre-existing concept. Its 100-file inventory, integrated-PDF
+preview, public access, and zero-open-draft closure all pass. The eight omitted
+historical MIT manifests remain preserved in prior immutable versions and are
+not described as deleted or replaced. No translation or publication task
+remains; future work requires an explicit new maintenance boundary.

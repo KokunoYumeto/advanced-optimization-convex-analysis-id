@@ -2,23 +2,22 @@
 
 Edisi pembaca bahasa Indonesia yang lengkap untuk materi optimisasi lanjut, analisis konveks, dan metode nonsmooth. Repositori ini memuat sumber TeX semantik yang dapat disunting, HTML yang dapat mengalir ulang, EPUB 3, PDF yang telah diverifikasi, pemeriksaan matematika dan komputasi yang dapat diulang, serta backend modular dengan pengenal stabil.
 
-**Status:** edisi terintegrasi lengkap dan lulus QA lokal; preservasi final adalah langkah berikut pada garis keturunan publik yang sudah ada. Habring arXiv `2607.11664v1` adalah spine sumber-terstruktur kanonis; prakata dan Bab 1–9 lengkap. Tiga suplemen Becker/Krock yang dibatasi secara tepat serta Original-01, Original-02, dan Original-03 menutup dualitas/KKT, reduksi varians, metode stokastik komposit/cermin/minibatch, ketaksamaan variasional, operator monoton maksimal, resolven/pemisahan, asesmen kumulatif, solusi lengkap, tujuh rubrik pembuktian, empat laboratorium keseluruhan, dan capstone. MIT OpenCourseWare 6.253, Royer, dan Penn tetap pendamping berlisensi terpisah. Backend stabil berisi 4.877 rekaman: 4.338 rekaman sebelumnya dipertahankan byte dan urutannya, 539 rekaman ditambahkan, dan dua bidang rekaman kursus yang usang dikoreksi. Materi O018 tetap dikecualikan.
+**Status:** edisi terintegrasi lengkap, lulus QA, dan terpreservasi publik dengan pembacaan ulang byte anonim. Habring arXiv `2607.11664v1` adalah spine sumber-terstruktur kanonis; prakata dan Bab 1–9 lengkap. Tiga suplemen Becker/Krock yang dibatasi secara tepat serta Original-01, Original-02, dan Original-03 menutup dualitas/KKT, reduksi varians, metode stokastik komposit/cermin/minibatch, ketaksamaan variasional, operator monoton maksimal, resolven/pemisahan, asesmen kumulatif, solusi lengkap, tujuh rubrik pembuktian, empat laboratorium keseluruhan, dan capstone. MIT OpenCourseWare 6.253, Royer, dan Penn tetap pendamping berlisensi terpisah. Backend stabil berisi 4.877 rekaman: 4.338 rekaman sebelumnya dipertahankan byte dan urutannya, 539 rekaman ditambahkan, dan dua bidang rekaman kursus yang usang dikoreksi. Materi O018 tetap dikecualikan.
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
 ## Preservasi dan mirror
 
-Checkpoint publik terbaru yang terverifikasi adalah [Original-02,
-10.5281/zenodo.22104724](https://doi.org/10.5281/zenodo.22104724) dalam [DOI
+Versi publik terbaru yang terverifikasi adalah [edisi terintegrasi,
+10.5281/zenodo.22142120](https://doi.org/10.5281/zenodo.22142120) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
-Semua 99 berkas—90 warisan dan sembilan tambahan Original-02—telah dibaca
-kembali secara anonim dan cocok byte demi byte; PDF Original-02 adalah
-pratinjau utama. Koreksi privasi minor pada rekaman yang sama mengganti hanya
-tiga berkas rilis, mempertahankan 96 berkas lain beserta DOI, konsep, metadata,
-dan pratinjau, serta menghasilkan nol temuan pencari lokasi profil pada seluruh
-tambahan publik. Rekaman itu adalah batas sejarah Original-02; setiap hak tetap
-berlaku per komponen, dan edisi terintegrasi final akan diterbitkan sebagai versi
-baru pada konsep yang sama, bukan sebagai konsep pesaing.
+Keseluruhan 100 berkas—91 warisan identik dan sembilan tambahan terintegrasi—
+telah dibaca kembali secara anonim dan cocok dengan ukuran serta SHA-256 yang
+diharapkan. PDF terintegrasi adalah pratinjau utama; rekaman dan unduhan bersifat
+publik, versi ini adalah versi terkini, dan pemeriksaan autentik menemukan nol
+draf terbuka pada garis konsep. Delapan manifest rilis MIT yang redundan tidak
+diulang pada versi ini tetapi tetap tersedia pada versi konsep terdahulu. Setiap
+hak tetap berlaku per komponen; tidak ada lisensi menyeluruh untuk rekaman campuran.
 
 Modul Habring Bab 3–9 yang murni CC BY 4.0 juga tersedia sebagai permukaan pembaca
 utama di [Figshare versi 2](https://doi.org/10.6084/m9.figshare.33314733.v2),
@@ -28,9 +27,9 @@ tidak ditempatkan pada item Figshare tersebut dan tetap berada di Zenodo.
 
 Seluruh edisi id-ID tetap berada di [repositori GitHub yang bernama jelas untuk
 bidang dan bahasa ini](https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id).
-Tranche Original-02 menggunakan repositori dan cabang `main` yang sama pada
-commit `74780b65dcf9954bdf915aecbf57cd17fd6b43ea`; seluruh 103 jalur dan
-11.226.335 byte publik cocok dalam pembacaan raw anonim yang dicatat di
+Edisi terintegrasi menggunakan repositori dan cabang `main` yang sama pada
+commit `b57225d46631680b3755edcd23975916e84a8b6c`; seluruh 87 jalur dan
+15.858.259 byte publik cocok dalam pembacaan raw anonim yang dicatat di
 `00_control/PUBLICATION_RECEIPTS.md`.
 Tidak dibuat repositori pengganti.
 

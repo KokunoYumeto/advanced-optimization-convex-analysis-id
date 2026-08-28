@@ -1089,3 +1089,52 @@ boundary; it does not start another evidence-only commit loop.
 - Next action is one reader-first final GitHub/Zenodo transaction followed by
   anonymous exact-byte readback, public-access verification, draft closure, and
   sanitized receipts. No duplicate repository or Zenodo concept is permitted.
+
+## 2026-08-28 — Integrated GitHub publication and anonymous readback
+
+- Repository/branch: `https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id`, `main`.
+- Commit/tree/parent: `b57225d46631680b3755edcd23975916e84a8b6c` /
+  `aa8663945724e998b03b74481ef290550bb2dc59` /
+  `74780b65dcf9954bdf915aecbf57cd17fd6b43ea`.
+- Exact scope: 87 manifest-bound added/modified paths, 15,858,259 aggregate
+  bytes. An isolated index seeded from the exact parent excluded any unrelated
+  staged state.
+- Anonymous verification: public smart-HTTP `main` resolution equals the
+  commit; every immutable raw path matches its committed bytes; the primary
+  `main` PDF matches the immutable commit.
+- Receipt:
+  `release/github/2026-08-28-integrated-final/github-public-readback-integrated-final.json`,
+  18,904 bytes / SHA-256
+  `f411b3d3fbb244526cf7d4b4993bc4f446c24676c787ac800d2c9926a80a4b19`.
+  Result `pass`; browser used false; credential material recorded false.
+
+## 2026-08-28 — Integrated Zenodo publication, readback, and closure
+
+- Existing lineage: parent record `22104724`, concept
+  `10.5281/zenodo.22059741`; no competing concept was created.
+- New public/latest record: `https://zenodo.org/records/22142120`; DOI
+  `10.5281/zenodo.22142120`.
+- Inventory: exactly 100 public files—91 inherited byte-identically and nine
+  integrated additions. Eight redundant historical MIT release manifests are
+  omitted only from this version and remain available in earlier versions.
+- Default preview:
+  `D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf`. Every one of the 100
+  anonymous downloads matches its expected byte count and SHA-256 identity.
+- Public readback receipt:
+  `release/zenodo/2026-08-28-integrated-final/zenodo-public-readback-integrated.json`,
+  27,343 bytes / SHA-256
+  `e5f75072c2d0aa6f2bfdfaa0a620495d913f75644528a626197089d183fcf176`.
+- Draft closure receipt:
+  `release/zenodo/2026-08-28-integrated-final/zenodo-draft-closure-integrated.json`,
+  475 bytes / SHA-256
+  `7907a1b6109a664e75aec5d55f3f3ab9d9b64b827d84304eebb59d81098ab437`.
+  Direct draft lookup returned HTTP 404; exhaustive authenticated pagination
+  scanned 260 account records and found zero open drafts in the concept.
+- Record and file access remain public. No credential material is present in
+  any receipt, no browser was used for the transaction, and no upstream
+  contact occurred.
+- Independent terminal audit:
+  `qa/INTEGRATED_TERMINAL_PUBLICATION_AUDIT.json`, 1,863 bytes / SHA-256
+  `c17677c7de0806080f41f98f6e38bc0f817fc6d06fc27b644021462bdf24c3d3`.
+  It rechecked live public Git and Zenodo state and records an empty required-
+  work list with the terminal condition satisfied.

@@ -1,0 +1,737 @@
+{
+  "addition_file_count": 9,
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "credential_material_recorded": false,
+  "default_preview": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+  "default_preview_source": "https://zenodo.org/api/records/22142120/files",
+  "file_count": 100,
+  "files": [
+    {
+      "bytes": 1856748,
+      "disposition": "inherited_unchanged",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_COMPLETE_RELEASE_2026.08.25_HABRING_V1.zip",
+      "public_byte_identity": "pass",
+      "sha256": "d30ddcfef040136f176aea87d897cd8675a40a029f7515e45c48621584d9598a"
+    },
+    {
+      "bytes": 1397822,
+      "disposition": "integrated_addition",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+      "public_byte_identity": "pass",
+      "sha256": "cdd9454f1d9ffc2dc13dccd6c9b82ac78d108d90feaa6baa609aae5f21335d32"
+    },
+    {
+      "bytes": 680451,
+      "disposition": "inherited_unchanged",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_ORIGINAL_02_2026.08.26.zip",
+      "public_byte_identity": "pass",
+      "sha256": "5fc4323613bbf3572d85c8c3ffbdcddc43a6ddbe9dd3f899829a2b67362e319d"
+    },
+    {
+      "bytes": 2497901,
+      "disposition": "inherited_unchanged",
+      "filename": "ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_SOURCE_BACKEND_2026.08.22_10U.zip",
+      "public_byte_identity": "pass",
+      "sha256": "0e2e5ac6452a50a5167e77da3ca5cc145406b61dfc11fe8d647a78052dab5274"
+    },
+    {
+      "bytes": 30131,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "b4a762b10746d394be714177669ad1d5e9903aa04933e8ff4791a179dd0377c0"
+    },
+    {
+      "bytes": 487534,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c698444856fd01e1ee306d7e3dbca31992f8bb4cf7b4a4cf106ea678be83e615"
+    },
+    {
+      "bytes": 18370,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "ff42d60d3bdce967341f69932a07cb85af868b3f4bb02a10f8beb627198719fe"
+    },
+    {
+      "bytes": 458915,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-02-pemisahan-douglas-rachford-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "32e26d96a0878ad2a5e798a099759eb4351cbe728a2d2b912757ebc402e49794"
+    },
+    {
+      "bytes": 24322,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-03-reduksi-varians-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "da86d8fc79e7dbc039b936437a310e74c3115d90407f7b7c1dce191e00a6fdcb"
+    },
+    {
+      "bytes": 476357,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-BECKER-03-reduksi-varians-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "2d2475c2bbd1af90dc203b0691dbc5f176d2a233c6888d49aec2fe045f498d6a"
+    },
+    {
+      "bytes": 3779312,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-01-09-catatan-kuliah-optimisasi-konveks-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "da2b421b97efce4e3d7b8cf6be9938d17b7768b9c6bcb4846b09b9c692b34c41"
+    },
+    {
+      "bytes": 516084,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-03-subgradien-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "45f7bc24ff46079881e42be9aa6f1b508c324a208f2b4dd82e35e7e3a6d544b4"
+    },
+    {
+      "bytes": 370824,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-04-metode-subgradien-terproyeksi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "5c9991af837995b2e24f4a9060eb3b0efe7b2d71a9bbde01948eeb81ebfd63b7"
+    },
+    {
+      "bytes": 473685,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-05-metode-gradien-proksimal-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "6f8aa99f6d0395f3c732ed64d2b5cadd5d95ff2195e2504e959d31a3c010731d"
+    },
+    {
+      "bytes": 392662,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-06-akselerasi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "cb9edf46d8d2582591ad3114f9a2b316073825dfd48079d12560793ad4bca0a0"
+    },
+    {
+      "bytes": 445733,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-07-dualitas-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c4354e1e1366bdb20cebb9c6eca26fba172d6d82a6ad22dd9e2e470da2baeb6e"
+    },
+    {
+      "bytes": 346785,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-08-penurunan-gradien-stokastik-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c1ed028667c5df3fd0a837807e2a17bf7a9e1fa3170938853c9a96b9670fa86a"
+    },
+    {
+      "bytes": 498244,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-HAB-09-transportasi-optimal-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "edc8e17fd43d17a0dd7811879dfbedaab9ac226c291ed5558ca0bfbb3ce10214"
+    },
+    {
+      "bytes": 20613,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-01-peran-kekonveksan-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "fff4de952dd2cb208208e1cfb3bbc8fe8a64936ff5fdb532a23a92fb0dc6af8b"
+    },
+    {
+      "bytes": 53370,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-01-peran-kekonveksan-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "bd03912f9d3fe6dbe7376577c7ca6e7ab5aee007dd33b51669cde1792644df58"
+    },
+    {
+      "bytes": 38196,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "d722e7bebc5b5f1c0a9d4c1980b747564897521ea7632be0ab0e3433b26ec007"
+    },
+    {
+      "bytes": 67749,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "06b9c6ce9eaac8f78149e7a881ebdff6ef5c8692d9040c5dec8929a2e646d89b"
+    },
+    {
+      "bytes": 9762,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "01785166246be0f1187353c64f228f341626951e7d20fef127a4b92ab7e96d90"
+    },
+    {
+      "bytes": 34550,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-03-pandangan-modern-optimisasi-konveks-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "3cc20409b71331564cbc5429ce72cd27ebe3cbdb072910d2483e0bdeee54a136"
+    },
+    {
+      "bytes": 9975,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "c7ee3ace683dd854ce99259536b58bc802cb17fdd189a32b403f9e87521ea81e"
+    },
+    {
+      "bytes": 36971,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-04-kebangkitan-era-algoritmik-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "9056c6ba9fa3996f907d1dfd6147ef219aa7c88941582c78d01977e60ce8ef5f"
+    },
+    {
+      "bytes": 16029,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-05-orientasi-kursus-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "424d854bb1e83e841a15d0073aad3db6bab0585ca6d587fd14a3b5cfb4274d83"
+    },
+    {
+      "bytes": 46785,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-05-orientasi-kursus-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "2af9e4dc8e999969f03817350451c4b21f3c764564eee64327d15b48483313c0"
+    },
+    {
+      "bytes": 70446,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-06-kuliah-2-landasan-konveks-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "94275af59592c64e7c8ae55fc384b721b2863a22ee328c33dc3b1d5a1e0af9a6"
+    },
+    {
+      "bytes": 74235,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-06-kuliah-2-landasan-konveks-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "84ce42542ed58e102c736dacc02b69cf16ab264a577d689d2fe5f7a24ba37d75"
+    },
+    {
+      "bytes": 77399,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "cc3b4f665d5f0b4cb9e26245ec0cce71658c6c0b3e5e07cee3fcabfb43df5e13"
+    },
+    {
+      "bytes": 75885,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "2c7b4defaa56578f628c048dc4f17ee06b61f2bc33122b172af5539a5dae2eec"
+    },
+    {
+      "bytes": 113898,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "b084dd10113b55e7789885d0ec303376c0bca58fdbb960b428ce1feac9e30c0a"
+    },
+    {
+      "bytes": 91293,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "b01517ee401e0b9f069e4f121f57e1bc3a482b9ceb69cba067c4371f11a47e62"
+    },
+    {
+      "bytes": 118805,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "1dcbb699a620a00c05e39ca6c28d6e40c408b1b70bdc2a4678d634654ed771c9"
+    },
+    {
+      "bytes": 101797,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-09-kuliah-5-resesi-dan-minimum-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "34b8b184a90a5da04ac421b6b8d73840cef4b43bb43a49b01fdc65c1b1e04721"
+    },
+    {
+      "bytes": 169871,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "2c3e0e72e535b181880b4e52cbc112c7d2fc393b8f5636e091ff517ed76f2038"
+    },
+    {
+      "bytes": 133787,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "3b01d57e8e8a7d7887f36cfdc205d1b68d1d007a152bd8e0cd75479628e1abc0"
+    },
+    {
+      "bytes": 96216,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "19dd1f9aeb65e951089a4501fefa65761448f86f21ee7024ccfde9a71e5b988d"
+    },
+    {
+      "bytes": 89771,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "82d39fa34f8e743204ba88b3b91f50d4a549bb7b0b79e529ed0bec1a51f16bc8"
+    },
+    {
+      "bytes": 379901,
+      "disposition": "integrated_addition",
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+      "public_byte_identity": "pass",
+      "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321"
+    },
+    {
+      "bytes": 2485595,
+      "disposition": "integrated_addition",
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89"
+    },
+    {
+      "bytes": 1671254,
+      "disposition": "integrated_addition",
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5"
+    },
+    {
+      "bytes": 64322,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.epub",
+      "public_byte_identity": "pass",
+      "sha256": "d3aaea87c928c825aac37310b3143e43c375f2ebb0ab4fe37bd0e34bfeab1f08"
+    },
+    {
+      "bytes": 353245,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "052155a1edc7f8f81a84e5445e1408c3ffdef6e42899677bf80f6300bc7558a4"
+    },
+    {
+      "bytes": 486032,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "7fafa5aff08ee02f6b79c8dcea7b4bf509570958f94dc94ae51fc9e66b9f6bca"
+    },
+    {
+      "bytes": 48701,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.epub",
+      "public_byte_identity": "pass",
+      "sha256": "dcde3d4e1a2070626fb86d3994667ce57095e5f8849b67ce3ebecaa145b54a86"
+    },
+    {
+      "bytes": 190403,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "public_byte_identity": "pass",
+      "sha256": "ed60085e7ccbfcafa6675dc8bc4ebd728eaaf7c27ca24d35d5dbec7b742f529a"
+    },
+    {
+      "bytes": 453811,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "0dee2b2c16f0f0868b2c0813462fce6ecc02ad2b71174eb4c622f23988771284"
+    },
+    {
+      "bytes": 515851,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-03-pendakian-gradien-dan-pencarian-garis-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "e1be82d06572c51b403608cd9595cc5adf2dc64cfa93f53001eba94e48f77e3e"
+    },
+    {
+      "bytes": 847350,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-04-pencarian-garis-hampiran-dan-konvergensi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "c0f283aa7d70eba05de6a35c98bc0aa55f3177ab40702bf7eed5de45a7b6ab8a"
+    },
+    {
+      "bytes": 2691780,
+      "disposition": "inherited_unchanged",
+      "filename": "D90-PENN-05-metode-newton-dan-koreksi-id.pdf",
+      "public_byte_identity": "pass",
+      "sha256": "427db2c5a4428dfbe222d7e1d4f5c5349d4f78484a8593c412328fe94a7353c6"
+    },
+    {
+      "bytes": 1304,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L06.md",
+      "public_byte_identity": "pass",
+      "sha256": "017fff0ae40e0ba379f3c5929224096b005972d0ca6d2acfcffb2de1e5f79fb1"
+    },
+    {
+      "bytes": 1445,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L07.md",
+      "public_byte_identity": "pass",
+      "sha256": "fdaf8dea4ddeca8dcca2d146771f92133f395b6acc626f6f1bc897253e27fe1c"
+    },
+    {
+      "bytes": 1417,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L08.md",
+      "public_byte_identity": "pass",
+      "sha256": "433a6208ac1bd06913e9dd2a98197a7a3d7b5b94d1f8214214fba51799afda76"
+    },
+    {
+      "bytes": 1448,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L09.md",
+      "public_byte_identity": "pass",
+      "sha256": "2e16c5a249dc2a09ec5d45a3684e6ed31b1b991e0af55b6771323a15eb1ad47e"
+    },
+    {
+      "bytes": 1453,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "b2ef5517cc535c88833510a6c5ba5d2890cb9c0f4c84e8f89155c87ab7205e2d"
+    },
+    {
+      "bytes": 1448,
+      "disposition": "inherited_unchanged",
+      "filename": "LICENSE_MIT_L11.md",
+      "public_byte_identity": "pass",
+      "sha256": "60d4cbb608e8240b18e2618aeb351ac485b62710bb0a068909ce29a28e42b1fd"
+    },
+    {
+      "bytes": 6451,
+      "disposition": "inherited_unchanged",
+      "filename": "README.md",
+      "public_byte_identity": "pass",
+      "sha256": "8a83aaf6615c050ca0710f1cd7563f1d6d44b96f69255cfdb5d87bd9cf943556"
+    },
+    {
+      "bytes": 2424,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L01.md",
+      "public_byte_identity": "pass",
+      "sha256": "b2832be26fd96bf74e245aacf5ad85abef88948b7d4231090c17f722825719ba"
+    },
+    {
+      "bytes": 1973,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L02.md",
+      "public_byte_identity": "pass",
+      "sha256": "209d8739eca4aa40dd3c0f6f50d7f08fa8deaeb95f361f1e90f11cc8be67b8eb"
+    },
+    {
+      "bytes": 1996,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L03.md",
+      "public_byte_identity": "pass",
+      "sha256": "3f12fa4cfaec3fccb84b610d61e6e3e72b42c305a18ac5c491850ea8dc2f150a"
+    },
+    {
+      "bytes": 1261,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L04_L05.md",
+      "public_byte_identity": "pass",
+      "sha256": "35d909feff9c2ba7f36f350cb182e47b2bad3234ff68c0449096745582c7e917"
+    },
+    {
+      "bytes": 1609,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L06.md",
+      "public_byte_identity": "pass",
+      "sha256": "a674687dfd0d103254fb8a4868f699fa59531b43d290b927b1a6e7e06d2c6f6e"
+    },
+    {
+      "bytes": 1945,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L07.md",
+      "public_byte_identity": "pass",
+      "sha256": "a3595e145cf33e1dd88a8a32c4c1ff9b1973a69e9f3359b46c9133188603d61b"
+    },
+    {
+      "bytes": 2036,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L08.md",
+      "public_byte_identity": "pass",
+      "sha256": "20ad77cad4a9ed9390eb35d782efbafc2714d9f6c398fbeb512fedb8d36885df"
+    },
+    {
+      "bytes": 2141,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L09.md",
+      "public_byte_identity": "pass",
+      "sha256": "98bfc3b36407d6e024d2958d342333cf3d52c8ae5f259c8dc1136136c23a1404"
+    },
+    {
+      "bytes": 2152,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "352c263bed758f26926679b3a571e3aae28edd59bdc7b83adf62832c9ae810b1"
+    },
+    {
+      "bytes": 2479,
+      "disposition": "inherited_unchanged",
+      "filename": "README_MIT_L11.md",
+      "public_byte_identity": "pass",
+      "sha256": "7ba6a27c4163616df35e25f83e6c671890709ae7d66961fa9f6d1fdd06cfe864"
+    },
+    {
+      "bytes": 1884,
+      "disposition": "inherited_unchanged",
+      "filename": "README_RELEASE.md",
+      "public_byte_identity": "pass",
+      "sha256": "b5484c58e15e13f7b0d12d818537154581572c312e5d9e753c9e179d3914bedd"
+    },
+    {
+      "bytes": 1455,
+      "disposition": "inherited_unchanged",
+      "filename": "README_RELEASE_MIT_L10.md",
+      "public_byte_identity": "pass",
+      "sha256": "6e44fd95b077b0c759efdd029375611295a63523391fbc1571f3e2ce7461e80a"
+    },
+    {
+      "bytes": 1657,
+      "disposition": "inherited_unchanged",
+      "filename": "README_RELEASE_MIT_L11.md",
+      "public_byte_identity": "pass",
+      "sha256": "203dedf12ca8eb49ae3898f0d1d119fad4be464ab5b01287fcfd023194c3f3c4"
+    },
+    {
+      "bytes": 2688,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS.md",
+      "public_byte_identity": "pass",
+      "sha256": "22ca25d08904233a89e7cbc246ae0eff684ad6579e7749a192c86e050a8ef097"
+    },
+    {
+      "bytes": 1686,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_AND_PROVENANCE_BECKER_02.md",
+      "public_byte_identity": "pass",
+      "sha256": "4f4aa50a8e7f176349ce887329a75b3925e71d49efcc8ede15710e7736e05161"
+    },
+    {
+      "bytes": 1865,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_AND_PROVENANCE_BECKER_03.md",
+      "public_byte_identity": "pass",
+      "sha256": "ba58739095cb715a4989826dbf52cbec6b9b204402c9f0a03e7c99f41697d8d1"
+    },
+    {
+      "bytes": 9274,
+      "disposition": "integrated_addition",
+      "filename": "RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+      "public_byte_identity": "pass",
+      "sha256": "acf83221211b25f67688d87932f333f9ed0309c11a5d6c3bea37b182ce72b360"
+    },
+    {
+      "bytes": 3584,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_AND_PROVENANCE_ORIGINAL_02.md",
+      "public_byte_identity": "pass",
+      "sha256": "28512dcc27ef38163e8874e5e582689fbc24783226d0dce29fe3ca0700cc4fb0"
+    },
+    {
+      "bytes": 2856,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_MIT_L01.md",
+      "public_byte_identity": "pass",
+      "sha256": "9c4ce36267e03113907af96af7c5f24c806ddebbb87e48b8ca8cdeafdc2fa1d5"
+    },
+    {
+      "bytes": 1235,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_MIT_L02.md",
+      "public_byte_identity": "pass",
+      "sha256": "cbffe2964211b42c43961ccc753d058828e5d859434cc00f31a75e2329efbc63"
+    },
+    {
+      "bytes": 1229,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_MIT_L03.md",
+      "public_byte_identity": "pass",
+      "sha256": "587b4f990e81259b2d4de933a4ce4c51932c3feb85d3695b4400232cc4003ee6"
+    },
+    {
+      "bytes": 988,
+      "disposition": "inherited_unchanged",
+      "filename": "RIGHTS_MIT_L04_L05.md",
+      "public_byte_identity": "pass",
+      "sha256": "616717d5773e02600ad5fb0602460fb77cf6e3e3d3f53a6453d53a54fb8c30c6"
+    },
+    {
+      "bytes": 1548,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS",
+      "public_byte_identity": "pass",
+      "sha256": "d9c2f084ad18e8692ff6c72bc16a1cc3491a4630c95be84149e4a65268baeaf4"
+    },
+    {
+      "bytes": 920,
+      "disposition": "integrated_addition",
+      "filename": "SHA256SUMS-integrated",
+      "public_byte_identity": "pass",
+      "sha256": "052c21c6205d58bb39970f06141decdaec7d5f96f64b741d4321a33e08a3eb1d"
+    },
+    {
+      "bytes": 4001,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l03",
+      "public_byte_identity": "pass",
+      "sha256": "d25f6f1ec3d9f0ce28b56cb85d5dddc273778db4fc0a398adcc9b213eb242b7f"
+    },
+    {
+      "bytes": 5039,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l04-l05",
+      "public_byte_identity": "pass",
+      "sha256": "59c26562dd44d2ed4333ff21c674daccbea8077a0f8220a1c3564524ceba57cb"
+    },
+    {
+      "bytes": 5857,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l06",
+      "public_byte_identity": "pass",
+      "sha256": "d886503cdc91d5b98882d5a6b800be050049512d336aade138e81b739a7135f7"
+    },
+    {
+      "bytes": 6723,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l07",
+      "public_byte_identity": "pass",
+      "sha256": "9f0ca3ccf05b91917267fc54b35d0e4bc8aa3c3b2bbf7abeb2623283bf53ecaa"
+    },
+    {
+      "bytes": 7581,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l08",
+      "public_byte_identity": "pass",
+      "sha256": "68b62dd5c424a97ebed0268ab08c091be1d64acb1f063942c62e29d3c545b8b1"
+    },
+    {
+      "bytes": 8399,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l09",
+      "public_byte_identity": "pass",
+      "sha256": "935849dad70bbaaefc807e242b6521012d742de3e50e4b0923b886d715ac82d6"
+    },
+    {
+      "bytes": 9243,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l10",
+      "public_byte_identity": "pass",
+      "sha256": "5e8b9f7f3f89ae1c9288060d97aae7a8f10df6694a26b6af3dd83137ecfb0998"
+    },
+    {
+      "bytes": 10071,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-mit-l11",
+      "public_byte_identity": "pass",
+      "sha256": "bdf0171a198d201e3e267ca5732ed78e1a9463d8ac433ddd84c67a0490253f31"
+    },
+    {
+      "bytes": 1001,
+      "disposition": "inherited_unchanged",
+      "filename": "SHA256SUMS-original-02",
+      "public_byte_identity": "pass",
+      "sha256": "1e1b5734be66d452fdf025100e1d4ec22184de02798f8f765eddccf74ef81576"
+    },
+    {
+      "bytes": 3839894,
+      "disposition": "inherited_unchanged",
+      "filename": "backend-records-2026.08.26-original-02.csv",
+      "public_byte_identity": "pass",
+      "sha256": "2f1963d415772229eb8a2d017a7aea847c7cf205c94afc8810b8cdbd89f8343c"
+    },
+    {
+      "bytes": 3183459,
+      "disposition": "inherited_unchanged",
+      "filename": "backend-records-2026.08.26-original-02.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "52efa90b75fecfa61498bd60ec530045d5cb08c921b6149735f1c6aaa3305439"
+    },
+    {
+      "bytes": 4272596,
+      "disposition": "integrated_addition",
+      "filename": "backend-records-2026.08.28-integrated.csv",
+      "public_byte_identity": "pass",
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915"
+    },
+    {
+      "bytes": 3534351,
+      "disposition": "integrated_addition",
+      "filename": "backend-records-2026.08.28-integrated.jsonl",
+      "public_byte_identity": "pass",
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30"
+    },
+    {
+      "bytes": 3092,
+      "disposition": "inherited_unchanged",
+      "filename": "backend-schema.json",
+      "public_byte_identity": "pass",
+      "sha256": "1166cbffe6016044430fe003e4981b1a3a537be7c115f0b646168a1936ab5ad0"
+    },
+    {
+      "bytes": 6379,
+      "disposition": "integrated_addition",
+      "filename": "release-manifest-integrated-zenodo.json",
+      "public_byte_identity": "pass",
+      "sha256": "e8bb6c5558341e10967e4848644fea3f15d3c9287402b9e8307bff8215bebd51"
+    },
+    {
+      "bytes": 6559,
+      "disposition": "inherited_unchanged",
+      "filename": "release-manifest-original-02-zenodo.json",
+      "public_byte_identity": "pass",
+      "sha256": "92e05870cc496deb1c9509a1299fdc90d73e9b04f920a3c8347171d900a9771f"
+    },
+    {
+      "bytes": 3406,
+      "disposition": "inherited_unchanged",
+      "filename": "release-manifest.json",
+      "public_byte_identity": "pass",
+      "sha256": "ee2f432bf8eefd19b70b54e5a5a352407ebeb75624895b10187f0bcfec8e5a3f"
+    }
+  ],
+  "inherited_file_count": 91,
+  "is_latest": true,
+  "metadata_ttp_mentions": 1,
+  "model_provenance_mentions": 1,
+  "omitted_from_this_version_only_preserved_in_prior_versions": [
+    "release-manifest-mit-l03.json",
+    "release-manifest-mit-l04-l05.json",
+    "release-manifest-mit-l06.json",
+    "release-manifest-mit-l07.json",
+    "release-manifest-mit-l08.json",
+    "release-manifest-mit-l09.json",
+    "release-manifest-mit-l10.json",
+    "release-manifest-mit-l11.json"
+  ],
+  "parent_record_doi": "10.5281/zenodo.22104724",
+  "parent_record_id": "22104724",
+  "record_doi": "10.5281/zenodo.22142120",
+  "record_id": "22142120",
+  "record_url": "https://zenodo.org/records/22142120",
+  "result": "pass",
+  "schema": "o015-zenodo-integrated-public-readback-v1",
+  "status": "published",
+  "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia (id-ID): Edisi Terintegrasi D90",
+  "upstream_contact": false,
+  "verified_at_utc": "2026-08-28T09:43:48.171712Z",
+  "version": "d90-integrated-2026.08.28"
+}

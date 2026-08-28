@@ -838,3 +838,14 @@ Execute next, in order:
 Do not reopen translation, renumber IDs, merge companions, contact upstream,
 create a competing repository/concept, expose credentials, or claim completion
 before the public-byte gates pass.
+
+## 2026-08-28 terminal cursor — COMPLETE-PUBLIC-VERIFIED
+
+All five actions in the live cursor are complete. GitHub release commit
+`b57225d46631680b3755edcd23975916e84a8b6c` and Zenodo DOI
+`10.5281/zenodo.22142120` passed exact anonymous byte readback; Zenodo's
+integrated PDF is the default preview, the record is latest and public, and the
+concept has zero open drafts. There is no next executable action for this
+finite goal. Preserve all stable IDs, sources, rights, companions, artifacts,
+and receipts; a later change must begin as an explicitly versioned maintenance
+boundary rather than reopening this cursor.

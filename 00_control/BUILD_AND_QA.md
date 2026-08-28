@@ -1923,3 +1923,28 @@ receipt `qa/INTEGRATED_RIGHTS_RELEASE_QA.json` is 68,004 /
 Result `pass`, `release_ready=true`, failed checks empty, contradiction count
 zero, privacy pass, and publication-route pass. This audit used no network,
 Git, credential, or browser operation.
+
+## 2026-08-28 — terminal public-preservation QA
+
+PASS. The isolated-index Git transaction produced commit
+`b57225d46631680b3755edcd23975916e84a8b6c`, tree
+`aa8663945724e998b03b74481ef290550bb2dc59`, from parent
+`74780b65dcf9954bdf915aecbf57cd17fd6b43ea`. Its committed manifest and actual
+diff-tree both contain exactly 87 added/modified paths. Anonymous `main`
+resolution and immutable raw downloads matched all 15,858,259 bytes.
+
+PASS. Zenodo record `22142120` is published/latest in the existing concept.
+The exact inventory arithmetic is 91 inherited unchanged plus nine additions
+equals 100. Every anonymous download matched expected bytes and SHA-256; the
+integrated PDF is the default preview. Record and file access are public.
+Authenticated closure returned draft HTTP 404 and scanned all 260 account
+records with zero open drafts for the concept. Publication/readback used only
+headless API and static transports; no browser window was opened.
+
+Terminal verifier `qa/verify_integrated_terminal_publication.py` independently
+rechecked public Git `main`, the immutable primary PDF, live Zenodo identity,
+open access, latest-version relation, 100-name/size inventory, default preview,
+and all three bound receipts. Its 1,863-byte PASS receipt is
+`qa/INTEGRATED_TERMINAL_PUBLICATION_AUDIT.json`, SHA-256
+`c17677c7de0806080f41f98f6e38bc0f817fc6d06fc27b644021462bdf24c3d3`;
+`required_work_remaining` is empty and `terminal_condition_satisfied` is true.

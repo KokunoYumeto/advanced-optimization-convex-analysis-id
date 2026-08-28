@@ -102,3 +102,22 @@ back all required bytes and hashes; prove the integrated PDF is the default
 preview, the record/files are public, and no open draft remains; then persist
 sanitized receipts and close the goal. No new source expansion, human-dependent
 hold, duplicate concept, blanket-license claim, or PDF/UA claim is permitted.
+
+## 2026-08-28 terminal closure — finite goal complete
+
+The publication-only workflow above is complete. GitHub `main` contains the
+87-path integrated release commit
+`b57225d46631680b3755edcd23975916e84a8b6c` (tree
+`aa8663945724e998b03b74481ef290550bb2dc59`); anonymous smart-HTTP resolution
+and immutable raw downloads matched all 15,858,259 committed bytes. Zenodo
+record `22142120`, DOI `10.5281/zenodo.22142120`, is the public latest version
+in concept `10.5281/zenodo.22059741`: all 100 files (91 inherited and nine
+integrated additions) matched their exact byte counts and SHA-256 identities,
+and the integrated PDF is the default preview. Authenticated closure scanned
+all 260 account records, found zero open concept drafts, and obtained HTTP 404
+for the published record's draft endpoint. All access remains public.
+
+The exact sanitized receipts are listed in `PUBLICATION_RECEIPTS.md` and bound
+in `SOURCE_AUTHORITY.json`. There is no remaining translation, reader, backend,
+rights, accessibility, QA, or publication action in this finite goal. Any later
+revision is a new versioned maintenance decision, not unfinished work here.

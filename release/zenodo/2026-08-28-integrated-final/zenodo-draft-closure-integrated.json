@@ -1,0 +1,14 @@
+{
+  "authenticated_draft_lookup_status": 404,
+  "authenticated_pagination_complete": true,
+  "authenticated_records_scanned": 260,
+  "concept_doi": "10.5281/zenodo.22059741",
+  "concept_id": "22059741",
+  "concept_open_draft_count": 0,
+  "credential_material_recorded": false,
+  "record_doi": "10.5281/zenodo.22142120",
+  "record_id": "22142120",
+  "result": "pass",
+  "schema": "o015-zenodo-integrated-draft-closure-v1",
+  "verified_at_utc": "2026-08-28T09:44:21.610231Z"
+}

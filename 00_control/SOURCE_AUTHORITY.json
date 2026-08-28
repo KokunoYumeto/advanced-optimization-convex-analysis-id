@@ -783,7 +783,7 @@
   },
   "current_integrated_course_admission": {
     "recorded_on": "2026-08-28",
-    "status": "complete_local_release_ready",
+    "status": "complete_public_verified",
     "scope": "Complete integrated Bahasa Indonesia O015/D90 coursebook: Habring preface and Chapters 1-9 as the canonical editable spine; three exact Becker/Krock supplements; independent Original-01, Original-02, and Original-03 completion layers; cumulative assessment, complete solutions, proof rubrics, four laboratories in total, and capstone. MIT OCW, Royer, and Penn remain separate companions. O018 content remains excluded.",
     "canonical_spine": {
       "authority_id": "o015-habring-arxiv-2607.11664v1",
@@ -986,6 +986,13 @@
         "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
         "bytes": 3777,
         "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4"
+      },
+      "terminal_publication": {
+        "path": "qa/INTEGRATED_TERMINAL_PUBLICATION_AUDIT.json",
+        "bytes": 1863,
+        "sha256": "c17677c7de0806080f41f98f6e38bc0f817fc6d06fc27b644021462bdf24c3d3",
+        "result": "pass",
+        "terminal_condition_satisfied": true
       }
     },
     "rights": {
@@ -1002,26 +1009,53 @@
     "publication": {
       "github_repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
       "github_branch": "main",
+      "github_release_commit": "b57225d46631680b3755edcd23975916e84a8b6c",
+      "github_release_tree": "aa8663945724e998b03b74481ef290550bb2dc59",
+      "github_release_parent": "74780b65dcf9954bdf915aecbf57cd17fd6b43ea",
+      "github_release_path_count": 87,
+      "github_release_aggregate_bytes": 15858259,
+      "github_public_readback": {
+        "path": "release/github/2026-08-28-integrated-final/github-public-readback-integrated-final.json",
+        "bytes": 18904,
+        "sha256": "f411b3d3fbb244526cf7d4b4993bc4f446c24676c787ac800d2c9926a80a4b19",
+        "result": "pass"
+      },
       "zenodo_parent_record_id": "22104724",
       "zenodo_parent_record_doi": "10.5281/zenodo.22104724",
+      "zenodo_latest_record_id": "22142120",
+      "zenodo_latest_record_doi": "10.5281/zenodo.22142120",
       "zenodo_concept_id": "22059741",
       "zenodo_concept_doi": "10.5281/zenodo.22059741",
-      "state": "next_action_is_build_compact_reader_first_release_then_publish_and_anonymously_read_back"
+      "zenodo_public_file_count": 100,
+      "zenodo_inherited_file_count": 91,
+      "zenodo_addition_file_count": 9,
+      "zenodo_default_preview": "D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "zenodo_public_readback": {
+        "path": "release/zenodo/2026-08-28-integrated-final/zenodo-public-readback-integrated.json",
+        "bytes": 27343,
+        "sha256": "e5f75072c2d0aa6f2bfdfaa0a620495d913f75644528a626197089d183fcf176",
+        "result": "pass"
+      },
+      "zenodo_draft_closure": {
+        "path": "release/zenodo/2026-08-28-integrated-final/zenodo-draft-closure-integrated.json",
+        "bytes": 475,
+        "sha256": "7907a1b6109a664e75aec5d55f3f3ab9d9b64b827d84304eebb59d81098ab437",
+        "authenticated_records_scanned": 260,
+        "concept_open_draft_count": 0,
+        "result": "pass"
+      },
+      "access": "public_record_and_public_files",
+      "state": "complete_public_verified"
     }
   },
   "current_production_cursor": {
     "recorded_on": "2026-08-28",
-    "authority_kind": "integrated_course_release_reconciliation",
+    "authority_kind": "integrated_course_terminal_release",
     "name": "INTEGRATED-COURSE-FINAL-RELEASE",
-    "state": "integrated_course_complete_release_reconciliation",
+    "state": "complete_public_verified",
     "scope_reference": "current_integrated_course_admission",
-    "required_actions": [
-      "pass the final rights and release audit against current controls",
-      "build and verify the compact reader-first final release payload",
-      "narrow-push the exact release manifest to the existing public GitHub main branch",
-      "publish one new version in the existing Zenodo concept and anonymously read back every required public byte",
-      "persist sanitized receipts and close the finite goal only after all publication gates pass"
-    ]
+    "required_actions": [],
+    "terminal_condition": "All content, reader, backend, rights, GitHub, Zenodo, anonymous-byte, public-access, default-preview, latest-version, and draft-closure gates pass; no required work remains."
   },
   "authorities": [
     {

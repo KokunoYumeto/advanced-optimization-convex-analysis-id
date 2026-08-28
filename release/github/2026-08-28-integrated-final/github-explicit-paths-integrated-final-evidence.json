@@ -1,0 +1,34 @@
+{
+    "schema":  "o015-github-integrated-final-evidence-explicit-paths-v1",
+    "repository":  {
+                       "owner":  "KokunoYumeto",
+                       "name":  "advanced-optimization-convex-analysis-id",
+                       "branch":  "main"
+                   },
+    "release":  "integrated-course-final-evidence-2026.08.28",
+    "expected_parent":  "b57225d46631680b3755edcd23975916e84a8b6c",
+    "required_path_count":  18,
+    "path_groups":  {
+                        "evidence_commit_paths":  [
+                                                      "00_control/BUILD_AND_QA.md",
+                                                      "00_control/CURRENT_CURSOR.md",
+                                                      "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+                                                      "00_control/CURRENT_STATE.md",
+                                                      "00_control/DECISION_LOG.md",
+                                                      "00_control/PUBLICATION_RECEIPTS.md",
+                                                      "00_control/SOURCE_AUTHORITY.json",
+                                                      "qa/INTEGRATED_TERMINAL_PUBLICATION_AUDIT.json",
+                                                      "qa/verify_integrated_terminal_publication.py",
+                                                      "README.md",
+                                                      "release/github/2026-08-28-integrated-final/github-explicit-paths-integrated-final-evidence.json",
+                                                      "release/github/2026-08-28-integrated-final/github-public-readback-integrated-final.json",
+                                                      "release/github/2026-08-28-integrated-final/prepare_github_integrated_final_evidence.ps1",
+                                                      "release/github/2026-08-28-integrated-final/verify_github_integrated_final_evidence_public.py",
+                                                      "release/zenodo/2026-08-28-integrated-final/publish_integrated_final.py",
+                                                      "release/zenodo/2026-08-28-integrated-final/zenodo-draft-closure-integrated.json",
+                                                      "release/zenodo/2026-08-28-integrated-final/zenodo-draft-integrated.json",
+                                                      "release/zenodo/2026-08-28-integrated-final/zenodo-public-readback-integrated.json"
+                                                  ]
+                    },
+    "post_commit_receipt":  "release/github/2026-08-28-integrated-final/github-public-readback-integrated-final-evidence.json"
+}

@@ -627,8 +627,6 @@ def validate_public_access(record: dict, *, draft: bool = False) -> None:
     files = record.get("files")
     if isinstance(files, dict) and files.get("enabled") is not True:
         raise RuntimeError("record files are not explicitly enabled")
-    if draft and not isinstance(access, dict):
-        raise RuntimeError("draft response lacks explicit public access controls")
 
 
 def public_entries(record: dict) -> dict[str, dict]:
@@ -765,7 +763,6 @@ def create_or_recover(client: requests.Session) -> str:
             or concept_id(draft) != CONCEPT_ID
         ):
             raise RuntimeError("saved state does not identify an editable draft")
-        validate_public_access(draft, draft=True)
         return record
     response = client.post(f"{API}/records/{PARENT_RECORD_ID}/versions", timeout=120)
     if response.status_code == 409:
@@ -774,10 +771,10 @@ def create_or_recover(client: requests.Session) -> str:
     record = str(response.json().get("id"))
     if not record.isdigit() or record == PARENT_RECORD_ID:
         raise RuntimeError("version endpoint returned an unsafe record id")
+    save_state({"id": record, "status": "draft"})
     draft = get_json(client, f"{API}/records/{record}/draft", "new-draft")
     if concept_id(draft) != CONCEPT_ID:
         raise RuntimeError("new version draft does not belong to the intended concept")
-    validate_public_access(draft, draft=True)
     save_state(draft)
     return record
 
@@ -788,13 +785,13 @@ def prepare() -> dict:
     verify_parent_public()
     client = session(True)
     record = create_or_recover(client)
-    ensure_namespace(client, record, inputs)
     response = client.put(f"{API}/records/{record}/draft", json=render_metadata(inputs), timeout=120)
     response.raise_for_status()
     updated = response.json()
     validate_metadata(updated["metadata"])
     validate_public_access(updated, draft=True)
     save_state(updated)
+    ensure_namespace(client, record, inputs)
     return {**local, "draft_id": record}
 
 

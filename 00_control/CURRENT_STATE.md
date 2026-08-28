@@ -1279,3 +1279,17 @@ GitHub `main`, publish one new version in Zenodo concept
 `10.5281/zenodo.22059741`, anonymously read back the exact public bytes, and
 persist sanitized receipts. The goal remains active until those publication
 actions pass.
+
+## 2026-08-28 terminal state — complete and publicly verified
+
+The preceding release-reconciliation state is superseded. The integrated
+course is complete and publicly preserved. GitHub `main` release commit
+`b57225d46631680b3755edcd23975916e84a8b6c` contains exactly 87 A/M paths,
+tree `aa8663945724e998b03b74481ef290550bb2dc59`, and 15,858,259 bytes; all
+public immutable raw bytes pass anonymous comparison. Zenodo record `22142120`
+(`10.5281/zenodo.22142120`) is the latest public version in the existing concept
+`10.5281/zenodo.22059741`, with exactly 91 inherited files and nine integrated
+additions. All 100 public files pass byte/SHA-256 readback, the integrated PDF
+is the default preview, record and files are public, and closure finds zero
+open drafts after an exhaustive 260-record authenticated scan. No required
+work remains.

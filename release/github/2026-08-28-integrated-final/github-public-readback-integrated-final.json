@@ -1,0 +1,542 @@
+{
+  "aggregate_bytes": 15858259,
+  "anonymous_smart_http_ref_match": true,
+  "branch": "main",
+  "browser_used": false,
+  "commit": "b57225d46631680b3755edcd23975916e84a8b6c",
+  "commit_path_count": 87,
+  "credential_material_recorded": false,
+  "date": "2026-08-28",
+  "files": [
+    {
+      "bytes": 214286,
+      "path": "00_control/ADVERSE_LEDGER.jsonl",
+      "sha256": "e3085710efd8ea18c567271728decab3e3ac50bde21240ac88d65d50873dcc51",
+      "status": "M"
+    },
+    {
+      "bytes": 140282,
+      "path": "00_control/BUILD_AND_QA.md",
+      "sha256": "2194db71cb0c3c51ebea4a5817252a8119e490d0f9edf4bb53123bebe6bbb8e0",
+      "status": "M"
+    },
+    {
+      "bytes": 66527,
+      "path": "00_control/COMPONENT_RIGHTS.csv",
+      "sha256": "63daf8708c53d760d525654608996e38e324c53d890efe7e82cff21b494526e9",
+      "status": "M"
+    },
+    {
+      "bytes": 32780,
+      "path": "00_control/COVERAGE_OVERLAP.md",
+      "sha256": "c62ad5789f5193d059cc98549d3a9b8f4c1f4e209b19d4a9962f3d39d128f3ba",
+      "status": "M"
+    },
+    {
+      "bytes": 55549,
+      "path": "00_control/CURRENT_CURSOR.md",
+      "sha256": "c6a74d84ff824d586142d4a021f9476a8122ecded3c168e0de8bc28e21d6b557",
+      "status": "M"
+    },
+    {
+      "bytes": 10055,
+      "path": "00_control/CURRENT_GOAL_AND_WORKFLOW.md",
+      "sha256": "3b2599ea1fb98f0805550dfac221e3cfc4b6451e273d93cc89f4fcd2f41a4705",
+      "status": "M"
+    },
+    {
+      "bytes": 80456,
+      "path": "00_control/CURRENT_STATE.md",
+      "sha256": "f7334a75799332d39812e2b4493a34dd4b900aeb78b2206f584feacc7d33aad2",
+      "status": "M"
+    },
+    {
+      "bytes": 75600,
+      "path": "00_control/DECISION_LOG.md",
+      "sha256": "950a8cf28c9d449186e42038018d6bf5dc0b8508fc0338e6972766339c073cc1",
+      "status": "M"
+    },
+    {
+      "bytes": 70861,
+      "path": "00_control/PUBLICATION_RECEIPTS.md",
+      "sha256": "620cbbf25e4a032c250a2d2582d028506b2b446bf249b729b6267e2d1c449410",
+      "status": "M"
+    },
+    {
+      "bytes": 81438,
+      "path": "00_control/SOURCE_AUTHORITY.json",
+      "sha256": "b8ce43eaec2213d7889f5be81ba74b586eae1fa452af5454057c3a8abf881ed7",
+      "status": "M"
+    },
+    {
+      "bytes": 4272596,
+      "path": "backend/records.csv",
+      "sha256": "8c98c63fcf528bb6dc202fdbaf4d7d791be3eb205513033bffd91be8b8120915",
+      "status": "M"
+    },
+    {
+      "bytes": 3534351,
+      "path": "backend/records.jsonl",
+      "sha256": "a8fe25a7170cd699a217a65f5a0c250518be7efa83f45529b70e17b0c737ff30",
+      "status": "M"
+    },
+    {
+      "bytes": 15806,
+      "path": "labs/original-03/globalisasi-newton.py",
+      "sha256": "f57348e409b768376c424feef382c468d07be5f8c9504197e5e6533315814541",
+      "status": "A"
+    },
+    {
+      "bytes": 2521,
+      "path": "labs/original-03/globalisasi-newton.svg",
+      "sha256": "69d28e1112a2e5016153cd572ddbd95702ad944ad8837ac445739ef8fd40cdf0",
+      "status": "A"
+    },
+    {
+      "bytes": 9982,
+      "path": "labs/original-03/globalisasi-newton-results.csv",
+      "sha256": "7893caf71944ed58eca0e46d0cc2794380681a74c1b69124fdfc3a3a1fe202ca",
+      "status": "A"
+    },
+    {
+      "bytes": 1967,
+      "path": "labs/original-03/globalisasi-newton-results.json",
+      "sha256": "35b3522701f008db68def8ee655f871e77cedfb5d257d58bef4cb4c3dbb37589",
+      "status": "A"
+    },
+    {
+      "bytes": 16187,
+      "path": "labs/original-03/kapstone-invers-komposit.py",
+      "sha256": "45092afab7b0b3751b43d24ace62b8ea2973a21ec24745c3c8213bc252940370",
+      "status": "A"
+    },
+    {
+      "bytes": 6280,
+      "path": "labs/original-03/kapstone-invers-komposit.svg",
+      "sha256": "da7cf7bfb69366a3e542b114296d31bc9e1d24aa56e2142e2fed56fa0b82dcb8",
+      "status": "A"
+    },
+    {
+      "bytes": 46008,
+      "path": "labs/original-03/kapstone-invers-komposit-results.csv",
+      "sha256": "328d9eba2c66f31b80408c5d157ec6ff2f99a08ec7e2ed577ddd3e3e32027f81",
+      "status": "A"
+    },
+    {
+      "bytes": 3457,
+      "path": "labs/original-03/kapstone-invers-komposit-results.json",
+      "sha256": "3c966ac6b7ca61a7607185f8bc8b5dc727cef7859bb6b0946812a92952bd6a8b",
+      "status": "A"
+    },
+    {
+      "bytes": 11387,
+      "path": "labs/original-03/transportasi-entropik.py",
+      "sha256": "9fca6188778608b94008476e257f7a0f1e578782168a7970c8b4a28f8960c5d9",
+      "status": "A"
+    },
+    {
+      "bytes": 9425,
+      "path": "labs/original-03/transportasi-entropik.svg",
+      "sha256": "02c3b30d0cdfd754425b81fa58d2f823411209599cfa225c3d9ad49d1fe743d2",
+      "status": "A"
+    },
+    {
+      "bytes": 7920,
+      "path": "labs/original-03/transportasi-entropik-results.csv",
+      "sha256": "c016984cdb49d17d3a2d76279da6e1416ddc2e6cc50cd43bff41a553756a2728",
+      "status": "A"
+    },
+    {
+      "bytes": 4071,
+      "path": "labs/original-03/transportasi-entropik-results.json",
+      "sha256": "25046e130e6691c5620aa820b389c9dbf0ad7bb0fe3a9ebf5eb9032e883b69e5",
+      "status": "A"
+    },
+    {
+      "bytes": 379901,
+      "path": "output/epub/D90-O015-optimisasi-lanjut-analisis-konveks-id.epub",
+      "sha256": "1bb882a75209adb220de4ee6c6cf92355b5402538c88050e807dc161fa5d9321",
+      "status": "A"
+    },
+    {
+      "bytes": 2485595,
+      "path": "output/html/D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "sha256": "028e026033bc60bba1aff282f34b2e550a9f9358a3bdecd16b74e3442f743c89",
+      "status": "A"
+    },
+    {
+      "bytes": 1671254,
+      "path": "output/pdf/D90-O015-optimisasi-lanjut-analisis-konveks-id.pdf",
+      "sha256": "9deefecf469c9f2aace26bc8ccdedc552debbe9874ae035badaf5cffee0f80e5",
+      "status": "A"
+    },
+    {
+      "bytes": 4333,
+      "path": "PROVENANCE.md",
+      "sha256": "0a44f5480f098b918fe21d35530a0d27abbbddad3c83e0f50f8a0a6851ceb5b8",
+      "status": "M"
+    },
+    {
+      "bytes": 10782,
+      "path": "qa/2026-08-27-integrated-pdf-build.json",
+      "sha256": "a36f0bfcf8526d6ed1161ec5627fc7d9631ae4df3bbead703b4549880deef83d",
+      "status": "A"
+    },
+    {
+      "bytes": 9657,
+      "path": "qa/build_integrated_pdf.py",
+      "sha256": "d9330c038ad174a4cd53e2aa295ff47b33e2e4327ad1b784ba0b2cb25ccd7f0d",
+      "status": "A"
+    },
+    {
+      "bytes": 47141,
+      "path": "qa/build_integrated_readers.py",
+      "sha256": "d9be2a7764054ab6ca699e1ec9dd9bab5fc04e8ba97b8221b0a62e58f5ddc877",
+      "status": "A"
+    },
+    {
+      "bytes": 56769,
+      "path": "qa/extend_backend_original_03.py",
+      "sha256": "50fef6ed0f59283b2887b40c285e3f4ba2940915e179735443d9710302cb76b2",
+      "status": "A"
+    },
+    {
+      "bytes": 4436,
+      "path": "qa/INTEGRATED_BROWSER_QA.json",
+      "sha256": "c0ac06d3545821da1b03fa059fc6213b1585e2657e4e6bd8b122ebcf4dea388a",
+      "status": "A"
+    },
+    {
+      "bytes": 80194,
+      "path": "qa/INTEGRATED_PDF_VALIDATION.json",
+      "sha256": "8cd8a5593ff8d8f9a78c53f7196527bdb26ed50560de8291a4964069d867af07",
+      "status": "A"
+    },
+    {
+      "bytes": 3100,
+      "path": "qa/INTEGRATED_PDF_VISUAL_QA.json",
+      "sha256": "41c12f4110ef70c0808c3eca5a8170d5ea63ada2723b005914b5612f6e6bd13d",
+      "status": "A"
+    },
+    {
+      "bytes": 8875,
+      "path": "qa/INTEGRATED_READERS_BUILD.json",
+      "sha256": "30cc9e363066aa0d47bc6d46fddec8a569120d4807f0beeb6973a9150e88c3c8",
+      "status": "A"
+    },
+    {
+      "bytes": 8963,
+      "path": "qa/INTEGRATED_READERS_VALIDATION.json",
+      "sha256": "2069af40785e573bfc81ff7742675f196f84e2bf875b6311ff484900fbf7b2f4",
+      "status": "A"
+    },
+    {
+      "bytes": 26298,
+      "path": "qa/INTEGRATED_REFLOW_INDEPENDENT.json",
+      "sha256": "7f0113674b513d6f3db5d694c5a351468495842b9a92363cc6a17f5e26cc1020",
+      "status": "A"
+    },
+    {
+      "bytes": 68004,
+      "path": "qa/INTEGRATED_RIGHTS_RELEASE_QA.json",
+      "sha256": "35ce414e9a347db004562df18b77ea3ddcf9a89095dd9156672de8912a778003",
+      "status": "A"
+    },
+    {
+      "bytes": 13329,
+      "path": "qa/ORIGINAL_03_BACKEND_BUILD.json",
+      "sha256": "0319079bcbbfdc0004384649c5617ee751ffd218c6f35d7b1dc2c850ab0614eb",
+      "status": "A"
+    },
+    {
+      "bytes": 3777,
+      "path": "qa/ORIGINAL_03_BACKEND_VALIDATION.json",
+      "sha256": "497adcc19f56368ab6dc2fdd7a416dc5108c125b2b2b1a29f965cb33132445c4",
+      "status": "A"
+    },
+    {
+      "bytes": 53446,
+      "path": "qa/ORIGINAL_03_COURSE_CLOSURE.json",
+      "sha256": "0e4dfa26143342cb22580c5cd2bff074a403337a3dd7aa82e3879aa82d261907",
+      "status": "A"
+    },
+    {
+      "bytes": 29433,
+      "path": "qa/validate_backend_original_03.py",
+      "sha256": "a9b73759e92cbbbde0abffecabab7f9ff0fd65f777276e6c74d8caa8957c2029",
+      "status": "A"
+    },
+    {
+      "bytes": 15637,
+      "path": "qa/verify_integrated_pdf.py",
+      "sha256": "f726b3c00787e67bf2b4f02ed43a2d9e04960e3b32989908144f1122100c0281",
+      "status": "A"
+    },
+    {
+      "bytes": 30756,
+      "path": "qa/verify_integrated_readers.py",
+      "sha256": "54e0e97e09c26ff10a5c55107fe8d1a75aa96cd4b8ea365cc2b4f54703c32464",
+      "status": "A"
+    },
+    {
+      "bytes": 57186,
+      "path": "qa/verify_integrated_reflow_independent.py",
+      "sha256": "b23bb834236f0f17d14540c10920adad9f0346b23d6405d8423eff26c33569c0",
+      "status": "A"
+    },
+    {
+      "bytes": 89201,
+      "path": "qa/verify_integrated_rights_release.py",
+      "sha256": "53bbde57200d9f10751715d2849a8f489ea01cbe0cbd52b6a5b9405ad5161763",
+      "status": "A"
+    },
+    {
+      "bytes": 96627,
+      "path": "qa/verify_original_03_course_closure.py",
+      "sha256": "250823523ca83e0a5d058fa58d1b44eeb887370b4bc209af1b2c32f14d58f6d5",
+      "status": "A"
+    },
+    {
+      "bytes": 42825,
+      "path": "README.md",
+      "sha256": "acefb1eb83d2ab32eb429e029499764dfcc590a3462937d44a170d4b79d0922f",
+      "status": "M"
+    },
+    {
+      "bytes": 1397822,
+      "path": "release/final/2026-08-28/ADVANCED_OPTIMIZATION_CONVEX_ANALYSIS_ID_INTEGRATED_RELEASE_2026.08.28.zip",
+      "sha256": "cdd9454f1d9ffc2dc13dccd6c9b82ac78d108d90feaa6baa609aae5f21335d32",
+      "status": "A"
+    },
+    {
+      "bytes": 3141,
+      "path": "release/final/2026-08-28/local-verification-integrated.json",
+      "sha256": "a6f5498ca24b804026c511b2e2a2aaa1edea435bb352a771871be21fb4d0d4cb",
+      "status": "A"
+    },
+    {
+      "bytes": 12190,
+      "path": "release/final/2026-08-28/prepare_integrated_release.py",
+      "sha256": "49b0ad1138db248bb0cc95100b077de514e5603b69b5e76f9d6f81cc522ac304",
+      "status": "A"
+    },
+    {
+      "bytes": 6379,
+      "path": "release/final/2026-08-28/release-manifest-integrated-zenodo.json",
+      "sha256": "e8bb6c5558341e10967e4848644fea3f15d3c9287402b9e8307bff8215bebd51",
+      "status": "A"
+    },
+    {
+      "bytes": 9274,
+      "path": "release/final/2026-08-28/RIGHTS_AND_PROVENANCE_INTEGRATED.md",
+      "sha256": "acf83221211b25f67688d87932f333f9ed0309c11a5d6c3bea37b182ce72b360",
+      "status": "A"
+    },
+    {
+      "bytes": 920,
+      "path": "release/final/2026-08-28/SHA256SUMS-integrated",
+      "sha256": "052c21c6205d58bb39970f06141decdaec7d5f96f64b741d4321a33e08a3eb1d",
+      "status": "A"
+    },
+    {
+      "bytes": 10247,
+      "path": "release/github/2026-08-28-integrated-final/github-explicit-paths-integrated-final.json",
+      "sha256": "3c1e105cacb3a5bc668c25061b9498144bc1ec328652e30d6d18c543b4afef7a",
+      "status": "A"
+    },
+    {
+      "bytes": 7819,
+      "path": "release/github/2026-08-28-integrated-final/prepare_github_integrated_final.ps1",
+      "sha256": "bf9743584eb4f2f707178743ad63cac1b49a4ea31e8e33a51d4979a40ef9cccb",
+      "status": "A"
+    },
+    {
+      "bytes": 5701,
+      "path": "release/github/2026-08-28-integrated-final/verify_github_integrated_final_public.py",
+      "sha256": "cf2a5e2e72bbcb33b1005f1d93c00e3160fa3d50dedfad4ed9ca6f5c9bcb8310",
+      "status": "A"
+    },
+    {
+      "bytes": 5591,
+      "path": "release/zenodo/2026-08-28-integrated-final/metadata-integrated.template.json",
+      "sha256": "c1931ef2f9ef48ec7024fbbae863c05f99fcbce2588966c2b182db7be37a3f00",
+      "status": "A"
+    },
+    {
+      "bytes": 46331,
+      "path": "release/zenodo/2026-08-28-integrated-final/publish_integrated_final.py",
+      "sha256": "57110b07ca05797278ff45a93ce9601e567616c9afa34e535d00ed5ca387b79a",
+      "status": "A"
+    },
+    {
+      "bytes": 4480,
+      "path": "release/zenodo/2026-08-28-integrated-final/release-inputs-integrated.json",
+      "sha256": "5f8ac1958789b818f6ba752b6baecbf9dd2c2cc912c96872eb873fedc32cdf36",
+      "status": "A"
+    },
+    {
+      "bytes": 2932,
+      "path": "release/zenodo/2026-08-28-integrated-final/release-inputs-integrated.template.json",
+      "sha256": "45c0741998618014b061b3954f7ad9c0f3fecbfd6538e5693d72f585dbcc34f5",
+      "status": "A"
+    },
+    {
+      "bytes": 2409,
+      "path": "release/zenodo/2026-08-28-integrated-final/RIGHTS_AND_PROVENANCE_INTEGRATED.template.md",
+      "sha256": "b9dc55b2fd6fc6d2ef27c87a2f2fa2a5baac342ae2de017c8cb71de440b628e5",
+      "status": "A"
+    },
+    {
+      "bytes": 4750,
+      "path": "RIGHTS.md",
+      "sha256": "98b6c3e4c9199eef97cc8eecaf34061dc11c8dfe18acef8463481fcdc6f641cf",
+      "status": "M"
+    },
+    {
+      "bytes": 5110,
+      "path": "source/id-ID/D90-O015-optimisasi-lanjut-analisis-konveks-id.tex",
+      "sha256": "3a7ca97267acc71557be9e7c441eed2aca11960bae8491e94525fe64aba2d5b4",
+      "status": "A"
+    },
+    {
+      "bytes": 19267,
+      "path": "source/id-ID/habring-03-subgradien-id.tex",
+      "sha256": "5cbefc17a3d1409305a9fdadf865b45cb399ff1edc41d837bc4f4c138d9b97df",
+      "status": "M"
+    },
+    {
+      "bytes": 35436,
+      "path": "source/id-ID/habring-07-dualitas-id.tex",
+      "sha256": "360d0a4afc6058e3c8c90b4c2a7d2dc7cbd5f42b3544b3174a1b838348560979",
+      "status": "M"
+    },
+    {
+      "bytes": 1161,
+      "path": "source/id-ID/latex-lab-testphase-latest.sty",
+      "sha256": "baef1ae96084d029ea2db72e025a7d760998080955a4dcd811ef512c28485886",
+      "status": "A"
+    },
+    {
+      "bytes": 4870,
+      "path": "source/id-ID/macros-id.tex",
+      "sha256": "689fd4875141eff9e40a56752227978b64a322c955a827d11c44469be2b9e8fc",
+      "status": "M"
+    },
+    {
+      "bytes": 3014,
+      "path": "source/id-ID/o015-accessibility-id.tex",
+      "sha256": "5aa8cc59e4d6786d7f310ccaab1085cfeaee02835cb7333f23bb66530c4d21aa",
+      "status": "A"
+    },
+    {
+      "bytes": 27425,
+      "path": "source/id-ID/original-01-metode-stokastik-komposit-cermin-minibatch-id.tex",
+      "sha256": "540c1bf2dd7d3d54f5d6b69e16641cdfc33011f24885bb0a216b616e861c13a0",
+      "status": "M"
+    },
+    {
+      "bytes": 10067,
+      "path": "source/id-ID/original-03/00-peta-asesmen-id.tex",
+      "sha256": "3d5f906f205cfabf7f3a464d18111209a22bc6edd193702ea584093b3d9938f8",
+      "status": "A"
+    },
+    {
+      "bytes": 24183,
+      "path": "source/id-ID/original-03/01-diagnostik-prasyarat-id.tex",
+      "sha256": "162f56e14f6d7fb1b879ed3403617ca7ca4d1fa32b4548812869bec1728a5b2f",
+      "status": "A"
+    },
+    {
+      "bytes": 15501,
+      "path": "source/id-ID/original-03/02-set-soal-dasar-konveks-id.tex",
+      "sha256": "bd09ebd90d1fef7b35147e84c449d14ba50078fde491babbb32d49f1c6695c83",
+      "status": "A"
+    },
+    {
+      "bytes": 14393,
+      "path": "source/id-ID/original-03/03-set-soal-metode-proksimal-id.tex",
+      "sha256": "243912d9de0f5d73de8fb8f3a5d041797f951331a6ad6cce955e6a8538172eff",
+      "status": "A"
+    },
+    {
+      "bytes": 16647,
+      "path": "source/id-ID/original-03/04-set-soal-dualitas-kkt-id.tex",
+      "sha256": "fa7d45448b63cc07572cad4afb8fef65e10922e3be094d6aa8227119cc9a7de2",
+      "status": "A"
+    },
+    {
+      "bytes": 10598,
+      "path": "source/id-ID/original-03/05-set-soal-metode-stokastik-id.tex",
+      "sha256": "1c062ad559e675dde14c26e86450d7c500232490d0112a0f34ca1d0f5886ad94",
+      "status": "A"
+    },
+    {
+      "bytes": 12295,
+      "path": "source/id-ID/original-03/06-set-soal-operator-monoton-id.tex",
+      "sha256": "3560f1cc9380c0a92e4e66f7e87dfc2a34c588670df220b1b0e6f0ea568c6919",
+      "status": "A"
+    },
+    {
+      "bytes": 10677,
+      "path": "source/id-ID/original-03/07-set-soal-transportasi-dan-sintesis-id.tex",
+      "sha256": "ec1420f9c1e7233861dbf189bad49ce749dfeff29d5f0386e7ca11fb81c55791",
+      "status": "A"
+    },
+    {
+      "bytes": 7947,
+      "path": "source/id-ID/original-03/08-rubrik-pembuktian-id.tex",
+      "sha256": "2779632ba1098cb5a842c195336945beece42bd7e1596e535b40ab6efaf3dd62",
+      "status": "A"
+    },
+    {
+      "bytes": 11934,
+      "path": "source/id-ID/original-03/09-ujian-tengah-id.tex",
+      "sha256": "8dda06c13022d1a6f953f1930c0ccdeeaa534e098e0dc68edd4a6d761900a003",
+      "status": "A"
+    },
+    {
+      "bytes": 20374,
+      "path": "source/id-ID/original-03/10-ujian-akhir-id.tex",
+      "sha256": "338a573281c6e22a6699b22d852705fdff0db464ad1bc10d9cdd924bb9430d76",
+      "status": "A"
+    },
+    {
+      "bytes": 5563,
+      "path": "source/id-ID/original-03/11-laboratorium-globalisasi-newton-id.tex",
+      "sha256": "bb988eeab3bb1ce7d3848cd09d6760c5ac99bc2ca3b4153d8684ca138e8f3647",
+      "status": "A"
+    },
+    {
+      "bytes": 4713,
+      "path": "source/id-ID/original-03/12-laboratorium-transportasi-entropik-id.tex",
+      "sha256": "7fafdef5e27bbb51354158b89a05b01ee68521d2a892fa27a9eb2d2e5e4a43c0",
+      "status": "A"
+    },
+    {
+      "bytes": 7045,
+      "path": "source/id-ID/original-03/13-proyek-kapstone-masalah-invers-komposit-id.tex",
+      "sha256": "ac8a1415e49b8f2b2c5fca46f33928e36239c90ef30b2872e64fcda4ea11e190",
+      "status": "A"
+    },
+    {
+      "bytes": 1785,
+      "path": "source/id-ID/original-03-penutupan-kursus-id.tex",
+      "sha256": "c53f8823adbe7b8ddb245ca09147c270daf795a58024ea12759eb149ca9eb7a9",
+      "status": "A"
+    },
+    {
+      "bytes": 957,
+      "path": "source/id-ID/references-integrated-id.bib",
+      "sha256": "1935cc1e40c1f0c2a1a2836358a0b8f5304573330ebfa3deba4c4b11dfdd5abc",
+      "status": "A"
+    }
+  ],
+  "immutable_raw_byte_failures": 0,
+  "only_added_or_modified": true,
+  "parent": "74780b65dcf9954bdf915aecbf57cd17fd6b43ea",
+  "primary_main_reader_matches_commit": true,
+  "repository": "https://github.com/KokunoYumeto/advanced-optimization-convex-analysis-id",
+  "result": "pass",
+  "schema": "o015-github-integrated-final-public-readback-v1",
+  "tree": "aa8663945724e998b03b74481ef290550bb2dc59"
+}
