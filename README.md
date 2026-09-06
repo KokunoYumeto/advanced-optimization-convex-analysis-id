@@ -23,8 +23,9 @@ recorded in `docs/reader-manifest.json`.
 
 ## Preservasi dan mirror
 
-Versi publik terbaru yang terverifikasi adalah [edisi terintegrasi,
-10.5281/zenodo.22142120](https://doi.org/10.5281/zenodo.22142120) dalam [DOI
+Versi publik terbaru yang terverifikasi adalah [edisi terintegrasi dengan
+navigasi program,
+10.5281/zenodo.22543810](https://doi.org/10.5281/zenodo.22543810) dalam [DOI
 konsep 10.5281/zenodo.22059741](https://doi.org/10.5281/zenodo.22059741).
 Keseluruhan 100 berkas—91 warisan identik dan sembilan tambahan terintegrasi—
 telah dibaca kembali secara anonim dan cocok dengan ukuran serta SHA-256 yang
