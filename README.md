@@ -6,6 +6,21 @@ Edisi pembaca bahasa Indonesia yang lengkap untuk materi optimisasi lanjut, anal
 
 English discovery label: **Advanced Optimization and Convex Analysis — Indonesian (id-ID) Edition**.
 
+## Pembaca web / Web readers
+
+Halaman masuk mahasiswa berada di
+[`https://kokunoyumeto.github.io/advanced-optimization-convex-analysis-id/`](https://kokunoyumeto.github.io/advanced-optimization-convex-analysis-id/).
+Halaman itu mengindeks 17 pembaca HTML lengkap yang dicerminkan byte demi byte
+dari [rekaman Zenodo 22543810](https://doi.org/10.5281/zenodo.22543810).
+Setiap halaman menyediakan tautan kembali ke program matematika dalam bahasa
+Indonesia dan Inggris serta tautan menonjol ke sumber asli yang berwibawa.
+
+The student landing page above indexes all 17 browser-readable documents. The
+mirror is reproducible with `python -B tools/build_github_pages.py --sync` and
+can be checked without network access with
+`python -B tools/build_github_pages.py`. Exact source and SHA-256 identities are
+recorded in `docs/reader-manifest.json`.
+
 ## Preservasi dan mirror
 
 Versi publik terbaru yang terverifikasi adalah [edisi terintegrasi,

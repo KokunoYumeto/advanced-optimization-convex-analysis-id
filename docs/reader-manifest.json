@@ -1,0 +1,175 @@
+{
+  "schema": "d90-github-pages-reader-manifest-v1",
+  "source_record_id": 22543810,
+  "source_record_doi": "https://doi.org/10.5281/zenodo.22543810",
+  "reader_count": 17,
+  "navigation_contract": {
+    "nav_id": "program-matematika-global-nav-v1",
+    "required_links": [
+      "https://kokunoyumeto.github.io/program-matematika-indonesia/id/#course-D90",
+      "https://kokunoyumeto.github.io/program-matematika-indonesia/en/#course-D90",
+      "https://arxiv.org/pdf/2607.11664"
+    ],
+    "required_occurrences_per_html": 1
+  },
+  "landing": {
+    "path": "docs/index.html",
+    "bytes": 6374,
+    "sha256": "63953b3fd0fb4697c8d420ccbf2d3ec4bace2cbbd142535e161c8b34f0b300eb"
+  },
+  "readers": [
+    {
+      "filename": "D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html",
+      "bytes": 31279,
+      "md5": "d871527c242fd31415dc3998eeb981c4",
+      "sha256": "a8f20b30ab785bb53906f14358ac08ea2d4a1d46fb9197d1af781ad92abc58b5",
+      "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Becker 1",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html/content",
+      "reader_url": "readers/D90-BECKER-01-dualitas-lagrange-slater-kkt-id.html"
+    },
+    {
+      "filename": "D90-BECKER-02-pemisahan-douglas-rachford-id.html",
+      "bytes": 19518,
+      "md5": "f09c604bd1e40b775cfa1f0e386cd27e",
+      "sha256": "d31d566b9604b7a1d06ded8242fd0b997aeab88bbbb339526eb3754ca797e45d",
+      "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Becker 2: Pemisahan Douglas-Rachford",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-BECKER-02-pemisahan-douglas-rachford-id.html/content",
+      "reader_url": "readers/D90-BECKER-02-pemisahan-douglas-rachford-id.html"
+    },
+    {
+      "filename": "D90-BECKER-03-reduksi-varians-id.html",
+      "bytes": 25470,
+      "md5": "2f1c8a8fd5df32692d5314021d694544",
+      "sha256": "15fee0425803d23b9b66d6ddf7d98703fa30357a771dc8d88c33cb9b641045a4",
+      "title": "Optimisasi Lanjut dan Analisis Konveks - Modul Becker 3: Reduksi Varians untuk SAA",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-BECKER-03-reduksi-varians-id.html/content",
+      "reader_url": "readers/D90-BECKER-03-reduksi-varians-id.html"
+    },
+    {
+      "filename": "D90-MIT-01-peran-kekonveksan-id.html",
+      "bytes": 21761,
+      "md5": "6939277c930af9bba038471f84c2e8e6",
+      "sha256": "d65e204325a44a4f1f6b700e659719058ed449365a734588f74d6463112e57fd",
+      "title": "Peran Kekonveksan dalam Optimisasi",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-01-peran-kekonveksan-id.html/content",
+      "reader_url": "readers/D90-MIT-01-peran-kekonveksan-id.html"
+    },
+    {
+      "filename": "D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html",
+      "bytes": 39344,
+      "md5": "b5e5d7f2fe74d7b72680018073f4f9e6",
+      "sha256": "87a434ed3f28d9b52b88d75f8e0eca0ac05ed852aa05821d4a7b8ec09dc306cc",
+      "title": "Dualitas dan Perilaku Pengecualian",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html/content",
+      "reader_url": "readers/D90-MIT-02-dualitas-dan-perilaku-pengecualian-id.html"
+    },
+    {
+      "filename": "D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html",
+      "bytes": 10910,
+      "md5": "5394b94c767074de80548041351b9d56",
+      "sha256": "96439b5b17b223db9841c8e8f0660771498122b05135db1db8481efa8893b83a",
+      "title": "Pandangan Modern tentang Optimisasi Konveks",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html/content",
+      "reader_url": "readers/D90-MIT-03-pandangan-modern-optimisasi-konveks-id.html"
+    },
+    {
+      "filename": "D90-MIT-04-kebangkitan-era-algoritmik-id.html",
+      "bytes": 11123,
+      "md5": "e6c68abfcf814e570b70bbd3faa70894",
+      "sha256": "16dae7185fa2d19d47eafbe2ee056eb2e0fa3afc1ac85227eb5d6683d568568e",
+      "title": "Kebangkitan Era Algoritmik",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-04-kebangkitan-era-algoritmik-id.html/content",
+      "reader_url": "readers/D90-MIT-04-kebangkitan-era-algoritmik-id.html"
+    },
+    {
+      "filename": "D90-MIT-05-orientasi-kursus-id.html",
+      "bytes": 17177,
+      "md5": "ff54cc6bd58fd89ff0834faec85e24c7",
+      "sha256": "e09c8da6dd24c6d1be27198955fb6cc36aeb3267eeefb01d1211510155ffdf17",
+      "title": "Tren Metodologis dan Orientasi Kursus",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-05-orientasi-kursus-id.html/content",
+      "reader_url": "readers/D90-MIT-05-orientasi-kursus-id.html"
+    },
+    {
+      "filename": "D90-MIT-06-kuliah-2-landasan-konveks-id.html",
+      "bytes": 71594,
+      "md5": "09e6869922dfe7b45d1e38505193542c",
+      "sha256": "766f5e48a35934e67a889df3aa80304f19228a063d01a32cc90662a0a81c8e36",
+      "title": "Kuliah 2: Landasan Himpunan dan Fungsi Konveks",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-06-kuliah-2-landasan-konveks-id.html/content",
+      "reader_url": "readers/D90-MIT-06-kuliah-2-landasan-konveks-id.html"
+    },
+    {
+      "filename": "D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html",
+      "bytes": 78547,
+      "md5": "7005a3cb16cfd09b06ad61fcdfab65a8",
+      "sha256": "0dbccb828489e393f86ec1c2955ccdbd2a9606e502c7988e6c93794d0609b2a6",
+      "title": "Kuliah 3: Fungsi Konveks Terdiferensialkan dan Teorema Caratheodory",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html/content",
+      "reader_url": "readers/D90-MIT-07-kuliah-3-fungsi-konveks-terdiferensial-caratheodory-id.html"
+    },
+    {
+      "filename": "D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html",
+      "bytes": 115046,
+      "md5": "a582cf52976a92f0894a12b538d7fb3b",
+      "sha256": "901e266bde87fd9702d71b00af664c2082ea95decabc1d3bd18404593eaf77e6",
+      "title": "Kuliah 4: Interior Relatif, Penutupan, dan Kontinuitas",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html/content",
+      "reader_url": "readers/D90-MIT-08-kuliah-4-interior-relatif-penutupan-kontinuitas-id.html"
+    },
+    {
+      "filename": "D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html",
+      "bytes": 119953,
+      "md5": "1275a608f428c4c9e2ec7b566cdbad79",
+      "sha256": "23ca10d66772675b224b079655f7c6bbd070e29c4bb77c11714e8337ffd22863",
+      "title": "Kuliah 5: Kerucut Resesi dan Titik Peminimum",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html/content",
+      "reader_url": "readers/D90-MIT-09-kuliah-5-resesi-dan-minimum-id.html"
+    },
+    {
+      "filename": "D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html",
+      "bytes": 171019,
+      "md5": "994bc63bf76e1f38acf4e761a9f25f1b",
+      "sha256": "9cdb6a286373748749ac87e8c2d5f7961b209e000e41cca7c736a2cfd081b9dc",
+      "title": "Kuliah 6: Irisan Himpunan Tertutup, Ketertutupan, dan Hiperbidang",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html/content",
+      "reader_url": "readers/D90-MIT-10-kuliah-6-irisan-tertutup-dan-hiperbidang-id.html"
+    },
+    {
+      "filename": "D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html",
+      "bytes": 97364,
+      "md5": "3fa1af7bc70448719c20fe1dc217bb10",
+      "sha256": "b66108ffcd78f72f66825b4d0f613736d4a58604133bb17024caee51b2ca2fd7",
+      "title": "Kuliah 7: Pemisahan, Hiperbidang Nonvertikal, dan Konjugasi",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html/content",
+      "reader_url": "readers/D90-MIT-11-kuliah-7-pemisahan-dan-konjugasi-id.html"
+    },
+    {
+      "filename": "D90-O015-optimisasi-lanjut-analisis-konveks-id.html",
+      "bytes": 2486743,
+      "md5": "7f25d5e60a8a8fd7738b8985f59fc240",
+      "sha256": "08bcdc3ba0b5ade63a712c71b8354b28ba512eedf17d52196676b6bb762986de",
+      "title": "Optimisasi Lanjut dan Analisis Konveks — Edisi Bahasa Indonesia",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-O015-optimisasi-lanjut-analisis-konveks-id.html/content",
+      "reader_url": "readers/D90-O015-optimisasi-lanjut-analisis-konveks-id.html"
+    },
+    {
+      "filename": "D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html",
+      "bytes": 354393,
+      "md5": "d741013444dc7409c7b626cfd03798aa",
+      "sha256": "dc2a08e0c4e62147050e8724d3e38befa1fde1f6a309272b2fc4f1c53c0cf3b9",
+      "title": "Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 1: Metode Stokastik Komposit, Cermin, dan Minibatch",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html/content",
+      "reader_url": "readers/D90-ORIG-01-metode-stokastik-komposit-cermin-minibatch-id.html"
+    },
+    {
+      "filename": "D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html",
+      "bytes": 191551,
+      "md5": "83a204787e206a3d1b6f54a64626bba6",
+      "sha256": "bc36d41496731544e3adc5466f722396f4cbf1b50a1684dd2c24b3b6111cc71a",
+      "title": "Optimisasi Lanjut dan Analisis Konveks — Tranche Asli 2: Ketaksamaan Variasional, Operator Monoton, Resolven, dan Pemisahan",
+      "source_url": "https://zenodo.org/api/records/22543810/files/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html/content",
+      "reader_url": "readers/D90-ORIG-02-ketaksamaan-variasional-operator-monoton-resolven-pemisahan-id.html"
+    }
+  ]
+}
