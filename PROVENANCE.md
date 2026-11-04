@@ -20,7 +20,7 @@ Dimitri P. Bertsekas's MIT OpenCourseWare 6.253 material, Clément W. Royer's st
 
 ## Production, correction, and verification record
 
-Translation, semantic reconstruction, independent connective writing, assessment authoring, backend generation, and mathematical/computational QA were assisted by **OpenAI Codex gpt-5.6-sol, Ultra**, acting at the repository user's direction. The system is not a source author, licensor, institutional representative, or substitute for the credited human authors and contributors. Exact source locators, changes, corrections, and independent-authorship boundaries are recorded in `00_control/SOURCE_AUTHORITY.json`, `00_control/COMPONENT_RIGHTS.csv`, and `00_control/ADVERSE_LEDGER.jsonl`.
+Translation, semantic reconstruction, independent connective writing, assessment authoring, backend generation, and mathematical/computational QA were done by AI: **OpenAI Codex gpt-5.6-sol, Ultra**, acting at the repository user's direction. The system is not a source author, licensor, institutional representative, or substitute for the credited human authors and contributors. Exact source locators, changes, corrections, and independent-authorship boundaries are recorded in `00_control/SOURCE_AUTHORITY.json`, `00_control/COMPONENT_RIGHTS.csv`, and `00_control/ADVERSE_LEDGER.jsonl`.
 
 Independent human/native-speaker review has not been recorded. That fact is disclosed as a quality limitation, not used as a publication hold. No endorsement, review, approval, sponsorship, or affiliation by Habring, Becker, Krock, MIT, Penn State, Université Paris Dauphine-PSL, arXiv, Athena Scientific, or any other source author or institution is implied.
 
